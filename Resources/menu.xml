@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/menu.xsd">
+
+    <entries>
+        <entry>
+            <name>MxcDropshipInnocigs</name>
+            <label lang="en">Innocigs Dropship</label>
+            <label lang="de">Innocigs Dropship</label>
+            <controller>MxcDropshipInnocigs</controller>
+            <action>index</action>
+            <class>sprite-truck-box</class>
+            <parent identifiedBy="controller">Article</parent>
+        </entry>
+    </entries>
+</menu>

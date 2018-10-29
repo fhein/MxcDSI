@@ -1,0 +1,8 @@
+{
+    "require": {
+        "shopware/shopware": "^5.5",
+   		"zendframework/zend-http" : "~2.8",
+        "ext-json" : "*",
+        "ext-simplexml": "*"
+    }
+}
