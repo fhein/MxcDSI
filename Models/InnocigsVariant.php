@@ -65,13 +65,6 @@ class InnocigsVariant extends ModelEntity
     private $priceRecommended;
 
     /**
-     * @var string $image;
-     *
-     * @ORM\Column(name="image", type="string", nullable=false)
-     */
-    private $image;
-
-    /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\ManyToMany( targetEntity="MxcDropshipInnocigs\Models\InnocigsAttribute", mappedBy="variants")
      */
@@ -208,14 +201,6 @@ class InnocigsVariant extends ModelEntity
     }
 
     /**
-     * @return string $image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
      * @return bool $active
      */
     public function isActive()
@@ -261,14 +246,6 @@ class InnocigsVariant extends ModelEntity
     public function setPriceRecommended($priceRecommended)
     {
         $this->priceRecommended = $priceRecommended;
-    }
-
-    /**
-     * @param string $image
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
     }
 
     /**

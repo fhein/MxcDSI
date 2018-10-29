@@ -47,9 +47,9 @@ class InnocigsClient {
         $this->password = $password;
     }
 
-    private function createVariantEntities(InnocigsArticle $article, array $variantArray) : string {
+    private function createVariantEntities(InnocigsArticle $article, array $variantArray) : array {
         $now = new DateTime();
-        $articleName = null;
+        $articleProperties = null;
         foreach ($variantArray as $variantCode => $variantData) {
             $variant = new InnocigsVariant();
 
@@ -69,9 +69,8 @@ class InnocigsClient {
             $tmp = str_replace(',', '.', $variantData['PRODUCTS_PRICE_RECOMMENDED']);
             $variant->setPriceRecommended(floatval($tmp));
             // @TODO: check whether the images of the different variants are different, actually. If they are the same, this property belongs to article and should be discarded here
-            $variant->setImage($variantData['PRODUCTS_IMAGE']);
             $article->addVariant($variant);
-            if (null === $articleName) {
+            if (null === $articleProperties) {
                 // Innocigs variant names include variant descriptions
                 // We take the first variant's name and remove the variant descriptions
                 // in order to extract the real article name
@@ -79,7 +78,8 @@ class InnocigsClient {
                 foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $attribute) {
                     $articleName = str_replace($attribute, '', $articleName);
                 }
-                $articleName = trim($articleName);
+                $articleProperties['name'] = $articleName;
+                $articleProperties['image'] = $variantData['PRODUCTS_IMAGE'];
             }
             foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $group => $attribute) {
                 $attrEntity = $this->attributes[$group][$attribute];
@@ -87,8 +87,7 @@ class InnocigsClient {
                 $this->entityManager->persist($attrEntity);
             }
         }
-        $articleName = $articleName ?? 'no name';
-        return $articleName;
+        return $articleProperties;
     }
 
     private function createArticleEntities(array $articles) {
@@ -96,10 +95,12 @@ class InnocigsClient {
         $i = 0;
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
-            $articleName = $this->createVariantEntities($article, $articleData);
-            $article->setInnocigsName($articleName);
+            $articleProperties = $this->createVariantEntities($article, $articleData);
+            $name = $articleProperties['name'];
+            $article->setInnocigsName($name);
             // use our name mapping if present, name from innocigs otherwise
-            $article->setName($this->articleNameMap[$articleName] ?? $articleName);
+            $article->setName($this->articleNameMap[$name] ?? $name);
+            $article->setImage($articleProperties['image']);
             $article->setInnocigsCode($articleCode);
             // use our code mapping if present, code from innocigs otherwise
             $article->setCode($this->articleCodeMap[$articleCode] ?? $articleCode);

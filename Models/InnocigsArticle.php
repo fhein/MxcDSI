@@ -59,6 +59,13 @@ class InnocigsArticle extends ModelEntity {
     private $description;
 
     /**
+     * @var string $image;
+     *
+     * @ORM\Column(name="image", type="string", nullable=false)
+     */
+    private $image;
+
+    /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
      *      targetEntity="InnocigsVariant",
@@ -281,5 +288,21 @@ class InnocigsArticle extends ModelEntity {
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
     }
 }
