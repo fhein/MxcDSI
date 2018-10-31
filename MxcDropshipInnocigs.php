@@ -64,8 +64,12 @@ class MxcDropshipInnocigs extends Plugin
         $password = $config->offsetGet('api_password');
         $client = new InnocigsClient($entityManager, $user, $password);
         $result = $client->downloadItems();
+
+        // create shopware groups & Options
+        $swResult = $client->createSWEntries();
+
         $activateContext->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
-        return $result;
+        return $swResult;
     }
 
     public function deactivate(DeactivateContext $context)

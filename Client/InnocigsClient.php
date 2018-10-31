@@ -3,6 +3,8 @@
 namespace MxcDropshipInnocigs\Client;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\OptimisticLockException;
 use MxcDropshipInnocigs\Helper\Log;
@@ -10,6 +12,10 @@ use MxcDropshipInnocigs\Models\InnocigsAttribute;
 use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use Shopware\Models\Article\Article;
+use Shopware\Models\Article\Detail;
+use Shopware\Models\Article\Configurator\Option;
+use Shopware\Models\Article\Configurator\Group;
 
 class InnocigsClient {
 
@@ -126,7 +132,7 @@ class InnocigsClient {
     private function createAttributeGroupEntities(array $attrs)
     {
         $now = new DateTime();
-        $this->log->log(var_export($attrs, true));
+        //$this->log->log(var_export($attrs, true));
         foreach ($attrs as $groupName => $attributes) {
             $attributeGroup = new InnocigsAttributeGroup();
             $attributeGroup->setInnocigsName($groupName);
@@ -184,4 +190,105 @@ class InnocigsClient {
         }
         return $this->apiClient;
     }
+
+    public function createSWEntries(){
+        //get innocigs articles.
+        $this->log->log('Start creating SW Entities');
+        $icVariantRepository = $this->entityManager->getRepository(InnocigsVariant::class);
+        $icVariants = $icVariantRepository->findAll();
+
+        foreach ($icVariants as $icVariant) {
+
+            $this->log->log('icVariant:' . $icVariant->getCode());
+            $icAttributes = $icVariant->getAttributes();
+
+            $swOptions = $this->createSWOptions($icAttributes);
+            $this->createSWDetail($icVariant, $swOptions);
+
+
+        }
+
+        return true;
+    }
+
+    private function createSWDetail(Collection $icVariant, Collection $swOptions){
+        $this->log->log(' Create Detail');
+
+        $articleDetailRepository = $this->entityManager->getRepository(Detail::class);
+
+        $this->log->log('Variant code: ' . $icVariant->getCode());
+
+        $article = $articleDetailRepository->findOneBy(['number' => $icVariant->getCode()]);
+        if(!isset($article)) {
+            // @TODO: create Article, Detail and Set
+        } else {
+            $this->log->log('article(s) found');
+        }
+
+    }
+
+    private function createSWOptions(Collection $icAttributes){
+        $this->log->log(' Create Options');
+
+        $swOptions = new ArrayCollection();
+
+        $groupRepository = $this->entityManager->getRepository(Group::class);
+        $allGroups = $groupRepository->findAll();
+
+        $groupPosition = count($allGroups);
+        $optionPosition = 0;
+        $optionRepository = $this->entityManager->getRepository(Option::class);
+
+        foreach($icAttributes as $icAttribute){
+            $icGroup = $icAttribute->getAttributeGroup();
+            $icGroupName = $icGroup->getName();
+
+            //search for existing option entries
+            $swOption = $optionRepository->findOneBy(['name' => $icAttribute->getName()]);
+
+            if(isset($swOption)){
+                $swGroupName = $swOption->getGroup()->getName();
+                if($swGroupName ==  $icGroupName){
+                    $this->log->log('Option ' . $swOption->getName() . ' already exists');
+                    $swOptions->add($swOption); // Group - Option Pair already exists
+                    continue;
+                }
+            }
+
+            //create Group
+            $swGroup = $groupRepository->findOneBy(['name' => $icGroupName]);
+            if (!isset($swGroup)){//create Group
+                $swGroup = New Group();
+                $swGroup->setName($icGroupName);
+                $swGroup->setPosition($groupPosition += 1);
+            }else{//get option position
+                $persistedOptions = $optionRepository->findBy(['group' => $swGroup->getId()]);
+                $optionPosition = count($persistedOptions) + 1;
+            }
+
+            //create Option
+            $swOption = New Option();
+            $swOption->setName($icAttribute->getName());
+            $swOption->setPosition($optionPosition);
+            $swOption->setGroup($swGroup);
+
+            $this->entityManager->persist($swGroup);
+            $this->entityManager->persist($swOption);
+            try {
+                $this->entityManager->flush();
+            } catch (OptimisticLockException $e) {
+                // @todo: add error handling here
+                $this->log->log('Exception thrown in createSWOptions.');
+                return null;
+            }
+            $this->log->log('Option ' . $swOption->getName() . ' created');
+
+            $swOptions->add($swOption);
+        }
+        $this->log->log('returning ' . count($swOptions) . ' options');
+
+        return $swOptions;
+
+    }
+
 }

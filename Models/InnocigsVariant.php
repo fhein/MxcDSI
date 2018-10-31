@@ -105,7 +105,7 @@ class InnocigsVariant extends ModelEntity
     /**
      * @return \Doctrine\Common\Collections\ArrayCollection
      */
-    public function getAttributes(): ArrayCollection
+    public function getAttributes()//: ArrayCollection
     {
         return $this->attributes;
     }
