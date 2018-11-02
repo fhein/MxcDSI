@@ -2,24 +2,42 @@
 
 namespace MxcDropshipInnocigs\Bootstrap;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;
 use Exception;
-use MxcDropshipInnocigs\Helper\Log;
+use MxcDropshipInnocigs\Exception\DatabaseException;
 use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
 use MxcDropshipInnocigs\Models\InnocigsAttribute;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Bundle\AttributeBundle\Service\CrudService;
 use Shopware\Components\Model\ModelManager;
+use Zend\Log\Logger;
 
 class Database
 {
-    private $entityManager;
+    /**
+     * @var ModelManager $modelManager
+     */
     private $modelManager;
+
+    /**
+     * @var CrudService $attributeService
+     */
     private $attributeService;
+
+    /**
+     * @var \Doctrine\Common\Cache\CacheProvider $metaDataCache
+     */
     private $metaDataCache;
+
+    /**
+     * @var SchemaTool $schemaTool
+     */
     private $schemaTool;
+
+    /**
+     * @var Logger $log
+     */
     private $log;
 
     // unique MxcDropShipInnocigs attribute name prefix
@@ -38,31 +56,21 @@ class Database
     ];
 
     /**
-     * @param EntityManager $entityManager
      * @param ModelManager $modelManager
      * @param CrudService $attributeService
+     * @param Logger $log
      */
-    public function __construct(EntityManager $entityManager, ModelManager $modelManager, CrudService $attributeService)
+    public function __construct(ModelManager $modelManager, CrudService $attributeService, Logger $log)
     {
-        // @TODO: How are symfony entity manager and shopware model manager related?
-
-        // entityManager is the Doctrine EntityManager
-        // modelManager is the Shopware ModelManager, they are related but obviously not the same
-        // as it seems, both are needed
-
-        $this->log = new Log();
-        $this->log->log('Database');
-        $this->entityManager = $entityManager;
+        $this->log = $log;
         $this->modelManager = $modelManager;
-        $this->metaDataCache = $this->entityManager->getConfiguration()->getMetadataCacheImpl();
-        $this->schemaTool = new SchemaTool($this->entityManager);
+        $this->metaDataCache = $this->modelManager->getConfiguration()->getMetadataCacheImpl();
+        $this->schemaTool = new SchemaTool($this->modelManager);
         $this->attributeService = $attributeService;
     }
 
     /**
      * Add the attributes defined in the §attributes member to the database schema
-     *
-     * @return bool
      */
     private function createAttributes() {
         foreach ($this->attributes as $table => $attributes) {
@@ -71,12 +79,11 @@ class Database
                     $this->attributeService->update($table, self::ATTR_PREFIX . $name, $type);
                     // $this->log->log('Added attribute '. self::ATTR_PREFIX . $name. '(type: ' . $type. ') to table '.$table);
                 } catch (Exception $e) {
-                    return false;
+                    throw new DatabaseException('Attribute service failed to create attributes: ' . $e->getMessage());
                 }
             }
         }
         $this->updateModel();
-        return true;
     }
 
     /**
@@ -91,7 +98,7 @@ class Database
                     $this->attributeService->delete($table, self::ATTR_PREFIX . $name);
                     // $this->log->log('Deleted attribute '. self::ATTR_PREFIX . $name. '(type: ' . $type. ') from table '.$table);
                 } catch (Exception $e) {
-                    return false;
+                    throw new DatabaseException('Attribute service failed to delete attributes: ' . $e->getMessage());
                 }
             }
         }
@@ -110,12 +117,11 @@ class Database
      */
     public function install()
     {
-        if ($this->createAttributes()) {
-           $this->schemaTool->updateSchema(
-                $this->getClassesMetaData(),
-                true // make sure to use the save mode
-            );
-        }
+        $this->createAttributes();
+        $this->schemaTool->updateSchema(
+            $this->getClassesMetaData(),
+            true // make sure to use the save mode
+        );
     }
 
     /**
@@ -137,10 +143,10 @@ class Database
     private function getClassesMetaData()
     {
         return [
-            $this->entityManager->getClassMetadata(InnocigsArticle::class),
-            $this->entityManager->getClassMetadata(InnocigsVariant::class),
-            $this->entityManager->getClassMetadata(InnocigsAttributeGroup::class),
-            $this->entityManager->getClassMetadata(InnocigsAttribute::class),
+            $this->modelManager->getClassMetadata(InnocigsArticle::class),
+            $this->modelManager->getClassMetadata(InnocigsVariant::class),
+            $this->modelManager->getClassMetadata(InnocigsAttributeGroup::class),
+            $this->modelManager->getClassMetadata(InnocigsAttribute::class),
         ];
     }
 }

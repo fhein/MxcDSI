@@ -2,9 +2,13 @@
 
 namespace MxcDropshipInnocigs\Client;
 
-use MxcDropshipInnocigs\Helper\Log;
-use Zend\Http\Client as HttpClient;
 use DateTime;
+use MxcDropshipInnocigs\Exception\ApiException;
+use Zend\Http\Client;
+use Zend\Http\Exception\RuntimeException as ZendClientException;
+use Zend\Http\Response;
+use Zend\Log\Logger;
+use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 
 class ApiClient
 {
@@ -14,54 +18,52 @@ class ApiClient
     protected $apiEntry;
 
     /**
-     * @var string $authUrl;
+     * @var string $authUrl
      */
     protected $authUrl;
 
     /**
-     * @var string $user;
+     * @var string $user
      */
     protected $user;
 
     /**
-     * @var string $password;
+     * @var string $password
      */
     protected $password;
 
     /**
-     * @var Zend\Http\Client $client;
+     * @var Client $client
      */
     protected $client = null;
 
+    /**
+     * @var int $logLevel
+     */
+    protected $logLevel;
+
     protected $log;
 
-    /**
-     * @param string $user
-     * @param string $password
-     */
-    public function __construct(string $user = null, string $password = null)
-    {
-        $this->log = new Log();
-        $this->log->log('Hallo');
-        if (null === $user) {
-            $credentials = Shopware()->Db()->fetchAll('SELECT user, password FROM s_plugin_mxc_dropship_innocigs_credentials');
-            $this->log->log('Loaded credentials.');
-            if (count($credentials) > 0) {
-                $this->user = $credentials[0]['user'];
-                $this->password = $credentials[0]['password'];
-            } else {
-                // @TODO: add error handling
-            }
-        } else {
-            $this->user = $user;
-            $this->password = $password;
-        }
-
-        $this->log->log('API user: ' . $this->user);
-        $this->log->log('API password: '. $this->password);
-
+    public function __construct(Credentials $credentials, Logger $log) {
+        $this->log = $log;
         $this->apiEntry = 'https://www.innocigs.com/xmlapi/api.php';
-        $this->authUrl = $this->apiEntry . '?cid=' . $this->user . '&auth=' . $this->password;
+        $this->authUrl = $this->apiEntry . '?cid=' . $credentials->getUser() . '&auth=' . $credentials->getPassword();
+        $this->log->info('User: '. $credentials->getUser());
+        $this->log->info('Password: '. $credentials->getPassword());
+        $this->connect();
+    }
+
+    private function connect() {
+        $response = null;
+        try {
+            $response = $this->getItemInfo('mxc_connection_test');
+            if (isset($response['ERRORS'])) {
+                $error = $response['ERRORS']['ERROR'];
+                throw new ServiceNotCreatedException(sprintf('API ERROR %s, %s', $error['CODE'], $error['MESSAGE']));
+            }
+        } catch(ApiException $e) {
+            throw new ServiceNotCreatedException($e->getMessage());
+        }
     }
 
     /**
@@ -116,16 +118,40 @@ class ApiClient
         return null;
     }
 
+    protected function getArrayResult(Response $response) {
+        if (!$response->isSuccess()) {
+            throw new ApiException('HTTP status: ' . $response->getStatusCode());
+        }
+        $body = $response->getBody();
+        $xml = simplexml_load_string($body);
+        if ($xml === false) {
+            throw new ApiException('Failed to load XML string: '. var_export($body, true));
+        }
+        $json = json_encode($xml);
+        if ($json === false) {
+            throw new ApiException('Failed to encode to JSON: ' . var_export($xml, true));
+        }
+        $result = json_decode($json, true);
+        if ($result === false) {
+            throw new ApiException('Failed to decode JSON: ' . var_export($json, true));
+        }
+        return $result;
+    }
+
     /**
      * @param string $cmd
      * @return \Zend\Http\Response
      */
     protected function send($cmd)
     {
-
         $client = $this->getClient();
         $client->setUri($cmd);
-        return $client->send();
+        try {
+            return $this->getArrayResult($client->send());
+        } catch (ZendClientException $e) {
+            // no response or response empty
+            throw new ApiException($e->getMessage());
+        }
     }
 
     /**
@@ -134,7 +160,7 @@ class ApiClient
     protected function getClient()
     {
         if (null === $this->client) {
-            $this->client = new HttpClient(
+            $this->client = new Client(
                 "",
                 [
                     'maxredirects' => 0,

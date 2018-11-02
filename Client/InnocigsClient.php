@@ -6,8 +6,10 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\OptimisticLockException;
-use MxcDropshipInnocigs\Helper\Log;
+use MxcDropshipInnocigs\Exception\DatabaseException;
 use MxcDropshipInnocigs\Models\InnocigsAttribute;
 use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
@@ -16,12 +18,12 @@ use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Configurator\Group;
+use Shopware\Models\Article\Supplier;
+use Zend\Log\Logger;
 
 class InnocigsClient {
 
     private $apiClient = null;
-    private $user;
-    private $password;
     private $entityManager;
     private $attributes;
     private $log;
@@ -44,13 +46,12 @@ class InnocigsClient {
 
     private $attributeNameMap = [];
 
-    public function __construct(EntityManager $entityManager, string $user = null, string $password = null) {
+    public function __construct(EntityManager $entityManager, ApiClient $apiClient, Logger $log) {
 
-        $this->log = new Log();
-        $this->log->log('Initializing Innocigs client.');
+        $this->log = $log;
+        $this->log->info('Initializing Innocigs client.');
         $this->entityManager = $entityManager;
-        $this->user = $user;
-        $this->password = $password;
+        $this->apiClient = $apiClient;
     }
 
     private function createVariantEntities(InnocigsArticle $article, array $variantArray) : array {
@@ -119,20 +120,17 @@ class InnocigsClient {
             try {
                 $this->entityManager->flush();
             } catch (OptimisticLockException $e) {
-                // @todo: add error handling here
-                $this->log->log('Exception thrown in createEntities.');
-                return false;
+                throw new DatabaseException('Doctrine failed to flush articles and variants: ' . $e->getMessage());
             }
             $i++;
             if ($i == 5) break;
         }
-        return true;
     }
 
     private function createAttributeGroupEntities(array $attrs)
     {
         $now = new DateTime();
-        //$this->log->log(var_export($attrs, true));
+        //$this->log->info(var_export($attrs, true));
         foreach ($attrs as $groupName => $attributes) {
             $attributeGroup = new InnocigsAttributeGroup();
             $attributeGroup->setInnocigsName($groupName);
@@ -155,21 +153,13 @@ class InnocigsClient {
             try {
                 $this->entityManager->flush();
             } catch (OptimisticLockException $e) {
-                // @todo: add error handling here
-                $this->log->log('Exception thrown in createAttributeGroups.');
-                return false;
+                throw new DatabaseException('Doctrine failed to flush attributes and groups: ' . $e->getMessage());
             }
         }
-        return true;
     }
 
     public function downloadItems() {
-        $response = $this->getApiClient()->getItemList();
-        if (!$response->isSuccess()) return false;
-
-        $body = simplexml_load_string($response->getBody());
-        $raw = json_decode(json_encode($body), TRUE);
-
+        $raw = $this->apiClient->getItemList();
         $items = [];
         $attributes = [];
 
@@ -179,56 +169,131 @@ class InnocigsClient {
                 $attributes[$group][$attribute] = 1;
             }
         }
-        $this->log->log('Creating Entities.');
-        if (!$this->createAttributeGroupEntities($attributes)) return false;
-        return $this->createArticleEntities($items);
-    }
-
-    private function getApiClient() {
-        if (null === $this->apiClient) {
-            $this->apiClient = new ApiClient($this->user, $this->password);
-        }
-        return $this->apiClient;
+        $this->log->info('Creating attribute groups and attributes.');
+        $this->createAttributeGroupEntities($attributes);
+        $this->log->info('Creating articles and variants.');
+        $this->createArticleEntities($items);
     }
 
     public function createSWEntries(){
         //get innocigs articles.
-        $this->log->log('Start creating SW Entities');
+        $this->log->info('Start creating SW Entities');
         $icVariantRepository = $this->entityManager->getRepository(InnocigsVariant::class);
         $icVariants = $icVariantRepository->findAll();
 
         foreach ($icVariants as $icVariant) {
 
-            $this->log->log('icVariant:' . $icVariant->getCode());
+            $this->log->info('icVariant:' . $icVariant->getCode());
             $icAttributes = $icVariant->getAttributes();
 
             $swOptions = $this->createSWOptions($icAttributes);
             $this->createSWDetail($icVariant, $swOptions);
-
 
         }
 
         return true;
     }
 
-    private function createSWDetail(Collection $icVariant, Collection $swOptions){
-        $this->log->log(' Create Detail');
+    private function createSWDetail(InnocigsVariant $icVariant, Collection $swOptions){
+        $this->log->info(' Create Detail');
 
         $articleDetailRepository = $this->entityManager->getRepository(Detail::class);
 
-        $this->log->log('Variant code: ' . $icVariant->getCode());
+        $this->log->info('Variant code: ' . $icVariant->getCode());
 
         $article = $articleDetailRepository->findOneBy(['number' => $icVariant->getCode()]);
         if(!isset($article)) {
             // @TODO: create Article, Detail and Set
         } else {
-            $this->log->log('article(s) found');
+            $this->log->info('article(s) found');
         }
 
     }
 
+    private function swOptionExists(string $name, $swOptions = null) : bool {
+        if (null === $swOptions) return false;
+
+        foreach ($swOptions as $swOption) {
+            /**
+             * @var Option $swOption
+             *
+             * to avoid code inspection 'undefined method'
+             */
+            if ($swOption->getName() === $name) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private function createSWAttributes() {
+        $swGroupRepo = $this->entityManager->getRepository(Group::class);
+        $icGroupRepo = $this->entityManager->getRepository(InnocigsAttributeGroup::class);
+
+        // determine the current number of shopware option groups
+        $qb = $this->entityManager->createQueryBuilder();
+        $qb->select($qb->expr()->count('u'))
+            ->from(Group::class, 'u');
+        $query = $qb->getQuery();
+        try {
+            $swGroupCount = $query->getSingleScalarResult();
+        } catch (NoResultException $e) {
+            throw new DatabaseException('Database query without result.');
+        } catch (NonUniqueResultException $e) {
+            throw new DatabaseException('Database query with non unique result.');
+        }
+
+        $icGroups = $icGroupRepo->findAll();
+
+        foreach ($icGroups as $icGroup) {
+            $icGroupName = $icGroup->getName();
+            $swGroup = $swGroupRepo->findOneBy(['name' => $icGroupName]);
+            $swOptions = null;
+            if (isset($swGroup)) {
+                // We already have a shopware group matching our group's name.
+                // So we have to check each option's name against our attribute name
+                // and add only those attributes which do not exist already.
+                $swOptions = $swGroup->getOptions();
+                $swOptionsCount = count($swOptions);
+                $this->log->info('Group ' . $icGroupName . ' already exists.');
+            } else {
+                // We do not have a shopware group matching our group's name.
+                // So we can create the group and add all innocigs options
+                // to that new group without further checks.
+                // We leave $swOptions = null, so swOptionExists() will return false
+                $swGroup = new Group();
+                $swGroup->setName($icGroupName);
+                $swGroup->setPosition($swGroupCount++);
+                $swOptionsCount = 1;
+                $this->log->info('Group ' . $icGroupName . ' created');
+            }
+
+            $icAttributes = $icGroup->getAttributes();
+            foreach ($icAttributes as $icAttribute) {
+                $icAttributeName = $icAttribute->getName();
+                if (! $this->swOptionExists($icAttributeName, $swOptions)) {
+                    $swOption = new Option();
+                    $swOption->setName($icAttributeName);
+                    $swOption->setPosition($swOptionsCount++);
+                    $swOption->setGroup($swGroup);
+                    $this->entityManager->persist($swOption);
+                    $this->log->info('Option ' . $icAttributeName . '(group: '. $icGroupName . ') created');
+                } else {
+                    $this->log->info('Option ' . $icAttributeName . '(group: '. $icGroupName . ') already exists.');
+                }
+
+            }
+            $this->entityManager->persist($swGroup);
+        }
+        try {
+            $this->entityManager->flush();
+        } catch (OptimisticLockException $e) {
+            throw new DatabaseException('Doctrine failed to flush shopware attributes and groups: ' . $e->getMessage());
+        }
+    }
+
     private function createSWOptions(Collection $icAttributes){
-        $this->log->log(' Create Options');
+        $this->log->info(' Create Options');
 
         $swOptions = new ArrayCollection();
 
@@ -240,16 +305,27 @@ class InnocigsClient {
         $optionRepository = $this->entityManager->getRepository(Option::class);
 
         foreach($icAttributes as $icAttribute){
+            /**
+             * @var InnocigsAttributeGroup $icGroup
+             */
             $icGroup = $icAttribute->getAttributeGroup();
             $icGroupName = $icGroup->getName();
+            $icAttributeName = $icAttribute->getName();
 
+            // check if we have a shopware group named like
+
+            /**
+             * @var Option $swOption
+             *
+             * to avoid code inspection 'undefined method'
+             */
             //search for existing option entries
             $swOption = $optionRepository->findOneBy(['name' => $icAttribute->getName()]);
 
             if(isset($swOption)){
                 $swGroupName = $swOption->getGroup()->getName();
                 if($swGroupName ==  $icGroupName){
-                    $this->log->log('Option ' . $swOption->getName() . ' already exists');
+                    $this->log->info('Option ' . $swOption->getName() . ' already exists');
                     $swOptions->add($swOption); // Group - Option Pair already exists
                     continue;
                 }
@@ -277,18 +353,22 @@ class InnocigsClient {
             try {
                 $this->entityManager->flush();
             } catch (OptimisticLockException $e) {
-                // @todo: add error handling here
-                $this->log->log('Exception thrown in createSWOptions.');
-                return null;
+                throw new DatabaseException('Doctrine failed to flush shopware attributes and groups: ' . $e->getMessage());
             }
-            $this->log->log('Option ' . $swOption->getName() . ' created');
-
+            $this->log->info('Option ' . $swOption->getName() . ' created');
             $swOptions->add($swOption);
         }
-        $this->log->log('returning ' . count($swOptions) . ' options');
+        $this->log->info('returning ' . count($swOptions) . ' options');
 
         return $swOptions;
-
     }
 
+    protected function createSWSupplier() {
+        $icSupplier = $this->entityManager->getRepository(Supplier::class)->findBy(['name' => 'InnoCigs']);
+        $this->log->info('FindBy result: '  . var_export($icSupplier, true));
+    }
+
+    protected function setupSWArticle() {
+        $swArticle = new Article();
+    }
 }
