@@ -6,8 +6,6 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\OptimisticLockException;
 use MxcDropshipInnocigs\Exception\DatabaseException;
 use MxcDropshipInnocigs\Models\InnocigsAttribute;
@@ -57,13 +55,15 @@ class InnocigsClient {
     private function createVariantEntities(InnocigsArticle $article, array $variantArray) : array {
         $now = new DateTime();
         $articleProperties = null;
+        // mark all variants of active articles active
+        $active = $article->getActive();
         foreach ($variantArray as $variantCode => $variantData) {
             $variant = new InnocigsVariant();
 
             $variant->setInnocigsCode($variantCode);
             // use our code mapping if present, code from innocigs otherwise
             $variant->setCode($this->variantCodeMap[$variantCode] ?? $variantCode);
-            $variant->setActive(false);
+            $variant->setActive($active);
             $variant->setCreated($now);
             $variant->setUpdated($now);
 
@@ -75,7 +75,6 @@ class InnocigsClient {
             $variant->setPriceNet(floatval($tmp));
             $tmp = str_replace(',', '.', $variantData['PRODUCTS_PRICE_RECOMMENDED']);
             $variant->setPriceRecommended(floatval($tmp));
-            // @TODO: check whether the images of the different variants are different, actually. If they are the same, this property belongs to article and should be discarded here
             $article->addVariant($variant);
             if (null === $articleProperties) {
                 // Innocigs variant names include variant descriptions
@@ -102,6 +101,8 @@ class InnocigsClient {
         $i = 0;
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
+            // mark the first two articles active for testing
+            $article->setActive($i < 2);
             $articleProperties = $this->createVariantEntities($article, $articleData);
             $name = $articleProperties['name'];
             $article->setInnocigsName($name);
@@ -112,7 +113,6 @@ class InnocigsClient {
             // use our code mapping if present, code from innocigs otherwise
             $article->setCode($this->articleCodeMap[$articleCode] ?? $articleCode);
             $article->setDescription('n/a');
-            $article->setActive(false);
             $article->setUpdated($now);
             $article->setCreated($now);
             // this cascades persisting the variants also
@@ -127,6 +127,20 @@ class InnocigsClient {
         }
     }
 
+    private function createAttributeEntities(InnocigsAttributeGroup $attributeGroup, $attributes) {
+        $now = new DateTime();
+        foreach ($attributes as $attributeName) {
+            $attribute = new InnocigsAttribute();
+            $attribute->setInnocigsName($attributeName);
+            // use our name mapping if present, name from innocigs otherwise
+            $attribute->setName($this->attributeNameMap[$attributeName] ?? $attributeName);
+            $attribute->setCreated($now);
+            $attribute->setUpdated($now);
+            $attributeGroup->addAttribute($attribute);
+            $this->attributes[$attributeGroup->getInnocigsName()][$attributeName] = $attribute;
+        }
+    }
+
     private function createAttributeGroupEntities(array $attrs)
     {
         $now = new DateTime();
@@ -138,16 +152,7 @@ class InnocigsClient {
             $attributeGroup->setName($this->groupNameMap[$groupName] ?? $groupName);
             $attributeGroup->setCreated($now);
             $attributeGroup->setUpdated($now);
-            foreach ($attributes as $attributeName => $_) {
-                $attribute = new InnocigsAttribute();
-                $attribute->setInnocigsName($attributeName);
-                // use our name mapping if present, name from innocigs otherwise
-                $attribute->setName($this->attributeNameMap[$attributeName] ?? $attributeName);
-                $attribute->setCreated($now);
-                $attribute->setUpdated($now);
-                $attributeGroup->addAttribute($attribute);
-                $this->attributes[$groupName][$attributeName] = $attribute;
-            }
+            $this->createAttributeEntities($attributeGroup, array_keys($attributes));
             // this cascades persisting the attributes also
             $this->entityManager->persist($attributeGroup);
             try {
@@ -173,13 +178,18 @@ class InnocigsClient {
         $this->createAttributeGroupEntities($attributes);
         $this->log->info('Creating articles and variants.');
         $this->createArticleEntities($items);
+        $variantRepo = $this->entityManager->getRepository(InnocigsVariant::class);
+        $activeVariants = $variantRepo->findBy(['active' => true]);
+        $this->log->info('Active variants: ' . count($activeVariants));
     }
 
     public function createSWEntries(){
         //get innocigs articles.
         $this->log->info('Start creating SW Entities');
         $icVariantRepository = $this->entityManager->getRepository(InnocigsVariant::class);
-        $icVariants = $icVariantRepository->findAll();
+
+        // run only on active variants
+        $icVariants = $icVariantRepository->findBy(['active' => true]);
 
         foreach ($icVariants as $icVariant) {
 
@@ -188,7 +198,6 @@ class InnocigsClient {
 
             $swOptions = $this->createSWOptions($icAttributes);
             $this->createSWDetail($icVariant, $swOptions);
-
         }
 
         return true;
@@ -208,88 +217,6 @@ class InnocigsClient {
             $this->log->info('article(s) found');
         }
 
-    }
-
-    private function swOptionExists(string $name, $swOptions = null) : bool {
-        if (null === $swOptions) return false;
-
-        foreach ($swOptions as $swOption) {
-            /**
-             * @var Option $swOption
-             *
-             * to avoid code inspection 'undefined method'
-             */
-            if ($swOption->getName() === $name) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private function createSWAttributes() {
-        $swGroupRepo = $this->entityManager->getRepository(Group::class);
-        $icGroupRepo = $this->entityManager->getRepository(InnocigsAttributeGroup::class);
-
-        // determine the current number of shopware option groups
-        $qb = $this->entityManager->createQueryBuilder();
-        $qb->select($qb->expr()->count('u'))
-            ->from(Group::class, 'u');
-        $query = $qb->getQuery();
-        try {
-            $swGroupCount = $query->getSingleScalarResult();
-        } catch (NoResultException $e) {
-            throw new DatabaseException('Database query without result.');
-        } catch (NonUniqueResultException $e) {
-            throw new DatabaseException('Database query with non unique result.');
-        }
-
-        $icGroups = $icGroupRepo->findAll();
-
-        foreach ($icGroups as $icGroup) {
-            $icGroupName = $icGroup->getName();
-            $swGroup = $swGroupRepo->findOneBy(['name' => $icGroupName]);
-            $swOptions = null;
-            if (isset($swGroup)) {
-                // We already have a shopware group matching our group's name.
-                // So we have to check each option's name against our attribute name
-                // and add only those attributes which do not exist already.
-                $swOptions = $swGroup->getOptions();
-                $swOptionsCount = count($swOptions);
-                $this->log->info('Group ' . $icGroupName . ' already exists.');
-            } else {
-                // We do not have a shopware group matching our group's name.
-                // So we can create the group and add all innocigs options
-                // to that new group without further checks.
-                // We leave $swOptions = null, so swOptionExists() will return false
-                $swGroup = new Group();
-                $swGroup->setName($icGroupName);
-                $swGroup->setPosition($swGroupCount++);
-                $swOptionsCount = 1;
-                $this->log->info('Group ' . $icGroupName . ' created');
-            }
-
-            $icAttributes = $icGroup->getAttributes();
-            foreach ($icAttributes as $icAttribute) {
-                $icAttributeName = $icAttribute->getName();
-                if (! $this->swOptionExists($icAttributeName, $swOptions)) {
-                    $swOption = new Option();
-                    $swOption->setName($icAttributeName);
-                    $swOption->setPosition($swOptionsCount++);
-                    $swOption->setGroup($swGroup);
-                    $this->entityManager->persist($swOption);
-                    $this->log->info('Option ' . $icAttributeName . '(group: '. $icGroupName . ') created');
-                } else {
-                    $this->log->info('Option ' . $icAttributeName . '(group: '. $icGroupName . ') already exists.');
-                }
-
-            }
-            $this->entityManager->persist($swGroup);
-        }
-        try {
-            $this->entityManager->flush();
-        } catch (OptimisticLockException $e) {
-            throw new DatabaseException('Doctrine failed to flush shopware attributes and groups: ' . $e->getMessage());
-        }
     }
 
     private function createSWOptions(Collection $icAttributes){
@@ -320,7 +247,7 @@ class InnocigsClient {
              * to avoid code inspection 'undefined method'
              */
             //search for existing option entries
-            $swOption = $optionRepository->findOneBy(['name' => $icAttribute->getName()]);
+            $swOption = $optionRepository->findOneBy(['name' => $icAttributeName]);
 
             if(isset($swOption)){
                 $swGroupName = $swOption->getGroup()->getName();
@@ -344,7 +271,7 @@ class InnocigsClient {
 
             //create Option
             $swOption = New Option();
-            $swOption->setName($icAttribute->getName());
+            $swOption->setName($icAttributeName);
             $swOption->setPosition($optionPosition);
             $swOption->setGroup($swGroup);
 

@@ -6,8 +6,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
 
+
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MxcDropshipInnocigs\Models\InnocigsAttributeRepository")
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_attribute")
  */
 class InnocigsAttribute extends ModelEntity {

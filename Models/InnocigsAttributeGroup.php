@@ -8,7 +8,7 @@ use Shopware\Components\Model\ModelEntity;
 
 
 /**
- * @ORM\Entity(repositoryClass="InnocigsAttributeGroupRepository")
+ * @ORM\Entity
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_attribute_group")
  */
 class InnocigsAttributeGroup extends ModelEntity {

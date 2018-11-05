@@ -66,6 +66,14 @@ class MxcDropshipInnocigs extends Plugin
         $services = Application::getServices();
         $client = $services->get(InnocigsClient::class);
         $logger = $services->get(Logger::class);
+
+        ob_start();
+        phpinfo();
+        $data = ob_get_contents();
+        ob_clean();
+        $logPath = Shopware()->DocPath().'var/log/phpinfo.html';
+        file_put_contents($logPath, $data);
+
         $result = false;
         // download InnoCigs items
         try {
