@@ -2,7 +2,6 @@
 
 namespace MxcDropshipInnocigs\Client;
 
-use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManager;
@@ -53,7 +52,6 @@ class InnocigsClient {
     }
 
     private function createVariantEntities(InnocigsArticle $article, array $variantArray) : array {
-        $now = new DateTime();
         $articleProperties = null;
         // mark all variants of active articles active
         $active = $article->getActive();
@@ -64,8 +62,6 @@ class InnocigsClient {
             // use our code mapping if present, code from innocigs otherwise
             $variant->setCode($this->variantCodeMap[$variantCode] ?? $variantCode);
             $variant->setActive($active);
-            $variant->setCreated($now);
-            $variant->setUpdated($now);
 
             $tmp = $variantData['EAN'];
             // the API delivers an empty array instead of an empty string if EAN is not available
@@ -97,7 +93,6 @@ class InnocigsClient {
     }
 
     private function createArticleEntities(array $articles) {
-        $now = new DateTime();
         $i = 0;
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
@@ -113,8 +108,6 @@ class InnocigsClient {
             // use our code mapping if present, code from innocigs otherwise
             $article->setCode($this->articleCodeMap[$articleCode] ?? $articleCode);
             $article->setDescription('n/a');
-            $article->setUpdated($now);
-            $article->setCreated($now);
             // this cascades persisting the variants also
             $this->entityManager->persist($article);
             try {
@@ -128,14 +121,11 @@ class InnocigsClient {
     }
 
     private function createAttributeEntities(InnocigsAttributeGroup $attributeGroup, $attributes) {
-        $now = new DateTime();
         foreach ($attributes as $attributeName) {
             $attribute = new InnocigsAttribute();
             $attribute->setInnocigsName($attributeName);
             // use our name mapping if present, name from innocigs otherwise
             $attribute->setName($this->attributeNameMap[$attributeName] ?? $attributeName);
-            $attribute->setCreated($now);
-            $attribute->setUpdated($now);
             $attributeGroup->addAttribute($attribute);
             $this->attributes[$attributeGroup->getInnocigsName()][$attributeName] = $attribute;
         }
@@ -143,15 +133,12 @@ class InnocigsClient {
 
     private function createAttributeGroupEntities(array $attrs)
     {
-        $now = new DateTime();
         //$this->log->info(var_export($attrs, true));
         foreach ($attrs as $groupName => $attributes) {
             $attributeGroup = new InnocigsAttributeGroup();
             $attributeGroup->setInnocigsName($groupName);
             // use our name mapping if present, name from innocigs otherwise
             $attributeGroup->setName($this->groupNameMap[$groupName] ?? $groupName);
-            $attributeGroup->setCreated($now);
-            $attributeGroup->setUpdated($now);
             $this->createAttributeEntities($attributeGroup, array_keys($attributes));
             // this cascades persisting the attributes also
             $this->entityManager->persist($attributeGroup);

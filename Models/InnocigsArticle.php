@@ -2,6 +2,7 @@
 
 namespace MxcDropshipInnocigs\Models;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
@@ -9,6 +10,7 @@ use Shopware\Components\Model\ModelEntity;
 
 /**
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_article")
  */
 class InnocigsArticle extends ModelEntity {
@@ -90,21 +92,33 @@ class InnocigsArticle extends ModelEntity {
     private $ignored = true;
 
     /**
-     * @var \DateTime $created
+     * @var DateTime $created
      *
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $created = null;
 
     /**
-     * @var \DateTime $updated
+     * @var DateTime $updated
      *
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated = null;
 
     public function __construct() {
         $this->variants = new ArrayCollection();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function updateTimestamps() {
+        $now = new DateTime();
+        $this->updated = $now;
+        if ( null === $this->created) {
+            $this->created = $now;
+        }
     }
 
     /**
@@ -155,19 +169,11 @@ class InnocigsArticle extends ModelEntity {
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getCreated(): \DateTime
+    public function getCreated(): DateTime
     {
         return $this->created;
-    }
-
-    /**
-     * @param \DateTime $created
-     */
-    public function setCreated(\DateTime $created)
-    {
-        $this->created = $created;
     }
 
     /**
@@ -208,14 +214,6 @@ class InnocigsArticle extends ModelEntity {
     public function getUpdated(): \DateTime
     {
         return $this->updated;
-    }
-
-    /**
-     * @param \DateTime $updated
-     */
-    public function setUpdated(\DateTime $updated)
-    {
-        $this->updated = $updated;
     }
 
     /**

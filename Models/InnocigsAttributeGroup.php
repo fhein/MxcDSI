@@ -2,13 +2,16 @@
 
 namespace MxcDropshipInnocigs\Models;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
 
 
+
 /**
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_attribute_group")
  */
 class InnocigsAttributeGroup extends ModelEntity {
@@ -50,19 +53,31 @@ class InnocigsAttributeGroup extends ModelEntity {
     /**
      * @var \DateTime $created
      *
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $created = null;
 
     /**
      * @var \DateTime $updated
      *
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated = null;
 
     public function __construct() {
         $this->attributes = new ArrayCollection();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function updateTimestamps() {
+        $now = new DateTime();
+        $this->updated = $now;
+        if ( null === $this->created) {
+            $this->created = $now;
+        }
     }
 
     /**
@@ -98,14 +113,6 @@ class InnocigsAttributeGroup extends ModelEntity {
     }
 
     /**
-     * @param \DateTime $created
-     */
-    public function setCreated(\DateTime $created)
-    {
-        $this->created = $created;
-    }
-
-    /**
      * @return \Doctrine\Common\Collections\ArrayCollection
      */
     public function getAttributes(): ArrayCollection
@@ -127,14 +134,6 @@ class InnocigsAttributeGroup extends ModelEntity {
     public function getUpdated(): \DateTime
     {
         return $this->updated;
-    }
-
-    /**
-     * @param \DateTime $updated
-     */
-    public function setUpdated(\DateTime $updated)
-    {
-        $this->updated = $updated;
     }
 
     /**

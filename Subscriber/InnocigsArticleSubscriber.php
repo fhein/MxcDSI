@@ -5,11 +5,19 @@ namespace MxcDropshipInnocigs\Subscriber;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\LifecycleEventArgs;
-use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Application\Application;
+use MxcDropshipInnocigs\Models\InnocigsArticle;
 use Doctrine\ORM\Events;
+use Zend\Log\Logger;
 
-class ModelSubscriber implements EventSubscriber
+class InnocigsArticleSubscriber implements EventSubscriber
 {
+    private $log;
+
+    public function __construct() {
+        $this->log = Application::getServices()->get(Logger::class);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -29,13 +37,12 @@ class ModelSubscriber implements EventSubscriber
         /** @var EntityManager $modelManager */
         //$modelManager = $arguments->getEntityManager();
 
-        $model = $arguments->getEntity();
+        $article = $arguments->getEntity();
 
-        if (! $model instanceof InnocigsVariant) {
+        if (! $article instanceof InnocigsArticle) {
             return;
         }
-
-        // modify item data
+        $this->log->info('preUpdate: ' . $article->getName());
     }
 
     /**

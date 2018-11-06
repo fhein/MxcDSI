@@ -18,6 +18,17 @@ use Zend\Log\Logger;
 
 class MxcDropshipInnocigs extends Plugin
 {
+    /**
+     * Write phpinfo.html to log directory
+     */
+    private function createPhpInfo() {
+        ob_start();
+        phpinfo();
+        $data = ob_get_contents();
+        ob_clean();
+        $logPath = Shopware()->DocPath().'var/log/phpinfo.html';
+        file_put_contents($logPath, $data);
+    }
 
     /**
      * @param InstallContext $installContext
@@ -67,18 +78,11 @@ class MxcDropshipInnocigs extends Plugin
         $client = $services->get(InnocigsClient::class);
         $logger = $services->get(Logger::class);
 
-        ob_start();
-        phpinfo();
-        $data = ob_get_contents();
-        ob_clean();
-        $logPath = Shopware()->DocPath().'var/log/phpinfo.html';
-        file_put_contents($logPath, $data);
-
         $result = false;
         // download InnoCigs items
         try {
             $client->downloadItems();// && $client->createSWEntries();
-            $activateContext->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
+            // $activateContext->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
             $result = true;
         } catch (ApiException $e) {
             $logger->err($e->getMessage());

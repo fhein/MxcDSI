@@ -2,12 +2,14 @@
 
 namespace MxcDropshipInnocigs\Models;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Shopware\Components\Model\ModelEntity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_variant")
  */
 class InnocigsVariant extends ModelEntity
@@ -87,19 +89,31 @@ class InnocigsVariant extends ModelEntity
     /**
      * @var \DateTime $created
      *
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $created = null;
 
     /**
      * @var \DateTime $updated
      *
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated = null;
 
     public function __construct() {
         $this->attributes = new ArrayCollection();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function updateTimestamps() {
+        $now = new DateTime();
+        $this->updated = $now;
+        if ( null === $this->created) {
+            $this->created = $now;
+        }
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace MxcDropshipInnocigs\Models;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
@@ -9,6 +10,7 @@ use Shopware\Components\Model\ModelEntity;
 
 /**
  * @ORM\Entity(repositoryClass="MxcDropshipInnocigs\Models\InnocigsAttributeRepository")
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_attribute")
  */
 class InnocigsAttribute extends ModelEntity {
@@ -53,19 +55,31 @@ class InnocigsAttribute extends ModelEntity {
     /**
      * @var \DateTime $created
      *
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $created = null;
 
     /**
      * @var \DateTime $updated
      *
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated = null;
 
     public function __construct() {
         $this->variants = new ArrayCollection();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function updateTimestamps() {
+        $now = new DateTime();
+        $this->updated = $now;
+        if ( null === $this->created) {
+            $this->created = $now;
+        }
     }
 
     /**
@@ -101,27 +115,11 @@ class InnocigsAttribute extends ModelEntity {
     }
 
     /**
-     * @param \DateTime $created
-     */
-    public function setCreated(\DateTime $created)
-    {
-        $this->created = $created;
-    }
-
-    /**
      * @return \DateTime
      */
     public function getUpdated(): \DateTime
     {
         return $this->updated;
-    }
-
-    /**
-     * @param \DateTime $updated
-     */
-    public function setUpdated(\DateTime $updated)
-    {
-        $this->updated = $updated;
     }
 
     /**

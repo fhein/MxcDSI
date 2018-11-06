@@ -11,10 +11,13 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.model.InnocigsArticle', {
     fields: [
         { name : 'id', type: 'int', useNull: true },
         { name : 'code', type: 'string' },
+        { name : 'innocigsCode', type: 'string' },
         { name : 'name', type: 'string' },
+        { name : 'innocigsName', type: 'string' },
         { name : 'active', type: 'boolean' },
-        { name : 'created', type: 'date' },
-        { name : 'updated', type: 'date' }
+        { name : 'ignored', type: 'boolean' },
+        { name : 'description', type: 'string' },
+        { name : 'image', type: 'string' }
     ],
 
     associations: [{
