@@ -42,7 +42,11 @@ class InnocigsArticleSubscriber implements EventSubscriber
         if (! $article instanceof InnocigsArticle) {
             return;
         }
-        $this->log->info('preUpdate: ' . $article->getName());
+        if ($arguments->hasChangedField('active')) {
+            $this->log->info('preUpdate: ' . $article->getName() . 'has changed state to ' . ($article->isActive() ? 'true' : 'false'));
+        } else {
+            $this->log->info('preUpdate: ' . $article->getName() . 'has no state change.');
+        }
     }
 
     /**
