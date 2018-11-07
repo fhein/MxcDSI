@@ -26,21 +26,52 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
             /**
              * @event mxcSaveArticle
              */
-             'mxcSaveArticle'
+            'mxcSaveArticle',
         );
     },
 
     createToolbarItems: function() {
         var me = this;
         var items = me.callParent(arguments);
-        items = Ext.Array.insert(items, 0, [ me.createActivateButton()]);
+        items = Ext.Array.insert(items, 0, [ me.createActivateButton(), me.createDeactivateButton()]);
         return items;
     },
 
     createActivateButton: function() {
+        var me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Activate selected',
-            iconCls: 'sprite-tick'
+            iconCls: 'sprite-tick',
+            handler: function() {
+                var selModel = me.getSelectionModel();
+                var records = selModel.getSelection();
+                Ext.each(records, function(record) {
+                    if (record.get('active') === false) {
+                        record.set('active', true);
+                        me.fireEvent('mxcSaveArticle', record);
+                    }
+                });
+                selModel.deselectAll();
+            }
+        });
+    },
+
+    createDeactivateButton: function() {
+        var me = this;
+        return Ext.create('Ext.button.Button', {
+            text: 'Deactivate selected',
+            iconCls: 'sprite-cross',
+            handler: function() {
+                var selModel = me.getSelectionModel();
+                var records = selModel.getSelection();
+                Ext.each(records, function(record) {
+                    if (record.get('active') === true) {
+                        record.set('active', false);
+                        me.fireEvent('mxcSaveArticle', record);
+                    }
+                });
+                selModel.deselectAll();
+            }
         });
     },
 
