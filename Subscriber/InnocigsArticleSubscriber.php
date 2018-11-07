@@ -5,6 +5,7 @@ namespace MxcDropshipInnocigs\Subscriber;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use Doctrine\ORM\Events;
@@ -30,9 +31,9 @@ class InnocigsArticleSubscriber implements EventSubscriber
     }
 
     /**
-     * @param LifecycleEventArgs $arguments
+     * @param PreUpdateEventArgs $arguments
      */
-    public function preUpdate(LifecycleEventArgs $arguments)
+    public function preUpdate(PreUpdateEventArgs $arguments)
     {
         /** @var EntityManager $modelManager */
         //$modelManager = $arguments->getEntityManager();
@@ -45,7 +46,7 @@ class InnocigsArticleSubscriber implements EventSubscriber
         if ($arguments->hasChangedField('active')) {
             $this->log->info('preUpdate: ' . $article->getName() . 'has changed state to ' . ($article->isActive() ? 'true' : 'false'));
         } else {
-            $this->log->info('preUpdate: ' . $article->getName() . 'has no state change.');
+            $this->log->info('preUpdate: ' . $article->getName() . ' has no state change.');
         }
     }
 
