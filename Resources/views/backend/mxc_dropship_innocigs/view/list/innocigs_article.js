@@ -18,6 +18,18 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
             deleteColumn: false
         };
     },
+
+    registerEvents: function() {
+        var me = this;
+        me.callParent(arguments);
+        me.addEvents(
+            /**
+             * @event mxcSaveArticle
+             */
+             'mxcSaveArticle'
+        );
+    },
+
     createToolbarItems: function() {
         var me = this;
         var items = me.callParent(arguments);
@@ -38,10 +50,26 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
 
         me.cellEditor = Ext.create('Ext.grid.plugin.CellEditing', {
             clicksToEdit: 1,
+            listeners: {
+                edit: function(editor, e) {
+                    // the 'edit' event gets fired even if the new value equals the old value
+                    if (e.originalValue === e.value) {
+                        return;
+                    }
+                    me.fireEvent('mxcSaveArticle', e.record);
+                }
+            }
         });
         items.push(me.cellEditor);
 
         return items;
     },
 
+    destroy: function() {
+        var me = this;
+        // If the window gets closed while the cell editor is active
+        // an exception gets thrown. This is a workaround for that problem.
+        me.cellEditor.completeEdit();
+        me.callParent(arguments);
+    }
 });

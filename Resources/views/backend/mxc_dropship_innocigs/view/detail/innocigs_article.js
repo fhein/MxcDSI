@@ -5,5 +5,5 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.detail.InnocigsArticle', {
     extend: 'Shopware.model.Container',
     alias: 'widget.mxc-innocigs-article-grid',
     title: 'InnoCigs Article',
-    height : 200
+    height : 250
 });
