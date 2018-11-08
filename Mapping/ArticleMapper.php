@@ -5,7 +5,9 @@ namespace MxcDropshipInnocigs\Mapping;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\OptimisticLockException;
+use Zend\EventManager\EventInterface;
 use MxcDropshipInnocigs\Exception\DatabaseException;
+use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Components\Model\ModelManager;
@@ -14,10 +16,15 @@ use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
+use Zend\EventManager\EventManagerInterface;
+use Zend\EventManager\ListenerAggregateInterface;
+use Zend\EventManager\ListenerAggregateTrait;
 use Zend\Log\Logger;
 
-class ArticleMapper
+class ArticleMapper implements ListenerAggregateInterface
 {
+    use ListenerAggregateTrait;
+
     private $modelManager;
     private $log;
     
@@ -25,7 +32,29 @@ class ArticleMapper
         $this->modelManager = $modelManager;
         $this->log = $log;
     }
-    
+
+    private function createShopwareArticle(InnocigsArticle $article) {
+        $this->log->info('Create Shopware Article for ' . $article->getName());
+    }
+
+    private function removeShopwareArticle(InnocigsArticle $article) {
+        $this->log->info('Remove Shopware Article for ' . $article->getName());
+    }
+
+    public function onArticleActiveStateChanged(EventInterface $e) {
+        /**
+         * @var InnocigsArticle $article
+         */
+        $article = $e->getParams()['article'];
+        $active = $article->isActive();
+        $this->log->info('Article state changed to ' . var_export($article->isActive(), true));
+        if ($active) {
+            $this->createShopwareArticle($article);
+        } else {
+            $this->removeShopwareArticle($article);
+        }
+    }
+
     public function createSWEntries(){
         //get innocigs articles.
         $this->log->info('Start creating SW Entities');
@@ -140,5 +169,20 @@ class ArticleMapper
 
     protected function setupSWArticle() {
         $swArticle = new Article();
+    }
+
+    /**
+     * Attach one or more listeners
+     *
+     * Implementors may add an optional $priority argument; the EventManager
+     * implementation will pass this to the aggregate.
+     *
+     * @param EventManagerInterface $events
+     * @param int $priority
+     * @return void
+     */
+    public function attach(EventManagerInterface $events, $priority = 1)
+    {
+        $this->listeners[] = $events->attach('article_active_state_changed', [$this, 'onArticleActiveStateChanged'], $priority);
     }
 }

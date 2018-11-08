@@ -20,6 +20,8 @@ class ArticleMapperFactory implements FactoryInterface
     {
         $log = $container->get(Logger::class);
         $modelManager = $container->get('modelManager');
-        return new ArticleMapper($modelManager, $log);
+        $mapper = new ArticleMapper($modelManager, $log);
+        $mapper->attach($container->get('events'));
+        return $mapper;
     }
 }
