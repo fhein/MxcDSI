@@ -3,10 +3,9 @@
 namespace MxcDropshipInnocigs\Client;
 
 use Interop\Container\ContainerInterface;
-use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class InnocigsClientFactory implements FactoryInterface
+class PropertyMapperFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -18,10 +17,7 @@ class InnocigsClientFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $apiClient = $container->get(ApiClient::class);
-        $propertyMapper = $container->get(PropertyMapper::class);
-        $modelManager = $container->get('modelManager');
-        $logger = $container->get(Logger::class);
-        return new InnocigsClient($modelManager, $apiClient, $propertyMapper, $logger);
+        $mappings = $container->get('config')['mappings'];
+        return new PropertyMapper($mappings->toArray());
     }
 }

@@ -4,13 +4,13 @@ namespace MxcDropshipInnocigs\Client;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\OptimisticLockException;
 use MxcDropshipInnocigs\Exception\DatabaseException;
 use MxcDropshipInnocigs\Models\InnocigsAttribute;
 use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Configurator\Option;
@@ -20,35 +20,38 @@ use Zend\Log\Logger;
 
 class InnocigsClient {
 
-    private $apiClient = null;
+    /**
+     * @var ApiClient $apiClient
+     */
+    private $apiClient;
+
+    /**
+     * @var ModelManager $entityManager
+     */
     private $entityManager;
+
+    /**
+     * @var array $attributes
+     */
     private $attributes;
+
+    /**
+     * @var PropertyMapper $mapper
+     */
+    private $mapper;
+
+    /**
+     * @var Logger $log
+     */
     private $log;
 
-    // The maps below map names and codes retrieved from the API to vapee names and codes
-    private $groupNameMap = [
-        'STAERKE' => 'Nikotinstärke',
-        'WIDERSTAND' => 'Widerstand',
-        'PACKUNG' => 'Packungsgröße',
-        'FARBE' => 'Farbe',
-        'DURCHMESSER' => 'Durchmesser',
-        'GLAS' => 'Glas',
-    ];
-
-    private $articleCodeMap = [];
-
-    private $variantCodeMap = [];
-
-    private $articleNameMap = [];
-
-    private $attributeNameMap = [];
-
-    public function __construct(EntityManager $entityManager, ApiClient $apiClient, Logger $log) {
+    public function __construct(ModelManager $entityManager, ApiClient $apiClient, PropertyMapper $mapper, Logger $log) {
 
         $this->log = $log;
         $this->log->info('Initializing Innocigs client.');
         $this->entityManager = $entityManager;
         $this->apiClient = $apiClient;
+        $this->mapper = $mapper;
     }
 
     private function createVariantEntities(InnocigsArticle $article, array $variantArray) : array {
@@ -60,7 +63,7 @@ class InnocigsClient {
 
             $variant->setInnocigsCode($variantCode);
             // use our code mapping if present, code from innocigs otherwise
-            $variant->setCode($this->variantCodeMap[$variantCode] ?? $variantCode);
+            $variant->setCode($this->mapper->mapVariantCode($variantCode));
             $variant->setActive($active);
 
             $tmp = $variantData['EAN'];
@@ -80,7 +83,7 @@ class InnocigsClient {
                 foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $attribute) {
                     $articleName = str_replace($attribute, '', $articleName);
                 }
-                $articleProperties['name'] = $articleName;
+                $articleProperties['name'] = trim($articleName);
                 $articleProperties['image'] = $variantData['PRODUCTS_IMAGE'];
             }
             foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $group => $attribute) {
@@ -102,11 +105,11 @@ class InnocigsClient {
             $name = $articleProperties['name'];
             $article->setInnocigsName($name);
             // use our name mapping if present, name from innocigs otherwise
-            $article->setName($this->articleNameMap[$name] ?? $name);
+            $article->setName($this->mapper->mapArticleName($name));
             $article->setImage($articleProperties['image']);
             $article->setInnocigsCode($articleCode);
             // use our code mapping if present, code from innocigs otherwise
-            $article->setCode($this->articleCodeMap[$articleCode] ?? $articleCode);
+            $article->setCode($this->mapper->mapArticleCode($articleCode));
             $article->setDescription('n/a');
             // this cascades persisting the variants also
             $this->entityManager->persist($article);
@@ -125,7 +128,7 @@ class InnocigsClient {
             $attribute = new InnocigsAttribute();
             $attribute->setInnocigsName($attributeName);
             // use our name mapping if present, name from innocigs otherwise
-            $attribute->setName($this->attributeNameMap[$attributeName] ?? $attributeName);
+            $attribute->setName($this->mapper->mapAttributeName($attributeName));
             $attributeGroup->addAttribute($attribute);
             $this->attributes[$attributeGroup->getInnocigsName()][$attributeName] = $attribute;
         }
@@ -138,7 +141,7 @@ class InnocigsClient {
             $attributeGroup = new InnocigsAttributeGroup();
             $attributeGroup->setInnocigsName($groupName);
             // use our name mapping if present, name from innocigs otherwise
-            $attributeGroup->setName($this->groupNameMap[$groupName] ?? $groupName);
+            $attributeGroup->setName($this->mapper->mapAttributeGroupName($groupName));
             $this->createAttributeEntities($attributeGroup, array_keys($attributes));
             // this cascades persisting the attributes also
             $this->entityManager->persist($attributeGroup);
