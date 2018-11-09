@@ -2,26 +2,21 @@
 
 namespace MxcDropshipInnocigs\Client;
 
-use Doctrine\ORM\OptimisticLockException;
-use MxcDropshipInnocigs\Exception\DatabaseException;
+use MxcDropshipInnocigs\Convenience\DoctrineModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsAttribute;
 use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use Shopware\Components\Model\ModelManager;
 use Zend\Log\Logger;
 
 class InnocigsClient {
+
+    use DoctrineModelManagerTrait;
 
     /**
      * @var ApiClient $apiClient
      */
     private $apiClient;
-
-    /**
-     * @var ModelManager $modelManager
-     */
-    private $modelManager;
 
     /**
      * @var array $attributes
@@ -38,11 +33,10 @@ class InnocigsClient {
      */
     private $log;
 
-    public function __construct(ModelManager $modelManager, ApiClient $apiClient, PropertyMapper $mapper, Logger $log) {
+    public function __construct(ApiClient $apiClient, PropertyMapper $mapper, Logger $log) {
 
         $this->log = $log;
         $this->log->info('Initializing Innocigs client.');
-        $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->mapper = $mapper;
     }
@@ -82,7 +76,7 @@ class InnocigsClient {
             foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $group => $attribute) {
                 $attrEntity = $this->attributes[$group][$attribute];
                 $variant->addAttribute($attrEntity);
-                $this->modelManager->persist($attrEntity);
+                $this->persist($attrEntity);
             }
         }
         return $articleProperties;
@@ -105,15 +99,11 @@ class InnocigsClient {
             $article->setCode($this->mapper->mapArticleCode($articleCode));
             $article->setDescription('n/a');
             // this cascades persisting the variants also
-            $this->modelManager->persist($article);
-            try {
-                $this->modelManager->flush();
-            } catch (OptimisticLockException $e) {
-                throw new DatabaseException('Doctrine failed to flush articles and variants: ' . $e->getMessage());
-            }
+            $this->persist($article);
             $i++;
             if ($i == 5) break;
         }
+        $this->flush();
     }
 
     private function createAttributeEntities(InnocigsAttributeGroup $attributeGroup, $attributes) {
@@ -138,12 +128,9 @@ class InnocigsClient {
             $this->createAttributeEntities($attributeGroup, array_keys($attributes));
             // this cascades persisting the attributes also
             $this->modelManager->persist($attributeGroup);
-            try {
-                $this->modelManager->flush();
-            } catch (OptimisticLockException $e) {
-                throw new DatabaseException('Doctrine failed to flush attributes and groups: ' . $e->getMessage());
-            }
+            $this->persist($attributeGroup);
         }
+        $this->flush();
     }
 
     public function downloadItems() {

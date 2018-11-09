@@ -87,6 +87,12 @@ class InnocigsVariant extends ModelEntity
     private $ignored = true;
 
     /**
+     * @var int $detailId
+     * @ORM\Column($ype="integer", nullable=true)
+     */
+    private $detailId = null;
+
+    /**
      * @var \DateTime $created
      *
      * @ORM\Column(type="datetime", nullable=true)
@@ -300,5 +306,21 @@ class InnocigsVariant extends ModelEntity
     public function setInnocigsCode(string $innocigsCode): void
     {
         $this->innocigsCode = $innocigsCode;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDetailId(): int
+    {
+        return $this->detailId;
+    }
+
+    /**
+     * @param int $detailId
+     */
+    public function setDetailId(int $detailId): void
+    {
+        $this->detailId = $detailId;
     }
 }

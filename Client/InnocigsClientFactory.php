@@ -20,8 +20,7 @@ class InnocigsClientFactory implements FactoryInterface
     {
         $apiClient = $container->get(ApiClient::class);
         $propertyMapper = $container->get(PropertyMapper::class);
-        $modelManager = $container->get('modelManager');
         $logger = $container->get(Logger::class);
-        return new InnocigsClient($modelManager, $apiClient, $propertyMapper, $logger);
+        return new InnocigsClient($apiClient, $propertyMapper, $logger);
     }
 }

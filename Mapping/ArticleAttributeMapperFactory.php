@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleMapperFactory implements FactoryInterface
+class ArticleAttributeMapperFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -19,9 +19,7 @@ class ArticleMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get(Logger::class);
-        $attributeMapper = $container->get(ArticleAttributeMapper::class);
-        $mapper = new ArticleMapper($attributeMapper, $log);
-        $mapper->attach($container->get('events'));
+        $mapper = new ArticleAttributeMapper($log);
         return $mapper;
     }
 }
