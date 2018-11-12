@@ -19,7 +19,8 @@ class ArticleAttributeMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get(Logger::class);
-        $mapper = new ArticleAttributeMapper($log);
+        $repository = $container->get(GroupRepository::class);
+        $mapper = new ArticleAttributeMapper($repository, $log);
         return $mapper;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace MxcDropshipInnocigs\Client;
 
-use MxcDropshipInnocigs\Convenience\DoctrineModelManagerTrait;
+use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsAttribute;
 use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
@@ -11,7 +11,7 @@ use Zend\Log\Logger;
 
 class InnocigsClient {
 
-    use DoctrineModelManagerTrait;
+    use ModelManagerTrait;
 
     /**
      * @var ApiClient $apiClient

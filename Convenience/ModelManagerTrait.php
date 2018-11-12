@@ -14,7 +14,7 @@ use MxcDropshipInnocigs\Exception\DatabaseException;
 use Shopware\Components\Model\ModelEntity;
 use Shopware\Components\Model\ModelManager;
 
-trait DoctrineModelManagerTrait
+trait ModelManagerTrait
 {
     /**
      * @var ModelManager $modelManager
@@ -23,7 +23,7 @@ trait DoctrineModelManagerTrait
     private $modelManager;
 
     private function persist(ModelEntity $entity) {
-        $this->modelManager->persist($entity);
+        $this->getModelManager()->persist($entity);
     }
 
     /**
@@ -34,18 +34,18 @@ trait DoctrineModelManagerTrait
      */
     private function flush() {
         try {
-            $this->modelManager->flush();
+            $this->getModelManager()->flush();
         } catch (OptimisticLockException $e) {
             throw new DatabaseException($e->getMessage());
         }
     }
 
     private function getRepository(string $name) {
-        return $this->modelManager->getRepository($name);
+        return $this->getModelManager()->getRepository($name);
     }
 
     private function createQuery(string $dql) {
-        return $this->modelManager->createQuery($dql);
+        return $this->getModelManager()->createQuery($dql);
     }
 
     private function getModelManager() {

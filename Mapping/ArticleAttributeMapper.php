@@ -2,47 +2,29 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-use MxcDropshipInnocigs\Convenience\DoctrineModelManagerTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsAttribute;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use Shopware\Models\Article\Configurator\Group;
-use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Configurator\Set;
 use Zend\Log\Logger;
 
 class ArticleAttributeMapper
 {
-    use DoctrineModelManagerTrait;
+    use ModelManagerTrait;
 
     private $log;
-    private $swGroupOptionLookup;
-    private $swGroupRepo;
+    private $groupRepository;
 
-    public function __construct(Logger $log)
+    public function __construct(GroupRepository $repository, Logger $log)
     {
         $this->log = $log;
-        $this->swGroupRepo = $this->getRepository(Group::class);
+        $this->groupRepository = $repository;
     }
 
-    private function getGroupOptionLookupTable()
-    {
-        $group = Group::class;
-        $option = Option::class;
-        $dql = "SELECT gname gName, o.name oName FROM $group g JOIN $option o WHERE o.group = g.id";
-        $array = $this->createQuery($dql)->getScalarResult();
-        $lookup = [];
-        foreach ($array as $entry) {
-            $lookup[$entry['gName']][$entry['oName']] = true;
-        }
-        $this->log->info(var_export($lookup, true));
-        return $lookup;
-    }
-
-    private function createShopwareGroupsAndOptions($icVariants)
-    {
-        $lookup = $this->getGroupOptionLookupTable();
-
+    private function createShopwareGroupsAndOptions(InnocigsArticle $article) {
+        $icVariants = $article->getVariants();
         foreach ($icVariants as $icVariant) {
             /**
              * @var InnocigsVariant $icVariant
@@ -52,45 +34,69 @@ class ArticleAttributeMapper
                 /**
                  * @var InnocigsAttribute $icAttribute
                  */
-                $swGroup = null;
                 $icGroupName = $icAttribute->getAttributeGroup()->getName();
-                if (!$lookup[$icGroupName]) {
-                    $lookup[$icGroupName] = 1;
-                    $swGroup = new Group();
-                    $swGroup->setName($icGroupName);
-                    $swGroup->setPosition(count($lookup));
-                    $this->persist($swGroup);
-                }
+                $swGroup = $this->groupRepository->loadGroup($icGroupName) ?? $this->groupRepository->createGroup($icGroupName);
 
-                $swOption = null;
                 $icAttributeName = $icAttribute->getName();
-                if (!$lookup[$icGroupName][$icAttributeName]) {
-                    $lookup[$icGroupName][$icAttributeName] = true;
-                    $swOption = new Option();
-                    $swOption->setName($icAttributeName);
-                    $swOption->setGroup($swGroup);
-                    $swOption->setPosition(count($lookup[$icGroupName]));
-                    $this->persist($swOption);
+                if (! $this->groupRepository->hasOption($swGroup, $icAttributeName)) {
+                    $this->groupRepository->createOption($swGroup, $icAttributeName);
                 }
             }
         }
-        $this->flush();
+        $this->groupRepository->flush();
+    }
+
+    private function createArticleSet(InnocigsArticle $article) {
+        $options = [];
+        $groups = [];
+        $variants = $article->getVariants();
+
+        // compute the groups and options belonging to this set
+        foreach ($variants as $variant) {
+            /**
+             * @var InnocigsVariant $variant
+             */
+            $attributes = $variant->getAttributes();
+            foreach ($attributes as $attribute) {
+                /**
+                 * @var InnocigsAttribute $attribute
+                 */
+                $groupName = $attribute->getAttributeGroup()->getName();
+                $optionName = $attribute->getName();
+                if (! isset($groups[$groupName])) {
+                    $group = $this->groupRepository->getGroup($groupName);
+                    $groups[$groupName] = $group;
+                } else {
+                    $group = $groups[$groupName];
+                }
+                $options[] = $this->groupRepository->getOption($group, $optionName);
+            }
+        }
+        // discard array keys
+        $groups = array_values($groups);
+
+        // create the shopware configurator set
+        $set = new Set();
+        $set->setName('mxc-set-' .  $article->getCode());
+        // standard set
+        $set->setType(0);
+        $set->setArticles(new ArrayCollection($article));
+        $set->setPublic(false);
+        $set->setGroups(new ArrayCollection($groups));
+        $set->setOptions(new ArrayCollection($options));
+        return $set;
     }
 
     public function createConfiguratorSet(InnocigsArticle $article)
     {
-        $icVariants = $article->getVariants();
-        if (count($icVariants) === 0) {
+        if (count($article->getVariants()) < 2) {
             return null;
         }
-        $this->createShopwareGroupsAndOptions($icVariants);
-        $icGroupAttributeMap = $article->getGroupAttributeMap();
+        $this->createShopwareGroupsAndOptions($article);
+        $set = $this->createArticleSet($article);
+        $this->persist($set);
+        $this->flush();
 
-        // here all groups and options are available in shopware
-
-        $swSet = new Set();
-        foreach ($icVariants as $icVariant) {
-
-        }
+        return $set;
     }
 }

@@ -355,7 +355,7 @@ class InnocigsArticle extends ModelEntity {
      *
      * @return array
      */
-    public function getGroupAttributeMap() {
+    public function getVariantsByGroupAndOption() {
         $map = [];
         $variants = $this->getVariants();
         foreach($variants as $variant) {
