@@ -17,8 +17,14 @@ use MxcDropshipInnocigs\Client\InnocigsClient;
 use MxcDropshipInnocigs\Client\InnocigsClientFactory;
 use MxcDropshipInnocigs\Client\PropertyMapper;
 use MxcDropshipInnocigs\Client\PropertyMapperFactory;
+use MxcDropshipInnocigs\Convenience\ExceptionLogger;
+use MxcDropshipInnocigs\Convenience\ExceptionLoggerFactory;
+use MxcDropshipInnocigs\Mapping\ArticleAttributeMapper;
+use MxcDropshipInnocigs\Mapping\ArticleAttributeMapperFactory;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleMapperFactory;
+use MxcDropshipInnocigs\Mapping\GroupRepository;
+use MxcDropshipInnocigs\Mapping\GroupRepositoryFactory;
 use Shopware\Bundle\AttributeBundle\Service\CrudService;
 use Shopware\Components\Model\ModelManager;
 use Shopware_Components_Config;
@@ -58,11 +64,14 @@ return [
     'services' => [
         'factories' => [
             ApiClient::class                    => ApiClientFactory::class,
+            ArticleAttributeMapper::class       => ArticleAttributeMapperFactory::class,
             ArticleMapper::class                => ArticleMapperFactory::class,
             Connection::class                   => DbalConnectionFactory::class,
             Credentials::class                  => CredentialsFactory::class,
             CrudService::class                  => AttributeManagerFactory::class,
             Database::class                     => DatabaseFactory::class,
+            ExceptionLogger::class              => ExceptionLoggerFactory::class,
+            GroupRepository::class              => GroupRepositoryFactory::class,
             InnocigsClient::class               => InnocigsClientFactory::class,
             Logger::class                       => LoggerServiceFactory::class,
             ModelManager::class                 => ModelManagerFactory::class,
@@ -70,10 +79,11 @@ return [
             Shopware_Components_Config::class   => ConfigurationFactory::class,
         ],
         'aliases' => [
+            'logger'                            => Logger::class,
+            'exceptionLogger'                   => ExceptionLogger::class,
             'attributeManager'                  => CrudService::class,
             'config'                            => Config::class,
             'dbalConnection'                    => Connection::class,
-            'logger'                            => Logger::class,
             'modelManager'                      => ModelManager::class,
             'pluginConfig'                      => Shopware_Components_Config::class,
         ]

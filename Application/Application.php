@@ -7,6 +7,7 @@ use Zend\Config\Factory;
 use Zend\EventManager\EventManager;
 use Zend\ServiceManager\ServiceManager;
 
+
 class Application {
     /**
      * @var ServiceManager $services
@@ -24,5 +25,4 @@ class Application {
         self::$services->setService('events', new EventManager());
         return self::$services;
     }
-
 }

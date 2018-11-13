@@ -88,7 +88,7 @@ class InnocigsVariant extends ModelEntity
 
     /**
      * @var int $detailId
-     * @ORM\Column($ype="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $detailId = null;
 

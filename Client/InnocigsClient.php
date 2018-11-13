@@ -87,7 +87,7 @@ class InnocigsClient {
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
             // mark the first two articles active for testing
-            $article->setActive($i < 2);
+            $article->setActive(false);
             $articleProperties = $this->createVariantEntities($article, $articleData);
             $name = $articleProperties['name'];
             $article->setInnocigsName($name);
@@ -101,7 +101,7 @@ class InnocigsClient {
             // this cascades persisting the variants also
             $this->persist($article);
             $i++;
-            if ($i == 5) break;
+            if ($i == 10) break;
         }
         $this->flush();
     }
@@ -127,7 +127,6 @@ class InnocigsClient {
             $attributeGroup->setName($this->mapper->mapAttributeGroupName($groupName));
             $this->createAttributeEntities($attributeGroup, array_keys($attributes));
             // this cascades persisting the attributes also
-            $this->modelManager->persist($attributeGroup);
             $this->persist($attributeGroup);
         }
         $this->flush();

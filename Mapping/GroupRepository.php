@@ -39,7 +39,7 @@ class GroupRepository
     {
         $group = Group::class;
         $option = Option::class;
-        $dql = "SELECT gname gName, o.name oName FROM $group g JOIN $option o WHERE o.group = g.id";
+        $dql = "SELECT g.name gName, o.name oName FROM $group g JOIN $option o WHERE o.group = g.id";
         $array = $this->createQuery($dql)->getScalarResult();
         $this->data = [];
         foreach ($array as $entry) {
