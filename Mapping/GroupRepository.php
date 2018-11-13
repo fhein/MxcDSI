@@ -25,6 +25,16 @@ class GroupRepository
         $this->createLookupTable();
     }
 
+    //    [
+    //        <group name> => [
+    //            'group' => true|Group
+    //            'options' => [
+    //                <option name> => true|Option,
+    //                ...
+    //            ],
+    //        ],
+    //        ...
+    //    ]
     private function createLookupTable()
     {
         $group = Group::class;
@@ -74,10 +84,10 @@ class GroupRepository
 
     public function getGroup(string $name) {
         if (! $this->data[$name]) return null;
-        $repository = $this->getRepository(Group::class);
         $group = $this->data[$name]['group'];
         if (! $group instanceof Group) {
-            $group = $repository->findOneBy(['name' => $name]);
+            $group = $this->getRepository(Group::class)->findOneBy(['name' => $name]);
+            $this->data[$name]['group'] = $group;
         }
         return $group;
     }
@@ -89,6 +99,7 @@ class GroupRepository
         if ($option instanceof Option) {
             return $option;
         }
+
         // We do not have the requested option, try to recover
         // If the next line returns the group is not managed by us
         if (! isset($this->data[$groupName])) return null;

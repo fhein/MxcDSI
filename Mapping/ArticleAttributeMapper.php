@@ -80,7 +80,7 @@ class ArticleAttributeMapper
         $set->setName('mxc-set-' .  $article->getCode());
         // standard set
         $set->setType(0);
-        $set->setArticles(new ArrayCollection($article));
+        $set->setArticles(new ArrayCollection([$article]));
         $set->setPublic(false);
         $set->setGroups(new ArrayCollection($groups));
         $set->setOptions(new ArrayCollection($options));

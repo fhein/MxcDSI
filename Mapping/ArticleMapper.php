@@ -44,9 +44,16 @@ class ArticleMapper implements ListenerAggregateInterface
 
     private function createShopwareArticle(InnocigsArticle $article) {
         $this->log->info('Create Shopware Article for ' . $article->getName());
+
         $configuratorSet = $this->attributeMapper->createConfiguratorSet($article);
-        $article = new Article();
-        $tax = new Tax();
+        $tax = $this->getTax();
+        $supplier = $this->getSupplier($article);
+
+        $swArticle = new Article();
+
+        /*** to be continued ...
+
+
     }
 
     private function removeShopwareArticle(InnocigsArticle $article) {
