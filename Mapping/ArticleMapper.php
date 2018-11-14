@@ -2,14 +2,17 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
+use Shopware\Models\Article\Price;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Tax\Tax;
+use Shopware\Models\Customer\Group;
 use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
@@ -42,6 +45,7 @@ class ArticleMapper implements ListenerAggregateInterface
     private $shopwareGroupRepository = null;
     private $shopwareGroupLookup = [];
 
+
     public function __construct(ArticleAttributeMapper $attributeMapper, Logger $log) {
         $this->attributeMapper = $attributeMapper;
         $this->services = Application::getServices();
@@ -62,35 +66,83 @@ class ArticleMapper implements ListenerAggregateInterface
 
             // Components you need to create a shopware article
             $tax = $this->getTax();
-            $this->log->info('tax: ' . $tax->getName());
             $supplier = $this->getSupplier($article);
-            $this->log->info('supplier: ' . $supplier->getName());
-            $configuratorSet = $this->attributeMapper->createConfiguratorSet($article);
+            //$configuratorSet = $this->attributeMapper->createConfiguratorSet($article);
 
             $swArticle = new Article();
             $swArticle->setName($article->getName());
             $swArticle->setTax($tax);
             $swArticle->setSupplier($supplier);
-            $swArticle->setConfiguratorSet($configuratorSet);
+            //$swArticle->setConfiguratorSet($configuratorSet);
 
-            $swDetails = $this->createShopwareDetails($article);
+            $swArticle->setActive(true);
 
-            //$swArticle = $this->getShopwareArticle($article->getName()) ?? new Article();
+            $this->persist($swArticle);
 
-            $this->persist($group);
+            $swDetails = $this->createShopwareDetails($article, $swArticle);
+            //$swArticle->setDetails($swDetails);
+
             $this->flush();
             return $swArticle;
 
         } catch (Exception $e) {
-            $this->log->info('TEST: Exeption!');
             $this->services->get('exceptionLogger')->log($e);
         }
     }
 
-    private function createShopwareDetail(InnocigsVariant $variant){
+    private function createShopwareDetails(InnocigsArticle $article, $swArticle){
+        $variants = $article->getVariants();
 
+        $details = new ArrayCollection();
+
+        $i=1;
+        foreach($variants as $variant){
+            $this->log->info('create Detail: '.$variant->getCode());
+
+            $detail = new Detail();
+            $this->log->info('set Article: '. $swArticle->getName());
+            $detail->setArticle($swArticle);
+            $detail->setNumber($variant->getCode());
+            $detail->setEan($variant->getEan());
+
+            $prices = $this->createPrice($variant, $swArticle, $detail);
+            $detail->setPrices($prices);
+            i>1 ? $detail->setKind(1) : $detail->setKind(2);
+            $detail->setActive(true);
+            $detail->setLastStock(0);
+            // Todo: $detail->setPurchaseUnit();
+            // Todo: $detail->setReferenceUnit();
+
+            $this->persist($detail);
+            $details->add($detail);
+            $i++;
+        }
+
+        return $details;
+    }
+    private function createPrice(InnocigsVariant $variant, Article $swArticle, Detail $swDetail){
+        $tax = $this->getTax()->getTax();
+        $netPrice = $variant->getPriceRecommended() / (1 + ($tax/100));
+
+        $price = new Price();
+        $price->setPrice($netPrice);
+        $price->setFrom(1);
+        $price->setTo(null);
+        $price->setCustomerGroup($this->getCustomerGroup());
+        $price->setArticle($swArticle);
+        $price->setDetail($swDetail);
+
+
+        // $this->persist($price); //cascade?
+
+        $this->persist($price);
+        $this->log->info('price '. $netPrice .'created');
+        return new ArrayCollection([$price]);
     }
 
+    private function getCustomerGroup(string $customerGroupKey = 'EK') {
+        return $this->getRepository(Group::class)->findOneBy(['key' => $customerGroupKey]);
+    }
     private function getShopwareArticle(InnocigsArticle $article){
         $variants = $article->getVariants();
 
