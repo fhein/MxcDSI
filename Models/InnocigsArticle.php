@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Models;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
 
@@ -54,6 +55,20 @@ class InnocigsArticle extends ModelEntity {
     private $code;
 
     /**
+     * @var string $supplier
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $supplier;
+
+    /**
+     * @var string $brand
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $brand;
+
+    /**
      * @var string $description
      *
      * @ORM\Column(type="string")
@@ -97,6 +112,13 @@ class InnocigsArticle extends ModelEntity {
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $created = null;
+
+    /**
+     * @var int $configSetId
+     *
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $configSetId = null;
 
     /**
      * @var DateTime $updated
@@ -177,9 +199,9 @@ class InnocigsArticle extends ModelEntity {
     }
 
     /**
-     * @return \Doctrine\Common\Collections\ArrayCollection
+     * @return Doctrine\Common\Collections\Collection
      */
-    public function getVariants(): ArrayCollection
+    public function getVariants(): Collection
     {
         return $this->variants;
     }
@@ -302,5 +324,88 @@ class InnocigsArticle extends ModelEntity {
     public function setImage(string $image): void
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return int
+     */
+    public function getConfigSetId(): int
+    {
+        return $this->configSetId;
+    }
+
+    /**
+     * @param int $configSetId
+     */
+    public function setConfigSetId(int $configSetId): void
+    {
+        $this->configSetId = $configSetId;
+    }
+
+    /**
+     * Build up an array which maps attributes to variants by group
+     *
+     *  [ <attribute group name> => [
+     *        <attribute name> => [
+     *              'variant' => <variant>,
+     *        ],
+     *        ...
+     *     ],
+     *    ...
+     *  ]
+     *
+     * @return array
+     */
+    public function getVariantsByGroupAndOption() {
+        $map = [];
+        $variants = $this->getVariants();
+        foreach($variants as $variant) {
+            /**
+             * @var InnocigsVariant $variant
+             */
+            $attributes = $variant->getAttributes();
+            foreach ($attributes as $attribute) {
+                /**
+                 * @var InnocigsAttribute $attribute
+                 */
+                $group = $attribute->getAttributeGroup();
+                $map[$group->getName()][$attribute->getName()] = [
+                    'variant' => $variant,
+                ];
+            }
+        }
+        return $map;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSupplier(): ?string
+    {
+        return $this->supplier;
+    }
+
+    /**
+     * @param string $supplier
+     */
+    public function setSupplier(string $supplier): void
+    {
+        $this->supplier = $supplier;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBrand(): ?string
+    {
+        return $this->brand;
+    }
+
+    /**
+     * @param string $brand
+     */
+    public function setBrand(string $brand): void
+    {
+        $this->brand = $brand;
     }
 }

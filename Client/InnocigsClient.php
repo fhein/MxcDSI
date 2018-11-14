@@ -2,53 +2,43 @@
 
 namespace MxcDropshipInnocigs\Client;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\OptimisticLockException;
-use MxcDropshipInnocigs\Exception\DatabaseException;
+use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsAttribute;
 use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use Shopware\Models\Article\Article;
-use Shopware\Models\Article\Detail;
-use Shopware\Models\Article\Configurator\Option;
-use Shopware\Models\Article\Configurator\Group;
-use Shopware\Models\Article\Supplier;
 use Zend\Log\Logger;
 
 class InnocigsClient {
 
-    private $apiClient = null;
-    private $entityManager;
+    use ModelManagerTrait;
+
+    /**
+     * @var ApiClient $apiClient
+     */
+    private $apiClient;
+
+    /**
+     * @var array $attributes
+     */
     private $attributes;
+
+    /**
+     * @var PropertyMapper $mapper
+     */
+    private $mapper;
+
+    /**
+     * @var Logger $log
+     */
     private $log;
 
-    // The maps below map names and codes retrieved from the API to vapee names and codes
-    private $groupNameMap = [
-        'STAERKE' => 'Nikotinstärke',
-        'WIDERSTAND' => 'Widerstand',
-        'PACKUNG' => 'Packungsgröße',
-        'FARBE' => 'Farbe',
-        'DURCHMESSER' => 'Durchmesser',
-        'GLAS' => 'Glas',
-    ];
-
-    private $articleCodeMap = [];
-
-    private $variantCodeMap = [];
-
-    private $articleNameMap = [];
-
-    private $attributeNameMap = [];
-
-    public function __construct(EntityManager $entityManager, ApiClient $apiClient, Logger $log) {
+    public function __construct(ApiClient $apiClient, PropertyMapper $mapper, Logger $log) {
 
         $this->log = $log;
         $this->log->info('Initializing Innocigs client.');
-        $this->entityManager = $entityManager;
         $this->apiClient = $apiClient;
+        $this->mapper = $mapper;
     }
 
     private function createVariantEntities(InnocigsArticle $article, array $variantArray) : array {
@@ -60,7 +50,7 @@ class InnocigsClient {
 
             $variant->setInnocigsCode($variantCode);
             // use our code mapping if present, code from innocigs otherwise
-            $variant->setCode($this->variantCodeMap[$variantCode] ?? $variantCode);
+            $variant->setCode($this->mapper->mapVariantCode($variantCode));
             $variant->setActive($active);
 
             $tmp = $variantData['EAN'];
@@ -80,13 +70,13 @@ class InnocigsClient {
                 foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $attribute) {
                     $articleName = str_replace($attribute, '', $articleName);
                 }
-                $articleProperties['name'] = $articleName;
+                $articleProperties['name'] = trim($articleName);
                 $articleProperties['image'] = $variantData['PRODUCTS_IMAGE'];
             }
             foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $group => $attribute) {
                 $attrEntity = $this->attributes[$group][$attribute];
                 $variant->addAttribute($attrEntity);
-                $this->entityManager->persist($attrEntity);
+                $this->persist($attrEntity);
             }
         }
         return $articleProperties;
@@ -97,27 +87,23 @@ class InnocigsClient {
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
             // mark the first two articles active for testing
-            $article->setActive($i < 2);
+            $article->setActive(false);
             $articleProperties = $this->createVariantEntities($article, $articleData);
             $name = $articleProperties['name'];
             $article->setInnocigsName($name);
             // use our name mapping if present, name from innocigs otherwise
-            $article->setName($this->articleNameMap[$name] ?? $name);
+            $article->setName($this->mapper->mapArticleName($name));
             $article->setImage($articleProperties['image']);
             $article->setInnocigsCode($articleCode);
             // use our code mapping if present, code from innocigs otherwise
-            $article->setCode($this->articleCodeMap[$articleCode] ?? $articleCode);
+            $article->setCode($this->mapper->mapArticleCode($articleCode));
             $article->setDescription('n/a');
             // this cascades persisting the variants also
-            $this->entityManager->persist($article);
-            try {
-                $this->entityManager->flush();
-            } catch (OptimisticLockException $e) {
-                throw new DatabaseException('Doctrine failed to flush articles and variants: ' . $e->getMessage());
-            }
+            $this->persist($article);
             $i++;
-            if ($i == 5) break;
+            if ($i == 10) break;
         }
+        $this->flush();
     }
 
     private function createAttributeEntities(InnocigsAttributeGroup $attributeGroup, $attributes) {
@@ -125,7 +111,7 @@ class InnocigsClient {
             $attribute = new InnocigsAttribute();
             $attribute->setInnocigsName($attributeName);
             // use our name mapping if present, name from innocigs otherwise
-            $attribute->setName($this->attributeNameMap[$attributeName] ?? $attributeName);
+            $attribute->setName($this->mapper->mapAttributeName($attributeName));
             $attributeGroup->addAttribute($attribute);
             $this->attributes[$attributeGroup->getInnocigsName()][$attributeName] = $attribute;
         }
@@ -138,16 +124,12 @@ class InnocigsClient {
             $attributeGroup = new InnocigsAttributeGroup();
             $attributeGroup->setInnocigsName($groupName);
             // use our name mapping if present, name from innocigs otherwise
-            $attributeGroup->setName($this->groupNameMap[$groupName] ?? $groupName);
+            $attributeGroup->setName($this->mapper->mapAttributeGroupName($groupName));
             $this->createAttributeEntities($attributeGroup, array_keys($attributes));
             // this cascades persisting the attributes also
-            $this->entityManager->persist($attributeGroup);
-            try {
-                $this->entityManager->flush();
-            } catch (OptimisticLockException $e) {
-                throw new DatabaseException('Doctrine failed to flush attributes and groups: ' . $e->getMessage());
-            }
+            $this->persist($attributeGroup);
         }
+        $this->flush();
     }
 
     public function downloadItems() {
@@ -165,10 +147,8 @@ class InnocigsClient {
         $this->createAttributeGroupEntities($attributes);
         $this->log->info('Creating articles and variants.');
         $this->createArticleEntities($items);
-        $variantRepo = $this->entityManager->getRepository(InnocigsVariant::class);
+        $variantRepo = $this->modelManager->getRepository(InnocigsVariant::class);
         $activeVariants = $variantRepo->findBy(['active' => true]);
         $this->log->info('Active variants: ' . count($activeVariants));
     }
-
-
 }

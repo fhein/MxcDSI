@@ -9,14 +9,26 @@ use Doctrine\ORM\Event\PreUpdateEventArgs;
 use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use Doctrine\ORM\Events;
+use Zend\EventManager\EventManager;
 use Zend\Log\Logger;
 
 class InnocigsArticleSubscriber implements EventSubscriber
 {
+    /**
+     * @var Logger $log
+     */
     private $log;
 
+    /**
+     * @var  EventManager $events
+     */
+    private $events;
+
     public function __construct() {
-        $this->log = Application::getServices()->get(Logger::class);
+        // @todo: Code smell: Constructed via Shopware's ServiceManager, so we connect to our service management via global Application
+        $services = Application::getServices();
+        $this->log = $services->get(Logger::class);
+        $this->events = $services->get('events');
     }
 
     /**
@@ -25,8 +37,8 @@ class InnocigsArticleSubscriber implements EventSubscriber
     public function getSubscribedEvents()
     {
         return [
-           Events::preUpdate,
-           Events::postUpdate,
+            Events::preUpdate,
+            Events::postUpdate,
         ];
     }
 
@@ -44,7 +56,9 @@ class InnocigsArticleSubscriber implements EventSubscriber
             return;
         }
         if ($arguments->hasChangedField('active')) {
-            $this->log->info('preUpdate: ' . $article->getName() . 'has changed state to ' . ($article->isActive() ? 'true' : 'false'));
+            // $this->log->info('preUpdate: ' . $article->getName() . ' has changed state to ' . ($article->isActive() ? 'true' : 'false'));
+            $params = compact('article');
+            $this->events->trigger('article_active_state_changed', $this, $params);
         } else {
             $this->log->info('preUpdate: ' . $article->getName() . ' has no state change.');
         }

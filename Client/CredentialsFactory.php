@@ -17,7 +17,7 @@ class CredentialsFactory implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $container->get('config');
+        $config = $container->get('pluginConfig');
         $user = $config->offsetGet('api_user');
         $password = null;
         if (is_string($user)) {

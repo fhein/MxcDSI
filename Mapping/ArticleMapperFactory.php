@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Client;
+namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class InnocigsClientFactory implements FactoryInterface
+class ArticleMapperFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -18,9 +18,10 @@ class InnocigsClientFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $apiClient = $container->get(ApiClient::class);
-        $propertyMapper = $container->get(PropertyMapper::class);
-        $logger = $container->get(Logger::class);
-        return new InnocigsClient($apiClient, $propertyMapper, $logger);
+        $log = $container->get(Logger::class);
+        $attributeMapper = $container->get(ArticleAttributeMapper::class);
+        $mapper = new ArticleMapper($attributeMapper, $log);
+        $mapper->attach($container->get('events'));
+        return $mapper;
     }
 }
