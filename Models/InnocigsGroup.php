@@ -13,9 +13,9 @@ use Shopware\Components\Model\ModelEntity;
 /**
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_attribute_group")
+ * @ORM\Table(name="s_plugin_mxc_dropship_configurator_group")
  */
-class InnocigsAttributeGroup extends ModelEntity {
+class InnocigsGroup extends ModelEntity {
     /**
      * Primary Key - autoincrement value
      *
@@ -28,13 +28,6 @@ class InnocigsAttributeGroup extends ModelEntity {
     private $id;
 
     /**
-     * @var string $innocigsName
-     *
-     * @ORM\Column(name="innocigs_name")
-     */
-    private $innocigsName;
-
-    /**
      * @var string $name
      *
      * @ORM\Column()
@@ -44,12 +37,12 @@ class InnocigsAttributeGroup extends ModelEntity {
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
-     *      targetEntity="MxcDropshipInnocigs\Models\InnocigsAttribute",
-     *      mappedBy="attributeGroup",
+     *      targetEntity="InnocigsOption",
+     *      mappedBy="group",
      *      cascade={"persist", "remove"}
      * )
      */
-    private $attributes;
+    private $options;
 
     /**
      * @var \DateTime $created
@@ -66,7 +59,7 @@ class InnocigsAttributeGroup extends ModelEntity {
     private $updated = null;
 
     public function __construct() {
-        $this->attributes = new ArrayCollection();
+        $this->options = new ArrayCollection();
     }
 
     /**
@@ -116,17 +109,17 @@ class InnocigsAttributeGroup extends ModelEntity {
     /**
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAttributes(): Collection
+    public function getOptions(): Collection
     {
-        return $this->attributes;
+        return $this->options;
     }
 
     /**
-     * @param InnocigsAttribute $attribute
+     * @param InnocigsOption $option
      */
-    public function addAttribute(InnocigsAttribute $attribute) {
-        $this->attributes->add($attribute);
-        $attribute->setAttributeGroup($this);
+    public function addOption(InnocigsOption $option) {
+        $this->options->add($option);
+        $option->setGroup($this);
     }
 
     /**
@@ -135,21 +128,5 @@ class InnocigsAttributeGroup extends ModelEntity {
     public function getUpdated(): \DateTime
     {
         return $this->updated;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInnocigsName(): string
-    {
-        return $this->innocigsName;
-    }
-
-    /**
-     * @param string $innocigsName
-     */
-    public function setInnocigsName(string $innocigsName): void
-    {
-        $this->innocigsName = $innocigsName;
     }
 }

@@ -27,16 +27,10 @@ class InnocigsVariant extends ModelEntity
 
     /**
      * @var InnocigsArticle $article
+     *
      * @ORM\ManyToOne(targetEntity="InnocigsArticle", inversedBy="variants")
      */
     private $article;
-
-    /**
-     * @var string $innocigsCode
-     *
-     * @ORM\Column(name="innocigs_code", type="string", nullable=false)
-     */
-    private $innocigsCode;
 
     /**
      * @var string $code
@@ -68,9 +62,9 @@ class InnocigsVariant extends ModelEntity
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany( targetEntity="MxcDropshipInnocigs\Models\InnocigsAttribute", mappedBy="variants")
+     * @ORM\ManyToMany(targetEntity="InnocigsOption", mappedBy="variants")
      */
-    private $attributes;
+    private $options;
 
     /**
      * @var boolean $active
@@ -107,7 +101,7 @@ class InnocigsVariant extends ModelEntity
     private $updated = null;
 
     public function __construct() {
-        $this->attributes = new ArrayCollection();
+        $this->options = new ArrayCollection();
     }
 
     /**
@@ -125,19 +119,19 @@ class InnocigsVariant extends ModelEntity
     /**
      * @return \Doctrine\Common\Collections\ArrayCollection
      */
-    public function getAttributes()//: ArrayCollection
+    public function getOptions()//: ArrayCollection
     {
-        return $this->attributes;
+        return $this->options;
     }
 
     /**
-     * @param InnocigsAttribute $attribute
+     * @param InnocigsOption $option
      *
      * This is the owner side so we have to add the backlink here
      */
-    public function addAttribute(InnocigsAttribute $attribute) {
-        $this->attributes->add($attribute);
-        $attribute->addVariant($this);
+    public function addOption(InnocigsOption $option) {
+        $this->options->add($option);
+        $option->addVariant($this);
     }
 
     /**
@@ -293,22 +287,6 @@ class InnocigsVariant extends ModelEntity
     }
 
     /**
-     * @return string
-     */
-    public function getInnocigsCode(): string
-    {
-        return $this->innocigsCode;
-    }
-
-    /**
-     * @param string $innocigsCode
-     */
-    public function setInnocigsCode(string $innocigsCode): void
-    {
-        $this->innocigsCode = $innocigsCode;
-    }
-
-    /**
      * @return int
      */
     public function getDetailId(): int
@@ -322,5 +300,22 @@ class InnocigsVariant extends ModelEntity
     public function setDetailId(int $detailId): void
     {
         $this->detailId = $detailId;
+    }
+    
+    public function __debugInfo()
+    {
+        return [
+            'id' => $this->id,
+            'article' => is_object($this->article) ? get_class($this->article) : $this->article,
+            'code' => $this->code,
+            'optionsType' => is_object($this->options) ? get_class($this->options) : gettype($this->options),
+//            'attributeCount' => count($this->attributes),
+            'ean' => $this->ean,
+            'priceNet' => $this->priceNet,
+            'priceRecommended' => $this->priceRecommended,
+            'active' => $this->active,
+            'ignored' => $this->ignored,
+            'detailId' => $this->detailId,
+        ];
     }
 }

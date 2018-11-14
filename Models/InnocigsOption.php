@@ -9,11 +9,11 @@ use Shopware\Components\Model\ModelEntity;
 
 
 /**
- * @ORM\Entity(repositoryClass="MxcDropshipInnocigs\Models\InnocigsAttributeRepository")
+ * @ORM\Entity(repositoryClass="InnocigsOptionRepository")
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_attribute")
+ * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_configurator_option")
  */
-class InnocigsAttribute extends ModelEntity {
+class InnocigsOption extends ModelEntity {
     /**
      * Primary Key - autoincrement value
      *
@@ -26,13 +26,6 @@ class InnocigsAttribute extends ModelEntity {
     private $id;
 
     /**
-     * @var string $innocigsName
-     *
-     * @ORM\Column(name="innocigs_name")
-     */
-    private $innocigsName;
-
-    /**
      * @var string $name
      *
      * @ORM\Column()
@@ -40,15 +33,15 @@ class InnocigsAttribute extends ModelEntity {
     private $name;
 
     /**
-     * @var InnocigsAttributeGroup $attributeGroup
-     * @ORM\ManyToOne(targetEntity="MxcDropshipInnocigs\Models\InnocigsAttributeGroup", inversedBy="attributes")
+     * @var InnocigsGroup $group
+     * @ORM\ManyToOne(targetEntity="InnocigsGroup", inversedBy="options")
      */
-    private $attributeGroup;
+    private $group;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany( targetEntity="InnocigsVariant", inversedBy="attributes")
-     * @ORM\JoinTable(name="s_plugin_mxc_dropship_innocigs_attributes_variants")
+     * @ORM\ManyToMany(targetEntity="InnocigsVariant", inversedBy="options")
+     * @ORM\JoinTable(name="s_plugin_mxc_dropship_innocigs_options_variants")
      */
     private $variants;
 
@@ -123,19 +116,19 @@ class InnocigsAttribute extends ModelEntity {
     }
 
     /**
-     * @return InnocigsAttributeGroup
+     * @return InnocigsGroup
      */
-    public function getAttributeGroup(): InnocigsAttributeGroup
+    public function getGroup(): InnocigsGroup
     {
-        return $this->attributeGroup;
+        return $this->group;
     }
 
     /**
-     * @param InnocigsAttributeGroup $attributeGroup
+     * @param InnocigsGroup $group
      */
-    public function setAttributeGroup(InnocigsAttributeGroup $attributeGroup): void
+    public function setGroup(InnocigsGroup $group): void
     {
-        $this->attributeGroup = $attributeGroup;
+        $this->group = $group;
     }
 
     /**
@@ -149,26 +142,10 @@ class InnocigsAttribute extends ModelEntity {
     /**
      * @param InnocigsVariant $variant
      *
-     * This is the 'owned' side, so we DO NOT $variant->addAttribute($this)
+     * This is the 'owned' side, so we DO NOT $variant->addOption($this)
      */
     public function addVariant(InnocigsVariant $variant): void
     {
         $this->variants->add($variant);
-    }
-
-    /**
-     * @return string
-     */
-    public function getInnocigsName(): string
-    {
-        return $this->innocigsName;
-    }
-
-    /**
-     * @param string $innocigsName
-     */
-    public function setInnocigsName(string $innocigsName): void
-    {
-        $this->innocigsName = $innocigsName;
     }
 }

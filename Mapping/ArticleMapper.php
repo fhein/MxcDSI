@@ -29,7 +29,7 @@ class ArticleMapper implements ListenerAggregateInterface
     protected $services;
 
     /**
-     * @var ArticleAttributeMapper $attributeMapper
+     * @var ArticleOptionMapper $attributeMapper
      */
     private $attributeMapper;
 
@@ -42,49 +42,16 @@ class ArticleMapper implements ListenerAggregateInterface
     private $shopwareGroupRepository = null;
     private $shopwareGroupLookup = [];
 
-    public function __construct(ArticleAttributeMapper $attributeMapper, Logger $log) {
+    public function __construct(ArticleOptionMapper $attributeMapper, Logger $log) {
         $this->attributeMapper = $attributeMapper;
         $this->services = Application::getServices();
-        $this->log = $this->services->get('logger');
-        //$this->log = $log;
+        $this->log = $log;
     }
 
     private function createShopwareArticle(InnocigsArticle $article) {
 
-        try{
-            $this->log->info('Create Shopware Article for ' . $article->getName());
-
-            $swArticle = $this->getShopwareArticle($article);
-
-            if (isset($swArticle)){
-                return $swArticle;
-            }
-
-            // Components you need to create a shopware article
-            $tax = $this->getTax();
-            $this->log->info('tax: ' . $tax->getName());
-            $supplier = $this->getSupplier($article);
-            $this->log->info('supplier: ' . $supplier->getName());
-            $configuratorSet = $this->attributeMapper->createConfiguratorSet($article);
-
-            $swArticle = new Article();
-            $swArticle->setName($article->getName());
-            $swArticle->setTax($tax);
-            $swArticle->setSupplier($supplier);
-            $swArticle->setConfiguratorSet($configuratorSet);
-
-            $swDetails = $this->createShopwareDetails($article);
-
-            //$swArticle = $this->getShopwareArticle($article->getName()) ?? new Article();
-
-            $this->persist($group);
-            $this->flush();
-            return $swArticle;
-
-        } catch (Exception $e) {
-            $this->log->info('TEST: Exeption!');
-            $this->services->get('exceptionLogger')->log($e);
-        }
+        $this->log->info('Create Shopware Article for ' . $article->getName());
+        $this->attributeMapper->createShopwareGroupsAndOptions($article);
     }
 
     private function createShopwareDetail(InnocigsVariant $variant){
@@ -165,21 +132,16 @@ class ArticleMapper implements ListenerAggregateInterface
      */
 
     private function getSupplier(InnocigsArticle $article) {
-        try {
-            $this->log->info('Get Supplier');
-            $supplierName = $article->getSupplier() ?? 'InnoCigs';
+        $this->log->info('Get Supplier');
+        $supplierName = $article->getSupplier() ?? 'InnoCigs';
 
-            $supplier = $this->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
-            if (!$supplier) {
-                $supplier = new Supplier();
-                $supplier->setName($supplierName);
-                $this->persist($supplier);
-                $this->flush();
-            }
-            return $supplier;
-        } catch (Exception $e) {
-            $this->log->info('TEST: Supplier Exeption!');
-            $this->services->get('exceptionLogger')->log($e);
+        $supplier = $this->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
+        if (!$supplier) {
+            $supplier = new Supplier();
+            $supplier->setName($supplierName);
+            $this->persist($supplier);
+            $this->flush();
         }
+        return $supplier;
     }
 }

@@ -5,8 +5,8 @@ namespace MxcDropshipInnocigs\Bootstrap;
 use Doctrine\ORM\Tools\SchemaTool;
 use Exception;
 use MxcDropshipInnocigs\Exception\DatabaseException;
-use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
-use MxcDropshipInnocigs\Models\InnocigsAttribute;
+use MxcDropshipInnocigs\Models\InnocigsGroup;
+use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Bundle\AttributeBundle\Service\CrudService;
@@ -145,8 +145,8 @@ class Database
         return [
             $this->modelManager->getClassMetadata(InnocigsArticle::class),
             $this->modelManager->getClassMetadata(InnocigsVariant::class),
-            $this->modelManager->getClassMetadata(InnocigsAttributeGroup::class),
-            $this->modelManager->getClassMetadata(InnocigsAttribute::class),
+            $this->modelManager->getClassMetadata(InnocigsGroup::class),
+            $this->modelManager->getClassMetadata(InnocigsOption::class),
         ];
     }
 }

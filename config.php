@@ -19,8 +19,8 @@ use MxcDropshipInnocigs\Client\PropertyMapper;
 use MxcDropshipInnocigs\Client\PropertyMapperFactory;
 use MxcDropshipInnocigs\Convenience\ExceptionLogger;
 use MxcDropshipInnocigs\Convenience\ExceptionLoggerFactory;
-use MxcDropshipInnocigs\Mapping\ArticleAttributeMapper;
-use MxcDropshipInnocigs\Mapping\ArticleAttributeMapperFactory;
+use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
+use MxcDropshipInnocigs\Mapping\ArticleOptionMapperFactory;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleMapperFactory;
 use MxcDropshipInnocigs\Mapping\GroupRepository;
@@ -64,7 +64,7 @@ return [
     'services' => [
         'factories' => [
             ApiClient::class                    => ApiClientFactory::class,
-            ArticleAttributeMapper::class       => ArticleAttributeMapperFactory::class,
+            ArticleOptionMapper::class       => ArticleOptionMapperFactory::class,
             ArticleMapper::class                => ArticleMapperFactory::class,
             Connection::class                   => DbalConnectionFactory::class,
             Credentials::class                  => CredentialsFactory::class,
@@ -89,6 +89,8 @@ return [
         ]
     ],
     'mappings' => [
+        'article_codes'     => [],
+        'arcticle_names'    => [],
         'group_names' => [
             'STAERKE'       => 'Nikotinstärke',
             'WIDERSTAND'    => 'Widerstand',
@@ -97,9 +99,7 @@ return [
             'DURCHMESSER'   => 'Durchmesser',
             'GLAS'          => 'Glas',
         ],
-        'arcticle_names'    => [],
         'option_names'      => [],
-        'article_codes'     => [],
         'variant_codes'     => [],
     ],
 ];

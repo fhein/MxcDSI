@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Models;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
 
@@ -27,25 +26,11 @@ class InnocigsArticle extends ModelEntity {
     private $id;
 
     /**
-     * @var string $innocigsName
-     *
-     * @ORM\Column(name="innocigs_name")
-     */
-    private $innocigsName;
-
-    /**
      * @var string $name
      *
      * @ORM\Column()
      */
     private $name;
-
-    /**
-     * @var string $innocigsCode
-     *
-     * @ORM\Column(name="innocigs_code", type="string", nullable=false)
-     */
-    private $innocigsCode;
 
     /**
      * @var string $code
@@ -198,10 +183,7 @@ class InnocigsArticle extends ModelEntity {
         return $this->created;
     }
 
-    /**
-     * @return Doctrine\Common\Collections\Collection
-     */
-    public function getVariants(): Collection
+    public function getVariants()
     {
         return $this->variants;
     }
@@ -260,38 +242,6 @@ class InnocigsArticle extends ModelEntity {
     public function setIgnored(bool $ignored)
     {
         $this->ignored = $ignored;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInnocigsName(): string
-    {
-        return $this->innocigsName;
-    }
-
-    /**
-     * @param string $innocigsName
-     */
-    public function setInnocigsName(string $innocigsName): void
-    {
-        $this->innocigsName = $innocigsName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInnocigsCode(): string
-    {
-        return $this->innocigsCode;
-    }
-
-    /**
-     * @param string $innocigsCode
-     */
-    public function setInnocigsCode(string $innocigsCode): void
-    {
-        $this->innocigsCode = $innocigsCode;
     }
 
     /**
@@ -363,12 +313,12 @@ class InnocigsArticle extends ModelEntity {
             /**
              * @var InnocigsVariant $variant
              */
-            $attributes = $variant->getAttributes();
+            $attributes = $variant->getOptions();
             foreach ($attributes as $attribute) {
                 /**
-                 * @var InnocigsAttribute $attribute
+                 * @var InnocigsOption $attribute
                  */
-                $group = $attribute->getAttributeGroup();
+                $group = $attribute->getGroup();
                 $map[$group->getName()][$attribute->getName()] = [
                     'variant' => $variant,
                 ];

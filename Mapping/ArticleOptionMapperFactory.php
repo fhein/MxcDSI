@@ -3,10 +3,9 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
-use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleAttributeMapperFactory implements FactoryInterface
+class ArticleOptionMapperFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -18,9 +17,9 @@ class ArticleAttributeMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $log = $container->get(Logger::class);
+        $log = $container->get('logger');
         $repository = $container->get(GroupRepository::class);
-        $mapper = new ArticleAttributeMapper($repository, $log);
+        $mapper = new ArticleOptionMapper($repository, $log);
         return $mapper;
     }
 }

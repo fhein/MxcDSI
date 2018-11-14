@@ -3,8 +3,8 @@
 namespace MxcDropshipInnocigs\Client;
 
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
-use MxcDropshipInnocigs\Models\InnocigsAttribute;
-use MxcDropshipInnocigs\Models\InnocigsAttributeGroup;
+use MxcDropshipInnocigs\Models\InnocigsOption;
+use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Zend\Log\Logger;
@@ -19,38 +19,29 @@ class InnocigsClient {
     private $apiClient;
 
     /**
-     * @var array $attributes
+     * @var array $options
      */
-    private $attributes;
-
-    /**
-     * @var PropertyMapper $mapper
-     */
-    private $mapper;
+    private $options;
 
     /**
      * @var Logger $log
      */
     private $log;
 
-    public function __construct(ApiClient $apiClient, PropertyMapper $mapper, Logger $log) {
-
+    public function __construct(ApiClient $apiClient, Logger $log) {
         $this->log = $log;
         $this->log->info('Initializing Innocigs client.');
         $this->apiClient = $apiClient;
-        $this->mapper = $mapper;
     }
 
-    private function createVariantEntities(InnocigsArticle $article, array $variantArray) : array {
+    private function createVariants(InnocigsArticle $article, array $variantArray) : array {
         $articleProperties = null;
         // mark all variants of active articles active
         $active = $article->getActive();
         foreach ($variantArray as $variantCode => $variantData) {
             $variant = new InnocigsVariant();
 
-            $variant->setInnocigsCode($variantCode);
-            // use our code mapping if present, code from innocigs otherwise
-            $variant->setCode($this->mapper->mapVariantCode($variantCode));
+            $variant->setCode($variantCode);
             $variant->setActive($active);
 
             $tmp = $variantData['EAN'];
@@ -67,88 +58,75 @@ class InnocigsClient {
                 // We take the first variant's name and remove the variant descriptions
                 // in order to extract the real article name
                 $articleName = $variantData['NAME'];
-                foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $attribute) {
-                    $articleName = str_replace($attribute, '', $articleName);
+                foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $option) {
+                    $articleName = str_replace($option, '', $articleName);
                 }
                 $articleProperties['name'] = trim($articleName);
                 $articleProperties['image'] = $variantData['PRODUCTS_IMAGE'];
             }
-            foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $group => $attribute) {
-                $attrEntity = $this->attributes[$group][$attribute];
-                $variant->addAttribute($attrEntity);
-                $this->persist($attrEntity);
+            foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $group => $option) {
+                $optionEntity = $this->options[$group][$option];
+                $variant->addOption($optionEntity);
             }
         }
         return $articleProperties;
     }
 
-    private function createArticleEntities(array $articles) {
+    private function createArticles(array $articles) {
         $i = 0;
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
             // mark the first two articles active for testing
             $article->setActive(false);
-            $articleProperties = $this->createVariantEntities($article, $articleData);
+            $articleProperties = $this->createVariants($article, $articleData);
             $name = $articleProperties['name'];
-            $article->setInnocigsName($name);
+            $article->setName($name);
             // use our name mapping if present, name from innocigs otherwise
-            $article->setName($this->mapper->mapArticleName($name));
             $article->setImage($articleProperties['image']);
-            $article->setInnocigsCode($articleCode);
-            // use our code mapping if present, code from innocigs otherwise
-            $article->setCode($this->mapper->mapArticleCode($articleCode));
+            $article->setCode($articleCode);
             $article->setDescription('n/a');
             // this cascades persisting the variants also
             $this->persist($article);
             $i++;
             if ($i == 10) break;
         }
-        $this->flush();
     }
 
-    private function createAttributeEntities(InnocigsAttributeGroup $attributeGroup, $attributes) {
-        foreach ($attributes as $attributeName) {
-            $attribute = new InnocigsAttribute();
-            $attribute->setInnocigsName($attributeName);
-            // use our name mapping if present, name from innocigs otherwise
-            $attribute->setName($this->mapper->mapAttributeName($attributeName));
-            $attributeGroup->addAttribute($attribute);
-            $this->attributes[$attributeGroup->getInnocigsName()][$attributeName] = $attribute;
+    private function createOptions(InnocigsGroup $group, $options) {
+        foreach ($options as $optionName) {
+            $option = new InnocigsOption();
+            $option->setName($optionName);
+            $group->addOption($option);
+            $this->options[$group->getName()][$optionName] = $option;
         }
     }
 
-    private function createAttributeGroupEntities(array $attrs)
+    private function createGroups(array $opts)
     {
-        //$this->log->info(var_export($attrs, true));
-        foreach ($attrs as $groupName => $attributes) {
-            $attributeGroup = new InnocigsAttributeGroup();
-            $attributeGroup->setInnocigsName($groupName);
-            // use our name mapping if present, name from innocigs otherwise
-            $attributeGroup->setName($this->mapper->mapAttributeGroupName($groupName));
-            $this->createAttributeEntities($attributeGroup, array_keys($attributes));
-            // this cascades persisting the attributes also
-            $this->persist($attributeGroup);
+        foreach ($opts as $groupName => $options) {
+            $group = new InnocigsGroup();
+            $group->setName($groupName);
+            $this->createOptions($group, array_keys($options));
+            // this cascades persisting the options also
+            $this->persist($group);
         }
-        $this->flush();
     }
 
     public function downloadItems() {
         $raw = $this->apiClient->getItemList();
         $items = [];
-        $attributes = [];
+        $options = [];
 
         foreach($raw['PRODUCTS']['PRODUCT'] as $item) {
             $items[$item['MASTER']][$item['MODEL']] = $item;
-            foreach($item['PRODUCTS_ATTRIBUTES'] as $group => $attribute) {
-                $attributes[$group][$attribute] = 1;
+            foreach($item['PRODUCTS_ATTRIBUTES'] as $group => $option) {
+                $options[$group][$option] = 1;
             }
         }
-        $this->log->info('Creating attribute groups and attributes.');
-        $this->createAttributeGroupEntities($attributes);
+        $this->log->info('Creating groups and options.');
+        $this->createGroups($options);
         $this->log->info('Creating articles and variants.');
-        $this->createArticleEntities($items);
-        $variantRepo = $this->modelManager->getRepository(InnocigsVariant::class);
-        $activeVariants = $variantRepo->findBy(['active' => true]);
-        $this->log->info('Active variants: ' . count($activeVariants));
+        $this->createArticles($items);
+        $this->flush();
     }
 }

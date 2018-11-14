@@ -19,7 +19,7 @@ class ArticleMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get(Logger::class);
-        $attributeMapper = $container->get(ArticleAttributeMapper::class);
+        $attributeMapper = $container->get(ArticleOptionMapper::class);
         $mapper = new ArticleMapper($attributeMapper, $log);
         $mapper->attach($container->get('events'));
         return $mapper;

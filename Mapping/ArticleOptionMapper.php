@@ -5,12 +5,12 @@ namespace MxcDropshipInnocigs\Mapping;
 use Doctrine\Common\Collections\ArrayCollection;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
-use MxcDropshipInnocigs\Models\InnocigsAttribute;
+use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Models\Article\Configurator\Set;
 use Zend\Log\Logger;
 
-class ArticleAttributeMapper
+class ArticleOptionMapper
 {
     use ModelManagerTrait;
 
@@ -21,30 +21,36 @@ class ArticleAttributeMapper
     {
         $this->log = $log;
         $this->groupRepository = $repository;
+        $this->log->info(__CLASS__ . ' created.');
     }
 
-    private function createShopwareGroupsAndOptions(InnocigsArticle $article) {
+    public function createShopwareGroupsAndOptions(InnocigsArticle $article) {
         $icVariants = $article->getVariants();
+        $this->log->info(__FUNCTION__ . ': ' . count($icVariants) . ' variants retrieved.');
         foreach ($icVariants as $icVariant) {
             /**
              * @var InnocigsVariant $icVariant
              */
-            $icAttributes = $icVariant->getAttributes();
-            foreach ($icAttributes as $icAttribute) {
+            $this->log->info(__FUNCTION__ . ': Trying to retrieve options from variant: ' . $icVariant->getCode());
+            $this->log->info(var_export($icVariant->__debugInfo(), true));
+            $icOptions = $icVariant->getOptions();
+            $this->log->info(__FUNCTION__ . ': ' . count($icOptions) . ' options retrieved.');
+            foreach ($icOptions as $icOption) {
                 /**
-                 * @var InnocigsAttribute $icAttribute
+                 * @var InnocigsOption $icOption
                  */
-                $icGroupName = $icAttribute->getAttributeGroup()->getName();
+                $icGroupName = $icOption->getGroup()->getName();
                 $swGroup = $this->groupRepository->loadGroup($icGroupName) ?? $this->groupRepository->createGroup($icGroupName);
+                $this->log->info(__FUNCTION__ . ': Got swGroup');
 
-                $icAttributeName = $icAttribute->getName();
-                if (! $this->groupRepository->hasOption($swGroup, $icAttributeName)) {
-                    $this->groupRepository->createOption($swGroup, $icAttributeName);
+
+                $icOptionName = $icOption->getName();
+                if (! $this->groupRepository->hasOption($swGroup, $icOptionName)) {
+                    $this->groupRepository->createOption($swGroup, $icOptionName);
                 }
             }
         }
-        //$this->groupRepository->flush();
-        $this->flush();
+        $this->groupRepository->flush();
     }
 
     private function createArticleSet(InnocigsArticle $article) {
@@ -57,13 +63,13 @@ class ArticleAttributeMapper
             /**
              * @var InnocigsVariant $variant
              */
-            $attributes = $variant->getAttributes();
-            foreach ($attributes as $attribute) {
+            $options = $variant->getOptions();
+            foreach ($options as $option) {
                 /**
-                 * @var InnocigsAttribute $attribute
+                 * @var InnocigsOption $option
                  */
-                $groupName = $attribute->getAttributeGroup()->getName();
-                $optionName = $attribute->getName();
+                $groupName = $option->getGroup()->getName();
+                $optionName = $option->getName();
                 if (! isset($groups[$groupName])) {
                     $group = $this->groupRepository->getGroup($groupName);
                     $groups[$groupName] = $group;

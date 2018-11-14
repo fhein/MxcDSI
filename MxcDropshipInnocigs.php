@@ -4,17 +4,15 @@ namespace MxcDropshipInnocigs;
 
 require __DIR__ . '/vendor/autoload.php';
 
+use Exception;
 use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Bootstrap\Database;
 use MxcDropshipInnocigs\Client\InnocigsClient;
-use MxcDropshipInnocigs\Exception\ApiException;
-use MxcDropshipInnocigs\Exception\DatabaseException;
 use Shopware\Components\Plugin;
 use Shopware\Components\Plugin\Context\ActivateContext;
 use Shopware\Components\Plugin\Context\DeactivateContext;
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
-use Zend\Log\Logger;
 
 class MxcDropshipInnocigs extends Plugin
 {
@@ -25,15 +23,15 @@ class MxcDropshipInnocigs extends Plugin
     public function install(InstallContext $installContext)
     {
         $services = Application::getServices();
-        $logger = $services->get(Logger::class);
+        $exceptionLogger = $services->get('exceptionLogger');
         try {
             $database = $services->get(Database::class);
             $database->install();
-            return true;
-        } catch(DatabaseException $e) {
-            $logger->err('Failed to install database: ' . $e->getMessage());
+        } catch (Exception $e) {
+            $exceptionLogger->log($e);
             return false;
         }
+        return true;
     }
 
     /**
@@ -46,15 +44,15 @@ class MxcDropshipInnocigs extends Plugin
             return true;
         }
         $services = Application::getServices();
-        $logger = $services->get(Logger::class);
+        $exceptionLogger = $services->get('exceptionLogger');
         try {
             $database = $services->get(Database::class);
             $database->uninstall();
-            return true;
-        } catch (DatabaseException $e) {
-            $logger->err('Failed to uninstall database: ' . $e->getMessage());
+        } catch (Exception $e) {
+            $exceptionLogger->log($e);
             return false;
         }
+        return true;
     }
 
     /**
@@ -64,18 +62,16 @@ class MxcDropshipInnocigs extends Plugin
     {
         $services = Application::getServices();
         $client = $services->get(InnocigsClient::class);
-        $logger = $services->get(Logger::class);
+        $exceptionLogger = $services->get('exceptionLogger');
 
         $result = false;
         // download InnoCigs items
         try {
-            $client->downloadItems();// && $client->createSWEntries();
+            $client->downloadItems();
             // $activateContext->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
             $result = true;
-        } catch (ApiException $e) {
-            $logger->err($e->getMessage());
-        } catch(DatabaseException $e) {
-            $logger->err($e->getMessage());
+        } catch(Exception $e) {
+            $exceptionLogger->log($e);
         }
         return $result;
     }

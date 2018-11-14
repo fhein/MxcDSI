@@ -29,11 +29,11 @@ class PropertyMapper
         return $this->mappings['variant_codes'][$code] ?? $code;
     }
 
-    public function mapAttributeGroupName($name) {
+    public function mapGroupName($name) {
         return $this->mappings['group_names'][$name] ?? $name;
     }
 
-    public function mapAttributeName($name) {
-        return $this->mappings['attribute_names'][$name] ?? $name;
+    public function mapOptionName($name) {
+        return $this->mappings['option_names'][$name] ?? $name;
     }
 }

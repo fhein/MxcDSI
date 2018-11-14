@@ -4,7 +4,7 @@ namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\ORM\EntityRepository;
 
-class InnocigsAttributeRepository extends EntityRepository
+class InnocigsOptionRepository extends EntityRepository
 {
     public function getActiveAttributes() {
         $em = $this->getEntityManager();

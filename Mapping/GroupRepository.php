@@ -9,6 +9,7 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
+use MxcDropshipInnocigs\Exception\DatabaseException;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 use Zend\Log\Logger;
@@ -46,6 +47,7 @@ class GroupRepository
             $this->data[$entry['gName']]['group'] = true;
             $this->data[$entry['gName']]['options'][$entry['oName']] = true;
         }
+        $this->log->info('Group repository lookup table: ' . PHP_EOL . var_export($this->data, true));
     }
 
     public function createGroup(string $name, int $pos = null) {
@@ -54,17 +56,8 @@ class GroupRepository
         $group->setPosition($pos ?? count($this->data));
         $this->data[$name]['group'] = $group;
         $this->persist($group);
+        $this->log->info('Created group: ' . $name);
         return $group;
-    }
-
-    public function createOption(Group $group, string $name, int $pos = null) {
-        $option = new Option();
-        $option->setName($name);
-        $option->setGroup($group);
-        $option->setPosition($pos ?? count($this->data));
-        $this->data[$group->getName()]['options'][$name] = $option;
-        $this->persist($option);
-        return $option;
     }
 
     public function loadGroup(string $name)
@@ -81,7 +74,10 @@ class GroupRepository
                  */
                 $this->data[$name]['options'][$option->getName()] = $option;
             }
-    }
+        } else {
+            throw new DatabaseException('Cache inconsistency. Can not load group we believe to have.');
+        }
+        $this->log->info('Group loaded: ' . $group->getName());
         return $group;
     }
 
@@ -93,6 +89,16 @@ class GroupRepository
             $this->data[$name]['group'] = $group;
         }
         return $group;
+    }
+
+    public function createOption(Group $group, string $name, int $pos = null) {
+        $option = new Option();
+        $option->setName($name);
+        $option->setGroup($group);
+        $option->setPosition($pos ?? count($this->data));
+        $this->data[$group->getName()]['options'][$name] = $option;
+        $this->persist($option);
+        return $option;
     }
 
     public function getOption(Group $group, string $name) {
