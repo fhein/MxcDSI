@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Models;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
 
@@ -198,9 +199,9 @@ class InnocigsArticle extends ModelEntity {
     }
 
     /**
-     * @return \Doctrine\Common\Collections\ArrayCollection
+     * @return Doctrine\Common\Collections\Collection
      */
-    public function getVariants(): ArrayCollection
+    public function getVariants(): Collection
     {
         return $this->variants;
     }
@@ -379,7 +380,7 @@ class InnocigsArticle extends ModelEntity {
     /**
      * @return string
      */
-    public function getSupplier(): string
+    public function getSupplier(): ?string
     {
         return $this->supplier;
     }
@@ -395,7 +396,7 @@ class InnocigsArticle extends ModelEntity {
     /**
      * @return string
      */
-    public function getBrand(): string
+    public function getBrand(): ?string
     {
         return $this->brand;
     }

@@ -14,7 +14,7 @@ class ExceptionLogger
     }
 
     public function log(Throwable $e, bool $logTrace = true, bool $rethrow = true) {
-        $this->log->crit(get_class($e) . ': "'. $e->getMessage(). '", code: ' . $e->getCode());
+        $this->log->crit(get_class($e) . ': "'. $e->getMessage(). '", code: ' . $e->getCode() . ' in line: ' . $e->getLine());
         if ($logTrace) $this->log->crit($e->getTraceAsString());
         if ($rethrow) throw($e);
     }
