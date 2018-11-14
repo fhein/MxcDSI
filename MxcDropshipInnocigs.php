@@ -19,18 +19,6 @@ use Zend\Log\Logger;
 class MxcDropshipInnocigs extends Plugin
 {
     /**
-     * Write phpinfo.html to log directory
-     */
-    private function createPhpInfo() {
-        ob_start();
-        phpinfo();
-        $data = ob_get_contents();
-        ob_clean();
-        $logPath = Shopware()->DocPath().'var/log/phpinfo.html';
-        file_put_contents($logPath, $data);
-    }
-
-    /**
      * @param InstallContext $installContext
      * @return boolean
      */
