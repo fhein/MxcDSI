@@ -48,9 +48,9 @@ class ArticleMapper implements ListenerAggregateInterface
         // The code commented out is new, should work, but was not run yet.
 
         // Components you need to create a shopware article
-        // $tax = $this->getTax();
-        // $supplier = $this->getSupplier($article);
-        // $configuratorSet = $this->attributeMapper->createConfiguratorSet($article);
+         $tax = $this->getTax();
+         $supplier = $this->getSupplier($article);
+         $configuratorSet = $this->attributeMapper->createConfiguratorSet($article);
         //
         // Here we go
         // $swArticle = new Article();
