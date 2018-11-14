@@ -67,18 +67,21 @@ class GroupRepository
         return $option;
     }
 
-    public function loadGroup(string $name) {
-        if (! $this->hasGroup($name)) return null;
+    public function loadGroup(string $name)
+    {
+        if (!$this->hasGroup($name)) return null;
         $repository = $this->getRepository(Group::class);
-        $group = $repository->findOneBy([ 'name' => $name]);
-        $this->data[$name]['group'] = $group;
-        $options = $group->getOptions();
-        foreach($options as $option) {
-            /**
-             * @var Option $option
-             */
-            $this->data[$name]['options'][$option->getName()] = $option;
-        }
+        $group = $repository->findOneBy(['name' => $name]);
+        if (isset($group)) {
+            $this->data[$name]['group'] = $group;
+            $options = $group->getOptions();
+            foreach ($options as $option) {
+                /**
+                 * @var Option $option
+                 */
+                $this->data[$name]['options'][$option->getName()] = $option;
+            }
+    }
         return $group;
     }
 
@@ -130,4 +133,6 @@ class GroupRepository
     public function hasOption(Group $group, string $name) {
         return isset($this->data[$group->getName()]['options'][$name]);
     }
+
+
 }
