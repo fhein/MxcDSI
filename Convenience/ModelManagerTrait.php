@@ -26,13 +26,18 @@ trait ModelManagerTrait
         $this->getModelManager()->persist($entity);
     }
 
+    private function remove(ModelEntity $entity){
+        $this->getModelManager()->remove($entity);
+    }
+
     /**
      * Flush the changes to the Doctrine model mapping an Doctrine exception
      * to our DatabaseException.
      *
      * @throws DatabaseException
      */
-    private function flush() {
+    private function flush()
+    {
         try {
             $this->getModelManager()->flush();
         } catch (OptimisticLockException $e) {
