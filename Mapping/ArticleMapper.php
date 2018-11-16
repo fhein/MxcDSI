@@ -2,14 +2,19 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
+use Shopware\Models\Article\Image;
+use Shopware\Models\Article\Price;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Tax\Tax;
+use Shopware\Models\Customer\Group;
+use Shopware\Models\Media;
 use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
@@ -42,6 +47,7 @@ class ArticleMapper implements ListenerAggregateInterface
     private $shopwareGroupRepository = null;
     private $shopwareGroupLookup = [];
 
+
     public function __construct(ArticleAttributeMapper $attributeMapper, Logger $log) {
         $this->attributeMapper = $attributeMapper;
         $this->services = Application::getServices();
@@ -51,65 +57,203 @@ class ArticleMapper implements ListenerAggregateInterface
 
     private function createShopwareArticle(InnocigsArticle $article) {
 
-        try{
-            $this->log->info('Create Shopware Article for ' . $article->getName());
-
             $swArticle = $this->getShopwareArticle($article);
 
-            if (isset($swArticle)){
-                return $swArticle;
-            }
+            if (isset($swArticle))return $swArticle;
+
+            $this->log->info('Create Shopware Article for ' . $article->getName());
 
             // Components you need to create a shopware article
             $tax = $this->getTax();
-            $this->log->info('tax: ' . $tax->getName());
             $supplier = $this->getSupplier($article);
-            $this->log->info('supplier: ' . $supplier->getName());
-            $configuratorSet = $this->attributeMapper->createConfiguratorSet($article);
+            //$configuratorSet = $this->attributeMapper->createConfiguratorSet($article);
 
             $swArticle = new Article();
             $swArticle->setName($article->getName());
             $swArticle->setTax($tax);
             $swArticle->setSupplier($supplier);
-            $swArticle->setConfiguratorSet($configuratorSet);
+            //$swArticle->setConfiguratorSet($configuratorSet);
+            $swArticle->setMetaTitle('');
+            $swArticle->setKeywords('');
 
-            $swDetails = $this->createShopwareDetails($article);
+            $swArticle->setDescription('');
+            $swArticle->setDescriptionLong('');
+            //todo: get description from innocigs
 
-            //$swArticle = $this->getShopwareArticle($article->getName()) ?? new Article();
+            $swArticle->setActive(true);
 
-            $this->persist($group);
+    //        $this->createImage($article);
+
+            $this->persist($swArticle);
+
+            //create details from innocigs variants
+            $variants = $article->getVariants();
+
+            $isMainDetail = true;
+            foreach($variants as $variant){
+                $detail = $this->createShopwareDetail($variant, $swArticle, $isMainDetail);
+                if($isMainDetail){
+                    $swArticle->setMainDetail($detail);
+                    $this->persist($swArticle);
+                    $isMainDetail = false;
+                }
+            }
+
             $this->flush();
             return $swArticle;
 
-        } catch (Exception $e) {
-            $this->log->info('TEST: Exeption!');
-            $this->services->get('exceptionLogger')->log($e);
-        }
     }
 
-    private function createShopwareDetail(InnocigsVariant $variant){
+    private function createAttribute(Detail $detail){
+        //create attribute - Articles will not be displayed if attribute entry is missing
+        $this->log->info('create Attribute for detail: '.$detail->getNumber());
+        $attribute = new \Shopware\Models\Attribute\Article();
+        $attribute->setArticleDetail($detail);
+        $this->persist($attribute);
+    }
+
+    private function createShopwareDetail(InnocigsVariant $variant, Article $swArticle, bool $isMainDetail){
+        $this->log->info('create Detail: '.$variant->getCode());
+
+        $detail = new Detail();
+        $detail->setNumber($variant->getCode());
+        $detail->setEan($variant->getEan());
+        $detail->setStockMin(0);
+        $detail->setSupplierNumber('');
+        $detail->setAdditionalText('');
+        $detail->setPackUnit('');
+        $detail->setShippingTime('');
+
+        $isMainDetail ? $detail->setKind(1) : $detail->setKind(2);
+
+        $detail->setActive(true);
+        $detail->setLastStock(0);
+        // Todo: $detail->setPurchaseUnit();
+        // Todo: $detail->setReferenceUnit();
+
+        $detail->setArticle($swArticle);
+
+        $prices = $this->createPrice($variant, $swArticle, $detail);
+        $detail->setPrices($prices);
+
+        $this->persist($detail);
+
+        $this->createAttribute($detail);
+        return $detail;
+    }
+
+    private function createImage(InnocigsArticle $article)
+    {
+        //download image
+        $url = $article->getImage();
+        $urlInfo = pathinfo($url);
+        $swUrl = 'media/image/' . $urlInfo['basename'];
+        $this->log->info('download image from '.$url);
+
+        $fileContent = file_get_contents($url);
+
+        // save to filesystem
+        $mediaService = Shopware()->Container()->get('shopware_media.media_service');
+        $this->log->info('save image to '. $swUrl);
+
+        $mediaService->write($swUrl);
+
+        //create database entry
+
+        $media = new Media();
+        $media->setAlbumId(-1);
+        $media->setName($urlInfo['filename']);
+        $media->setPath($swUrl);
+        $media->setType('IMAGE');
+        $media->setExtension($urlInfo['extension']);
+
+        $size = getimagesize($swUrl);
+
+        $this->log->info('Image width: '. $size{0}. ' height: '. $size{1});
+
+        $media->setWidth($size{0});
+        $media->setHeight{$size{1}};
+        $media->setFileSize(filesize($swUrl));
+
+        $this->persist($media);
+
+        $image = new Image();
+        $image->setMedia($media);
+
 
     }
 
+    private function createPrice(InnocigsVariant $variant, Article $swArticle, Detail $detail){
+        $tax = $this->getTax()->getTax();
+        $netPrice = $variant->getPriceRecommended() / (1 + ($tax/100));
+
+        $this->log->info('create price '.$netPrice.' for detail: '. $detail->getNumber());
+
+        $price = new Price();
+        $price->setPrice($netPrice);
+        $price->setFrom(1);
+        $price->setTo(null);
+        $price->setCustomerGroup($this->getCustomerGroup());
+        $price->setArticle($swArticle);
+        $price->setDetail($detail);
+
+        $this->persist($price);
+        return new ArrayCollection([$price]);
+    }
+
+    private function getCustomerGroup(string $customerGroupKey = 'EK') {
+        return $this->getRepository(Group::class)->findOneBy(['key' => $customerGroupKey]);
+    }
+
+    /**
+     * Gets the Shopware Article by looking for the Shopware detail of the first variant for the supplied $article.
+     * If it exists, we suppose that the article and all other variants exist as well
+     *
+     * @param InnocigsArticle $article
+     * @return null|Article
+     */
     private function getShopwareArticle(InnocigsArticle $article){
         $variants = $article->getVariants();
 
-        //get first Shopware variant. If it exists, we suppose that the article and all other variants exist as well
-        $this->log->info('Search for variant: ' .$variants{0}->getCode());
         $swDetail = $this->getRepository(Detail::class)->findOneBy(['number' => $variants{0}->getCode()]);
 
         if (isset($swDetail)){
-            $this->log->info('Detail found');
+            $this->log->info('Article already exists');
             $swArticle = $swDetail->getArticle();
-        }else{
-            $this->log->info('Detail not found');
         }
 
         return $swArticle;
     }
 
+    /**
+     * If supplied $article exists, the Shopware article and all related details, attributes and prices are removed from database.
+     *
+     * @param InnocigsArticle $article
+     */
     private function removeShopwareArticle(InnocigsArticle $article) {
         $this->log->info('Remove Shopware Article for ' . $article->getName());
+
+        //Todo: remove Set?, group?, option?
+        $swArticle = $this->getShopwareArticle($article);
+
+        if (isset($swArticle)){
+            $details = $swArticle->getDetails();
+            foreach($details as $detail){
+                $attributes = $detail->getAttribute();
+                if(isset($attributes)) $this->remove($attributes);
+
+                $prices = $detail->getPrices;
+                foreach($prices as $price){
+                    $this->remove($price);
+                }
+
+                $this->remove($detail);
+            }
+            $this->remove($swArticle);
+            $this->flush();
+            $this->log->info('Article removed successfully');
+        }
+
     }
 
     public function onArticleActiveStateChanged(EventInterface $e) {
@@ -126,6 +270,7 @@ class ArticleMapper implements ListenerAggregateInterface
             /**
              * @var InnocigsArticle $article
              */
+            $this->log->info('------------------------------------------------------------------------------------------------------');
             $this->log->info('Processing active state for ' . $article->getCode());
             $article->isActive() ?
                 $this->createShopwareArticle($article) :
@@ -165,8 +310,6 @@ class ArticleMapper implements ListenerAggregateInterface
      */
 
     private function getSupplier(InnocigsArticle $article) {
-        try {
-            $this->log->info('Get Supplier');
             $supplierName = $article->getSupplier() ?? 'InnoCigs';
 
             $supplier = $this->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
@@ -177,9 +320,5 @@ class ArticleMapper implements ListenerAggregateInterface
                 $this->flush();
             }
             return $supplier;
-        } catch (Exception $e) {
-            $this->log->info('TEST: Supplier Exeption!');
-            $this->services->get('exceptionLogger')->log($e);
-        }
     }
 }
