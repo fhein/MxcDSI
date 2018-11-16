@@ -30,6 +30,7 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends \Shopware_Control
         // events only.
         try {
             $this->services->get(ArticleMapper::class);
+            $this->log->info('*********************** START ***********************');
             parent::updateAction();
             // Here all Doctrine lifecycle events are completed so we can
             // savely work with Doctrine again

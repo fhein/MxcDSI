@@ -8,6 +8,7 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Exception\DatabaseException;
 use Shopware\Models\Article\Configurator\Group;
@@ -38,9 +39,10 @@ class GroupRepository
     //    ]
     private function createLookupTable()
     {
-        $group = Group::class;
-        $option = Option::class;
-        $dql = "SELECT g.name gName, o.name oName FROM $group g JOIN $option o WHERE o.group = g.id";
+        $dql = sprintf('SELECT g.name gName, o.name oName FROM %s g JOIN %s o WHERE o.group = g.id',
+            Group::class,
+        Option::class
+        );
         $array = $this->createQuery($dql)->getScalarResult();
         $this->data = [];
         foreach ($array as $entry) {
@@ -50,95 +52,75 @@ class GroupRepository
         $this->log->info('Group repository lookup table: ' . PHP_EOL . var_export($this->data, true));
     }
 
-    public function createGroup(string $name, int $pos = null) {
+    public function createGroup(string $name) {
+        $group = $this->getGroup($name);
+        if ($group instanceof Group) return $group;
+
+        $this->log->info('Creating shopware group ' . $name);
         $group = new Group();
         $group->setName($name);
-        $group->setPosition($pos ?? count($this->data));
+
+        $group->setPosition(count($this->data));
         $this->data[$name]['group'] = $group;
         $this->persist($group);
         $this->log->info('Created group: ' . $name);
         return $group;
     }
 
-    public function loadGroup(string $name)
-    {
-        if (!$this->hasGroup($name)) return null;
-        $repository = $this->getRepository(Group::class);
-        $group = $repository->findOneBy(['name' => $name]);
-        if (isset($group)) {
-            $this->data[$name]['group'] = $group;
-            $options = $group->getOptions();
-            foreach ($options as $option) {
-                /**
-                 * @var Option $option
-                 */
-                $this->data[$name]['options'][$option->getName()] = $option;
-            }
-        } else {
-            throw new DatabaseException('Cache inconsistency. Can not load group we believe to have.');
-        }
-        $this->log->info('Group loaded: ' . $group->getName());
-        return $group;
-    }
-
     public function getGroup(string $name) {
-        if (! $this->data[$name]) return null;
-        $group = $this->data[$name]['group'];
-        if (! $group instanceof Group) {
+        $group = $this->data[$name]['group'] ?? null;
+        if ($group  === true) {
             $group = $this->getRepository(Group::class)->findOneBy(['name' => $name]);
             $this->data[$name]['group'] = $group;
+            $this->persist($group);
         }
         return $group;
     }
 
-    public function createOption(Group $group, string $name, int $pos = null) {
+    public function getOption(string $groupName, string $optionName) {
+        $option = $this->data[$groupName]['options'][$optionName] ?? null;
+        $groupId = $this->getGroup($groupName)->getId();
+        if ($option === true) {
+            $this->log->info(__FUNCTION__ . ': Retrieving option ' . $optionName . ' for group ' . $groupName);
+            $dql = sprintf("SELECT o FROM %s o JOIN %s g WHERE o.group = %s",
+                Option::class,
+                Group::class,
+                $groupId);
+            $option = $this->createQuery($dql)->getResult()[0];
+            $this->data[$groupName]['options'][$optionName] = $option;
+        }
+        return $option;
+    }
+
+    public function createOption(string $groupName, string $optionName) {
+
+        // we do not create an option if we do not know the group
+        $this->log->info(__FUNCTION__ . ': Creating option ' . $optionName . ' for group ' . $groupName);
+        $group = $this->getGroup($groupName);
+        if (null === $group) return null;
+
+        // if we know the option already return it
+        $option = $this->getOption($groupName, $optionName);
+        if ($option instanceof Option) return $option;
+
+        // create new option
         $option = new Option();
-        $option->setName($name);
+        $option->setName($optionName);
         $option->setGroup($group);
-        $option->setPosition($pos ?? count($this->data));
-        $this->data[$group->getName()]['options'][$name] = $option;
-        $this->persist($option);
+        /**
+         * @var ArrayCollection $options
+         */
+        $options = $group->getOptions();
+        $options->add($option);
+        $group->setOptions($options);
+
+        $option->setPosition(count($this->data[$groupName]['options']));
+        $this->data[$groupName]['options'][$optionName] = $option;
+        $this->log->info(__FUNCTION__ . ': Option ' . $optionName . ' for group ' . $groupName . ' created.');
         return $option;
     }
 
-    public function getOption(Group $group, string $name) {
-        $groupName = $group->getName();
-        // short cut retrieval (works if everything is fine)
-        $option = $this->data[$groupName]['options'][$name];
-        if ($option instanceof Option) {
-            return $option;
-        }
-
-        // We do not have the requested option, try to recover
-        // If the next line returns the group is not managed by us
-        if (! isset($this->data[$groupName])) return null;
-        // Check if we just know about the group or if it is loaded already
-        if ($this->data[$groupName]['group'] === true) {
-            // group exists but is not loaded
-            $this->loadGroup($groupName);
-        } else {
-            // check if the group we store and group given are the same object
-            if ($this->data[$groupName]['group'] !== $group ) {
-                // we have an unexpected inconsistency
-                return null;
-            }
-        }
-        // Here the group and all it's options are cached
-        // Check if the requested option is available
-        if (! isset($this->data[$groupName]['options'][$name])) return null;
-
-        // here we know the option exists and the cache holds it
-        $option = $this->data[$name]['options'][$name];
-        return $option;
+    public function commit() {
+        $this->flush();
     }
-
-    public function hasGroup(string $name) {
-        return isset($this->data[$name]);
-    }
-
-    public function hasOption(Group $group, string $name) {
-        return isset($this->data[$group->getName()]['options'][$name]);
-    }
-
-
 }

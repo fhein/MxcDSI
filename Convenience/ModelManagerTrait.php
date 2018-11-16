@@ -9,6 +9,7 @@
 namespace MxcDropshipInnocigs\Convenience;
 
 use Doctrine\ORM\OptimisticLockException;
+use Exception;
 use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Exception\DatabaseException;
 use Shopware\Components\Model\ModelEntity;
@@ -37,6 +38,8 @@ trait ModelManagerTrait
             $this->getModelManager()->flush();
         } catch (OptimisticLockException $e) {
             throw new DatabaseException($e->getMessage());
+        } catch (Exception $e) {
+            Application::getServices()->get('exceptionLogger')->log($e);
         }
     }
 

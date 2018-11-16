@@ -26,31 +26,23 @@ class ArticleOptionMapper
 
     public function createShopwareGroupsAndOptions(InnocigsArticle $article) {
         $icVariants = $article->getVariants();
-        $this->log->info(__FUNCTION__ . ': ' . count($icVariants) . ' variants retrieved.');
         foreach ($icVariants as $icVariant) {
             /**
              * @var InnocigsVariant $icVariant
              */
-            $this->log->info(__FUNCTION__ . ': Trying to retrieve options from variant: ' . $icVariant->getCode());
-            $this->log->info(var_export($icVariant->__debugInfo(), true));
             $icOptions = $icVariant->getOptions();
-            $this->log->info(__FUNCTION__ . ': ' . count($icOptions) . ' options retrieved.');
             foreach ($icOptions as $icOption) {
                 /**
                  * @var InnocigsOption $icOption
                  */
                 $icGroupName = $icOption->getGroup()->getName();
-                $swGroup = $this->groupRepository->loadGroup($icGroupName) ?? $this->groupRepository->createGroup($icGroupName);
-                $this->log->info(__FUNCTION__ . ': Got swGroup');
-
-
                 $icOptionName = $icOption->getName();
-                if (! $this->groupRepository->hasOption($swGroup, $icOptionName)) {
-                    $this->groupRepository->createOption($swGroup, $icOptionName);
-                }
+
+                $this->groupRepository->createGroup($icGroupName);
+                $this->groupRepository->createOption($icGroupName, $icOptionName);
             }
         }
-        $this->groupRepository->flush();
+        $this->groupRepository->commit();
     }
 
     private function createArticleSet(InnocigsArticle $article) {
