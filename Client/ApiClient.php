@@ -118,14 +118,43 @@ class ApiClient
         return null;
     }
 
+    protected function logXMLErrors(array $errors) {
+        foreach ($errors as $error) {
+            $msg = str_replace(PHP_EOL,'',$error->message);
+            $this->log->err(sprintf(
+                'XML Error: %s, line: %s, column: %s',
+                $msg,
+                $error->line,
+                $error->column));
+        }
+    }
+
     protected function getArrayResult(Response $response) {
         if (!$response->isSuccess()) {
             throw new ApiException('HTTP status: ' . $response->getStatusCode());
         }
         $body = $response->getBody();
-        $xml = simplexml_load_string($body);
+
+        // The next line is a workaround for the currently broken InnoCigs API.
+        // They use & without replacing them with &amp;
+        // bug introduced by InnoCigs on Nov-19-2018
+        // reported to InnoCigs on Nov-19-2018
+        //
+        // Note: After the bug got fixed by InnoCigs, this workaround must be removed
+        // because it then introduces an error
+        //
+        $body = str_replace('&', '&amp;', $body);
+
+        libxml_use_internal_errors(true);
+        $xml = simplexml_load_string($body, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
+        $errors = libxml_get_errors();
+
         if ($xml === false) {
-            throw new ApiException('Failed to load XML string: '. var_export($body, true));
+            $this->logXmlErrors($errors);
+            $dump = Shopware()->DocPath() . 'var/log/innocigs-api-response-' . date('Y-m-d') . '.xml';
+            file_put_contents($dump, $body);
+            $this->log->info('InnoCigs API response dumped to ' . $dump);
+            throw new ApiException('InnoCigs API returned an invalid XML string. See log file for detailed information.');
         }
         $json = json_encode($xml);
         if ($json === false) {

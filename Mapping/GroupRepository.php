@@ -10,7 +10,6 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
-use MxcDropshipInnocigs\Exception\DatabaseException;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 use Zend\Log\Logger;
@@ -82,10 +81,12 @@ class GroupRepository
         $groupId = $this->getGroup($groupName)->getId();
         if ($option === true) {
             $this->log->info(__FUNCTION__ . ': Retrieving option ' . $optionName . ' for group ' . $groupName);
-            $dql = sprintf("SELECT o FROM %s o JOIN %s g WHERE o.group = %s",
+            $dql = sprintf("SELECT o FROM %s o JOIN %s g WHERE o.group = %s AND o.name = '%s'",
                 Option::class,
                 Group::class,
-                $groupId);
+                 $groupId,
+                 $optionName);
+            $this->log->info('Query for option: ' . $dql);
             $option = $this->createQuery($dql)->getResult()[0];
             $this->data[$groupName]['options'][$optionName] = $option;
         }

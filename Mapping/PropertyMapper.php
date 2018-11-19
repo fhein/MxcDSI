@@ -6,7 +6,7 @@
  * Time: 15:11
  */
 
-namespace MxcDropshipInnocigs\Client;
+namespace MxcDropshipInnocigs\Mapping;
 
 
 class PropertyMapper

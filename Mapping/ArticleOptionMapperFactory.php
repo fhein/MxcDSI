@@ -19,7 +19,8 @@ class ArticleOptionMapperFactory implements FactoryInterface
     {
         $log = $container->get('logger');
         $repository = $container->get(GroupRepository::class);
-        $mapper = new ArticleOptionMapper($repository, $log);
+        $pMapper = $container->get(PropertyMapper::class);
+        $mapper = new ArticleOptionMapper($repository, $pMapper, $log);
         return $mapper;
     }
 }

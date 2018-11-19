@@ -6,7 +6,6 @@ use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Tax\Tax;
@@ -52,6 +51,8 @@ class ArticleMapper implements ListenerAggregateInterface
 
         $this->log->info('Create Shopware Article for ' . $article->getName());
         $this->attributeMapper->createShopwareGroupsAndOptions($article);
+        $set = $this->attributeMapper->createConfiguratorSet($article);
+        $this->flush();
     }
 
     private function createShopwareDetail(InnocigsVariant $variant){
