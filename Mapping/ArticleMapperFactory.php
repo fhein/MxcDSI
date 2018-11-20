@@ -21,7 +21,8 @@ class ArticleMapperFactory implements FactoryInterface
         $log = $container->get(Logger::class);
         $attributeMapper = $container->get(ArticleOptionMapper::class);
         $propertyMapper = $container->get(PropertyMapper::class);
-        $articleMapper = new ArticleMapper($attributeMapper, $propertyMapper, $log);
+        $mediaService = $container->get('mediaService');
+        $articleMapper = new ArticleMapper($attributeMapper, $propertyMapper, $mediaService, $log);
         $articleMapper->attach($container->get('events'));
         return $articleMapper;
     }

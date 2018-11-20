@@ -58,8 +58,14 @@ class SetRepository
          */
         $set = $setRepo->findOneBy(['name' => $name]);
         if ($set === null) {
+            $this->log->info(sprintf('%s: Creating new configurator set %s.',
+                __FUNCTION__,
+                $name));
             $set = $this->createSet($name);
         } else {
+            $this->log->info(sprintf('%s: Using existing configurator set %s.',
+                __FUNCTION__,
+                $name));
             // prepare lookup tables groups and options of existing set
             $options = $set->getOptions()->toArray();
             foreach($options as $option) {
@@ -82,8 +88,27 @@ class SetRepository
 
     public function addOption(Option $option) {
         $group = $option->getGroup();
-        $this->groups[$group->getName()] = $group;
-        $this->options[$option->getName()] = $option;
+        $groupName = $group->getName();
+        $optionName = $option->getName();
+        $setName = $this->set->getName();
+
+        if (! isset($this->groups[$groupName])) {
+            $this->log->info(sprintf('%s: Adding group %s to set %s.',
+                __FUNCTION__,
+                $groupName,
+                $setName
+            ));
+            $this->groups[$groupName] = $group;
+        }
+
+        if (! isset($this->options[$optionName])) {
+            $this->log->info(sprintf('%s: Adding option %s to set %s.',
+                __FUNCTION__,
+                $optionName,
+                $setName
+            ));
+            $this->options[$optionName] = $option;
+        }
     }
 
     public function prepareSet(Article $article) {

@@ -137,9 +137,9 @@ class ApiClient
 
         libxml_use_internal_errors(true);
         $xml = simplexml_load_string($body, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
-        $errors = libxml_get_errors();
 
         if ($xml === false) {
+            $errors = libxml_get_errors();
             $this->logXmlErrors($errors);
             $dump = Shopware()->DocPath() . 'var/log/invalid-innocigs-api-response-' . date('Y-m-d-H-i-s') . '.txt';
             file_put_contents($dump, $body);

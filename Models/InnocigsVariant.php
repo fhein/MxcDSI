@@ -4,8 +4,9 @@ namespace MxcDropshipInnocigs\Models;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
-use Shopware\Components\Model\ModelEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Shopware\Components\Model\ModelEntity;
+use Shopware\Models\Article\Configurator\Option;
 
 /**
  * @ORM\Entity
@@ -99,6 +100,18 @@ class InnocigsVariant extends ModelEntity
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated = null;
+
+    /**
+     * @var array $shoppwwareOptions
+     *
+     * This property will not be persisted. The array gets filled by
+     * ArticleOptionMapper, which creates Shopware options from our
+     * options and adds the created shopware options here.
+     *
+     * Later on, the ArticleMapper will create the shopware detail
+     * records, which get associations to the shopware options stored here.
+     */
+    private $shopwareOptions = [];
 
     public function __construct() {
         $this->options = new ArrayCollection();
@@ -301,7 +314,7 @@ class InnocigsVariant extends ModelEntity
     {
         $this->detailId = $detailId;
     }
-    
+
     public function __debugInfo()
     {
         return [
@@ -317,5 +330,25 @@ class InnocigsVariant extends ModelEntity
             'ignored' => $this->ignored,
             'detailId' => $this->detailId,
         ];
+    }
+
+    /**
+     * @return array
+     */
+    public function getShopwareOptions(): array
+    {
+        return $this->shopwareOptions;
+    }
+
+    /**
+     * @param array $shopwareOptions
+     */
+    public function setShopwareOptions(array $shopwareOptions): void
+    {
+        $this->shopwareOptions = $shopwareOptions;
+    }
+
+    public function addShopwareOption(Option $option) {
+        $this->shopwareOptions[] = $option;
     }
 }

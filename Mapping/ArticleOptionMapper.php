@@ -26,6 +26,10 @@ class ArticleOptionMapper
 
     public function createShopwareGroupsAndOptions(InnocigsArticle $article) {
         $icVariants = $article->getVariants();
+        $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs Article %s',
+            __FUNCTION__,
+            $article->getCode()
+        ));
         foreach ($icVariants as $icVariant) {
             /**
              * @var InnocigsVariant $icVariant
@@ -39,7 +43,8 @@ class ArticleOptionMapper
                 $icOptionName = $this->mapper->mapOptionName($icOption->getName());
 
                 $this->groupRepository->createGroup($icGroupName);
-                $this->groupRepository->createOption($icGroupName, $icOptionName);
+                $swOption = $this->groupRepository->createOption($icGroupName, $icOptionName);
+                $icVariant->addShopwareOption($swOption);
             }
         }
         $this->groupRepository->commit();
@@ -49,11 +54,21 @@ class ArticleOptionMapper
     {
         $variants = $icArticle->getVariants();
         if (count($variants) < 2) {
+            $this->log->info(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does not provide variants.',
+                __FUNCTION__,
+                $icArticle->getCode()
+            ));
             return null;
         }
-        $this->log->info('Article: '. $icArticle->getName() . ': Creating set for ' . count($variants) . ' variants.');
         $setRepository = new SetRepository();
-        $setRepository->initSet('mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode()));
+        $setName = 'mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode());
+        $setRepository->initSet($setName);
+
+        $this->log->info(sprintf('%s: Setup of configurator %s set for InnoCigs Article %s',
+            __FUNCTION__,
+            $setName,
+            $icArticle->getCode()
+        ));
 
         // add the options belonging to this article and variants
         foreach ($variants as $variant) {

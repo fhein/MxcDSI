@@ -6,6 +6,7 @@ use Doctrine\DBAL\Connection;
 use MxcDropshipInnocigs\Application\AttributeManagerFactory;
 use MxcDropshipInnocigs\Application\ConfigurationFactory;
 use MxcDropshipInnocigs\Application\DbalConnectionFactory;
+use MxcDropshipInnocigs\Application\MediaServiceFactory;
 use MxcDropshipInnocigs\Application\ModelManagerFactory;
 use MxcDropshipInnocigs\Bootstrap\Database;
 use MxcDropshipInnocigs\Bootstrap\DatabaseFactory;
@@ -26,6 +27,7 @@ use MxcDropshipInnocigs\Mapping\GroupRepositoryFactory;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\PropertyMapperFactory;
 use Shopware\Bundle\AttributeBundle\Service\CrudService;
+use Shopware\Bundle\MediaBundle\MediaService;
 use Shopware\Components\Model\ModelManager;
 use Shopware_Components_Config;
 use Zend\Config\Config;
@@ -77,6 +79,7 @@ return [
             ModelManager::class                 => ModelManagerFactory::class,
             PropertyMapper::class               => PropertyMapperFactory::class,
             Shopware_Components_Config::class   => ConfigurationFactory::class,
+            MediaService::class                 => MediaServiceFactory::class,
         ],
         'aliases' => [
             'logger'                            => Logger::class,
@@ -86,6 +89,7 @@ return [
             'dbalConnection'                    => Connection::class,
             'modelManager'                      => ModelManager::class,
             'pluginConfig'                      => Shopware_Components_Config::class,
+            'mediaService'                      => MediaService::class,
         ]
     ],
     'mappings' => [

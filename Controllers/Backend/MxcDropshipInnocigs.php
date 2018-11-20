@@ -1,8 +1,8 @@
 <?php
 
 use MxcDropshipInnocigs\Application\Application;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
+use MxcDropshipInnocigs\Models\InnocigsArticle;
 
 class Shopware_Controllers_Backend_MxcDropshipInnocigs extends \Shopware_Controllers_Backend_Application
 {
@@ -36,7 +36,11 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends \Shopware_Control
             // savely work with Doctrine again
             $this->services->get('events')->trigger('process_active_states', $this, []);;
         } catch (Exception $e) {
-            $this->log->err('Caught exception: ' . get_class($e) . ': ' . $e->getMessage());
+            $this->View()->assign( [
+               'success' => false,
+               'error' => $e->getMessage(),
+            ]);
+            $this->log->err('Exception: ' . get_class($e) . ': ' . $e->getMessage());
             $this->services->get('exceptionLogger')->log($e);
         }
     }
