@@ -6,6 +6,7 @@ use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use Shopware\Models\Article\Article;
 use Zend\Log\Logger;
 
 class ArticleOptionMapper
@@ -44,15 +45,15 @@ class ArticleOptionMapper
         $this->groupRepository->commit();
     }
 
-    public function createConfiguratorSet(InnocigsArticle $article)
+    public function createConfiguratorSet(InnocigsArticle $icArticle, Article $swArticle)
     {
-        $variants = $article->getVariants();
+        $variants = $icArticle->getVariants();
         if (count($variants) < 2) {
             return null;
         }
-        $this->log->info('Article: '. $article->getName() . ': Creating set for ' . count($variants) . ' variants.');
+        $this->log->info('Article: '. $icArticle->getName() . ': Creating set for ' . count($variants) . ' variants.');
         $setRepository = new SetRepository();
-        $setRepository->initSet('mxc-set-' . $this->mapper->mapArticleCode($article->getCode()));
+        $setRepository->initSet('mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode()));
 
         // add the options belonging to this article and variants
         foreach ($variants as $variant) {
@@ -70,6 +71,6 @@ class ArticleOptionMapper
                 $setRepository->addOption($option);
             }
         }
-        return $setRepository->getSet();
+        return $setRepository->prepareSet($swArticle);
     }
 }

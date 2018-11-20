@@ -5,6 +5,7 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
+use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Configurator\Set;
@@ -85,11 +86,13 @@ class SetRepository
         $this->options[$option->getName()] = $option;
     }
 
-    public function getSet() {
+    public function prepareSet(Article $article) {
         if ($this->isNew) {
             $this->set->setPublic(false);
             $this->set->setType(0);
         }
+
+        $this->set->getArticles()->add($article);
 
         // objects are returned by reference
         $setGroups = $this->set->getGroups();

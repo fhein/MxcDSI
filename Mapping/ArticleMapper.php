@@ -2,10 +2,10 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Tax\Tax;
@@ -25,12 +25,15 @@ class ArticleMapper implements ListenerAggregateInterface
      */
     private $log;
 
-    protected $services;
-
     /**
      * @var ArticleOptionMapper $attributeMapper
      */
     private $attributeMapper;
+
+    /**
+     * @var PropertyMapper $propertyMapper
+     */
+    private $propertyMapper;
 
     /**
      * @var array $unitOfWork
@@ -41,35 +44,83 @@ class ArticleMapper implements ListenerAggregateInterface
     private $shopwareGroupRepository = null;
     private $shopwareGroupLookup = [];
 
-    public function __construct(ArticleOptionMapper $attributeMapper, Logger $log) {
+    public function __construct(ArticleOptionMapper $attributeMapper, PropertyMapper $propertyMapper, Logger $log) {
         $this->attributeMapper = $attributeMapper;
-        $this->services = Application::getServices();
+        $this->propertyMapper = $propertyMapper;
         $this->log = $log;
     }
 
     private function createShopwareArticle(InnocigsArticle $article) {
 
         $this->log->info('Create Shopware Article for ' . $article->getName());
+
+        $swArticle = $this->getShopwareArticle($article);
+        if (isset($swArticle))return $swArticle;
+
+        $swArticle = new Article();
+        $this->persist($swArticle);
+
         $this->attributeMapper->createShopwareGroupsAndOptions($article);
-        $set = $this->attributeMapper->createConfiguratorSet($article);
+        $set = $this->attributeMapper->createConfiguratorSet($article, $swArticle);
+
+        $tax = $this->getTax();
+        $supplier = $this->getSupplier($article);
+        $swArticle->setName($article->getName());
+        $swArticle->setTax($tax);
+        $swArticle->setSupplier($supplier);
+        $swArticle->setConfiguratorSet($set);
+        $swArticle->setMetaTitle('');
+        $swArticle->setKeywords('');
+
+        $swArticle->setDescription('');
+        $swArticle->setDescriptionLong('');
+        //todo: get description from innocigs
+
+        $swArticle->setActive(true);
+
+        //        $this->createImage($article);
+
+
+        //create details from innocigs variants
+        $variants = $article->getVariants();
+
+        $isMainDetail = true;
+        foreach($variants as $variant){
+            /**
+             * @var Detail $swDetail
+             */
+            $swDetail = $this->createShopwareDetail($variant, $swArticle, $isMainDetail);
+            if($isMainDetail){
+                $swArticle->setMainDetail($swDetail);
+                $this->persist($swArticle);
+                $isMainDetail = false;
+            }
+        }
+
         $this->flush();
+        return $swArticle;
     }
 
-    private function createShopwareDetail(InnocigsVariant $variant){
+    private function createShopwareDetail(InnocigsVariant $variant, Article $swArticle, bool $isMainDetail){
 
     }
 
     private function getShopwareArticle(InnocigsArticle $article){
+        $swArticle = null;
         $variants = $article->getVariants();
 
         //get first Shopware variant. If it exists, we suppose that the article and all other variants exist as well
         $this->log->info('Search for variant: ' .$variants{0}->getCode());
-        $swDetail = $this->getRepository(Detail::class)->findOneBy(['number' => $variants{0}->getCode()]);
+        $code = $this->propertyMapper->mapArticleCode($variants{0}->getCode());
+        /**
+         * @var Detail $swDetail
+         */
+        $swDetail = $this->getRepository(Detail::class)->findOneBy(['number' => $code]);
 
-        if (isset($swDetail)){
+        if (null !== $swDetail) {
             $this->log->info('Detail found');
             $swArticle = $swDetail->getArticle();
-        }else{
+        } else {
             $this->log->info('Detail not found');
         }
 
