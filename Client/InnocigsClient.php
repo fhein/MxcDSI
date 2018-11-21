@@ -3,9 +3,9 @@
 namespace MxcDropshipInnocigs\Client;
 
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
-use MxcDropshipInnocigs\Models\InnocigsOption;
-use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
+use MxcDropshipInnocigs\Models\InnocigsGroup;
+use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Zend\Log\Logger;
 
@@ -82,13 +82,14 @@ class InnocigsClient {
             $name = $articleProperties['name'];
             $article->setName($name);
             // use our name mapping if present, name from innocigs otherwise
-            $article->setImage($articleProperties['image']);
+            $tmp = is_string($articleProperties['image']) ? $articleProperties['image'] : '';
+            $article->setImage($tmp);
             $article->setCode($articleCode);
             $article->setDescription('n/a');
             // this cascades persisting the variants also
             $this->persist($article);
             $i++;
-            if ($i == 10) break;
+//            if ($i >= 100) break;
         }
     }
 
@@ -112,11 +113,54 @@ class InnocigsClient {
         }
     }
 
+    public function addArticleDetail(InnocigsArticle $article)
+    {
+        $variant = $article->getVariants()[0];
+        $raw = $this->apiClient->getItemInfo($variant->getCode());
+        $description = $raw['PRODUCTS']['PRODUCT']['DESCRIPTION'];
+        if (! is_string($description)) {
+            $this->log->info(sprintf('%s: No description available from InnoCigs for article %s.',
+                __FUNCTION__,
+                $article->getCode()
+            ));
+            return;
+        }
+        if ($article->getDescription() !== $description) {
+            $this->log->info(sprintf('%s: Adding article description from InnoCigs to article %s.',
+                __FUNCTION__,
+                $article->getCode()
+            ));
+            $article->setDescription($description);
+            $this->persist($article);
+        } else  {
+            $this->log->info(sprintf('%s: Article description from InnoCigs for article %s is up to date.',
+                __FUNCTION__,
+                $article->getCode()
+            ));
+        }
+    }
+
+    public function createArticleConfigurationFile(string $path) {
+        $articles = $this->getRepository(InnocigsArticle::class)->findAll();
+        $config = [];
+
+        foreach ($articles as $article) {
+            $name = $article->getName();
+            $words = explode(' ', $name);
+            $config[$article->getCode()] = [
+                'name' => $article->getName(),
+                'brand' => $article->getBrand() ?? $words[0],
+                'supplier' => $article->getSupplier() ?? $words[0],
+            ];
+        }
+        $content = '<?php ' . PHP_EOL . 'return ' . var_export($config, true). ';' . PHP_EOL;
+        file_put_contents($path . '/article_config.php', $content);
+    }
+
     public function downloadItems() {
         $raw = $this->apiClient->getItemList();
         $items = [];
         $options = [];
-
         foreach($raw['PRODUCTS']['PRODUCT'] as $item) {
             $items[$item['MASTER']][$item['MODEL']] = $item;
             foreach($item['PRODUCTS_ATTRIBUTES'] as $group => $option) {

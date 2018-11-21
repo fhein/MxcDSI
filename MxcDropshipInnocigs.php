@@ -68,6 +68,7 @@ class MxcDropshipInnocigs extends Plugin
         // download InnoCigs items
         try {
             $client->downloadItems();
+            $client->createArticleConfigurationFile($this->getPath());
             // $activateContext->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
             $result = true;
         } catch(Exception $e) {

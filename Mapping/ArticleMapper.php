@@ -1,9 +1,14 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
+/** @noinspection PhpUnhandledExceptionInspection */
+
+/** @noinspection PhpUndefinedClassInspection */
 
 namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
+use Exception;
+use MxcDropshipInnocigs\Client\InnocigsClient;
 use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
@@ -15,6 +20,7 @@ use Shopware\Models\Article\Price;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Group;
 use Shopware\Models\Media\Media;
+use Shopware\Models\Plugin\Plugin;
 use Shopware\Models\Tax\Tax;
 use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
@@ -48,6 +54,11 @@ class ArticleMapper implements ListenerAggregateInterface
     private $mediaService;
 
     /**
+     * @var InnocigsClient $client
+     */
+    private $client;
+
+    /**
      * @var array $unitOfWork
      */
     private $unitOfWork = [];
@@ -60,11 +71,13 @@ class ArticleMapper implements ListenerAggregateInterface
         ArticleOptionMapper $option,
         PropertyMapper $propertyMapper,
         MediaService $mediaService,
+        InnocigsClient $client,
         Logger $log)
     {
         $this->optionMapper = $option;
         $this->propertyMapper = $propertyMapper;
         $this->mediaService = $mediaService;
+        $this->client = $client;
         $this->log = $log;
     }
 
@@ -88,6 +101,9 @@ class ArticleMapper implements ListenerAggregateInterface
             $article->getCode()
         ));
 
+        // this will get the product detail record from InnoCigs which holds the description
+        $this->client->addArticleDetail($article);
+
         $swArticle = new Article();
         $this->persist($swArticle);
 
@@ -98,8 +114,8 @@ class ArticleMapper implements ListenerAggregateInterface
         $swArticle->setSupplier($supplier);
         $swArticle->setMetaTitle('');
         $swArticle->setKeywords('');
-        $swArticle->setDescription('');
-        $swArticle->setDescriptionLong('');
+        $swArticle->setDescription($article->getDescription());
+        $swArticle->setDescriptionLong($article->getDescription());
         //todo: get description from innocigs
 
         $swArticle->setActive(true);
@@ -158,17 +174,6 @@ class ArticleMapper implements ListenerAggregateInterface
         return $swArticle;
     }
 
-    private function createAttribute(Detail $swDetail) {
-        //create attribute - Articles will not be displayed if attribute entry is missing
-        $this->log->info(sprintf('%s: Creating attribute record for detail record %s',
-            __FUNCTION__,
-            $swDetail->getNumber()
-        ));
-        $attribute = new \Shopware\Models\Attribute\Article();
-        $this->persist($attribute);
-        $attribute->setArticleDetail($swDetail);
-    }
-
     private function createShopwareDetail(InnocigsVariant $variant, Article $swArticle, bool $isMainDetail){
         $this->log->info(sprintf('%s: Creating detail record for InnoCigs variant %s',
             __FUNCTION__,
@@ -177,6 +182,20 @@ class ArticleMapper implements ListenerAggregateInterface
 
         $detail = new Detail();
         $this->persist($detail);
+
+        // The class \Shopware\Models\Attribute\Article ist part of the Shopware attribute system.
+        // It gets (re)generated automatically by Shopware core, when attributes are added/removed
+        // via the attribute crud service. It is located in \var\cache\production\doctrine\attributes.
+        //
+        if (class_exists('\Shopware\Models\Attribute\Article')) {
+            $attribute = new \Shopware\Models\Attribute\Article();
+            $detail->setAttribute($attribute);
+            if ($isMainDetail) {
+                $swArticle->setAttribute($attribute);
+            }
+        } else {
+            throw new Exception(__FUNCTION__ . ': Shopware article attribute model does not exist.');
+        }
 
         $detail->setNumber($this->propertyMapper->mapVariantCode($variant->getCode()));
         $detail->setEan($variant->getEan());
@@ -199,7 +218,6 @@ class ArticleMapper implements ListenerAggregateInterface
         $detail->setPrices($prices);
         $detail->setConfiguratorOptions(new ArrayCollection($variant->getShopwareOptions()));
 
-        $this->createAttribute($detail);
         return $detail;
     }
 
@@ -239,6 +257,17 @@ class ArticleMapper implements ListenerAggregateInterface
 
         $image = new Image();
         $image->setMedia($media);
+    }
+
+    private function enableDropship(Article $swArticle)
+    {
+        if (null === $this->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
+            $this->log->warn(sprintf('%s: Could not prepare Shopware article "%s" for dropship orders. Dropshippers Companion is not installed.',
+                __FUNCTION__,
+                $swArticle->getName()
+            ));
+            return;
+        }
     }
 
     private function createPrice(InnocigsVariant $variant, Article $swArticle, Detail $detail){

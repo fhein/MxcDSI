@@ -79,7 +79,7 @@ class ApiClient
      * @param string $model
      * @return \Zend\Http\Response
      */
-    public function getItemInfo($model)
+    public function     getItemInfo($model)
     {
         $cmd = $this->authUrl . "&command=product&model=" . $model;
         return $this->send($cmd);
