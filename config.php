@@ -6,6 +6,7 @@ use Doctrine\DBAL\Connection;
 use MxcDropshipInnocigs\Application\AttributeManagerFactory;
 use MxcDropshipInnocigs\Application\ConfigurationFactory;
 use MxcDropshipInnocigs\Application\DbalConnectionFactory;
+use MxcDropshipInnocigs\Application\InstallationOptionsFactory;
 use MxcDropshipInnocigs\Application\MediaServiceFactory;
 use MxcDropshipInnocigs\Application\ModelManagerFactory;
 use MxcDropshipInnocigs\Bootstrap\Database;
@@ -36,6 +37,23 @@ use Zend\Log\Logger;
 use Zend\Log\LoggerServiceFactory;
 
 return [
+    'plugin' => [
+        'install' => [
+            'createSchema' => false,
+        ],
+        'activate' => [
+            'importArticles' => false,
+            'numberOfArticles' => -1,
+            'clearCache' => false,
+        ],
+        'deactivate' => [
+            'dropArticles' => false,
+            'dropConfigurator' => false,
+        ],
+        'uninstall' => [
+            'dropSchema' => false
+        ]
+    ],
     'log' => [
         'writers' => [
             'stream' => [
@@ -80,6 +98,7 @@ return [
             PropertyMapper::class               => PropertyMapperFactory::class,
             Shopware_Components_Config::class   => ConfigurationFactory::class,
             MediaService::class                 => MediaServiceFactory::class,
+            'installOptions'                    => InstallationOptionsFactory::class
         ],
         'aliases' => [
             'logger'                            => Logger::class,

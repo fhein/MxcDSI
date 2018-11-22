@@ -47,7 +47,7 @@ class ArticleOptionMapper
                 $icVariant->addShopwareOption($swOption);
             }
         }
-        $this->groupRepository->commit();
+        $this->groupRepository->flush();
     }
 
     public function createConfiguratorSet(InnocigsArticle $icArticle, Article $swArticle)

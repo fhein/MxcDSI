@@ -27,6 +27,10 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
              * @event mxcSaveArticle
              */
             'mxcSaveArticle',
+            /**
+             * @event mxcSaveActiveStates
+             */
+            'mxcSaveActiveStates'
         );
     },
 
@@ -37,21 +41,29 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
         return items;
     },
 
+    handleActiveStateChanges: function(changeTo) {
+        var me = this;
+        var selModel = me.getSelectionModel();
+        var records = selModel.getSelection();
+        Ext.each(records, function(record) {
+            // deselect records which already have the target states
+            // set the target state otherwise
+            if (record.get('active') === changeTo) {
+                selModel.deselect(record);
+            } else {
+                record.set('active', changeTo)
+            }
+        });
+        me.fireEvent('mxcSaveActiveStates', selModel);
+    },
+
     createActivateButton: function() {
         var me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Activate selected',
             iconCls: 'sprite-tick',
             handler: function() {
-                var selModel = me.getSelectionModel();
-                var records = selModel.getSelection();
-                Ext.each(records, function(record) {
-                    if (record.get('active') === false) {
-                        record.set('active', true);
-                        me.fireEvent('mxcSaveArticle', record);
-                    }
-                });
-                selModel.deselectAll();
+                me.handleActiveStateChanges(true);
             }
         });
     },
@@ -62,15 +74,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
             text: 'Deactivate selected',
             iconCls: 'sprite-cross',
             handler: function() {
-                var selModel = me.getSelectionModel();
-                var records = selModel.getSelection();
-                Ext.each(records, function(record) {
-                    if (record.get('active') === true) {
-                        record.set('active', false);
-                        me.fireEvent('mxcSaveArticle', record);
-                    }
-                });
-                selModel.deselectAll();
+                me.handleActiveStateChanges(false);
             }
         });
     },

@@ -18,25 +18,15 @@ class GroupRepository
 {
     use ModelManagerTrait;
 
-    private $data;
-    private $log;
+    protected $data;
+    protected $log;
 
     public function __construct(Logger $log) {
         $this->log = $log;
         $this->createLookupTable();
     }
 
-    //    [
-    //        <group name> => [
-    //            'group' => true|Group
-    //            'options' => [
-    //                <option name> => true|Option,
-    //                ...
-    //            ],
-    //        ],
-    //        ...
-    //    ]
-    private function createLookupTable()
+    protected function createLookupTable()
     {
         $dql = sprintf('SELECT g.name gName, o.name oName FROM %s g JOIN %s o WHERE o.group = g.id',
             Group::class,
@@ -48,7 +38,6 @@ class GroupRepository
             $this->data[$entry['gName']]['group'] = true;
             $this->data[$entry['gName']]['options'][$entry['oName']] = true;
         }
-        $this->log->info('Group repository lookup table: ' . PHP_EOL . var_export($this->data, true));
     }
 
     public function createGroup(string $name) {
@@ -136,9 +125,5 @@ class GroupRepository
         $option->setPosition(count($this->data[$groupName]['options']));
         $this->data[$groupName]['options'][$optionName] = $option;
         return $option;
-    }
-
-    public function commit() {
-        $this->flush();
     }
 }

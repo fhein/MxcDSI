@@ -72,7 +72,7 @@ class InnocigsClient {
         return $articleProperties;
     }
 
-    private function createArticles(array $articles) {
+    private function createArticles(array $articles, int $limit = -1) {
         $i = 0;
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
@@ -89,7 +89,7 @@ class InnocigsClient {
             // this cascades persisting the variants also
             $this->persist($article);
             $i++;
-//            if ($i >= 100) break;
+            if ($limit !== -1 && $i === $limit) break;
         }
     }
 
@@ -145,19 +145,17 @@ class InnocigsClient {
         $config = [];
 
         foreach ($articles as $article) {
-            $name = $article->getName();
-            $words = explode(' ', $name);
             $config[$article->getCode()] = [
                 'name' => $article->getName(),
-                'brand' => $article->getBrand() ?? $words[0],
-                'supplier' => $article->getSupplier() ?? $words[0],
+                'brand' => $article->getBrand(),
+                'supplier' => $article->getSupplier(),
             ];
         }
         $content = '<?php ' . PHP_EOL . 'return ' . var_export($config, true). ';' . PHP_EOL;
         file_put_contents($path . '/article_config.php', $content);
     }
 
-    public function downloadItems() {
+    public function importArticles(int $limit = -1) {
         $raw = $this->apiClient->getItemList();
         $items = [];
         $options = [];
@@ -166,11 +164,12 @@ class InnocigsClient {
             foreach($item['PRODUCTS_ATTRIBUTES'] as $group => $option) {
                 $options[$group][$option] = 1;
             }
+            if ($limit !== -1 && count($items) === $limit) break;
         }
         $this->log->info('Creating groups and options.');
         $this->createGroups($options);
         $this->log->info('Creating articles and variants.');
-        $this->createArticles($items);
+        $this->createArticles($items, $limit);
         $this->flush();
     }
 }

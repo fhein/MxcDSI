@@ -16,19 +16,19 @@ return [
   [
     'name' => 'Americas Finest Tabak E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-DM' => 
   [
     'name' => 'Delicate Mild Tabak E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-TA' => 
   [
     'name' => 'Taste of America Tabak E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'AS10000MININAUTHEADS' => 
   [
@@ -40,31 +40,31 @@ return [
   [
     'name' => 'RY4 Tabak E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-DS' => 
   [
     'name' => 'Desert Safari Tabak E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-VB' => 
   [
     'name' => 'Virginas Best Tabak E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-ST' => 
   [
     'name' => 'Strong Taste Tabak E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-PB' => 
   [
     'name' => 'Pipes Best Tabak E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'AS10000NAUTMINITANK' => 
   [
@@ -82,13 +82,13 @@ return [
   [
     'name' => 'Himbeere E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-VA' => 
   [
     'name' => 'Vanille E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'AS10000BVCHEADS' => 
   [
@@ -142,7 +142,7 @@ return [
   [
     'name' => 'SC Silikon Mundstücke',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000NETZ' => 
   [
@@ -154,7 +154,7 @@ return [
   [
     'name' => 'Tobacco Probierbox E-Zigaretten Liquid  10er Packung',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000EGOEGOCASE' => 
   [
@@ -172,7 +172,7 @@ return [
   [
     'name' => 'Pfirsich E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000KFZLADE' => 
   [
@@ -184,31 +184,31 @@ return [
   [
     'name' => 'Fruit Probierbox E-Zigaretten Liquid  10er Packung',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-KS' => 
   [
     'name' => 'Kokos Schokolade E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-EN' => 
   [
     'name' => 'E-Taste E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-EB' => 
   [
     'name' => 'Erdbeere E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-AX' => 
   [
     'name' => 'Apfelmix E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000VTSKIN' => 
   [
@@ -363,8 +363,8 @@ return [
   'MIGHTY' => 
   [
     'name' => 'Mighty Vaporizer',
-    'brand' => null,
-    'supplier' => null,
+    'brand' => 'InnoCigs',
+    'supplier' => 'InnoCigs',
   ],
   'IC10000OIDH' => 
   [
@@ -460,13 +460,13 @@ return [
   [
     'name' => 'Star Spangled Tabak Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-AN' => 
   [
     'name' => 'Afternoon Vanille-Käsekuchen Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-IR' => 
   [
@@ -658,13 +658,13 @@ return [
   [
     'name' => 'SC 18650er Akku 2000 mAh',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000AV26' => 
   [
     'name' => 'SC 26650er Akku 4200 mAh',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SM10000R40' => 
   [
@@ -802,97 +802,97 @@ return [
   [
     'name' => 'Wild West Tabakaroma E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-TO' => 
   [
     'name' => 'Pure Tabakaroma E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-PU' => 
   [
     'name' => 'Maracuja E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-IC' => 
   [
     'name' => 'Ice E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-BU' => 
   [
     'name' => 'Blue E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-EL' => 
   [
     'name' => 'Erdbeermilch E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-HC' => 
   [
     'name' => 'Honey Crunch E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-BK' => 
   [
     'name' => 'Blaubeer Käsekuchen E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-SK' => 
   [
     'name' => 'Sauerkirsche E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-CK' => 
   [
     'name' => 'Cookie E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-EK' => 
   [
     'name' => 'Erdbeer Käsekuchen E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-TR' => 
   [
     'name' => 'T-Ride E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-MM' => 
   [
     'name' => 'Melonenmix E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-MJ' => 
   [
     'name' => 'Mojito E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-EF' => 
   [
     'name' => 'Exotische Früchte E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-GOU' => 
   [
     'name' => 'Gourmet Probierbox E-Zigaretten Liquid  10er Packung',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SM10000V8BMOU' => 
   [
@@ -922,121 +922,121 @@ return [
   [
     'name' => 'Red Violet Amarenakirsche Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-CD' => 
   [
     'name' => 'Celestial Dragon Tabak Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-AH' => 
   [
     'name' => 'Angels in Heaven Tabak Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-MA' => 
   [
     'name' => 'Monkey Around Bananen-Amarenakirsche Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-CB' => 
   [
     'name' => 'Caribbean Kokos-Schokoladen Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-PS' => 
   [
     'name' => 'Pretty Sweetheart Sahne-Erdbeer Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-AL' => 
   [
     'name' => 'Always Cola Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-GA' => 
   [
     'name' => 'Green Angry Limetten Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-DD' => 
   [
     'name' => 'Devils Darling Tabak Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-BN' => 
   [
     'name' => 'Brown Nutty Nougat Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-FY' => 
   [
     'name' => 'First Money Orangenlimonade Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-HF' => 
   [
     'name' => 'Hairy Fluffy Pfirsich Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-LS' => 
   [
     'name' => 'Little Soft Himbeer Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-SH' => 
   [
     'name' => 'Sweetheart Erdbeer Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-TE' => 
   [
     'name' => 'The Empire Tabak Nuss Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-TR' => 
   [
     'name' => 'The Rebels Tabak Vanille Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-ML' => 
   [
     'name' => 'Milli Vanille Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-MW' => 
   [
     'name' => 'Master Wood Waldmeister Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-RC' => 
   [
     'name' => 'Red Cyclone Rote Früchte Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000L10-SY' => 
   [
     'name' => 'Spiky Maracuja Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SONYVT6' => 
   [
@@ -1072,55 +1072,55 @@ return [
   [
     'name' => 'SC Easy 2 E-Zigaretten Set',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000ETAKKU' => 
   [
     'name' => 'SC Easy 2 Akku 650 mAh',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000ETVER' => 
   [
     'name' => 'SC Easy 2 Atomizer',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000ETUSB' => 
   [
     'name' => 'SC Easy 2 USB-Ladekabel',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000ETC-SS' => 
   [
     'name' => 'SC Easy 2 Caps Star Spangled  (3 pro Pack)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000ETC-CJ' => 
   [
     'name' => 'SC Easy 2 Caps Commander Joe  (3 pro Pack)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000ETC-FM' => 
   [
     'name' => 'SC Easy 2 Caps First Man  (3 pro Pack)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000ETC-CV' => 
   [
     'name' => 'SC Easy 2 Caps Cold Vacci  (3 pro Pack)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000ETC-IR' => 
   [
     'name' => 'SC Easy 2 Caps Inside Red  (3 pro Pack)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SM10000TEA' => 
   [
@@ -1240,19 +1240,19 @@ return [
   [
     'name' => 'Tasche mit Schulterriemen',
     'brand' => 'InnoCigs',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000TAG' => 
   [
     'name' => 'Tasche mit Griff',
     'brand' => 'InnoCigs',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000TAM' => 
   [
     'name' => 'Multifunktionstasche',
     'brand' => 'InnoCigs',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC10000OID2' => 
   [
@@ -1282,43 +1282,43 @@ return [
   [
     'name' => 'Menthol-Erdbeere E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-MB' => 
   [
     'name' => 'Menthol-Blaubeere E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-MH' => 
   [
     'name' => 'Menthol-Himbeere E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-MK' => 
   [
     'name' => 'Menthol-Kirsche E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-MA' => 
   [
     'name' => 'Menthol-Apfel E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-MW' => 
   [
     'name' => 'Menthol-Wassermelone E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-MT' => 
   [
     'name' => 'Menthol E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'PA10000PA2' => 
   [
@@ -2050,19 +2050,19 @@ return [
   [
     'name' => 'Celluloid Mundstücke  (5 Stück pro Packung)',
     'brand' => 'InnoCigs',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC100EM' => 
   [
     'name' => 'Edelstahl Mundstücke S1Z (5 Stück pro Packung)',
     'brand' => 'InnoCigs',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC100KM' => 
   [
     'name' => 'Kunststoff Mundstücke  (5 Stück pro Packung)',
     'brand' => 'InnoCigs',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'IC100PR' => 
   [
@@ -3244,133 +3244,133 @@ return [
   [
     'name' => 'Aroma Kaktusfeige',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-ST' => 
   [
     'name' => 'Aroma Strong Taste Tabak',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-RY' => 
   [
     'name' => 'Aroma RY4 Tabak',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-AP' => 
   [
     'name' => 'Aroma Apfel',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-VA' => 
   [
     'name' => 'Aroma Vanille',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-WM' => 
   [
     'name' => 'Aroma Wassermelone',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-ME' => 
   [
     'name' => 'Aroma Menthol',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-PF' => 
   [
     'name' => 'Aroma Pfirsich',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-IC' => 
   [
     'name' => 'Aroma Ice',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-HB' => 
   [
     'name' => 'Aroma Himbeere',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-VB' => 
   [
     'name' => 'Aroma Virginias Best Tabak',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-EB' => 
   [
     'name' => 'Aroma Erdbeere',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-MA' => 
   [
     'name' => 'Aroma Maracuja',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-SK' => 
   [
     'name' => 'Aroma Sauerkirsche',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-EF' => 
   [
     'name' => 'Aroma Exotische Früchte',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-MJ' => 
   [
     'name' => 'Aroma Mojito',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-AF' => 
   [
     'name' => 'Aroma Americas Finest Tabak',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-KI' => 
   [
     'name' => 'Aroma Kirsche',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-BA' => 
   [
     'name' => 'Aroma Banane',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100A10-BL' => 
   [
     'name' => 'Aroma Blaubeere',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-B' => 
   [
     'name' => '1 Liter Basis 50PG/50VG 0 mg/ml',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC10000L10-S' => 
   [
     'name' => '10ml Shot 50PG/50VG 18 mg/ml',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100EMXL' => 
   [
@@ -3664,7 +3664,7 @@ return [
   [
     'name' => '100 ml Basis 50PG/50VG 0 mg/ml',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SM100T12G' => 
   [
@@ -5374,7 +5374,7 @@ return [
   [
     'name' => 'SC 21700er Akku 4000 mAh',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'DJ100L10-SF' => 
   [
@@ -5434,7 +5434,7 @@ return [
   [
     'name' => 'Kaktusfeige E-Zigaretten Liquid',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'PS100L10-SK' => 
   [
@@ -8938,73 +8938,73 @@ return [
   [
     'name' => 'SC Easy 3 E-Zigaretten Set 9 mg/ml',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-DD' => 
   [
     'name' => 'SC Easy 3 Caps Devils Darling Tabak (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-SS' => 
   [
     'name' => 'SC Easy 3 Caps Star Spangled Tabak (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-TR' => 
   [
     'name' => 'SC Easy 3 Caps The Rebels Tabak Vanille (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-WG' => 
   [
     'name' => 'SC Easy 3 Caps White Glacier Fresh (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-RV' => 
   [
     'name' => 'SC Easy 3 Caps Red Violet Amarenakirsche (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-FM' => 
   [
     'name' => 'SC Easy 3 Caps First Man Apfel (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-BS' => 
   [
     'name' => 'SC Easy 3 Caps Blue Spot Blaubeeren (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-ML' => 
   [
     'name' => 'SC Easy 3 Caps Mili Vanille (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-PS' => 
   [
     'name' => 'SC Easy 3 Caps Pretty Sweetheart Sahne-Erdbeere (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3P-RC' => 
   [
     'name' => 'SC Easy 3 Caps Red Cyclone Rote Früchte (2 Stück pro Packung)',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'SC100E3U' => 
   [
     'name' => 'SC Easy 3 USB-Ladekabel',
     'brand' => 'SC',
-    'supplier' => null,
+    'supplier' => 'InnoCigs',
   ],
   'CS10010-HS' => 
   [

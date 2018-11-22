@@ -28,9 +28,9 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends \Shopware_Control
         // applications event manager. The ArticleMapper object lives in
         // the service manager only. It's operation gets triggered via
         // events only.
+        $this->logAction();
         try {
             $this->services->get(ArticleMapper::class);
-            $this->log->info('*********************** START ***********************');
             parent::updateAction();
             // Here all Doctrine lifecycle events are completed so we can
             // savely work with Doctrine again
@@ -43,5 +43,24 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends \Shopware_Control
             $this->log->err('Exception: ' . get_class($e) . ': ' . $e->getMessage());
             $this->services->get('exceptionLogger')->log($e);
         }
+        $this->logAction(false);
+    }
+
+    public function setActivationStatesAction() {
+        $this->logAction();
+        $data = $this->Request()->getParams();
+        $this->log->info(sprintf('%s: Got data: ' . PHP_EOL . '%s',
+            __FUNCTION__,
+            var_export($data, true)
+        ));
+        $this->logAction(false);
+    }
+
+    protected function logAction(bool $start = true) {
+        $marker = '***********************';
+        $text = $start ? 'START: ' : 'STOP: ';
+        $text .= debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1]['function'];
+        $this->log->info(sprintf('%s %s %s', $marker, $text, $marker));
+
     }
 }

@@ -33,7 +33,7 @@ trait ModelManagerTrait
      *
      * @throws DatabaseException
      */
-    private function flush() {
+    public function flush() {
         try {
             $this->getModelManager()->flush();
         } catch (OptimisticLockException $e) {

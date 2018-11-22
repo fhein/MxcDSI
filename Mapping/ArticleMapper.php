@@ -203,7 +203,8 @@ class ArticleMapper implements ListenerAggregateInterface
         $detail->setSupplierNumber('');
         $detail->setAdditionalText('');
         $detail->setPackUnit('');
-        $detail->setShippingTime('');
+        $detail->setShippingTime(5);
+        $detail->setPurchasePrice($variant->getPriceNet());
 
         $isMainDetail ? $detail->setKind(1) : $detail->setKind(2);
 
