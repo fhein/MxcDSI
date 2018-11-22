@@ -8,32 +8,59 @@ use Exception;
 use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Bootstrap\Database;
 use MxcDropshipInnocigs\Client\InnocigsClient;
+use MxcDropshipInnocigs\Convenience\ExceptionLogger;
 use Shopware\Components\Plugin;
 use Shopware\Components\Plugin\Context\ActivateContext;
 use Shopware\Components\Plugin\Context\DeactivateContext;
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
+use Zend\Log\Logger;
+use Zend\ServiceManager\ServiceManager;
 
 class MxcDropshipInnocigs extends Plugin
 {
+    /**
+     * @var ServiceManager $services
+     */
+    protected $services;
+    /**
+     * @var Logger $log
+     */
+    protected $log;
+    /**
+     * @var ExceptionLogger $exceptionLog
+     */
+    protected $exceptionLog;
+
+    /*
+     *  The parent constructor is marked final for whatever reason, puh
+     */
+    public function construct() {
+        $this->services = Application::getServices();
+        $this->log = $this->services->get('logger');
+        $this->exceptionLog = $this->services->get('exceptionLogger');
+    }
+
     /**
      * @param InstallContext $context
      * @return boolean
      */
     public function install(InstallContext $context)
     {
-        $services = Application::getServices();
+        $this->construct();
+        $this->logAction();
         $options = $this->getOptions();
         if ($options->createSchema) {
-            $exceptionLogger = $services->get('exceptionLogger');
             try {
-                $database = $services->get(Database::class);
+                $database = $this->services->get(Database::class);
                 $database->install();
             } catch (Exception $e) {
-                $exceptionLogger->log($e);
+                $this->exceptionLog->log($e);
+                $this->logAction(false);
                 return false;
             }
         }
+        $this->logAction(false);
         return true;
     }
 
@@ -43,18 +70,20 @@ class MxcDropshipInnocigs extends Plugin
      */
     public function uninstall(UninstallContext $context)
     {
-        $services = Application::getServices();
+        $this->construct();
+        $this->logAction();
         $options = $this->getOptions();
         if ($options->dropSchema) {
-            $exceptionLogger = $services->get('exceptionLogger');
             try {
-                $database = $services->get(Database::class);
+                $database = $this->services->get(Database::class);
                 $database->uninstall();
             } catch (Exception $e) {
-                $exceptionLogger->log($e);
+                $this->exceptionLog->log($e);
+                $this->logAction(false);
                 return false;
             }
         }
+        $this->logAction(false);
         return true;
     }
 
@@ -63,27 +92,33 @@ class MxcDropshipInnocigs extends Plugin
      */
     public function activate(ActivateContext $context)
     {
-        $services = Application::getServices();
-        $client = $services->get(InnocigsClient::class);
-        $exceptionLogger = $services->get('exceptionLogger');
+        $this->construct();
+        $this->logAction();
+        $client = null;
         try {
             $options = $this->getOptions();
-            if ($options->importItems) {
+            if ($options->importArticles) {
+                $client = $this->getInnocigsClient();
                 $client->importArticles($options->onActivate->numberOfArticles ?? -1);
             }
             if ($options->saveArticleConfiguration){
+                $client = $this->getInnocigsClient();
                 $client->createArticleConfigurationFile($this->getPath());
             }
             if ($options->clearCache) {
                 $context->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
             }
         } catch(Exception $e) {
-            $exceptionLogger->log($e);
+            $this->exceptionLog->log($e);
+        } finally {
+            $this->logAction(false);
         }
     }
 
     public function deactivate(DeactivateContext $context)
     {
+        $this->construct();
+        $this->logAction();
         $options = $this->getOptions();
         if ($options->dropArticles) {
             // @todo: Drop Articles
@@ -91,11 +126,24 @@ class MxcDropshipInnocigs extends Plugin
                 // @todo: Drop Groups and Options also
             }
         }
+        $this->logAction(false);
+    }
+
+    protected function getInnocigsClient() {
+        $this->client = $this->client ?? $this->services->get(InnocigsClient::class);
+        return $this->client;
     }
 
     protected function getOptions() {
-        $services = Application::getServices();
         $function = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1]['function'];
-        return $services->get('installOptions')->$function;
+        return $this->services->get('installOptions')->$function;
+    }
+
+    protected function logAction(bool $start = true) {
+        $marker = '***********************';
+        $text = $start ? 'START: ' : 'STOP: ';
+        $text .= debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1]['function'];
+        $this->log->info(sprintf('%s %s %s', $marker, $text, $marker));
+
     }
 }

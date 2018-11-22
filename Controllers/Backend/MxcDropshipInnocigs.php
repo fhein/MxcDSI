@@ -23,13 +23,13 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends \Shopware_Control
 
     public function updateAction()
     {
-        // If the ArticleMapper does not exist already, it gets created via the
-        // ArticleMapperFactory. This factory ties the article mapper to the
-        // applications event manager. The ArticleMapper object lives in
-        // the service manager only. It's operation gets triggered via
-        // events only.
         $this->logAction();
         try {
+            // If the ArticleMapper does not exist already, it gets created via the
+            // ArticleMapperFactory. This factory ties the article mapper to the
+            // applications event manager. The ArticleMapper object lives in
+            // the service manager only. It's operation gets triggered via
+            // events only.
             $this->services->get(ArticleMapper::class);
             parent::updateAction();
             // Here all Doctrine lifecycle events are completed so we can
@@ -42,18 +42,9 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends \Shopware_Control
             ]);
             $this->log->err('Exception: ' . get_class($e) . ': ' . $e->getMessage());
             $this->services->get('exceptionLogger')->log($e);
+        } finally {
+            $this->logAction(false);
         }
-        $this->logAction(false);
-    }
-
-    public function setActivationStatesAction() {
-        $this->logAction();
-        $data = $this->Request()->getParams();
-        $this->log->info(sprintf('%s: Got data: ' . PHP_EOL . '%s',
-            __FUNCTION__,
-            var_export($data, true)
-        ));
-        $this->logAction(false);
     }
 
     protected function logAction(bool $start = true) {
