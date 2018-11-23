@@ -2,10 +2,10 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
 use Shopware\Models\Article\Article;
 use Zend\Log\Logger;
 

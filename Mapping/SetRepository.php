@@ -4,7 +4,7 @@ namespace MxcDropshipInnocigs\Mapping;
 
 
 use MxcDropshipInnocigs\Application\Application;
-use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
+use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;

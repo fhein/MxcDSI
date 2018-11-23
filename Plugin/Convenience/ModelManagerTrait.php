@@ -6,7 +6,7 @@
  * Time: 19:20
  */
 
-namespace MxcDropshipInnocigs\Convenience;
+namespace MxcDropshipInnocigs\Plugin\Convenience;
 
 use Doctrine\ORM\OptimisticLockException;
 use Exception;

@@ -2,11 +2,11 @@
 
 namespace MxcDropshipInnocigs\Client;
 
-use MxcDropshipInnocigs\Convenience\ModelManagerTrait;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
 use Zend\Log\Logger;
 
 class InnocigsClient {
