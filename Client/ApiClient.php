@@ -7,7 +7,7 @@ use MxcDropshipInnocigs\Exception\ApiException;
 use Zend\Http\Client;
 use Zend\Http\Exception\RuntimeException as ZendClientException;
 use Zend\Http\Response;
-use Zend\Log\Logger;
+use Zend\Log\LoggerInterface;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 
 class ApiClient
@@ -44,7 +44,7 @@ class ApiClient
 
     protected $log;
 
-    public function __construct(Credentials $credentials, Logger $log) {
+    public function __construct(Credentials $credentials, LoggerInterface $log) {
         $this->log = $log;
         $this->apiEntry = 'https://www.innocigs.com/xmlapi/api.php';
         $this->authUrl = $this->apiEntry . '?cid=' . $credentials->getUser() . '&auth=' . $credentials->getPassword();

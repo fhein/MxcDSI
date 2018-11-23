@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Application;
+namespace MxcDropshipInnocigs\Plugin\Shopware;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class InstallationOptionsFactory implements FactoryInterface
+class DbalConnectionFactory implements FactoryInterface
 {
 
     /**
@@ -18,6 +18,6 @@ class InstallationOptionsFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        return $container->get('config')->plugin;
+        return Shopware()->Container()->get('dbal_connection');
     }
 }

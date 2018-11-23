@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Application;
+namespace MxcDropshipInnocigs\Plugin\Shopware;
 
-use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
-class AttributeManagerFactory implements FactoryInterface
+class MediaServiceFactory implements FactoryInterface
 {
 
     /**
@@ -18,6 +18,6 @@ class AttributeManagerFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        return Shopware()->Container()->get('shopware_attribute.crud_service');
+        return Shopware()->Container()->get('shopware_media.media_service');
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace MxcDropshipInnocigs\Application;
+namespace MxcDropshipInnocigs\Plugin\Shopware;
 
-use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ModelManagerFactory implements FactoryInterface
 {
