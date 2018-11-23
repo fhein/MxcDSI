@@ -39,7 +39,7 @@ trait ModelManagerTrait
         } catch (OptimisticLockException $e) {
             throw new DatabaseException($e->getMessage());
         } catch (Exception $e) {
-            Application::getServices()->get('exceptionLogger')->log($e);
+            Application::getServices()->get('logger')->except($e);
         }
     }
 
