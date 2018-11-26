@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Bootstrap;
+namespace MxcDropshipInnocigs\Plugin\Database;
 
 use Interop\Container\ContainerInterface;
 use Zend\Log\Logger;
@@ -20,7 +20,8 @@ class DatabaseFactory implements FactoryInterface
     {
         $entityManager = $container->get('modelManager');
         $attributeManager = $container->get('attributeManager');
+        $config = $container->get('config');
         $logger = $container->get(Logger::class);
-        return new Database($entityManager, $attributeManager, $logger);
+        return new Database($entityManager, $attributeManager, $config, $logger);
     }
 }

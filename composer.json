@@ -5,7 +5,7 @@
         "zendframework/zend-log" : "~2.10",
         "zendframework/zend-eventmanager" : "~3.2",
         "zendframework/zend-config" : "~3.2",
-        "mxc-commons/mxc-servicemanager" : "~0.9",
+        "mxc-commons/mxc-servicemanager" : "~1.0",
         "ext-json" : "*",
         "ext-simplexml": "*",
         "ext-libxml": "*"

@@ -2,9 +2,8 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-
-use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
+use MxcDropshipInnocigs\Plugin\Plugin;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
@@ -41,7 +40,7 @@ class SetRepository
     private $log;
 
     public function __construct() {
-        $this->log = Application::getServices()->get('logger');
+        $this->log = Plugin::getServices()->get('logger');
     }
 
     protected function createSet(string $name) {

@@ -2,9 +2,6 @@
 
 namespace MxcDropshipInnocigs;
 
-use MxcDropshipInnocigs\Application\Application;
-use MxcDropshipInnocigs\Bootstrap\Database;
-use MxcDropshipInnocigs\Bootstrap\DatabaseFactory;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\ApiClientFactory;
 use MxcDropshipInnocigs\Client\Credentials;
@@ -19,32 +16,45 @@ use MxcDropshipInnocigs\Mapping\GroupRepository;
 use MxcDropshipInnocigs\Mapping\GroupRepositoryFactory;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\PropertyMapperFactory;
+use MxcDropshipInnocigs\Models\InnocigsArticle;
+use MxcDropshipInnocigs\Models\InnocigsGroup;
+use MxcDropshipInnocigs\Models\InnocigsOption;
+use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Plugin\Database\Database;
+use MxcDropshipInnocigs\Plugin\Database\DatabaseFactory;
 use Zend\Log\Formatter\Simple;
 use Zend\Log\Logger;
 
 return [
     'plugin' => [
-        'application' => [
-            Application::class => [
-                'onInstall' => [
-                    'createSchema' => false,
+        Database::class => [
+            'general' => [
+                'models' => [
+                    InnocigsArticle::class,
+                    InnocigsVariant::class,
+                    InnocigsGroup::class,
+                    InnocigsOption::class,
                 ],
-                'onActivate' => [
-                    'importArticles' => false,
-                    'numberOfArticles' => -1,
-                    'clearCache' => false,
-                ],
-                'onDeactivate' => [
-                    'dropArticles' => false,
-                    'dropConfigurator' => false,
-                ],
-                'onUninstall' => [
-                    'dropSchema' => false
-                ]
             ],
+            'onInstall' => [
+                'createSchema' => false,
+                'createAttributes' => false,
+            ],
+            'onUninstall' => [
+                'dropSchema' => false,
+                'dropAttributes' => false,
+            ]
         ],
-        'listeners' => [
-
+        InnocigsClient::class => [
+            'onActivate' => [
+                'importArticles' => false,
+                'numberOfArticles' => -1,
+                'clearCache' => false,
+            ],
+            'onDeactivate' => [
+                'dropArticles' => false,
+                'dropConfigurator' => false,
+            ],
         ],
     ],
     'log' => [

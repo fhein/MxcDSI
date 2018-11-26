@@ -6,9 +6,9 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
-use MxcDropshipInnocigs\Application\Application;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
 use Doctrine\ORM\Events;
+use MxcDropshipInnocigs\Models\InnocigsArticle;
+use MxcDropshipInnocigs\Plugin\Plugin;
 use Zend\EventManager\EventManager;
 use Zend\Log\Logger;
 
@@ -26,7 +26,7 @@ class InnocigsArticleSubscriber implements EventSubscriber
 
     public function __construct() {
         // @todo: Code smell: Constructed via Shopware's ServiceManager, so we connect to our service management via global Application
-        $services = Application::getServices();
+        $services = Plugin::getServices();
         $this->log = $services->get(Logger::class);
         $this->events = $services->get('events');
     }

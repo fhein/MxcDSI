@@ -10,8 +10,8 @@ namespace MxcDropshipInnocigs\Plugin\Convenience;
 
 use Doctrine\ORM\OptimisticLockException;
 use Exception;
-use MxcDropshipInnocigs\Application\Application;
 use MxcDropshipInnocigs\Exception\DatabaseException;
+use MxcDropshipInnocigs\Plugin\Plugin;
 use Shopware\Components\Model\ModelEntity;
 use Shopware\Components\Model\ModelManager;
 
@@ -39,7 +39,7 @@ trait ModelManagerTrait
         } catch (OptimisticLockException $e) {
             throw new DatabaseException($e->getMessage());
         } catch (Exception $e) {
-            Application::getServices()->get('logger')->except($e);
+            Plugin::getServices()->get('logger')->except($e);
         }
     }
 
@@ -53,7 +53,7 @@ trait ModelManagerTrait
 
     private function getModelManager() {
         if (! $this->modelManager) {
-            $this->modelManager = Application::getServices()->get('modelManager');
+            $this->modelManager = Plugin::getServices()->get('modelManager');
         }
         return $this->modelManager;
     }

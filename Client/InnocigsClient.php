@@ -6,10 +6,13 @@ use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Plugin\ActionListener;
 use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
-use Zend\Log\Logger;
+use MxcDropshipInnocigs\Plugin\Service\LoggerInterface;
+use Zend\Config\Config;
+use Zend\EventManager\EventInterface;
 
-class InnocigsClient {
+class InnocigsClient extends ActionListener {
 
     use ModelManagerTrait;
 
@@ -28,10 +31,10 @@ class InnocigsClient {
      */
     private $log;
 
-    public function __construct(ApiClient $apiClient, Logger $log) {
+    public function __construct(ApiClient $apiClient, Config $config, LoggerInterface $log) {
         $this->log = $log;
-        $this->log->info('Initializing Innocigs client.');
         $this->apiClient = $apiClient;
+        parent::__construct($config);
     }
 
     private function createVariants(InnocigsArticle $article, array $variantArray) : array {
@@ -140,7 +143,7 @@ class InnocigsClient {
         }
     }
 
-    public function createArticleConfigurationFile(string $path) {
+    public function createArticleConfigurationFile() {
         $articles = $this->getRepository(InnocigsArticle::class)->findAll();
         $config = [];
 
@@ -152,7 +155,7 @@ class InnocigsClient {
             ];
         }
         $content = '<?php ' . PHP_EOL . 'return ' . var_export($config, true). ';' . PHP_EOL;
-        file_put_contents($path . '/article_config.php', $content);
+        file_put_contents(__DIR__ . '/../Config/article.config.php', $content);
     }
 
     public function importArticles(int $limit = -1) {
@@ -171,5 +174,35 @@ class InnocigsClient {
         $this->log->info('Creating articles and variants.');
         $this->createArticles($items, $limit);
         $this->flush();
+    }
+
+    public function onActivate(EventInterface $e) {
+        $this->log->enter();
+        $context = $e->getParam('context');
+        $options = $this->getOptions();
+        if (true === $options->importArticles) {
+            $this->importArticles($options->onActivate->numberOfArticles ?? -1);
+        }
+        if (true === $options->saveArticleConfiguration){
+            $this->createArticleConfigurationFile();
+        }
+        if (true === $options->clearCache) {
+            $context->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
+        }
+        $this->log->leave();
+        return true;
+    }
+
+    public function onDeactivate(EventInterface $e) {
+        $this->log->enter();
+        $options = $this->getOptions();
+        if (true === $options->dropArticles) {
+            // @todo: Drop Articles
+            if (true === $options->dropConfigurator) {
+                // @todo: Drop Groups and Options also
+            }
+        }
+        $this->log->leave();
+        return true;
     }
 }

@@ -11,7 +11,6 @@ namespace MxcDropshipInnocigs\Plugin\Service;
 
 use Throwable;
 use Traversable;
-use Zend\Log\LoggerInterface;
 
 class Logger implements LoggerInterface
 {
@@ -108,15 +107,16 @@ class Logger implements LoggerInterface
      */
     public function debug($message, $extra = [])
     {
-        return $this->log->debug($message, $extra);
+        $this->log->debug($message, $extra);
+        return $this;
     }
 
-    public function enter(string $function = null) {
-        return $this->logAction(true, $function);
+    public function enter() {
+        return $this->logAction(true);
     }
 
-    public function leave($function = null) {
-        return $this->logAction(false, $function);
+    public function leave() {
+        return $this->logAction(false);
     }
 
     public function except(Throwable $e, bool $logTrace = true, bool $rethrow = true) {
@@ -126,18 +126,9 @@ class Logger implements LoggerInterface
         return $this;
     }
 
-    protected function logAction(bool $start = true, string $function = null) {
-        $marker = '***********************';
-        $text = $start ? 'START:' : 'STOP:';
-        $function = $function ?? debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1]['function'];
-        $this->log->notice(sprintf('%s %s %s %s', $marker, $text, $function, $marker));
-    }
-
-    public function getCaller(int $levelUp = 1) {
-        return debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, $levelUp + 2)[$levelUp + 1]['function'];
-    }
-
-    public function getInnerLog() {
-        return $this->log;
+    protected function logAction(bool $start = true) {
+        $marker = $start ? '>>> ' : '<<< ';
+        $trace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 3)[2];
+        $this->log->debug(sprintf('%s %s#%s', $marker, $trace['class'], $trace['function']));
     }
 }
