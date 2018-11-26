@@ -181,7 +181,7 @@ class InnocigsClient extends ActionListener {
         $context = $e->getParam('context');
         $options = $this->getOptions();
         if (true === $options->importArticles) {
-            $this->importArticles($options->onActivate->numberOfArticles ?? -1);
+            $this->importArticles($options->numberOfArticles ?? -1);
         }
         if (true === $options->saveArticleConfiguration){
             $this->createArticleConfigurationFile();
