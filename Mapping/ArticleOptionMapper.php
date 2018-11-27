@@ -6,8 +6,8 @@ use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
+use MxcDropshipInnocigs\Plugin\Service\LoggerInterface;
 use Shopware\Models\Article\Article;
-use Zend\Log\Logger;
 
 class ArticleOptionMapper
 {
@@ -17,7 +17,7 @@ class ArticleOptionMapper
     private $groupRepository;
     private $mapper;
 
-    public function __construct(GroupRepository $repository, PropertyMapper $mapper, Logger $log)
+    public function __construct(GroupRepository $repository, PropertyMapper $mapper, LoggerInterface $log)
     {
         $this->log = $log;
         $this->groupRepository = $repository;

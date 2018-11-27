@@ -8,8 +8,5 @@
             <argument type="service" id="template"/>
             <tag name="shopware.event_subscriber"/>
         </service>
-        <service id="mxc_dropship_innocigs.subscriber.innocigs_article_subscriber" class="MxcDropshipInnocigs\Subscriber\InnocigsArticleSubscriber">
-            <tag name="doctrine.event_subscriber"/>
-        </service>
     </services>
 </container>

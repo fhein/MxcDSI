@@ -10,9 +10,9 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
+use MxcDropshipInnocigs\Plugin\Service\LoggerInterface;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
-use Zend\Log\Logger;
 
 class GroupRepository
 {
@@ -21,7 +21,7 @@ class GroupRepository
     protected $data;
     protected $log;
 
-    public function __construct(Logger $log) {
+    public function __construct(LoggerInterface $log) {
         $this->log = $log;
         $this->createLookupTable();
     }
@@ -55,11 +55,11 @@ class GroupRepository
             $name
         ));
         $group = new Group();
-        $group->setName($name);
+        $this->persist($group);
 
+        $group->setName($name);
         $group->setPosition(count($this->data));
         $this->data[$name]['group'] = $group;
-        $this->persist($group);
         return $group;
     }
 

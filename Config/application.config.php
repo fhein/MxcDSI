@@ -2,6 +2,7 @@
 
 namespace MxcDropshipInnocigs;
 
+use Doctrine\ORM\Events;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\ApiClientFactory;
 use MxcDropshipInnocigs\Client\Credentials;
@@ -22,6 +23,8 @@ use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use MxcDropshipInnocigs\Plugin\Database\Database;
 use MxcDropshipInnocigs\Plugin\Database\DatabaseFactory;
+use MxcDropshipInnocigs\Plugin\Subscriber\EntitySubscriberFactory;
+use MxcDropshipInnocigs\Subscriber\InnocigsArticleSubscriber;
 use Zend\Log\Formatter\Simple;
 use Zend\Log\Logger;
 
@@ -54,6 +57,14 @@ return [
             'onDeactivate' => [
                 'dropArticles' => false,
                 'dropConfigurator' => false,
+            ],
+        ],
+    ],
+    'model_subscribers' => [
+        InnocigsArticleSubscriber::class => [
+            'model' => InnocigsArticle::class,
+            'events' => [
+                Events::preUpdate,
             ],
         ],
     ],
@@ -94,6 +105,10 @@ return [
             GroupRepository::class      => GroupRepositoryFactory::class,
             InnocigsClient::class       => InnocigsClientFactory::class,
             PropertyMapper::class       => PropertyMapperFactory::class,
+            InnocigsArticleSubscriber::class => EntitySubscriberFactory::class,
+        ],
+        'aliases' => [
+            'test' => InnocigsArticleSubscriber::class,
         ],
     ],
     'mappings' => [

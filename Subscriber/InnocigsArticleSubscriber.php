@@ -2,78 +2,25 @@
 
 namespace MxcDropshipInnocigs\Subscriber;
 
-use Doctrine\Common\EventSubscriber;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\Event\LifecycleEventArgs;
-use Doctrine\ORM\Event\PreUpdateEventArgs;
-use Doctrine\ORM\Events;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Plugin\Plugin;
-use Zend\EventManager\EventManager;
-use Zend\Log\Logger;
+use MxcDropshipInnocigs\Plugin\Subscriber\EntitySubscriber;
+use Zend\EventManager\EventInterface;
 
-class InnocigsArticleSubscriber implements EventSubscriber
+class InnocigsArticleSubscriber extends EntitySubscriber
 {
     /**
-     * @var Logger $log
+     * @param EventInterface $e
+     * @return bool
      */
-    private $log;
-
-    /**
-     * @var  EventManager $events
-     */
-    private $events;
-
-    public function __construct() {
-        // @todo: Code smell: Constructed via Shopware's ServiceManager, so we connect to our service management via global Application
+    public function preUpdate(EventInterface $e)
+    {
         $services = Plugin::getServices();
-        $this->log = $services->get(Logger::class);
-        $this->events = $services->get('events');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSubscribedEvents()
-    {
-        return [
-            Events::preUpdate,
-            Events::postUpdate,
-        ];
-    }
-
-    /**
-     * @param PreUpdateEventArgs $arguments
-     */
-    public function preUpdate(PreUpdateEventArgs $arguments)
-    {
-        /** @var EntityManager $modelManager */
-        //$modelManager = $arguments->getEntityManager();
-
-        $article = $arguments->getEntity();
-
-        if (! $article instanceof InnocigsArticle) {
-            return;
-        }
+        $arguments = $e->getParam('args');
         if ($arguments->hasChangedField('active')) {
-            // $this->log->info('preUpdate: ' . $article->getName() . ' has changed state to ' . ($article->isActive() ? 'true' : 'false'));
-            $params = compact('article');
-            $this->events->trigger('article_active_state_changed', $this, $params);
-        } else {
-            $this->log->info('preUpdate: ' . $article->getName() . ' has no state change.');
+            $params = ['article' => $arguments->getEntity()];
+            $services->get('events')->trigger('article_active_state_changed', $this, $params);
         }
-    }
-
-    /**
-     * @param LifecycleEventArgs $arguments
-     */
-    public function postUpdate(LifecycleEventArgs $arguments)
-    {
-        /** @var EntityManager $modelManager */
-        //$modelManager = $arguments->getEntityManager();
-
-        // $model = $arguments->getEntity();
-
-        // modify models or do some other fancy stuff
+        // false indicates that we do not want to abort event processing here
+        return false;
     }
 }

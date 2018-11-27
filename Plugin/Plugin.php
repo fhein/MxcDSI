@@ -14,6 +14,10 @@ use MxcDropshipInnocigs\Plugin\Shopware\ConfigurationFactory;
 use MxcDropshipInnocigs\Plugin\Shopware\DbalConnectionFactory;
 use MxcDropshipInnocigs\Plugin\Shopware\MediaServiceFactory;
 use MxcDropshipInnocigs\Plugin\Shopware\ModelManagerFactory;
+use MxcDropshipInnocigs\Plugin\Subscriber\EntitySubscriberFactory;
+use MxcDropshipInnocigs\Plugin\Subscriber\ModelSubscriber;
+use MxcDropshipInnocigs\Plugin\Subscriber\ModelSubscriberFactory;
+use Shopware\Components\Model\ModelManager;
 use Shopware\Components\Plugin as Base;
 use Shopware\Components\Plugin\Context\ActivateContext;
 use Shopware\Components\Plugin\Context\DeactivateContext;
@@ -41,11 +45,12 @@ class Plugin extends Base
     private static $serviceConfig = [
         'factories' => [
             // shopware service interface
-            'dbalConnection'    => DbalConnectionFactory::class,
-            'attributeManager'  => AttributeManagerFactory::class,
-            'mediaManager'      => MediaServiceFactory::class,
-            'modelManager'      => ModelManagerFactory::class,
-            'pluginConfig'      => ConfigurationFactory::class,
+            'dbalConnection'            => DbalConnectionFactory::class,
+            'attributeManager'          => AttributeManagerFactory::class,
+            'mediaManager'              => MediaServiceFactory::class,
+            'modelManager'              => ModelManagerFactory::class,
+            'pluginConfig'              => ConfigurationFactory::class,
+            ModelSubscriber::class      => ModelSubscriberFactory::class,
 
             // services
             Logger::class       => LoggerServiceFactory::class,
@@ -72,6 +77,25 @@ class Plugin extends Base
         $services->configure($config['services']);
         $services->setService('config', new Config($config));
         $services->setService('events', new EventManager());
+
+        $subscribers = $config['model_subscribers'] ?? [];
+        if (count($subscribers) > 0) {
+            /**
+             * @var ModelManager $modelManager
+             */
+            $modelManager = $services->get('modelManager');
+            $evm = $modelManager->getEventManager();
+            $evm->addEventSubscriber($services->get(ModelSubscriber::class));
+        }
+        foreach ($subscribers as $subscriber => $settings) {
+            $model = $settings['model'];
+            if (class_exists($model) && class_exists($subscriber)) {
+                $services->setFactory($subscriber, EntitySubscriberFactory::class);
+                // may move in future to allow lazy instantiation
+                $services->get($subscriber);
+            }
+        }
+
         $services->setAllowOverride(false);
         self::$globalServices = $services;
         return self::$globalServices;

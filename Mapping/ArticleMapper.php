@@ -12,6 +12,7 @@ use MxcDropshipInnocigs\Client\InnocigsClient;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
+use MxcDropshipInnocigs\Plugin\Service\LoggerInterface;
 use Shopware\Bundle\MediaBundle\MediaService;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
@@ -26,7 +27,6 @@ use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\EventManager\ListenerAggregateTrait;
-use Zend\Log\Logger;
 
 class ArticleMapper implements ListenerAggregateInterface
 {
@@ -34,7 +34,7 @@ class ArticleMapper implements ListenerAggregateInterface
     use ModelManagerTrait;
 
     /**
-     * @var Logger $log
+     * @var LoggerInterface $log
      */
     private $log;
 
@@ -72,7 +72,7 @@ class ArticleMapper implements ListenerAggregateInterface
         PropertyMapper $propertyMapper,
         MediaService $mediaService,
         InnocigsClient $client,
-        Logger $log)
+        LoggerInterface $log)
     {
         $this->optionMapper = $option;
         $this->propertyMapper = $propertyMapper;
