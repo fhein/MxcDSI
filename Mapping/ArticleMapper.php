@@ -125,7 +125,7 @@ class ArticleMapper implements ListenerAggregateInterface
         $set = $this->optionMapper->createConfiguratorSet($article, $swArticle);
         $swArticle->setConfiguratorSet($set);
 
-        $images = $this->getImages($article);
+        $images = $this->getImages($article, $swArticle);
         $swArticle->setImages($images);
 
 
@@ -173,6 +173,7 @@ class ArticleMapper implements ListenerAggregateInterface
         if (! $swDetails->isEmpty()){
             $swArticle = $swDetails->offsetGet(0)->getArticle();
         }
+
         return $swArticle;
     }
 
@@ -224,7 +225,7 @@ class ArticleMapper implements ListenerAggregateInterface
         return $detail;
     }
 
-    private function getImages(InnocigsArticle $article)
+    private function getImages(InnocigsArticle $article, Article $swArticle)
     {
         //download image
         $url = $article->getImage();
@@ -252,13 +253,8 @@ class ArticleMapper implements ListenerAggregateInterface
         $now = new DateTime();
         $media->setCreated($now);
 
-        $size = getimagesize($swUrl);
-        $this->log->info('sw Image size: '. var_dump($size));
-        $this->log->info('sw Image size: '. $size);
-
         $size = getimagesize($url);
-        $this->log->info('ic Image size: '. var_dump($size));
-        $this->log->info('ic Image size: '. $size);
+        $this->log->info('ic Image size: '. $size{0});
 
         if ($size == false) $size = array(0,0);
 
@@ -270,10 +266,15 @@ class ArticleMapper implements ListenerAggregateInterface
 
         $image = new Image();
         $image->setMedia($media);
-        $this->persist($media);
+        $image->setArticle($swArticle);
+        $image->setExtension($urlInfo['extension']);
+        $image->setMain(1);
+        $image->setPath($media->getName());
+        $image->setPosition(1);
+        $this->persist($image);
 
         $images = new ArrayCollection();
-        $images->add($media);
+        $images->add($image);
 
         return $images;
     }
