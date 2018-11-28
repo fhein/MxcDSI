@@ -8,6 +8,7 @@ namespace MxcDropshipInnocigs\Mapping;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
 use Exception;
+use DateTime;
 use MxcDropshipInnocigs\Client\InnocigsClient;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
@@ -124,7 +125,8 @@ class ArticleMapper implements ListenerAggregateInterface
         $set = $this->optionMapper->createConfiguratorSet($article, $swArticle);
         $swArticle->setConfiguratorSet($set);
 
-        //        $this->createImage($article);
+        $images = $this->getImages($article);
+        $swArticle->setImages($images);
 
 
         //create details from innocigs variants
@@ -222,7 +224,7 @@ class ArticleMapper implements ListenerAggregateInterface
         return $detail;
     }
 
-    private function createImage(InnocigsArticle $article)
+    private function getImages(InnocigsArticle $article)
     {
         //download image
         $url = $article->getImage();
@@ -235,7 +237,7 @@ class ArticleMapper implements ListenerAggregateInterface
         // save to filesystem
         $this->log->info('save image to '. $swUrl);
 
-        $this->mediaService->write($swUrl); // second parameter needed
+        $this->mediaService->write($swUrl, $fileContent);
 
         //create database entry
 
@@ -245,10 +247,20 @@ class ArticleMapper implements ListenerAggregateInterface
         $media->setPath($swUrl);
         $media->setType('IMAGE');
         $media->setExtension($urlInfo['extension']);
+        $media->setDescription('');
+        $media->setUserId(50); // Todo: Get User ID from System
+        $now = new DateTime();
+        $media->setCreated($now);
 
         $size = getimagesize($swUrl);
+        $this->log->info('sw Image size: '. var_dump($size));
+        $this->log->info('sw Image size: '. $size);
 
-        $this->log->info('Image width: '. $size{0}. ' height: '. $size{1});
+        $size = getimagesize($url);
+        $this->log->info('ic Image size: '. var_dump($size));
+        $this->log->info('ic Image size: '. $size);
+
+        if ($size == false) $size = array(0,0);
 
         $media->setWidth($size{0});
         $media->setHeight{$size{1}};
@@ -258,6 +270,12 @@ class ArticleMapper implements ListenerAggregateInterface
 
         $image = new Image();
         $image->setMedia($media);
+        $this->persist($media);
+
+        $images = new ArrayCollection();
+        $images->add($media);
+
+        return $images;
     }
 
     private function enableDropship(Article $swArticle)
