@@ -125,7 +125,8 @@ class ArticleMapper implements ListenerAggregateInterface
         $set = $this->optionMapper->createConfiguratorSet($article, $swArticle);
         $swArticle->setConfiguratorSet($set);
 
-        $images = $this->getImages($article, $swArticle);
+        $url = $article->getImage();
+        $images = $this->getImage($url, $swArticle);
         $swArticle->setImages($images);
 
 
@@ -225,44 +226,16 @@ class ArticleMapper implements ListenerAggregateInterface
         return $detail;
     }
 
-    private function getImages(InnocigsArticle $article, Article $swArticle)
+    private function getImage(string $url, Article $swArticle)
     {
-        //download image
-        $url = $article->getImage();
+        $this->log->info('Getting image from '.$url);
+
         $urlInfo = pathinfo($url);
-        $swUrl = 'media/image/' . $urlInfo['basename'];
-        $this->log->info('download image from '.$url);
+        $swUrl = 'media/image/'.$urlInfo['basename'];
 
-        $fileContent = file_get_contents($url);
+        if (!$this->mediaService->has($swUrl)) $this->copyICImage($url, $swUrl);
 
-        // save to filesystem
-        $this->log->info('save image to '. $swUrl);
-
-        $this->mediaService->write($swUrl, $fileContent);
-
-        //create database entry
-
-        $media = new Media();
-        $media->setAlbumId(-1);
-        $media->setName($urlInfo['filename']);
-        $media->setPath($swUrl);
-        $media->setType('IMAGE');
-        $media->setExtension($urlInfo['extension']);
-        $media->setDescription('');
-        $media->setUserId(50); // Todo: Get User ID from System
-        $now = new DateTime();
-        $media->setCreated($now);
-
-        $size = getimagesize($url);
-        $this->log->info('ic Image size: '. $size{0});
-
-        if ($size == false) $size = array(0,0);
-
-        $media->setWidth($size{0});
-        $media->setHeight{$size{1}};
-        $media->setFileSize(filesize($swUrl));
-
-        $this->persist($media);
+        $media = $this->getMedia($swUrl,$url);
 
         $image = new Image();
         $image->setMedia($media);
@@ -277,6 +250,61 @@ class ArticleMapper implements ListenerAggregateInterface
         $images->add($image);
 
         return $images;
+    }
+
+    private function getMedia(string $swUrl, string $url){
+
+        $media = $this->getRepository(Media::class)->findOneBy(['path' => $swUrl]);
+
+        if (null === $media)
+            $media = $this->createMedia($swUrl,$url);
+
+        return $media;
+    }
+
+    private function createMedia (string $swUrl, string $url ){
+        $urlInfo = pathinfo($url);
+
+        $media = new Media();
+        $media->setAlbumId(-1);
+        $media->setName($urlInfo['filename']);
+        $media->setPath($swUrl);
+        $media->setType('IMAGE');
+        $media->setExtension($urlInfo['extension']);
+        $media->setDescription('');
+
+     //   $userID = Shopware()->Session()['sUserId'];
+     //   $this->log->info('current user: '.$userID);
+
+        $media->setUserId(50); // Todo: Get User ID from System
+        $now = new DateTime();
+        $media->setCreated($now);
+
+        $size = getimagesize($url);
+        $this->log->info('Image size: '. $size{0} . ' - ' . $size{1});
+
+        if ($size == false) $size = array(0,0);
+
+        $media->setWidth($size{0});
+        $media->setHeight{$size{1}};
+        $media->setFileSize(filesize($swUrl));
+
+        $this->persist($media);
+
+        return $media;
+    }
+
+    private function copyICImage(string $url, $swUrl){
+        //download image
+        $urlInfo = pathinfo($url);
+        $this->log->info('download image from '.$url);
+
+        $fileContent = file_get_contents($url);
+
+        // save to filesystem
+        $this->log->info('save image to '. $swUrl);
+
+        $this->mediaService->write($swUrl, $fileContent);
     }
 
     private function enableDropship(Article $swArticle)
