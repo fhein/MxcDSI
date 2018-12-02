@@ -1,10 +1,10 @@
 {
-    "require": {
-        "shopware/shopware": "^5.5",
-   		"zendframework/zend-http" : "~2.8",
-        "mxc-commons/mxc-shopware-plugin" : "0.1",
-        "ext-json" : "*",
-        "ext-simplexml": "*",
-        "ext-libxml": "*"
-    }
+  "require": {
+    "shopware/shopware": "^5.5",
+    "zendframework/zend-http" : "~2.8",
+    "mxc-commons/mxc-shopware-plugin" : "0.1",
+    "ext-json" : "*",
+    "ext-simplexml": "*",
+    "ext-libxml": "*"
+  }
 }
