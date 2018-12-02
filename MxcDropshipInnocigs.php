@@ -4,6 +4,6 @@ namespace MxcDropshipInnocigs;
 
 require __DIR__ . '/vendor/autoload.php';
 
-use MxcDropshipInnocigs\Plugin\Plugin;
+use Mxc\Shopware\Plugin\Plugin;
 
 class MxcDropshipInnocigs extends Plugin {}

@@ -3,6 +3,8 @@
 namespace MxcDropshipInnocigs;
 
 use Doctrine\ORM\Events;
+use Mxc\Shopware\Plugin\Database\Database;
+use Mxc\Shopware\Plugin\Database\DatabaseFactory;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\ApiClientFactory;
 use MxcDropshipInnocigs\Client\Credentials;
@@ -21,52 +23,56 @@ use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use MxcDropshipInnocigs\Plugin\Database\Database;
-use MxcDropshipInnocigs\Plugin\Database\DatabaseFactory;
-use MxcDropshipInnocigs\Plugin\Subscriber\EntitySubscriberFactory;
 use MxcDropshipInnocigs\Subscriber\InnocigsArticleSubscriber;
 use Zend\Log\Formatter\Simple;
 use Zend\Log\Logger;
 
 return [
     'plugin' => [
-        Database::class => [
-            'general' => [
-                'models' => [
-                    InnocigsArticle::class,
-                    InnocigsVariant::class,
-                    InnocigsGroup::class,
-                    InnocigsOption::class,
-                ],
-            ],
-            'onInstall' => [
-                'createSchema' => false,
-                'createAttributes' => false,
-            ],
-            'onUninstall' => [
-                'dropSchema' => false,
-                'dropAttributes' => false,
-            ]
-        ],
         InnocigsClient::class => [
-            'onActivate' => [
-                'importArticles' => false,
-                'numberOfArticles' => -1,
-                'clearCache' => false,
-            ],
-            'onDeactivate' => [
-                'dropArticles' => false,
-                'dropConfigurator' => false,
+            'options' => [
+                'activate' => [
+                    'importArticles' => false,
+                    'numberOfArticles' => -1,
+                    'clearCache' => false,
+                ],
             ],
         ],
     ],
-    'model_subscribers' => [
-        InnocigsArticleSubscriber::class => [
-            'model' => InnocigsArticle::class,
-            'events' => [
-                Events::preUpdate,
-            ],
+    'doctrine' => [
+        'models' => [
+            InnocigsArticle::class,
+            InnocigsVariant::class,
+            InnocigsGroup::class,
+            InnocigsOption::class,
         ],
+        'attributes' => [
+            's_articles_attributes' => [
+                'mxc_ds_test_attribute' => [
+                    'type' => 'text',
+                    'settings' => [
+                        'label'            => '',
+                        'supportText'      => '',
+                        'helpText'         => '',
+                        'translatable'     => false,
+                        'displayInBackend' => false,
+                        'position'         => 10000,
+                        'custom'           => false
+                    ],
+                    'newColumnName' => null,
+                    'updateDependingTables' => false,
+                    'defaultValue' => null,
+                ]
+            ]
+        ],
+        'listeners' => [
+            InnocigsArticleSubscriber::class => [
+                'model' => InnocigsArticle::class,
+                'events' => [
+                    Events::preUpdate,
+                ],
+            ],
+        ]
     ],
     'log' => [
         'writers' => [
@@ -97,15 +103,14 @@ return [
     ],
     'services' => [
         'factories' => [
-            ApiClient::class            => ApiClientFactory::class,
-            ArticleOptionMapper::class  => ArticleOptionMapperFactory::class,
-            ArticleMapper::class        => ArticleMapperFactory::class,
-            Credentials::class          => CredentialsFactory::class,
-            Database::class             => DatabaseFactory::class,
-            GroupRepository::class      => GroupRepositoryFactory::class,
-            InnocigsClient::class       => InnocigsClientFactory::class,
-            PropertyMapper::class       => PropertyMapperFactory::class,
-            InnocigsArticleSubscriber::class => EntitySubscriberFactory::class,
+            ApiClient::class                    => ApiClientFactory::class,
+            ArticleOptionMapper::class          => ArticleOptionMapperFactory::class,
+            ArticleMapper::class                => ArticleMapperFactory::class,
+            Credentials::class                  => CredentialsFactory::class,
+            Database::class                     => DatabaseFactory::class,
+            GroupRepository::class              => GroupRepositoryFactory::class,
+            InnocigsClient::class               => InnocigsClientFactory::class,
+            PropertyMapper::class               => PropertyMapperFactory::class,
         ],
         'aliases' => [
             'test' => InnocigsArticleSubscriber::class,

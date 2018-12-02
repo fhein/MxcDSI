@@ -1,8 +1,8 @@
 <?php
 
+use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
-use MxcDropshipInnocigs\Plugin\Controller\BackendApplicationController;
 
 class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicationController
 {

@@ -9,8 +9,8 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
-use MxcDropshipInnocigs\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
+use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 

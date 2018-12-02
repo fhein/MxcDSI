@@ -2,8 +2,8 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
-use MxcDropshipInnocigs\Plugin\Plugin;
+use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
+use Mxc\Shopware\Plugin\Plugin;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;

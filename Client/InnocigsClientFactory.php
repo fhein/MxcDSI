@@ -18,9 +18,9 @@ class InnocigsClientFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        $options = $container->get('config')->plugin->$requestedName;
         $apiClient = $container->get(ApiClient::class);
-        $logger = $container->get(Logger::class);
-        $config = $container->get('config');
-        return new InnocigsClient($apiClient, $config, $logger);
+        $log = $container->get(Logger::class);
+        return new InnocigsClient($apiClient, $options, $log);
     }
 }

@@ -2,11 +2,11 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
+use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
+use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
-use MxcDropshipInnocigs\Plugin\Service\LoggerInterface;
 use Shopware\Models\Article\Article;
 
 class ArticleOptionMapper
@@ -47,6 +47,8 @@ class ArticleOptionMapper
                 $icVariant->addShopwareOption($swOption);
             }
         }
+        /** @noinspection PhpUnhandledExceptionInspection */
+        /** @noinspection PhpUnhandledExceptionInspection */
         $this->groupRepository->flush();
     }
 

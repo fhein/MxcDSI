@@ -2,13 +2,13 @@
 
 namespace MxcDropshipInnocigs\Client;
 
+use Mxc\Shopware\Plugin\ActionListener;
+use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
+use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use MxcDropshipInnocigs\Plugin\ActionListener;
-use MxcDropshipInnocigs\Plugin\Convenience\ModelManagerTrait;
-use MxcDropshipInnocigs\Plugin\Service\LoggerInterface;
 use Zend\Config\Config;
 use Zend\EventManager\EventInterface;
 
@@ -19,25 +19,25 @@ class InnocigsClient extends ActionListener {
     /**
      * @var ApiClient $apiClient
      */
-    private $apiClient;
+    protected $apiClient;
 
     /**
      * @var array $options
      */
-    private $options;
+    protected $options;
 
     /**
-     * @var Logger $log
+     * @var LoggerInterface $log
      */
-    private $log;
+    protected $log;
 
     public function __construct(ApiClient $apiClient, Config $config, LoggerInterface $log) {
+        parent::__construct($config);
         $this->log = $log;
         $this->apiClient = $apiClient;
-        parent::__construct($config);
     }
 
-    private function createVariants(InnocigsArticle $article, array $variantArray) : array {
+    protected function createVariants(InnocigsArticle $article, array $variantArray) : array {
         $articleProperties = null;
         // mark all variants of active articles active
         $active = $article->getActive();
@@ -75,7 +75,7 @@ class InnocigsClient extends ActionListener {
         return $articleProperties;
     }
 
-    private function createArticles(array $articles, int $limit = -1) {
+    protected function createArticles(array $articles, int $limit = -1) {
         $i = 0;
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
@@ -96,7 +96,7 @@ class InnocigsClient extends ActionListener {
         }
     }
 
-    private function createOptions(InnocigsGroup $group, $options) {
+    protected function createOptions(InnocigsGroup $group, $options) {
         foreach ($options as $optionName) {
             $option = new InnocigsOption();
             $option->setName($optionName);
@@ -105,7 +105,7 @@ class InnocigsClient extends ActionListener {
         }
     }
 
-    private function createGroups(array $opts)
+    protected function createGroups(array $opts)
     {
         foreach ($opts as $groupName => $options) {
             $group = new InnocigsGroup();
@@ -173,13 +173,15 @@ class InnocigsClient extends ActionListener {
         $this->createGroups($options);
         $this->log->info('Creating articles and variants.');
         $this->createArticles($items, $limit);
+        /** @noinspection PhpUnhandledExceptionInspection */
         $this->flush();
     }
 
-    public function onActivate(EventInterface $e) {
+    public function activate(EventInterface $e) {
         $this->log->enter();
         $context = $e->getParam('context');
         $options = $this->getOptions();
+        $this->log->info('activateOptions: ' . var_export($options->toArray(), true));
         if (true === $options->importArticles) {
             $this->importArticles($options->numberOfArticles ?? -1);
         }
@@ -193,16 +195,12 @@ class InnocigsClient extends ActionListener {
         return true;
     }
 
-    public function onDeactivate(EventInterface $e) {
-        $this->log->enter();
-        $options = $this->getOptions();
-        if (true === $options->dropArticles) {
-            // @todo: Drop Articles
-            if (true === $options->dropConfigurator) {
-                // @todo: Drop Groups and Options also
-            }
-        }
-        $this->log->leave();
+    /**
+     * @noinspection PhpUnusedParameterInspection
+     * @param EventInterface $e
+     * @return bool
+     */
+    public function deactivate(EventInterface $e) {
         return true;
     }
 }

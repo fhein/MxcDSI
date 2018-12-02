@@ -2,8 +2,8 @@
 
 namespace MxcDropshipInnocigs\Subscriber;
 
-use MxcDropshipInnocigs\Plugin\Plugin;
-use MxcDropshipInnocigs\Plugin\Subscriber\EntitySubscriber;
+use Mxc\Shopware\Plugin\Plugin;
+use Mxc\Shopware\Plugin\Subscriber\EntitySubscriber;
 use Zend\EventManager\EventInterface;
 
 class InnocigsArticleSubscriber extends EntitySubscriber
