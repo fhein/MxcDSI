@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Configurator;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -17,6 +17,8 @@ class GroupRepositoryFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        return new GroupRepository($container->get('logger'));
+        $log = $container->get('logger');
+        $modelManager = $container->get('modelManager');
+        return new GroupRepository($modelManager, $log);
     }
 }

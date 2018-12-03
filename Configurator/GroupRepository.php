@@ -6,23 +6,32 @@
  * Time: 14:36
  */
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Configurator;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 
 class GroupRepository
 {
-    use ModelManagerTrait;
-
+    /**
+     * @var array $data
+     */
     protected $data;
+    /**
+     * @var LoggerInterface $log
+     */
     protected $log;
+    /**
+     * @var ModelManager $modelManager
+     */
+    protected $modelManager;
 
-    public function __construct(LoggerInterface $log) {
+    public function __construct(ModelManager $modelManager, LoggerInterface $log) {
         $this->log = $log;
+        $this->modelManager = $modelManager;
         $this->createLookupTable();
     }
 
@@ -32,7 +41,7 @@ class GroupRepository
             Group::class,
         Option::class
         );
-        $array = $this->createQuery($dql)->getScalarResult();
+        $array = $this->modelManager->createQuery($dql)->getScalarResult();
         $this->data = [];
         foreach ($array as $entry) {
             $this->data[$entry['gName']]['group'] = true;
@@ -55,7 +64,7 @@ class GroupRepository
             $name
         ));
         $group = new Group();
-        $this->persist($group);
+        $this->modelManager->persist($group);
 
         $group->setName($name);
         $group->setPosition(count($this->data));
@@ -66,9 +75,9 @@ class GroupRepository
     public function getGroup(string $name) {
         $group = $this->data[$name]['group'] ?? null;
         if ($group  === true) {
-            $group = $this->getRepository(Group::class)->findOneBy(['name' => $name]);
+            $group = $this->modelManager->getRepository(Group::class)->findOneBy(['name' => $name]);
             $this->data[$name]['group'] = $group;
-            $this->persist($group);
+            $this->modelManager->persist($group);
         }
         return $group;
     }
@@ -82,7 +91,7 @@ class GroupRepository
                 Group::class,
                  $groupId,
                  $optionName);
-            $option = $this->createQuery($dql)->getResult()[0];
+            $option = $this->modelManager->createQuery($dql)->getResult()[0];
             $this->data[$groupName]['options'][$optionName] = $option;
         }
         return $option;
@@ -125,5 +134,9 @@ class GroupRepository
         $option->setPosition(count($this->data[$groupName]['options']));
         $this->data[$groupName]['options'][$optionName] = $option;
         return $option;
+    }
+
+    public function flush() {
+        $this->modelManager->flush();
     }
 }

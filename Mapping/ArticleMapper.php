@@ -5,15 +5,16 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
 use Exception;
-use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Client\InnocigsClient;
+use MxcDropshipInnocigs\Listener\InnocigsClient;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Bundle\MediaBundle\MediaService;
+use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Image;
@@ -31,49 +32,54 @@ use Zend\EventManager\ListenerAggregateTrait;
 class ArticleMapper implements ListenerAggregateInterface
 {
     use ListenerAggregateTrait;
-    use ModelManagerTrait;
 
     /**
      * @var LoggerInterface $log
      */
-    private $log;
+    protected $log;
 
     /**
      * @var ArticleOptionMapper $optionMapper
      */
-    private $optionMapper;
+    protected $optionMapper;
 
     /**
      * @var PropertyMapper $propertyMapper
      */
-    private $propertyMapper;
+    protected $propertyMapper;
 
     /**
      * @var MediaService $mediaService
      */
-    private $mediaService;
+    protected $mediaService;
 
     /**
      * @var InnocigsClient $client
      */
-    private $client;
+    protected $client;
+    /**
+     * @var ModelManager $modelManager
+     */
+    protected $modelManager;
 
     /**
      * @var array $unitOfWork
      */
-    private $unitOfWork = [];
+    protected $unitOfWork = [];
 
-    private $shopwareGroups = [];
-    private $shopwareGroupRepository = null;
-    private $shopwareGroupLookup = [];
+    protected $shopwareGroups = [];
+    protected $shopwareGroupRepository = null;
+    protected $shopwareGroupLookup = [];
 
     public function __construct(
+        ModelManager $modelManager,
         ArticleOptionMapper $option,
         PropertyMapper $propertyMapper,
         MediaService $mediaService,
         InnocigsClient $client,
         LoggerInterface $log)
     {
+        $this->modelManager = $modelManager;
         $this->optionMapper = $option;
         $this->propertyMapper = $propertyMapper;
         $this->mediaService = $mediaService;
@@ -81,7 +87,7 @@ class ArticleMapper implements ListenerAggregateInterface
         $this->log = $log;
     }
 
-    private function createShopwareArticle(InnocigsArticle $article) {
+    protected function createShopwareArticle(InnocigsArticle $article) {
 
         $swArticle = $this->getShopwareArticle($article);
 
@@ -105,7 +111,7 @@ class ArticleMapper implements ListenerAggregateInterface
         $this->client->addArticleDetail($article);
 
         $swArticle = new Article();
-        $this->persist($swArticle);
+        $this->modelManager->persist($swArticle);
 
         $tax = $this->getTax();
         $supplier = $this->getSupplier($article);
@@ -124,8 +130,9 @@ class ArticleMapper implements ListenerAggregateInterface
         $set = $this->optionMapper->createConfiguratorSet($article, $swArticle);
         $swArticle->setConfiguratorSet($set);
 
-        //        $this->createImage($article);
-
+        $url = $article->getImage();
+        $images = $this->getImage($url, $swArticle);
+        $swArticle->setImages($images);
 
         //create details from innocigs variants
         $variants = $article->getVariants();
@@ -138,12 +145,12 @@ class ArticleMapper implements ListenerAggregateInterface
             $swDetail = $this->createShopwareDetail($variant, $swArticle, $isMainDetail);
             if($isMainDetail){
                 $swArticle->setMainDetail($swDetail);
-                $this->persist($swArticle);
+                $this->modelManager->persist($swArticle);
                 $isMainDetail = false;
             }
         }
 
-        $this->flush();
+        $this->modelManager->flush();
         return $swArticle;
     }
 
@@ -154,7 +161,7 @@ class ArticleMapper implements ListenerAggregateInterface
      * @param InnocigsArticle $article
      * @return null|Article
      */
-    private function getShopwareArticle(InnocigsArticle $article){
+    protected function getShopwareArticle(InnocigsArticle $article){
         $swArticle = null;
         $variants = $article->getVariants();
         $codes = [];
@@ -166,7 +173,7 @@ class ArticleMapper implements ListenerAggregateInterface
          * @var Criteria $criteria
          */
         $criteria = Criteria::create()->where($expr->in('number', $codes));
-        $swDetails = $this->getRepository(Detail::class)->matching($criteria);
+        $swDetails = $this->modelManager->getRepository(Detail::class)->matching($criteria);
 
         if (! $swDetails->isEmpty()){
             $swArticle = $swDetails->offsetGet(0)->getArticle();
@@ -174,14 +181,14 @@ class ArticleMapper implements ListenerAggregateInterface
         return $swArticle;
     }
 
-    private function createShopwareDetail(InnocigsVariant $variant, Article $swArticle, bool $isMainDetail){
+    protected function createShopwareDetail(InnocigsVariant $variant, Article $swArticle, bool $isMainDetail){
         $this->log->info(sprintf('%s: Creating detail record for InnoCigs variant %s',
             __FUNCTION__,
             $variant->getCode()
         ));
 
         $detail = new Detail();
-        $this->persist($detail);
+        $this->modelManager->persist($detail);
 
         // The class \Shopware\Models\Attribute\Article ist part of the Shopware attribute system.
         // It gets (re)generated automatically by Shopware core, when attributes are added/removed
@@ -222,22 +229,44 @@ class ArticleMapper implements ListenerAggregateInterface
         return $detail;
     }
 
-    private function createImage(InnocigsArticle $article)
+    protected function getImage(string $url, Article $swArticle)
     {
-        //download image
-        $url = $article->getImage();
+        $this->log->info('Getting image from '.$url);
+
         $urlInfo = pathinfo($url);
-        $swUrl = 'media/image/' . $urlInfo['basename'];
-        $this->log->info('download image from '.$url);
+        $swUrl = 'media/image/'.$urlInfo['basename'];
 
-        $fileContent = file_get_contents($url);
+        if (!$this->mediaService->has($swUrl)) $this->copyICImage($url, $swUrl);
 
-        // save to filesystem
-        $this->log->info('save image to '. $swUrl);
+        $media = $this->getMedia($swUrl,$url);
 
-        $this->mediaService->write($swUrl); // second parameter needed
+        $image = new Image();
+        $image->setMedia($media);
+        $image->setArticle($swArticle);
+        $image->setExtension($urlInfo['extension']);
+        $image->setMain(1);
+        $image->setPath($media->getName());
+        $image->setPosition(1);
+        $this->modelManager->persist($image);
 
-        //create database entry
+        $images = new ArrayCollection();
+        $images->add($image);
+
+        return $images;
+    }
+
+    protected function getMedia(string $swUrl, string $url){
+
+        $media = $this->modelManager->getRepository(Media::class)->findOneBy(['path' => $swUrl]);
+
+        if (null === $media)
+            $media = $this->createMedia($swUrl,$url);
+
+        return $media;
+    }
+
+    protected function createMedia (string $swUrl, string $url ){
+        $urlInfo = pathinfo($url);
 
         $media = new Media();
         $media->setAlbumId(-1);
@@ -245,24 +274,43 @@ class ArticleMapper implements ListenerAggregateInterface
         $media->setPath($swUrl);
         $media->setType('IMAGE');
         $media->setExtension($urlInfo['extension']);
+        $media->setDescription('');
 
-        $size = getimagesize($swUrl);
+        //   $userID = Shopware()->Session()['sUserId'];
+        //   $this->log->info('current user: '.$userID);
 
-        $this->log->info('Image width: '. $size{0}. ' height: '. $size{1});
+        $media->setUserId(50); // Todo: Get User ID from System
+        $now = new DateTime();
+        $media->setCreated($now);
+
+        $size = getimagesize($url);
+        $this->log->debug('Image size: '. $size{0} . ' - ' . $size{1});
+
+        if ($size == false) $size = array(0,0);
 
         $media->setWidth($size{0});
-        $media->setHeight{$size{1}};
+        $media->setHeight($size{1});
         $media->setFileSize(filesize($swUrl));
 
-        $this->persist($media);
+        $this->modelManager->persist($media);
 
-        $image = new Image();
-        $image->setMedia($media);
+        return $media;
     }
 
-    private function enableDropship(Article $swArticle)
+    protected function copyICImage(string $url, $swUrl){
+        //download image
+        $this->log->debug('download image from '.$url);
+        $fileContent = file_get_contents($url);
+
+        // save to filesystem
+        $this->log->debug('save image to '. $swUrl);
+
+        $this->mediaService->write($swUrl, $fileContent);
+    }
+
+    protected function enableDropship(Article $swArticle)
     {
-        if (null === $this->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
+        if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
             $this->log->warn(sprintf('%s: Could not prepare Shopware article "%s" for dropship orders. Dropshippers Companion is not installed.',
                 __FUNCTION__,
                 $swArticle->getName()
@@ -271,7 +319,7 @@ class ArticleMapper implements ListenerAggregateInterface
         }
     }
 
-    private function createPrice(InnocigsVariant $variant, Article $swArticle, Detail $detail){
+    protected function createPrice(InnocigsVariant $variant, Article $swArticle, Detail $detail){
         $tax = $this->getTax()->getTax();
         $netPrice = $variant->getPriceRecommended() / (1 + ($tax/100));
 
@@ -285,17 +333,17 @@ class ArticleMapper implements ListenerAggregateInterface
         $price->setPrice($netPrice);
         $price->setFrom(1);
         $price->setTo(null);
-        $customerGroup = $this->getRepository(Group::class)->findOneBy(['key' => 'EK']);
+        $customerGroup = $this->modelManager->getRepository(Group::class)->findOneBy(['key' => 'EK']);
         $price->setCustomerGroup($customerGroup);
         $price->setArticle($swArticle);
         $price->setDetail($detail);
 
-        $this->persist($price);
+        $this->modelManager->persist($price);
         return new ArrayCollection([$price]);
     }
 
 
-    private function removeShopwareArticle(InnocigsArticle $article) {
+    protected function removeShopwareArticle(InnocigsArticle $article) {
         $this->log->info('Remove Shopware Article for ' . $article->getName());
     }
 
@@ -303,12 +351,13 @@ class ArticleMapper implements ListenerAggregateInterface
         /**
          * @var InnocigsArticle $article
          */
+        $this->log->info(__CLASS__ . '#' . __FUNCTION__ . ' was triggered.');
         $this->unitOfWork[] = $e->getParams()['article'];
     }
 
     public function onProcessActiveStates()
     {
-
+        $this->log->info(__CLASS__ . '#' . __FUNCTION__ . ' was triggered.');
         foreach ($this->unitOfWork as $article) {
             /**
              * @var InnocigsArticle $article
@@ -342,8 +391,8 @@ class ArticleMapper implements ListenerAggregateInterface
         $this->listeners[] = $events->attach('process_active_states', [$this, 'onProcessActiveStates'], $priority);
     }
 
-    private function getTax(float $taxValue = 19.0) {
-        $tax = $this->getRepository(Tax::class)->findOneBy(['tax' => $taxValue]);
+    protected function getTax(float $taxValue = 19.0) {
+        $tax = $this->modelManager->getRepository(Tax::class)->findOneBy(['tax' => $taxValue]);
         if (! $tax instanceof Tax) {
             $name = sprintf('Tax (%.2f)', $taxValue);
             $this->log->info(sprintf('%s: Creating Shopware tax "%s" with tax value %.2f.',
@@ -353,14 +402,15 @@ class ArticleMapper implements ListenerAggregateInterface
             ));
 
             $tax = new Tax();
-            $this->persist($tax);
+            $this->modelManager->persist($tax);
 
             $tax->setName($name);
             $tax->setTax($taxValue);
         } else {
             $this->log->info(sprintf('%s: Using existing Shopware tax "%s" with tax value %.2f.',
                 __FUNCTION__,
-                $tax->getName()
+                $tax->getName(),
+                $taxValue
             ));
 
         }
@@ -375,16 +425,16 @@ class ArticleMapper implements ListenerAggregateInterface
      * @return null|object|Supplier
      */
 
-    private function getSupplier(InnocigsArticle $article) {
+    protected function getSupplier(InnocigsArticle $article) {
         $supplierName = $article->getSupplier() ?? 'InnoCigs';
-        $supplier = $this->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
+        $supplier = $this->modelManager->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
         if (! $supplier) {
             $this->log->info(sprintf('%s: Creating Shopware supplier "%s"',
                 __FUNCTION__,
                 $supplierName
             ));
             $supplier = new Supplier();
-            $this->persist($supplier);
+            $this->modelManager->persist($supplier);
             $supplier->setName($supplierName);
         } else {
             $this->log->info(sprintf('%s: Using existing Shopware supplier "%s"',

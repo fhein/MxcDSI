@@ -19,6 +19,7 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
             // the service manager only. It's operation gets triggered via
             // events only.
             $this->services->get(ArticleMapper::class);
+            $this->log->info('Config path: ' . $this->getConfigPath());
             parent::updateAction();
             // Here all Doctrine lifecycle events are completed so we can
             // savely work with Doctrine again

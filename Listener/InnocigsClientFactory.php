@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Listener;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Client\ApiClient;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleOptionMapperFactory implements FactoryInterface
+class InnocigsClientFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -18,11 +18,10 @@ class ArticleOptionMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        $options = $container->get('config')->plugin->$requestedName;
+        $apiClient = $container->get(ApiClient::class);
         $log = $container->get('logger');
-        $repository = $container->get(GroupRepository::class);
-        $pMapper = $container->get(PropertyMapper::class);
         $modelManager = $container->get('modelManager');
-        $mapper = new ArticleOptionMapper($modelManager, $repository, $pMapper, $log);
-        return $mapper;
+        return new InnocigsClient($modelManager, $apiClient, $options, $log);
     }
 }

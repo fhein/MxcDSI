@@ -9,14 +9,18 @@ use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\ApiClientFactory;
 use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Client\CredentialsFactory;
-use MxcDropshipInnocigs\Client\InnocigsClient;
-use MxcDropshipInnocigs\Client\InnocigsClientFactory;
+use MxcDropshipInnocigs\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Configurator\GroupRepositoryFactory;
+use MxcDropshipInnocigs\Filter\OptionRepository as PropertyRepository;
+use MxcDropshipInnocigs\Filter\OptionRepositoryFactory as PropertyRepositoryFactory;
+use MxcDropshipInnocigs\Listener\FilterTest;
+use MxcDropshipInnocigs\Listener\FilterTestFactory;
+use MxcDropshipInnocigs\Listener\InnocigsClient;
+use MxcDropshipInnocigs\Listener\InnocigsClientFactory;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleMapperFactory;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapperFactory;
-use MxcDropshipInnocigs\Mapping\GroupRepository;
-use MxcDropshipInnocigs\Mapping\GroupRepositoryFactory;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\PropertyMapperFactory;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
@@ -36,6 +40,12 @@ return [
                     'numberOfArticles' => -1,
                     'clearCache' => false,
                 ],
+            ],
+        ],
+        FilterTest::class => [
+            'options' => [
+                'activate' => [],
+                'deactivate' => [],
             ],
         ],
     ],
@@ -93,7 +103,7 @@ return [
                             'name' => 'priority',
                             'options' => [
                                 'operator' => '<=',
-                                'priority' => Logger::INFO,
+                                'priority' => Logger::DEBUG,
                             ],
                         ],
                     ],
@@ -110,10 +120,9 @@ return [
             Database::class                     => DatabaseFactory::class,
             GroupRepository::class              => GroupRepositoryFactory::class,
             InnocigsClient::class               => InnocigsClientFactory::class,
+            FilterTest::class                   => FilterTestFactory::class,
             PropertyMapper::class               => PropertyMapperFactory::class,
-        ],
-        'aliases' => [
-            'test' => InnocigsArticleSubscriber::class,
+            PropertyRepository::class           => PropertyRepositoryFactory::class,
         ],
     ],
     'mappings' => [

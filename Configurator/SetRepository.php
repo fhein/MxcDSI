@@ -1,19 +1,16 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Configurator;
 
-use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
-use Mxc\Shopware\Plugin\Plugin;
+use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Configurator\Set;
-use Zend\Log\Logger;
 
 class SetRepository
 {
-    use ModelManagerTrait;
-
     /**
      * @var Set $set
      */
@@ -35,12 +32,17 @@ class SetRepository
     private $groups;
 
     /**
-     * @var Logger $log
+     * @var LoggerInterface $log
      */
     private $log;
+    /**
+     * @var ModelManager $modelManager
+     */
+    protected $modelManager;
 
-    public function __construct() {
-        $this->log = Plugin::getServices()->get('logger');
+    public function __construct(ModelManager $modelManager, LoggerInterface $log) {
+        $this->log = $log;
+        $this->modelManager = $modelManager;
     }
 
     protected function createSet(string $name) {
@@ -51,7 +53,7 @@ class SetRepository
     }
 
     public function initSet(string $name) {
-        $setRepo = $this->getRepository(Set::class);
+        $setRepo = $this->modelManager->getRepository(Set::class);
         /**
          * @var Set $set
          */
@@ -81,7 +83,7 @@ class SetRepository
                 $this->groups[$group->getName()] = $group;
             }
         }
-        $this->persist($set);
+        $this->modelManager->persist($set);
         $this->set = $set;
     }
 

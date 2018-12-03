@@ -1,20 +1,19 @@
 <?php
 
-namespace MxcDropshipInnocigs\Client;
+namespace MxcDropshipInnocigs\Listener;
 
 use Mxc\Shopware\Plugin\ActionListener;
-use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 use Zend\EventManager\EventInterface;
 
 class InnocigsClient extends ActionListener {
-
-    use ModelManagerTrait;
 
     /**
      * @var ApiClient $apiClient
@@ -31,10 +30,15 @@ class InnocigsClient extends ActionListener {
      */
     protected $log;
 
-    public function __construct(ApiClient $apiClient, Config $config, LoggerInterface $log) {
-        parent::__construct($config);
-        $this->log = $log;
+    /**
+     * @var ModelManager $modelManager
+     */
+    protected $modelManager;
+
+    public function __construct(ModelManager $modelManager, ApiClient $apiClient, Config $config, LoggerInterface $log) {
+        parent::__construct($config, $log);
         $this->apiClient = $apiClient;
+        $this->modelManager = $modelManager;
     }
 
     protected function createVariants(InnocigsArticle $article, array $variantArray) : array {
@@ -90,7 +94,7 @@ class InnocigsClient extends ActionListener {
             $article->setCode($articleCode);
             $article->setDescription('n/a');
             // this cascades persisting the variants also
-            $this->persist($article);
+            $this->modelManager->persist($article);
             $i++;
             if ($limit !== -1 && $i === $limit) break;
         }
@@ -112,7 +116,7 @@ class InnocigsClient extends ActionListener {
             $group->setName($groupName);
             $this->createOptions($group, array_keys($options));
             // this cascades persisting the options also
-            $this->persist($group);
+            $this->modelManager->persist($group);
         }
     }
 
@@ -134,7 +138,7 @@ class InnocigsClient extends ActionListener {
                 $article->getCode()
             ));
             $article->setDescription($description);
-            $this->persist($article);
+            $this->modelManager->persist($article);
         } else  {
             $this->log->info(sprintf('%s: Article description from InnoCigs for article %s is up to date.',
                 __FUNCTION__,
@@ -144,7 +148,7 @@ class InnocigsClient extends ActionListener {
     }
 
     public function createArticleConfigurationFile() {
-        $articles = $this->getRepository(InnocigsArticle::class)->findAll();
+        $articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
         $config = [];
 
         foreach ($articles as $article) {
@@ -174,15 +178,15 @@ class InnocigsClient extends ActionListener {
         $this->log->info('Creating articles and variants.');
         $this->createArticles($items, $limit);
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->flush();
+        $this->modelManager->flush();
     }
 
     public function activate(EventInterface $e) {
         $this->log->enter();
         $context = $e->getParam('context');
         $options = $this->getOptions();
-        $this->log->info('activateOptions: ' . var_export($options->toArray(), true));
-        if (true === $options->importArticles) {
+        $articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
+        if (empty($articles)) {
             $this->importArticles($options->numberOfArticles ?? -1);
         }
         if (true === $options->saveArticleConfiguration){
@@ -200,7 +204,7 @@ class InnocigsClient extends ActionListener {
      * @param EventInterface $e
      * @return bool
      */
-    public function deactivate(EventInterface $e) {
+    public function deactivate(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e) {
         return true;
     }
 }

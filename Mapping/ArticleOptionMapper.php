@@ -2,26 +2,27 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-use Mxc\Shopware\Plugin\Convenience\ModelManagerTrait;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Configurator\SetRepository;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 
 class ArticleOptionMapper
 {
-    use ModelManagerTrait;
+    protected $log;
+    protected $groupRepository;
+    protected $mapper;
 
-    private $log;
-    private $groupRepository;
-    private $mapper;
-
-    public function __construct(GroupRepository $repository, PropertyMapper $mapper, LoggerInterface $log)
+    public function __construct(ModelManager $modelManager, GroupRepository $repository, PropertyMapper $mapper, LoggerInterface $log)
     {
         $this->log = $log;
         $this->groupRepository = $repository;
         $this->mapper = $mapper;
+        $this->modelManager = $modelManager;
     }
 
     public function createShopwareGroupsAndOptions(InnocigsArticle $article) {
@@ -48,7 +49,6 @@ class ArticleOptionMapper
             }
         }
         /** @noinspection PhpUnhandledExceptionInspection */
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->groupRepository->flush();
     }
 
@@ -62,7 +62,7 @@ class ArticleOptionMapper
             ));
             return null;
         }
-        $setRepository = new SetRepository();
+        $setRepository = new SetRepository($this->modelManager, $this->log);
         $setName = 'mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode());
         $setRepository->initSet($setName);
 

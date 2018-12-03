@@ -104,7 +104,7 @@
         <element type="button" scope="locale">
             <name>api_test</name>
             <label lang="de">Konfiguration testen</label>
-            <label lang="en">Test configuration</label>
+            <label lang="en">FilterTest configuration</label>
         </element>
     </elements>
 </config>

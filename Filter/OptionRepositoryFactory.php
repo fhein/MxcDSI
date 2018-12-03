@@ -1,12 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Filter;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Configurator\GroupRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleOptionMapperFactory implements FactoryInterface
+class OptionRepositoryFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -19,10 +18,7 @@ class ArticleOptionMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get('logger');
-        $repository = $container->get(GroupRepository::class);
-        $pMapper = $container->get(PropertyMapper::class);
         $modelManager = $container->get('modelManager');
-        $mapper = new ArticleOptionMapper($modelManager, $repository, $pMapper, $log);
-        return $mapper;
+        return new OptionRepository($modelManager, $log);
     }
 }

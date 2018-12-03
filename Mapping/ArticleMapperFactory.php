@@ -3,7 +3,7 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Client\InnocigsClient;
+use MxcDropshipInnocigs\Listener\InnocigsClient;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -24,7 +24,8 @@ class ArticleMapperFactory implements FactoryInterface
         $propertyMapper = $container->get(PropertyMapper::class);
         $client = $container->get(InnocigsClient::class);
         $mediaService = $container->get('mediaManager');
-        $articleMapper = new ArticleMapper($attributeMapper, $propertyMapper, $mediaService, $client, $log);
+        $modelManager = $container->get('modelManager');
+        $articleMapper = new ArticleMapper($modelManager, $attributeMapper, $propertyMapper, $mediaService, $client, $log);
         $articleMapper->attach($container->get('events'));
         return $articleMapper;
     }

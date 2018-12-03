@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Client;
+namespace MxcDropshipInnocigs\Listener;
 
 use Interop\Container\ContainerInterface;
-use Zend\Log\Logger;
+use MxcDropshipInnocigs\Filter\OptionRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class InnocigsClientFactory implements FactoryInterface
+class FilterTestFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -19,8 +19,8 @@ class InnocigsClientFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $options = $container->get('config')->plugin->$requestedName;
-        $apiClient = $container->get(ApiClient::class);
-        $log = $container->get(Logger::class);
-        return new InnocigsClient($apiClient, $options, $log);
+        $repository = $container->get(OptionRepository::class);
+        $log = $container->get('logger');
+        return new FilterTest($repository, $options, $log);
     }
 }
