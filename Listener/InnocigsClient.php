@@ -14,47 +14,61 @@ use Zend\Config\Config;
 use Zend\EventManager\EventInterface;
 
 class InnocigsClient extends ActionListener {
-
     /**
      * @var ApiClient $apiClient
      */
     protected $apiClient;
-
     /**
      * @var array $options
      */
     protected $options;
-
     /**
      * @var LoggerInterface $log
      */
     protected $log;
-
     /**
      * @var ModelManager $modelManager
      */
     protected $modelManager;
 
-    public function __construct(ModelManager $modelManager, ApiClient $apiClient, Config $config, LoggerInterface $log) {
+    public function __construct(
+        ModelManager $modelManager,
+        ApiClient $apiClient,
+        Config $config,
+        LoggerInterface $log
+    ) {
         parent::__construct($config, $log);
         $this->apiClient = $apiClient;
         $this->modelManager = $modelManager;
+    }
+
+    private function getStringParam($value) {
+        if (is_string($value)) {
+            return $value;
+        }
+        if (is_array($value) && empty($value)) {
+            return '';
+        }
+        throw new InvalidArgumentException(
+            sprintf('String or empty array expected, got %s.',
+                is_object($value) ? get_class($value) : gettype($value)
+            )
+        );
     }
 
     protected function createVariants(InnocigsArticle $article, array $variantArray) : array {
         $articleProperties = null;
         // mark all variants of active articles active
         $active = $article->getActive();
+        $ignored = $article->getIgnored();
         foreach ($variantArray as $variantCode => $variantData) {
             $variant = new InnocigsVariant();
 
             $variant->setCode($variantCode);
             $variant->setActive($active);
+            $variant->setIgnored($ignored);
 
-            $tmp = $variantData['EAN'];
-            // the API delivers an empty array instead of an empty string if EAN is not available
-            $tmp = is_string($tmp) ? $tmp : '';
-            $variant->setEan($tmp);
+            $variant->setEan($this->getStringParam($variantData['EAN']));
             $tmp = str_replace(',', '.', $variantData['PRODUCTS_PRICE']);
             $variant->setPriceNet(floatval($tmp));
             $tmp = str_replace(',', '.', $variantData['PRODUCTS_PRICE_RECOMMENDED']);
@@ -83,14 +97,12 @@ class InnocigsClient extends ActionListener {
         $i = 0;
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
-            // mark the first two articles active for testing
             $article->setActive(false);
+            $article->setIgnored(false);
             $articleProperties = $this->createVariants($article, $articleData);
             $name = $articleProperties['name'];
             $article->setName($name);
-            // use our name mapping if present, name from innocigs otherwise
-            $tmp = is_string($articleProperties['image']) ? $articleProperties['image'] : '';
-            $article->setImage($tmp);
+            $article->setImage($this->getStringParam($articleProperties['image']));
             $article->setCode($articleCode);
             $article->setDescription('n/a');
             // this cascades persisting the variants also
@@ -124,9 +136,9 @@ class InnocigsClient extends ActionListener {
     {
         $variant = $article->getVariants()[0];
         $raw = $this->apiClient->getItemInfo($variant->getCode());
-        $description = $raw['PRODUCTS']['PRODUCT']['DESCRIPTION'];
-        if (! is_string($description)) {
-            $this->log->info(sprintf('%s: No description available from InnoCigs for article %s.',
+        $description = $this->getStringParam($raw['PRODUCTS']['PRODUCT']['DESCRIPTION']);
+        if ($description === '') {
+            $this->log->warn(sprintf('%s: No description available from InnoCigs for article %s.',
                 __FUNCTION__,
                 $article->getCode()
             ));
@@ -158,7 +170,7 @@ class InnocigsClient extends ActionListener {
                 'supplier' => $article->getSupplier(),
             ];
         }
-        $content = '<?php ' . PHP_EOL . 'return ' . var_export($config, true). ';' . PHP_EOL;
+        $content = '<?php' . PHP_EOL . 'return ' . var_export($config, true). ';' . PHP_EOL;
         file_put_contents(__DIR__ . '/../Config/article.config.php', $content);
     }
 

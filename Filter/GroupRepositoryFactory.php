@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Filter;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class OptionRepositoryFactory implements FactoryInterface
+class GroupRepositoryFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -19,6 +19,6 @@ class OptionRepositoryFactory implements FactoryInterface
     {
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        return new OptionRepository($modelManager, $log);
+        return new GroupRepository($modelManager, $log);
     }
 }

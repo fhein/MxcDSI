@@ -1,12 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: frank.hein
+ * Date: 04.12.2018
+ * Time: 17:14
+ */
 
-namespace MxcDropshipInnocigs\Listener;
+namespace MxcDropshipInnocigs\Configurator;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Filter\GroupRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class FilterTestFactory implements FactoryInterface
+class SetRepositoryFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -18,9 +23,10 @@ class FilterTestFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $options = $container->get('config')->plugin->$requestedName;
-        $repository = $container->get(GroupRepository::class);
         $log = $container->get('logger');
-        return new FilterTest($repository, $options, $log);
+        $modelManager = $container->get('modelManager');
+        return new SetRepository($modelManager, $log);
     }
 }
+
+

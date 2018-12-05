@@ -4,7 +4,7 @@ namespace MxcDropshipInnocigs\Listener;
 
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Filter\OptionRepository;
+use MxcDropshipInnocigs\Filter\GroupRepository;
 use Zend\Config\Config;
 use Zend\EventManager\EventInterface;
 
@@ -20,32 +20,32 @@ class FilterTest extends ActionListener
     ];
 
     /**
-     * @var OptionRepository $repo
+     * @var GroupRepository $repo
      */
     protected $repo;
 
-    public function __construct(OptionRepository $repository, Config $config, LoggerInterface $log) {
+    public function __construct(GroupRepository $repository, Config $config, LoggerInterface $log) {
         parent::__construct($config, $log);
         $this->repo = $repository;
     }
 
-    public function install(EventInterface $e) {
+    public function install( /** @noinspection PhpUnusedParameterInspection */ EventInterface $e) {
         $this->log->enter();
         foreach ($this->filters as $filter => $options) {
-            $this->repo->createOption($filter);
+            $this->repo->createGroup($filter);
             foreach($options as $option) {
-                $this->repo->createValue($filter, $option);
+                $this->repo->createOption($filter, $option);
             }
         }
         $this->repo->flush();
         $this->log->leave();
     }
 
-    public function uninstall(EventInterface $e) {
+    public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e) {
         $this->log->enter();
         $filters = array_keys($this->filters);
         foreach($filters as $filter) {
-            $this->repo->deleteOption($filter);
+            $this->repo->deleteGroup($filter);
         }
         $this->log->leave();
     }

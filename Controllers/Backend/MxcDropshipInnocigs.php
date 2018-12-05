@@ -19,7 +19,6 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
             // the service manager only. It's operation gets triggered via
             // events only.
             $this->services->get(ArticleMapper::class);
-            $this->log->info('Config path: ' . $this->getConfigPath());
             parent::updateAction();
             // Here all Doctrine lifecycle events are completed so we can
             // savely work with Doctrine again
@@ -28,5 +27,16 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
             $this->log->except($e);
         }
         $this->log->leave();
+    }
+
+    /**
+     * Create the list query which will select only InnocigsArticles which are not ignored.
+     *
+     * @return \Shopware\Components\Model\QueryBuilder
+     */
+    public function getListQuery() {
+        $builder = parent::getListQuery();
+        $builder->andWhere($builder->expr()->eq($this->alias . '.ignored', intval(false)));
+        return $builder;
     }
 }

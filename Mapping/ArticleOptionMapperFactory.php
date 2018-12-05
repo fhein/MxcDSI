@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
 use MxcDropshipInnocigs\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Configurator\SetRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ArticleOptionMapperFactory implements FactoryInterface
@@ -19,10 +20,10 @@ class ArticleOptionMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get('logger');
-        $repository = $container->get(GroupRepository::class);
+        $groupRepository = $container->get(GroupRepository::class);
+        $setRepository = $container->get(SetRepository::class);
         $pMapper = $container->get(PropertyMapper::class);
-        $modelManager = $container->get('modelManager');
-        $mapper = new ArticleOptionMapper($modelManager, $repository, $pMapper, $log);
+        $mapper = new ArticleOptionMapper($groupRepository, $setRepository, $pMapper, $log);
         return $mapper;
     }
 }

@@ -61,7 +61,6 @@ class ArticleMapper implements ListenerAggregateInterface
      * @var ModelManager $modelManager
      */
     protected $modelManager;
-
     /**
      * @var array $unitOfWork
      */
@@ -88,6 +87,8 @@ class ArticleMapper implements ListenerAggregateInterface
     }
 
     protected function createShopwareArticle(InnocigsArticle $article) {
+        // do nothing if either the article or all of its variants are set to be ignored
+        if ($article->isIgnored()) return;
 
         $swArticle = $this->getShopwareArticle($article);
 
@@ -97,7 +98,7 @@ class ArticleMapper implements ListenerAggregateInterface
                 $article->getCode(),
                 $swArticle->getId()
             ));
-            return $swArticle;
+            return;
         }
 
         $name = $this->propertyMapper->mapArticleName($article->getName());
@@ -111,6 +112,7 @@ class ArticleMapper implements ListenerAggregateInterface
         $this->client->addArticleDetail($article);
 
         $swArticle = new Article();
+        $article->setArticle($swArticle);
         $this->modelManager->persist($swArticle);
 
         $tax = $this->getTax();
@@ -127,7 +129,7 @@ class ArticleMapper implements ListenerAggregateInterface
         $swArticle->setActive(true);
 
         $this->optionMapper->createShopwareGroupsAndOptions($article);
-        $set = $this->optionMapper->createConfiguratorSet($article, $swArticle);
+        $set = $this->optionMapper->createConfiguratorSet($article);
         $swArticle->setConfiguratorSet($set);
 
         $url = $article->getImage();
@@ -139,6 +141,7 @@ class ArticleMapper implements ListenerAggregateInterface
 
         $isMainDetail = true;
         foreach($variants as $variant){
+            if ($variant->isIgnored()) continue;
             /**
              * @var Detail $swDetail
              */
@@ -151,7 +154,7 @@ class ArticleMapper implements ListenerAggregateInterface
         }
 
         $this->modelManager->flush();
-        return $swArticle;
+        return;
     }
 
     /**

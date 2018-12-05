@@ -6,7 +6,7 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
-
+use Shopware\Models\Article\Article;
 
 /**
  * @ORM\Entity
@@ -24,49 +24,42 @@ class InnocigsArticle extends ModelEntity {
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
     /**
      * @var string $name
      *
-     * @ORM\Column()
+     * @ORM\Column(type="string", nullable=false)
      */
     private $name;
-
     /**
      * @var string $code
      *
      * @ORM\Column(type="string", nullable=false)
      */
     private $code;
-
     /**
      * @var string $supplier
      *
      * @ORM\Column(type="string", nullable=true)
      */
     private $supplier;
-
     /**
      * @var string $brand
      *
      * @ORM\Column(type="string", nullable=true)
      */
     private $brand;
-
     /**
      * @var string $description
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $description;
-
     /**
      * @var string $image;
      *
-     * @ORM\Column(name="image", type="string", nullable=false)
+     * @ORM\Column(name="image", type="string", nullable=true)
      */
     private $image;
-
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
@@ -76,18 +69,23 @@ class InnocigsArticle extends ModelEntity {
      * )
      */
     private $variants;
-
+    /**
+     * @var Article
+     * @ORM\OneToOne(targetEntity="Shopware\Models\Article\Article")
+     * @ORM\JoinColumn(name="article_id", referencedColumnName="id", nullable=true)
+     */
+    private $article;
     /**
      * @var boolean $active
      *
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=false)
      */
     private $active = false;
 
     /**
      * @var boolean $ignored
      *
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=false)
      */
     private $ignored = true;
 
@@ -112,10 +110,12 @@ class InnocigsArticle extends ModelEntity {
      */
     private $updated = null;
 
+    /**
+     * InnocigsArticle constructor.
+     */
     public function __construct() {
         $this->variants = new ArrayCollection();
     }
-
     /**
      * @ORM\PrePersist
      * @ORM\PreUpdate
@@ -127,7 +127,6 @@ class InnocigsArticle extends ModelEntity {
             $this->created = $now;
         }
     }
-
     /**
      * @return int
      */
@@ -135,7 +134,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->id;
     }
-
     /**
      * @return string
      */
@@ -143,7 +141,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->name;
     }
-
     /**
      * @param string $name
      */
@@ -151,14 +148,12 @@ class InnocigsArticle extends ModelEntity {
     {
         $this->name = $name;
     }
-
     /**
      * @return boolean
      */
     public function isActive() {
         return $this->active;
     }
-
     /**
      * @return bool
      */
@@ -166,7 +161,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->active;
     }
-
     /**
      * @param bool $active
      */
@@ -174,7 +168,6 @@ class InnocigsArticle extends ModelEntity {
     {
         $this->active = $active;
     }
-
     /**
      * @return DateTime
      */
@@ -182,12 +175,10 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->created;
     }
-
     public function getVariants()
     {
         return $this->variants;
     }
-
     /**
      * @param InnocigsVariant $variant
      */
@@ -195,7 +186,6 @@ class InnocigsArticle extends ModelEntity {
         $this->variants->add($variant);
         $variant->setArticle($this);
     }
-
     /**
      * @return string
      */
@@ -203,7 +193,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->code;
     }
-
     /**
      * @param string $code
      */
@@ -211,7 +200,6 @@ class InnocigsArticle extends ModelEntity {
     {
         $this->code = $code;
     }
-
     /**
      * @return \DateTime
      */
@@ -219,15 +207,20 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->updated;
     }
-
     /**
+     * Return true if this object or all of its variants are ignored
+     *
      * @return bool
      */
     public function isIgnored(): bool
     {
-        return $this->ignored;
+        if ($this->getIgnored()) return true;
+        $variants = $this->getVariants();
+        foreach($variants as $variant) {
+            if (! $variant->isIgnored()) return false;
+        }
+        return true;
     }
-
     /**
      * @return bool
      */
@@ -235,7 +228,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->ignored;
     }
-
     /**
      * @param bool $ignored
      */
@@ -243,7 +235,6 @@ class InnocigsArticle extends ModelEntity {
     {
         $this->ignored = $ignored;
     }
-
     /**
      * @return string
      */
@@ -251,7 +242,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->description;
     }
-
     /**
      * @param string $description
      */
@@ -259,7 +249,6 @@ class InnocigsArticle extends ModelEntity {
     {
         $this->description = $description;
     }
-
     /**
      * @return string
      */
@@ -267,7 +256,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->image;
     }
-
     /**
      * @param string $image
      */
@@ -275,7 +263,6 @@ class InnocigsArticle extends ModelEntity {
     {
         $this->image = $image;
     }
-
     /**
      * @return int
      */
@@ -283,7 +270,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->configSetId;
     }
-
     /**
      * @param int $configSetId
      */
@@ -291,42 +277,6 @@ class InnocigsArticle extends ModelEntity {
     {
         $this->configSetId = $configSetId;
     }
-
-    /**
-     * Build up an array which maps attributes to variants by group
-     *
-     *  [ <attribute group name> => [
-     *        <attribute name> => [
-     *              'variant' => <variant>,
-     *        ],
-     *        ...
-     *     ],
-     *    ...
-     *  ]
-     *
-     * @return array
-     */
-    public function getVariantsByGroupAndOption() {
-        $map = [];
-        $variants = $this->getVariants();
-        foreach($variants as $variant) {
-            /**
-             * @var InnocigsVariant $variant
-             */
-            $attributes = $variant->getOptions();
-            foreach ($attributes as $attribute) {
-                /**
-                 * @var InnocigsOption $attribute
-                 */
-                $group = $attribute->getGroup();
-                $map[$group->getName()][$attribute->getName()] = [
-                    'variant' => $variant,
-                ];
-            }
-        }
-        return $map;
-    }
-
     /**
      * @return string
      */
@@ -334,7 +284,6 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->supplier;
     }
-
     /**
      * @param string $supplier
      */
@@ -342,7 +291,6 @@ class InnocigsArticle extends ModelEntity {
     {
         $this->supplier = $supplier;
     }
-
     /**
      * @return string
      */
@@ -350,12 +298,25 @@ class InnocigsArticle extends ModelEntity {
     {
         return $this->brand;
     }
-
     /**
      * @param string $brand
      */
     public function setBrand(string $brand): void
     {
         $this->brand = $brand;
+    }
+    /**
+     * @return Article
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+    /**
+     * @param Article $article
+     */
+    public function setArticle(Article $article): void
+    {
+        $this->article = $article;
     }
 }

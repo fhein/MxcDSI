@@ -6,13 +6,13 @@
  * Time: 14:36
  */
 
-namespace MxcDropshipInnocigs\Configurator;
+namespace MxcDropshipInnocigs\Filter;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use Shopware\Components\Model\ModelManager;
-use Shopware\Models\Article\Configurator\Group;
-use Shopware\Models\Article\Configurator\Option;
+use Shopware\Models\Property\Option;
+use Shopware\Models\Property\Value;
 
 class GroupRepository
 {
@@ -37,45 +37,46 @@ class GroupRepository
 
     protected function createLookupTable()
     {
-        $dql = sprintf('SELECT g.name gName, o.name oName FROM %s g JOIN %s o WHERE o.group = g.id',
-            Group::class,
-        Option::class
+        $dql = sprintf('SELECT o.name oName, v.value vName FROM %s o JOIN %s v WHERE v.option = o.id',
+            Option::class,
+        Value::class
         );
         $array = $this->modelManager->createQuery($dql)->getScalarResult();
         $this->data = [];
         foreach ($array as $entry) {
-            $this->data[$entry['gName']]['group'] = true;
-            $this->data[$entry['gName']]['options'][$entry['oName']] = true;
+            $this->data[$entry['oName']]['group'] = true;
+            $this->data[$entry['oName']]['options'][$entry['vName']] = true;
         }
     }
 
     public function createGroup(string $name) {
-        $group = $this->getGroup($name);
-        if ($group instanceof Group) {
-            $this->log->info(sprintf('%s: Returning existing Shopware configurator group %s.',
+        $option = $this->getGroup($name);
+        if ($option instanceof Option) {
+            $this->log->info(sprintf('%s: Returning existing Shopware filter option %s.',
                 __FUNCTION__,
                 $name
             ));
-            return $group;
+            return $option;
         }
 
-        $this->log->info(sprintf('%s: Creating shopware group %s',
+        $this->log->info(sprintf('%s: Creating shopware filter option %s',
             __FUNCTION__,
             $name
         ));
-        $group = new Group();
-        $this->modelManager->persist($group);
+        $option = new Option();
+        $this->modelManager->persist($option);
 
-        $group->setName($name);
-        $group->setPosition(count($this->data));
-        $this->data[$name]['group'] = $group;
-        return $group;
+        $option->setName($name);
+        $option->setFilterable(true);
+        $this->data[$name]['group'] = $option;
+        $this->data[$name]['options'] = [];
+        return $option;
     }
 
     public function getGroup(string $name) {
         $group = $this->data[$name]['group'] ?? null;
         if ($group  === true) {
-            $group = $this->modelManager->getRepository(Group::class)->findOneBy(['name' => $name]);
+            $group = $this->modelManager->getRepository(Option::class)->findOneBy(['name' => $name]);
             $this->data[$name]['group'] = $group;
             $this->modelManager->persist($group);
         }
@@ -86,9 +87,9 @@ class GroupRepository
         $option = $this->data[$groupName]['options'][$optionName] ?? null;
         $groupId = $this->getGroup($groupName)->getId();
         if ($option === true) {
-            $dql = sprintf("SELECT o FROM %s o JOIN %s g WHERE o.group = %s AND o.name = '%s'",
+            $dql = sprintf("SELECT o FROM %s v JOIN %s o WHERE v.option = %s AND v.option = '%s'",
+                Value::class,
                 Option::class,
-                Group::class,
                  $groupId,
                  $optionName);
             $option = $this->modelManager->createQuery($dql)->getResult()[0];
@@ -103,33 +104,31 @@ class GroupRepository
         $group = $this->getGroup($groupName);
         if (null === $group) return null;
 
-        // if we know the option already return it
+        // if we know the group already return it
         $option = $this->getOption($groupName, $optionName);
-        if ($option instanceof Option) {
-            $this->log->info(sprintf('%s: Returning existing Shopware configurator option %s of group %s.',
+        if ($option instanceof Value) {
+            $this->log->info(sprintf('%s: Returning existing group %s of Shopware property %s.',
                 __FUNCTION__,
                 $optionName,
                 $groupName
             ));
-            return $option;
+            return $group;
         }
 
-        $this->log->info(sprintf('%s: Creating option %s for group %s.',
+        $this->log->info(sprintf('%s: Creating group %s for Shopware property %s.',
             __FUNCTION__,
             $optionName,
             $groupName
         ));
 
         // create new option
-        $option = new Option();
-        $option->setName($optionName);
-        $option->setGroup($group);
+        $option = new Value($group, $optionName);
+        $this->modelManager->persist($option);
         /**
          * @var ArrayCollection $options
          */
-        $options = $group->getOptions();
+        $options = $group->getValues();
         $options->add($option);
-        $group->setOptions($options);
 
         $option->setPosition(count($this->data[$groupName]['options']));
         $this->data[$groupName]['options'][$optionName] = $option;
@@ -138,19 +137,19 @@ class GroupRepository
 
     public function deleteGroup(string $groupName) {
         // cascade remove does not work because the shopware doctrine config is incomplete
-        $group = $this->modelManager->getRepository(Group::class)->findOneBy(['name' => $groupName]);
+        $group = $this->modelManager->getRepository(Option::class)->findOneBy(['name' => $groupName]);
         if ($group) {
-            // delete the options
-            $dql = sprintf( "DELETE %s option WHERE option.group = %s",
-                Option::class,
+            // delete the values
+            $dql = sprintf( "DELETE %s value WHERE value.option = %s",
+                Value::class,
                 $group->getId()
             );
             $query = $this->modelManager->createQuery($dql);
             $query->execute();
 
             // delete the group
-            $dql = sprintf( "DELETE %s group WHERE group.name = '%s'",
-                Group::class,
+            $dql = sprintf( "DELETE %s option WHERE option.name = '%s'",
+                Option::class,
                 $groupName
             );
             $query = $this->modelManager->createQuery($dql);
@@ -161,8 +160,8 @@ class GroupRepository
     public function deleteOption(string $groupName, string $optionName) {
         $group = $this->modelManager->getRepository(Option::class)->findOneBy(['name' => $groupName]);
         if ($group) {
-            $dql = sprintf("DELETE %s option WHERE option.group = %s AND option.name = '%s'",
-                Option::class,
+            $dql = sprintf("DELETE %s value WHERE value.option = %s AND value.value = '%s'",
+                Value::class,
                 $group->getId(),
                 $optionName
             );
@@ -170,10 +169,8 @@ class GroupRepository
             $query->execute();
         }
     }
-
     public function flush() {
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
     }
-
 }

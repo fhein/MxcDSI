@@ -9,10 +9,12 @@ use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\ApiClientFactory;
 use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Client\CredentialsFactory;
-use MxcDropshipInnocigs\Configurator\GroupRepository;
-use MxcDropshipInnocigs\Configurator\GroupRepositoryFactory;
-use MxcDropshipInnocigs\Filter\OptionRepository as PropertyRepository;
-use MxcDropshipInnocigs\Filter\OptionRepositoryFactory as PropertyRepositoryFactory;
+use MxcDropshipInnocigs\Configurator\GroupRepository as ConfiguratorGroupRepository;
+use MxcDropshipInnocigs\Configurator\GroupRepositoryFactory as ConfiguratorGroupRepositoryFactory;
+use MxcDropshipInnocigs\Configurator\SetRepository as ConfiguratorSetRepository;
+use MxcDropshipInnocigs\Configurator\SetRepositoryFactory as ConfiguratorSetRepositoryFactory;
+use MxcDropshipInnocigs\Filter\GroupRepository as FilterGroupRepository;
+use MxcDropshipInnocigs\Filter\GroupRepositoryFactory as FilterGroupRepositoryFactory;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\FilterTestFactory;
 use MxcDropshipInnocigs\Listener\InnocigsClient;
@@ -28,8 +30,6 @@ use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use MxcDropshipInnocigs\Subscriber\InnocigsArticleSubscriber;
-use Zend\Log\Formatter\Simple;
-use Zend\Log\Logger;
 
 return [
     'plugin' => [
@@ -84,33 +84,6 @@ return [
             ],
         ]
     ],
-    'log' => [
-        'writers' => [
-            'stream' => [
-                'name' => 'stream',
-                'priority'  => Logger::ALERT,
-                'options'   => [
-                    'stream'    => Shopware()->DocPath() . 'var/log/mxc_dropship_innocigs-' . date('Y-m-d') . '.log',
-                    'formatter' => [
-                        'name'      => Simple::class,
-                        'options'   => [
-                            'format'            => '%timestamp% %priorityName%: %message% %extra%',
-                            'dateTimeFormat'    => 'H:i:s',
-                        ],
-                    ],
-                    'filters' => [
-                        'priority' => [
-                            'name' => 'priority',
-                            'options' => [
-                                'operator' => '<=',
-                                'priority' => Logger::DEBUG,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-    ],
     'services' => [
         'factories' => [
             ApiClient::class                    => ApiClientFactory::class,
@@ -118,7 +91,9 @@ return [
             ArticleMapper::class                => ArticleMapperFactory::class,
             Credentials::class                  => CredentialsFactory::class,
             Database::class                     => DatabaseFactory::class,
-            GroupRepository::class              => GroupRepositoryFactory::class,
+            ConfiguratorGroupRepository::class  => ConfiguratorGroupRepositoryFactory::class,
+            ConfiguratorSetRepository::class    => ConfiguratorSetRepositoryFactory::class,
+            FilterGroupRepository::class        => FilterGroupRepositoryFactory::class,
             InnocigsClient::class               => InnocigsClientFactory::class,
             FilterTest::class                   => FilterTestFactory::class,
             PropertyMapper::class               => PropertyMapperFactory::class,

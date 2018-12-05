@@ -8,30 +8,56 @@ use MxcDropshipInnocigs\Configurator\SetRepository;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use Shopware\Components\Model\ModelManager;
-use Shopware\Models\Article\Article;
 
 class ArticleOptionMapper
 {
+    /**
+     * @var LoggerInterface $log
+     */
     protected $log;
+    /**
+     * @var GroupRepository $groupRepository
+     */
     protected $groupRepository;
+    /**
+     * @var SetRepository $setRepository
+     */
+    protected $setRepository;
+    /**
+     * @var PropertyMapper $mapper
+     */
     protected $mapper;
 
-    public function __construct(ModelManager $modelManager, GroupRepository $repository, PropertyMapper $mapper, LoggerInterface $log)
+    /**
+     * ArticleOptionMapper constructor.
+     *
+     * @param GroupRepository $groupRepository
+     * @param SetRepository $setRepository
+     * @param PropertyMapper $mapper
+     * @param LoggerInterface $log
+     */
+    public function __construct(GroupRepository $groupRepository, SetRepository $setRepository, PropertyMapper $mapper, LoggerInterface $log)
     {
         $this->log = $log;
-        $this->groupRepository = $repository;
+        $this->groupRepository = $groupRepository;
+        $this->setRepository = $setRepository;
         $this->mapper = $mapper;
-        $this->modelManager = $modelManager;
     }
 
+    /**
+     * Create missing configurator groups and options for an InnoCigs article.
+     *
+     * @param InnocigsArticle $article
+     */
     public function createShopwareGroupsAndOptions(InnocigsArticle $article) {
         $icVariants = $article->getVariants();
         $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs Article %s',
             __FUNCTION__,
             $article->getCode()
         ));
+        $groupOptions = [];
         foreach ($icVariants as $icVariant) {
+            if ($icVariant->isIgnored()) continue;
             /**
              * @var InnocigsVariant $icVariant
              */
@@ -43,6 +69,15 @@ class ArticleOptionMapper
                 $icGroupName =  $this->mapper->mapGroupName($icOption->getGroup()->getName());
                 $icOptionName = $this->mapper->mapOptionName($icOption->getName());
 
+                $groupOptions[$icGroupName][$icOptionName] = $icVariant;
+            }
+        }
+        foreach ($groupOptions as $icGroupName => $options) {
+            // Because some variants may be set to be ignored there is a chance that we have
+            // groups with just a single option. We do not apply such groups, because
+            // selecting from a single choice is not meaningful.
+            if (count($options) <  2) continue;
+            foreach ($options as $icOptionName => $icVariant) {
                 $this->groupRepository->createGroup($icGroupName);
                 $swOption = $this->groupRepository->createOption($icGroupName, $icOptionName);
                 $icVariant->addShopwareOption($swOption);
@@ -52,7 +87,13 @@ class ArticleOptionMapper
         $this->groupRepository->flush();
     }
 
-    public function createConfiguratorSet(InnocigsArticle $icArticle, Article $swArticle)
+    /**
+     * Create and setup a configurator set for a Shopware article
+     *
+     * @param InnocigsArticle $icArticle
+     * @return null|\Shopware\Models\Article\Configurator\Set
+     */
+    public function createConfiguratorSet(InnocigsArticle $icArticle)
     {
         $variants = $icArticle->getVariants();
         if (count($variants) < 2) {
@@ -62,9 +103,8 @@ class ArticleOptionMapper
             ));
             return null;
         }
-        $setRepository = new SetRepository($this->modelManager, $this->log);
         $setName = 'mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode());
-        $setRepository->initSet($setName);
+        $this->setRepository->initSet($setName);
 
         $this->log->info(sprintf('%s: Setup of configurator %s set for InnoCigs Article %s',
             __FUNCTION__,
@@ -85,9 +125,9 @@ class ArticleOptionMapper
                 $groupName = $this->mapper->mapGroupName($icOption->getGroup()->getName());
                 $optionName = $this->mapper->mapOptionName($icOption->getName());
                 $option = $this->groupRepository->getOption($groupName, $optionName);
-                $setRepository->addOption($option);
+                $this->setRepository->addOption($option);
             }
         }
-        return $setRepository->prepareSet($swArticle);
+        return $this->setRepository->prepareSet($icArticle->getArticle());
     }
 }
