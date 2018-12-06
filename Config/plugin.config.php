@@ -84,6 +84,9 @@ return [
             ],
         ]
     ],
+    'filters' => [
+
+    ],
     'services' => [
         'factories' => [
             ApiClient::class                    => ApiClientFactory::class,

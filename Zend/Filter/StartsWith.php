@@ -13,12 +13,9 @@ class StartsWith extends Needles
      * @throws Exception\RuntimeException If filtering $value is impossible
      * @return mixed
      */
-    public function filter($value)
+    public function apply(&$value)
     {
-        if (! is_string($value)) return $value;
-        $needles = $this->getOptions()['needles'];
-
-        foreach($needles as $needle) {
+        foreach($this->needles as $needle) {
             $len = strlen($needle);
             if (substr($value, 0, $len) === $needle) return true;
         }

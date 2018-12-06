@@ -1,8 +1,10 @@
 <?php
 
+use Doctrine\ORM\QueryBuilder;
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
+
 
 class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicationController
 {
@@ -29,14 +31,7 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
         $this->log->leave();
     }
 
-    /**
-     * Create the list query which will select only InnocigsArticles which are not ignored.
-     *
-     * @return \Shopware\Components\Model\QueryBuilder
-     */
-    public function getListQuery() {
-        $builder = parent::getListQuery();
+    public function finalizeListQuery(QueryBuilder $builder) {
         $builder->andWhere($builder->expr()->eq($this->alias . '.ignored', intval(false)));
-        return $builder;
     }
 }

@@ -13,22 +13,12 @@ class Contains extends Needles
      * @throws RuntimeException If filtering $value is impossible
      * @return mixed
      */
-    public function filter($value)
+    public function apply(&$value)
     {
-        if (! is_string($value)) {
-            throw new RuntimeException(
-                sprintf('Expected string, got %s',
-                    is_object($value) ? get_class($value) : gettype($value)
-                )
-            );
-        };
-
-        $needles = $this->getOptions()['needles'];
-
-        foreach($needles as $needle) {
+        if ($needle = '') return true;
+        foreach($this->needles as $needle) {
             if (strpos($value, $needle) !== false) return true;
         }
-
         return false;
     }
 }

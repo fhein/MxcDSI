@@ -13,7 +13,7 @@ use Shopware\Models\Article\Configurator\Option;
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_variant")
  */
-class InnocigsVariant extends ModelEntity
+class InnocigsVariant extends ModelEntity implements InnocigsModelInterface
 {
     /**
      * Primary Key - autoincrement value
@@ -150,7 +150,7 @@ class InnocigsVariant extends ModelEntity
     /**
      * @return \DateTime $created
      */
-    public function getCreated()
+    public function getCreated(): DateTime
     {
         return $this->created;
     }
@@ -158,7 +158,7 @@ class InnocigsVariant extends ModelEntity
     /**
      * @return \DateTime $updated
      */
-    public function getUpdated()
+    public function getUpdated(): DateTime
     {
         return $this->updated;
     }
@@ -198,7 +198,7 @@ class InnocigsVariant extends ModelEntity
     /**
      * @return string $code
      */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -231,6 +231,13 @@ class InnocigsVariant extends ModelEntity
      * @return bool $active
      */
     public function isActive()
+    {
+        return $this->active;
+    }
+    /**
+     * @return bool $active
+     */
+    public function getActive(): bool
     {
         return $this->active;
     }
@@ -282,7 +289,13 @@ class InnocigsVariant extends ModelEntity
     {
         return $this->ignored;
     }
-
+    /**
+     * @return bool
+     */
+    public function getIgnored(): bool
+    {
+        return $this->ignored;
+    }
     /**
      * @param bool $ignored
      */
