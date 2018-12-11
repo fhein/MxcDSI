@@ -4,27 +4,16 @@ namespace MxcDropshipInnocigs;
 
 use Doctrine\ORM\Events;
 use Mxc\Shopware\Plugin\Database\Database;
-use Mxc\Shopware\Plugin\Database\DatabaseFactory;
 use MxcDropshipInnocigs\Client\ApiClient;
-use MxcDropshipInnocigs\Client\ApiClientFactory;
 use MxcDropshipInnocigs\Client\Credentials;
-use MxcDropshipInnocigs\Client\CredentialsFactory;
 use MxcDropshipInnocigs\Configurator\GroupRepository as ConfiguratorGroupRepository;
-use MxcDropshipInnocigs\Configurator\GroupRepositoryFactory as ConfiguratorGroupRepositoryFactory;
 use MxcDropshipInnocigs\Configurator\SetRepository as ConfiguratorSetRepository;
-use MxcDropshipInnocigs\Configurator\SetRepositoryFactory as ConfiguratorSetRepositoryFactory;
 use MxcDropshipInnocigs\Filter\GroupRepository as FilterGroupRepository;
-use MxcDropshipInnocigs\Filter\GroupRepositoryFactory as FilterGroupRepositoryFactory;
 use MxcDropshipInnocigs\Listener\FilterTest;
-use MxcDropshipInnocigs\Listener\FilterTestFactory;
 use MxcDropshipInnocigs\Listener\InnocigsClient;
-use MxcDropshipInnocigs\Listener\InnocigsClientFactory;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
-use MxcDropshipInnocigs\Mapping\ArticleMapperFactory;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
-use MxcDropshipInnocigs\Mapping\ArticleOptionMapperFactory;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
-use MxcDropshipInnocigs\Mapping\PropertyMapperFactory;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsOption;
@@ -88,19 +77,19 @@ return [
 
     ],
     'services' => [
-        'factories' => [
-            ApiClient::class                    => ApiClientFactory::class,
-            ArticleOptionMapper::class          => ArticleOptionMapperFactory::class,
-            ArticleMapper::class                => ArticleMapperFactory::class,
-            Credentials::class                  => CredentialsFactory::class,
-            Database::class                     => DatabaseFactory::class,
-            ConfiguratorGroupRepository::class  => ConfiguratorGroupRepositoryFactory::class,
-            ConfiguratorSetRepository::class    => ConfiguratorSetRepositoryFactory::class,
-            FilterGroupRepository::class        => FilterGroupRepositoryFactory::class,
-            InnocigsClient::class               => InnocigsClientFactory::class,
-            FilterTest::class                   => FilterTestFactory::class,
-            PropertyMapper::class               => PropertyMapperFactory::class,
-            PropertyRepository::class           => PropertyRepositoryFactory::class,
+        'magicals' => [
+            ApiClient::class,
+            ArticleOptionMapper::class,
+            ArticleMapper::class,
+            Credentials::class,
+            Database::class,
+            ConfiguratorGroupRepository::class,
+            ConfiguratorSetRepository::class,
+            FilterGroupRepository::class,
+            InnocigsClient::class,
+            FilterTest::class,
+            PropertyMapper::class,
+            FilterGroupRepository::class,
         ],
     ],
     'mappings' => [
