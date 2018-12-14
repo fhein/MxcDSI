@@ -49,7 +49,7 @@ class GroupRepository
         }
     }
 
-    public function createGroup(string $name) {
+    public function createGroup(string $name) : Group {
         $group = $this->getGroup($name);
         if ($group instanceof Group) {
             $this->log->info(sprintf('%s: Returning existing Shopware configurator group %s.',
@@ -72,7 +72,7 @@ class GroupRepository
         return $group;
     }
 
-    public function getGroup(string $name) {
+    public function getGroup(string $name) : ?Group {
         $group = $this->data[$name]['group'] ?? null;
         if ($group  === true) {
             $group = $this->modelManager->getRepository(Group::class)->findOneBy(['name' => $name]);
@@ -82,14 +82,13 @@ class GroupRepository
         return $group;
     }
 
-    public function getOption(string $groupName, string $optionName) {
+    public function getOption(string $groupName, string $optionName) : ?Option {
         $option = $this->data[$groupName]['options'][$optionName] ?? null;
-        $groupId = $this->getGroup($groupName)->getId();
         if ($option === true) {
             $dql = sprintf("SELECT o FROM %s o JOIN %s g WHERE o.group = %s AND o.name = '%s'",
                 Option::class,
                 Group::class,
-                 $groupId,
+                 $$this->getGroup($groupName)->getId(),
                  $optionName);
             $option = $this->modelManager->createQuery($dql)->getResult()[0];
             $this->data[$groupName]['options'][$optionName] = $option;
@@ -97,8 +96,7 @@ class GroupRepository
         return $option;
     }
 
-    public function createOption(string $groupName, string $optionName) {
-
+    public function createOption(string $groupName, string $optionName) : ?Option {
         // we do not create an option if we do not know the group
         $group = $this->getGroup($groupName);
         if (null === $group) return null;

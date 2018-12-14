@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Models;
 
@@ -60,6 +60,13 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
      * @ORM\Column(name="image", type="string", nullable=true)
      */
     private $image;
+
+    /**
+     * @var string $manual;
+     *
+     * @ORM\Column(name="manual", type="string", nullable=true)
+     */
+    private $manual;
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
@@ -318,5 +325,21 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     public function setArticle(Article $article): void
     {
         $this->article = $article;
+    }
+
+    /**
+     * @return string
+     */
+    public function getManual(): string
+    {
+        return $this->manual;
+    }
+
+    /**
+     * @param string $manual
+     */
+    public function setManual(string $manual): void
+    {
+        $this->manual = $manual;
     }
 }

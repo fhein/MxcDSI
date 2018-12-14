@@ -26,8 +26,12 @@ return [
             'options' => [
                 'activate' => [
                     'importArticles' => false,
+                    'useArticleConfiguration' => true,
                     'numberOfArticles' => -1,
                     'clearCache' => false,
+                ],
+                'deactivate' => [
+                    'saveArticleConfiguration' => true,
                 ],
             ],
         ],
@@ -47,8 +51,8 @@ return [
         ],
         'attributes' => [
             's_articles_attributes' => [
-                'mxc_ds_test_attribute' => [
-                    'type' => 'text',
+                'mxc_dsi_supplier' => [
+                    'type' => 'string',
                     'settings' => [
                         'label'            => '',
                         'supportText'      => '',
@@ -58,11 +62,20 @@ return [
                         'position'         => 10000,
                         'custom'           => false
                     ],
-                    'newColumnName' => null,
-                    'updateDependingTables' => false,
-                    'defaultValue' => null,
-                ]
-            ]
+                    'mxc_dsi_brand' => [
+                        'type' => 'string',
+                        'settings' => [
+                            'label'            => '',
+                            'supportText'      => '',
+                            'helpText'         => '',
+                            'translatable'     => false,
+                            'displayInBackend' => false,
+                            'position'         => 10100,
+                            'custom'           => false
+                        ],
+                    ],
+                ],
+            ],
         ],
         'listeners' => [
             InnocigsArticleSubscriber::class => [

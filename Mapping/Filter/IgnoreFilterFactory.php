@@ -1,12 +1,13 @@
-<?php /** @noinspection PhpUnusedParameterInspection */
+<?php
 
-namespace MxcDropshipInnocigs\Listener;
+namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Client\ApiClient;
+use MxcDropshipInnocigs\Mapping\Filter\IgnoreFilter;
+use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class InnocigsClientFactory implements FactoryInterface
+class IgnoreFilterFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -18,10 +19,12 @@ class InnocigsClientFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $container->get('config')->plugin->$requestedName;
-        $apiClient = $container->get(ApiClient::class);
-        $log = $container->get('logger');
+        $log = $container->get(Logger::class);
         $modelManager = $container->get('modelManager');
-        return new InnocigsClient($modelManager, $apiClient, $config, $log);
+        $filter = new IgnoreFilter(
+            $modelManager,
+            $log
+        );
+        return $filter;
     }
 }

@@ -5,7 +5,6 @@ use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 
-
 class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicationController
 {
     protected $model = InnocigsArticle::class;

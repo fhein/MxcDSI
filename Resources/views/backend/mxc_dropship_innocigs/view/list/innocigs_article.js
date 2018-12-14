@@ -9,9 +9,11 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
         return {
             detailWindow: 'Shopware.apps.MxcDropshipInnocigs.view.detail.Window',
             columns: {
-                code:   { header: 'Code'},
-                name:   { header: 'Name', flex: 3 },
-                active: { header: 'active', width: 60, flex: 0 }
+                code:       { header: 'Code'},
+                supplier:   { header: 'Supplier'},
+                brand:      { header: 'Brand'},
+                name:       { header: 'Name', flex: 3 },
+                active:     { header: 'active', width: 60, flex: 0 }
             },
             addButton: false,
             deleteButton: false,

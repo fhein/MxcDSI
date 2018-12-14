@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Client;
 
@@ -88,11 +88,12 @@ class ApiClient
     /**
      * @param \DateTime $date
      * @return \Zend\Http\Response
+     * @throws \Exception
      */
     public function getTrackingData($date = null)
     {
         if (! $date instanceof DateTime) {
-            $date = (new \DateTime())->format('Y-m-d');
+            $date = (new DateTime())->format('Y-m-d');
         }
         $cmd = $this->authUrl . '&command=tracking&day=' . $date;
         return $this->send($cmd);
