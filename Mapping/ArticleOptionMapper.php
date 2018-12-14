@@ -3,11 +3,11 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Configurator\GroupRepository;
-use MxcDropshipInnocigs\Configurator\SetRepository;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
 
 class ArticleOptionMapper
 {
@@ -68,8 +68,13 @@ class ArticleOptionMapper
                  */
                 $icGroupName =  $this->mapper->mapGroupName($icOption->getGroup()->getName());
                 $icOptionName = $this->mapper->mapOptionName($icOption->getName());
-
-                $groupOptions[$icGroupName][$icOptionName] = $icVariant;
+                $groupOptions[$icGroupName][$icOptionName][] = $icVariant;
+                $this->log->debug(sprintf('Variant %s (%s) has option %s from group %s.',
+                    $icVariant->getCode(),
+                    $icVariant->getId(),
+                    $icOptionName,
+                    $icGroupName
+                ));
             }
         }
         foreach ($groupOptions as $icGroupName => $options) {
@@ -77,10 +82,18 @@ class ArticleOptionMapper
             // groups with just a single option. We do not apply such groups, because
             // selecting from a single choice is not meaningful.
             if (count($options) <  2) continue;
-            foreach ($options as $icOptionName => $icVariant) {
+            foreach ($options as $icOptionName => $icVariants) {
                 $this->groupRepository->createGroup($icGroupName);
                 $swOption = $this->groupRepository->createOption($icGroupName, $icOptionName);
-                $icVariant->addShopwareOption($swOption);
+                foreach ($icVariants as $icVariant) {
+                    $icVariant->addShopwareOption($swOption);
+                    $this->log->debug(sprintf('Adding shopware option %s (%s) to variant %s (%s)',
+                        $swOption->getName(),
+                        $swOption->getId(),
+                        $icVariant->getCode(),
+                        $icVariant->getId()
+                    ));
+                }
             }
         }
         /** @noinspection PhpUnhandledExceptionInspection */
@@ -103,6 +116,7 @@ class ArticleOptionMapper
             ));
             return null;
         }
+        $this->createShopwareGroupsAndOptions($icArticle);
         $setName = 'mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode());
         $this->setRepository->initSet($setName);
 
@@ -114,20 +128,21 @@ class ArticleOptionMapper
 
         // add the options belonging to this article and variants
         foreach ($variants as $variant) {
+            if ($variant->isIgnored()) {
+                continue;
+            }
             /**
              * @var InnocigsVariant $variant
              */
-            $options = $variant->getOptions();
-            foreach ($options as $icOption) {
-                /**
-                 * @var InnocigsOption $icOption
-                 */
-                $groupName = $this->mapper->mapGroupName($icOption->getGroup()->getName());
-                $optionName = $this->mapper->mapOptionName($icOption->getName());
-                $option = $this->groupRepository->getOption($groupName, $optionName);
+            $options = $variant->getShopwareOptions();
+            foreach ($options as $option) {
                 $this->setRepository->addOption($option);
             }
         }
         return $this->setRepository->prepareSet($icArticle->getArticle());
+    }
+
+    public function getShopwareOptions(InnocigsVariant $variant) {
+        return $variant->getShopwareOptions();
     }
 }

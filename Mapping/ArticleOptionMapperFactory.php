@@ -3,8 +3,8 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Configurator\GroupRepository;
-use MxcDropshipInnocigs\Configurator\SetRepository;
+use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ArticleOptionMapperFactory implements FactoryInterface

@@ -6,7 +6,7 @@
  * Time: 14:36
  */
 
-namespace MxcDropshipInnocigs\Filter;
+namespace MxcDropshipInnocigs\Toolbox\Filter;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;

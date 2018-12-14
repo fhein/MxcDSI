@@ -3,7 +3,7 @@
 namespace MxcDropshipInnocigs\Listener;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Filter\GroupRepository;
+use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class FilterTestFactory implements FactoryInterface

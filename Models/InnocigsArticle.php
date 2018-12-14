@@ -55,18 +55,18 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
      */
     private $description;
     /**
-     * @var string $image;
+     * @var string $imageUrl;
      *
      * @ORM\Column(name="image", type="string", nullable=true)
      */
-    private $image;
+    private $imageUrl;
 
     /**
-     * @var string $manual;
+     * @var string $manualUrl;
      *
      * @ORM\Column(name="manual", type="string", nullable=true)
      */
-    private $manual;
+    private $manualUrl;
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
@@ -259,16 +259,16 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @return string
      */
-    public function getImage(): string
+    public function getImageUrl(): string
     {
-        return $this->image;
+        return $this->imageUrl;
     }
     /**
-     * @param string $image
+     * @param string $imageUrl
      */
-    public function setImage(string $image): void
+    public function setImageUrl(string $imageUrl): void
     {
-        $this->image = $image;
+        $this->imageUrl = $imageUrl;
     }
     /**
      * @return int
@@ -330,16 +330,16 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @return string
      */
-    public function getManual(): string
+    public function getManualUrl(): string
     {
-        return $this->manual;
+        return $this->manualUrl;
     }
 
     /**
-     * @param string $manual
+     * @param string $manualUrl
      */
-    public function setManual(string $manual): void
+    public function setManualUrl(string $manualUrl): void
     {
-        $this->manual = $manual;
+        $this->manualUrl = $manualUrl;
     }
 }

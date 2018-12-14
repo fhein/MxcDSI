@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Configurator;
+namespace MxcDropshipInnocigs\Toolbox\Configurator;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use Shopware\Components\Model\ModelManager;
@@ -16,12 +16,7 @@ class SetRepository
      */
     private $set;
 
-    /**
-     * @var bool $isNew
-     */
-    private $isNew = false;
-
-    /**
+     /**
      * @var array $options
      */
     private $options;
@@ -48,7 +43,8 @@ class SetRepository
     protected function createSet(string $name) {
         $set = new Set();
         $set->setName($name);
-        $this->isNew = true;
+        $this->set->setPublic(false);
+        $this->set->setType(0);
         return $set;
     }
 
@@ -113,11 +109,8 @@ class SetRepository
     }
 
     public function prepareSet(Article $article) {
-        if ($this->isNew) {
-            $this->set->setPublic(false);
-            $this->set->setType(0);
-        }
 
+        $this->log->enter();
         $this->set->getArticles()->add($article);
 
         // objects are returned by reference
@@ -135,6 +128,7 @@ class SetRepository
         foreach ($this->options as $option) {
             $setOptions->add($option);
         }
+        $this->log->leave();
         return $this->set;
     }
 }

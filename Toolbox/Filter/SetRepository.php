@@ -6,7 +6,7 @@
  * Time: 17:12
  */
 
-namespace MxcDropshipInnocigs\Filter;
+namespace MxcDropshipInnocigs\Toolbox\Filter;
 
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;

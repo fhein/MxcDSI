@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Filter;
+namespace MxcDropshipInnocigs\Toolbox\Filter;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;

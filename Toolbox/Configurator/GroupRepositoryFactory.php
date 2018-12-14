@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Configurator;
+namespace MxcDropshipInnocigs\Toolbox\Configurator;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;

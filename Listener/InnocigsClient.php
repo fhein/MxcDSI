@@ -134,8 +134,8 @@ class InnocigsClient extends ActionListener
             $articleProperties = $this->createVariants($article, $articleData);
             $name = $articleProperties['name'];
             $article->setName($name);
-            $article->setImage($this->getStringParam($articleProperties['image']));
-            $article->setManual($this->getStringParam($articleProperties['manual']));
+            $article->setImageUrl($this->getStringParam($articleProperties['image']));
+            $article->setManualUrl($this->getStringParam($articleProperties['manual']));
             $article->setCode($articleCode);
             $article->setDescription('n/a');
             if (isset($this->articleConfig[$articleCode]['brand'])) {

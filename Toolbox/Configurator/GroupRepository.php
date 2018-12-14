@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: frank.hein
- * Date: 12.11.2018
- * Time: 14:36
- */
 
-namespace MxcDropshipInnocigs\Configurator;
+namespace MxcDropshipInnocigs\Toolbox\Configurator;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
@@ -52,14 +46,14 @@ class GroupRepository
     public function createGroup(string $name) : Group {
         $group = $this->getGroup($name);
         if ($group instanceof Group) {
-            $this->log->info(sprintf('%s: Returning existing Shopware configurator group %s.',
+            $this->log->notice(sprintf('%s: Returning existing Shopware configurator group %s.',
                 __FUNCTION__,
                 $name
             ));
             return $group;
         }
 
-        $this->log->info(sprintf('%s: Creating shopware group %s',
+        $this->log->notice(sprintf('%s: Creating shopware group %s',
             __FUNCTION__,
             $name
         ));
@@ -88,7 +82,7 @@ class GroupRepository
             $dql = sprintf("SELECT o FROM %s o JOIN %s g WHERE o.group = %s AND o.name = '%s'",
                 Option::class,
                 Group::class,
-                 $$this->getGroup($groupName)->getId(),
+                 $this->getGroup($groupName)->getId(),
                  $optionName);
             $option = $this->modelManager->createQuery($dql)->getResult()[0];
             $this->data[$groupName]['options'][$optionName] = $option;
@@ -104,7 +98,7 @@ class GroupRepository
         // if we know the option already return it
         $option = $this->getOption($groupName, $optionName);
         if ($option instanceof Option) {
-            $this->log->info(sprintf('%s: Returning existing Shopware configurator option %s of group %s.',
+            $this->log->notice(sprintf('%s: Returning existing Shopware configurator option %s of group %s.',
                 __FUNCTION__,
                 $optionName,
                 $groupName
@@ -112,7 +106,7 @@ class GroupRepository
             return $option;
         }
 
-        $this->log->info(sprintf('%s: Creating option %s for group %s.',
+        $this->log->notice(sprintf('%s: Creating option %s for group %s.',
             __FUNCTION__,
             $optionName,
             $groupName

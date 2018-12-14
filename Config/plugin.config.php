@@ -6,9 +6,6 @@ use Doctrine\ORM\Events;
 use Mxc\Shopware\Plugin\Database\Database;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
-use MxcDropshipInnocigs\Configurator\GroupRepository as ConfiguratorGroupRepository;
-use MxcDropshipInnocigs\Configurator\SetRepository as ConfiguratorSetRepository;
-use MxcDropshipInnocigs\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\InnocigsClient;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
@@ -19,6 +16,10 @@ use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use MxcDropshipInnocigs\Subscriber\InnocigsArticleSubscriber;
+use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
+use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
+use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
+use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 
 return [
     'plugin' => [
@@ -103,6 +104,7 @@ return [
             FilterTest::class,
             PropertyMapper::class,
             FilterGroupRepository::class,
+            MediaTool::class,
         ],
     ],
     'mappings' => [
