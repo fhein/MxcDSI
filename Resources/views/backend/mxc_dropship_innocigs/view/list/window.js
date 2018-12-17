@@ -9,7 +9,10 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.Window', {
     configure: function() {
         return {
             listingGrid: 'Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle',
-            listingStore: 'Shopware.apps.MxcDropshipInnocigs.store.InnocigsArticle'
+            listingStore: 'Shopware.apps.MxcDropshipInnocigs.store.InnocigsArticle',
+            extensions: [
+                { xtype: 'mxc-innocigs-article-listing-filter-panel' }
+            ]
         };
     }
 });

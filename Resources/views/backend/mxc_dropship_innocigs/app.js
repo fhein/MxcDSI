@@ -14,6 +14,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs', {
         'list.Window',
         'list.InnocigsArticle',
         'list.InnocigsVariant',
+        'list.extensions.Filter',
 
         'detail.InnocigsArticle',
         'detail.InnocigsVariant',

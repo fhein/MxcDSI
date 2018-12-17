@@ -43,8 +43,8 @@ class SetRepository
     protected function createSet(string $name) {
         $set = new Set();
         $set->setName($name);
-        $this->set->setPublic(false);
-        $this->set->setType(0);
+        $set->setPublic(false);
+        $set->setType(0);
         return $set;
     }
 
