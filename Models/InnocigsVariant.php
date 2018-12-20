@@ -75,11 +75,11 @@ class InnocigsVariant extends ModelEntity implements InnocigsModelInterface
     private $active = false;
 
     /**
-     * @var boolean $ignored
+     * @var boolean $accepted
      *
      * @ORM\Column(type="boolean")
      */
-    private $ignored = true;
+    private $accepted = true;
 
     /**
      * @var int $detailId
@@ -230,10 +230,11 @@ class InnocigsVariant extends ModelEntity implements InnocigsModelInterface
     /**
      * @return bool $active
      */
-    public function isActive()
+    public function isActive() : bool
     {
         return $this->active;
     }
+
     /**
      * @return bool $active
      */
@@ -285,23 +286,25 @@ class InnocigsVariant extends ModelEntity implements InnocigsModelInterface
     /**
      * @return bool
      */
-    public function isIgnored(): bool
+    public function isAccepted(): bool
     {
-        return $this->ignored;
+        return $this->accepted;
     }
+
     /**
      * @return bool
      */
-    public function getIgnored(): bool
+    public function getAccepted(): bool
     {
-        return $this->ignored;
+        return $this->accepted;
     }
+
     /**
-     * @param bool $ignored
+     * @param bool $accepted
      */
-    public function setIgnored(bool $ignored): void
+    public function setAccepted(bool $accepted): void
     {
-        $this->ignored = $ignored;
+        $this->accepted = $accepted;
     }
 
     /**
@@ -326,23 +329,6 @@ class InnocigsVariant extends ModelEntity implements InnocigsModelInterface
     public function setDetailId(int $detailId): void
     {
         $this->detailId = $detailId;
-    }
-
-    public function __debugInfo()
-    {
-        return [
-            'id' => $this->id,
-            'article' => is_object($this->article) ? get_class($this->article) : $this->article,
-            'code' => $this->code,
-            'optionsType' => is_object($this->options) ? get_class($this->options) : gettype($this->options),
-//            'attributeCount' => count($this->attributes),
-            'ean' => $this->ean,
-            'priceNet' => $this->priceNet,
-            'priceRecommended' => $this->priceRecommended,
-            'active' => $this->active,
-            'ignored' => $this->ignored,
-            'detailId' => $this->detailId,
-        ];
     }
 
     /**

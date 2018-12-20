@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
-use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
@@ -27,6 +26,10 @@ class ArticleOptionMapper
      * @var PropertyMapper $mapper
      */
     protected $mapper;
+    /**
+     * @var InnocigsEntityValidator $validator
+     */
+    protected $validator;
 
     /**
      * ArticleOptionMapper constructor.
@@ -34,38 +37,37 @@ class ArticleOptionMapper
      * @param GroupRepository $groupRepository
      * @param SetRepository $setRepository
      * @param PropertyMapper $mapper
+     * @param InnocigsEntityValidator $validator
      * @param LoggerInterface $log
      */
-    public function __construct(GroupRepository $groupRepository, SetRepository $setRepository, PropertyMapper $mapper, LoggerInterface $log)
-    {
+    public function __construct(
+        GroupRepository $groupRepository,
+        SetRepository $setRepository,
+        PropertyMapper $mapper,
+        InnocigsEntityValidator $validator,
+        LoggerInterface $log
+    ) {
         $this->log = $log;
         $this->groupRepository = $groupRepository;
         $this->setRepository = $setRepository;
         $this->mapper = $mapper;
+        $this->validator = $validator;
     }
 
     /**
      * Create missing configurator groups and options for an InnoCigs article.
      *
-     * @param InnocigsArticle $article
+     * @param array $icVariants
      */
-    public function createShopwareGroupsAndOptions(InnocigsArticle $article) {
-        $icVariants = $article->getVariants();
-        $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs Article %s',
-            __FUNCTION__,
-            $article->getCode()
-        ));
+    public function createShopwareGroupsAndOptions(array $icVariants) {
+        $this->log->enter();
         $groupOptions = [];
         foreach ($icVariants as $icVariant) {
-            if ($icVariant->isIgnored()) continue;
             /**
              * @var InnocigsVariant $icVariant
              */
             $icOptions = $icVariant->getOptions();
             foreach ($icOptions as $icOption) {
-                /**
-                 * @var InnocigsOption $icOption
-                 */
                 $icGroupName =  $this->mapper->mapGroupName($icOption->getGroup()->getName());
                 $icOptionName = $this->mapper->mapOptionName($icOption->getName());
                 $groupOptions[$icGroupName][$icOptionName][] = $icVariant;
@@ -78,16 +80,21 @@ class ArticleOptionMapper
             }
         }
         foreach ($groupOptions as $icGroupName => $options) {
-            // Because some variants may be set to be ignored there is a chance that we have
-            // groups with just a single option. We do not apply such groups, because
-            // selecting from a single choice is not meaningful.
-            if (count($options) <  2) continue;
+            // Because some variants may be set to be ignored (accepted = false) there is a chance that we have
+            // groups with just a single option. We do not apply such groups, because selecting from a single
+            // choice is not meaningful.
+            if (count($options) <  2) {
+                $this->log->notice(sprintf('Skipping group %s because there are not multiple options available.',
+                    $icGroupName
+                ));
+                continue;
+            }
             foreach ($options as $icOptionName => $icVariants) {
                 $this->groupRepository->createGroup($icGroupName);
                 $swOption = $this->groupRepository->createOption($icGroupName, $icOptionName);
                 foreach ($icVariants as $icVariant) {
                     $icVariant->addShopwareOption($swOption);
-                    $this->log->debug(sprintf('Adding shopware option %s (%s) to variant %s (%s)',
+                    $this->log->notice(sprintf('Adding shopware option %s (id: %s) to variant %s (id: %s).',
                         $swOption->getName(),
                         $swOption->getId(),
                         $icVariant->getCode(),
@@ -96,8 +103,20 @@ class ArticleOptionMapper
                 }
             }
         }
+        $this->log->leave();
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->groupRepository->flush();
+    }
+
+    protected function getValidVariants(InnocigsArticle $article) : array {
+        $validVariants = [];
+        $variants = $article->getVariants();
+        foreach ($variants as $variant) {
+            if ($this->validator->validate($variant)) {
+                $validVariants[] = $variant;
+            }
+        }
+        return $validVariants;
     }
 
     /**
@@ -108,29 +127,33 @@ class ArticleOptionMapper
      */
     public function createConfiguratorSet(InnocigsArticle $icArticle)
     {
-        $variants = $icArticle->getVariants();
+        $variants = $this->getValidVariants($icArticle);
         if (count($variants) < 2) {
-            $this->log->info(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does not provide variants.',
+            $this->log->notice(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does '
+                . 'not provide more than one variant which is set not to get ignored.',
                 __FUNCTION__,
                 $icArticle->getCode()
             ));
             return null;
         }
-        $this->createShopwareGroupsAndOptions($icArticle);
-        $setName = 'mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode());
-        $this->setRepository->initSet($setName);
 
-        $this->log->info(sprintf('%s: Setup of configurator %s set for InnoCigs Article %s',
+        $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs Article %s.',
             __FUNCTION__,
-            $setName,
             $icArticle->getCode()
         ));
 
+        $this->createShopwareGroupsAndOptions($variants);
+
+        $name = 'mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode());
+        $this->log->info(sprintf('%s: Creating configurator set %s for InnoCigs Article %s.',
+            __FUNCTION__,
+            $name,
+            $icArticle->getCode()
+        ));
+        $set = $this->setRepository->initSet($name);
+
         // add the options belonging to this article and variants
         foreach ($variants as $variant) {
-            if ($variant->isIgnored()) {
-                continue;
-            }
             /**
              * @var InnocigsVariant $variant
              */
@@ -139,7 +162,8 @@ class ArticleOptionMapper
                 $this->setRepository->addOption($option);
             }
         }
-        return $this->setRepository->prepareSet($icArticle->getArticle());
+        $set->getArticles()->add($icArticle->getArticle());
+        return $set;
     }
 
     public function getShopwareOptions(InnocigsVariant $variant) {

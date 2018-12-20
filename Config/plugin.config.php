@@ -3,13 +3,15 @@
 namespace MxcDropshipInnocigs;
 
 use Doctrine\ORM\Events;
-use Mxc\Shopware\Plugin\Database\Database;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
+use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Listener\FilterTest;
+use MxcDropshipInnocigs\Listener\IgnoreTest;
 use MxcDropshipInnocigs\Listener\InnocigsClient;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
+use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
@@ -96,7 +98,6 @@ return [
             ArticleOptionMapper::class,
             ArticleMapper::class,
             Credentials::class,
-            Database::class,
             ConfiguratorGroupRepository::class,
             ConfiguratorSetRepository::class,
             FilterGroupRepository::class,
@@ -105,6 +106,8 @@ return [
             PropertyMapper::class,
             FilterGroupRepository::class,
             MediaTool::class,
+            InnocigsUpdater::class,
+            InnocigsEntityValidator::class,
         ],
     ],
     'mappings' => [
@@ -121,4 +124,27 @@ return [
         'option_names'      => [],
         'variant_codes'     => [],
     ],
+    'import' => [
+        'update' => [
+            [
+                'entity' => InnocigsVariant::class,
+                'andWhere' => [
+                    [
+                        'field' => 'code',
+                        'operator' => 'LIKE',
+                        'value' => '%-H',
+                    ],
+                    [
+                        'field' => 'ean',
+                        'operator' => '=',
+                        'value' => '123',
+                    ],
+                ],
+                'set' => [
+                    'accepted' => false,
+                    'active' => false
+                ]
+            ],
+        ],
+    ]
 ];

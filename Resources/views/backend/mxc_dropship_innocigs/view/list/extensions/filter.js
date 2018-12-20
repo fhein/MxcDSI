@@ -9,18 +9,19 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.extensions.Filter', {
             model: 'Shopware.apps.MxcDropshipInnocigs.model.InnocigsArticle',
             fields: {
                 code: {
-                    expression: 'LIKE',
+                    expression: 'LIKE'
                 },
                 name: {
                     expression: 'LIKE',
                 },
                 supplier: {
-                    expression: 'LIKE'
+                    expression: 'LIKE',
                 },
                 brand: {
-                    expression: 'LIKE'
+                    expression: 'LIKE',
                 },
-                active: { }
+                active: { },
+                accepted: { }
             }
         };
     }

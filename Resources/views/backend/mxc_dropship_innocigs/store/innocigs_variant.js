@@ -5,7 +5,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.store.InnocigsVariant', {
 
     configure: function() {
         return {
-            controller: 'MxcDropshipInnocigs'
+            controller: 'InnocigsVariant'
         };
     },
 

@@ -34,6 +34,12 @@ class InnocigsGroup extends ModelEntity {
     private $name;
 
     /**
+     * @var bool $accepted
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $accepted;
+
+    /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
      *      targetEntity="InnocigsOption",
@@ -128,4 +134,21 @@ class InnocigsGroup extends ModelEntity {
     {
         return $this->updated;
     }
+
+    /**
+     * @return bool
+     */
+    public function isAccepted(): bool
+    {
+        return $this->accepted;
+    }
+
+    /**
+     * @param bool $accepted
+     */
+    public function setAccepted(bool $accepted)
+    {
+        $this->accepted = $accepted;
+    }
+
 }

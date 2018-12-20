@@ -23,7 +23,8 @@ class ArticleOptionMapperFactory implements FactoryInterface
         $groupRepository = $container->get(GroupRepository::class);
         $setRepository = $container->get(SetRepository::class);
         $pMapper = $container->get(PropertyMapper::class);
-        $mapper = new ArticleOptionMapper($groupRepository, $setRepository, $pMapper, $log);
+        $entityValidator = $container->get(InnocigsEntityValidator::class);
+        $mapper = new ArticleOptionMapper($groupRepository, $setRepository, $pMapper, $entityValidator, $log);
         return $mapper;
     }
 }

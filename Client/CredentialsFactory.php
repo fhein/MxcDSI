@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: frank.hein
- * Date: 02.11.2018
- * Time: 13:09
- */
 
 namespace MxcDropshipInnocigs\Client;
 
-
+use Doctrine\DBAL\Connection;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -23,16 +17,23 @@ class CredentialsFactory implements FactoryInterface
         if (is_string($user)) {
             $password = $config->offsetGet('api_password');
         } else {
+            $credentialsTable = 's_plugin_mxc_dropship_innocigs_credentials';
+            /**
+             * @var Connection $dbal
+             */
             $dbal = $container->get('dbalConnection');
-            $sql = 'SELECT user, password FROM s_plugin_mxc_dropship_innocigs_credentials';
-            $credentials = $dbal->query($sql)->fetchAll();
-            if (count($credentials) > 0) {
-                $user = $credentials[0]['user'];
-                $password = $credentials[0]['password'];
+            if ($dbal->getSchemaManager()->tablesExist([$credentialsTable])) {
+                $sql = "SELECT user, password FROM $credentialsTable";
+                /** @noinspection PhpUnhandledExceptionInspection */
+                $credentials = $dbal->query($sql)->fetchAll();
+                if (count($credentials) > 0) {
+                    $user = $credentials[0]['user'];
+                    $password = $credentials[0]['password'];
+                }
             }
         }
         if (! (is_string($user) && is_string($password) && $user !== '' && $password !== '')) {
-            throw new ServiceNotCreatedException('Invalid credentials');
+            throw new ServiceNotCreatedException('No valid InnoCigs API credentials available.');
         };
         return new Credentials($user, $password);
     }

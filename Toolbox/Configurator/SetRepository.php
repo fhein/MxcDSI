@@ -4,8 +4,6 @@ namespace MxcDropshipInnocigs\Toolbox\Configurator;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use Shopware\Components\Model\ModelManager;
-use Shopware\Models\Article\Article;
-use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Configurator\Set;
 
@@ -55,32 +53,22 @@ class SetRepository
          */
         $set = $setRepo->findOneBy(['name' => $name]);
         if ($set === null) {
-            $this->log->info(sprintf('%s: Creating new configurator set %s.',
+            $this->log->debug(sprintf('%s: Creating new configurator set %s.',
                 __FUNCTION__,
                 $name));
             $set = $this->createSet($name);
         } else {
-            $this->log->info(sprintf('%s: Using existing configurator set %s.',
+            $this->log->debug(sprintf('%s: Resetting existing configurator set %s.',
                 __FUNCTION__,
                 $name));
-            // prepare lookup tables groups and options of existing set
-            $options = $set->getOptions()->toArray();
-            foreach($options as $option) {
-                /**
-                 * @var Option $option
-                 */
-                $this->options[$option->getName()] = $option;
-            }
-            $groups = $set->getGroups()->toArray();
-            foreach ($groups as $group) {
-                /**
-                 * @var Group $group
-                 */
-                $this->groups[$group->getName()] = $group;
-            }
+            // discard group and option and article links of existing set
+            $set->getOptions()->clear();
+            $set->getGroups()->clear();
+            $set->getArticles()->clear();
         }
         $this->modelManager->persist($set);
         $this->set = $set;
+        return $this->set;
     }
 
     public function addOption(Option $option) {
@@ -96,6 +84,7 @@ class SetRepository
                 $setName
             ));
             $this->groups[$groupName] = $group;
+            $this->set->getGroups()->add($group);
         }
 
         if (! isset($this->options[$optionName])) {
@@ -105,30 +94,7 @@ class SetRepository
                 $setName
             ));
             $this->options[$optionName] = $option;
+            $this->set->getOptions()->add($option);
         }
-    }
-
-    public function prepareSet(Article $article) {
-
-        $this->log->enter();
-        $this->set->getArticles()->add($article);
-
-        // objects are returned by reference
-        $setGroups = $this->set->getGroups();
-        $setGroups->clear();
-        // Note: $this->set->setGroups(new ArrayCollection($this->groups)) does not work. Why??
-        foreach ($this->groups as $group) {
-            $setGroups->add($group);
-        }
-
-        // objects are returned by reference
-        $setOptions = $this->set->getOptions();
-        $setOptions->clear();
-        // Note: $this->set->setOptions(new ArrayCollection($this->options)) does not work. Why??
-        foreach ($this->options as $option) {
-            $setOptions->add($option);
-        }
-        $this->log->leave();
-        return $this->set;
     }
 }

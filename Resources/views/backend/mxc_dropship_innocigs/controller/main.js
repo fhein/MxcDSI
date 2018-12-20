@@ -8,10 +8,35 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
         me.control({
             'mxc-innocigs-article-listing-grid': {
                 mxcSaveArticle:  me.onSaveArticle,
-                mxcSaveActiveStates:  me.onSaveMultipleActiveStates
+                mxcSaveMultiple:  me.onSaveMultiple,
+                mxcImportItems: me.onImportItems
             },
         });
         me.mainWindow = me.getView('list.Window').create({ }).show();
+    },
+
+    onImportItems: function(grid) {
+        var mask = new Ext.LoadMask(grid, { msg: 'Importing items ...'});
+        mask.show();
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '{url controller=MxcDropshipInnocigs action=import}',
+            params: {},
+            callback: function(responseData, operation) {
+                if(!operation) {
+                    Shopware.Notification.createGrowlMessage('Import', 'An error occured while importing items.');
+                    return false;
+                } else {
+                    Shopware.Notification.createGrowlMessage('Import', 'Items were successfully imported.');
+                    grid.store.load();
+                    mask.hide();
+                }
+            }
+        });
+    },
+
+    onApplyFilter: function() {
+
     },
 
     /**
@@ -20,6 +45,9 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
      * @param record
      */
     onSaveArticle: function(record) {
+        if (record.get('active') === true) {
+            record.set('accepted', true);
+        }
         record.save({
             params: {
                  resource: 'innocigs_article'
@@ -46,18 +74,21 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
         });
     },
 
-    onSaveMultipleActiveStates: function(selectionModel) {
+    onSaveMultiple: function(grid, selectionModel) {
         var me = this;
         var records = selectionModel.getSelection();
         if (records.length > 0) {
-            me.saveActiveStates(records, function() {
+            var mask = new Ext.LoadMask(grid, { msg: 'Applying changes ...'});
+            mask.show();
+            me.save(records, function() {
                 selectionModel.deselectAll();
-                Shopware.Notification.createGrowlMessage('InnoCigs Dropship', 'Successfully changed active states.', 'MxcDropshipInnocigs');
+                Shopware.Notification.createGrowlMessage('InnoCigs Dropship', 'Changes successfully applied.', 'MxcDropshipInnocigs');
+                mask.hide();
             });
         };
     },
 
-    saveActiveStates: function(records, callback) {
+    save: function(records, callback) {
         var me = this,
             record = records.pop();
 
@@ -67,12 +98,14 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
                     // Update the modified record by the data, the controller returned
                     // This way we make sure, that the record shows the data which is stored
                     // in the database
-                    record.set('active', operation.records[0].data['active']);
+                    Ext.each(Object.keys(record.getData()), function (key) {
+                        record.set(key, operation.records[0].data[key]);
+                    });
 
-                    if (records.length == 0) {
+                    if (records.length === 0) {
                         callback();
                     } else {
-                        me.saveActiveStates(records, callback);
+                        me.save(records, callback);
                     }
                 } else {
                     Shopware.Notification.createStickyGrowlMessage({
@@ -95,5 +128,4 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
             }
         })
     },
-
 });

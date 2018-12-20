@@ -108,6 +108,7 @@ class InnocigsClient extends ActionListener
         foreach ($opts as $groupName => $options) {
             $group = new InnocigsGroup();
             $group->setName($groupName);
+            $group->setAccepted(true);
             $this->createOptions($group, array_keys($options));
             // this cascades persisting the options also
             $this->modelManager->persist($group);
@@ -119,6 +120,7 @@ class InnocigsClient extends ActionListener
         foreach ($options as $optionName) {
             $option = new InnocigsOption();
             $option->setName($optionName);
+            $option->setAccepted(true);
             $group->addOption($option);
             $this->options[$group->getName()][$optionName] = $option;
         }
@@ -130,7 +132,7 @@ class InnocigsClient extends ActionListener
         foreach ($articles as $articleCode => $articleData) {
             $article = new InnocigsArticle();
             $article->setActive(false);
-            $article->setIgnored(false);
+            $article->setAccepted(true);
             $articleProperties = $this->createVariants($article, $articleData);
             $name = $articleProperties['name'];
             $article->setName($name);
@@ -167,14 +169,14 @@ class InnocigsClient extends ActionListener
     {
         $articleProperties = null;
         // mark all variants of active articles active
-        $active = $article->getActive();
-        $ignored = $article->getIgnored();
+        $active = $article->isActive();
+        $accepted = $article->isAccepted();
         foreach ($variantArray as $variantCode => $variantData) {
             $variant = new InnocigsVariant();
 
             $variant->setCode($variantCode);
             $variant->setActive($active);
-            $variant->setIgnored($ignored);
+            $variant->setAccepted($accepted);
 
             $variant->setEan($this->getStringParam($variantData['EAN']));
             $tmp = str_replace(',', '.', $variantData['PRODUCTS_PRICE']);
@@ -261,7 +263,7 @@ class InnocigsClient extends ActionListener
             }
             $this->importArticles($options->numberOfArticles ?? -1);
         }
-        if (true === $options->clearCache) {
+        if ($context !== null && true === $options->clearCache) {
             $context->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
         }
         $this->log->leave();

@@ -90,11 +90,11 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     private $active = false;
 
     /**
-     * @var boolean $ignored
+     * @var boolean $accepted
      *
      * @ORM\Column(type="boolean", nullable=false)
      */
-    private $ignored = true;
+    private $accepted = true;
 
     /**
      * @var DateTime $created
@@ -158,7 +158,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @return boolean
      */
-    public function isActive() {
+    public function isActive() : bool {
         return $this->active;
     }
     /**
@@ -214,33 +214,20 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     {
         return $this->updated;
     }
+
     /**
-     * Return true if this object or all of its variants are ignored
-     *
-     * @return bool
+     * @param bool $accepted
      */
-    public function isIgnored(): bool
+    public function setAccepted(bool $accepted)
     {
-        if ($this->getIgnored()) return true;
-        $variants = $this->getVariants();
-        foreach($variants as $variant) {
-            if (! $variant->isIgnored()) return false;
-        }
-        return true;
+        $this->accepted = $accepted;
     }
     /**
      * @return bool
      */
-    public function getIgnored(): bool
+    public function isAccepted(): bool
     {
-        return $this->ignored;
-    }
-    /**
-     * @param bool $ignored
-     */
-    public function setIgnored(bool $ignored)
-    {
-        $this->ignored = $ignored;
+        return $this->accepted;
     }
     /**
      * @return string
@@ -252,7 +239,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @param string $description
      */
-    public function setDescription(string $description): void
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
@@ -266,7 +253,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @param string $imageUrl
      */
-    public function setImageUrl(string $imageUrl): void
+    public function setImageUrl(string $imageUrl)
     {
         $this->imageUrl = $imageUrl;
     }
@@ -280,7 +267,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @param int $configSetId
      */
-    public function setConfigSetId(int $configSetId): void
+    public function setConfigSetId(int $configSetId)
     {
         $this->configSetId = $configSetId;
     }
@@ -294,7 +281,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @param string $supplier
      */
-    public function setSupplier(string $supplier): void
+    public function setSupplier(string $supplier)
     {
         $this->supplier = $supplier;
     }
@@ -308,7 +295,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @param string $brand
      */
-    public function setBrand(string $brand): void
+    public function setBrand(string $brand)
     {
         $this->brand = $brand;
     }
@@ -322,7 +309,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @param Article $article
      */
-    public function setArticle(Article $article): void
+    public function setArticle(Article $article)
     {
         $this->article = $article;
     }
@@ -338,7 +325,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     /**
      * @param string $manualUrl
      */
-    public function setManualUrl(string $manualUrl): void
+    public function setManualUrl(string $manualUrl)
     {
         $this->manualUrl = $manualUrl;
     }

@@ -1,9 +1,12 @@
 <?php
 
-use Doctrine\ORM\QueryBuilder;
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
+use Mxc\Shopware\Plugin\Database\SchemaManager;
+use MxcDropshipInnocigs\Import\InnocigsUpdater;
+use MxcDropshipInnocigs\Listener\InnocigsClient;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
+use Zend\EventManager\Event;
 
 class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicationController
 {
@@ -13,6 +16,7 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
     public function updateAction()
     {
         $this->log->enter();
+        $this->log->info(get_class($this));
         try {
             // If the ArticleMapper does not exist already, it gets created via the
             // ArticleMapperFactory. This factory ties the article mapper to the
@@ -30,7 +34,40 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
         $this->log->leave();
     }
 
-    public function finalizeListQuery(QueryBuilder $builder) {
-        $builder->andWhere($builder->expr()->eq($this->alias . '.ignored', intval(false)));
+    public function importAction()
+    {
+        $this->log->enter();
+        try {
+            $sm = $this->services->get(SchemaManager::class);
+            $client = $this->services->get(InnocigsClient::class);
+            $sm->drop();
+            $sm->create();
+            $client->activate(new Event());
+        } catch (Throwable $e) {
+            $this->log->except($e);
+        }
+        $this->log->leave();
     }
+
+    public function filterAction() {
+        $this->log->enter();
+        try {
+
+        } catch (Throwable $e) {
+            $this->log->except($e);
+        }
+        $this->log->leave();
+    }
+
+    public function synchronizeAction() {
+        $this->log->enter();
+        $this->services->get(InnocigsUpdater::class);
+
+
+        $this->log->leave();
+    }
+
+//    public function finalizeListQuery(QueryBuilder $builder) {
+//        $builder->andWhere($builder->expr()->eq($this->alias . '.ignored', intval(false)));
+//    }
 }

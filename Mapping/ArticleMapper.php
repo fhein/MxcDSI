@@ -80,8 +80,8 @@ class ArticleMapper implements ListenerAggregateInterface
     }
 
     protected function createShopwareArticle(InnocigsArticle $article) {
-        // do nothing if either the article or all of its variants are set to be ignored
-        if ($article->isIgnored()) return;
+        // do nothing if either the article or all of its variants are set to get not accepted
+        if (! $article->isAccepted()) return;
 
         $swArticle = $this->getShopwareArticle($article) ?? new Article();
         $this->modelManager->persist($swArticle);
@@ -116,7 +116,7 @@ class ArticleMapper implements ListenerAggregateInterface
 
         $isMainDetail = true;
         foreach($variants as $variant){
-            if ($variant->isIgnored()) continue;
+            if (! $variant->isAccepted()) continue;
             /**
              * @var Detail $swDetail
              */

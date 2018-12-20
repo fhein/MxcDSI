@@ -39,6 +39,12 @@ class InnocigsOption extends ModelEntity {
     private $group;
 
     /**
+     * @var bool $accepted
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $accepted;
+
+    /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\ManyToMany(targetEntity="InnocigsVariant", inversedBy="options")
      * @ORM\JoinTable(name="s_plugin_mxc_dropship_innocigs_options_variants")
@@ -147,5 +153,21 @@ class InnocigsOption extends ModelEntity {
     public function addVariant(InnocigsVariant $variant): void
     {
         $this->variants->add($variant);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAccepted(): bool
+    {
+        return $this->accepted;
+    }
+
+    /**
+     * @param bool $accepted
+     */
+    public function setAccepted(bool $accepted): void
+    {
+        $this->accepted = $accepted;
     }
 }

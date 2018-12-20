@@ -4,7 +4,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.model.InnocigsVariant', {
 
     configure: function() {
         return {
-            controller: 'MxcDropshipInnocigs',
+            controller: 'InnocigsVariant',
             detail: 'Shopware.apps.MxcDropshipInnocigs.view.detail.InnocigsVariant'
         };
     },
@@ -17,6 +17,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.model.InnocigsVariant', {
         { name : 'priceNet', type: 'float' },
         { name : 'priceRecommended', type: 'float' },
         { name : 'active', type: 'boolean' },
+        { name : 'accepted', type: 'boolean'},
         { name : 'created', type: 'date' },
         { name : 'updated', type: 'date' }
     ]

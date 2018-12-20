@@ -1,23 +1,23 @@
 <?php
-namespace MxcDropshipInnocigs\Mapping\Filter;
+
+namespace MxcDropshipInnocigs\Import;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use Shopware\Components\Model\ModelManager;
 
-class InnocigsFilter
+class InnocigsUpdater
 {
-    /**
-     * @var LoggerInterface $log
-     */
-    protected $log;
     /**
      * @var ModelManager $modelManager
      */
     protected $modelManager;
+    /**
+     * @var LoggerInterface $log
+     */
+    protected $log;
 
     /**
-     * InnocigsFilter constructor.
-
+     * InnocigsUpdater constructor.
      * @param ModelManager $modelManager
      * @param LoggerInterface $log
      */

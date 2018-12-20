@@ -9,11 +9,12 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
         return {
             detailWindow: 'Shopware.apps.MxcDropshipInnocigs.view.detail.Window',
             columns: {
+                active:     { header: 'active', width: 60, flex: 0 },
                 code:       { header: 'Code'},
                 supplier:   { header: 'Supplier'},
                 brand:      { header: 'Brand'},
                 name:       { header: 'Name', flex: 3 },
-                active:     { header: 'active', width: 60, flex: 0 }
+                accepted:   { header: 'accepted', width:60, flex: 0}
             },
             addButton: false,
             deleteButton: false,
@@ -30,16 +31,31 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
              */
             'mxcSaveArticle',
             /**
-             * @event mxcSaveActiveStates
+             * @event mxcSaveMultiple
              */
-            'mxcSaveActiveStates'
+            'mxcSaveMultiple',
+            /**
+             * @event mxcApplyFilter
+             */
+            'mxcApplyFilter',
+            /**
+             * @event mxcImportItems
+             */
+            'mxcImportItems'
         );
     },
 
     createToolbarItems: function() {
         var me = this;
         var items = me.callParent(arguments);
-        items = Ext.Array.insert(items, 0, [ me.createActivateButton(), me.createDeactivateButton()]);
+        items = Ext.Array.insert(items, 0, [
+            me.createImportItemsButton(),
+            me.createFilterButton(),
+            me.createAcceptButton(),
+            me.createIgnoreButton(),
+            me.createActivateButton(),
+            me.createDeactivateButton()
+        ]);
         return items;
     },
 
@@ -53,10 +69,29 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
             if (record.get('active') === changeTo) {
                 selModel.deselect(record);
             } else {
-                record.set('active', changeTo)
+                record.set('active', changeTo);
+                if (changeTo === true) {
+                    record.set('accepted', changeTo);
+                }
             }
         });
-        me.fireEvent('mxcSaveActiveStates', selModel);
+        me.fireEvent('mxcSaveMultiple', me, selModel);
+    },
+
+    handleAcceptedState: function(changeTo) {
+        var me = this;
+        var selModel = me.getSelectionModel();
+        var records = selModel.getSelection();
+        Ext.each(records, function(record) {
+            // deselect records which already have the target states
+            // set the target state otherwise
+            if (record.get('accepted') === changeTo) {
+                selModel.deselect(record);
+            } else {
+                record.set('accepted', changeTo)
+            }
+        });
+        me.fireEvent('mxcSaveMultiple', me, selModel);
     },
 
     createActivateButton: function() {
@@ -77,6 +112,50 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
             iconCls: 'sprite-cross',
             handler: function() {
                 me.handleActiveStateChanges(false);
+            }
+        });
+    },
+
+    createFilterButton: function() {
+        var me = this;
+        return Ext.create('Ext.button.Button', {
+            text: 'Apply filter',
+            iconCls: 'sprite-filter',
+            handler: function() {
+                me.fireEvent('mxcApplyFilter', me);
+            }
+        });
+    },
+
+    createImportItemsButton: function() {
+        var me = this;
+        return Ext.create('Ext.button.Button', {
+            text: 'Import Articles',
+            iconCls: 'sprite-download-cloud',
+            handler: function() {
+                me.fireEvent('mxcImportItems', me);
+            }
+        });
+    },
+
+    createIgnoreButton: function() {
+        var me = this;
+        return Ext.create('Ext.button.Button', {
+            text: 'Ignore selected',
+            iconCls: 'sprite-cross-circle',
+            handler: function() {
+                me.handleAcceptedState(false);
+            }
+        });
+    },
+
+    createAcceptButton: function() {
+        var me = this;
+        return Ext.create('Ext.button.Button', {
+            text: 'Accept selected',
+            iconCls: 'sprite-tick-circle',
+            handler: function() {
+                me.handleAcceptedState(true);
             }
         });
     },
