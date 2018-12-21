@@ -1412,7 +1412,7 @@ return array(
     ),
     'SM10000V8D' => array(
         'name' => 'Steamax TFV8 Top Cap Dichtungen',
-        'brand' => 'InnoCigs',
+        'brand' => 'Steamax',
         'supplier' => 'Smoktech',
     ),
     'VP100TR' => array(

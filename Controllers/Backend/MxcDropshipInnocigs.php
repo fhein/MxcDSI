@@ -52,7 +52,7 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
     public function filterAction() {
         $this->log->enter();
         try {
-
+            // @todo: Apply filter here
         } catch (Throwable $e) {
             $this->log->except($e);
         }

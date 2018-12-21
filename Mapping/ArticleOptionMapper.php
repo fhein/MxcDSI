@@ -68,30 +68,39 @@ class ArticleOptionMapper
              */
             $icOptions = $icVariant->getOptions();
             foreach ($icOptions as $icOption) {
-                $icGroupName =  $this->mapper->mapGroupName($icOption->getGroup()->getName());
-                $icOptionName = $this->mapper->mapOptionName($icOption->getName());
-                $groupOptions[$icGroupName][$icOptionName][] = $icVariant;
+                $icGroupName = $icOption->getGroup()->getName();
+                $icOptionName = $icOption->getName();
+
                 $this->log->debug(sprintf('Variant %s (%s) has option %s from group %s.',
                     $icVariant->getCode(),
                     $icVariant->getId(),
                     $icOptionName,
                     $icGroupName
                 ));
+
+                // A valid variant may hold options which are invalid. Skip invalid options.
+                if (! $this->validator->validate($icOption)) {
+                    $this->log->debug('Named option does not validate and is ignored.');
+                    continue;
+                }
+                $swGroupName =  $this->mapper->mapGroupName($icGroupName);
+                $swOptionName = $this->mapper->mapOptionName($icOptionName);
+                $groupOptions[$swGroupName][$swOptionName][] = $icVariant;
             }
         }
-        foreach ($groupOptions as $icGroupName => $options) {
+        foreach ($groupOptions as $swGroupName => $options) {
             // Because some variants may be set to be ignored (accepted = false) there is a chance that we have
             // groups with just a single option. We do not apply such groups, because selecting from a single
             // choice is not meaningful.
             if (count($options) <  2) {
-                $this->log->notice(sprintf('Skipping group %s because there are not multiple options available.',
-                    $icGroupName
+                $this->log->notice(sprintf('Skipping creation/update of group %s because there are less than two options available.',
+                    $swGroupName
                 ));
                 continue;
             }
-            foreach ($options as $icOptionName => $icVariants) {
-                $this->groupRepository->createGroup($icGroupName);
-                $swOption = $this->groupRepository->createOption($icGroupName, $icOptionName);
+            foreach ($options as $swOptionName => $icVariants) {
+                $this->groupRepository->createGroup($swGroupName);
+                $swOption = $this->groupRepository->createOption($swGroupName, $swOptionName);
                 foreach ($icVariants as $icVariant) {
                     $icVariant->addShopwareOption($swOption);
                     $this->log->notice(sprintf('Adding shopware option %s (id: %s) to variant %s (id: %s).',

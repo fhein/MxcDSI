@@ -40,9 +40,9 @@ class InnocigsEntityValidator
     }
 
     /**
-     * An InnocigsVariant validates if either it's accepted member is true,
-     * the accepted member of it's associated article is true,
-     * and the accepted members of all associated options are true
+     * An InnocigsVariant validates if either it's accepted member is true
+     * and the accepted member of it's associated article is true,
+     * and at least one of it's options has an accepted member which is true
      *
      * @param InnocigsVariant $variant
      * @return bool
@@ -54,11 +54,11 @@ class InnocigsEntityValidator
         }
         $options = $variant->getOptions();
         foreach ($options as $option) {
-            if (! $this->validateOption($option)) {
-                return false;
+            if ($this->validateOption($option)) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     /**
