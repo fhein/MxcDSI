@@ -182,6 +182,7 @@ class InnocigsArticle extends ModelEntity implements InnocigsModelInterface {
     {
         return $this->created;
     }
+
     public function getVariants()
     {
         return $this->variants;

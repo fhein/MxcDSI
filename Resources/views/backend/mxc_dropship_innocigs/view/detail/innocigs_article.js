@@ -1,9 +1,14 @@
 //
 
 Ext.define('Shopware.apps.MxcDropshipInnocigs.view.detail.InnocigsArticle', {
-    // extend: 'Shopware.grid.Panel',
     extend: 'Shopware.model.Container',
-    alias: 'widget.mxc-innocigs-article-grid',
+    alias: 'widget.mxc-innocigs-article-detail-container',
     title: 'InnoCigs Article',
-    height : 250
+    height : 350,
+
+    configure: function() {
+        return {
+            controller: 'MxcDropshipInnocigs',
+        };
+    }
 });

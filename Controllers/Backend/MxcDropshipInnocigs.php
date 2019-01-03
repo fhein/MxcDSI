@@ -40,8 +40,12 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
         try {
             $sm = $this->services->get(SchemaManager::class);
             $client = $this->services->get(InnocigsClient::class);
+            // drop all database tables and remove all attributes
+            // created by this plugin
             $sm->drop();
+            // recreate database tables and attributes
             $sm->create();
+            // import items from InnoCigs
             $client->activate(new Event());
         } catch (Throwable $e) {
             $this->log->except($e);
@@ -65,6 +69,11 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
 
 
         $this->log->leave();
+    }
+
+    protected function getAdditionalDetailData(array $data) {
+        $data['variants'] = [];
+        return $data;
     }
 
 //    public function finalizeListQuery(QueryBuilder $builder) {

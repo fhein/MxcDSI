@@ -13,12 +13,12 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs', {
     views: [
         'list.Window',
         'list.InnocigsArticle',
-        'list.InnocigsVariant',
         'list.extensions.Filter',
 
         'detail.InnocigsArticle',
-        'detail.InnocigsVariant',
-        'detail.Window'
+        'detail.Window',
+
+        'detail.InnocigsVariant'
     ],
 
     models: [ 'InnocigsArticle', 'InnocigsVariant' ],

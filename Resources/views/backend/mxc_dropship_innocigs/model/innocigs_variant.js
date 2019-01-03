@@ -4,14 +4,12 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.model.InnocigsVariant', {
 
     configure: function() {
         return {
-            controller: 'InnocigsVariant',
-            detail: 'Shopware.apps.MxcDropshipInnocigs.view.detail.InnocigsVariant'
+            listing: 'Shopware.apps.MxcDropshipInnocigs.view.detail.InnocigsVariant'
         };
     },
 
     fields: [
         { name : 'id', type: 'int', useNull: true },
-        { name : 'article', type: 'int' },
         { name : 'code', type: 'string' },
         { name : 'ean', type: 'string' },
         { name : 'priceNet', type: 'float' },

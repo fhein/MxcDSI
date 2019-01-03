@@ -17,13 +17,18 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.model.InnocigsArticle', {
         { name : 'description', type: 'string' },
         { name : 'brand', type: 'string' },
         { name : 'supplier', type: 'string' },
-        { name : 'image', type: 'string' }
+        { name : 'image', type: 'string' },
     ],
 
-    associations: [{
-        relation: 'OneToMany',
-        type: 'hasMany',
-        model: 'Shopware.apps.MxcDropshipInnocigs.model.InnocigsVariant',
-        associationKey: 'variants'
-    }]
+    associations: [
+        {
+            relation: 'OneToMany',
+            type: 'hasMany',
+            loadOnDemand: true,
+            model: 'Shopware.apps.MxcDropshipInnocigs.model.InnocigsVariant',
+            storeClass: 'Shopware.apps.MxcDropshipInnocigs.store.InnocigsVariant',
+            name: 'getVariants',
+            associationKey: 'variants'
+        }
+    ]
 });
