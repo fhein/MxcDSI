@@ -23,7 +23,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     registerEvents: function() {
-        var me = this;
+        let me = this;
         me.callParent(arguments);
         me.addEvents(
             /**
@@ -46,8 +46,8 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     createToolbarItems: function() {
-        var me = this;
-        var items = me.callParent(arguments);
+        let me = this;
+        let items = me.callParent(arguments);
         items = Ext.Array.insert(items, 0, [
             me.createImportItemsButton(),
             me.createFilterButton(),
@@ -60,9 +60,9 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     handleActiveStateChanges: function(changeTo) {
-        var me = this;
-        var selModel = me.getSelectionModel();
-        var records = selModel.getSelection();
+        let me = this;
+        let selModel = me.getSelectionModel();
+        let records = selModel.getSelection();
         Ext.each(records, function(record) {
             // deselect records which already have the target states
             // set the target state otherwise
@@ -79,9 +79,9 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     handleAcceptedState: function(changeTo) {
-        var me = this;
-        var selModel = me.getSelectionModel();
-        var records = selModel.getSelection();
+        let me = this;
+        let selModel = me.getSelectionModel();
+        let records = selModel.getSelection();
         Ext.each(records, function(record) {
             // deselect records which already have the target states
             // set the target state otherwise
@@ -95,7 +95,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     createActivateButton: function() {
-        var me = this;
+        let me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Activate selected',
             iconCls: 'sprite-tick',
@@ -106,7 +106,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     createDeactivateButton: function() {
-        var me = this;
+        let me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Deactivate selected',
             iconCls: 'sprite-cross',
@@ -117,7 +117,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     createFilterButton: function() {
-        var me = this;
+        let me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Apply filter',
             iconCls: 'sprite-filter',
@@ -128,7 +128,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     createImportItemsButton: function() {
-        var me = this;
+        let me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Import Articles',
             iconCls: 'sprite-download-cloud',
@@ -139,7 +139,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     createIgnoreButton: function() {
-        var me = this;
+        let me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Ignore selected',
             iconCls: 'sprite-cross-circle',
@@ -150,7 +150,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     createAcceptButton: function() {
-        var me = this;
+        let me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Accept selected',
             iconCls: 'sprite-tick-circle',
@@ -161,12 +161,15 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     createPlugins: function () {
-        var me = this;
-        var items = me.callParent(arguments);
+        let me = this;
+        let items = me.callParent(arguments);
 
         me.cellEditor = Ext.create('Ext.grid.plugin.CellEditing', {
             clicksToEdit: 1,
             listeners: {
+                beforeedit: function(editor, e) {
+                    return (e.column.text !== 'Code' && e.column.text !== 'Name');
+                },
                 edit: function(editor, e) {
                     // the 'edit' event gets fired even if the new value equals the old value
                     if (e.originalValue === e.value) {
@@ -182,7 +185,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.list.InnocigsArticle', {
     },
 
     destroy: function() {
-        var me = this;
+        let me = this;
         // If the window gets closed while the cell editor is active
         // an exception gets thrown. This is a workaround for that problem.
         me.cellEditor.completeEdit();

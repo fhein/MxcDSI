@@ -17,7 +17,8 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.model.InnocigsVariant', {
         { name : 'active', type: 'boolean' },
         { name : 'accepted', type: 'boolean'},
         { name : 'created', type: 'date' },
-        { name : 'updated', type: 'date' }
+        { name : 'updated', type: 'date' },
+        { name : 'description', type: 'string'}
     ]
 });
 

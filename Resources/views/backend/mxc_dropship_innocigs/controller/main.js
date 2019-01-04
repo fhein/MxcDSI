@@ -3,20 +3,22 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
     extend: 'Enlight.app.Controller',
 
     init: function() {
-        var me = this;
+        let me = this;
 
         me.control({
             'mxc-innocigs-article-listing-grid': {
+                mxcSaveVariant: me.onSaveArticle,
                 mxcSaveArticle:  me.onSaveArticle,
                 mxcSaveMultiple:  me.onSaveMultiple,
-                mxcImportItems: me.onImportItems
+                mxcImportItems: me.onImportItems,
+                mxcApplyFilter: me.onApplyFilter
             },
         });
         me.mainWindow = me.getView('list.Window').create({ }).show();
     },
 
     onImportItems: function(grid) {
-        var mask = new Ext.LoadMask(grid, { msg: 'Importing items ...'});
+        let mask = new Ext.LoadMask(grid, { msg: 'Importing items ...'});
         mask.show();
         Ext.Ajax.request({
             method: 'POST',
@@ -35,8 +37,24 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
         });
     },
 
-    onApplyFilter: function() {
-
+    onApplyFilter: function(grid) {
+        let mask = new Ext.LoadMask(grid, { msg: 'Applying filters ...'});
+        mask.show();
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '{url controller=MxcDropshipInnocigs action=filter}',
+            params: {},
+            callback: function(responseData, operation) {
+                if(!operation) {
+                    Shopware.Notification.createGrowlMessage('Import', 'An error occured while applying filters.');
+                    return false;
+                } else {
+                    Shopware.Notification.createGrowlMessage('Import', 'Filters successfully applied.');
+                    grid.store.load();
+                    mask.hide();
+                }
+            }
+        });
     },
 
     /**
@@ -75,21 +93,21 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
     },
 
     onSaveMultiple: function(grid, selectionModel) {
-        var me = this;
-        var records = selectionModel.getSelection();
+        let me = this;
+        let records = selectionModel.getSelection();
         if (records.length > 0) {
-            var mask = new Ext.LoadMask(grid, { msg: 'Applying changes ...'});
+            let mask = new Ext.LoadMask(grid, { msg: 'Applying changes ...'});
             mask.show();
             me.save(records, function() {
                 selectionModel.deselectAll();
                 Shopware.Notification.createGrowlMessage('InnoCigs Dropship', 'Changes successfully applied.', 'MxcDropshipInnocigs');
                 mask.hide();
             });
-        };
+        }
     },
 
     save: function(records, callback) {
-        var me = this,
+        let me = this,
             record = records.pop();
 
         record.save({

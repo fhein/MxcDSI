@@ -13,7 +13,7 @@ use Shopware\Models\Article\Configurator\Option;
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_variant")
  */
-class InnocigsVariant extends ModelEntity implements InnocigsModelInterface
+class InnocigsVariant extends ModelEntity implements ValidationModelInterface
 {
     /**
      * Primary Key - autoincrement value
@@ -66,6 +66,12 @@ class InnocigsVariant extends ModelEntity implements InnocigsModelInterface
      * @ORM\ManyToMany(targetEntity="InnocigsOption", mappedBy="variants")
      */
     private $options;
+
+    /**
+     * @var string
+     * @ORM\Column(name="description", type="string", nullable=true)
+     */
+    private $description;
 
     /**
      * @var boolean $active
@@ -145,6 +151,25 @@ class InnocigsVariant extends ModelEntity implements InnocigsModelInterface
     public function addOption(InnocigsOption $option) {
         $this->options->add($option);
         $option->addVariant($this);
+        $this->getDescription();
+    }
+
+    public function getDescription() {
+        /**
+         * @var InnocigsOption $option
+         */
+        $d = [];
+        foreach($this->getOptions() as $option) {
+            $group = $option->getGroup();
+            $d[] = sprintf('%s: %s', $group->getName(), $option->getName());
+        }
+        sort($d);
+        $this->description = implode(', ', $d);
+        return $this->description;
+    }
+
+    public function setDescription(/** @noinspection PhpUnusedParameterInspection */ string $_) {
+        $this->getDescription();
     }
 
     /**

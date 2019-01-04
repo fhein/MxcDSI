@@ -16,7 +16,8 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
     public function updateAction()
     {
         $this->log->enter();
-        $this->log->info(get_class($this));
+        $data = $this->request->getParams();
+        $this->log->notice(var_export($data, true));
         try {
             // If the ArticleMapper does not exist already, it gets created via the
             // ArticleMapperFactory. This factory ties the article mapper to the
@@ -66,8 +67,6 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
     public function synchronizeAction() {
         $this->log->enter();
         $this->services->get(InnocigsUpdater::class);
-
-
         $this->log->leave();
     }
 

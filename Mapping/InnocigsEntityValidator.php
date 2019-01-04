@@ -5,9 +5,9 @@ namespace MxcDropshipInnocigs\Mapping;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
-use MxcDropshipInnocigs\Models\InnocigsModelInterface;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Models\ValidationModelInterface;
 
 class InnocigsEntityValidator
 {
@@ -101,7 +101,7 @@ class InnocigsEntityValidator
         return ($option->isAccepted() && $option->getGroup()->isAccepted());
     }
 
-    public function validate(InnocigsModelInterface $entity) : bool {
+    public function validate(ValidationModelInterface $entity) : bool {
         $method = $this->validators[get_class($entity)] ?? null;
         if (null === $method) {
             throw new InvalidArgumentException('No validator available for ' . get_class($entity));
