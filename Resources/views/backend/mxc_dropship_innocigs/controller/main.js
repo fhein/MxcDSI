@@ -7,13 +7,13 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
 
         me.control({
             'mxc-innocigs-article-listing-grid': {
-                mxcSaveVariant: me.onSaveArticle,
                 mxcSaveArticle:  me.onSaveArticle,
                 mxcSaveMultiple:  me.onSaveMultiple,
                 mxcImportItems: me.onImportItems,
                 mxcApplyFilter: me.onApplyFilter
-            },
+            }
         });
+        Shopware.app.Application.on('innocigsarticle-save-successfully', me.onDetailSaved);
         me.mainWindow = me.getView('list.Window').create({ }).show();
     },
 

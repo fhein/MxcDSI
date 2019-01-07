@@ -14,6 +14,7 @@ use Shopware\Models\Article\Article;
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_article")
  */
 class InnocigsArticle extends ModelEntity implements ValidationModelInterface {
+
     /**
      * Primary Key - autoincrement value
      *
@@ -194,6 +195,25 @@ class InnocigsArticle extends ModelEntity implements ValidationModelInterface {
         $this->variants->add($variant);
         $variant->setArticle($this);
     }
+
+    // This API gets implicitly called when the user saves an article.
+    //
+    // If the 'Save' button gets clicked on the article detail window
+    // updated variant information is provided (accepted status of each variant).
+    //
+    // If the 'Save' action gets triggered via the article listing
+    // (cell editing, 'Activate selected', etc), an empty variant array
+    // is provided.
+    //
+    // So we apply the variant array only if it is not empty. Otherwise
+    // the variants, which are all well defined and present, would be removed.
+    //
+    public function setVariants($variants) {
+        if (! empty($variants)) {
+            $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\InnocigsVariant', 'variants');
+        }
+    }
+
     /**
      * @return string
      */

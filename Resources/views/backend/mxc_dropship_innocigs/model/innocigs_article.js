@@ -11,18 +11,18 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.model.InnocigsArticle', {
     fields: [
         { name : 'id', type: 'int', useNull: true },
         { name : 'code', type: 'string' },
-        { name : 'name', type: 'string' },
-        { name : 'active', type: 'boolean' },
-        { name : 'accepted', type: 'boolean' },
         { name : 'brand', type: 'string' },
+        { name : 'active', type: 'boolean' },
+
+        { name : 'name', type: 'string' },
         { name : 'supplier', type: 'string' },
+        { name : 'accepted', type: 'boolean' },
     ],
 
     associations: [
         {
             relation: 'OneToMany',
             type: 'hasMany',
-            loadOnDemand: true,
             model: 'Shopware.apps.MxcDropshipInnocigs.model.InnocigsVariant',
             storeClass: 'Shopware.apps.MxcDropshipInnocigs.store.InnocigsVariant',
             name: 'getVariants',

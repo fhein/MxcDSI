@@ -19,18 +19,6 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.detail.InnocigsVariant', {
         };
     },
 
-    registerEvents: function() {
-        let me = this;
-        me.callParent(arguments);
-        me.addEvents(
-            /**
-             * @event mxcSaveVariant
-             */
-            'mxcSaveVariant',
-        );
-    },
-
-
     createPlugins: function () {
         let me = this;
         let items = me.callParent(arguments);
@@ -39,14 +27,12 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.detail.InnocigsVariant', {
             clicksToEdit: 1,
             listeners: {
                 beforeedit: function(editor, e) {
+                    // disable cell editing for all columns but the 'use' column
                     return (e.column.text === 'use');
                 },
                 edit: function(editor, e) {
-                    // the 'edit' event gets fired even if the new value equals the old value
-                    if (e.originalValue === e.value) {
-                        return;
-                    }
-                    //me.fireEvent('mxcSaveVariant', e.record);
+                    // prevent the red dirty cell marker
+                    e.record.commit();
                 }
             }
         });
