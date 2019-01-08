@@ -46,21 +46,29 @@ class InnocigsClient
     protected $config;
 
     /**
+     * @var ImportModifier $importModifier
+     */
+    protected $importModifier;
+
+    /**
      * InnocigsClient constructor.
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
+     * @param ImportModifier $importModifier
      * @param Config $config
      * @param LoggerInterface $log
      */
     public function __construct(
         ModelManager $modelManager,
         ApiClient $apiClient,
+        ImportModifier $importModifier,
         Config $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
+        $this->importModifier = $importModifier;
         $this->config = $config;
         $this->log = $log;
     }
@@ -266,6 +274,11 @@ class InnocigsClient
             }
             /** @noinspection PhpUndefinedFieldInspection */
             $this->importArticles($this->config->numberOfArticles ?? -1);
+        }
+        /** @noinspection PhpUndefinedFieldInspection */
+        if ($this->config->applyFilters) {
+            $this->log->notice('Applying import modifications.');
+            $this->importModifier->apply();
         }
         $this->log->leave();
         return true;

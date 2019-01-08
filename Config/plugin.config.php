@@ -5,6 +5,7 @@ namespace MxcDropshipInnocigs;
 use Doctrine\ORM\Events;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
+use MxcDropshipInnocigs\Import\ImportModifier;
 use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Listener\FilterTest;
@@ -95,6 +96,7 @@ return [
             MediaTool::class,
             InnocigsUpdater::class,
             InnocigsEntityValidator::class,
+            ImportModifier::class,
         ],
     ],
     'mappings' => [
@@ -121,11 +123,6 @@ return [
                         'operator' => 'LIKE',
                         'value' => '%-H',
                     ],
-                    [
-                        'field' => 'ean',
-                        'operator' => '=',
-                        'value' => '123',
-                    ],
                 ],
                 'set' => [
                     'accepted' => false,
@@ -139,6 +136,7 @@ return [
         InnocigsClient::class => [
             'useArticleConfiguration' => true,
             'numberOfArticles' => -1,
+            'applyFilters' => true,
         ],
     ],
 ];

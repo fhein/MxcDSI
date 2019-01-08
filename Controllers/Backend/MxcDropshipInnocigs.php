@@ -2,6 +2,7 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use Mxc\Shopware\Plugin\Database\SchemaManager;
+use MxcDropshipInnocigs\Import\ImportModifier;
 use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
@@ -56,7 +57,8 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
     public function filterAction() {
         $this->log->enter();
         try {
-            // @todo: Apply filter here
+            $importModifier = $this->services->get(ImportModifier::class);
+            $importModifier->apply();
         } catch (Throwable $e) {
             $this->log->except($e);
         }
@@ -73,8 +75,4 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
         $data['variants'] = [];
         return $data;
     }
-
-//    public function finalizeListQuery(QueryBuilder $builder) {
-//        $builder->andWhere($builder->expr()->eq($this->alias . '.ignored', intval(false)));
-//    }
 }
