@@ -14,7 +14,7 @@ class ImportModifierFactory implements FactoryInterface
         $log = $container->get('logger');
         $config = $container->get('config');
         $config = $config->import->update ?? new Config([]);
-        $updater = new BulkOperation($modelManager, $log);
-        return new ImportModifier($updater, $config);
+        $bulkOperation = new BulkOperation($modelManager, $log);
+        return new ImportModifier($bulkOperation, $config);
     }
 }

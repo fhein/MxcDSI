@@ -41,6 +41,9 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
         try {
             $sm = $this->services->get(SchemaManager::class);
             $client = $this->services->get(InnocigsClient::class);
+
+            //$client->createArticleConfiguration();
+
             // drop all database tables and remove all attributes
             // created by this plugin
             $sm->drop();

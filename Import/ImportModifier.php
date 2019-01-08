@@ -8,24 +8,24 @@ use Zend\Config\Config;
 class ImportModifier
 {
     /**
-     * @var BulkOperation $updater
+     * @var BulkOperation $bulkOperation
      */
-    protected $updater;
+    protected $bulkOperation;
 
     /**
      * @var array $config
      */
     protected $config;
 
-    public function __construct(BulkOperation $updater, Config $config) {
-        $this->updater = $updater;
+    public function __construct(BulkOperation $ibulkOperation, Config $config) {
+        $this->bulkOperation = $ibulkOperation;
         $this->config = $config->toArray();
     }
 
     public function apply()
     {
         foreach($this->config as $filter) {
-            $this->updater->update($filter);
+            $this->bulkOperation->update($filter);
         }
     }
 }

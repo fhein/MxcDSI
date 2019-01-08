@@ -25,13 +25,13 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
             url: '{url controller=MxcDropshipInnocigs action=import}',
             params: {},
             callback: function(responseData, operation) {
+                mask.hide();
                 if(!operation) {
                     Shopware.Notification.createGrowlMessage('Import', 'An error occured while importing items.');
                     return false;
                 } else {
                     Shopware.Notification.createGrowlMessage('Import', 'Items were successfully imported.');
                     grid.store.load();
-                    mask.hide();
                 }
             }
         });
@@ -45,13 +45,13 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.controller.Main', {
             url: '{url controller=MxcDropshipInnocigs action=filter}',
             params: {},
             callback: function(responseData, operation) {
+                mask.hide();
                 if(!operation) {
                     Shopware.Notification.createGrowlMessage('Import', 'An error occured while applying filters.');
                     return false;
                 } else {
                     Shopware.Notification.createGrowlMessage('Import', 'Filters successfully applied.');
                     grid.store.load();
-                    mask.hide();
                 }
             }
         });

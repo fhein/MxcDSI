@@ -165,11 +165,6 @@ return array(
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
-    'SC10000BCC' => array(
-        'name' => 'SC BCC Pure Cotton Head  (5 Stück pro Packung)',
-        'brand' => 'SC',
-        'supplier' => 'eLeaf',
-    ),
     'SC10000GSP' => array(
         'name' => 'SC GS Air Pure Cotton Head  (5 Stück pro Packung)',
         'brand' => 'SC',
@@ -480,13 +475,8 @@ return array(
         'brand' => 'SC',
         'supplier' => 'eLeaf',
     ),
-    'IC10000APC' => array(
-        'name' => 'InnoCigs eGo AIO Pro C E-Zigaretten Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
     'IC10000EVD' => array(
-        'name' => 'InnoCigs eVic VTC Dual Body weiß',
+        'name' => 'InnoCigs eVic VTC Dual Body',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
@@ -540,30 +530,10 @@ return array(
         'brand' => 'Steamax',
         'supplier' => 'Smoktech',
     ),
-    'SM10000MOSR8' => array(
-        'name' => 'Steamax R80 TC',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
-    ),
     'SM10000USB' => array(
         'name' => 'Steamax USB-Ladekabel',
         'brand' => 'Steamax',
         'supplier' => 'Steamax',
-    ),
-    'SM10000MNI' => array(
-        'name' => 'Steamax Micro Ni200 Heads 0,1 Ohm (5 Stück pro Packung)',
-        'brand' => 'Steamax',
-        'supplier' => 'Steamax',
-    ),
-    'SM10000V4S' => array(
-        'name' => 'Steamax TFV4 Clearomizer Set',
-        'brand' => 'Steamax',
-        'supplier' => 'Steamax',
-    ),
-    'SM10000V8' => array(
-        'name' => 'Steamax TFV8 Clearomizer Set',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
     ),
     'SM10000V8RT' => array(
         'name' => 'Steamax TFV8 Glastank',
@@ -790,11 +760,6 @@ return array(
         'brand' => 'Sony',
         'supplier' => 'Murata / Sony',
     ),
-    'IC10000NA' => array(
-        'name' => 'InnoCigs Ornate Clearomizer Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
     'IC10000MGS' => array(
         'name' => 'InnoCigs MGS SS316L Head 0,15 Ohm (5 Stück pro Packung)',
         'brand' => 'InnoCigs',
@@ -895,11 +860,6 @@ return array(
         'brand' => 'InnoCigs',
         'supplier' => 'InnoCigs',
     ),
-    'IC10000OID2' => array(
-        'name' => 'InnoCigs Cuboid 200W',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
     'SC10000ATH' => array(
         'name' => 'SC IC Heads 1,1 Ohm (5 Stück pro Packung)',
         'brand' => 'SC',
@@ -954,11 +914,6 @@ return array(
         'name' => 'Chubby Gorilla Quad Akkubox',
         'brand' => 'Chubby Gorilla',
         'supplier' => 'Chubby Gorilla',
-    ),
-    'SC10000PDB' => array(
-        'name' => 'SC Pico Dual 200 Watt',
-        'brand' => 'SC',
-        'supplier' => 'eLeaf',
     ),
     'SC10000PDM' => array(
         'name' => 'SC Melo 3 Mini Clearomizer Set',
@@ -1370,18 +1325,8 @@ return array(
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
-    'IC100UX5C' => array(
-        'name' => 'InnoCigs Unimax 25 Clearomizer Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
     'IC100UX5B' => array(
         'name' => 'InnoCigs Unimax 25 Akku 3000 mAh',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'IC100UXM' => array(
-        'name' => 'InnoCigs Unimax Mundstücke (5 Stück pro Packung)',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
@@ -1420,11 +1365,6 @@ return array(
         'brand' => 'Vapanion',
         'supplier' => 'Vapanion',
     ),
-    'VP100TRBM' => array(
-        'name' => 'Vapanion Tarot Nano 80 Watt',
-        'brand' => 'Vapanion',
-        'supplier' => 'Vapanion',
-    ),
     'VP100TRVC' => array(
         'name' => 'Vapanion Veco Tank Clearomizer Set',
         'brand' => 'Vapanion',
@@ -1437,11 +1377,6 @@ return array(
     ),
     'VP100TRT' => array(
         'name' => 'Vapanion Traditional EUC Clapton Heads  (5 Stück pro Packung)',
-        'brand' => 'Vapanion',
-        'supplier' => 'Vapanion',
-    ),
-    'VP100TRP' => array(
-        'name' => 'Vapanion Tarot Pro 160 Watt',
         'brand' => 'Vapanion',
         'supplier' => 'Vapanion',
     ),
@@ -1535,6 +1470,11 @@ return array(
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
+    'SM100AL' => array(
+        'name' => 'Steamax Alien 220 Watt',
+        'brand' => 'Steamax',
+        'supplier' => 'Smoktech',
+    ),
     'SC100ECML' => array(
         'name' => 'SC ECML 0,75 Ohm Heads (5 Stück pro Packung)',
         'brand' => 'SC',
@@ -1552,11 +1492,6 @@ return array(
     ),
     'SM100GX' => array(
         'name' => 'Steamax GX350 E-Zigaretten Set',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
-    ),
-    'SM100GXM' => array(
-        'name' => 'Steamax GX350',
         'brand' => 'Steamax',
         'supplier' => 'Smoktech',
     ),
@@ -1600,11 +1535,6 @@ return array(
         'brand' => 'SC',
         'supplier' => 'eLeaf',
     ),
-    'SC100QC' => array(
-        'name' => 'SC iStick QC 200 E-Zigaretten Set',
-        'brand' => 'SC',
-        'supplier' => 'eLeaf',
-    ),
     'AS10000K3M' => array(
         'name' => 'Aspire K2 & K3 Mundstücke Edelstahl (5 St. pro Pack)',
         'brand' => 'Aspire',
@@ -1629,16 +1559,6 @@ return array(
         'name' => 'Steamax WS01 Triple Heads 0,2 Ohm (5 Stück pro Packung)',
         'brand' => 'Steamax',
         'supplier' => 'Wismec',
-    ),
-    'SC100OP' => array(
-        'name' => 'Steamax Osub Plus 80 Watt',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
-    ),
-    'UW100CRM2' => array(
-        'name' => 'Uwell Crown 2 Mini Clearomizer Set',
-        'brand' => 'Uwell',
-        'supplier' => 'Uwell',
     ),
     'VV100L10-RB' => array(
         'name' => 'Vampire Vape VLADS VG Liquid - Raspberry Blast -',
@@ -1700,11 +1620,6 @@ return array(
         'brand' => 'Uwell',
         'supplier' => 'Uwell',
     ),
-    'UW100CR2' => array(
-        'name' => 'Uwell Crown 2 Clearomizer Set',
-        'brand' => 'Uwell',
-        'supplier' => 'Uwell',
-    ),
     'UW100CR3' => array(
         'name' => 'Uwell Crown 3 Clearomizer Set',
         'brand' => 'Uwell',
@@ -1714,11 +1629,6 @@ return array(
         'name' => 'Uwell Crown 3 Glastank',
         'brand' => 'Uwell',
         'supplier' => 'Uwell',
-    ),
-    'JF10000COVA' => array(
-        'name' => 'Joyfect Crazy One Magnetabdeckung',
-        'brand' => 'Joyfect',
-        'supplier' => 'Joyfect',
     ),
     'HV100L10-RL' => array(
         'name' => 'DVTCH Amsterdam - Red Light District',
@@ -1770,18 +1680,8 @@ return array(
         'brand' => 'Charlie Noble',
         'supplier' => 'Charlie Noble',
     ),
-    'SM100G150M' => array(
-        'name' => 'Steamax G150  Akku 4200 mAh',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
-    ),
     'SM100SPH' => array(
         'name' => 'Steamax Spirals Dual Core  Heads (5 Stück pro Packung)',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
-    ),
-    'SM100SPM' => array(
-        'name' => 'Steamax Spirals Plus Mundstücke (2 Stück pro Packung)',
         'brand' => 'Steamax',
         'supplier' => 'Smoktech',
     ),
@@ -1825,16 +1725,6 @@ return array(
         'brand' => 'Erste Sahne',
         'supplier' => 'Erste Sahne',
     ),
-    'IC100TFTA' => array(
-        'name' => 'InnoCigs eGo One TFTA E-Zigaretten Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'IC100PCL' => array(
-        'name' => 'InnoCigs ProCL Heads 0,6 Ohm (5 Stück pro Packung)',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
     'SM100T12T6' => array(
         'name' => 'Steamax TFV12 V12-T6 Sextuple Heads 0,17 Ohm (3 Stück pro Packung)',
         'brand' => 'Steamax',
@@ -1855,26 +1745,6 @@ return array(
         'brand' => 'Mad Hatter',
         'supplier' => 'Mad Hatter',
     ),
-    'MH100L10-LC' => array(
-        'name' => 'Mad Hatter - I Love Cookies Too Liquid  (3x 10ml)',
-        'brand' => 'Mad Hatter',
-        'supplier' => 'Mad Hatter',
-    ),
-    'MH100L10-LP' => array(
-        'name' => 'Mad Hatter - I Love Popcorn Liquid  (3x 10ml)',
-        'brand' => 'Mad Hatter',
-        'supplier' => 'Mad Hatter',
-    ),
-    'MH100L10-LT' => array(
-        'name' => 'Mad Hatter - I Love Taffy Liquid  (3x 10ml)',
-        'brand' => 'Mad Hatter',
-        'supplier' => 'Mad Hatter',
-    ),
-    'MH100L10-AJ' => array(
-        'name' => 'Mad Hatter - Apple Juice Box - Limited Edition Liquid  (3x 10ml)',
-        'brand' => 'Mad Hatter',
-        'supplier' => 'Mad Hatter',
-    ),
     'AD100L10-RA' => array(
         'name' => 'ADE Juice - Red ADE Liquid 0 mg/mgl (3x 10ml)',
         'brand' => 'ADE Juice',
@@ -1882,16 +1752,6 @@ return array(
     ),
     'IC100EP2M' => array(
         'name' => 'InnoCigs eVic Primo 2.0 228 Watt',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'IC100U2' => array(
-        'name' => 'InnoCigs Unimax 2 Clearomizer Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'IC100U2M' => array(
-        'name' => 'InnoCigs Unimax 2 Mundstücke (5 Stück pro Packung)',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
@@ -2014,6 +1874,11 @@ return array(
         'name' => 'Steamax V8 Baby M2 Core Dual Heads  (5 Stück pro Packung)',
         'brand' => 'Steamax',
         'supplier' => 'Smoktech',
+    ),
+    'AS100CE' => array(
+        'name' => 'Aspire Cleito EXO Clearomizer Set',
+        'brand' => 'Aspire',
+        'supplier' => 'Aspire',
     ),
     'AS100CEDC' => array(
         'name' => 'Aspire Cleito EXO Drip Caps',
@@ -2305,16 +2170,6 @@ return array(
         'brand' => 'Steamax',
         'supplier' => 'Smoktech',
     ),
-    'IC100PM' => array(
-        'name' => 'InnoCigs eVic Primo Mini E-Zigaretten Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'IC100PMM' => array(
-        'name' => 'InnoCigs eVic Primo Mini 80 Watt',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
     'IC100PA' => array(
         'name' => 'InnoCigs ProCore Aries Clearomizer Set',
         'brand' => 'InnoCigs',
@@ -2337,11 +2192,6 @@ return array(
     ),
     'IC100PGC' => array(
         'name' => 'InnoCigs Atopack Penguin Cartridge 8,8 ml',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'IC100PGCJ' => array(
-        'name' => 'InnoCigs Atopack Penguin Cartridge 2,0 ml mit JVIC2 Head',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
@@ -2470,20 +2320,10 @@ return array(
         'brand' => 'SC',
         'supplier' => 'InnoCigs',
     ),
-    'SC100KTM' => array(
-        'name' => 'SC iKonn Total 50 Watt',
-        'brand' => 'SC',
-        'supplier' => 'eLeaf',
-    ),
     'SC100HW' => array(
         'name' => 'SC HW1 Heads  (5 Stück pro Packung)',
         'brand' => 'SC',
         'supplier' => 'eLeaf',
-    ),
-    'SM100BS' => array(
-        'name' => 'Steamax Osub 80W Baby E-Zigaretten Set',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
     ),
     'AS100BSH' => array(
         'name' => 'Aspire Breeze Heads  (5 Stück pro Packung)',
@@ -2574,11 +2414,6 @@ return array(
         'name' => 'Vampire Vape Koncept XIX - Tika Taka - Fresh 0mg/ml',
         'brand' => 'Vampire Vape',
         'supplier' => 'Vampire Vape',
-    ),
-    'IC100CTPA' => array(
-        'name' => 'InnoCigs Cuboid Tap mit ProCore Aries E-Zigaretten Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
     ),
     'IC100CTM' => array(
         'name' => 'InnoCigs Cuboid Tap 228 Watt',
@@ -2739,16 +2574,6 @@ return array(
         'name' => 'SC Melo RT 25 Ersatz-Dichtung  (2 Stück pro Packung)',
         'brand' => 'SC',
         'supplier' => 'eLeaf',
-    ),
-    'SM100AL' => array(
-        'name' => 'Steamax Alien 220 Watt',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
-    ),
-    'IC100CP' => array(
-        'name' => 'InnoCigs Cuboid Pro E-Zigaretten Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
     ),
     'HL100L10-EM' => array(
         'name' => 'Happy Liquid - Erdbeer-Menthol (PG) -',
@@ -2935,80 +2760,15 @@ return array(
         'brand' => 'Humble Juice',
         'supplier' => 'Humble Juice',
     ),
-    'BBL10-FS' => array(
-        'name' => 'Barista Brew - Frozen Strawberry Watermelon Refresher 50 ml - 0 mg/ml',
-        'brand' => 'Barista Brew',
-        'supplier' => 'Barista Brew',
-    ),
     'BBL10-SW' => array(
         'name' => 'Barista Brew - Strawberry Watermelon Refresher 50 ml - 0 mg/ml',
         'brand' => 'Barista Brew',
         'supplier' => 'Barista Brew',
     ),
-    'IC100CBM' => array(
-        'name' => 'InnoCigs CuBox Akku 3000mAh',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
     'IC100C2' => array(
         'name' => 'InnoCigs Cubis 2 Clearomizer Set',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
-    ),
-    'FZ100L10-KO' => array(
-        'name' => 'Fizzy - Kola 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-GR' => array(
-        'name' => 'Fizzy - Grape 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-MA' => array(
-        'name' => 'Fizzy - Mango 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-SB' => array(
-        'name' => 'Fizzy - Strawberry 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'IC100C2M' => array(
-        'name' => 'InnoCigs CuAIO D22 & Cubis 2 Mundstücke (5 Stück pro Packung)',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'FZ100L10-BL' => array(
-        'name' => 'Fizzy - Bull 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'IC100C2G' => array(
-        'name' => 'InnoCigs CuAIO D22 & Cubis 2 Glastank',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'FZ100L10-HD' => array(
-        'name' => 'Fizzy - Honeydew 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-PA' => array(
-        'name' => 'Fizzy - Pineapple 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-OR' => array(
-        'name' => 'Fizzy - Orange 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-WB' => array(
-        'name' => 'Fizzy - Wildberries 55 ml - 0 mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
     ),
     'SAMSINR30Q' => array(
         'name' => 'Samsung INR18650-30Q 3000mAh',
@@ -3044,16 +2804,6 @@ return array(
         'name' => 'Hustler Juice - Daring 50 ml - 0 mg/ml',
         'brand' => 'Hustler Juice',
         'supplier' => 'Hustler Juice',
-    ),
-    'TM100L10-TB' => array(
-        'name' => 'The Milkman - Delights - Truffleberry 50ml - 0 mg/ml',
-        'brand' => 'The Fog Clown',
-        'supplier' => 'The Fog Clown',
-    ),
-    'TM100L10-BM' => array(
-        'name' => 'The Milkman - Delights - Bubble Milk 50ml - 0 mg/ml',
-        'brand' => 'The Fog Clown',
-        'supplier' => 'The Fog Clown',
     ),
     'VV100L10-SC' => array(
         'name' => 'Vampire Vape - The Naughty One - Salted Caramel Pretzel 50 ml - 0 mg/ml',
@@ -3140,70 +2890,10 @@ return array(
         'brand' => 'Vapanion',
         'supplier' => 'Vapanion',
     ),
-    'FD100L10-MC' => array(
-        'name' => 'French Dude - Mango and Cream 100ml - 0mg/ml',
-        'brand' => 'French Dude',
-        'supplier' => 'French Dude',
-    ),
-    'PM100L10-OR' => array(
-        'name' => 'Pancake Man - Original 100ml - 0mg/ml',
-        'brand' => 'Pancake Man',
-        'supplier' => 'Pancake Man',
-    ),
-    'PM100L10-DL' => array(
-        'name' => 'Pancake Man - Deluxe 100ml - 0mg/ml',
-        'brand' => 'Pancake Man',
-        'supplier' => 'Pancake Man',
-    ),
-    'PM100L10-TF' => array(
-        'name' => 'Pancake Man - Tooty Frooty 100ml - 0mg/ml',
-        'brand' => 'Pancake Man',
-        'supplier' => 'Pancake Man',
-    ),
     'DE100L10-BD' => array(
         'name' => 'Donuts E-Juice - Blueberry Donuts - 50ml - 0 mg/ml',
         'brand' => 'Donuts E-Juice',
         'supplier' => 'Donuts E-Juice',
-    ),
-    'MW100L10-M1' => array(
-        'name' => 'Marshmallow Man - Marshmallow Man - 50ml - 0mg/ml',
-        'brand' => 'Marshmallow Man',
-        'supplier' => 'Marshmallow Man',
-    ),
-    'AQ100L10-PE' => array(
-        'name' => 'Aqua - Pure - 50ml - 0mg/ml',
-        'brand' => 'Aqua',
-        'supplier' => 'Aqua',
-    ),
-    'AQ100L10-PI' => array(
-        'name' => 'Aqua - Pure Ice - 50ml - 0mg/ml',
-        'brand' => 'Aqua',
-        'supplier' => 'Aqua',
-    ),
-    'AQ100L10-FW' => array(
-        'name' => 'Aqua - Flow - 50ml - 0mg/ml',
-        'brand' => 'Aqua',
-        'supplier' => 'Aqua',
-    ),
-    'AQ100L10-FI' => array(
-        'name' => 'Aqua - Flow Ice - 50ml - 0mg/ml',
-        'brand' => 'Aqua',
-        'supplier' => 'Aqua',
-    ),
-    'AQ100L10-OS' => array(
-        'name' => 'Aqua - Oasis - 50ml - 0mg/ml',
-        'brand' => 'Aqua',
-        'supplier' => 'Aqua',
-    ),
-    'AQ100L10-MT' => array(
-        'name' => 'Aqua - Mist - 50ml - 0mg/ml',
-        'brand' => 'Aqua',
-        'supplier' => 'Aqua',
-    ),
-    'AQ100L10-MI' => array(
-        'name' => 'Aqua - Mist Ice - 50ml - 0mg/ml',
-        'brand' => 'Aqua',
-        'supplier' => 'Aqua',
     ),
     'BV100L10-00' => array(
         'name' => 'Beard Vape Co. - X-Series No. 00 - 50ml - 0mg/ml',
@@ -3269,36 +2959,6 @@ return array(
         'name' => 'Bazooka Sour Straws - Blue Raspberry Ice - 50ml - 0mg/ml',
         'brand' => 'Bazooka Sour Straws',
         'supplier' => 'Bazooka Sour Straws',
-    ),
-    'FZ100L10-SC' => array(
-        'name' => 'Fizzy - Cream - Strawberry Custard - 55ml - 0mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-BP' => array(
-        'name' => 'Fizzy - Cream - Butterscotch Popcorn - 55ml - 0mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-MT' => array(
-        'name' => 'Fizzy - Cream - Original Milk Tea - 55ml - 0mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-TC' => array(
-        'name' => 'Fizzy - Tundra - Tropical Cocktail - 55ml - 0mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-PB' => array(
-        'name' => 'Fizzy - Tundra - Pineapple Berry - 55ml - 0mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
-    ),
-    'FZ100L10-SM' => array(
-        'name' => 'Fizzy - Tundra - Strawberry Mango - 55ml - 0mg/ml',
-        'brand' => 'Fizzy',
-        'supplier' => 'Fizzy',
     ),
     'AS100TY' => array(
         'name' => 'Aspire Typhon 100 Watt',
@@ -3445,11 +3105,6 @@ return array(
         'brand' => 'Steamax',
         'supplier' => 'Wismec',
     ),
-    'TM100L10-PT' => array(
-        'name' => 'The Milkman - Pixie Tarts 50ml - 0 mg/ml',
-        'brand' => 'The Fog Clown',
-        'supplier' => 'The Fog Clown',
-    ),
     'CG100V3120' => array(
         'name' => 'Chubby Gorilla 120ML V3 PET Unicorn Leerflasche',
         'brand' => 'Chubby Gorilla',
@@ -3487,11 +3142,6 @@ return array(
     ),
     'IC100EPA' => array(
         'name' => 'InnoCigs EKEE 80 Watt',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'IC100EPC' => array(
-        'name' => 'InnoCigs ProCore Motor Clearomizer Set',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
@@ -3535,20 +3185,10 @@ return array(
         'brand' => 'SC',
         'supplier' => 'eLeaf',
     ),
-    'SC100IC2T' => array(
-        'name' => 'SC iCare 2 Tank',
-        'brand' => 'SC',
-        'supplier' => 'eLeaf',
-    ),
     'UW100VY' => array(
         'name' => 'Uwell Valyrian Clearomizer Set',
         'brand' => 'Uwell',
         'supplier' => 'Uwell',
-    ),
-    'IC100CBA' => array(
-        'name' => 'InnoCigs CuBox AIO E-Zigaretten Set',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
     ),
     'UW100VYG' => array(
         'name' => 'Uwell Valyrian Glastank 5 ml',
@@ -3569,16 +3209,6 @@ return array(
         'name' => 'Uwell Valyrian Ersatz-Dichtungen',
         'brand' => 'Uwell',
         'supplier' => 'Uwell',
-    ),
-    'DM100L10-PT' => array(
-        'name' => 'DripMore - Peachy Tea 50 ml - 0 mg/ml',
-        'brand' => 'DripMore',
-        'supplier' => 'DripMore',
-    ),
-    'DM100L10-WM' => array(
-        'name' => 'DripMore - Watermelone 50 ml - 0 mg/ml',
-        'brand' => 'DripMore',
-        'supplier' => 'DripMore',
     ),
     'DM100L10-SP' => array(
         'name' => 'DripMore - Strawberry Palm 50 ml - 0 mg/ml',
@@ -3625,20 +3255,10 @@ return array(
         'brand' => 'Vape Base',
         'supplier' => 'Vape Base',
     ),
-    'YH100MX' => array(
-        'name' => 'Yihi SX Mini MX Class 75 Watt',
-        'brand' => 'Yihi',
-        'supplier' => 'Yihi',
-    ),
     'SM100T12D' => array(
         'name' => 'Steamax TFV12 Ersatz-Dichtungen',
         'brand' => 'Steamax',
         'supplier' => 'Smoktech',
-    ),
-    'SC100ST' => array(
-        'name' => 'SC iStick Tria E-Zigaretten Set',
-        'brand' => 'SC',
-        'supplier' => 'eLeaf',
     ),
     'SC100STM' => array(
         'name' => 'SC iStick Tria 300 Watt',
@@ -3820,11 +3440,6 @@ return array(
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
-    'IC100CLM' => array(
-        'name' => 'InnoCigs Cuboid Lite 80 Watt',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
     'IC100ED' => array(
         'name' => 'InnoCigs Exceed D22 Clearomizer Set',
         'brand' => 'InnoCigs',
@@ -3895,18 +3510,8 @@ return array(
         'brand' => 'Humble Juice',
         'supplier' => 'Humble Juice',
     ),
-    'MD100L10-MY' => array(
-        'name' => 'Modus - Molly 50 ml - 0mg/ml',
-        'brand' => 'Modus Vapors',
-        'supplier' => 'Modus Vapors',
-    ),
     'SD100L10-AG' => array(
         'name' => 'Shoreditch - Mixd - Anger 50 ml - 0 mg/ml',
-        'brand' => 'Shoreditch',
-        'supplier' => 'Shoreditch',
-    ),
-    'SD100L10-FR' => array(
-        'name' => 'Shoreditch - Mixd - Fear 50 ml - 0 mg/ml',
         'brand' => 'Shoreditch',
         'supplier' => 'Shoreditch',
     ),
@@ -3915,60 +3520,10 @@ return array(
         'brand' => 'Shoreditch',
         'supplier' => 'Shoreditch',
     ),
-    'SD100L10-LV' => array(
-        'name' => 'Shoreditch - Mixd - Love 50 ml - 0 mg/ml',
-        'brand' => 'Shoreditch',
-        'supplier' => 'Shoreditch',
-    ),
     'SD100L10-PS' => array(
         'name' => 'Shoreditch - Mixd - Passion 50 ml - 0 mg/ml',
         'brand' => 'Shoreditch',
         'supplier' => 'Shoreditch',
-    ),
-    'SD100L10-BS' => array(
-        'name' => 'Shoreditch - Pudn - Boss 50 ml - 0 mg/ml',
-        'brand' => 'Shoreditch',
-        'supplier' => 'Shoreditch',
-    ),
-    'SD100L10-DP' => array(
-        'name' => 'Shoreditch - Pudn - Dope 50 ml - 0 mg/ml',
-        'brand' => 'Shoreditch',
-        'supplier' => 'Shoreditch',
-    ),
-    'SD100L10-LH' => array(
-        'name' => 'Shoreditch - Pudn - Lush 50 ml - 0 mg/ml',
-        'brand' => 'Shoreditch',
-        'supplier' => 'Shoreditch',
-    ),
-    'SD100L10-PG' => array(
-        'name' => 'Shoreditch - Pudn - Peng 50 ml - 0 mg/ml',
-        'brand' => 'Shoreditch',
-        'supplier' => 'Shoreditch',
-    ),
-    'CD100L10-RO' => array(
-        'name' => 'Charlies Chalk Dust - Stumps - Rhino 50 ml - 0 mg/ml',
-        'brand' => 'Charlies Chalk Dust',
-        'supplier' => 'Charlies Chalk Dust',
-    ),
-    'CD100L10-SB' => array(
-        'name' => 'Charlies Chalk Dust - Stumps - B 50 ml - 0 mg/ml',
-        'brand' => 'Charlies Chalk Dust',
-        'supplier' => 'Charlies Chalk Dust',
-    ),
-    'BY100L10-BT' => array(
-        'name' => 'Binary - Byte 50 ml - 0 mg/ml',
-        'brand' => 'Binary',
-        'supplier' => 'Binary',
-    ),
-    'BY100L10-PW' => array(
-        'name' => 'Binary - Pow 50 ml - 0 mg/ml',
-        'brand' => 'Binary',
-        'supplier' => 'Binary',
-    ),
-    'BY100L10-SR' => array(
-        'name' => 'Binary - Siren 50 ml - 0 mg/ml',
-        'brand' => 'Binary',
-        'supplier' => 'Binary',
     ),
     'SC10000AV21' => array(
         'name' => 'SC 21700er Akku 4000 mAh',
@@ -4125,11 +3680,6 @@ return array(
         'brand' => 'Pink Spot',
         'supplier' => 'Pink Spot',
     ),
-    'HJ100L10-FS' => array(
-        'name' => 'Havoc Juice - Firestorm 100 ml - 0 mg/ml',
-        'brand' => 'Havoc Juice',
-        'supplier' => 'Havoc Juice',
-    ),
     'BM100L10-FB' => array(
         'name' => 'Bubble Monster - Fruit Burst - 100ml 0mg/ml',
         'brand' => 'Bubble Monster',
@@ -4142,11 +3692,6 @@ return array(
     ),
     'BM100L10-VT' => array(
         'name' => 'Bubble Monster - Vinto - 100ml 0mg/ml',
-        'brand' => 'Bubble Monster',
-        'supplier' => 'Bubble Monster',
-    ),
-    'BM100L10-WM' => array(
-        'name' => 'Bubble Monster - Watermelon - 100ml 0mg/ml',
         'brand' => 'Bubble Monster',
         'supplier' => 'Bubble Monster',
     ),
@@ -4240,65 +3785,10 @@ return array(
         'brand' => 'Smashing Drops',
         'supplier' => 'Smashing Drops',
     ),
-    'SM100L10-VC' => array(
-        'name' => 'Smashing Drops - Vanilla Cream - 100ml 0mg/ml',
-        'brand' => 'Smashing Drops',
-        'supplier' => 'Smashing Drops',
-    ),
-    'OG100L10-PB' => array(
-        'name' => 'OG Bear - Purple Bear - 100ml - 0mg/ml',
-        'brand' => 'OG Bear',
-        'supplier' => 'OG Bear',
-    ),
     'OG100L10-WB' => array(
         'name' => 'OG Bear - White Bear - 100ml - 0mg/ml',
         'brand' => 'OG Bear',
         'supplier' => 'OG Bear',
-    ),
-    'SY100L10-ML' => array(
-        'name' => 'Slushy - Melon Madness - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
-    ),
-    'SY100L10-MD' => array(
-        'name' => 'Slushy - Melon Madness Iced - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
-    ),
-    'SY100L10-BR' => array(
-        'name' => 'Slushy - Blue Raspberry - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
-    ),
-    'SY100L10-MM' => array(
-        'name' => 'Slushy - Mandarin Mango - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
-    ),
-    'SY100L10-PR' => array(
-        'name' => 'Slushy - Peach Raspberry - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
-    ),
-    'SY100L10-SP' => array(
-        'name' => 'Slushy - Strawberry Pineapple - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
-    ),
-    'SY100L10-SW' => array(
-        'name' => 'Slushy - Strawberry Watermelon - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
-    ),
-    'SY100L10-BI' => array(
-        'name' => 'Slushy - Blue Raspberry Iced - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
-    ),
-    'SY100L10-SI' => array(
-        'name' => 'Slushy - Strawberry Watermelon Iced - 50ml - 0mg/ml',
-        'brand' => 'Slushy',
-        'supplier' => 'Slushy',
     ),
     'A100CM' => array(
         'name' => 'AsMODus Colossal 80 Watt',
@@ -4429,11 +3919,6 @@ return array(
         'name' => 'Hapa - Hawaiian Passion Lime - 50ml - 0mg/ml',
         'brand' => 'Hapa',
         'supplier' => 'Hapa',
-    ),
-    'SM100MGM' => array(
-        'name' => 'Steamax Mag 225 Watt',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
     ),
     'BL100A10-NX' => array(
         'name' => 'Bozz Liquids - Aroma NXTLVL 10ml',
@@ -4665,21 +4150,6 @@ return array(
         'brand' => 'asMODus',
         'supplier' => 'asMODus',
     ),
-    'EP100L10-ED' => array(
-        'name' => 'eL PatRón - el Diablo - 50ml - 0mg',
-        'brand' => 'eL PatRón',
-        'supplier' => 'eL PatRón',
-    ),
-    'EP100L10-PA' => array(
-        'name' => 'eL PatRón - Plata - 50ml - 0mg',
-        'brand' => 'eL PatRón',
-        'supplier' => 'eL PatRón',
-    ),
-    'EP100L10-TR' => array(
-        'name' => 'eL PatRón - Tranquilo - 50ml - 0mg',
-        'brand' => 'eL PatRón',
-        'supplier' => 'eL PatRón',
-    ),
     'DC100L10-TO' => array(
         'name' => 'Depper Cola - The Original - 50 ml - 0mg',
         'brand' => 'Depper Cola',
@@ -4715,18 +4185,13 @@ return array(
         'brand' => 'Sweet & Fruity',
         'supplier' => 'Sweet & Fruity',
     ),
-    'SM100PS' => array(
-        'name' => 'Steamax S-Priv 225 Watt',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
-    ),
     'SM100SPR' => array(
         'name' => 'Steamax Stick Prince E-Zigaretten Set',
         'brand' => 'Steamax',
         'supplier' => 'Smoktech',
     ),
     'IC100DP' => array(
-        'name' => 'InnoCigs Atopack Dolphin E-Zigaretten Set weiß',
+        'name' => 'InnoCigs Atopack Dolphin E-Zigaretten Set',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
@@ -4735,11 +4200,6 @@ return array(
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
-    'SM100CB' => array(
-        'name' => 'Steamax CB-60 E-Zigaretten Set',
-        'brand' => 'Steamax',
-        'supplier' => 'Wismec',
-    ),
     'SM100CBA' => array(
         'name' => 'Steamax CB-60 Akku 60 Watt',
         'brand' => 'Steamax',
@@ -4747,11 +4207,6 @@ return array(
     ),
     'SM100AM' => array(
         'name' => 'Steamax Amor NS Clearomizer',
-        'brand' => 'Steamax',
-        'supplier' => 'Wismec',
-    ),
-    'SM100AMG' => array(
-        'name' => 'Steamax Amor NS Glastank',
         'brand' => 'Steamax',
         'supplier' => 'Wismec',
     ),
@@ -4995,11 +4450,6 @@ return array(
         'brand' => 'Twisted',
         'supplier' => 'Twisted',
     ),
-    'SC100SK' => array(
-        'name' => 'SC iStick Kiya E-Zigaretten Set',
-        'brand' => 'SC',
-        'supplier' => 'eLeaf',
-    ),
     'YH100TC' => array(
         'name' => 'Yihi SX Mini T Class 200 Watt',
         'brand' => 'Yihi',
@@ -5112,11 +4562,6 @@ return array(
     ),
     'IC100PXG' => array(
         'name' => 'InnoCigs ProCore X Glastank',
-        'brand' => 'InnoCigs',
-        'supplier' => 'Joyetech',
-    ),
-    'IC100PX' => array(
-        'name' => 'InnoCigs ProCore X Clearomizer Set',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
     ),
@@ -5910,11 +5355,6 @@ return array(
         'brand' => 'Uwell',
         'supplier' => 'Uwell',
     ),
-    'SM100RX21' => array(
-        'name' => 'Steamax Reuleaux RX2 21700 E-Zigaretten Set',
-        'brand' => 'Steamax',
-        'supplier' => 'Wismec',
-    ),
     'UW100NM' => array(
         'name' => 'Uwell Nunchaku 80 Watt',
         'brand' => 'Uwell',
@@ -6500,6 +5940,16 @@ return array(
         'brand' => 'asMODus',
         'supplier' => 'asMODus',
     ),
+    'WFR100LNC' => array(
+        'name' => 'Wismec Luxotic NC E-Zigaretten Set',
+        'brand' => 'Wismec',
+        'supplier' => 'Wismec',
+    ),
+    'WFR100GV2' => array(
+        'name' => 'Wismec Guillotine V2 Clearomizer Set',
+        'brand' => 'Wismec',
+        'supplier' => 'Wismec',
+    ),
     'SM100GKG' => array(
         'name' => 'Steamax Gnome King Glastank',
         'brand' => 'Steamax',
@@ -6508,6 +5958,41 @@ return array(
     'SM100GKB' => array(
         'name' => 'Steamax Gnome King Glastank Bulgy',
         'brand' => 'Steamax',
+        'supplier' => 'Wismec',
+    ),
+    'WFR100GV2M' => array(
+        'name' => 'Wismec Guillotine V2 Mundstück',
+        'brand' => 'Wismec',
+        'supplier' => 'Wismec',
+    ),
+    'WFR100GV2B' => array(
+        'name' => 'Wismec Guillotine V2 Base',
+        'brand' => 'Wismec',
+        'supplier' => 'Wismec',
+    ),
+    'WFR100GV2C' => array(
+        'name' => 'Wismec Guillotine V2 Clapton Coils 0,28 Ohm (10 Stück pro Packung)',
+        'brand' => 'Wismec',
+        'supplier' => 'Wismec',
+    ),
+    'WFR100LT' => array(
+        'name' => 'Wismec Luxotic BF Box E-Zigaretten Set',
+        'brand' => 'Wimec',
+        'supplier' => 'Wismec',
+    ),
+    'WFR100LTF' => array(
+        'name' => 'Wismec Luxotic BF Box Liquidflasche',
+        'brand' => 'Wismec',
+        'supplier' => 'Wismec',
+    ),
+    'WFR100TB' => array(
+        'name' => 'Wismec Tobhino BF RDA Clearomizer Set',
+        'brand' => 'Wismec',
+        'supplier' => 'Wismec',
+    ),
+    'WFR100TBH' => array(
+        'name' => 'Wismec Tobhino BF RDA Clapton Coil 0,18 Ohm (10 Stück pro Packung)',
+        'brand' => 'Wismec',
         'supplier' => 'Wismec',
     ),
     'IC100AE' => array(
@@ -6627,11 +6112,6 @@ return array(
     ),
     'VP100CO' => array(
         'name' => 'Vapanion Cascade One E-Zigaretten Set',
-        'brand' => 'Vapanion',
-        'supplier' => 'Vapanion',
-    ),
-    'VP100CM' => array(
-        'name' => 'Vapanion Cascade Mini Clearomizer Set',
         'brand' => 'Vapanion',
         'supplier' => 'Vapanion',
     ),
@@ -7040,11 +6520,6 @@ return array(
         'brand' => 'Aspire',
         'supplier' => 'Aspire',
     ),
-    'SM100RK' => array(
-        'name' => 'Steamax Sinuous Ravage 230 mit Gnome King E-Zigaretten Set',
-        'brand' => 'Steamax',
-        'supplier' => 'Wismec',
-    ),
     'IC100BP' => array(
         'name' => 'InnoCigs Batpack E-Zigaretten Set',
         'brand' => 'InnoCigs',
@@ -7244,11 +6719,6 @@ return array(
         'name' => 'Steamax Amor NS Pro Mundstücke (5 Stück pro Packung)',
         'brand' => 'Steamax',
         'supplier' => 'Wismec',
-    ),
-    'SM100GB' => array(
-        'name' => 'Steamax G-Priv Baby E-Zigaretten Set',
-        'brand' => 'Steamax',
-        'supplier' => 'Smoktech',
     ),
     'SM100GBM' => array(
         'name' => 'Steamax G-Priv Baby 85 Watt',
@@ -7485,26 +6955,6 @@ return array(
         'brand' => 'Vaporesso',
         'supplier' => 'Vaporesso',
     ),
-    'VP100PR' => array(
-        'name' => 'Vapanion Polar E-Zigaretten Set',
-        'brand' => 'Vapanion',
-        'supplier' => 'Vapanion',
-    ),
-    'VP100PRM' => array(
-        'name' => 'Vapanion Polar 220 Watt',
-        'brand' => 'Vapanion',
-        'supplier' => 'Vapanion',
-    ),
-    'VP100TB' => array(
-        'name' => 'Vapanion Tarot Baby E-Zigaretten Set',
-        'brand' => 'Vapanion',
-        'supplier' => 'Vapanion',
-    ),
-    'VP100TBA' => array(
-        'name' => 'Vapanion Tarot Baby Akku 2500mAh',
-        'brand' => 'Vapanion',
-        'supplier' => 'Vapanion',
-    ),
     'SB100A10-KZ' => array(
         'name' => 'Smoking Bull - Aroma Kiez Plörre 10ml',
         'brand' => 'Smoking Bull',
@@ -7539,6 +6989,21 @@ return array(
         'name' => 'InnoCigs Espion Infinite AI E-Zigaretten Set',
         'brand' => 'InnoCigs',
         'supplier' => 'Joyetech',
+    ),
+    'SM100PDM' => array(
+        'name' => 'Steamax TFV12 Prince Dual Mesh Heads 0,2 Ohm (3 Stück pro Packung)',
+        'brand' => 'Steamax',
+        'supplier' => 'Smoktech',
+    ),
+    'SM100PTM' => array(
+        'name' => 'Steamax TFV12 Prince Triple Mesh Heads 0,15 Ohm (3 Stück pro Packung)',
+        'brand' => 'Steamax',
+        'supplier' => 'Smoktech',
+    ),
+    'AS100CH' => array(
+        'name' => 'Aspire Cleito Pro Mesh Heads 0,15 Ohm (5 Stück pro Packung)',
+        'brand' => 'Aspire',
+        'supplier' => 'Aspire',
     ),
     'AS100COC' => array(
         'name' => 'Aspire Cleito 120 Pro Clearomizer Set',
@@ -7584,6 +7049,26 @@ return array(
         'name' => 'Twelve Monkeys - Origins - Gattago - 50ml - 0mg/ml',
         'brand' => 'Twelve Monkeys',
         'supplier' => 'Twelve Monkeys',
+    ),
+    'SC100JE' => array(
+        'name' => 'SC iJust ECM E-Zigaretten Set',
+        'brand' => 'SC',
+        'supplier' => 'eLeaf',
+    ),
+    'SC100JEC' => array(
+        'name' => 'SC iJust ECM Clearomizer Set',
+        'brand' => 'SC',
+        'supplier' => 'eLeaf',
+    ),
+    'SC100JEG' => array(
+        'name' => 'SC iJust ECM Glastank',
+        'brand' => 'SC',
+        'supplier' => 'eLeaf',
+    ),
+    'SC100ELH' => array(
+        'name' => 'SC ECL Heads 0,18 Ohm (5 Stück pro Packung)',
+        'brand' => 'SC',
+        'supplier' => 'eLeaf',
     ),
     'XTARVC2S' => array(
         'name' => 'XTAR VC2S USB-Ladegerät',
@@ -7710,6 +7195,16 @@ return array(
         'brand' => 'SC',
         'supplier' => 'InnoCigs',
     ),
+    'VS100TB' => array(
+        'name' => 'Vaporesso Tarot Baby E-Zigaretten Set',
+        'brand' => 'Vaporesso',
+        'supplier' => 'Vaporesso',
+    ),
+    'VS100TBA' => array(
+        'name' => 'Vaporesso Tarot Baby Akku 2500mAh',
+        'brand' => 'Vaporesso',
+        'supplier' => 'Vaporesso',
+    ),
     'TT100L10-TP' => array(
         'name' => 'TWIST - Tropical Pucker Punch 50ml - 0mg/ml',
         'brand' => 'Fruit Twist',
@@ -7755,6 +7250,11 @@ return array(
         'brand' => 'Fruit Twist',
         'supplier' => 'Fruit Twist',
     ),
+    'VO100ZPM' => array(
+        'name' => 'VapeOnly Zen Pipe Mundstück',
+        'brand' => 'VapeOnly',
+        'supplier' => 'VapeOnly',
+    ),
     'FC100L10-GA' => array(
         'name' => 'The Fog Clown - Gallo - 50ml - 0mg/ml',
         'brand' => 'The Fog Clown',
@@ -7764,5 +7264,40 @@ return array(
         'name' => 'The Fog Clown - Sajos - 50ml - 0mg/ml',
         'brand' => 'The Fog Clown',
         'supplier' => 'The Fog Clown',
+    ),
+    'CN100TH' => array(
+        'name' => 'COTN Threads Watte (20 Stück pro Packung)',
+        'brand' => 'COTN',
+        'supplier' => 'COTN',
+    ),
+    'PL100L10-NS' => array(
+        'name' => 'PlusSolt 10ml Nikotinsalz Shot 50VG/50PG 18mg/ml',
+        'brand' => 'PlusSolt',
+        'supplier' => 'PlusSolt',
+    ),
+    'CN100LP' => array(
+        'name' => 'COTN Lump Watte',
+        'brand' => 'COTN',
+        'supplier' => 'COTN',
+    ),
+    'DJ100L10-RA' => array(
+        'name' => 'Dexter’s Juice Lab - Red Apple 0 mg/ml 100ml',
+        'brand' => 'Dexter\'s Juice Lab',
+        'supplier' => 'Dexter\'s Juice Lab',
+    ),
+    'DJ100L10-BL' => array(
+        'name' => 'Dexter’s Juice Lab - Blue Lemonade 0 mg/ml 100ml',
+        'brand' => 'Dexter\'s Juice Lab',
+        'supplier' => 'Dexter\'s Juice Lab',
+    ),
+    'DJ100L10-SY' => array(
+        'name' => 'Dexter’s Juice Lab - Strawberry Yoghurt 0 mg/ml 100ml',
+        'brand' => 'Dexter\'s Juice Lab',
+        'supplier' => 'Dexter\'s Juice Lab',
+    ),
+    'DJ100L10-DS' => array(
+        'name' => 'Dexter’s Juice Lab - #deschsubber 0 mg/ml 100ml',
+        'brand' => 'Dexter\'s Juice Lab',
+        'supplier' => 'Dexter\'s Juice Lab',
     ),
 );

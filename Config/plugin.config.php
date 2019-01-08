@@ -129,7 +129,48 @@ return [
                     'active' => false
                 ]
             ],
-
+            [
+                'entity' => InnocigsArticle::class,
+                'andWhere' => [
+                    [
+                        'field' => 'name',
+                        'operator' => 'LIKE',
+                        'value' => '%iquid%'
+                    ]
+                ],
+                'set' => [
+                    'accepted' => false,
+                    'active' => false,
+                ]
+            ],
+            [
+                'entity' => InnocigsArticle::class,
+                'andWhere' => [
+                    [
+                        'field' => 'name',
+                        'operator' => 'LIKE',
+                        'value' => '%Aroma%'
+                    ]
+                ],
+                'set' => [
+                    'accepted' => false,
+                    'active' => false,
+                ]
+            ],
+            [
+                'entity' => InnocigsArticle::class,
+                'andWhere' => [
+                    [
+                        'field' => 'brand',
+                        'operator' => 'LIKE',
+                        'value' => 'DVTCH Amsterdam'
+                    ]
+                ],
+                'set' => [
+                    'accepted' => false,
+                    'active' => false,
+                ]
+            ],
         ],
     ],
     'class_config' => [
