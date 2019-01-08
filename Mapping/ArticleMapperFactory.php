@@ -3,7 +3,7 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Listener\InnocigsClient;
+use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;

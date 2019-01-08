@@ -163,7 +163,7 @@ return array(
     'IC10000VTSKIN' => array(
         'name' => 'InnoCigs eVic-VT & VTwo Hülle',
         'brand' => 'InnoCigs',
-        'supplier' => 'JoyeTech',
+        'supplier' => 'Joyetech',
     ),
     'SC10000BCC' => array(
         'name' => 'SC BCC Pure Cotton Head  (5 Stück pro Packung)',

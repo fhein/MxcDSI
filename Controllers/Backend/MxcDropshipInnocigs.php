@@ -2,11 +2,10 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use Mxc\Shopware\Plugin\Database\SchemaManager;
+use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
-use MxcDropshipInnocigs\Listener\InnocigsClient;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
-use Zend\EventManager\Event;
 
 class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicationController
 {
@@ -47,7 +46,7 @@ class Shopware_Controllers_Backend_MxcDropshipInnocigs extends BackendApplicatio
             // recreate database tables and attributes
             $sm->create();
             // import items from InnoCigs
-            $client->activate(new Event());
+            $client->import();
         } catch (Throwable $e) {
             $this->log->except($e);
         }

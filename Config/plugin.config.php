@@ -5,10 +5,10 @@ namespace MxcDropshipInnocigs;
 use Doctrine\ORM\Events;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
+use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\IgnoreTest;
-use MxcDropshipInnocigs\Listener\InnocigsClient;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
@@ -25,19 +25,6 @@ use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 
 return [
     'plugin' => [
-        InnocigsClient::class => [
-            'options' => [
-                'activate' => [
-                    'importArticles' => false,
-                    'useArticleConfiguration' => true,
-                    'numberOfArticles' => -1,
-                    'clearCache' => false,
-                ],
-                'deactivate' => [
-                    'saveArticleConfiguration' => true,
-                ],
-            ],
-        ],
         FilterTest::class => [
             'options' => [
                 'activate' => [],
@@ -145,6 +132,13 @@ return [
                     'active' => false
                 ]
             ],
+
         ],
-    ]
+    ],
+    'class_config' => [
+        InnocigsClient::class => [
+            'useArticleConfiguration' => true,
+            'numberOfArticles' => -1,
+        ],
+    ],
 ];

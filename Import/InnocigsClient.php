@@ -1,8 +1,7 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Listener;
+namespace MxcDropshipInnocigs\Import;
 
-use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
@@ -12,9 +11,8 @@ use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 use Zend\Config\Factory;
-use Zend\EventManager\EventInterface;
 
-class InnocigsClient extends ActionListener
+class InnocigsClient
 {
     /**
      * @var string $articleConfigFile
@@ -43,6 +41,11 @@ class InnocigsClient extends ActionListener
     protected $articleConfig = [];
 
     /**
+     * @var Config $config
+     */
+    protected $config;
+
+    /**
      * InnocigsClient constructor.
      *
      * @param ModelManager $modelManager
@@ -56,9 +59,10 @@ class InnocigsClient extends ActionListener
         Config $config,
         LoggerInterface $log
     ) {
-        parent::__construct($config, $log);
-        $this->apiClient = $apiClient;
         $this->modelManager = $modelManager;
+        $this->apiClient = $apiClient;
+        $this->config = $config;
+        $this->log = $log;
     }
 
     public function addArticleDetail(InnocigsArticle $article)
@@ -249,39 +253,21 @@ class InnocigsClient extends ActionListener
         $this->modelManager->flush();
     }
 
-    public function activate(EventInterface $e)
+    public function import()
     {
         $this->log->enter();
-        $context = $e->getParam('context');
-        $options = $this->getOptions();
         // only import articles if we do not have them
         $repository = $this->modelManager->getRepository(InnocigsArticle::class);
         $count = intval($repository->createQueryBuilder('a')->select('count(a.id)')->getQuery()->getSingleScalarResult());
         if ($count === 0) {
-            if (true === $options->useArticleConfiguration) {
+            /** @noinspection PhpUndefinedFieldInspection */
+            if (true === $this->config->useArticleConfiguration) {
                 $this->readArticleConfiguration();
             }
-            $this->importArticles($options->numberOfArticles ?? -1);
-        }
-        if ($context !== null && true === $options->clearCache) {
-            $context->scheduleClearCache(InstallContext::CACHE_LIST_ALL);
+            /** @noinspection PhpUndefinedFieldInspection */
+            $this->importArticles($this->config->numberOfArticles ?? -1);
         }
         $this->log->leave();
-        return true;
-    }
-
-    /**
-     * @param EventInterface $e
-     * @return bool
-     */
-    public function deactivate(
-        /** @noinspection PhpUnusedParameterInspection */
-        EventInterface $e
-    ) {
-        $options = $this->getOptions();
-        if (true === $options->saveArticleConfiguration) {
-            $this->createArticleConfiguration();
-        }
         return true;
     }
 }
