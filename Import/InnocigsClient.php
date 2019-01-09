@@ -18,6 +18,12 @@ class InnocigsClient
      * @var string $articleConfigFile
      */
     protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
+
+    /**
+     * @var string $configuratorConfigFile
+     */
+    protected $configuratorConfigFile = __DIR__ . '/../Config/configurator.config.php';
+
     /**
      * @var ApiClient $apiClient
      */
@@ -39,6 +45,11 @@ class InnocigsClient
      * @var array $articleConfig
      */
     protected $articleConfig = [];
+
+    /**
+     * @var array $configuratorConfig
+     */
+    protected $configuratorConfig = [];
 
     /**
      * @var Config $config
@@ -230,6 +241,34 @@ class InnocigsClient
             ];
         }
         Factory::toFile($this->articleConfigFile, $config);
+    }
+
+    public function createConfiguratorConfiguration() {
+        $groups = $this->modelManager->getRepository(InnocigsGroup::class)->findAll();
+        $config = [];
+        foreach ($groups as $group) {
+            $options = $group->getOptions();
+            $odata = [];
+            /**
+             * @var InnocigsOption $option
+             */
+            foreach ($options as $option) {
+                $odata[$option->getName()] = $option->isAccepted();
+            }
+            $config[$group->getName()] = [
+                'accepted' => $group->isAccepted(),
+                'options'  => $odata
+            ];
+        }
+        Factory::toFile($this->configuratorConfigFile, $config);
+    }
+
+    public function readConfiguratorConfiguration() {
+        $this->configuratorConfig = [];
+        if (file_exists($this->configuratorConfigFile)) {
+            /** @noinspection PhpIncludeInspection */
+            $this->configuratorConfig = include $this->configuratorConfigFile;
+        }
     }
 
     protected function readArticleConfiguration() {

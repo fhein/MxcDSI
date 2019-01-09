@@ -4,10 +4,19 @@
 
     <entries>
         <entry>
-            <name>MxcDropshipInnocigs</name>
+            <name>MxcInnocigsArticle</name>
             <label lang="en">Innocigs Dropship</label>
             <label lang="de">Innocigs Dropship</label>
-            <controller>MxcDropshipInnocigs</controller>
+            <controller>InnocigsArticle</controller>
+            <action>index</action>
+            <class>sprite-truck-box</class>
+            <parent identifiedBy="controller">Article</parent>
+        </entry>
+        <entry>
+            <name>MxcInnocigsGroup</name>
+            <label lang="en">Innocigs Groups</label>
+            <label lang="de">Innocigs Groups</label>
+            <controller>InnocigsGroup</controller>
             <action>index</action>
             <class>sprite-truck-box</class>
             <parent identifiedBy="controller">Article</parent>

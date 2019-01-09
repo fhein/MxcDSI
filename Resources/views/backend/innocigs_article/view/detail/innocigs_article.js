@@ -1,0 +1,15 @@
+//
+
+Ext.define('Shopware.apps.InnocigsArticle.view.detail.InnocigsArticle', {
+    extend: 'Shopware.model.Container',
+    alias: 'widget.mxc-innocigs-article-detail-container',
+    title: 'InnoCigs Article',
+    height : 300,
+
+    configure: function() {
+        return {
+            controller: 'InnocigsArticle',
+            associations: [ 'variants' ]
+        };
+    }
+});
