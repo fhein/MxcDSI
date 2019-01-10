@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
+use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
@@ -68,7 +69,11 @@ class ArticleOptionMapper
              */
             $icOptions = $icVariant->getOptions();
             foreach ($icOptions as $icOption) {
-                $icGroupName = $icOption->getInnocigsGroup()->getName();
+                /**
+                 * @var InnocigsGroup $icGroup
+                 */
+                $icGroup = $icOption->getInnocigsGroup();
+                $icGroupName = $icGroup->getName();
                 $icOptionName = $icOption->getName();
 
                 $this->log->debug(sprintf('Variant %s (%s) has option %s from group %s.',
@@ -78,9 +83,9 @@ class ArticleOptionMapper
                     $icGroupName
                 ));
 
-                // A valid variant may hold options which are invalid. Skip invalid options.
-                if (! $this->validator->validate($icOption)) {
-                    $this->log->debug('Named option does not validate and is ignored.');
+                // A valid variant may hold options which are ignored. Skip variants with ignored options.
+                if (! $this->validator->validateOption($icOption)) {
+                    $this->log->debug('Named option does not validate. Variant ignored.');
                     continue 2;
                 }
                 $swGroupName =  $this->mapper->mapGroupName($icGroupName);
@@ -121,7 +126,7 @@ class ArticleOptionMapper
         $validVariants = [];
         $variants = $article->getVariants();
         foreach ($variants as $variant) {
-            if ($this->validator->validate($variant)) {
+            if ($this->validator->validateVariant($variant)) {
                 $validVariants[] = $variant;
             }
         }

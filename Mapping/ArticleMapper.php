@@ -55,6 +55,10 @@ class ArticleMapper implements ListenerAggregateInterface
      */
     protected $mediaTool;
     /**
+     * @var InnocigsEntityValidator $validator
+     */
+    protected $validator;
+    /**
      * @var array $unitOfWork
      */
     protected $unitOfWork = [];
@@ -69,6 +73,7 @@ class ArticleMapper implements ListenerAggregateInterface
         PropertyMapper $propertyMapper,
         MediaTool $mediaTool,
         InnocigsClient $client,
+        InnocigsEntityValidator $validator,
         LoggerInterface $log)
     {
         $this->modelManager = $modelManager;
@@ -76,12 +81,13 @@ class ArticleMapper implements ListenerAggregateInterface
         $this->propertyMapper = $propertyMapper;
         $this->mediaTool = $mediaTool;
         $this->client = $client;
+        $this->validator = $validator;
         $this->log = $log;
     }
 
     protected function createShopwareArticle(InnocigsArticle $article) {
         // do nothing if either the article or all of its variants are set to get not accepted
-        if (! $article->isAccepted()) return;
+        if (! $this->validator->validateArticle($article)) return;
 
         $swArticle = $this->getShopwareArticle($article) ?? new Article();
         $this->modelManager->persist($swArticle);

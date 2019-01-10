@@ -26,12 +26,14 @@ class ArticleMapperFactory implements FactoryInterface
         $client = $container->get(InnocigsClient::class);
         $mediaTool = $container->get(MediaTool::class);
         $modelManager = $container->get('modelManager');
+        $entityValidator = $container->get(InnocigsEntityValidator::class);
         $articleMapper = new ArticleMapper(
             $modelManager,
             $attributeMapper,
             $propertyMapper,
             $mediaTool,
             $client,
+            $entityValidator,
             $log
         );
         $articleMapper->attach($container->get('events'));

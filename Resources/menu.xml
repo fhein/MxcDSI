@@ -14,7 +14,7 @@
                     <name>MxcInnocigsArticle</name>
                     <label lang="en">Article</label>
                     <label lang="de">Artikel</label>
-                    <controller>InnocigsArticle</controller>
+                    <controller>MxcDsiArticle</controller>
                     <action>index</action>
                     <class>sprite-documents</class>
                 </entry>
@@ -22,7 +22,7 @@
                     <name>MxcInnocigsGroup</name>
                     <label lang="en">Groups</label>
                     <label lang="de">Gruppen</label>
-                    <controller>InnocigsGroup</controller>
+                    <controller>MxcDsiGroup</controller>
                     <action>index</action>
                     <class>sprite-category-item</class>
                 </entry>
