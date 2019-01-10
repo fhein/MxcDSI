@@ -66,13 +66,10 @@ Ext.define('Shopware.apps.InnocigsArticle.view.list.InnocigsArticle', {
         Ext.each(records, function(record) {
             // deselect records which already have the target states
             // set the target state otherwise
-            if (record.get('active') === changeTo) {
+            if (record.get('active') === changeTo || record.get('accepted') === false) {
                 selModel.deselect(record);
             } else {
                 record.set('active', changeTo);
-                if (changeTo === true) {
-                    record.set('accepted', changeTo);
-                }
             }
         });
         me.fireEvent('mxcSaveMultiple', me, selModel);
@@ -168,6 +165,9 @@ Ext.define('Shopware.apps.InnocigsArticle.view.list.InnocigsArticle', {
             clicksToEdit: 1,
             listeners: {
                 beforeedit: function(editor, e) {
+                    if (e.column.text === 'active') {
+                        return e.record.get('accepted') === true;
+                    }
                     return (e.column.text !== 'Code' && e.column.text !== 'Name');
                 },
                 edit: function(editor, e) {

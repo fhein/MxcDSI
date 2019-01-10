@@ -9,13 +9,46 @@ Ext.define('Shopware.apps.InnocigsGroup.view.detail.InnocigsOption', {
     configure: function() {
         return {
              columns: {
-                 // active:     { header: 'active', width: 60, flex: 0 }
-                 name:          { header: 'Name' },
-                 accepted:      { header: 'use', width: 40, flex: 0}
+                 name:          { header: 'Name'},
+                 accepted:      { header: 'accept', width: 40, flex: 0}
              },
-            toolbar: false,
-            actionColumn: false
+            addButton: false,
+            deleteButton: false,
+            actionColumn: false,
+            searchField: false
         };
+    },
+
+    createToolbarItems: function() {
+        let me = this;
+        let items = me.callParent(arguments);
+        items = Ext.Array.insert(items, 0, [
+            me.createAcceptButton(),
+            me.createIgnoreButton(),
+        ]);
+        return items;
+    },
+
+    createIgnoreButton: function() {
+        let me = this;
+        return Ext.create('Ext.button.Button', {
+            text: 'Ignore selected',
+            iconCls: 'sprite-cross-circle',
+            handler: function() {
+                me.handleAcceptedState(false);
+            }
+        });
+    },
+
+    createAcceptButton: function() {
+        let me = this;
+        return Ext.create('Ext.button.Button', {
+            text: 'Accept selected',
+            iconCls: 'sprite-tick-circle',
+            handler: function() {
+                me.handleAcceptedState(true);
+            }
+        });
     },
 
     createPlugins: function () {
@@ -26,8 +59,8 @@ Ext.define('Shopware.apps.InnocigsGroup.view.detail.InnocigsOption', {
             clicksToEdit: 1,
             listeners: {
                 beforeedit: function(editor, e) {
-                    // disable cell editing for all columns but the 'use' column
-                    return (e.column.text === 'use');
+                    // disable cell editing for all columns but the 'accept' column
+                    return (e.column.text === 'accept');
                 },
                 edit: function(editor, e) {
                     // prevent the red dirty cell marker
@@ -38,6 +71,16 @@ Ext.define('Shopware.apps.InnocigsGroup.view.detail.InnocigsOption', {
         items.push(me.cellEditor);
 
         return items;
+    },
+
+    handleAcceptedState: function(changeTo) {
+        let me = this;
+        let selModel = me.getSelectionModel();
+        let records = selModel.getSelection();
+        Ext.each(records, function(record) {
+            record.set('accepted', changeTo);
+            record.commit();
+        });
     },
 
     destroy: function() {

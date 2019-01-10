@@ -20,11 +20,6 @@ class InnocigsClient
     protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
 
     /**
-     * @var string $configuratorConfigFile
-     */
-    protected $configuratorConfigFile = __DIR__ . '/../Config/configurator.config.php';
-
-    /**
      * @var ApiClient $apiClient
      */
     protected $apiClient;
@@ -45,11 +40,6 @@ class InnocigsClient
      * @var array $articleConfig
      */
     protected $articleConfig = [];
-
-    /**
-     * @var array $configuratorConfig
-     */
-    protected $configuratorConfig = [];
 
     /**
      * @var Config $config
@@ -243,34 +233,6 @@ class InnocigsClient
         Factory::toFile($this->articleConfigFile, $config);
     }
 
-    public function createConfiguratorConfiguration() {
-        $groups = $this->modelManager->getRepository(InnocigsGroup::class)->findAll();
-        $config = [];
-        foreach ($groups as $group) {
-            $options = $group->getOptions();
-            $odata = [];
-            /**
-             * @var InnocigsOption $option
-             */
-            foreach ($options as $option) {
-                $odata[$option->getName()] = $option->isAccepted();
-            }
-            $config[$group->getName()] = [
-                'accepted' => $group->isAccepted(),
-                'options'  => $odata
-            ];
-        }
-        Factory::toFile($this->configuratorConfigFile, $config);
-    }
-
-    public function readConfiguratorConfiguration() {
-        $this->configuratorConfig = [];
-        if (file_exists($this->configuratorConfigFile)) {
-            /** @noinspection PhpIncludeInspection */
-            $this->configuratorConfig = include $this->configuratorConfigFile;
-        }
-    }
-
     protected function readArticleConfiguration() {
         $this->articleConfig = [];
         if (file_exists($this->articleConfigFile)) {
@@ -313,11 +275,11 @@ class InnocigsClient
             }
             /** @noinspection PhpUndefinedFieldInspection */
             $this->importArticles($this->config->numberOfArticles ?? -1);
-        }
-        /** @noinspection PhpUndefinedFieldInspection */
-        if ($this->config->applyFilters) {
-            $this->log->notice('Applying import modifications.');
-            $this->importModifier->apply();
+            /** @noinspection PhpUndefinedFieldInspection */
+            if ($this->config->applyFilters) {
+                $this->log->notice('Applying import modifications.');
+                $this->importModifier->apply();
+            }
         }
         $this->log->leave();
         return true;

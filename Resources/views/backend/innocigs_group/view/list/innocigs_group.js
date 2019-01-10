@@ -10,7 +10,7 @@ Ext.define('Shopware.apps.InnocigsGroup.view.list.InnocigsGroup', {
             detailWindow: 'Shopware.apps.InnocigsGroup.view.detail.Window',
             columns: {
                 name:       { header: 'Name', flex: 3 },
-                accepted:   { header: 'use', width:60, flex: 0}
+                accepted:   { header: 'accept', width:60, flex: 0}
             },
             toolbar: false,
             deleteColumn: false
@@ -36,7 +36,7 @@ Ext.define('Shopware.apps.InnocigsGroup.view.list.InnocigsGroup', {
             clicksToEdit: 1,
             listeners: {
                 beforeedit: function(editor, e) {
-                    return (e.column.text === 'use');
+                    return (e.column.text === 'accept');
                 },
                 edit: function(editor, e) {
                     // the 'edit' event gets fired even if the new value equals the old value

@@ -2,7 +2,6 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\InnocigsClient;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
 
 class Shopware_Controllers_Backend_InnocigsGroup extends BackendApplicationController
@@ -16,13 +15,7 @@ class Shopware_Controllers_Backend_InnocigsGroup extends BackendApplicationContr
          * @var \Shopware\Components\Model\ModelManager $modelManager
          */
         try {
-            $modelManager = $this->services->get('modelManager');
-            $repository = $modelManager->getRepository(InnocigsArticle::class);
-            $count = intval($repository->createQueryBuilder('a')->select('count(a.id)')->getQuery()->getSingleScalarResult());
-            if ($count === 0) {
-                $client = $this->services->get(InnocigsClient::class);
-                $client->import();
-            }
+            $this->services->get(InnocigsClient::class)->import();
             parent::indexAction();
         } catch (Throwable $e) {
             $this->log->except($e);
