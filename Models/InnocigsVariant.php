@@ -160,7 +160,7 @@ class InnocigsVariant extends ModelEntity implements ValidationModelInterface
          */
         $d = [];
         foreach($this->getOptions() as $option) {
-            $group = $option->getGroup();
+            $group = $option->getInnocigsGroup();
             $d[] = sprintf('%s: %s', $group->getName(), $option->getName());
         }
         sort($d);

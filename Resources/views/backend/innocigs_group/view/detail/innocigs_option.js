@@ -10,7 +10,7 @@ Ext.define('Shopware.apps.InnocigsGroup.view.detail.InnocigsOption', {
         return {
              columns: {
                  // active:     { header: 'active', width: 60, flex: 0 }
-                 name:          { header: 'Name', width: 150, flex: 0},
+                 name:          { header: 'Name' },
                  accepted:      { header: 'use', width: 40, flex: 0}
              },
             toolbar: false,

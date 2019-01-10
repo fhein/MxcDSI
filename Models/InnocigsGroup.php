@@ -43,7 +43,7 @@ class InnocigsGroup extends ModelEntity implements ValidationModelInterface {
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
      *      targetEntity="InnocigsOption",
-     *      mappedBy="group",
+     *      mappedBy="innocigsGroup",
      *      cascade={"persist", "remove"}
      * )
      */
@@ -142,7 +142,7 @@ class InnocigsGroup extends ModelEntity implements ValidationModelInterface {
      */
     public function addOption(InnocigsOption $option) {
         $this->options->add($option);
-        $option->setGroup($this);
+        $option->setInnocigsGroup($this);
     }
 
     /**

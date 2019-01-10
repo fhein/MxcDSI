@@ -98,7 +98,7 @@ class InnocigsEntityValidator
      * @return bool
      */
     public function validateOption(InnocigsOption $option) : bool {
-        return ($option->isAccepted() && $option->getGroup()->isAccepted());
+        return ($option->isAccepted() && $option->getInnocigsGroup()->isAccepted());
     }
 
     public function validate(ValidationModelInterface $entity) : bool {

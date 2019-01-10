@@ -4,22 +4,29 @@
 
     <entries>
         <entry>
-            <name>MxcInnocigsArticle</name>
+            <name>InnoCigs Dropship</name>
             <label lang="en">Innocigs Dropship</label>
             <label lang="de">Innocigs Dropship</label>
-            <controller>InnocigsArticle</controller>
-            <action>index</action>
             <class>sprite-truck-box</class>
             <parent identifiedBy="controller">Article</parent>
-        </entry>
-        <entry>
-            <name>MxcInnocigsGroup</name>
-            <label lang="en">Innocigs Groups</label>
-            <label lang="de">Innocigs Groups</label>
-            <controller>InnocigsGroup</controller>
-            <action>index</action>
-            <class>sprite-truck-box</class>
-            <parent identifiedBy="controller">Article</parent>
+            <children>
+                <entry>
+                    <name>MxcInnocigsArticle</name>
+                    <label lang="en">Article</label>
+                    <label lang="de">Artikel</label>
+                    <controller>InnocigsArticle</controller>
+                    <action>index</action>
+                    <class>sprite-documents</class>
+                </entry>
+                <entry>
+                    <name>MxcInnocigsGroup</name>
+                    <label lang="en">Groups</label>
+                    <label lang="de">Gruppen</label>
+                    <controller>InnocigsGroup</controller>
+                    <action>index</action>
+                    <class>sprite-category-item</class>
+                </entry>
+            </children>
         </entry>
     </entries>
 </menu>

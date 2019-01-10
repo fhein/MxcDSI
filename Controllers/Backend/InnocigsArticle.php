@@ -13,6 +13,26 @@ class Shopware_Controllers_Backend_InnocigsArticle extends BackendApplicationCon
     protected $model = InnocigsArticle::class;
     protected $alias = 'innocigs_article';
 
+    public function indexAction() {
+        $this->log->enter();
+        /**
+         * @var \Shopware\Components\Model\ModelManager $modelManager
+         */
+        try {
+            $modelManager = $this->services->get('modelManager');
+            $repository = $modelManager->getRepository(InnocigsArticle::class);
+            $count = intval($repository->createQueryBuilder('a')->select('count(a.id)')->getQuery()->getSingleScalarResult());
+            if ($count === 0) {
+                $client = $this->services->get(InnocigsClient::class);
+                $client->import();
+            }
+            parent::indexAction();
+        } catch (Throwable $e) {
+            $this->log->except($e);
+        }
+        $this->log->leave();
+    }
+
     public function updateAction()
     {
         $this->log->enter();

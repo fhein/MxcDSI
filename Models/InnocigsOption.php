@@ -33,10 +33,10 @@ class InnocigsOption extends ModelEntity implements ValidationModelInterface {
     private $name;
 
     /**
-     * @var InnocigsGroup $group
+     * @var InnocigsGroup $grp
      * @ORM\ManyToOne(targetEntity="InnocigsGroup", inversedBy="options")
      */
-    private $group;
+    private $innocigsGroup;
 
     /**
      * @var bool $accepted
@@ -124,17 +124,17 @@ class InnocigsOption extends ModelEntity implements ValidationModelInterface {
     /**
      * @return InnocigsGroup
      */
-    public function getGroup(): InnocigsGroup
+    public function getInnocigsGroup(): InnocigsGroup
     {
-        return $this->group;
+        return $this->innocigsGroup;
     }
 
     /**
-     * @param InnocigsGroup $group
+     * @param InnocigsGroup $innocigsGroup
      */
-    public function setGroup(InnocigsGroup $group): void
+    public function setInnocigsGroup(InnocigsGroup $innocigsGroup): void
     {
-        $this->group = $group;
+        $this->innocigsGroup = $innocigsGroup;
     }
 
     /**

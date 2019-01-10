@@ -116,20 +116,6 @@ return [
     'import' => [
         'update' => [
             [
-                'entity' => InnocigsVariant::class,
-                'andWhere' => [
-                    [
-                        'field' => 'code',
-                        'operator' => 'LIKE',
-                        'value' => '%-H',
-                    ],
-                ],
-                'set' => [
-                    'accepted' => false,
-                    'active' => false
-                ]
-            ],
-            [
                 'entity' => InnocigsArticle::class,
                 'andWhere' => [
                     [

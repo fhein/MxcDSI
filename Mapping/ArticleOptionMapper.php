@@ -68,7 +68,7 @@ class ArticleOptionMapper
              */
             $icOptions = $icVariant->getOptions();
             foreach ($icOptions as $icOption) {
-                $icGroupName = $icOption->getGroup()->getName();
+                $icGroupName = $icOption->getInnocigsGroup()->getName();
                 $icOptionName = $icOption->getName();
 
                 $this->log->debug(sprintf('Variant %s (%s) has option %s from group %s.',
@@ -81,7 +81,7 @@ class ArticleOptionMapper
                 // A valid variant may hold options which are invalid. Skip invalid options.
                 if (! $this->validator->validate($icOption)) {
                     $this->log->debug('Named option does not validate and is ignored.');
-                    continue;
+                    continue 2;
                 }
                 $swGroupName =  $this->mapper->mapGroupName($icGroupName);
                 $swOptionName = $this->mapper->mapOptionName($icOptionName);

@@ -49,7 +49,7 @@ Ext.define('Shopware.apps.InnocigsArticle.view.list.InnocigsArticle', {
         let me = this;
         let items = me.callParent(arguments);
         items = Ext.Array.insert(items, 0, [
-            me.createImportItemsButton(),
+            // me.createImportItemsButton(),
             me.createFilterButton(),
             me.createAcceptButton(),
             me.createIgnoreButton(),
