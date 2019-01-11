@@ -2,12 +2,18 @@
 Ext.define('Shopware.apps.MxcDsiGroup.controller.Main', {
     extend: 'Enlight.app.Controller',
 
+    refs: [
+        { ref: 'groupListing', selector: 'mxc-innocigs-group-list-window mxc-innocigs-group-listing-grid' },
+    ],
+
     init: function() {
         let me = this;
 
         me.control({
             'mxc-innocigs-group-listing-grid': {
-                mxcSaveGroup:  me.onSaveGroup,
+                mxcSaveGroup:       me.onGroupSave,
+                mxcSelectGroup:     me.onGroupSelect,
+                mxcDeselectGroup:   me.onGroupDeselect,
             }
         });
         Shopware.app.Application.on('innocigsgroup-save-successfully', me.onDetailSaved);
@@ -19,7 +25,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Main', {
      *
      * @param record
      */
-    onSaveGroup: function(record) {
+    onGroupSave: function(record) {
         if (record.get('active') === true) {
             record.set('accepted', true);
         }
@@ -48,4 +54,40 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Main', {
             }
         });
     },
+
+    onGroupSelect: function(record, configurator) {
+        let me = this;
+
+        if (record) {
+            record.set('accepted', true);
+            me.sortGroupGrid();
+            Shopware.Notification.createGrowlMessage('Success', 'Selected successfully.');
+        } else {
+            Shopware.Notification.createGrowlMessage('Failure', 'Selection failed.');
+        }
+        return true;
+    },
+
+    onGroupDeselect: function(record, configurator) {
+        let me = this;
+        let groupListing = me.getGroupListing();
+
+        record.set('accepted', false);
+        groupListing.getSelectionModel().deselect(record, true);
+        me.sortGroupGrid();
+        Shopware.Notification.createGrowlMessage('Success', 'Deselected successfully.');
+    },
+
+    /**
+     * Internal helper function to sort the configurator group grid.
+     */
+    sortGroupGrid: function() {
+        let me = this,
+            groupListing = me.getGroupListing();
+        groupListing.getStore().sort([
+            { property: 'accepted', 'direction': 'DESC' }
+
+        ]);
+    },
+
 });

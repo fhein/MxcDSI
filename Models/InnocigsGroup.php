@@ -14,7 +14,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dropship_configurator_group")
  */
-class InnocigsGroup extends ModelEntity implements ValidationModelInterface {
+class InnocigsGroup extends ModelEntity  {
     /**
      * Primary Key - autoincrement value
      *

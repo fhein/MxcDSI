@@ -10,7 +10,6 @@ use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
-use Zend\Config\Factory;
 
 class InnocigsClient
 {
@@ -216,21 +215,6 @@ class InnocigsClient
             }
         }
         return $articleProperties;
-    }
-
-    public function createArticleConfiguration()
-    {
-        $articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
-        $config = [];
-
-        foreach ($articles as $article) {
-            $config[$article->getCode()] = [
-                'name' => $article->getName(),
-                'brand' => $article->getBrand(),
-                'supplier' => $article->getSupplier(),
-            ];
-        }
-        Factory::toFile($this->articleConfigFile, $config);
     }
 
     protected function readArticleConfiguration() {

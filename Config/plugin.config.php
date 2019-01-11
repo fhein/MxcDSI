@@ -8,8 +8,8 @@ use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportModifier;
 use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
+use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
 use MxcDropshipInnocigs\Listener\FilterTest;
-use MxcDropshipInnocigs\Listener\IgnoreTest;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
@@ -32,6 +32,7 @@ return [
                 'deactivate' => [],
             ],
         ],
+        ArticleAttributeFilePersister::class => [],
     ],
     'doctrine' => [
         'models' => [
@@ -97,6 +98,7 @@ return [
             InnocigsUpdater::class,
             InnocigsEntityValidator::class,
             ImportModifier::class,
+            ArticleAttributeFilePersister::class,
         ],
     ],
     'mappings' => [

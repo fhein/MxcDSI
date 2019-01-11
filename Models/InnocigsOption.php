@@ -13,7 +13,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dropship_innocigs_configurator_option")
  */
-class InnocigsOption extends ModelEntity implements ValidationModelInterface {
+class InnocigsOption extends ModelEntity  {
     /**
      * Primary Key - autoincrement value
      *

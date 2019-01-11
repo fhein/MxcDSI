@@ -10,8 +10,8 @@ Ext.define('Shopware.apps.MxcDsiGroup.model.InnocigsGroup', {
 
     fields: [
         { name : 'id', type: 'int', useNull: true },
-        { name : 'name', type: 'string' },
         { name : 'accepted', type: 'boolean' },
+        { name : 'name', type: 'string' },
     ],
 
     associations: [
