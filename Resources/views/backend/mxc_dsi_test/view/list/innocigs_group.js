@@ -1,6 +1,6 @@
 //{namespace name=backend/mxc_dsi_test/view/list/innocigs_group}
 //{block name="backend/mxc_dsi_test/view/mxc_dsi_test/view/list/window"}
-Ext.define('Shopware.apps.MxcDsiGroup.view.list.InnocigsGroup', {
+Ext.define('Shopware.apps.MxcDsiTest.view.list.InnocigsGroup', {
     extend: 'Shopware.grid.Panel',
     alias:  'widget.mxc-innocigs-group-listing-grid',
     region: 'center',
@@ -39,7 +39,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.InnocigsGroup', {
     configure: function() {
         let me = this;
         return {
-            detailWindow: 'Shopware.apps.MxcDsiGroup.view.detail.Window',
+            detailWindow: 'Shopware.apps.MxcDsiTest.view.detail.Window',
             columns: {
                 name:       { header: 'Name', flex: 3 }
             },

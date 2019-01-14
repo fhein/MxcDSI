@@ -1,6 +1,6 @@
 //
 
-Ext.define('Shopware.apps.MxcDsiGroup.view.detail.InnocigsGroup', {
+Ext.define('Shopware.apps.MxcDsiTest.view.detail.InnocigsGroup', {
     extend: 'Shopware.model.Container',
     alias: 'widget.mxc-innocigs-group-detail-container',
     title: 'InnoCigs Configurator Group',

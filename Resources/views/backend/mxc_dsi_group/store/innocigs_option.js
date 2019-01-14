@@ -6,7 +6,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.store.InnocigsOption', {
 
     configure: function() {
         return {
-            controller: 'MxcDsiGroup'
+            controller: 'MxcDsiTest'
         };
     }
 });

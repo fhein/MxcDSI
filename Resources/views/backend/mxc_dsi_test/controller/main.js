@@ -1,9 +1,10 @@
 
-Ext.define('Shopware.apps.MxcDsiGroup.controller.Main', {
+Ext.define('Shopware.apps.MxcDsiTest.controller.Main', {
     extend: 'Enlight.app.Controller',
 
     refs: [
         { ref: 'groupListing', selector: 'mxc-innocigs-group-list-window mxc-innocigs-group-listing-grid' },
+        { ref: 'optionListing', selector: 'mxc-innocigs-group-detail-window mxc-innocigs-option-listing-grid'}
     ],
 
     init: function() {
@@ -13,7 +14,9 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Main', {
             'mxc-innocigs-group-listing-grid': {
                 mxcSaveGroup:       me.onGroupSave,
                 mxcSelectGroup:     me.onGroupSelect,
-                mxcDeselectGroup:   me.onGroupDeselect,
+            },
+            'mxc-innocigs-option-listing-grid': {
+                mxcSelectOption:    me.onOptionSelect,
             }
         });
         Shopware.app.Application.on('innocigsgroup-save-successfully', me.onDetailSaved);
@@ -63,9 +66,25 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Main', {
         return true;
     },
 
-    /**
-     * Internal helper function to sort the configurator group grid.
-     */
+    onOptionSelect: function(record, value) {
+        Shopware.Notification.createGrowlMessage('Option', 'Option selected: ' + (value === true ? 'true' : 'false'));
+        let me = this;
+        //alert(record.get('name'));
+        record.set('accepted', value);
+        //me.onGroupSave(record);
+        me.sortOptionGrid();
+        return true;
+    },
+
+    sortOptionGrid: function() {
+        let me = this;
+        let optionListing = me.getOptionListing();
+        optionListing.getStore().sort([
+            { property: 'accepted', 'direction': 'DESC' }
+
+        ]);
+    },
+
     sortGroupGrid: function() {
         let me = this;
         let groupListing = me.getGroupListing();

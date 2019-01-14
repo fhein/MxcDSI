@@ -1,15 +1,15 @@
 //{namespace name=backend/mxc_dsi_test/view/list/innocigs_group}
 //{block name="backend/mxc_dsi_test/view/mxc_dsi_test/view/list/window"}
-Ext.define('Shopware.apps.MxcDsiGroup.view.list.InnocigsGroup', {
+Ext.define('Shopware.apps.MxcDsiTest.view.detail.InnocigsOption', {
     extend: 'Shopware.grid.Panel',
-    alias:  'widget.mxc-innocigs-group-listing-grid',
+    alias:  'widget.mxc-innocigs-option-listing-grid',
     region: 'center',
 
     snippets: {
-        groups: {
-            acceptedGroups: '{s name=innocigs/configurator/group/active_groups_header}Accepted groups{/s}',
-            ignoredGroups: '{s name=innocigs/configurator/group/inactive_groups_header}Ignored groups{/s}',
-            selected: '{s name=innocigs/configurator/group/group_header_selected}selected{/s}',
+        options: {
+            acceptedOptions: '{s name=innocigs/configurator/option/accepted_options_header}Accepted options{/s}',
+            ignoredOptions: '{s name=innocigs/configurator/option/ignored_options_header}Ignored options{/s}',
+            selected: '{s name=innocigs/configurator/option/option_header_selected}selected{/s}',
         }
     },
 
@@ -18,16 +18,23 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.InnocigsGroup', {
         me.listeners = {
             cellclick: function(view, td, cellIndex, record) {
                 if (cellIndex === 0 && record.get('accepted') === true) {
-                    me.fireEvent('mxcSelectGroup', record, false);
+                    let records = me.store.data.items;
+                    Shopware.Notification.createGrowlMessage('Store', records.length + ' items.');
+                    me.fireEvent('mxcSelectOption', record, false);
                 }
             },
             viewready: function(view, opts) {
                 let selected = [];
+                console.log(me);
+                console.log(me.getStore().data.items);
+
                 me.store.each(function(record) {
+                    console.log(record);
                     if (record.get('accepted') === true) {
                         selected.push(record);
                     }
                 });
+                Shopware.Notification.createGrowlMessage('Store', selected.length + ' options.');
                 if (selected.length > 0) {
                     me.getSelectionModel().select(selected, true, true);
                 }
@@ -39,12 +46,12 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.InnocigsGroup', {
     configure: function() {
         let me = this;
         return {
-            detailWindow: 'Shopware.apps.MxcDsiGroup.view.detail.Window',
+            detailWindow: 'Shopware.apps.MxcDsiTest.view.detail.Window',
             columns: {
                 name:       { header: 'Name', flex: 3 }
             },
             toolbar: false,
-            deleteColumn: false,
+            actionColumn: false,
             pagingbar: false
         };
     },
@@ -54,13 +61,9 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.InnocigsGroup', {
         me.callParent(arguments);
         me.addEvents(
             /**
-             * @event mxcSaveGroup
-             */
-            'mxcSaveGroup',
-            /**
              * @event mxcSelectGroup
              */
-            'mxcSelectGroup',
+            'mxcSelectOption',
         );
     },
 
@@ -71,7 +74,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.InnocigsGroup', {
             showHeaderCheckbox: false,
             listeners: {
                 select: function (sm, record) {
-                    let success = me.fireEvent('mxcSelectGroup', record, true);
+                    let success = me.fireEvent('mxcSelectOption', record, true);
                     if (success === false) {
                         sm.deselect(record, true);
                     }
@@ -87,13 +90,13 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.InnocigsGroup', {
         me.groupingFeature =  Ext.create('Ext.grid.feature.Grouping', {
             groupHeaderTpl: Ext.create('Ext.XTemplate',
                 '<span>{ name:this.formatHeader }</span>',
-                '<span>&nbsp;({ rows.length } ' + me.snippets.groups.selected + ')</span>',
+                '<span>&nbsp;({ rows.length } ' + me.snippets.options.selected + ')</span>',
                 {
                     formatHeader: function(accepted) {
                         if (accepted === true || accepted === 'true') {
-                            return me.snippets.groups.acceptedGroups;
+                            return me.snippets.options.acceptedOptions;
                         } else {
-                            return me.snippets.groups.ignoredGroups;
+                            return me.snippets.options.ignoredOptions;
                         }
                     }
                 }

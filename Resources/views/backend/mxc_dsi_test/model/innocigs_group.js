@@ -1,10 +1,10 @@
-Ext.define('Shopware.apps.MxcDsiGroup.model.InnocigsGroup', {
+Ext.define('Shopware.apps.MxcDsiTest.model.InnocigsGroup', {
     extend: 'Shopware.data.Model',
 
     configure: function() {
         return {
             controller: 'MxcDsiTest',
-            detail: 'Shopware.apps.MxcDsiGroup.view.detail.InnocigsGroup'
+            detail: 'Shopware.apps.MxcDsiTest.view.detail.InnocigsGroup'
         };
     },
 
@@ -18,8 +18,8 @@ Ext.define('Shopware.apps.MxcDsiGroup.model.InnocigsGroup', {
         {
             relation: 'OneToMany',
             type: 'hasMany',
-            model: 'Shopware.apps.MxcDsiGroup.model.InnocigsOption',
-            storeClass: 'Shopware.apps.MxcDsiGroup.store.InnocigsOption',
+            model: 'Shopware.apps.MxcDsiTest.model.InnocigsOption',
+            storeClass: 'Shopware.apps.MxcDsiTest.store.InnocigsOption',
             name: 'getOptions',
             associationKey: 'options'
         }

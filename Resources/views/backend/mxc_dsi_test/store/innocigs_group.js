@@ -1,10 +1,9 @@
 //
 
-Ext.define('Shopware.apps.MxcDsiGroup.store.InnocigsGroup', {
+Ext.define('Shopware.apps.MxcDsiTest.store.InnocigsGroup', {
     extend:'Shopware.store.Listing',
-    model: 'Shopware.apps.MxcDsiGroup.model.InnocigsGroup',
+    model: 'Shopware.apps.MxcDsiTest.model.InnocigsGroup',
 
-   // autoLoad: false,
     remoteSort: false,
     groupField: 'accepted',
     sorters: [{ property: 'accepted', direction: 'DESC'}],

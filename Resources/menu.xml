@@ -26,6 +26,14 @@
                     <action>index</action>
                     <class>sprite-category-item</class>
                 </entry>
+                <entry>
+                    <name>MxcInnocigsTest</name>
+                    <label lang="en">Playground</label>
+                    <label lang="de">Spielwiese</label>
+                    <controller>MxcDsiTest</controller>
+                    <action>index</action>
+                    <class>sprite-smiley-cool</class>
+                </entry>
             </children>
         </entry>
     </entries>
