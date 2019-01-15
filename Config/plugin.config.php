@@ -53,19 +53,37 @@ return [
                         'displayInBackend' => false,
                         'position'         => 10000,
                         'custom'           => false
+                    ]
+                ],
+                'mxc_dsi_brand' => [
+                    'type' => 'string',
+                    'settings' => [
+                        'label'            => '',
+                        'supportText'      => '',
+                        'helpText'         => '',
+                        'translatable'     => false,
+                        'displayInBackend' => false,
+                        'position'         => 10100,
+                        'custom'           => false
                     ],
-                    'mxc_dsi_brand' => [
-                        'type' => 'string',
-                        'settings' => [
-                            'label'            => '',
-                            'supportText'      => '',
-                            'helpText'         => '',
-                            'translatable'     => false,
-                            'displayInBackend' => false,
-                            'position'         => 10100,
-                            'custom'           => false
-                        ],
-                    ],
+                ],
+                'dc_ic_ordernumber' => [
+                    'type' => 'string',
+                ],
+                'dc_ic_articlename' => [
+                    'type' => 'string',
+                ],
+                'dc_ic_purchasing_price' => [
+                    'type' => 'string',
+                ],
+                'dc_ic_retail_price' => [
+                    'type' => 'string',
+                ],
+                'dc_ic_instock' => [
+                    'type' => 'integer',
+                ],
+                'dc_ic_active' => [
+                    'type' => 'boolean',
                 ],
             ],
         ],

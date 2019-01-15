@@ -40,6 +40,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             // events only.
             $this->services->get(ArticleMapper::class);
             parent::updateAction();
+
             // Here all Doctrine lifecycle events are completed so we can
             // savely work with Doctrine again
             $this->services->get('events')->trigger('process_active_states', $this, []);;

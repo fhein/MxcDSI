@@ -16,7 +16,6 @@ use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Group;
-use Shopware\Models\Plugin\Plugin;
 use Shopware\Models\Tax\Tax;
 use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
@@ -214,19 +213,26 @@ class ArticleMapper implements ListenerAggregateInterface
         // Note: shopware options are added non persistently to variants when
         // configurator set is created
         $detail->setConfiguratorOptions(new ArrayCollection($this->optionMapper->getShopwareOptions($variant)));
+        $this->enableDropship($variant, $attribute);
 
         return $detail;
     }
 
-    protected function enableDropship(Article $swArticle)
+    protected function enableDropship(InnocigsVariant $variant, \Shopware\Models\Attribute\Article $attribute)
     {
-        if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
-            $this->log->warn(sprintf('%s: Could not prepare Shopware article "%s" for dropship orders. Dropshippers Companion is not installed.',
-                __FUNCTION__,
-                $swArticle->getName()
-            ));
-            return;
-        }
+//        if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
+//            $this->log->warn(sprintf('%s: Could not prepare Shopware article "%s" for dropship orders. Dropshippers Companion is not installed.',
+//                __FUNCTION__,
+//                $variant->getCode()
+//            ));
+//            return;
+//        }
+          $attribute->setDcIcActive(true);
+          $attribute->setDcIcOrderNumber($variant->getCode());
+          $attribute->setDcIcArticleName($variant->getArticle()->getName());
+          $attribute->setDcIcPurchasingPrice($variant->getPriceNet());
+          $attribute->setDcIcRetailPrice($variant->getPriceRecommended());
+          $attribute->setDcIcInstock(0); // @todo: Get stock
     }
 
     protected function createPrice(InnocigsVariant $variant, Article $swArticle, Detail $detail){
@@ -279,7 +285,7 @@ class ArticleMapper implements ListenerAggregateInterface
         return $supplier;
     }
 
-    protected function removeShopwareArticle(InnocigsArticle $article) {
+    protected function disableShopwareArticle(InnocigsArticle $article) {
         $this->log->info('Remove Shopware Article for ' . $article->getName());
     }
 
@@ -330,7 +336,7 @@ class ArticleMapper implements ListenerAggregateInterface
             ));
             $article->isActive() ?
                 $this->createShopwareArticle($article) :
-                $this->removeShopwareArticle($article);
+                $this->disableShopwareArticle($article);
         }
         $this->unitOfWork = [];
         // we have to reset this because groups may be deleted

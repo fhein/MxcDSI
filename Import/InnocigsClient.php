@@ -100,6 +100,11 @@ class InnocigsClient
         }
     }
 
+    public function getStock(InnocigsVariant $variant)
+    {
+
+    }
+
     private function getStringParam($value)
     {
         if (is_string($value)) {
