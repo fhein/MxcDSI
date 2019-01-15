@@ -6,6 +6,7 @@ use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
+use MxcDropshipInnocigs\Models\InnocigsImage;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use Shopware\Components\Model\ModelManager;
@@ -102,7 +103,9 @@ class InnocigsClient
 
     public function getStock(InnocigsVariant $variant)
     {
-
+        $raw = $this->apiClient->getStockInfo($variant->getCode());
+        $this->log->debug(var_export($raw, true));
+        return $raw['QUANTITIES']['PRODUCT']['QUANTITY'];
     }
 
     private function getStringParam($value)
@@ -201,6 +204,11 @@ class InnocigsClient
             $tmp = str_replace(',', '.', $variantData['PRODUCTS_PRICE_RECOMMENDED']);
             $variant->setPriceRecommended(floatval($tmp));
             $article->addVariant($variant);
+            foreach($variantData['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'] as $imageData) {
+                $image = new InnocigsImage();
+                $image->setImage($imageData);
+                $variant->addImage($image);
+            }
             if (null === $articleProperties) {
                 // Innocigs variant names include variant descriptions
                 // We take the first variant's name and remove the variant descriptions

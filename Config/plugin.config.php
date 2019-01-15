@@ -16,6 +16,7 @@ use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
+use MxcDropshipInnocigs\Models\InnocigsImage;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
 use MxcDropshipInnocigs\Subscriber\InnocigsArticleSubscriber;
@@ -40,6 +41,7 @@ return [
             InnocigsVariant::class,
             InnocigsGroup::class,
             InnocigsOption::class,
+            InnocigsImage::class,
         ],
         'attributes' => [
             's_articles_attributes' => [

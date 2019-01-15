@@ -33,7 +33,7 @@ class InnocigsOption extends ModelEntity  {
     private $name;
 
     /**
-     * @var InnocigsGroup $grp
+     * @var InnocigsGroup $innocigsGroup
      * @ORM\ManyToOne(targetEntity="InnocigsGroup", inversedBy="options")
      */
     private $innocigsGroup;

@@ -227,12 +227,18 @@ class ArticleMapper implements ListenerAggregateInterface
 //            ));
 //            return;
 //        }
-          $attribute->setDcIcActive(true);
-          $attribute->setDcIcOrderNumber($variant->getCode());
-          $attribute->setDcIcArticleName($variant->getArticle()->getName());
-          $attribute->setDcIcPurchasingPrice($variant->getPriceNet());
-          $attribute->setDcIcRetailPrice($variant->getPriceRecommended());
-          $attribute->setDcIcInstock(0); // @todo: Get stock
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setDcIcActive(true);
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setDcIcOrderNumber($variant->getCode());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setDcIcArticleName($variant->getArticle()->getName());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setDcIcPurchasingPrice($variant->getPriceNet());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setDcIcRetailPrice($variant->getPriceRecommended());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setDcIcInstock($this->client->getStock($variant));
     }
 
     protected function createPrice(InnocigsVariant $variant, Article $swArticle, Detail $detail){

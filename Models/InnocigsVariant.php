@@ -68,6 +68,16 @@ class InnocigsVariant extends ModelEntity
     private $options;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ORM\OneToMany(
+     *      targetEntity="InnocigsImage",
+     *      mappedBy="variant",
+     *      cascade={"persist", "remove"}
+     * )
+     */
+    private $images;
+
+    /**
      * @var string
      * @ORM\Column(name="description", type="string", nullable=true)
      */
@@ -121,6 +131,7 @@ class InnocigsVariant extends ModelEntity
 
     public function __construct() {
         $this->options = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     /**
@@ -374,5 +385,26 @@ class InnocigsVariant extends ModelEntity
 
     public function addShopwareOption(Option $option) {
         $this->shopwareOptions[] = $option;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param array $images
+     */
+    public function setImages($images)
+    {
+        $this->setOneToMany($images, 'MxcDropshipInnocigs\Models\InnocigsImage', 'images');
+    }
+
+    public function addImage(InnocigsImage $image) {
+        $this->images->add($image);
+        $image->setVariant($this);
     }
 }
