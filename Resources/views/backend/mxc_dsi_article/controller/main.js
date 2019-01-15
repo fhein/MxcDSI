@@ -1,4 +1,3 @@
-
 Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
     extend: 'Enlight.app.Controller',
 
@@ -13,7 +12,6 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
                 mxcApplyFilter: me.onApplyFilter
             }
         });
-        Shopware.app.Application.on('innocigsarticle-save-successfully', me.onDetailSaved);
         me.mainWindow = me.getView('list.Window').create({ }).show();
     },
 
@@ -81,9 +79,12 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
                 }
             },
             failure: function(record, operation) {
+                let rawData = operation.records[0].proxy.reader.rawData;
+                let message = rawData.message ? rawData.message : '{s name=unknownError}An unknown error occurred, please check your server logs{/s}';
+
                 Shopware.Notification.createStickyGrowlMessage({
                         title: '{s name=error}Error{/s}',
-                        text: '{s name=unknownError}An unknown error occurred, please check your server logs{/s}',
+                        text: message,
                         log: true
                     },
                     'InnocigsArticle'

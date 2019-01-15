@@ -1,6 +1,7 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 namespace MxcDropshipInnocigs\Models;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
 
@@ -34,6 +35,32 @@ class InnocigsImage extends ModelEntity
      * @ORM\Column()
      */
     private $image;
+
+    /**
+     * @var DateTime $created
+     *
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $created = null;
+
+    /**
+     * @var DateTime $updated
+     *
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated = null;
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function updateTimestamps() {
+        $now = new DateTime();
+        $this->updated = $now;
+        if ( null === $this->created) {
+            $this->created = $now;
+        }
+    }
 
     /**
      * @return int

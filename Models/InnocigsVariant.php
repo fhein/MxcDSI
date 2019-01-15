@@ -403,6 +403,9 @@ class InnocigsVariant extends ModelEntity
         $this->setOneToMany($images, 'MxcDropshipInnocigs\Models\InnocigsImage', 'images');
     }
 
+    /**
+     * @param InnocigsImage $image
+     */
     public function addImage(InnocigsImage $image) {
         $this->images->add($image);
         $image->setVariant($this);

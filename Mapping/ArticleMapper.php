@@ -218,15 +218,33 @@ class ArticleMapper implements ListenerAggregateInterface
         return $detail;
     }
 
+    protected function validateDropshipPlugin(\Shopware\Models\Attribute\Article $attribute): bool
+    {
+        // This line validates the presence of the InnocigsPlugin;
+        if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
+            return false;
+        };
+
+        // These do not actually validate the presence of the Innocigs plugin.
+        // We validate the presence of the attributes the Innocigs plugin uses instead.
+        // If they apply changes to the attributes they use, we can not proceed.
+        return method_exists($attribute, 'setDcIcOrderNumber')
+            && method_exists($attribute, 'setDcIcArticleName')
+            && method_exists($attribute, 'setDcPurchasingPrice')
+            && method_exists($attribute, 'setDcRetailPrice')
+            && method_exists($attribute, 'setDcIcActive')
+            && method_exists($attribute, 'setDcIcInstock');
+    }
+
     protected function enableDropship(InnocigsVariant $variant, \Shopware\Models\Attribute\Article $attribute)
     {
-//        if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
-//            $this->log->warn(sprintf('%s: Could not prepare Shopware article "%s" for dropship orders. Dropshippers Companion is not installed.',
-//                __FUNCTION__,
-//                $variant->getCode()
-//            ));
-//            return;
-//        }
+        if (! $this->validateDropshipPlugin($attribute)) {
+            $this->log->warn(sprintf('%s: Could not prepare Shopware article "%s" for dropship orders. Dropshippers Companion is not installed.',
+                __FUNCTION__,
+                $variant->getCode()
+            ));
+            return;
+        }
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcActive(true);
         /** @noinspection PhpUndefinedMethodInspection */
@@ -316,7 +334,6 @@ class ArticleMapper implements ListenerAggregateInterface
                 $tax->getName(),
                 $taxValue
             ));
-
         }
         return $tax;
     }

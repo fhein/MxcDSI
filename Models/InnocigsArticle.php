@@ -105,13 +105,6 @@ class InnocigsArticle extends ModelEntity  {
     private $created = null;
 
     /**
-     * @var int $configSetId
-     *
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $configSetId = null;
-
-    /**
      * @var DateTime $updated
      *
      * @ORM\Column(type="datetime", nullable=true)
@@ -119,11 +112,19 @@ class InnocigsArticle extends ModelEntity  {
     private $updated = null;
 
     /**
+     * @var int $configSetId
+     *
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $configSetId = null;
+
+    /**
      * InnocigsArticle constructor.
      */
     public function __construct() {
         $this->variants = new ArrayCollection();
     }
+
     /**
      * @ORM\PrePersist
      * @ORM\PreUpdate
