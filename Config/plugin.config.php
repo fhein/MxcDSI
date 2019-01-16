@@ -2,7 +2,7 @@
 
 namespace MxcDropshipInnocigs;
 
-use Doctrine\ORM\Events;
+
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportModifier;
@@ -19,7 +19,6 @@ use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsImage;
 use MxcDropshipInnocigs\Models\InnocigsOption;
 use MxcDropshipInnocigs\Models\InnocigsVariant;
-use MxcDropshipInnocigs\Subscriber\InnocigsArticleSubscriber;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
@@ -89,14 +88,14 @@ return [
                 ],
             ],
         ],
-        'listeners' => [
-            InnocigsArticleSubscriber::class => [
-                'model' => InnocigsArticle::class,
-                'events' => [
-                    Events::preUpdate,
-                ],
-            ],
-        ]
+//        'listeners' => [
+//            InnocigsArticleSubscriber::class => [
+//                'model' => InnocigsArticle::class,
+//                'events' => [
+//                    Events::preUpdate,
+//                ],
+//            ],
+//        ]
     ],
     'filters' => [
 

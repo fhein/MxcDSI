@@ -1,5 +1,9 @@
-Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
+Ext.define('Shopware.apps.MxcDsiArticle.controller.InnocigsArticle', {
     extend: 'Enlight.app.Controller',
+
+    refs: [
+        { ref: 'articleListing', selector: 'mxc-innocigs-article-list-window mxc-innocigs-article-listing-grid' },
+    ],
 
     init: function() {
         let me = this;
@@ -61,9 +65,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
      * @param record
      */
     onSaveArticle: function(record) {
-        if (record.get('active') === true) {
-            record.set('accepted', true);
-        }
+        let me = this;
         record.save({
             params: {
                  resource: 'innocigs_article'
@@ -79,16 +81,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
                 }
             },
             failure: function(record, operation) {
-                let rawData = operation.records[0].proxy.reader.rawData;
-                let message = rawData.message ? rawData.message : '{s name=unknownError}An unknown error occurred, please check your server logs{/s}';
-
-                Shopware.Notification.createStickyGrowlMessage({
-                        title: '{s name=error}Error{/s}',
-                        text: message,
-                        log: true
-                    },
-                    'InnocigsArticle'
-                );
+                me.handleError(record, operation);
             }
         });
     },
@@ -99,7 +92,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
         if (records.length > 0) {
             let mask = new Ext.LoadMask(grid, { msg: 'Applying changes ...'});
             mask.show();
-            me.save(records, function() {
+            me.save(records, mask, function() {
                 selectionModel.deselectAll();
                 Shopware.Notification.createGrowlMessage('InnoCigs Dropship', 'Changes successfully applied.', 'InnocigsArticle');
                 mask.hide();
@@ -107,7 +100,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
         }
     },
 
-    save: function(records, callback) {
+    save: function(records, mask, callback) {
         let me = this,
             record = records.pop();
 
@@ -124,27 +117,34 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Main', {
                     if (records.length === 0) {
                         callback();
                     } else {
-                        me.save(records, callback);
+                        me.save(records, mask, callback);
                     }
                 } else {
-                    Shopware.Notification.createStickyGrowlMessage({
-                            title: '{s name=error}Error{/s}',
-                            text: '{s name=unknownError}An unknown error occurred, please check your server logs{/s}',
-                            log: true
-                        },
-                        'InnocigsArticle'
-                    );
+                    me.handleError(operation);
+                    mask.hide();
                 }
             },
             failure: function(record, operation) {
-                Shopware.Notification.createStickyGrowlMessage({
-                        title: '{s name=error}Error{/s}',
-                        text: '{s name=unknownError}An unknown error occurred, please check your server logs{/s}',
-                        log: true
-                    },
-                    'InnocigsArticle'
-                );
+                me.handleError(record, operation);
+                mask.hide();
+                me.getArticleListing().getStore().load();
             }
         })
     },
+    handleError: function(record, operation) {
+        let rawData = operation.records[0].proxy.reader.rawData;
+        let message = '{s name=unknownError}An unknown error occurred, please check your server logs.{/s}';
+        if (rawData.message) {
+            record.set('active', false);
+            message = rawData.message;
+        }
+
+        Shopware.Notification.createStickyGrowlMessage({
+                title: '{s name=error}Error{/s}',
+                text: message,
+                log: true
+            },
+            'InnocigsArticle'
+        );
+    }
 });

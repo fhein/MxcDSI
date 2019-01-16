@@ -32,6 +32,12 @@ class InnocigsArticle extends ModelEntity  {
      */
     private $name;
     /**
+     * @var string $category
+     *
+     * @ORM\Column(type="string")
+     */
+    private $category;
+    /**
      * @var string $code
      *
      * @ORM\Column(type="string", nullable=false)
@@ -351,4 +357,21 @@ class InnocigsArticle extends ModelEntity  {
     {
         $this->manualUrl = $manualUrl;
     }
+
+    /**
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param string $category
+     */
+    public function setCategory(string $category)
+    {
+        $this->category = $category;
+    }
+
 }

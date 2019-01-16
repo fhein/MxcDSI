@@ -8,7 +8,7 @@ Ext.define('Shopware.apps.MxcDsiArticle', {
     loadPath: '{url action=load}',
     bulkLoad: true,
 
-    controllers: [ 'Main' ],
+    controllers: [ 'InnocigsArticle' ],
 
     views: [
         'list.Window',
@@ -25,6 +25,6 @@ Ext.define('Shopware.apps.MxcDsiArticle', {
     stores: [ 'InnocigsArticle', 'InnocigsVariant' ],
 
     launch: function() {
-        return this.getController('Main').mainWindow;
+        return this.getController('InnocigsArticle').mainWindow;
     }
 });

@@ -16,16 +16,11 @@ use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Group;
+use Shopware\Models\Plugin\Plugin;
 use Shopware\Models\Tax\Tax;
-use Zend\EventManager\EventInterface;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
-use Zend\EventManager\ListenerAggregateTrait;
 
-class ArticleMapper implements ListenerAggregateInterface
+class ArticleMapper
 {
-    use ListenerAggregateTrait;
-
     /**
      * @var LoggerInterface $log
      */
@@ -57,10 +52,6 @@ class ArticleMapper implements ListenerAggregateInterface
      * @var InnocigsEntityValidator $validator
      */
     protected $validator;
-    /**
-     * @var array $unitOfWork
-     */
-    protected $unitOfWork = [];
 
     protected $shopwareGroups = [];
     protected $shopwareGroupRepository = null;
@@ -84,9 +75,12 @@ class ArticleMapper implements ListenerAggregateInterface
         $this->log = $log;
     }
 
-    protected function createShopwareArticle(InnocigsArticle $article) {
+    public function createShopwareArticle(InnocigsArticle $article) {
+        $this->log->enter();
         // do nothing if either the article or all of its variants are set to get not accepted
-        if (! $this->validator->validateArticle($article)) return;
+        if (! $this->validator->validateArticle($article)) {
+            return false;
+        }
 
         $swArticle = $this->getShopwareArticle($article) ?? new Article();
         $this->modelManager->persist($swArticle);
@@ -136,9 +130,9 @@ class ArticleMapper implements ListenerAggregateInterface
                 $isMainDetail = false;
             }
         }
-
         $this->modelManager->flush();
-        return;
+        $this->log->leave();
+        return true;
     }
 
     /**
@@ -309,8 +303,9 @@ class ArticleMapper implements ListenerAggregateInterface
         return $supplier;
     }
 
-    protected function disableShopwareArticle(InnocigsArticle $article) {
+    protected function deactivateShopwareArticle(InnocigsArticle $article) {
         $this->log->info('Remove Shopware Article for ' . $article->getName());
+        return true;
     }
 
     protected function getTax(float $taxValue = 19.0) {
@@ -338,47 +333,12 @@ class ArticleMapper implements ListenerAggregateInterface
         return $tax;
     }
 
-    public function onArticleActiveStateChanged(EventInterface $e) {
-        /**
-         * @var InnocigsArticle $article
-         */
-        $this->log->info(__CLASS__ . '#' . __FUNCTION__ . ' was triggered.');
-        $this->unitOfWork[] = $e->getParams()['article'];
-    }
-
-    public function onProcessActiveStates()
+    public function handleActiveStateChange(InnocigsArticle $article)
     {
         $this->log->info(__CLASS__ . '#' . __FUNCTION__ . ' was triggered.');
-        foreach ($this->unitOfWork as $article) {
-            /**
-             * @var InnocigsArticle $article
-             */
-            $this->log->info(sprintf('%s: Processing active state for %s.',
-                __FUNCTION__,
-                $article->getCode()
-            ));
-            $article->isActive() ?
-                $this->createShopwareArticle($article) :
-                $this->disableShopwareArticle($article);
-        }
-        $this->unitOfWork = [];
-        // we have to reset this because groups may be deleted
-        // by other modules or plugins
-    }
-
-    /**
-     * Attach one or more listeners
-     *
-     * Implementors may add an optional $priority argument; the EventManager
-     * implementation will pass this to the aggregate.
-     *
-     * @param EventManagerInterface $events
-     * @param int $priority
-     * @return void
-     */
-    public function attach(EventManagerInterface $events, $priority = 1)
-    {
-        $this->listeners[] = $events->attach('article_active_state_changed', [$this, 'onArticleActiveStateChanged'], $priority);
-        $this->listeners[] = $events->attach('process_active_states', [$this, 'onProcessActiveStates'], $priority);
+        $result = $article->isActive() ?
+            $this->createShopwareArticle($article) :
+            $this->deactivateShopwareArticle($article);
+        return $result;
     }
 }

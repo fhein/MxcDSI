@@ -158,6 +158,7 @@ class InnocigsClient
             $article->setName($name);
             $article->setImageUrl($this->getStringParam($articleProperties['image']));
             $article->setManualUrl($this->getStringParam($articleProperties['manual']));
+            $article->setCategory($this->getStringParam($articleProperties['category']));
             $article->setCode($articleCode);
             $article->setDescription('n/a');
             if (isset($this->articleConfig[$articleCode]['brand'])) {
@@ -220,7 +221,7 @@ class InnocigsClient
                 $articleProperties['name'] = trim($articleName);
                 $articleProperties['image'] = $variantData['PRODUCTS_IMAGE'];
                 $articleProperties['manual'] = $variantData['PRODUCTS_MANUAL'];
-
+                $articleProperties['category'] = $variantData['CATEGORY'];
             }
             foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $group => $option) {
                 $optionEntity = $this->options[$group][$option];

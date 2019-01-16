@@ -36,7 +36,6 @@ class ArticleMapperFactory implements FactoryInterface
             $entityValidator,
             $log
         );
-        $articleMapper->attach($container->get('events'));
         return $articleMapper;
     }
 }

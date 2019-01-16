@@ -24,10 +24,21 @@ class ArticleAttributeFilePersister extends ActionListener
      */
     protected $modelManager;
 
+    protected $articles;
+
     /**
      * @var string $articleConfigFile
      */
     protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
+
+    protected $unusableCategories = [
+        109 => 'Zubehör > Aspire Zubehör > alte Aspire Zubehör Kategorien > Aspire Plato ',
+        110 => 'Zubehör > Aspire Zubehör > alte Aspire Zubehör Kategorien > Aspire Zubehör',
+        126 => 'Zubehör > InnoCigs Zubehör > alte InnoCigs Zubehör Kategorien > InnoCigs eGo One',
+        127 => 'Zubehör > InnoCigs Zubehör > alte InnoCigs Zubehör Kategorien > InnoCigs eGrip ',
+        128 => 'Zubehör > InnoCigs Zubehör > alte InnoCigs Zubehör Kategorien > InnoCigs eRoll-C',
+        129 => 'Zubehör > InnoCigs Zubehör > alte InnoCigs Zubehör Kategorien > InnoCigs eVic-VT',
+    ];
 
     /**
      * ArticleAttributeFilePersister constructor.
@@ -39,24 +50,59 @@ class ArticleAttributeFilePersister extends ActionListener
     {
         parent::__construct($config, $log);
         $this->modelManager = $modelManager;
+        $this->articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
     }
 
     public function createArticleConfiguration()
     {
         $this->log->enter();
-        $articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
         $config = [];
 
-        foreach ($articles as $article) {
+        foreach ($this->articles as $article) {
             $config[$article->getCode()] = [
                 'name' => $article->getName(),
                 'brand' => $article->getBrand(),
                 'supplier' => $article->getSupplier(),
             ];
         }
-        Factory::toFile($this->articleConfigFile, $config);
+        if (! empty($config)) {
+            Factory::toFile($this->articleConfigFile, $config);
+        }
         $this->log->debug('Brand/supplier information saved to ' . $this->articleConfigFile);
         $this->log->leave();
+    }
+
+    public function createListOfDefectArticles() {
+        $config = [];
+        foreach ($this->articles as $article) {
+            $category = $article->getCategory();
+            if ($category === null || $category === '') {
+                $config['defects']['ic_api']['article']['category_missing'][$article->getCode()] = $article->getName();
+            }
+            foreach($this->unusableCategories as $uCategory) {
+                if ($category === $uCategory) {
+                    $config['defects']['ic_api']['article']['category_unusable'][$article->getCode()] =
+                        [
+                            'name' => $article->getName(),
+                            'category' => $uCategory,
+                        ];
+                }
+            }
+        }
+        Factory::toFile(__DIR__ . '/../Config/article.defects.php', $config);
+    }
+
+    public function createCategoryList() {
+        $config = [];
+        foreach($this->articles as $article)  {
+            $config[$article->getCategory()] = true;
+        }
+        $tmp = array_keys($config);
+        sort($tmp);
+        $config = [
+            'categories' => $tmp
+        ];
+        Factory::toFile(__DIR__ . '/../Config/categories.dump.php', $config);
     }
 
     public function installArticleConfiguration() {
@@ -88,5 +134,7 @@ class ArticleAttributeFilePersister extends ActionListener
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
         $this->createArticleConfiguration();
+        $this->createListOfDefectArticles();
+        $this->createCategoryList();
     }
 }

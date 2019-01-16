@@ -6,7 +6,6 @@ use MxcDropshipInnocigs\Import\ImportModifier;
 use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
-use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
@@ -31,20 +30,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     public function updateAction()
     {
         $this->log->enter();
-        $data = $this->request->getParams();
-        //$this->log->notice(var_export($data, true));
         try {
-            // If the ArticleMapper does not exist already, it gets created via the
-            // ArticleMapperFactory. This factory ties the article mapper to the
-            // applications event manager. The ArticleMapper object lives in
-            // the service manager only. It's operation gets triggered via
-            // events only.
-            $this->services->get(ArticleMapper::class);
             parent::updateAction();
-
-            // Here all Doctrine lifecycle events are completed so we can
-            // savely work with Doctrine again
-            $this->services->get('events')->trigger('process_active_states', $this, []);;
         } catch (Throwable $e) {
             $this->log->except($e);
         }
@@ -96,29 +83,53 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     }
 
     public function save($data) {
-        /* @var \Shopware\Components\Model\ModelEntity $storedModel */
+        /** @var InnocigsArticle $model */
+        $sActive = false;
         if (! empty($data['id'])) {
-            $storedModel = $this->getRepository()->find($data['id']);
+            $model = $this->getRepository()->find($data['id']);
+            $sActive = $model->isActive();
         } else {
-            throw new RuntimeException('Creation of new instances of InnocigsArticle via GUI is not supported.');
+            $model = new $this->model();
+            $this->getManager()->persist($model);
         }
+
         if (isset($data['variants']) && empty($data['variants'])) {
             unset($data['variants']);
         }
-        /** @var InnocigsArticle $updatedModel; */
-        $updatedModel = new $this->model();
-        $rdata = $this->resolveExtJsData($data);
-        $updatedModel->fromArray($rdata);
-        $uActive = $updatedModel->isActive();
-        $sActive = $storedModel->isActive();
-        if (! $uActive || $uActive === $sActive) {
-            return parent::save($data);
+        $data = $this->resolveExtJsData($data);
+        $model->fromArray($data);
+
+        $uActive = $model->isActive();
+
+        $articleMapper = $this->services->get(ArticleMapper::class);
+        if ($uActive !== $sActive) {
+            if (! $articleMapper->handleActiveStateChange($model)) {
+                return [
+                    'success' => false,
+                    'message' => 'Shopware article not created because it failed to validate.',
+                ];
+            }
         }
-        $entityValidator = $this->services->get(InnocigsEntityValidator::class);
-        if (! $entityValidator->validateArticle($updatedModel)) {
-            return ['success' => false, 'message' => 'Article not activated because it does not have any accepted variant.'];
+
+        $violations = $this->getManager()->validate($model);
+        $errors = [];
+        /** @var Symfony\Component\Validator\ConstraintViolation $violation */
+        foreach ($violations as $violation) {
+            $errors[] = [
+                'message' => $violation->getMessage(),
+                'property' => $violation->getPropertyPath(),
+            ];
         }
-        $this->log->debug(var_export($data, true));
-        return parent::save($data);
+
+        if (!empty($errors)) {
+            return ['success' => false, 'violations' => $errors];
+        }
+
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->getManager()->flush();
+
+        $detail = $this->getDetail($model->getId());
+
+        return ['success' => true, 'data' => $detail['data']];
     }
 }
