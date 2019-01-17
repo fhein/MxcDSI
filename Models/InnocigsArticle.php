@@ -69,6 +69,13 @@ class InnocigsArticle extends ModelEntity  {
     private $imageUrl;
 
     /**
+     * @var string $manufacturer;
+     *
+     * @ORM\Column(name="manufacturer", type="string", nullable=true)
+     */
+    private $manufacturer;
+
+    /**
      * @var string $manualUrl;
      *
      * @ORM\Column(name="manual", type="string", nullable=true)
@@ -372,6 +379,22 @@ class InnocigsArticle extends ModelEntity  {
     public function setCategory(string $category)
     {
         $this->category = $category;
+    }
+
+    /**
+     * @return string
+     */
+    public function getManufacturer()
+    {
+        return $this->manufacturer;
+    }
+
+    /**
+     * @param string $manufacturer
+     */
+    public function setManufacturer(string $manufacturer)
+    {
+        $this->manufacturer = $manufacturer;
     }
 
 }

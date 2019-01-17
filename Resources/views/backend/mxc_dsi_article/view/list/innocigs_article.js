@@ -13,6 +13,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.InnocigsArticle', {
                 code:       { header: 'Code'},
                 supplier:   { header: 'Supplier'},
                 brand:      { header: 'Brand'},
+                manufacturer: { header: 'Manufacturer' },
                 category:   { header: 'Category'},
                 name:       { header: 'Name', flex: 3 },
                 accepted:   { header: 'accept', width:45, flex: 0}

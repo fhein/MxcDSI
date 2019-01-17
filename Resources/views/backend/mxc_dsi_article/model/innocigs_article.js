@@ -14,7 +14,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.model.InnocigsArticle', {
         { name : 'brand', type: 'string' },
         { name : 'category', type: 'string'},
         { name : 'active', type: 'boolean' },
-
+        { name : 'manufacturer', type: 'string' },
         { name : 'name', type: 'string' },
         { name : 'supplier', type: 'string' },
         { name : 'accepted', type: 'boolean' },

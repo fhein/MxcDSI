@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Import;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
+use MxcDropshipInnocigs\Exception\InvalidArgumentException;
 use MxcDropshipInnocigs\Models\InnocigsArticle;
 use MxcDropshipInnocigs\Models\InnocigsGroup;
 use MxcDropshipInnocigs\Models\InnocigsImage;
@@ -159,6 +160,7 @@ class InnocigsClient
             $article->setImageUrl($this->getStringParam($articleProperties['image']));
             $article->setManualUrl($this->getStringParam($articleProperties['manual']));
             $article->setCategory($this->getStringParam($articleProperties['category']));
+            $article->setManufacturer($this->getStringParam($articleProperties['manufacturer']));
             $article->setCode($articleCode);
             $article->setDescription('n/a');
             if (isset($this->articleConfig[$articleCode]['brand'])) {
@@ -222,6 +224,7 @@ class InnocigsClient
                 $articleProperties['image'] = $variantData['PRODUCTS_IMAGE'];
                 $articleProperties['manual'] = $variantData['PRODUCTS_MANUAL'];
                 $articleProperties['category'] = $variantData['CATEGORY'];
+                $articleProperties['manufacturer'] = $variantData['MANUFACTURER'];
             }
             foreach ($variantData['PRODUCTS_ATTRIBUTES'] as $group => $option) {
                 $optionEntity = $this->options[$group][$option];

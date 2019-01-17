@@ -57,6 +57,7 @@ class ArticleAttributeFilePersister extends ActionListener
         $config = [];
 
         foreach ($this->articles as $article) {
+            /** @var InnocigsArticle $article */
             $config[$article->getCode()] = [
                 'name' => $article->getName(),
                 'brand' => $article->getBrand(),
@@ -73,6 +74,7 @@ class ArticleAttributeFilePersister extends ActionListener
     public function createListOfDefectArticles() {
         $config = [];
         foreach ($this->articles as $article) {
+            /** @var InnocigsArticle $article */
             $category = $article->getCategory();
             if ($category === null || $category === '') {
                 $config['defects']['ic_api']['article']['category_missing'][$article->getCode()] = $article->getName();
@@ -93,6 +95,7 @@ class ArticleAttributeFilePersister extends ActionListener
     public function createCategoryList() {
         $config = [];
         foreach($this->articles as $article)  {
+            /** @var InnocigsArticle $article */
             $config[$article->getCategory()] = true;
         }
         $tmp = array_keys($config);
