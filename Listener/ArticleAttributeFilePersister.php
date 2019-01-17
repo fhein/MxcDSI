@@ -23,6 +23,7 @@ class ArticleAttributeFilePersister extends ActionListener
      * @var ModelManager $modelManager
      */
     protected $modelManager;
+    protected $articles;
 
     /**
      * @var string $articleConfigFile
@@ -54,9 +55,8 @@ class ArticleAttributeFilePersister extends ActionListener
     {
         $this->log->enter();
         $config = [];
-        $articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
 
-        foreach ($articles as $article) {
+        foreach ($this->articles as $article) {
             $config[$article->getCode()] = [
                 'name' => $article->getName(),
                 'brand' => $article->getBrand(),
@@ -72,8 +72,7 @@ class ArticleAttributeFilePersister extends ActionListener
 
     public function createListOfDefectArticles() {
         $config = [];
-        $articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
-        foreach ($articles as $article) {
+        foreach ($this->articles as $article) {
             $category = $article->getCategory();
             if ($category === null || $category === '') {
                 $config['defects']['ic_api']['article']['category_missing'][$article->getCode()] = $article->getName();
@@ -93,8 +92,7 @@ class ArticleAttributeFilePersister extends ActionListener
 
     public function createCategoryList() {
         $config = [];
-        $articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
-        foreach($articles as $article)  {
+        foreach($this->articles as $article)  {
             $config[$article->getCategory()] = true;
         }
         $tmp = array_keys($config);
@@ -133,6 +131,7 @@ class ArticleAttributeFilePersister extends ActionListener
 
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
+        $this->articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
         $this->createArticleConfiguration();
         $this->createListOfDefectArticles();
         $this->createCategoryList();
