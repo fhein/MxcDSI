@@ -7,11 +7,11 @@ use Doctrine\Common\Collections\Criteria;
 use Exception;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\InnocigsClient;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
-use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Models\Work\Article;
+use MxcDropshipInnocigs\Models\Work\Variant;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 use Shopware\Components\Model\ModelManager;
-use Shopware\Models\Article\Article;
+use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
 use Shopware\Models\Article\Supplier;
@@ -75,19 +75,19 @@ class ArticleMapper
         $this->log = $log;
     }
 
-    public function createShopwareArticle(InnocigsArticle $article) {
+    public function createShopwareArticle(Article $article) {
         $this->log->enter();
         // do nothing if either the article or all of its variants are set to get not accepted
         if (! $this->validator->validateArticle($article)) {
             return false;
         }
 
-        $swArticle = $this->getShopwareArticle($article) ?? new Article();
+        $swArticle = $this->getShopwareArticle($article) ?? new ShopwareArticle();
         $this->modelManager->persist($swArticle);
 
         $name = $this->propertyMapper->mapArticleName($article->getName());
 
-        // this will get the product detail record from InnoCigs can hold the description
+        // this will get the product detail record from InnoCigs which can hold a description
         $this->client->addArticleDetail($article);
 
         $article->setArticle($swArticle);
@@ -101,7 +101,6 @@ class ArticleMapper
         $swArticle->setKeywords('');
         $swArticle->setDescription($article->getDescription());
         $swArticle->setDescriptionLong($article->getDescription());
-        //todo: get description from innocigs
 
         $swArticle->setActive(true);
 
@@ -139,10 +138,10 @@ class ArticleMapper
      * Gets the Shopware Article by looking for the Shopware detail of the first variant for the supplied $article.
      * If it exists, we assume that the article and all other variants exist as well
      *
-     * @param InnocigsArticle $article
-     * @return null|Article
+     * @param Article $article
+     * @return null|ShopwareArticle
      */
-    protected function getShopwareArticle(InnocigsArticle $article){
+    protected function getShopwareArticle(Article $article){
         $swArticle = null;
         $variants = $article->getVariants();
         $codes = [];
@@ -162,7 +161,7 @@ class ArticleMapper
         return $swArticle;
     }
 
-    protected function createShopwareDetail(InnocigsVariant $variant, Article $swArticle, bool $isMainDetail){
+    protected function createShopwareDetail(Variant $variant, ShopwareArticle $swArticle, bool $isMainDetail){
         $this->log->info(sprintf('%s: Creating detail record for InnoCigs variant %s',
             __FUNCTION__,
             $variant->getCode()
@@ -180,6 +179,9 @@ class ArticleMapper
             if ($isMainDetail) {
                 $swArticle->setAttribute($attribute);
             }
+            $icArticle = $variant->getArticle();
+            /** @noinspection PhpUndefinedMethodInspection */
+            $attribute->setMxcDsiBrand($this->propertyMapper->mapManufacturer($icArticle->getBrand()));
         } else {
             throw new Exception(__FUNCTION__ . ': Shopware article attribute model does not exist.');
         }
@@ -191,7 +193,7 @@ class ArticleMapper
         $detail->setAdditionalText('');
         $detail->setPackUnit('');
         $detail->setShippingTime(5);
-        $detail->setPurchasePrice($variant->getPriceNet());
+        $detail->setPurchasePrice($variant->getPurchasePrice());
 
         $isMainDetail ? $detail->setKind(1) : $detail->setKind(2);
 
@@ -230,7 +232,7 @@ class ArticleMapper
             && method_exists($attribute, 'setDcIcInstock');
     }
 
-    protected function enableDropship(InnocigsVariant $variant, \Shopware\Models\Attribute\Article $attribute)
+    protected function enableDropship(Variant $variant, \Shopware\Models\Attribute\Article $attribute)
     {
         if (! $this->validateDropshipPlugin($attribute)) {
             $this->log->warn(sprintf('%s: Could not prepare Shopware article "%s" for dropship orders. Dropshippers Companion is not installed.',
@@ -253,9 +255,9 @@ class ArticleMapper
         $attribute->setDcIcInstock($this->client->getStock($variant));
     }
 
-    protected function createPrice(InnocigsVariant $variant, Article $swArticle, Detail $detail){
+    protected function createPrice(Variant $variant, ShopwareArticle $swArticle, Detail $detail){
         $tax = $this->getTax()->getTax();
-        $netPrice = $variant->getPriceRecommended() / (1 + ($tax/100));
+        $netPrice = $variant->getRetailPrice() / (1 + ($tax/100));
 
         $this->log->info(sprintf('%s: Creating price %.2f for detail record %s.',
             __FUNCTION__,
@@ -280,10 +282,10 @@ class ArticleMapper
      * If supplied $article has a supplier then get it by name from Shopware or create it if necessary.
      * Otherwise do the same with default supplier name InnoCigs
      *
-     * @param InnocigsArticle $article
+     * @param Article $article
      * @return null|object|Supplier
      */
-    protected function getSupplier(InnocigsArticle $article) {
+    protected function getSupplier(Article $article) {
         $supplierName = $article->getSupplier() ?? 'InnoCigs';
         $supplier = $this->modelManager->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
         if (! $supplier) {
@@ -303,7 +305,7 @@ class ArticleMapper
         return $supplier;
     }
 
-    protected function deactivateShopwareArticle(InnocigsArticle $article) {
+    protected function deactivateShopwareArticle(Article $article) {
         $this->log->info('Remove Shopware Article for ' . $article->getName());
         return true;
     }
@@ -333,7 +335,7 @@ class ArticleMapper
         return $tax;
     }
 
-    public function handleActiveStateChange(InnocigsArticle $article)
+    public function handleActiveStateChange(Article $article)
     {
         $this->log->info(__CLASS__ . '#' . __FUNCTION__ . ' was triggered.');
         $result = $article->isActive() ?

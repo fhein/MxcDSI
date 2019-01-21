@@ -2,20 +2,20 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-use MxcDropshipInnocigs\Models\InnocigsArticle;
-use MxcDropshipInnocigs\Models\InnocigsOption;
-use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Models\Work\Article;
+use MxcDropshipInnocigs\Models\Work\Option;
+use MxcDropshipInnocigs\Models\Work\Variant;
 
 class InnocigsEntityValidator
 {
     /**
-     * An InnocigsArticle validates true if either it's accepted member is true
+     * An Article validates true if either it's accepted member is true
      * and at least one of it's variants validates true
      *
-     * @param InnocigsArticle $article
+     * @param Article $article
      * @return bool
      */
-    public function validateArticle(InnocigsArticle $article) : bool
+    public function validateArticle(Article $article) : bool
     {
         if (! $article->isAccepted()) {
             return false;
@@ -30,14 +30,14 @@ class InnocigsEntityValidator
     }
 
     /**
-     * An InnocigsVariant validates if either it's accepted member is true
+     * An Variant validates if either it's accepted member is true
      * and the accepted member of it's associated article is true,
      * and at least one of it's options has an accepted member which is true
      *
-     * @param InnocigsVariant $variant
+     * @param Variant $variant
      * @return bool
      */
-    public function validateVariant(InnocigsVariant $variant) : bool
+    public function validateVariant(Variant $variant) : bool
     {
         if (! ($variant->isAccepted() && $variant->getArticle()->isAccepted())) {
             return false;
@@ -52,13 +52,13 @@ class InnocigsEntityValidator
     }
 
     /**
-     * An InnocigsOption is ignored if either it's ignored member is true
+     * An Option is ignored if either it's ignored member is true
      * or the ignored member of the associated group is true.
      *
-     * @param InnocigsOption $option
+     * @param Option $option
      * @return bool
      */
-    public function validateOption(InnocigsOption $option) : bool {
-        return ($option->isAccepted() && $option->getInnocigsGroup()->isAccepted());
+    public function validateOption(Option $option) : bool {
+        return ($option->isAccepted() && $option->getIcGroup()->isAccepted());
     }
 }

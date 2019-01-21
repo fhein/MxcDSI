@@ -13,13 +13,8 @@ use MxcDropshipInnocigs\Models\Work\Variant;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
-class InnocigsClient
+class InnocigsImporter
 {
-    /**
-     * @var string $articleConfigFile
-     */
-    protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
-
     /**
      * @var ApiClient $apiClient
      */
@@ -36,56 +31,27 @@ class InnocigsClient
      * @var ModelManager $modelManager
      */
     protected $modelManager;
-
-    /**
-     * @var array $articleConfig
-     */
-    protected $articleConfig = [];
-
     /**
      * @var Config $config
      */
     protected $config;
 
     /**
-     * @var ImportModifier $importModifier
-     */
-    protected $importModifier;
-
-    protected $optionNameMapping = [
-        'blau-prisma' => 'prisma-blau',
-        'chrom-prisma' => 'chrome-prisma',
-        'gold-prisma' => 'prisma-gold',
-        '10 mg/ml' => '- 10mg/ml',
-        'grau-weiß' => 'grau-weiss',
-        '0,25 Ohm' => '0,25',
-        '1000er Packung' => '1000er Packubng',
-        'resin-rot' => ' Resin rot',
-        '0 mg/ml'   => '0 mg/mgl',
-        'weiss' => ' weiß',
-        '1,5 mg/ml' => '1,5 ml',
-
-    ];
-
-    /**
-     * InnocigsClient constructor.
+     * InnocigsImporter constructor.
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
-     * @param ImportModifier $importModifier
      * @param Config $config
      * @param LoggerInterface $log
      */
     public function __construct(
         ModelManager $modelManager,
         ApiClient $apiClient,
-        ImportModifier $importModifier,
         Config $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
-        $this->importModifier = $importModifier;
         $this->config = $config;
         $this->log = $log;
     }

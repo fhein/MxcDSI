@@ -8,22 +8,21 @@ Ext.define('Shopware.apps.MxcDsiGroup', {
     loadPath: '{url action=load}',
     bulkLoad: true,
 
-    controllers: [ 'Main' ],
+    controllers: [ 'Group' ],
 
     views: [
+        'list.Group',
         'list.Window',
-        'list.InnocigsGroup',
 
-        'detail.InnocigsGroup',
-        'detail.Window',
-
-        'detail.InnocigsOption'
+        'detail.Group',
+        'detail.Option',
+        'detail.Window'
     ],
 
-    models: [ 'InnocigsGroup', 'InnocigsOption' ],
-    stores: [ 'InnocigsGroup', 'InnocigsOption' ],
+    models: [ 'Group', 'Option' ],
+    stores: [ 'Group', 'Option' ],
 
     launch: function() {
-        return this.getController('Main').mainWindow;
+        return this.getController('Group').mainWindow;
     }
 });

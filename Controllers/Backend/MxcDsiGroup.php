@@ -2,11 +2,11 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\InnocigsClient;
-use MxcDropshipInnocigs\Models\InnocigsGroup;
+use MxcDropshipInnocigs\Models\Work\Group;
 
 class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationController
 {
-    protected $model = InnocigsGroup::class;
+    protected $model = Group::class;
     protected $alias = 'innocigs_group';
 
     public function indexAction() {

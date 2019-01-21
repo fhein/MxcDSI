@@ -6,11 +6,11 @@ use MxcDropshipInnocigs\Import\ImportModifier;
 use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
+use MxcDropshipInnocigs\Models\Work\Article;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
 {
-    protected $model = InnocigsArticle::class;
+    protected $model = Article::class;
     protected $alias = 'innocigs_article';
 
     public function indexAction() {
@@ -83,7 +83,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     }
 
     public function save($data) {
-        /** @var InnocigsArticle $model */
+        /** @var Article $model */
         $sActive = false;
         if (! empty($data['id'])) {
             $model = $this->getRepository()->find($data['id']);

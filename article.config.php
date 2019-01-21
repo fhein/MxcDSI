@@ -620,7 +620,7 @@ return [
   ],
   'XTARVC2' => 
   [
-    'name' => 'XTAR VC2Plus Master 2 USB-Ladegerät',
+    'name' => 'XTAR VC2Plus Article 2 USB-Ladegerät',
     'brand' => 'XTAR',
     'supplier' => 'XTAR',
   ],
@@ -1022,7 +1022,7 @@ return [
   ],
   'IC10000L10-MW' => 
   [
-    'name' => 'Master Wood Waldmeister Aroma - Liquid für E-Zigaretten',
+    'name' => 'Article Wood Waldmeister Aroma - Liquid für E-Zigaretten',
     'brand' => 'SC',
     'supplier' => 'InnoCigs',
   ],

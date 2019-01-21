@@ -14,11 +14,16 @@ use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
-use MxcDropshipInnocigs\Models\InnocigsGroup;
-use MxcDropshipInnocigs\Models\InnocigsImage;
-use MxcDropshipInnocigs\Models\InnocigsOption;
-use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Models\Import\Article as ImportMaster;
+use MxcDropshipInnocigs\Models\Import\Group as ImportGroup;
+use MxcDropshipInnocigs\Models\Import\Image as ImportImage;
+use MxcDropshipInnocigs\Models\Import\Option as ImportOption;
+use MxcDropshipInnocigs\Models\Import\Variant as ImportModel;
+use MxcDropshipInnocigs\Models\Work\Article;
+use MxcDropshipInnocigs\Models\Work\Group;
+use MxcDropshipInnocigs\Models\Work\Image;
+use MxcDropshipInnocigs\Models\Work\Option;
+use MxcDropshipInnocigs\Models\Work\Variant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
@@ -36,11 +41,16 @@ return [
     ],
     'doctrine' => [
         'models' => [
-            InnocigsArticle::class,
-            InnocigsVariant::class,
-            InnocigsGroup::class,
-            InnocigsOption::class,
-            InnocigsImage::class,
+            Article::class,
+            Variant::class,
+            Group::class,
+            Option::class,
+            Image::class,
+            ImportMaster::class,
+            ImportModel::class,
+            ImportGroup::class,
+            ImportOption::class,
+            ImportImage::class,
         ],
         'attributes' => [
             's_articles_attributes' => [
@@ -90,7 +100,7 @@ return [
         ],
 //        'listeners' => [
 //            InnocigsArticleSubscriber::class => [
-//                'model' => InnocigsArticle::class,
+//                'model' => Article::class,
 //                'events' => [
 //                    Events::preUpdate,
 //                ],
@@ -137,7 +147,7 @@ return [
     'import' => [
         'update' => [
             [
-                'entity' => InnocigsArticle::class,
+                'entity' => Article::class,
                 'andWhere' => [
                     [
                         'field' => 'name',
@@ -151,7 +161,7 @@ return [
                 ]
             ],
             [
-                'entity' => InnocigsArticle::class,
+                'entity' => Article::class,
                 'andWhere' => [
                     [
                         'field' => 'name',
@@ -165,7 +175,7 @@ return [
                 ]
             ],
             [
-                'entity' => InnocigsArticle::class,
+                'entity' => Article::class,
                 'andWhere' => [
                     [
                         'field' => 'brand',

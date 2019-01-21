@@ -1,12 +1,12 @@
 Ext.define('Shopware.apps.MxcDsiArticle.view.list.extensions.Filter', {
     extend: 'Shopware.listing.FilterPanel',
-    alias:  'widget.mxc-innocigs-article-listing-filter-panel',
+    alias:  'widget.mxc-dsi-article-listing-filter-panel',
     width: 270,
 
     configure: function() {
         return {
-            controller: 'InnocigsArticle',
-            model: 'Shopware.apps.MxcDsiArticle.model.InnocigsArticle',
+            controller: 'Article',
+            model: 'Shopware.apps.MxcDsiArticle.model.Article',
             fields: {
                 code: {
                     expression: 'LIKE'

@@ -11,7 +11,7 @@ namespace MxcDropshipInnocigs\Listener;
 
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
+use MxcDropshipInnocigs\Models\Work\Article;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 use Zend\Config\Factory;
@@ -57,7 +57,7 @@ class ArticleAttributeFilePersister extends ActionListener
         $config = [];
 
         foreach ($this->articles as $article) {
-            /** @var InnocigsArticle $article */
+            /** @var Article $article */
             $config[$article->getCode()] = [
                 'name' => $article->getName(),
                 'brand' => $article->getBrand(),
@@ -74,7 +74,7 @@ class ArticleAttributeFilePersister extends ActionListener
     public function createListOfDefectArticles() {
         $config = [];
         foreach ($this->articles as $article) {
-            /** @var InnocigsArticle $article */
+            /** @var Article $article */
             $category = $article->getCategory();
             if ($category === null || $category === '') {
                 $config['defects']['ic_api']['article']['category_missing'][$article->getCode()] = $article->getName();
@@ -88,6 +88,20 @@ class ArticleAttributeFilePersister extends ActionListener
                         ];
                 }
             }
+            if ($article->getManufacturer() === 'Smok') {
+                $config['defects']['ic_api']['article']['manufacturer_wrong'][$article->getCode()] = [
+                    'name' => $article->getName(),
+                    'manufacturer_from_api' => $article->getManufacturer(),
+                    'manufacturer_correct' => $article->getBrand(),
+                ];
+            }
+            if ($article->getManufacturer() !== $article->getBrand()) {
+                $config['defects']['ic_api']['article']['manufacturer_different'][$article->getCode()] = [
+                    'name' => $article->getName(),
+                    'manufacturer' => $article->getManufacturer(),
+                    'brand' => $article->getBrand(),
+                ];
+            }
         }
         Factory::toFile(__DIR__ . '/../Config/article.defects.php', $config);
     }
@@ -95,7 +109,7 @@ class ArticleAttributeFilePersister extends ActionListener
     public function createCategoryList() {
         $config = [];
         foreach($this->articles as $article)  {
-            /** @var InnocigsArticle $article */
+            /** @var Article $article */
             $config[$article->getCategory()] = true;
         }
         $tmp = array_keys($config);
@@ -134,7 +148,7 @@ class ArticleAttributeFilePersister extends ActionListener
 
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
-        $this->articles = $this->modelManager->getRepository(InnocigsArticle::class)->findAll();
+        $this->articles = $this->modelManager->getRepository(Article::class)->findAll();
         $this->createArticleConfiguration();
         $this->createListOfDefectArticles();
         $this->createCategoryList();

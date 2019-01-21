@@ -11,7 +11,7 @@
             <parent identifiedBy="controller">Article</parent>
             <children>
                 <entry>
-                    <name>MxcInnocigsArticle</name>
+                    <name>MxcDsiArticle</name>
                     <label lang="en">Article</label>
                     <label lang="de">Artikel</label>
                     <controller>MxcDsiArticle</controller>
@@ -19,7 +19,7 @@
                     <class>sprite-documents</class>
                 </entry>
                 <entry>
-                    <name>MxcInnocigsGroup</name>
+                    <name>MxcDsiGroup</name>
                     <label lang="en">Groups</label>
                     <label lang="de">Gruppen</label>
                     <controller>MxcDsiGroup</controller>
@@ -27,7 +27,7 @@
                     <class>sprite-category-item</class>
                 </entry>
                 <entry>
-                    <name>MxcInnocigsTest</name>
+                    <name>MxcDsiTest</name>
                     <label lang="en">Playground</label>
                     <label lang="de">Spielwiese</label>
                     <controller>MxcDsiTest</controller>

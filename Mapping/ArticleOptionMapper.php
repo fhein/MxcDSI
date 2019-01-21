@@ -3,9 +3,9 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\InnocigsArticle;
-use MxcDropshipInnocigs\Models\InnocigsGroup;
-use MxcDropshipInnocigs\Models\InnocigsVariant;
+use MxcDropshipInnocigs\Models\Work\Article;
+use MxcDropshipInnocigs\Models\Work\Group;
+use MxcDropshipInnocigs\Models\Work\Variant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
 
@@ -65,14 +65,14 @@ class ArticleOptionMapper
         $groupOptions = [];
         foreach ($icVariants as $icVariant) {
             /**
-             * @var InnocigsVariant $icVariant
+             * @var Variant $icVariant
              */
             $icOptions = $icVariant->getOptions();
             foreach ($icOptions as $icOption) {
                 /**
-                 * @var InnocigsGroup $icGroup
+                 * @var Group $icGroup
                  */
-                $icGroup = $icOption->getInnocigsGroup();
+                $icGroup = $icOption->getIcGroup();
                 $icGroupName = $icGroup->getName();
                 $icOptionName = $icOption->getName();
 
@@ -122,7 +122,7 @@ class ArticleOptionMapper
         $this->groupRepository->flush();
     }
 
-    protected function getValidVariants(InnocigsArticle $article) : array {
+    protected function getValidVariants(Article $article) : array {
         $validVariants = [];
         $variants = $article->getVariants();
         foreach ($variants as $variant) {
@@ -136,10 +136,10 @@ class ArticleOptionMapper
     /**
      * Create and setup a configurator set for a Shopware article
      *
-     * @param InnocigsArticle $icArticle
+     * @param Article $icArticle
      * @return null|\Shopware\Models\Article\Configurator\Set
      */
-    public function createConfiguratorSet(InnocigsArticle $icArticle)
+    public function createConfiguratorSet(Article $icArticle)
     {
         $variants = $this->getValidVariants($icArticle);
         if (count($variants) < 2) {
@@ -169,7 +169,7 @@ class ArticleOptionMapper
         // add the options belonging to this article and variants
         foreach ($variants as $variant) {
             /**
-             * @var InnocigsVariant $variant
+             * @var Variant $variant
              */
             $options = $variant->getShopwareOptions();
             foreach ($options as $option) {
@@ -180,7 +180,7 @@ class ArticleOptionMapper
         return $set;
     }
 
-    public function getShopwareOptions(InnocigsVariant $variant) {
+    public function getShopwareOptions(Variant $variant) {
         return $variant->getShopwareOptions();
     }
 }
