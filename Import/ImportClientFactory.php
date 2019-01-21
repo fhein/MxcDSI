@@ -7,7 +7,7 @@ use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use MxcDropshipInnocigs\Client\ApiClient;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class InnocigsImporterFactory implements FactoryInterface
+class ImportClientFactory implements FactoryInterface
 {
     use ClassConfigTrait;
     /**
@@ -24,6 +24,6 @@ class InnocigsImporterFactory implements FactoryInterface
         $apiClient = $container->get(ApiClient::class);
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        return new InnocigsImporter($modelManager, $apiClient, $config, $log);
+        return new ImportClient($modelManager, $apiClient, $config, $log);
     }
 }

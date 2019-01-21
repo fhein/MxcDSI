@@ -2,9 +2,10 @@
 
 namespace MxcDropshipInnocigs;
 
-
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
+use MxcDropshipInnocigs\Import\ImportBase;
+use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportModifier;
 use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
@@ -119,6 +120,7 @@ return [
             ConfiguratorGroupRepository::class,
             ConfiguratorSetRepository::class,
             FilterGroupRepository::class,
+            ImportClient::class,
             InnocigsClient::class,
             FilterTest::class,
             PropertyMapper::class,
@@ -195,6 +197,9 @@ return [
             'useArticleConfiguration' => true,
             'numberOfArticles' => -1,
             'applyFilters' => true,
+        ],
+        ImportBase::class => [
+            'numberOfArticles' => -1,
         ],
         ImportClient::class => [
             'numberOfArticles' => -1,

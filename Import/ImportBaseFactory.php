@@ -23,7 +23,6 @@ class ImportBaseFactory implements FactoryInterface
         $config = $this->getClassConfig($container, $requestedName);
         $apiClient = $container->get(ApiClient::class);
         $log = $container->get('logger');
-        $modelManager = $container->get('modelManager');
-        return new ImportBase($modelManager, $apiClient, $config, $log);
+        return new ImportBase($apiClient, $config, $log);
     }
 }

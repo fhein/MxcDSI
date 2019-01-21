@@ -23,16 +23,16 @@ class ImportVariant extends ModelEntity
     private $category;
 
     /**
-     * @var string $master
-     * @ORM\ManyToOne(targetEntity="ImportArticle", inversedBy="models")
+     * @var ImportArticle $master
+     * @ORM\ManyToOne(targetEntity="ImportArticle", inversedBy="variants")
      */
     private $master;
 
     /**
-     * @var string $model
+     * @var string $number
      * @ORM\Column(type="string", nullable=false)
      */
-    private $model;
+    private $number;
 
     /**
      * @var string $ean
@@ -47,26 +47,26 @@ class ImportVariant extends ModelEntity
     private $name;
 
     /**
-     * @var float $purchasePrice
-     * @ORM\Column(name="purchase_price", type="decimal", precision=5, scale=2, nullable=false)
+     * @var string $purchasePrice
+     * @ORM\Column(name="purchase_price", type="string", nullable = false)
      */
     private $purchasePrice;
 
     /**
-     * @var float $purchasePrice
-     * @ORM\Column(name="retail_price", type="decimal", precision=5, scale=2, nullable=false)
+     * @var string $purchasePrice
+     * @ORM\Column(name="retail_price", type="string", nullable=false)
      */
     private $retailPrice;
 
     /**
-     * @var string $image;
-     * @ORM\OneToOne(targetEntity="ImportImage")
+     * @var ImportImage $image;
+     * @ORM\OneToOne(targetEntity="ImportImage", cascade="persist")
      */
     private $image;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="ImportImage", mappedBy="models")
+     * @ORM\ManyToMany(targetEntity="ImportImage", mappedBy="variants", cascade="persist")
      */
     private $additionalImages;
 
@@ -84,7 +84,7 @@ class ImportVariant extends ModelEntity
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="ImportOption", mappedBy="models")
+     * @ORM\ManyToMany(targetEntity="ImportOption", mappedBy="variants")
      */
     private $options;
 
@@ -122,9 +122,9 @@ class ImportVariant extends ModelEntity
     }
 
     /**
-     * @param string $master
+     * @param ImportArticle $master
      */
-    public function setMaster(string $master)
+    public function setMaster(ImportArticle $master)
     {
         $this->master = $master;
     }
@@ -132,17 +132,17 @@ class ImportVariant extends ModelEntity
     /**
      * @return string
      */
-    public function getModel(): string
+    public function getNumber(): string
     {
-        return $this->model;
+        return $this->number;
     }
 
     /**
-     * @param string $model
+     * @param string $number
      */
-    public function setModel(string $model)
+    public function setNumber(string $number)
     {
-        $this->model = $model;
+        $this->number = $number;
     }
 
     /**
@@ -178,49 +178,49 @@ class ImportVariant extends ModelEntity
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getPurchasePrice(): float
+    public function getPurchasePrice(): string
     {
         return $this->purchasePrice;
     }
 
     /**
-     * @param float $purchasePrice
+     * @param string $purchasePrice
      */
-    public function setPurchasePrice(float $purchasePrice)
+    public function setPurchasePrice(string $purchasePrice)
     {
         $this->purchasePrice = $purchasePrice;
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getRetailPrice(): float
+    public function getRetailPrice(): string
     {
         return $this->retailPrice;
     }
 
     /**
-     * @param float $retailPrice
+     * @param string $retailPrice
      */
-    public function setRetailPrice(float $retailPrice)
+    public function setRetailPrice(string $retailPrice)
     {
         $this->retailPrice = $retailPrice;
     }
 
     /**
-     * @return string
+     * @return ImportImage
      */
-    public function getImage(): string
+    public function getImage()
     {
         return $this->image;
     }
 
     /**
-     * @param string $image
+     * @param ImportImage $image
      */
-    public function setImage(string $image)
+    public function setImage(ImportImage $image)
     {
         $this->image = $image;
     }
@@ -243,7 +243,7 @@ class ImportVariant extends ModelEntity
 
     public function addAdditionalImage(ImportImage $image) {
         $this->additionalImages->add($image);
-        $image->addModel($this);
+        $image->addVariant($this);
     }
 
     /**

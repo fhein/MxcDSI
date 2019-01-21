@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Import;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
-use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
 class ImportBase
@@ -18,10 +17,6 @@ class ImportBase
      * @var LoggerInterface $log
      */
     protected $log;
-    /**
-     * @var ModelManager $modelManager
-     */
-    protected $modelManager;
 
     /**
      * @var Config $config
@@ -34,20 +29,22 @@ class ImportBase
     protected $import;
 
     /**
+     * @var array $items
+     */
+    protected $items;
+
+    /**
      * ImportBase constructor.
      *
-     * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param Config $config
      * @param LoggerInterface $log
      */
     public function __construct(
-        ModelManager $modelManager,
         ApiClient $apiClient,
         Config $config,
         LoggerInterface $log
     ) {
-        $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->config = $config;
         $this->log = $log;
@@ -57,16 +54,37 @@ class ImportBase
     {
         $raw = $this->apiClient->getItemList();
         $this->import = [];
+        /** @noinspection PhpUndefinedFieldInspection */
         $limit = $this->config->numberOfArticles ?? -1;
 
         foreach ($raw['PRODUCTS']['PRODUCT'] as $item) {
-            $this->import['articles'][$item['MASTER']][$item['MODEL']] = $item;
+            $this->import[$item['MASTER']][$item['MODEL']] = $item;
             foreach ($item['PRODUCTS_ATTRIBUTES'] as $group => $option) {
-                $this->import['groups'][$group][$option] = 1;
+                $this->items['groups'][$group][$option] = true;
             }
-            if ($limit !== -1 && count($this->articles) === $limit) {
+            $this->items['images'][$item['PRODUCTS_IMAGE']] = true;
+            foreach ($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'] as $image) {
+                    $this->items['images'][$image] = true;
+            }
+            if ($limit !== -1 && count($this->import) === $limit) {
                 break;
             }
         }
     }
+
+    protected function getParamString($value)
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+        if (is_array($value) && empty($value)) {
+            return '';
+        }
+        throw new InvalidArgumentException(
+            sprintf('String or empty array expected, got %s.',
+                is_object($value) ? get_class($value) : gettype($value)
+            )
+        );
+    }
+
 }

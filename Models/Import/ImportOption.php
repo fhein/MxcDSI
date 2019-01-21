@@ -32,13 +32,13 @@ class ImportOption extends ModelEntity  {
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Variant", inversedBy="options")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_options_models")
+     * @ORM\ManyToMany(targetEntity="ImportVariant", inversedBy="options")
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_options_variants")
      */
-    private $models;
+    private $variants;
 
     public function __construct() {
-        $this->models = new ArrayCollection();
+        $this->variants = new ArrayCollection();
     }
 
     /**
@@ -76,18 +76,18 @@ class ImportOption extends ModelEntity  {
     /**
      * @return ArrayCollection
      */
-    public function getModels()
+    public function getVariants()
     {
-        return $this->models;
+        return $this->variants;
     }
 
     /**
-     * @param ImportVariant $model
+     * @param ImportVariant $variant
      *
      * This is the 'owned' side, so we DO NOT $variant->addOption($this)
      */
-    public function addModel(ImportVariant $model)
+    public function addModel(ImportVariant $variant)
     {
-        $this->models->add($model);
+        $this->variants->add($variant);
     }
 }

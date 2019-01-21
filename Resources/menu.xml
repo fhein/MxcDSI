@@ -11,6 +11,14 @@
             <parent identifiedBy="controller">Article</parent>
             <children>
                 <entry>
+                    <name>MxcDsiImport</name>
+                    <label lang="en">Import</label>
+                    <label lang="de">Import</label>
+                    <controller>MxcDsiImport</controller>
+                    <action>index</action>
+                    <class>sprite-document-import</class>
+                </entry>
+                <entry>
                     <name>MxcDsiArticle</name>
                     <label lang="en">Article</label>
                     <label lang="de">Artikel</label>
