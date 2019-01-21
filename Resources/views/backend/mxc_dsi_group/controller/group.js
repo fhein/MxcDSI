@@ -16,7 +16,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Group', {
                 mxcDeselectGroup:   me.onGroupDeselect,
             }
         });
-        Shopware.app.Application.on('Group-save-successfully', me.onDetailSaved);
+        Shopware.app.Application.on('ImportGroup-save-successfully', me.onDetailSaved);
         me.mainWindow = me.getView('list.Window').create({ }).show();
     },
 

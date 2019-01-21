@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models\Work;
+namespace MxcDropshipInnocigs\Models\Current;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -88,7 +88,7 @@ class Group extends ModelEntity  {
     //
     public function setOptions($options) {
         if (! empty($options)) {
-            $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Work\Option', 'options');
+            $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Current\Option', 'options');
         }
     }
 

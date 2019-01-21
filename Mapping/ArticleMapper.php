@@ -7,8 +7,8 @@ use Doctrine\Common\Collections\Criteria;
 use Exception;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\InnocigsClient;
-use MxcDropshipInnocigs\Models\Work\Article;
-use MxcDropshipInnocigs\Models\Work\Variant;
+use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Current\Variant;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
@@ -135,7 +135,7 @@ class ArticleMapper
     }
 
     /**
-     * Gets the Shopware Article by looking for the Shopware detail of the first variant for the supplied $article.
+     * Gets the Shopware ImportArticle by looking for the Shopware detail of the first variant for the supplied $article.
      * If it exists, we assume that the article and all other variants exist as well
      *
      * @param Article $article
@@ -169,7 +169,7 @@ class ArticleMapper
 
         $detail = new Detail();
 
-        // The class \Shopware\Models\Attribute\Article ist part of the Shopware attribute system.
+        // The class \Shopware\Models\Attribute\ImportArticle ist part of the Shopware attribute system.
         // It gets (re)generated automatically by Shopware core, when attributes are added/removed
         // via the attribute crud service. It is located in \var\cache\production\doctrine\attributes.
         //
@@ -306,7 +306,7 @@ class ArticleMapper
     }
 
     protected function deactivateShopwareArticle(Article $article) {
-        $this->log->info('Remove Shopware Article for ' . $article->getName());
+        $this->log->info('Remove Shopware ImportArticle for ' . $article->getName());
         return true;
     }
 

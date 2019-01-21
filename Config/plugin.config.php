@@ -14,16 +14,16 @@ use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
-use MxcDropshipInnocigs\Models\Import\Article as ImportMaster;
-use MxcDropshipInnocigs\Models\Import\Group as ImportGroup;
-use MxcDropshipInnocigs\Models\Import\Image as ImportImage;
-use MxcDropshipInnocigs\Models\Import\Option as ImportOption;
-use MxcDropshipInnocigs\Models\Import\Variant as ImportModel;
-use MxcDropshipInnocigs\Models\Work\Article;
-use MxcDropshipInnocigs\Models\Work\Group;
-use MxcDropshipInnocigs\Models\Work\Image;
-use MxcDropshipInnocigs\Models\Work\Option;
-use MxcDropshipInnocigs\Models\Work\Variant;
+use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Current\Group;
+use MxcDropshipInnocigs\Models\Current\Image;
+use MxcDropshipInnocigs\Models\Current\Option;
+use MxcDropshipInnocigs\Models\Current\Variant;
+use MxcDropshipInnocigs\Models\Import\ImportArticle;
+use MxcDropshipInnocigs\Models\Import\ImportGroup;
+use MxcDropshipInnocigs\Models\Import\ImportImage;
+use MxcDropshipInnocigs\Models\Import\ImportOption;
+use MxcDropshipInnocigs\Models\Import\ImportVariant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
@@ -46,8 +46,8 @@ return [
             Group::class,
             Option::class,
             Image::class,
-            ImportMaster::class,
-            ImportModel::class,
+            ImportArticle::class,
+            ImportVariant::class,
             ImportGroup::class,
             ImportOption::class,
             ImportImage::class,
@@ -100,7 +100,7 @@ return [
         ],
 //        'listeners' => [
 //            InnocigsArticleSubscriber::class => [
-//                'model' => Article::class,
+//                'model' => ImportArticle::class,
 //                'events' => [
 //                    Events::preUpdate,
 //                ],
@@ -196,5 +196,8 @@ return [
             'numberOfArticles' => -1,
             'applyFilters' => true,
         ],
+        ImportClient::class => [
+            'numberOfArticles' => -1,
+        ]
     ],
 ];

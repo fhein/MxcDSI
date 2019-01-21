@@ -12,7 +12,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_model_import")
  */
-class Variant extends ModelEntity
+class ImportVariant extends ModelEntity
 {
     use BaseModelTrait;
 
@@ -24,7 +24,7 @@ class Variant extends ModelEntity
 
     /**
      * @var string $master
-     * @ORM\ManyToOne(targetEntity="Article", inversedBy="models")
+     * @ORM\ManyToOne(targetEntity="ImportArticle", inversedBy="models")
      */
     private $master;
 
@@ -60,13 +60,13 @@ class Variant extends ModelEntity
 
     /**
      * @var string $image;
-     * @ORM\OneToOne(targetEntity="Image")
+     * @ORM\OneToOne(targetEntity="ImportImage")
      */
     private $image;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Image", mappedBy="models")
+     * @ORM\ManyToMany(targetEntity="ImportImage", mappedBy="models")
      */
     private $additionalImages;
 
@@ -84,12 +84,12 @@ class Variant extends ModelEntity
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Option", mappedBy="models")
+     * @ORM\ManyToMany(targetEntity="ImportOption", mappedBy="models")
      */
     private $options;
 
     /**
-     * Variant constructor.
+     * ImportVariant constructor.
      */
     public function __construct()
     {
@@ -241,7 +241,7 @@ class Variant extends ModelEntity
         $this->additionalImages = $additionalImages;
     }
 
-    public function addAdditionalImage(Image $image) {
+    public function addAdditionalImage(ImportImage $image) {
         $this->additionalImages->add($image);
         $image->addModel($this);
     }
@@ -294,7 +294,7 @@ class Variant extends ModelEntity
         $this->options = $options;
     }
 
-    public function addOption(Option $option) {
+    public function addOption(ImportOption $option) {
         $this->options->add($option);
         $option->addModel($this);
     }

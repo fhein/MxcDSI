@@ -3,9 +3,9 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Work\Article;
-use MxcDropshipInnocigs\Models\Work\Group;
-use MxcDropshipInnocigs\Models\Work\Variant;
+use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Current\Group;
+use MxcDropshipInnocigs\Models\Current\Variant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
 
@@ -76,7 +76,7 @@ class ArticleOptionMapper
                 $icGroupName = $icGroup->getName();
                 $icOptionName = $icOption->getName();
 
-                $this->log->debug(sprintf('Variant %s (%s) has option %s from group %s.',
+                $this->log->debug(sprintf('ImportVariant %s (%s) has option %s from group %s.',
                     $icVariant->getCode(),
                     $icVariant->getId(),
                     $icOptionName,
@@ -85,7 +85,7 @@ class ArticleOptionMapper
 
                 // A valid variant may hold options which are ignored. Skip variants with ignored options.
                 if (! $this->validator->validateOption($icOption)) {
-                    $this->log->debug('Named option does not validate. Variant ignored.');
+                    $this->log->debug('Named option does not validate. ImportVariant ignored.');
                     continue 2;
                 }
                 $swGroupName =  $this->mapper->mapGroupName($icGroupName);
@@ -151,7 +151,7 @@ class ArticleOptionMapper
             return null;
         }
 
-        $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs Article %s.',
+        $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs ImportArticle %s.',
             __FUNCTION__,
             $icArticle->getCode()
         ));
@@ -159,7 +159,7 @@ class ArticleOptionMapper
         $this->createShopwareGroupsAndOptions($variants);
 
         $name = 'mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode());
-        $this->log->info(sprintf('%s: Creating configurator set %s for InnoCigs Article %s.',
+        $this->log->info(sprintf('%s: Creating configurator set %s for InnoCigs ImportArticle %s.',
             __FUNCTION__,
             $name,
             $icArticle->getCode()

@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models\Work;
+namespace MxcDropshipInnocigs\Models\Current;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -68,11 +68,6 @@ class Article extends ModelEntity  {
      * )
      */
     private $variants;
-                                                                    ///
-    ///////////////////////////////////////////////////////////////////
-
-    ///////////////////////////////////////////////////////////////////
-    /// Data introduced by us
 
     /**
      * @var string $supplier
@@ -104,11 +99,9 @@ class Article extends ModelEntity  {
      * @ORM\Column(type="boolean", nullable=false)
      */
     private $accepted = true;
-                                                                    ///
-    ///////////////////////////////////////////////////////////////////
 
     /**
-     * Article constructor.
+     * ImportArticle constructor.
      */
     public function __construct() {
         $this->variants = new ArrayCollection();
@@ -163,7 +156,7 @@ class Article extends ModelEntity  {
     }
 
     public function setVariants($variants) {
-        $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\Work\Variant', 'variants');
+        $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\Current\Variant', 'variants');
     }
     /**
      * @return string

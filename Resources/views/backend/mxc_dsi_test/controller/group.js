@@ -19,7 +19,7 @@ Ext.define('Shopware.apps.MxcDsiTest.controller.Group', {
                 mxcSelectOption:    me.onOptionSelect,
             }
         });
-        Shopware.app.Application.on('Group-save-successfully', me.onDetailSaved);
+        Shopware.app.Application.on('ImportGroup-save-successfully', me.onDetailSaved);
         me.mainWindow = me.getView('list.Window').create({ }).show();
     },
 
@@ -67,7 +67,7 @@ Ext.define('Shopware.apps.MxcDsiTest.controller.Group', {
     },
 
     onOptionSelect: function(record, value) {
-        Shopware.Notification.createGrowlMessage('Option', 'Option selected: ' + (value === true ? 'true' : 'false'));
+        Shopware.Notification.createGrowlMessage('Option', 'ImportOption selected: ' + (value === true ? 'true' : 'false'));
         let me = this;
         //alert(record.get('name'));
         record.set('accepted', value);

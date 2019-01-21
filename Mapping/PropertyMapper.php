@@ -9,7 +9,7 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 
-use MxcDropshipInnocigs\Models\Work\Article;
+use MxcDropshipInnocigs\Models\Current\Article;
 
 class PropertyMapper
 {

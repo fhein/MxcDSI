@@ -1,5 +1,5 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
-namespace MxcDropshipInnocigs\Models\Work;
+namespace MxcDropshipInnocigs\Models\Current;
 
 use Doctrine\ORM\Mapping as ORM;
 use MxcDropshipInnocigs\Models\BaseModelTrait;

@@ -14,7 +14,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_group_import")
  */
-class Group extends ModelEntity  {
+class ImportGroup extends ModelEntity  {
 
     use BaseModelTrait;
 
@@ -27,7 +27,7 @@ class Group extends ModelEntity  {
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
-     *      targetEntity="Option",
+     *      targetEntity="ImportOption",
      *      mappedBy="importGroup",
      *      cascade={"persist", "remove"}
      * )
@@ -70,7 +70,7 @@ class Group extends ModelEntity  {
     //
     public function setOptions($options) {
         if (! empty($options)) {
-            $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Work\Option', 'options');
+            $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Current\Option', 'options');
         }
     }
     /**
@@ -82,9 +82,9 @@ class Group extends ModelEntity  {
     }
 
     /**
-     * @param Option $option
+     * @param ImportOption $option
      */
-    public function addOption(Option $option) {
+    public function addOption(ImportOption $option) {
         $this->options->add($option);
         $option->setIcGroup($this);
     }

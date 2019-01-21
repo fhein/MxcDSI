@@ -1,4 +1,5 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
+
 namespace MxcDropshipInnocigs\Models\Import;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -9,59 +10,55 @@ use Shopware\Components\Model\ModelEntity;
 /**
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_plugin_mxc_dsi_image_import")
+ * @ORM\Table(name="s_plugin_mxc_dsi_master_import")
  */
-class Image extends ModelEntity
-{
+class ImportArticle extends ModelEntity  {
+
     use BaseModelTrait;
 
     /**
-     * @var string $image
+     * @var string $number
      * @ORM\Column()
      */
-    private $image;
+    private $number;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Variant", inversedBy="addtionalImages")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_images_models")
+     * @ORM\OneToMany(targetEntity="Variant", mappedBy="master", cascade={"persist", "remove"})
      */
     private $models;
+
 
     public function __construct() {
         $this->models = new ArrayCollection();
     }
 
-    /**
-     * @return string
-     */
-    public function getImage(): string
-    {
-        return $this->image;
+    public function setNumber(string $number) {
+        $this->number = $number;
     }
 
-    /**
-     * @param string $image
-     */
-    public function setImage(string $image)
+    public function getNumber()
     {
-        $this->image = $image;
+        return $this->number;
     }
 
-    public function getModels()
-    {
+    public function getModels() {
         return $this->models;
     }
 
-    /**
-     * @param ArrayCollection $models
-     */
-    public function setModels(ArrayCollection $models)
-    {
+    public function setModels(ArrayCollection $models) {
         $this->models = $models;
     }
 
-    public function addModel(Variant $model) {
+    /**
+     * @param ImportVariant $model
+     */
+    public function addModel(ImportVariant $model) {
         $this->models->add($model);
+        $model->setMaster($this);
+    }
+
+    public static function fromImport(array $import) {
+
     }
 }

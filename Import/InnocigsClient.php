@@ -5,11 +5,11 @@ namespace MxcDropshipInnocigs\Import;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
-use MxcDropshipInnocigs\Models\Work\Article;
-use MxcDropshipInnocigs\Models\Work\Group;
-use MxcDropshipInnocigs\Models\Work\Image;
-use MxcDropshipInnocigs\Models\Work\Option;
-use MxcDropshipInnocigs\Models\Work\Variant;
+use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Current\Group;
+use MxcDropshipInnocigs\Models\Current\Image;
+use MxcDropshipInnocigs\Models\Current\Option;
+use MxcDropshipInnocigs\Models\Current\Variant;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
@@ -110,7 +110,7 @@ class InnocigsClient
             $article->setDescription($description);
             $this->modelManager->persist($article);
         } else {
-            $this->log->info(sprintf('%s: Article description from InnoCigs for article %s is up to date.',
+            $this->log->info(sprintf('%s: ImportArticle description from InnoCigs for article %s is up to date.',
                 __FUNCTION__,
                 $article->getCode()
             ));
@@ -220,14 +220,14 @@ class InnocigsClient
                 $o = $this->optionNameMapping[$option] ?? null;
                 if ($o) {
                     $this->log->warn(sprintf(
-                        'Article name \'%s\' does not contain the option name \'%s\'. Option name mapping fix applied.',
+                        'ImportArticle name \'%s\' does not contain the option name \'%s\'. ImportOption name mapping fix applied.',
                         $name,
                         $option
                     ));
                     $name = str_replace($o, '', $name);
                 } else {
                     $this->log->warn(sprintf(
-                        'Article name \'%s\' does not contain the option name \'%s\' and there is no option name mapping specified.',
+                        'ImportArticle name \'%s\' does not contain the option name \'%s\' and there is no option name mapping specified.',
                         $name,
                         $option
                     ));

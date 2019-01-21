@@ -13,7 +13,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_option_import")
  */
-class Option extends ModelEntity  {
+class ImportOption extends ModelEntity  {
 
     use BaseModelTrait;
 
@@ -25,8 +25,8 @@ class Option extends ModelEntity  {
     private $name;
 
     /**
-     * @var Group $icGroup
-     * @ORM\ManyToOne(targetEntity="Group", inversedBy="options")
+     * @var ImportGroup $icGroup
+     * @ORM\ManyToOne(targetEntity="ImportGroup", inversedBy="options")
      */
     private $icGroup;
 
@@ -58,7 +58,7 @@ class Option extends ModelEntity  {
     }
 
     /**
-     * @return Group
+     * @return ImportGroup
      */
     public function getIcGroup()
     {
@@ -66,9 +66,9 @@ class Option extends ModelEntity  {
     }
 
     /**
-     * @param Group $icGroup
+     * @param ImportGroup $icGroup
      */
-    public function setIcGroup(Group $icGroup)
+    public function setIcGroup(ImportGroup $icGroup)
     {
         $this->icGroup = $icGroup;
     }
@@ -82,11 +82,11 @@ class Option extends ModelEntity  {
     }
 
     /**
-     * @param Variant $model
+     * @param ImportVariant $model
      *
      * This is the 'owned' side, so we DO NOT $variant->addOption($this)
      */
-    public function addModel(Variant $model)
+    public function addModel(ImportVariant $model)
     {
         $this->models->add($model);
     }
