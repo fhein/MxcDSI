@@ -2,7 +2,6 @@
 
 namespace MxcDropshipInnocigs\Models\Current;
 
-use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -44,18 +43,6 @@ class Group extends ModelEntity  {
 
     public function __construct() {
         $this->options = new ArrayCollection();
-    }
-
-    /**
-     * @ORM\PrePersist
-     * @ORM\PreUpdate
-     */
-    public function updateTimestamps() {
-        $now = new DateTime();
-        $this->updated = $now;
-        if ( null === $this->created) {
-            $this->created = $now;
-        }
     }
 
     /**
@@ -123,5 +110,4 @@ class Group extends ModelEntity  {
     {
         $this->accepted = $accepted;
     }
-
 }

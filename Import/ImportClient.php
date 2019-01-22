@@ -107,7 +107,7 @@ class ImportClient extends ImportBase
         }
         if ($image === true) {
             $image = new ImportImage();
-            $image->setImage($url);
+            $image->setUrl($url);
             return $image;
         }
         throw new InvalidArgumentException(sprintf(

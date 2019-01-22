@@ -25,6 +25,7 @@ use MxcDropshipInnocigs\Models\Import\ImportGroup;
 use MxcDropshipInnocigs\Models\Import\ImportImage;
 use MxcDropshipInnocigs\Models\Import\ImportOption;
 use MxcDropshipInnocigs\Models\Import\ImportVariant;
+use MxcDropshipInnocigs\Models\Mapping\ArticleSupplierBrandMapping;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
@@ -52,6 +53,7 @@ return [
             ImportGroup::class,
             ImportOption::class,
             ImportImage::class,
+            ArticleSupplierBrandMapping::class,
         ],
         'attributes' => [
             's_articles_attributes' => [
@@ -145,6 +147,20 @@ return [
         ],
         'option_names'      => [],
         'variant_codes'     => [],
+        'manufacturers'     => [
+            'Smok' => [
+                'supplier'  => 'Smoktech',
+                'brand'     => 'Smok'
+            ],
+            'Renova' => [
+                'supplier'  => 'Vaporesso',
+                'brand'     => 'Renova',
+            ],
+            'Dexter`s Juice Lab' => [
+                'brand' => 'Dexter\'s Juice Lab',
+                'supplier' => 'Dexter\'s Juice Lab',
+            ]
+        ],
     ],
     'import' => [
         'update' => [

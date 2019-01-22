@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs\Models\Import;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
@@ -66,7 +67,8 @@ class ImportVariant extends ModelEntity
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="ImportImage", mappedBy="variants", cascade="persist")
+     * @ORM\ManyToMany(targetEntity="ImportImage", inversedBy="variants", cascade="persist")
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_variants_images")
      */
     private $additionalImages;
 
@@ -84,7 +86,8 @@ class ImportVariant extends ModelEntity
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="ImportOption", mappedBy="variants")
+     * @ORM\ManyToMany(targetEntity="ImportOption", inversedBy="variants")
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_variants_options")
      */
     private $options;
 
@@ -226,9 +229,9 @@ class ImportVariant extends ModelEntity
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
-    public function getAdditionalImages(): ArrayCollection
+    public function getAdditionalImages(): Collection
     {
         return $this->additionalImages;
     }
@@ -265,7 +268,7 @@ class ImportVariant extends ModelEntity
     /**
      * @return string
      */
-    public function getManualUrl(): string
+    public function getManualUrl(): ?string
     {
         return $this->manualUrl;
     }
@@ -279,9 +282,9 @@ class ImportVariant extends ModelEntity
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
-    public function getOptions(): ArrayCollection
+    public function getOptions(): Collection
     {
         return $this->options;
     }

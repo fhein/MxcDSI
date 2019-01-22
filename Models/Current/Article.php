@@ -12,6 +12,7 @@ use Shopware\Models\Article\Article as ShopwareArticle;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_article")
+ * @ORM\Entity(repositoryClass="ArticleRepository")
  */
 class Article extends ModelEntity  {
 
@@ -43,7 +44,7 @@ class Article extends ModelEntity  {
 
     /**
      * @var string $imageUrl;
-     * @ORM\Column(name="image", type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $imageUrl;
 
@@ -227,7 +228,7 @@ class Article extends ModelEntity  {
     /**
      * @param string $supplier
      */
-    public function setSupplier(string $supplier)
+    public function setSupplier(?string $supplier)
     {
         $this->supplier = $supplier;
     }
@@ -243,7 +244,7 @@ class Article extends ModelEntity  {
     /**
      * @param string $brand
      */
-    public function setBrand(string $brand)
+    public function setBrand(?string $brand)
     {
         $this->brand = $brand;
     }
@@ -275,7 +276,7 @@ class Article extends ModelEntity  {
     /**
      * @param string $manualUrl
      */
-    public function setManualUrl(string $manualUrl)
+    public function setManualUrl(?string $manualUrl)
     {
         $this->manualUrl = $manualUrl;
     }

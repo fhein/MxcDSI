@@ -15,6 +15,12 @@ class PropertyMapper
 {
     private $mappings;
 
+    private $innocigsBrands = [
+        'SC',
+        'Steamax',
+        'InnoCigs'
+    ];
+
     public function __construct(array $mappings) {
         $this->mappings = $mappings;
     }
@@ -39,14 +45,10 @@ class PropertyMapper
         return $this->mappings['option_names'][$name] ?? $name;
     }
 
-    public function mapManufacturer($name) {
-        return $this->mappings['manufacturers'][$name] ?? $name;
-    }
-
     public function mapCategory($name, Article $article)
     {
-        if (isset($this->mappings['manufacturers'][$name])) {
-            return $this->mappings['manufacturers'][$name];
+        if (isset($this->mappings['categories'][$name])) {
+            return $this->mappings['categories'][$name];
         }
 
         $supplier = $article->getSupplier();
@@ -87,5 +89,21 @@ class PropertyMapper
             return ('Unknown');
         }
         return $name;
+    }
+
+    public function mapManufacturer($name)
+    {
+        $name = trim($name);
+        if ($name === 'Akkus') {
+            return [];
+        }
+        if (isset($this->mappings['manufacturers'][$name])) {
+            return $this->mappings['manufacturers'][$name];
+        }
+        $result ['brand' ] = $name;
+        if (! in_array($name, $this->innocigsBrands)) {
+            $result['supplier'] = $name;
+        }
+        return $result;
     }
 }

@@ -38,8 +38,7 @@ class Option extends ModelEntity  {
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Variant", inversedBy="options")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_options_variants")
+     * @ORM\ManyToMany(targetEntity="Variant", mappedBy="options")
      */
     private $variants;
 

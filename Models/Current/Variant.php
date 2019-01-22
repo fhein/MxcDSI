@@ -54,17 +54,15 @@ class Variant extends ModelEntity
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Option", mappedBy="variants")
+     * @ORM\ManyToMany(targetEntity="Option", inversedBy="variants")
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_options")
      */
     private $options;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\OneToMany(
-     *      targetEntity="Image",
-     *      mappedBy="variant",
-     *      cascade={"persist", "remove"}
-     * )
+     * @ORM\ManyToMany(targetEntity="Image", inversedBy="variants", cascade="persist")
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_images")
      */
     private $images;
 
@@ -223,7 +221,7 @@ class Variant extends ModelEntity
     /**
      * @param float $purchasePrice
      */
-    public function setPriceNet($purchasePrice)
+    public function setPurchasePrice($purchasePrice)
     {
         $this->purchasePrice = $purchasePrice;
     }
@@ -309,6 +307,6 @@ class Variant extends ModelEntity
      */
     public function addImage(Image $image) {
         $this->images->add($image);
-        $image->setVariant($this);
+        $image->addVariant($this);
     }
 }

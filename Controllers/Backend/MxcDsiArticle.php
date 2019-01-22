@@ -19,7 +19,11 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
          * @var \Shopware\Components\Model\ModelManager $modelManager
          */
         try {
-            $this->services->get(InnocigsClient::class)->import();
+            $icClient = $this->services->get(InnocigsClient::class);
+            if ($icClient === null) {
+                $this->log->err('ICClient is null.');
+            }
+            $icClient->import();
             parent::indexAction();
         } catch (Throwable $e) {
             $this->log->except($e);

@@ -32,8 +32,7 @@ class ImportOption extends ModelEntity  {
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="ImportVariant", inversedBy="options")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_options_variants")
+     * @ORM\ManyToMany(targetEntity="ImportVariant", mappedBy="options")
      */
     private $variants;
 

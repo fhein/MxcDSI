@@ -12,6 +12,7 @@ namespace MxcDropshipInnocigs\Listener;
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Mapping\ArticleSupplierBrandMapping;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 use Zend\Config\Factory;
@@ -55,18 +56,15 @@ class ArticleAttributeFilePersister extends ActionListener
     {
         $this->log->enter();
         $config = [];
+        $query = $this->modelManager->createQuery('DELETE FROM MxcDropshipInnocigs\Models\Mapping\ArticleSupplierBrandMapping');
+        $this->log->debug('Delete mapping: ' . $query->getDQL());
+        $query->execute();
 
         foreach ($this->articles as $article) {
-            /** @var Article $article */
-            $config[$article->getCode()] = [
-                'name' => $article->getName(),
-                'brand' => $article->getBrand(),
-                'supplier' => $article->getSupplier(),
-            ];
+            $entry = ArticleSupplierBrandMapping::fromArticle($article);
+            $this->modelManager->persist($entry);
         }
-        if (! empty($config)) {
-            Factory::toFile($this->articleConfigFile, $config);
-        }
+        $this->modelManager->flush();
         $this->log->debug('Brand/supplier information saved to ' . $this->articleConfigFile);
         $this->log->leave();
     }
@@ -146,11 +144,29 @@ class ArticleAttributeFilePersister extends ActionListener
         $this->installArticleConfiguration();
     }
 
+    public function dumpInnocigsBrandsAndAkkus() {
+        $r = $this->modelManager->getRepository(Article::class);
+        $akkus = $r->createQueryBuilder('a')
+            ->select('a.code')
+            ->where('a.manufacturer = \'Akkus\'')
+            ->getQuery()
+            ->getScalarResult();
+        $config['akkus'] = array_column($akkus, 'code');;
+        $innocigs = $r->createQueryBuilder('a')
+            ->select('a.code')
+            ->where('a.manufacturer IN (\'InnoCigs\', \'Steamax\', \'SC\')')
+            ->getQuery()
+            ->getScalarResult();
+        $config['innocigs'] = array_column($innocigs, 'code');
+        Factory::toFile(__DIR__ . '/../Config/ia.dump.php', $config);
+    }
+
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
         $this->articles = $this->modelManager->getRepository(Article::class)->findAll();
         $this->createArticleConfiguration();
         $this->createListOfDefectArticles();
+        $this->dumpInnocigsBrandsAndAkkus();
         $this->createCategoryList();
     }
 }

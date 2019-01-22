@@ -1,6 +1,8 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 namespace MxcDropshipInnocigs\Models\Current;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
@@ -15,47 +17,58 @@ class Image extends ModelEntity
     use BaseModelTrait;
 
     /**
-     * @var Variant $variant
-     * @ORM\ManyToOne(targetEntity="Variant", inversedBy="images")
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Variant", mappedBy="images")
      */
-    private $variant;
+    private $variants;
 
     /**
-     * @var string $image
-     *
-     * @ORM\Column()
+     * @var string $url
+     * @ORM\Column(type="string", nullable=false)
      */
-    private $image;
+    private $url;
+
+    public function __construct()
+    {
+        $this->variants = new ArrayCollection();
+    }
 
     /**
      * @return string
      */
-    public function getImage(): string
+    public function getUrl(): string
     {
-        return $this->image;
+        return $this->url;
     }
 
     /**
-     * @param string $image
+     * @param string $url
      */
-    public function setImage(string $image)
+    public function setUrl(string $url)
     {
-        $this->image = $image;
+        $this->url = $url;
     }
 
     /**
-     * @return Variant
+     * @return Collection
      */
-    public function getVariant()
+    public function getVariants()
     {
-        return $this->variant;
+        return $this->variants;
+    }
+
+    /**
+     * @param ArrayCollection $variants
+     */
+    public function setVariants(ArrayCollection $variants): void
+    {
+        $this->variants = $variants;
     }
 
     /**
      * @param Variant $variant
      */
-    public function setVariant(Variant $variant): void
-    {
-        $this->variant = $variant;
+    public function addVariant(Variant $variant) {
+        $this->variants->add($variant);
     }
 }

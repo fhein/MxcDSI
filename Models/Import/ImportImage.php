@@ -16,15 +16,14 @@ class ImportImage extends ModelEntity
     use BaseModelTrait;
 
     /**
-     * @var string $image
+     * @var string $url
      * @ORM\Column()
      */
-    private $image;
+    private $url;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="ImportVariant", inversedBy="additionalImages")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_images_variants")
+     * @ORM\ManyToMany(targetEntity="ImportVariant", mappedBy="additionalImages")
      */
     private $variants;
 
@@ -35,17 +34,17 @@ class ImportImage extends ModelEntity
     /**
      * @return string
      */
-    public function getImage(): string
+    public function getUrl(): string
     {
-        return $this->image;
+        return $this->url;
     }
 
     /**
-     * @param string $image
+     * @param string $url
      */
-    public function setImage(string $image)
+    public function setUrl(string $url)
     {
-        $this->image = $image;
+        $this->url = $url;
     }
 
     public function getVariants()
