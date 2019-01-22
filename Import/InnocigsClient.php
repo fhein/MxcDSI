@@ -75,8 +75,9 @@ class InnocigsClient
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
-     * @param ImportClient $importClient,
+     * @param ImportClient $importClient ,
      *
+     * @param PropertyMapper $propertyMapper
      * @param ImportModifier $importModifier
      * @param Config $config
      * @param LoggerInterface $log

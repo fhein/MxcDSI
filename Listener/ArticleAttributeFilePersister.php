@@ -55,7 +55,6 @@ class ArticleAttributeFilePersister extends ActionListener
     public function createArticleConfiguration()
     {
         $this->log->enter();
-        $config = [];
         $query = $this->modelManager->createQuery('DELETE FROM MxcDropshipInnocigs\Models\Mapping\ArticleSupplierBrandMapping');
         $this->log->debug('Delete mapping: ' . $query->getDQL());
         $query->execute();
@@ -64,6 +63,7 @@ class ArticleAttributeFilePersister extends ActionListener
             $entry = ArticleSupplierBrandMapping::fromArticle($article);
             $this->modelManager->persist($entry);
         }
+        /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
         $this->log->debug('Brand/supplier information saved to ' . $this->articleConfigFile);
         $this->log->leave();
