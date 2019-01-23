@@ -60,7 +60,6 @@ class ImportMapper
         '0 mg/ml'   => '0 mg/mgl',
         'weiss' => ' weiß',
         '1,5 mg/ml' => '1,5 ml',
-
     ];
 
     /**
@@ -149,25 +148,26 @@ class ImportMapper
             $group = new Group();
             $this->modelManager->persist($group);
 
-            $group->setName($importGroup->getName());
+            $group->setName($this->propertyMapper->mapGroupName($importGroup->getName()));
             $group->setAccepted(true);
-            $this->createOptions($group, $importGroup->getOptions());
+            $this->createOptions($group, $importGroup);
         }
     }
 
-    protected function createOptions(Group $group, Collection $importOptions)
+    protected function createOptions(Group $group, ImportGroup $importGroup)
     {
         /** @var ImportOption $importOption */
+        $importOptions = $importGroup->getOptions();
         foreach ($importOptions as $importOption) {
             $option = new Option();
 
             $optionName = $importOption->getName();
-            $option->setName($optionName);
+            $option->setName($this->propertyMapper->mapOptionName($optionName));
 
             $option->setAccepted(true);
             $group->addOption($option);
 
-            $this->options[$group->getName()][$optionName] = $option;
+            $this->options[$importGroup->getName()][$optionName] = $option;
         }
     }
 
@@ -183,27 +183,29 @@ class ImportMapper
             $article->setActive(false);
             $article->setAccepted(true);
 
-
             $this->createVariants($article, $importArticle->getVariants());
             $number = $importArticle->getNumber();
-            $article->setCode($number);
+            $article->setCode($this->propertyMapper->mapArticleCode($number));
+            $article->setIcCode($number);
             $article->setDescription('n/a');
             /** @var ImportVariant $v0 */
             $v0 = $importArticle->getVariants()[0];
-            $article->setCategory($v0->getCategory());
             $article->setManualUrl($v0->getManualUrl());
             $article->setManufacturer($v0->getManufacturer());
             $name = $this->removeOptionsFromArticleName($v0->getName(), $v0->getOptions());
-            $article->setName($name);
             $image = $v0->getImage();
 
             $bs = $this->propertyMapper->mapManufacturer($number, $v0->getManufacturer());
             $article->setBrand($bs['brand']);
             $article->setSupplier($bs['supplier']);
+            $article->setName($this->propertyMapper->mapArticleName($name, $number, $article));
 
             if (null !== $image) {
                 $article->setImageUrl($image->getUrl());
             }
+
+            // this has to be last because it depends on the article properties
+            $article->setCategory($this->propertyMapper->mapCategory($v0->getCategory(), $number, $article));
 
             $i++;
             if ($limit !== -1 && $i === $limit) {
@@ -255,6 +257,10 @@ class ImportMapper
                 }
             }
         }
+        $name = trim($name);
+        if (substr($name, -2) === ' -') {
+            $name = substr($name, 0, strlen($name) - 2);
+        }
         return trim($name);
     }
 
@@ -275,7 +281,7 @@ class ImportMapper
             $variant->setActive($active);
             $variant->setAccepted($accepted);
 
-            $variant->setCode($importVariant->getNumber());
+            $variant->setCode($this->propertyMapper->mapVariantCode($importVariant->getNumber()));
             $variant->setEan($importVariant->getEan());
 
             $price = floatval(str_replace(',', '.', $importVariant->getPurchasePrice()));

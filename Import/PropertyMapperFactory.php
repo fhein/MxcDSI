@@ -13,6 +13,7 @@ class PropertyMapperFactory implements FactoryInterface
 
     /** @var LoggerInterface $log */
     protected $log;
+
     /**
      * Create an object
      *
@@ -23,32 +24,27 @@ class PropertyMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $this->log = $container->get('logger');
         $mappings = $container->get('config')['mappings'];
         $articleConfig = $this->getArticleConfiguration();
+        $log = $container->get('logger');
 
-        return new PropertyMapper($mappings->toArray(), $articleConfig);
+        return new PropertyMapper($mappings->toArray(), $articleConfig, $log);
     }
 
-    protected function getArticleConfiguration() {
-        $this->log->enter();
-        if ( ! file_exists($this->articleConfigFile)) {
-            $distributedFile = $this->articleConfigFile . '.dist';
-            if (file_exists($distributedFile)) {
-                $this->log->debug('Creating brand/supplier file from plugin distribution.');
-                copy($distributedFile, $this->articleConfigFile);
+    protected function getArticleConfiguration()
+    {
+        if (file_exists($this->articleConfigFile)) {
+            $fn = $this->articleConfigFile;
+        } else {
+            $distFile = $this->articleConfigFile . '.dist';
+            if (file_exists($distFile)) {
+                $fn = $distFile;
             } else {
-                $this->log->debug(sprintf(
-                    'Distributed brand/supplier %sfile missing. Nothing done.',
-                    $distributedFile
-                ));
                 return [];
             }
         }
-        /** @noinspection PhpIncludeInspection */
-        $articleConfig = include $this->articleConfigFile;
-        $this->log->leave();
-        return $articleConfig;
+        $config = include $fn;
+        return $config;
     }
-
 }
+

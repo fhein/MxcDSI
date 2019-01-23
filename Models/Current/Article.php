@@ -25,6 +25,12 @@ class Article extends ModelEntity  {
     private $code;
 
     /**
+     * @var string $code
+     * @ORM\Column(name="ic_code", type="string", nullable=false)
+     */
+    private $icCode;
+
+    /**
      * @var string $name
      * @ORM\Column(type="string", nullable=false)
      */
@@ -75,13 +81,13 @@ class Article extends ModelEntity  {
      * @ORM\Column(type="string", nullable=true)
      */
     private $supplier;
+
     /**
      * @var string $brand
      *
      * @ORM\Column(type="string", nullable=true)
      */
     private $brand;
-
     /**
      * @var ShopwareArticle
      * @ORM\OneToOne(targetEntity="Shopware\Models\Article\Article")
@@ -115,6 +121,7 @@ class Article extends ModelEntity  {
     {
         return $this->name;
     }
+
     /**
      * @param string $name
      */
@@ -142,7 +149,6 @@ class Article extends ModelEntity  {
     {
         $this->active = $active;
     }
-
     public function getVariants()
     {
         return $this->variants;
@@ -159,6 +165,7 @@ class Article extends ModelEntity  {
     public function setVariants($variants) {
         $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\Current\Variant', 'variants');
     }
+
     /**
      * @return string
      */
@@ -172,6 +179,22 @@ class Article extends ModelEntity  {
     public function setCode(string $code)
     {
         $this->code = $code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIcCode(): string
+    {
+        return $this->icCode;
+    }
+
+    /**
+     * @param string $icCode
+     */
+    public function setIcCode(string $icCode)
+    {
+        $this->icCode = $icCode;
     }
 
     /**

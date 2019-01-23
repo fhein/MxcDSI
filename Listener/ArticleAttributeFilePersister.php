@@ -39,10 +39,16 @@ class ArticleAttributeFilePersister extends ActionListener
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
         $this->log->enter();
-        $r = $this->modelManager->getRepository(Article::class);
-        /** @noinspection PhpUndefinedFieldInspection */
-        $config = $r->getSupplierBrand($this->config->innocigsBrands->toArray());
-        /** @noinspection PhpUndefinedFieldInspection */
+        $repository = $this->modelManager->getRepository(Article::class);
+
+        // update $article.config.php.dist
+        $config = $repository->getSuppliersAndBrandsDist();
+        $fn = $this->config->articleConfigFile . '.php';
+        Factory::toFile($fn, $config);
+        rename($fn, $this->config->articleConfigFile . '.dist');
+
+        // update $article.config.php
+        $config = $repository->getAllSuppliersAndBrands();
         Factory::toFile($this->config->articleConfigFile, $config);
         $this->log->leave();
     }

@@ -7,26 +7,62 @@ use MxcDropshipInnocigs\Models\BaseEntityRepository;
 
 class ArticleRepository extends BaseEntityRepository
 {
+    /** @var Query $supplierBrandByManufacturerQuery */
+    protected $supplierBrandByManufacturerQuery;
+
     /** @var Query $supplierBrandQuery */
     protected $supplierBrandQuery;
 
-    protected function getSupplierBrandQuery() {
+    protected $innocigsBrands = [
+        'SC',
+        'Steamax',
+        'InnoCigs',
+    ];
+
+    protected function getSupplierBrandBuilder() {
+        /** @noinspection PhpUnhandledExceptionInspection */
+        return $this->createQueryBuilder('a')
+            ->select('a.icCode, a.name, a.brand, a.supplier, a.category')
+            ->indexBy('a', 'a.icCode');
+    }
+
+    protected function getSupplierAndBrandAllQuery() {
         if ($this->supplierBrandQuery === null) {
-            /** @noinspection PhpUnhandledExceptionInspection */
-            $this->supplierBrandQuery = $this->getEntityManager()->createQueryBuilder()
-                ->select('a.code, a.name, a.brand, a.supplier')
-                ->from('MxcDropshipInnocigs\Models\Current\Article', 'a', 'a.code')
-                ->where('a.manufacturer IN (:manufacturers)')
-                ->getQuery();
+            $this->supplierBrandQuery = $this->getSupplierBrandBuilder()->getQuery();
         }
         return $this->supplierBrandQuery;
     }
 
-    public function getSupplierBrand($manufacturers) {
+    protected function getSupplierBrandByManufacturerQuery() {
+        if ($this->supplierBrandByManufacturerQuery === null) {
+            /** @noinspection PhpUnhandledExceptionInspection */
+            $this->supplierBrandByManufacturerQuery = $this->getSupplierBrandBuilder()
+                ->where('a.manufacturer IN (:manufacturers)')
+                ->getQuery();
+        }
+        return $this->supplierBrandByManufacturerQuery;
+    }
+
+    public function getSupplierAndBrandByManufacturer($manufacturers) {
         if (is_string($manufacturers)) {
             $manufacturers = [$manufacturers];
         }
-        $query = $this->getSupplierBrandQuery();
-        return $query->setParameter('manufacturers', $manufacturers)->getResult(Query::HYDRATE_ARRAY);
+        return $this->getSupplierBrandByManufacturerQuery()
+            ->setParameter('manufacturers', $manufacturers)
+            ->getResult(Query::HYDRATE_ARRAY);
+    }
+
+    public function getSuppliersAndBrandsDist() {
+        $result = $this->createQueryBuilder('a')
+            ->select('a.icCode, a.name, a.supplier, a.category')
+            ->indexBy('a', 'a.icCode')
+            ->where('a.manufacturer IN (:manufacturers)')
+            ->setParameter('manufacturers', $this->innocigsBrands)
+            ->getQuery()->getResult(Query::HYDRATE_ARRAY);
+        return array_merge($result, $this->getSupplierAndBrandByManufacturer('Akkus'));
+    }
+
+    public function getAllSuppliersAndBrands() {
+        return $this->getSupplierAndBrandAllQuery()->getResult(Query::HYDRATE_ARRAY);
     }
 }

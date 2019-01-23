@@ -40,12 +40,6 @@ return [
         ],
         DumpOnUninstall::class => [],
         ArticleAttributeFilePersister::class => [
-            'innocigsBrands' => [
-                'SC',
-                'Steamax',
-                'InnoCigs',
-                'Akkus'
-            ],
             'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
         ],
     ],
@@ -144,7 +138,31 @@ return [
     ],
     'mappings' => [
         'article_codes'     => [],
-        'arcticle_names'    => [],
+        'article_names'    => [
+            'Vampire Vape Applelicious - E-Zigaretten Liquid' => 'Vampire Vape - Applelicious - E-Zigaretten Liquid',
+
+            'Chubby Gorilla 30ML LDPE Unicorn Leerflasche' => 'Chubby Gorilla - LPDE Unicorn Leerflasche - 30 ml',
+            'Chubby Gorilla 60ML LDPE Unicorn Leerflasche' => 'Chubby Gorilla - LPDE Unicorn Leerflasche - 60 ml',
+
+            'Chubby Gorilla 10ML V3 PET Unicorn Leerflasche' => 'Chubby Gorilla - V3 PET Unicorn Leerflasche - 10 ml',
+            'Chubby Gorilla 30ML V3 PET Unicorn Leerflasche' => 'Chubby Gorilla - V3 PET Unicorn Leerflasche - 30 ml',
+            'Chubby Gorilla 60ML V3 PET Unicorn Leerflasche' => 'Chubby Gorilla - V3 PET Unicorn Leerflasche - 60 ml',
+            'Chubby Gorilla 100ML V3 PET Unicorn Leerflasche' => 'Chubby Gorilla - V3 PET Unicorn Leerflasche - 100 ml',
+            'Chubby Gorilla 120ML V3 PET Unicorn Leerflasche' => 'Chubby Gorilla - V3 PET Unicorn Leerflasche - 120 ml',
+            'Chubby Gorilla 200ML V3 PET Unicorn Leerflasche' => 'Chubby Gorilla - V3 PET Unicorn Leerflasche - 200 ml',
+
+            'Chubby Gorilla 30ML Stubby PET Unicorn Leerflasche' => 'Chubby Gorilla - Stubby PET Unicorn Leerflasche - 30 ml',
+            'Chubby Gorilla 75ML Stubby PET Unicorn Leerflasche' => 'Chubby Gorilla - Stubby PET Unicorn Leerflasche - 75 ml',
+        ],
+        'article_name_parts' => [
+            '50ml' => '50 ml',
+            '100ml' => '100 ml',
+            '10ml' => '10 ml',
+            '0mg/ml' => '0 mg/ml',
+            '30ML' => '30 ml',
+            '50 ml - 0 mg/ml' => '- 50 ml, 0 mg/ml',
+            '100 ml - 0 mg/ml' => '100 ml, 0 mg/ml',
+        ],
         'group_names' => [
             'STAERKE'       => 'Nikotinstärke',
             'WIDERSTAND'    => 'Widerstand',
@@ -153,7 +171,9 @@ return [
             'DURCHMESSER'   => 'Durchmesser',
             'GLAS'          => 'Glas',
         ],
-        'option_names'      => [],
+        'option_names'      => [
+            'minz-grün' => 'minzgrün',
+        ],
         'variant_codes'     => [],
         'manufacturers'     => [
             'Smok' => [
@@ -169,6 +189,9 @@ return [
                 'supplier' => 'Dexter\'s Juice Lab',
             ]
         ],
+        'categories' => [
+            'Alt > Joyetech 510-T > Zubehör' => 'Zubehör > Joyetech',
+        ]
     ],
     'import' => [
         'update' => [
