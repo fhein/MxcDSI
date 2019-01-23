@@ -12,7 +12,6 @@ namespace MxcDropshipInnocigs\Listener;
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Current\Article;
-use MxcDropshipInnocigs\Models\Mapping\ArticleSupplierBrandMapping;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 use Zend\Config\Factory;
@@ -24,21 +23,6 @@ class ArticleAttributeFilePersister extends ActionListener
      * @var ModelManager $modelManager
      */
     protected $modelManager;
-    protected $articles;
-
-    /**
-     * @var string $articleConfigFile
-     */
-    protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
-
-    protected $unusableCategories = [
-        109 => 'Zubehör > Aspire Zubehör > alte Aspire Zubehör Kategorien > Aspire Plato ',
-        110 => 'Zubehör > Aspire Zubehör > alte Aspire Zubehör Kategorien > Aspire Zubehör',
-        126 => 'Zubehör > InnoCigs Zubehör > alte InnoCigs Zubehör Kategorien > InnoCigs eGo One',
-        127 => 'Zubehör > InnoCigs Zubehör > alte InnoCigs Zubehör Kategorien > InnoCigs eGrip ',
-        128 => 'Zubehör > InnoCigs Zubehör > alte InnoCigs Zubehör Kategorien > InnoCigs eRoll-C',
-        129 => 'Zubehör > InnoCigs Zubehör > alte InnoCigs Zubehör Kategorien > InnoCigs eVic-VT',
-    ];
 
     /**
      * ArticleAttributeFilePersister constructor.
@@ -52,121 +36,14 @@ class ArticleAttributeFilePersister extends ActionListener
         $this->modelManager = $modelManager;
     }
 
-    public function createArticleConfiguration()
-    {
-        $this->log->enter();
-        $query = $this->modelManager->createQuery('DELETE FROM MxcDropshipInnocigs\Models\Mapping\ArticleSupplierBrandMapping');
-        $this->log->debug('Delete mapping: ' . $query->getDQL());
-        $query->execute();
-
-        foreach ($this->articles as $article) {
-            $entry = ArticleSupplierBrandMapping::fromArticle($article);
-            $this->modelManager->persist($entry);
-        }
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
-        $this->log->debug('Brand/supplier information saved to ' . $this->articleConfigFile);
-        $this->log->leave();
-    }
-
-    public function createListOfDefectArticles() {
-        $config = [];
-        foreach ($this->articles as $article) {
-            /** @var Article $article */
-            $category = $article->getCategory();
-            if ($category === null || $category === '') {
-                $config['defects']['ic_api']['article']['category_missing'][$article->getCode()] = $article->getName();
-            }
-            foreach($this->unusableCategories as $uCategory) {
-                if ($category === $uCategory) {
-                    $config['defects']['ic_api']['article']['category_unusable'][$article->getCode()] =
-                        [
-                            'name' => $article->getName(),
-                            'category' => $uCategory,
-                        ];
-                }
-            }
-            if ($article->getManufacturer() === 'Smok') {
-                $config['defects']['ic_api']['article']['manufacturer_wrong'][$article->getCode()] = [
-                    'name' => $article->getName(),
-                    'manufacturer_from_api' => $article->getManufacturer(),
-                    'manufacturer_correct' => $article->getBrand(),
-                ];
-            }
-            if ($article->getManufacturer() !== $article->getBrand()) {
-                $config['defects']['ic_api']['article']['manufacturer_different'][$article->getCode()] = [
-                    'name' => $article->getName(),
-                    'manufacturer' => $article->getManufacturer(),
-                    'brand' => $article->getBrand(),
-                ];
-            }
-        }
-        Factory::toFile(__DIR__ . '/../Config/article.defects.php', $config);
-    }
-
-    public function createCategoryList() {
-        $config = [];
-        foreach($this->articles as $article)  {
-            /** @var Article $article */
-            $config[$article->getCategory()] = true;
-        }
-        $tmp = array_keys($config);
-        sort($tmp);
-        $config = [
-            'categories' => $tmp
-        ];
-        Factory::toFile(__DIR__ . '/../Config/categories.dump.php', $config);
-    }
-
-    public function installArticleConfiguration() {
-        $this->log->enter();
-        if (! file_exists($this->articleConfigFile)) {
-            $distributedFile = $this->articleConfigFile . '.dist';
-            if (file_exists($distributedFile)) {
-                $this->log->debug('Creating brand/supplier file from plugin distribution.');
-                copy($distributedFile, $this->articleConfigFile);
-            } else {
-                $this->log->debug(sprintf(
-                    'Distributed brand/supplier %sfile missing. Nothing done.',
-                    $distributedFile
-                ));
-            }
-        } else {
-            $this->log->debug(sprintf(
-                'Brand/supplier file %s already present. Nothing done.',
-                $this->articleConfigFile
-            ));
-        }
-        $this->log->leave();
-    }
-
-    public function install(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e) {
-        $this->installArticleConfiguration();
-    }
-
-    public function dumpInnocigsBrandsAndAkkus() {
-        $r = $this->modelManager->getRepository(Article::class);
-        $akkus = $r->createQueryBuilder('a')
-            ->select('a.code')
-            ->where('a.manufacturer = \'Akkus\'')
-            ->getQuery()
-            ->getScalarResult();
-        $config['akkus'] = array_column($akkus, 'code');;
-        $innocigs = $r->createQueryBuilder('a')
-            ->select('a.code')
-            ->where('a.manufacturer IN (\'InnoCigs\', \'Steamax\', \'SC\')')
-            ->getQuery()
-            ->getScalarResult();
-        $config['innocigs'] = array_column($innocigs, 'code');
-        Factory::toFile(__DIR__ . '/../Config/ia.dump.php', $config);
-    }
-
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
-        $this->articles = $this->modelManager->getRepository(Article::class)->findAll();
-        $this->createArticleConfiguration();
-        $this->createListOfDefectArticles();
-        $this->dumpInnocigsBrandsAndAkkus();
-        $this->createCategoryList();
+        $this->log->enter();
+        $r = $this->modelManager->getRepository(Article::class);
+        /** @noinspection PhpUndefinedFieldInspection */
+        $config = $r->getSupplierBrand($this->config->innocigsBrands->toArray());
+        /** @noinspection PhpUndefinedFieldInspection */
+        Factory::toFile($this->config->articleConfigFile, $config);
+        $this->log->leave();
     }
 }

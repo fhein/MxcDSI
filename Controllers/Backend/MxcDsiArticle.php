@@ -2,8 +2,8 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use Mxc\Shopware\Plugin\Database\SchemaManager;
+use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\ImportModifier;
-use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Current\Article;
@@ -19,7 +19,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
          * @var \Shopware\Components\Model\ModelManager $modelManager
          */
         try {
-            $icClient = $this->services->get(InnocigsClient::class);
+            $icClient = $this->services->get(ImportMapper::class);
             if ($icClient === null) {
                 $this->log->err('ICClient is null.');
             }
@@ -47,7 +47,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->enter();
         try {
             $sm = $this->services->get(SchemaManager::class);
-            $client = $this->services->get(InnocigsClient::class);
+            $client = $this->services->get(ImportMapper::class);
 
             // $client->createConfiguratorConfiguration();
 

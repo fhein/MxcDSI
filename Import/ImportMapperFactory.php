@@ -5,10 +5,9 @@ namespace MxcDropshipInnocigs\Import;
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use MxcDropshipInnocigs\Client\ApiClient;
-use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class InnocigsClientFactory implements FactoryInterface
+class ImportMapperFactory implements FactoryInterface
 {
     use ClassConfigTrait;
     /**
@@ -28,6 +27,6 @@ class InnocigsClientFactory implements FactoryInterface
         $modelManager = $container->get('modelManager');
         $importModifier = $container->get(ImportModifier::class);
         $propertyMapper = $container->get(PropertyMapper::class);
-        return new InnocigsClient($modelManager, $apiClient, $importClient, $propertyMapper, $importModifier, $config, $log);
+        return new ImportMapper($modelManager, $apiClient, $importClient, $propertyMapper, $importModifier, $config, $log);
     }
 }

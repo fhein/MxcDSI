@@ -4,17 +4,17 @@ namespace MxcDropshipInnocigs;
 
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
-use MxcDropshipInnocigs\Import\ImportBase;
 use MxcDropshipInnocigs\Import\ImportClient;
+use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\ImportModifier;
-use MxcDropshipInnocigs\Import\InnocigsClient;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
+use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
+use MxcDropshipInnocigs\Listener\DumpOnUninstall;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
-use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Models\Current\Article;
 use MxcDropshipInnocigs\Models\Current\Group;
 use MxcDropshipInnocigs\Models\Current\Image;
@@ -25,7 +25,6 @@ use MxcDropshipInnocigs\Models\Import\ImportGroup;
 use MxcDropshipInnocigs\Models\Import\ImportImage;
 use MxcDropshipInnocigs\Models\Import\ImportOption;
 use MxcDropshipInnocigs\Models\Import\ImportVariant;
-use MxcDropshipInnocigs\Models\Mapping\ArticleSupplierBrandMapping;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
@@ -39,7 +38,16 @@ return [
                 'deactivate' => [],
             ],
         ],
-        ArticleAttributeFilePersister::class => [],
+        DumpOnUninstall::class => [],
+        ArticleAttributeFilePersister::class => [
+            'innocigsBrands' => [
+                'SC',
+                'Steamax',
+                'InnoCigs',
+                'Akkus'
+            ],
+            'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
+        ],
     ],
     'doctrine' => [
         'models' => [
@@ -53,7 +61,6 @@ return [
             ImportGroup::class,
             ImportOption::class,
             ImportImage::class,
-            ArticleSupplierBrandMapping::class,
         ],
         'attributes' => [
             's_articles_attributes' => [
@@ -123,7 +130,7 @@ return [
             ConfiguratorSetRepository::class,
             FilterGroupRepository::class,
             ImportClient::class,
-            InnocigsClient::class,
+            ImportMapper::class,
             FilterTest::class,
             PropertyMapper::class,
             FilterGroupRepository::class,
@@ -132,6 +139,7 @@ return [
             InnocigsEntityValidator::class,
             ImportModifier::class,
             ArticleAttributeFilePersister::class,
+            DumpOnUninstall::class,
         ],
     ],
     'mappings' => [
@@ -209,13 +217,9 @@ return [
         ],
     ],
     'class_config' => [
-        InnocigsClient::class => [
-            'useArticleConfiguration' => true,
+        ImportMapper::class => [
             'numberOfArticles' => -1,
             'applyFilters' => true,
-        ],
-        ImportBase::class => [
-            'numberOfArticles' => -1,
         ],
         ImportClient::class => [
             'numberOfArticles' => -1,

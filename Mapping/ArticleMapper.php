@@ -6,7 +6,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
 use Exception;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Import\InnocigsClient;
+use MxcDropshipInnocigs\Import\ImportMapper;
+use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Models\Current\Article;
 use MxcDropshipInnocigs\Models\Current\Variant;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
@@ -37,7 +38,7 @@ class ArticleMapper
     protected $propertyMapper;
 
     /**
-     * @var InnocigsClient $client
+     * @var ImportMapper $client
      */
     protected $client;
     /**
@@ -62,7 +63,7 @@ class ArticleMapper
         ArticleOptionMapper $optionMapper,
         PropertyMapper $propertyMapper,
         MediaTool $mediaTool,
-        InnocigsClient $client,
+        ImportMapper $client,
         InnocigsEntityValidator $validator,
         LoggerInterface $log)
     {
@@ -181,7 +182,7 @@ class ArticleMapper
             }
             $icArticle = $variant->getArticle();
             /** @noinspection PhpUndefinedMethodInspection */
-            $attribute->setMxcDsiBrand($this->propertyMapper->mapManufacturer($icArticle->getBrand()));
+            $attribute->setMxcDsiBrand($icArticle->getBrand());
         } else {
             throw new Exception(__FUNCTION__ . ': Shopware article attribute model does not exist.');
         }

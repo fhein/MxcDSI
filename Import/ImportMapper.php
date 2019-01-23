@@ -6,7 +6,6 @@ use Doctrine\Common\Collections\Collection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
-use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Models\Current\Article;
 use MxcDropshipInnocigs\Models\Current\Group;
 use MxcDropshipInnocigs\Models\Current\Image;
@@ -20,11 +19,8 @@ use MxcDropshipInnocigs\Models\Import\ImportVariant;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
-class InnocigsClient
+class ImportMapper
 {
-    /** @var string $articleConfigFile */
-    protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
-
     /** @var ApiClient $apiClient */
     protected $apiClient;
 
@@ -45,9 +41,6 @@ class InnocigsClient
 
     /** @var ModelManager $modelManager */
     protected $modelManager;
-
-    /** @var array $articleConfig */
-    protected $articleConfig = [];
 
     /** @var Config $config */
     protected $config;
@@ -71,7 +64,7 @@ class InnocigsClient
     ];
 
     /**
-     * InnocigsClient constructor.
+     * ImportMapper constructor.
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
@@ -178,19 +171,6 @@ class InnocigsClient
         }
     }
 
-    protected function getBrandSupplier(string $number, string $manufacturer) {
-        $bs = $this->propertyMapper->mapManufacturer($manufacturer);
-        $this->log->debug('BS from PropertyMapper' . var_export($bs, true));
-//        if (! isset($bs['brand'])) {
-//            $bs['brand'] = $this->articleConfig[$number]['brand'] ?? '';
-//        }
-//        if (! isset($bs['supplier'])) {
-//            $bs['supplier'] = $this->articleConfig[$number]['supplier'] ?? '';
-//        }
-        $this->log->debug('BS after addon: ' . var_export($bs, true));
-        return $bs;
-    }
-
     protected function createArticles($importArticles, int $limit = -1)
     {
         $i = 0;
@@ -217,7 +197,7 @@ class InnocigsClient
             $article->setName($name);
             $image = $v0->getImage();
 
-            $bs = $this->getBrandSupplier($number, $v0->getManufacturer());
+            $bs = $this->propertyMapper->mapManufacturer($number, $v0->getManufacturer());
             $article->setBrand($bs['brand']);
             $article->setSupplier($bs['supplier']);
 
@@ -317,16 +297,6 @@ class InnocigsClient
         }
     }
 
-    protected function readArticleConfiguration() {
-        $this->articleConfig = [];
-//        $query = $this->modelManager->createQuery('SELECT m FROM MxcDropshipInnocigs\Models\Mapping\ArticleSupplierBrandMapping m INDEX BY m.code');
-//        $config = $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
-        if (file_exists($this->articleConfigFile)) {
-            /** @noinspection PhpIncludeInspection */
-            $this->articleConfig = include $this->articleConfigFile;
-        }
-    }
-
     public function import()
     {
         $this->log->enter();
@@ -336,10 +306,6 @@ class InnocigsClient
         if ($articleRepository->count() === 0) {
             if ($importArticleRepository->count() === 0) {
                 $this->importClient->import();
-            }
-            /** @noinspection PhpUndefinedFieldInspection */
-            if (true === $this->config->useArticleConfiguration) {
-                $this->readArticleConfiguration();
             }
 
             $groups = $this->modelManager->getRepository(ImportGroup::class)->findAll();

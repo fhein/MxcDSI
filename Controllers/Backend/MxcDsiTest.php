@@ -1,7 +1,7 @@
 <?php
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use MxcDropshipInnocigs\Import\InnocigsClient;
+use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Models\Current\Group;
 
 class Shopware_Controllers_Backend_MxcDsiTest extends BackendApplicationController
@@ -15,7 +15,7 @@ class Shopware_Controllers_Backend_MxcDsiTest extends BackendApplicationControll
          * @var \Shopware\Components\Model\ModelManager $modelManager
          */
         try {
-            $this->services->get(InnocigsClient::class)->import();
+            $this->services->get(ImportMapper::class)->import();
             parent::indexAction();
         } catch (Throwable $e) {
             $this->log->except($e);

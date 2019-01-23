@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Models\Current\Article;
 use MxcDropshipInnocigs\Models\Current\Group;
 use MxcDropshipInnocigs\Models\Current\Variant;

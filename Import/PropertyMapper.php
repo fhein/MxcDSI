@@ -6,7 +6,7 @@
  * Time: 15:11
  */
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Import;
 
 
 use MxcDropshipInnocigs\Models\Current\Article;
@@ -15,14 +15,20 @@ class PropertyMapper
 {
     private $mappings;
 
+    /** @var array $articleConfig */
+    protected $articleConfig;
+
+    /** @var array $innocigsBrands */
     private $innocigsBrands = [
         'SC',
         'Steamax',
-        'InnoCigs'
+        'InnoCigs',
+        'Akkus'
     ];
 
-    public function __construct(array $mappings) {
+    public function __construct(array $mappings, array $articleConfig ) {
         $this->mappings = $mappings;
+        $this->articleConfig = $articleConfig;
     }
 
     public function mapArticleName($name) {
@@ -91,18 +97,20 @@ class PropertyMapper
         return $name;
     }
 
-    public function mapManufacturer($name)
+    public function mapManufacturer($number, $name)
     {
         $name = trim($name);
+        $result = $this->articleConfig[$number];
         if ($name === 'Akkus') {
-            return [];
+            return $result;
         }
-        if (isset($this->mappings['manufacturers'][$name])) {
-            return $this->mappings['manufacturers'][$name];
+        if (! isset($result['brand'])) {
+            $result['brand'] = $this->mappings['manufacturers'][$name]['brand'] ?? $name;
         }
-        $result ['brand' ] = $name;
-        if (! in_array($name, $this->innocigsBrands)) {
-            $result['supplier'] = $name;
+        if (! isset($result['supplier'])) {
+            if (! in_array($name, $this->innocigsBrands)) {
+                $result['supplier'] = $this->mappings['manufacturers'][$name]['supplier'] ?? $name;
+            }
         }
         return $result;
     }
