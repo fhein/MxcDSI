@@ -15,10 +15,20 @@ use Zend\Config\Config;
 
 class ImportClient extends ImportBase
 {
-    /**
-     * @var ModelManager $modelManager
-     */
+    /** @var ModelManager $modelManager */
     protected $modelManager;
+
+    protected $articleRepository;
+    protected $variantRepository;
+    protected $groupRepository;
+    protected $optionRepository;
+    protected $imageRepository;
+
+    protected $articles;
+    protected $variants;
+    protected $groups;
+    protected $options;
+    protected $images;
 
     /**
      * ImportBase constructor.
@@ -36,11 +46,23 @@ class ImportClient extends ImportBase
     ) {
         parent::__construct($apiClient, $config, $log);
         $this->modelManager = $modelManager;
+        $this->articleRepository = $modelManager->getRepository(ImportArticle::class);
+        $this->variantRepository = $modelManager->getRepository(ImportVariant::class);
+        $this->groupRepository = $modelManager->getRepository(ImportGroup::class);
+        $this->optionRepository = $modelManager->getRepository(ImportOption::class);
+        $this->imageRepository = $modelManager->getRepository(ImportImage::class);
     }
 
     public function import()
     {
         parent::import();
+
+        $this->articles = $this->articleRepository->getAllIndexed();
+        $this->variants = $this->variantRepository->getAllIndexed();
+        $this->groups = $this->groupRepository->getAllIndexed();
+        //$this->options = $this->optionRepository->getAllIndexed();
+        $this->images = $this->imageRepository->getAllIndexed();
+
         /** @noinspection PhpUndefinedFieldInspection */
         $limit = $this->config->numberOfArticles ?? -1;
         $this->createGroups();
@@ -50,9 +72,13 @@ class ImportClient extends ImportBase
 
     protected function createArticles(int $limit = -1)
     {
+
         $i = 0;
         foreach ($this->import as $number => $data) {
-            $article = new ImportArticle();
+            $article = $this->articleRepository->findOneBy(['number' => $number]) ?? new ImportArticle();
+            $this->modelManager->persist($article);
+            $article->getVariants()->clear();
+
             $this->createVariants($article, $data);
             $article->setNumber($number);
             // this cascades persisting the variants also
@@ -67,7 +93,12 @@ class ImportClient extends ImportBase
     protected function createVariants(ImportArticle $article, array $variants)
     {
         foreach ($variants as $number => $data) {
-            $variant = new ImportVariant();
+            $variant = $this->variantRepository->findOneBy(['number' => $number]) ?? new ImportVariant();
+            $this->modelManager->persist($variant);
+
+            $variant->getOptions()->clear();
+            $variant->getAdditionalImages()->clear();
+
             $this->setVariant($variant, $number, $data);
             $article->addVariant($variant);
         }
@@ -119,7 +150,10 @@ class ImportClient extends ImportBase
     protected function createGroups()
     {
         foreach ($this->items['groups'] as $groupName => $options) {
-            $group = new ImportGroup();
+            $group = $this->groupRepository->findOneBy(['name' => $groupName]) ?? new ImportGroup();
+            $this->modelManager->persist($group);
+            $group->getOptions()->clear();
+
             $group->setName($groupName);
             $this->createOptions($group, array_keys($options));
             // this cascades persisting the options also
@@ -130,10 +164,18 @@ class ImportClient extends ImportBase
     protected function createOptions(ImportGroup $group, $options)
     {
         foreach ($options as $optionName) {
-            $option = new ImportOption();
+            $groupName = $group->getName();
+            $option = $this->optionRepository->findOption($groupName, $optionName);
+            $this->log->debug('Find option returned ' . is_object($option) ? get_class($option) : gettype($option));
+            if ($option === null) {
+                $option = new ImportOption();
+            }
+            $this->modelManager->persist($option);
+
+            $this->items['groups'][$groupName][$optionName] = $option;
+
             $option->setName($optionName);
             $group->addOption($option);
-            $this->items['groups'][$group->getName()][$optionName] = $option;
         }
     }
 }

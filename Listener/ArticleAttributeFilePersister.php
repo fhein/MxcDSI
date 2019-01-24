@@ -43,13 +43,20 @@ class ArticleAttributeFilePersister extends ActionListener
 
         // update $article.config.php.dist
         $config = $repository->getSuppliersAndBrandsDist();
-        $fn = $this->config->articleConfigFile . '.php';
-        Factory::toFile($fn, $config);
-        rename($fn, $this->config->articleConfigFile . '.dist');
+        if (! empty($config)) {
+            /** @noinspection PhpUndefinedFieldInspection */
+            $fn = $this->config->articleConfigFile . '.php';
+            Factory::toFile($fn, $config);
+            /** @noinspection PhpUndefinedFieldInspection */
+            rename($fn, $this->config->articleConfigFile . '.dist');
+        }
 
         // update $article.config.php
         $config = $repository->getAllSuppliersAndBrands();
-        Factory::toFile($this->config->articleConfigFile, $config);
+        if (! empty($config)) {
+            /** @noinspection PhpUndefinedFieldInspection */
+            Factory::toFile($this->config->articleConfigFile, $config);
+        }
         $this->log->leave();
     }
 }

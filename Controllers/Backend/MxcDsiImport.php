@@ -27,5 +27,4 @@ class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationContro
         $data['variants'] = [];
         return $data;
     }
-
 }

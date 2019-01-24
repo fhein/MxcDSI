@@ -4,13 +4,13 @@ namespace MxcDropshipInnocigs\Models\Import;
 
 use MxcDropshipInnocigs\Models\BaseEntityRepository;
 
-class ImportArticleRepository extends BaseEntityRepository
+class ImportGroupRepository extends BaseEntityRepository
 {
     public function getAllIndexed() {
         /** @noinspection PhpUnhandledExceptionInspection */
-        return $this->createQueryBuilder('a')
-            -> select('a')
-            -> indexBy('a', 'a.number')
+        return $this->createQueryBuilder('g')
+            -> select('g')
+            -> indexBy('g', 'g.name')
             -> getQuery()
             ->getResult();
     }

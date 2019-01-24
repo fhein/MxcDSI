@@ -12,6 +12,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_option_import")
+ * @ORM\Entity(repositoryClass="ImportOptionRepository")
  */
 class ImportOption extends ModelEntity  {
 

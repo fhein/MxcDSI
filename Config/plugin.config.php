@@ -2,6 +2,7 @@
 
 namespace MxcDropshipInnocigs;
 
+use Doctrine\ORM\Events;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
@@ -25,6 +26,11 @@ use MxcDropshipInnocigs\Models\Import\ImportGroup;
 use MxcDropshipInnocigs\Models\Import\ImportImage;
 use MxcDropshipInnocigs\Models\Import\ImportOption;
 use MxcDropshipInnocigs\Models\Import\ImportVariant;
+use MxcDropshipInnocigs\Subscriber\ImportArticleSubscriber;
+use MxcDropshipInnocigs\Subscriber\ImportGroupSubscriber;
+use MxcDropshipInnocigs\Subscriber\ImportImageSubscriber;
+use MxcDropshipInnocigs\Subscriber\ImportOptionSubscriber;
+use MxcDropshipInnocigs\Subscriber\ImportVariantSubscriber;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
@@ -102,14 +108,44 @@ return [
                 ],
             ],
         ],
-//        'listeners' => [
-//            InnocigsArticleSubscriber::class => [
-//                'model' => ImportArticle::class,
-//                'events' => [
-//                    Events::preUpdate,
-//                ],
-//            ],
-//        ]
+        'listeners' => [
+            ImportArticleSubscriber::class => [
+                'model' => ImportArticle::class,
+                'events' => [
+                    Events::prePersist,
+                    Events::preUpdate,
+                ],
+            ],
+            ImportVariantSubscriber::class => [
+                'model' => ImportVariant::class,
+                'events' => [
+                    Events::prePersist,
+                    Events::preUpdate,
+                ],
+            ],
+            ImportGroupSubscriber::class => [
+                'model' => ImportGroup::class,
+                'events' => [
+                    Events::prePersist,
+                    Events::preUpdate,
+                ],
+            ],
+            ImportOptionSubscriber::class => [
+                'model' => ImportOption::class,
+                'events' => [
+                    Events::prePersist,
+                    Events::preUpdate,
+                ],
+            ],
+            ImportImageSubscriber::class => [
+                'model' => ImportImage::class,
+                'events' => [
+                    Events::prePersist,
+                    Events::preUpdate,
+                ],
+            ],
+
+        ]
     ],
     'filters' => [
 
@@ -262,11 +298,11 @@ return [
     ],
     'class_config' => [
         ImportMapper::class => [
-            'numberOfArticles' => -1,
+            'numberOfArticles' => 10,
             'applyFilters' => true,
         ],
         ImportClient::class => [
-            'numberOfArticles' => -1,
+            'numberOfArticles' => 10,
         ]
     ],
 ];

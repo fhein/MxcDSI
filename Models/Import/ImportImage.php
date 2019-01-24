@@ -10,6 +10,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_image_import")
+ * @ORM\Entity(repositoryClass="ImportImageRepository")
  */
 class ImportImage extends ModelEntity
 {

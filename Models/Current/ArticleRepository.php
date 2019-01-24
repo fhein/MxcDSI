@@ -53,6 +53,7 @@ class ArticleRepository extends BaseEntityRepository
     }
 
     public function getSuppliersAndBrandsDist() {
+        /** @noinspection PhpUnhandledExceptionInspection */
         $result = $this->createQueryBuilder('a')
             ->select('a.icCode, a.name, a.supplier, a.category')
             ->indexBy('a', 'a.icCode')

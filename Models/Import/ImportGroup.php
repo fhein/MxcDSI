@@ -13,6 +13,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_group_import")
+ * @ORM\Entity(repositoryClass="ImportGroupRepository")
  */
 class ImportGroup extends ModelEntity  {
 

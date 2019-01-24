@@ -43,6 +43,7 @@ class PropertyMapperFactory implements FactoryInterface
                 return [];
             }
         }
+        /** @noinspection PhpIncludeInspection */
         $config = include $fn;
         return $config;
     }
