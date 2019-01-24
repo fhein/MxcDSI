@@ -63,8 +63,11 @@ class ImportBase
                 $this->items['groups'][$group][$option] = true;
             }
             $this->items['images'][$item['PRODUCTS_IMAGE']] = true;
+            if (is_string($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])) {
+                $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'] = [$item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']];
+            }
             foreach ($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'] as $image) {
-                    $this->items['images'][$image] = true;
+                $this->items['images'][$image] = true;
             }
             if ($limit !== -1 && count($this->import) === $limit) {
                 break;
