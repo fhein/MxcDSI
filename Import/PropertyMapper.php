@@ -38,8 +38,8 @@ class PropertyMapper
     public function mapArticleName(string $name, string $index, Article $article)
     {
         // article configuration has highest priority
-        $result = $this->articleConfig[$index]['name'];
-        if ($result !== null) return $result;
+//        $result = $this->articleConfig[$index]['name'];
+//        if ($result !== null) return $result;
 
         // general name mapping applies next
         $result = $this->mappings['article_names'][$name];
@@ -50,9 +50,10 @@ class PropertyMapper
         if ($brand && in_array($brand, $this->innocigsBrands) && (strpos($name, $brand) !== 0)) {
             $name = $brand . ' ' . $name;
         }
-        if ($brand === 'asMODus') {
-            $name = str_replace('AsMODus', 'asMODus', $name);
-        }
+        $parts = $this->mappings['article_name_parts'];
+        $search = array_keys($parts);
+        $replace = array_values($parts);
+        $name = str_replace($search, $replace, $name);
         return $name;
     }
 
