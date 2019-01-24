@@ -3,7 +3,6 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Models\Current\Article;
 use MxcDropshipInnocigs\Models\Current\Group;
 use MxcDropshipInnocigs\Models\Current\Variant;
@@ -12,25 +11,16 @@ use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
 
 class ArticleOptionMapper
 {
-    /**
-     * @var LoggerInterface $log
-     */
+    /** @var LoggerInterface $log */
     protected $log;
-    /**
-     * @var GroupRepository $groupRepository
-     */
+
+    /** @var GroupRepository $groupRepository */
     protected $groupRepository;
-    /**
-     * @var SetRepository $setRepository
-     */
+
+    /** @var SetRepository $setRepository */
     protected $setRepository;
-    /**
-     * @var PropertyMapper $mapper
-     */
-    protected $mapper;
-    /**
-     * @var InnocigsEntityValidator $validator
-     */
+
+    /** @var InnocigsEntityValidator $validator */
     protected $validator;
 
     /**
@@ -38,21 +28,18 @@ class ArticleOptionMapper
      *
      * @param GroupRepository $groupRepository
      * @param SetRepository $setRepository
-     * @param PropertyMapper $mapper
      * @param InnocigsEntityValidator $validator
      * @param LoggerInterface $log
      */
     public function __construct(
         GroupRepository $groupRepository,
         SetRepository $setRepository,
-        PropertyMapper $mapper,
         InnocigsEntityValidator $validator,
         LoggerInterface $log
     ) {
         $this->log = $log;
         $this->groupRepository = $groupRepository;
         $this->setRepository = $setRepository;
-        $this->mapper = $mapper;
         $this->validator = $validator;
     }
 
@@ -74,14 +61,14 @@ class ArticleOptionMapper
                  * @var Group $icGroup
                  */
                 $icGroup = $icOption->getIcGroup();
-                $icGroupName = $icGroup->getName();
-                $icOptionName = $icOption->getName();
+                $groupName = $icGroup->getName();
+                $optionName = $icOption->getName();
 
                 $this->log->debug(sprintf('ImportVariant %s (%s) has option %s from group %s.',
                     $icVariant->getCode(),
                     $icVariant->getId(),
-                    $icOptionName,
-                    $icGroupName
+                    $optionName,
+                    $groupName
                 ));
 
                 // A valid variant may hold options which are ignored. Skip variants with ignored options.
@@ -89,24 +76,22 @@ class ArticleOptionMapper
                     $this->log->debug('Named option does not validate. ImportVariant ignored.');
                     continue 2;
                 }
-                $swGroupName =  $this->mapper->mapGroupName($icGroupName);
-                $swOptionName = $this->mapper->mapOptionName($icOptionName);
-                $groupOptions[$swGroupName][$swOptionName][] = $icVariant;
+                $groupOptions[$groupName][$optionName][] = $icVariant;
             }
         }
-        foreach ($groupOptions as $swGroupName => $options) {
+        foreach ($groupOptions as $groupName => $options) {
             // Because some variants may be set to be ignored (accepted = false) there is a chance that we have
             // groups with just a single option. We do not apply such groups, because selecting from a single
             // choice is not meaningful.
             if (count($options) <  2) {
                 $this->log->notice(sprintf('Skipping creation/update of group %s because there are less than two options available.',
-                    $swGroupName
+                    $groupName
                 ));
                 continue;
             }
-            foreach ($options as $swOptionName => $icVariants) {
-                $this->groupRepository->createGroup($swGroupName);
-                $swOption = $this->groupRepository->createOption($swGroupName, $swOptionName);
+            foreach ($options as $optionName => $icVariants) {
+                $this->groupRepository->createGroup($groupName);
+                $swOption = $this->groupRepository->createOption($groupName, $optionName);
                 foreach ($icVariants as $icVariant) {
                     $icVariant->addShopwareOption($swOption);
                     $this->log->notice(sprintf('Adding shopware option %s (id: %s) to variant %s (id: %s).',
@@ -159,7 +144,7 @@ class ArticleOptionMapper
 
         $this->createShopwareGroupsAndOptions($variants);
 
-        $name = 'mxc-set-' . $this->mapper->mapArticleCode($icArticle->getCode());
+        $name = 'mxc-set-' . $icArticle->getCode();
         $this->log->info(sprintf('%s: Creating configurator set %s for InnoCigs ImportArticle %s.',
             __FUNCTION__,
             $name,

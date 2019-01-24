@@ -7,7 +7,6 @@ use Doctrine\Common\Collections\Criteria;
 use Exception;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ImportMapper;
-use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Models\Current\Article;
 use MxcDropshipInnocigs\Models\Current\Variant;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
@@ -33,11 +32,6 @@ class ArticleMapper
     protected $optionMapper;
 
     /**
-     * @var PropertyMapper $propertyMapper
-     */
-    protected $propertyMapper;
-
-    /**
      * @var ImportMapper $client
      */
     protected $client;
@@ -61,7 +55,6 @@ class ArticleMapper
     public function __construct(
         ModelManager $modelManager,
         ArticleOptionMapper $optionMapper,
-        PropertyMapper $propertyMapper,
         MediaTool $mediaTool,
         ImportMapper $client,
         InnocigsEntityValidator $validator,
@@ -69,7 +62,6 @@ class ArticleMapper
     {
         $this->modelManager = $modelManager;
         $this->optionMapper = $optionMapper;
-        $this->propertyMapper = $propertyMapper;
         $this->mediaTool = $mediaTool;
         $this->client = $client;
         $this->validator = $validator;
@@ -86,7 +78,7 @@ class ArticleMapper
         $swArticle = $this->getShopwareArticle($article) ?? new ShopwareArticle();
         $this->modelManager->persist($swArticle);
 
-        $name = $this->propertyMapper->mapArticleName($article->getName());
+        $name = $article->getName();
 
         // this will get the product detail record from InnoCigs which can hold a description
         $this->client->addArticleDetail($article);
@@ -119,7 +111,7 @@ class ArticleMapper
             /**
              * @var Detail $swDetail
              */
-            $code = $this->propertyMapper->mapVariantCode($variant->getCode());
+            $code = $variant->getCode();
             $swDetail = $this->modelManager->getRepository(Detail::class)->findOneBy([ 'number' => $code ])
                 ?? $this->createShopwareDetail($variant, $swArticle, $isMainDetail);
 
@@ -147,7 +139,7 @@ class ArticleMapper
         $variants = $article->getVariants();
         $codes = [];
         foreach ($variants as $variant) {
-            $codes[] = $this->propertyMapper->mapVariantCode($variant->getCode());
+            $codes[] = $variant->getCode();
         }
         $expr = Criteria::expr();
         /**
@@ -187,7 +179,7 @@ class ArticleMapper
             throw new Exception(__FUNCTION__ . ': Shopware article attribute model does not exist.');
         }
 
-        $detail->setNumber($this->propertyMapper->mapVariantCode($variant->getCode()));
+        $detail->setNumber($variant->getCode());
         $detail->setEan($variant->getEan());
         $detail->setStockMin(0);
         $detail->setSupplierNumber('');
