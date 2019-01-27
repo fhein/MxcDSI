@@ -1,7 +1,7 @@
 <?php
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use MxcDropshipInnocigs\Import\ImportMapper;
+use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Models\Current\Group;
 
 class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationController
@@ -15,7 +15,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
          * @var \Shopware\Components\Model\ModelManager $modelManager
          */
         try {
-            $this->services->get(ImportMapper::class)->import();
+            $this->services->get(ImportClient::class)->import();
             parent::indexAction();
         } catch (Throwable $e) {
             $this->log->except($e);
