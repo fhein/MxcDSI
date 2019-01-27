@@ -1,10 +1,10 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models\Import;
+namespace MxcDropshipInnocigs\Models\Current;
 
 use MxcDropshipInnocigs\Models\BaseEntityRepository;
 
-class ImportVariantRepository extends BaseEntityRepository
+class VariantRepository extends BaseEntityRepository
 {
     public function getAllIndexed() {
         /** @noinspection PhpUnhandledExceptionInspection */

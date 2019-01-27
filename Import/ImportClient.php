@@ -2,180 +2,146 @@
 
 namespace MxcDropshipInnocigs\Import;
 
+use Doctrine\Common\EventSubscriber;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
-use MxcDropshipInnocigs\Exception\InvalidArgumentException;
-use MxcDropshipInnocigs\Models\Import\ImportArticle;
-use MxcDropshipInnocigs\Models\Import\ImportGroup;
-use MxcDropshipInnocigs\Models\Import\ImportImage;
-use MxcDropshipInnocigs\Models\Import\ImportOption;
-use MxcDropshipInnocigs\Models\Import\ImportVariant;
+use MxcDropshipInnocigs\Models\Import\Model;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
-class ImportClient extends ImportBase
+class ImportClient extends ImportBase implements EventSubscriber
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;
 
-    protected $articleRepository;
-    protected $variantRepository;
-    protected $groupRepository;
-    protected $optionRepository;
-    protected $imageRepository;
+    /** @var ImportMapper $importMapper */
+    protected $importMapper;
 
-    protected $articles;
-    protected $variants;
-    protected $groups;
-    protected $options;
-    protected $images;
+    /** @var array */
+    protected $additions;
+
+    /** @var array */
+    protected $changes;
+
+    /** @var array */
+    protected $deletions;
+
+    protected $importLog;
+
+    /** @var array */
+    protected $fields = [
+        'master',
+        'model',
+        'ean',
+        'name',
+        'purchasePrice',
+        'retailPrice',
+        'imageUrl',
+        'additionalImages',
+        'manufacturer'
+    ];
 
     /**
-     * ImportBase constructor.
+     * ImportClient constructor.
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
+     * @param ImportMapper $importMapper
      * @param Config $config
      * @param LoggerInterface $log
      */
     public function __construct(
         ModelManager $modelManager,
         ApiClient $apiClient,
+        ImportMapper $importMapper,
         Config $config,
         LoggerInterface $log
     ) {
         parent::__construct($apiClient, $config, $log);
         $this->modelManager = $modelManager;
-        $this->articleRepository = $modelManager->getRepository(ImportArticle::class);
-        $this->variantRepository = $modelManager->getRepository(ImportVariant::class);
-        $this->groupRepository = $modelManager->getRepository(ImportGroup::class);
-        $this->optionRepository = $modelManager->getRepository(ImportOption::class);
-        $this->imageRepository = $modelManager->getRepository(ImportImage::class);
+        $this->importMapper = $importMapper;
+    }
+
+    public function getSubscribedEvents()
+    {
+        return ['preUpdate'];
     }
 
     public function import()
     {
+        $this->importLog['deletions'] = $this->modelManager->getRepository(Model::class)->getAllIndexed();
+        $this->importLog['additions'] = [];
+        $this->importLog['changes'] = [];
+
+        $evm = $this->modelManager->getEventManager();
+        $evm->addEventSubscriber($this);
+
         parent::import();
-
-        $this->articles = $this->articleRepository->getAllIndexed();
-        $this->variants = $this->variantRepository->getAllIndexed();
-        $this->groups = $this->groupRepository->getAllIndexed();
-        //$this->options = $this->optionRepository->getAllIndexed();
-        $this->images = $this->imageRepository->getAllIndexed();
-
-        /** @noinspection PhpUndefinedFieldInspection */
-        $limit = $this->config->numberOfArticles ?? -1;
-        $this->createGroups();
-        $this->createArticles($limit);
+        $this->createModels();
         $this->modelManager->flush();
+        $this->logImport();
+
+        $this->importMapper->import($this->importLog);
     }
 
-    protected function createArticles(int $limit = -1)
-    {
+    protected function logImport() {
+        $this->log->debug('Additions:');
+        $this->log->debug(var_export(array_keys($this->importLog['additions']), true));
+        $this->log->debug('Deletions:');
+        $this->log->debug(var_export(array_keys($this->importLog['deletions']), true));
+        $this->log->debug('Changes:');
+        $this->log->debug(var_export($this->importLog['changes'], true));
+    }
 
-        $i = 0;
+    protected function createModels() {
         foreach ($this->import as $number => $data) {
-            $article = $this->articleRepository->findOneBy(['number' => $number]) ?? new ImportArticle();
-            $this->modelManager->persist($article);
-            $article->getVariants()->clear();
-
-            $this->createVariants($article, $data);
-            $article->setNumber($number);
-            // this cascades persisting the variants also
-            $this->modelManager->persist($article);
-            $i++;
-            if ($limit !== -1 && $i === $limit) {
-                break;
+            $model = $this->importLog['deletions'][$number];
+            if (null !== $model) {
+                unset($this->importLog['deletions'][$number]);
+            } else {
+                $model = new Model();
+                $this->importLog['additions'][$number] = $model;
+                $this->modelManager->persist($model);
             }
-        }
-    }
-
-    protected function createVariants(ImportArticle $article, array $variants)
-    {
-        foreach ($variants as $number => $data) {
-            $variant = $this->variantRepository->findOneBy(['number' => $number]) ?? new ImportVariant();
-            $this->modelManager->persist($variant);
-
-            $variant->getOptions()->clear();
-            $variant->getAdditionalImages()->clear();
-
-            $this->setVariant($variant, $number, $data);
-            $article->addVariant($variant);
+            $this->setModel($model, $data);
         }
     }
 
     /**
-     * @param ImportVariant $variant
-     * @param $data
-     * @param $number
+     * @param Model $model
+     * @param array $data
      */
-    protected function setVariant(ImportVariant $variant, $number, $data): void
+    protected function setModel(Model $model, array $data): void
     {
-        $variant->setCategory($this->getParamString($data['CATEGORY']));
-        $variant->setNumber($number);
-        $variant->setEan($this->getParamString($data['EAN']));
-        $variant->setName($this->getParamString($data['NAME']));
-        $variant->setPurchasePrice($this->getParamString($data['PRODUCTS_PRICE']));
-        $variant->setRetailPrice($this->getParamString($data['PRODUCTS_PRICE_RECOMMENDED']));
-        $variant->setManufacturer($this->getParamString($data['MANUFACTURER']));
-        $imageUrl = $this->getParamString($data['PRODUCTS_IMAGE']);
-        if ($imageUrl !== '') {
-            $variant->setImage($this->getImage($data['PRODUCTS_IMAGE']));
-        }
-        foreach($data['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'] as $imageUrl) {
-            $image = $this->getImage($imageUrl);
-            $variant->addAdditionalImage($image);
-        }
-        foreach ($data['PRODUCTS_ATTRIBUTES'] as $group => $option) {
-            $variant->addOption($this->items['groups'][$group][$option]);
-        }
+        $model->setCategory($this->getParamString($data['CATEGORY']));
+        $model->setMaster($data['MASTER']);
+        $model->setModel($this->getParamString($data['MODEL']));
+        $model->setEan($this->getParamString($data['EAN']));
+        $model->setName($this->getParamString($data['NAME']));
+        $model->setPurchasePrice($this->getParamString($data['PRODUCTS_PRICE']));
+        $model->setRetailPrice($this->getParamString($data['PRODUCTS_PRICE_RECOMMENDED']));
+        $model->setManufacturer($this->getParamString($data['MANUFACTURER']));
+        $model->setImageUrl($this->getParamString($data['PRODUCTS_IMAGE']));
+        $model->setAdditionalImages($data['PRODUCTS_IMAGE_ADDITIONAL']);
+        $model->setOptions($data['PRODUCTS_ATTRIBUTES']);
     }
 
-    public function getImage($url) {
-        $image = $this->items['images'][$url];
-        if ($image instanceof ImportImage) {
-            return $image;
-        }
-        if ($image === true) {
-            $image = new ImportImage();
-            $image->setUrl($url);
-            return $image;
-        }
-        throw new InvalidArgumentException(sprintf(
-            'Requested Image %s not registered.',
-            $url
-        ));
-    }
-
-    protected function createGroups()
+    public function preUpdate(PreUpdateEventArgs $args)
     {
-        foreach ($this->items['groups'] as $groupName => $options) {
-            $group = $this->groupRepository->findOneBy(['name' => $groupName]) ?? new ImportGroup();
-            $this->modelManager->persist($group);
-            $group->getOptions()->clear();
-
-            $group->setName($groupName);
-            $this->createOptions($group, array_keys($options));
-            // this cascades persisting the options also
-            $this->modelManager->persist($group);
-        }
-    }
-
-    protected function createOptions(ImportGroup $group, $options)
-    {
-        foreach ($options as $optionName) {
-            $groupName = $group->getName();
-            $option = $this->optionRepository->findOption($groupName, $optionName);
-            $this->log->debug('Find option returned ' . is_object($option) ? get_class($option) : gettype($option));
-            if ($option === null) {
-                $option = new ImportOption();
+        /** @var PreUpdateEventArgs $args */
+        if (! $args->getEntity() instanceof Model) return;
+        $this->log->debug('preUpdate');
+        $model = $args->getEntity();
+        $number = $model->getNumber();
+        $this->importLog['changes'][$number]['model'] = $model;
+        foreach ($this->fields as $field) {
+            if ($args->hasChangedField($field)) {
+                $this->importLog['changes'][$number]['fields'][$field] = [
+                    'oldValue' => $args->getOldValue($field),
+                    'newValue' => $args->getNewValue($field)
+                ];
             }
-            $this->modelManager->persist($option);
-
-            $this->items['groups'][$groupName][$optionName] = $option;
-
-            $option->setName($optionName);
-            $group->addOption($option);
         }
     }
 }

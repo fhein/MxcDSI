@@ -2,7 +2,6 @@
 
 namespace MxcDropshipInnocigs;
 
-use Doctrine\ORM\Events;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
@@ -21,16 +20,8 @@ use MxcDropshipInnocigs\Models\Current\Group;
 use MxcDropshipInnocigs\Models\Current\Image;
 use MxcDropshipInnocigs\Models\Current\Option;
 use MxcDropshipInnocigs\Models\Current\Variant;
-use MxcDropshipInnocigs\Models\Import\ImportArticle;
-use MxcDropshipInnocigs\Models\Import\ImportGroup;
-use MxcDropshipInnocigs\Models\Import\ImportImage;
-use MxcDropshipInnocigs\Models\Import\ImportOption;
-use MxcDropshipInnocigs\Models\Import\ImportVariant;
-use MxcDropshipInnocigs\Subscriber\ImportArticleSubscriber;
-use MxcDropshipInnocigs\Subscriber\ImportGroupSubscriber;
-use MxcDropshipInnocigs\Subscriber\ImportImageSubscriber;
-use MxcDropshipInnocigs\Subscriber\ImportOptionSubscriber;
-use MxcDropshipInnocigs\Subscriber\ImportVariantSubscriber;
+use MxcDropshipInnocigs\Models\Import\Model;
+use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
@@ -38,12 +29,12 @@ use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 
 return [
     'plugin' => [
-        FilterTest::class => [
-            'options' => [
-                'activate' => [],
-                'deactivate' => [],
-            ],
-        ],
+//        FilterTest::class => [
+//            'options' => [
+//                'activate' => [],
+//                'deactivate' => [],
+//            ],
+//        ],
         DumpOnUninstall::class => [],
         ArticleAttributeFilePersister::class => [
             'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
@@ -56,11 +47,7 @@ return [
             Group::class,
             Option::class,
             Image::class,
-            ImportArticle::class,
-            ImportVariant::class,
-            ImportGroup::class,
-            ImportOption::class,
-            ImportImage::class,
+            Model::class,
         ],
         'attributes' => [
             's_articles_attributes' => [
@@ -109,42 +96,13 @@ return [
             ],
         ],
         'listeners' => [
-            ImportArticleSubscriber::class => [
-                'model' => ImportArticle::class,
-                'events' => [
-                    Events::prePersist,
-                    Events::preUpdate,
-                ],
-            ],
-            ImportVariantSubscriber::class => [
-                'model' => ImportVariant::class,
-                'events' => [
-                    Events::prePersist,
-                    Events::preUpdate,
-                ],
-            ],
-            ImportGroupSubscriber::class => [
-                'model' => ImportGroup::class,
-                'events' => [
-                    Events::prePersist,
-                    Events::preUpdate,
-                ],
-            ],
-            ImportOptionSubscriber::class => [
-                'model' => ImportOption::class,
-                'events' => [
-                    Events::prePersist,
-                    Events::preUpdate,
-                ],
-            ],
-            ImportImageSubscriber::class => [
-                'model' => ImportImage::class,
-                'events' => [
-                    Events::prePersist,
-                    Events::preUpdate,
-                ],
-            ],
-
+//            ModelSubscriber::class => [
+//                'model' => Model::class,
+//                'events' => [
+//                    Events::postPersist,
+//                    Events::preUpdate,
+//                ],
+//            ],
         ]
     ],
     'filters' => [
@@ -298,11 +256,11 @@ return [
     ],
     'class_config' => [
         ImportMapper::class => [
-            'numberOfArticles' => 10,
+            'numberOfArticles' => 100,
             'applyFilters' => true,
         ],
         ImportClient::class => [
-            'numberOfArticles' => 10,
-        ]
+            'numberOfArticles' => 100,
+        ],
     ],
 ];

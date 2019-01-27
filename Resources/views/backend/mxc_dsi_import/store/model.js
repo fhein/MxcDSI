@@ -1,8 +1,8 @@
 //
 
-Ext.define('Shopware.apps.MxcDsiImport.store.Article', {
+Ext.define('Shopware.apps.MxcDsiImport.store.Model', {
     extend:'Shopware.store.Listing',
-    model: 'Shopware.apps.MxcDsiImport.model.Article',
+    model: 'Shopware.apps.MxcDsiImport.model.Model',
 
     configure: function() {
         return {

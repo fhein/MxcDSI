@@ -2,11 +2,11 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Models\Import\ImportArticle;
+use MxcDropshipInnocigs\Models\Import\Model;
 
 class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationController
 {
-    protected $model = ImportArticle::class;
+    protected $model = Model::class;
     protected $alias = 'import_article';
 
     public function indexAction() {
@@ -27,4 +27,16 @@ class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationContro
         $data['variants'] = [];
         return $data;
     }
+
+    public function importAction()
+    {
+        $this->log->enter();
+        try {
+            $this->services->get(ImportClient::class)->import();
+        } catch (Throwable $e) {
+            $this->log->except($e);
+        }
+        $this->log->leave();
+    }
+
 }

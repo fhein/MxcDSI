@@ -57,11 +57,11 @@ class PropertyMapper
         return $name;
     }
 
-    public function mapArticleCode($code) {
+    public function mapArticleNumber($code) {
         return $this->mappings['article_codes'][$code] ?? $code;
     }
 
-    public function mapVariantCode($code) {
+    public function mapVariantNumber($code) {
         return $this->mappings['variant_codes'][$code] ?? $code;
     }
 

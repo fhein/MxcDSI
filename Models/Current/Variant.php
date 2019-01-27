@@ -2,7 +2,6 @@
 
 namespace MxcDropshipInnocigs\Models\Current;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
@@ -12,6 +11,7 @@ use Shopware\Models\Article\Configurator\Option as ShopwareOption;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_variant")
+ * @ORM\Entity(repositoryClass="VariantRepository")
  */
 class Variant extends ModelEntity
 {
@@ -25,11 +25,10 @@ class Variant extends ModelEntity
     private $article;
 
     /**
-     * @var string $code
-     *
-     * @ORM\Column(name="code", type="string", nullable=false)
+     * @var string $number
+     * @ORM\Column(name="number", type="string", nullable=false)
      */
-    private $code;
+    private $number;
 
     /**
      * @var string $ean
@@ -40,7 +39,6 @@ class Variant extends ModelEntity
 
     /**
      * @var float $purchasePrice
-     *
      * @ORM\Column(name="purchase_price", type="decimal", precision=5, scale=2, nullable=false)
      */
     private $purchasePrice;
@@ -53,24 +51,15 @@ class Variant extends ModelEntity
     private $retailPrice;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Option", inversedBy="variants")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_options")
+     * @var string $options
+     * @ORM\Column(name="options", type="string", nullable=true)
      */
     private $options;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Image", inversedBy="variants", cascade="persist")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_images")
+     * @ORM\Column(tpye="string", nullable=true)
      */
     private $images;
-
-    /**
-     * @var string
-     * @ORM\Column(name="description", type="string", nullable=true)
-     */
-    private $description;
 
     /**
      * @var boolean $active
@@ -98,44 +87,12 @@ class Variant extends ModelEntity
      */
     private $shopwareOptions = [];
 
-    public function __construct() {
-        $this->options = new ArrayCollection();
-        $this->images = new ArrayCollection();
-    }
-
     /**
-     * @return \Doctrine\Common\Collections\ArrayCollection
+     * @return string
      */
-    public function getOptions()//: ArrayCollection
+    public function getOptions()
     {
         return $this->options;
-    }
-
-    /**
-     * @param Option $option
-     *
-     * This is the owner side so we have to add the backlink here
-     */
-    public function addOption(Option $option) {
-        $this->options->add($option);
-        $option->addVariant($this);
-        $this->getDescription();
-    }
-
-    public function getDescription() {
-        /** @var Option $option */
-        $d = [];
-        foreach($this->getOptions() as $option) {
-            $group = $option->getIcGroup();
-            $d[] = sprintf('%s: %s', $group->getName(), $option->getName());
-        }
-        sort($d);
-        $this->description = implode(', ', $d);
-        return $this->description;
-    }
-
-    public function setDescription(/** @noinspection PhpUnusedParameterInspection */ string $_) {
-        $this->getDescription();
     }
 
     /**
@@ -149,9 +106,9 @@ class Variant extends ModelEntity
     /**
      * @return string $code
      */
-    public function getCode(): string
+    public function getNumber(): string
     {
-        return $this->code;
+        return $this->number;
     }
 
     /**
@@ -203,11 +160,18 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param string $code
+     * @param string $options
      */
-    public function setCode($code)
+    public function setOptions(string $options) {
+        $this->options = $options;
+    }
+
+    /**
+     * @param string $number
+     */
+    public function setNumber($number)
     {
-        $this->code = $code;
+        $this->number = $number;
     }
 
     /**
@@ -287,7 +251,7 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @return ArrayCollection
+     * @return string
      */
     public function getImages()
     {
@@ -295,18 +259,11 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param array $images
+     * @param string $images
      */
     public function setImages($images)
     {
-        $this->setOneToMany($images, 'MxcDropshipInnocigs\Models\Current\Image', 'images');
+        $this->images = $images;
     }
 
-    /**
-     * @param Image $image
-     */
-    public function addImage(Image $image) {
-        $this->images->add($image);
-        $image->addVariant($this);
-    }
 }

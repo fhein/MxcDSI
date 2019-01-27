@@ -2,20 +2,14 @@
 
 namespace MxcDropshipInnocigs\Import;
 
-use Doctrine\Common\Collections\Collection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
 use MxcDropshipInnocigs\Models\Current\Article;
-use MxcDropshipInnocigs\Models\Current\Group;
-use MxcDropshipInnocigs\Models\Current\Image;
-use MxcDropshipInnocigs\Models\Current\Option;
+use MxcDropshipInnocigs\Models\Current\ArticleRepository;
 use MxcDropshipInnocigs\Models\Current\Variant;
-use MxcDropshipInnocigs\Models\Import\ImportArticle;
-use MxcDropshipInnocigs\Models\Import\ImportGroup;
-use MxcDropshipInnocigs\Models\Import\ImportImage;
-use MxcDropshipInnocigs\Models\Import\ImportOption;
-use MxcDropshipInnocigs\Models\Import\ImportVariant;
+use MxcDropshipInnocigs\Models\Current\VariantRepository;
+use MxcDropshipInnocigs\Models\Import\Model;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
@@ -24,17 +18,20 @@ class ImportMapper
     /** @var ApiClient $apiClient */
     protected $apiClient;
 
-    /** @var ImportClient $importClient */
-    protected $importClient;
-
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
 
-    /** @var array $options */
-    protected $options;
+    /** @var ArticleRepository $articleRepository */
+    protected $articleRepository;
 
-    /** @var array $images */
-    protected $images;
+    /** @var VariantRepository $variantRepository */
+    protected $variantRepository;
+
+    /** @var array $variants */
+    protected $variants;
+
+    /** @var array */
+    protected $articles;
 
     /** @var LoggerInterface $log */
     protected $log;
@@ -67,8 +64,6 @@ class ImportMapper
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
-     * @param ImportClient $importClient ,
-     *
      * @param PropertyMapper $propertyMapper
      * @param ImportModifier $importModifier
      * @param Config $config
@@ -77,7 +72,6 @@ class ImportMapper
     public function __construct(
         ModelManager $modelManager,
         ApiClient $apiClient,
-        ImportClient $importClient,
         PropertyMapper $propertyMapper,
         ImportModifier $importModifier,
         Config $config,
@@ -85,7 +79,6 @@ class ImportMapper
     ) {
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
-        $this->importClient = $importClient;
         $this->propertyMapper = $propertyMapper;
         $this->importModifier = $importModifier;
         $this->config = $config;
@@ -100,28 +93,28 @@ class ImportMapper
         if ($description === '') {
             $this->log->warn(sprintf('%s: No description available from InnoCigs for article %s.',
                 __FUNCTION__,
-                $article->getCode()
+                $article->getNumber()
             ));
             return;
         }
         if ($article->getDescription() !== $description) {
             $this->log->info(sprintf('%s: Adding article description from InnoCigs to article %s.',
                 __FUNCTION__,
-                $article->getCode()
+                $article->getNumber()
             ));
             $article->setDescription($description);
             $this->modelManager->persist($article);
         } else {
             $this->log->info(sprintf('%s: ImportArticle description from InnoCigs for article %s is up to date.',
                 __FUNCTION__,
-                $article->getCode()
+                $article->getNumber()
             ));
         }
     }
 
     public function getStock(Variant $variant)
     {
-        $raw = $this->apiClient->getStockInfo($variant->getCode());
+        $raw = $this->apiClient->getStockInfo($variant->getNumber());
         $this->log->debug(var_export($raw, true));
         return $raw['QUANTITIES']['PRODUCT']['QUANTITY'];
     }
@@ -141,97 +134,15 @@ class ImportMapper
         );
     }
 
-    protected function createGroups(array $importGroups)
-    {
-        /** @var ImportGroup $importGroup */
-        foreach ($importGroups as $importGroup) {
-            $group = new Group();
-            $this->modelManager->persist($group);
+    protected function removeOptionsFromArticleName(string $name, string $options) {
 
-            $group->setName($this->propertyMapper->mapGroupName($importGroup->getName()));
-            $group->setAccepted(true);
-            $this->createOptions($group, $importGroup);
-        }
-    }
-
-    protected function createOptions(Group $group, ImportGroup $importGroup)
-    {
-        /** @var ImportOption $importOption */
-        $importOptions = $importGroup->getOptions();
-        foreach ($importOptions as $importOption) {
-            $option = new Option();
-
-            $optionName = $importOption->getName();
-            $option->setName($this->propertyMapper->mapOptionName($optionName));
-
-            $option->setAccepted(true);
-            $group->addOption($option);
-
-            $this->options[$importGroup->getName()][$optionName] = $option;
-        }
-    }
-
-    protected function createArticles($importArticles, int $limit = -1)
-    {
-        $i = 0;
-        /** @var ImportArticle $importArticle */
-        foreach ($importArticles as $importArticle) {
-            $article = new Article();
-            // this cascades persisting the variants also
-            $this->modelManager->persist($article);
-
-            $article->setActive(false);
-            $article->setAccepted(true);
-
-            $this->createVariants($article, $importArticle->getVariants());
-            $number = $importArticle->getNumber();
-            $article->setCode($this->propertyMapper->mapArticleCode($number));
-            $article->setIcCode($number);
-            $article->setDescription('n/a');
-            /** @var ImportVariant $v0 */
-            $v0 = $importArticle->getVariants()[0];
-            $article->setManualUrl($v0->getManualUrl());
-            $article->setManufacturer($v0->getManufacturer());
-            $name = $this->removeOptionsFromArticleName($v0->getName(), $v0->getOptions());
-            $image = $v0->getImage();
-
-            $bs = $this->propertyMapper->mapManufacturer($number, $v0->getManufacturer());
-            $article->setBrand($bs['brand']);
-            $article->setSupplier($bs['supplier']);
-            $article->setName($this->propertyMapper->mapArticleName($name, $number, $article));
-
-            if (null !== $image) {
-                $article->setImageUrl($image->getUrl());
-            }
-
-            // this has to be last because it depends on the article properties
-            $article->setCategory($this->propertyMapper->mapCategory($v0->getCategory(), $number, $article));
-
-            $i++;
-            if ($limit !== -1 && $i === $limit) {
-                break;
-            }
-        }
-    }
-
-    protected function getImage(ImportImage $image) {
-        $url = $image->getUrl();
-        $image = $this->images[$url];
-        if ($image instanceof Image) {
-            return $image;
-        }
-        $image = new Image;
-        $image->setUrl($url);
-        $this->images[$url] = $image;
-        return $image;
-    }
-
-    protected function removeOptionsFromArticleName(string $name, Collection $importOptions) {
         // Innocigs variant names include variant descriptions
         // We take the first variant's name and remove the variant descriptions
         // in order to extract the real article name
-        foreach ($importOptions as $importOption) {
-            $option = trim($importOption->getName());
+        $options = explode($options, '##!##');
+
+        foreach ($options as $option) {
+            $option = trim(explode($option, '#!#')[1]);
             if ($option === '1er Packung') continue;
 
             if (strpos($name, $option) !== false) {
@@ -264,72 +175,116 @@ class ImportMapper
         return trim($name);
     }
 
-    protected function createVariants(Article $article, Collection $importVariants)
-    {
-        // mark all variants of active articles active
-        $active = $article->isActive();
-        $accepted = $article->isAccepted();
-        /** @var ImportVariant $importVariant */
-        foreach ($importVariants as $importVariant) {
-            $variant = new Variant();
-            // This persist is necessary allthough the relation is defined cascade persist.
-            // I assume this is because Option holds a one to many
-            $this->modelManager->persist($variant);
+    protected function getArticle(string $number) {
+        if ($this->articles[$number]) return $this->articles[$number];
+        $article = $this->articleRepository->findOneBy(['number' => $number]);
+        if ($article) {
+            $this->articles[$number] = $article;
+            return $article;
+        }
+        return null;
+    }
 
+    protected function addArticle(Model $model) {
+        $article = new Article();
+        $this->modelManager->persist($article);
+        $article->setActive(false);
+        $article->setAccepted(true);
+
+        $number = $model->getMaster();
+        $this->articles[$number] = $article;
+        $article->setNumber($this->propertyMapper->mapArticleNumber($number));
+        $article->setIcNumber($number);
+
+        $article->setNumber($this->propertyMapper->mapArticleNumber($number));
+        $article->setIcNumber($number);
+        $article->setDescription('n/a');
+        $article->setManualUrl($model->getManualUrl());
+        $manufacturer = $model->getManufacturer();
+        $article->setManufacturer($manufacturer);
+        $article->setImageUrl($model->getImageUrl());
+        $name = $this->removeOptionsFromArticleName($model->getName(), $model->getOptions());
+        $bs = $this->propertyMapper->mapManufacturer($number, $manufacturer);
+        $article->setBrand($bs['brand']);
+        $article->setSupplier($bs['supplier']);
+        $article->setName($this->propertyMapper->mapArticleName($name, $number, $article));
+
+        // this has to be last because it depends on the article properties
+        $article->setCategory($this->propertyMapper->mapCategory($model->getCategory(), $number, $article));
+        return $article;
+    }
+
+    protected function addVariants(array $additions) {
+        /** @var  Model $model */
+        foreach ($additions as $number => $model) {
+            $article = $this->getArticle($model->getMaster());
+            if (null === $article) {
+                $article = $this->addArticle($model);
+            }
+            $variant = new Variant();
+            $this->modelManager->persist($variant);
             $article->addVariant($variant);
 
-            $variant->setActive($active);
-            $variant->setAccepted($accepted);
+            $variant->setActive(false);
+            $variant->setAccepted(true);
+            $variant->setNumber($this->propertyMapper->mapVariantNumber($model->getModel()));
+            $variant->setEan($model->getEan());
 
-            $variant->setCode($this->propertyMapper->mapVariantCode($importVariant->getNumber()));
-            $variant->setEan($importVariant->getEan());
-
-            $price = floatval(str_replace(',', '.', $importVariant->getPurchasePrice()));
+            $price = floatval(str_replace(',', '.', $model->getPurchasePrice()));
             $variant->setPurchasePrice($price);
-
-            $price = floatVal(str_replace(',', '.', $importVariant->getRetailPrice()));
+            $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
             $variant->setRetailPrice($price);
-            /** @var ImportImage $importImage */
-            foreach ($importVariant->getAdditionalImages() as $importImage) {
-                $image = $this->getImage($importImage);
-                $variant->addImage($image);
-            }
-            /** @var ImportOption $importOption */
-            foreach ($importVariant->getOptions() as $importOption) {
-                $group = $importOption->getIcGroup()->getName();
-                $option = $this->options[$group][$importOption->getName()];
-                $variant->addOption($option);
+            $variant->setImages($model->getAdditionalImages());
+            $variant->setOptions($model->getOptions());
+        }
+    }
+
+    protected function deleteVariants(array $deletions) {
+        /** @var  Model $model */
+        foreach ($deletions as $model) {
+            /** @var  Variant $variant */
+            $variant = $this->variantRepository->findOneBy([ 'model' => $model->getModel()]);
+            $article = $variant->getArticle();
+            $article->removeVariant($variant);
+            $this->modelManager->remove($variant);
+            if ($article->getVariants()->count() === 0) {
+                $this->modelManager->remove($article);
             }
         }
     }
 
-    public function import()
+    public function changeVariants(array $changes)
+    {
+    }
+
+    public function import(array $import)
     {
         $this->log->enter();
-        // only import articles if we do not have them
-        $importArticleRepository = $this->modelManager->getRepository(ImportArticle::class);
-        $articleRepository = $this->modelManager->getRepository(Article::class);
-        if ($articleRepository->count() === 0) {
-            if ($importArticleRepository->count() === 0) {
-                $this->importClient->import();
-            }
-
-            $groups = $this->modelManager->getRepository(ImportGroup::class)->findAll();
-            $this->createGroups($groups);
-
-            $importArticles = $importArticleRepository->findAll();
-            /** @noinspection PhpUndefinedFieldInspection */
-            $limit  = $this->config->numberOfArticles ?? -1;
-            $this->createArticles($importArticles, $limit);
-
-            /** @noinspection PhpUndefinedFieldInspection */
-            if ($this->config->applyFilters) {
-                $this->log->notice('Applying import modifications.');
-                $this->importModifier->apply();
-            }
+        $this->articleRepository = $this->modelManager->getRepository(Article::class);
+        $this->variantRepository = $this->modelManager->getRepository(Variant::class);
+        $this->variants = $this->variantRepository->getAllIndexed();
+        $this->addVariants($import['additions']);
+        $this->deleteVariants($import['deletions']);
+        $this->changeVariants($import['changes']);
+        /** @noinspection PhpUndefinedFieldInspection */
+        if ($this->config->applyFilters) {
+            $this->log->notice('Applying import modifications.');
+            $this->importModifier->apply();
         }
         $this->modelManager->flush();
         $this->log->leave();
         return true;
+    }
+
+    protected function getArticleRepository() {
+        if (! $this->articleRepository) {
+            $this->articleRepository = $this->modelManager->getRepository(Article::class);
+        }
+    }
+
+    protected function getVariantRepository() {
+        if (! $this->variantRepository) {
+            $this->variantRepository = $this->modelManager->getRepository(Variant::class);
+        }
     }
 }

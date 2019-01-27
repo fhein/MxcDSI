@@ -19,16 +19,16 @@ class Article extends ModelEntity  {
     use BaseModelTrait;
 
     /**
-     * @var string $code
+     * @var string $number
      * @ORM\Column(type="string", nullable=false)
      */
-    private $code;
+    private $number;
 
     /**
      * @var string $code
-     * @ORM\Column(name="ic_code", type="string", nullable=false)
+     * @ORM\Column(name="ic_number", type="string", nullable=false)
      */
-    private $icCode;
+    private $icNumber;
 
     /**
      * @var string $name
@@ -129,6 +129,7 @@ class Article extends ModelEntity  {
     {
         $this->name = $name;
     }
+
     /**
      * @return boolean
      */
@@ -162,6 +163,12 @@ class Article extends ModelEntity  {
         $variant->setArticle($this);
     }
 
+
+    public function removeVariant(Variant $variant) {
+        $this->variants->removeElement($variant);
+
+    }
+
     public function setVariants($variants) {
         $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\Current\Variant', 'variants');
     }
@@ -169,32 +176,32 @@ class Article extends ModelEntity  {
     /**
      * @return string
      */
-    public function getCode(): string
+    public function getNumber(): string
     {
-        return $this->code;
+        return $this->number;
     }
     /**
-     * @param string $code
+     * @param string $number
      */
-    public function setCode(string $code)
+    public function setNumber(string $number)
     {
-        $this->code = $code;
+        $this->number = $number;
     }
 
     /**
      * @return string
      */
-    public function getIcCode(): string
+    public function getIcNumber(): string
     {
-        return $this->icCode;
+        return $this->icNumber;
     }
 
     /**
-     * @param string $icCode
+     * @param string $icNumber
      */
-    public function setIcCode(string $icCode)
+    public function setIcNumber(string $icNumber)
     {
-        $this->icCode = $icCode;
+        $this->icNumber = $icNumber;
     }
 
     /**

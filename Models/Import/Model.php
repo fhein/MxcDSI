@@ -2,8 +2,6 @@
 
 namespace MxcDropshipInnocigs\Models\Import;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
@@ -12,9 +10,9 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_model_import")
- * @ORM\Entity(repositoryClass="ImportVariantRepository")
+ * @ORM\Entity(repositoryClass="ModelRepository")
  */
-class ImportVariant extends ModelEntity
+class Model extends ModelEntity
 {
     use BaseModelTrait;
 
@@ -25,16 +23,16 @@ class ImportVariant extends ModelEntity
     private $category;
 
     /**
-     * @var ImportArticle $master
-     * @ORM\ManyToOne(targetEntity="ImportArticle", inversedBy="variants")
+     * @var string
+     * @ORM\Column(type="string", nullable=false)
      */
     private $master;
 
     /**
-     * @var string $number
+     * @var string
      * @ORM\Column(type="string", nullable=false)
      */
-    private $number;
+    private $model;
 
     /**
      * @var string $ean
@@ -50,7 +48,7 @@ class ImportVariant extends ModelEntity
 
     /**
      * @var string $purchasePrice
-     * @ORM\Column(name="purchase_price", type="string", nullable = false)
+     * @ORM\Column(name="purchase_price", type="string", nullable=false)
      */
     private $purchasePrice;
 
@@ -61,15 +59,14 @@ class ImportVariant extends ModelEntity
     private $retailPrice;
 
     /**
-     * @var ImportImage $image;
-     * @ORM\OneToOne(targetEntity="ImportImage", cascade="persist")
+     * @var string $imageUrl;
+     * @ORM\Column(name="image_url", type="string", nullable=true)
      */
-    private $image;
+    private $imageUrl;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="ImportImage", inversedBy="variants", cascade="persist")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_variants_images")
+     * @var string
+     * @ORM\Column(name="addl_images", type="text", nullable=true)
      */
     private $additionalImages;
 
@@ -86,20 +83,10 @@ class ImportVariant extends ModelEntity
     private $manualUrl;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="ImportOption", inversedBy="variants")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_import_variants_options")
+     * @var string
+     * @ORM\Column(type="string", nullable=false)
      */
     private $options;
-
-    /**
-     * ImportVariant constructor.
-     */
-    public function __construct()
-    {
-        $this->options = new ArrayCollection();
-        $this->additionalImages = new ArrayCollection();
-    }
 
     /**
      * @return string
@@ -126,9 +113,9 @@ class ImportVariant extends ModelEntity
     }
 
     /**
-     * @param ImportArticle $master
+     * @param string $master
      */
-    public function setMaster(ImportArticle $master)
+    public function setMaster(string $master)
     {
         $this->master = $master;
     }
@@ -136,17 +123,17 @@ class ImportVariant extends ModelEntity
     /**
      * @return string
      */
-    public function getNumber(): string
+    public function getModel(): string
     {
-        return $this->number;
+        return $this->model;
     }
 
     /**
-     * @param string $number
+     * @param string $model
      */
-    public function setNumber(string $number)
+    public function setModel(string $model)
     {
-        $this->number = $number;
+        $this->model = $model;
     }
 
     /**
@@ -214,40 +201,35 @@ class ImportVariant extends ModelEntity
     }
 
     /**
-     * @return ImportImage
+     * @return string
      */
-    public function getImage()
+    public function getImageUrl()
     {
-        return $this->image;
+        return $this->imageUrl;
     }
 
     /**
-     * @param ImportImage $image
+     * @param string $imageUrl
      */
-    public function setImage(ImportImage $image)
+    public function setImageUrl(string $imageUrl)
     {
-        $this->image = $image;
+        $this->imageUrl = $imageUrl;
     }
 
     /**
-     * @return Collection
+     * @return string
      */
-    public function getAdditionalImages(): Collection
+    public function getAdditionalImages(): string
     {
         return $this->additionalImages;
     }
 
     /**
-     * @param ArrayCollection $additionalImages
+     * @param null|string $additionalImages
      */
-    public function setAdditionalImages(ArrayCollection $additionalImages)
+    public function setAdditionalImages(?string $additionalImages)
     {
         $this->additionalImages = $additionalImages;
-    }
-
-    public function addAdditionalImage(ImportImage $image) {
-        $this->additionalImages->add($image);
-        $image->addVariant($this);
     }
 
     /**
@@ -275,31 +257,26 @@ class ImportVariant extends ModelEntity
     }
 
     /**
-     * @param string $manualUrl
+     * @param null|string $manualUrl
      */
-    public function setManualUrl(string $manualUrl)
+    public function setManualUrl(?string $manualUrl)
     {
         $this->manualUrl = $manualUrl;
     }
 
     /**
-     * @return Collection
+     * @return string
      */
-    public function getOptions(): Collection
+    public function getOptions(): string
     {
         return $this->options;
     }
 
     /**
-     * @param ArrayCollection $options
+     * @param string $options
      */
-    public function setOptions(ArrayCollection $options)
+    public function setOptions(string $options)
     {
         $this->options = $options;
-    }
-
-    public function addOption(ImportOption $option) {
-        $this->options->add($option);
-        $option->addModel($this);
     }
 }

@@ -52,11 +52,11 @@ class DumpOnUninstall extends ActionListener
             /** @var Article $article */
             $category = $article->getCategory();
             if ($category === null || $category === '') {
-                $config['defects']['ic_api']['article']['category_missing'][$article->getCode()] = $article->getName();
+                $config['defects']['ic_api']['article']['category_missing'][$article->getNumber()] = $article->getName();
             }
             foreach($this->unusableCategories as $uCategory) {
                 if ($category === $uCategory) {
-                    $config['defects']['ic_api']['article']['category_unusable'][$article->getCode()] =
+                    $config['defects']['ic_api']['article']['category_unusable'][$article->getNumber()] =
                         [
                             'name' => $article->getName(),
                             'category' => $uCategory,
@@ -64,14 +64,14 @@ class DumpOnUninstall extends ActionListener
                 }
             }
             if ($article->getManufacturer() === 'Smok') {
-                $config['defects']['ic_api']['article']['manufacturer_wrong'][$article->getCode()] = [
+                $config['defects']['ic_api']['article']['manufacturer_wrong'][$article->getNumber()] = [
                     'name' => $article->getName(),
                     'manufacturer_from_api' => $article->getManufacturer(),
                     'manufacturer_correct' => $article->getBrand(),
                 ];
             }
             if ($article->getManufacturer() !== $article->getBrand()) {
-                $config['defects']['ic_api']['article']['manufacturer_different'][$article->getCode()] = [
+                $config['defects']['ic_api']['article']['manufacturer_different'][$article->getNumber()] = [
                     'name' => $article->getName(),
                     'manufacturer' => $article->getManufacturer(),
                     'brand' => $article->getBrand(),

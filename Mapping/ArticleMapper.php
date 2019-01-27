@@ -157,7 +157,7 @@ class ArticleMapper
     protected function createShopwareDetail(Variant $variant, ShopwareArticle $swArticle, bool $isMainDetail){
         $this->log->info(sprintf('%s: Creating detail record for InnoCigs variant %s',
             __FUNCTION__,
-            $variant->getCode()
+            $variant->getNumber()
         ));
 
         $detail = new Detail();
@@ -179,7 +179,7 @@ class ArticleMapper
             throw new Exception(__FUNCTION__ . ': Shopware article attribute model does not exist.');
         }
 
-        $detail->setNumber($variant->getCode());
+        $detail->setNumber($variant->getNumber());
         $detail->setEan($variant->getEan());
         $detail->setStockMin(0);
         $detail->setSupplierNumber('');
@@ -230,14 +230,14 @@ class ArticleMapper
         if (! $this->validateDropshipPlugin($attribute)) {
             $this->log->warn(sprintf('%s: Could not prepare Shopware article "%s" for dropship orders. Dropshippers Companion is not installed.',
                 __FUNCTION__,
-                $variant->getCode()
+                $variant->getNumber()
             ));
             return;
         }
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcActive(true);
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcOrderNumber($variant->getCode());
+        $attribute->setDcIcOrderNumber($variant->getNumber());
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcArticleName($variant->getArticle()->getName());
         /** @noinspection PhpUndefinedMethodInspection */

@@ -55,23 +55,25 @@ class ImportBase
         $raw = $this->apiClient->getItemList();
         $this->import = [];
         /** @noinspection PhpUndefinedFieldInspection */
-        $limit = $this->config->numberOfArticles ?? -1;
+        $this->import = array_column($raw['PRODUCTS']['PRODUCT'], null, 'MODEL');
 
-        foreach ($raw['PRODUCTS']['PRODUCT'] as $item) {
-            $this->import[$item['MASTER']][$item['MODEL']] = $item;
+        foreach ($this->import as $item) {
+            // flatten options
+            $options = [];
             foreach ($item['PRODUCTS_ATTRIBUTES'] as $group => $option) {
-                $this->items['groups'][$group][$option] = true;
+                $options[] = $group . '#!#' . $option;
             }
-            $this->items['images'][$item['PRODUCTS_IMAGE']] = true;
+            sort($options);
+            $item['PRODUCTS_ATTRIBUTES'] = implode('##!##', $options);
+
             if (is_string($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])) {
-                $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'] = [$item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']];
+                $item['PRODUCTS_IMAGE_ADDITIONAL'] = $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'];
+            } else {
+                $images = $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'];
+                sort($images);
+                $item['PRODUCTS_IMAGE_ADDITIONAL'] = implode('#!#', $images);
             }
-            foreach ($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'] as $image) {
-                $this->items['images'][$image] = true;
-            }
-            if ($limit !== -1 && count($this->import) === $limit) {
-                break;
-            }
+            $this->import[$item['MODEL']] = $item;
         }
     }
 

@@ -23,7 +23,9 @@ class ImportClientFactory implements FactoryInterface
         $config = $this->getClassConfig($container, $requestedName);
         $apiClient = $container->get(ApiClient::class);
         $log = $container->get('logger');
+        $importMapper = $container->get(ImportMapper::class);
         $modelManager = $container->get('modelManager');
-        return new ImportClient($modelManager, $apiClient, $config, $log);
+        $client = new ImportClient($modelManager, $apiClient, $importMapper, $config, $log);
+        return $client;
     }
 }

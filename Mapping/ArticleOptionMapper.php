@@ -65,7 +65,7 @@ class ArticleOptionMapper
                 $optionName = $icOption->getName();
 
                 $this->log->debug(sprintf('ImportVariant %s (%s) has option %s from group %s.',
-                    $icVariant->getCode(),
+                    $icVariant->getNumber(),
                     $icVariant->getId(),
                     $optionName,
                     $groupName
@@ -97,7 +97,7 @@ class ArticleOptionMapper
                     $this->log->notice(sprintf('Adding shopware option %s (id: %s) to variant %s (id: %s).',
                         $swOption->getName(),
                         $swOption->getId(),
-                        $icVariant->getCode(),
+                        $icVariant->getNumber(),
                         $icVariant->getId()
                     ));
                 }
@@ -132,23 +132,23 @@ class ArticleOptionMapper
             $this->log->notice(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does '
                 . 'not provide more than one variant which is set not to get ignored.',
                 __FUNCTION__,
-                $icArticle->getCode()
+                $icArticle->getNumber()
             ));
             return null;
         }
 
         $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs ImportArticle %s.',
             __FUNCTION__,
-            $icArticle->getCode()
+            $icArticle->getNumber()
         ));
 
         $this->createShopwareGroupsAndOptions($variants);
 
-        $name = 'mxc-set-' . $icArticle->getCode();
+        $name = 'mxc-set-' . $icArticle->getNumber();
         $this->log->info(sprintf('%s: Creating configurator set %s for InnoCigs ImportArticle %s.',
             __FUNCTION__,
             $name,
-            $icArticle->getCode()
+            $icArticle->getNumber()
         ));
         $set = $this->setRepository->initSet($name);
 

@@ -1,16 +1,16 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models\Import;
+namespace MxcDropshipInnocigs\Models\Current;
 
 use MxcDropshipInnocigs\Models\BaseEntityRepository;
 
-class ImportArticleRepository extends BaseEntityRepository
+class OptionRepository extends BaseEntityRepository
 {
     public function getAllIndexed() {
         /** @noinspection PhpUnhandledExceptionInspection */
-        return $this->createQueryBuilder('a')
-            -> select('a')
-            -> indexBy('a', 'a.number')
+        return $this->createQueryBuilder('o')
+            -> select('o')
+            -> indexBy('o', 'o.name')
             -> getQuery()
             ->getResult();
     }

@@ -8,24 +8,20 @@ Ext.define('Shopware.apps.MxcDsiImport', {
     loadPath: '{url action=load}',
     bulkLoad: true,
 
-    controllers: [ 'Article' ],
+    controllers: [ 'Model' ],
 
     views: [
-        'list.Article',
+        'list.Model',
         'list.Window',
 
-        'detail.Article',
+        'detail.Model',
         'detail.Window',
-
-        'variant.detail.VariantDetail',
-        'variant.detail.VariantList',
-        'variant.detail.Window',
     ],
 
-    models: [ 'Article', 'Variant' ],
-    stores: [ 'Article', 'Variant' ],
+    models: [ 'Model' ],
+    stores: [ 'Model' ],
 
     launch: function() {
-        return this.getController('Article').mainWindow;
+        return this.getController('Model').mainWindow;
     }
 });

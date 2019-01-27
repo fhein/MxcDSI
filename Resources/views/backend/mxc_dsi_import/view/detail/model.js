@@ -1,9 +1,9 @@
 //
 
-Ext.define('Shopware.apps.MxcDsiImport.view.variant.detail.VariantDetail', {
+Ext.define('Shopware.apps.MxcDsiImport.view.detail.Model', {
     extend: 'Shopware.model.Container',
-    alias: 'widget.mxc-dsi-import-variant-detail-container',
-    title: 'Variant Details',
+    alias: 'widget.mxc-dsi-model-detail-container',
+    title: 'InnoCigs Import',
     height : 300,
 
     configure: function() {

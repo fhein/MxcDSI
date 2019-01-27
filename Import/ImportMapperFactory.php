@@ -22,11 +22,10 @@ class ImportMapperFactory implements FactoryInterface
     {
         $config = $this->getClassConfig($container, $requestedName);
         $apiClient = $container->get(ApiClient::class);
-        $importClient = $container->get(ImportClient::class);
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
         $importModifier = $container->get(ImportModifier::class);
         $propertyMapper = $container->get(PropertyMapper::class);
-        return new ImportMapper($modelManager, $apiClient, $importClient, $propertyMapper, $importModifier, $config, $log);
+        return new ImportMapper($modelManager, $apiClient, $propertyMapper, $importModifier, $config, $log);
     }
 }
