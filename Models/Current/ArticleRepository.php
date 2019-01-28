@@ -52,7 +52,7 @@ class ArticleRepository extends BaseEntityRepository
             ->getResult(Query::HYDRATE_ARRAY);
     }
 
-    public function getSuppliersAndBrandsDist() {
+    public function getDist() {
         /** @noinspection PhpUnhandledExceptionInspection */
         $result = $this->createQueryBuilder('a')
             ->select('a.icCode, a.name, a.supplier, a.category')

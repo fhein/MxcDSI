@@ -130,9 +130,9 @@ class ImportClient extends ImportBase implements EventSubscriber
     public function preUpdate(PreUpdateEventArgs $args)
     {
         /** @var PreUpdateEventArgs $args */
-        if (! $args->getEntity() instanceof Model) return;
-        $this->log->debug('preUpdate');
         $model = $args->getEntity();
+        if (! $model instanceof Model) return;
+
         $number = $model->getNumber();
         $this->importLog['changes'][$number]['model'] = $model;
         foreach ($this->fields as $field) {

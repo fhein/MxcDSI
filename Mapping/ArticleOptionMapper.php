@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Current\Article;
-use MxcDropshipInnocigs\Models\Current\Group;
 use MxcDropshipInnocigs\Models\Current\Variant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
@@ -55,14 +54,11 @@ class ArticleOptionMapper
             /**
              * @var Variant $icVariant
              */
-            $icOptions = $icVariant->getOptions();
+            $icOptions = explode('##!##', $icVariant->getOptions());
             foreach ($icOptions as $icOption) {
-                /**
-                 * @var Group $icGroup
-                 */
-                $icGroup = $icOption->getIcGroup();
-                $groupName = $icGroup->getName();
-                $optionName = $icOption->getName();
+                $param = explode('#!#', $icOption);
+                $groupName = $param[0];
+                $optionName = $param[1];
 
                 $this->log->debug(sprintf('ImportVariant %s (%s) has option %s from group %s.',
                     $icVariant->getNumber(),

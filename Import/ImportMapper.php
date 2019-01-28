@@ -7,6 +7,8 @@ use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
 use MxcDropshipInnocigs\Models\Current\Article;
 use MxcDropshipInnocigs\Models\Current\ArticleRepository;
+use MxcDropshipInnocigs\Models\Current\Option;
+use MxcDropshipInnocigs\Models\Current\OptionRepository;
 use MxcDropshipInnocigs\Models\Current\Variant;
 use MxcDropshipInnocigs\Models\Current\VariantRepository;
 use MxcDropshipInnocigs\Models\Import\Model;
@@ -26,6 +28,9 @@ class ImportMapper
 
     /** @var VariantRepository $variantRepository */
     protected $variantRepository;
+
+    /** @var OptionRepository $optionRepository */
+    protected $optionRepository;
 
     /** @var array $variants */
     protected $variants;
@@ -134,6 +139,17 @@ class ImportMapper
         );
     }
 
+    public function mapOptions(string $options) {
+        $options = explode('##!##', $options);
+        foreach ($options as $option) {
+            $option = explode('#!#', $option);
+            $option[0] = $this->propertyMapper->mapGroupName($option[0]);
+            $options[1] = $this->propertyMapper->mapOptionName($option[1]);
+            $result[] = implode('#!#', $option);
+        }
+        return implode('##!##', $result);
+    }
+
     protected function removeOptionsFromArticleName(string $name, string $options) {
 
         // Innocigs variant names include variant descriptions
@@ -235,7 +251,7 @@ class ImportMapper
             $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
             $variant->setRetailPrice($price);
             $variant->setImages($model->getAdditionalImages());
-            $variant->setOptions($model->getOptions());
+            $variant->setOptions($this->mapOptions($model->getOptions()));
         }
     }
 
@@ -262,7 +278,10 @@ class ImportMapper
         $this->log->enter();
         $this->articleRepository = $this->modelManager->getRepository(Article::class);
         $this->variantRepository = $this->modelManager->getRepository(Variant::class);
+        $this->optionRepository = $this->modelManager->getRepository(Option::class);
         $this->variants = $this->variantRepository->getAllIndexed();
+        $this->options = $this->optionRepository->getAllIndexed();
+
         $this->addVariants($import['additions']);
         $this->deleteVariants($import['deletions']);
         $this->changeVariants($import['changes']);

@@ -42,7 +42,7 @@ class ArticleAttributeFilePersister extends ActionListener
         $repository = $this->modelManager->getRepository(Article::class);
 
         // update $article.config.php.dist
-        $config = $repository->getSuppliersAndBrandsDist();
+        $config = $repository->getDist();
         if (! empty($config)) {
             /** @noinspection PhpUndefinedFieldInspection */
             $fn = $this->config->articleConfigFile . '.php';
