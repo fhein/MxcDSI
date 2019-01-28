@@ -2,14 +2,14 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-use MxcDropshipInnocigs\Models\Current\Article;
-use MxcDropshipInnocigs\Models\Current\Option;
-use MxcDropshipInnocigs\Models\Current\Variant;
+use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\Option;
+use MxcDropshipInnocigs\Models\Variant;
 
 class InnocigsEntityValidator
 {
     /**
-     * An ImportArticle validates true if either it's accepted member is true
+     * An Article validates true if either it's accepted member is true
      * and at least one of it's variants validates true
      *
      * @param Article $article

@@ -2,7 +2,7 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Models\Current\Group;
+use MxcDropshipInnocigs\Models\Group;
 
 class Shopware_Controllers_Backend_MxcDsiTest extends BackendApplicationController
 {

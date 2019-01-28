@@ -8,7 +8,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.extensions.Filter', {
             controller: 'Article',
             model: 'Shopware.apps.MxcDsiArticle.model.Article',
             fields: {
-                code: {
+                number: {
                     expression: 'LIKE'
                 },
                 name: {

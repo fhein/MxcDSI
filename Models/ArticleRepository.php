@@ -1,9 +1,8 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models\Current;
+namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\ORM\Query;
-use MxcDropshipInnocigs\Models\BaseEntityRepository;
 
 class ArticleRepository extends BaseEntityRepository
 {
@@ -22,8 +21,8 @@ class ArticleRepository extends BaseEntityRepository
     protected function getSupplierBrandBuilder() {
         /** @noinspection PhpUnhandledExceptionInspection */
         return $this->createQueryBuilder('a')
-            ->select('a.icCode, a.name, a.brand, a.supplier, a.category')
-            ->indexBy('a', 'a.icCode');
+            ->select('a.icNumber, a.name, a.brand, a.supplier, a.category')
+            ->indexBy('a', 'a.icNumber');
     }
 
     protected function getSupplierAndBrandAllQuery() {
@@ -55,8 +54,8 @@ class ArticleRepository extends BaseEntityRepository
     public function getDist() {
         /** @noinspection PhpUnhandledExceptionInspection */
         $result = $this->createQueryBuilder('a')
-            ->select('a.icCode, a.name, a.supplier, a.category')
-            ->indexBy('a', 'a.icCode')
+            ->select('a.icNumber, a.name, a.supplier, a.category')
+            ->indexBy('a', 'a.icNumber')
             ->where('a.manufacturer IN (:manufacturers)')
             ->setParameter('manufacturers', $this->innocigsBrands)
             ->getQuery()->getResult(Query::HYDRATE_ARRAY);

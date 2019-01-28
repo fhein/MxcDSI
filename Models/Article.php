@@ -1,10 +1,9 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models\Current;
+namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
 use Shopware\Models\Article\Article as ShopwareArticle;
 
@@ -38,7 +37,7 @@ class Article extends ModelEntity  {
 
     /**
      * @var string $category
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $category;
 
@@ -108,7 +107,7 @@ class Article extends ModelEntity  {
     private $accepted = true;
 
     /**
-     * ImportArticle constructor.
+     * Article constructor.
      */
     public function __construct() {
         $this->variants = new ArrayCollection();
@@ -170,7 +169,7 @@ class Article extends ModelEntity  {
     }
 
     public function setVariants($variants) {
-        $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\Current\Variant', 'variants');
+        $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\Variant', 'variants');
     }
 
     /**
@@ -219,36 +218,36 @@ class Article extends ModelEntity  {
         return $this->accepted;
     }
     /**
-     * @return string
+     * @return null|string
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
     /**
-     * @param string $description
+     * @param null|string $description
      */
-    public function setDescription(string $description)
+    public function setDescription(?string $description)
     {
         $this->description = $description;
     }
     /**
-     * @return string
+     * @return null|string
      */
-    public function getImageUrl(): string
+    public function getImageUrl(): ?string
     {
         return $this->imageUrl;
     }
     /**
-     * @param string $imageUrl
+     * @param null|string
      */
-    public function setImageUrl(string $imageUrl)
+    public function setImageUrl(?string $imageUrl)
     {
         $this->imageUrl = $imageUrl;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getSupplier(): ?string
     {
@@ -256,7 +255,7 @@ class Article extends ModelEntity  {
     }
 
     /**
-     * @param string $supplier
+     * @param null|string $supplier
      */
     public function setSupplier(?string $supplier)
     {
@@ -264,7 +263,7 @@ class Article extends ModelEntity  {
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getBrand(): ?string
     {
@@ -272,7 +271,7 @@ class Article extends ModelEntity  {
     }
 
     /**
-     * @param string $brand
+     * @param null|string $brand
      */
     public function setBrand(?string $brand)
     {
@@ -296,15 +295,15 @@ class Article extends ModelEntity  {
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getManualUrl(): string
+    public function getManualUrl(): ?string
     {
         return $this->manualUrl;
     }
 
     /**
-     * @param string $manualUrl
+     * @param null|string $manualUrl
      */
     public function setManualUrl(?string $manualUrl)
     {
@@ -312,33 +311,33 @@ class Article extends ModelEntity  {
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getCategory()
+    public function getCategory(): ?string
     {
         return $this->category;
     }
 
     /**
-     * @param string $category
+     * @param null|string $category
      */
-    public function setCategory(string $category)
+    public function setCategory(?string $category)
     {
         $this->category = $category;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getManufacturer()
+    public function getManufacturer(): ?string
     {
         return $this->manufacturer;
     }
 
     /**
-     * @param string $manufacturer
+     * @param null|string $manufacturer
      */
-    public function setManufacturer(string $manufacturer)
+    public function setManufacturer(?string $manufacturer)
     {
         $this->manufacturer = $manufacturer;
     }

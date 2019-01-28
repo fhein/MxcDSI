@@ -1,11 +1,10 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models\Current;
+namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
 
 
@@ -13,6 +12,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_group")
+ * @ORM\Entity(repositoryClass="GroupRepository")
  */
 class Group extends ModelEntity  {
 
@@ -75,7 +75,7 @@ class Group extends ModelEntity  {
     //
     public function setOptions($options) {
         if (! empty($options)) {
-            $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Current\Option', 'options');
+            $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Option', 'options');
         }
     }
 

@@ -1,15 +1,14 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models\Import;
+namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\ORM\Mapping as ORM;
-use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
 
 /**
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_plugin_mxc_dsi_model_import")
+ * @ORM\Table(name="s_plugin_mxc_dsi_model")
  * @ORM\Entity(repositoryClass="ModelRepository")
  */
 class Model extends ModelEntity
@@ -18,7 +17,7 @@ class Model extends ModelEntity
 
     /**
      * @var string $category
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $category;
 
@@ -36,7 +35,7 @@ class Model extends ModelEntity
 
     /**
      * @var string $ean
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $ean;
 
@@ -71,8 +70,8 @@ class Model extends ModelEntity
     private $additionalImages;
 
     /**
-     * @var string $manufacturer ;
-     * @ORM\Column(name="manufacturer", type="string", nullable=true)
+     * @var string $manufacturer
+     * @ORM\Column(type="string", nullable=true)
      */
     private $manufacturer;
 
@@ -89,17 +88,17 @@ class Model extends ModelEntity
     private $options;
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getCategory(): string
+    public function getCategory(): ?string
     {
         return $this->category;
     }
 
     /**
-     * @param string $category
+     * @param null|string $category
      */
-    public function setCategory(string $category)
+    public function setCategory(?string $category)
     {
         $this->category = $category;
     }
@@ -137,17 +136,17 @@ class Model extends ModelEntity
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getEan(): string
+    public function getEan(): ?string
     {
         return $this->ean;
     }
 
     /**
-     * @param string $ean
+     * @param null|string $ean
      */
-    public function setEan(string $ean)
+    public function setEan(?string $ean)
     {
         $this->ean = $ean;
     }
@@ -201,17 +200,17 @@ class Model extends ModelEntity
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getImageUrl()
+    public function getImageUrl() : ?string
     {
         return $this->imageUrl;
     }
 
     /**
-     * @param string $imageUrl
+     * @param null|string $imageUrl
      */
-    public function setImageUrl(string $imageUrl)
+    public function setImageUrl(?string $imageUrl)
     {
         $this->imageUrl = $imageUrl;
     }
@@ -219,7 +218,7 @@ class Model extends ModelEntity
     /**
      * @return string
      */
-    public function getAdditionalImages(): string
+    public function getAdditionalImages(): ?string
     {
         return $this->additionalImages;
     }
@@ -233,23 +232,23 @@ class Model extends ModelEntity
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getManufacturer(): string
+    public function getManufacturer(): ?string
     {
         return $this->manufacturer;
     }
 
     /**
-     * @param string $manufacturer
+     * @param null|string $manufacturer
      */
-    public function setManufacturer(string $manufacturer)
+    public function setManufacturer(?string $manufacturer)
     {
         $this->manufacturer = $manufacturer;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
     public function getManualUrl(): ?string
     {

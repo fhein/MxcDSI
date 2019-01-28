@@ -1,10 +1,9 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models\Current;
+namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
 
 
@@ -12,6 +11,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_option")
+ * @ORM\Entity(repositoryClass="OptionRepository")
  */
 class Option extends ModelEntity  {
 

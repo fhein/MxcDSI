@@ -10,7 +10,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.detail.Variant', {
         return {
              columns: {
                  // active:     { header: 'active', width: 60, flex: 0 }
-                 code:          { header: 'Code', width: 150, flex: 0},
+                 number:        { header: 'Number', width: 150, flex: 0},
                  description:   { header: 'Description'},
                  accepted:      { header: 'accept', width: 45, flex: 0}
              },

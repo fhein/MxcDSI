@@ -6,7 +6,7 @@ use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportModifier;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
-use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Article;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
 {

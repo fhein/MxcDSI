@@ -1,8 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models\Import;
-
-use MxcDropshipInnocigs\Models\BaseEntityRepository;
+namespace MxcDropshipInnocigs\Models;
 
 class ModelRepository extends BaseEntityRepository
 {

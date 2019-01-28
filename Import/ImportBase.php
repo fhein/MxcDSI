@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Import;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
+use MxcDropshipInnocigs\Exception\InvalidArgumentException;
 use Zend\Config\Config;
 
 class ImportBase
@@ -61,30 +62,26 @@ class ImportBase
             // flatten options
             $options = [];
             foreach ($item['PRODUCTS_ATTRIBUTES'] as $group => $option) {
-                $options[] = $group . '#!#' . $option;
+                $options[] = trim($group) . '#!#' . trim($option);
             }
             sort($options);
             $item['PRODUCTS_ATTRIBUTES'] = implode('##!##', $options);
 
             if (is_string($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])) {
-                $item['PRODUCTS_IMAGE_ADDITIONAL'] = $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'];
+                $item['PRODUCTS_IMAGE_ADDITIONAL'] = trim($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']);
             } else {
-                $images = $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'];
+                $images = array_map('trim', $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']);
                 sort($images);
                 $item['PRODUCTS_IMAGE_ADDITIONAL'] = implode('#!#', $images);
             }
-            $this->import[$item['MODEL']] = $item;
+            $this->import[trim($item['MODEL'])] = array_map('trim', $item);
         }
     }
 
     protected function getParamString($value)
     {
-        if (is_string($value)) {
-            return $value;
-        }
-        if (is_array($value) && empty($value)) {
-            return '';
-        }
+        if (! $value || is_string($value)) return $value;
+        if (is_array($value) && empty($value)) return '';
         throw new InvalidArgumentException(
             sprintf('String or empty array expected, got %s.',
                 is_object($value) ? get_class($value) : gettype($value)

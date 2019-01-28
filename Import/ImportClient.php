@@ -6,7 +6,7 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
-use MxcDropshipInnocigs\Models\Import\Model;
+use MxcDropshipInnocigs\Models\Model;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
@@ -80,7 +80,7 @@ class ImportClient extends ImportBase implements EventSubscriber
         parent::import();
         $this->createModels();
         $this->modelManager->flush();
-        $this->logImport();
+        // $this->logImport();
 
         $this->importMapper->import($this->importLog);
     }
@@ -115,7 +115,7 @@ class ImportClient extends ImportBase implements EventSubscriber
     protected function setModel(Model $model, array $data): void
     {
         $model->setCategory($this->getParamString($data['CATEGORY']));
-        $model->setMaster($data['MASTER']);
+        $model->setMaster($this->getParamString($data['MASTER']));
         $model->setModel($this->getParamString($data['MODEL']));
         $model->setEan($this->getParamString($data['EAN']));
         $model->setName($this->getParamString($data['NAME']));

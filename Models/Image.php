@@ -1,16 +1,16 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
-namespace MxcDropshipInnocigs\Models\Current;
+namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
 
 /**
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_image")
+ * @ORM\Entity(repositoryClass="ImageRepository")
  */
 class Image extends ModelEntity
 {
@@ -27,6 +27,12 @@ class Image extends ModelEntity
      * @ORM\Column(type="string", nullable=false)
      */
     private $url;
+
+    /**
+     * @var bool $accepted
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $accepted;
 
     public function __construct()
     {
@@ -70,5 +76,21 @@ class Image extends ModelEntity
      */
     public function addVariant(Variant $variant) {
         $this->variants->add($variant);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAccepted(): bool
+    {
+        return $this->accepted;
+    }
+
+    /**
+     * @param bool $accepted
+     */
+    public function setAccepted(bool $accepted)
+    {
+        $this->accepted = $accepted;
     }
 }

@@ -2,7 +2,7 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Models\Import\Model;
+use MxcDropshipInnocigs\Models\Model;
 
 class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationController
 {

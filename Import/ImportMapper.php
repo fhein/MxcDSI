@@ -2,16 +2,19 @@
 
 namespace MxcDropshipInnocigs\Import;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
-use MxcDropshipInnocigs\Models\Current\Article;
-use MxcDropshipInnocigs\Models\Current\ArticleRepository;
-use MxcDropshipInnocigs\Models\Current\Option;
-use MxcDropshipInnocigs\Models\Current\OptionRepository;
-use MxcDropshipInnocigs\Models\Current\Variant;
-use MxcDropshipInnocigs\Models\Current\VariantRepository;
-use MxcDropshipInnocigs\Models\Import\Model;
+use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\ArticleRepository;
+use MxcDropshipInnocigs\Models\Group;
+use MxcDropshipInnocigs\Models\Image;
+use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Models\Option;
+use MxcDropshipInnocigs\Models\OptionRepository;
+use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\Models\VariantRepository;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
@@ -35,8 +38,17 @@ class ImportMapper
     /** @var array $variants */
     protected $variants;
 
+    /** @var array $options */
+    protected $options;
+
+    /** @var array $groups */
+    protected $groups;
+
     /** @var array */
     protected $articles;
+
+    /** @var array */
+    protected $images;
 
     /** @var LoggerInterface $log */
     protected $log;
@@ -49,20 +61,6 @@ class ImportMapper
 
     /** @var ImportModifier $importModifier */
     protected $importModifier;
-
-    protected $optionNameMapping = [
-        'blau-prisma' => 'prisma-blau',
-        'chrom-prisma' => 'chrome-prisma',
-        'gold-prisma' => 'prisma-gold',
-        '10 mg/ml' => '- 10mg/ml',
-        'grau-weiß' => 'grau-weiss',
-        '0,25 Ohm' => '0,25',
-        '1000er Packung' => '1000er Packubng',
-        'resin-rot' => ' Resin rot',
-        '0 mg/ml'   => '0 mg/mgl',
-        'weiss' => ' weiß',
-        '1,5 mg/ml' => '1,5 ml',
-    ];
 
     /**
      * ImportMapper constructor.
@@ -93,7 +91,7 @@ class ImportMapper
     public function addArticleDetail(Article $article)
     {
         $variant = $article->getVariants()[0];
-        $raw = $this->apiClient->getItemInfo($variant->getCode());
+        $raw = $this->apiClient->getItemInfo($variant->getNumber());
         $description = $this->getStringParam($raw['PRODUCTS']['PRODUCT']['DESCRIPTION']);
         if ($description === '') {
             $this->log->warn(sprintf('%s: No description available from InnoCigs for article %s.',
@@ -110,7 +108,7 @@ class ImportMapper
             $article->setDescription($description);
             $this->modelManager->persist($article);
         } else {
-            $this->log->info(sprintf('%s: ImportArticle description from InnoCigs for article %s is up to date.',
+            $this->log->info(sprintf('%s: Article description from InnoCigs for article %s is up to date.',
                 __FUNCTION__,
                 $article->getNumber()
             ));
@@ -139,66 +137,39 @@ class ImportMapper
         );
     }
 
-    public function mapOptions(string $options) {
-        $options = explode('##!##', $options);
-        foreach ($options as $option) {
-            $option = explode('#!#', $option);
-            $option[0] = $this->propertyMapper->mapGroupName($option[0]);
-            $options[1] = $this->propertyMapper->mapOptionName($option[1]);
-            $result[] = implode('#!#', $option);
+    protected function getGroup(string $groupName) {
+        $group = $this->groups[$groupName];
+        if (null === $group) {
+            $group = new Group();
+            $group->setAccepted(true);
+            $group->setName($groupName);
+            $this->modelManager->persist($group);
+            $this->groups[$groupName] = $group;
         }
-        return implode('##!##', $result);
+        return $group;
     }
 
-    protected function removeOptionsFromArticleName(string $name, string $options) {
-
-        // Innocigs variant names include variant descriptions
-        // We take the first variant's name and remove the variant descriptions
-        // in order to extract the real article name
-        $options = explode($options, '##!##');
-
-        foreach ($options as $option) {
-            $option = trim(explode($option, '#!#')[1]);
-            if ($option === '1er Packung') continue;
-
-            if (strpos($name, $option) !== false) {
-                $name = str_replace($option, '', $name);
-            } else {
-                // They introduced some cases where the option name is not equal
-                // to the string added to the article name, so we have to check
-                // that, also. The implementation here is a hack right now.
-                $o = $this->optionNameMapping[$option] ?? null;
-                if ($o) {
-                    $this->log->warn(sprintf(
-                        'ImportArticle name \'%s\' does not contain the option name \'%s\'. ImportOption name mapping fix applied.',
-                        $name,
-                        $option
-                    ));
-                    $name = str_replace($o, '', $name);
-                } else {
-                    $this->log->warn(sprintf(
-                        'ImportArticle name \'%s\' does not contain the option name \'%s\' and there is no option name mapping specified.',
-                        $name,
-                        $option
-                    ));
-                }
+    public function getOptions(string $optionString): ArrayCollection
+    {
+        $optionArray = explode('##!##', $optionString);
+        $options = [];
+        foreach ($optionArray as $option) {
+            $param = explode('#!#', $option);
+            $optionName = $this->propertyMapper->mapOptionName($param[1]);
+            $groupName = $this->propertyMapper->mapGroupName($param[0]);
+            $option = $this->options[$groupName][$optionName];
+            if ($option === null) {
+                $group = $this->getGroup($groupName);
+                $option = new Option();
+                $option->setAccepted(true);
+                $option->setName($optionName);
+                $group->addOption($option);
+                $this->modelManager->persist($group);
+                $this->options[$groupName][$optionName] = $option;
             }
+            $options[] = $option;
         }
-        $name = trim($name);
-        if (substr($name, -2) === ' -') {
-            $name = substr($name, 0, strlen($name) - 2);
-        }
-        return trim($name);
-    }
-
-    protected function getArticle(string $number) {
-        if ($this->articles[$number]) return $this->articles[$number];
-        $article = $this->articleRepository->findOneBy(['number' => $number]);
-        if ($article) {
-            $this->articles[$number] = $article;
-            return $article;
-        }
-        return null;
+        return new ArrayCollection($options);
     }
 
     protected function addArticle(Model $model) {
@@ -206,52 +177,61 @@ class ImportMapper
         $this->modelManager->persist($article);
         $article->setActive(false);
         $article->setAccepted(true);
-
-        $number = $model->getMaster();
-        $this->articles[$number] = $article;
-        $article->setNumber($this->propertyMapper->mapArticleNumber($number));
-        $article->setIcNumber($number);
-
-        $article->setNumber($this->propertyMapper->mapArticleNumber($number));
-        $article->setIcNumber($number);
-        $article->setDescription('n/a');
-        $article->setManualUrl($model->getManualUrl());
-        $manufacturer = $model->getManufacturer();
-        $article->setManufacturer($manufacturer);
-        $article->setImageUrl($model->getImageUrl());
-        $name = $this->removeOptionsFromArticleName($model->getName(), $model->getOptions());
-        $bs = $this->propertyMapper->mapManufacturer($number, $manufacturer);
-        $article->setBrand($bs['brand']);
-        $article->setSupplier($bs['supplier']);
-        $article->setName($this->propertyMapper->mapArticleName($name, $number, $article));
-
-        // this has to be last because it depends on the article properties
-        $article->setCategory($this->propertyMapper->mapCategory($model->getCategory(), $number, $article));
+        $this->propertyMapper->modelToArticle($model, $article);
         return $article;
+    }
+
+    protected function getArticle(Model $model) {
+        $number = $model->getMaster();
+
+        // return cached article if available
+        $article = $this->articles[$number];
+        if ($article) return $article;
+
+        // get from database or create new article
+        $article = $this->articleRepository->findOneBy(['number' => $number]) ?? $this->addArticle($model);
+
+        // add to cache
+        $this->articles[$number] = $article;
+
+        return $article;
+    }
+
+    public function getImages(?string $imageString) {
+        $imageUrls = explode('#!#', $imageString);
+        $images = [];
+        foreach ($imageUrls as $imageUrl) {
+            $image = $this->images[$imageUrl];
+            if (null === $image) {
+                $image = new Image();
+                $this->modelManager->persist($image);
+                $image->setAccepted(true);
+                $image->setUrl($imageUrl);
+                $this->images[$imageUrl] = $image;
+                $images[] = $image;
+            }
+        }
+        return new ArrayCollection($images);
     }
 
     protected function addVariants(array $additions) {
         /** @var  Model $model */
         foreach ($additions as $number => $model) {
-            $article = $this->getArticle($model->getMaster());
-            if (null === $article) {
-                $article = $this->addArticle($model);
-            }
+            $article = $this->getArticle($model);
             $variant = new Variant();
             $this->modelManager->persist($variant);
+            $this->variants[$model->getModel()] = $variant;
             $article->addVariant($variant);
-
             $variant->setActive(false);
             $variant->setAccepted(true);
-            $variant->setNumber($this->propertyMapper->mapVariantNumber($model->getModel()));
-            $variant->setEan($model->getEan());
 
-            $price = floatval(str_replace(',', '.', $model->getPurchasePrice()));
-            $variant->setPurchasePrice($price);
-            $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
-            $variant->setRetailPrice($price);
-            $variant->setImages($model->getAdditionalImages());
-            $variant->setOptions($this->mapOptions($model->getOptions()));
+            $this->propertyMapper->modelToVariant($model, $variant);
+
+            $images = $model->getAdditionalImages();
+            if (null !== $images) {
+                $variant->setImages($this->getImages($images));
+            }
+            $variant->setOptions($this->getOptions($model->getOptions()));
         }
     }
 
@@ -269,8 +249,60 @@ class ImportMapper
         }
     }
 
-    public function changeVariants(array $changes)
+    protected function changeOptions(Article $article, string $newValue) {
+
+    }
+
+    protected function changeImages(Variant $variant, string $newValue)
     {
+    }
+
+    protected function changeVariant(Variant $variant, Model $model, array $fields) {
+        foreach ($fields as $name => $values) {
+            $newValue = $values['newValue'];
+            switch ($name) {
+                case 'category':
+                    $this->propertyMapper->mapCategory($variant->getArticle(), $newValue);
+                    break;
+                case 'ean':
+                    $variant->setEan($newValue);
+                    break;
+                case 'name':
+                    $name = $this->propertyMapper->removeOptionsFromArticleName($newValue, $model->getOptions());
+                    $this->propertyMapper->mapArticleName($variant->getArticle(), $name);
+                    break;
+                case 'purchasePrice':
+                    $price = floatval(str_replace(',', '.', $newValue));
+                    $variant->setPurchasePrice($price);
+                    break;
+                case 'retailPrice':
+                    $price = floatval(str_replace(',', '.', $newValue));
+                    $variant->setRetailPrice($price);
+                    break;
+                case 'manufacturer':
+                    $this->propertyMapper->mapManufacturer($variant->getArticle(), $newValue);
+                    break;
+                case 'imageUrl':
+                    $variant->getArticle()->setImageUrl($newValue);
+                    break;
+                case 'additionalImages':
+                    $this->changeImages($variant, $newValue);
+                    break;
+                case 'options':
+                    $this->changeOptions($variant->getArticle(), $newValue);
+                    break;
+            }
+        }
+    }
+
+    protected function changeVariants(array $changes)
+    {
+        foreach ($changes as $number => $change) {
+            $variant = $this->variants[$number];
+            $model = $change['model'];
+            $fields = $change['fields'];
+            $this->changeVariant($variant, $model, $fields);
+        }
     }
 
     public function import(array $import)
@@ -281,6 +313,8 @@ class ImportMapper
         $this->optionRepository = $this->modelManager->getRepository(Option::class);
         $this->variants = $this->variantRepository->getAllIndexed();
         $this->options = $this->optionRepository->getAllIndexed();
+        $this->groups = $this->modelManager->getRepository(Group::class)->getAllIndexed();
+        $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
 
         $this->addVariants($import['additions']);
         $this->deleteVariants($import['deletions']);

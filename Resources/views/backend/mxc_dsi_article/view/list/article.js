@@ -10,7 +10,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             detailWindow: 'Shopware.apps.MxcDsiArticle.view.detail.Window',
             columns: {
                 active:     { header: 'active', width: 40, flex: 0 },
-                code:       { header: 'Code'},
+                number:     { header: 'Number'},
                 manufacturer: { header: 'Manufacturer' },
                 supplier:   { header: 'Supplier'},
                 brand:      { header: 'Brand'},

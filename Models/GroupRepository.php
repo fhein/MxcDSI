@@ -1,8 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models\Current;
-
-use MxcDropshipInnocigs\Models\BaseEntityRepository;
+namespace MxcDropshipInnocigs\Models;
 
 class GroupRepository extends BaseEntityRepository
 {

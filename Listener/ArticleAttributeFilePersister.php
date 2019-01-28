@@ -11,7 +11,7 @@ namespace MxcDropshipInnocigs\Listener;
 
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Article;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 use Zend\Config\Factory;

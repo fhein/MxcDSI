@@ -3,8 +3,9 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Current\Article;
-use MxcDropshipInnocigs\Models\Current\Variant;
+use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\Option;
+use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
 
@@ -51,14 +52,12 @@ class ArticleOptionMapper
         $this->log->enter();
         $groupOptions = [];
         foreach ($icVariants as $icVariant) {
-            /**
-             * @var Variant $icVariant
-             */
-            $icOptions = explode('##!##', $icVariant->getOptions());
+            /** @var Variant $icVariant */
+            $icOptions = $icVariant->getOptions();
+            /** @var Option $icOption */
             foreach ($icOptions as $icOption) {
-                $param = explode('#!#', $icOption);
-                $groupName = $param[0];
-                $optionName = $param[1];
+                $groupName = $icOption->getIcGroup()->getName();
+                $optionName = $icOption->getName();
 
                 $this->log->debug(sprintf('ImportVariant %s (%s) has option %s from group %s.',
                     $icVariant->getNumber(),
@@ -133,7 +132,7 @@ class ArticleOptionMapper
             return null;
         }
 
-        $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs ImportArticle %s.',
+        $this->log->info(sprintf('%s: Creating configurator groups and options for InnoCigs article %s.',
             __FUNCTION__,
             $icArticle->getNumber()
         ));
@@ -141,7 +140,7 @@ class ArticleOptionMapper
         $this->createShopwareGroupsAndOptions($variants);
 
         $name = 'mxc-set-' . $icArticle->getNumber();
-        $this->log->info(sprintf('%s: Creating configurator set %s for InnoCigs ImportArticle %s.',
+        $this->log->info(sprintf('%s: Creating configurator set %s for InnoCigs article %s.',
             __FUNCTION__,
             $name,
             $icArticle->getNumber()

@@ -1,9 +1,10 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models\Current;
+namespace MxcDropshipInnocigs\Models;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use MxcDropshipInnocigs\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
 use Shopware\Models\Article\Configurator\Option as ShopwareOption;
 
@@ -31,12 +32,17 @@ class Variant extends ModelEntity
     private $number;
 
     /**
+     * @var string $number
+     * @ORM\Column(name="ic_number", type="string", nullable=false)
+     */
+    private $icNumber;
+
+    /**
      * @var string $ean
      *
-     * @ORM\Column(name="ean", type="string", nullable=false)
+     * @ORM\Column(name="ean", type="string", nullable=true)
      */
     private $ean;
-
     /**
      * @var float $purchasePrice
      * @ORM\Column(name="purchase_price", type="decimal", precision=5, scale=2, nullable=false)
@@ -51,15 +57,23 @@ class Variant extends ModelEntity
     private $retailPrice;
 
     /**
-     * @var string $options
-     * @ORM\Column(name="options", type="string", nullable=true)
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Option", inversedBy="variants")
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_options")
      */
     private $options;
 
     /**
-     * @ORM\Column(tpye="string", nullable=true)
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Image", inversedBy="variants", cascade="persist")
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_images")
      */
     private $images;
+
+    /**
+     * @var @ORM\Column(type="string", nullable=true)
+     */
+    private $description;
 
     /**
      * @var boolean $active
@@ -87,12 +101,44 @@ class Variant extends ModelEntity
      */
     private $shopwareOptions = [];
 
+    public function __construct()
+    {
+        $this->options = new ArrayCollection();
+    }
+
     /**
-     * @return string
+     * @return Collection
      */
     public function getOptions()
     {
         return $this->options;
+    }
+
+    /**
+     * @param Option $option./in
+     *
+     * This is the owner side so we have to add the backlink here
+     */
+    public function addOption(Option $option) {
+        $this->options->add($option);
+        $option->addVariant($this);
+        $this->getDescription();
+    }
+
+    public function getDescription() {
+        /** @var Option $option */
+        $d = [];
+        foreach($this->getOptions() as $option) {
+            $group = $option->getIcGroup();
+            $d[] = $group->getName() . ': ' . $option->getName();
+        }
+        sort($d);
+        $this->description = implode(', ', $d);
+        return $this->description;
+    }
+
+    public function setDescription(/** @noinspection PhpUnusedParameterInspection */ string $_) {
+        $this->getDescription();
     }
 
     /**
@@ -112,9 +158,9 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @return string $ean
+     * @return null|string $ean
      */
-    public function getEan()
+    public function getEan() : ?string
     {
         return $this->ean;
     }
@@ -160,10 +206,14 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param string $options
+     * @param Collection $options
      */
-    public function setOptions(string $options) {
+    public function setOptions(Collection $options) {
         $this->options = $options;
+        foreach ($options as $option) {
+            $option->addVariant($this);
+        }
+        $this->getDescription();
     }
 
     /**
@@ -175,9 +225,9 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param string $ean
+     * @param null|string $ean
      */
-    public function setEan($ean)
+    public function setEan(?string $ean)
     {
         $this->ean = $ean;
     }
@@ -251,7 +301,7 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @return string
+     * @return Collection
      */
     public function getImages()
     {
@@ -259,11 +309,37 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param string $images
+     * @param Collection $images
      */
-    public function setImages($images)
+    public function setImages(Collection $images)
     {
         $this->images = $images;
+        foreach ($images as $image) {
+            $image->addVariant($this);
+        }
     }
 
+    /**
+     * @param Image $image
+     */
+    public function addImage(Image $image) {
+        $this->images->add($image);
+        $image->addVariant($this);
+    }
+
+    /**
+     * @return string
+     */
+    public function getIcNumber(): string
+    {
+        return $this->icNumber;
+    }
+
+    /**
+     * @param string $icNumber
+     */
+    public function setIcNumber(string $icNumber): void
+    {
+        $this->icNumber = $icNumber;
+    }
 }

@@ -1,8 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models\Current;
-
-use MxcDropshipInnocigs\Models\BaseEntityRepository;
+namespace MxcDropshipInnocigs\Models;
 
 class OptionRepository extends BaseEntityRepository
 {
@@ -10,7 +8,6 @@ class OptionRepository extends BaseEntityRepository
         /** @noinspection PhpUnhandledExceptionInspection */
         $options = $this->createQueryBuilder('o')
             ->select('o')
-            ->leftJoin(Group::class, 'g')
             ->getQuery()
             ->getResult();
         $result = [];

@@ -10,7 +10,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.model.Variant', {
 
     fields: [
         { name : 'id', type: 'int', useNull: true },
-        { name : 'code', type: 'string' },
+        { name : 'number', type: 'string' },
         { name : 'ean', type: 'string' },
         { name : 'priceNet', type: 'float' },
         { name : 'priceRecommended', type: 'float' },

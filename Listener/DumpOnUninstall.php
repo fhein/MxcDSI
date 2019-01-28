@@ -11,7 +11,7 @@ namespace MxcDropshipInnocigs\Listener;
 
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Article;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 use Zend\Config\Factory;
@@ -98,13 +98,13 @@ class DumpOnUninstall extends ActionListener
     public function dumpInnocigsBrandsAndAkkus() {
         $r = $this->modelManager->getRepository(Article::class);
         $akkus = $r->createQueryBuilder('a')
-            ->select('a.code')
+            ->select('a.number')
             ->where('a.manufacturer = \'Akkus\'')
             ->getQuery()
             ->getScalarResult();
         $config['akkus'] = array_column($akkus, 'code');;
         $innocigs = $r->createQueryBuilder('a')
-            ->select('a.code')
+            ->select('a.number')
             ->where('a.manufacturer IN (\'InnoCigs\', \'Steamax\', \'SC\')')
             ->getQuery()
             ->getScalarResult();

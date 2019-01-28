@@ -10,7 +10,9 @@ namespace MxcDropshipInnocigs\Import;
 
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Current\Article;
+use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Models\Variant;
 
 class PropertyMapper
 {
@@ -29,13 +31,27 @@ class PropertyMapper
         'InnoCigs',
     ];
 
+    protected $optionNameMapping = [
+        'blau-prisma' => 'prisma-blau',
+        'chrom-prisma' => 'chrome-prisma',
+        'gold-prisma' => 'prisma-gold',
+        '10 mg/ml' => '- 10mg/ml',
+        'grau-weiß' => 'grau-weiss',
+        '0,25 Ohm' => '0,25',
+        '1000er Packung' => '1000er Packubng',
+        'resin-rot' => ' Resin rot',
+        '0 mg/ml'   => '0 mg/mgl',
+        'weiss' => ' weiß',
+        '1,5 mg/ml' => '1,5 ml',
+    ];
+
     public function __construct(array $mappings, array $articleConfig, LoggerInterface $log) {
         $this->mappings = $mappings;
         $this->articleConfig = $articleConfig;
         $this->log = $log;
     }
 
-    public function mapArticleName(string $name, string $index, Article $article)
+    public function mapArticleName(Article $article, string $name): void
     {
         // article configuration has highest priority
 //        $result = $this->articleConfig[$index]['name'];
@@ -43,7 +59,10 @@ class PropertyMapper
 
         // general name mapping applies next
         $result = $this->mappings['article_names'][$name];
-        if ($result !== null) return $result;
+        if ($result !== null) {
+            $article->setName($result);
+            return;
+        }
 
         // rule based name mapping
         $brand = $article->getBrand();
@@ -54,15 +73,7 @@ class PropertyMapper
         $search = array_keys($parts);
         $replace = array_values($parts);
         $name = str_replace($search, $replace, $name);
-        return $name;
-    }
-
-    public function mapArticleNumber($code) {
-        return $this->mappings['article_codes'][$code] ?? $code;
-    }
-
-    public function mapVariantNumber($code) {
-        return $this->mappings['variant_codes'][$code] ?? $code;
+        $article->setName($name);
     }
 
     public function mapGroupName($name) {
@@ -82,77 +93,144 @@ class PropertyMapper
         return $name;
     }
 
-    public function mapCategory(string $name, string $index, Article $article)
+    public function mapCategory(Article $article, ?string $name) : void
     {
+        if (null === $name) {
+            $article->setCategory('Unknown');
+            return;
+        }
         // article configuration has highest priority
-        $result = $this->articleConfig[$index]['category'];
-        if ($result !== null) return $result;
-
         // general category mapping applies next
-        $result = $this->mappings['categories'][$name];
-        if ($result !== null) return $result;
-        $name = trim($name);
+        $result = $this->articleConfig[$article->getNumber()]['category'] ?? $this->mappings['categories'][$name];
+        if ($result !== null) {
+            $article->setCategory($result);
+            return;
+        }
 
         // rule based category mapping
         if (strpos($name, 'E-Zigaretten') === 0) {
-            return $this->addSubCategory('E-Zigaretten', $article->getSupplier());
+            $category = $this->addSubCategory('E-Zigaretten', $article->getSupplier());
         } elseif (strpos($name, 'Clearomizer') === 0) {
-            return $this->addSubCategory('Verdampfer', $article->getSupplier());
+            $category = $this->addSubCategory('Verdampfer', $article->getSupplier());
         } elseif (strpos($name, 'Box Mods') === 0) {
-            return $this->addSubCategory('Akkuträger', $article->getSupplier());
+            $category = $this->addSubCategory('Akkuträger', $article->getSupplier());
         } elseif (strpos($name, 'Ladegerät') !== false || strpos($article->getName(), 'Ladegerät') !== false) {
-            return $this->addSubCategory('Zubehör > Ladegeräte', $article->getSupplier());
+            $category = $this->addSubCategory('Zubehör > Ladegeräte', $article->getSupplier());
         } elseif( strpos($name, 'Aspire Zubehör') !== false) {
-            return $this->addSubCategory('Zubehör', $article->getSupplier());
+            $category = $this->addSubCategory('Zubehör', $article->getSupplier());
         } elseif( strpos($name, 'Innocigs Zubehör') !== false) {
-            return $this->addSubCategory('Zubehör', $article->getSupplier());
+            $category = $this->addSubCategory('Zubehör', $article->getSupplier());
         } elseif( strpos($name, 'Steamax Zubehör') !== false) {
-            return $this->addSubCategory('Zubehör', $article->getSupplier());
+            $category = $this->addSubCategory('Zubehör', $article->getSupplier());
         } elseif(strpos($article->getName(), 'mAh') != 0) {
             // we had to check Aspire Zubehör, Innocigs Zubehör and Steamax Zubehör upfront
             // because those categories have products with 'mAh' also, but belong to another category
-            return $this->addSubCategory('Zubehör > Akku-Zellen', $article->getSupplier());
+            $category = $this->addSubCategory('Zubehör > Akku-Zellen', $article->getSupplier());
         } elseif (strpos($name, 'Zubehör') === 0) {
-            return $this->addSubCategory('Zubehör', $article->getSupplier());
+            $category = $this->addSubCategory('Zubehör', $article->getSupplier());
         } elseif (strpos($name, 'Liquids > Shake and Vape') === 0) {
-            return $this->addSubCategory('Shake & Vape', $article->getSupplier());
+            $category = $this->addSubCategory('Shake & Vape', $article->getSupplier());
         } elseif (strpos($name, 'Liquids > Basen & Aromen') === 0) {
-            return $this->addSubCategory('Aromen', $article->getSupplier());
+            $category = $this->addSubCategory('Aromen', $article->getSupplier());
         } elseif (strpos($name, 'Liquids > SC > Aromen') === 0) {
-            return $this->addSubCategory('Aromen', $article->getBrand());
+            $category = $this->addSubCategory('Aromen', $article->getBrand());
         } elseif (strpos($name, 'Vampire Vape Aromen') !== false) {
-            return 'Aromen > Vampire Vape';
+            $category = 'Aromen > Vampire Vape';
         } elseif (strpos($name, 'VLADS VG') !== false) {
-            return 'Liquids > VLADS VG';
+            $category = 'Liquids > VLADS VG';
         } elseif ($name === 'Liquids') {
-            return $this->addSubCategory('Liquids', $article->getSupplier());
+            $category = $this->addSubCategory('Liquids', $article->getSupplier());
         } elseif (strpos($name, 'Basen & Shots') !== false) {
-            return $this->addSubCategory('Basen & Shots', $article->getBrand());
+            $category = $this->addSubCategory('Basen & Shots', $article->getBrand());
         } elseif (strpos($name, 'Basen und Shots') !== false) {
-            return $this->addSubCategory('Basen & Shots', $article->getBrand());
+            $category = $this->addSubCategory('Basen & Shots', $article->getBrand());
         } elseif(strpos($article->getName(), 'Vaporizer') !== false) {
-            return $this->addSubCategory('Vaporizer', $article->getBrand());
+            $category = $this->addSubCategory('Vaporizer', $article->getBrand());
         } elseif(strpos($name, 'Liquids >') === 0) {
-            return $name;
+            $category = $name;
         } else {
-            return $this->addSubCategory('Unknown', $name);
+            $category = $this->addSubCategory('Unknown', $name);
         }
+        $article->setCategory($category);
     }
 
-    public function mapManufacturer($number, $name)
+    public function mapManufacturer(Article $article, $name): void
     {
-        $name = trim($name);
-        $result = $this->articleConfig[$number];
-        if ($name === 'Akkus') return $result;
-
-        if (! isset($result['brand'])) {
-            $result['brand'] = $this->mappings['manufacturers'][$name]['brand'] ?? $name;
-        }
-        if (! isset($result['supplier'])) {
+        $result = $this->articleConfig[$article->getNumber()];
+        $article->setBrand($result['brand'] ?? $this->mappings['manufacturers'][$name]['brand'] ?? $name);
+        $supplier = $result['supplier'];
+        if (! $supplier) {
             if (! in_array($name, $this->innocigsBrands)) {
-                $result['supplier'] = $this->mappings['manufacturers'][$name]['supplier'] ?? $name;
+                $supplier = $this->mappings['manufacturers'][$name]['supplier'] ?? $name;
             }
         }
-        return $result;
+        $article->setSupplier($supplier);
+        $article->setManufacturer($name);
+    }
+
+    public function removeOptionsFromArticleName(string $name, string $options)
+    {
+        // Innocigs variant names include variant descriptions
+        // We take the first variant's name and remove the variant descriptions
+        // in order to extract the real article name
+        $options = explode('##!##', $options);
+
+        foreach ($options as $option) {
+            $option = explode( '#!#', $option)[1];
+            if ($option === '1er Packung') continue;
+
+            if (strpos($name, $option) !== false) {
+                $name = str_replace($option, '', $name);
+            } else {
+                // They introduced some cases where the option name is not equal
+                // to the string added to the article name, so we have to check
+                // that, also. The implementation here is a hack right now.
+                $o = $this->optionNameMapping[$option] ?? null;
+                if ($o) {
+                    $this->log->warn(sprintf(
+                        'Model name \'%s\' does not contain the option name \'%s\'. ImportOption name mapping fix applied.',
+                        $name,
+                        $option
+                    ));
+                    $name = str_replace($o, '', $name);
+                } else {
+                    $this->log->warn(sprintf(
+                        'Model name \'%s\' does not contain the option name \'%s\' and there is no option name mapping specified.',
+                        $name,
+                        $option
+                    ));
+                }
+            }
+        }
+        $name = trim($name);
+        if (substr($name, -2) === ' -') {
+            $name = substr($name, 0, strlen($name) - 2);
+        }
+        return trim($name);
+    }
+
+    public function modelToArticle(Model $model, Article $article) {
+        $number = $model->getMaster();
+        $article->setNumber($this->mappings['article_codes'][$number] ?? $number);
+        $article->setIcNumber($number);
+        $article->setManualUrl($model->getManualUrl());
+        $article->setImageUrl($model->getImageUrl());
+        $name = $this->removeOptionsFromArticleName($model->getName(), $model->getOptions());
+        $this->mapManufacturer($article, $model->getManufacturer());
+        $this->mapArticleName($article, $name);
+
+        // this has to be last because it depends on the article properties
+        $this->mapCategory($article, $model->getCategory());
+    }
+
+    public function modelToVariant(Model $model, Variant $variant) {
+        $number = $model->getModel();
+        $variant->setNumber($this->mappings['variant_codes'][$number] ?? $number);
+        $variant->setIcNumber($number);
+        $variant->setEan($model->getEan());
+        $price = floatval(str_replace(',', '.', $model->getPurchasePrice()));
+        $variant->setPurchasePrice($price);
+        $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
+        $variant->setRetailPrice($price);
     }
 }
