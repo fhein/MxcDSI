@@ -165,7 +165,7 @@ class Article extends ModelEntity  {
 
     public function removeVariant(Variant $variant) {
         $this->variants->removeElement($variant);
-
+        $variant->setArticle(null);
     }
 
     public function setVariants($variants) {

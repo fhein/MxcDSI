@@ -9,10 +9,12 @@
 namespace MxcDropshipInnocigs\Import;
 
 
+use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
+use Zend\Config\Factory;
 
 class PropertyMapper
 {
@@ -20,6 +22,9 @@ class PropertyMapper
 
     /** @var array $articleConfig */
     protected $articleConfig;
+
+    /** @var BulkOperation  */
+    protected $bulkOperation;
 
     /** @var LoggerInterface $log */
     protected $log;
@@ -31,24 +36,14 @@ class PropertyMapper
         'InnoCigs',
     ];
 
-    protected $optionNameMapping = [
-        'blau-prisma' => 'prisma-blau',
-        'chrom-prisma' => 'chrome-prisma',
-        'gold-prisma' => 'prisma-gold',
-        '10 mg/ml' => '- 10mg/ml',
-        'grau-weiß' => 'grau-weiss',
-        '0,25 Ohm' => '0,25',
-        '1000er Packung' => '1000er Packubng',
-        'resin-rot' => ' Resin rot',
-        '0 mg/ml'   => '0 mg/mgl',
-        'weiss' => ' weiß',
-        '1,5 mg/ml' => '1,5 ml',
-    ];
+    protected $mismatchedOptionNames = [];
+    protected $categoryMap = [];
 
-    public function __construct(array $mappings, array $articleConfig, LoggerInterface $log) {
+    public function __construct(array $mappings, array $articleConfig, BulkOperation $bulkOperation, LoggerInterface $log) {
         $this->mappings = $mappings;
         $this->articleConfig = $articleConfig;
         $this->log = $log;
+        $this->bulkOperation = $bulkOperation;
     }
 
     public function mapArticleName(Article $article, string $name): void
@@ -104,6 +99,7 @@ class PropertyMapper
         $result = $this->articleConfig[$article->getNumber()]['category'] ?? $this->mappings['categories'][$name];
         if ($result !== null) {
             $article->setCategory($result);
+            $this->categoryMap[$name] = $result;
             return;
         }
 
@@ -151,6 +147,7 @@ class PropertyMapper
         } else {
             $category = $this->addSubCategory('Unknown', $name);
         }
+        $this->categoryMap[$name] = $category;
         $article->setCategory($category);
     }
 
@@ -168,12 +165,14 @@ class PropertyMapper
         $article->setManufacturer($name);
     }
 
-    public function removeOptionsFromArticleName(string $name, string $options)
+    public function removeOptionsFromArticleName(Model $model)
     {
         // Innocigs variant names include variant descriptions
         // We take the first variant's name and remove the variant descriptions
         // in order to extract the real article name
-        $options = explode('##!##', $options);
+        $options = explode('##!##', $model->getOptions());
+        $name = $model->getName();
+        $model = $model->getModel();
 
         foreach ($options as $option) {
             $option = explode( '#!#', $option)[1];
@@ -182,16 +181,15 @@ class PropertyMapper
             if (strpos($name, $option) !== false) {
                 $name = str_replace($option, '', $name);
             } else {
+                $this->mismatchedOptionNames[$model] = [
+                    'name' => $name,
+                    'option' => $option
+                ];
                 // They introduced some cases where the option name is not equal
                 // to the string added to the article name, so we have to check
                 // that, also. The implementation here is a hack right now.
-                $o = $this->optionNameMapping[$option] ?? null;
+                $o = $this->mappings['article_name_option_fixes'][$option] ?? null;
                 if ($o) {
-                    $this->log->warn(sprintf(
-                        'Model name \'%s\' does not contain the option name \'%s\'. ImportOption name mapping fix applied.',
-                        $name,
-                        $option
-                    ));
                     $name = str_replace($o, '', $name);
                 } else {
                     $this->log->warn(sprintf(
@@ -215,7 +213,7 @@ class PropertyMapper
         $article->setIcNumber($number);
         $article->setManualUrl($model->getManualUrl());
         $article->setImageUrl($model->getImageUrl());
-        $name = $this->removeOptionsFromArticleName($model->getName(), $model->getOptions());
+        $name = $this->removeOptionsFromArticleName($model);
         $this->mapManufacturer($article, $model->getManufacturer());
         $this->mapArticleName($article, $name);
 
@@ -232,5 +230,20 @@ class PropertyMapper
         $variant->setPurchasePrice($price);
         $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
         $variant->setRetailPrice($price);
+    }
+
+    public function log() {
+        Factory::toFile(__DIR__ . '/../Dump/option.name.mismatches.php', $this->mismatchedOptionNames);
+        Factory::toFile(__DIR__ . '/../Dump/category.map.php', $this->categoryMap);
+    }
+
+    public function getMismatchedOptionNames() {
+        return $this->mismatchedOptionNames;
+    }
+
+    public function applyFilters() {
+        foreach($this->mappings['filter']['update'] as $filter) {
+            $this->bulkOperation->update($filter);
+        }
     }
 }

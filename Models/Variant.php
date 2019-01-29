@@ -125,6 +125,19 @@ class Variant extends ModelEntity
         $this->getDescription();
     }
 
+    public function addOptions(ArrayCollection $options) {
+        foreach ($options as $option) {
+            $this->addOption($option);
+        }
+    }
+
+    public function removeOption(Option $option)
+    {
+        $this->options->removeElement($option);
+        $option->removeVariant($this);
+        $this->getDescription();
+    }
+
     public function getDescription() {
         /** @var Option $option */
         $d = [];
@@ -198,9 +211,9 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param Article $article
+     * @param null|Article $article
      */
-    public function setArticle(Article $article)
+    public function setArticle(?Article $article)
     {
         $this->article = $article;
     }
@@ -325,6 +338,19 @@ class Variant extends ModelEntity
     public function addImage(Image $image) {
         $this->images->add($image);
         $image->addVariant($this);
+    }
+
+    public function addImages(ArrayCollection $images)
+    {
+        foreach($images as $image) {
+            $this->addImage($image);
+        }
+    }
+
+    public function removeImage(Image $image)
+    {
+        $this->images->removeElement($image);
+        $image->removeVariant($this);
     }
 
     /**

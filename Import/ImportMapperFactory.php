@@ -24,8 +24,7 @@ class ImportMapperFactory implements FactoryInterface
         $apiClient = $container->get(ApiClient::class);
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        $importModifier = $container->get(ImportModifier::class);
         $propertyMapper = $container->get(PropertyMapper::class);
-        return new ImportMapper($modelManager, $apiClient, $propertyMapper, $importModifier, $config, $log);
+        return new ImportMapper($modelManager, $apiClient, $propertyMapper, $config, $log);
     }
 }

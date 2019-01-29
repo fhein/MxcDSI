@@ -12,4 +12,16 @@ class ImageRepository extends BaseEntityRepository
             -> getQuery()
             ->getResult();
     }
+
+    public function removeOrphaned() {
+        $orphans = $this->createQueryBuilder('i')
+            ->select('i')
+            ->where('i.variants is empty')
+            ->getQuery()
+            ->getResult();
+        foreach($orphans as $orphan) {
+            $this->getEntityManager()->remove($orphan);
+        }
+    }
+
 }

@@ -9,6 +9,7 @@ use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Models\Model;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
+use Zend\Config\Factory;
 
 class ImportClient extends ImportBase implements EventSubscriber
 {
@@ -28,6 +29,12 @@ class ImportClient extends ImportBase implements EventSubscriber
     protected $deletions;
 
     protected $importLog;
+
+    /** @var array */
+    protected $categoryUsage;
+
+    /** @var array */
+    protected $categories;
 
     /** @var array */
     protected $fields = [
@@ -80,6 +87,12 @@ class ImportClient extends ImportBase implements EventSubscriber
         parent::import();
         $this->createModels();
         $this->modelManager->flush();
+
+        $this->categories = array_keys($this->categories);
+        sort($this->categories);
+        Factory::toFile(__DIR__ . '/../Dump/innocigs.categories.php', $this->categories);
+        ksort($this->categoryUsage);
+        Factory::toFile(__DIR__ . '/../Dump/innocigs.category.usage.php', $this->categoryUsage);
         // $this->logImport();
 
         $this->importMapper->import($this->importLog);
@@ -114,7 +127,8 @@ class ImportClient extends ImportBase implements EventSubscriber
      */
     protected function setModel(Model $model, array $data): void
     {
-        $model->setCategory($this->getParamString($data['CATEGORY']));
+        $category = $this->getParamString($data['CATEGORY']);
+        $model->setCategory($category);
         $model->setMaster($this->getParamString($data['MASTER']));
         $model->setModel($this->getParamString($data['MODEL']));
         $model->setEan($this->getParamString($data['EAN']));
@@ -125,6 +139,9 @@ class ImportClient extends ImportBase implements EventSubscriber
         $model->setImageUrl($this->getParamString($data['PRODUCTS_IMAGE']));
         $model->setAdditionalImages($data['PRODUCTS_IMAGE_ADDITIONAL']);
         $model->setOptions($data['PRODUCTS_ATTRIBUTES']);
+
+        $this->categoryUsage[$category][] = $model->getName();
+        $this->categories[$category] = true;
     }
 
     public function preUpdate(PreUpdateEventArgs $args)

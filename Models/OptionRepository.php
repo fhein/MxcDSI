@@ -19,4 +19,17 @@ class OptionRepository extends BaseEntityRepository
         }
         return $result;
     }
+
+    public function removeOrphaned() {
+        $orphans = $this->createQueryBuilder('o')
+            ->select('o')
+            ->where('o.variants is empty')
+            ->getQuery()
+            ->getResult();
+        /** @var Option $orphan */
+        foreach($orphans as $orphan) {
+            $orphan->getIcGroup()->removeOption($orphan);
+            $this->getEntityManager()->remove($orphan);
+        }
+    }
 }

@@ -7,14 +7,11 @@ use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
 use MxcDropshipInnocigs\Models\Article;
-use MxcDropshipInnocigs\Models\ArticleRepository;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Option;
-use MxcDropshipInnocigs\Models\OptionRepository;
 use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Models\VariantRepository;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
@@ -25,15 +22,6 @@ class ImportMapper
 
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
-
-    /** @var ArticleRepository $articleRepository */
-    protected $articleRepository;
-
-    /** @var VariantRepository $variantRepository */
-    protected $variantRepository;
-
-    /** @var OptionRepository $optionRepository */
-    protected $optionRepository;
 
     /** @var array $variants */
     protected $variants;
@@ -59,16 +47,12 @@ class ImportMapper
     /** @var Config $config */
     protected $config;
 
-    /** @var ImportModifier $importModifier */
-    protected $importModifier;
-
     /**
      * ImportMapper constructor.
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
-     * @param ImportModifier $importModifier
      * @param Config $config
      * @param LoggerInterface $log
      */
@@ -76,14 +60,12 @@ class ImportMapper
         ModelManager $modelManager,
         ApiClient $apiClient,
         PropertyMapper $propertyMapper,
-        ImportModifier $importModifier,
         Config $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
-        $this->importModifier = $importModifier;
         $this->config = $config;
         $this->log = $log;
     }
@@ -188,10 +170,7 @@ class ImportMapper
         $article = $this->articles[$number];
         if ($article) return $article;
 
-        // get from database or create new article
-        $article = $this->articleRepository->findOneBy(['number' => $number]) ?? $this->addArticle($model);
-
-        // add to cache
+        $article = $this->addArticle($model);
         $this->articles[$number] = $article;
 
         return $article;
@@ -217,6 +196,12 @@ class ImportMapper
     protected function addVariants(array $additions) {
         /** @var  Model $model */
         foreach ($additions as $number => $model) {
+
+            // This line ensures that all model names are checked against
+            // the option names. Import works without it, but the log
+            // does not contain a complete list of option name mismatches.
+            $this->propertyMapper->removeOptionsFromArticleName($model);
+
             $article = $this->getArticle($model);
             $variant = new Variant();
             $this->modelManager->persist($variant);
@@ -237,9 +222,10 @@ class ImportMapper
 
     protected function deleteVariants(array $deletions) {
         /** @var  Model $model */
+        $variantRepository = $this->modelManager->getRepository(Variant::class);
         foreach ($deletions as $model) {
             /** @var  Variant $variant */
-            $variant = $this->variantRepository->findOneBy([ 'model' => $model->getModel()]);
+            $variant = $variantRepository->findOneBy([ 'model' => $model->getModel()]);
             $article = $variant->getArticle();
             $article->removeVariant($variant);
             $this->modelManager->remove($variant);
@@ -249,17 +235,39 @@ class ImportMapper
         }
     }
 
-    protected function changeOptions(Article $article, string $newValue) {
-
+    protected function changeOptions(Variant $variant, string $oldValue, string $newValue) {
+        $oldOptions = explode('##!##', $oldValue);
+        $newOptions = explode('##!##', $newValue);
+        $rOptions = array_diff($oldOptions, $newOptions);
+        foreach ($rOptions as $option) {
+            $param = explode('#!#', $option);
+            $variant->removeOption($this->options[$param[0]][$param[1]]);
+        }
+        $addedOptions = array_diff($newOptions, $oldOptions);
+        $addedOptions = implode('##!##', $addedOptions);
+        $addedOptions = $this->getOptions($addedOptions);
+        $variant->addOptions($this->getOptions($addedOptions));
     }
 
-    protected function changeImages(Variant $variant, string $newValue)
+    protected function changeImages(Variant $variant, string $oldValue, string $newValue)
     {
+        $oldImages = explode('#!#', $oldValue);
+        $newImages = explode('#!#', $newValue);
+
+        $removed = array_diff($oldImages, $newImages);
+        foreach ($removed as $url) {
+            $variant->removeImage($this->images[$url]);
+        }
+
+        $addedImages = implode('#!#', array_diff($newImages, $oldImages));
+        $addedImages = $this->getImages($addedImages);
+        $variant->addImages($addedImages);
     }
 
     protected function changeVariant(Variant $variant, Model $model, array $fields) {
         foreach ($fields as $name => $values) {
             $newValue = $values['newValue'];
+            $oldValue = $values['oldValue'];
             switch ($name) {
                 case 'category':
                     $this->propertyMapper->mapCategory($variant->getArticle(), $newValue);
@@ -268,7 +276,7 @@ class ImportMapper
                     $variant->setEan($newValue);
                     break;
                 case 'name':
-                    $name = $this->propertyMapper->removeOptionsFromArticleName($newValue, $model->getOptions());
+                    $name = $this->propertyMapper->removeOptionsFromArticleName($model);
                     $this->propertyMapper->mapArticleName($variant->getArticle(), $name);
                     break;
                 case 'purchasePrice':
@@ -286,10 +294,14 @@ class ImportMapper
                     $variant->getArticle()->setImageUrl($newValue);
                     break;
                 case 'additionalImages':
-                    $this->changeImages($variant, $newValue);
+                    $this->changeImages($variant, $oldValue, $newValue);
                     break;
                 case 'options':
-                    $this->changeOptions($variant->getArticle(), $newValue);
+                    $this->changeOptions($variant, $oldValue, $newValue);
+                    break;
+                case 'master':
+                    $variant->getArticle()->removeVariant($variant);
+                    $this->getArticle($newValue)->addVariant($variant);
                     break;
             }
         }
@@ -305,39 +317,42 @@ class ImportMapper
         }
     }
 
+    protected function initCache()
+    {
+        $this->articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
+        $this->groups = $this->modelManager->getRepository(Group::class)->getAllIndexed();
+        $this->options = $this->modelManager->getRepository(Option::class)->getAllIndexed();
+        $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
+    }
+
+
+    protected function removeOrphanedItems() {
+        $this->modelManager->getRepository(Article::class)->removeOrphaned();
+        $this->modelManager->getRepository(Variant::class)->removeOrphaned();
+        $this->modelManager->getRepository(Group::class)->removeOrphaned();
+        $this->modelManager->getRepository(Option::class)->removeOrphaned();
+        $this->modelManager->getRepository(Image::class)->removeOrphaned();
+    }
+
     public function import(array $import)
     {
         $this->log->enter();
-        $this->articleRepository = $this->modelManager->getRepository(Article::class);
-        $this->variantRepository = $this->modelManager->getRepository(Variant::class);
-        $this->optionRepository = $this->modelManager->getRepository(Option::class);
-        $this->variants = $this->variantRepository->getAllIndexed();
-        $this->options = $this->optionRepository->getAllIndexed();
-        $this->groups = $this->modelManager->getRepository(Group::class)->getAllIndexed();
-        $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
+        $this->initCache();
 
         $this->addVariants($import['additions']);
         $this->deleteVariants($import['deletions']);
         $this->changeVariants($import['changes']);
+        $this->modelManager->flush();
+        $this->modelManager->clear();
+
         /** @noinspection PhpUndefinedFieldInspection */
         if ($this->config->applyFilters) {
-            $this->log->notice('Applying import modifications.');
-            $this->importModifier->apply();
+            $this->propertyMapper->applyFilters();
         }
-        $this->modelManager->flush();
+
+        $this->propertyMapper->log();
         $this->log->leave();
         return true;
-    }
-
-    protected function getArticleRepository() {
-        if (! $this->articleRepository) {
-            $this->articleRepository = $this->modelManager->getRepository(Article::class);
-        }
-    }
-
-    protected function getVariantRepository() {
-        if (! $this->variantRepository) {
-            $this->variantRepository = $this->modelManager->getRepository(Variant::class);
-        }
     }
 }

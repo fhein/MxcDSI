@@ -78,6 +78,11 @@ class Image extends ModelEntity
         $this->variants->add($variant);
     }
 
+    public function removeVariant(Variant $variant)
+    {
+        $this->variants->removeElement($variant);
+    }
+
     /**
      * @return bool
      */

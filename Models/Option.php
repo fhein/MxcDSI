@@ -71,9 +71,9 @@ class Option extends ModelEntity  {
     }
 
     /**
-     * @param Group $icGroup
+     * @param null|Group $icGroup
      */
-    public function setIcGroup(Group $icGroup)
+    public function setIcGroup(?Group $icGroup)
     {
         $this->icGroup = $icGroup;
     }
@@ -96,6 +96,9 @@ class Option extends ModelEntity  {
         $this->variants->add($variant);
     }
 
+    public function removeVariant(Variant $variant) {
+        $this->variants->removeElement($variant);
+    }
     /**
      * @return bool
      */

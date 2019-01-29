@@ -9,6 +9,28 @@ class ArticleRepository extends BaseEntityRepository
     /** @var Query $supplierBrandByManufacturerQuery */
     protected $supplierBrandByManufacturerQuery;
 
+    public function getAllIndexed()
+    {
+        /** @noinspection PhpUnhandledExceptionInspection */
+        return $this->createQueryBuilder('a')
+            -> select('a')
+            -> indexBy('a', 'a.number')
+            -> getQuery()
+            ->getResult();
+    }
+
+    public function removeOrphaned() {
+        $orphans = $this->createQueryBuilder('a')
+            ->select('a')
+            ->where('a.variants is empty')
+            ->getQuery()
+            ->getResult();
+        /** @var Option $option */
+        foreach($orphans as $orphan) {
+            $this->getEntityManager()->remove($orphan);
+        }
+    }
+
     /** @var Query $supplierBrandQuery */
     protected $supplierBrandQuery;
 

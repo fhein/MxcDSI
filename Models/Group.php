@@ -95,6 +95,12 @@ class Group extends ModelEntity  {
         $option->setIcGroup($this);
     }
 
+    public function removeOption(Option $option)
+    {
+        $this->options->removeElement($option);
+        $option->setIcGroup(null);
+    }
+
     /**
      * @return bool
      */
