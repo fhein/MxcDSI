@@ -28,6 +28,7 @@ class OptionRepository extends BaseEntityRepository
             ->getResult();
         /** @var Option $orphan */
         foreach($orphans as $orphan) {
+            $this->log->debug('Removing orphaned option \'' . $orphan->getName() .'\'');
             $orphan->getIcGroup()->removeOption($orphan);
             $this->getEntityManager()->remove($orphan);
         }

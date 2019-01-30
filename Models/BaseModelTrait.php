@@ -10,6 +10,8 @@ namespace MxcDropshipInnocigs\Models;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use ReflectionClass;
+use ReflectionProperty;
 
 /**
  * @ORM\MappedSuperclass
@@ -25,19 +27,19 @@ trait BaseModelTrait
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var DateTime $created
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $created = null;
+    protected $created = null;
 
     /**
      * @var DateTime $updated
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $updated = null;
+    protected $updated = null;
 
     /**
      * @ORM\PrePersist
@@ -74,5 +76,18 @@ trait BaseModelTrait
     public function getUpdated(): \DateTime
     {
         return $this->updated;
+    }
+
+    public function getPrivatePropertyNames(): array
+    {
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $r = new ReflectionClass($this);
+        $properties = $r->getProperties(ReflectionProperty::IS_PRIVATE);
+        $fields = [];
+        foreach ($properties as $property) {
+            $name = $property->getName();
+            $fields[] = $name;
+        }
+        return $fields;
     }
 }

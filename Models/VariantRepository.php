@@ -20,7 +20,9 @@ class VariantRepository extends BaseEntityRepository
             ->getQuery()
             ->getResult();
 
+        /** @var Variant $orphan */
         foreach($orphans as $orphan) {
+            $this->log->debug('Removing orphaned variant \'' . $orphan->getNumber() .'\'');
             $this->getEntityManager()->remove($orphan);
         }
     }

@@ -1,7 +1,6 @@
 <?php
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use Mxc\Shopware\Plugin\Database\SchemaManager;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportModifier;
 use MxcDropshipInnocigs\Import\InnocigsUpdater;
@@ -46,17 +45,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $sm = $this->services->get(SchemaManager::class);
             $client = $this->services->get(ImportClient::class);
-
-            // $client->createConfiguratorConfiguration();
-
-            // drop all database tables and remove all attributes
-            // created by this plugin
-            $sm->drop();
-            // recreate database tables and attributes
-            $sm->create();
-            // import items from InnoCigs
             $client->import();
         } catch (Throwable $e) {
             $this->log->except($e);

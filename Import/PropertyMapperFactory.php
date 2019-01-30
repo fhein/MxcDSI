@@ -26,11 +26,12 @@ class PropertyMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $mappings = $container->get('config')['mappings'];
-        $articleConfig = $this->getArticleConfiguration();
+        $mappings = $mappings->toArray();
+        $mappings['articles'] =$this->getArticleConfiguration();
         $log = $container->get('logger');
         $bulkOperation = new BulkOperation($container->get('modelManager'), $log);
 
-        return new PropertyMapper($mappings->toArray(), $articleConfig, $bulkOperation, $log);
+        return new PropertyMapper($mappings, $bulkOperation, $log);
     }
 
     protected function getArticleConfiguration()

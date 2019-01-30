@@ -88,6 +88,12 @@ class Model extends ModelEntity
     private $options;
 
     /**
+     * @var bool
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    protected $deleted = false;
+
+    /**
      * @return null|string
      */
     public function getCategory(): ?string
@@ -277,5 +283,29 @@ class Model extends ModelEntity
     public function setOptions(string $options)
     {
         $this->options = $options;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getDeleted(): bool
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDeleted(): bool
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * @param bool $deleted
+     */
+    public function setDeleted(bool $deleted): void
+    {
+        $this->deleted = $deleted;
     }
 }

@@ -3,6 +3,9 @@
 namespace MxcDropshipInnocigs\Import;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\EventSubscriber;
+use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
@@ -15,7 +18,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
-class ImportMapper
+class ImportMapper implements EventSubscriber
 {
     /** @var ApiClient $apiClient */
     protected $apiClient;
@@ -46,6 +49,12 @@ class ImportMapper
 
     /** @var Config $config */
     protected $config;
+
+    /** @var array */
+    protected $importLog;
+
+    /** @var array */
+    protected $fields;
 
     /**
      * ImportMapper constructor.
@@ -225,7 +234,8 @@ class ImportMapper
         $variantRepository = $this->modelManager->getRepository(Variant::class);
         foreach ($deletions as $model) {
             /** @var  Variant $variant */
-            $variant = $variantRepository->findOneBy([ 'model' => $model->getModel()]);
+            $variant = $variantRepository->findOneBy([ 'number' => $model->getModel()]);
+            $variant->removeChildAssociations();
             $article = $variant->getArticle();
             $article->removeVariant($variant);
             $this->modelManager->remove($variant);
@@ -317,6 +327,15 @@ class ImportMapper
         }
     }
 
+    protected function removeOrphanedItems() {
+        $this->modelManager->getRepository(Article::class)->removeOrphaned();
+        $this->modelManager->getRepository(Variant::class)->removeOrphaned();
+        $this->modelManager->getRepository(Option::class)->removeOrphaned();
+        $this->modelManager->getRepository(Group::class)->removeOrphaned();
+        $this->modelManager->getRepository(Image::class)->removeOrphaned();
+    }
+
+
     protected function initCache()
     {
         $this->articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
@@ -326,26 +345,35 @@ class ImportMapper
         $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
     }
 
+    protected function initFields() {
+        foreach ([Article::class, Variant::class, Group::class, Option::class, Image::class] as $class) {
+            /** @var Article $o */
+            $o = new $class();
+            $this->fields[$class] = $o->getPrivatePropertyNames();
+        }
+    }
 
-    protected function removeOrphanedItems() {
-        $this->modelManager->getRepository(Article::class)->removeOrphaned();
-        $this->modelManager->getRepository(Variant::class)->removeOrphaned();
-        $this->modelManager->getRepository(Group::class)->removeOrphaned();
-        $this->modelManager->getRepository(Option::class)->removeOrphaned();
-        $this->modelManager->getRepository(Image::class)->removeOrphaned();
+    protected function getClass($object) {
+        foreach ([Article::class, Variant::class, Group::class, Option::class, Image::class] as $class) {
+            if ($object instanceof $class) return $class;
+        }
+        return null;
     }
 
     public function import(array $import)
     {
         $this->log->enter();
+        $evm = $this->modelManager->getEventManager();
+        $evm->addEventSubscriber($this);
         $this->initCache();
+        $this->initFields();
 
         $this->addVariants($import['additions']);
         $this->deleteVariants($import['deletions']);
         $this->changeVariants($import['changes']);
         $this->modelManager->flush();
         $this->modelManager->clear();
-
+        $evm->removeEventSubscriber($this);
         /** @noinspection PhpUndefinedFieldInspection */
         if ($this->config->applyFilters) {
             $this->propertyMapper->applyFilters();
@@ -354,5 +382,39 @@ class ImportMapper
         $this->propertyMapper->log();
         $this->log->leave();
         return true;
+    }
+
+    public function preUpdate(PreUpdateEventArgs $args)
+    {
+        /** @var PreUpdateEventArgs $args */
+        $entity = $args->getEntity();
+        $class = $this->getClass($entity);
+        $fields = $this->fields[$class];
+        if (null === $fields) return;
+
+        $changes['entity'] = $entity;
+        foreach ($this->fields as $field) {
+            if ($args->hasChangedField($field)) {
+                $changes['fields'][$field] = [
+                    'oldValue' => $args->getOldValue($field),
+                    'newValue' => $args->getNewValue($field)
+                ];
+            }
+        }
+        $this->importLog['changes'][$class][] = $changes;
+    }
+
+    public function postPersist(LifecycleEventArgs $args) {
+
+    }
+
+    /**
+     * Returns an array of events this subscriber wants to listen to.
+     *
+     * @return array
+     */
+    public function getSubscribedEvents()
+    {
+        return [ 'preUpdate', 'postPersist'];
     }
 }

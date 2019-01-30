@@ -1,10 +1,15 @@
 <?php
 
+use MxcDropshipInnocigs\Models\Article;
+
 return [
     'article_name_option_fixes' => [
         'blau-prisma' => 'prisma-blau',
         'minz-grün' => 'minzgrün',
-        'chrom-prisma' => 'chrome-prisma',
+        'chrom-prisma' => [
+            'chrome-prisma',
+            'prisma-chrom'
+        ],
         'gold-prisma' => 'prisma-gold',
         'gunmetal-prisma' => 'prisma-gunmetal',
         'regenbogen-prisma' => 'prisma-regenbogen',
@@ -18,7 +23,10 @@ return [
         '0,25 Ohm' => '0,25',
         '0,4 Ohm' => '0,4',
         '1000er Packung' => '1000er Packubng',
-        '20er Packung' => '20er Packug',
+        '20er Packung' => [
+            '20er Packug',
+            '(20 Stück Pro Packung)'
+        ],
         'resin-rot' => 'Resin rot',
         'resin-gelb' => 'Resin gelb',
         '0 mg/ml'   => '0 mg/mgl',
@@ -30,10 +38,12 @@ return [
         '6 mg/ml' => '6mg/ml',
         'matt-schwarz' => 'matt schwarz',
         'schwarz-weiss' => 'schwarz-weiß',
-        '50PG / 50VG' => '50PG/50VG',
+        '50PG / 50VG' => [
+            '50PG/50VG',
+            '50VG/50PG'
+        ],
         '80VG / 20PG' => '80VG/20PG',
         'regenbogen' => 'iridescent',
-        // '20er Packung' => '(20 Stück pro Packung)',
         '28 GA' => '28GA',
         '26 GA' => '26GA',
         '24 GA' => '24GA',
@@ -145,4 +155,5 @@ return [
             ],
         ],
     ],
+    'articles' => 'This key is reserverd for PropertyMapperFactory',
 ];

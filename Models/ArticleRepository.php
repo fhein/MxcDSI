@@ -25,8 +25,9 @@ class ArticleRepository extends BaseEntityRepository
             ->where('a.variants is empty')
             ->getQuery()
             ->getResult();
-        /** @var Option $option */
+        /** @var Article $orphan */
         foreach($orphans as $orphan) {
+            $this->log->debug('Removing orphaned article \'' . $orphan->getName() .'\'');
             $this->getEntityManager()->remove($orphan);
         }
     }

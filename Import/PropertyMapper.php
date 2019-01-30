@@ -20,9 +20,6 @@ class PropertyMapper
 {
     private $mappings;
 
-    /** @var array $articleConfig */
-    protected $articleConfig;
-
     /** @var BulkOperation  */
     protected $bulkOperation;
 
@@ -39,9 +36,8 @@ class PropertyMapper
     protected $mismatchedOptionNames = [];
     protected $categoryMap = [];
 
-    public function __construct(array $mappings, array $articleConfig, BulkOperation $bulkOperation, LoggerInterface $log) {
+    public function __construct(array $mappings, BulkOperation $bulkOperation, LoggerInterface $log) {
         $this->mappings = $mappings;
-        $this->articleConfig = $articleConfig;
         $this->log = $log;
         $this->bulkOperation = $bulkOperation;
     }
@@ -49,7 +45,7 @@ class PropertyMapper
     public function mapArticleName(Article $article, string $name): void
     {
         // article configuration has highest priority
-//        $result = $this->articleConfig[$index]['name'];
+//        $result = $this->mappings['articles'][$article->getNumber()]['name'];
 //        if ($result !== null) return $result;
 
         // general name mapping applies next
@@ -96,7 +92,7 @@ class PropertyMapper
         }
         // article configuration has highest priority
         // general category mapping applies next
-        $result = $this->articleConfig[$article->getNumber()]['category'] ?? $this->mappings['categories'][$name];
+        $result = $this->mappings['articles'][$article->getNumber()]['category'] ?? $this->mappings['categories'][$name];
         if ($result !== null) {
             $article->setCategory($result);
             $this->categoryMap[$name] = $result;
@@ -153,7 +149,7 @@ class PropertyMapper
 
     public function mapManufacturer(Article $article, $name): void
     {
-        $result = $this->articleConfig[$article->getNumber()];
+        $result = $this->mappings['articles'][$article->getNumber()];
         $article->setBrand($result['brand'] ?? $this->mappings['manufacturers'][$name]['brand'] ?? $name);
         $supplier = $result['supplier'];
         if (! $supplier) {
@@ -165,6 +161,35 @@ class PropertyMapper
         $article->setManufacturer($name);
     }
 
+    protected function applyOptionNameMapping(string $model, string $name, string $option) {
+        // They introduced some cases where the option name is not equal
+        // to the string added to the article name, so we have to check
+        // that, also. The implementation here is a hack right now.
+        $o = $this->mappings['article_name_option_fixes'][$option] ?? null;
+        $fixApplied = false;
+        $fixAvailable = false;
+        if ($o) {
+            $fixAvailable = true;
+            if (is_string($o)) {
+                $o = [$o];
+            }
+            foreach ($o as $mappedOption) {
+                if (strpos($name, $mappedOption) !== false) {
+                    $name = str_replace($mappedOption, '', $name);
+                    $fixApplied = true;
+                    break;
+                }
+            }
+        }
+        $this->mismatchedOptionNames[$model] = [
+            'name' => $name,
+            'option' => $option,
+            'fixAvailable' => $fixAvailable,
+            'fixApplied' => $fixApplied,
+        ];
+        return $name;
+    }
+
     public function removeOptionsFromArticleName(Model $model)
     {
         // Innocigs variant names include variant descriptions
@@ -172,33 +197,20 @@ class PropertyMapper
         // in order to extract the real article name
         $options = explode('##!##', $model->getOptions());
         $name = $model->getName();
-        $model = $model->getModel();
 
         foreach ($options as $option) {
             $option = explode( '#!#', $option)[1];
+
+            // '1er Packung' is not a substring of any article name
             if ($option === '1er Packung') continue;
 
             if (strpos($name, $option) !== false) {
+                // article name contains option name
                 $name = str_replace($option, '', $name);
-            } else {
-                $this->mismatchedOptionNames[$model] = [
-                    'name' => $name,
-                    'option' => $option
-                ];
-                // They introduced some cases where the option name is not equal
-                // to the string added to the article name, so we have to check
-                // that, also. The implementation here is a hack right now.
-                $o = $this->mappings['article_name_option_fixes'][$option] ?? null;
-                if ($o) {
-                    $name = str_replace($o, '', $name);
-                } else {
-                    $this->log->warn(sprintf(
-                        'Model name \'%s\' does not contain the option name \'%s\' and there is no option name mapping specified.',
-                        $name,
-                        $option
-                    ));
-                }
+                continue;
             }
+
+            $name = $this->applyOptionNameMapping($model->getModel(), $name, $option);
         }
         $name = trim($name);
         if (substr($name, -2) === ' -') {
@@ -232,18 +244,39 @@ class PropertyMapper
         $variant->setRetailPrice($price);
     }
 
-    public function log() {
-        Factory::toFile(__DIR__ . '/../Dump/option.name.mismatches.php', $this->mismatchedOptionNames);
-        Factory::toFile(__DIR__ . '/../Dump/category.map.php', $this->categoryMap);
-    }
-
     public function getMismatchedOptionNames() {
         return $this->mismatchedOptionNames;
     }
-
     public function applyFilters() {
-        foreach($this->mappings['filter']['update'] as $filter) {
+        foreach($this->mappings['filters']['update'] as $filter) {
             $this->bulkOperation->update($filter);
         }
+    }
+
+    protected function logOptionNameFixes()
+    {
+        foreach ($this->mismatchedOptionNames as $optionLog) {
+            if (false === $optionLog['fixAvailable']) {
+                $this->log->warn(sprintf(
+                    'Model name \'%s\' does not contain the option name \'%s\' and there is no option name mapping specified.',
+                    $optionLog['name'],
+                    $optionLog['option']
+                ));
+                continue;
+            }
+            if (false === $optionLog['fixApplied']) {
+                $this->log->warn(sprintf(
+                    'Model name \'%s\' does not contain the option name \'%s\' and the option name mapping does not apply.',
+                    $optionLog['name'],
+                    $optionLog['option']
+                ));
+            }
+        }
+    }
+
+    public function log() {
+        Factory::toFile(__DIR__ . '/../Dump/option.name.mismatches.php', $this->mismatchedOptionNames);
+        Factory::toFile(__DIR__ . '/../Dump/category.map.php', $this->categoryMap);
+        $this->logOptionNameFixes();
     }
 }

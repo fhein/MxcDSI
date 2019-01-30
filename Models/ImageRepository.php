@@ -19,7 +19,9 @@ class ImageRepository extends BaseEntityRepository
             ->where('i.variants is empty')
             ->getQuery()
             ->getResult();
+        /** @var Image $orphan */
         foreach($orphans as $orphan) {
+            $this->log->debug('Removing orphaned image \'' . $orphan->getUrl() .'\'');
             $this->getEntityManager()->remove($orphan);
         }
     }

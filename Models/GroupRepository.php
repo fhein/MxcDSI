@@ -19,8 +19,9 @@ class GroupRepository extends BaseEntityRepository
             ->where('g.options is empty')
             ->getQuery()
             ->getResult();
-        /** @var Option $option */
+        /** @var Group $orphan */
         foreach($orphans as $orphan) {
+            $this->log->debug('Removing orphaned group \'' . $orphan->getName() .'\'');
             $this->getEntityManager()->remove($orphan);
         }
     }

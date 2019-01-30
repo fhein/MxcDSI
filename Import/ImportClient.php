@@ -37,17 +37,7 @@ class ImportClient extends ImportBase implements EventSubscriber
     protected $categories;
 
     /** @var array */
-    protected $fields = [
-        'master',
-        'model',
-        'ean',
-        'name',
-        'purchasePrice',
-        'retailPrice',
-        'imageUrl',
-        'additionalImages',
-        'manufacturer'
-    ];
+    protected $fields;
 
     /**
      * ImportClient constructor.
@@ -81,11 +71,15 @@ class ImportClient extends ImportBase implements EventSubscriber
         $this->importLog['additions'] = [];
         $this->importLog['changes'] = [];
 
+        $model = new Model();
+        $this->fields = $model->getPrivatePropertyNames();
+
         $evm = $this->modelManager->getEventManager();
         $evm->addEventSubscriber($this);
 
         parent::import();
         $this->createModels();
+        $this->deleteModels();
         $this->modelManager->flush();
 
         $this->categories = array_keys($this->categories);
@@ -93,8 +87,8 @@ class ImportClient extends ImportBase implements EventSubscriber
         Factory::toFile(__DIR__ . '/../Dump/innocigs.categories.php', $this->categories);
         ksort($this->categoryUsage);
         Factory::toFile(__DIR__ . '/../Dump/innocigs.category.usage.php', $this->categoryUsage);
+        $evm->removeEventSubscriber($this);
         // $this->logImport();
-
         $this->importMapper->import($this->importLog);
     }
 
@@ -105,6 +99,16 @@ class ImportClient extends ImportBase implements EventSubscriber
         $this->log->debug(var_export(array_keys($this->importLog['deletions']), true));
         $this->log->debug('Changes:');
         $this->log->debug(var_export($this->importLog['changes'], true));
+    }
+
+    protected function deleteModels() {
+        /**
+         * @var string $number
+         * @var Model $model
+         */
+        foreach ($this->importLog['deletions'] as $number => $model) {
+            $model->setDeleted(true);
+        }
     }
 
     protected function createModels() {

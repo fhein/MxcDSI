@@ -20,7 +20,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
     },
 
     onImportItems: function(grid) {
-        let mask = new Ext.LoadMask(grid, { msg: 'Importing items ...'});
+        let mask = new Ext.LoadMask(grid, { msg: 'Updating items ...'});
         mask.show();
         Ext.Ajax.request({
             method: 'POST',
@@ -29,10 +29,10 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
             callback: function(responseData, operation) {
                 mask.hide();
                 if(!operation) {
-                    Shopware.Notification.createGrowlMessage('Import', 'An error occured while importing items.');
+                    Shopware.Notification.createGrowlMessage('Update', 'An error occured while updating items.');
                     return false;
                 } else {
-                    Shopware.Notification.createGrowlMessage('Import', 'Items were successfully imported.');
+                    Shopware.Notification.createGrowlMessage('Update', 'Items were successfully updated.');
                     grid.store.load();
                 }
             }
