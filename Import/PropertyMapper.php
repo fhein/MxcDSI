@@ -18,6 +18,7 @@ class PropertyMapper
     protected $mismatchedOptionNames = [];
     protected $unmappedArticleNames = [];
     protected $usedNamePartReplacements = [];
+    protected $usedNamePartReplacementsRexp = [];
     protected $nameMap = [];
     protected $categoryMap = [];
     private $mappings;
@@ -78,23 +79,7 @@ class PropertyMapper
         if ($brand && in_array($brand, $this->innocigsBrands) && (strpos($name, $brand) !== 0)) {
             $name = $brand . ' ' . $name;
         }
-        $parts = $this->mappings['article_name_parts'];
-        $search = array_keys($parts);
-        $replace = array_values($parts);
-        $name = str_replace($search, $replace, $name);
-
-//        // This is the explicit implementation of the str_replace operation above.
-//        // Disable the above str_replace and enable this block if you want to check
-//        // which article_name_parts replacements are actually used.
-//        $count = count($search);
-//        for ($i = 0; $i < $count; $i++) {
-//            if (strpos($name, $search[$i]) !== false) {
-//                $name = str_replace($search[$i], $replace[$i], $name);
-//                $this->usedNamePartReplacements[$search[$i]] = true;
-//            }
-//        }
-
-        $name = trim($name);
+        $name = trim($this->replaceNameParts($name));
         $article->setName($name);
 
         if ($name === $nameBefore) {
@@ -260,7 +245,11 @@ class PropertyMapper
     public function log() {
         Factory::toFile(__DIR__ . '/../Dump/option.name.mismatches.php', $this->mismatchedOptionNames);
         Factory::toFile(__DIR__ . '/../Dump/category.map.php', $this->categoryMap);
+        ksort($this->nameMap);
         Factory::toFile(__DIR__ . '/../Dump/article.name.map.php', $this->nameMap);
+        $names = array_values($this->nameMap);
+        sort($names);
+        Factory::toFile(__DIR__ . '/../Dump/article.names.php', $names);
         if (! empty($this->usedNamePartReplacements)) {
             Factory::toFile(__DIR__ . '/../Dump/used.name.part.replacements.php', array_keys($this->usedNamePartReplacements));
         }
@@ -289,5 +278,46 @@ class PropertyMapper
         foreach ($this->unmappedArticleNames as $name => $_)  {
             $this->log->warn('Unmapped article name: ' . $name);
         }
+    }
+
+    /**
+     * @param string $name
+     * @return mixed|string|string[]|null
+     */
+    protected function replaceNameParts(string $name)
+    {
+        $parts = $this->mappings['article_name_parts_rexp'];
+        if (null !== $parts) {
+            $search = array_keys($parts);
+            $replace = array_values($parts);
+            $name = preg_replace($search, $replace, $name);
+//            // This is the explicit implementation of the preg_replace operation above.
+//            // Disable the above str_replace and enable this block if you want to check
+//            // which article_name_parts replacements are actually used.
+//            $count = count($search);
+//            for ($i = 0; $i < $count; $i++) {
+//                if (strpos($name, $search[$i]) !== false) {
+//                    $name = preg_replace($search[$i], $replace[$i], $name);
+//                    $this->usedNamePartReplacementsRexp[$search[$i]] = true;
+//                }
+//            }
+        }
+        $parts = $this->mappings['article_name_parts'];
+        if (null !== $parts) {
+            $search = array_keys($parts);
+            $replace = array_values($parts);
+            $name = str_replace($search, $replace, $name);
+//            // This is the explicit implementation of the str_replace operation above.
+//            // Disable the above str_replace and enable this block if you want to check
+//            // which article_name_parts replacements are actually used.
+//            $count = count($search);
+//            for ($i = 0; $i < $count; $i++) {
+//                if (strpos($name, $search[$i]) !== false) {
+//                    $name = str_replace($search[$i], $replace[$i], $name);
+//                    $this->usedNamePartReplacements[$search[$i]] = true;
+//                }
+//            }
+        }
+        return $name;
     }
 }

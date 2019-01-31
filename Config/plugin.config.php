@@ -119,7 +119,7 @@ return [
             'applyFilters' => true,
         ],
         ImportClient::class => [
-            'limit' => 100,
+            'limit' => -1,
         ],
     ],
 ];
