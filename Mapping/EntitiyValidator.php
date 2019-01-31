@@ -6,7 +6,7 @@ use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Variant;
 
-class InnocigsEntityValidator
+class EntitiyValidator
 {
     /**
      * An Article validates true if either it's accepted member is true

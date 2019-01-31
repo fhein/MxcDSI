@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: frank.hein
- * Date: 04.12.2018
- * Time: 17:14
- */
 
 namespace MxcDropshipInnocigs\Toolbox\Configurator;
 

@@ -286,8 +286,7 @@ class ImportMapper implements EventSubscriber
                     $variant->setEan($newValue);
                     break;
                 case 'name':
-                    $name = $this->propertyMapper->removeOptionsFromArticleName($model);
-                    $this->propertyMapper->mapArticleName($variant->getArticle(), $name);
+                    $this->propertyMapper->mapArticleName($model, $variant->getArticle());
                     break;
                 case 'purchasePrice':
                     $price = floatval(str_replace(',', '.', $newValue));

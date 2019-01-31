@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: frank.hein
- * Date: 04.12.2018
- * Time: 17:12
- */
 
 namespace MxcDropshipInnocigs\Toolbox\Filter;
-
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use Shopware\Components\Model\ModelManager;

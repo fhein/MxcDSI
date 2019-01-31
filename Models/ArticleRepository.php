@@ -9,22 +9,20 @@ class ArticleRepository extends BaseEntityRepository
     /** @var Query $supplierBrandByManufacturerQuery */
     protected $supplierBrandByManufacturerQuery;
 
+    protected $getAllIndexedDql = 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.number';
+
     public function getAllIndexed()
     {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        return $this->createQueryBuilder('a')
-            -> select('a')
-            -> indexBy('a', 'a.number')
-            -> getQuery()
-            ->getResult();
+        return $this->getEntityManager()->createQuery($this->getAllIndexedDql)->getResult();
     }
 
     public function removeOrphaned() {
-        $orphans = $this->createQueryBuilder('a')
+        $query = $this->createQueryBuilder('a')
             ->select('a')
             ->where('a.variants is empty')
-            ->getQuery()
-            ->getResult();
+            ->getQuery();
+        $this->log->debug('Article#removeOrphans: ' . $query->getDQL());
+        $orphans = $query->getResult();
         /** @var Article $orphan */
         foreach($orphans as $orphan) {
             $this->log->debug('Removing orphaned article \'' . $orphan->getName() .'\'');

@@ -52,7 +52,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         let items = me.callParent(arguments);
         items = Ext.Array.insert(items, 0, [
             me.createImportItemsButton(),
-            me.createFilterButton(),
+//            me.createFilterButton(),
             me.createAcceptButton(),
             me.createIgnoreButton(),
             me.createActivateButton(),

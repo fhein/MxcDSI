@@ -4,21 +4,19 @@ namespace MxcDropshipInnocigs\Models;
 
 class GroupRepository extends BaseEntityRepository
 {
+    protected $getAllIndexedDql = 'SELECT g FROM MxcDropshipInnocigs\Models\Group g INDEX BY g.name';
+
     public function getAllIndexed() {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        return $this->createQueryBuilder('g')
-            -> select('g')
-            -> indexBy('g', 'g.name')
-            -> getQuery()
-            ->getResult();
+        return $this->getEntityManager()->createQuery($this->getAllIndexedDql)->getResult();
     }
 
     public function removeOrphaned() {
-        $orphans = $this->createQueryBuilder('g')
+        $query = $this->createQueryBuilder('g')
             ->select('g')
             ->where('g.options is empty')
-            ->getQuery()
-            ->getResult();
+            ->getQuery();
+        $this->log->debug('Group#removeOrphans: ' . $query->getDQL());
+        $orphans = $query->getResult();
         /** @var Group $orphan */
         foreach($orphans as $orphan) {
             $this->log->debug('Removing orphaned group \'' . $orphan->getName() .'\'');

@@ -11,13 +11,25 @@ use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 use Zend\Config\Factory;
 
-class ImportClient extends ImportBase implements EventSubscriber
+class ImportClient implements EventSubscriber
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;
 
+    /** @var ApiClient $apiClient */
+    protected $apiClient;
+
+    /** @var LoggerInterface $log */
+    protected $log;
+
+    /** @var Config $config */
+    protected $config;
+
     /** @var ImportMapper $importMapper */
     protected $importMapper;
+
+    /** @var array $import */
+    protected $import;
 
     /** @var array */
     protected $additions;
@@ -55,14 +67,11 @@ class ImportClient extends ImportBase implements EventSubscriber
         Config $config,
         LoggerInterface $log
     ) {
-        parent::__construct($apiClient, $config, $log);
         $this->modelManager = $modelManager;
         $this->importMapper = $importMapper;
-    }
-
-    public function getSubscribedEvents()
-    {
-        return ['preUpdate'];
+        $this->apiClient = $apiClient;
+        $this->log = $log;
+        $this->config = $config;
     }
 
     public function import()
@@ -77,7 +86,7 @@ class ImportClient extends ImportBase implements EventSubscriber
         $evm = $this->modelManager->getEventManager();
         $evm->addEventSubscriber($this);
 
-        parent::import();
+        $this->apiImport();
         $this->createModels();
         $this->deleteModels();
         $this->modelManager->flush();
@@ -112,7 +121,13 @@ class ImportClient extends ImportBase implements EventSubscriber
     }
 
     protected function createModels() {
+        $limit = $this->config->get('limit', -1);
+        $cursor = 0;
         foreach ($this->import as $number => $data) {
+
+            if ($cursor === $limit) return;
+            $cursor++;
+
             $model = $this->importLog['deletions'][$number];
             if (null !== $model) {
                 unset($this->importLog['deletions'][$number]);
@@ -148,6 +163,11 @@ class ImportClient extends ImportBase implements EventSubscriber
         $this->categories[$category] = true;
     }
 
+    public function getSubscribedEvents()
+    {
+        return ['preUpdate'];
+    }
+
     public function preUpdate(PreUpdateEventArgs $args)
     {
         /** @var PreUpdateEventArgs $args */
@@ -164,5 +184,43 @@ class ImportClient extends ImportBase implements EventSubscriber
                 ];
             }
         }
+    }
+
+    protected function apiImport()
+    {
+        $raw = $this->apiClient->getItemList();
+        $this->import = [];
+        /** @noinspection PhpUndefinedFieldInspection */
+        $this->import = array_column($raw['PRODUCTS']['PRODUCT'], null, 'MODEL');
+
+        foreach ($this->import as $item) {
+            // flatten options
+            $options = [];
+            foreach ($item['PRODUCTS_ATTRIBUTES'] as $group => $option) {
+                $options[] = trim($group) . '#!#' . trim($option);
+            }
+            sort($options);
+            $item['PRODUCTS_ATTRIBUTES'] = implode('##!##', $options);
+
+            if (is_string($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])) {
+                $item['PRODUCTS_IMAGE_ADDITIONAL'] = trim($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']);
+            } else {
+                $images = array_map('trim', $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']);
+                sort($images);
+                $item['PRODUCTS_IMAGE_ADDITIONAL'] = implode('#!#', $images);
+            }
+            $this->import[trim($item['MODEL'])] = array_map('trim', $item);
+        }
+    }
+
+    protected function getParamString($value)
+    {
+        if (! $value || is_string($value)) return $value;
+        if (is_array($value) && empty($value)) return '';
+        throw new InvalidArgumentException(
+            sprintf('String or empty array expected, got %s.',
+                is_object($value) ? get_class($value) : gettype($value)
+            )
+        );
     }
 }

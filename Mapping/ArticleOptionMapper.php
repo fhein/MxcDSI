@@ -20,7 +20,7 @@ class ArticleOptionMapper
     /** @var SetRepository $setRepository */
     protected $setRepository;
 
-    /** @var InnocigsEntityValidator $validator */
+    /** @var EntitiyValidator $validator */
     protected $validator;
 
     /**
@@ -28,13 +28,13 @@ class ArticleOptionMapper
      *
      * @param GroupRepository $groupRepository
      * @param SetRepository $setRepository
-     * @param InnocigsEntityValidator $validator
+     * @param EntitiyValidator $validator
      * @param LoggerInterface $log
      */
     public function __construct(
         GroupRepository $groupRepository,
         SetRepository $setRepository,
-        InnocigsEntityValidator $validator,
+        EntitiyValidator $validator,
         LoggerInterface $log
     ) {
         $this->log = $log;

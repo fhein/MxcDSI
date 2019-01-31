@@ -2,8 +2,6 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Import\ImportModifier;
-use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 
@@ -14,9 +12,6 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
 
     public function indexAction() {
         $this->log->enter();
-        /**
-         * @var \Shopware\Components\Model\ModelManager $modelManager
-         */
         try {
             $client = $this->services->get(ImportClient::class);
             if ($client === null) {
@@ -50,23 +45,6 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         } catch (Throwable $e) {
             $this->log->except($e);
         }
-        $this->log->leave();
-    }
-
-    public function filterAction() {
-        $this->log->enter();
-        try {
-            $importModifier = $this->services->get(ImportModifier::class);
-            $importModifier->apply();
-        } catch (Throwable $e) {
-            $this->log->except($e);
-        }
-        $this->log->leave();
-    }
-
-    public function synchronizeAction() {
-        $this->log->enter();
-        $this->services->get(InnocigsUpdater::class);
         $this->log->leave();
     }
 

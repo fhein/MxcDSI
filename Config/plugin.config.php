@@ -6,14 +6,12 @@ use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
-use MxcDropshipInnocigs\Import\ImportModifier;
-use MxcDropshipInnocigs\Import\InnocigsUpdater;
 use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
-use MxcDropshipInnocigs\Mapping\InnocigsEntityValidator;
+use MxcDropshipInnocigs\Mapping\EntitiyValidator;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -93,15 +91,6 @@ return [
                 ],
             ],
         ],
-        'listeners' => [
-//            ModelSubscriber::class => [
-//                'model' => Model::class,
-//                'events' => [
-//                    Events::postPersist,
-//                    Events::preUpdate,
-//                ],
-//            ],
-        ]
     ],
     'filters' => [
 
@@ -109,32 +98,28 @@ return [
     'services' => [
         'magicals' => [
             ApiClient::class,
-            ArticleOptionMapper::class,
+            ArticleAttributeFilePersister::class,
             ArticleMapper::class,
-            Credentials::class,
+            ArticleOptionMapper::class,
             ConfiguratorGroupRepository::class,
             ConfiguratorSetRepository::class,
+            Credentials::class,
+            EntitiyValidator::class,
             FilterGroupRepository::class,
+            FilterTest::class,
             ImportClient::class,
             ImportMapper::class,
-            FilterTest::class,
-            PropertyMapper::class,
-            FilterGroupRepository::class,
             MediaTool::class,
-            InnocigsUpdater::class,
-            InnocigsEntityValidator::class,
-            ImportModifier::class,
-            ArticleAttributeFilePersister::class,
+            PropertyMapper::class,
         ],
     ],
     'mappings' => include __DIR__ . '/mapping.config.php',
     'class_config' => [
         ImportMapper::class => [
-            'numberOfModels' => 100,
             'applyFilters' => true,
         ],
         ImportClient::class => [
-            'numberOfArticles' => 100,
+            'limit' => 100,
         ],
     ],
 ];

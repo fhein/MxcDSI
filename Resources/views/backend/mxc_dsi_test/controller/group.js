@@ -38,9 +38,8 @@ Ext.define('Shopware.apps.MxcDsiTest.controller.Group', {
             },
             success: function(record, operation) {
                 if (operation.success) {
-                    // Update the modified record by the data, the controller returned
-                    // This way we make sure, that the record shows the data which is stored
-                    // in the database
+                    // Update the modified record with data returned by the php controller
+                    // to make sure, that the grid shows the data actually stored in the db
                     Ext.each(Object.keys(record.getData()), function (key) {
                         record.set(key, operation.records[0].data[key]);
                     });
@@ -62,36 +61,21 @@ Ext.define('Shopware.apps.MxcDsiTest.controller.Group', {
         let me = this;
         record.set('accepted', value);
         me.onGroupSave(record);
-        me.sortGroupGrid();
+        me.sortGrid('group');
         return true;
     },
 
     onOptionSelect: function(record, value) {
         Shopware.Notification.createGrowlMessage('Option', 'ImportOption selected: ' + (value === true ? 'true' : 'false'));
         let me = this;
-        //alert(record.get('name'));
         record.set('accepted', value);
-        //me.onGroupSave(record);
-        me.sortOptionGrid();
+        me.sortGrid('option');
         return true;
     },
 
-    sortOptionGrid: function() {
-        let me = this;
-        let optionListing = me.getOptionListing();
-        optionListing.getStore().sort([
-            { property: 'accepted', 'direction': 'DESC' }
-
-        ]);
-    },
-
-    sortGroupGrid: function() {
-        let me = this;
-        let groupListing = me.getGroupListing();
-        groupListing.getStore().sort([
-            { property: 'accepted', 'direction': 'DESC' }
-
-        ]);
-    },
+    sortGrid: function(selector) {
+        let listing = selector === 'option' ? this.getOptionListing() : this.getGroupListing();
+        listing.getStore().sort([{ property: 'accepted', 'direction': 'DESC' }]);
+    }
 
 });

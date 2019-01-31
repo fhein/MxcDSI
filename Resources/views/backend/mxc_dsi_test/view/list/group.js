@@ -37,7 +37,6 @@ Ext.define('Shopware.apps.MxcDsiTest.view.list.Group', {
     },
 
     configure: function() {
-        let me = this;
         return {
             detailWindow: 'Shopware.apps.MxcDsiTest.view.detail.Window',
             columns: {

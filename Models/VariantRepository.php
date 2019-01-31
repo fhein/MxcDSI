@@ -4,21 +4,19 @@ namespace MxcDropshipInnocigs\Models;
 
 class VariantRepository extends BaseEntityRepository
 {
+    protected $getAllIndexedDql = 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.number';
+
     public function getAllIndexed() {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        return $this->createQueryBuilder('v')
-            -> select('v')
-            -> indexBy('v', 'v.number')
-            -> getQuery()
-            ->getResult();
+        return $this->getEntityManager()->createQuery($this->getAllIndexedDql)->getResult();
     }
 
     public function removeOrphaned() {
-        $orphans = $this->createQueryBuilder('v')
+        $query = $this->createQueryBuilder('v')
             ->select('v')
             ->where('v.article = null')
-            ->getQuery()
-            ->getResult();
+            ->getQuery();
+        $this->log->debug('Variant#removeOrphans: ' . $query->getDQL());
+        $orphans = $query->getResult();
 
         /** @var Variant $orphan */
         foreach($orphans as $orphan) {

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: frank.hein
- * Date: 12.11.2018
- * Time: 14:36
- */
 
 namespace MxcDropshipInnocigs\Toolbox\Filter;
 

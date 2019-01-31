@@ -44,7 +44,7 @@ class ArticleMapper
      */
     protected $mediaTool;
     /**
-     * @var InnocigsEntityValidator $validator
+     * @var EntitiyValidator $validator
      */
     protected $validator;
 
@@ -57,7 +57,7 @@ class ArticleMapper
         ArticleOptionMapper $optionMapper,
         MediaTool $mediaTool,
         ImportMapper $client,
-        InnocigsEntityValidator $validator,
+        EntitiyValidator $validator,
         LoggerInterface $log)
     {
         $this->modelManager = $modelManager;

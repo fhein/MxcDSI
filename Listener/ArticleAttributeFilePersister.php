@@ -1,10 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: frank.hein
- * Date: 11.01.2019
- * Time: 14:52
- */
+<?php /** @noinspection PhpUndefinedFieldInspection */
 
 namespace MxcDropshipInnocigs\Listener;
 
@@ -44,7 +38,6 @@ class ArticleAttributeFilePersister extends ActionListener
         // update $article.config.php.dist
         $config = $repository->getDist();
         if (! empty($config)) {
-            /** @noinspection PhpUndefinedFieldInspection */
             $fn = $this->config->articleConfigFile . '.php';
             Factory::toFile($fn, $config);
             /** @noinspection PhpUndefinedFieldInspection */

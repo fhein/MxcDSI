@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: frank.hein
- * Date: 22.01.2019
- * Time: 17:43
- */
 
 namespace MxcDropshipInnocigs\Models;
 
