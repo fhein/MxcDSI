@@ -4,10 +4,10 @@ namespace MxcDropshipInnocigs\Import;
 
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Import\Report\MappingReport;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
-use Zend\Config\Factory;
 
 class PropertyMapper
 {
@@ -17,10 +17,13 @@ class PropertyMapper
     protected $log;
     protected $mismatchedOptionNames = [];
     protected $unmappedArticleNames = [];
-    protected $usedNamePartReplacements = [];
-    protected $usedNamePartReplacementsRexp = [];
+    protected $usedStrReplacements = [];
+    protected $usedPregReplacements = [];
     protected $nameMap = [];
+    protected $nameWithoutOptionsMap = [];
     protected $categoryMap = [];
+    protected $brands = [];
+    protected $suppliers = [];
     private $mappings;
     /** @var array $innocigsBrands */
     private $innocigsBrands = [
@@ -59,6 +62,8 @@ class PropertyMapper
         }
         $article->setSupplier($supplier);
         $article->setManufacturer($manufacturer);
+        $this->brands[$article->getBrand()] = true;
+        $this->suppliers[$article->getSupplier()] = true;
     }
 
     public function mapArticleName(Model $model, Article $article): void
@@ -66,6 +71,7 @@ class PropertyMapper
         $nameBefore = $model->getName();
 
         $name = $this->removeOptionsFromArticleName($model);
+        $nameBeforeWithoutOptions = $name;
 
         // general name mapping applied first
         $result = $this->mappings['article_names'][$model->getName()];
@@ -77,7 +83,7 @@ class PropertyMapper
         // rule based name mapping applied next
         $brand = $article->getBrand();
         if ($brand && in_array($brand, $this->innocigsBrands) && (strpos($name, $brand) !== 0)) {
-            $name = $brand . ' ' . $name;
+            $name = $brand . ' - ' . $name;
         }
         $name = trim($this->replaceNameParts($name));
         $article->setName($name);
@@ -86,6 +92,7 @@ class PropertyMapper
             $this->unmappedArticleNames[$name] = true;
         }
         $this->nameMap[$nameBefore] = $name;
+        $this->nameWithoutOptionsMap[$nameBefore] = $nameBeforeWithoutOptions;
     }
 
     public function removeOptionsFromArticleName(Model $model)
@@ -243,16 +250,18 @@ class PropertyMapper
     }
 
     public function log() {
-        Factory::toFile(__DIR__ . '/../Dump/option.name.mismatches.php', $this->mismatchedOptionNames);
-        Factory::toFile(__DIR__ . '/../Dump/category.map.php', $this->categoryMap);
-        ksort($this->nameMap);
-        Factory::toFile(__DIR__ . '/../Dump/article.name.map.php', $this->nameMap);
-        $names = array_values($this->nameMap);
-        sort($names);
-        Factory::toFile(__DIR__ . '/../Dump/article.names.php', $names);
-        if (! empty($this->usedNamePartReplacements)) {
-            Factory::toFile(__DIR__ . '/../Dump/used.name.part.replacements.php', array_keys($this->usedNamePartReplacements));
-        }
+        $topics = [
+            'mismatchedOptionNames' => $this->mismatchedOptionNames,
+            'nameWithoutOptionsMap' => $this->nameWithoutOptionsMap,
+            'categoryMap'           => $this->categoryMap,
+            'nameMap'               => $this->nameMap,
+            'suppliers'             => $this->suppliers,
+            'brands'                => $this->brands,
+            'usedStrReplacements'   => $this->usedStrReplacements,
+            'usedPregReplacements'  => $this->usedPregReplacements,
+        ];
+        $mapReport = new MappingReport();
+        $mapReport->report($topics);
         $this->logOptionNameIssues();
     }
 
@@ -298,7 +307,7 @@ class PropertyMapper
 //            for ($i = 0; $i < $count; $i++) {
 //                if (strpos($name, $search[$i]) !== false) {
 //                    $name = preg_replace($search[$i], $replace[$i], $name);
-//                    $this->usedNamePartReplacementsRexp[$search[$i]] = true;
+//                    $this->usedPregReplacements[$search[$i]] = true;
 //                }
 //            }
         }
@@ -314,7 +323,7 @@ class PropertyMapper
 //            for ($i = 0; $i < $count; $i++) {
 //                if (strpos($name, $search[$i]) !== false) {
 //                    $name = str_replace($search[$i], $replace[$i], $name);
-//                    $this->usedNamePartReplacements[$search[$i]] = true;
+//                    $this->usedStrReplacements[$search[$i]] = true;
 //                }
 //            }
         }
