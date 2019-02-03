@@ -4,7 +4,9 @@ namespace MxcDropshipInnocigs\Import;
 
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Import\Report\MappingReport;
+use MxcDropshipInnocigs\Import\Report\ArrayMap;
+use MxcDropshipInnocigs\Import\Report\ArrayReport;
+use MxcDropshipInnocigs\Import\Report\Mapper\SuccessiveReplacer;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
@@ -13,34 +15,28 @@ class PropertyMapper
 {
     /** @var BulkOperation  */
     protected $bulkOperation;
+
+    /** @var ArrayReport */
+    protected $reporter;
     /** @var LoggerInterface $log */
     protected $log;
     protected $mismatchedOptionNames = [];
-    protected $unmappedArticleNames = [];
-    protected $usedStrReplacements = [];
-    protected $usedPregReplacements = [];
-    protected $nameMap = [];
-    protected $nameWithoutOptionsMap = [];
+    protected $nameTrace = [];
     protected $categoryMap = [];
     protected $brands = [];
     protected $suppliers = [];
-    private $mappings;
-    /** @var array $innocigsBrands */
-    private $innocigsBrands = [
-        'SC',
-        'Steamax',
-        'InnoCigs',
-    ];
+    private   $config;
 
-    public function __construct(array $mappings, BulkOperation $bulkOperation, LoggerInterface $log) {
-        $this->mappings = $mappings;
+    public function __construct(BulkOperation $bulkOperation, ArrayReport $reporter, array $config, LoggerInterface $log) {
+        $this->config = $config;
         $this->log = $log;
         $this->bulkOperation = $bulkOperation;
+        $this->reporter = $reporter;
     }
 
     public function modelToArticle(Model $model, Article $article) {
         $number = $model->getMaster();
-        $article->setNumber($this->mappings['article_codes'][$number] ?? $number);
+        $article->setNumber($this->config['article_codes'][$number] ?? $number);
         $article->setIcNumber($number);
         $article->setManualUrl($model->getManualUrl());
         $article->setImageUrl($model->getImageUrl());
@@ -52,12 +48,12 @@ class PropertyMapper
 
     public function mapManufacturer(Article $article, string $manufacturer): void
     {
-        $result = $this->mappings['articles'][$article->getNumber()];
-        $article->setBrand($result['brand'] ?? $this->mappings['manufacturers'][$manufacturer]['brand'] ?? $manufacturer);
+        $result = $this->config['articles'][$article->getNumber()];
+        $article->setBrand($result['brand'] ?? $this->config['manufacturers'][$manufacturer]['brand'] ?? $manufacturer);
         $supplier = $result['supplier'];
         if (! $supplier) {
-            if (! in_array($manufacturer, $this->innocigsBrands)) {
-                $supplier = $this->mappings['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
+            if (! in_array($manufacturer, $this->config['innocigs_brands'])) {
+                $supplier = $this->config['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
             }
         }
         $article->setSupplier($supplier);
@@ -68,31 +64,37 @@ class PropertyMapper
 
     public function mapArticleName(Model $model, Article $article): void
     {
-        $nameBefore = $model->getName();
-
+        $trace['model'] = $model->getModel();
+        $trace['imported'] = $model->getName();
         $name = $this->removeOptionsFromArticleName($model);
-        $nameBeforeWithoutOptions = $name;
+        $trace['options_removed'] = $name;
 
         // general name mapping applied first
-        $result = $this->mappings['article_names'][$model->getName()];
+        $result = $this->config['article_names'][$model->getName()];
         if ($result !== null) {
+            $trace['directly_mapped'] = $result;
             $article->setName($result);
             return;
         }
 
         // rule based name mapping applied next
         $brand = $article->getBrand();
-        if ($brand && in_array($brand, $this->innocigsBrands) && (strpos($name, $brand) !== 0)) {
+        if ($brand && in_array($brand, $this->config['innocigs_brands']) && (strpos($name, $brand) !== 0)) {
             $name = $brand . ' - ' . $name;
         }
-        $name = trim($this->replaceNameParts($name));
-        $article->setName($name);
+        $trace['brand_prepended'] = $name;
 
-        if ($name === $nameBefore) {
-            $this->unmappedArticleNames[$name] = true;
+        foreach($this->config['article_name_replacements'] as $replacer => $replacements) {
+            $name = $replacer(array_keys($replacements), array_values($replacements), $name);
+            $trace[$replacer . '_applied'] = $name;
         }
-        $this->nameMap[$nameBefore] = $name;
-        $this->nameWithoutOptionsMap[$nameBefore] = $nameBeforeWithoutOptions;
+
+        $name = trim($name);
+
+        $article->setName($name);
+        $trace['mapped'] = $name;
+
+        $this->nameTrace[$trace['imported']] = $trace;
     }
 
     public function removeOptionsFromArticleName(Model $model)
@@ -127,7 +129,7 @@ class PropertyMapper
         // They introduced some cases where the option name is not equal
         // to the string added to the article name, so we have to check
         // that, also. The implementation here is a hack right now.
-        $o = $this->mappings['article_name_option_fixes'][$option] ?? null;
+        $o = $this->config['article_name_option_fixes'][$option] ?? null;
         $fixApplied = false;
         $fixAvailable = false;
         if ($o) {
@@ -160,7 +162,7 @@ class PropertyMapper
         }
         // article configuration has highest priority
         // general category mapping applies next
-        $result = $this->mappings['articles'][$article->getNumber()]['category'] ?? $this->mappings['categories'][$name];
+        $result = $this->config['articles'][$article->getNumber()]['category'] ?? $this->config['categories'][$name];
         if ($result !== null) {
             $article->setCategory($result);
             $this->categoryMap[$name] = $result;
@@ -225,7 +227,7 @@ class PropertyMapper
 
     public function modelToVariant(Model $model, Variant $variant) {
         $number = $model->getModel();
-        $variant->setNumber($this->mappings['variant_codes'][$number] ?? $number);
+        $variant->setNumber($this->config['variant_codes'][$number] ?? $number);
         $variant->setIcNumber($number);
         $variant->setEan($model->getEan());
         $price = floatval(str_replace(',', '.', $model->getPurchasePrice()));
@@ -235,98 +237,92 @@ class PropertyMapper
     }
 
     public function mapGroupName($name) {
-        return $this->mappings['group_names'][$name] ?? $name;
+        return $this->config['group_names'][$name] ?? $name;
     }
 
     public function mapOptionName($name) {
-        $mapping = $this->mappings['option_names'][$name] ?? $name;
+        $mapping = $this->config['option_names'][$name] ?? $name;
         return str_replace('weiss', 'weiß', $mapping);
     }
 
     public function applyFilters() {
-        foreach($this->mappings['filters']['update'] as $filter) {
+        foreach($this->config['filters']['update'] as $filter) {
             $this->bulkOperation->update($filter);
         }
     }
 
-    public function log() {
+    public function logMappingResults() {
+
+        ksort($this->brands);
+        ksort($this->suppliers);
+        ksort($this->nameTrace);
+        ksort($this->mismatchedOptionNames);
+
+        $unchangedArticleNames = array_map(function($value) {
+                return ($value['imported'] === $value['mapped']);
+            }, $this->nameTrace);
+        $unchangedArticleNames = array_keys(array_filter(
+            $unchangedArticleNames,
+            function($value) { return $value === true; }
+        ));
+
+        $namesWithoutRemovedOptions = array_map(function($value) {
+            return ($value['imported'] === $value['options_removed']);
+        }, $this->nameTrace);
+        $namesWithoutRemovedOptions = array_keys(array_filter($namesWithoutRemovedOptions, function($value) { return $value === true; }));
+
+        $optionMappingIssues = array_filter($this->mismatchedOptionNames, function($value) {
+            false === $value['fixAvailable'] || false === $value['fixApplied'];
+        });
+
+        $nameMap = array_values(array_map(function($value) {
+            return [
+                'imported' => $value['imported'],
+                'mapped  ' => $value['mapped'],
+            ];
+        }, $this->nameTrace));
+
+        $pregReplace = [];
+        foreach ($this->nameTrace as $key => $entry) {
+            $pregReplace[$key] = $entry['brand_prepended'];
+        }
+        $mapper = new ArrayMap();
+        $pregReplace = $mapper($pregReplace,
+            [
+                SuccessiveReplacer::class => [
+                    'replacer' => 'preg_replace',
+                    'replacements' => $this->config['article_name_replacements']['preg_replace'],
+                ],
+            ]
+        );
+
+        $strReplace = [];
+        foreach ($this->nameTrace as $key => $entry) {
+            $strReplace[$key] = $entry['preg_replace_applied'];
+        }
+        $strReplace = $mapper($strReplace,
+            [
+                SuccessiveReplacer::class => [
+                    'replacer' => 'str_replace',
+                    'replacements' => $this->config['article_name_replacements']['str_replace'],
+                ],
+            ]
+        );
+
         $topics = [
-            'mismatchedOptionNames' => $this->mismatchedOptionNames,
-            'nameWithoutOptionsMap' => $this->nameWithoutOptionsMap,
-            'categoryMap'           => $this->categoryMap,
-            'nameMap'               => $this->nameMap,
-            'suppliers'             => $this->suppliers,
-            'brands'                => $this->brands,
-            'usedStrReplacements'   => $this->usedStrReplacements,
-            'usedPregReplacements'  => $this->usedPregReplacements,
+            'mismatchedOptionNames'     => $optionMappingIssues,
+            'namesWithoutRemovedOption' => $namesWithoutRemovedOptions,
+            'brands'                    => array_keys($this->brands),
+            'suppliers'                 => array_keys($this->suppliers),
+            'articleNameMap'            => $nameMap,
+            'articleNameTrace'          => $this->nameTrace,
+            'articleNames'              => array_column($nameMap, 'mapped  '),
+            'articleNamesUnmapped'      => $unchangedArticleNames,
+            'articleNamesPregReplace'   => $pregReplace,
+            'articleNamesStrReplace'    => $strReplace,
         ];
-        $mapReport = new MappingReport();
-        $mapReport->report($topics);
-        $this->logOptionNameIssues();
-    }
 
-    protected function logOptionNameIssues()
-    {
-        foreach ($this->mismatchedOptionNames as $optionLog) {
-            if (false === $optionLog['fixAvailable']) {
-                $this->log->warn(sprintf(
-                    'Model name \'%s\' does not contain the option name \'%s\' and there is no option name mapping specified.',
-                    $optionLog['name'],
-                    $optionLog['option']
-                ));
-                continue;
-            }
-            if (false === $optionLog['fixApplied']) {
-                $this->log->warn(sprintf(
-                    'Model name \'%s\' does not contain the option name \'%s\' and the option name mapping does not apply.',
-                    $optionLog['name'],
-                    $optionLog['option']
-                ));
-            }
-        }
-        foreach ($this->unmappedArticleNames as $name => $_)  {
-            $this->log->warn('Unmapped article name: ' . $name);
-        }
-    }
-
-    /**
-     * @param string $name
-     * @return mixed|string|string[]|null
-     */
-    protected function replaceNameParts(string $name)
-    {
-        $parts = $this->mappings['article_name_parts_rexp'];
-        if (null !== $parts) {
-            $search = array_keys($parts);
-            $replace = array_values($parts);
-            $name = preg_replace($search, $replace, $name);
-//            // This is the explicit implementation of the preg_replace operation above.
-//            // Disable the above str_replace and enable this block if you want to check
-//            // which article_name_parts replacements are actually used.
-//            $count = count($search);
-//            for ($i = 0; $i < $count; $i++) {
-//                if (strpos($name, $search[$i]) !== false) {
-//                    $name = preg_replace($search[$i], $replace[$i], $name);
-//                    $this->usedPregReplacements[$search[$i]] = true;
-//                }
-//            }
-        }
-        $parts = $this->mappings['article_name_parts'];
-        if (null !== $parts) {
-            $search = array_keys($parts);
-            $replace = array_values($parts);
-            $name = str_replace($search, $replace, $name);
-//            // This is the explicit implementation of the str_replace operation above.
-//            // Disable the above str_replace and enable this block if you want to check
-//            // which article_name_parts replacements are actually used.
-//            $count = count($search);
-//            for ($i = 0; $i < $count; $i++) {
-//                if (strpos($name, $search[$i]) !== false) {
-//                    $name = str_replace($search[$i], $replace[$i], $name);
-//                    $this->usedStrReplacements[$search[$i]] = true;
-//                }
-//            }
-        }
-        return $name;
+        $mapReport = new ArrayReport();
+        $mapReport($topics);
     }
 }

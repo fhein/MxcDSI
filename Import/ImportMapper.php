@@ -378,7 +378,7 @@ class ImportMapper implements EventSubscriber
             $this->propertyMapper->applyFilters();
         }
 
-        $this->propertyMapper->log();
+        $this->propertyMapper->logMappingResults();
         $this->log->leave();
         return true;
     }

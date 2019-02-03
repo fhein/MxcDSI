@@ -7,6 +7,7 @@ use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\PropertyMapper;
+use MxcDropshipInnocigs\Import\Report\ArrayReport;
 use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
@@ -111,9 +112,10 @@ return [
             ImportMapper::class,
             MediaTool::class,
             PropertyMapper::class,
+            ArrayReport::class,
         ],
     ],
-    'mappings' => include __DIR__ . '/mapping.config.php',
+    'propertymapper' => include __DIR__ . '/propertymapper.config.php',
     'class_config' => [
         ImportMapper::class => [
             'applyFilters' => true,

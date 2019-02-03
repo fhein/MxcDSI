@@ -16,5 +16,4 @@ class ContainsAllOf
         }
         return true;
     }
-
 }

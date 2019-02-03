@@ -5,6 +5,7 @@ namespace MxcDropshipInnocigs\Import;
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use MxcDropshipInnocigs\Client\ApiClient;
+use MxcDropshipInnocigs\Import\Report\ArrayReport;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImportClientFactory implements FactoryInterface
@@ -23,9 +24,10 @@ class ImportClientFactory implements FactoryInterface
         $config = $this->getClassConfig($container, $requestedName);
         $apiClient = $container->get(ApiClient::class);
         $log = $container->get('logger');
+        $reporter = $container->get(ArrayReport::class);
         $importMapper = $container->get(ImportMapper::class);
         $modelManager = $container->get('modelManager');
-        $client = new ImportClient($modelManager, $apiClient, $importMapper, $config, $log);
+        $client = new ImportClient($modelManager, $apiClient, $importMapper, $reporter, $config, $log);
         return $client;
     }
 }
