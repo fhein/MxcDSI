@@ -37,9 +37,9 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
              */
             'mxcSaveMultiple',
             /**
-             * @event mxcApplyFilter
+             * @event mxcRemapProperties
              */
-            'mxcApplyFilter',
+            'mxcRemapProperties',
             /**
              * @event mxcImportItems
              */
@@ -51,8 +51,8 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         let me = this;
         let items = me.callParent(arguments);
         items = Ext.Array.insert(items, 0, [
-            me.createImportItemsButton(),
-//            me.createFilterButton(),
+            me.createImportButton(),
+            me.createRemapButton(),
             me.createAcceptButton(),
             me.createIgnoreButton(),
             me.createActivateButton(),
@@ -115,18 +115,18 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         });
     },
 
-    createFilterButton: function() {
+    createRemapButton: function() {
         let me = this;
         return Ext.create('Ext.button.Button', {
-            text: 'Apply filter',
-            iconCls: 'sprite-filter',
+            text: 'Remap Properties',
+            iconCls: 'sprite-maps',
             handler: function() {
-                me.fireEvent('mxcApplyFilter', me);
+                me.fireEvent('mxcRemapProperties', me);
             }
         });
     },
 
-    createImportItemsButton: function() {
+    createImportButton: function() {
         let me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Update',

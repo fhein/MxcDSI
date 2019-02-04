@@ -2,7 +2,6 @@
 
 namespace MxcDropshipInnocigs\Import;
 
-use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\Report\ArrayMap;
 use MxcDropshipInnocigs\Import\Report\ArrayReport;
@@ -13,37 +12,69 @@ use MxcDropshipInnocigs\Models\Variant;
 
 class PropertyMapper
 {
-    /** @var BulkOperation  */
-    protected $bulkOperation;
-
     /** @var ArrayReport */
     protected $reporter;
     /** @var LoggerInterface $log */
     protected $log;
-    protected $mismatchedOptionNames = [];
-    protected $nameTrace = [];
-    protected $categoryMap = [];
-    protected $brands = [];
-    protected $suppliers = [];
+
     private   $config;
 
-    public function __construct(BulkOperation $bulkOperation, ArrayReport $reporter, array $config, LoggerInterface $log) {
+    protected $mismatchedOptionNames;
+    protected $nameTrace;
+    protected $categoryMap;
+    protected $brands;
+    protected $suppliers;
+
+    public function __construct(ArrayReport $reporter, array $config, LoggerInterface $log) {
         $this->config = $config;
         $this->log = $log;
-        $this->bulkOperation = $bulkOperation;
         $this->reporter = $reporter;
+        $this->initLog();
     }
 
-    public function modelToArticle(Model $model, Article $article) {
+    public function initLog() {
+        $this->nameTrace = [];
+        $this->mismatchedOptionNames = [];
+        $this->categoryMap = [];
+        $this->brands = [];
+        $this->suppliers = [];
+
+    }
+
+    /**
+     * Set all properties of Variant maintained by PropertyMapper
+     *
+     * @param Model $model
+     * @param Variant $variant
+     */
+    public function mapModelToVariant(Model $model, Variant $variant) {
+        $number = $model->getModel();
+        $variant->setNumber($this->config['variant_codes'][$number] ?? $number);
+    }
+
+    public function mapGroupName($name) {
+        return $this->config['group_names'][$name] ?? $name;
+    }
+
+    public function mapOptionName($name) {
+        $mapping = $this->config['option_names'][$name] ?? $name;
+        return str_replace('weiss', 'weiß', $mapping);
+    }
+
+    /**
+     * Set all properties of Article maintained by PropertyMapper
+     *
+     * @param Model $model
+     * @param Article $article
+     */
+    public function mapModelToArticle(Model $model, Article $article) {
         $number = $model->getMaster();
         $article->setNumber($this->config['article_codes'][$number] ?? $number);
-        $article->setIcNumber($number);
-        $article->setManualUrl($model->getManualUrl());
-        $article->setImageUrl($model->getImageUrl());
-        $this->mapManufacturer($article, $model->getManufacturer());
-        $this->mapArticleName($model, $article);
-        // this has to be last because it depends on the article properties
-        $this->mapCategory($article, $model->getCategory());
+
+        // do not change ordering of the next lines
+        $this->mapManufacturer($article, $model->getManufacturer());    // sets supplier, brand and manufacturer
+        $this->mapArticleName($model, $article);                        // uses brand, sets name
+        $this->mapCategory($article, $model->getCategory());            // uses supplier, brand and name, sets category
     }
 
     public function mapManufacturer(Article $article, string $manufacturer): void
@@ -225,34 +256,8 @@ class PropertyMapper
         return $name;
     }
 
-    public function modelToVariant(Model $model, Variant $variant) {
-        $number = $model->getModel();
-        $variant->setNumber($this->config['variant_codes'][$number] ?? $number);
-        $variant->setIcNumber($number);
-        $variant->setEan($model->getEan());
-        $price = floatval(str_replace(',', '.', $model->getPurchasePrice()));
-        $variant->setPurchasePrice($price);
-        $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
-        $variant->setRetailPrice($price);
-    }
-
-    public function mapGroupName($name) {
-        return $this->config['group_names'][$name] ?? $name;
-    }
-
-    public function mapOptionName($name) {
-        $mapping = $this->config['option_names'][$name] ?? $name;
-        return str_replace('weiss', 'weiß', $mapping);
-    }
-
-    public function applyFilters() {
-        foreach($this->config['filters']['update'] as $filter) {
-            $this->bulkOperation->update($filter);
-        }
-    }
-
-    public function logMappingResults() {
-
+    public function logMappingResults()
+    {
         ksort($this->brands);
         ksort($this->suppliers);
         ksort($this->nameTrace);

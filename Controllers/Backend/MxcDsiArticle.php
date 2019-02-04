@@ -2,6 +2,7 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
+use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 
@@ -21,6 +22,10 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             parent::indexAction();
         } catch (Throwable $e) {
             $this->log->except($e);
+            $this->view->assign([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
         }
         $this->log->leave();
     }
@@ -32,6 +37,10 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             parent::updateAction();
         } catch (Throwable $e) {
             $this->log->except($e);
+            $this->view->assign([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
         }
         $this->log->leave();
     }
@@ -44,6 +53,27 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $client->import();
         } catch (Throwable $e) {
             $this->log->except($e);
+            $this->view->assign([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
+        }
+        $this->log->leave();
+    }
+
+    public function remapAction()
+    {
+        $this->log->enter();
+        try {
+            /** @var ImportMapper $client */
+            $client = $this->services->get(ImportMapper::class);
+            $client->reapplyPropertyMapping();
+        } catch (Throwable $e) {
+            $this->log->except($e);
+            $this->view->assign([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
         }
         $this->log->leave();
     }
@@ -54,35 +84,45 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     }
 
     public function save($data) {
-        /** @var Article $model */
-        $sActive = false;
+        /** @var Article $article */
         if (! empty($data['id'])) {
-            $model = $this->getRepository()->find($data['id']);
-            $sActive = $model->isActive();
+            // this is a request to update an existing article
+            $article = $this->getRepository()->find($data['id']);
+            // currently stored $active state
+            $sActive = $article->isActive();
         } else {
-            $model = new $this->model();
-            $this->getManager()->persist($model);
+            // this is a request to create a new article (not supported via our UI)
+            $article = new $this->model();
+            $this->getManager()->persist($article);
+            // default $active state
+            $sActive = false;
         }
-
+        // Variant data is empty only if the request comes from the list view (not the detail view)
+        // We prevent storing an article with empty variant list by unsetting empty variant data.
         if (isset($data['variants']) && empty($data['variants'])) {
             unset($data['variants']);
         }
-        $data = $this->resolveExtJsData($data);
-        $model->fromArray($data);
 
-        $uActive = $model->isActive();
+        // hydrate (new or existing) article from UI data
+        $data = $this->resolveExtJsData($data);
+        $article->fromArray($data);
+
+        // updated $active state
+        $uActive = $article->isActive();
 
         $articleMapper = $this->services->get(ArticleMapper::class);
         if ($uActive !== $sActive) {
-            if (! $articleMapper->handleActiveStateChange($model)) {
+            // User request to change active state of article
+            if (! $articleMapper->handleActiveStateChange($article)) {
                 return [
                     'success' => false,
                     'message' => 'Shopware article not created because it failed to validate.',
                 ];
             }
         }
-
-        $violations = $this->getManager()->validate($model);
+        // Our customization ends here.
+        // The rest below is default Shopware behaviour copied from parent implementation
+        $violations = $this->getManager()->validate($article);
         $errors = [];
         /** @var Symfony\Component\Validator\ConstraintViolation $violation */
         foreach ($violations as $violation) {
@@ -99,7 +139,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->getManager()->flush();
 
-        $detail = $this->getDetail($model->getId());
+        $detail = $this->getDetail($article->getId());
 
         return ['success' => true, 'data' => $detail['data']];
     }

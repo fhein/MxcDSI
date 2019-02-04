@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
+use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Exception\InvalidArgumentException;
@@ -20,11 +21,20 @@ use Zend\Config\Config;
 
 class ImportMapper implements EventSubscriber
 {
+    /** @var ModelManager $modelManager */
+    protected $modelManager;
+
     /** @var ApiClient $apiClient */
     protected $apiClient;
 
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
+
+    /** @var BulkOperation $bulkOperation */
+    protected $bulkOperation;
+
+    /** @var array $config */
+    protected $config;
 
     /** @var array $variants */
     protected $variants;
@@ -44,12 +54,6 @@ class ImportMapper implements EventSubscriber
     /** @var LoggerInterface $log */
     protected $log;
 
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
-
-    /** @var Config $config */
-    protected $config;
-
     /** @var array */
     protected $importLog;
 
@@ -62,6 +66,7 @@ class ImportMapper implements EventSubscriber
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
+     * @param BulkOperation $bulkOperation
      * @param Config $config
      * @param LoggerInterface $log
      */
@@ -69,13 +74,15 @@ class ImportMapper implements EventSubscriber
         ModelManager $modelManager,
         ApiClient $apiClient,
         PropertyMapper $propertyMapper,
+        BulkOperation $bulkOperation,
         Config $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
-        $this->config = $config;
+        $this->bulkOperation = $bulkOperation;
+        $this->config = $config->toArray();
         $this->log = $log;
     }
 
@@ -166,9 +173,13 @@ class ImportMapper implements EventSubscriber
     protected function addArticle(Model $model) {
         $article = new Article();
         $this->modelManager->persist($article);
+        $article->setIcNumber($model->getMaster());
         $article->setActive(false);
         $article->setAccepted(true);
-        $this->propertyMapper->modelToArticle($model, $article);
+        $article->setManualUrl($model->getManualUrl());
+        $article->setImageUrl($model->getImageUrl());
+
+        $this->propertyMapper->mapModelToArticle($model, $article);
         return $article;
     }
 
@@ -219,7 +230,16 @@ class ImportMapper implements EventSubscriber
             $variant->setActive(false);
             $variant->setAccepted(true);
 
-            $this->propertyMapper->modelToVariant($model, $variant);
+            // set properties without mapping
+            $variant->setIcNumber($number);
+            $variant->setEan($model->getEan());
+            $price = floatval(str_replace(',', '.', $model->getPurchasePrice()));
+            $variant->setPurchasePrice($price);
+            $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
+            $variant->setRetailPrice($price);
+
+            // set mapped properties
+            $this->propertyMapper->mapModelToVariant($model, $variant);
 
             $images = $model->getAdditionalImages();
             if (null !== $images) {
@@ -373,14 +393,38 @@ class ImportMapper implements EventSubscriber
         $this->modelManager->flush();
         $this->modelManager->clear();
         $evm->removeEventSubscriber($this);
-        /** @noinspection PhpUndefinedFieldInspection */
-        if ($this->config->applyFilters) {
-            $this->propertyMapper->applyFilters();
+        if ($this->config['applyFilters']) {
+            foreach($this->config['filters']['update'] as $filter) {
+                $this->bulkOperation->update($filter);
+            }
         }
-
         $this->propertyMapper->logMappingResults();
         $this->log->leave();
         return true;
+    }
+
+    public function reapplyPropertyMapping()
+    {
+        $models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
+        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        if (! $models || ! $articles) return;
+        /** @var Article $article */
+        foreach ($articles as $article) {
+            $variants = $article->getVariants();
+            $first = true;
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                $model = $models[$variant->getIcNumber()];
+                if ($first) {
+                    $this->propertyMapper->mapModelToArticle($model, $article);
+                    $first = false;
+
+                }
+                $this->propertyMapper->mapModelToVariant($model, $variant);
+            }
+        }
+        $this->modelManager->flush();
+        $this->modelManager->clear();
     }
 
     public function preUpdate(PreUpdateEventArgs $args)

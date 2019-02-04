@@ -4,7 +4,7 @@ namespace MxcDropshipInnocigs\Models;
 
 class VariantRepository extends BaseEntityRepository
 {
-    protected $getAllIndexedDql = 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.number';
+    protected $getAllIndexedDql = 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber';
 
     public function getAllIndexed() {
         return $this->getEntityManager()->createQuery($this->getAllIndexedDql)->getResult();

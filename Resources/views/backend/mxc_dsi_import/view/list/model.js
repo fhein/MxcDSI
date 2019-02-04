@@ -36,12 +36,12 @@ Ext.define('Shopware.apps.MxcDsiImport.view.list.Model', {
         let me = this;
         let items = me.callParent(arguments);
         items = Ext.Array.insert(items, 0, [
-            me.createImportItemsButton(),
+            me.createImportButton(),
         ]);
         return items;
     },
 
-    createImportItemsButton: function() {
+    createImportButton: function() {
         let me = this;
         return Ext.create('Ext.button.Button', {
             text: 'Import',

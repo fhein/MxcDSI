@@ -3,7 +3,6 @@
 namespace MxcDropshipInnocigs\Import;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\Report\ArrayReport;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -31,9 +30,8 @@ class PropertyMapperFactory implements FactoryInterface
         $config['articles'] = $this->getArticleConfiguration();
         $log = $container->get('logger');
         $reporter = $container->get(ArrayReport::class);
-        $bulkOperation = new BulkOperation($container->get('modelManager'), $log);
 
-        return new PropertyMapper($bulkOperation, $reporter, $config, $log);
+        return new PropertyMapper($reporter, $config, $log);
     }
 
     protected function getArticleConfiguration()

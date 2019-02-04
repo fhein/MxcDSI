@@ -10,10 +10,10 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
 
         me.control({
             'mxc-dsi-article-listing-grid': {
-                mxcSaveArticle:  me.onSaveArticle,
-                mxcSaveMultiple:  me.onSaveMultiple,
-                mxcImportItems: me.onImportItems,
-                mxcApplyFilter: me.onApplyFilter
+                mxcSaveArticle:     me.onSaveArticle,
+                mxcSaveMultiple:    me.onSaveMultiple,
+                mxcImportItems:     me.onImportItems,
+                mxcRemapProperties: me.onRemapProperties
             }
         });
         me.mainWindow = me.getView('list.Window').create({ }).show();
@@ -39,20 +39,20 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         });
     },
 
-    onApplyFilter: function(grid) {
-        let mask = new Ext.LoadMask(grid, { msg: 'Applying filters ...'});
+    onRemapProperties: function(grid) {
+        let mask = new Ext.LoadMask(grid, { msg: 'Remapping properties ...'});
         mask.show();
         Ext.Ajax.request({
             method: 'POST',
-            url: '{url controller=MxcDsiArticle action=filter}',
+            url: '{url controller=MxcDsiArticle action=remap}',
             params: {},
             callback: function(responseData, operation) {
                 mask.hide();
                 if(!operation) {
-                    Shopware.Notification.createGrowlMessage('Import', 'An error occured while applying filters.');
+                    Shopware.Notification.createGrowlMessage('Remap Properties', 'An error occured while remapping properties.');
                     return false;
                 } else {
-                    Shopware.Notification.createGrowlMessage('Import', 'Filters successfully applied.');
+                    Shopware.Notification.createGrowlMessage('Remap Properties', 'Properties were successfully remapped.');
                     grid.store.load();
                 }
             }

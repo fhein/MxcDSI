@@ -9,7 +9,7 @@ class ArticleRepository extends BaseEntityRepository
     /** @var Query $supplierBrandByManufacturerQuery */
     protected $supplierBrandByManufacturerQuery;
 
-    protected $getAllIndexedDql = 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.number';
+    protected $getAllIndexedDql = 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber';
 
     public function getAllIndexed()
     {

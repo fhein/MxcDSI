@@ -26,9 +26,6 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Group', {
      * @param record
      */
     onGroupSave: function(record) {
-        if (record.get('active') === true) {
-            record.set('accepted', true);
-        }
         record.save({
             params: {
                  resource: 'innocigs_group'

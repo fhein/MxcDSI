@@ -1,7 +1,5 @@
 <?php
 
-use MxcDropshipInnocigs\Models\Article;
-
 return [
     'article_name_option_fixes'     => [
         'blau-prisma'     => 'prisma-blau',
@@ -202,31 +200,6 @@ return [
     ],
     'categories'     => [
         'Alt > Joyetech 510-T > Zubehör'     => 'Zubehör > Joyetech',
-    ],
-    'filters'     => [
-        'update'     => [
-            [
-                'entity'     => Article::class,
-                'andWhere'     => [
-                    [ 'field'     => 'name', 'operator'     => 'LIKE', 'value'     => '%iquid%' ]
-                ],
-                'set'     => [ 'accepted'     => false, 'active'     => false ],
-            ],
-            [
-                'entity'     => Article::class,
-                'andWhere'     => [
-                    [ 'field'     => 'name', 'operator'     => 'LIKE', 'value'     => '%Aroma%' ]
-                ],
-                'set'     => [ 'accepted'     => false, 'active'     => false, ]
-            ],
-            [
-                'entity'     => Article::class,
-                'andWhere'     => [
-                    [ 'field'     => 'brand', 'operator'     => 'LIKE', 'value'     => 'DVTCH Amsterdam' ]
-                ],
-                'set'     => [ 'accepted'     => false, 'active'     => false, ]
-            ],
-        ],
     ],
     'innocigs_brands' => [ 'SC', 'Steamax', 'InnoCigs'],
 
