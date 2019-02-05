@@ -1,5 +1,4 @@
 <?php
-
 return [
     'article_name_option_fixes'     => [
         'blau-prisma'     => 'prisma-blau',
@@ -66,7 +65,8 @@ return [
     'article_name_replacements'     => [
         'preg_replace' => [
             '~0ml\/ml~'                                                     => '0mg/ml',
-            '~((1 Liter)|(\d+ ml)) (Basis) - (0 mg/ml)~'                    => '$4 - $1, $5',
+            '~((1 Liter)|(\d+ ml)) (Basis)~'                                => '$4 - $1',
+            '~1 Liter~'                                                     => '1.000 ml',
             '~E-Zigaretten (Liquid)~'                                       => '- $1',
             '~(Liquid) für E-Zigaretten~'                                   => '$1',
             '~Aroma (- Liquid)~'                                            => '$1',
@@ -74,6 +74,8 @@ return [
             '~-(\d+) ml~'                                                   => '- $1 ml',
             '~(\d) ?mAH~'                                                   => '$1 mAh',
             '~ (\d+) mAh~'                                                  => ', $1 mAh',
+            '~(\d{2})VG */ *(\d{2})PG~'                                     => '- VG/PG: $1:$2,',
+            '~(\d{2})PG */ *(\d{2})VG~'                                     => '- VG/PG: $2:$1,',
             '~(\d)(\d{3}) mAh~'                                             => '$1.$2 mAh',
             '~([^,\-]) (\d) m$~'                                            => '$1 - $2 m',
             '~([^,\-]) (\d,\d+) Ohm~'                                       => '$1, $2 Ohm',
@@ -85,7 +87,7 @@ return [
             '~ml - (\d)~'                                                   => 'ml, $1',
             '~([^,\-]) (\d(,\d+)?) ?ml~'                                    => '$1, $2 ml',
             '~(\d+)ML(.*Leerflasche)~'                                      =>'$2, $1 ml',
-            '~ml (\d)~'                                                     => 'ml, $1',
+            '~ml +(\d)~'                                                     => 'ml, $1',
             '~([^,\-]) (\d+) ml$~'                                          => '$1 - $2 ml',
             '~([^,\-]) (\d+) mg\/ml$~'                                      => '$1 - $2 mg/ml',
             '~(\d+ mg/ml),? (\d+ ml)~'                                      => '$2, $1',
@@ -105,13 +107,17 @@ return [
             '~(Twisted -) (Cryostasis|Road Trip) (Aroma)(.*)(- \d+ ml)~'    => '$1 $2 $4 - $3 $5',
             '~((SC)|(InnoCigs))(.*)((- )?(Liquid)|(Aroma))$~'               => '$1$4$6$5 - 10 ml',
             '~(SC) (- Vape Base)(.*-)(.*)~'                                 => '$1 $3 $2 - $4',
+            '~^(Erste Sahne) ([^\-])~'                                        => '$1 - $2',
             '~Heads?~'                                                      => 'Verdampferkopf',
+            '~((Vape)|(SC)) - (\d+ ml) (Shot) - (.*), (.*)~'                => '$1 - $5 - $6, $4, $7',
+            '~(Solt) (\d+ ml) (.*) - (.*), (.*)~'                           => '$1 - $3 - $4, $2, $5',
             '~ - ?$~'                                                       => '',
             '~\s+~'                                                         => ' ',
             '~(-\s)+~'                                                      => '- ',
         ],
         'str_replace' => [
             'SINUOUS'                               => 'Sinuous',
+            'GNOME'                                 => 'Gnome',
             'Verdampferkopf Verdampferkopf'         => 'Verdampferkopf',
             'Sherbert'                              => 'Sherbet',
             ' Core Dual '                           => ' ',
@@ -160,11 +166,10 @@ return [
             'pro Pack)'                             => 'pro Packung)',
             'St. pro'                               => 'Stück pro',
             '5er Pack'                              => '5 Stück pro Packung',
-            '50VG/50PG'                             => 'PG/VG 50:50,',
-            '50PG/50VG'                             => 'PG/VG 50:50,',
             '10er Packung'                          => '(10 Stück pro Packung)',
             '(Dual Coil), 1,5 Ohm'                  => '- Dual Coil, 1,5 Ohm',
             'Vape Base'                             => 'Shake & Vape',
+            'Vape Verdampferkopf'                   => 'Vape Head',
             'mAh 40A'                               => 'mAh, 40 A',
             'P80 Watt'                              => 'P80, 80 Watt',
             '+ Adapter'                             => ', mit Adapter',
@@ -200,8 +205,41 @@ return [
         ]
     ],
     'categories'     => [
-        'Alt > Joyetech 510-T > Zubehör'     => 'Zubehör > Joyetech',
+        'source' => [
+            'preg_match' => [
+                '~Liquids \> Easy 3 Caps~' => 'Liquids > Easy 3 Caps',
+                '~E-Zigaretten~'    => 'E-Zigaretten',
+                '~TWIST~.*- \d~'    => 'Shake & Vape',
+                '~^Alt > Joye~'     => 'Zubehör',
+                '~Clearomizer~'    => 'Verdampfer',
+                '~^Box Mods~'       => 'Akkuträger',
+                '~((Aspire)|(InnoCigs)|(Steamax) )?Zubehör~'  => 'Zubehör',
+                '~Ladegerät~'       => 'Ladegeräte',
+                '~Shake & Vape~'    => 'Shake & Vape',
+                '~VLADS VG~'        => 'Liquids',
+                '~Basen und Shots~' => 'Basen & Shots',
+                '~Vaporizer~'       => 'Vaporizer'
+
+            ],
+        ],
+        'name' => [
+            'preg_match' => [
+                '~TWIST~' => 'Shake & Vape',
+                '~COTN~'  => 'Zubehör',
+                '~Werkzeug-Set~' => 'Zubehör',
+                '~Verdampferkopf~' => ' Zubehör',
+                '~(Basis)|(Shot)~' => 'Basen & Shots',
+                '~Aroma~' => 'Aromen',
+                '~Liquid~' => 'Liquid',
+                '~0 mg/ml~' => 'Shake & Vape',
+                '~Flavor~' => 'Aromen',
+                '~Vampire Vape.*Limited Edition~' => 'Aromen',
+                '~iWu Abdeck~' => 'Zubehör',
+                '~Ladegerät~' => 'Ladegeräte',
+            ]
+        ]
     ],
+
     'innocigs_brands' => [ 'SC', 'Steamax', 'InnoCigs'],
 
     'articles'     => 'This key is reserverd for PropertyMapperFactory',

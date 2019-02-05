@@ -399,38 +399,6 @@ class ImportMapper implements EventSubscriber
         return true;
     }
 
-    public function reapplyPropertyMapping()
-    {
-        $models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
-        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
-        if (! $models || ! $articles) return;
-        /** @var Article $article */
-        foreach ($articles as $article) {
-            $variants = $article->getVariants();
-            $first = true;
-            /** @var Variant $variant */
-            foreach ($variants as $variant) {
-                $model = $models[$variant->getIcNumber()];
-                if ($first) {
-                    $this->propertyMapper->mapModelToArticle($model, $article);
-                    $first = false;
-
-                }
-                $this->propertyMapper->mapModelToVariant($model, $variant);
-            }
-        }
-        $this->modelManager->flush();
-        $this->modelManager->clear();
-        $this->checkArticlePropertyMappingConsistency();
-    }
-
-    public function checkArticlePropertyMappingConsistency() {
-        $models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
-        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
-        if (! $models || ! $articles) return;
-        $this->propertyMapper->checkArticlePropertyMappingConsistency($models, $articles);
-    }
-
     public function preUpdate(PreUpdateEventArgs $args)
     {
         /** @var PreUpdateEventArgs $args */

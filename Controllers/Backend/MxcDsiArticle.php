@@ -3,6 +3,7 @@
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
+use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 
@@ -66,8 +67,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->enter();
         try {
             /** @var ImportMapper $client */
-            $client = $this->services->get(ImportMapper::class);
-            $client->reapplyPropertyMapping();
+            $mapper = $this->services->get(PropertyMapper::class);
+            $mapper->reapplyPropertyMapping();
         } catch (Throwable $e) {
             $this->log->except($e);
             $this->view->assign([
