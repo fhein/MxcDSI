@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Import\Report;
+namespace MxcDropshipInnocigs\Report;
 
 use Zend\Config\Factory;
 use Zend\Filter\StringToLower;

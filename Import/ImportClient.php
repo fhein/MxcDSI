@@ -6,8 +6,8 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
-use MxcDropshipInnocigs\Import\Report\ArrayReport;
 use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Report\ArrayReport;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
@@ -18,9 +18,6 @@ class ImportClient implements EventSubscriber
 
     /** @var ApiClient $apiClient */
     protected $apiClient;
-
-    /** @var ArrayReport */
-    protected $reporter;
 
     /** @var LoggerInterface $log */
     protected $log;
@@ -60,7 +57,6 @@ class ImportClient implements EventSubscriber
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param ImportMapper $importMapper
-     * @param ArrayReport $reporter
      * @param Config $config
      * @param LoggerInterface $log
      */
@@ -68,7 +64,6 @@ class ImportClient implements EventSubscriber
         ModelManager $modelManager,
         ApiClient $apiClient,
         ImportMapper $importMapper,
-        ArrayReport $reporter,
         Config $config,
         LoggerInterface $log
     ) {
@@ -76,7 +71,6 @@ class ImportClient implements EventSubscriber
         $this->importMapper = $importMapper;
         $this->apiClient = $apiClient;
         $this->log = $log;
-        $this->reporter = $reporter;
         $this->config = $config;
     }
 
@@ -104,7 +98,8 @@ class ImportClient implements EventSubscriber
             'innocigsCategories' => $this->categories,
             'innocigsCategoryUsage' => $this->categoryUsage,
         ];
-        ($this->reporter)($topics);
+        $report = new ArrayReport();
+        $report($topics);
 
         $evm->removeEventSubscriber($this);
         // $this->logImport();

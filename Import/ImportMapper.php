@@ -425,6 +425,14 @@ class ImportMapper implements EventSubscriber
         }
         $this->modelManager->flush();
         $this->modelManager->clear();
+        $this->checkArticlePropertyMappingConsistency();
+    }
+
+    public function checkArticlePropertyMappingConsistency() {
+        $models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
+        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        if (! $models || ! $articles) return;
+        $this->propertyMapper->checkArticlePropertyMappingConsistency($models, $articles);
     }
 
     public function preUpdate(PreUpdateEventArgs $args)

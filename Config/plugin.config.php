@@ -7,7 +7,6 @@ use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\PropertyMapper;
-use MxcDropshipInnocigs\Import\Report\ArrayReport;
 use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
@@ -19,6 +18,7 @@ use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
@@ -92,9 +92,6 @@ return [
                 ],
             ],
         ],
-    ],
-    'filters' => [
-
     ],
     'services' => [
         'magicals' => [

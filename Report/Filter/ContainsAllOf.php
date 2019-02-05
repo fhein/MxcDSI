@@ -1,8 +1,8 @@
 <?php
 
-namespace MxcDropshipInnocigs\Import\Report\Filter;
+namespace MxcDropshipInnocigs\Report\Filter;
 
-class ContainsOneOf
+class ContainsAllOf
 {
     protected $matches;
 
@@ -12,9 +12,8 @@ class ContainsOneOf
 
     public function filter($value) {
         foreach ($this->matches as $match) {
-            if (strpos($value, $match) !== false) return true;
+            if (strpos($value, $match) === false) return false;
         }
-        return false;
+        return true;
     }
-
 }

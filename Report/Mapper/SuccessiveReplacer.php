@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Import\Report\Mapper;
+namespace MxcDropshipInnocigs\Report\Mapper;
 
 class SuccessiveReplacer
 {

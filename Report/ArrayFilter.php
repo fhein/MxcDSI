@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Import\Report;
+namespace MxcDropshipInnocigs\Report;
 
 class ArrayFilter
 {
