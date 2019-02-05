@@ -160,7 +160,6 @@ class ImportClient implements EventSubscriber
         $model->setPurchasePrice($this->getParamString($data['PRODUCTS_PRICE']));
         $model->setRetailPrice($this->getParamString($data['PRODUCTS_PRICE_RECOMMENDED']));
         $model->setManufacturer($this->getParamString($data['MANUFACTURER']));
-        $model->setImageUrl($this->getParamString($data['PRODUCTS_IMAGE']));
         $model->setAdditionalImages($data['PRODUCTS_IMAGE_ADDITIONAL']);
         $model->setOptions($data['PRODUCTS_ATTRIBUTES']);
 
@@ -206,13 +205,16 @@ class ImportClient implements EventSubscriber
             }
             sort($options);
             $item['PRODUCTS_ATTRIBUTES'] = implode('##!##', $options);
-
             if (is_string($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])) {
                 $item['PRODUCTS_IMAGE_ADDITIONAL'] = trim($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']);
             } else {
                 $images = array_map('trim', $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']);
                 sort($images);
                 $item['PRODUCTS_IMAGE_ADDITIONAL'] = implode('#!#', $images);
+            }
+            $image = trim($this->getParamString($item['PRODUCTS_IMAGE']));
+            if ($image !== '') {
+                $item['PRODUCTS_IMAGE_ADDITIONAL'] = $image . '#!#' . $item['PRODUCTS_IMAGE_ADDITIONAL'];
             }
             $this->import[trim($item['MODEL'])] = array_map('trim', $item);
         }

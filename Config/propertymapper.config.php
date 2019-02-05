@@ -66,6 +66,7 @@ return [
     'article_name_replacements'     => [
         'preg_replace' => [
             '~0ml\/ml~'                                                     => '0mg/ml',
+            '~((1 Liter)|(\d+ ml)) (Basis) - (0 mg/ml)~'                    => '$4 - $1, $5',
             '~E-Zigaretten (Liquid)~'                                       => '- $1',
             '~(Liquid) für E-Zigaretten~'                                   => '$1',
             '~Aroma (- Liquid)~'                                            => '$1',

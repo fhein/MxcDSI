@@ -8,6 +8,7 @@ use Exception;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 use Shopware\Components\Model\ModelManager;
@@ -100,7 +101,13 @@ class ArticleMapper
         $set = $this->optionMapper->createConfiguratorSet($article);
         $swArticle->setConfiguratorSet($set);
 
-        $this->mediaTool->setArticleImages($article->getImageUrl(), $swArticle);
+        // Quick hack to adapt to new image handling (no more imageUrl in Article)
+
+        /** @var  Variant $firstVariant */
+        $firstVariant = $article->getVariants()[0];
+        /** @var Image $image */
+        $image = $firstVariant->getImages()[0];
+        $this->mediaTool->setArticleImages($image->getUrl(), $swArticle);
 
         //create details from innocigs variants
         $variants = $article->getVariants();

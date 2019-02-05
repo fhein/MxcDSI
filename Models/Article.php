@@ -48,12 +48,6 @@ class Article extends ModelEntity  {
     private $description;
 
     /**
-     * @var string $imageUrl;
-     * @ORM\Column(type="string", nullable=true)
-     */
-    private $imageUrl;
-
-    /**
      * @var string $manufacturer;
      * @ORM\Column(name="manufacturer", type="string", nullable=true)
      */
@@ -217,6 +211,7 @@ class Article extends ModelEntity  {
     {
         return $this->accepted;
     }
+
     /**
      * @return null|string
      */
@@ -224,26 +219,13 @@ class Article extends ModelEntity  {
     {
         return $this->description;
     }
+
     /**
      * @param null|string $description
      */
     public function setDescription(?string $description)
     {
         $this->description = $description;
-    }
-    /**
-     * @return null|string
-     */
-    public function getImageUrl(): ?string
-    {
-        return $this->imageUrl;
-    }
-    /**
-     * @param null|string
-     */
-    public function setImageUrl(?string $imageUrl)
-    {
-        $this->imageUrl = $imageUrl;
     }
 
     /**

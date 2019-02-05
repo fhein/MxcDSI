@@ -177,7 +177,6 @@ class ImportMapper implements EventSubscriber
         $article->setActive(false);
         $article->setAccepted(true);
         $article->setManualUrl($model->getManualUrl());
-        $article->setImageUrl($model->getImageUrl());
 
         $this->propertyMapper->mapModelToArticle($model, $article);
         return $article;
@@ -318,9 +317,6 @@ class ImportMapper implements EventSubscriber
                     break;
                 case 'manufacturer':
                     $this->propertyMapper->mapManufacturer($variant->getArticle(), $newValue);
-                    break;
-                case 'imageUrl':
-                    $variant->getArticle()->setImageUrl($newValue);
                     break;
                 case 'additionalImages':
                     $this->changeImages($variant, $oldValue, $newValue);
