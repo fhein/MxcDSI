@@ -102,7 +102,7 @@ class ImportClient implements EventSubscriber
         $topics = [
             'innocigsCategories' => $this->categories,
             'innocigsCategoryUsage' => $this->categoryUsage,
-            'importLog' => $this->importLog,
+            //'importLog' => $this->importLog,
         ];
         $report = new ArrayReport();
         $report($topics);
@@ -176,8 +176,8 @@ class ImportClient implements EventSubscriber
             $item['master'] = $this->getParamString($data['MASTER']);
             $item['ean'] = $this->getParamString($data['EAN']);
             $item['name'] = $this->getParamString($data['NAME']);
-            $item['retailPrice'] = $this->getParamString($data['PRODUCTS_PRICE']);
-            $item['purchasePrice'] = $this->getParamString($data['PRODUCTS_PRICE_RECOMMENDED']);
+            $item['purchasePrice'] = $this->getParamString($data['PRODUCTS_PRICE']);
+            $item['retailPrice'] = $this->getParamString($data['PRODUCTS_PRICE_RECOMMENDED']);
             $item['manufacturer'] = $this->getParamString($data['MANUFACTURER']);
             $item['manual'] = $this->getParamString($data['PRODUCTS_MANUAL']);
             $item['options'] = $this->condenseOptions($data['PRODUCTS_ATTRIBUTES']);

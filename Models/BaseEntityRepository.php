@@ -23,7 +23,8 @@ class BaseEntityRepository extends EntityRepository
 
     public function count(): int
     {
+        $dql = sprintf('SELECT count(c.id) FROM %s c', $this->getClassName());
         /** @noinspection PhpUnhandledExceptionInspection */
-        return $this->createQueryBuilder('a')->select('count(a.id)')->getQuery()->getSingleScalarResult();
+        return $this->getEntityManager()->createQuery($dql)->getSingleScalarResult();
     }
 }

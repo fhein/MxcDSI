@@ -105,6 +105,36 @@ class PropertyMapper
         $this->suppliers[$article->getSupplier()] = true;
     }
 
+    protected function correctSupplierAndBrand(string $name, Article $article)
+    {
+        $brand = $article->getBrand();
+        if (!$brand) {
+            return $name;
+        }
+        $supplier = $article->getSupplier();
+        if ($supplier === 'Innocigs') $supplier = 'InnoCigs';
+        $isInnocigsBrand = in_array($brand, $this->config['innocigs_brands']);
+        $isInnocigsSupplier = ($supplier === 'InnoCigs');
+
+        if ($isInnocigsBrand && $isInnocigsSupplier) {
+            if (strpos($name, $brand) !== 0) {
+                $name = $brand . ' - ' . $name;
+            }
+            return $name;
+        }
+
+        $append = $isInnocigsBrand ? ' - by ' . $brand : '';
+        if ($supplier === 'Smoktech') {
+            $supplier = 'SMOK';
+        }
+
+
+        if (! $isInnocigsSupplier ) {
+            $name = str_replace($brand, $supplier, $name) . $append;
+        }
+        return $name;
+    }
+
     public function mapArticleName(Model $model, Article $article): void
     {
         $trace['model'] = $model->getModel();
@@ -121,10 +151,7 @@ class PropertyMapper
         }
 
         // rule based name mapping applied next
-        $brand = $article->getBrand();
-        if ($brand && in_array($brand, $this->config['innocigs_brands']) && (strpos($name, $brand) !== 0)) {
-            $name = $brand . ' - ' . $name;
-        }
+        $name = $this->correctSupplierAndBrand($name, $article);
         $trace['brand_prepended'] = $name;
 
         foreach ($this->config['article_name_replacements'] as $replacer => $replacements) {
@@ -215,6 +242,7 @@ class PropertyMapper
             if ($key === 'category') {
                 $input = $icCategory;
             }
+            /** @noinspection PhpUndefinedVariableInspection */
             if (null === $input) {
                 $method = 'get' . ucFirst($key);
                 if (method_exists($article, $method)) {
@@ -226,7 +254,7 @@ class PropertyMapper
                     if (preg_match('~Easy 3~', $article->getName())) {
                         $supplierTag = $article->getBrand();
                     } else {
-                        $supplierTag = preg_match('~(Liquid)|(Aromen)|(Basen)~',
+                        $supplierTag = preg_match('~(Liquid)|(Aromen)|(Basen)|(Shake \& Vape)~',
                             $mappedCategory) === 1 ? $article->getBrand() : $article->getSupplier();
                     }
                     if ($matcher($pattern, $input) === 1) {
@@ -281,7 +309,7 @@ class PropertyMapper
         }));
 
         $optionMappingIssues = array_filter($this->mismatchedOptionNames, function ($value) {
-            false === $value['fixAvailable'] || false === $value['fixApplied'];
+            return (false === $value['fixAvailable'] || false === $value['fixApplied']);
         });
 
         $nameMap = array_values(array_map(function ($value) {
@@ -317,19 +345,25 @@ class PropertyMapper
                 ],
             ]
         );
+        $articleNames = array_flip(array_flip(array_column($nameMap, 'mapped  ')));
+        sort($articleNames);
+        $importedArticleNamesWithOptionsRemoved =  array_flip(array_flip(array_column($this->nameTrace, 'options_removed')));
+        sort($importedArticleNamesWithOptionsRemoved);
+
 
         $topics = [
-            'mismatchedOptionNames'     => $optionMappingIssues,
-            'namesWithoutRemovedOption' => $namesWithoutRemovedOptions,
-            'brands'                    => array_keys($this->brands),
-            'suppliers'                 => array_keys($this->suppliers),
-            'articleNameMap'            => $nameMap,
-            'articleNameTrace'          => $this->nameTrace,
-            'articleNames'              => array_column($nameMap, 'mapped  '),
-            'articleNamesUnmapped'      => $unchangedArticleNames,
-            'articleNamesPregReplace'   => $pregReplace,
-            'articleNamesStrReplace'    => $strReplace,
-            'categoryUsage'             => $this->categoryUsage,
+            'mismatchedOptionNames'             => $optionMappingIssues,
+            'namesWithoutRemovedOption'         => $namesWithoutRemovedOptions,
+            'importedNamesWithRemovedOptions'   => $importedArticleNamesWithOptionsRemoved,
+            'brands'                            => array_keys($this->brands),
+            'suppliers'                         => array_keys($this->suppliers),
+            'articleNameMap'                    => $nameMap,
+            'articleNameTrace'                  => $this->nameTrace,
+            'articleNames'                      => $articleNames,
+            'articleNamesUnmapped'              => $unchangedArticleNames,
+            'articleNamesPregReplace'           => $pregReplace,
+            'articleNamesStrReplace'            => $strReplace,
+            'categoryUsage'                     => $this->categoryUsage,
         ];
 
         $report = new ArrayReport();

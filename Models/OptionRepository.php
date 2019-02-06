@@ -4,6 +4,10 @@ namespace MxcDropshipInnocigs\Models;
 
 class OptionRepository extends BaseEntityRepository
 {
+    protected $dql = [
+        'removeOrphaned'    => 'SELECT o FROM MxcDropshipInnocigs\Models\Option o WHERE o.variants is empty',
+    ];
+
     public function getAllIndexed() {
         $options = $this->findAll();
         $result = [];
@@ -17,13 +21,7 @@ class OptionRepository extends BaseEntityRepository
     }
 
     public function removeOrphaned() {
-        $query = $this->createQueryBuilder('o')
-            ->select('o')
-            ->where('o.variants is empty')
-            ->getQuery();
-        $this->log->debug('Option#removeOrphans: ' . $query->getDQL());
-        $orphans = $query->getResult();
-
+        $orphans = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
         /** @var Option $orphan */
         foreach($orphans as $orphan) {
             $this->log->debug('Removing orphaned option \'' . $orphan->getName() .'\'');

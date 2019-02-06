@@ -5,6 +5,7 @@
     "mxc-commons/mxc-shopware-plugin" : "^0.1",
     "ext-json" : "*",
     "ext-simplexml": "*",
-    "ext-libxml": "*"
+    "ext-libxml": "*",
+    "ext-dom": "*"
   }
 }

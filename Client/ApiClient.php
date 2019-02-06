@@ -130,11 +130,31 @@ class ApiClient
         }
     }
 
+    protected function logXML($xml)
+    {
+        $dom = new \DOMDocument("1.0", "ISO-8859-15");
+        $dom->loadXML($xml);
+        $dom->formatOutput = true;
+        $pretty = $dom->saveXML();
+
+        $reportDir = Shopware()->DocPath() . 'var/log/mxc_dropship_innocigs';
+        if (file_exists($reportDir) && ! is_dir($reportDir)) {
+            unlink($reportDir);
+        }
+        if (! is_dir($reportDir)) {
+            mkdir($reportDir);
+        }
+
+        $fn = Shopware()->DocPath() . 'var/log/mxc_dropship_innocigs/api_result.xml';
+        file_put_contents($fn, $pretty);
+    }
+
     protected function getArrayResult(Response $response) {
         if (!$response->isSuccess()) {
             throw new ApiException('HTTP status: ' . $response->getStatusCode());
         }
         $body = $response->getBody();
+        $this->logXML($body);
 
         libxml_use_internal_errors(true);
         $xml = simplexml_load_string($body, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);

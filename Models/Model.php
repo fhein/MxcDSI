@@ -59,7 +59,7 @@ class Model extends ModelEntity
 
     /**
      * @var string $images;
-     * @ORM\Column(name="image_url", type="string", nullable=true)
+     * @ORM\Column(name="image_url", type="text", nullable=true)
      */
     private $images;
 

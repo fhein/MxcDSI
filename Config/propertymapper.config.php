@@ -1,18 +1,16 @@
 <?php
 return [
     'article_name_option_fixes'     => [
-        'blau-prisma'       => 'prisma-blau',
-        'minz-grün'         => 'minzgrün',
-        'chrom-prisma'      => [
-            'chrome-prisma',
-            'prisma-chrom'
-        ],
-        'gold-prisma'       => 'prisma-gold',
-        'gunmetal-prisma'   => 'prisma-gunmetal',
-        'regenbogen-prisma' => 'prisma-regenbogen',
-        'rot-prisma'        => 'prisma-rot',
-        'grün-prisma'       => 'prisma-grün',
+//        'blau-prisma'       => 'prisma-blau',
+        'prisma-blau'       => 'blau-prisma',
+        'prisma-chrom'      => 'chrom-prisma',
+        'prisma-gold'       => 'gold-prisma',
+        'prisma-regenbogen' => 'regenbogen-prisma',
+        'prisma-rot'        => 'rot-prisma',
+        'prisma-grün'       => 'grün-prisma',
+        'prisma-gunmetal'   => 'gunmetal-prisma',
         'gunmetal chrome'   => 'gunmetal-chrom',
+        'minz-grün'         => 'minzgrün',
         'auto pink'         => 'auto-pink',
         '10 mg/ml'          => '- 10mg/ml',
         '20 mg/ml'          => '- 20mg/ml',
@@ -39,7 +37,8 @@ return [
         'weiß'              => 'weiss',
         '50PG / 50VG'       => [
             '50PG/50VG',
-            '50VG/50PG'
+            '50VG/50PG',
+            '50VG / 50PG',
         ],
         '70VG / 30PG'       => '70VG/30PG',
         '80VG / 20PG'       => '80VG/20PG',
@@ -54,7 +53,14 @@ return [
         '24 GA*2+32 GA'     => '24GA*2+32GA',
         '28 GA*2+32 GA'     => '28GA*2+32GA',
         '26 GA+32 GA'       => '26GA+32GA',
-        '28 GA*2+30 GA'     => '28GA*2+30GA'
+        '28 GA*2+30 GA'     => '28GA*2+30GA',
+
+        'Flasche schwarz + schwarze Cap' => 'schwarz mit schwarzer Cap',
+        'Flasche schwarz transparent + schwarze Cap' => 'schwarz-transparent mit schwarzer Cap',
+        'Flasche transparent + schwarze Cap' => 'mit schwarzer Cap',
+        //'Flasche transparent + transparente Cap' =>
+        'Flasche weiss + weisse Cap' => 'weiss mit weisser Cap',
+
     ],
 
     'article_codes'         => [],
@@ -110,7 +116,7 @@ return [
             '~(SC) (- Vape Base)(.*-)(.*)~'                                 => '$1 $3 - $4',
             '~^(Erste Sahne) ([^\-])~'                                      => '$1 - $2',
             '~(John Smith.*) (- \d+ ml)~'                                   => '$1 - Aroma $2',
-            '~Heads?~'                                                      => 'Verdampferkopf',
+            '~Heads~'                                                       => 'Head',
             '~((Vape)|(SC)) - (\d+ ml) (Shot) - (.*), (.*)~'                => '$1 - $5 - $6, $4, $7',
             '~(Solt) (\d+ ml) (.*) - (.*), (.*)~'                           => '$1 - $3 - $4, $2, $5',
             '~(Happy Liquid)(.*)~'                                          => '$1$2 - Liquid - 10 ml',
@@ -118,15 +124,17 @@ return [
             '~\s+~'                                                         => ' ',
             '~(-\s)+~'                                                      => '- ',
             '~(Liquid)$~'                                                   => '$1 - 10 ml',
-            '~(- \d+ ml, 0 mg/ml)$~'                                        => '- Shake & Vape - $1'
+            '~(- \d+ ml, 0 mg/ml)$~'                                        => '- Shake & Vape - $1',
+            '~([^,\-]) (\d m)~'                                             => '$1, $2'
         ],
         'str_replace' => [
             'SINUOUS'                               => 'Sinuous',
             'GNOME'                                 => 'Gnome',
-            'Verdampferkopf Verdampferkopf'         => 'Verdampferkopf',
+            'Head Head'                             => 'Head',
             'Sherbert'                              => 'Sherbet',
             ' Core Dual '                           => ' ',
             ' Core '                                => ' ',
+            'Basis'                                 => 'Base',
             'Afternoon Vanille-Käsekuchen'          => 'Afternoon',
             'Always Cola'                           => 'Always',
             'Angels in Heaven Tabak'                => 'Angels in Heaven',
@@ -174,11 +182,11 @@ return [
             '10er Packung'                          => '(10 Stück pro Packung)',
             '(Dual Coil), 1,5 Ohm'                  => '- Dual Coil, 1,5 Ohm',
             'Vape Base'                             => 'Shake & Vape',
-            'Vape Verdampferkopf'                   => 'Vape Head',
             'mAh 40A'                               => 'mAh, 40 A',
             'P80 Watt'                              => 'P80, 80 Watt',
             '+ Adapter'                             => ', mit Adapter',
             'Limited Edition - 30 ml'               => 'Limited Edition - Aroma - 30 ml',
+            'Base - Shake & Vape -'                 => 'Base -',
             '- -'                                   => '-',
             ' ,'                                    => ',',
             ', -'                                   => '-',
@@ -213,13 +221,14 @@ return [
     'categories'     => [
         'name' => [
             'preg_match' => [
+                '~^SC - Base~'          => 'Basen & Shots',
                 '~Atlantis EVO Tank~'   => 'Verdampfer',
                 '~Feedlink~'            => 'Akkuträger',
                 '~TWIST~'               => 'Shake & Vape',
                 '~COTN~'                => 'Zubehör',
                 '~(Werkzeug-Set)|(pinzette)|(Heizplatte)|(Dichtung)|(Glastank)|(Mundstück)~' => 'Zubehör',
                 '~Verdampferkopf~'      => ' Zubehör',
-                '~(Basis)|(Shot)~'      => 'Basen & Shots',
+                '~(Shot)~'              => 'Basen & Shots',
                 '~- Aroma~'             => 'Aromen',
                 '~Liquid~'              => 'Liquid',
                 '~0 mg/ml~'             => 'Shake & Vape',
@@ -249,7 +258,8 @@ return [
         ],
     ],
 
-    'innocigs_brands' => [ 'SC', 'Steamax', 'InnoCigs'],
+    'innocigs_brands' => [ 'SC', 'Steamax', 'InnoCigs', 'Innocigs'],
+    'innocigs_manufacturers' => ['SC', 'Steamax', 'InnoCigs', 'Innocigs', 'Akkus'],
 
     'articles'     => 'This key is reserverd for PropertyMapperFactory',
 ];
