@@ -64,6 +64,7 @@ return [
 
     'article_name_replacements'     => [
         'preg_replace' => [
+            '~Aster$~'                                                      => 'Aster 75 Watt',
             '~0ml\/ml~'                                                     => '0mg/ml',
             '~((1 Liter)|(\d+ ml)) (Basis)~'                                => '$4 - $1',
             '~1 Liter~'                                                     => '1.000 ml',
@@ -106,15 +107,18 @@ return [
             '~(VapeTastic -) (Aroma) - (.*)(- \d+ ml)~'                     => '$1 $3 - $2 $4',
             '~(Twisted -) (Cryostasis|Road Trip) (Aroma)(.*)(- \d+ ml)~'    => '$1 $2 $4 - $3 $5',
             '~((SC)|(InnoCigs))(.*)((- )?(Liquid)|(Aroma))$~'               => '$1$4$6$5 - 10 ml',
-            '~(SC) (- Vape Base)(.*-)(.*)~'                                 => '$1 $3 $2 - $4',
+            '~(SC) (- Vape Base)(.*-)(.*)~'                                 => '$1 $3 - $4',
             '~^(Erste Sahne) ([^\-])~'                                      => '$1 - $2',
             '~(John Smith.*) (- \d+ ml)~'                                   => '$1 - Aroma $2',
             '~Heads?~'                                                      => 'Verdampferkopf',
             '~((Vape)|(SC)) - (\d+ ml) (Shot) - (.*), (.*)~'                => '$1 - $5 - $6, $4, $7',
             '~(Solt) (\d+ ml) (.*) - (.*), (.*)~'                           => '$1 - $3 - $4, $2, $5',
+            '~(Happy Liquid)(.*)~'                                          => '$1$2 - Liquid - 10 ml',
             '~ - ?$~'                                                       => '',
             '~\s+~'                                                         => ' ',
             '~(-\s)+~'                                                      => '- ',
+            '~(Liquid)$~'                                                   => '$1 - 10 ml',
+            '~(- \d+ ml, 0 mg/ml)$~'                                        => '- Shake & Vape - $1'
         ],
         'str_replace' => [
             'SINUOUS'                               => 'Sinuous',
@@ -207,31 +211,16 @@ return [
         ]
     ],
     'categories'     => [
-        'source' => [
-            'preg_match' => [
-                '~Liquids \> Easy 3 Caps~' => 'Liquids > Easy 3 Caps',
-                '~E-Zigaretten~'    => 'E-Zigaretten',
-                '~TWIST~.*- \d~'    => 'Shake & Vape',
-                '~^Alt > Joye~'     => 'Zubehör',
-                '~Clearomizer~'    => 'Verdampfer',
-                '~^Box Mods~'       => 'Akkuträger',
-                '~((Aspire)|(InnoCigs)|(Steamax) )?Zubehör~'  => 'Zubehör',
-                '~Ladegerät~'       => 'Ladegeräte',
-                '~Shake & Vape~'    => 'Shake & Vape',
-                '~VLADS VG~'        => 'Liquids',
-                '~Basen und Shots~' => 'Basen & Shots',
-                '~Vaporizer~'       => 'Vaporizer'
-
-            ],
-        ],
         'name' => [
             'preg_match' => [
+                '~Atlantis EVO Tank~' => 'Verdampfer',
+                '~Feedlink~'          => 'Akkuträger',
                 '~TWIST~' => 'Shake & Vape',
                 '~COTN~'  => 'Zubehör',
-                '~Werkzeug-Set~' => 'Zubehör',
+                '~(Werkzeug-Set)|(pinzette)|(Heizplatte)|(Dichtung)|(Glastank)|(Mundstück)~' => 'Zubehör',
                 '~Verdampferkopf~' => ' Zubehör',
                 '~(Basis)|(Shot)~' => 'Basen & Shots',
-                '~Aroma~' => 'Aromen',
+                '~- Aroma~' => 'Aromen',
                 '~Liquid~' => 'Liquid',
                 '~0 mg/ml~' => 'Shake & Vape',
                 '~Flavor~' => 'Aromen',
@@ -239,7 +228,25 @@ return [
                 '~iWu Abdeck~' => 'Zubehör',
                 '~Ladegerät~' => 'Ladegeräte',
             ]
-        ]
+        ],
+        'category' => [
+            'preg_match' => [
+                '~Liquids \> Easy 3 Caps~' => 'Liquids > Easy 3 Caps',
+                '~E-Zigaretten~'            => 'E-Zigaretten',
+                '~^Alt > Joye~'             => 'Zubehör',
+                '~Clearomizer~'             => 'Verdampfer',
+                '~^Box Mods~'               => 'Akkuträger',
+                '~Ladegerät~'               => 'Ladegeräte',
+                '~Akku-Zellen \& Zubehör~'  => 'Akkuzellen & Zubehör',
+                '~((Aspire)|(InnoCigs)|(Steamax)) Zubehör~'  => 'Zubehör',
+                '~Shake & Vape~'            => 'Shake & Vape',
+                '~VLADS VG~'                => 'Liquids',
+                '~Basen und Shots~'         => 'Basen & Shots',
+                '~Vaporizer~'               => 'Vaporizer',
+                '~Zubehör~'                 => 'Zubehör',
+
+            ],
+        ],
     ],
 
     'innocigs_brands' => [ 'SC', 'Steamax', 'InnoCigs'],

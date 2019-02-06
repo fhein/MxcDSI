@@ -23,7 +23,7 @@ class PropertyMapper
 
     protected $mismatchedOptionNames;
     protected $nameTrace;
-    protected $categoryMap;
+    protected $categoryUsage;
     protected $brands;
     protected $suppliers;
 
@@ -42,7 +42,7 @@ class PropertyMapper
     {
         $this->nameTrace = [];
         $this->mismatchedOptionNames = [];
-        $this->categoryMap = [];
+        $this->categoryUsage = [];
         $this->brands = [];
         $this->suppliers = [];
         $this->models = null;
@@ -202,10 +202,6 @@ class PropertyMapper
 
     public function mapCategory(Article $article, ?string $icCategory): void
     {
-        if (null === $icCategory) {
-            $article->setCategory('Unknown');
-            return;
-        }
         $category = null;
         // article configuration has highest priority
         // general category mapping applies next
@@ -215,9 +211,16 @@ class PropertyMapper
 //            $this->categoryMap[$icCategory] = $result;
 //            return;
 //        }
-
-        foreach ($this->config['categories'] as $input => $settings) {
-            $key = $input === 'name' ? $article->getName() : $icCategory;
+        foreach ($this->config['categories'] as $key => $settings) {
+            if ($key === 'category') {
+                $input = $icCategory;
+            }
+            if (null === $input) {
+                $method = 'get' . ucFirst($key);
+                if (method_exists($article, $method)) {
+                    $input = $article->$method();
+                }
+            }
             foreach ($settings as $matcher => $mappings) {
                 foreach($mappings as $pattern => $mappedCategory) {
                     if (preg_match('~Easy 3~', $article->getName())) {
@@ -226,7 +229,7 @@ class PropertyMapper
                         $supplierTag = preg_match('~(Liquid)|(Aromen)|(Basen)~',
                             $mappedCategory) === 1 ? $article->getBrand() : $article->getSupplier();
                     }
-                    if ($matcher($pattern, $key) === 1) {
+                    if ($matcher($pattern, $input) === 1) {
                         $category = $this->addSubCategory($mappedCategory, $supplierTag);
                         $category = preg_replace('~(Easy 3 Caps) > (.*)~', '$2 > $1', $category);
                         break 3;
@@ -237,53 +240,7 @@ class PropertyMapper
         if (! $category) {
             $category = '';
         }
-
-
-//        // rule based category mapping
-//        if (strpos($icCategory, 'E-Zigaretten') === 0) {
-//            $category = $this->addSubCategory('E-Zigaretten', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Clearomizer') === 0) {
-//            $category = $this->addSubCategory('Verdampfer', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Box Mods') === 0) {
-//            $category = $this->addSubCategory('Akkuträger', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Ladegerät') !== false || strpos($article->getName(), 'Ladegerät') !== false) {
-//            $category = $this->addSubCategory('Zubehör > Ladegeräte', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Aspire Zubehör') !== false) {
-//            $category = $this->addSubCategory('Zubehör', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Innocigs Zubehör') !== false) {
-//            $category = $this->addSubCategory('Zubehör', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Steamax Zubehör') !== false) {
-//            $category = $this->addSubCategory('Zubehör', $article->getSupplier());
-//        } elseif (strpos($article->getName(), 'mAh') != 0) {
-//            // we had to check Aspire Zubehör, Innocigs Zubehör and Steamax Zubehör upfront
-//            // because those categories have products with 'mAh' also, but belong to another category
-//            $category = $this->addSubCategory('Zubehör > Akku-Zellen', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Zubehör') === 0) {
-//            $category = $this->addSubCategory('Zubehör', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Liquids > Shake and Vape') === 0) {
-//            $category = $this->addSubCategory('Shake & Vape', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Liquids > Basen & Aromen') === 0) {
-//            $category = $this->addSubCategory('Aromen', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Liquids > SC > Aromen') === 0) {
-//            $category = $this->addSubCategory('Aromen', $article->getBrand());
-//        } elseif (strpos($icCategory, 'Vampire Vape Aromen') !== false) {
-//            $category = 'Aromen > Vampire Vape';
-//        } elseif (strpos($icCategory, 'VLADS VG') !== false) {
-//            $category = 'Liquids > VLADS VG';
-//        } elseif ($icCategory === 'Liquids') {
-//            $category = $this->addSubCategory('Liquids', $article->getSupplier());
-//        } elseif (strpos($icCategory, 'Basen & Shots') !== false) {
-//            $category = $this->addSubCategory('Basen & Shots', $article->getBrand());
-//        } elseif (strpos($icCategory, 'Basen und Shots') !== false) {
-//            $category = $this->addSubCategory('Basen & Shots', $article->getBrand());
-//        } elseif (strpos($article->getName(), 'Vaporizer') !== false) {
-//            $category = $this->addSubCategory('Vaporizer', $article->getBrand());
-//        } elseif (strpos($icCategory, 'Liquids >') === 0) {
-//            $category = $icCategory;
-//        } else {
-//            $category = $this->addSubCategory('Unknown', $icCategory);
-//        }
-        $this->categoryMap[$icCategory] = $category;
+        $this->categoryUsage[$category][$article->getName()] = true;
         $article->setCategory($category);
     }
 
@@ -301,6 +258,10 @@ class PropertyMapper
         ksort($this->suppliers);
         ksort($this->nameTrace);
         ksort($this->mismatchedOptionNames);
+        ksort($this->categoryUsage);
+        foreach ($this->categoryUsage as &$array) {
+            ksort($array);
+        }
 
         $unchangedArticleNames = array_map(function ($value) {
             return ($value['imported'] === $value['mapped']);
@@ -368,6 +329,7 @@ class PropertyMapper
             'articleNamesUnmapped'      => $unchangedArticleNames,
             'articleNamesPregReplace'   => $pregReplace,
             'articleNamesStrReplace'    => $strReplace,
+            'categoryUsage'             => $this->categoryUsage,
         ];
 
         $report = new ArrayReport();

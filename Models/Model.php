@@ -58,16 +58,10 @@ class Model extends ModelEntity
     private $retailPrice;
 
     /**
-     * @var string $imageUrl;
+     * @var string $images;
      * @ORM\Column(name="image_url", type="string", nullable=true)
      */
-    private $imageUrl;
-
-    /**
-     * @var string
-     * @ORM\Column(name="addl_images", type="text", nullable=true)
-     */
-    private $additionalImages;
+    private $images;
 
     /**
      * @var string $manufacturer
@@ -76,10 +70,10 @@ class Model extends ModelEntity
     private $manufacturer;
 
     /**
-     * @var string $manualUrl ;
+     * @var string $manual ;
      * @ORM\Column(name="manual", type="string", nullable=true)
      */
-    private $manualUrl;
+    private $manual;
 
     /**
      * @var string
@@ -92,6 +86,13 @@ class Model extends ModelEntity
      * @ORM\Column(type="boolean", nullable=false)
      */
     protected $deleted = false;
+
+    public function fromImport(array $data) {
+        foreach ($data as $key => $value) {
+            $setter = 'set' . ucfirst($key);
+            $this->$setter($value);
+        }
+    }
 
     /**
      * @return null|string
@@ -208,33 +209,17 @@ class Model extends ModelEntity
     /**
      * @return null|string
      */
-    public function getImageUrl() : ?string
+    public function getImages() : ?string
     {
-        return $this->imageUrl;
+        return $this->images;
     }
 
     /**
-     * @param null|string $imageUrl
+     * @param null|string $images
      */
-    public function setImageUrl(?string $imageUrl)
+    public function setImages(?string $images)
     {
-        $this->imageUrl = $imageUrl;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAdditionalImages(): ?string
-    {
-        return $this->additionalImages;
-    }
-
-    /**
-     * @param null|string $additionalImages
-     */
-    public function setAdditionalImages(?string $additionalImages)
-    {
-        $this->additionalImages = $additionalImages;
+        $this->images = $images;
     }
 
     /**
@@ -256,17 +241,17 @@ class Model extends ModelEntity
     /**
      * @return null|string
      */
-    public function getManualUrl(): ?string
+    public function getManual(): ?string
     {
-        return $this->manualUrl;
+        return $this->manual;
     }
 
     /**
-     * @param null|string $manualUrl
+     * @param null|string $manual
      */
-    public function setManualUrl(?string $manualUrl)
+    public function setManual(?string $manual)
     {
-        $this->manualUrl = $manualUrl;
+        $this->manual = $manual;
     }
 
     /**

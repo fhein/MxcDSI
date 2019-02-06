@@ -74,6 +74,11 @@ class ImportClient implements EventSubscriber
         $this->config = $config;
     }
 
+    public function getSubscribedEvents()
+    {
+        return ['preUpdate'];
+    }
+
     public function import()
     {
         $this->importLog['deletions'] = $this->modelManager->getRepository(Model::class)->getAllIndexed();
@@ -97,22 +102,13 @@ class ImportClient implements EventSubscriber
         $topics = [
             'innocigsCategories' => $this->categories,
             'innocigsCategoryUsage' => $this->categoryUsage,
+            'importLog' => $this->importLog,
         ];
         $report = new ArrayReport();
         $report($topics);
 
         $evm->removeEventSubscriber($this);
-        // $this->logImport();
         $this->importMapper->import($this->importLog);
-    }
-
-    protected function logImport() {
-        $this->log->debug('Additions:');
-        $this->log->debug(var_export(array_keys($this->importLog['additions']), true));
-        $this->log->debug('Deletions:');
-        $this->log->debug(var_export(array_keys($this->importLog['deletions']), true));
-        $this->log->debug('Changes:');
-        $this->log->debug(var_export($this->importLog['changes'], true));
     }
 
     protected function deleteModels() {
@@ -141,35 +137,11 @@ class ImportClient implements EventSubscriber
                 $this->importLog['additions'][$number] = $model;
                 $this->modelManager->persist($model);
             }
-            $this->setModel($model, $data);
+            $model->fromImport($data);
+            $category = $data['category'];
+            $this->categoryUsage[$category][] = $model->getName();
+            $this->categories[$category] = true;
         }
-    }
-
-    /**
-     * @param Model $model
-     * @param array $data
-     */
-    protected function setModel(Model $model, array $data): void
-    {
-        $category = $this->getParamString($data['CATEGORY']);
-        $model->setCategory($category);
-        $model->setMaster($this->getParamString($data['MASTER']));
-        $model->setModel($this->getParamString($data['MODEL']));
-        $model->setEan($this->getParamString($data['EAN']));
-        $model->setName($this->getParamString($data['NAME']));
-        $model->setPurchasePrice($this->getParamString($data['PRODUCTS_PRICE']));
-        $model->setRetailPrice($this->getParamString($data['PRODUCTS_PRICE_RECOMMENDED']));
-        $model->setManufacturer($this->getParamString($data['MANUFACTURER']));
-        $model->setAdditionalImages($data['PRODUCTS_IMAGE_ADDITIONAL']);
-        $model->setOptions($data['PRODUCTS_ATTRIBUTES']);
-
-        $this->categoryUsage[$category][] = $model->getName();
-        $this->categories[$category] = true;
-    }
-
-    public function getSubscribedEvents()
-    {
-        return ['preUpdate'];
     }
 
     public function preUpdate(PreUpdateEventArgs $args)
@@ -178,7 +150,7 @@ class ImportClient implements EventSubscriber
         $model = $args->getEntity();
         if (! $model instanceof Model) return;
 
-        $number = $model->getNumber();
+        $number = $model->getModel();
         $this->importLog['changes'][$number]['model'] = $model;
         foreach ($this->fields as $field) {
             if ($args->hasChangedField($field)) {
@@ -192,38 +164,74 @@ class ImportClient implements EventSubscriber
 
     protected function apiImport()
     {
+        $report = new ArrayReport();
         $raw = $this->apiClient->getItemList();
-        $this->import = [];
-        /** @noinspection PhpUndefinedFieldInspection */
-        $this->import = array_column($raw['PRODUCTS']['PRODUCT'], null, 'MODEL');
+        $topics['ImportDataRaw'] = $raw;
 
-        foreach ($this->import as $item) {
+        $this->import = [];
+        foreach ($raw['PRODUCTS']['PRODUCT'] as $data) {
             // flatten options
-            $options = [];
-            foreach ($item['PRODUCTS_ATTRIBUTES'] as $group => $option) {
-                $options[] = trim($group) . '#!#' . trim($option);
-            }
-            sort($options);
-            $item['PRODUCTS_ATTRIBUTES'] = implode('##!##', $options);
-            if (is_string($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])) {
-                $item['PRODUCTS_IMAGE_ADDITIONAL'] = trim($item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']);
-            } else {
-                $images = array_map('trim', $item['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE']);
-                sort($images);
-                $item['PRODUCTS_IMAGE_ADDITIONAL'] = implode('#!#', $images);
-            }
-            $image = trim($this->getParamString($item['PRODUCTS_IMAGE']));
-            if ($image !== '') {
-                $item['PRODUCTS_IMAGE_ADDITIONAL'] = $image . '#!#' . $item['PRODUCTS_IMAGE_ADDITIONAL'];
-            }
-            $this->import[trim($item['MODEL'])] = array_map('trim', $item);
+            $item['category'] = $this->getParamString($data['CATEGORY']);
+            $item['model'] = $this->getParamString($data['MODEL']);
+            $item['master'] = $this->getParamString($data['MASTER']);
+            $item['ean'] = $this->getParamString($data['EAN']);
+            $item['name'] = $this->getParamString($data['NAME']);
+            $item['retailPrice'] = $this->getParamString($data['PRODUCTS_PRICE']);
+            $item['purchasePrice'] = $this->getParamString($data['PRODUCTS_PRICE_RECOMMENDED']);
+            $item['manufacturer'] = $this->getParamString($data['MANUFACTURER']);
+            $item['manual'] = $this->getParamString($data['PRODUCTS_MANUAL']);
+            $item['options'] = $this->condenseOptions($data['PRODUCTS_ATTRIBUTES']);
+            $item['images'] = $this->condenseImages(
+                $this->getParamString($data['PRODUCTS_IMAGE']),
+                $this->getParamArray($data['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])
+            );
+            $this->import[$item['model']] = $item;
         }
+        $topics['importData'] = $this->import;
+        $report($topics);
+    }
+
+    protected function condenseImages(?string $image, array $addlImages) {
+        $images = [];
+        if (is_string($image) && $image !== '') {
+            $images[] = $image;
+        }
+        if (! empty($addlImages)) {
+            sort($addlImages);
+            $images[] = implode('#!#', $addlImages);
+        }
+        return implode('#!#', $images);
+    }
+
+    /**
+     * @param array $attributes
+     * @return array
+     */
+    protected function condenseOptions(array $attributes)
+    {
+        $options = [];
+        foreach ($attributes as $group => $option) {
+            $options[] = trim($group) . '#!#' . trim($option);
+        }
+        sort($options);
+        return implode('##!##', $options);
+    }
+
+    protected function getParamArray($value) {
+        if (null === $value) return [];
+        if (is_string($value)) return [ $value ];
+        if (is_array($value)) return $value;
+        throw new InvalidArgumentException(
+            sprintf('String or array expected, got %s.',
+                is_object($value) ? get_class($value) : gettype($value)
+            )
+        );
     }
 
     protected function getParamString($value)
     {
-        if (! $value || is_string($value)) return $value;
-        if (is_array($value) && empty($value)) return '';
+        if (is_string($value)) return trim($value);
+        if ($value === null || is_array($value)) return '';
         throw new InvalidArgumentException(
             sprintf('String or empty array expected, got %s.',
                 is_object($value) ? get_class($value) : gettype($value)

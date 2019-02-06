@@ -54,10 +54,10 @@ class Article extends ModelEntity  {
     private $manufacturer;
 
     /**
-     * @var string $manualUrl;
+     * @var string $manual;
      * @ORM\Column(name="manual", type="string", nullable=true)
      */
-    private $manualUrl;
+    private $manual;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
@@ -279,17 +279,17 @@ class Article extends ModelEntity  {
     /**
      * @return null|string
      */
-    public function getManualUrl(): ?string
+    public function getManual(): ?string
     {
-        return $this->manualUrl;
+        return $this->manual;
     }
 
     /**
-     * @param null|string $manualUrl
+     * @param null|string $manual
      */
-    public function setManualUrl(?string $manualUrl)
+    public function setManual(?string $manual)
     {
-        $this->manualUrl = $manualUrl;
+        $this->manual = $manual;
     }
 
     /**

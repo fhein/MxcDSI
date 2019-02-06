@@ -18,7 +18,7 @@ Ext.define('Shopware.apps.MxcDsiImport.model.Model', {
         { name : 'model', type: 'string' },
         { name : 'retailPrice', type: 'string' },
         { name : 'manufacturer', type: 'string' },
-        { name : 'additionalImages', type: 'string' },
+        { name : 'images', type: 'string' },
         { name : 'ean', type: 'string' },
     ],
 });
