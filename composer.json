@@ -2,6 +2,7 @@
   "require": {
     "shopware/shopware": "^5.5",
     "zendframework/zend-http" : "~2.8",
+    "zendframework/zend-filter": "^2.9",
     "mxc-commons/mxc-shopware-plugin" : "^0.1",
     "ext-json" : "*",
     "ext-simplexml": "*",

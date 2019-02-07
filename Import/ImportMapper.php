@@ -206,8 +206,8 @@ class ImportMapper implements EventSubscriber
                 $image->setAccepted(true);
                 $image->setUrl($imageUrl);
                 $this->images[$imageUrl] = $image;
-                $images[] = $image;
             }
+            $images[] = $image;
         }
         return new ArrayCollection($images);
     }
