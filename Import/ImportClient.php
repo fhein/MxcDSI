@@ -42,6 +42,9 @@ class ImportClient implements EventSubscriber
 
     protected $importLog;
 
+    /** @var array $options */
+    protected $optionNames;
+
     /** @var array */
     protected $categoryUsage;
 
@@ -50,6 +53,10 @@ class ImportClient implements EventSubscriber
 
     /** @var array */
     protected $fields;
+
+    /** @var ArrayReport */
+    protected $reporter;
+
 
     /**
      * ImportClient constructor.
@@ -72,6 +79,7 @@ class ImportClient implements EventSubscriber
         $this->apiClient = $apiClient;
         $this->log = $log;
         $this->config = $config;
+        $this->reporter = new ArrayReport();
     }
 
     public function getSubscribedEvents()
@@ -84,6 +92,7 @@ class ImportClient implements EventSubscriber
         $this->importLog['deletions'] = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         $this->importLog['additions'] = [];
         $this->importLog['changes'] = [];
+        $this->optionNames = [];
 
         $model = new Model();
         $this->fields = $model->getPrivatePropertyNames();
@@ -99,13 +108,15 @@ class ImportClient implements EventSubscriber
         $this->categories = array_keys($this->categories);
         sort($this->categories);
         ksort($this->categoryUsage);
+        ksort($this->optionNames);
         $topics = [
-            'innocigsCategories' => $this->categories,
-            'innocigsCategoryUsage' => $this->categoryUsage,
+            'imCategoryInnocigs' => $this->categories,
+            'imCategoryUsageInnocigs' => $this->categoryUsage,
+            'imOptionNamesInnocigs'   => array_keys($this->optionNames),
             //'importLog' => $this->importLog,
         ];
-        $report = new ArrayReport();
-        $report($topics);
+
+        ($this->reporter)($topics);
 
         $evm->removeEventSubscriber($this);
         $this->importMapper->import($this->importLog);
@@ -164,9 +175,8 @@ class ImportClient implements EventSubscriber
 
     protected function apiImport()
     {
-        $report = new ArrayReport();
         $raw = $this->apiClient->getItemList();
-        $topics['ImportDataRaw'] = $raw;
+        $topics['imDataRaw'] = $raw;
 
         $this->import = [];
         foreach ($raw['PRODUCTS']['PRODUCT'] as $data) {
@@ -187,8 +197,8 @@ class ImportClient implements EventSubscriber
             );
             $this->import[$item['model']] = $item;
         }
-        $topics['importData'] = $this->import;
-        $report($topics);
+        $topics['imData'] = $this->import;
+        ($this->reporter)($topics);
     }
 
     protected function condenseImages(?string $image, array $addlImages) {
@@ -211,7 +221,9 @@ class ImportClient implements EventSubscriber
     {
         $options = [];
         foreach ($attributes as $group => $option) {
-            $options[] = trim($group) . '#!#' . trim($option);
+            $option = trim($option);
+            $options[] = trim($group) . '#!#' . $option;
+            $this->optionNames[$option] = true;
         }
         sort($options);
         return implode('##!##', $options);

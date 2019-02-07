@@ -11,14 +11,17 @@ class ArrayReport
     protected $reportDir;
     protected $writer;
 
-    public function __construct()
+    public function __construct(string $class = null)
     {
         $this->reportDir = Shopware()->DocPath() . 'var/log/mxc_dropship_innocigs';
+        if (null !== $class) {
+            $this->reportDir .= '/' . $this->getFileName($class);
+        }
         if (file_exists($this->reportDir) && ! is_dir($this->reportDir)) {
             unlink($this->reportDir);
         }
         if (! is_dir($this->reportDir)) {
-            mkdir($this->reportDir);
+            mkdir($this->reportDir, 0777, true);
         }
     }
 

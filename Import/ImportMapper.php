@@ -206,8 +206,8 @@ class ImportMapper implements EventSubscriber
                 $image->setAccepted(true);
                 $image->setUrl($imageUrl);
                 $this->images[$imageUrl] = $image;
-                $images[] = $image;
             }
+            $images[] = $image;
         }
         return new ArrayCollection($images);
     }
@@ -215,12 +215,6 @@ class ImportMapper implements EventSubscriber
     protected function addVariants(array $additions) {
         /** @var  Model $model */
         foreach ($additions as $number => $model) {
-
-            // This line ensures that all model names are checked against
-            // the option names. Import works without it, but the log
-            // does not contain a complete list of option name mismatches.
-            $this->propertyMapper->removeOptionsFromArticleName($model);
-
             $article = $this->getArticle($model);
             $variant = new Variant();
             $this->modelManager->persist($variant);
@@ -394,7 +388,7 @@ class ImportMapper implements EventSubscriber
                 $this->bulkOperation->update($filter);
             }
         }
-        $this->propertyMapper->logMappingResults();
+        $this->propertyMapper->report();
         $this->log->leave();
         return true;
     }

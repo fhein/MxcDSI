@@ -7,6 +7,7 @@ use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\PropertyMapper;
+use MxcDropshipInnocigs\Import\Report\PropertyMapper as PropertyMapperReport;
 use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
@@ -109,6 +110,7 @@ return [
             ImportMapper::class,
             MediaTool::class,
             PropertyMapper::class,
+            PropertyMapperReport::class,
             ArrayReport::class,
         ],
     ],
@@ -119,25 +121,25 @@ return [
             'filters'     => [
                 'update'     => [
                     [
-                        'entity'     => Article::class,
-                        'andWhere'     => [
-                            [ 'field'     => 'name', 'operator'     => 'LIKE', 'value'     => '%iquid%' ]
+                        'entity' => Article::class,
+                        'andWhere' => [
+                            [ 'field' => 'name', 'operator' => 'LIKE', 'value' => '%iquid%' ]
                         ],
-                        'set'     => [ 'accepted'     => false, 'active'     => false ],
+                        'set' => [ 'accepted' => false, 'active' => false ],
                     ],
                     [
-                        'entity'     => Article::class,
-                        'andWhere'     => [
-                            [ 'field'     => 'name', 'operator'     => 'LIKE', 'value'     => '%Aroma%' ]
+                        'entity' => Article::class,
+                        'andWhere' => [
+                            [ 'field' => 'name', 'operator' => 'LIKE', 'value' => '%Aroma%' ]
                         ],
-                        'set'     => [ 'accepted'     => false, 'active'     => false, ]
+                        'set' => [ 'accepted' => false, 'active' => false, ]
                     ],
                     [
-                        'entity'     => Article::class,
-                        'andWhere'     => [
-                            [ 'field'     => 'brand', 'operator'     => 'LIKE', 'value'     => 'DVTCH Amsterdam' ]
+                        'entity' => Article::class,
+                        'andWhere' => [
+                            [ 'field' => 'brand', 'operator' => 'LIKE', 'value' => 'DVTCH Amsterdam' ]
                         ],
-                        'set'     => [ 'accepted'     => false, 'active'     => false, ]
+                        'set'     => [ 'accepted' => false, 'active' => false, ]
                     ],
                 ],
             ],

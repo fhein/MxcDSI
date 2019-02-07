@@ -145,7 +145,7 @@ class ApiClient
             mkdir($reportDir);
         }
 
-        $fn = Shopware()->DocPath() . 'var/log/mxc_dropship_innocigs/api_result.xml';
+        $fn = Shopware()->DocPath() . 'var/log/mxc_dropship_innocigs/api_data.xml';
         file_put_contents($fn, $pretty);
     }
 

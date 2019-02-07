@@ -3,12 +3,11 @@
 namespace MxcDropshipInnocigs\Import;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Report\ArrayMap;
 use MxcDropshipInnocigs\Report\ArrayReport;
-use MxcDropshipInnocigs\Report\Mapper\SuccessiveReplacer;
 use Shopware\Components\Model\ModelManager;
 
 class PropertyMapper
@@ -19,20 +18,20 @@ class PropertyMapper
     /** @var LoggerInterface $log */
     protected $log;
 
+    /** @var Reporter $reporter */
+    protected $reporter;
+
     protected $config;
 
-    protected $mismatchedOptionNames;
-    protected $nameTrace;
-    protected $categoryUsage;
-    protected $brands;
-    protected $suppliers;
+    protected $report;
 
     protected $articles = null;
     protected $models = null;
 
-    public function __construct(ModelManager $modelManager, array $config, LoggerInterface $log)
+    public function __construct(ModelManager $modelManager, Reporter $reporter, array $config, LoggerInterface $log)
     {
         $this->config = $config;
+        $this->reporter = $reporter;
         $this->log = $log;
         $this->init();
         $this->modelManager = $modelManager;
@@ -40,11 +39,7 @@ class PropertyMapper
 
     public function init()
     {
-        $this->nameTrace = [];
-        $this->mismatchedOptionNames = [];
-        $this->categoryUsage = [];
-        $this->brands = [];
-        $this->suppliers = [];
+        $this->report = [];
         $this->models = null;
         $this->articles = null;
     }
@@ -101,8 +96,8 @@ class PropertyMapper
         }
         $article->setSupplier($supplier);
         $article->setManufacturer($manufacturer);
-        $this->brands[$article->getBrand()] = true;
-        $this->suppliers[$article->getSupplier()] = true;
+        $this->report['brand'][$article->getBrand()] = true;
+        $this->report['supplier'][$article->getSupplier()] = true;
     }
 
     protected function correctSupplierAndBrand(string $name, Article $article)
@@ -117,7 +112,8 @@ class PropertyMapper
         $isInnocigsSupplier = ($supplier === 'InnoCigs');
 
         if ($isInnocigsBrand && $isInnocigsSupplier) {
-            if (strpos($name, $brand) !== 0) {
+            // There are some articles from supplier InnoCigs which are not branded
+            if (strpos($name, $brand) !== 0 && ! in_array($name, $this->config['articles_without_brand'])) {
                 $name = $brand . ' - ' . $name;
             }
             return $name;
@@ -158,13 +154,19 @@ class PropertyMapper
             $name = $replacer(array_keys($replacements), array_values($replacements), $name);
             $trace[$replacer . '_applied'] = $name;
         }
+        $supplier = $article->getSupplier();
+        $supplier = $supplier === 'Smoktech' ? 'SMOK' : $supplier;
+        $search[] = '~(' . $article->getBrand() . ') ([^\-])~';
+        $search[] = '~(' . $supplier . ') ([^\-])~';
+        $name = preg_replace($search, '$1 - $2', $name);
+        $trace['supplier_separator'] = $name;
 
         $name = trim($name);
 
         $article->setName($name);
         $trace['mapped'] = $name;
 
-        $this->nameTrace[$trace['imported']] = $trace;
+        $this->report['name'][$trace['imported']] = $trace;
     }
 
     public function removeOptionsFromArticleName(Model $model)
@@ -183,17 +185,27 @@ class PropertyMapper
                 continue;
             }
 
+            $number = $model->getModel();
+
             if (strpos($name, $option) !== false) {
                 // article name contains option name
+                $before = $name;
                 $name = str_replace($option, '', $name);
+                $this->report['option'][$number] = [
+                    'before' => $before,
+                    'after' => $name,
+                    'mapped' => true,
+                    'option' => $option,
+                ];
                 continue;
             }
 
-            $name = $this->applyOptionNameMapping($model->getModel(), $name, $option);
+            $name = $this->applyOptionNameMapping($number, $name, $option);
+
         }
-        if (substr($name, -2) === ' -') {
-            $name = substr($name, 0, strlen($name) - 2);
-        }
+//        if (substr($name, -2) === ' -') {
+//            $name = substr($name, 0, strlen($name) - 2);
+//        }
         return trim($name);
     }
 
@@ -205,6 +217,7 @@ class PropertyMapper
         $o = $this->config['article_name_option_fixes'][$option] ?? null;
         $fixApplied = false;
         $fixAvailable = false;
+        $before = $name;
         if ($o) {
             $fixAvailable = true;
             if (is_string($o)) {
@@ -218,8 +231,9 @@ class PropertyMapper
                 }
             }
         }
-        $this->mismatchedOptionNames[$model] = [
-            'name'         => $name,
+        $this->report['option'][$model] = [
+            'before'       => $before,
+            'after'        => $name,
             'option'       => $option,
             'fixAvailable' => $fixAvailable,
             'fixApplied'   => $fixApplied,
@@ -268,7 +282,7 @@ class PropertyMapper
         if (! $category) {
             $category = '';
         }
-        $this->categoryUsage[$category][$article->getName()] = true;
+        $this->report['category'][$category][$article->getName()] = true;
         $article->setCategory($category);
     }
 
@@ -278,96 +292,6 @@ class PropertyMapper
             $name .= ' > ' . $subcategory;
         }
         return $name;
-    }
-
-    public function logMappingResults()
-    {
-        ksort($this->brands);
-        ksort($this->suppliers);
-        ksort($this->nameTrace);
-        ksort($this->mismatchedOptionNames);
-        ksort($this->categoryUsage);
-        foreach ($this->categoryUsage as &$array) {
-            ksort($array);
-        }
-
-        $unchangedArticleNames = array_map(function ($value) {
-            return ($value['imported'] === $value['mapped']);
-        }, $this->nameTrace);
-        $unchangedArticleNames = array_keys(array_filter(
-            $unchangedArticleNames,
-            function ($value) {
-                return $value === true;
-            }
-        ));
-
-        $namesWithoutRemovedOptions = array_map(function ($value) {
-            return ($value['imported'] === $value['options_removed']);
-        }, $this->nameTrace);
-        $namesWithoutRemovedOptions = array_keys(array_filter($namesWithoutRemovedOptions, function ($value) {
-            return $value === true;
-        }));
-
-        $optionMappingIssues = array_filter($this->mismatchedOptionNames, function ($value) {
-            return (false === $value['fixAvailable'] || false === $value['fixApplied']);
-        });
-
-        $nameMap = array_values(array_map(function ($value) {
-            return [
-                'imported' => $value['imported'],
-                'mapped  ' => $value['mapped'],
-            ];
-        }, $this->nameTrace));
-
-        $pregReplace = [];
-        foreach ($this->nameTrace as $key => $entry) {
-            $pregReplace[$key] = $entry['brand_prepended'];
-        }
-        $mapper = new ArrayMap();
-        $pregReplace = $mapper($pregReplace,
-            [
-                SuccessiveReplacer::class => [
-                    'replacer'     => 'preg_replace',
-                    'replacements' => $this->config['article_name_replacements']['preg_replace'],
-                ],
-            ]
-        );
-
-        $strReplace = [];
-        foreach ($this->nameTrace as $key => $entry) {
-            $strReplace[$key] = $entry['preg_replace_applied'];
-        }
-        $strReplace = $mapper($strReplace,
-            [
-                SuccessiveReplacer::class => [
-                    'replacer'     => 'str_replace',
-                    'replacements' => $this->config['article_name_replacements']['str_replace'],
-                ],
-            ]
-        );
-        $articleNames = array_flip(array_flip(array_column($nameMap, 'mapped  ')));
-        sort($articleNames);
-        $importedArticleNamesWithOptionsRemoved =  array_flip(array_flip(array_column($this->nameTrace, 'options_removed')));
-        sort($importedArticleNamesWithOptionsRemoved);
-
-
-        $topics = [
-            'mismatchedOptionNames'             => $optionMappingIssues,
-            'namesWithoutRemovedOption'         => $namesWithoutRemovedOptions,
-            'importedNamesWithRemovedOptions'   => $importedArticleNamesWithOptionsRemoved,
-            'brands'                            => array_keys($this->brands),
-            'suppliers'                         => array_keys($this->suppliers),
-            'articleNameMap'                    => $nameMap,
-            'articleNameTrace'                  => $this->nameTrace,
-            'articleNames'                      => $articleNames,
-            'articleNamesUnmapped'              => $unchangedArticleNames,
-            'articleNamesPregReplace'           => $pregReplace,
-            'articleNamesStrReplace'            => $strReplace,
-            'categoryUsage'                     => $this->categoryUsage,
-        ];
-
-        $report = new ArrayReport();
-        $report($topics);
     }
 
     public function reapplyPropertyMapping()
@@ -396,7 +320,7 @@ class PropertyMapper
         $this->modelManager->flush();
         $this->modelManager->clear();
         $this->checkArticlePropertyMappingConsistency();
-        $this->logMappingResults();
+        $this->report();
     }
 
     /**
@@ -463,7 +387,7 @@ class PropertyMapper
             }
         }
         ksort($topics);
-        $topics = [ 'propertyMappingInconsistencies' => $topics ];
+        $topics = [ 'pmPropertyMappingInconsistencies' => $topics ];
         $report = new ArrayReport();
         $report($topics);
     }
@@ -479,4 +403,9 @@ class PropertyMapper
         $this->models = $this->models ?? $this->modelManager->getRepository(Model::class)->getAllIndexed();
         return $this->models;
     }
+
+    public function report() {
+        ($this->reporter)($this->report, $this->config);
+    }
+
 }
