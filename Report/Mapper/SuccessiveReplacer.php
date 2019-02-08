@@ -6,10 +6,12 @@ class SuccessiveReplacer
 {
     protected $replacements;
     protected $replacer;
+    protected $showNotMatched;
 
-    public function __construct(array $params) {
+    public function __construct(array $params, bool $showNotMatched = false) {
         $this->replacements = $params['replacements'] ?? [];
         $this->replacer = $params['replacer'];
+        $this->showNotMatched = $showNotMatched;
     }
 
     public function map($value) {
@@ -18,7 +20,7 @@ class SuccessiveReplacer
         $value = [];
         $value['value'] = $current;
         $value['replacements'] = [];
-        $value['nomatch'] = [];
+        if ($this->showNotMatched) $value['nomatch'] = [];
         foreach ($this->replacements as $search => $replace) {
             $new = ($this->replacer)($search, $replace, $current);
             if ($new !== $current) {
@@ -28,7 +30,7 @@ class SuccessiveReplacer
                     'rslt' => $new,
                 ];
                 $current = $new;
-            } else {
+            } elseif ($this->showNotMatched) {
                 $value['nomatch'][] = $search;
             }
         }

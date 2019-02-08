@@ -8,6 +8,7 @@ use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use RuntimeException;
 use Shopware\Components\Model\ModelManager;
 
 class PropertyMapper
@@ -78,6 +79,12 @@ class PropertyMapper
         $number = $model->getMaster();
         $article->setNumber($this->config['article_codes'][$number] ?? $number);
 
+        if (! (
+            $this->checkRegularExpressions('name_cleanup')
+            && $this->checkRegularExpressions('name_prepare')
+            && $this->checkRegularExpressions('article_name_replacements')
+        )) throw new RuntimeException('Regular expression failure.');
+
         // do not change ordering of the next lines
         $this->mapManufacturer($article, $model->getManufacturer());    // sets supplier, brand and manufacturer
         $this->mapArticleName($model, $article);                        // uses brand, sets name
@@ -131,9 +138,40 @@ class PropertyMapper
         return $name;
     }
 
+    protected function replace(string $topic, string $what) {
+        $config = $this->config[$what];
+        if (null === $config) return $topic;
+        foreach ($config as $replacer => $replacements) {
+            $search = array_keys($replacements);
+            $replace = array_values($replacements);
+            $topic = $replacer($search, $replace, $topic);
+        }
+        return $topic;
+    }
+
+    public function checkRegularExpressions($what)
+    {
+        $config = $this->config[$what];
+        $result = true;
+        if (null === $config) return $result;
+        foreach ($config as $replacer => $replacements) {
+            if ($replacer !== 'preg_replace') continue;
+            $searches = array_keys($replacements);
+            foreach ($searches as $search) {
+                $result = preg_replace($search, '', 'test');
+                if ($result === null) {
+                    $this->log->debug($what . ': Error in regular expression: ' . $search . ' (' . $what . ')');
+                    $result = false;
+                }
+            }
+        }
+        return $result;
+    }
+
     public function mapArticleName(Model $model, Article $article): void
     {
-        $trace['model'] = $model->getModel();
+        $modelName = $model->getName();
+        $this->report['name'][$modelName]['model'] = $model->getModel();
         $trace['imported'] = $model->getName();
         $name = $this->removeOptionsFromArticleName($model);
         $trace['options_removed'] = $name;
@@ -145,23 +183,28 @@ class PropertyMapper
             $article->setName($result);
             return;
         }
+        $name = $this->replace($name, 'name_prepare');
 
         // rule based name mapping applied next
         $name = $this->correctSupplierAndBrand($name, $article);
         $trace['brand_prepended'] = $name;
 
-        foreach ($this->config['article_name_replacements'] as $replacer => $replacements) {
-            $name = $replacer(array_keys($replacements), array_values($replacements), $name);
-            $trace[$replacer . '_applied'] = $name;
-        }
+        $name = $this->replace($name, 'article_name_replacements');
+        $trace['after_name_replacements'] = $name;
+
         $supplier = $article->getSupplier();
         $supplier = $supplier === 'Smoktech' ? 'SMOK' : $supplier;
         $search[] = '~(' . $article->getBrand() . ') ([^\-])~';
         $search[] = '~(' . $supplier . ') ([^\-])~';
         $name = preg_replace($search, '$1 - $2', $name);
         $trace['supplier_separator'] = $name;
+        $search = $this->config['product_names'][$article->getBrand()];
+        if (null !== $search) {
+            $name = preg_replace($search, '$1 -', $name);
+            $trace['product_separator'] = $name;
+        }
 
-        $name = trim($name);
+        $name = $this->replace($name, 'name_cleanup');
 
         $article->setName($name);
         $trace['mapped'] = $name;

@@ -6,6 +6,7 @@ use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Client\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
+use MxcDropshipInnocigs\Import\PropertyExtractor;
 use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as PropertyMapperReport;
 use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
@@ -112,6 +113,7 @@ return [
             PropertyMapper::class,
             PropertyMapperReport::class,
             ArrayReport::class,
+            PropertyExtractor::class,
         ],
     ],
     'propertymapper' => include __DIR__ . '/propertymapper.config.php',
