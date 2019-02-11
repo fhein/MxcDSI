@@ -184,6 +184,7 @@ return [
             '~E-Zigaretten Starter Set~'                                 => 'E-Zigarette (Set)',
             '~(Anniversary)-(Edition) (E-Zigarette)~'                    => '$1 $2 - $3',
             '~E-Zigaretten Set~'                                         => 'E-Zigarette (Set)',
+            '~(J-Easy)((3)|(9))~'                                        => '$1 $2',
             '~Clearomizer Set~'                                          => 'Clearomizer (Set)',
             '~Glastank und Mundstück Set~'                               => 'Glastank + Mundstück (Set)',
             '~Tank (Clearomizer)~'                                       => '$1',
@@ -223,6 +224,7 @@ return [
             '~(Amnis) (- \d+ mAh)~'                                      => '$1 - Akku $2',
             '~(Pumper.*) (- \d+ Watt)~'                                  => '$1 - Squonker Box $2',
             '~(Basal) (Akku)~'                                           => '$1 - $2',
+            '~(J-Easy \d) (Akku)~'                                       => '$1 - $2',
             '~(Invoke) (- \d+ Watt)~'                                    => '$1 - Akkuträger $2',
             '~(iKonn) (- \d+ Watt)~'                                     => '$1 - Akkuträger $2',
             '~(Lexicon) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
@@ -271,6 +273,7 @@ return [
             '~(Pod) mit~'                                                => '$1 -',
             '~(Batterie)-H(ülse)~'                                       => '$1h$2',
             '~(Batterie)-K(appe)~'                                       => '$1k$2',
+            '~Ta (Baby)~'                                                => 'Tarot $1',
         ],
     ],
     'product_names'             => [
