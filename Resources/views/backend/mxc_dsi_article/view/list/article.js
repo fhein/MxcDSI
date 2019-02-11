@@ -172,7 +172,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                     } else if (e.column.text === 'accept') {
                         return e.record.get('active') === false;
                     }
-                    return (e.column.text === 'Brand' || e.column.text === 'Supplier' || e.column.text === 'Category');
+                    return (e.column.text === 'Brand' || e.column.text === 'Supplier' || e.column.text === 'Category' || e.column.text === 'Name');
                 },
                 edit: function(editor, e) {
                     // the 'edit' event gets fired even if the new value equals the old value

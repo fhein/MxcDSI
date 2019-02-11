@@ -194,6 +194,7 @@ class PropertyMapper
 
         $supplier = $article->getSupplier();
         $supplier = $supplier === 'Smoktech' ? 'SMOK' : $supplier;
+
         $search[] = '~(' . $article->getBrand() . ') ([^\-])~';
         $search[] = '~(' . $supplier . ') ([^\-])~';
         $name = preg_replace($search, '$1 - $2', $name);
