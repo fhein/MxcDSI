@@ -390,14 +390,15 @@ class PropertyMapper
         }
         /** @var Article $mappedArticle */
         $mapped = [];
-        foreach ($mappedArticles['article'] as $mappedArticle) {
-            foreach (['name', 'brand', 'supplier', 'category', 'number'] as $topic) {
+        foreach ($mappedArticles as $current) {
+            $mappedArticle = $current['article'];
+            foreach (['name', 'category', 'number'] as $topic) {
                 $getter = 'get' . ucfirst($topic);
                 $mapped[$topic][$mappedArticle->$getter()] = true;
             }
         }
         $issues = [];
-        foreach (['name', 'brand', 'supplier', 'category', 'number'] as $topic) {
+        foreach (['name', 'category', 'number'] as $topic) {
             if (count($mapped[$topic]) !== 1) {
                 $issues['topics'][] = $topic;
             }
