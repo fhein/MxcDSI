@@ -52,6 +52,7 @@ class ArticleMapper
     protected $shopwareGroupRepository = null;
     protected $shopwareGroupLookup = [];
 
+
     public function __construct(
         ModelManager $modelManager,
         ArticleOptionMapper $optionMapper,
@@ -99,14 +100,6 @@ class ArticleMapper
 
         $set = $this->optionMapper->createConfiguratorSet($article);
         $swArticle->setConfiguratorSet($set);
-
-        // Quick hack to adapt to new image handling (no more imageUrl in Article)
-
-//        /** @var  Variant $firstVariant */
-//        $firstVariant = $article->getVariants()[0];
-//        /** @var Image $image */
-//        $image = $firstVariant->getImages()[0];
-//        $this->mediaTool->setArticleImages($image->getUrl(), $swArticle);
 
         //create details from innocigs variants
         $variants = $article->getVariants();
@@ -209,8 +202,8 @@ class ArticleMapper
         // configurator set is created
         $detail->setConfiguratorOptions(new ArrayCollection($this->optionMapper->getShopwareOptions($variant)));
 
-        $images = $variant->getImages();
-        $this->mediaTool->setArticleImages($images, $swArticle, $detail);
+
+        $this->mediaTool->setArticleImages($variant->getImages(), $swArticle, $detail);
 
         $this->enableDropship($variant, $attribute);
 

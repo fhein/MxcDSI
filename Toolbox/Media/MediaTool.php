@@ -39,6 +39,17 @@ class MediaTool
     protected $image;
 
     /**
+     * @var ArrayCollection $shopwareArticleImages
+     */
+    protected $shopwareArticleImages;
+
+    /**
+     * @var array $shopwareMainImages
+     */
+    protected $shopwareMainImages;
+
+
+    /**
      * MediaService constructor.
      *
      * @param ModelManager $modelManager
@@ -51,6 +62,8 @@ class MediaTool
         $this->authService = $authService;
         $this->mediaService = $mediaService;
         $this->log = $log;
+        $this->shopwareArticleImages = new ArrayCollection();
+        $this->shopwareMainImages = [];
     }
 
     protected function getMedia(string $swUrl, string $url){
@@ -100,7 +113,7 @@ class MediaTool
      * @param int $position
      * @return Image
      */
-    protected function getImage(string $url, Article $swArticle, int $position)
+    protected function getImage(string $url, Article $swArticle, int $position):Image
     {
         $urlInfo = pathinfo($url);
         $swUrl = 'media/image/' . $urlInfo['basename'];
@@ -117,11 +130,6 @@ class MediaTool
         }
 
         $media = $this->getMedia($swUrl, $url);
-
-        $articleImages = $swArticle->getImages();
-        foreach ($articleImages as $articleImage){
-            $test = 'test';
-        }
 
         $this->image = new Image();
         $this->modelManager->persist($this->image);
@@ -144,6 +152,7 @@ class MediaTool
         $this->modelManager->persist($image);
 
         $image->setExtension($urlInfo['extension']);
+        $image->setMain(($position > 1) ? 2 : 1);
         $image->setPosition($position);
         $image->setArticleDetail($swDetail);
 
@@ -163,41 +172,36 @@ class MediaTool
             );
         }
 
-        $imageCollection = new ArrayCollection();
-        $i=1;
+        $i=count($this->shopwareMainImages) +1;
         foreach ($icImages as $icImage) {
-            $this->getImage($icImage->getUrl(), $swArticle, $i); //entry for article Image
 
-            $isMainDetail = $swDetail->getKind();
-            $this->image->setMain((($i === 1) && $isMainDetail) ? 1 : 2);
+            $this->image = $this->shopwareMainImages[$icImage->getUrl()];
+            if(!$this->image) {
+                $this->getImage($icImage->getUrl(), $swArticle, $i); //entry for Image itself
+
+                $this->shopwareArticleImages->add($this->image);
+            }
 
             if ($swDetail->getConfiguratorOptions() !== null) $this->setOptionMappings($swDetail->getConfiguratorOptions());
 
-            $detailImg = $this->createDetailImage($icImage->getUrl(), $swDetail, $i); //image entry for detail relation
+            $detailImg = $this->createDetailImage($icImage->getUrl(), $swDetail, $this->image->getPosition()); //image entry for detail relation
             $detailImg->setParent($this->image);
             $detailImg->setMain($this->image->getMain());
 
-            $imageCollection->add($this->image);
-            $imageCollection->add($detailImg);
+            $this->shopwareArticleImages->add($detailImg);
+            $this->shopwareMainImages[$icImage->getUrl()] = $this->image;
+
             $i++;
         }
-        $swArticle->setImages($imageCollection);
-        $this->modelManager->persist($swArticle);
+        $swArticle->setImages($this->shopwareArticleImages);
 
-        $articleImages = $swArticle->getImages();
-        foreach ($articleImages as $articleImage){
-            $test = 'test';
-        }
-        foreach ($imageCollection as $imageX){
-            $test = 'test';
-        }
+        return $this->shopwareArticleImages;
     }
 
     protected function setOptionMappings($configuratorOptions){
 
         if ($configuratorOptions !== null) {
 
-            //$mapping = $this->image->getMappings();
             $mapping = new Image\Mapping();
             $this->modelManager->persist($mapping);
 
@@ -211,7 +215,6 @@ class MediaTool
                 $rules->add($rule);
             }
 
-            //$mapping = new Image\Mapping();
             $mapping->setImage($this->image);
             $mapping->setRules($rules);
             $this->image->setMappings([$mapping]);
