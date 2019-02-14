@@ -3,12 +3,14 @@
 namespace MxcDropshipInnocigs\Import;
 
 use Interop\Container\ContainerInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class PropertyMapperFactory implements FactoryInterface
 {
+    use ClassConfigTrait;
     /** @var string $articleConfigFile */
     protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
 
@@ -27,7 +29,7 @@ class PropertyMapperFactory implements FactoryInterface
     {
         $modelManager = $container->get('modelManager');
         $reporter = $container->get(Reporter::class);
-        $config = $container->get('config')['propertymapper'];
+        $config = $this->getClassConfig($container, $requestedName);
         $config = $config->toArray();
         $config['articles'] = $this->getArticleConfiguration();
         $log = $container->get('logger');

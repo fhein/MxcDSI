@@ -132,7 +132,7 @@ class ApiClient
 
     protected function logXML($xml)
     {
-        $dom = new \DOMDocument("1.0", "ISO-8859-15");
+        $dom = new \DOMDocument("1.0", "utf-8");
         $dom->loadXML($xml);
         $dom->formatOutput = true;
         $pretty = $dom->saveXML();
@@ -157,6 +157,13 @@ class ApiClient
         $this->logXML($body);
 
         libxml_use_internal_errors(true);
+        $body = preg_replace_callback(
+            '/<!\[CDATA\[(.*)\]\]>/s',
+            function ($matches) {
+                return trim(htmlspecialchars($matches[1]));
+            },
+            $body
+        );
         $xml = simplexml_load_string($body, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
 
         if ($xml === false) {
@@ -178,6 +185,17 @@ class ApiClient
         return $result;
     }
 
+    protected function getArrayResultFast(Response $response)
+    {
+        $xml = preg_replace_callback(
+            '/<!\[CDATA\[(.*)\]\]>/s',
+            function ($matches) { return trim(htmlspecialchars($matches[1])); },
+            $response->getBody()
+        );
+        $xml = simplexml_load_string($xml, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
+        return json_decode(json_encode($xml), true);
+    }
+
     /**
      * @param string $cmd
      * @return \Zend\Http\Response
@@ -187,7 +205,7 @@ class ApiClient
         $client = $this->getClient();
         $client->setUri($cmd);
         try {
-            return $this->getArrayResult($client->send());
+            return $this->getArrayResultFast($client->send());
         } catch (ZendClientException $e) {
             // no response or response empty
             throw new ApiException($e->getMessage());

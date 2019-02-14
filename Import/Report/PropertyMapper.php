@@ -35,7 +35,7 @@ class PropertyMapper
         $this->config = $config;
         foreach ($this->config['log'] as $topic) {
             $method = 'log' . ucfirst($topic);
-            if (method_exists($this, $method)) {
+            if (method_exists($this, $method) && $topics[$topic] !== null) {
                 $this->$method();
             }
         }

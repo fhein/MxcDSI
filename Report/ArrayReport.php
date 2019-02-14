@@ -29,7 +29,7 @@ class ArrayReport
         if (! $topics || empty($topics)) return;
 
         foreach ($topics as $what => $topic) {
-            if (! is_string($what) || empty($topic)) continue;
+            if (! is_string($what)) continue;
             $fn = $this->getFileName($what);
             $this->writeFiles($topic, $fn);
         }

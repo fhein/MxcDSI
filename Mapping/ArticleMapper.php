@@ -8,7 +8,6 @@ use Exception;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Models\Article;
-use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 use Shopware\Components\Model\ModelManager;
@@ -52,6 +51,7 @@ class ArticleMapper
     protected $shopwareGroups = [];
     protected $shopwareGroupRepository = null;
     protected $shopwareGroupLookup = [];
+
 
     public function __construct(
         ModelManager $modelManager,
@@ -100,14 +100,6 @@ class ArticleMapper
 
         $set = $this->optionMapper->createConfiguratorSet($article);
         $swArticle->setConfiguratorSet($set);
-
-        // Quick hack to adapt to new image handling (no more imageUrl in Article)
-
-        /** @var  Variant $firstVariant */
-        $firstVariant = $article->getVariants()[0];
-        /** @var Image $image */
-        $image = $firstVariant->getImages()[0];
-        $this->mediaTool->setArticleImages($image->getUrl(), $swArticle);
 
         //create details from innocigs variants
         $variants = $article->getVariants();
@@ -209,6 +201,10 @@ class ArticleMapper
         // Note: shopware options are added non persistently to variants when
         // configurator set is created
         $detail->setConfiguratorOptions(new ArrayCollection($this->optionMapper->getShopwareOptions($variant)));
+
+
+        $this->mediaTool->setArticleImages($variant->getImages(), $swArticle, $detail);
+
         $this->enableDropship($variant, $attribute);
 
         return $detail;

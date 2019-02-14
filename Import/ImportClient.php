@@ -8,6 +8,7 @@ use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcDropshipInnocigs\Toolbox\Arrays\ArrayTool;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
@@ -46,17 +47,19 @@ class ImportClient implements EventSubscriber
     protected $optionNames;
 
     /** @var array */
-    protected $categoryUsage;
+    protected $categoryUsage = [];
 
     /** @var array */
-    protected $categories;
+    protected $categories = [];
+
+    /** @var array */
+    protected $missingItems = [];
 
     /** @var array */
     protected $fields;
 
     /** @var ArrayReport */
     protected $reporter;
-
 
     /**
      * ImportClient constructor.
@@ -109,11 +112,14 @@ class ImportClient implements EventSubscriber
         sort($this->categories);
         ksort($this->categoryUsage);
         ksort($this->optionNames);
+        foreach ($this->missingItems as &$item) {
+            asort($item);
+        }
         $topics = [
-            'imCategoryInnocigs' => $this->categories,
+            'imCategoryInnocigs'      => $this->categories,
             'imCategoryUsageInnocigs' => $this->categoryUsage,
             'imOptionNamesInnocigs'   => array_keys($this->optionNames),
-            //'importLog' => $this->importLog,
+            'imMissingItems'          => $this->missingItems,
         ];
 
         ($this->reporter)($topics);
@@ -122,63 +128,13 @@ class ImportClient implements EventSubscriber
         $this->importMapper->import($this->importLog);
     }
 
-    protected function deleteModels() {
-        /**
-         * @var string $number
-         * @var Model $model
-         */
-        foreach ($this->importLog['deletions'] as $number => $model) {
-            $model->setDeleted(true);
-        }
-    }
-
-    protected function createModels() {
-        $limit = $this->config->get('limit', -1);
-        $cursor = 0;
-        foreach ($this->import as $number => $data) {
-
-            if ($cursor === $limit) return;
-            $cursor++;
-
-            $model = $this->importLog['deletions'][$number];
-            if (null !== $model) {
-                unset($this->importLog['deletions'][$number]);
-            } else {
-                $model = new Model();
-                $this->importLog['additions'][$number] = $model;
-                $this->modelManager->persist($model);
-            }
-            $model->fromImport($data);
-            $category = $data['category'];
-            $this->categoryUsage[$category][] = $model->getName();
-            $this->categories[$category] = true;
-        }
-    }
-
-    public function preUpdate(PreUpdateEventArgs $args)
-    {
-        /** @var PreUpdateEventArgs $args */
-        $model = $args->getEntity();
-        if (! $model instanceof Model) return;
-
-        $number = $model->getModel();
-        $this->importLog['changes'][$number]['model'] = $model;
-        foreach ($this->fields as $field) {
-            if ($args->hasChangedField($field)) {
-                $this->importLog['changes'][$number]['fields'][$field] = [
-                    'oldValue' => $args->getOldValue($field),
-                    'newValue' => $args->getNewValue($field)
-                ];
-            }
-        }
-    }
-
     protected function apiImport()
     {
         $raw = $this->apiClient->getItemList();
         $topics['imDataRaw'] = $raw;
 
         $this->import = [];
+        $i = 1;
         foreach ($raw['PRODUCTS']['PRODUCT'] as $data) {
             // flatten options
             $item['category'] = $this->getParamString($data['CATEGORY']);
@@ -195,22 +151,43 @@ class ImportClient implements EventSubscriber
                 $this->getParamString($data['PRODUCTS_IMAGE']),
                 $this->getParamArray($data['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])
             );
-            $this->import[$item['model']] = $item;
+            $importDescriptions = $this->config->get('importDescriptions', false);
+            if ($importDescriptions) {
+                $raw = $this->apiClient->getItemInfo($item['model']);
+                $item['description'] = $this->getParamString($raw['PRODUCTS']['PRODUCT']['DESCRIPTION']);
+                if ($i % 100 === 0) {
+                    $this->log->debug('Imported descriptions: ' . $i);
+                }
+                if ($item['description'] === '') {
+                    $this->missingItems['missing_descriptions'][$item['model']] = $item['name'];
+                }
+            }
+            $this->import[$item['master']][$item['model']] = $item;
+            if ($item['images'] === '') {
+                $this->missingItems['missing_images'][$item['model']] = $item['name'];
+            }
+            if ($item['category'] === '') {
+                $this->missingItems['missing_categories'][$item['model']] = $item['name'];
+            }
+            $i++;
         }
         $topics['imData'] = $this->import;
         ($this->reporter)($topics);
     }
 
-    protected function condenseImages(?string $image, array $addlImages) {
-        $images = [];
-        if (is_string($image) && $image !== '') {
-            $images[] = $image;
+    protected function getParamString($value)
+    {
+        if (is_string($value)) {
+            return trim($value);
         }
-        if (! empty($addlImages)) {
-            sort($addlImages);
-            $images[] = implode('#!#', $addlImages);
+        if ($value === null || is_array($value)) {
+            return '';
         }
-        return implode('#!#', $images);
+        throw new InvalidArgumentException(
+            sprintf('String or empty array expected, got %s.',
+                is_object($value) ? get_class($value) : gettype($value)
+            )
+        );
     }
 
     /**
@@ -229,10 +206,30 @@ class ImportClient implements EventSubscriber
         return implode('##!##', $options);
     }
 
-    protected function getParamArray($value) {
-        if (null === $value) return [];
-        if (is_string($value)) return [ $value ];
-        if (is_array($value)) return $value;
+    protected function condenseImages(?string $image, array $addlImages)
+    {
+        $images = [];
+        if (is_string($image) && $image !== '') {
+            $images[] = $image;
+        }
+        if (!empty($addlImages)) {
+            sort($addlImages);
+            $images[] = implode('#!#', $addlImages);
+        }
+        return implode('#!#', $images);
+    }
+
+    protected function getParamArray($value)
+    {
+        if (null === $value) {
+            return [];
+        }
+        if (is_string($value)) {
+            return [$value];
+        }
+        if (is_array($value)) {
+            return $value;
+        }
         throw new InvalidArgumentException(
             sprintf('String or array expected, got %s.',
                 is_object($value) ? get_class($value) : gettype($value)
@@ -240,14 +237,157 @@ class ImportClient implements EventSubscriber
         );
     }
 
-    protected function getParamString($value)
+    protected function createModels()
     {
-        if (is_string($value)) return trim($value);
-        if ($value === null || is_array($value)) return '';
-        throw new InvalidArgumentException(
-            sprintf('String or empty array expected, got %s.',
-                is_object($value) ? get_class($value) : gettype($value)
-            )
-        );
+        $limit = $this->config->get('limit', -1);
+        $cursor = 0;
+        $missingAttributes = [];
+        $modelIssues = [];
+        foreach ($this->import as $master => $records) {
+            if ($cursor === $limit) {
+                return;
+            }
+            $cursor++;
+            $options = [];
+            $models = [];
+            foreach ($records as $number => $data) {
+                $model = $this->importLog['deletions'][$number];
+                if (null !== $model) {
+                    unset($this->importLog['deletions'][$number]);
+                } else {
+                    $model = new Model();
+                    $this->importLog['additions'][$number] = $model;
+                    $this->modelManager->persist($model);
+                }
+                $model->fromImport($data);
+                $models[$model->getModel()] = $model;
+                $options[$model->getOptions()] = true;
+                $category = $data['category'];
+                $this->categoryUsage[$category][] = $model->getName();
+                $this->categories[$category] = true;
+            }
+            // The option strings of all models with the same master id
+            // must be different, otherwise attributes are missing
+            if (count($records) !== count($options)) {
+                $record = $this->checkMissingAttributes($records, $models);
+                $missingAttributes[$master] = $record;
+            }
+            $modelIssue = $this->checkModelIssues($records, $models);
+            if (!empty($modelIssue)) {
+                $modelIssues[$master] = $modelIssue;
+            }
+        }
+        ($this->reporter)([
+            'imMissingAttributes' => $missingAttributes,
+            'imMissingModels'     => $modelIssues,
+        ]);
+    }
+
+    /**
+     * @param array $records
+     * @param array $models
+     * @return array
+     */
+    protected function checkMissingAttributes(array $records, array $models): array
+    {
+        $record = [];
+        foreach ($records as $number => $data) {
+            $record[$number] = [
+                'name'       => $data['name'],
+                'attributes' => $data['options'],
+                'fixed'      => false,
+            ];
+            $fix = $this->config['attribute_fixes'][$data['master']][$number]['attributes'];
+            if ($fix !== null) {
+                $models[$number]->setOptions($fix);
+                $record[$number]['fixed'] = $fix;
+            }
+        }
+        return $record;
+    }
+
+    protected function checkModelIssues(array $records, array $models)
+    {
+        $groups = [];
+        foreach ($records as $number => $data) {
+            $model = $models[$number];
+            $options = $model->getOptions();
+            $options = explode('##!##', $options);
+            foreach ($options as $fullOption) {
+                list ($group, $option) = explode('#!#', $fullOption);
+                $groups[$group][$option] = $fullOption;
+            }
+        }
+
+        ksort($groups);
+        foreach ($groups as $name => $options) {
+            sort($options);
+            $groups[$name] = array_values($options);
+        }
+
+        $product = ArrayTool::cartesianProduct($groups);
+        $nrModelsExpected = count($product);
+        $nrModelsDelivered = count($records);
+
+        $record = [];
+        if ($nrModelsDelivered != $nrModelsExpected) {
+            $record = [
+                'models_delivered' => $nrModelsDelivered,
+                'models_expected'  => $nrModelsExpected,
+            ];
+
+            $set = [];
+            foreach ($product as $value) {
+                $set[implode('##!##', $value)] = true;
+            }
+
+            foreach ($records as $number => $data) {
+                $options = $models[$number]->getOptions();
+                $record['models'][$number] = [
+                    'name'    => $data['name'],
+                    'options' => $options,
+                ];
+                unset($set[$options]);
+            }
+            $record['models_missing'] = array_keys($set);
+        }
+        return $record;
+    }
+
+    protected function deleteModels()
+    {
+        /**
+         * @var string $number
+         * @var Model $model
+         */
+        foreach ($this->importLog['deletions'] as $number => $model) {
+            $model->setDeleted(true);
+        }
+    }
+
+    public function preUpdate(PreUpdateEventArgs $args)
+    {
+        /** @var PreUpdateEventArgs $args */
+        $model = $args->getEntity();
+        if (!$model instanceof Model) {
+            return;
+        }
+
+        $number = $model->getModel();
+        $fields = [];
+        foreach ($this->fields as $field) {
+            if ($args->hasChangedField($field)) {
+                $fields[$field] = [
+                    'oldValue' => $args->getOldValue($field),
+                    'newValue' => $args->getNewValue($field)
+                ];
+            }
+        }
+        if (!empty($fields)) {
+            $this->importLog['changes'][$number] = [
+                'model'  => $model,
+                'fields' => $fields,
+            ];
+        }
     }
 }

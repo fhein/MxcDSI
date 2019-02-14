@@ -9,19 +9,19 @@ class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationContro
     protected $model = Model::class;
     protected $alias = 'import_article';
 
-    public function indexAction() {
-        $this->log->enter();
-        /**
-         * @var \Shopware\Components\Model\ModelManager $modelManager
-         */
-        try {
-            $this->services->get(ImportClient::class)->import();
-            parent::indexAction();
-        } catch (Throwable $e) {
-            $this->log->except($e);
-        }
-        $this->log->leave();
-    }
+//    public function indexAction() {
+//        $this->log->enter();
+//        /**
+//         * @var \Shopware\Components\Model\ModelManager $modelManager
+//         */
+//        try {
+//            $this->services->get(ImportClient::class)->import();
+//            parent::indexAction();
+//        } catch (Throwable $e) {
+//            $this->log->except($e);
+//        }
+//        $this->log->leave();
+//    }
 
     protected function getAdditionalDetailData(array $data) {
         $data['variants'] = [];

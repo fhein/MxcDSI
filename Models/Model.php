@@ -46,6 +46,12 @@ class Model extends ModelEntity
     private $name;
 
     /**
+     * @var string $description
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $description;
+
+    /**
      * @var string $purchasePrice
      * @ORM\Column(name="purchase_price", type="string", nullable=false)
      */
@@ -90,7 +96,9 @@ class Model extends ModelEntity
     public function fromImport(array $data) {
         foreach ($data as $key => $value) {
             $setter = 'set' . ucfirst($key);
-            $this->$setter($value);
+            if (method_exists($this, $setter)) {
+                $this->$setter($value);
+            }
         }
     }
 
@@ -292,5 +300,21 @@ class Model extends ModelEntity
     public function setDeleted(bool $deleted): void
     {
         $this->deleted = $deleted;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
     }
 }

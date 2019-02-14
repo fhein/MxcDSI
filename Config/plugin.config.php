@@ -28,19 +28,19 @@ use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
 
 return [
-    'plugin' => [
+    'plugin'         => [
 //        FilterTest::class => [
 //            'options' => [
 //                'activate' => [],
 //                'deactivate' => [],
 //            ],
 //        ],
-        ArticleAttributeFilePersister::class => [
-            'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
-        ],
+ArticleAttributeFilePersister::class => [
+    'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
+],
     ],
-    'doctrine' => [
-        'models' => [
+    'doctrine'       => [
+        'models'     => [
             Article::class,
             Variant::class,
             Group::class,
@@ -50,8 +50,8 @@ return [
         ],
         'attributes' => [
             's_articles_attributes' => [
-                'mxc_dsi_supplier' => [
-                    'type' => 'string',
+                'mxc_dsi_supplier'       => [
+                    'type'     => 'string',
                     'settings' => [
                         'label'            => '',
                         'supportText'      => '',
@@ -62,8 +62,8 @@ return [
                         'custom'           => false
                     ]
                 ],
-                'mxc_dsi_brand' => [
-                    'type' => 'string',
+                'mxc_dsi_brand'          => [
+                    'type'     => 'string',
                     'settings' => [
                         'label'            => '',
                         'supportText'      => '',
@@ -74,28 +74,28 @@ return [
                         'custom'           => false
                     ],
                 ],
-                'dc_ic_ordernumber' => [
+                'dc_ic_ordernumber'      => [
                     'type' => 'string',
                 ],
-                'dc_ic_articlename' => [
+                'dc_ic_articlename'      => [
                     'type' => 'string',
                 ],
                 'dc_ic_purchasing_price' => [
                     'type' => 'string',
                 ],
-                'dc_ic_retail_price' => [
+                'dc_ic_retail_price'     => [
                     'type' => 'string',
                 ],
-                'dc_ic_instock' => [
+                'dc_ic_instock'          => [
                     'type' => 'integer',
                 ],
-                'dc_ic_active' => [
+                'dc_ic_active'           => [
                     'type' => 'boolean',
                 ],
             ],
         ],
     ],
-    'services' => [
+    'services'       => [
         'magicals' => [
             ApiClient::class,
             ArticleAttributeFilePersister::class,
@@ -116,38 +116,10 @@ return [
             PropertyExtractor::class,
         ],
     ],
-    'propertymapper' => include __DIR__ . '/propertymapper.config.php',
+
     'class_config' => [
-        ImportMapper::class => [
-            'applyFilters' => true,
-            'filters'     => [
-                'update'     => [
-                    [
-                        'entity' => Article::class,
-                        'andWhere' => [
-                            [ 'field' => 'name', 'operator' => 'LIKE', 'value' => '%iquid%' ]
-                        ],
-                        'set' => [ 'accepted' => false, 'active' => false ],
-                    ],
-                    [
-                        'entity' => Article::class,
-                        'andWhere' => [
-                            [ 'field' => 'name', 'operator' => 'LIKE', 'value' => '%Aroma%' ]
-                        ],
-                        'set' => [ 'accepted' => false, 'active' => false, ]
-                    ],
-                    [
-                        'entity' => Article::class,
-                        'andWhere' => [
-                            [ 'field' => 'brand', 'operator' => 'LIKE', 'value' => 'DVTCH Amsterdam' ]
-                        ],
-                        'set'     => [ 'accepted' => false, 'active' => false, ]
-                    ],
-                ],
-            ],
-        ],
-        ImportClient::class => [
-            'limit' => -1,
-        ],
+        ImportClient::class   => include __DIR__ . '/importclient.config.php',
+        PropertyMapper::class => include __DIR__ . '/propertymapper.config.php',
+        ImportMapper::class   => include __DIR__ . '/importmapper.config.php',
     ],
 ];

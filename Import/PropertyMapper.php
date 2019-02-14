@@ -173,7 +173,7 @@ class PropertyMapper
         $modelName = $model->getName();
         $this->report['name'][$modelName]['model'] = $model->getModel();
         $trace['imported'] = $model->getName();
-        $name = $this->removeOptionsFromArticleName($model);
+        $name = $this->removeOptionsFromModelName($model);
         $trace['options_removed'] = $name;
 
         // general name mapping applied first
@@ -213,7 +213,7 @@ class PropertyMapper
         $this->report['name'][$trace['imported']] = $trace;
     }
 
-    public function removeOptionsFromArticleName(Model $model)
+    public function removeOptionsFromModelName(Model $model)
     {
         // Innocigs variant names include variant descriptions
         // We take the first variant's name and remove the variant descriptions
@@ -223,12 +223,6 @@ class PropertyMapper
 
         foreach ($options as $option) {
             $option = explode('#!#', $option)[1];
-
-            // '1er Packung' is not a substring of any article name
-            if ($option === '1er Packung') {
-                continue;
-            }
-
             $number = $model->getModel();
 
             if (strpos($name, $option) !== false) {
@@ -260,10 +254,9 @@ class PropertyMapper
         // that, also. The implementation here is a hack right now.
         $o = $this->config['article_name_option_fixes'][$option] ?? null;
         $fixApplied = false;
-        $fixAvailable = false;
+        $fixAvailable = $o !== null;
         $before = $name;
-        if ($o) {
-            $fixAvailable = true;
+        if ($fixAvailable && $o !== '') {
             if (is_string($o)) {
                 $o = [$o];
             }
@@ -377,58 +370,37 @@ class PropertyMapper
         if (! $models) return [];
 
         $variants = $article->getVariants();
-        $mappedArticles = [];
+        $map = [];
         /** @var Variant $variant */
         foreach ($variants as $variant) {
-            $mappedArticle = new Article();
-            $model = $models[$variant->getIcNumber()];
-            $this->mapModelToArticle($model, $mappedArticle);
-            $mappedArticles[] = [
-                'article' => $mappedArticle,
-                'model'   => $model,
-            ];
+            $number = $variant->getIcNumber();
+            $model = $models[$number];
+            $map[$this->removeOptionsFromModelName($model)] = $number;
         }
-        /** @var Article $mappedArticle */
-        $mapped = [];
-        foreach ($mappedArticles as $current) {
-            $mappedArticle = $current['article'];
-            foreach (['name', 'category', 'number'] as $topic) {
-                $getter = 'get' . ucfirst($topic);
-                $mapped[$topic][$mappedArticle->$getter()] = true;
-            }
-        }
+        if (count($map) === 1) return [];
         $issues = [];
-        foreach (['name', 'category', 'number'] as $topic) {
-            if (count($mapped[$topic]) !== 1) {
-                $issues['topics'][] = $topic;
-            }
-        }
-        if (!empty($issues)) {
-            foreach ($issues['topics'] as $topic) {
-                $getter = 'get' . ucfirst($topic);
-                $mgetter = ($getter === 'getNumber') ? 'getMaster' : $getter;
-                foreach ($mappedArticles as $mappedArticle) {
-                    $model = $mappedArticle['model'];
-                    if (method_exists($model, $mgetter)) {
-                        $issues[$topic][$mappedArticle['model']->$mgetter()] = $mappedArticle['article']->$getter();
-                    }
-                }
-            }
+        foreach ($map as $name => $number) {
+            /** @var Model $model */
+            $model = $models[$number];
+            $issues[$number] = [
+                'name' => $name,
+                'options' => $model->getOptions()
+            ];
         }
         return $issues;
     }
 
     public function checkArticlePropertyMappingConsistency()
     {
-        $this->init();
+        //$this->init();
         $articles = $this->getArticles() ?? [];
 
         /** @var Article $article */
         $topics = [];
         foreach ($articles as $article) {
-            $issue = $this->checkMappingConsistency($article);
-            if (! empty($issue)) {
-                $topic[$article->getIcNumber()] = $issue;
+            $issues = $this->checkMappingConsistency($article);
+            if (! empty($issues)) {
+                $topics[$article->getIcNumber()] = $issues;
             }
         }
         ksort($topics);
