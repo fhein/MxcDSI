@@ -15,6 +15,7 @@ use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
 use Shopware\Models\Article\Supplier;
+use Shopware\Models\Category\Category;
 use Shopware\Models\Customer\Group;
 use Shopware\Models\Plugin\Plugin;
 use Shopware\Models\Tax\Tax;
@@ -250,6 +251,69 @@ class ArticleMapper
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcInstock($this->client->getStock($variant));
     }
+
+    protected function createCategory(string $category, string $root)
+    {
+        $repository = $this->modelManager->getRepository(Category::class);
+        $path = explode(' > ', $category);
+    }
+
+    // Save Catogory from Shopware Controller
+//    public function saveDetail()
+//    {
+//        $params = $this->Request()->getParams();
+//        $categoryId = (int) $params['id'];
+//
+//        if (empty($categoryId)) {
+//            $categoryModel = new Category();
+//            Shopware()->Models()->persist($categoryModel);
+//
+//            // Find parent for newly created category
+//            $params['parentId'] = is_numeric($params['parentId']) ? (int) $params['parentId'] : 1;
+//            $parentCategory = $this->getRepository()->find($params['parentId']);
+//            $categoryModel->setParent($parentCategory);
+//
+//            // If Leaf-Category gets childcategory move all assignments to new childcategory
+//            if ($parentCategory->getChildren()->count() === 0 && $parentCategory->getArticles()->count() > 0) {
+//                /** @var \Shopware\Models\Article\Article $article */
+//                foreach ($parentCategory->getArticles() as $article) {
+//                    $article->removeCategory($parentCategory);
+//                    $article->addCategory($categoryModel);
+//                }
+//            }
+//        } else {
+//            $categoryModel = $this->getRepository()->find($categoryId);
+//        }
+//
+//        $categoryModel->setStream(null);
+//        if ($params['streamId']) {
+//            $params['stream'] = Shopware()->Models()->find(\Shopware\Models\ProductStream\ProductStream::class, (int) $params['streamId']);
+//        }
+//
+//        $params = $this->prepareCustomerGroupsAssociatedData($params);
+//        $params = $this->prepareMediaAssociatedData($params);
+//
+//        unset($params['articles'], $params['emotion'], $params['imagePath'], $params['parentId'], $params['parent']);
+//
+//        if (!array_key_exists('template', $params)) {
+//            $params['template'] = null;
+//        }
+//
+//        $params['changed'] = new \DateTime();
+//        $categoryModel->fromArray($params);
+//        Shopware()->Models()->flush();
+//
+//        $categoryId = $categoryModel->getId();
+//        $query = $this->getRepository()->getBackendDetailQuery($categoryId)->getQuery();
+//        $query->setHydrationMode(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
+//        $paginator = $this->getModelManager()->createPaginator($query);
+//        $data = $paginator->getIterator()->getArrayCopy();
+//        $data = $data[0];
+//        $data['imagePath'] = $data['media']['path'];
+//
+//        $this->View()->assign(['success' => true, 'data' => $data, 'total' => count($data)]);
+//    }
+
 
     protected function createPrice(Variant $variant, ShopwareArticle $swArticle, Detail $detail){
         $tax = $this->getTax()->getTax();

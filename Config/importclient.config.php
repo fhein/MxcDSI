@@ -2,7 +2,7 @@
 
 return [
     'limit' => -1,
-    'importDescriptions' => true,
+//    'importDescriptions' => true,
 
     'attribute_fixes' => [
         'AS10000CLEITOTANK' => [

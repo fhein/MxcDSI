@@ -47,7 +47,7 @@ class Model extends ModelEntity
 
     /**
      * @var string $description
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
@@ -65,7 +65,7 @@ class Model extends ModelEntity
 
     /**
      * @var string $images;
-     * @ORM\Column(name="image_url", type="text", nullable=true)
+     * @ORM\Column(name="images", type="text", nullable=true)
      */
     private $images;
 

@@ -128,48 +128,28 @@ class ImportClient implements EventSubscriber
         $this->importMapper->import($this->importLog);
     }
 
+
     protected function apiImport()
     {
-        $raw = $this->apiClient->getItemList();
-        $topics['imDataRaw'] = $raw;
-
-        $this->import = [];
+        $this->import = $this->apiClient->getItemList();
         $i = 1;
-        foreach ($raw['PRODUCTS']['PRODUCT'] as $data) {
-            // flatten options
-            $item['category'] = $this->getParamString($data['CATEGORY']);
-            $item['model'] = $this->getParamString($data['MODEL']);
-            $item['master'] = $this->getParamString($data['MASTER']);
-            $item['ean'] = $this->getParamString($data['EAN']);
-            $item['name'] = $this->getParamString($data['NAME']);
-            $item['purchasePrice'] = $this->getParamString($data['PRODUCTS_PRICE']);
-            $item['retailPrice'] = $this->getParamString($data['PRODUCTS_PRICE_RECOMMENDED']);
-            $item['manufacturer'] = $this->getParamString($data['MANUFACTURER']);
-            $item['manual'] = $this->getParamString($data['PRODUCTS_MANUAL']);
-            $item['options'] = $this->condenseOptions($data['PRODUCTS_ATTRIBUTES']);
-            $item['images'] = $this->condenseImages(
-                $this->getParamString($data['PRODUCTS_IMAGE']),
-                $this->getParamArray($data['PRODUCTS_IMAGE_ADDITIONAL']['IMAGE'])
-            );
-            $importDescriptions = $this->config->get('importDescriptions', false);
-            if ($importDescriptions) {
-                $raw = $this->apiClient->getItemInfo($item['model']);
-                $item['description'] = $this->getParamString($raw['PRODUCTS']['PRODUCT']['DESCRIPTION']);
-                if ($i % 100 === 0) {
-                    $this->log->debug('Imported descriptions: ' . $i);
-                }
+        foreach ($this->import as &$master) {
+            foreach ($master as &$item) {
+                $item['options'] = $this->condenseOptions($item['options']);
+                $item['images'] = $this->condenseImages($item['image'], $item['images']);
+                unset ($item['image']);
                 if ($item['description'] === '') {
                     $this->missingItems['missing_descriptions'][$item['model']] = $item['name'];
                 }
+                $this->import[$item['master']][$item['model']] = $item;
+                if ($item['images'] === '') {
+                    $this->missingItems['missing_images'][$item['model']] = $item['name'];
+                }
+                if ($item['category'] === '') {
+                    $this->missingItems['missing_categories'][$item['model']] = $item['name'];
+                }
+                $i++;
             }
-            $this->import[$item['master']][$item['model']] = $item;
-            if ($item['images'] === '') {
-                $this->missingItems['missing_images'][$item['model']] = $item['name'];
-            }
-            if ($item['category'] === '') {
-                $this->missingItems['missing_categories'][$item['model']] = $item['name'];
-            }
-            $i++;
         }
         $topics['imData'] = $this->import;
         ($this->reporter)($topics);
@@ -242,7 +222,7 @@ class ImportClient implements EventSubscriber
         $limit = $this->config->get('limit', -1);
         $cursor = 0;
         $missingAttributes = [];
-        $modelIssues = [];
+        $missingModels = [];
         foreach ($this->import as $master => $records) {
             if ($cursor === $limit) {
                 return;
@@ -272,14 +252,14 @@ class ImportClient implements EventSubscriber
                 $record = $this->checkMissingAttributes($records, $models);
                 $missingAttributes[$master] = $record;
             }
-            $modelIssue = $this->checkModelIssues($records, $models);
-            if (!empty($modelIssue)) {
-                $modelIssues[$master] = $modelIssue;
+            $issue = $this->checkMissingModels($records, $models);
+            if (! empty($issue)) {
+                $missingModels[$master] = $issue;
             }
         }
         ($this->reporter)([
             'imMissingAttributes' => $missingAttributes,
-            'imMissingModels'     => $modelIssues,
+            'imMissingModels'     => $missingModels,
         ]);
     }
 
@@ -306,7 +286,7 @@ class ImportClient implements EventSubscriber
         return $record;
     }
 
-    protected function checkModelIssues(array $records, array $models)
+    protected function checkMissingModels(array $records, array $models)
     {
         $groups = [];
         foreach ($records as $number => $data) {
