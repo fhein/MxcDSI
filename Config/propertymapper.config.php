@@ -269,8 +269,10 @@ return [
             '~(Ironfist) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
             '~(Hypercar) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
             '~(Nunchaku) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
+            '~(Ultex T80) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Luxe) (- \d+ Watt)~'                                      => '$1 - Akkuträger $2',
             '~(Polar) (- \d+ Watt)~'                                     => '$1 - Akkuträger $2',
+            '~(Species) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(Sinuous.*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Revenger.*) (- \d+ Watt)~'                                => '$1 - Akkuträger $2',
             '~(SX Mini.*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
@@ -485,7 +487,11 @@ return [
             '~(Reuleaux RX Gen3 Dual)~',
             '~(Sinuous(( P80)|( Ravage)|( SW))?)~',
             '~(Reux)~',
+        ],
+        'ZQ' => [
+            '~(Vi)~',
         ]
+
     ],
     'group_names'               => [
         'STAERKE'     => 'Nikotinstärke',

@@ -15,10 +15,13 @@ use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
 use Shopware\Models\Article\Supplier;
+use Shopware\Models\Article\Unit;
 use Shopware\Models\Category\Category;
 use Shopware\Models\Customer\Group;
 use Shopware\Models\Plugin\Plugin;
 use Shopware\Models\Tax\Tax;
+use Zend\Config\Config;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
 class ArticleMapper
 {
@@ -26,6 +29,11 @@ class ArticleMapper
      * @var LoggerInterface $log
      */
     protected $log;
+
+    /**
+     * @var Config $config
+     */
+    protected $config;
 
     /**
      * @var ArticleOptionMapper $optionMapper
@@ -60,6 +68,7 @@ class ArticleMapper
         MediaTool $mediaTool,
         ImportMapper $client,
         EntitiyValidator $validator,
+        Config $config,
         LoggerInterface $log)
     {
         $this->modelManager = $modelManager;
@@ -67,6 +76,7 @@ class ArticleMapper
         $this->mediaTool = $mediaTool;
         $this->client = $client;
         $this->validator = $validator;
+        $this->config = $config;
         $this->log = $log;
     }
 
@@ -81,9 +91,6 @@ class ArticleMapper
         $this->modelManager->persist($swArticle);
 
         $name = $article->getName();
-
-        // this will get the product detail record from InnoCigs which can hold a description
-        $this->client->addArticleDetail($article);
 
         $article->setArticle($swArticle);
 
@@ -101,6 +108,7 @@ class ArticleMapper
 
         $set = $this->optionMapper->createConfiguratorSet($article);
         $swArticle->setConfiguratorSet($set);
+        $this->addCategories($article, $swArticle);
 
         //create details from innocigs variants
         $variants = $article->getVariants();
@@ -192,11 +200,10 @@ class ArticleMapper
 
         $detail->setActive(true);
         $detail->setLastStock(0);
-        // Todo: $detail->setPurchaseUnit();
-        // Todo: $detail->setReferenceUnit();
 
         $detail->setArticle($swArticle);
 
+        $this->setReferencePrice($variant->getArticle(), $detail);
         $prices = $this->createPrice($variant, $swArticle, $detail);
         $detail->setPrices($prices);
         // Note: shopware options are added non persistently to variants when
@@ -252,68 +259,46 @@ class ArticleMapper
         $attribute->setDcIcInstock($this->client->getStock($variant));
     }
 
-    protected function createCategory(string $category, string $root)
+    protected function createCategory(Category $parent, string $name)
     {
-        $repository = $this->modelManager->getRepository(Category::class);
-        $path = explode(' > ', $category);
+        $child = new Category();
+        $this->modelManager->persist($child);
+        $child->setName($name);
+        $child->setParent($parent);
+        $child->setChanged();
+        if ($parent->getChildren()->count() === 0 && $parent->getArticles()->count() > 0) {
+            /** @var \Shopware\Models\Article\Article $article */
+            foreach ($parent->getArticles() as $article) {
+                $article->removeCategory($parent);
+                $article->addCategory($child);
+            }
+            $parent->setChanged();
+        }
+        return $child;
     }
 
-    // Save Catogory from Shopware Controller
-//    public function saveDetail()
-//    {
-//        $params = $this->Request()->getParams();
-//        $categoryId = (int) $params['id'];
-//
-//        if (empty($categoryId)) {
-//            $categoryModel = new Category();
-//            Shopware()->Models()->persist($categoryModel);
-//
-//            // Find parent for newly created category
-//            $params['parentId'] = is_numeric($params['parentId']) ? (int) $params['parentId'] : 1;
-//            $parentCategory = $this->getRepository()->find($params['parentId']);
-//            $categoryModel->setParent($parentCategory);
-//
-//            // If Leaf-Category gets childcategory move all assignments to new childcategory
-//            if ($parentCategory->getChildren()->count() === 0 && $parentCategory->getArticles()->count() > 0) {
-//                /** @var \Shopware\Models\Article\Article $article */
-//                foreach ($parentCategory->getArticles() as $article) {
-//                    $article->removeCategory($parentCategory);
-//                    $article->addCategory($categoryModel);
-//                }
-//            }
-//        } else {
-//            $categoryModel = $this->getRepository()->find($categoryId);
-//        }
-//
-//        $categoryModel->setStream(null);
-//        if ($params['streamId']) {
-//            $params['stream'] = Shopware()->Models()->find(\Shopware\Models\ProductStream\ProductStream::class, (int) $params['streamId']);
-//        }
-//
-//        $params = $this->prepareCustomerGroupsAssociatedData($params);
-//        $params = $this->prepareMediaAssociatedData($params);
-//
-//        unset($params['articles'], $params['emotion'], $params['imagePath'], $params['parentId'], $params['parent']);
-//
-//        if (!array_key_exists('template', $params)) {
-//            $params['template'] = null;
-//        }
-//
-//        $params['changed'] = new \DateTime();
-//        $categoryModel->fromArray($params);
-//        Shopware()->Models()->flush();
-//
-//        $categoryId = $categoryModel->getId();
-//        $query = $this->getRepository()->getBackendDetailQuery($categoryId)->getQuery();
-//        $query->setHydrationMode(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
-//        $paginator = $this->getModelManager()->createPaginator($query);
-//        $data = $paginator->getIterator()->getArrayCopy();
-//        $data = $data[0];
-//        $data['imagePath'] = $data['media']['path'];
-//
-//        $this->View()->assign(['success' => true, 'data' => $data, 'total' => count($data)]);
-//    }
+    protected function getCategory(string $path, Category $root = null)
+    {
+        $repository = $this->modelManager->getRepository(Category::class);
+        /** @var Category $parent */
+        $parent = ($root !== null) ? $root : $repository->findOneBy(['parentId' => null]);
+        $path = explode(' > ', $path);
+        foreach ($path as $categoryName) {
+            $child = $repository->findOneBy(['name' => $categoryName, 'parentId' => $parent->getId()]);
+            $parent = ($child !== null) ? $child : $this->createCategory($parent, $categoryName);
+        }
+        return $parent;
+    }
 
+    protected function addCategories(Article $article, ShopwareArticle $swArticle)
+    {
+        $root = $this->config->get('root_category', 'Deutsch');
+        $root = $this->getCategory($root);
+        $catgories = explode(MXC_DELIMITER_L1, $article->getCategory());
+        foreach ($catgories as $category) {
+            $swArticle->addCategory($this->getCategory($category, $root));
+        }
+    }
 
     protected function createPrice(Variant $variant, ShopwareArticle $swArticle, Detail $detail){
         $tax = $this->getTax()->getTax();
@@ -393,6 +378,35 @@ class ArticleMapper
             ));
         }
         return $tax;
+    }
+
+    protected function getUnit(string $name)
+    {
+        $unit = $this->modelManager->getRepository(Unit::class)->findOneBy(['name' => $name]);
+        if (! $unit instanceof Unit) {
+            $unit = new Unit();
+            $this->modelManager->persist($unit);
+            $unit->setName($name);
+        }
+        return $unit;
+    }
+
+    protected function setReferencePrice(Article $article, Detail $detail)
+    {
+        if (preg_match('~(Liquid)|(Aromen)|(Basen)|(Shake \& Vape)~', $article->getCategory()) !== 1) return;
+        $matches = [];
+        $name = $article->getName();
+        preg_match('~(\d+(\.\d+)?) ml~', $name, $matches);
+        if (empty($matches)) return;
+        $this->log->debug(var_export($matches, true));
+        $volume = $matches[1];
+        $volume = str_replace('.', '', $volume);
+        $reference = $volume < 100 ? 100 : ($volume < 1000 ? 1000 : 0);
+        if ($reference === 0) return;
+        $detail->setPurchaseUnit($volume);
+        $detail->setReferenceUnit($reference);
+        $unit = $this->getUnit('ml');
+        $detail->setUnit($unit);
     }
 
     public function handleActiveStateChange(Article $article)

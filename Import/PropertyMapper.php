@@ -10,6 +10,8 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use RuntimeException;
 use Shopware\Components\Model\ModelManager;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class PropertyMapper
 {
@@ -218,11 +220,11 @@ class PropertyMapper
         // Innocigs variant names include variant descriptions
         // We take the first variant's name and remove the variant descriptions
         // in order to extract the real article name
-        $options = explode('##!##', $model->getOptions());
+        $options = explode(MXC_DELIMITER_L2, $model->getOptions());
         $name = $model->getName();
 
         foreach ($options as $option) {
-            $option = explode('#!#', $option)[1];
+            $option = explode(MXC_DELIMITER_L1, $option)[1];
             $number = $model->getModel();
 
             if (strpos($name, $option) !== false) {

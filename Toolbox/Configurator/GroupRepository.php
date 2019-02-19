@@ -163,6 +163,37 @@ class GroupRepository
         }
     }
 
+    protected function sortGroupOptions(array $groups, int $sortFlags)
+    {
+        foreach ($groups as $group) {
+            $options = $group->getOptions();
+            $array = [];
+            /** @var \Shopware\Models\Article\Configurator\Option $option */
+            foreach ($options as $option) {
+                $array[$option->getName()] = $option;
+            }
+            $keys = array_keys($array);
+            sort($keys, $sortFlags);
+            $pos = 1;
+            foreach ($keys as $key) {
+                $array[$key]->setPosition($pos++);
+            }
+        }
+    }
+
+    public function sortOptions(string $group, int $sortFlags = SORT_NATURAL)
+    {
+        $groups = [ $this->modelManager->getRepository(Group::class)->findOneBy(['name' => $group]) ];
+        $this->sortGroupOptions($groups, $sortFlags);
+    }
+
+    public function sortAllOptions(int $sortFlags = SORT_NATURAL)
+    {
+        $groups = $this->modelManager->getRepository(Group::class)->findAll();
+        $this->sortGroupOptions($groups, $sortFlags);
+    }
+
+
     public function flush() {
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();

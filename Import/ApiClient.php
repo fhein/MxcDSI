@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Client;
+namespace MxcDropshipInnocigs\Import;
 
 use DateTime;
 use DOMDocument;
@@ -8,7 +8,6 @@ use DomElement;
 use MxcDropshipInnocigs\Exception\ApiException;
 use Zend\Http\Client;
 use Zend\Http\Exception\RuntimeException as ZendClientException;
-use Zend\Http\Response;
 use Zend\Log\LoggerInterface;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 
@@ -77,55 +76,42 @@ class ApiClient
     public function getItemInfo($model)
     {
         $cmd = $this->authUrl . "&command=product&model=" . $model;
-        return $this->getArrayResult($this->send($cmd));
-    }
-
-    protected function getArrayResult(Response $response)
-    {
-        if (!$response->isSuccess()) {
-            throw new ApiException('HTTP status: ' . $response->getStatusCode());
-        }
-        $body = $response->getBody();
-        return $this->xmlToArray($body);
+        return $this->modelsToArray($this->send($cmd)->getBody());
     }
 
     /**
-     * @param string $body
      * @return array
      */
-    public function xmlToArray(string $body): array
+    public function getItemList()
     {
-        $this->logXML($body);
-        libxml_use_internal_errors(true);
-//        $body = preg_replace_callback(
-//            '/<!\[CDATA\[([\r\n.]*)\]\]>/',
-//            function ($matches) {
-//                return trim(htmlspecialchars($matches[1]));
-//            },
-//            $body
-//        );
-//        $out = [$body];
-//        (new ArrayReport())(['apiPregreplace' => $out]);
-        $xml = simplexml_load_string($body, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
-//        $xml = simplexml_load_string($body, 'SimpleXmlElement', LIBXML_NOCDATA);
+        $cmd = $this->authUrl . '&command=products&type=extended';
+        return $this->modelsToArray($this->send($cmd)->getBody());
+    }
 
-        if ($xml === false) {
-            $errors = libxml_get_errors();
-            $this->logXmlErrors($errors);
-            $dump = Shopware()->DocPath() . 'var/log/invalid-innocigs-api-response-' . date('Y-m-d-H-i-s') . '.txt';
-            file_put_contents($dump, $body);
-            $this->log->info('Invalid InnoCigs API response dumped to ' . $dump);
-            throw new ApiException('InnoCigs API returned invalid XML. See log file for detailed information.');
+    /**
+     * @param \DateTime $date
+     * @return array
+     * @throws \Exception
+     */
+    public function getTrackingData($date = null)
+    {
+        if (!$date instanceof DateTime) {
+            $date = (new DateTime())->format('Y-m-d');
         }
-        $json = json_encode($xml);
-        if ($json === false) {
-            throw new ApiException('Failed to encode to JSON: ' . var_export($xml, true));
-        }
-        $result = json_decode($json, true);
-        if ($result === false) {
-            throw new ApiException('Failed to decode JSON: ' . var_export($json, true));
-        }
-        return $result;
+        $cmd = $this->authUrl . '&command=tracking&day=' . $date;
+        return $this->xmlToArray($this->send($cmd)->getBody());
+    }
+
+    /**
+     * @param string $model
+     * @return array
+     */
+    public function getStockInfo($model = null)
+    {
+        $cmd = is_string($model)
+            ? $this->authUrl . '&command=quantity&model=' . urlencode($model)
+            : $this->authUrl . '&command=quantity_all';
+        return $this->xmlToArray($this->send($cmd)->getBody());
     }
 
     protected function logXML($xml)
@@ -168,6 +154,10 @@ class ApiClient
         $client = $this->getClient();
         $client->setUri($cmd);
         try {
+            $response = $client->send();
+            if (! $response->isSuccess()) {
+                throw new ApiException('HTTP status: ' . $response->getStatusCode());
+            }
             return $client->send();
         } catch (ZendClientException $e) {
             // no response or response empty
@@ -193,50 +183,7 @@ class ApiClient
         return $this->client;
     }
 
-    /**
-     * @return array
-     */
-    public function getItemList()
-    {
-        $cmd = $this->authUrl . '&command=products&type=extended';
-        return $this->domXMLToArray($this->send($cmd)->getBody());
-    }
-
-    /**
-     * @param \DateTime $date
-     * @return array
-     * @throws \Exception
-     */
-    public function getTrackingData($date = null)
-    {
-        if (!$date instanceof DateTime) {
-            $date = (new DateTime())->format('Y-m-d');
-        }
-        $cmd = $this->authUrl . '&command=tracking&day=' . $date;
-        return $this->getArrayResult($this->send($cmd));
-    }
-
-    /**
-     * @param string $model
-     * @return array
-     */
-    public function getStockInfo($model = null)
-    {
-        $cmd = is_string($model)
-            ? $this->authUrl . '&command=quantity&model=' . urlencode($model)
-            : $this->authUrl . '&command=quantity_all';
-        return $this->getArrayResult($this->send($cmd));
-    }
-
-    /**
-     * @return NULL
-     */
-    public function order()
-    {
-        return null;
-    }
-
-    public function domXMLToArray(string $xml): array
+    public function modelsToArray(string $xml): array
     {
         $dom = new DOMDocument();
         $dom->loadXML($xml);
@@ -277,5 +224,34 @@ class ApiClient
             $import[$item['master']][$item['model']] = $item;
         }
         return $import;
+    }
+
+    /**
+     * @param string $body
+     * @return array
+     */
+    public function xmlToArray(string $body): array
+    {
+        $this->logXML($body);
+        libxml_use_internal_errors(true);
+        $xml = simplexml_load_string($body, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
+
+        if ($xml === false) {
+            $errors = libxml_get_errors();
+            $this->logXmlErrors($errors);
+            $dump = Shopware()->DocPath() . 'var/log/invalid-innocigs-api-response-' . date('Y-m-d-H-i-s') . '.txt';
+            file_put_contents($dump, $body);
+            $this->log->info('Invalid InnoCigs API response dumped to ' . $dump);
+            throw new ApiException('InnoCigs API returned invalid XML. See log file for detailed information.');
+        }
+        $json = json_encode($xml);
+        if ($json === false) {
+            throw new ApiException('Failed to encode to JSON: ' . var_export($xml, true));
+        }
+        $result = json_decode($json, true);
+        if ($result === false) {
+            throw new ApiException('Failed to decode JSON: ' . var_export($json, true));
+        }
+        return $result;
     }
 }

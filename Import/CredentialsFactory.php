@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Client;
+namespace MxcDropshipInnocigs\Import;
 
 use Doctrine\DBAL\Connection;
 use Interop\Container\ContainerInterface;

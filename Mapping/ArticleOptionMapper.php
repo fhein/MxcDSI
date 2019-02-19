@@ -7,6 +7,7 @@ use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Toolbox\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
 
 class ArticleOptionMapper
@@ -74,6 +75,7 @@ class ArticleOptionMapper
                 $groupOptions[$groupName][$optionName][] = $icVariant;
             }
         }
+        $sortOptions = [];
         foreach ($groupOptions as $groupName => $options) {
             // Because some variants may be set to be ignored (accepted = false) there is a chance that we have
             // groups with just a single option. We do not apply such groups, because selecting from a single
@@ -84,8 +86,10 @@ class ArticleOptionMapper
                 ));
                 continue;
             }
+            array_multisort(array_keys($options), SORT_NATURAL, $options);
             foreach ($options as $optionName => $icVariants) {
                 $this->groupRepository->createGroup($groupName);
+                $sortOptions[$groupName] = true;
                 $swOption = $this->groupRepository->createOption($groupName, $optionName);
                 foreach ($icVariants as $icVariant) {
                     $icVariant->addShopwareOption($swOption);
@@ -98,9 +102,14 @@ class ArticleOptionMapper
                 }
             }
         }
-        $this->log->leave();
+        $sortOptions = array_keys($sortOptions);
+        foreach ($sortOptions as $groupName) {
+            $this->groupRepository->sortOptions($groupName);
+        }
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->groupRepository->flush();
+
+        $this->log->leave();
     }
 
     protected function getValidVariants(Article $article) : array {

@@ -5,12 +5,13 @@ namespace MxcDropshipInnocigs\Import;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Client\ApiClient;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Arrays\ArrayTool;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class ImportClient implements EventSubscriber
 {
@@ -133,13 +134,19 @@ class ImportClient implements EventSubscriber
     {
         $this->import = $this->apiClient->getItemList();
         $i = 1;
+        $description = [];
         foreach ($this->import as &$master) {
             foreach ($master as &$item) {
                 $item['options'] = $this->condenseOptions($item['options']);
+                if (! empty($item['images'])) {
+                    $this->missingItems['additional_images_available'][$item['model']] = $item['name'];
+                }
                 $item['images'] = $this->condenseImages($item['image'], $item['images']);
                 unset ($item['image']);
                 if ($item['description'] === '') {
                     $this->missingItems['missing_descriptions'][$item['model']] = $item['name'];
+                } else {
+                    $description[$item['description']]['models'][$item['model']] = $item['name'];
                 }
                 $this->import[$item['master']][$item['model']] = $item;
                 if ($item['images'] === '') {
@@ -151,8 +158,13 @@ class ImportClient implements EventSubscriber
                 $i++;
             }
         }
-        $topics['imData'] = $this->import;
-        ($this->reporter)($topics);
+        foreach ($description as $desc => &$entry) {
+            $entry['description'] = preg_replace('~\n~', '', $desc);
+        }
+        $description = array_values($description);
+        ($this->reporter)([ 'imDescriptions' => $description]);
+
+        ($this->reporter)(['imData' => $this->import]);
     }
 
     protected function getParamString($value)
@@ -179,11 +191,11 @@ class ImportClient implements EventSubscriber
         $options = [];
         foreach ($attributes as $group => $option) {
             $option = trim($option);
-            $options[] = trim($group) . '#!#' . $option;
+            $options[] = trim($group) . MXC_DELIMITER_L1 . $option;
             $this->optionNames[$option] = true;
         }
         sort($options);
-        return implode('##!##', $options);
+        return implode(MXC_DELIMITER_L2, $options);
     }
 
     protected function condenseImages(?string $image, array $addlImages)
@@ -194,9 +206,9 @@ class ImportClient implements EventSubscriber
         }
         if (!empty($addlImages)) {
             sort($addlImages);
-            $images[] = implode('#!#', $addlImages);
+            $images[] = implode(MXC_DELIMITER_L1, $addlImages);
         }
-        return implode('#!#', $images);
+        return implode(MXC_DELIMITER_L1, $images);
     }
 
     protected function getParamArray($value)
@@ -292,9 +304,9 @@ class ImportClient implements EventSubscriber
         foreach ($records as $number => $data) {
             $model = $models[$number];
             $options = $model->getOptions();
-            $options = explode('##!##', $options);
+            $options = explode(MXC_DELIMITER_L2, $options);
             foreach ($options as $fullOption) {
-                list ($group, $option) = explode('#!#', $fullOption);
+                list ($group, $option) = explode(MXC_DELIMITER_L1, $fullOption);
                 $groups[$group][$option] = $fullOption;
             }
         }
@@ -318,7 +330,7 @@ class ImportClient implements EventSubscriber
 
             $set = [];
             foreach ($product as $value) {
-                $set[implode('##!##', $value)] = true;
+                $set[implode(MXC_DELIMITER_L2, $value)] = true;
             }
 
             foreach ($records as $number => $data) {

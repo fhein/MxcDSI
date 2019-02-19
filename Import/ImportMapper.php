@@ -8,8 +8,6 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Client\ApiClient;
-use MxcDropshipInnocigs\Exception\InvalidArgumentException;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -18,6 +16,8 @@ use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Variant;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class ImportMapper implements EventSubscriber
 {
@@ -86,53 +86,11 @@ class ImportMapper implements EventSubscriber
         $this->log = $log;
     }
 
-    public function addArticleDetail(Article $article)
-    {
-        $variant = $article->getVariants()[0];
-        $raw = $this->apiClient->getItemInfo($variant->getNumber());
-        $description = $this->getStringParam($raw['PRODUCTS']['PRODUCT']['DESCRIPTION']);
-        if ($description === '') {
-            $this->log->warn(sprintf('%s: No description available from InnoCigs for article %s.',
-                __FUNCTION__,
-                $article->getNumber()
-            ));
-            return;
-        }
-        if ($article->getDescription() !== $description) {
-            $this->log->info(sprintf('%s: Adding article description from InnoCigs to article %s.',
-                __FUNCTION__,
-                $article->getNumber()
-            ));
-            $article->setDescription($description);
-            $this->modelManager->persist($article);
-        } else {
-            $this->log->info(sprintf('%s: Article description from InnoCigs for article %s is up to date.',
-                __FUNCTION__,
-                $article->getNumber()
-            ));
-        }
-    }
-
     public function getStock(Variant $variant)
     {
         $raw = $this->apiClient->getStockInfo($variant->getNumber());
         $this->log->debug(var_export($raw, true));
         return $raw['QUANTITIES']['PRODUCT']['QUANTITY'];
-    }
-
-    private function getStringParam($value)
-    {
-        if (is_string($value)) {
-            return trim($value);
-        }
-        if (is_array($value) && empty($value)) {
-            return '';
-        }
-        throw new InvalidArgumentException(
-            sprintf('String or empty array expected, got %s.',
-                is_object($value) ? get_class($value) : gettype($value)
-            )
-        );
     }
 
     protected function getGroup(string $groupName) {
@@ -149,10 +107,10 @@ class ImportMapper implements EventSubscriber
 
     public function getOptions(string $optionString): ArrayCollection
     {
-        $optionArray = explode('##!##', $optionString);
+        $optionArray = explode(MXC_DELIMITER_L2, $optionString);
         $options = [];
         foreach ($optionArray as $option) {
-            $param = explode('#!#', $option);
+            $param = explode(MXC_DELIMITER_L1, $option);
             $optionName = $this->propertyMapper->mapOptionName($param[1]);
             $groupName = $this->propertyMapper->mapGroupName($param[0]);
             $option = $this->options[$groupName][$optionName];
@@ -196,7 +154,7 @@ class ImportMapper implements EventSubscriber
     }
 
     public function getImages(?string $imageString) {
-        $imageUrls = explode('#!#', $imageString);
+        $imageUrls = explode(MXC_DELIMITER_L1, $imageString);
         $images = [];
         foreach ($imageUrls as $imageUrl) {
             $image = $this->images[$imageUrl];
@@ -259,30 +217,30 @@ class ImportMapper implements EventSubscriber
     }
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue) {
-        $oldOptions = explode('##!##', $oldValue);
-        $newOptions = explode('##!##', $newValue);
+        $oldOptions = explode(MXC_DELIMITER_L2, $oldValue);
+        $newOptions = explode(MXC_DELIMITER_L2, $newValue);
         $rOptions = array_diff($oldOptions, $newOptions);
         foreach ($rOptions as $option) {
-            $param = explode('#!#', $option);
+            $param = explode(MXC_DELIMITER_L1, $option);
             $variant->removeOption($this->options[$param[0]][$param[1]]);
         }
         $addedOptions = array_diff($newOptions, $oldOptions);
-        $addedOptions = implode('##!##', $addedOptions);
+        $addedOptions = implode(MXC_DELIMITER_L2, $addedOptions);
         $addedOptions = $this->getOptions($addedOptions);
         $variant->addOptions($this->getOptions($addedOptions));
     }
 
     protected function changeImages(Variant $variant, string $oldValue, string $newValue)
     {
-        $oldImages = explode('#!#', $oldValue);
-        $newImages = explode('#!#', $newValue);
+        $oldImages = explode(MXC_DELIMITER_L1, $oldValue);
+        $newImages = explode(MXC_DELIMITER_L1, $newValue);
 
         $removed = array_diff($oldImages, $newImages);
         foreach ($removed as $url) {
             $variant->removeImage($this->images[$url]);
         }
 
-        $addedImages = implode('#!#', array_diff($newImages, $oldImages));
+        $addedImages = implode(MXC_DELIMITER_L1, array_diff($newImages, $oldImages));
         $addedImages = $this->getImages($addedImages);
         $variant->addImages($addedImages);
     }

@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Toolbox\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 

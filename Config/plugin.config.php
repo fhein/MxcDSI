@@ -2,8 +2,8 @@
 
 namespace MxcDropshipInnocigs;
 
-use MxcDropshipInnocigs\Client\ApiClient;
-use MxcDropshipInnocigs\Client\Credentials;
+use MxcDropshipInnocigs\Import\ApiClient;
+use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\PropertyExtractor;
@@ -23,6 +23,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
 use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
+use MxcDropshipInnocigs\Toolbox\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
@@ -121,5 +122,8 @@ ArticleAttributeFilePersister::class => [
         ImportClient::class   => include __DIR__ . '/importclient.config.php',
         PropertyMapper::class => include __DIR__ . '/propertymapper.config.php',
         ImportMapper::class   => include __DIR__ . '/importmapper.config.php',
+        ArticleMapper::class => [
+            'root_category' => 'Deutsch > InnoCigs',
+        ]
     ],
 ];
