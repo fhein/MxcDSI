@@ -24,6 +24,9 @@ class PropertyMapper
     /** @var Reporter $reporter */
     protected $reporter;
 
+    /** @var Flavorist $flavorist */
+    protected $flavorist;
+
     protected $config;
 
     protected $report;
@@ -31,13 +34,14 @@ class PropertyMapper
     protected $articles = null;
     protected $models = null;
 
-    public function __construct(ModelManager $modelManager, Reporter $reporter, array $config, LoggerInterface $log)
+    public function __construct(ModelManager $modelManager, Flavorist $flavorist, Reporter $reporter, array $config, LoggerInterface $log)
     {
         $this->config = $config;
         $this->reporter = $reporter;
         $this->log = $log;
         $this->init();
         $this->modelManager = $modelManager;
+        $this->flavorist = $flavorist;
     }
 
     public function init()
@@ -184,6 +188,9 @@ class PropertyMapper
             $trace['directly_mapped'] = $result;
             $article->setName($result);
             return;
+        }
+        if (strpos($name, 'VapeHansa') !== false) {
+            $this->log->debug('Before replace: ' . $name);
         }
         $name = $this->replace($name, 'name_prepare');
 

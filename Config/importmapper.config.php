@@ -29,4 +29,5 @@ return [
 //            ],
         ],
     ],
+    'flavors' => include __DIR__ . '/flavor.config.php',
 ];

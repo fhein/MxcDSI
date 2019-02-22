@@ -18,7 +18,8 @@ Ext.define('Shopware.apps.MxcDsiArticle.model.Variant', {
         { name : 'accepted', type: 'boolean'},
         { name : 'created', type: 'date' },
         { name : 'updated', type: 'date' },
-        { name : 'description', type: 'string'}
+        { name : 'description', type: 'string'},
+        { name : 'new', type: 'boolean' },
     ]
 });
 

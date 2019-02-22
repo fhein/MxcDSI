@@ -245,6 +245,8 @@ class ImportClient implements EventSubscriber
             foreach ($records as $number => $data) {
                 $model = $this->importLog['deletions'][$number];
                 if (null !== $model) {
+                    /** @var Model $model */
+                    $model = $this->importLog['deletions'][$number];
                     unset($this->importLog['deletions'][$number]);
                 } else {
                     $model = new Model();

@@ -90,6 +90,13 @@ class Variant extends ModelEntity
     private $accepted = true;
 
     /**
+     * @var boolean $new
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $new = true;
+
+
+    /**
      * @var array $shopwareOptions
      *
      * This property will not be persisted. The array gets filled by
@@ -380,5 +387,21 @@ class Variant extends ModelEntity
             $image->removeVariant($this);
         }
         $this->images->clear();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isNew(): bool
+    {
+        return $this->new;
+    }
+
+    /**
+     * @param bool $new
+     */
+    public function setNew(bool $new): void
+    {
+        $this->new = $new;
     }
 }

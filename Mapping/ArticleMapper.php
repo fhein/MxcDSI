@@ -183,6 +183,11 @@ class ArticleMapper
             $icArticle = $variant->getArticle();
             /** @noinspection PhpUndefinedMethodInspection */
             $attribute->setMxcDsiBrand($icArticle->getBrand());
+            /** @noinspection PhpUndefinedMethodInspection */
+            $attribute->setMxcDsiSupplier($icArticle->getSupplier());
+            /** @noinspection PhpUndefinedMethodInspection */
+            $attribute->setMxcDsiFlavor($icArticle->getFlavor());
+
         } else {
             throw new Exception(__FUNCTION__ . ': Shopware article attribute model does not exist.');
         }
@@ -393,16 +398,23 @@ class ArticleMapper
 
     protected function setReferencePrice(Article $article, Detail $detail)
     {
+        // These products may need a reference price, unit is ml
         if (preg_match('~(Liquid)|(Aromen)|(Basen)|(Shake \& Vape)~', $article->getCategory()) !== 1) return;
         $matches = [];
         $name = $article->getName();
         preg_match('~(\d+(\.\d+)?) ml~', $name, $matches);
+        // If there's there are no ml in the product name we exit
         if (empty($matches)) return;
-        $this->log->debug(var_export($matches, true));
+        // remove thousands punctuation
         $volume = $matches[1];
         $volume = str_replace('.', '', $volume);
+
+        // calculate the reference volume
         $reference = $volume < 100 ? 100 : ($volume < 1000 ? 1000 : 0);
+        // Exit if we have no reference volume
         if ($reference === 0) return;
+
+        // set reference volume and unit
         $detail->setPurchaseUnit($volume);
         $detail->setReferenceUnit($reference);
         $unit = $this->getUnit('ml');

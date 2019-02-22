@@ -1,9 +1,9 @@
 Ext.define('Shopware.apps.MxcDsiArticle.view.list.extensions.Filter', {
     extend: 'Shopware.listing.FilterPanel',
-    alias:  'widget.mxc-dsi-article-listing-filter-panel',
+    alias: 'widget.mxc-dsi-article-listing-filter-panel',
     width: 270,
 
-    configure: function() {
+    configure: function () {
         return {
             controller: 'Article',
             model: 'Shopware.apps.MxcDsiArticle.model.Article',
@@ -27,7 +27,8 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.extensions.Filter', {
                     expression: 'LIKE',
                 },
                 active: { },
-                accepted: { }
+                accepted: { },
+                new: { },
             }
         };
     }

@@ -95,6 +95,8 @@ return [
             '~- (mit Ello)~'     => '$1',
             '~-(V8-)~'           => '- $1',
             '~(10er Packung)en~' => '$1',
+            '~-(Anniversary)~'   => '- $1',
+            '~(GS) -(Basal)~'    => '$1 $2',
         ],
     ],
 
@@ -138,6 +140,8 @@ return [
             '~- Twisted (Aroma) - (.*)(- \d+ ml)~'                       => '- $2 - $1 $3',
             '~(I VG - )(Aroma) (.*)(- \d+ ml)~'                          => '$1 $3 - $2 $4',
             '~(Bozz Liquids -) (Aroma)(.*)(- \d+ ml)~'                   => '$1 $3 - $2 $4',
+            '~(Vapors Line -) (Aroma)(.*)(- \d+ ml)~'                    => '$1 $3 - $2 $4',
+            '~(VapeHansa -) (Aroma)(.*) (\d+ ml)~'                       => '$1 $3 - $2 - $4',
             '~(Flavorist -) (Aroma)(.*)(- \d+ ml)~'                      => '$1 $3 - $2 $4',
             '~(VapeTastic -) (Aroma) - (.*)(- \d+ ml)~'                  => '$1 $3 - $2 $4',
             '~(Twisted -) (Cryostasis|Road Trip) (Aroma)(.*)(- \d+ ml)~' => '$1 $2 $4 - $3 $5',
@@ -195,6 +199,12 @@ return [
             '~(Star Spangled) Tabak~'                                    => '$1',
             '~(Sweetheart) Erdbeer~'                                     => '$1',
             '~(The Empire) Tabak Nuss~'                                  => '$1',
+            '~(It).*(Apple Pie)~'                                        => '$1\'s $2',
+            '~(King)s (Fool)~'                                           => '$1\'s $2',
+            '~(Nebelfee).?(s Milk)~'                                     => '$1\'$2',
+            '~(Father)s (Milk)~'                                         => '$1\'s $2',
+            '~(Smooth) Weston~'                                          => '$1 Western',
+            '~(Ice) (Frappe)~'                                           => '$1d $2',
             '~(Pipes Best) Tabak~'                                       => '$1',
             '~(Desert Safari) Tabak~'                                    => '$1',
             '~(Delicate Mild) Tabak~'                                    => '$1',
@@ -243,6 +253,7 @@ return [
             '~(Zelos) - 5~'                                              => '$1 - Akku - 5',
             '~(Typhon) (- \d+ Watt)~'                                    => '$1 - Akku $2',
             '~(Speeder) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
+            '~(Crown 4) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(SkyStar) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(Puxos) (- \d+ Watt)~'                                     => '$1 - Akkuträger $2',
             '~(Feedlink) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
@@ -371,7 +382,7 @@ return [
             '~(Batpack)~',
             '~(Atopack)~',
             '~(Cubis 2)~',
-            '~(eGo AIO)~',
+            '~((eGo AIO) (Mansion)?)~',
             '~(Espion (Infinite AI)|(Infinite)|(Silk)|(Solo))~',
             '~(eVic Primo Fit)~',
             '~(Exceed (Air)|(Box)|(D19)|(D22)|(Edge))~',
@@ -440,7 +451,7 @@ return [
 
         ],
         'Uwell'     => [
-            '~(Crown 3)~',
+            '~(Crown (3|4))~',
             '~(Fancier RTA)~',
             '~(Hypercar)~',
             '~(Ironfist)~',
@@ -488,7 +499,7 @@ return [
             '~(Sinuous(( P80)|( Ravage)|( SW))?)~',
             '~(Reux)~',
         ],
-        'ZQ' => [
+        'ZQ'        => [
             '~(Vi)~',
         ]
 
@@ -580,7 +591,7 @@ return [
                 '~(Werkzeug)|(pinzette)|(Heizplatte)~'               => 'Zubehör > Werkzeug',
                 '~(Mundstück)|(Drip Tip)|(Drip Cap)~'                => 'Zubehör > Mundstücke & Schutz',
                 '~(Glastank)|(Hollowed Out Tank)|(Tankschutz)~'      => 'Zubehör > Glastanks',
-                '~[Dd]ichtung~'                                      => 'Zubehör > Dichtungen',
+                '~([Dd]ichtung)|(O-Ring)~'                           => 'Zubehör > Dichtungen',
                 '~([Kk]abel)|([Ss]tecker)~'                          => 'Zubehör > Kabel & Stecker',
                 '~(Abdeckung)|(Vitrine)|(Vape Bands)~'               => 'Zubehör > Accessoires',
                 '~[Mm]agnet~'                                        => 'Zubehör > sonstiges',

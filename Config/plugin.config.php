@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs;
 
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Import\Credentials;
+use MxcDropshipInnocigs\Import\Flavorist;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\PropertyExtractor;
@@ -75,6 +76,18 @@ ArticleAttributeFilePersister::class => [
                         'custom'           => false
                     ],
                 ],
+                'mxc_dsi_flavor'          => [
+                    'type'     => 'string',
+                    'settings' => [
+                        'label'            => '',
+                        'supportText'      => '',
+                        'helpText'         => '',
+                        'translatable'     => false,
+                        'displayInBackend' => false,
+                        'position'         => 10200,
+                        'custom'           => false
+                    ],
+                ],
                 'dc_ic_ordernumber'      => [
                     'type' => 'string',
                 ],
@@ -108,6 +121,7 @@ ArticleAttributeFilePersister::class => [
             EntitiyValidator::class,
             FilterGroupRepository::class,
             FilterTest::class,
+            Flavorist::class,
             ImportClient::class,
             ImportMapper::class,
             MediaTool::class,

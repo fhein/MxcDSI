@@ -101,6 +101,19 @@ class Article extends ModelEntity  {
     private $accepted = true;
 
     /**
+     * @var boolean $new
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $new = true;
+
+    /**
+     * @var string $flavor
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $flavor;
+
+    /**
      * Article constructor.
      */
     public function __construct() {
@@ -322,5 +335,37 @@ class Article extends ModelEntity  {
     public function setManufacturer(?string $manufacturer)
     {
         $this->manufacturer = $manufacturer;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isNew(): bool
+    {
+        return $this->new;
+    }
+
+    /**
+     * @param bool $new
+     */
+    public function setNew(bool $new): void
+    {
+        $this->new = $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFlavor(): string
+    {
+        return $this->flavor;
+    }
+
+    /**
+     * @param string $flavor
+     */
+    public function setFlavor(string $flavor): void
+    {
+        $this->flavor = $flavor;
     }
 }

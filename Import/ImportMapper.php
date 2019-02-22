@@ -137,6 +137,11 @@ class ImportMapper implements EventSubscriber
         $article->setManual($model->getManual());
 
         $this->propertyMapper->mapModelToArticle($model, $article);
+        $this->log->info(sprintf(
+            'New article: %s - %s',
+            $article->getIcNumber(),
+            $article->getName()
+        ));
         return $article;
     }
 
@@ -174,6 +179,11 @@ class ImportMapper implements EventSubscriber
         /** @var  Model $model */
         foreach ($additions as $number => $model) {
             $article = $this->getArticle($model);
+
+            $flavor = $this->config['flavors'][$article->getIcNumber()]['flavor'];
+            if ($flavor !== null) {
+                $article->setFlavor(implode(', ', $flavor));
+            }
             $variant = new Variant();
             $this->modelManager->persist($variant);
             $this->variants[$model->getModel()] = $variant;
@@ -305,6 +315,8 @@ class ImportMapper implements EventSubscriber
 
     protected function initCache()
     {
+        $this->modelManager->createQuery('UPDATE '. Article::class . ' a set a.new = false')->execute();
+        $this->modelManager->createQuery('UPDATE '. Variant::class . ' a set a.new = false')->execute();
         $this->articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->groups = $this->modelManager->getRepository(Group::class)->getAllIndexed();
@@ -329,6 +341,8 @@ class ImportMapper implements EventSubscriber
 
     public function import(array $import)
     {
+//        $this->sortFlavorCategories();
+//        return true;
         $this->log->enter();
         $evm = $this->modelManager->getEventManager();
         $evm->addEventSubscriber($this);
@@ -347,6 +361,11 @@ class ImportMapper implements EventSubscriber
             }
         }
         $this->propertyMapper->report();
+
+        $flavorist = new Flavorist($this->modelManager, $this->log);
+        $flavorist->updateCategories();
+        $flavorist->updateFlavors();
+
         $this->log->leave();
         return true;
     }
