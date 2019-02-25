@@ -81,12 +81,19 @@ class Article extends ModelEntity  {
      * @ORM\Column(type="string", nullable=true)
      */
     private $brand;
+
     /**
      * @var ShopwareArticle
      * @ORM\OneToOne(targetEntity="Shopware\Models\Article\Article")
      * @ORM\JoinColumn(name="article_id", referencedColumnName="id", nullable=true)
      */
     private $article;
+
+    /**
+     * @var ArticleProperties
+     * @ORM\OneToOne(targetEntity="ArticleProperties")
+     */
+    private $properties;
 
     /**
      * @var boolean $active
@@ -142,6 +149,7 @@ class Article extends ModelEntity  {
     public function isActive() : bool {
         return $this->active;
     }
+
     /**
      * @return bool
      */
@@ -160,7 +168,6 @@ class Article extends ModelEntity  {
     {
         return $this->variants;
     }
-
     /**
      * @param Variant $variant
      */
@@ -169,11 +176,11 @@ class Article extends ModelEntity  {
         $variant->setArticle($this);
     }
 
-
     public function removeVariant(Variant $variant) {
         $this->variants->removeElement($variant);
         $variant->setArticle(null);
     }
+
 
     public function setVariants($variants) {
         $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\Variant', 'variants');
@@ -186,6 +193,7 @@ class Article extends ModelEntity  {
     {
         return $this->number;
     }
+
     /**
      * @param string $number
      */
@@ -193,7 +201,6 @@ class Article extends ModelEntity  {
     {
         $this->number = $number;
     }
-
     /**
      * @return string
      */
@@ -217,6 +224,7 @@ class Article extends ModelEntity  {
     {
         $this->accepted = $accepted;
     }
+
     /**
      * @return bool
      */
@@ -224,7 +232,6 @@ class Article extends ModelEntity  {
     {
         return $this->accepted;
     }
-
     /**
      * @return null|string
      */
@@ -367,5 +374,21 @@ class Article extends ModelEntity  {
     public function setFlavor(string $flavor): void
     {
         $this->flavor = $flavor;
+    }
+
+    /**
+     * @return ArticleProperties
+     */
+    public function getProperties() : ?ArticleProperties
+    {
+        return $this->properties;
+    }
+
+    /**
+     * @param ArticleProperties $properties
+     */
+    public function setProperties(ArticleProperties $properties): void
+    {
+        $this->properties = $properties;
     }
 }

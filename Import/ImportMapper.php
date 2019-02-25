@@ -30,6 +30,9 @@ class ImportMapper implements EventSubscriber
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
 
+    /** @var PropertyExtractor $propertyExtractor */
+    protected $propertyExtractor;
+
     /** @var BulkOperation $bulkOperation */
     protected $bulkOperation;
 
@@ -66,6 +69,7 @@ class ImportMapper implements EventSubscriber
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
+     * @param PropertyExtractor $propertyExtractor
      * @param BulkOperation $bulkOperation
      * @param Config $config
      * @param LoggerInterface $log
@@ -74,6 +78,7 @@ class ImportMapper implements EventSubscriber
         ModelManager $modelManager,
         ApiClient $apiClient,
         PropertyMapper $propertyMapper,
+        PropertyExtractor $propertyExtractor,
         BulkOperation $bulkOperation,
         Config $config,
         LoggerInterface $log
@@ -81,6 +86,7 @@ class ImportMapper implements EventSubscriber
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
+        $this->propertyExtractor = $propertyExtractor;
         $this->bulkOperation = $bulkOperation;
         $this->config = $config->toArray();
         $this->log = $log;
@@ -365,6 +371,8 @@ class ImportMapper implements EventSubscriber
         $flavorist = new Flavorist($this->modelManager, $this->log);
         $flavorist->updateCategories();
         $flavorist->updateFlavors();
+
+        $this->propertyExtractor->extract();
 
         $this->log->leave();
         return true;

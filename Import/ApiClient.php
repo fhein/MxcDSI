@@ -185,6 +185,7 @@ class ApiClient
 
     public function modelsToArray(string $xml): array
     {
+        $this->logXML($xml);
         $dom = new DOMDocument();
         $dom->loadXML($xml);
         $models = $dom->getElementsByTagName('PRODUCT');

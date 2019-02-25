@@ -16,6 +16,7 @@ use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\EntitiyValidator;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\ArticleProperties;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -49,6 +50,7 @@ ArticleAttributeFilePersister::class => [
             Option::class,
             Image::class,
             Model::class,
+            ArticleProperties::class,
         ],
         'attributes' => [
             's_articles_attributes' => [
@@ -136,6 +138,7 @@ ArticleAttributeFilePersister::class => [
         ImportClient::class   => include __DIR__ . '/importclient.config.php',
         PropertyMapper::class => include __DIR__ . '/propertymapper.config.php',
         ImportMapper::class   => include __DIR__ . '/importmapper.config.php',
+        PropertyExtractor::class => include __DIR__ . '/propertyextractor.config.php',
         ArticleMapper::class => [
             'root_category' => 'Deutsch > InnoCigs',
         ]

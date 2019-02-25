@@ -6,29 +6,17 @@ use Doctrine\ORM\Query;
 
 class ArticleRepository extends BaseEntityRepository
 {
-    /** @var Query $supplierBrandByManufacturerQuery */
-    protected $supplierBrandByManufacturerQuery;
-
-    /** @var Query $supplierBrandQuery */
-    protected $supplierBrandQuery;
-
     protected $dql = [
         'getAllIndexed'             => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
-
         'getAllIndexedByName'       => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.name',
-
         'getFlavoredIndexed'        => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber WHERE a.flavor IS NOT NULL',
-
         'getDist'                   => 'SELECT a.icNumber, a.name, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
                                         . 'INDEX BY a.icNumber WHERE a.manufacturer IN (:manufacturers)',
-
         'getAllSuppliersAndBrands'  => 'SELECT a.icNumber, a.name, a.brand, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
                                         . 'INDEX BY a.icNumber',
-
         'getSuppliersAndBrands'     => 'SELECT a.icNumber, a.name, a.brand, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
                                         . 'INDEX BY a.icNumber WHERE a.manufacturer IN (:manufacturers)',
-
-        'removeOrphaned' => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.variants is empty',
+        'removeOrphaned'            => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.variants is empty',
     ];
 
     public function getAllIndexed()

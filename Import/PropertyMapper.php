@@ -182,6 +182,8 @@ class PropertyMapper
         $name = $this->removeOptionsFromModelName($model);
         $trace['options_removed'] = $name;
 
+        if ($modelName === 'Americas Finest Tabak E-Zigaretten Liquid 0 mg/ml') xdebug_break();
+
         // general name mapping applied first
         $result = $this->config['article_names'][$model->getName()];
         if ($result !== null) {
@@ -189,10 +191,8 @@ class PropertyMapper
             $article->setName($result);
             return;
         }
-        if (strpos($name, 'VapeHansa') !== false) {
-            $this->log->debug('Before replace: ' . $name);
-        }
         $name = $this->replace($name, 'name_prepare');
+        if ($name === null) xdebug_break();
 
         // rule based name mapping applied next
         $name = $this->correctSupplierAndBrand($name, $article);
@@ -213,6 +213,7 @@ class PropertyMapper
             $name = preg_replace($search, '$1 -', $name);
             $trace['product_separator'] = $name;
         }
+        if ($name === null) xdebug_break();
 
         $name = $this->replace($name, 'name_cleanup');
 
@@ -345,7 +346,10 @@ class PropertyMapper
         $this->init();
         $models = $this->getModels();
         $articles = $this->getArticles();
-        if (! $models || ! $articles) return;
+        if (! $models || ! $articles) {
+            $this->log->debug(__FUNCTION__ . ': no models or no articles found.');
+            return;
+        }
 
         /** @var Article $article */
         foreach ($articles as $article) {
