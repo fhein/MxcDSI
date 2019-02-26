@@ -141,6 +141,7 @@ class ImportMapper implements EventSubscriber
         $article->setActive(false);
         $article->setAccepted(true);
         $article->setManual($model->getManual());
+        $article->setDescription($model->getDescription());
 
         $this->propertyMapper->mapModelToArticle($model, $article);
         $this->log->info(sprintf(
@@ -373,6 +374,7 @@ class ImportMapper implements EventSubscriber
         $flavorist->updateFlavors();
 
         $this->propertyExtractor->extract();
+        $this->propertyExtractor->export();
 
         $this->log->leave();
         return true;

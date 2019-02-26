@@ -56,14 +56,10 @@ class PropertyExtractor
 
     public function extractArticleProperties(Article $article)
     {
-        $properties = $article->getProperties() ?? new ArticleProperties();
-        $this->modelManager->persist($properties);
-        $article->setProperties($properties);
-        $properties->setIcNumber($article->getIcNumber());
-        $type = $this->extractType($article);
-        $properties->setType($type);
-        $properties->setName($article->getName());
-        $properties->setAssociatedProduct($this->extractAssociatedProduct($article));
+        $article->setType($this->extractType($article));
+        $article->setCommonName($this->extractCommonName($article));
+        $article->setPiecesPerPack($this->extractPiecesPerPack($article));
+        $article->setDosage($this->extractDosage($article));
     }
 
     protected function extractType(Article $article)
@@ -87,17 +83,50 @@ class PropertyExtractor
         return ArticleProperties::TYPE_UNKNOWN;
     }
 
-    protected function extractAssociatedProduct(Article $article)
+    protected function extractCommonName(Article $article)
+    {
+        $name = $article->getName();
+        $raw = explode(' - ', $name);
+        $index = $this->config['name_index'][$raw[0]][$raw[1]] ?? 1;
+        return $raw[$index] ?? $raw[0];
+    }
+
+    protected function extractPiecesPerPack(Article $article)
     {
         $name = $article->getName();
         $matches = [];
-
-        if (preg_match('~^(.* -) (.*) (- .*)~', $name, $matches) === 1) {
-            $this->log->debug('Product: ' . $name . ', extracted: ' . $matches[2]);
-            $this->log->debug('Matches: ' . var_export($matches, true));
-            return $matches[2];
+        $ppp = 1;
+        if (preg_match('~\((\d+) Stück~', $name, $matches) === 1) {
+            $ppp = $matches[1];
         };
-        return '';
+        return $ppp;
     }
 
+    protected function extractDosage(Article $article)
+    {
+        $supplier = $article->getSupplier();
+        $dosage = $this->config['recommended_dosage'][$supplier];
+        return $dosage;
+    }
+
+    public function export() {
+        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        $export = [];
+        /** @var  Article $article */
+        foreach($articles as $number => $article) {
+            $pg = $article->getPg();
+            if ($pg !== null) {
+                $vg = $article->getVg();
+                $export[$number]['base'] = [
+                    'vg' => $vg,
+                    'pg' => $pg,
+                ];
+            }
+            $dosage = $article->getDosage();
+            if ($dosage['min'] !== null) {
+                $export[$number]['dosage'] = $dosage;
+            }
+        }
+        (new ArrayReport())(['peProperties' => $export]);
+    }
 }

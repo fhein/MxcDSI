@@ -8,6 +8,7 @@ use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
 use RuntimeException;
 use Shopware\Components\Model\ModelManager;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
@@ -27,6 +28,9 @@ class PropertyMapper
     /** @var Flavorist $flavorist */
     protected $flavorist;
 
+    /** @var RegexChecker $regexChecker */
+    protected $regexChecker;
+
     protected $config;
 
     protected $report;
@@ -42,6 +46,13 @@ class PropertyMapper
         $this->init();
         $this->modelManager = $modelManager;
         $this->flavorist = $flavorist;
+        $this->regexChecker = new RegexChecker();
+
+        if ($this->config['settings']['checkRegularExpressions'] === true) {
+            if (!$this->checkRegularExpressions()) {
+                throw new RuntimeException('Regular expression failure.');
+            }
+        }
     }
 
     public function init()
@@ -84,12 +95,6 @@ class PropertyMapper
     {
         $number = $model->getMaster();
         $article->setNumber($this->config['article_codes'][$number] ?? $number);
-
-        if (! (
-            $this->checkRegularExpressions('name_cleanup')
-            && $this->checkRegularExpressions('name_prepare')
-            && $this->checkRegularExpressions('article_name_replacements')
-        )) throw new RuntimeException('Regular expression failure.');
 
         // do not change ordering of the next lines
         $this->mapManufacturer($article, $model->getManufacturer());    // sets supplier, brand and manufacturer
@@ -155,25 +160,6 @@ class PropertyMapper
         return $topic;
     }
 
-    public function checkRegularExpressions($what)
-    {
-        $config = $this->config[$what];
-        $result = true;
-        if (null === $config) return $result;
-        foreach ($config as $replacer => $replacements) {
-            if ($replacer !== 'preg_replace') continue;
-            $searches = array_keys($replacements);
-            foreach ($searches as $search) {
-                $result = preg_replace($search, '', 'test');
-                if ($result === null) {
-                    $this->log->debug($what . ': Error in regular expression: ' . $search . ' (' . $what . ')');
-                    $result = false;
-                }
-            }
-        }
-        return $result;
-    }
-
     public function mapArticleName(Model $model, Article $article): void
     {
         $modelName = $model->getName();
@@ -182,7 +168,6 @@ class PropertyMapper
         $name = $this->removeOptionsFromModelName($model);
         $trace['options_removed'] = $name;
 
-        if ($modelName === 'Americas Finest Tabak E-Zigaretten Liquid 0 mg/ml') xdebug_break();
 
         // general name mapping applied first
         $result = $this->config['article_names'][$model->getName()];
@@ -192,7 +177,6 @@ class PropertyMapper
             return;
         }
         $name = $this->replace($name, 'name_prepare');
-        if ($name === null) xdebug_break();
 
         // rule based name mapping applied next
         $name = $this->correctSupplierAndBrand($name, $article);
@@ -213,7 +197,6 @@ class PropertyMapper
             $name = preg_replace($search, '$1 -', $name);
             $trace['product_separator'] = $name;
         }
-        if ($name === null) xdebug_break();
 
         $name = $this->replace($name, 'name_cleanup');
 
@@ -251,9 +234,6 @@ class PropertyMapper
             $name = $this->applyOptionNameMapping($number, $name, $option);
 
         }
-//        if (substr($name, -2) === ' -') {
-//            $name = substr($name, 0, strlen($name) - 2);
-//        }
         return trim($name);
     }
 
@@ -438,4 +418,34 @@ class PropertyMapper
         ($this->reporter)($this->report, $this->config);
     }
 
+    public function checkRegularExpressions()
+    {
+        $errors = [];
+        foreach ($this->config['categories'] as $entry) {
+            $entries = $entry['preg_match'];
+            if (! is_array($entries)) continue;
+            if (false === $this->regexChecker->validate(array_keys($entry['preg_match']))) {
+                $errors = array_merge($errors, $this->regexChecker->getErrors());
+            }
+        }
+        foreach (['name_prepare', 'name_cleanup', 'article_name_replacements'] as $entry) {
+            $entries = $this->config[$entry]['preg_replace'];
+            if (! is_array($entries)) continue;
+            if (false === $this->regexChecker->validate(array_keys($entries))) {
+                $errors = array_merge($errors, $this->regexChecker->getErrors());
+            }
+        }
+        foreach ($this->config['product_names'] as $entry) {
+            if (! is_array($entry)) continue;
+            if (false === $this->regexChecker->validate($entry)) {
+                $errors = array_merge($errors, $this->regexChecker->getErrors());
+            }
+        }
+        $result = empty($errors);
+        if (false === $result) {
+            $this->log->debug('Errors in regular expressions.');
+            $this->log->debug(var_export($errors, true));
+        }
+        return $result;
+    }
 }

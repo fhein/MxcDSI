@@ -16,7 +16,6 @@ use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\EntitiyValidator;
 use MxcDropshipInnocigs\Models\Article;
-use MxcDropshipInnocigs\Models\ArticleProperties;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -38,9 +37,9 @@ return [
 //                'deactivate' => [],
 //            ],
 //        ],
-ArticleAttributeFilePersister::class => [
-    'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
-],
+        ArticleAttributeFilePersister::class => [
+            'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
+        ],
     ],
     'doctrine'       => [
         'models'     => [
@@ -50,7 +49,6 @@ ArticleAttributeFilePersister::class => [
             Option::class,
             Image::class,
             Model::class,
-            ArticleProperties::class,
         ],
         'attributes' => [
             's_articles_attributes' => [
