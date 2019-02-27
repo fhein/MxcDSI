@@ -7,7 +7,7 @@ use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\Flavorist;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
-use MxcDropshipInnocigs\Import\PropertyExtractor;
+use MxcDropshipInnocigs\Import\PropertyDerivator;
 use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as PropertyMapperReport;
 use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
@@ -128,16 +128,16 @@ return [
             PropertyMapper::class,
             PropertyMapperReport::class,
             ArrayReport::class,
-            PropertyExtractor::class,
+            PropertyDerivator::class,
         ],
     ],
 
     'class_config' => [
-        ImportClient::class   => include __DIR__ . '/importclient.config.php',
-        PropertyMapper::class => include __DIR__ . '/propertymapper.config.php',
-        ImportMapper::class   => include __DIR__ . '/importmapper.config.php',
-        PropertyExtractor::class => include __DIR__ . '/propertyextractor.config.php',
-        ArticleMapper::class => [
+        ImportClient::class      => include __DIR__ . '/importclient.config.php',
+        PropertyMapper::class    => include __DIR__ . '/propertymapper.config.php',
+        ImportMapper::class      => include __DIR__ . '/importmapper.config.php',
+        PropertyDerivator::class => include __DIR__ . '/propertyderivator.config.php',
+        ArticleMapper::class     => [
             'root_category' => 'Deutsch > InnoCigs',
         ]
     ],

@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class PropertyExtractorFactory implements FactoryInterface
+class PropertyDerivatorFactory implements FactoryInterface
 {
     use ClassConfigTrait;
     /**
@@ -22,6 +22,6 @@ class PropertyExtractorFactory implements FactoryInterface
         $config = $this->getClassConfig($container, $requestedName);
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        return new PropertyExtractor($modelManager, $config, $log);
+        return new PropertyDerivator($modelManager, $config, $log);
     }
 }

@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
 use Shopware\Models\Article\Configurator\Option as ShopwareOption;
+use Shopware\Models\Article\Detail as ShopwareDetail;
 
 /**
  * @ORM\Entity
@@ -24,6 +25,13 @@ class Variant extends ModelEntity
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="variants")
      */
     private $article;
+
+    /**
+     * @var ShopwareDetail
+     * @ORM\OneToOne(targetEntity="Shopware\Models\Article\Detail")
+     * @ORM\JoinColumn(name="detail_id", referencedColumnName="id", nullable=true)
+     */
+    private $detail;
 
     /**
      * @var string $number
@@ -403,5 +411,21 @@ class Variant extends ModelEntity
     public function setNew(bool $new): void
     {
         $this->new = $new;
+    }
+
+    /**
+     * @return ShopwareDetail
+     */
+    public function getDetail(): ?ShopwareDetail
+    {
+        return $this->detail;
+    }
+
+    /**
+     * @param ShopwareDetail $detail
+     */
+    public function setDetail(?ShopwareDetail $detail): void
+    {
+        $this->detail = $detail;
     }
 }

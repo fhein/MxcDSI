@@ -62,6 +62,55 @@ class PropertyMapper
         $this->articles = null;
     }
 
+    public function reapplyPropertyMapping()
+    {
+        $this->init();
+        $models = $this->getModels();
+        $articles = $this->getArticles();
+        if (! $models || ! $articles) {
+            $this->log->debug(__FUNCTION__ . ': no models or no articles found.');
+            return;
+        }
+
+        /** @var Article $article */
+        foreach ($articles as $article) {
+            $variants = $article->getVariants();
+            $first = true;
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                $model = $models[$variant->getIcNumber()];
+                if ($first) {
+                    $this->mapModelToArticle($model, $article);
+                    $first = false;
+
+                }
+                $this->mapModelToVariant($model, $variant);
+            }
+        }
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
+        $this->modelManager->clear();
+        $this->checkArticlePropertyMappingConsistency();
+        $this->report();
+    }
+
+    /**
+     * Set all properties of Article maintained by PropertyMapper
+     *
+     * @param Model $model
+     * @param Article $article
+     */
+    public function mapModelToArticle(Model $model, Article $article)
+    {
+        $number = $model->getMaster();
+        $article->setNumber($this->config['article_codes'][$number] ?? $number);
+
+        // do not change ordering of the next lines
+        $this->mapManufacturer($article, $model->getManufacturer());    // sets supplier, brand and manufacturer
+        $this->mapArticleName($model, $article);                        // uses brand, sets name
+        $this->mapCategory($model, $article);                           // uses supplier, brand and name, sets category
+    }
+
     /**
      * Set all properties of Variant maintained by PropertyMapper
      *
@@ -83,23 +132,6 @@ class PropertyMapper
     {
         $mapping = $this->config['option_names'][$name] ?? $name;
         return str_replace('weiss', 'weiß', $mapping);
-    }
-
-    /**
-     * Set all properties of Article maintained by PropertyMapper
-     *
-     * @param Model $model
-     * @param Article $article
-     */
-    public function mapModelToArticle(Model $model, Article $article)
-    {
-        $number = $model->getMaster();
-        $article->setNumber($this->config['article_codes'][$number] ?? $number);
-
-        // do not change ordering of the next lines
-        $this->mapManufacturer($article, $model->getManufacturer());    // sets supplier, brand and manufacturer
-        $this->mapArticleName($model, $article);                        // uses brand, sets name
-        $this->mapCategory($article, $model->getCategory());            // uses supplier, brand and name, sets category
     }
 
     public function mapManufacturer(Article $article, string $manufacturer): void
@@ -147,17 +179,6 @@ class PropertyMapper
             $name = str_replace($brand, $supplier, $name) . $append;
         }
         return $name;
-    }
-
-    protected function replace(string $topic, string $what) {
-        $config = $this->config[$what];
-        if (null === $config) return $topic;
-        foreach ($config as $replacer => $replacements) {
-            $search = array_keys($replacements);
-            $replace = array_values($replacements);
-            $topic = $replacer($search, $replace, $topic);
-        }
-        return $topic;
     }
 
     public function mapArticleName(Model $model, Article $article): void
@@ -210,7 +231,7 @@ class PropertyMapper
     {
         // Innocigs variant names include variant descriptions
         // We take the first variant's name and remove the variant descriptions
-        // in order to extract the real article name
+        // in order to derive the real article name
         $options = explode(MXC_DELIMITER_L2, $model->getOptions());
         $name = $model->getName();
 
@@ -268,7 +289,7 @@ class PropertyMapper
         return $name;
     }
 
-    public function mapCategory(Article $article, ?string $icCategory): void
+    public function mapCategory(Model $model, Article $article): void
     {
         $category = null;
         // article configuration has highest priority
@@ -281,7 +302,7 @@ class PropertyMapper
 //        }
         foreach ($this->config['categories'] as $key => $settings) {
             if ($key === 'category') {
-                $input = $icCategory;
+                $input = $model->getCategory();
             }
             /** @noinspection PhpUndefinedVariableInspection */
             if (null === $input) {
@@ -300,7 +321,7 @@ class PropertyMapper
                     }
                     if ($matcher($pattern, $input) === 1) {
                         $category = $this->addSubCategory($mappedCategory, $supplierTag);
-                        $category = preg_replace('~(Easy 3 Caps) > (.*)~', '$2 > $1', $category);
+                        $category = preg_replace('~(Easy 3( Caps)?) > (.*)~', '$3 > $1', $category);
                         break 3;
                     }
                 }
@@ -319,38 +340,6 @@ class PropertyMapper
             $name .= ' > ' . $subcategory;
         }
         return $name;
-    }
-
-    public function reapplyPropertyMapping()
-    {
-        $this->init();
-        $models = $this->getModels();
-        $articles = $this->getArticles();
-        if (! $models || ! $articles) {
-            $this->log->debug(__FUNCTION__ . ': no models or no articles found.');
-            return;
-        }
-
-        /** @var Article $article */
-        foreach ($articles as $article) {
-            $variants = $article->getVariants();
-            $first = true;
-            /** @var Variant $variant */
-            foreach ($variants as $variant) {
-                $model = $models[$variant->getIcNumber()];
-                if ($first) {
-                    $this->mapModelToArticle($model, $article);
-                    $first = false;
-
-                }
-                $this->mapModelToVariant($model, $variant);
-            }
-        }
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
-        $this->modelManager->clear();
-        $this->checkArticlePropertyMappingConsistency();
-        $this->report();
     }
 
     /**
@@ -402,22 +391,6 @@ class PropertyMapper
         $report($topics);
     }
 
-    protected function getArticles()
-    {
-        $this->articles = $this->articles ?? $this->modelManager->getRepository(Article::class)->getAllIndexed();
-        return $this->articles;
-    }
-
-    protected function getModels()
-    {
-        $this->models = $this->models ?? $this->modelManager->getRepository(Model::class)->getAllIndexed();
-        return $this->models;
-    }
-
-    public function report() {
-        ($this->reporter)($this->report, $this->config);
-    }
-
     public function checkRegularExpressions()
     {
         $errors = [];
@@ -447,5 +420,32 @@ class PropertyMapper
             $this->log->debug(var_export($errors, true));
         }
         return $result;
+    }
+
+    protected function replace(string $topic, string $what) {
+        $config = $this->config[$what];
+        if (null === $config) return $topic;
+        foreach ($config as $replacer => $replacements) {
+            $search = array_keys($replacements);
+            $replace = array_values($replacements);
+            $topic = $replacer($search, $replace, $topic);
+        }
+        return $topic;
+    }
+
+    protected function getArticles()
+    {
+        $this->articles = $this->articles ?? $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        return $this->articles;
+    }
+
+    protected function getModels()
+    {
+        $this->models = $this->models ?? $this->modelManager->getRepository(Model::class)->getAllIndexed();
+        return $this->models;
+    }
+
+    public function report() {
+        ($this->reporter)($this->report, $this->config);
     }
 }

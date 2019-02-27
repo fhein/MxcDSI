@@ -154,6 +154,11 @@ class Article extends ModelEntity  {
     private $active = false;
 
     /**
+     * @var boolean $activateSpareParts
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $activateSpareParts = false;
+    /**
      * @var boolean $accepted
      * @ORM\Column(type="boolean", nullable=false)
      */
@@ -171,78 +176,6 @@ class Article extends ModelEntity  {
      * @ORM\Column(type="string", nullable=true)
      */
     private $flavor;
-
-    const TYPE_E_CIGARETTE      = 0;
-    const TYPE_BOX_MOD          = 1;
-    const TYPE_E_PIPE           = 2;
-    const TYPE_CLEAROMIZER      = 3;
-    const TYPE_LIQUID           = 4;
-    const TYPE_AROMA            = 5;
-    const TYPE_SHAKE_VAPE       = 6;
-    const TYPE_HEAD             = 7;
-    const TYPE_TANK             = 8;
-    const TYPE_SEAL             = 9;
-    const TYPE_DRIP_TIP         = 10;
-    const TYPE_POD              = 11;
-    const TYPE_CARTRIDGE        = 12;
-    const TYPE_CELL             = 13;
-    const TYPE_CELL_BOX         = 14;
-    const TYPE_BASE             = 15;
-    const TYPE_CHARGER          = 16;
-    const TYPE_BAG              = 17;
-    const TYPE_TOOL             = 18;
-    const TYPE_WADDING          = 19; // Watte
-    const TYPE_WIRE             = 20;
-    const TYPE_BOTTLE           = 21;
-    const TYPE_SQUONKER_BOTTLE  = 22;
-    const TYPE_VAPORIZER        = 23;
-    const TYPE_SHOT             = 24;
-    const TYPE_CABLE            = 25;
-    const TYPE_BOX_MOD_CELL     = 26;
-    const TYPE_COIL             = 27;
-    const TYPE_RDA_BASE         = 28;
-    const TYPE_MAGNET           = 29;
-    const TYPE_MAGNET_ADAPTER   = 30;
-    const TYPE_ACCESSORY        = 31;
-    const TYPE_BATTERY_CAP      = 32;
-    const TYPE_UNKNOWN          = 33;
-
-    protected $types = [
-        self::TYPE_E_CIGARETTE      => 'E_CIGARETTE',
-        self::TYPE_BOX_MOD          => 'BOX_MOD',
-        self::TYPE_E_PIPE           => 'E_PIPE',
-        self::TYPE_CLEAROMIZER      => 'CLEAROMIZER',
-        self::TYPE_LIQUID           => 'LIQUID',
-        self::TYPE_AROMA            => 'AROMA',
-        self::TYPE_SHAKE_VAPE       => 'SHAKE_VAPE',
-        self::TYPE_HEAD             => 'HEAD',
-        self::TYPE_TANK             => 'TANK',
-        self::TYPE_SEAL             => 'SEAL',
-        self::TYPE_DRIP_TIP         => 'DRIP_TIP',
-        self::TYPE_POD              => 'POD',
-        self::TYPE_CARTRIDGE        => 'CARTRIDGE',
-        self::TYPE_CELL             => 'CELL',
-        self::TYPE_CELL_BOX         => 'CELL_BOX',
-        self::TYPE_BASE             => 'BASE',
-        self::TYPE_CHARGER          => 'CHARGER',
-        self::TYPE_BAG              => 'BAG',
-        self::TYPE_TOOL             => 'TOOL',
-        self::TYPE_WADDING          => 'WADDING', // Watte
-        self::TYPE_WIRE             => 'WIRE',
-        self::TYPE_BOTTLE           => 'BOTTLE',
-        self::TYPE_SQUONKER_BOTTLE  => 'SQUONKER_BOTTLE',
-        self::TYPE_VAPORIZER        => 'VAPORIZER',
-        self::TYPE_SHOT             => 'SHOT',
-        self::TYPE_CABLE            => 'CABLE',
-        self::TYPE_BOX_MOD_CELL     => 'BOX_MOD_CELL',
-        self::TYPE_COIL             => 'COIL',
-        self::TYPE_RDA_BASE         => 'RDA_BASE',
-        self::TYPE_MAGNET           => 'MAGNET',
-        self::TYPE_MAGNET_ADAPTER   => 'MAGNET_ADAPTER',
-        self::TYPE_ACCESSORY        => 'ACCESSORY',
-        self::TYPE_BATTERY_CAP      => 'BATTERY_CAP',
-        self::TYPE_UNKNOWN          => 'UNKNOWN',
-    ];
 
     /**
      * Article constructor.
@@ -487,7 +420,7 @@ class Article extends ModelEntity  {
     /**
      * @return string
      */
-    public function getFlavor(): string
+    public function getFlavor(): ?string
     {
         return $this->flavor;
     }
@@ -495,7 +428,7 @@ class Article extends ModelEntity  {
     /**
      * @param string $flavor
      */
-    public function setFlavor(string $flavor): void
+    public function setFlavor(?string $flavor): void
     {
         $this->flavor = $flavor;
     }
@@ -510,9 +443,9 @@ class Article extends ModelEntity  {
         $this->spareParts->add($sparePart);
     }
 
-    public function setSpareParts(Collection $spareParts)
+    public function setSpareParts(?Collection $spareParts)
     {
-        $this->spareParts = $spareParts;
+        $this->spareParts = $spareParts ?? new ArrayCollection();
     }
 
     public function removeSparePart(Article $sparePart)
@@ -549,7 +482,6 @@ class Article extends ModelEntity  {
      */
     public function setType($type): void
     {
-        if (is_int($type)) $type = $this->types[$type];
         $this->type = $type;
     }
 
@@ -646,5 +578,21 @@ class Article extends ModelEntity  {
     public function setVg(?int $vg): void
     {
         $this->vg = $vg;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActivateSpareParts(): bool
+    {
+        return $this->activateSpareParts;
+    }
+
+    /**
+     * @param bool $activateSpareParts
+     */
+    public function setActivateSpareParts(bool $activateSpareParts): void
+    {
+        $this->activateSpareParts = $activateSpareParts;
     }
 }

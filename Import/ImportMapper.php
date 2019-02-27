@@ -30,7 +30,7 @@ class ImportMapper implements EventSubscriber
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
 
-    /** @var PropertyExtractor $propertyExtractor */
+    /** @var PropertyDerivator $propertyExtractor */
     protected $propertyExtractor;
 
     /** @var BulkOperation $bulkOperation */
@@ -69,7 +69,7 @@ class ImportMapper implements EventSubscriber
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
-     * @param PropertyExtractor $propertyExtractor
+     * @param PropertyDerivator $propertyExtractor
      * @param BulkOperation $bulkOperation
      * @param Config $config
      * @param LoggerInterface $log
@@ -78,7 +78,7 @@ class ImportMapper implements EventSubscriber
         ModelManager $modelManager,
         ApiClient $apiClient,
         PropertyMapper $propertyMapper,
-        PropertyExtractor $propertyExtractor,
+        PropertyDerivator $propertyExtractor,
         BulkOperation $bulkOperation,
         Config $config,
         LoggerInterface $log
@@ -268,7 +268,7 @@ class ImportMapper implements EventSubscriber
             $oldValue = $values['oldValue'];
             switch ($name) {
                 case 'category':
-                    $this->propertyMapper->mapCategory($variant->getArticle(), $newValue);
+                    $this->propertyMapper->mapCategory($model, $variant->getArticle());
                     break;
                 case 'ean':
                     $variant->setEan($newValue);
@@ -373,7 +373,7 @@ class ImportMapper implements EventSubscriber
         $flavorist->updateCategories();
         $flavorist->updateFlavors();
 
-        $this->propertyExtractor->extract();
+        $this->propertyExtractor->derive();
         $this->propertyExtractor->export();
 
         $this->log->leave();

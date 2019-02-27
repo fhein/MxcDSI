@@ -3,7 +3,6 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Criteria;
 use Exception;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ImportMapper;
@@ -83,26 +82,27 @@ class ArticleMapper
     public function createShopwareArticle(Article $article) {
         $this->log->enter();
         // do nothing if either the article or all of its variants are set to get not accepted
+        //
         if (! $this->validator->validateArticle($article)) {
             return false;
         }
 
-        $swArticle = $this->getShopwareArticle($article) ?? new ShopwareArticle();
+        $swArticle = $article->getArticle() ?? new ShopwareArticle();
         $this->modelManager->persist($swArticle);
-
-        $name = $article->getName();
 
         $article->setArticle($swArticle);
 
-        $tax = $this->getTax();
-        $supplier = $this->getSupplier($article);
-        $swArticle->setName($name);
-        $swArticle->setTax($tax);
-        $swArticle->setSupplier($supplier);
-        $swArticle->setMetaTitle('');
-        $swArticle->setKeywords('');
-        $swArticle->setDescription($article->getDescription());
+        $swArticle->setName($article->getName());
+        $swArticle->setTax($this->getTax());
+        $swArticle->setSupplier($this->getSupplier($article));
         $swArticle->setDescriptionLong($article->getDescription());
+
+        // @todo: Set Shortdescription (SEO)
+        //$swArticle->setDescription($article->getDescription());
+        // @todo: Set Keywords (SEO)
+        $swArticle->setKeywords('');
+        $seoTitle = 'Vapee.de: ' . preg_replace('~\(\d+ Stück pro Packung\)~','',$article->getName());
+        $swArticle->setMetaTitle($seoTitle);
 
         $swArticle->setActive(true);
 
@@ -116,14 +116,7 @@ class ArticleMapper
         $isMainDetail = true;
         foreach($variants as $variant){
             if (! $variant->isAccepted()) continue;
-            /**
-             * @var Detail $swDetail
-             */
-            $number = $variant->getNumber();
-            $swDetail = $this->modelManager->getRepository(Detail::class)->findOneBy([ 'number' => $number])
-                ?? $this->createShopwareDetail($variant, $swArticle, $isMainDetail);
-
-            $this->modelManager->persist($swDetail);
+            $swDetail = $variant->getDetail() ?? $this->createShopwareDetail($variant, $swArticle, $isMainDetail);
 
             if($isMainDetail){
                 $swArticle->setMainDetail($swDetail);
@@ -135,40 +128,15 @@ class ArticleMapper
         return true;
     }
 
-    /**
-     * Gets the Shopware Article by looking for the Shopware detail of the first variant for the supplied $article.
-     * If it exists, we assume that the article and all other variants exist as well
-     *
-     * @param Article $article
-     * @return null|ShopwareArticle
-     */
-    protected function getShopwareArticle(Article $article){
-        $swArticle = null;
-        $variants = $article->getVariants();
-        $numbers = [];
-        foreach ($variants as $variant) {
-            $numbers[] = $variant->getNumber();
-        }
-        $expr = Criteria::expr();
-        /**
-         * @var Criteria $criteria
-         */
-        $criteria = Criteria::create()->where($expr->in('number', $numbers));
-        $swDetails = $this->modelManager->getRepository(Detail::class)->matching($criteria);
-
-        if (! $swDetails->isEmpty()){
-            $swArticle = $swDetails->offsetGet(0)->getArticle();
-        }
-        return $swArticle;
-    }
-
     protected function createShopwareDetail(Variant $variant, ShopwareArticle $swArticle, bool $isMainDetail){
         $this->log->info(sprintf('%s: Creating detail record for InnoCigs variant %s',
             __FUNCTION__,
-            $variant->getNumber()
+            $variant->getIcNumber()
         ));
 
         $detail = new Detail();
+        $this->modelManager->persist($detail);
+        $variant->setDetail($detail);
 
         // The class \Shopware\Models\Attribute\Article ist part of the Shopware attribute system.
         // It gets (re)generated automatically by Shopware core, when attributes are added/removed
@@ -336,7 +304,7 @@ class ArticleMapper
      * @return null|object|Supplier
      */
     protected function getSupplier(Article $article) {
-        $supplierName = $article->getSupplier() ?? 'InnoCigs';
+        $supplierName = $article->getSupplier() ?? 'unknown';
         $supplier = $this->modelManager->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
         if (! $supplier) {
             $this->log->info(sprintf('%s: Creating Shopware supplier "%s"',
