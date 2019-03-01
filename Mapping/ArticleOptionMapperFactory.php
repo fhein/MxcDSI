@@ -3,9 +3,9 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
-use MxcDropshipInnocigs\Toolbox\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ArticleOptionMapperFactory implements FactoryInterface

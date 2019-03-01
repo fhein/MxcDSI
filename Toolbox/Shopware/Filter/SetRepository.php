@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Filter;
+namespace MxcDropshipInnocigs\Toolbox\Shopware\Filter;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use Shopware\Components\Model\ModelManager;

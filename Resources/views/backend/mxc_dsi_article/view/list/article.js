@@ -9,15 +9,16 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         return {
             detailWindow: 'Shopware.apps.MxcDsiArticle.view.detail.Window',
             columns: {
-                new:        { header: 'new', width: 40, flex: 0 },
-                active:     { header: 'active', width: 40, flex: 0 },
-                number:     { header: 'Number'},
-                manufacturer: { header: 'Manufacturer' },
-                supplier:   { header: 'Supplier'},
-                brand:      { header: 'Brand'},
-                category:   { header: 'Category'},
-                name:       { header: 'Name', flex: 3 },
-                accepted:   { header: 'accept', width:45, flex: 0}
+                new:                        { header: 'new', width: 40, flex: 0 },
+                active:                     { header: 'active', width: 40, flex: 0 },
+                activateRelatedArticles:    { header: 'related', width: 40, flex: 0 },
+                number:                     { header: 'Number'},
+                manufacturer:               { header: 'Manufacturer' },
+                supplier:                   { header: 'Supplier'},
+                brand:                      { header: 'Brand'},
+                category:                   { header: 'Category'},
+                name:                       { header: 'Name', flex: 3 },
+                accepted:                   { header: 'accept', width:45, flex: 0}
             },
             addButton: false,
             deleteButton: false,
@@ -173,7 +174,14 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                     } else if (e.column.text === 'accept') {
                         return e.record.get('active') === false;
                     }
-                    return (e.column.text === 'Brand' || e.column.text === 'Supplier' || e.column.text === 'Category' || e.column.text === 'Name');
+                    return (
+                        e.column.text === 'Brand'
+                        || e.column.text === 'Supplier'
+                        || e.column.text === 'Category'
+                        || e.column.text === 'Name'
+                        || e.column.text === 'new'
+                        || e.column.text === 'related'
+                    );
                 },
                 edit: function(editor, e) {
                     // the 'edit' event gets fired even if the new value equals the old value

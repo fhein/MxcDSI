@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Configurator;
+namespace MxcDropshipInnocigs\Toolbox\Shopware\Configurator;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class SetRepositoryFactory implements FactoryInterface
+class GroupRepositoryFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -19,8 +19,6 @@ class SetRepositoryFactory implements FactoryInterface
     {
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        return new SetRepository($modelManager, $log);
+        return new GroupRepository($modelManager, $log);
     }
 }
-
-

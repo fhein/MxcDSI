@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Mapping;
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use MxcDropshipInnocigs\Import\ImportMapper;
-use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 

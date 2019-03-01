@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Configurator;
+namespace MxcDropshipInnocigs\Toolbox\Shopware\Configurator;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
@@ -183,7 +183,7 @@ class GroupRepository
 
     public function sortOptions(string $group, int $sortFlags = SORT_NATURAL)
     {
-        $groups = [ $this->modelManager->getRepository(Group::class)->findOneBy(['name' => $group]) ];
+        $groups = $this->modelManager->getRepository(Group::class)->findBy(['name' => $group]);
         $this->sortGroupOptions($groups, $sortFlags);
     }
 

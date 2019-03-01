@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Media;
+namespace MxcDropshipInnocigs\Toolbox\Shopware\Configurator;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class MediaToolFactory implements FactoryInterface
+class SetRepositoryFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -18,9 +18,9 @@ class MediaToolFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get('logger');
-        $authService = $container->get('authService');
         $modelManager = $container->get('modelManager');
-        $mediaManager = $container->get('mediaManager');
-        return new MediaTool($modelManager, $mediaManager, $authService, $log);
+        return new SetRepository($modelManager, $log);
     }
 }
+
+

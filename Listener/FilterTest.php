@@ -4,7 +4,7 @@ namespace MxcDropshipInnocigs\Listener;
 
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository;
 use Zend\Config\Config;
 use Zend\EventManager\EventInterface;
 

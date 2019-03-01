@@ -68,9 +68,9 @@ return array(
     ),
     'SC10000ISTICKNETZ' => array(
         'icNumber' => 'SC10000ISTICKNETZ',
-        'name' => 'eLeaf - iStick -Netzstecker - by SC',
+        'name' => 'eLeaf - iStick - Netzstecker - by SC',
         'supplier' => 'eLeaf',
-        'category' => 'Zubehör > Kabel & Stecker > eLeaf',
+        'category' => 'Zubehör > Ladegeräte > eLeaf',
     ),
     'SC10000MUND' => array(
         'icNumber' => 'SC10000MUND',
@@ -88,13 +88,13 @@ return array(
         'icNumber' => 'IC10000EGOEGOCASE',
         'name' => 'InnoCigs - Tasche für E-Zigaretten',
         'supplier' => 'InnoCigs',
-        'category' => 'E-Zigaretten > InnoCigs',
+        'category' => 'Zubehör > Taschen > InnoCigs',
     ),
     'IC10000XLCASE' => array(
         'icNumber' => 'IC10000XLCASE',
         'name' => 'InnoCigs - Tasche X -L für E-Zigaretten schwarz',
         'supplier' => 'InnoCigs',
-        'category' => 'E-Zigaretten > InnoCigs',
+        'category' => 'Zubehör > Taschen > InnoCigs',
     ),
     'SC10000L10-PF' => array(
         'icNumber' => 'SC10000L10-PF',
@@ -148,13 +148,13 @@ return array(
         'icNumber' => 'IC10000NZNETZ',
         'name' => 'InnoCigs - Netzstecker',
         'supplier' => 'InnoCigs',
-        'category' => 'Zubehör > Kabel & Stecker > InnoCigs',
+        'category' => 'Zubehör > Ladegeräte > InnoCigs',
     ),
     'IC10000USB' => array(
         'icNumber' => 'IC10000USB',
         'name' => 'InnoCigs - Micro USB-Ladekabel',
         'supplier' => 'InnoCigs',
-        'category' => 'Zubehör > Kabel & Stecker > InnoCigs',
+        'category' => 'Zubehör > Ladegeräte > InnoCigs',
     ),
     'SC10000GSAIRMUND' => array(
         'icNumber' => 'SC10000GSAIRMUND',
@@ -266,9 +266,9 @@ return array(
     ),
     'IC10000CASE' => array(
         'icNumber' => 'IC10000CASE',
-        'name' => 'InnoCigs - Tasche V2 für E-Zigaretten',
+        'name' => 'InnoCigs - Tasche V2 M für E-Zigaretten',
         'supplier' => 'InnoCigs',
-        'category' => 'E-Zigaretten > InnoCigs',
+        'category' => 'Zubehör > Taschen > InnoCigs',
     ),
     'SC10000AST' => array(
         'icNumber' => 'SC10000AST',
@@ -278,13 +278,13 @@ return array(
     ),
     'SC10000AV18' => array(
         'icNumber' => 'SC10000AV18',
-        'name' => 'SC - 18650 - Akkuzelle - 2.000 mAh',
+        'name' => 'SC - Akkuzelle - 18650, 2.000 mAh',
         'supplier' => 'InnoCigs',
         'category' => 'Zubehör > Akkuzellen & Zubehör > InnoCigs',
     ),
     'SC10000AV26' => array(
         'icNumber' => 'SC10000AV26',
-        'name' => 'SC - 26650 - Akkuzelle - 4.200 mAh',
+        'name' => 'SC - Akkuzelle - 26650, 4.200 mAh',
         'supplier' => 'InnoCigs',
         'category' => 'Zubehör > Akkuzellen & Zubehör > InnoCigs',
     ),
@@ -516,12 +516,6 @@ return array(
         'supplier' => 'InnoCigs',
         'category' => 'Liquids > InnoCigs',
     ),
-    'IC10000MGS' => array(
-        'icNumber' => 'IC10000MGS',
-        'name' => 'Joyetech - MGS SS316L Head - 0,15 Ohm (5 Stück pro Packung) - by InnoCigs',
-        'supplier' => 'Joyetech',
-        'category' => 'Zubehör > Verdampferköpfe > Joyetech',
-    ),
     'IC10000TA' => array(
         'icNumber' => 'IC10000TA',
         'name' => 'Tasche mit Schulterriemen',
@@ -606,12 +600,6 @@ return array(
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Verdampferköpfe > eLeaf',
     ),
-    'IC100UX2C' => array(
-        'icNumber' => 'IC100UX2C',
-        'name' => 'Joyetech - Unimax 22 - Clearomizer (Set) - by InnoCigs',
-        'supplier' => 'Joyetech',
-        'category' => 'Verdampfer > Joyetech',
-    ),
     'IC100KTV8' => array(
         'icNumber' => 'IC100KTV8',
         'name' => 'Keramik Multifunktionspinzette Tweezer V8 schwarz',
@@ -662,31 +650,31 @@ return array(
     ),
     'IC100PRH' => array(
         'icNumber' => 'IC100PRH',
-        'name' => 'Joyetech - Presence - Head - 1,6 Ohm (5 Stück pro Packung) - by InnoCigs',
+        'name' => 'Joyetech - Presence Head - 1,6 Ohm (5 Stück pro Packung) - by InnoCigs',
         'supplier' => 'Joyetech',
         'category' => 'Zubehör > Verdampferköpfe > Joyetech',
     ),
     'SC100ECML' => array(
         'icNumber' => 'SC100ECML',
-        'name' => 'eLeaf - ECML - Head - 0,75 Ohm (5 Stück pro Packung) - by SC',
+        'name' => 'eLeaf - ECML Head - 0,75 Ohm (5 Stück pro Packung) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Verdampferköpfe > eLeaf',
     ),
     'SC100ECH' => array(
         'icNumber' => 'SC100ECH',
-        'name' => 'eLeaf - EC Ceramic - Head - 0,5 Ohm (5 Stück pro Packung) - by SC',
+        'name' => 'eLeaf - EC Ceramic Head - 0,5 Ohm (5 Stück pro Packung) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Verdampferköpfe > eLeaf',
     ),
     'SC100ECL' => array(
         'icNumber' => 'SC100ECL',
-        'name' => 'eLeaf - ECL SS316 - Head - 0,3 Ohm (5 Stück pro Packung) - by SC',
+        'name' => 'eLeaf - ECL SS316 Head - 0,3 Ohm (5 Stück pro Packung) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Verdampferköpfe > eLeaf',
     ),
     'SM100T12' => array(
         'icNumber' => 'SM100T12',
-        'name' => 'SMOK - TFV12 -Clearomizer (Set) - by Steamax',
+        'name' => 'SMOK - TFV12 - Clearomizer (Set) - by Steamax',
         'supplier' => 'Smoktech',
         'category' => 'Verdampfer > Smoktech',
     ),
@@ -752,7 +740,7 @@ return array(
     ),
     'IC100PGC' => array(
         'icNumber' => 'IC100PGC',
-        'name' => 'Joyetech - Atopack - Penguin Cartridge, 8,8 ml - by InnoCigs',
+        'name' => 'Joyetech - Atopack - Penguin Cartridge - by InnoCigs',
         'supplier' => 'Joyetech',
         'category' => 'Pods & Cartridges > Joyetech',
     ),
@@ -908,13 +896,13 @@ return array(
     ),
     'SC100E' => array(
         'icNumber' => 'SC100E',
-        'name' => 'eLeaf - Ello -Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - Ello - Clearomizer (Set) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Verdampfer > eLeaf',
     ),
     'SC100EG' => array(
         'icNumber' => 'SC100EG',
-        'name' => 'eLeaf - Ello -Glastank, 4 ml - by SC',
+        'name' => 'eLeaf - Ello - Glastank - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Glastanks > eLeaf',
     ),
@@ -989,12 +977,6 @@ return array(
         'name' => 'Wismec - Gnome - Clearomizer (Set) - by Steamax',
         'supplier' => 'Wismec',
         'category' => 'Verdampfer > Wismec',
-    ),
-    'SM100G3' => array(
-        'icNumber' => 'SM100G3',
-        'name' => '- Reuleaux - RX - Gen3 - E-Zigarette - (Set) - by - Steamax',
-        'supplier' => 'Wismec',
-        'category' => 'E-Zigaretten',
     ),
     'SM100G3M' => array(
         'icNumber' => 'SM100G3M',
@@ -1152,12 +1134,6 @@ return array(
         'supplier' => 'Smoktech',
         'category' => 'Zubehör > Dichtungen > Smoktech',
     ),
-    'SM100FJC' => array(
-        'icNumber' => 'SM100FJC',
-        'name' => 'Wismec - Divider - Clearomizer (Set) - by Steamax',
-        'supplier' => 'Wismec',
-        'category' => 'Verdampfer > Wismec',
-    ),
     'IC100ED' => array(
         'icNumber' => 'IC100ED',
         'name' => 'Joyetech - Exceed D22 - Clearomizer (Set) - by InnoCigs',
@@ -1166,7 +1142,7 @@ return array(
     ),
     'IC100EXH' => array(
         'icNumber' => 'IC100EXH',
-        'name' => 'Joyetech - EX - Head (5 Stück pro Packung) - by InnoCigs',
+        'name' => 'Joyetech - EX Head (5 Stück pro Packung) - by InnoCigs',
         'supplier' => 'Joyetech',
         'category' => 'Zubehör > Verdampferköpfe > Joyetech',
     ),
@@ -1184,7 +1160,7 @@ return array(
     ),
     'SC10000AV21' => array(
         'icNumber' => 'SC10000AV21',
-        'name' => 'SC - 21700 - Akkuzelle - 4.000 mAh',
+        'name' => 'SC - Akkuzelle - 21700, 4.000 mAh',
         'supplier' => 'InnoCigs',
         'category' => 'Zubehör > Akkuzellen & Zubehör > InnoCigs',
     ),
@@ -1202,13 +1178,13 @@ return array(
     ),
     'SC100GT' => array(
         'icNumber' => 'SC100GT',
-        'name' => 'eLeaf - GS -Turbo Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Turbo - Clearomizer (Set) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Verdampfer > eLeaf',
     ),
     'SC100GTG' => array(
         'icNumber' => 'SC100GTG',
-        'name' => 'eLeaf - GS -Turbo Glastank - by SC',
+        'name' => 'eLeaf - GS Turbo - Glastank - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Glastanks > eLeaf',
     ),
@@ -1292,19 +1268,19 @@ return array(
     ),
     'SC100BLC' => array(
         'icNumber' => 'SC100BLC',
-        'name' => 'eLeaf - GS -Basal - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Basal - Clearomizer (Set) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Verdampfer > eLeaf',
     ),
     'SC100BLG' => array(
         'icNumber' => 'SC100BLG',
-        'name' => 'eLeaf - GS -Basal - Glastank - by SC',
+        'name' => 'eLeaf - GS Basal - Glastank - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Glastanks > eLeaf',
     ),
     'SC100BLM' => array(
         'icNumber' => 'SC100BLM',
-        'name' => 'eLeaf - GS -Basal - Mundstück (5 Stück pro Packung) - by SC',
+        'name' => 'eLeaf - GS Basal - Mundstück (5 Stück pro Packung) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Mundstücke & Schutz > eLeaf',
     ),
@@ -1332,12 +1308,6 @@ return array(
         'supplier' => 'eLeaf',
         'category' => 'E-Zigaretten > eLeaf',
     ),
-    'IC100PXG' => array(
-        'icNumber' => 'IC100PXG',
-        'name' => 'Joyetech - ProCore X - Glastank - by InnoCigs',
-        'supplier' => 'Joyetech',
-        'category' => 'Zubehör > Glastanks > Joyetech',
-    ),
     'SC100P21' => array(
         'icNumber' => 'SC100P21',
         'name' => 'eLeaf - iStick Pico 21700 mit Ello - E-Zigarette (Set) - by SC',
@@ -1352,7 +1322,7 @@ return array(
     ),
     'SC100HWC' => array(
         'icNumber' => 'SC100HWC',
-        'name' => 'eLeaf - HW1-C - Head - 0,25 Ohm (5 Stück pro Packung) - by SC',
+        'name' => 'eLeaf - HW1-C Head - 0,25 Ohm (5 Stück pro Packung) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Verdampferköpfe > eLeaf',
     ),
@@ -1386,18 +1356,6 @@ return array(
         'supplier' => 'Smoktech',
         'category' => 'E-Zigaretten > Smoktech',
     ),
-    'SM100MBM' => array(
-        'icNumber' => 'SM100MBM',
-        'name' => 'SMOK - Mag Baby - Akku - 50 Watt - by Steamax',
-        'supplier' => 'Smoktech',
-        'category' => 'Akkus > Smoktech',
-    ),
-    'SM100BT' => array(
-        'icNumber' => 'SM100BT',
-        'name' => 'SMOK - TFV8 Baby - T12 Duodecuple Head - 0,15 Ohm (5 Stück pro Packung) - by Steamax',
-        'supplier' => 'Smoktech',
-        'category' => 'Zubehör > Verdampferköpfe > Smoktech',
-    ),
     'SM100PB' => array(
         'icNumber' => 'SM100PB',
         'name' => 'SMOK - TFV12 Baby Prince - Clearomizer (Set) - by Steamax',
@@ -1416,15 +1374,9 @@ return array(
         'supplier' => 'Smoktech',
         'category' => 'Zubehör > Mundstücke & Schutz > Smoktech',
     ),
-    'SM100CM' => array(
-        'icNumber' => 'SM100CM',
-        'name' => 'SMOK - Cobra Mundstücke (2 Stück pro Packung) - by Steamax',
-        'supplier' => 'Smoktech',
-        'category' => 'Zubehör > Mundstücke & Schutz > Smoktech',
-    ),
     'IC100AB' => array(
         'icNumber' => 'IC100AB',
-        'name' => 'InnoCigs - 21700 - Akkubox',
+        'name' => 'InnoCigs - Akkubox - 21700',
         'supplier' => 'InnoCigs',
         'category' => 'Zubehör > Akkuzellen & Zubehör > InnoCigs',
     ),
@@ -1628,13 +1580,13 @@ return array(
     ),
     'SC100HWN' => array(
         'icNumber' => 'SC100HWN',
-        'name' => 'eLeaf - HW-N - Head - 0,2 Ohm (5 Stück pro Packung) - by SC',
+        'name' => 'eLeaf - HW-N Head - 0,2 Ohm (5 Stück pro Packung) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Verdampferköpfe > eLeaf',
     ),
     'SC100HWM' => array(
         'icNumber' => 'SC100HWM',
-        'name' => 'eLeaf - HW-M - Head - 0,15 Ohm (5 Stück pro Packung) - by SC',
+        'name' => 'eLeaf - HW-M Head - 0,15 Ohm (5 Stück pro Packung) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Verdampferköpfe > eLeaf',
     ),
@@ -1708,19 +1660,13 @@ return array(
         'icNumber' => 'SC100E3U',
         'name' => 'SC - Easy 3 - USB-Ladekabel',
         'supplier' => 'InnoCigs',
-        'category' => 'Zubehör > Kabel & Stecker > SC',
+        'category' => 'Zubehör > SC > Easy 3',
     ),
     'SM100V8B' => array(
         'icNumber' => 'SM100V8B',
         'name' => 'SMOK - TFV8 Baby - Strip Head - 0,15 Ohm (5 Stück pro Packung) - by Steamax',
         'supplier' => 'Smoktech',
         'category' => 'Zubehör > Verdampferköpfe > Smoktech',
-    ),
-    'SM100XB' => array(
-        'icNumber' => 'SM100XB',
-        'name' => 'SMOK - X-Priv Baby E-Zigarette (Set) - by Steamax',
-        'supplier' => 'Smoktech',
-        'category' => 'E-Zigaretten > Smoktech',
     ),
     'SM100XBA' => array(
         'icNumber' => 'SM100XBA',
@@ -1800,12 +1746,6 @@ return array(
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Dichtungen > eLeaf',
     ),
-    'SM100AP' => array(
-        'icNumber' => 'SM100AP',
-        'name' => 'Wismec - Amor NS Pro - Clearomizer (Set) - by Steamax',
-        'supplier' => 'Wismec',
-        'category' => 'Verdampfer > Wismec',
-    ),
     'SM100CB8M' => array(
         'icNumber' => 'SM100CB8M',
         'name' => 'Wismec - CB-80 - Akkuträger - 80 Watt - by Steamax',
@@ -1817,6 +1757,12 @@ return array(
         'name' => 'Wismec - WS04 Head - 1,3 Ohm (5 Stück pro Packung) - by Steamax',
         'supplier' => 'Wismec',
         'category' => 'Zubehör > Verdampferköpfe > Wismec',
+    ),
+    'SM100APG' => array(
+        'icNumber' => 'SM100APG',
+        'name' => 'Wismec - Amor NS Pro - Glastank - by Steamax',
+        'supplier' => 'Wismec',
+        'category' => 'Zubehör > Glastanks > Wismec',
     ),
     'SM100GBM' => array(
         'icNumber' => 'SM100GBM',
@@ -2190,6 +2136,12 @@ return array(
         'supplier' => 'InnoCigs',
         'category' => 'Shake & Vape > InnoCigs',
     ),
+    'IC100EAM' => array(
+        'icNumber' => 'IC100EAM',
+        'name' => 'Joyetech - eGo AIO Mansion - E-Zigarette (Set) - by InnoCigs',
+        'supplier' => 'Joyetech',
+        'category' => 'E-Zigaretten > Joyetech',
+    ),
     'IC100PCR' => array(
         'icNumber' => 'IC100PCR',
         'name' => 'Joyetech - ProCore Remix - Clearomizer (Set) - by InnoCigs',
@@ -2210,7 +2162,7 @@ return array(
     ),
     'SC100GDC' => array(
         'icNumber' => 'SC100GDC',
-        'name' => 'eLeaf - GS -Drive Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Drive - Clearomizer (Set) - by SC',
         'supplier' => 'eLeaf',
         'category' => 'Verdampfer > eLeaf',
     ),
@@ -2220,9 +2172,15 @@ return array(
         'supplier' => 'eLeaf',
         'category' => 'Zubehör > Verdampferköpfe > eLeaf',
     ),
+    'IC100UTM' => array(
+        'icNumber' => 'IC100UTM',
+        'name' => 'Joyetech - Ultex T80 - Akkuträger - 80 Watt - by InnoCigs',
+        'supplier' => 'Joyetech',
+        'category' => 'Akkuträger > Joyetech',
+    ),
     'SONYVTC5A' => array(
         'icNumber' => 'SONYVTC5A',
-        'name' => 'Murata / Sony - Konion US18650VTC5A - Akkuzelle - 2.600 mAh',
+        'name' => 'Murata / Sony - Konion US18650 VTC5A - Akkuzelle - 2.600 mAh',
         'brand' => 'Sony',
         'supplier' => 'Murata / Sony',
         'category' => 'Zubehör > Akkuzellen & Zubehör > Murata / Sony',
@@ -2341,14 +2299,14 @@ return array(
     ),
     'ZQ10018' => array(
         'icNumber' => 'ZQ10018',
-        'name' => 'ZestQuest - 18650 - Akkuzelle - 3.000 mAh (2 Stück pro Packung)',
+        'name' => 'ZestQuest - Akkuzelle - 18650, 3.000 mAh (2 Stück pro Packung)',
         'brand' => 'ZestQuest',
         'supplier' => 'ZestQuest',
         'category' => 'Zubehör > Akkuzellen & Zubehör > ZestQuest',
     ),
     'ZQ10021' => array(
         'icNumber' => 'ZQ10021',
-        'name' => 'ZestQuest - 21700 - Akkuzelle - 4.000 mAh',
+        'name' => 'ZestQuest - Akkuzelle - 21700, 4.000 mAh',
         'brand' => 'ZestQuest',
         'supplier' => 'ZestQuest',
         'category' => 'Zubehör > Akkuzellen & Zubehör > ZestQuest',

@@ -28,8 +28,6 @@ class Variant extends ModelEntity
 
     /**
      * @var ShopwareDetail
-     * @ORM\OneToOne(targetEntity="Shopware\Models\Article\Detail")
-     * @ORM\JoinColumn(name="detail_id", referencedColumnName="id", nullable=true)
      */
     private $detail;
 
@@ -413,10 +411,7 @@ class Variant extends ModelEntity
         $this->new = $new;
     }
 
-    /**
-     * @return ShopwareDetail
-     */
-    public function getDetail(): ?ShopwareDetail
+    public function getDetail()
     {
         return $this->detail;
     }
@@ -428,4 +423,5 @@ class Variant extends ModelEntity
     {
         $this->detail = $detail;
     }
+
 }

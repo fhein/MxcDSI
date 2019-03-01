@@ -1697,6 +1697,31 @@ return array(
             2 => 'Nektarine',
         ),
     ),
+    'MF100A10-DM' => array(
+        'number' => 'MF100A10-DM',
+        'name' => 'Mule Fuel - Aroma Django Mango - 10 ml',
+        'flavor' => array(),
+    ),
+    'MF100A10-MC' => array(
+        'number' => 'MF100A10-MC',
+        'name' => 'Mule Fuel - Aroma Mint Cake - 15 ml',
+        'flavor' => array(),
+    ),
+    'MF100A10-MM' => array(
+        'number' => 'MF100A10-MM',
+        'name' => 'Mule Fuel - Aroma Massive Melons - 10 ml',
+        'flavor' => array(),
+    ),
+    'MF100A10-TL' => array(
+        'number' => 'MF100A10-TL',
+        'name' => 'Mule Fuel - Aroma Tai Chi Lychee - 10 ml',
+        'flavor' => array(),
+    ),
+    'MF100A10-WR' => array(
+        'number' => 'MF100A10-WR',
+        'name' => 'Mule Fuel - Aroma White Rabbit - 15 ml',
+        'flavor' => array(),
+    ),
     'MR100L10-LE' => array(
         'number' => 'MR100L10-LE',
         'name' => 'Miami Drippers - Lemon E11even - Liquid - 10 ml',
@@ -4447,237 +4472,411 @@ return array(
     'VH100A10-CA' => array(
         'number' => 'VH100A10-CA',
         'name' => 'VapeHansa - Crank Shock Iced Apple - Aroma - 10 ml',
-        'flavor' => ['grüner Apfel', 'Karamell', 'Koolada'],
+        'flavor' => array(
+            0 => 'grüner Apfel',
+            1 => 'Karamell',
+            2 => 'Koolada',
+        ),
     ),
     'VH100A10-CB' => array(
         'number' => 'VH100A10-CB',
         'name' => 'VapeHansa - Crank Shock Iced Blueberry - Aroma - 10 ml',
-        'flavor' => ['Blaubeere','Himbeere', 'Koolada'],
+        'flavor' => array(
+            0 => 'Blaubeere',
+            1 => 'Himbeere',
+            2 => 'Koolada',
+        ),
     ),
     'VH100A10-CI' => array(
         'number' => 'VH100A10-CI',
         'name' => 'VapeHansa - Crank Shock Iced Melon - Aroma - 10 ml',
-        'flavor' => ['Melone','Pfirsich','Koolada'],
+        'flavor' => array(
+            0 => 'Melone',
+            1 => 'Pfirsich',
+            2 => 'Koolada',
+        ),
     ),
     'VH100A10-CM' => array(
         'number' => 'VH100A10-CM',
         'name' => 'VapeHansa - Crank Shock Iced Mango - Aroma - 10 ml',
-        'flavor' => ['Mango','Litschi','Mirabelle','Maracuja','Zitrone'],
+        'flavor' => array(
+            0 => 'Mango',
+            1 => 'Litschi',
+            2 => 'Mirabelle',
+            3 => 'Maracuja',
+            4 => 'Zitrone',
+        ),
     ),
     'VH100A10-CP' => array(
         'number' => 'VH100A10-CP',
         'name' => 'VapeHansa - Crank Shock Iced Pear - Aroma - 10 ml',
-        'flavor' => ['Birne','Haselnuss','Koolada'],
+        'flavor' => array(
+            0 => 'Birne',
+            1 => 'Haselnuss',
+            2 => 'Koolada',
+        ),
     ),
     'VH100A10-CR' => array(
         'number' => 'VH100A10-CR',
         'name' => 'VapeHansa - Crank Shock Iced Berry - Aroma - 10 ml',
-        'flavor' => ['rote Beeren','Koolada'],
+        'flavor' => array(
+            0 => 'rote Beeren',
+            1 => 'Koolada',
+        ),
     ),
     'VH100A10-FB' => array(
         'number' => 'VH100A10-FB',
         'name' => 'VapeHansa - Fruit Blender Black Bowl - Aroma - 20 ml',
-        'flavor' => ['Blaubeere','Erdbeere','Himbeere','schwarze Johannisbeere'],
+        'flavor' => array(
+            0 => 'Blaubeere',
+            1 => 'Erdbeere',
+            2 => 'Himbeere',
+            3 => 'schwarze Johannisbeere',
+        ),
     ),
     'VH100A10-FD' => array(
         'number' => 'VH100A10-FD',
         'name' => 'VapeHansa - Fruit Blender Dragon Dumb - Aroma - 20 ml',
-        'flavor' => ['Erdbeere','Mirabelle','Karamell'],
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Mirabelle',
+            2 => 'Karamell',
+        ),
     ),
     'VH100A10-FH' => array(
         'number' => 'VH100A10-FH',
         'name' => 'VapeHansa - Fruit Blender Purple Hell - Aroma - 20 ml',
-        'flavor' => ['Blaubeere','Granatapfel','Himbeere','Zuckerwatte'],
+        'flavor' => array(
+            0 => 'Blaubeere',
+            1 => 'Granatapfel',
+            2 => 'Himbeere',
+            3 => 'Zuckerwatte',
+        ),
     ),
     'VH100A10-FJ' => array(
         'number' => 'VH100A10-FJ',
         'name' => 'VapeHansa - Fruit Blender Jungle Food - Aroma - 20 ml',
-        'flavor' => ['Mango','Kiwi','Pfirsich'],
+        'flavor' => array(
+            0 => 'Mango',
+            1 => 'Kiwi',
+            2 => 'Pfirsich',
+        ),
     ),
     'VH100A10-FN' => array(
         'number' => 'VH100A10-FN',
         'name' => 'VapeHansa - Fruit Blender Strango Sorbet - Aroma - 20 ml',
-        'flavor' => ['Erdbeere','Mango'],
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Mango',
+        ),
     ),
     'VH100A10-FP' => array(
         'number' => 'VH100A10-FP',
         'name' => 'VapeHansa - Fruit Blender Sucker Punch - Aroma - 20 ml',
-        'flavor' => ['Erdbeere','Pfirsich','Apfel'],
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Pfirsich',
+            2 => 'Apfel',
+        ),
     ),
     'VH100A10-FS' => array(
         'number' => 'VH100A10-FS',
         'name' => 'VapeHansa - Fruit Blender Soul Trip - Aroma - 20 ml',
-        'flavor' => ['Erdbeere','Litschi','Blaubeere'],
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Litschi',
+            2 => 'Blaubeere',
+        ),
     ),
     'VH100A10-FT' => array(
         'number' => 'VH100A10-FT',
         'name' => 'VapeHansa - Fruit Blender Stingberry Tango - Aroma - 20 ml',
-        'flavor' => ['Stachelbeere','Waldmeister','Boysenbeere','Kiwi'],
+        'flavor' => array(
+            0 => 'Stachelbeere',
+            1 => 'Waldmeister',
+            2 => 'Boysenbeere',
+            3 => 'Kiwi',
+        ),
     ),
     'VH100A10-HE' => array(
         'number' => 'VH100A10-HE',
         'name' => 'VapeHansa - Haftbefehl! VH-1201 Eistee Litschi Limette - Aroma - 10 ml',
-        'flavor' => ['Eistee','Litschi','Limette','Koolada'],
+        'flavor' => array(
+            0 => 'Eistee',
+            1 => 'Litschi',
+            2 => 'Limette',
+            3 => 'Koolada',
+        ),
     ),
     'VH100A10-HP' => array(
         'number' => 'VH100A10-HP',
         'name' => 'VapeHansa - Haftbefehl! VH-1202 Pistazien-Vanille-Creme - Aroma - 10 ml',
-        'flavor' => ['Pistazie','Vanille','Cream'],
+        'flavor' => array(
+            0 => 'Pistazie',
+            1 => 'Vanille',
+            2 => 'Cream',
+        ),
     ),
     'VH100A10-HU' => array(
         'number' => 'VH100A10-HU',
         'name' => 'VapeHansa - Haftbefehl! VH-1203 Ultimative TacTic - Aroma - 10 ml',
-        'flavor' => ['Zitrusfrüchte'],
+        'flavor' => array(
+            0 => 'Zitrusfrüchte',
+        ),
     ),
     'VH100A10-PA' => array(
         'number' => 'VH100A10-PA',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition Golden Age - Aroma - 20 ml',
-        'flavor' => ['Karamell','Toffee','Sahne'],
+        'flavor' => array(
+            0 => 'Karamell',
+            1 => 'Toffee',
+            2 => 'Sahne',
+        ),
     ),
     'VH100A10-PB' => array(
         'number' => 'VH100A10-PB',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition Bienenstich - Aroma - 20 ml',
-        'flavor' => ['Bienenstich'],
+        'flavor' => array(
+            0 => 'Bienenstich',
+        ),
     ),
     'VH100A10-PC' => array(
         'number' => 'VH100A10-PC',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition Cocoanas - Aroma - 20 ml',
-        'flavor' => ['Ananas','Kokos','Milch','Sahne'],
+        'flavor' => array(
+            0 => 'Ananas',
+            1 => 'Kokos',
+            2 => 'Milch',
+            3 => 'Sahne',
+        ),
     ),
     'VH100A10-PF' => array(
         'number' => 'VH100A10-PF',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition ClouD Tea Fresh - Aroma - 20 ml',
-        'flavor' => ['Eistee','Koolada','Beeren','Guave'],
+        'flavor' => array(
+            0 => 'Eistee',
+            1 => 'Koolada',
+            2 => 'Beeren',
+            3 => 'Guave',
+        ),
     ),
     'VH100A10-PM' => array(
         'number' => 'VH100A10-PM',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition Mandarin Cake - Aroma - 20 ml',
-        'flavor' => ['Kuchen','Butter','Mandarine','Schmand'],
+        'flavor' => array(
+            0 => 'Kuchen',
+            1 => 'Butter',
+            2 => 'Mandarine',
+            3 => 'Schmand',
+        ),
     ),
     'VH100A10-PR' => array(
         'number' => 'VH100A10-PR',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition Bratapfel - Aroma - 20 ml',
-        'flavor' => ['Bratapfel','Milch','Vanille','Aprikose'],
+        'flavor' => array(
+            0 => 'Bratapfel',
+            1 => 'Milch',
+            2 => 'Vanille',
+            3 => 'Aprikose',
+        ),
     ),
     'VH100A10-PT' => array(
         'number' => 'VH100A10-PT',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition Tropy Fruit - Aroma - 20 ml',
-        'flavor' => ['Gummibärchen','Früchte'],
+        'flavor' => array(
+            0 => 'Gummibärchen',
+            1 => 'Früchte',
+        ),
     ),
     'VH100A10-PW' => array(
         'number' => 'VH100A10-PW',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition Woodruffin’ Milk - Aroma - 20 ml',
-        'flavor' => ['Pistazie','Waldmeister','Milch'],
+        'flavor' => array(
+            0 => 'Pistazie',
+            1 => 'Waldmeister',
+            2 => 'Milch',
+        ),
     ),
     'VH100A10-PZ' => array(
         'number' => 'VH100A10-PZ',
         'name' => 'VapeHansa - ClouDrippin’ Psychedelic Edition ClouD Tailz - Aroma - 20 ml',
-        'flavor' => ['Zitrone','Curaçao','Ingwer'],
+        'flavor' => array(
+            0 => 'Zitrone',
+            1 => 'Curaçao',
+            2 => 'Ingwer',
+        ),
     ),
     'VH100A10-SB' => array(
         'number' => 'VH100A10-SB',
         'name' => 'VapeHansa - Splash! BLUE - Aroma - 20 ml',
-        'flavor' => ['Blaubeere','Himbeere','Koolada','Cream','Vanille'],
+        'flavor' => array(
+            0 => 'Blaubeere',
+            1 => 'Himbeere',
+            2 => 'Koolada',
+            3 => 'Cream',
+            4 => 'Vanille',
+        ),
     ),
     'VH100A10-SF' => array(
         'number' => 'VH100A10-SF',
         'name' => 'VapeHansa - Specials Flaumensaft - Aroma - 20 ml',
-        'flavor' => ['Sahne','Erdbeere','Milch','Vanille'],
+        'flavor' => array(
+            0 => 'Sahne',
+            1 => 'Erdbeere',
+            2 => 'Milch',
+            3 => 'Vanille',
+        ),
     ),
     'VH100A10-SG' => array(
         'number' => 'VH100A10-SG',
         'name' => 'VapeHansa - Splash! GREEN - Aroma - 20 ml',
-        'flavor' => ['Gurke','Wassermelone','Pfirsich','Koolada'],
+        'flavor' => array(
+            0 => 'Gurke',
+            1 => 'Wassermelone',
+            2 => 'Pfirsich',
+            3 => 'Koolada',
+        ),
     ),
     'VH100A10-SO' => array(
         'number' => 'VH100A10-SO',
         'name' => 'VapeHansa - Splash! ORANGE - Aroma - 20 ml',
-        'flavor' => ['Orange','Zitrone','Mandarine','Koolada'],
+        'flavor' => array(
+            0 => 'Orange',
+            1 => 'Zitrone',
+            2 => 'Mandarine',
+            3 => 'Koolada',
+        ),
     ),
     'VH100A10-SR' => array(
         'number' => 'VH100A10-SR',
         'name' => 'VapeHansa - Splash! RED - Aroma - 20 ml',
-        'flavor' => ['Erdbeere','Kiwi','Wassermelone'],
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Kiwi',
+            2 => 'Wassermelone',
+        ),
     ),
     'VH100A10-SY' => array(
         'number' => 'VH100A10-SY',
         'name' => 'VapeHansa - Splash! YELLOW - Aroma - 20 ml',
-        'flavor' => ['Zitrone','Mirabelle'],
+        'flavor' => array(
+            0 => 'Zitrone',
+            1 => 'Mirabelle',
+        ),
     ),
     'VL100A10-BO' => array(
         'number' => 'VL100A10-BO',
         'name' => 'Vapors Line - Aroma Blood Orange Royal - 10 ml',
-        'flavor' => ['Blutorange','Zitrusfrüchte'],
+        'flavor' => array(
+            0 => 'Blutorange',
+            1 => 'Zitrusfrüchte',
+        ),
     ),
     'VL100A10-CC' => array(
         'number' => 'VL100A10-CC',
         'name' => 'Vapors Line - Aroma Crispy Cream Citrus Vanilla - 10 ml',
-        'flavor' => ['Sahne','Torte','Vanille','Zitrusfrüchte'],
+        'flavor' => array(
+            0 => 'Sahne',
+            1 => 'Torte',
+            2 => 'Vanille',
+            3 => 'Zitrusfrüchte',
+        ),
     ),
     'VL100A10-CO' => array(
         'number' => 'VL100A10-CO',
         'name' => 'Vapors Line - Aroma Cola - 10 ml',
-        'flavor' => ['Cola'],
+        'flavor' => array(
+            0 => 'Cola',
+        ),
     ),
     'VL100A10-EY' => array(
         'number' => 'VL100A10-EY',
         'name' => 'Vapors Line - Aroma Energy - 10 ml',
-        'flavor' => ['Energy Drink'],
+        'flavor' => array(
+            0 => 'Energy Drink',
+        ),
     ),
     'VL100A10-FB' => array(
         'number' => 'VL100A10-FB',
         'name' => 'Vapors Line - Aroma Forrest Berrys Mix - 10 ml',
-        'flavor' => ['Waldbeeren'],
+        'flavor' => array(
+            0 => 'Waldbeeren',
+        ),
     ),
     'VL100A10-JG' => array(
         'number' => 'VL100A10-JG',
         'name' => 'Vapors Line - Aroma Joghurt - 10 ml',
-        'flavor' => ['Joghurt'],
+        'flavor' => array(
+            0 => 'Joghurt',
+        ),
     ),
     'VL100A10-LS' => array(
         'number' => 'VL100A10-LS',
         'name' => 'Vapors Line - Aroma Lime Sweet Sour - 10 ml',
-        'flavor' => ['Limette','Zitrone'],
+        'flavor' => array(
+            0 => 'Limette',
+            1 => 'Zitrone',
+        ),
     ),
     'VL100A10-MB' => array(
         'number' => 'VL100A10-MB',
         'name' => 'Vapors Line - Aroma Maximus Blend - 10 ml',
-        'flavor' => ['Tabak'],
+        'flavor' => array(
+            0 => 'Tabak',
+        ),
     ),
     'VL100A10-MM' => array(
         'number' => 'VL100A10-MM',
         'name' => 'Vapors Line - Aroma Menthol Mint Xtra - 10 ml',
-        'flavor' => ['Menthol','Pfefferminze'],
+        'flavor' => array(
+            0 => 'Menthol',
+            1 => 'Pfefferminze',
+        ),
     ),
     'VL100A10-NY' => array(
         'number' => 'VL100A10-NY',
         'name' => 'Vapors Line - Aroma Cheesecake New York - 10 ml',
-        'flavor' => ['Käsekuchen'],
+        'flavor' => array(
+            0 => 'Käsekuchen',
+        ),
     ),
     'VL100A10-PB' => array(
         'number' => 'VL100A10-PB',
         'name' => 'Vapors Line - Aroma Power Bar - 10 ml',
-        'flavor' => ['Schokolade','Milch','Haselnuss','rote Beeren'],
+        'flavor' => array(
+            0 => 'Schokolade',
+            1 => 'Milch',
+            2 => 'Haselnuss',
+            3 => 'rote Beeren',
+        ),
     ),
     'VL100A10-RD' => array(
         'number' => 'VL100A10-RD',
         'name' => 'Vapors Line - Aroma Red Apple Premium - 10 ml',
-        'flavor' => ['roter Apfel'],
+        'flavor' => array(
+            0 => 'roter Apfel',
+        ),
     ),
     'VL100A10-SJ' => array(
         'number' => 'VL100A10-SJ',
         'name' => 'Vapors Line - Aroma Strawberry Juicey Plus - 10 ml',
-        'flavor' => ['Erdbeere'],
+        'flavor' => array(
+            0 => 'Erdbeere',
+        ),
     ),
     'VL100A10-SM' => array(
         'number' => 'VL100A10-SM',
         'name' => 'Vapors Line - Aroma Sweet Melon - 10 ml',
-        'flavor' => ['Honigmelone'],
+        'flavor' => array(
+            0 => 'Honigmelone',
+        ),
     ),
     'VL100A10-WM' => array(
         'number' => 'VL100A10-WM',
         'name' => 'Vapors Line - Aroma Watermelon - 10 ml',
-        'flavor' => ['Wassermelone'],
+        'flavor' => array(
+            0 => 'Wassermelone',
+        ),
     ),
     'VL100L10-BB' => array(
         'number' => 'VL100L10-BB',
@@ -4795,7 +4994,7 @@ return array(
             0 => 'Früchte',
             1 => 'Keks',
             2 => 'Vanille',
-            3 => 'Eiscreme'
+            3 => 'Eiscreme',
         ),
     ),
     'VL100L10-SV' => array(
@@ -4992,7 +5191,12 @@ return array(
     'VV100A10-CH' => array(
         'number' => 'VV100A10-CH',
         'name' => 'Vampire Vape - Charger - Aroma - 30 ml',
-        'flavor' => ['Früchte','Zitrusfrüchte','Anis','Menthol'],
+        'flavor' => array(
+            0 => 'Früchte',
+            1 => 'Zitrusfrüchte',
+            2 => 'Anis',
+            3 => 'Menthol',
+        ),
     ),
     'VV100A10-CL' => array(
         'number' => 'VV100A10-CL',
@@ -5005,12 +5209,20 @@ return array(
     'VV100A10-CP' => array(
         'number' => 'VV100A10-CP',
         'name' => 'Vampire Vape - Catapult - Aroma - 30 ml',
-        'flavor' => ['Sommerfrüchte','schwarze Johannisbeere','Koolada'],
+        'flavor' => array(
+            0 => 'Sommerfrüchte',
+            1 => 'schwarze Johannisbeere',
+            2 => 'Koolada',
+        ),
     ),
     'VV100A10-CR' => array(
         'number' => 'VV100A10-CR',
         'name' => 'Vampire Vape - Crushed Candy - Aroma - 30 ml',
-        'flavor' => ['Erdbeere','Wassermelone','Kaugummi'],
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Wassermelone',
+            2 => 'Kaugummi',
+        ),
     ),
     'VV100A10-CS' => array(
         'number' => 'VV100A10-CS',
@@ -5299,7 +5511,10 @@ return array(
     'VV100A10-RM' => array(
         'number' => 'VV100A10-RM',
         'name' => 'Vampire Vape - Rhubarb Crumble - Aroma - 30 ml',
-        'flavor' => ['Rhabarber','Crumble'],
+        'flavor' => array(
+            0 => 'Rhabarber',
+            1 => 'Crumble',
+        ),
     ),
     'VV100A10-RS' => array(
         'number' => 'VV100A10-RS',
@@ -5414,7 +5629,10 @@ return array(
     'VV100A10-VO' => array(
         'number' => 'VV100A10-VO',
         'name' => 'Vampire Vape - Vanilla Tobacco - Aroma - 30 ml',
-        'flavor' => ['Tabak','Vanille'],
+        'flavor' => array(
+            0 => 'Tabak',
+            1 => 'Vanille',
+        ),
     ),
     'VV100A10-VT' => array(
         'number' => 'VV100A10-VT',

@@ -3,12 +3,12 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Exception;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Detail;
@@ -56,6 +56,8 @@ class ArticleMapper
      */
     protected $validator;
 
+    protected $articleTool;
+
     protected $shopwareGroups = [];
     protected $shopwareGroupRepository = null;
     protected $shopwareGroupLookup = [];
@@ -77,63 +79,111 @@ class ArticleMapper
         $this->validator = $validator;
         $this->config = $config;
         $this->log = $log;
+        $this->articleTool = new ArticleTool();
     }
 
-    public function createShopwareArticle(Article $article) {
-        $this->log->enter();
+    public function createShopwareArticle(Article $icArticle) : ?ShopwareArticle
+    {
         // do nothing if either the article or all of its variants are set to get not accepted
         //
-        if (! $this->validator->validateArticle($article)) {
-            return false;
+        if (! $this->validator->validateArticle($icArticle)) {
+            return null;
         }
 
-        $swArticle = $article->getArticle() ?? new ShopwareArticle();
+        $swArticle = $this->getShopwareArticle($icArticle) ?? new ShopwareArticle();
         $this->modelManager->persist($swArticle);
 
-        $article->setArticle($swArticle);
+        $icArticle->setArticle($swArticle);
 
-        $swArticle->setName($article->getName());
+        $swArticle->setName($icArticle->getName());
         $swArticle->setTax($this->getTax());
-        $swArticle->setSupplier($this->getSupplier($article));
-        $swArticle->setDescriptionLong($article->getDescription());
+        $swArticle->setSupplier($this->getSupplier($icArticle));
+        $swArticle->setDescriptionLong($icArticle->getDescription());
 
         // @todo: Set Shortdescription (SEO)
-        //$swArticle->setDescription($article->getDescription());
+        $swArticle->setDescription('');
         // @todo: Set Keywords (SEO)
         $swArticle->setKeywords('');
-        $seoTitle = 'Vapee.de: ' . preg_replace('~\(\d+ Stück pro Packung\)~','',$article->getName());
-        $swArticle->setMetaTitle($seoTitle);
+
+        $metaTitle = 'Vapee.de: ' . preg_replace('~\(\d+ Stück pro Packung\)~','',$icArticle->getName());
+        $swArticle->setMetaTitle($metaTitle);
 
         $swArticle->setActive(true);
 
-        $set = $this->optionMapper->createConfiguratorSet($article);
+        $set = $this->optionMapper->createConfiguratorSet($icArticle);
         $swArticle->setConfiguratorSet($set);
-        $this->addCategories($article, $swArticle);
+        $this->addCategories($icArticle, $swArticle);
 
         //create details from innocigs variants
-        $variants = $article->getVariants();
+        $variants = $icArticle->getVariants();
 
         $isMainDetail = true;
         foreach($variants as $variant){
             if (! $variant->isAccepted()) continue;
-            $swDetail = $variant->getDetail() ?? $this->createShopwareDetail($variant, $swArticle, $isMainDetail);
+            $swDetail = $this->getShopwareDetail($variant) ?? $this->createShopwareDetail($variant, $swArticle, $isMainDetail);
 
             if($isMainDetail){
                 $swArticle->setMainDetail($swDetail);
                 $isMainDetail = false;
             }
         }
+
+        $this->setRelatedArticles($icArticle, $swArticle);
+
         $this->modelManager->flush();
-        $this->log->leave();
-        return true;
+        return $swArticle;
+    }
+
+    /**
+     * Variants hold a reference to the associated shopware Detail.
+     * Shopware Detail records may have been removed by other modules.
+     *
+     * @param Variant $variant
+     * @return Detail|null
+     */
+    protected function getShopwareDetail(Variant $variant) {
+        $swDetail = $variant->getDetail();
+        if ($swDetail === null) {
+            $swDetail = $this->modelManager->getRepository(Variant::class)->getShopwareDetail($variant);
+            $variant->setDetail($swDetail);
+        }
+        return $swDetail;
+    }
+
+    protected function getShopwareArticle(Article $icArticle)
+    {
+        $swArticle = $icArticle->getArticle();
+        if ($swArticle === null) {
+            $swArticle = $this->modelManager->getRepository(Article::class)->getShopwareArticle($icArticle);
+            $icArticle->setArticle($swArticle);
+        }
+        return $swArticle;
+    }
+
+    protected function setRelatedArticles(Article $icArticle, ShopwareArticle $swArticle)
+    {
+        $icRelatedArticles = $icArticle->getRelatedArticles();
+        $swRelatedArticles = [];
+        $createRelatedArticles = $icArticle->getActivateRelatedArticles();
+        /** @var Article $icRelatedArticle */
+        foreach ($icRelatedArticles as $icRelatedArticle)
+        {
+            $swRelatedArticle = $this->getShopwareArticle($icRelatedArticle);
+            if ((null === $swRelatedArticle) && $createRelatedArticles) {
+                $this->mediaTool->init();
+                $swRelatedArticle = $this->createShopwareArticle($icRelatedArticle);
+                $icRelatedArticle->setActive(true);
+            }
+            if (null !== $swRelatedArticle) {
+                $swRelatedArticles[] = $swRelatedArticle;
+            }
+        }
+        if (! empty($swRelatedArticles)) {
+            $swArticle->setRelated(new ArrayCollection($swRelatedArticles));
+        }
     }
 
     protected function createShopwareDetail(Variant $variant, ShopwareArticle $swArticle, bool $isMainDetail){
-        $this->log->info(sprintf('%s: Creating detail record for InnoCigs variant %s',
-            __FUNCTION__,
-            $variant->getIcNumber()
-        ));
-
         $detail = new Detail();
         $this->modelManager->persist($detail);
         $variant->setDetail($detail);
@@ -141,24 +191,20 @@ class ArticleMapper
         // The class \Shopware\Models\Attribute\Article ist part of the Shopware attribute system.
         // It gets (re)generated automatically by Shopware core, when attributes are added/removed
         // via the attribute crud service. It is located in \var\cache\production\doctrine\attributes.
-        //
-        if (class_exists('\Shopware\Models\Attribute\Article')) {
-            $attribute = new \Shopware\Models\Attribute\Article();
-            $detail->setAttribute($attribute);
-            if ($isMainDetail) {
-                $swArticle->setAttribute($attribute);
-            }
-            $icArticle = $variant->getArticle();
-            /** @noinspection PhpUndefinedMethodInspection */
-            $attribute->setMxcDsiBrand($icArticle->getBrand());
-            /** @noinspection PhpUndefinedMethodInspection */
-            $attribute->setMxcDsiSupplier($icArticle->getSupplier());
-            /** @noinspection PhpUndefinedMethodInspection */
-            $attribute->setMxcDsiFlavor($icArticle->getFlavor());
-
-        } else {
-            throw new Exception(__FUNCTION__ . ': Shopware article attribute model does not exist.');
+        $attribute = new \Shopware\Models\Attribute\Article();
+        $detail->setAttribute($attribute);
+        if ($isMainDetail) {
+            $swArticle->setAttribute($attribute);
         }
+        $icArticle = $variant->getArticle();
+
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setMxcDsiBrand($icArticle->getBrand());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setMxcDsiSupplier($icArticle->getSupplier());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setMxcDsiFlavor($icArticle->getFlavor());
+
 
         $detail->setNumber($variant->getNumber());
         $detail->setEan($variant->getEan());
@@ -274,16 +320,10 @@ class ArticleMapper
     }
 
     protected function createPrice(Variant $variant, ShopwareArticle $swArticle, Detail $detail){
-        $tax = $this->getTax()->getTax();
+        $tax = $swArticle->getTax()->getTax();
         $netPrice = $variant->getRetailPrice() / (1 + ($tax/100));
-
-        $this->log->info(sprintf('%s: Creating price %.2f for detail record %s.',
-            __FUNCTION__,
-            $netPrice,
-            $detail->getNumber()
-        ));
-
         $price = new Price();
+        $this->modelManager->persist($price);
         $price->setPrice($netPrice);
         $price->setFrom(1);
         $price->setTo(null);
@@ -292,39 +332,44 @@ class ArticleMapper
         $price->setArticle($swArticle);
         $price->setDetail($detail);
 
-        $this->modelManager->persist($price);
         return new ArrayCollection([$price]);
     }
 
     /**
      * If supplied $article has a supplier then get it by name from Shopware or create it if necessary.
-     * Otherwise do the same with default supplier name InnoCigs
+     * Otherwise do the same with default supplier name 'unknown'
      *
      * @param Article $article
-     * @return null|object|Supplier
+     * @return Supplier
      */
     protected function getSupplier(Article $article) {
         $supplierName = $article->getSupplier() ?? 'unknown';
         $supplier = $this->modelManager->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
         if (! $supplier) {
-            $this->log->info(sprintf('%s: Creating Shopware supplier "%s"',
-                __FUNCTION__,
-                $supplierName
-            ));
             $supplier = new Supplier();
             $this->modelManager->persist($supplier);
             $supplier->setName($supplierName);
-        } else {
-            $this->log->info(sprintf('%s: Using existing Shopware supplier "%s"',
-                __FUNCTION__,
-                $supplierName
-            ));
         }
         return $supplier;
     }
 
-    protected function deactivateShopwareArticle(Article $article) {
-        $this->log->info('Remove Shopware article for ' . $article->getName());
+    protected function deactivateShopwareArticle(Article $icArticle) {
+        $this->log->info('Remove Shopware article for ' . $icArticle->getName());
+
+        // This code is meant to delete an article, but it does not work yet
+        // See ArticleTool
+
+//        $swArticle = $this->getShopwareArticle($icArticle);
+//        if ($swArticle === null) return true;
+//
+//        $this->articleTool->deleteArticle($swArticle);
+//
+//        if ($icArticle->getActivateRelatedArticles()) {
+//            $icRelatedArticles = $icArticle->getRelatedArticles();
+//            foreach ($icRelatedArticles as $icRelatedArticle) {
+//                $this->deactivateShopwareArticle($icRelatedArticle);
+//            }
+//        }
         return true;
     }
 
@@ -332,23 +377,10 @@ class ArticleMapper
         $tax = $this->modelManager->getRepository(Tax::class)->findOneBy(['tax' => $taxValue]);
         if (! $tax instanceof Tax) {
             $name = sprintf('Tax (%.2f)', $taxValue);
-            $this->log->info(sprintf('%s: Creating Shopware tax "%s" with tax value %.2f.',
-                __FUNCTION__,
-                $name,
-                $taxValue
-            ));
-
             $tax = new Tax();
             $this->modelManager->persist($tax);
-
             $tax->setName($name);
             $tax->setTax($taxValue);
-        } else {
-            $this->log->info(sprintf('%s: Using existing Shopware tax "%s" with tax value %.2f.',
-                __FUNCTION__,
-                $tax->getName(),
-                $taxValue
-            ));
         }
         return $tax;
     }
@@ -391,7 +423,6 @@ class ArticleMapper
 
     public function handleActiveStateChange(Article $article)
     {
-        $this->log->info(__CLASS__ . '#' . __FUNCTION__ . ' was triggered.');
         $result = $article->isActive() ?
             $this->createShopwareArticle($article) :
             $this->deactivateShopwareArticle($article);

@@ -10,6 +10,7 @@ class ArticleRepository extends BaseEntityRepository
         'getAllIndexed'             => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
         'getAllIndexedByName'       => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.name',
         'getFlavoredIndexed'        => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber WHERE a.flavor IS NOT NULL',
+        'getShopwareArticle'        => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number IN (:ordernumbers)',
         'getDist'                   => 'SELECT a.icNumber, a.name, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
                                         . 'INDEX BY a.icNumber WHERE a.manufacturer IN (:manufacturers)',
         'getAllSuppliersAndBrands'  => 'SELECT a.icNumber, a.name, a.brand, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
@@ -32,6 +33,23 @@ class ArticleRepository extends BaseEntityRepository
     public function getFlavoredIndexed()
     {
         return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+    }
+
+    public function getShopwareArticle(Article $article)
+    {
+        $orderNumbers = [];
+        $variants = $article->getVariants();
+        foreach ($variants as $variant) {
+            $orderNumbers[] = $variant->getNumber();
+        }
+        $details = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])
+            ->setParameter('ordernumbers', $orderNumbers)
+            ->getResult();
+
+        if ($details[0] === null) return null;
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $details[0]->getArticle();
+
     }
 
     public function removeOrphaned()

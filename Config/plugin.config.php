@@ -23,11 +23,11 @@ use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
-use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository as ConfiguratorGroupRepository;
-use MxcDropshipInnocigs\Toolbox\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository as ConfiguratorSetRepository;
-use MxcDropshipInnocigs\Toolbox\Filter\GroupRepository as FilterGroupRepository;
-use MxcDropshipInnocigs\Toolbox\Media\MediaTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGroupRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 
 return [
     'plugin'         => [

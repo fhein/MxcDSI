@@ -106,7 +106,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
 
         // hydrate (new or existing) article from UI data
         $data = $this->resolveExtJsData($data);
-        unset($data['spareParts']);
+        unset($data['relatedArticles']);
         $article->fromArray($data);
 
         // updated $active state

@@ -95,7 +95,6 @@ class ImportMapper implements EventSubscriber
     public function getStock(Variant $variant)
     {
         $raw = $this->apiClient->getStockInfo($variant->getNumber());
-        $this->log->debug(var_export($raw, true));
         return $raw['QUANTITIES']['PRODUCT']['QUANTITY'];
     }
 
@@ -348,9 +347,6 @@ class ImportMapper implements EventSubscriber
 
     public function import(array $import)
     {
-//        $this->sortFlavorCategories();
-//        return true;
-        $this->log->enter();
         $evm = $this->modelManager->getEventManager();
         $evm->addEventSubscriber($this);
         $this->initCache();
@@ -375,8 +371,6 @@ class ImportMapper implements EventSubscriber
 
         $this->propertyExtractor->derive();
         $this->propertyExtractor->export();
-
-        $this->log->leave();
         return true;
     }
 

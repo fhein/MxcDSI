@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Media;
+namespace MxcDropshipInnocigs\Toolbox\Shopware\Media;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -33,10 +33,6 @@ class MediaTool
      * @var MediaService $mediaService
      */
     protected $mediaService;
-    /**
-     * @var Image $image
-     */
-    protected $image;
 
     /**
      * @var ArrayCollection $shopwareArticleImages
@@ -61,6 +57,10 @@ class MediaTool
         $this->authService = $authService;
         $this->mediaService = $mediaService;
         $this->log = $log;
+        $this->init();
+    }
+
+    public function init() {
         $this->shopwareArticleImages = new ArrayCollection();
         $this->shopwareMainImages = [];
     }
@@ -130,17 +130,17 @@ class MediaTool
 
         $media = $this->getMedia($swUrl, $url);
 
-        $this->image = new Image();
-        $this->modelManager->persist($this->image);
+        $image = new Image();
+        $this->modelManager->persist($image);
 
-        $this->image->setArticle($swArticle);
-        $this->image->setMedia($media);
-        $this->image->setExtension($urlInfo['extension']);
-        $this->image->setMain(($position > 1) ? 2 : 1);
-        $this->image->setPath($media->getName());
-        $this->image->setPosition($position);
+        $image->setArticle($swArticle);
+        $image->setMedia($media);
+        $image->setExtension($urlInfo['extension']);
+        $image->setMain(($position > 1) ? 2 : 1);
+        $image->setPath($media->getName());
+        $image->setPosition($position);
 
-        return $this->image;
+        return $image;
 
     }
 
@@ -174,21 +174,21 @@ class MediaTool
         $i=count($this->shopwareMainImages) +1;
         foreach ($icImages as $icImage) {
 
-            $this->image = $this->shopwareMainImages[$icImage->getUrl()];
-            if(!$this->image) {
-                $this->getImage($icImage->getUrl(), $swArticle, $i); //entry for Image itself
+            $image = $this->shopwareMainImages[$icImage->getUrl()];
 
-                $this->shopwareArticleImages->add($this->image);
+            if (null === $image) {
+                $image = $this->getImage($icImage->getUrl(), $swArticle, $i); //entry for Image itself
+                $this->shopwareArticleImages->add($image);
             }
 
-            if ($swDetail->getConfiguratorOptions() !== null) $this->setOptionMappings($swDetail->getConfiguratorOptions());
+            if ($swDetail->getConfiguratorOptions() !== null) $this->setOptionMappings($swDetail->getConfiguratorOptions(), $image);
 
-            $detailImg = $this->createDetailImage($icImage->getUrl(), $swDetail, $this->image->getPosition()); //image entry for detail relation
-            $detailImg->setParent($this->image);
-            $detailImg->setMain($this->image->getMain());
+            $detailImg = $this->createDetailImage($icImage->getUrl(), $swDetail, $image->getPosition()); //image entry for detail relation
+            $detailImg->setParent($image);
+            $detailImg->setMain($image->getMain());
 
             $this->shopwareArticleImages->add($detailImg);
-            $this->shopwareMainImages[$icImage->getUrl()] = $this->image;
+            $this->shopwareMainImages[$icImage->getUrl()] = $image;
 
             $i++;
         }
@@ -197,7 +197,7 @@ class MediaTool
         return $this->shopwareArticleImages;
     }
 
-    protected function setOptionMappings($configuratorOptions){
+    protected function setOptionMappings($configuratorOptions, Image $image){
 
         if ($configuratorOptions !== null) {
 
@@ -214,10 +214,10 @@ class MediaTool
                 $rules->add($rule);
             }
 
-            $mapping->setImage($this->image);
+            $mapping->setImage($image);
             $mapping->setRules($rules);
             /** @noinspection PhpParamsInspection */
-            $this->image->setMappings([$mapping]);
+            $image->setMappings([$mapping]);
         }
     }
 }

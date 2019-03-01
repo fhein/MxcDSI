@@ -105,10 +105,7 @@ return [
     ],
 
     'recommended_dosage' => [
-        'Vampire Vape' => [
-            'min' => 10,
-            'max' => 15,
-        ]
+        'Vampire Vape' => '10-15',
     ],
 
     'spare_part_groups' => [
@@ -116,6 +113,12 @@ return [
             'match_common_name' => false,
             'groups' => [
                 'BASE',
+                'SHOT'
+            ],
+        ],
+        'BASE' => [
+            'match_common_name' => false,
+            'groups' => [
                 'SHOT'
             ],
         ],

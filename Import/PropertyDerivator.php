@@ -71,11 +71,11 @@ class PropertyDerivator
         foreach ($articles as $number => $article) {
             $this->deriveProperties($article);
         }
-        $this->deriveSpareParts();
+        $this->deriveRelatedArticles();
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
         $this->deriveProductNames();
-        $this->dumpSpareParts();
+        $this->dumpRelatedArticles();
     }
 
     protected function deriveProductNames() {
@@ -161,29 +161,29 @@ class PropertyDerivator
         return $dosage;
     }
 
-    protected function addSparePartGroups(Article $article, array $config)
+    protected function addRelatedArticleGroups(Article $article, array $config)
     {
         foreach ($config['groups'] as $groupName) {
             foreach ($this->articleGroups[$groupName] as $cName => $group) {
-                /** @var Article $sparePart */
-                foreach ($group as $sparePart) {
+                /** @var Article $relatedArticle */
+                foreach ($group as $relatedArticle) {
                     if ($config['match_common_name'] && $article->getCommonName() !== $cName) {
                         continue;
                     }
-                    $article->addSparePart($sparePart);
+                    $article->addRelatedArticle($relatedArticle);
                 }
             }
         }
     }
 
-    protected function deriveSpareParts()
+    protected function deriveRelatedArticles()
     {
         foreach ($this->config['spare_part_groups'] as $group => $setting) {
             foreach ($this->articleGroups[$group] as $articles) {
                 /** @var Article $article */
                 foreach ($articles as $article) {
-                    $article->setSpareParts(null);
-                    $this->addSparePartGroups($article, $setting);
+                    $article->setRelatedArticles(null);
+                    $this->addRelatedArticleGroups($article, $setting);
                 }
             }
         }
@@ -194,39 +194,35 @@ class PropertyDerivator
         $export = [];
         /** @var  Article $article */
         foreach($articles as $number => $article) {
-            $pg = $article->getPg();
-            if ($pg !== null) {
-                $vg = $article->getVg();
-                $export[$number]['base'] = [
-                    'vg' => $vg,
-                    'pg' => $pg,
-                ];
+            $base = $article->getBase();
+            if ($base !== null) {
+                $export[$number]['base'] = $base;
             }
             $dosage = $article->getDosage();
-            if ($dosage['min'] !== null) {
+            if ($dosage !== null) {
                 $export[$number]['dosage'] = $dosage;
             }
         }
         (new ArrayReport())(['peProperties' => $export]);
     }
 
-    public function dumpSpareParts() {
+    public function dumpRelatedArticles() {
         $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         /** @var Article $article */
-        $sparePartList = [];
+        $relatedArticleList = [];
         foreach ($articles as $number => $article) {
-            $spareParts = $article->getSpareParts();
-            if ($spareParts->isEmpty()) continue;
+            $relatedArticles = $article->getRelatedArticles();
+            if ($relatedArticles->isEmpty()) continue;
             $list = [];
-            foreach ($spareParts as $sparePart) {
-                $list[] = $sparePart->getName();
+            foreach ($relatedArticles as $relatedArticle) {
+                $list[] = $relatedArticle->getName();
             }
-            $sparePartList[$number] = [
+            $relatedArticleList[$number] = [
                 'name' => $article->getName(),
-                'parts' => $list,
+                'related_articles' => $list,
             ];
         }
-        (new ArrayReport())(['peSpareParts' => $sparePartList]);
+        (new ArrayReport())(['peRelatedArticles' => $relatedArticleList]);
     }
 
 }

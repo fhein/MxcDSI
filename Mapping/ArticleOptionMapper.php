@@ -6,9 +6,9 @@ use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Configurator\GroupRepository;
-use MxcDropshipInnocigs\Toolbox\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Configurator\SetRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
 
 class ArticleOptionMapper
 {

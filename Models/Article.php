@@ -26,15 +26,15 @@ class Article extends ModelEntity  {
 
     /**
      * @ORM\ManyToMany(targetEntity="Article")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_articles_spareparts",
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_articles_related",
      *     joinColumns={@ORM\JoinColumn(name="article_id", referencedColumnName="id")},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="sparepart_id", referencedColumnName="id")}
+     *     inverseJoinColumns={@ORM\JoinColumn(name="related_id", referencedColumnName="id")}
      *     )
      */
-    private $spareParts;
+    private $relatedArticles;
 
     /**
-     * @var string $code
+     * @var string $icNumber
      * @ORM\Column(name="ic_number", type="string", nullable=false)
      */
     private $icNumber;
@@ -112,40 +112,25 @@ class Article extends ModelEntity  {
      */
     private $brand;
 
-    /**
-     * @var ShopwareArticle
-     * @ORM\OneToOne(targetEntity="Shopware\Models\Article\Article")
-     * @ORM\JoinColumn(name="article_id", referencedColumnName="id", nullable=true)
-     */
     private $article;
 
     /**
-     * @var int $dosageMin
+     * Aroma dosage
      *
-     * @ORM\Column(name="rcmd_cnctr_min", type="integer", nullable=true)
+     * @var string $dosage
+     *
+     * @ORM\Column(type="string", nullable=true)
      */
-    private $dosageMin;
+    private $dosage;
 
     /**
-     * @var int $dosageMax
+     * VG/PG
      *
-     * @ORM\Column(name="rcmd_cnctr_max", type="integer", nullable=true)
-     */
-    private $dosageMax;
-
-    /**
-     * @var int $pg
+     * @var string $base
      *
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
-    private $pg;
-
-    /**
-     * @var int $vg
-     *
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $vg;
+    private $base;
 
     /**
      * @var boolean $active
@@ -154,10 +139,10 @@ class Article extends ModelEntity  {
     private $active = false;
 
     /**
-     * @var boolean $activateSpareParts
+     * @var boolean $activateRelatedArticles
      * @ORM\Column(type="boolean", nullable=false)
      */
-    private $activateSpareParts = false;
+    private $activateRelatedArticles = false;
     /**
      * @var boolean $accepted
      * @ORM\Column(type="boolean", nullable=false)
@@ -182,7 +167,7 @@ class Article extends ModelEntity  {
      */
     public function __construct() {
         $this->variants = new ArrayCollection();
-        $this->spareParts = new ArrayCollection();
+        $this->relatedArticles = new ArrayCollection();
     }
 
     /**
@@ -337,18 +322,12 @@ class Article extends ModelEntity  {
         $this->brand = $brand;
     }
 
-    /**
-     * @return ShopwareArticle
-     */
     public function getArticle()
     {
         return $this->article;
     }
 
-    /**
-     * @param ShopwareArticle $article
-     */
-    public function setArticle(ShopwareArticle $article)
+    public function setArticle(?ShopwareArticle $article)
     {
         $this->article = $article;
     }
@@ -433,24 +412,24 @@ class Article extends ModelEntity  {
         $this->flavor = $flavor;
     }
 
-    public function getSpareParts()
+    public function getRelatedArticles()
     {
-        return $this->spareParts;
+        return $this->relatedArticles;
     }
 
-    public function addSparePart(Article $sparePart)
+    public function addRelatedArticle(Article $relatedArticle)
     {
-        $this->spareParts->add($sparePart);
+        $this->relatedArticles->add($relatedArticle);
     }
 
-    public function setSpareParts(?Collection $spareParts)
+    public function setRelatedArticles(?Collection $relatedArticles)
     {
-        $this->spareParts = $spareParts ?? new ArrayCollection();
+        $this->relatedArticles = $relatedArticles ?? new ArrayCollection();
     }
 
-    public function removeSparePart(Article $sparePart)
+    public function removeRelatedArticle(Article $relatedArticle)
     {
-        $this->spareParts->removeElement($sparePart);
+        $this->relatedArticles->removeElement($relatedArticle);
     }
 
     /**
@@ -501,98 +480,53 @@ class Article extends ModelEntity  {
         $this->piecesPerPack = $piecesPerPack;
     }
 
-    /**
-     * @return int|null
-     */
-    public function getDosageMin(): ?int
-    {
-        return $this->dosageMin;
-    }
 
     /**
-     * @param int|null $dosageMin
+     * @param string|null $dosage
      */
-    public function setDosageMin(?int $dosageMin): void
+    public function setDosage(?string $dosage)
     {
-        $this->dosageMin = $dosageMin;
+        $this->dosage = $dosage;
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getDosageMax(): ?int
+    public function getDosage() : ?string
     {
-        return $this->dosageMax;
-    }
-
-    public function setDosage(?array $p)
-    {
-        $p = $p ?? [ 'min' => null, 'max' => null ];
-        $this->setDosageMax($p['max']);
-        $this->setDosageMin($p['min']);
-    }
-
-    public function getDosage()
-    {
-        return [
-            'min' => $this->getDosageMin(),
-            'max' => $this->getDosageMax(),
-        ];
-    }
-
-    /**
-     * @param int|null $dosageMax
-     */
-    public function setDosageMax(?int $dosageMax): void
-    {
-        $this->dosageMax = $dosageMax;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getPg(): ?int
-    {
-        return $this->pg;
-    }
-
-    /**
-     * @param int|null $pg
-     */
-    public function setPg(?int $pg): void
-    {
-        $this->pg = $pg;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getVg(): ?int
-    {
-        return $this->vg;
-    }
-
-    /**
-     * @param int|null $vg
-     */
-    public function setVg(?int $vg): void
-    {
-        $this->vg = $vg;
+        return $this->dosage;
     }
 
     /**
      * @return bool
      */
-    public function getActivateSpareParts(): bool
+    public function getActivateRelatedArticles(): bool
     {
-        return $this->activateSpareParts;
+        return $this->activateRelatedArticles;
     }
 
     /**
-     * @param bool $activateSpareParts
+     * @param bool $activateRelatedArticles
      */
-    public function setActivateSpareParts(bool $activateSpareParts): void
+    public function setActivateRelatedArticles(bool $activateRelatedArticles): void
     {
-        $this->activateSpareParts = $activateSpareParts;
+        $this->activateRelatedArticles = $activateRelatedArticles;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getBase(): ?string
+    {
+        return $this->base;
+    }
+
+    /**
+     * @param string|null $base
+     */
+    public function setBase(?string $base): void
+    {
+        $this->base = $base;
+    }
+
 }
