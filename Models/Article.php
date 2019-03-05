@@ -34,6 +34,15 @@ class Article extends ModelEntity  {
     private $relatedArticles;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Article")
+     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_articles_similar",
+     *     joinColumns={@ORM\JoinColumn(name="article_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="similar_id", referencedColumnName="id")}
+     *     )
+     */
+    private $similarArticles;
+
+    /**
      * @var string $icNumber
      * @ORM\Column(name="ic_number", type="string", nullable=false)
      */
@@ -143,6 +152,13 @@ class Article extends ModelEntity  {
      * @ORM\Column(type="boolean", nullable=false)
      */
     private $activateRelatedArticles = false;
+
+    /**
+     * @var boolean $activateSimilarArticles
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $activateSimilarArticles = false;
+
     /**
      * @var boolean $accepted
      * @ORM\Column(type="boolean", nullable=false)
@@ -168,6 +184,7 @@ class Article extends ModelEntity  {
     public function __construct() {
         $this->variants = new ArrayCollection();
         $this->relatedArticles = new ArrayCollection();
+        $this->similarArticles = new ArrayCollection();
     }
 
     /**
@@ -432,6 +449,27 @@ class Article extends ModelEntity  {
         $this->relatedArticles->removeElement($relatedArticle);
     }
 
+    public function getSimilarArticles()
+    {
+        return $this->similarArticles;
+    }
+
+    public function addSimilarArticle(Article $similarArticle)
+    {
+        $this->similarArticles->add($similarArticle);
+    }
+
+    public function setSimilarArticles(?Collection $similarArticles)
+    {
+        $this->similarArticles = $similarArticles ?? new ArrayCollection();
+    }
+
+    public function removeSimilarArticle(Article $similarArticle)
+    {
+        $this->similarArticles->removeElement($similarArticle);
+    }
+
+
     /**
      * @return string
      */
@@ -527,6 +565,22 @@ class Article extends ModelEntity  {
     public function setBase(?string $base): void
     {
         $this->base = $base;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActivateSimilarArticles(): bool
+    {
+        return $this->activateSimilarArticles;
+    }
+
+    /**
+     * @param bool $activateSimilarArticles
+     */
+    public function setActivateSimilarArticles(bool $activateSimilarArticles): void
+    {
+        $this->activateSimilarArticles = $activateSimilarArticles;
     }
 
 }

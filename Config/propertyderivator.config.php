@@ -108,7 +108,7 @@ return [
         'Vampire Vape' => '10-15',
     ],
 
-    'spare_part_groups' => [
+    'related_article_groups' => [
         'AROMA' => [
             'match_common_name' => false,
             'groups' => [
@@ -197,5 +197,54 @@ return [
                 'DRIP_TIP',
             ],
         ],
+    ],
+    'similar_article_groups' => [
+        'AROMA' => [
+            'match_common_name' => true,
+            'groups' => [
+                'LQIUID',
+                'SHAKE_VAPE'
+            ],
+        ],
+        'LIQUID' => [
+            'match_common_name' => true,
+            'groups' => [
+                'AROMA',
+                'SHAKE_VAPE'
+            ],
+        ],
+        'SHAKE_VAPE' => [
+            'match_common_name' => true,
+            'groups' => [
+                'AROMA',
+                'LIQUID'
+            ],
+        ],
+    ],
+    'similar_flavors' => [
+        0 => 'Apfelstrudel',
+        1 => 'Baklava',
+        2 => 'Bienenstich',
+        3 => 'Biskuit',
+        4 => 'Blätterteig',
+        5 => 'Churro',
+        6 => 'Crumble',
+        7 => 'Donut',
+        8 => 'Keks',
+        9 => 'Kuchen',
+        10 => 'Käsekuchen',
+        11 => 'Macaron',
+        12 => 'Muffin',
+        13 => 'Müsliriegel',
+        14 => 'Pfannkuchen',
+        15 => 'Salzbretzel',
+        16 => 'Streuselkuchen',
+        17 => 'Toast',
+        18 => 'Torte',
+        19 => 'Waffel',
+        20 => 'Energy Drink',
+        21 => 'Limonade',
+        22 => 'Mojito',
+        23 => 'Cola',
     ]
 ];

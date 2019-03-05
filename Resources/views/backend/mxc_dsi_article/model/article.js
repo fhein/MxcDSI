@@ -18,6 +18,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.model.Article', {
         { name : 'name', type: 'string' },
         { name : 'supplier', type: 'string' },
         { name : 'activateRelatedArticles', type: 'boolean' },
+        { name : 'activateSimilarArticles', type: 'boolean' },
         { name : 'accepted', type: 'boolean' },
         { name : 'new', type: 'boolean' },
     ],

@@ -129,6 +129,7 @@ class ArticleMapper
         }
 
         $this->setRelatedArticles($icArticle, $swArticle);
+        $this->setSimilarArticles($icArticle, $swArticle);
 
         $this->modelManager->flush();
         return $swArticle;
@@ -180,6 +181,29 @@ class ArticleMapper
         }
         if (! empty($swRelatedArticles)) {
             $swArticle->setRelated(new ArrayCollection($swRelatedArticles));
+        }
+    }
+    
+    public function setSimilarArticles(Article $icArticle, ShopwareArticle $swArticle)
+    {
+        $icSimilarArticles = $icArticle->getSimilarArticles();
+        $swSimilarArticles = [];
+        $createSimilarArticles = $icArticle->getActivateSimilarArticles();
+        /** @var Article $icSimilarArticle */
+        foreach ($icSimilarArticles as $icSimilarArticle)
+        {
+            $swSimilarArticle = $this->getShopwareArticle($icSimilarArticle);
+            if ((null === $swSimilarArticle) && $createSimilarArticles) {
+                $this->mediaTool->init();
+                $swSimilarArticle = $this->createShopwareArticle($icSimilarArticle);
+                $icSimilarArticle->setActive(true);
+            }
+            if (null !== $swSimilarArticle) {
+                $swSimilarArticles[] = $swSimilarArticle;
+            }
+        }
+        if (! empty($swSimilarArticles)) {
+            $swArticle->setSimilar(new ArrayCollection($swSimilarArticles));
         }
     }
 
@@ -249,8 +273,8 @@ class ArticleMapper
         // If they apply changes to the attributes they use, we can not proceed.
         return method_exists($attribute, 'setDcIcOrderNumber')
             && method_exists($attribute, 'setDcIcArticleName')
-            && method_exists($attribute, 'setDcPurchasingPrice')
-            && method_exists($attribute, 'setDcRetailPrice')
+            && method_exists($attribute, 'setDcIcPurchasingPrice')
+            && method_exists($attribute, 'setDcIcRetailPrice')
             && method_exists($attribute, 'setDcIcActive')
             && method_exists($attribute, 'setDcIcInstock');
     }
@@ -267,13 +291,13 @@ class ArticleMapper
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcActive(true);
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcOrderNumber($variant->getNumber());
+        $attribute->setDcIcOrderNumber($variant->getIcNumber());
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcArticleName($variant->getArticle()->getName());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcPurchasingPrice($variant->getPriceNet());
+        $attribute->setDcIcPurchasingPrice($variant->getPurchasePrice());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcRetailPrice($variant->getPriceRecommended());
+        $attribute->setDcIcRetailPrice($variant->getRetailPrice());
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcInstock($this->client->getStock($variant));
     }

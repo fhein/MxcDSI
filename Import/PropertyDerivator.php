@@ -9,6 +9,7 @@
 namespace MxcDropshipInnocigs\Import;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Report\ArrayReport;
@@ -72,10 +73,12 @@ class PropertyDerivator
             $this->deriveProperties($article);
         }
         $this->deriveRelatedArticles();
+        $this->deriveSimilarArticles();
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
         $this->deriveProductNames();
         $this->dumpRelatedArticles();
+        $this->dumpSimilarArticles();
     }
 
     protected function deriveProductNames() {
@@ -161,8 +164,9 @@ class PropertyDerivator
         return $dosage;
     }
 
-    protected function addRelatedArticleGroups(Article $article, array $config)
+    protected function getAsscociatedArticles(Article $article, array $config)
     {
+        $associatedArticles = [];
         foreach ($config['groups'] as $groupName) {
             foreach ($this->articleGroups[$groupName] as $cName => $group) {
                 /** @var Article $relatedArticle */
@@ -170,22 +174,76 @@ class PropertyDerivator
                     if ($config['match_common_name'] && $article->getCommonName() !== $cName) {
                         continue;
                     }
-                    $article->addRelatedArticle($relatedArticle);
+                    $associatedArticles[] = $relatedArticle;
+                }
+            }
+        }
+        return $associatedArticles;
+    }
+
+    protected function deriveRelatedArticles()
+    {
+        foreach ($this->config['related_article_groups'] as $group => $setting) {
+            foreach ($this->articleGroups[$group] as $articles) {
+                /** @var Article $article */
+                foreach ($articles as $article) {
+                    $relatedArticles = $this->getAsscociatedArticles($article, $setting);
+                    $article->setRelatedArticles(new ArrayCollection($relatedArticles));
                 }
             }
         }
     }
 
-    protected function deriveRelatedArticles()
+    protected function isSimilarFlavoredArticle(Article $article1, Article $article2)
     {
-        foreach ($this->config['spare_part_groups'] as $group => $setting) {
+        $flavor1 = array_map('trim', explode(',', $article1->getFlavor()));
+        $flavor2 = array_map('trim', explode(',', $article2->getFlavor()));
+        foreach ($this->config['similar_flavors'] as $flavor) {
+            if (in_array($flavor, $flavor1) && in_array($flavor, $flavor2)) {
+                return true;
+            }
+        }
+        $common = array_intersect($flavor1, $flavor2);
+        $min = min(count($flavor1), count($flavor2));
+        $count = count($common);
+        $requiredMatches = $min === 1 ? 1 : $min - 1;
+        return ($count === $requiredMatches);
+    }
+
+    protected function deriveSimilarFlavoredArticles($group)
+    {
+        $articles = [];
+        foreach ($this->articleGroups[$group] as $groupArticles) {
+            foreach($groupArticles as $article) {
+                $articles[] = $article;
+            };
+        }
+        foreach ($articles as $article1) {
+            /** @var ArrayCollection $similarArticles */
+            $similarArticles = $article1->getSimilarArticles();
+            foreach ($articles as $article2) {
+                if ($article1 === $article2 || ! $this->isSimilarFlavoredArticle($article1, $article2)) continue;
+                if (! $similarArticles->contains($article2)) {
+                    $article1->addSimilarArticle($article2);
+                }
+            }
+        }
+    }
+
+    protected function deriveSimilarArticles()
+    {
+        foreach ($this->config['similar_article_groups'] as $group => $setting) {
             foreach ($this->articleGroups[$group] as $articles) {
                 /** @var Article $article */
                 foreach ($articles as $article) {
-                    $article->setRelatedArticles(null);
-                    $this->addRelatedArticleGroups($article, $setting);
+                    $similarArticles = $this->getAsscociatedArticles($article, $setting);
+                    $article->setSimilarArticles(new ArrayCollection($similarArticles));
                 }
             }
+        }
+
+        foreach (['SHAKE_VAPE', 'LIQUID', 'AROMA'] as $group) {
+            $this->deriveSimilarFlavoredArticles($group);
         }
     }
 
@@ -223,6 +281,29 @@ class PropertyDerivator
             ];
         }
         (new ArrayReport())(['peRelatedArticles' => $relatedArticleList]);
+    }
+
+    public function dumpSimilarArticles() {
+        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        /** @var Article $article */
+        $similarArticleList = [];
+        foreach ($articles as $number => $article) {
+            $similarArticles = $article->getSimilarArticles();
+            if ($similarArticles->isEmpty()) continue;
+            $list = [];
+            foreach ($similarArticles as $similarArticle) {
+                $list[] = [
+                    'name' => $similarArticle->getName(),
+                    'flavor' => $similarArticle->getFlavor(),
+                ];
+            }
+            $similarArticleList[$number] = [
+                'name' => $article->getName(),
+                'flavor' => $article->getFlavor(),
+                'similar_articles' => $list,
+            ];
+        }
+        (new ArrayReport())(['peSimilarArticles' => $similarArticleList]);
     }
 
 }

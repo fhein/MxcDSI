@@ -3669,10 +3669,9 @@ return array(
         'number' => 'TW100L10-KF',
         'name' => 'Twisted - Highway Vapor - Kolbenfresser - Shake & Vape - 50 ml, 0 mg/ml',
         'flavor' => array(
-            0 => 'Erdbeere',
-            1 => 'Granatapfel',
-            2 => 'Honig',
-            3 => 'Litschi',
+            0 => 'Marshmellow',
+            1 => 'Vanille',
+            2 => 'Eiscreme',
         ),
     ),
     'TW100L10-KM' => array(
