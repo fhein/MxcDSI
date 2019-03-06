@@ -646,5 +646,15 @@ return [
         'name',
         'replacement',
         'category',
+    ],
+    'retail_prices' => [
+        [
+            'criteria' => [
+                'brand'     => 'SC',
+                'supplier'  => 'InnoCigs',
+                'type'      => 'LIQUID',
+            ],
+            'retail_price'  => 2.50
+        ]
     ]
 ];

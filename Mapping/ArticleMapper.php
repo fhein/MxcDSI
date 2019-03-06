@@ -247,6 +247,7 @@ class ArticleMapper
         $detail->setArticle($swArticle);
 
         $this->setReferencePrice($variant->getArticle(), $detail);
+
         $prices = $this->createPrice($variant, $swArticle, $detail);
         $detail->setPrices($prices);
         // Note: shopware options are added non persistently to variants when
@@ -424,8 +425,11 @@ class ArticleMapper
     {
         // These products may need a reference price, unit is ml
         if (preg_match('~(Liquid)|(Aromen)|(Basen)|(Shake \& Vape)~', $article->getCategory()) !== 1) return;
-        $matches = [];
+        // Do not add reference price on multi item packs
         $name = $article->getName();
+        if (preg_match('~\(\d+ Stück pro Packung\)~', $name) === 1) return;
+
+        $matches = [];
         preg_match('~(\d+(\.\d+)?) ml~', $name, $matches);
         // If there's there are no ml in the product name we exit
         if (empty($matches)) return;

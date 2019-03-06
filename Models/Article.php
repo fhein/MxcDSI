@@ -151,7 +151,7 @@ class Article extends ModelEntity  {
      * @var boolean $activateRelatedArticles
      * @ORM\Column(type="boolean", nullable=false)
      */
-    private $activateRelatedArticles = false;
+    private $activateRelatedArticles = true;
 
     /**
      * @var boolean $activateSimilarArticles

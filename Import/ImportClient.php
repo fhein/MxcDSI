@@ -93,6 +93,9 @@ class ImportClient implements EventSubscriber
 
     public function import()
     {
+//        (new CategoryTool())->removeEmptyCategories();
+//        return;
+
         $this->importLog['deletions'] = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         $this->importLog['additions'] = [];
         $this->importLog['changes'] = [];

@@ -138,7 +138,7 @@ return [
         ImportMapper::class      => include __DIR__ . '/importmapper.config.php',
         PropertyDerivator::class => include __DIR__ . '/propertyderivator.config.php',
         ArticleMapper::class     => [
-            'root_category' => 'Deutsch > InnoCigs',
+            'root_category' => 'Deutsch',
         ]
     ],
 ];

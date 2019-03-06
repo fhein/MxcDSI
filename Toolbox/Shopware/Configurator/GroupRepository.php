@@ -31,63 +31,60 @@ class GroupRepository
 
     protected function createLookupTable()
     {
-        $dql = sprintf('SELECT g.name gName, o.name oName FROM %s g JOIN %s o WHERE o.group = g.id',
-            Group::class,
-        Option::class
-        );
-        $array = $this->modelManager->createQuery($dql)->getScalarResult();
-        $this->data = [];
-        foreach ($array as $entry) {
-            $this->data[$entry['gName']]['group'] = true;
-            $this->data[$entry['gName']]['options'][$entry['oName']] = true;
+//        $dql = sprintf('SELECT g.name gName, o.name oName FROM %s g JOIN %s o WHERE o.group = g.id',
+//            Group::class,
+//        Option::class
+//        );
+//        $array = $this->modelManager->createQuery($dql)->getScalarResult();
+//        $this->data = [];
+//        foreach ($array as $entry) {
+//            $this->data[$entry['gName']]['group'] = true;
+//            $this->data[$entry['gName']]['options'][$entry['oName']] = true;
+//        }
+
+        $dql = sprintf ('SELECT g FROM %s g', Group::class);
+        $groups = $this->modelManager->createQuery($dql)->getResult();
+        /** @var Group $group */
+        foreach ($groups as $group) {
+            $groupName = $group->getName();
+            $this->data[$groupName]['group'] = $group;
+            $options = $group->getOptions();
+            foreach($options as $option) {
+                $this->data[strtolower($groupName)]['options'][strtolower($option->getName())] = $option;
+            }
         }
     }
 
-    public function createGroup(string $name) : Group {
-        $group = $this->getGroup($name);
+    public function createGroup(string $groupName) : Group {
+        $group = $this->getGroup($groupName);
+
         if ($group instanceof Group) {
             $this->log->notice(sprintf('%s: Returning existing Shopware configurator group %s.',
                 __FUNCTION__,
-                $name
+                $group->getName()
             ));
             return $group;
         }
 
         $this->log->notice(sprintf('%s: Creating shopware group %s',
             __FUNCTION__,
-            $name
+            $groupName
         ));
         $group = new Group();
         $this->modelManager->persist($group);
 
-        $group->setName($name);
+        $group->setName($groupName);
         $group->setPosition(count($this->data));
-        $this->data[$name]['group'] = $group;
+        $this->data[strtolower($groupName)]['group'] = $group;
         return $group;
     }
 
-    public function getGroup(string $name) : ?Group {
-        $group = $this->data[$name]['group'] ?? null;
-        if ($group  === true) {
-            $group = $this->modelManager->getRepository(Group::class)->findOneBy(['name' => $name]);
-            $this->data[$name]['group'] = $group;
-            $this->modelManager->persist($group);
-        }
-        return $group;
+    public function getGroup(string $groupName) : ?Group {
+        return $this->data[strtolower($groupName)]['group'];
     }
 
     public function getOption(string $groupName, string $optionName) : ?Option {
-        $option = $this->data[$groupName]['options'][$optionName] ?? null;
-        if ($option === true) {
-            $dql = sprintf("SELECT o FROM %s o JOIN %s g WHERE o.group = %s AND o.name = '%s'",
-                Option::class,
-                Group::class,
-                 $this->getGroup($groupName)->getId(),
-                 $optionName);
-            $option = $this->modelManager->createQuery($dql)->getResult()[0];
-            $this->data[$groupName]['options'][$optionName] = $option;
-        }
-        return $option;
+        return $this->data[strtolower($groupName)]['options'][strtolower($optionName)];
     }
 
     public function createOption(string $groupName, string $optionName) : ?Option {
@@ -124,7 +121,7 @@ class GroupRepository
         $group->setOptions($options);
 
         $option->setPosition(count($this->data[$groupName]['options']));
-        $this->data[$groupName]['options'][$optionName] = $option;
+        $this->data[strtolower($groupName)]['options'][strtolower($optionName)] = $option;
         return $option;
     }
 
