@@ -358,6 +358,7 @@ class ImportMapper implements EventSubscriber
         $this->modelManager->flush();
         $this->modelManager->clear();
         $evm->removeEventSubscriber($this);
+
         if ($this->config['applyFilters']) {
             foreach($this->config['filters']['update'] as $filter) {
                 $this->bulkOperation->update($filter);

@@ -121,6 +121,14 @@ class Article extends ModelEntity  {
      */
     private $brand;
 
+    /**
+     * @var float $tax
+     *
+     * @ORM\Column(type="float", nullable=false)
+     */
+    private $tax = 19.0;
+
+
     private $article;
 
     /**
@@ -581,6 +589,22 @@ class Article extends ModelEntity  {
     public function setActivateSimilarArticles(bool $activateSimilarArticles): void
     {
         $this->activateSimilarArticles = $activateSimilarArticles;
+    }
+
+    /**
+     * @return float
+     */
+    public function getTax(): float
+    {
+        return $this->tax;
+    }
+
+    /**
+     * @param float $tax
+     */
+    public function setTax(float $tax): void
+    {
+        $this->tax = $tax;
     }
 
 }
