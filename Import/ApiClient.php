@@ -228,20 +228,20 @@ class ApiClient
     }
 
     /**
-     * @param string $body
+     * @param string $xml
      * @return array
      */
-    public function xmlToArray(string $body): array
+    public function xmlToArray(string $xml): array
     {
-        $this->logXML($body);
+        $this->logXML($xml);
         libxml_use_internal_errors(true);
-        $xml = simplexml_load_string($body, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
+        $xml = simplexml_load_string($xml, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
 
         if ($xml === false) {
             $errors = libxml_get_errors();
             $this->logXmlErrors($errors);
             $dump = Shopware()->DocPath() . 'var/log/invalid-innocigs-api-response-' . date('Y-m-d-H-i-s') . '.txt';
-            file_put_contents($dump, $body);
+            file_put_contents($dump, $xml);
             $this->log->info('Invalid InnoCigs API response dumped to ' . $dump);
             throw new ApiException('InnoCigs API returned invalid XML. See log file for detailed information.');
         }

@@ -9,8 +9,8 @@ use MxcDropshipInnocigs\Models\Variant;
 class EntitiyValidator
 {
     /**
-     * An Article validates true if either it's accepted member is true
-     * and at least one of it's variants validates true
+     * An article validates true if either it's $accepted member is true
+     * and at least one of the article's variants validates true
      *
      * @param Article $article
      * @return bool
@@ -30,9 +30,9 @@ class EntitiyValidator
     }
 
     /**
-     * An ImportVariant validates if either it's accepted member is true
-     * and the accepted member of it's associated article is true,
-     * and at least one of it's options has an accepted member which is true
+     * A variant validates true if the $accepted member of the variant is true and
+     * the $accepted member of the associated Article is true and all of the variant's
+     * options validate true
      *
      * @param Variant $variant
      * @return bool
@@ -44,16 +44,16 @@ class EntitiyValidator
         }
         $options = $variant->getOptions();
         foreach ($options as $option) {
-            if ($this->validateOption($option)) {
-                return true;
+            if (! $this->validateOption($option)) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     /**
-     * An ImportOption is ignored if either it's ignored member is true
-     * or the ignored member of the associated group is true.
+     * An option validates true if either it's $accepted member is true
+     * or the $accepted member of the associated group is true.
      *
      * @param Option $option
      * @return bool

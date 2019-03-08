@@ -53,6 +53,7 @@ class ArticleOptionMapper
         $this->log->enter();
         $groupOptions = [];
         foreach ($icVariants as $icVariant) {
+            if (! $this->validator->validateVariant($icVariant)) continue;
             /** @var Variant $icVariant */
             $icOptions = $icVariant->getOptions();
             /** @var Option $icOption */
@@ -66,12 +67,6 @@ class ArticleOptionMapper
                     $optionName,
                     $groupName
                 ));
-
-                // A valid variant may hold options which are ignored. Skip variants with ignored options.
-                if (! $this->validator->validateOption($icOption)) {
-                    $this->log->debug('Named option does not validate. ImportVariant ignored.');
-                    continue 2;
-                }
                 $groupOptions[$groupName][$optionName][] = $icVariant;
             }
         }
@@ -168,9 +163,5 @@ class ArticleOptionMapper
         }
         $set->getArticles()->add($icArticle->getArticle());
         return $set;
-    }
-
-    public function getShopwareOptions(Variant $variant) {
-        return $variant->getShopwareOptions();
     }
 }

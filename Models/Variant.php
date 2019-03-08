@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;
 use Shopware\Models\Article\Configurator\Option as ShopwareOption;
-use Shopware\Models\Article\Detail as ShopwareDetail;
+use Shopware\Models\Article\Detail;
 
 /**
  * @ORM\Entity
@@ -27,7 +27,7 @@ class Variant extends ModelEntity
     private $article;
 
     /**
-     * @var ShopwareDetail
+     * @var Detail
      */
     private $detail;
 
@@ -411,15 +411,18 @@ class Variant extends ModelEntity
         $this->new = $new;
     }
 
-    public function getDetail()
+    public function getDetail() : ?Detail
     {
+        if ($this->detail === null) {
+            $this->detail = Shopware()->Models()->getRepository(Variant::class)->getShopwareDetail($this);
+        }
         return $this->detail;
     }
 
     /**
-     * @param ShopwareDetail $detail
+     * @param Detail $detail
      */
-    public function setDetail(?ShopwareDetail $detail): void
+    public function setDetail(?Detail $detail): void
     {
         $this->detail = $detail;
     }

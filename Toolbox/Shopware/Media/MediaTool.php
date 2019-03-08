@@ -5,15 +5,15 @@ namespace MxcDropshipInnocigs\Toolbox\Shopware\Media;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\Variant;
 use Shopware\Bundle\MediaBundle\MediaService;
 use Shopware\Components\Model\ModelManager;
-use Shopware\Models\Article\Article;
-use Shopware\Models\Article\Detail;
+use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Image;
 use Shopware\Models\Media\Album;
 use Shopware\Models\Media\Media;
 use Shopware_Components_Auth;
-use Traversable;
 
 class MediaTool
 {
@@ -57,12 +57,6 @@ class MediaTool
         $this->authService = $authService;
         $this->mediaService = $mediaService;
         $this->log = $log;
-        $this->init();
-    }
-
-    public function init() {
-        $this->shopwareArticleImages = new ArrayCollection();
-        $this->shopwareMainImages = [];
     }
 
     protected function getMedia(string $swUrl, string $url){
@@ -108,16 +102,16 @@ class MediaTool
      * Downloads image from given url if the image is not present already
      *
      * @param string $url
-     * @param Article $swArticle
+     * @param ShopwareArticle $swArticle
      * @param int $position
      * @return Image
      */
-    protected function getImage(string $url, Article $swArticle, int $position):Image
+    protected function getImage(string $url, ShopwareArticle $swArticle, int $position):Image
     {
         $urlInfo = pathinfo($url);
         $swUrl = 'media/image/' . $urlInfo['basename'];
 
-        if (!$this->mediaService->has($swUrl)) {
+        if (! $this->mediaService->has($swUrl)) {
             $this->log->debug('Downloading image from ' . $url);
             $fileContent = file_get_contents($url);
 
@@ -144,57 +138,57 @@ class MediaTool
 
     }
 
-    protected function createDetailImage(string $url, $swDetail, int $position) {
+    protected function createDetailImage(string $url, $swDetail) {
         $urlInfo = pathinfo($url);
 
         $image = new Image();
         $this->modelManager->persist($image);
 
         $image->setExtension($urlInfo['extension']);
-        $image->setMain(($position > 1) ? 2 : 1);
-        $image->setPosition($position);
         $image->setArticleDetail($swDetail);
 
         return $image;
     }
 
-    public function setArticleImages($icImages, Article $swArticle, Detail $swDetail)
+    public function setArticleImages(Article $icArticle, ShopwareArticle $swArticle) {
+        $this->shopwareMainImages = [];
+        $this->shopwareArticleImages = new ArrayCollection();
+
+        $this->removeImages($swArticle);
+
+        $variants = $icArticle->getVariants();
+        foreach ($variants as $variant) {
+            $this->setDetailImages($variant, $swArticle);
+        }
+        $swArticle->setImages($this->shopwareArticleImages);
+    }
+
+    public function setDetailImages(Variant $variant, ShopwareArticle $swArticle)
     {
-        if (is_string($icImages)) {
-            $icImages = [ $icImages ];
-        }
-        if (! (is_array($icImages) || $icImages instanceof Traversable)) {
-            throw new InvalidArgumentException(
-                sprintf('Invalid argument supplied: Expected string, array or instance of Traversable, got %s.',
-                is_object($icImages) ? get_class($icImages) : gettype($icImages)
-                )
-            );
-        }
+        $swDetail = $variant->getDetail();
+        if ($swDetail === null) return;
 
-        $i=count($this->shopwareMainImages) +1;
+        $i=count($this->shopwareMainImages) + 1;
+        $icImages = $variant->getImages();
         foreach ($icImages as $icImage) {
-
             $image = $this->shopwareMainImages[$icImage->getUrl()];
 
             if (null === $image) {
-                $image = $this->getImage($icImage->getUrl(), $swArticle, $i); //entry for Image itself
+                $image = $this->getImage($icImage->getUrl(), $swArticle, $i++); //entry for Image itself
                 $this->shopwareArticleImages->add($image);
+                $this->shopwareMainImages[$icImage->getUrl()] = $image;
             }
 
-            if ($swDetail->getConfiguratorOptions() !== null) $this->setOptionMappings($swDetail->getConfiguratorOptions(), $image);
+            if ($swDetail->getConfiguratorOptions() !== null) {
+                $this->setOptionMappings($swDetail->getConfiguratorOptions(), $image);
+            }
 
-            $detailImg = $this->createDetailImage($icImage->getUrl(), $swDetail, $image->getPosition()); //image entry for detail relation
+            $detailImg = $this->createDetailImage($icImage->getUrl(), $swDetail); //image entry for detail relation
             $detailImg->setParent($image);
             $detailImg->setMain($image->getMain());
-
+            $detailImg->setPosition($image->getPosition());
             $this->shopwareArticleImages->add($detailImg);
-            $this->shopwareMainImages[$icImage->getUrl()] = $image;
-
-            $i++;
         }
-        $swArticle->setImages($this->shopwareArticleImages);
-
-        return $this->shopwareArticleImages;
     }
 
     protected function setOptionMappings($configuratorOptions, Image $image){
@@ -219,5 +213,34 @@ class MediaTool
             /** @noinspection PhpParamsInspection */
             $image->setMappings([$mapping]);
         }
+    }
+
+    protected function removeImage(Image $image)
+    {
+        $children = $image->getChildren();
+        foreach ($children as $child) {
+            $this->removeImage($child);
+        }
+        $children->clear();
+
+        $mappings = $image->getMappings();
+        /** @var Image\Mapping $mapping */
+        foreach ($mappings as $mapping) {
+            $rules = $mapping->getRules();
+            foreach ($rules as $rule) {
+                $this->modelManager->remove($rule);
+            }
+            $this->modelManager->remove($mapping);
+        }
+        $this->modelManager->remove($image);
+    }
+
+    protected function removeImages(ShopwareArticle $swArticle)
+    {
+        $images = $swArticle->getImages();
+        foreach ($images as $image) {
+            $this->removeImage($image);
+        }
+        $images->clear();
     }
 }

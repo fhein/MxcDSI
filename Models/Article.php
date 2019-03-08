@@ -347,8 +347,11 @@ class Article extends ModelEntity  {
         $this->brand = $brand;
     }
 
-    public function getArticle()
+    public function getArticle() : ?ShopwareArticle
     {
+        if ($this->article === null) {
+            $this->article = Shopware()->Models()->getRepository(Article::class)->getShopwareArticle($this);
+        }
         return $this->article;
     }
 

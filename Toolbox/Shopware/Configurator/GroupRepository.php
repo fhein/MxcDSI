@@ -31,32 +31,21 @@ class GroupRepository
 
     protected function createLookupTable()
     {
-//        $dql = sprintf('SELECT g.name gName, o.name oName FROM %s g JOIN %s o WHERE o.group = g.id',
-//            Group::class,
-//        Option::class
-//        );
-//        $array = $this->modelManager->createQuery($dql)->getScalarResult();
-//        $this->data = [];
-//        foreach ($array as $entry) {
-//            $this->data[$entry['gName']]['group'] = true;
-//            $this->data[$entry['gName']]['options'][$entry['oName']] = true;
-//        }
-
         $dql = sprintf ('SELECT g FROM %s g', Group::class);
         $groups = $this->modelManager->createQuery($dql)->getResult();
         /** @var Group $group */
         foreach ($groups as $group) {
-            $groupName = $group->getName();
+            $groupName = strtolower($group->getName());
             $this->data[$groupName]['group'] = $group;
             $options = $group->getOptions();
             foreach($options as $option) {
-                $this->data[strtolower($groupName)]['options'][strtolower($option->getName())] = $option;
+                $this->data[$groupName]['options'][strtolower($option->getName())] = $option;
             }
         }
     }
 
     public function createGroup(string $groupName) : Group {
-        $group = $this->getGroup($groupName);
+        $group = $this->data[strtolower($groupName)]['group'];
 
         if ($group instanceof Group) {
             $this->log->notice(sprintf('%s: Returning existing Shopware configurator group %s.',
@@ -79,21 +68,14 @@ class GroupRepository
         return $group;
     }
 
-    public function getGroup(string $groupName) : ?Group {
-        return $this->data[strtolower($groupName)]['group'];
-    }
-
-    public function getOption(string $groupName, string $optionName) : ?Option {
-        return $this->data[strtolower($groupName)]['options'][strtolower($optionName)];
-    }
-
     public function createOption(string $groupName, string $optionName) : ?Option {
         // we do not create an option if we do not know the group
-        $group = $this->getGroup($groupName);
+        /** @var Group $group */
+        $group = $this->data[strtolower($groupName)]['group'];
         if (null === $group) return null;
 
         // if we know the option already return it
-        $option = $this->getOption($groupName, $optionName);
+        $option = $this->data[strtolower($groupName)]['options'][strtolower($optionName)];
         if ($option instanceof Option) {
             $this->log->notice(sprintf('%s: Returning existing Shopware configurator option %s of group %s.',
                 __FUNCTION__,

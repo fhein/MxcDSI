@@ -144,6 +144,8 @@ return [
                 'SEAL',
                 'RDA_BASE',
                 'ACCESSORY',
+                'BOX_MOD',
+                'BOX_MOD_CELL',
             ],
         ],
         'BOX_MOD' => [
@@ -152,6 +154,7 @@ return [
                 'SQUONKER_BOTTLE',
                 'ACCESSORY',
                 'CABLE',
+                'CLEROMIZER'
             ],
         ],
         'BOX_MOD_CELL' => [
@@ -160,6 +163,7 @@ return [
                 'SQUONKER_BOTTLE',
                 'ACCESSORY',
                 'CABLE',
+                'CLEAROMIZER'
             ],
         ],
         'E_CIGARETTE' => [
@@ -172,6 +176,13 @@ return [
                 'SQUONKER_BOTTLE',
                 'CABLE',
                 'DRIP_TIP',
+                'BOX_MOD',
+                'BOX_MOD_CELL',
+                'HEAD',
+                'CLEAROMIZER',
+                'TANK',
+                'SEAL',
+                'CABLE'
             ],
         ],
         'E_PIPE' => [
@@ -184,6 +195,13 @@ return [
                 'SQUONKER_BOTTLE',
                 'CABLE',
                 'DRIP_TIP',
+                'BOX_MOD',
+                'BOX_MOD_CELL',
+                'HEAD',
+                'CLEAROMIZER',
+                'TANK',
+                'SEAL',
+                'CABLE',
             ],
         ],
         'VAPORIZER' => [
@@ -194,7 +212,15 @@ return [
                 'LIQUID',
                 'ACCESSORY',
                 'SQUONKER_BOTTLE',
+                'CABLE',
                 'DRIP_TIP',
+                'BOX_MOD',
+                'BOX_MOD_CELL',
+                'HEAD',
+                'CLEAROMIZER',
+                'TANK',
+                'SEAL',
+                'CABLE',
             ],
         ],
     ],
@@ -221,6 +247,7 @@ return [
             ],
         ],
     ],
+    // We assume all articles having one of these flavor components in common as similar
     'similar_flavors' => [
         0 => 'Apfelstrudel',
         1 => 'Baklava',
