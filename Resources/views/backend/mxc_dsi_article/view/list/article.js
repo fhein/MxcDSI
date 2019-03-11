@@ -19,6 +19,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                 brand:                      { header: 'Brand'},
                 category:                   { header: 'Category'},
                 name:                       { header: 'Name', flex: 3 },
+                flavor:                     { header: 'Flavor', flex: 3 },
                 accepted:                   { header: 'accept', width:45, flex: 0}
             },
             addButton: false,
@@ -180,6 +181,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                         || e.column.text === 'Supplier'
                         || e.column.text === 'Category'
                         || e.column.text === 'Name'
+                        || e.column.text === 'Flavor'
                         || e.column.text === 'new'
                         || e.column.text === 'related'
                         || e.column.text === 'similar'

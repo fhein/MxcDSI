@@ -1700,27 +1700,44 @@ return array(
     'MF100A10-DM' => array(
         'number' => 'MF100A10-DM',
         'name' => 'Mule Fuel - Aroma Django Mango - 10 ml',
-        'flavor' => array(),
+        'flavor' => array(
+            'Mango',
+            'Orange',
+            'Traube',
+            'Koolada'
+        ),
     ),
     'MF100A10-MC' => array(
         'number' => 'MF100A10-MC',
         'name' => 'Mule Fuel - Aroma Mint Cake - 15 ml',
-        'flavor' => array(),
+        'flavor' => array(
+            0 => 'Cream',
+            1 => 'Torte',
+            2 => 'Minze',
+        ),
     ),
     'MF100A10-MM' => array(
         'number' => 'MF100A10-MM',
         'name' => 'Mule Fuel - Aroma Massive Melons - 10 ml',
-        'flavor' => array(),
+        'flavor' => array(
+            'verschiedene Melonensorten'
+        ),
     ),
     'MF100A10-TL' => array(
         'number' => 'MF100A10-TL',
         'name' => 'Mule Fuel - Aroma Tai Chi Lychee - 10 ml',
-        'flavor' => array(),
+        'flavor' => array(
+            'Litschi',
+            'Menthol',
+        ),
     ),
     'MF100A10-WR' => array(
         'number' => 'MF100A10-WR',
         'name' => 'Mule Fuel - Aroma White Rabbit - 15 ml',
-        'flavor' => array(),
+        'flavor' => array(
+            'weiße Schokolade',
+            'Himbeere'
+        ),
     ),
     'MR100L10-LE' => array(
         'number' => 'MR100L10-LE',

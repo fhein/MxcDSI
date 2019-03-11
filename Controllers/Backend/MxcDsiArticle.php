@@ -116,7 +116,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $articleMapper = $this->services->get(ArticleMapper::class);
         if ($uActive !== $sActive) {
             // User request to change active state of article
-            if (! $articleMapper->handleActiveStateChange($article)) {
+            if (! $articleMapper->handleActiveStateChange($article) && $uActive === true) {
                 return [
                     'success' => false,
                     'message' => 'Shopware article not created because it failed to validate.',

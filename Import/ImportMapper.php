@@ -187,7 +187,7 @@ class ImportMapper implements EventSubscriber
             $article = $this->getArticle($model);
 
             $flavor = $this->config['flavors'][$article->getIcNumber()]['flavor'];
-            if ($flavor !== null) {
+            if (is_array($flavor) && ! empty($flavor)) {
                 $article->setFlavor(implode(', ', $flavor));
             }
             $variant = new Variant();
@@ -222,7 +222,7 @@ class ImportMapper implements EventSubscriber
         foreach ($deletions as $model) {
             /** @var  Variant $variant */
             $variant = $variantRepository->findOneBy([ 'number' => $model->getModel()]);
-            $variant->removeChildAssociations();
+            $variant->removeImagesAndOptions();
             $article = $variant->getArticle();
             $article->removeVariant($variant);
             $this->modelManager->remove($variant);
@@ -313,8 +313,12 @@ class ImportMapper implements EventSubscriber
     protected function removeOrphanedItems() {
         $this->modelManager->getRepository(Article::class)->removeOrphaned();
         $this->modelManager->getRepository(Variant::class)->removeOrphaned();
+
+        // Orphaned options must be removed before orphaned groups because groups may
+        // become orphaned during removal of orphaned options
         $this->modelManager->getRepository(Option::class)->removeOrphaned();
         $this->modelManager->getRepository(Group::class)->removeOrphaned();
+
         $this->modelManager->getRepository(Image::class)->removeOrphaned();
     }
 

@@ -150,7 +150,10 @@ class MediaTool
         return $image;
     }
 
-    public function setArticleImages(Article $icArticle, ShopwareArticle $swArticle) {
+    public function setArticleImages(Article $icArticle) {
+        $swArticle = $icArticle->getArticle();
+        if (! $swArticle) return;
+
         $this->shopwareMainImages = [];
         $this->shopwareArticleImages = new ArrayCollection();
 

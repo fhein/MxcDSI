@@ -33,27 +33,32 @@ class Flavorist
     {
         if (file_exists($this->flavorFile)) {
             /** @noinspection PhpIncludeInspection */
-            $flavors = include $this->flavorFile;
+            $currentFlavors = include $this->flavorFile;
         } else {
-            $flavors = [];
+            $currentFlavors = [];
         }
         $articles = $this->modelManager->getRepository(Article::class)->findAll();
+        /** @var Article $article */
+        $newFlavors = [];
         foreach ($articles as $article) {
             $isFlavored = preg_match('~(Liquid)|(Aromen)|(Shake \& Vape)~', $article->getCategory()) === 1;
             $isMultiPack = strpos($article->getName(), 'Probierbox') !== false;
             if ($isFlavored && ! $isMultiPack) {
                 $number = $article->getIcNumber();
-                if ($flavors[$number] === null) {
-                    $flavors[$number] = [
-                        'number' => $number,
-                        'name'   => $article->getName(),
-                        'flavor' => [],
-                    ];
+                if ($article->getFlavor() !== null) {
+                    $flavor = array_map('trim', explode(',', $article->getFlavor()));
+                } else {
+                    $flavor = $currentFlavors[$number]['flavor'];
                 }
+                $newFlavors[$number] = [
+                    'number' => $number,
+                    'name'   => $article->getName(),
+                    'flavor' => $flavor
+                ];
             }
         }
-        ksort($flavors);
-        Factory::toFile($this->flavorFile, $flavors);
+        ksort($newFlavors);
+        Factory::toFile($this->flavorFile, $newFlavors);
     }
 
 

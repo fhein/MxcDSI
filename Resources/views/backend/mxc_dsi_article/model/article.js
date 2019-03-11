@@ -16,6 +16,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.model.Article', {
         { name : 'active', type: 'boolean' },
         { name : 'manufacturer', type: 'string' },
         { name : 'name', type: 'string' },
+        { name : 'flavor', type: 'string' },
         { name : 'supplier', type: 'string' },
         { name : 'activateRelatedArticles', type: 'boolean' },
         { name : 'activateSimilarArticles', type: 'boolean' },

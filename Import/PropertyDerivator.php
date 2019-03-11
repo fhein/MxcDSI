@@ -164,17 +164,17 @@ class PropertyDerivator
         return $dosage;
     }
 
-    protected function getAsscociatedArticles(Article $article, array $config)
+    protected function getAsscociatedArticles(Article $article, array $config) : ArrayCollection
     {
-        $associatedArticles = [];
+        $associatedArticles = new ArrayCollection();
         foreach ($config['groups'] as $groupName) {
             foreach ($this->articleGroups[$groupName] as $cName => $group) {
                 /** @var Article $relatedArticle */
                 foreach ($group as $relatedArticle) {
-                    if ($config['match_common_name'] && $article->getCommonName() !== $cName) {
-                        continue;
-                    }
-                    $associatedArticles[] = $relatedArticle;
+                    if ($config['match_common_name'] && $article->getCommonName() !== $cName) continue;
+                    if ($associatedArticles->contains($relatedArticle)) continue;
+
+                    $associatedArticles->add($relatedArticle);
                 }
             }
         }
@@ -188,7 +188,7 @@ class PropertyDerivator
                 /** @var Article $article */
                 foreach ($articles as $article) {
                     $relatedArticles = $this->getAsscociatedArticles($article, $setting);
-                    $article->setRelatedArticles(new ArrayCollection($relatedArticles));
+                    $article->setRelatedArticles($relatedArticles);
                 }
             }
         }
@@ -237,7 +237,7 @@ class PropertyDerivator
                 /** @var Article $article */
                 foreach ($articles as $article) {
                     $similarArticles = $this->getAsscociatedArticles($article, $setting);
-                    $article->setSimilarArticles(new ArrayCollection($similarArticles));
+                    $article->setSimilarArticles($similarArticles);
                 }
             }
         }

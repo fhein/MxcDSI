@@ -107,8 +107,9 @@ class PropertyMapper
 
         // do not change ordering of the next lines
         $this->mapManufacturer($article, $model->getManufacturer());    // sets supplier, brand and manufacturer
-        $this->mapArticleName($model, $article);                        // uses brand, sets name
+        $article->setName($this->mapArticleName($model, $article));     // uses brand, sets name
         $this->mapCategory($model, $article);                           // uses supplier, brand and name, sets category
+        $this->mapFlavor($article);
     }
 
     /**
@@ -181,23 +182,22 @@ class PropertyMapper
         return $name;
     }
 
-    public function mapArticleName(Model $model, Article $article): void
+    public function mapArticleName(Model $model, Article $article): string
     {
         $modelName = $model->getName();
         $this->report['name'][$modelName]['model'] = $model->getModel();
         $trace['imported'] = $model->getName();
-        $name = $this->removeOptionsFromModelName($model);
+        $name = $this->replace($modelName, 'name_prepare');
+        $trace['name_prepared'] = $name;
+        $name = $this->removeOptionsFromModelName($name, $model);
         $trace['options_removed'] = $name;
-
 
         // general name mapping applied first
         $result = $this->config['article_names'][$model->getName()];
         if ($result !== null) {
             $trace['directly_mapped'] = $result;
-            $article->setName($result);
-            return;
+            return $result;
         }
-        $name = $this->replace($name, 'name_prepare');
 
         // rule based name mapping applied next
         $name = $this->correctSupplierAndBrand($name, $article);
@@ -220,20 +220,27 @@ class PropertyMapper
         }
 
         $name = $this->replace($name, 'name_cleanup');
+        $name = preg_replace('~\s+~', ' ', $name);
 
-        $article->setName($name);
         $trace['mapped'] = $name;
-
         $this->report['name'][$trace['imported']] = $trace;
+        return $name;
     }
 
-    public function removeOptionsFromModelName(Model $model)
+    protected function mapFlavor(Article $article) {
+        $flavor = $this->config['flavors'][$article->getIcNumber()]['flavor'];
+        if (is_array($flavor) && ! empty($flavor)) {
+            $article->setFlavor(implode(', ', $flavor));
+        }
+    }
+
+    public function removeOptionsFromModelName(string $name, Model $model)
     {
         // Innocigs variant names include variant descriptions
         // We take the first variant's name and remove the variant descriptions
         // in order to derive the real article name
         $options = explode(MXC_DELIMITER_L2, $model->getOptions());
-        $name = $model->getName();
+//        $name = $model->getName();
 
         foreach ($options as $option) {
             $option = explode(MXC_DELIMITER_L1, $option)[1];
@@ -255,6 +262,7 @@ class PropertyMapper
             $name = $this->applyOptionNameMapping($number, $name, $option);
 
         }
+        $name = preg_replace('~\s+~', ' ', $name);
         return trim($name);
     }
 
@@ -357,7 +365,7 @@ class PropertyMapper
         foreach ($variants as $variant) {
             $number = $variant->getIcNumber();
             $model = $models[$number];
-            $map[$this->removeOptionsFromModelName($model)] = $number;
+            $map[$this->mapArticleName($model, $article)] = $number;
         }
         if (count($map) === 1) return [];
         $issues = [];
@@ -365,7 +373,8 @@ class PropertyMapper
             /** @var Model $model */
             $model = $models[$number];
             $issues[$number] = [
-                'name' => $name,
+                'imported_name' => $model->getName(),
+                'mapped_name' => $name,
                 'options' => $model->getOptions()
             ];
         }

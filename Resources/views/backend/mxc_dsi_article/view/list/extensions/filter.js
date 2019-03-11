@@ -26,6 +26,9 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.extensions.Filter', {
                 category: {
                     expression: 'LIKE',
                 },
+                flavor: {
+                    expression: 'LIKE',
+                },
                 active: { },
                 accepted: { },
                 new: { },

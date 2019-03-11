@@ -382,7 +382,7 @@ class Variant extends ModelEntity
         $this->icNumber = $icNumber;
     }
 
-    public function removeChildAssociations()
+    public function removeImagesAndOptions()
     {
         foreach ($this->options as $option) {
             $option->removeVariant($this);

@@ -71,7 +71,7 @@ class ArticleMapper
     protected $shopwareGroupRepository = null;
     protected $shopwareGroupLookup = [];
 
-    protected $ekCustomerGroup;
+    protected $customerGroups;
 
     public function __construct(
         ModelManager $modelManager,
@@ -94,20 +94,22 @@ class ArticleMapper
         if (! $this->dropshippersCompanionPresent) {
             $this->log->warn('Can not prepare articles for dropship orders. Dropshipper\'s Companion is not installed.');
         }
-        $this->ekCustomerGroup = $this->modelManager->getRepository(Group::class)->findOneBy(['key' => 'EK']);
+        $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
+        foreach ($customerGroups as $customerGroup) {
+            $this->customerGroups[$customerGroup->getKey()] = $customerGroup;
+        }
     }
 
     public function handleActiveStateChange(Article $icArticle)
     {
-        $swArticle = $icArticle->getArticle();
-        $active = $icArticle->isActive();
-        if ($swArticle === null && $active) {
-            $swArticle = $this->createShopwareArticle($icArticle);
+        $swArticle = null;
+        if ($icArticle->isActive()) {
+            $swArticle = $this->updateShopwareArticle($icArticle) ?? $this->createShopwareArticle($icArticle);
         }
         if ($swArticle !== null) {
             $this->adjustShopwareArticleActiveState($icArticle);
         }
-        return $active ? $swArticle : true;
+        return $swArticle;
     }
 
     public function createShopwareArticle(Article $icArticle): ?ShopwareArticle
@@ -121,9 +123,9 @@ class ArticleMapper
         $this->modelManager->persist($swArticle);
         $icArticle->setArticle($swArticle);
 
-        $this->setShopwareArticleProperties($icArticle, $swArticle, true);
-        $this->createShopwareDetails($icArticle, $swArticle);
-        $this->mediaTool->setArticleImages($icArticle, $swArticle);
+        $this->setShopwareArticleProperties($icArticle, true);
+        $this->createShopwareDetails($icArticle);
+        $this->mediaTool->setArticleImages($icArticle);
         $this->setReferencePrice($icArticle);
 
         $swArticle->setActive(false);
@@ -131,31 +133,142 @@ class ArticleMapper
         return $swArticle;
     }
 
-    public function updateShopwareArticle(Article $icArticle, bool $force = false)
+    /**
+     * @param Article $icArticle
+     */
+    protected function createShopwareDetails(Article $icArticle): void
     {
         $swArticle = $icArticle->getArticle();
-        if (!$swArticle) {
-            return;
+        if (! $swArticle) return;
+
+        $set = $this->optionMapper->createConfiguratorSet($icArticle);
+        $swArticle->setConfiguratorSet($set);
+
+        $icVariants = $icArticle->getVariants();
+
+        $isMainDetail = true;
+        foreach ($icVariants as $icVariant) {
+            if (! $this->validator->validateVariant($icVariant)) {
+                continue;
+            }
+
+            $swDetail = $this->createShopwareDetail($icVariant);
+            $swDetail->setKind(2);
+            if ($isMainDetail) {
+                $swDetail->setKind(1);
+                // -- retail price gets set only on creation
+                $this->setRetailPrice($icVariant);
+                $swArticle->setMainDetail($swDetail);
+                $swArticle->setAttribute($swDetail->getAttribute());
+                $isMainDetail = false;
+            }
         }
+    }
+
+    protected function createShopwareDetail(Variant $icVariant)
+    {
+        $swArticle = $icVariant->getArticle()->getArticle();
+        if (! $swArticle) return null;
+
+        $detail = new Detail();
+        $this->modelManager->persist($detail);
+        // The next two settings have to be made upfront because the later code relies on these
+        $icVariant->setDetail($detail);
+        $detail->setArticle($swArticle);
+
+        // The class \Shopware\Models\Attribute\Article ist part of the Shopware attribute system.
+        // It gets (re)generated automatically by Shopware core, when attributes are added/removed
+        // via the attribute crud service. It is located in \var\cache\production\doctrine\attributes.
+        $attribute = new \Shopware\Models\Attribute\Article();
+        $detail->setAttribute($attribute);
+
+        $this->setShopwareDetailProperties($icVariant,  true);
+        $detail->setActive(false);
+
+        // Note: shopware options were added non persistently to variants when configurator set was created
+        $detail->setConfiguratorOptions(new ArrayCollection($icVariant->getShopwareOptions()));
+
+        return $detail;
+    }
+
+    protected function setShopwareDetailProperties(Variant $icVariant, bool $force)
+    {
+        $swDetail = $icVariant->getDetail();
+        $icArticle = $icVariant->getArticle();
+
+        $swDetail->setNumber($icVariant->getNumber());
+        $swDetail->setEan($icVariant->getEan());
+        $swDetail->setPurchasePrice($icVariant->getPurchasePrice());
+
+        $attribute = $swDetail->getAttribute();
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setMxcDsiBrand($icArticle->getBrand());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setMxcDsiSupplier($icArticle->getSupplier());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setMxcDsiFlavor($icArticle->getFlavor());
+
+        $probe = $swDetail->getShippingTime();
+        if ($force || ! $probe ) {
+            $swDetail->setShippingTime(5);
+        }
+
+        $probe = $swDetail->getLastStock();
+        if ($force || ! $probe) {
+            $swDetail->setLastStock(0);
+        }
+
+        // The next properties are nullable. As long as we do not provide
+        // default values we ignore them.
+
+//        $probe = $swDetail->getStockMin();
+//        if ($force || ! $probe) {
+//            $swDetail->setStockMin(null);
+//        }
+//
+//        $probe = $swDetail->getSupplierNumber();
+//        if ($force || ! $probe) {
+//            $swDetail->setSupplierNumber(null);
+//        }
+//
+//        $probe = $swDetail->getAdditionalText();
+//        if ($force || ! $probe) {
+//            $swDetail->setAdditionalText(null);
+//        }
+//
+//        $probe = $swDetail->getPackUnit();
+//        if ($force || ! $probe) {
+//            $swDetail->setPackUnit(null);
+//        }
+    }
+
+    public function updateShopwareArticle(Article $icArticle, bool $force = false) : ?ShopwareArticle
+    {
+        $swArticle = $icArticle->getArticle();
+        if (!$swArticle) return null;
 
         // deactivate article if it is not accepted any longer
-        if (!$this->validator->validateArticle($icArticle)) {
+        if (! $this->validator->validateArticle($icArticle)) {
             $icArticle->setActive(false);
             $this->handleActiveStateChange($icArticle);
-            return;
+            return $swArticle;
         }
 
-        $this->setShopwareArticleProperties($icArticle, $swArticle, $force);
-        $this->updateShopwareDetails($icArticle, $swArticle);
+        $this->setShopwareArticleProperties($icArticle, $force);
+        $this->updateShopwareDetails($icArticle);
 
-        $this->mediaTool->setArticleImages($icArticle, $swArticle);
+        $this->mediaTool->setArticleImages($icArticle);
         $this->setReferencePrice($icArticle);
 
         $this->modelManager->flush();
+        return $swArticle;
     }
 
-    protected function updateShopwareDetails(Article $icArticle, ShopwareArticle $swArticle)
+    protected function updateShopwareDetails(Article $icArticle)
     {
+        $swArticle = $icArticle->getArticle();
+        if (! $swArticle) return;
+
         $swDetails = $swArticle->getDetails();
         $variants = $icArticle->getVariants();
         $deletedVariants = [];
@@ -175,12 +288,26 @@ class ArticleMapper
                 $newVariants[] = $variant;
             }
         }
-        // @todo: Add new Variants, delete/deactivate obsolete variants
+        if (empty($newVariants) && empty($deletedVariants)) {
+            foreach ($variants as $variant) {
+                $this->setShopwareDetailProperties($variant, false);
+            }
+            return;
+        }
 
+        $set = $this->optionMapper->createConfiguratorSet($icArticle);
+        $swArticle->setConfiguratorSet($set);
+
+
+
+        // @todo: Add new Variants, delete/deactivate obsolete variants
     }
 
-    protected function setShopwareArticleProperties(Article $icArticle, ShopwareArticle $swArticle, bool $force)
+    protected function setShopwareArticleProperties(Article $icArticle, bool $force)
     {
+        $swArticle = $icArticle->getArticle();
+        if (! $swArticle) return;
+
         // update description if not already set or if force is set
         $probe = $swArticle->getDescriptionLong();
         if ($force || !$probe || $probe === '') {
@@ -217,25 +344,6 @@ class ArticleMapper
         $this->setCategories($icArticle, $swArticle);
     }
 
-    // Set Shopware article's active state according to Innocigs article active state
-
-    protected function setRelatedArticles(Article $icArticle, ShopwareArticle $swArticle)
-    {
-        $this->setAssociatedArticles(
-            $icArticle->getActivateRelatedArticles(),
-            $icArticle->getRelatedArticles(),
-            $swArticle->getRelated()
-        );
-    }
-
-    public function setSimilarArticles(Article $icArticle, ShopwareArticle $swArticle)
-    {
-        $this->setAssociatedArticles(
-            $icArticle->getActivateSimilarArticles(),
-            $icArticle->getSimilarArticles(),
-            $swArticle->getSimilar());
-    }
-
     public function adjustShopwareArticleActiveState(Article $icArticle)
     {
         $swArticle = $icArticle->getArticle();
@@ -254,122 +362,6 @@ class ArticleMapper
             $swDetail->setActive($state);
             $this->setDropship($swDetail, $variant, $state);
         }
-    }
-
-    protected function removeShopwareDetails(ShopwareArticle $swArticle)
-    {
-        $details = $swArticle->getDetails();
-        /** @var Detail $detail */
-        foreach ($details as $detail) {
-            $attribute = $detail->getAttribute();
-            $this->modelManager->remove($detail);
-            $this->modelManager->remove($attribute);
-        }
-        $details->clear();
-    }
-
-    /**
-     * @param Article $icArticle
-     * @param ShopwareArticle $swArticle
-     */
-    protected function createShopwareDetails(Article $icArticle, ShopwareArticle $swArticle): void
-    {
-        $set = $this->optionMapper->createConfiguratorSet($icArticle);
-        $swArticle->setConfiguratorSet($set);
-
-        $variants = $icArticle->getVariants();
-
-        $isMainDetail = true;
-        foreach ($variants as $variant) {
-            if (! $this->validator->validateVariant($variant)) {
-                continue;
-            }
-
-            $swDetail = $this->createShopwareDetail($variant, $swArticle);
-            $swDetail->setKind(2);
-            if ($isMainDetail) {
-                $swDetail->setKind(1);
-                $swArticle->setMainDetail($swDetail);
-                $swArticle->setAttribute($swDetail->getAttribute());
-                $isMainDetail = false;
-            }
-        }
-    }
-
-    protected function createShopwareDetail(Variant $variant, ShopwareArticle $swArticle)
-    {
-        $detail = new Detail();
-        $this->modelManager->persist($detail);
-        // The next two settings have to be made upfront because the later code relies on these
-        $variant->setDetail($detail);
-        $detail->setArticle($swArticle);
-
-        // The class \Shopware\Models\Attribute\Article ist part of the Shopware attribute system.
-        // It gets (re)generated automatically by Shopware core, when attributes are added/removed
-        // via the attribute crud service. It is located in \var\cache\production\doctrine\attributes.
-        $attribute = new \Shopware\Models\Attribute\Article();
-        $detail->setAttribute($attribute);
-
-        $this->setShopwareDetailProperties($variant, $detail, true);
-        $detail->setActive(false);
-
-        // Note: shopware options were added non persistently to variants when configurator set was created
-        $detail->setConfiguratorOptions(new ArrayCollection($variant->getShopwareOptions()));
-
-        return $detail;
-    }
-
-    protected function setShopwareDetailProperties(Variant $icVariant, Detail $swDetail, bool $force)
-    {
-        $icArticle = $icVariant->getArticle();
-
-        $swDetail->setNumber($icVariant->getNumber());
-        $swDetail->setEan($icVariant->getEan());
-        $swDetail->setPurchasePrice($icVariant->getPurchasePrice());
-
-        $this->setRetailPrice($icVariant);
-
-        $attribute = $swDetail->getAttribute();
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setMxcDsiBrand($icArticle->getBrand());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setMxcDsiSupplier($icArticle->getSupplier());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setMxcDsiFlavor($icArticle->getFlavor());
-
-        $probe = $swDetail->getShippingTime();
-        if ($force || ! $probe) {
-            $swDetail->setShippingTime(5);
-        }
-
-        $probe = $swDetail->getLastStock();
-        if ($force || ! $probe) {
-            // @todo
-            $swDetail->setLastStock(0);
-        }
-
-        // The next properties are nullable. As long as we do not provide
-        // default values we ignore them.
-
-//        $probe = $swDetail->getStockMin();
-//        if ($force || ! $probe) {
-//            $swDetail->setStockMin(null);
-//        }
-//
-//        $probe = $swDetail->getSupplierNumber();
-//        if ($force || ! $probe) {
-//            $swDetail->setSupplierNumber(null);
-//        }
-//
-//        $probe = $swDetail->getAdditionalText();
-//        if ($force || ! $probe) {
-//            $swDetail->setAdditionalText(null);
-//        }
-//
-//        $probe = $swDetail->getPackUnit();
-//        if ($force || ! $probe) {
-//            $swDetail->setPackUnit(null);
-//        }
     }
 
     protected function setDropship(Detail $swDetail, Variant $variant, bool $state)
@@ -548,40 +540,46 @@ class ArticleMapper
     }
 
     /**
-     * Creates and returns a price object for the 'EK' customer group which is
-     * related to the given Shopware detail and the assiciated Shopware article.
+     * Creates and returns a price object for the customer group identified by $key
+     * which is related to the given Shopware detail and the assiciated Shopware article.
      *
      * @param Detail $swDetail
+     * @param string $key       customer group key
      * @return Price
      */
-    protected function createPrice(Detail $swDetail)
+    protected function createPrice(Detail $swDetail, string $key)
     {
+        $customerGroup = $this->customerGroups[$key];
+        if ($customerGroup === null) {
+            throw new \RuntimeException(__FUNCTION__ . ': Invalid customer group key ' . $key . '.');
+        }
         $price = new Price();
         $this->modelManager->persist($price);
-        $price->setCustomerGroup($this->ekCustomerGroup);
+        $price->setCustomerGroup($customerGroup);
         $price->setArticle($swDetail->getArticle());
         $price->setDetail($swDetail);
         return $price;
     }
 
     /**
-     * Returns the price object for the customer group 'EK' of the given Shopware
-     * detail object. If the price object is not found it will be created and added
-     * to the Shopware detail object.
+     * Returns the price object for the customer group with the given key of the given
+     * Shopware detail object. If the price object is not found it will be created and
+     * added to the Shopware detail object.
      *
      * @param Detail $swDetail
+     * @param string $key           customer group key
      * @return Price
      */
-    protected function getPrice(Detail $swDetail)
+    protected function getPrice(Detail $swDetail, string $key = 'EK')
     {
         $prices = $swDetail->getPrices();
         /** @var Price $price */
         foreach ($prices as $price) {
-            if ($price->getCustomerGroup()->getKey() === 'EK') {
+            if ($price->getCustomerGroup()->getKey() === $key) {
                 return $price;
             }
         }
-        $price = $this->createPrice($swDetail);
+        $price = $this->createPrice($swDetail, $key);
         $swDetail->getPrices()->add($price);
         return $price;
     }
@@ -654,6 +652,46 @@ class ArticleMapper
     {
         $swRelated = $activate ? $this->activateShopwareArticles($icArticles) : $this->getShopwareArticles($icArticles);
         $this->addArticlesToCollection($swRelated, $target);
+    }
+
+    /**
+     * Set the related articles of a Shopware article according to the settings of the InnoCigs article.
+     * If the $replace flag is true, the related articles of the Shopware article will be replaced. If the
+     * $replace flag is false, new related articles will be added, if any.
+     *
+     * @param Article $icArticle
+     * @param ShopwareArticle $swArticle
+     * @param bool $replace                 true: replace related articles, false: add related articles
+     */
+    protected function setRelatedArticles(Article $icArticle, ShopwareArticle $swArticle, bool $replace = false)
+    {
+        $related = $swArticle->getRelated();
+        if ($replace) $related->clear();
+        $this->setAssociatedArticles(
+            $icArticle->getActivateRelatedArticles(),
+            $icArticle->getRelatedArticles(),
+            $related
+        );
+    }
+
+    /**
+     * Set the similar articles of a Shopware article according to the settings of the InnoCigs article.
+     * If the $replace flag is true, the similar articles of the Shopware article will be replaced. If the
+     * $replace flag is false, new similar articles will be added, if any.
+     *
+     * @param Article $icArticle
+     * @param ShopwareArticle $swArticle
+     * @param bool $replace                 true: replace related articles, false: add related articles
+     */
+    public function setSimilarArticles(Article $icArticle, ShopwareArticle $swArticle, bool $replace = false)
+    {
+        $similar = $swArticle->getSimilar();
+        if ($replace) $similar->clear();
+        $this->setAssociatedArticles(
+            $icArticle->getActivateSimilarArticles(),
+            $icArticle->getSimilarArticles(),
+            $similar
+        );
     }
 
     /**

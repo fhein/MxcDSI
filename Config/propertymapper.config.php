@@ -1,7 +1,32 @@
 <?php
 return [
-    'settings'                  => [
+    'settings' => [
         'checkRegularExpressions' => true,
+    ],
+
+    'name_prepare'              => [
+        'preg_replace' => [
+            '~\s+~'                                        => ' ',
+            '~(- )+~'                                      => '$1',
+            '~ ,~'                                         => ',',
+            '~, -~'                                        => '-',
+            '~ - ?$~'                                      => '',
+            '~10ml\/ml~'                                   => '10ml',
+            '~0ml\/ml~'                                    => '0mg/ml',
+            '~(\d+)m~'                                     => '$1 m',
+            '~(0 mg)$~'                                    => '$1/ml',
+            '~(\d) mAH~'                                   => '$1 mAh',
+            '~(\d mg)[^\/]~'                               => '$1/ml',
+            '~Sherbert~'                                   => 'Sherbet',
+            '~Americas~'                                   => 'America\'s',
+            '~America´s~'                                  => 'America\'s',
+            '~(Heads )+~'                                  => '$1',
+            '~(Head )+~'                                   => '$1',
+            '~(10er Packung)en~'                           => '$1',
+            '~((HW1)|(HW2)) (Heads)~'                      => 'HW1/HW2 $4',
+            '~artikblau~'                                  => 'arktikblau',
+            '~(K2 & K3.*) \(\d+ (St. pro Pack\))~'         => '$1 (5 $2',
+        ],
     ],
     'article_name_option_fixes' => [
         'prisma-blau'                                => 'blau-prisma',
@@ -11,16 +36,15 @@ return [
         'prisma-rot'                                 => 'rot-prisma',
         'prisma-gunmetal'                            => 'gunmetal-prisma',
         '0,4 Ohm'                                    => '0,4',
+        '2,0 ml'                                     => '2 ml',
         '2 ml'                                       => '2,0 ml',
         '4 ml'                                       => '4ml',
         'Typ A'                                      => 'Typ-A',
         'Typ B'                                      => 'Typ-B',
-        '3 ml'                                       => '3ml',
-        '5 ml'                                       => '5ml',
-        '8 ml'                                       => '8ml',
-        '10 mg/ml'                                   => '10mg/ml',
-        'M'                                          => 'M',
-        'XL'                                         => 'XL',
+        '3,0ml'                                      => '3 ml',
+        '4,2ml'                                      => '4,2 ml',
+        'V2-M'                                       => 'M',
+        'V2-XL'                                      => 'XL',
         'matt-schwarz'                               => 'matt schwarz',
         'schwarz-weiß'                               => 'schwarz-weiss',
         'Flasche schwarz transparent + schwarze Cap' => 'schwarz-transparent mit schwarzer Cap',
@@ -46,7 +70,7 @@ return [
         'ProC1-S 0,25 Ohm'                           => '0,25 Ohm',
         'ProC2 0,15 Ohm'                             => '0,15 Ohm',
         'ProC3 0,2 Ohm'                              => '0,2 Ohm',
-        'ProC4 0,2 Ohm'                              => '0,15 Ohm',
+        'ProC4 0,15 Ohm'                             => '0,15 Ohm',
         'Edelstahl (5er Pack)'                       => 'Edelstahl (5 St. pro Pack)',
         'Kunststoff (10er Pack)'                     => 'KunstStoff (10 St. pro Pack),'
     ],
@@ -66,24 +90,6 @@ return [
         'Vampire Vape Applelicious - E-Zigaretten Liquid' => 'Vampire Vape - Applelicious - E-Zigaretten Liquid',
     ],
 
-    'name_prepare' => [
-        'preg_replace' => [
-            '~\s+~'          => ' ',
-            '~(- )+~'        => '$1',
-            '~ ,~'           => ',',
-            '~, -~'          => '-',
-            '~ - ?$~'        => '',
-            '~0ml\/ml~'      => '0mg/ml',
-            '~(\d+)m~'       => '$1 m',
-            '~(0 mg)$~'      => '$1/ml',
-            '~(\d) mAH~'     => '$1 mAh',
-            '~(\d mg)[^\/]~' => '$1/ml',
-            '~Sherbert~'     => 'Sherbet',
-            '~Americas~'     => 'America\'s',
-            '~(Heads )+~'    => '$1',
-            '~(Head )+~'     => '$1',
-        ],
-    ],
 
     'name_cleanup' => [
         'preg_replace' => [
@@ -110,6 +116,7 @@ return [
             '~- (Head)~'          => '$1',
             '~^(\p{L}*) (Head)~'  => '$1 - $2',
             '~(JustFog) ([^\-])~' => '$1 - $2',
+            '~ XXer Packung~'     => '',
         ],
     ],
 
@@ -145,6 +152,7 @@ return [
             '~([^,\-]) (\d+ ml, \d+ mg/ml)~'                             => '$1 - $2',
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
             '~Rebelz (- Aroma)(.*)(- \d+ ml)~'                           => 'Rebelz - $2 $1 $3',
+            '~(Mule Fuel) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 - $4',
             '~Vape( -)?( Aroma)(.*)(- \d+ ml)~'                          => 'Vape - $3 -$2 $4',
             '~(Vampire Vape) ([^\-])~'                                   => '$1 - $2',
             '~(VLADS VG) Liquid (-.*)~'                                  => '$1 $2 - Liquid',
@@ -173,6 +181,8 @@ return [
             '~([^\-]) (\d.\d+) (mAh)~'                                   => '$1 - $2 $3',
             '~(Liquid)$~'                                                => '$1 - 10 ml',
             '~(\d+(\.\d+)? ml, 0 mg/ml)$~'                               => '- Shake & Vape - $1',
+            '~(Chicken Shop.*) (- 0 mg/ml)~'                             => '$1 - Shake & Vape $2',
+            '~(Disco Juice.*) (- 0 mg/ml)~'                              => '$1 - Shake & Vape $2',
             '~(Basis -) - Shake \& Vape -~'                              => '$1',
             '~([^,\-]) (\d m)~'                                          => '$1, $2',
             '~Clearomizer (Head)~'                                       => '$1',
@@ -268,6 +278,7 @@ return [
             '~(Typhon) (- \d+ Watt)~'                                    => '$1 - Akku $2',
             '~(Speeder) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(Crown 4) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
+            '~(x Ultroner EOS II) (- \d+ Watt)~'                         => '$1 - Akkuträger $2',
             '~(SkyStar) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(Puxos) (- \d+ Watt)~'                                     => '$1 - Akkuträger $2',
             '~(Feedlink) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
@@ -287,6 +298,7 @@ return [
             '~(Aegis Legend) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Nova) (- \d+ Watt)~'                                      => '$1 - Akkuträger $2',
             '~(Espion.*) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
+            '~(eVic Primo SE) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~([GXTH]-Priv( 2)?) (- \d+ Watt)~'                          => '$1 - Akkuträger $3',
             '~(G-Priv Baby) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(X-Priv Baby) (- \d\.\d+ mAh)~'                            => '$1 - Akku $2',
@@ -561,6 +573,8 @@ return [
         '28 GA*2+32 GA'              => '28 GA * 2 + 32 GA',
         '28 GA*3+36 GA'              => '28 GA * 3 + 36 GA',
         '30 GA*3+38 GA'              => '30 GA * 3 + 38 GA',
+        '4,2ml'                      => '4,2 ml',
+        '3,0ml'                      => '3,0 ml',
         '50PG / 50VG'                => 'VG/PG: 50/50',
         '70VG / 30PG'                => 'VG/PG: 70/30',
         '80VG / 20PG'                => 'VG/PG: 80/20',
@@ -638,8 +652,8 @@ return [
     'innocigs_brands'        => ['SC', 'Steamax', 'InnoCigs', 'Innocigs'],
     'innocigs_manufacturers' => ['SC', 'Steamax', 'InnoCigs', 'Innocigs', 'Akkus'],
 
-    'articles' => 'This key is reserverd for PropertyMapperFactory',
-    'log'      => [
+    'articles'      => 'This key is reserverd for PropertyMapperFactory',
+    'log'           => [
         'brand',
         'supplier',
         'option',
@@ -649,12 +663,13 @@ return [
     ],
     'retail_prices' => [
         [
-            'criteria' => [
-                'brand'     => 'SC',
-                'supplier'  => 'InnoCigs',
-                'type'      => 'LIQUID',
+            'criteria'     => [
+                'brand'    => 'SC',
+                'supplier' => 'InnoCigs',
+                'type'     => 'LIQUID',
             ],
-            'retail_price'  => 2.50
+            'retail_price' => 2.50
         ]
-    ]
+    ],
+    'flavors'       => include __DIR__ . '/flavor.config.php',
 ];
