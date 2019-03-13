@@ -48,14 +48,14 @@ class GroupRepository
         $group = $this->data[strtolower($groupName)]['group'];
 
         if ($group instanceof Group) {
-            $this->log->notice(sprintf('%s: Returning existing Shopware configurator group %s.',
+            $this->log->notice(sprintf('%s: Using existing Shopware configurator group %s.',
                 __FUNCTION__,
                 $group->getName()
             ));
             return $group;
         }
 
-        $this->log->notice(sprintf('%s: Creating shopware group %s',
+        $this->log->notice(sprintf('%s: Creating Shopware configurator group %s',
             __FUNCTION__,
             $groupName
         ));
@@ -77,7 +77,7 @@ class GroupRepository
         // if we know the option already return it
         $option = $this->data[strtolower($groupName)]['options'][strtolower($optionName)];
         if ($option instanceof Option) {
-            $this->log->notice(sprintf('%s: Returning existing Shopware configurator option %s of group %s.',
+            $this->log->notice(sprintf('%s: Using existing Shopware configurator option %s of group %s.',
                 __FUNCTION__,
                 $optionName,
                 $groupName
@@ -85,7 +85,7 @@ class GroupRepository
             return $option;
         }
 
-        $this->log->notice(sprintf('%s: Creating option %s for group %s.',
+        $this->log->notice(sprintf('%s: Creating Shopware configurator option %s for group %s.',
             __FUNCTION__,
             $optionName,
             $groupName
@@ -171,11 +171,4 @@ class GroupRepository
         $groups = $this->modelManager->getRepository(Group::class)->findAll();
         $this->sortGroupOptions($groups, $sortFlags);
     }
-
-
-    public function flush() {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
-    }
-
 }

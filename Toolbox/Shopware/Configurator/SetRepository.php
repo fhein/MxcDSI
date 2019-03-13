@@ -40,13 +40,14 @@ class SetRepository
 
     protected function createSet(string $name) {
         $set = new Set();
+        $this->modelManager->persist($set);
         $set->setName($name);
         $set->setPublic(false);
         $set->setType(0);
         return $set;
     }
 
-    public function initSet(string $name) {
+    public function getSet(string $name) {
         $setRepo = $this->modelManager->getRepository(Set::class);
         /**
          * @var Set $set
@@ -66,8 +67,9 @@ class SetRepository
             $set->getGroups()->clear();
             $set->getArticles()->clear();
         }
-        $this->modelManager->persist($set);
         $this->set = $set;
+        $this->groups = [];
+        $this->options = [];
         return $this->set;
     }
 
