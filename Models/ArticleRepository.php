@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\ORM\Query;
+use MxcDropshipInnocigs\Mapping\EntitiyValidator;
 
 class ArticleRepository extends BaseEntityRepository
 {
@@ -34,6 +35,20 @@ class ArticleRepository extends BaseEntityRepository
     {
         return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
     }
+
+    public function getValidVariants(Article $article) : array
+    {
+        $validator = new EntitiyValidator();
+        $validVariants = [];
+        $variants = $article->getVariants();
+        foreach ($variants as $variant) {
+            if ($validator->validateVariant($variant)) {
+                $validVariants[] = $variant;
+            }
+        }
+        return $validVariants;
+    }
+
 
     public function getShopwareArticle(Article $article)
     {

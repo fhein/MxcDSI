@@ -495,7 +495,7 @@ return [
             '~(Luxotic NC)~',
             '~(Motiv 2)~',
             '~(Reuleaux RX Gen3 Dual)~',
-            '~(Sinuous(( P80)|( Ravage)|( SW))?)~',
+            '~(Sinuous(( P80)|( Ravage)|( SW)|( Solo))?)~',
             '~(Reux)~'
 
         ],

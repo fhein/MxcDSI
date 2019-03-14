@@ -21,10 +21,10 @@ class ArticleOptionMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get('logger');
+        $modelManager = $container->get('modelManager');
         $groupRepository = $container->get(GroupRepository::class);
         $setRepository = $container->get(SetRepository::class);
-        $entityValidator = $container->get(EntitiyValidator::class);
-        $mapper = new ArticleOptionMapper($groupRepository, $setRepository, $entityValidator, $log);
+        $mapper = new ArticleOptionMapper($groupRepository, $setRepository, $modelManager, $log);
         return $mapper;
     }
 }

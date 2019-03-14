@@ -9,6 +9,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
+use Shopware\Components\Model\ModelManager;
 
 class ArticleOptionMapper
 {
@@ -21,27 +22,27 @@ class ArticleOptionMapper
     /** @var SetRepository $setRepository */
     protected $setRepository;
 
-    /** @var EntitiyValidator $validator */
-    protected $validator;
+    /** @var ModelManager $modelManager */
+    protected $modelManager;
 
     /**
      * ArticleOptionMapper constructor.
      *
      * @param GroupRepository $groupRepository
      * @param SetRepository $setRepository
-     * @param EntitiyValidator $validator
+     * @param ModelManager $modelManager
      * @param LoggerInterface $log
      */
     public function __construct(
         GroupRepository $groupRepository,
         SetRepository $setRepository,
-        EntitiyValidator $validator,
+        ModelManager $modelManager,
         LoggerInterface $log
     ) {
         $this->log = $log;
         $this->groupRepository = $groupRepository;
         $this->setRepository = $setRepository;
-        $this->validator = $validator;
+        $this->modelManager = $modelManager;
     }
 
     /**
@@ -106,17 +107,6 @@ class ArticleOptionMapper
         $this->log->leave();
     }
 
-    protected function getValidVariants(Article $article) : array {
-        $validVariants = [];
-        $variants = $article->getVariants();
-        foreach ($variants as $variant) {
-            if ($this->validator->validateVariant($variant)) {
-                $validVariants[] = $variant;
-            }
-        }
-        return $validVariants;
-    }
-
     /**
      * Create and setup a configurator set for a Shopware article
      *
@@ -125,7 +115,7 @@ class ArticleOptionMapper
      */
     public function createConfiguratorSet(Article $icArticle)
     {
-        $validVariants = $this->getValidVariants($icArticle);
+        $validVariants = $this->modelManager->getRepository(Article::class)->getValidVariants($icArticle);
         if (count($validVariants) < 2) {
             $this->log->notice(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does '
                 . 'not provide more than one variant which is set not to get ignored.',

@@ -98,13 +98,15 @@ class ImportMapper implements EventSubscriber
         return $raw['QUANTITIES']['PRODUCT']['QUANTITY'];
     }
 
-    protected function getGroup(string $groupName) {
+    protected function getGroup(string $groupName)
+    {
         $group = $this->groups[$groupName];
         if (null === $group) {
             $group = new Group();
+            $this->modelManager->persist($group);
+
             $group->setAccepted(true);
             $group->setName($groupName);
-            $this->modelManager->persist($group);
             $this->groups[$groupName] = $group;
         }
         return $group;
@@ -125,7 +127,6 @@ class ImportMapper implements EventSubscriber
                 $option->setAccepted(true);
                 $option->setName($optionName);
                 $group->addOption($option);
-                $this->modelManager->persist($group);
                 $this->options[$groupName][$optionName] = $option;
             }
             $options[] = $option;
@@ -133,7 +134,8 @@ class ImportMapper implements EventSubscriber
         return new ArrayCollection($options);
     }
 
-    protected function addArticle(Model $model) {
+    protected function addArticle(Model $model)
+    {
         $article = new Article();
         $this->modelManager->persist($article);
         $article->setIcNumber($model->getMaster());
@@ -151,12 +153,15 @@ class ImportMapper implements EventSubscriber
         return $article;
     }
 
-    protected function getArticle(Model $model) {
+    protected function getArticle(Model $model)
+    {
         $number = $model->getMaster();
 
         // return cached article if available
         $article = $this->articles[$number];
-        if ($article) return $article;
+        if ($article) {
+            return $article;
+        }
 
         $article = $this->addArticle($model);
         $this->articles[$number] = $article;
@@ -164,7 +169,8 @@ class ImportMapper implements EventSubscriber
         return $article;
     }
 
-    public function getImages(?string $imageString) {
+    public function getImages(?string $imageString)
+    {
         $imageUrls = explode(MXC_DELIMITER_L1, $imageString);
         $images = [];
         foreach ($imageUrls as $imageUrl) {
@@ -181,13 +187,14 @@ class ImportMapper implements EventSubscriber
         return new ArrayCollection($images);
     }
 
-    protected function addVariants(array $additions) {
+    protected function addVariants(array $additions)
+    {
         /** @var  Model $model */
         foreach ($additions as $number => $model) {
             $article = $this->getArticle($model);
 
             $flavor = $this->config['flavors'][$article->getIcNumber()]['flavor'];
-            if (is_array($flavor) && ! empty($flavor)) {
+            if (is_array($flavor) && !empty($flavor)) {
                 $article->setFlavor(implode(', ', $flavor));
             }
             $variant = new Variant();
@@ -216,12 +223,13 @@ class ImportMapper implements EventSubscriber
         }
     }
 
-    protected function deleteVariants(array $deletions) {
+    protected function deleteVariants(array $deletions)
+    {
         /** @var  Model $model */
         $variantRepository = $this->modelManager->getRepository(Variant::class);
         foreach ($deletions as $model) {
             /** @var  Variant $variant */
-            $variant = $variantRepository->findOneBy([ 'number' => $model->getModel()]);
+            $variant = $variantRepository->findOneBy(['number' => $model->getModel()]);
             $variant->removeImagesAndOptions();
             $article = $variant->getArticle();
             $article->removeVariant($variant);
@@ -232,7 +240,8 @@ class ImportMapper implements EventSubscriber
         }
     }
 
-    protected function changeOptions(Variant $variant, string $oldValue, string $newValue) {
+    protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
+    {
         $oldOptions = explode(MXC_DELIMITER_L2, $oldValue);
         $newOptions = explode(MXC_DELIMITER_L2, $newValue);
         $rOptions = array_diff($oldOptions, $newOptions);
@@ -261,7 +270,8 @@ class ImportMapper implements EventSubscriber
         $variant->addImages($addedImages);
     }
 
-    protected function changeVariant(Variant $variant, Model $model, array $fields) {
+    protected function changeVariant(Variant $variant, Model $model, array $fields)
+    {
         foreach ($fields as $name => $values) {
             $newValue = $values['newValue'];
             $oldValue = $values['oldValue'];
@@ -303,6 +313,7 @@ class ImportMapper implements EventSubscriber
     protected function changeVariants(array $changes)
     {
         foreach ($changes as $number => $change) {
+            /** @var Variant $variant */
             $variant = $this->variants[$number];
             $model = $change['model'];
             $fields = $change['fields'];
@@ -310,7 +321,8 @@ class ImportMapper implements EventSubscriber
         }
     }
 
-    protected function removeOrphanedItems() {
+    protected function removeOrphanedItems()
+    {
         $this->modelManager->getRepository(Article::class)->removeOrphaned();
         $this->modelManager->getRepository(Variant::class)->removeOrphaned();
 
@@ -325,8 +337,8 @@ class ImportMapper implements EventSubscriber
 
     protected function initCache()
     {
-        $this->modelManager->createQuery('UPDATE '. Article::class . ' a set a.new = false')->execute();
-        $this->modelManager->createQuery('UPDATE '. Variant::class . ' a set a.new = false')->execute();
+        $this->modelManager->createQuery('UPDATE ' . Article::class . ' a set a.new = false')->execute();
+        $this->modelManager->createQuery('UPDATE ' . Variant::class . ' a set a.new = false')->execute();
         $this->articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->groups = $this->modelManager->getRepository(Group::class)->getAllIndexed();
@@ -334,7 +346,8 @@ class ImportMapper implements EventSubscriber
         $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
     }
 
-    protected function initFields() {
+    protected function initFields()
+    {
         foreach ([Article::class, Variant::class, Group::class, Option::class, Image::class] as $class) {
             /** @var Article $o */
             $o = new $class();
@@ -342,9 +355,12 @@ class ImportMapper implements EventSubscriber
         }
     }
 
-    protected function getClass($object) {
+    protected function getClass($object)
+    {
         foreach ([Article::class, Variant::class, Group::class, Option::class, Image::class] as $class) {
-            if ($object instanceof $class) return $class;
+            if ($object instanceof $class) {
+                return $class;
+            }
         }
         return null;
     }
@@ -353,6 +369,7 @@ class ImportMapper implements EventSubscriber
     {
         $evm = $this->modelManager->getEventManager();
         $evm->addEventSubscriber($this);
+        $this->importLog = [];
         $this->initCache();
         $this->initFields();
 
@@ -364,7 +381,7 @@ class ImportMapper implements EventSubscriber
         $evm->removeEventSubscriber($this);
 
         if ($this->config['applyFilters']) {
-            foreach($this->config['filters']['update'] as $filter) {
+            foreach ($this->config['filters']['update'] as $filter) {
                 $this->bulkOperation->update($filter);
             }
         }
@@ -376,6 +393,7 @@ class ImportMapper implements EventSubscriber
 
         $this->propertyExtractor->derive();
         $this->propertyExtractor->export();
+
         return true;
     }
 
@@ -385,7 +403,9 @@ class ImportMapper implements EventSubscriber
         $entity = $args->getEntity();
         $class = $this->getClass($entity);
         $fields = $this->fields[$class];
-        if (null === $fields) return;
+        if (null === $fields) {
+            return;
+        }
 
         $changes['entity'] = $entity;
         foreach ($this->fields as $field) {
@@ -399,8 +419,21 @@ class ImportMapper implements EventSubscriber
         $this->importLog['changes'][$class][] = $changes;
     }
 
-    public function postPersist(LifecycleEventArgs $args) {
+    public function postPersist(LifecycleEventArgs $args)
+    {
+        $entity = $args->getEntity();
+        $class = $this->getClass($entity);
 
+        $changes['entity'] = $entity;
+        $this->importLog['additions'][$class][] = $entity;
+    }
+
+    public function postRemove(LifecycleEventArgs $args) {
+        $entity = $args->getEntity();
+        $class = $this->getClass($entity);
+
+        $changes['entity'] = $entity;
+        $this->importLog['deletions'][$class][] = $entity;
     }
 
     /**
@@ -410,6 +443,6 @@ class ImportMapper implements EventSubscriber
      */
     public function getSubscribedEvents()
     {
-        return [ 'preUpdate', 'postPersist'];
+        return [ 'preUpdate', 'postPersist', 'postRemove'];
     }
 }

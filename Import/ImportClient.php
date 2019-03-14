@@ -112,23 +112,9 @@ class ImportClient implements EventSubscriber
         $this->deleteModels();
         $this->modelManager->flush();
 
-        $this->categories = array_keys($this->categories);
-        sort($this->categories);
-        ksort($this->categoryUsage);
-        ksort($this->optionNames);
-        foreach ($this->missingItems as &$item) {
-            asort($item);
-        }
-        $topics = [
-            'imCategoryInnocigs'      => $this->categories,
-            'imCategoryUsageInnocigs' => $this->categoryUsage,
-            'imOptionNamesInnocigs'   => array_keys($this->optionNames),
-            'imMissingItems'          => $this->missingItems,
-        ];
-
-        ($this->reporter)($topics);
-
         $evm->removeEventSubscriber($this);
+
+        $this->logImport();
         $this->importMapper->import($this->importLog);
     }
 
@@ -386,5 +372,55 @@ class ImportClient implements EventSubscriber
                 'fields' => $fields,
             ];
         }
+    }
+
+    protected function logImport()
+    {
+        $importLog = [];
+        foreach ($this->importLog as $topic => $entries) {
+            switch ($topic) {
+                case 'changes' :
+                    foreach ($entries as $entry) {
+                        /** @var Model $model */
+                        $model = $entry['model'];
+                        $importLog[$model->getMaster()]['changes'][$model->getModel()][] = [
+                            'name'   => $model->getName(),
+                            'fields' => $entry['fields'],
+                        ];
+                    }
+                    break;
+
+                default:
+                    foreach ($entries as $model) {
+                        /** @var Model $model */
+                        $importLog[$model->getMaster()][$topic][$model->getModel()][] = $model->getName();
+                    }
+                    break;
+            }
+        }
+        ksort($importLog);
+        foreach ($importLog as $master => &$entries) {
+            ksort($entries);
+            foreach ($entries as &$entry) {
+                ksort($entry);
+            }
+        }
+
+        $this->categories = array_keys($this->categories);
+        sort($this->categories);
+        ksort($this->categoryUsage);
+        ksort($this->optionNames);
+        foreach ($this->missingItems as &$item) {
+            asort($item);
+        }
+        $topics = [
+            'imCategoryInnocigs'      => $this->categories,
+            'imCategoryUsageInnocigs' => $this->categoryUsage,
+            'imOptionNamesInnocigs'   => array_keys($this->optionNames),
+            'imMissingItems'          => $this->missingItems,
+            'imImportLog'             => $importLog,
+        ];
+
+        ($this->reporter)($topics);
     }
 }

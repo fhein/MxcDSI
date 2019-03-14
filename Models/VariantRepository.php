@@ -15,6 +15,10 @@ class VariantRepository extends BaseEntityRepository
         return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
     }
 
+    public function getPublicVariants(Article $article) {
+
+    }
+
     public function getShopwareDetail(Variant $variant)
     {
         $result = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])

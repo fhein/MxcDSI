@@ -191,8 +191,10 @@ class ArticleMapper
         $icVariants = $icArticle->getVariants();
 
         $isMainDetail = true;
+        /** @var Variant $icVariant */
         foreach ($icVariants as $icVariant) {
             if (! $this->validator->validateVariant($icVariant)) {
+                $this->setShopwareDetailActiveState($icVariant, false);
                 continue;
             }
 
@@ -410,6 +412,15 @@ class ArticleMapper
         }
     }
 
+    protected function setShopwareDetailActiveState(Variant $icVariant, bool $active)
+    {
+        $swDetail = $icVariant->getDetail();
+        if ($swDetail === null) return;
+
+        $swDetail->setActive($active);
+        $this->setDropship($icVariant, $active);
+    }
+
     /**
      * Set the shopware article active state to according to the $active state
      * of the given InnoCigs article. Does not modify the active state of the
@@ -428,41 +439,43 @@ class ArticleMapper
         $icActive = $icArticle->isActive();
         $swArticle->setActive($icActive);
 
-        $variants = $icArticle->getVariants();
-        /** @var Variant $variant */
-        foreach ($variants as $variant) {
-            $swDetail = $variant->getDetail();
-            if ($swDetail === null) continue;
-            $swActive = $swDetail->getActive();
-            $dropshipActive = $icActive && $swActive;
-            $this->setDropship($swDetail, $variant, $dropshipActive);
+        $icVariants = $icArticle->getVariants();
+        /** @var Variant $icVariant */
+        foreach ($icVariants as $icVariant) {
+            $icVariantActive = $this->validator->validateVariant($icVariant) && $icActive;
+            $icVariant->setActive($icVariantActive);
+            $this->setShopwareDetailActiveState($icVariant, $icVariantActive);
         }
     }
 
     /**
      * Set the Shopware detail attributes for the dropship plugin.
      *
-     * @param Detail $swDetail
-     * @param Variant $variant
+     * @param Variant $icVariant
      * @param bool $active
      */
-    protected function setDropship(Detail $swDetail, Variant $variant, bool $active)
+    protected function setDropship(Variant $icVariant, bool $active)
     {
-        if (!$this->dropshippersCompanionPresent) return;
+        if (! $this->dropshippersCompanionPresent) return;
+
+        $swDetail = $icVariant->getDetail();
+        if (! $swDetail) return;
 
         $attribute = $swDetail->getAttribute();
+        if (! $attribute) return;
+
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcActive($active);
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcOrderNumber($variant->getIcNumber());
+        $attribute->setDcIcOrderNumber($icVariant->getIcNumber());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcArticleName($variant->getArticle()->getName());
+        $attribute->setDcIcArticleName($icVariant->getArticle()->getName());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcPurchasingPrice($variant->getPurchasePrice());
+        $attribute->setDcIcPurchasingPrice($icVariant->getPurchasePrice());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcRetailPrice($variant->getRetailPrice());
+        $attribute->setDcIcRetailPrice($icVariant->getRetailPrice());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcInstock($this->client->getStock($variant));
+        $attribute->setDcIcInstock($this->client->getStock($icVariant));
     }
 
     /**
