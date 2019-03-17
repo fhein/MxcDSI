@@ -19,8 +19,14 @@ class Article extends ModelEntity  {
     use BaseModelTrait;
 
     /**
+     * @var string $icNumber
+     * @ORM\Column(name="ic_number", type="string", nullable=false)
+     */
+    private $icNumber;
+
+    /**
      * @var string $number
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $number;
 
@@ -43,14 +49,8 @@ class Article extends ModelEntity  {
     private $similarArticles;
 
     /**
-     * @var string $icNumber
-     * @ORM\Column(name="ic_number", type="string", nullable=false)
-     */
-    private $icNumber;
-
-    /**
      * @var string $name
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $name;
 
@@ -196,17 +196,17 @@ class Article extends ModelEntity  {
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param string|null $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -256,7 +256,7 @@ class Article extends ModelEntity  {
     /**
      * @return string
      */
-    public function getNumber(): string
+    public function getNumber()
     {
         return $this->number;
     }
@@ -264,7 +264,7 @@ class Article extends ModelEntity  {
     /**
      * @param string $number
      */
-    public function setNumber(string $number)
+    public function setNumber($number)
     {
         $this->number = $number;
     }
@@ -302,7 +302,7 @@ class Article extends ModelEntity  {
     /**
      * @return null|string
      */
-    public function getDescription(): ?string
+    public function getDescription()
     {
         return $this->description;
     }
@@ -310,7 +310,7 @@ class Article extends ModelEntity  {
     /**
      * @param null|string $description
      */
-    public function setDescription(?string $description)
+    public function setDescription($description)
     {
         $this->description = $description;
     }
@@ -318,7 +318,7 @@ class Article extends ModelEntity  {
     /**
      * @return null|string
      */
-    public function getSupplier(): ?string
+    public function getSupplier()
     {
         return $this->supplier;
     }
@@ -326,7 +326,7 @@ class Article extends ModelEntity  {
     /**
      * @param null|string $supplier
      */
-    public function setSupplier(?string $supplier)
+    public function setSupplier($supplier)
     {
         $this->supplier = $supplier;
     }
@@ -334,7 +334,7 @@ class Article extends ModelEntity  {
     /**
      * @return null|string
      */
-    public function getBrand(): ?string
+    public function getBrand()
     {
         return $this->brand;
     }
@@ -342,7 +342,7 @@ class Article extends ModelEntity  {
     /**
      * @param null|string $brand
      */
-    public function setBrand(?string $brand)
+    public function setBrand($brand)
     {
         $this->brand = $brand;
     }
@@ -363,7 +363,7 @@ class Article extends ModelEntity  {
     /**
      * @return null|string
      */
-    public function getManual(): ?string
+    public function getManual()
     {
         return $this->manual;
     }
@@ -371,7 +371,7 @@ class Article extends ModelEntity  {
     /**
      * @param null|string $manual
      */
-    public function setManual(?string $manual)
+    public function setManual($manual)
     {
         $this->manual = $manual;
     }
@@ -379,7 +379,7 @@ class Article extends ModelEntity  {
     /**
      * @return null|string
      */
-    public function getCategory(): ?string
+    public function getCategory()
     {
         return $this->category;
     }
@@ -387,7 +387,7 @@ class Article extends ModelEntity  {
     /**
      * @param null|string $category
      */
-    public function setCategory(?string $category)
+    public function setCategory($category)
     {
         $this->category = $category;
     }
@@ -395,7 +395,7 @@ class Article extends ModelEntity  {
     /**
      * @return null|string
      */
-    public function getManufacturer(): ?string
+    public function getManufacturer()
     {
         return $this->manufacturer;
     }
@@ -403,7 +403,7 @@ class Article extends ModelEntity  {
     /**
      * @param null|string $manufacturer
      */
-    public function setManufacturer(?string $manufacturer)
+    public function setManufacturer($manufacturer)
     {
         $this->manufacturer = $manufacturer;
     }
@@ -419,23 +419,23 @@ class Article extends ModelEntity  {
     /**
      * @param bool $new
      */
-    public function setNew(bool $new): void
+    public function setNew(bool $new)
     {
         $this->new = $new;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFlavor(): ?string
+    public function getFlavor()
     {
         return $this->flavor;
     }
 
     /**
-     * @param string $flavor
+     * @param null|string $flavor
      */
-    public function setFlavor(?string $flavor): void
+    public function setFlavor($flavor)
     {
         $this->flavor = $flavor;
     }
@@ -480,11 +480,10 @@ class Article extends ModelEntity  {
         $this->similarArticles->removeElement($similarArticle);
     }
 
-
     /**
      * @return string
      */
-    public function getCommonName(): ?string
+    public function getCommonName()
     {
         return $this->commonName;
     }
@@ -492,23 +491,23 @@ class Article extends ModelEntity  {
     /**
      * @param string $commonName
      */
-    public function setCommonName(?string $commonName): void
+    public function setCommonName($commonName)
     {
         $this->commonName = $commonName;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getType(): ?string
+    public function getType()
     {
         return $this->type;
     }
 
     /**
-     * @param $type
+     * @param null|string $type
      */
-    public function setType($type): void
+    public function setType($type)
     {
         $this->type = $type;
     }
@@ -524,7 +523,7 @@ class Article extends ModelEntity  {
     /**
      * @param int|null $piecesPerPack
      */
-    public function setPiecesPerPack(?int $piecesPerPack): void
+    public function setPiecesPerPack($piecesPerPack)
     {
         $this->piecesPerPack = $piecesPerPack;
     }
@@ -533,7 +532,7 @@ class Article extends ModelEntity  {
     /**
      * @param string|null $dosage
      */
-    public function setDosage(?string $dosage)
+    public function setDosage($dosage)
     {
         $this->dosage = $dosage;
     }
@@ -541,7 +540,7 @@ class Article extends ModelEntity  {
     /**
      * @return string|null
      */
-    public function getDosage() : ?string
+    public function getDosage()
     {
         return $this->dosage;
     }
@@ -557,7 +556,7 @@ class Article extends ModelEntity  {
     /**
      * @param bool $activateRelatedArticles
      */
-    public function setActivateRelatedArticles(bool $activateRelatedArticles): void
+    public function setActivateRelatedArticles(bool $activateRelatedArticles)
     {
         $this->activateRelatedArticles = $activateRelatedArticles;
     }
@@ -565,7 +564,7 @@ class Article extends ModelEntity  {
     /**
      * @return string|null
      */
-    public function getBase(): ?string
+    public function getBase()
     {
         return $this->base;
     }
@@ -573,7 +572,7 @@ class Article extends ModelEntity  {
     /**
      * @param string|null $base
      */
-    public function setBase(?string $base): void
+    public function setBase($base)
     {
         $this->base = $base;
     }
@@ -589,7 +588,7 @@ class Article extends ModelEntity  {
     /**
      * @param bool $activateSimilarArticles
      */
-    public function setActivateSimilarArticles(bool $activateSimilarArticles): void
+    public function setActivateSimilarArticles(bool $activateSimilarArticles)
     {
         $this->activateSimilarArticles = $activateSimilarArticles;
     }
@@ -605,7 +604,7 @@ class Article extends ModelEntity  {
     /**
      * @param float $tax
      */
-    public function setTax(float $tax): void
+    public function setTax(float $tax)
     {
         $this->tax = $tax;
     }

@@ -65,23 +65,22 @@ class PropertyDerivator
         $this->modelManager = $modelManager;
     }
 
-    public function derive()
+    public function derive(array $articles)
     {
         $this->articleGroups = [];
-        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        //$articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         foreach ($articles as $number => $article) {
             $this->deriveProperties($article);
         }
         $this->deriveRelatedArticles();
         $this->deriveSimilarArticles();
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
-        $this->deriveProductNames();
+
+        $this->dumpProductNames();
         $this->dumpRelatedArticles();
         $this->dumpSimilarArticles();
     }
 
-    protected function deriveProductNames() {
+    protected function dumpProductNames() {
         $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         $products = [];
         foreach ($articles as $number => $article) {

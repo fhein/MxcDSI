@@ -12,24 +12,24 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     protected $model = Article::class;
     protected $alias = 'innocigs_article';
 
-    public function indexAction() {
-        $this->log->enter();
-        try {
-            $client = $this->services->get(ImportClient::class);
-            if ($client === null) {
-                $this->log->err('client is null.');
-            }
-            $client->import();
-            parent::indexAction();
-        } catch (Throwable $e) {
-            $this->log->except($e);
-            $this->view->assign([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
-        }
-        $this->log->leave();
-    }
+//    public function indexAction() {
+//        $this->log->enter();
+//        try {
+//            $client = $this->services->get(ImportClient::class);
+//            if ($client === null) {
+//                $this->log->err('client is null.');
+//            }
+//            $client->import();
+//            parent::indexAction();
+//        } catch (Throwable $e) {
+//            $this->log->except($e);
+//            $this->view->assign([
+//                'success' => false,
+//                'message' => $e->getMessage(),
+//            ]);
+//        }
+//        $this->log->leave();
+//    }
 
     public function updateAction()
     {
@@ -37,11 +37,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         try {
             parent::updateAction();
         } catch (Throwable $e) {
-            $this->log->except($e);
-            $this->view->assign([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
         $this->log->leave();
     }
@@ -52,11 +49,10 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         try {
             $client = $this->services->get(ImportClient::class);
             $client->import();
+            $this->view->assign([ 'success' => true, 'message' => 'Items were successfully updated.']);
         } catch (Throwable $e) {
-            $this->log->except($e);
-            $this->view->assign([
-                'success' => false,
-                'message' => $e->getMessage(),
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
             ]);
         }
         $this->log->leave();
@@ -68,13 +64,12 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         try {
             /** @var ImportMapper $client */
             $mapper = $this->services->get(PropertyMapper::class);
-            $mapper->reapplyPropertyMapping();
+            $articles = $this->getModelManager()->getRepository(Article::class)->getAllIndexed();
+            $mapper->mapProperties($articles);
+            $this->view->assign([ 'success' => true, 'message' => 'Item properties were successfully remapped.']);
         } catch (Throwable $e) {
-            $this->log->except($e);
-            $this->view->assign([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
         $this->log->leave();
     }

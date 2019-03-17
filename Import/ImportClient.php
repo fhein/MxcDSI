@@ -6,6 +6,7 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Arrays\ArrayTool;
 use Shopware\Components\Model\ModelManager;
@@ -59,6 +60,8 @@ class ImportClient implements EventSubscriber
     /** @var array */
     protected $fields;
 
+    protected $variants;
+
     /** @var ArrayReport */
     protected $reporter;
 
@@ -99,6 +102,7 @@ class ImportClient implements EventSubscriber
         $this->importLog['deletions'] = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         $this->importLog['additions'] = [];
         $this->importLog['changes'] = [];
+        $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->optionNames = [];
 
         $model = new Model();
@@ -117,7 +121,6 @@ class ImportClient implements EventSubscriber
         $this->logImport();
         $this->importMapper->import($this->importLog);
     }
-
 
     protected function apiImport()
     {
@@ -237,6 +240,14 @@ class ImportClient implements EventSubscriber
                     /** @var Model $model */
                     $model = $this->importLog['deletions'][$number];
                     unset($this->importLog['deletions'][$number]);
+
+                    // If this model does not have an associated variant, put it
+                    // on the additions list in order to get the variant created later.
+                    $variant = $this->variants[$number];
+                    if (! $variant) {
+                        $this->importLog['additions'][$number] = $model;
+                    }
+
                 } else {
                     $model = new Model();
                     $this->importLog['additions'][$number] = $model;
@@ -383,7 +394,7 @@ class ImportClient implements EventSubscriber
                     foreach ($entries as $entry) {
                         /** @var Model $model */
                         $model = $entry['model'];
-                        $importLog[$model->getMaster()]['changes'][$model->getModel()][] = [
+                        $importLog[$model->getMaster()]['changes'][$model->getModel()] = [
                             'name'   => $model->getName(),
                             'fields' => $entry['fields'],
                         ];
@@ -393,7 +404,7 @@ class ImportClient implements EventSubscriber
                 default:
                     foreach ($entries as $model) {
                         /** @var Model $model */
-                        $importLog[$model->getMaster()][$topic][$model->getModel()][] = $model->getName();
+                        $importLog[$model->getMaster()][$topic][$model->getModel()] = $model->getName();
                     }
                     break;
             }

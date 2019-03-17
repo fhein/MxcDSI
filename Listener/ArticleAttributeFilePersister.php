@@ -36,7 +36,13 @@ class ArticleAttributeFilePersister extends ActionListener
         $repository = $this->modelManager->getRepository(Article::class);
 
         // update $article.config.php.dist
-        $config = $repository->getDist();
+        try {
+            $config = $repository->getDist();
+        } catch (\Exception $e) {
+            // This will happen if someone removed the database tables manually meanwhile
+            $this->log->leave();
+            return;
+        }
         if (! empty($config)) {
             $fn = $this->config->articleConfigFile . '.php';
             Factory::toFile($fn, $config);

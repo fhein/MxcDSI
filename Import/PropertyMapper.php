@@ -62,11 +62,11 @@ class PropertyMapper
         $this->articles = null;
     }
 
-    public function reapplyPropertyMapping()
+    public function mapProperties(array $articles)
     {
         $this->init();
         $models = $this->getModels();
-        $articles = $this->getArticles();
+        //$articles = $this->getArticles();
         if (! $models || ! $articles) {
             $this->log->debug(__FUNCTION__ . ': no models or no articles found.');
             return;
@@ -88,8 +88,6 @@ class PropertyMapper
             }
         }
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
-        $this->modelManager->clear();
         $this->checkArticlePropertyMappingConsistency();
         $this->report();
     }

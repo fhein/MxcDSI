@@ -20,42 +20,70 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
     },
 
     onImportItems: function(grid) {
+        let me = this;
         let mask = new Ext.LoadMask(grid, { msg: 'Updating items ...'});
         mask.show();
         Ext.Ajax.request({
             method: 'POST',
             url: '{url controller=MxcDsiArticle action=import}',
             params: {},
-            callback: function(responseData, operation) {
+
+            success: function (response) {
                 mask.hide();
-                if(!operation) {
-                    Shopware.Notification.createGrowlMessage('Update', 'An error occured while updating items.');
-                    return false;
-                } else {
-                    Shopware.Notification.createGrowlMessage('Update', 'Items were successfully updated.');
+                let result = Ext.JSON.decode(response.responseText);
+                console.log(result);
+                if (!result) {
+                    me.showError(response.responseText);
+                } else if (result.success) {
+                    Shopware.Notification.createGrowlMessage('Update', result.message);
                     grid.store.load();
+                } else {
+                    me.showError(result.message);
                 }
-            }
+            },
+
+            failure: function (response) {
+                mask.hide();
+                if (response.responseText) {
+                    me.showError(response.responseText);
+                } else {
+                    me.showError('An unknown error occurred, please check your server logs.');
+                }
+            },
         });
     },
 
     onRemapProperties: function(grid) {
+        let me = this;
         let mask = new Ext.LoadMask(grid, { msg: 'Remapping properties ...'});
         mask.show();
         Ext.Ajax.request({
             method: 'POST',
             url: '{url controller=MxcDsiArticle action=remap}',
             params: {},
-            callback: function(responseData, operation) {
+
+            success: function (response) {
                 mask.hide();
-                if(!operation) {
-                    Shopware.Notification.createGrowlMessage('Remap Properties', 'An error occured while remapping properties.');
-                    return false;
-                } else {
-                    Shopware.Notification.createGrowlMessage('Remap Properties', 'Properties were successfully remapped.');
+                let result = Ext.JSON.decode(response.responseText);
+                console.log(result);
+                if (!result) {
+                    me.showError(response.responseText);
+                } else if (result.success) {
+                    Shopware.Notification.createGrowlMessage('Remap Properties', result.message);
                     grid.store.load();
+                } else {
+                    me.showError(result.message);
                 }
-            }
+            },
+
+            failure: function (response) {
+                mask.hide();
+                if (response.responseText) {
+                    me.showError(response.responseText);
+                } else {
+                    me.showError('An unknown error occurred, please check your server logs');
+                }
+            },
         });
     },
 
@@ -138,13 +166,17 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
             record.set('active', false);
             message = rawData.message;
         }
+        me.showError(message);
+    },
+    showError: function (message) {
+        var me = this;
 
         Shopware.Notification.createStickyGrowlMessage({
-                title: '{s name=error}Error{/s}',
+                title: 'Error',
                 text: message,
                 log: true
             },
-            'Article'
-        );
-    }
+            'MxcDropshipInnoCigs');
+    },
+
 });

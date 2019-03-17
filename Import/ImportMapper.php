@@ -144,12 +144,6 @@ class ImportMapper implements EventSubscriber
         $article->setManual($model->getManual());
         $article->setDescription($model->getDescription());
 
-        $this->propertyMapper->mapModelToArticle($model, $article);
-        $this->log->info(sprintf(
-            'New article: %s - %s',
-            $article->getIcNumber(),
-            $article->getName()
-        ));
         return $article;
     }
 
@@ -193,10 +187,6 @@ class ImportMapper implements EventSubscriber
         foreach ($additions as $number => $model) {
             $article = $this->getArticle($model);
 
-            $flavor = $this->config['flavors'][$article->getIcNumber()]['flavor'];
-            if (is_array($flavor) && !empty($flavor)) {
-                $article->setFlavor(implode(', ', $flavor));
-            }
             $variant = new Variant();
             $this->modelManager->persist($variant);
             $this->variants[$model->getModel()] = $variant;
@@ -213,7 +203,7 @@ class ImportMapper implements EventSubscriber
             $variant->setRetailPrice($price);
 
             // set mapped properties
-            $this->propertyMapper->mapModelToVariant($model, $variant);
+            //$this->propertyMapper->mapModelToVariant($model, $variant);
 
             $images = $model->getImages();
             if (null !== $images) {
@@ -376,8 +366,10 @@ class ImportMapper implements EventSubscriber
         $this->addVariants($import['additions']);
         $this->deleteVariants($import['deletions']);
         $this->changeVariants($import['changes']);
+        $this->propertyMapper->mapProperties($this->articles);
+        $this->propertyExtractor->derive($this->articles);
         $this->modelManager->flush();
-        $this->modelManager->clear();
+
         $evm->removeEventSubscriber($this);
 
         if ($this->config['applyFilters']) {
@@ -391,7 +383,6 @@ class ImportMapper implements EventSubscriber
         $flavorist->updateCategories();
         $flavorist->updateFlavors();
 
-        $this->propertyExtractor->derive();
         $this->propertyExtractor->export();
 
         return true;

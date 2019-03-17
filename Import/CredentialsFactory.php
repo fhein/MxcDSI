@@ -23,7 +23,7 @@ class CredentialsFactory implements FactoryInterface
              */
             $dbal = $container->get('dbalConnection');
             if ($dbal->getSchemaManager()->tablesExist([$credentialsTable])) {
-                $sql = "SELECT user, password FROM $credentialsTable";
+                $sql = "SELECT user, password FROM $credentialsTable WHERE type = 'production'";
                 /** @noinspection PhpUnhandledExceptionInspection */
                 $credentials = $dbal->query($sql)->fetchAll();
                 if (count($credentials) > 0) {

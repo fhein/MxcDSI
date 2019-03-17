@@ -3,7 +3,7 @@
 // use MxcDropshipInnocigs\Models\Article;
 
 return [
-    'applyFilters' => true,
+    'applyFilters' => false,
     'filters'     => [
         'update'     => [
 //            [
@@ -29,5 +29,25 @@ return [
 //            ],
         ],
     ],
-    'flavors' => include __DIR__ . '/flavor.config.php',
+
+    // this is an attempt to define rules to set the accepted state on creation
+//    'accept_filter' => [
+//        Group::class => [
+//            'default' => true,
+//            'rules' => [
+//                ['name'  => ['preg_match' => ['~1er Packung~']], 'set' => ['accepted' => true, 'active' => false]]
+//            ]
+//        ],
+//        Option::class => [
+//            'default' => true,
+//            'groups' => [
+//                'Packungsgröße' => [
+//                    'default' => false,
+//                    'rules' => [
+//                        ['name'  => ['preg_match' => ['~1er Packung~']], 'set' => ['accepted' => true, 'active' => false]]
+//                    ]
+//                ]
+//            ]
+//        ]
+//    ]
 ];

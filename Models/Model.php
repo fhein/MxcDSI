@@ -297,7 +297,7 @@ class Model extends ModelEntity
     /**
      * @param bool $deleted
      */
-    public function setDeleted(bool $deleted): void
+    public function setDeleted(bool $deleted)
     {
         $this->deleted = $deleted;
     }
@@ -313,7 +313,7 @@ class Model extends ModelEntity
     /**
      * @param string $description
      */
-    public function setDescription(string $description): void
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }

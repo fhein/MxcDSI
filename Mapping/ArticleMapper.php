@@ -25,10 +25,7 @@ use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
 class ArticleMapper
 {
-    protected $kind = [
-        true  => 1,
-        false => 2,
-    ];
+    protected $articlesToCreate;
 
     /**
      * @var LoggerInterface $log
@@ -121,14 +118,71 @@ class ArticleMapper
     public function handleActiveStateChange(Article $icArticle)
     {
         $swArticle = null;
+        $articlesCreated = [];
         if ($icArticle->isActive()) {
-            /** @noinspection PhpUnhandledExceptionInspection */
-            $swArticle = $this->setShopwareArticle($icArticle);
-        }
-        if ($swArticle !== null) {
+            $this->log->debug('Article to activate: ' . $icArticle->getName());
+            $articlesToCreate = $this->getArticlesToCreate($icArticle);
+            $this->log->debug('Articles to create: ' . count($articlesToCreate));
+            foreach ($articlesToCreate as $article) {
+                if (! $this->validator->validateArticle($article)) continue;
+                $swArticle = $this->setShopwareArticle($article);
+                if ($swArticle !== null) {
+                    $article->setActive(true);
+                    $articlesCreated[] = $article->getIcNumber();
+                    $this->setShopwareArticleActiveState($article);
+                }
+            }
+            // @todo: Update existing articles
+        } else {
+            $this->log->debug('Article is not active: ' . $icArticle->getName());
             $this->setShopwareArticleActiveState($icArticle);
         }
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
+        $this->updateArticleLinks($articlesCreated);
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
         return $swArticle;
+    }
+
+    protected function updateArticleLinks(array $articlesCreated) {
+        if (count($articlesCreated) === 0) return;
+        $repository = $this->modelManager->getRepository(Article::class);
+
+        $articlesWithRelatedNewArticles = $repository->getAllWithRelated($articlesCreated);
+        foreach ($articlesWithRelatedNewArticles as $icArticle) {
+            $this->setRelatedArticles($icArticle);
+        }
+        $articlesWithSimilarNewArticles = $repository->getAllWithSimilar($articlesCreated);
+        foreach ($articlesWithSimilarNewArticles as $icArticle) {
+            $this->setSimilarArticles($icArticle);
+        }
+    }
+
+    protected function addArticlesToCreate(Collection $icArticles)
+    {
+        foreach ($icArticles as $icArticle) {
+            if (! $icArticle->getArticle() ) {
+                $this->articlesToCreate[$icArticle->getIcNumber()] = $icArticle;
+            }
+        }
+    }
+
+    protected function getArticlesToCreate(Article $icArticle) {
+        // @todo: Recursion
+        $this->articlesToCreate = [];
+        if (! $icArticle->getArticle()) {
+            $this->articlesToCreate[$icArticle->getIcNumber()] = $icArticle;
+        }
+        if ($icArticle->getActivateRelatedArticles()) {
+            $this->log->debug('Article is set to activate related articles.');
+            $this->addArticlesToCreate($icArticle->getRelatedArticles());
+        }
+        if ($icArticle->getActivateSimilarArticles()) {
+            $this->log->debug('Article is set to activate similar articles.');
+            $this->addArticlesToCreate($icArticle->getSimilarArticles());
+        }
+        return $this->articlesToCreate;
     }
 
     /**
@@ -146,7 +200,7 @@ class ArticleMapper
         // deactivate article if it is not accepted any longer
         if ( ! $this->validator->validateArticle($icArticle)) {
             $icArticle->setActive(false);
-            $this->handleActiveStateChange($icArticle);
+            $this->setShopwareArticleActiveState($icArticle);
             return $swArticle;
         }
 
@@ -171,9 +225,14 @@ class ArticleMapper
         if ($create) {
             $swArticle->setActive(false);
         }
+        $this->log->debug('Related articles for ' . $icArticle->getName());
+        foreach ($icArticle->getRelatedArticles() as $relatedArticle) {
+            $this->log->debug($relatedArticle->getName());
+        }
+        // $this->setRelatedArticles($icArticle);
+        // $this->setSimilarArticles($icArticle);
+        $this->setCategories($icArticle);
 
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
         return $swArticle;
     }
 
@@ -224,7 +283,15 @@ class ArticleMapper
         if ($swDetail) {
             // Update existing detail
             $this->setShopwareDetailProperties($icVariant, false);
+            $configuratorOptions = $swDetail->getConfiguratorOptions();
+            $configuratorOptions->clear();
+            // Next line is necessary to avoid Doctrine duplicte relation exception
+            $swDetail->getConfiguratorOptions()->clear();
             $swDetail->setConfiguratorOptions(new ArrayCollection($icVariant->getShopwareOptions()));
+            foreach ($icVariant->getShopwareOptions() as $option) {
+                $this->log->debug('Adding shopware option ' . $option->getId() . ' to detail ' . $swDetail->getId());
+            //    $configuratorOptions->add($option);
+            }
             return $swDetail;
         }
 
@@ -296,12 +363,6 @@ class ArticleMapper
 
         $swArticle->setTax($this->getTax($icArticle->getTax()));
         $swArticle->setSupplier($this->getSupplier($icArticle));
-
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->setRelatedArticles($icArticle);
-        $this->setSimilarArticles($icArticle);
-
-        $this->setCategories($icArticle);
     }
 
     /**
@@ -735,29 +796,6 @@ class ArticleMapper
     }
 
     /**
-     * For a given collection of InnoCigs articles return a collection of Shopware $articles.
-     * If an InnoCigs article has no Shopware article associated, the Shopware article will
-     * be created.
-     *
-     * @param Collection $icArticles
-     * @return ArrayCollection
-     */
-    protected function activateShopwareArticles(Collection $icArticles): ArrayCollection
-    {
-        $swArticles = [];
-        foreach ($icArticles as $icArticle) {
-            $icArticle->setActive(true);
-            /** @noinspection PhpUnhandledExceptionInspection */
-            $swArticle = $this->handleActiveStateChange($icArticle);
-            $icArticle->setActive($swArticle !== null);
-            if ($icArticle->isActive()) {
-                $swArticles[] = $swArticle;
-            }
-        }
-        return new ArrayCollection($swArticles);
-    }
-
-    /**
      * Add all articles of the given Innocigs article collection to the target collection.
      * No duplicates.
      *
@@ -781,12 +819,11 @@ class ArticleMapper
      * @param Collection $icArticles list of InnoCigs articles
      * @param Collection $target target collection
      */
-    protected function setAssociatedArticles(bool $activate, Collection $icArticles, Collection $target)
-    {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $swRelated = $activate ? $this->activateShopwareArticles($icArticles) : $this->getShopwareArticles($icArticles);
-        $this->addArticlesToCollection($swRelated, $target);
-    }
+//    protected function setAssociatedArticles(Collection $icArticles, Collection $target)
+//    {
+//        /** @noinspection PhpUnhandledExceptionInspection */
+//        $this->addArticlesToCollection($this->getShopwareArticles($icArticles), $target);
+//    }
 
     /**
      * Set the related articles of a Shopware article according to the settings of the InnoCigs article.
@@ -803,12 +840,8 @@ class ArticleMapper
 
         $related = $swArticle->getRelated();
         if ($replace) $related->clear();
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->setAssociatedArticles(
-            $icArticle->getActivateRelatedArticles(),
-            $icArticle->getRelatedArticles(),
-            $related
-        );
+        $relatedArticles = $this->getShopwareArticles($icArticle->getRelatedArticles());
+        $this->addArticlesToCollection($relatedArticles, $related);
     }
 
     /**
@@ -826,12 +859,8 @@ class ArticleMapper
 
         $similar = $swArticle->getSimilar();
         if ($replace) $similar->clear();
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->setAssociatedArticles(
-            $icArticle->getActivateSimilarArticles(),
-            $icArticle->getSimilarArticles(),
-            $similar
-        );
+        $similarArticles = $this->getShopwareArticles($icArticle->getSimilarArticles());
+        $this->addArticlesToCollection($similarArticles, $similar);
     }
 
     /**

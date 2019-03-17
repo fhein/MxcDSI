@@ -66,7 +66,7 @@ class Image extends ModelEntity
     /**
      * @param ArrayCollection $variants
      */
-    public function setVariants(ArrayCollection $variants): void
+    public function setVariants(ArrayCollection $variants)
     {
         $this->variants = $variants;
     }

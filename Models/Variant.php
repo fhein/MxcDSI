@@ -20,6 +20,18 @@ class Variant extends ModelEntity
     use BaseModelTrait;
 
     /**
+     * @var string $number
+     * @ORM\Column(name="ic_number", type="string", nullable=false)
+     */
+    private $icNumber;
+
+    /**
+     * @var string $number
+     * @ORM\Column(name="number", type="string", nullable=true)
+     */
+    private $number;
+
+    /**
      * @var Article $article
      *
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="variants")
@@ -32,23 +44,12 @@ class Variant extends ModelEntity
     private $detail;
 
     /**
-     * @var string $number
-     * @ORM\Column(name="number", type="string", nullable=false)
-     */
-    private $number;
-
-    /**
-     * @var string $number
-     * @ORM\Column(name="ic_number", type="string", nullable=false)
-     */
-    private $icNumber;
-
-    /**
      * @var string $ean
      *
      * @ORM\Column(name="ean", type="string", nullable=true)
      */
     private $ean;
+
     /**
      * @var float $purchasePrice
      * @ORM\Column(name="purchase_price", type="decimal", precision=5, scale=2, nullable=false)
@@ -64,7 +65,7 @@ class Variant extends ModelEntity
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Option", inversedBy="variants")
+     * @ORM\ManyToMany(targetEntity="Option", inversedBy="variants", cascade="persist")
      * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_options")
      */
     private $options;
@@ -84,14 +85,14 @@ class Variant extends ModelEntity
     /**
      * @var boolean $active
      *
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=false)
      */
     private $active = false;
 
     /**
      * @var boolean $accepted
      *
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=false)
      */
     private $accepted = true;
 
@@ -100,7 +101,6 @@ class Variant extends ModelEntity
      * @ORM\Column(type="boolean", nullable=false)
      */
     private $new = true;
-
 
     /**
      * @var array $shopwareOptions
@@ -176,9 +176,9 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @return string $code
+     * @return string|null
      */
-    public function getNumber(): string
+    public function getNumber(): ?string
     {
         return $this->number;
     }
@@ -243,9 +243,9 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param string $number
+     * @param string|null $number
      */
-    public function setNumber($number)
+    public function setNumber(?string $number)
     {
         $this->number = $number;
     }
@@ -323,7 +323,8 @@ class Variant extends ModelEntity
     }
 
     public function addShopwareOption(ShopwareOption $option) {
-        $this->shopwareOptions[] = $option;
+        if (! in_array($option, $this->shopwareOptions, true))
+            $this->shopwareOptions[] = $option;
     }
 
     /**
@@ -377,7 +378,7 @@ class Variant extends ModelEntity
     /**
      * @param string $icNumber
      */
-    public function setIcNumber(string $icNumber): void
+    public function setIcNumber(string $icNumber)
     {
         $this->icNumber = $icNumber;
     }
@@ -406,7 +407,7 @@ class Variant extends ModelEntity
     /**
      * @param bool $new
      */
-    public function setNew(bool $new): void
+    public function setNew(bool $new)
     {
         $this->new = $new;
     }
@@ -422,7 +423,7 @@ class Variant extends ModelEntity
     /**
      * @param Detail $detail
      */
-    public function setDetail(?Detail $detail): void
+    public function setDetail(?Detail $detail)
     {
         $this->detail = $detail;
     }

@@ -50,8 +50,6 @@ class ApiClient
         $this->log = $log;
         $this->apiEntry = 'https://www.innocigs.com/xmlapi/api.php';
         $this->authUrl = $this->apiEntry . '?cid=' . $credentials->getUser() . '&auth=' . $credentials->getPassword();
-        $this->log->info('User: ' . $credentials->getUser());
-        $this->log->info('Password: ' . $credentials->getPassword());
         $this->connect();
     }
 
@@ -59,11 +57,7 @@ class ApiClient
     {
         $response = null;
         try {
-            $response = $this->getItemInfo('mxc_connection_test');
-            if (isset($response['ERRORS'])) {
-                $error = $response['ERRORS']['ERROR'];
-                throw new ServiceNotCreatedException(sprintf('API ERROR %s, %s', $error['CODE'], $error['MESSAGE']));
-            }
+            $this->getItemInfo('mxc_connection_test');
         } catch (ApiException $e) {
             throw new ServiceNotCreatedException($e->getMessage());
         }
@@ -183,8 +177,24 @@ class ApiClient
         return $this->client;
     }
 
+    protected function checkXmlResult(string $xml)
+    {
+        if (strpos($xml, '<ERRORS>') !== false) {
+            $this->xmlToArray($xml);
+        }
+    }
+
+    protected function checkArrayResult(array $response)
+    {
+        $error = $response['ERRORS']['ERROR'];
+        if ($error) {
+            throw new ApiException('InnoCigs API: <br/>'.$error['MESSAGE']);
+        }
+    }
+
     public function modelsToArray(string $xml): array
     {
+        $this->checkXmlResult($xml);
         $this->logXML($xml);
         $dom = new DOMDocument();
         $dom->loadXML($xml);
@@ -253,6 +263,7 @@ class ApiClient
         if ($result === false) {
             throw new ApiException('Failed to decode JSON: ' . var_export($json, true));
         }
+        $this->checkArrayResult($result);
         return $result;
     }
 }
