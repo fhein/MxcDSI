@@ -102,6 +102,9 @@ class Variant extends ModelEntity
      */
     private $new = true;
 
+    /** @var boolean $valid */
+    private $valid;
+
     /**
      * @var array $shopwareOptions
      *
@@ -128,17 +131,19 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param Option $option./in
+     * @param Option $option ./in
      *
      * This is the owner side so we have to add the backlink here
      */
-    public function addOption(Option $option) {
+    public function addOption(Option $option)
+    {
         $this->options->add($option);
         $option->addVariant($this);
         $this->getDescription();
     }
 
-    public function addOptions(ArrayCollection $options) {
+    public function addOptions(ArrayCollection $options)
+    {
         foreach ($options as $option) {
             $this->addOption($option);
         }
@@ -151,10 +156,11 @@ class Variant extends ModelEntity
         $this->getDescription();
     }
 
-    public function getDescription() {
+    public function getDescription()
+    {
         /** @var Option $option */
         $d = [];
-        foreach($this->getOptions() as $option) {
+        foreach ($this->getOptions() as $option) {
             $group = $option->getIcGroup();
             $d[] = $group->getName() . ': ' . $option->getName();
         }
@@ -163,7 +169,10 @@ class Variant extends ModelEntity
         return $this->description;
     }
 
-    public function setDescription(/** @noinspection PhpUnusedParameterInspection */ string $_) {
+    public function setDescription(
+        /** @noinspection PhpUnusedParameterInspection */
+        string $_
+    ) {
         $this->getDescription();
     }
 
@@ -186,7 +195,7 @@ class Variant extends ModelEntity
     /**
      * @return null|string $ean
      */
-    public function getEan() : ?string
+    public function getEan(): ?string
     {
         return $this->ean;
     }
@@ -210,7 +219,7 @@ class Variant extends ModelEntity
     /**
      * @return bool $active
      */
-    public function isActive() : bool
+    public function isActive(): bool
     {
         return $this->active;
     }
@@ -234,7 +243,8 @@ class Variant extends ModelEntity
     /**
      * @param Collection $options
      */
-    public function setOptions(Collection $options) {
+    public function setOptions(Collection $options)
+    {
         $this->options = $options;
         foreach ($options as $option) {
             $option->addVariant($this);
@@ -322,9 +332,11 @@ class Variant extends ModelEntity
         $this->shopwareOptions = $shopwareOptions;
     }
 
-    public function addShopwareOption(ShopwareOption $option) {
-        if (! in_array($option, $this->shopwareOptions, true))
+    public function addShopwareOption(ShopwareOption $option)
+    {
+        if (!in_array($option, $this->shopwareOptions, true)) {
             $this->shopwareOptions[] = $option;
+        }
     }
 
     /**
@@ -349,14 +361,15 @@ class Variant extends ModelEntity
     /**
      * @param Image $image
      */
-    public function addImage(Image $image) {
+    public function addImage(Image $image)
+    {
         $this->images->add($image);
         $image->addVariant($this);
     }
 
     public function addImages(ArrayCollection $images)
     {
-        foreach($images as $image) {
+        foreach ($images as $image) {
             $this->addImage($image);
         }
     }
@@ -412,7 +425,7 @@ class Variant extends ModelEntity
         $this->new = $new;
     }
 
-    public function getDetail() : ?Detail
+    public function getDetail(): ?Detail
     {
         if ($this->detail === null) {
             $this->detail = Shopware()->Models()->getRepository(Variant::class)->getShopwareDetail($this);
@@ -428,4 +441,14 @@ class Variant extends ModelEntity
         $this->detail = $detail;
     }
 
+    /**
+     * @return bool
+     */
+    public function isValid()
+    {
+        if ($this->valid === null) {
+            $this->valid = Shopware()->Models()->getRepository(Variant::class)->validateVariant($this);
+        }
+        return $this->valid;
+    }
 }

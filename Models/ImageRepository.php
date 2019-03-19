@@ -10,15 +10,16 @@ class ImageRepository extends BaseEntityRepository
     ];
 
     public function getAllIndexed() {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        return $this->getQuery(__FUNCTION__)->getResult();
     }
 
     public function removeOrphaned() {
-        $orphans = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        $orphans = $this->getQuery(__FUNCTION__)->getResult();
         /** @var Image $orphan */
+        $em = $this->getEntityManager();
         foreach($orphans as $orphan) {
             $this->log->debug('Removing orphaned image \'' . $orphan->getUrl() .'\'');
-            $this->getEntityManager()->remove($orphan);
+            $em->remove($orphan);
         }
     }
 

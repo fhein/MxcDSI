@@ -11,16 +11,17 @@ class GroupRepository extends BaseEntityRepository
 
     public function getAllIndexed()
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        return $this->getQuery(__FUNCTION__)->getResult();
     }
 
     public function removeOrphaned()
     {
-        $orphans = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        $orphans = $this->getQuery(__FUNCTION__)->getResult();
         /** @var Group $orphan */
+        $em = $this->getEntityManager();
         foreach ($orphans as $orphan) {
             $this->log->debug('Removing orphaned group \'' . $orphan->getName() . '\'');
-            $this->getEntityManager()->remove($orphan);
+            $em->remove($orphan);
         }
     }
 }

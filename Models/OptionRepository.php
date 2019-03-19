@@ -21,12 +21,13 @@ class OptionRepository extends BaseEntityRepository
     }
 
     public function removeOrphaned() {
-        $orphans = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        $orphans = $this->getQuery(__FUNCTION__)->getResult();
         /** @var Option $orphan */
+        $em = $this->getEntityManager();
         foreach($orphans as $orphan) {
             $this->log->debug('Removing orphaned option \'' . $orphan->getName() .'\'');
             $orphan->getIcGroup()->removeOption($orphan);
-            $this->getEntityManager()->remove($orphan);
+            $em->remove($orphan);
         }
     }
 }

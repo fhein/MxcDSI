@@ -3,7 +3,6 @@
 namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\ORM\Query;
-use MxcDropshipInnocigs\Mapping\EntitiyValidator;
 
 class ArticleRepository extends BaseEntityRepository
 {
@@ -44,43 +43,44 @@ class ArticleRepository extends BaseEntityRepository
 
     public function getAllIndexed()
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        return $this->getQuery(__FUNCTION__)->getResult();
     }
 
     public function getAllWithRelated(array $relatedIds)
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])
-            ->setParameter('relatedIds', $relatedIds)->getResult();
+        return $this->getQuery(__FUNCTION__)
+            ->setParameter('relatedIds', $relatedIds)
+            ->getResult();
     }
 
     public function getAllWithSimilar(array $relatedIds)
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])
+        return $this->getQuery(__FUNCTION__)
             ->setParameter('similarIds', $relatedIds)->getResult();
     }
 
     public function getLinked()
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        return $this->getQuery(__FUNCTION__)->getResult();
     }
 
     public function getAllIndexedByName()
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        return $this->getQuery(__FUNCTION__)->getResult();
     }
 
     public function getFlavoredIndexed()
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        return $this->getQuery(__FUNCTION__)->getResult();
     }
 
     public function getValidVariants(Article $article) : array
     {
-        $validator = new EntitiyValidator();
         $validVariants = [];
         $variants = $article->getVariants();
+        /** @var Variant $variant */
         foreach ($variants as $variant) {
-            if ($validator->validateVariant($variant)) {
+            if ($variant->isValid()) {
                 $validVariants[] = $variant;
             }
         }
@@ -90,52 +90,24 @@ class ArticleRepository extends BaseEntityRepository
 
     public function getShopwareArticle(Article $article)
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])
+        return $this->getQuery(__FUNCTION__)
             ->setParameter('number', $article->getNumber())->getResult()[0];
-
-//        $orderNumbers = [];
-//        $variants = $article->getVariants();
-//        foreach ($variants as $variant) {
-//            $orderNumbers[] = $variant->getNumber();
-//        }
-//        $details = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])
-//            ->setParameter('ordernumbers', $orderNumbers)
-//            ->getResult();
-//
-//        if ($details[0] === null) {
-//            return null;
-//        }
-//        /** @noinspection PhpUndefinedMethodInspection */
-//        return $details[0]->getArticle();
-
     }
-
-    public function getAllHavingShopwareArticleIndexed()
-    {
-        $icArticles = $this->getAllIndexed();
-        $result = [];
-        foreach ($icArticles as $icArticle) {
-            if ($this->getShopwareArticle($icArticle) !== null) {
-                $result[] = $icArticle;
-            }
-        }
-        return $result;
-    }
-
 
     public function removeOrphaned()
     {
-        $orphans = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        $orphans = $this->getQuery(__FUNCTION__)->getResult();
         /** @var Article $orphan */
+        $em = $this->getEntityManager();
         foreach ($orphans as $orphan) {
             $this->log->debug('Removing orphaned article \'' . $orphan->getName() . '\'');
-            $this->getEntityManager()->remove($orphan);
+            $em->remove($orphan);
         }
     }
 
     public function getDist()
     {
-        $result = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])
+        $result = $this->getQuery(__FUNCTION__)
             ->setParameter('manufacturers', ['SC', 'InnoCigs', 'Steamax'])
             ->getResult(Query::HYDRATE_ARRAY);
         return array_merge($result, $this->getSuppliersAndBrands('Akkus'));
@@ -146,16 +118,34 @@ class ArticleRepository extends BaseEntityRepository
         if (null === $manufacturers) {
             return $this->getAllSuppliersAndBrands();
         }
-        return $this->getEntityManager()
-            ->createQuery($this->dql[__FUNCTION__])
+        return $this->getQuery(__FUNCTION__)
             ->setParameter('manufacturers', is_string($manufacturers) ? [$manufacturers] : $manufacturers)
             ->getResult(Query::HYDRATE_ARRAY);
     }
 
     public function getAllSuppliersAndBrands()
     {
-        return $this->getEntityManager()
-            ->createQuery($this->dql[__FUNCTION__])
-            ->getResult(Query::HYDRATE_ARRAY);
+        return $this->getQuery(__FUNCTION__)->getResult(Query::HYDRATE_ARRAY);
+    }
+
+    /**
+     * An article validates true if either it's $accepted member is true
+     * and at least one of the article's variants validates true
+     *
+     * @param Article $article
+     * @return bool
+     */
+    public function validateArticle(Article $article) : bool
+    {
+        if (! $article->isAccepted()) {
+            return false;
+        }
+        $variants = $article->getVariants();
+        foreach($variants as $variant) {
+            if ($variant->isValid()) {
+                return true;
+            }
+        }
+        return false;
     }
 }

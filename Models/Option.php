@@ -42,6 +42,9 @@ class Option extends ModelEntity  {
      */
     private $variants;
 
+    /** @var boolean $valid */
+    private $valid;
+
     public function __construct() {
         $this->variants = new ArrayCollection();
     }
@@ -113,5 +116,16 @@ class Option extends ModelEntity  {
     public function setAccepted(bool $accepted)
     {
         $this->accepted = $accepted;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isValid(): bool
+    {
+        if (! $this->valid) {
+            $this->valid = $this->accepted && $this->getIcGroup()->isAccepted();
+        }
+        return $this->valid;
     }
 }

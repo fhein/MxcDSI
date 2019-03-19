@@ -107,6 +107,7 @@ class Article extends ModelEntity  {
      * )
      */
     private $variants;
+    private $validVariants;
 
     /**
      * @var string $supplier
@@ -162,11 +163,22 @@ class Article extends ModelEntity  {
     private $activateRelatedArticles = true;
 
     /**
+     * @var boolean $createRelatedArticles
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $createRelatedArticles = true;
+
+    /**
      * @var boolean $activateSimilarArticles
      * @ORM\Column(type="boolean", nullable=false)
      */
     private $activateSimilarArticles = false;
 
+    /**
+     * @var boolean $activateSimilarArticles
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $createSimilarArticles = false;
     /**
      * @var boolean $accepted
      * @ORM\Column(type="boolean", nullable=false)
@@ -178,6 +190,9 @@ class Article extends ModelEntity  {
      * @ORM\Column(type="boolean", nullable=false)
      */
     private $new = true;
+
+    /** @var boolean $valid */
+    private $valid;
 
     /**
      * @var string $flavor
@@ -358,6 +373,14 @@ class Article extends ModelEntity  {
     public function setArticle(?ShopwareArticle $article)
     {
         $this->article = $article;
+    }
+
+    public function getValidVariants()
+    {
+        if (! $this->validVariants) {
+            $this->validVariants = Shopware()->Models()->getRepository(Article::class)->getValidVariants($this);
+        }
+        return $this->validVariants;
     }
 
     /**
@@ -607,6 +630,45 @@ class Article extends ModelEntity  {
     public function setTax(float $tax)
     {
         $this->tax = $tax;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCreateSimilarArticles(): bool
+    {
+        return $this->createSimilarArticles;
+    }
+
+    /**
+     * @param bool $createSimilarArticles
+     */
+    public function setCreateSimilarArticles(bool $createSimilarArticles): void
+    {
+        $this->createSimilarArticles = $createSimilarArticles;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCreateRelatedArticles(): bool
+    {
+        return $this->createRelatedArticles;
+    }
+
+    /**
+     * @param bool $createRelatedArticles
+     */
+    public function setCreateRelatedArticles(bool $createRelatedArticles): void
+    {
+        $this->createRelatedArticles = $createRelatedArticles;
+    }
+
+    public function isValid() {
+        if (! $this->valid) {
+            $this->valid  = Shopware()->Models()->getRepository(Article::class)->validateArticle($this);
+        }
+        return $this->valid;
     }
 
 }

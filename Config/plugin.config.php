@@ -14,7 +14,7 @@ use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
-use MxcDropshipInnocigs\Mapping\EntitiyValidator;
+use MxcDropshipInnocigs\Mapping\EntityValidator;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -118,7 +118,6 @@ return [
             ConfiguratorGroupRepository::class,
             ConfiguratorSetRepository::class,
             Credentials::class,
-            EntitiyValidator::class,
             FilterGroupRepository::class,
             FilterTest::class,
             Flavorist::class,

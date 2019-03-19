@@ -25,7 +25,11 @@ use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
 class ArticleMapper
 {
-    protected $articlesToCreate;
+    protected $associatedArticles;
+
+    protected $createdArticles;
+
+    protected $categoryTree;
 
     /**
      * @var LoggerInterface $log
@@ -54,10 +58,6 @@ class ArticleMapper
      * @var MediaTool $mediaTool
      */
     protected $mediaTool;
-    /**
-     * @var EntitiyValidator $validator
-     */
-    protected $validator;
 
     /** @var bool */
     protected $dropshippersCompanionPresent;
@@ -77,7 +77,6 @@ class ArticleMapper
      * @param ArticleOptionMapper $optionMapper
      * @param MediaTool $mediaTool
      * @param ImportMapper $client
-     * @param EntitiyValidator $validator
      * @param Config $config
      * @param LoggerInterface $log
      */
@@ -86,7 +85,6 @@ class ArticleMapper
         ArticleOptionMapper $optionMapper,
         MediaTool $mediaTool,
         ImportMapper $client,
-        EntitiyValidator $validator,
         Config $config,
         LoggerInterface $log
     ) {
@@ -94,7 +92,6 @@ class ArticleMapper
         $this->optionMapper = $optionMapper;
         $this->mediaTool = $mediaTool;
         $this->client = $client;
-        $this->validator = $validator;
         $this->config = $config;
         $this->log = $log;
         $this->articleTool = new ArticleTool();
@@ -118,71 +115,109 @@ class ArticleMapper
     public function handleActiveStateChange(Article $icArticle)
     {
         $swArticle = null;
-        $articlesCreated = [];
+        $this->createdArticles = [];
+
         if ($icArticle->isActive()) {
-            $this->log->debug('Article to activate: ' . $icArticle->getName());
-            $articlesToCreate = $this->getArticlesToCreate($icArticle);
-            $this->log->debug('Articles to create: ' . count($articlesToCreate));
-            foreach ($articlesToCreate as $article) {
-                if (! $this->validator->validateArticle($article)) continue;
-                $swArticle = $this->setShopwareArticle($article);
-                if ($swArticle !== null) {
-                    $article->setActive(true);
-                    $articlesCreated[] = $article->getIcNumber();
-                    $this->setShopwareArticleActiveState($article);
-                }
-            }
-            // @todo: Update existing articles
-        } else {
-            $this->log->debug('Article is not active: ' . $icArticle->getName());
-            $this->setShopwareArticleActiveState($icArticle);
+            // update or create article, can modify icArticle's active state
+            $swArticle = $this->setShopwareArticle($icArticle);
         }
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
-        $this->updateArticleLinks($articlesCreated);
+
+        if ($icArticle->isActive()) {
+            // Build a list of all articles associated to this article
+            $this->associatedArticles = [];
+            $this->prepareAssociatedArticles($icArticle);
+
+            foreach ($this->associatedArticles as $article) {
+                $this->setShopwareArticle($article);
+                $this->setShopwareArticleActive($article);
+            }
+
+            // All related and similar articles have been created according to
+            // the configuration of the $icArticle
+            $this->setRelatedArticles($icArticle);
+            $this->setSimilarArticles($icArticle);
+        }
+
+        $this->setShopwareArticleActive($icArticle);
+
+        // Update all articles with similar or related articles referencing articles
+        // that we just created.
+        if (! empty($this->createdArticles)) {
+            $this->updateArticleLinks($this->createdArticles);
+        }
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
         return $swArticle;
     }
 
-    protected function updateArticleLinks(array $articlesCreated) {
-        if (count($articlesCreated) === 0) return;
+
+    /**
+     * Update the related and similar article lists of all Shopware articles
+     * where the corresponding icArticle has related and similar articles from
+     * the given $icArticles array.
+     *
+     * @param array $icArticles
+     */
+    protected function updateArticleLinks(array $icArticles) {
+        if (count($icArticles) === 0) return;
+
         $repository = $this->modelManager->getRepository(Article::class);
 
-        $articlesWithRelatedNewArticles = $repository->getAllWithRelated($articlesCreated);
+        $articlesWithRelatedNewArticles = $repository->getAllWithRelated($icArticles);
         foreach ($articlesWithRelatedNewArticles as $icArticle) {
             $this->setRelatedArticles($icArticle);
         }
-        $articlesWithSimilarNewArticles = $repository->getAllWithSimilar($articlesCreated);
+
+        $articlesWithSimilarNewArticles = $repository->getAllWithSimilar($icArticles);
         foreach ($articlesWithSimilarNewArticles as $icArticle) {
             $this->setSimilarArticles($icArticle);
         }
     }
 
-    protected function addArticlesToCreate(Collection $icArticles)
-    {
-        foreach ($icArticles as $icArticle) {
-            if (! $icArticle->getArticle() ) {
-                $this->articlesToCreate[$icArticle->getIcNumber()] = $icArticle;
-            }
-        }
+    /**
+     * Fill the $this->associatedArticles recursively
+     *
+     * @param Article $icArticle
+     */
+    protected function prepareAssociatedArticles(Article $icArticle) {
+        // exit recursion if $icArticle is registered already
+        if ($this->associatedArticles[$icArticle->getIcNumber()]) return;
+
+        $this->prepareAssociatedArticlesCollection(
+            $icArticle->getRelatedArticles(),
+            $icArticle->getCreateRelatedArticles(),
+            $icArticle->getActivateRelatedArticles()
+        );
+
+        $this->prepareAssociatedArticlesCollection(
+            $icArticle->getSimilarArticles(),
+            $icArticle->getCreateSimilarArticles(),
+            $icArticle->getActivateSimilarArticles()
+        );
     }
 
-    protected function getArticlesToCreate(Article $icArticle) {
-        // @todo: Recursion
-        $this->articlesToCreate = [];
-        if (! $icArticle->getArticle()) {
-            $this->articlesToCreate[$icArticle->getIcNumber()] = $icArticle;
+    /**
+     * @param Collection $icArticles
+     * @param bool $createAssociated
+     * @param bool $activateAssociated
+     */
+    protected function prepareAssociatedArticlesCollection(
+        Collection $icArticles,
+        bool $createAssociated,
+        bool $activateAssociated
+    ) {
+        /** @var Article $article */
+        foreach ($icArticles as $article) {
+            if (! $createAssociated && ! $article->getArticle()) {
+                $article->setActive(false);
+                continue;
+            }
+            if ($activateAssociated) {
+                $article->setActive(true);
+            }
+            $this->associatedArticles[$article->getIcNumber()] = $article;
+            $this->prepareAssociatedArticles($article);
         }
-        if ($icArticle->getActivateRelatedArticles()) {
-            $this->log->debug('Article is set to activate related articles.');
-            $this->addArticlesToCreate($icArticle->getRelatedArticles());
-        }
-        if ($icArticle->getActivateSimilarArticles()) {
-            $this->log->debug('Article is set to activate similar articles.');
-            $this->addArticlesToCreate($icArticle->getSimilarArticles());
-        }
-        return $this->articlesToCreate;
     }
 
     /**
@@ -197,10 +232,12 @@ class ArticleMapper
         $swArticle = $icArticle->getArticle();
         $create = ($swArticle === null);
 
-        // deactivate article if it is not accepted any longer
-        if ( ! $this->validator->validateArticle($icArticle)) {
+        // Only create active articles
+        if ($create && ! $icArticle->isActive()) return null;
+
+        // Deactivate article if it is not accepted any longer
+        if ( ! $icArticle->isValid()) {
             $icArticle->setActive(false);
-            $this->setShopwareArticleActiveState($icArticle);
             return $swArticle;
         }
 
@@ -209,6 +246,7 @@ class ArticleMapper
             $swArticle = new ShopwareArticle();
             $this->modelManager->persist($swArticle);
             $icArticle->setArticle($swArticle);
+            $this->createdArticles[] = $icArticle->getIcNumber();
         }
 
         $this->removeObsoleteShopwareDetails($icArticle);
@@ -222,16 +260,11 @@ class ArticleMapper
         $this->mediaTool->setArticleImages($icArticle);
         $this->setReferencePrice($icArticle);
 
-        if ($create) {
-            $swArticle->setActive(false);
-        }
-        $this->log->debug('Related articles for ' . $icArticle->getName());
-        foreach ($icArticle->getRelatedArticles() as $relatedArticle) {
-            $this->log->debug($relatedArticle->getName());
-        }
-        // $this->setRelatedArticles($icArticle);
-        // $this->setSimilarArticles($icArticle);
-        $this->setCategories($icArticle);
+        // We have to flush each article in order to get the newly created categories
+        // pushed to the database.
+
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
 
         return $swArticle;
     }
@@ -252,11 +285,6 @@ class ArticleMapper
         $isMainDetail = true;
         /** @var Variant $icVariant */
         foreach ($icVariants as $icVariant) {
-            if (! $this->validator->validateVariant($icVariant)) {
-                $this->setShopwareDetailActiveState($icVariant, false);
-                continue;
-            }
-
             $swDetail = $this->setShopwareDetail($icVariant);
             $swDetail->setKind(2);
             if ($isMainDetail) {
@@ -275,7 +303,6 @@ class ArticleMapper
      * @param Variant $icVariant
      * @return Detail|null
      */
-
     protected function setShopwareDetail(Variant $icVariant)
     {
         $swDetail = $icVariant->getDetail();
@@ -288,10 +315,6 @@ class ArticleMapper
             // Next line is necessary to avoid Doctrine duplicte relation exception
             $swDetail->getConfiguratorOptions()->clear();
             $swDetail->setConfiguratorOptions(new ArrayCollection($icVariant->getShopwareOptions()));
-            foreach ($icVariant->getShopwareOptions() as $option) {
-                $this->log->debug('Adding shopware option ' . $option->getId() . ' to detail ' . $swDetail->getId());
-            //    $configuratorOptions->add($option);
-            }
             return $swDetail;
         }
 
@@ -363,6 +386,7 @@ class ArticleMapper
 
         $swArticle->setTax($this->getTax($icArticle->getTax()));
         $swArticle->setSupplier($this->getSupplier($icArticle));
+        $this->setCategories($icArticle);
     }
 
     /**
@@ -473,39 +497,51 @@ class ArticleMapper
         }
     }
 
-    protected function setShopwareDetailActiveState(Variant $icVariant, bool $active)
-    {
-        $swDetail = $icVariant->getDetail();
-        if ($swDetail === null) return;
-
-        $swDetail->setActive($active);
-        $this->setDropship($icVariant, $active);
-    }
-
     /**
      * Set the shopware article active state to according to the $active state
-     * of the given InnoCigs article. Does not modify the active state of the
+     * of the given InnoCigs article. Can modify the active state of the
      * Shopware Details. If the InnoCigs article is active, dropship gets
      * enabled for all active Shopware details and disabled for non active
      * Shopware details. If the article is not active, dropship gets disabled
      * for all Shopware details.
      *
+     * If the InnoCigs article is not valid any longer or there is no corresponding
+     * Shopware article, the InnoCigs article gets deactivated.
+     *
      * @param Article $icArticle
      */
-    public function setShopwareArticleActiveState(Article $icArticle)
+    public function setShopwareArticleActive(Article $icArticle)
     {
         $swArticle = $icArticle->getArticle();
-        if ($swArticle === null) return;
+        $active = $icArticle->isValid() && $icArticle->isActive() && $swArticle !== null;
 
-        $icActive = $icArticle->isActive();
-        $swArticle->setActive($icActive);
+        $icArticle->setActive($active);
 
         $icVariants = $icArticle->getVariants();
         /** @var Variant $icVariant */
         foreach ($icVariants as $icVariant) {
-            $icVariantActive = $this->validator->validateVariant($icVariant) && $icActive;
-            $icVariant->setActive($icVariantActive);
-            $this->setShopwareDetailActiveState($icVariant, $icVariantActive);
+            $this->setShopwareDetailActive($icVariant, $active);
+        }
+
+        if ($swArticle) {
+            $swArticle->setActive($active);
+        }
+    }
+
+    /**
+     * Set the Shopware detail's active state
+     *
+     * @param Variant $icVariant
+     * @param bool $active
+     */
+    protected function setShopwareDetailActive(Variant $icVariant, bool $active)
+    {
+        $swDetail = $icVariant->getDetail();
+        $active = $active && $icVariant->isValid() && $swDetail !== null;
+        $this->setDropship($icVariant, $active);
+        $icVariant->setActive($active);
+        if ($swDetail) {
+            $swDetail->setActive($active);
         }
     }
 
@@ -553,7 +589,7 @@ class ArticleMapper
         $child->setName($name);
         $child->setParent($parent);
         $child->setChanged();
-        if ($parent->getChildren()->count() === 0 && $parent->getArticles()->count() > 0) {
+        if ($parent->getArticles()->count() > 0) {
             /** @var \Shopware\Models\Article\Article $article */
             foreach ($parent->getArticles() as $article) {
                 $article->removeCategory($parent);
@@ -576,14 +612,19 @@ class ArticleMapper
      */
     protected function getCategory(string $path, Category $root = null)
     {
+//        $category = $this->knownCategories[$path];
+//        if ($category !== null) {
+//            return $category;
+//        }
         $repository = $this->modelManager->getRepository(Category::class);
         /** @var Category $parent */
         $parent = ($root !== null) ? $root : $repository->findOneBy(['parentId' => null]);
-        $path = explode(' > ', $path);
-        foreach ($path as $categoryName) {
+        $nodes = explode(' > ', $path);
+        foreach ($nodes as $categoryName) {
             $child = $repository->findOneBy(['name' => $categoryName, 'parentId' => $parent->getId()]);
-            $parent = ($child !== null) ? $child : $this->createCategory($parent, $categoryName);
+            $parent = $child ?? $this->createCategory($parent, $categoryName);
         }
+//        $this->knownCategories[$path] = $parent;
         return $parent;
     }
 
@@ -598,12 +639,15 @@ class ArticleMapper
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 
-        $swArticle->getCategories()->clear();
         $root = $this->config->get('root_category', 'Deutsch');
-        $root = $this->getCategory($root);
+        $rootCategory = $this->getCategory($root);
         $catgories = explode(MXC_DELIMITER_L1, $icArticle->getCategory());
         foreach ($catgories as $category) {
-            $swArticle->addCategory($this->getCategory($category, $root));
+            // if ($icArticle->getName() === 'SC - Base - 100 ml, 0 mg/ml') xdebug_break();
+            $this->log->debug('Getting category for article '. $icArticle->getName());
+            $swCategory = $this->getCategory($category, $rootCategory);
+            $swArticle->addCategory($swCategory);
+            $swCategory->setChanged();
         }
     }
 
@@ -691,27 +735,43 @@ class ArticleMapper
         }
 
         // remove thousands punctuation
-        $volume = $matches[1];
-        $volume = str_replace('.', '', $volume);
-
-        // calculate the reference volume
-        $reference = $volume < 100 ? 100 : ($volume < 1000 ? 1000 : 0);
-        // Exit if we have no reference volume
-        if ($reference === 0) {
-            return;
-        }
+        $baseVolume = $matches[1];
+        $baseVolume = str_replace('.', '', $baseVolume);
 
         $icVariants = $icArticle->getVariants();
         /** @var Variant $icVariant */
         foreach ($icVariants as $icVariant) {
             $swDetail = $icVariant->getDetail();
             if (! $swDetail) continue;
+            $pieces = $this->getPiecesPerPack($icVariant);
+            // calculate the reference volume
+            $volume = $baseVolume * $pieces;
+            $reference = $volume < 100 ? 100 : ($volume < 1000 ? 1000 : 0);
+            // Exit if we have no reference volume
+            if ($reference === 0) {
+                continue;
+            }
+
             // set reference volume and unit
             $swDetail->setPurchaseUnit($volume);
             $swDetail->setReferenceUnit($reference);
             $unit = $this->getUnit('ml');
             $swDetail->setUnit($unit);
         }
+    }
+
+    protected function getPiecesPerPack(Variant $icVariant) {
+        $options = $icVariant->getOptions();
+        $matches = [];
+        $pieces = 1;
+        foreach ($options as $option) {
+            preg_match('~(\d+)er Packung~', $option->getName(), $matches);
+            if (empty($matches)) {
+                continue;
+            }
+            $pieces =  $matches[1];
+        }
+        return $pieces;
     }
 
     /**
@@ -810,20 +870,6 @@ class ArticleMapper
             }
         }
     }
-
-    /**
-     * Add the Shopware articles which are related to a given list of InnoCigs articles to a given
-     * target collection. Used to set similar articles and related articles of Shopware articles.
-     *
-     * @param bool $activate If true then missing Shopware articles get created
-     * @param Collection $icArticles list of InnoCigs articles
-     * @param Collection $target target collection
-     */
-//    protected function setAssociatedArticles(Collection $icArticles, Collection $target)
-//    {
-//        /** @noinspection PhpUnhandledExceptionInspection */
-//        $this->addArticlesToCollection($this->getShopwareArticles($icArticles), $target);
-//    }
 
     /**
      * Set the related articles of a Shopware article according to the settings of the InnoCigs article.

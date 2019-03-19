@@ -12,16 +12,12 @@ class VariantRepository extends BaseEntityRepository
 
     public function getAllIndexed()
     {
-        return $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
-    }
-
-    public function getPublicVariants(Article $article) {
-
+        return $this->getQuery(__FUNCTION__)->getResult();
     }
 
     public function getShopwareDetail(Variant $variant)
     {
-        $result = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])
+        $result = $this->getQuery(__FUNCTION__)
             ->setParameter('ordernumber', $variant->getNumber())
             ->getResult();
         return $result[0];
@@ -29,11 +25,35 @@ class VariantRepository extends BaseEntityRepository
 
     public function removeOrphaned()
     {
-        $orphans = $this->getEntityManager()->createQuery($this->dql[__FUNCTION__])->getResult();
+        $orphans = $this->getQuery(__FUNCTION__)->getResult();
         /** @var Variant $orphan */
+        $em = $this->getEntityManager();
         foreach($orphans as $orphan) {
             $this->log->debug('Removing orphaned variant \'' . $orphan->getNumber() .'\'');
-            $this->getEntityManager()->remove($orphan);
+            $em->remove($orphan);
         }
+    }
+
+    /**
+     * A variant validates true if the $accepted member of the variant is true and
+     * the $accepted member of the associated Article is true and all of the variant's
+     * options validate true
+     *
+     * @param Variant $variant
+     * @return bool
+     */
+    public function validateVariant(Variant $variant) : bool
+    {
+        if (! ($variant->isAccepted() && $variant->getArticle()->isAccepted())) {
+            return false;
+        }
+        $options = $variant->getOptions();
+        /** @var Option $option */
+        foreach ($options as $option) {
+            if (! $option->isValid()) {
+                return false;
+            }
+        }
+        return true;
     }
 }

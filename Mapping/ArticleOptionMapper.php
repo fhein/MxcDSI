@@ -115,7 +115,7 @@ class ArticleOptionMapper
      */
     public function createConfiguratorSet(Article $icArticle)
     {
-        $validVariants = $this->modelManager->getRepository(Article::class)->getValidVariants($icArticle);
+        $validVariants = $icArticle->getValidVariants();
         if (count($validVariants) < 2) {
             $this->log->notice(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does '
                 . 'not provide more than one variant which is set not to get ignored.',
