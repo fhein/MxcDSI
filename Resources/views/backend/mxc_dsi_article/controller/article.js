@@ -177,6 +177,8 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
     },
 
     handleError: function(record, operation) {
+        let me = this;
+
         let rawData = operation.records[0].proxy.reader.rawData;
         let message = '{s name=unknownError}An unknown error occurred, please check your server logs.{/s}';
         if (rawData.message) {
@@ -185,9 +187,8 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         }
         me.showError(message);
     },
-    showError: function (message) {
-        var me = this;
 
+    showError: function (message) {
         Shopware.Notification.createStickyGrowlMessage({
                 title: 'Error',
                 text: message,

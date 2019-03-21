@@ -19,7 +19,6 @@ Ext.define('Shopware.apps.MxcDsiTest.controller.Group', {
                 mxcSelectOption:    me.onOptionSelect,
             }
         });
-        Shopware.app.Application.on('ImportGroup-save-successfully', me.onDetailSaved);
         me.mainWindow = me.getView('list.Window').create({ }).show();
     },
 

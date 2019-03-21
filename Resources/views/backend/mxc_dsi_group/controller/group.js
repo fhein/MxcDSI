@@ -13,10 +13,8 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Group', {
             'mxc-dsi-group-listing-grid': {
                 mxcSaveGroup:       me.onGroupSave,
                 mxcSelectGroup:     me.onGroupSelect,
-                mxcDeselectGroup:   me.onGroupDeselect,
             }
         });
-        Shopware.app.Application.on('ImportGroup-save-successfully', me.onDetailSaved);
         me.mainWindow = me.getView('list.Window').create({ }).show();
     },
 
