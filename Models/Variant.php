@@ -83,6 +83,14 @@ class Variant extends ModelEntity
     private $description;
 
     /**
+     * Pieces per order derived from the variants's package size option.
+     *
+     * @var int $piecesPerOrder
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $piecesPerOrder;
+
+    /**
      * @var boolean $active
      *
      * @ORM\Column(type="boolean", nullable=false)
@@ -450,5 +458,24 @@ class Variant extends ModelEntity
             $this->valid = Shopware()->Models()->getRepository(Variant::class)->validateVariant($this);
         }
         return $this->valid;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPiecesPerOrder()
+    {
+        if (! $this->piecesPerOrder) {
+            $this->piecesPerOrder = Shopware()->Models()->getRepository(Variant::class)->getPiecesPerOrder($this);
+        }
+        return $this->piecesPerOrder;
+    }
+
+    /**
+     * @param int $piecesPerOrder
+     */
+    public function setPiecesPerOrder($piecesPerOrder)
+    {
+        $this->piecesPerOrder = $piecesPerOrder;
     }
 }

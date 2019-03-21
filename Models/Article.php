@@ -69,6 +69,9 @@ class Article extends ModelEntity  {
     private $type;
 
     /**
+     * This property reflects the pieces per pack information extracted
+     * from the article name (example: (5 Stück pro Packung)).
+     *
      * @var int $piecesPerPack
      * @ORM\Column(type="integer", nullable=true)
      */
@@ -643,7 +646,7 @@ class Article extends ModelEntity  {
     /**
      * @param bool $createSimilarArticles
      */
-    public function setCreateSimilarArticles(bool $createSimilarArticles): void
+    public function setCreateSimilarArticles(bool $createSimilarArticles)
     {
         $this->createSimilarArticles = $createSimilarArticles;
     }
@@ -659,7 +662,7 @@ class Article extends ModelEntity  {
     /**
      * @param bool $createRelatedArticles
      */
-    public function setCreateRelatedArticles(bool $createRelatedArticles): void
+    public function setCreateRelatedArticles(bool $createRelatedArticles)
     {
         $this->createRelatedArticles = $createRelatedArticles;
     }

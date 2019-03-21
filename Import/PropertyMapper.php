@@ -139,7 +139,7 @@ class PropertyMapper
         $article->setBrand($result['brand'] ?? $this->config['manufacturers'][$manufacturer]['brand'] ?? $manufacturer);
         $supplier = $result['supplier'];
         if (!$supplier) {
-            if (!in_array($manufacturer, $this->config['innocigs_brands'])) {
+            if (! in_array($manufacturer, $this->config['innocigs_brands'])) {
                 $supplier = $this->config['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
             }
         }

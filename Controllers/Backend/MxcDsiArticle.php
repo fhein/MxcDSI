@@ -58,6 +58,35 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->leave();
     }
 
+    public function setStateMultipleAction()
+    {
+        $this->log->enter();
+        try {
+            $params = $this->request->getParams();
+            $setter = 'set' . ucfirst($params['field']);
+            $value = $params['value'] === 'true';
+            $ids = json_decode($params['ids'], true);
+
+            $services = $this->getServices();
+            $modelManager = $services->get('modelManager');
+            $icArticles = $modelManager->getRepository(Article::class)->getArticlesByIds($ids);
+
+            $articleMapper = $services->get(ArticleMapper::class);
+
+            /** @var Article $icArticle */
+            foreach ($icArticles as $icArticle) {
+                $icArticle->$setter($value);
+                $articleMapper->handleActiveStateChange($icArticle);
+                $modelManager->flush();
+            }
+            $this->view->assign(['success' => true, 'message' => 'Articles were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $this->log->leave();
+    }
+
     public function remapAction()
     {
         $this->log->enter();
@@ -66,6 +95,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $mapper = $this->services->get(PropertyMapper::class);
             $articles = $this->getModelManager()->getRepository(Article::class)->getAllIndexed();
             $mapper->mapProperties($articles);
+            $this->getModelManager()->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Item properties were successfully remapped.']);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
@@ -86,12 +116,15 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $article = $this->getRepository()->find($data['id']);
             // currently stored $active state
             $sActive = $article->isActive();
+            $sAccepted = $article->isAccepted();
         } else {
             // this is a request to create a new article (not supported via our UI)
             $article = new $this->model();
             $this->getManager()->persist($article);
             // default $active state
             $sActive = false;
+            // default $accepted state
+            $sAccepted = true;
         }
         // Variant data is empty only if the request comes from the list view (not the detail view)
         // We prevent storing an article with empty variant list by unsetting empty variant data.
@@ -107,18 +140,23 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
 
         // updated $active state
         $uActive = $article->isActive();
+        $uAccepted = $article->isAccepted();
 
         $articleMapper = $this->services->get(ArticleMapper::class);
+
         if ($uActive !== $sActive) {
             // User request to change active state of article
-            /** @noinspection PhpUnhandledExceptionInspection */
             if (! $articleMapper->handleActiveStateChange($article) && $uActive === true) {
                 return [
                     'success' => false,
                     'message' => 'Shopware article not created because it failed to validate.',
                 ];
             }
+        } elseif ($uAccepted !== $sAccepted) {
+            // User request to change accepted state of article
+            $articleMapper->handleActiveStateChange($article);
         }
+
         // Our customization ends here.
         // The rest below is default Shopware behaviour copied from parent implementation
         $violations = $this->getManager()->validate($article);

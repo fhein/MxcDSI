@@ -13,7 +13,9 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 mxcSaveArticle:     me.onSaveArticle,
                 mxcSaveMultiple:    me.onSaveMultiple,
                 mxcImportItems:     me.onImportItems,
-                mxcRemapProperties: me.onRemapProperties
+                mxcRemapProperties: me.onRemapProperties,
+                mxcSetActiveMultiple: me.onSetActiveMultiple,
+                mxcSetAcceptedMultiple: me.onSetAcceptedMultiple
             }
         });
         me.mainWindow = me.getView('list.Window').create({ }).show();
@@ -95,9 +97,6 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
     onSaveArticle: function(record) {
         let me = this;
         record.save({
-            // params: {
-            //      resource: 'article'
-            // },
             success: function(record, operation) {
                 if (operation.success) {
                     // Update the modified record by the data, the controller returned
@@ -112,6 +111,23 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 me.handleError(record, operation);
             }
         });
+    },
+
+    onSetActiveMultiple: function(grid, selectionModel) {
+        let me = this;
+        let field = 'active';
+        let value = selectionModel.getSelection()[0].get(field);
+        let maskMessage = value ? 'Activating articles.' : 'Deactivating articles.';
+        me.setFieldMultiple(grid, selectionModel, field, value, maskMessage);
+    },
+
+
+    onSetAcceptedMultiple: function(grid, selectionModel) {
+        let me = this;
+        let field = 'accepted';
+        let value = selectionModel.getSelection()[0].get(field);
+        let maskMessage = value ? 'Setting articles to accepted.' : 'Setting articles to ignored.';
+        me.setFieldMultiple(grid, selectionModel, field, value, maskMessage);
     },
 
     onSaveMultiple: function(grid, selectionModel) {
@@ -159,6 +175,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
             }
         })
     },
+
     handleError: function(record, operation) {
         let rawData = operation.records[0].proxy.reader.rawData;
         let message = '{s name=unknownError}An unknown error occurred, please check your server logs.{/s}';
@@ -177,6 +194,51 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 log: true
             },
             'MxcDropshipInnoCigs');
+    },
+
+    setFieldMultiple: function(grid, selectionModel, field, value, maskMessage) {
+        let me = this;
+        let mask = new Ext.LoadMask(grid, { msg: maskMessage});
+        let ids = [];
+
+        Ext.each(selectionModel.getSelection(), function (record) {
+            ids.push(record.get('id'));
+        });
+
+        mask.show();
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '{url controller=MxcDsiArticle action=setStateMultiple}',
+            params: {
+                field: field,
+                value: value,
+                ids: Ext.JSON.encode(ids)
+            },
+
+            success: function (response) {
+                mask.hide();
+                let result = Ext.JSON.decode(response.responseText);
+                console.log(result);
+                if (!result) {
+                    me.showError(response.responseText);
+                } else if (result.success) {
+                    Shopware.Notification.createGrowlMessage('Success', result.message);
+                    grid.store.load();
+                } else {
+                    me.showError(result.message);
+                }
+            },
+
+            failure: function (response) {
+                mask.hide();
+                if (response.responseText) {
+                    me.showError(response.responseText);
+                } else {
+                    me.showError('An unknown error occurred, please check your server logs.');
+                }
+            },
+        });
+
     },
 
 });

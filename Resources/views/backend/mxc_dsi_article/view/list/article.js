@@ -44,6 +44,17 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
              * @event mxcRemapProperties
              */
             'mxcRemapProperties',
+
+            /**
+             * @event mxcSetActiveMultiple
+             */
+            'mxcSetActiveMultiple',
+
+            /**
+             * @event mxcSetActiveMultiple
+             */
+            'mxcSetAcceptedMultiple',
+
             /**
              * @event mxcImportItems
              */
@@ -65,7 +76,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         return items;
     },
 
-    handleActiveStateChanges: function(changeTo) {
+    handleActiveState: function(changeTo) {
         let me = this;
         let selModel = me.getSelectionModel();
         let records = selModel.getSelection();
@@ -78,7 +89,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                 record.set('active', changeTo);
             }
         });
-        me.fireEvent('mxcSaveMultiple', me, selModel);
+        me.fireEvent('mxcSetActiveMultiple', me, selModel);
     },
 
     handleAcceptedState: function(changeTo) {
@@ -88,13 +99,14 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         Ext.each(records, function(record) {
             // deselect records which already have the target states
             // set the target state otherwise
-            if (record.get('accepted') === changeTo || (changeTo === false && record.get('active') === true)) {
+            if (record.get('accepted') === changeTo) {
+//            if (record.get('accepted') === changeTo || (changeTo === false && record.get('active') === true)) {
                 selModel.deselect(record);
             } else {
                 record.set('accepted', changeTo)
             }
         });
-        me.fireEvent('mxcSaveMultiple', me, selModel);
+        me.fireEvent('mxcSetAcceptedMultiple', me, selModel);
     },
 
     createActivateButton: function() {
@@ -103,7 +115,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             text: 'Activate selected',
             iconCls: 'sprite-tick',
             handler: function() {
-                me.handleActiveStateChanges(true);
+                me.handleActiveState(true);
             }
         });
     },
@@ -114,7 +126,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             text: 'Deactivate selected',
             iconCls: 'sprite-cross',
             handler: function() {
-                me.handleActiveStateChanges(false);
+                me.handleActiveState(false);
             }
         });
     },
@@ -173,9 +185,9 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                 beforeedit: function(editor, e) {
                     if (e.column.text === 'active') {
                         return e.record.get('accepted') === true;
-                    } else if (e.column.text === 'accept') {
+                    }/* else if (e.column.text === 'accept') {
                         return e.record.get('active') === false;
-                    }
+                    }*/
                     return (
                         e.column.text === 'Brand'
                         || e.column.text === 'Supplier'
@@ -185,6 +197,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                         || e.column.text === 'new'
                         || e.column.text === 'related'
                         || e.column.text === 'similar'
+                        || e.column.text == 'accept'
                     );
                 },
                 edit: function(editor, e) {

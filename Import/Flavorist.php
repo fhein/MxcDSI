@@ -64,7 +64,7 @@ class Flavorist
 
     public function updateCategories() {
         $this->revertCategories();
-        $articles = $this->modelManager->getRepository(Article::class)->getFlavoredIndexed();
+        $articles = $this->modelManager->getRepository(Article::class)->getFlavoredArticles();
         /** @var Article $article */
         foreach ($articles as $article) {
             $flavors = $article->getFlavor();

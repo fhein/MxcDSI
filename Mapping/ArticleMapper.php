@@ -8,7 +8,6 @@ use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
@@ -25,11 +24,11 @@ use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
 class ArticleMapper
 {
+    /** @var array $associatedArticles */
     protected $associatedArticles;
 
+    /** @var array $createdArticles */
     protected $createdArticles;
-
-    protected $categoryTree;
 
     /**
      * @var LoggerInterface $log
@@ -62,12 +61,6 @@ class ArticleMapper
     /** @var bool */
     protected $dropshippersCompanionPresent;
 
-    protected $articleTool;
-
-    protected $shopwareGroups = [];
-    protected $shopwareGroupRepository = null;
-    protected $shopwareGroupLookup = [];
-
     protected $customerGroups;
 
     /**
@@ -94,7 +87,6 @@ class ArticleMapper
         $this->client = $client;
         $this->config = $config;
         $this->log = $log;
-        $this->articleTool = new ArticleTool();
         $this->dropshippersCompanionPresent = $this->validateDropshippersCompanion();
         $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
         foreach ($customerGroups as $customerGroup) {
@@ -123,7 +115,8 @@ class ArticleMapper
         }
 
         if ($icArticle->isActive()) {
-            // Build a list of all articles associated to this article
+            // Recursively build a list of all articles associated to this article
+            // which need to get created or activated
             $this->associatedArticles = [];
             $this->prepareAssociatedArticles($icArticle);
 
@@ -163,12 +156,12 @@ class ArticleMapper
 
         $repository = $this->modelManager->getRepository(Article::class);
 
-        $articlesWithRelatedNewArticles = $repository->getAllWithRelated($icArticles);
+        $articlesWithRelatedNewArticles = $repository->getAllHavingRelatedArticles($icArticles);
         foreach ($articlesWithRelatedNewArticles as $icArticle) {
             $this->setRelatedArticles($icArticle);
         }
 
-        $articlesWithSimilarNewArticles = $repository->getAllWithSimilar($icArticles);
+        $articlesWithSimilarNewArticles = $repository->getAllHavingSimilarArticles($icArticles);
         foreach ($articlesWithSimilarNewArticles as $icArticle) {
             $this->setSimilarArticles($icArticle);
         }
@@ -216,13 +209,14 @@ class ArticleMapper
                 $article->setActive(true);
             }
             $this->associatedArticles[$article->getIcNumber()] = $article;
+
+            // Recursion
             $this->prepareAssociatedArticles($article);
         }
     }
 
     /**
-     * Update the Shopware article associated to the active InnoCigs article.
-     * If the Shopware article does not exist it will be created.
+     * Create/Update the Shopware article associated to the active InnoCigs article.
      *
      * @param Article $icArticle
      * @return ShopwareArticle|null
@@ -612,10 +606,6 @@ class ArticleMapper
      */
     protected function getCategory(string $path, Category $root = null)
     {
-//        $category = $this->knownCategories[$path];
-//        if ($category !== null) {
-//            return $category;
-//        }
         $repository = $this->modelManager->getRepository(Category::class);
         /** @var Category $parent */
         $parent = ($root !== null) ? $root : $repository->findOneBy(['parentId' => null]);
@@ -624,7 +614,6 @@ class ArticleMapper
             $child = $repository->findOneBy(['name' => $categoryName, 'parentId' => $parent->getId()]);
             $parent = $child ?? $this->createCategory($parent, $categoryName);
         }
-//        $this->knownCategories[$path] = $parent;
         return $parent;
     }
 
@@ -743,7 +732,7 @@ class ArticleMapper
         foreach ($icVariants as $icVariant) {
             $swDetail = $icVariant->getDetail();
             if (! $swDetail) continue;
-            $pieces = $this->getPiecesPerPack($icVariant);
+            $pieces = $icVariant->getPiecesPerOrder();
             // calculate the reference volume
             $volume = $baseVolume * $pieces;
             $reference = $volume < 100 ? 100 : ($volume < 1000 ? 1000 : 0);
@@ -758,20 +747,6 @@ class ArticleMapper
             $unit = $this->getUnit('ml');
             $swDetail->setUnit($unit);
         }
-    }
-
-    protected function getPiecesPerPack(Variant $icVariant) {
-        $options = $icVariant->getOptions();
-        $matches = [];
-        $pieces = 1;
-        foreach ($options as $option) {
-            preg_match('~(\d+)er Packung~', $option->getName(), $matches);
-            if (empty($matches)) {
-                continue;
-            }
-            $pieces =  $matches[1];
-        }
-        return $pieces;
     }
 
     /**

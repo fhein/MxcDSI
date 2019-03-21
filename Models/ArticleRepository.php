@@ -8,24 +8,26 @@ class ArticleRepository extends BaseEntityRepository
 {
     protected $dql = [
         'getAllIndexed'                      => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
+
+        'getArticlesByIds'                   => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.id in (:ids)',
+
                                                 // get all articles which have an associated Shopware Article
-        'getLinked'                          => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+        'getLinkedIndexed'                   => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
                                                     . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
                                                 // get all articles which have an associated Shopware Article
                                                 // that have related articles with :relatedIds
-        'getAllWithRelated'                  => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+        'getAllHavingRelatedArticles'        => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
                                                     . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
                                                     . 'JOIN a.relatedArticles r  WHERE r.icNumber IN (:relatedIds)',
                                                 // get all articles which have an associated Shopware Article
                                                 // that have similar articles with :simularIds
-        'getAllWithSimilar'                  => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+        'getAllHavingSimilarArticles'        => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
                                                     . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
                                                     . 'JOIN a.similarArticles s  WHERE s.icNumber IN (:similarIds)',
-        'getAllIndexedByName'                => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.name',
-        'getFlavoredIndexed'                 => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber WHERE a.flavor IS NOT NULL',
+        'getFlavoredArticles'                => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber WHERE a.flavor IS NOT NULL',
         'getShopwareArticle'                 => 'SELECT DISTINCT s FROM Shopware\Models\Article\Article s '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.article = s.id '
                                                     . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
@@ -46,30 +48,31 @@ class ArticleRepository extends BaseEntityRepository
         return $this->getQuery(__FUNCTION__)->getResult();
     }
 
-    public function getAllWithRelated(array $relatedIds)
+    public function getArticlesByIds(array $ids) {
+        return $this->getQuery(__FUNCTION__)
+            ->setParameter('ids', $ids)
+            ->getResult();
+    }
+
+    public function getAllHavingRelatedArticles(array $relatedIds)
     {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('relatedIds', $relatedIds)
             ->getResult();
     }
 
-    public function getAllWithSimilar(array $relatedIds)
+    public function getAllHavingSimilarArticles(array $relatedIds)
     {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('similarIds', $relatedIds)->getResult();
     }
 
-    public function getLinked()
+    public function getLinkedArticles()
     {
         return $this->getQuery(__FUNCTION__)->getResult();
     }
 
-    public function getAllIndexedByName()
-    {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
-
-    public function getFlavoredIndexed()
+    public function getFlavoredArticles()
     {
         return $this->getQuery(__FUNCTION__)->getResult();
     }
