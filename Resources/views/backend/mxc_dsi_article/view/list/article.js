@@ -197,7 +197,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                         || e.column.text === 'new'
                         || e.column.text === 'related'
                         || e.column.text === 'similar'
-                        || e.column.text == 'accept'
+                        || e.column.text === 'accept'
                     );
                 },
                 edit: function(editor, e) {
