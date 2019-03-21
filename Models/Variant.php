@@ -86,7 +86,6 @@ class Variant extends ModelEntity
      * Pieces per order derived from the variants's package size option.
      *
      * @var int $piecesPerOrder
-     * @ORM\Column(type="integer", nullable=true)
      */
     private $piecesPerOrder;
 
