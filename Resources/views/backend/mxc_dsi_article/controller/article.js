@@ -10,15 +10,51 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
 
         me.control({
             'mxc-dsi-article-listing-grid': {
-                mxcSaveArticle:     me.onSaveArticle,
-                mxcSaveMultiple:    me.onSaveMultiple,
-                mxcImportItems:     me.onImportItems,
-                mxcRemapProperties: me.onRemapProperties,
-                mxcSetActiveMultiple: me.onSetActiveMultiple,
-                mxcSetAcceptedMultiple: me.onSetAcceptedMultiple
+                mxcSaveArticle:         me.onSaveArticle,
+                mxcSaveMultiple:        me.onSaveMultiple,
+                mxcImportItems:         me.onImportItems,
+                mxcRemapProperties:     me.onRemapProperties,
+                mxcSetActiveMultiple:   me.onSetActiveMultiple,
+                mxcSetAcceptedMultiple: me.onSetAcceptedMultiple,
+                mxcRefreshItems:        me.onRefreshItems,
+
             }
         });
         me.mainWindow = me.getView('list.Window').create({ }).show();
+    },
+
+    onRefreshItems: function(grid) {
+        let me = this;
+        let mask = new Ext.LoadMask(grid, { msg: 'Refreshing active state ...'});
+        mask.show();
+        Ext.Ajax.request({
+            method: 'POST',
+            url: '{url controller=MxcDsiArticle action=refresh}',
+            params: {},
+
+            success: function (response) {
+                mask.hide();
+                let result = Ext.JSON.decode(response.responseText);
+                console.log(result);
+                if (!result) {
+                    me.showError(response.responseText);
+                } else if (result.success) {
+                    Shopware.Notification.createGrowlMessage('Refresh', result.message);
+                    grid.store.load();
+                } else {
+                    me.showError(result.message);
+                }
+            },
+
+            failure: function (response) {
+                mask.hide();
+                if (response.responseText) {
+                    me.showError(response.responseText);
+                } else {
+                    me.showError('An unknown error occurred, please check your server logs.');
+                }
+            },
+        });
     },
 
     onImportItems: function(grid) {
@@ -96,8 +132,11 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
      */
     onSaveArticle: function(record) {
         let me = this;
+        // @todo: Errors do not get displayed
         record.save({
             success: function(record, operation) {
+                console.log('Success (onSaveArticle)');
+                console.log(record);
                 if (operation.success) {
                     // Update the modified record by the data, the controller returned
                     // This way we make sure, that the record shows the data which is stored
@@ -108,6 +147,8 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 }
             },
             failure: function(record, operation) {
+                console.log('Failure (onSaveArticle)');
+                console.log(record);
                 me.handleError(record, operation);
             }
         });
@@ -128,52 +169,6 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         let value = selectionModel.getSelection()[0].get(field);
         let maskMessage = value ? 'Setting articles to accepted.' : 'Setting articles to ignored.';
         me.setFieldMultiple(grid, selectionModel, field, value, maskMessage);
-    },
-
-    onSaveMultiple: function(grid, selectionModel) {
-        let me = this;
-        let records = selectionModel.getSelection();
-        if (records.length > 0) {
-            let mask = new Ext.LoadMask(grid, { msg: 'Applying changes ...'});
-            mask.show();
-            me.save(records, mask, function() {
-                selectionModel.deselectAll();
-                Shopware.Notification.createGrowlMessage('InnoCigs Dropship', 'Changes successfully applied.', 'Article');
-                mask.hide();
-            });
-        }
-    },
-
-    save: function(records, mask, callback) {
-        let me = this,
-            record = records.pop();
-
-        record.save({
-            success: function(record, operation) {
-                if (operation.success) {
-                    // Update the modified record by the data, the controller returned
-                    // This way we make sure, that the record shows the data which is stored
-                    // in the database
-                    Ext.each(Object.keys(record.getData()), function (key) {
-                        record.set(key, operation.records[0].data[key]);
-                    });
-
-                    if (records.length === 0) {
-                        callback();
-                    } else {
-                        me.save(records, mask, callback);
-                    }
-                } else {
-                    me.handleError(operation);
-                    mask.hide();
-                }
-            },
-            failure: function(record, operation) {
-                me.handleError(record, operation);
-                mask.hide();
-                me.getArticleListing().getStore().load();
-            }
-        })
     },
 
     handleError: function(record, operation) {
@@ -239,7 +234,5 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 }
             },
         });
-
     },
-
 });

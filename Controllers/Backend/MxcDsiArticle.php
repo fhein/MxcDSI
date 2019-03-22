@@ -12,24 +12,17 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     protected $model = Article::class;
     protected $alias = 'innocigs_article';
 
-//    public function indexAction() {
-//        $this->log->enter();
-//        try {
-//            $client = $this->services->get(ImportClient::class);
-//            if ($client === null) {
-//                $this->log->err('client is null.');
-//            }
-//            $client->import();
-//            parent::indexAction();
-//        } catch (Throwable $e) {
-//            $this->log->except($e);
-//            $this->view->assign([
-//                'success' => false,
-//                'message' => $e->getMessage(),
-//            ]);
-//        }
-//        $this->log->leave();
-//    }
+    public function indexAction() {
+        $this->log->enter();
+        try {
+            parent::indexAction();
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
+            ]);
+        }
+        $this->log->leave();
+    }
 
     public function updateAction()
     {
@@ -58,12 +51,31 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->leave();
     }
 
+    public function refreshAction() {
+        try {
+            $modelManager = $this->getModelManager();
+            $articles = $modelManager->getRepository(Article::class)->findAll();
+            foreach ($articles as $article) {
+                if ($article->isActive() && ! $article->getArticle()) {
+                    $article->setActive(false);
+                }
+            }
+            $modelManager->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Items were successfully refreshed.']);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
+            ]);
+        }
+        $this->log->leave();
+    }
+
     public function setStateMultipleAction()
     {
         $this->log->enter();
         try {
             $params = $this->request->getParams();
-            $setter = 'set' . ucfirst($params['field']);
+            $field = $params['field'];
             $value = $params['value'] === 'true';
             $ids = json_decode($params['ids'], true);
 
@@ -72,13 +84,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $icArticles = $modelManager->getRepository(Article::class)->getArticlesByIds($ids);
 
             $articleMapper = $services->get(ArticleMapper::class);
+            $articleMapper->handleActiveStateChanges($icArticles, $field, $value);
 
-            /** @var Article $icArticle */
-            foreach ($icArticles as $icArticle) {
-                $icArticle->$setter($value);
-                $articleMapper->handleActiveStateChange($icArticle);
-                $modelManager->flush();
-            }
             $this->view->assign(['success' => true, 'message' => 'Articles were successfully updated.']);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
@@ -146,15 +153,21 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
 
         if ($uActive !== $sActive) {
             // User request to change active state of article
-            if (! $articleMapper->handleActiveStateChange($article) && $uActive === true) {
-                return [
-                    'success' => false,
-                    'message' => 'Shopware article not created because it failed to validate.',
-                ];
+            if ($articleMapper->handleActiveStateChange($article) !== $uActive) {
+                if ($uActive) {
+                    $message = 'Shopware article not created because it failed to validate.';
+                } else {
+                    $message = 'Shopware article was not deactivated.';
+                }
+                return [ 'success' => false, 'message' => $message ];
             }
         } elseif ($uAccepted !== $sAccepted) {
             // User request to change accepted state of article
             $articleMapper->handleActiveStateChange($article);
+            if ($article->isAccepted() !== $uAccepted) {
+                $message = 'Failed to set article\'s accepted state to ' . var_export($uAccepted, true) . '.';
+                return [ 'success' => false, 'message' => $message ];
+            }
         }
 
         // Our customization ends here.

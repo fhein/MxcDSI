@@ -26,7 +26,6 @@ class ImportMapperFactory implements FactoryInterface
         $modelManager = $container->get('modelManager');
         $propertyMapper = $container->get(PropertyMapper::class);
         $bulkOperation = new BulkOperation($container->get('modelManager'), $log);
-        $propertyExtractor = $container->get(PropertyDerivator::class);
-        return new ImportMapper($modelManager, $apiClient, $propertyMapper, $propertyExtractor, $bulkOperation, $config, $log);
+        return new ImportMapper($modelManager, $apiClient, $propertyMapper, $bulkOperation, $config, $log);
     }
 }

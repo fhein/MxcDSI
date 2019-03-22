@@ -36,10 +36,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
              * @event mxcSaveArticle
              */
             'mxcSaveArticle',
-            /**
-             * @event mxcSaveMultiple
-             */
-            'mxcSaveMultiple',
+
             /**
              * @event mxcRemapProperties
              */
@@ -58,7 +55,12 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             /**
              * @event mxcImportItems
              */
-            'mxcImportItems'
+            'mxcImportItems',
+
+            /**
+             * @event mxcRefreshItems
+             */
+            'mxcRefreshItems'
         );
     },
 
@@ -66,12 +68,10 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         let me = this;
         let items = me.callParent(arguments);
         items = Ext.Array.insert(items, 0, [
+            me.createSelectionButton(),
             me.createImportButton(),
-            me.createRemapButton(),
-            me.createAcceptButton(),
-            me.createIgnoreButton(),
-            me.createActivateButton(),
-            me.createDeactivateButton()
+            me.createRefreshButton(),
+            me.createRemapButton()
         ]);
         return items;
     },
@@ -100,7 +100,6 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             // deselect records which already have the target states
             // set the target state otherwise
             if (record.get('accepted') === changeTo) {
-//            if (record.get('accepted') === changeTo || (changeTo === false && record.get('active') === true)) {
                 selModel.deselect(record);
             } else {
                 record.set('accepted', changeTo)
@@ -109,25 +108,50 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         me.fireEvent('mxcSetAcceptedMultiple', me, selModel);
     },
 
-    createActivateButton: function() {
+    createSelectionButton: function() {
         let me = this;
-        return Ext.create('Ext.button.Button', {
-            text: 'Activate selected',
-            iconCls: 'sprite-tick',
-            handler: function() {
-                me.handleActiveState(true);
-            }
-        });
-    },
 
-    createDeactivateButton: function() {
-        let me = this;
+        var menu = Ext.create('Ext.menu.Menu', {
+            id: 'mxcSelectionMenu',
+            style: {
+                overflow: 'visible'
+            },
+            items: [
+                {
+                    text : 'Activate selected',
+                    iconCls: 'sprite-tick',
+                    handler: function() {
+                        me.handleActiveState(true);
+                    }
+                },
+                {
+                    text : 'Deactivate selected',
+                    iconCls: 'sprite-cross',
+                    handler: function() {
+                        me.handleActiveState(false);
+                    }
+                },
+                '-',
+                {
+                    text: 'Accept selected',
+                    iconCls: 'sprite-tick-circle',
+                    handler: function() {
+                        me.handleAcceptedState(true);
+                    }
+                },
+                {
+                    text: 'Ignore selected',
+                    iconCls: 'sprite-cross-circle',
+                    handler: function() {
+                        me.handleAcceptedState(false);
+                    }
+                }
+            ]
+        });
         return Ext.create('Ext.button.Button', {
-            text: 'Deactivate selected',
-            iconCls: 'sprite-cross',
-            handler: function() {
-                me.handleActiveState(false);
-            }
+            text: 'Selection',
+            iconCls: 'sprite-ui-check-box',
+            menu: menu
         });
     },
 
@@ -153,24 +177,13 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         });
     },
 
-    createIgnoreButton: function() {
+    createRefreshButton: function() {
         let me = this;
         return Ext.create('Ext.button.Button', {
-            text: 'Ignore selected',
-            iconCls: 'sprite-cross-circle',
+            text: 'Refresh',
+            iconCls: 'sprite-arrow-circle',
             handler: function() {
-                me.handleAcceptedState(false);
-            }
-        });
-    },
-
-    createAcceptButton: function() {
-        let me = this;
-        return Ext.create('Ext.button.Button', {
-            text: 'Accept selected',
-            iconCls: 'sprite-tick-circle',
-            handler: function() {
-                me.handleAcceptedState(true);
+                me.fireEvent('mxcRefreshItems', me);
             }
         });
     },

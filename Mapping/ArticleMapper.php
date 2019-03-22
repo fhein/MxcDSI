@@ -101,34 +101,91 @@ class ArticleMapper
      * If $active === false the Shopware article gets disabled without getting
      * updated.
      *
+     * @param array $icArticles
+     * @param string $field
+     * @param bool $value
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
+    public function handleActiveStateChanges(array $icArticles, string $field, bool $value)
+    {
+        $setter = 'set' . ucfirst($field);
+        if (! method_exists(Article::class, $setter)) return;
+
+        $this->createdArticles = [];
+        $activeArticles = [];
+        /** @var Article $icArticle */
+        foreach ($icArticles as $icArticle) {
+            $icArticle->$setter($value);
+            if (! $this->setShopwareArticle($icArticle)) {
+                $this->setShopwareArticleActive($icArticle);
+                continue;
+            }
+            $icNumber = $icArticle->getIcNumber();
+            $activeArticles[$icNumber] = $activeArticles[$icNumber] ?? $icArticle;
+        }
+
+        $this->associatedArticles = [];
+        foreach ($activeArticles as $icArticle) {
+            $this->prepareAssociatedArticles($icArticle);
+        }
+
+        foreach ($this->associatedArticles as $icArticle) {
+            if ($this->setShopwareArticle($icArticle)) {
+                $activeArticles[$icArticle->getIcNumber()] = $icArticle;
+            }
+            $this->setShopwareArticleActive($icArticle);
+        }
+
+        foreach ($activeArticles as $icArticle) {
+            $this->setRelatedArticles($icArticle);
+            $this->setSimilarArticles($icArticle);
+            $this->setShopwareArticleActive($icArticle);
+        }
+
+        // Update all articles with similar or related articles referencing articles
+        // that we just created.
+        if (! empty($this->createdArticles)) {
+            $this->updateArticleLinks($this->createdArticles);
+        }
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
+    }
+
+
+    /**
+     * Main entry point if the $active state of an InnoCigs article changes.
+     * If $active === true, creates/updates the Shopware article associated to
+     * the given InnoCigs article.
+     * If $active === false the Shopware article gets disabled without getting
+     * updated.
+     *
      * @param Article $icArticle
-     * @return ShopwareArticle|null
+     * @return bool
      */
     public function handleActiveStateChange(Article $icArticle)
     {
-        $swArticle = null;
         $this->createdArticles = [];
+        $activeArticles = [];
 
-        if ($icArticle->isActive()) {
-            // update or create article, can modify icArticle's active state
-            $swArticle = $this->setShopwareArticle($icArticle);
-        }
+        if ($this->setShopwareArticle($icArticle)) {
+            $activeArticles[$icArticle->getIcNumber()] = $icArticle;
 
-        if ($icArticle->isActive()) {
             // Recursively build a list of all articles associated to this article
             // which need to get created or activated
             $this->associatedArticles = [];
             $this->prepareAssociatedArticles($icArticle);
 
             foreach ($this->associatedArticles as $article) {
-                $this->setShopwareArticle($article);
+                if ($this->setShopwareArticle($article)) {
+                    $activeArticles[$article->getIcNumber()] = $article;
+                }
                 $this->setShopwareArticleActive($article);
             }
 
-            // All related and similar articles have been created according to
-            // the configuration of the $icArticle
-            $this->setRelatedArticles($icArticle);
-            $this->setSimilarArticles($icArticle);
+            foreach ($activeArticles as $icArticle) {
+                $this->setRelatedArticles($icArticle);
+                $this->setSimilarArticles($icArticle);
+            }
         }
 
         $this->setShopwareArticleActive($icArticle);
@@ -140,9 +197,9 @@ class ArticleMapper
         }
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
-        return $swArticle;
-    }
 
+        return $icArticle->isActive();
+    }
 
     /**
      * Update the related and similar article lists of all Shopware articles
@@ -202,7 +259,6 @@ class ArticleMapper
         /** @var Article $article */
         foreach ($icArticles as $article) {
             if (! $createAssociated && ! $article->getArticle()) {
-                $article->setActive(false);
                 continue;
             }
             if ($activateAssociated) {
@@ -219,21 +275,16 @@ class ArticleMapper
      * Create/Update the Shopware article associated to the active InnoCigs article.
      *
      * @param Article $icArticle
-     * @return ShopwareArticle|null
+     * @return bool
      */
-    protected function setShopwareArticle(Article $icArticle): ?ShopwareArticle
+    protected function setShopwareArticle(Article $icArticle): bool
     {
         $swArticle = $icArticle->getArticle();
         $create = ($swArticle === null);
 
-        // Only create active articles
-        if ($create && ! $icArticle->isActive()) return null;
-
-        // Deactivate article if it is not accepted any longer
-        if ( ! $icArticle->isValid()) {
-            $icArticle->setActive(false);
-            return $swArticle;
-        }
+        $active = $icArticle->isActive() && $icArticle->isValid();
+        $icArticle->setActive($active);
+        if (! $active) return false;
 
         if ($create) {
             // Create Shopware Article
@@ -243,7 +294,7 @@ class ArticleMapper
             $this->createdArticles[] = $icArticle->getIcNumber();
         }
 
-        $this->removeObsoleteShopwareDetails($icArticle);
+        $this->removeDetachedShopwareDetails($icArticle);
 
         $set = $this->optionMapper->createConfiguratorSet($icArticle);
         $swArticle->setConfiguratorSet($set);
@@ -260,7 +311,7 @@ class ArticleMapper
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
 
-        return $swArticle;
+        return true;
     }
 
     /**
@@ -456,13 +507,13 @@ class ArticleMapper
     }
 
     /**
-     * Delete the obsolete detail records of the Shopware article associated to the
-     * given InnoCigs article from the database. A Detail record is obsolete if the
-     * InnoCigs article does not have a variant associated to the particular detail record.
+     * Delete the detached Detail records of the Shopware article associated to the
+     * given InnoCigs article from the database. A Detail record is detached if the
+     * InnoCigs article does not have a variant associated to the particular Detail record.
      *
      * @param Article $icArticle
      */
-    protected function removeObsoleteShopwareDetails(Article $icArticle)
+    protected function removeDetachedShopwareDetails(Article $icArticle)
     {
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
@@ -831,15 +882,15 @@ class ArticleMapper
     }
 
     /**
-     * Add all articles of the given Innocigs article collection to the target collection.
+     * Add all articles of the given Shopware article collection to the target collection.
      * No duplicates.
      *
-     * @param Collection $articles
+     * @param Collection $swArticles
      * @param Collection $collection
      */
-    protected function addArticlesToCollection(Collection $articles, Collection $collection)
+    protected function addArticlesToCollection(Collection $swArticles, Collection $collection)
     {
-        foreach ($articles as $article) {
+        foreach ($swArticles as $article) {
             if (!$collection->contains($article)) {
                 $collection->add($article);
             }

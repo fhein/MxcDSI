@@ -30,9 +30,6 @@ class ImportMapper implements EventSubscriber
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
 
-    /** @var PropertyDerivator $propertyExtractor */
-    protected $propertyExtractor;
-
     /** @var BulkOperation $bulkOperation */
     protected $bulkOperation;
 
@@ -69,7 +66,6 @@ class ImportMapper implements EventSubscriber
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
-     * @param PropertyDerivator $propertyExtractor
      * @param BulkOperation $bulkOperation
      * @param Config $config
      * @param LoggerInterface $log
@@ -78,7 +74,6 @@ class ImportMapper implements EventSubscriber
         ModelManager $modelManager,
         ApiClient $apiClient,
         PropertyMapper $propertyMapper,
-        PropertyDerivator $propertyExtractor,
         BulkOperation $bulkOperation,
         Config $config,
         LoggerInterface $log
@@ -86,7 +81,6 @@ class ImportMapper implements EventSubscriber
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
-        $this->propertyExtractor = $propertyExtractor;
         $this->bulkOperation = $bulkOperation;
         $this->config = $config->toArray();
         $this->log = $log;
@@ -185,6 +179,7 @@ class ImportMapper implements EventSubscriber
     {
         /** @var  Model $model */
         foreach ($additions as $number => $model) {
+            $this->log->debug('Adding variant: ' . $model->getName());
             $article = $this->getArticle($model);
 
             $variant = new Variant();
@@ -194,16 +189,13 @@ class ImportMapper implements EventSubscriber
             $variant->setActive(false);
             $variant->setAccepted(true);
 
-            // set properties without mapping
+            // set properties which do not require mapping
             $variant->setIcNumber($number);
             $variant->setEan($model->getEan());
             $price = floatval(str_replace(',', '.', $model->getPurchasePrice()));
             $variant->setPurchasePrice($price);
             $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
             $variant->setRetailPrice($price);
-
-            // set mapped properties
-            //$this->propertyMapper->mapModelToVariant($model, $variant);
 
             $images = $model->getImages();
             if (null !== $images) {
@@ -224,8 +216,10 @@ class ImportMapper implements EventSubscriber
             $article = $variant->getArticle();
             $article->removeVariant($variant);
             $this->modelManager->remove($variant);
+            unset($this->variants[$variant->getIcNumber()]);
             if ($article->getVariants()->count() === 0) {
                 $this->modelManager->remove($article);
+                unset($this->articles[$article->getIcNumber()]);
             }
         }
     }
@@ -262,6 +256,7 @@ class ImportMapper implements EventSubscriber
 
     protected function changeVariant(Variant $variant, Model $model, array $fields)
     {
+        $this->log->debug('Changing variant: ' . $model->getName());
         foreach ($fields as $name => $values) {
             $newValue = $values['newValue'];
             $oldValue = $values['oldValue'];
@@ -367,7 +362,6 @@ class ImportMapper implements EventSubscriber
         $this->deleteVariants($import['deletions']);
         $this->changeVariants($import['changes']);
         $this->propertyMapper->mapProperties($this->articles);
-        $this->propertyExtractor->derive($this->articles);
         $this->modelManager->flush();
 
         $evm->removeEventSubscriber($this);
@@ -382,8 +376,6 @@ class ImportMapper implements EventSubscriber
         $flavorist = new Flavorist($this->modelManager, $this->log);
         $flavorist->updateCategories();
         $flavorist->updateFlavors();
-
-        $this->propertyExtractor->export();
 
         return true;
     }

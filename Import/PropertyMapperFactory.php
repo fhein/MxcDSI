@@ -33,9 +33,10 @@ class PropertyMapperFactory implements FactoryInterface
         $config = $config->toArray();
         $config['articles'] = $this->getArticleConfiguration();
         $flavorist = $container->get(Flavorist::class);
+        $propertyDerivator = $container->get(PropertyDerivator::class);
         $log = $container->get('logger');
 
-        return new PropertyMapper($modelManager, $flavorist, $reporter, $config, $log);
+        return new PropertyMapper($modelManager, $propertyDerivator, $flavorist, $reporter, $config, $log);
     }
 
     protected function getArticleConfiguration()

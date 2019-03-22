@@ -19,6 +19,9 @@ class PropertyMapper
     /** @var ModelManager $modelManager */
     protected $modelManager;
 
+    /** @var PropertyDerivator $propertyDerivator */
+    protected $propertyDerivator;
+
     /** @var LoggerInterface $log */
     protected $log;
 
@@ -38,7 +41,13 @@ class PropertyMapper
     protected $articles = null;
     protected $models = null;
 
-    public function __construct(ModelManager $modelManager, Flavorist $flavorist, Reporter $reporter, array $config, LoggerInterface $log)
+    public function __construct(
+        ModelManager $modelManager,
+        PropertyDerivator $propertyDerivator,
+        Flavorist $flavorist,
+        Reporter $reporter,
+        array $config,
+        LoggerInterface $log)
     {
         $this->config = $config;
         $this->reporter = $reporter;
@@ -46,6 +55,7 @@ class PropertyMapper
         $this->init();
         $this->modelManager = $modelManager;
         $this->flavorist = $flavorist;
+        $this->propertyDerivator = $propertyDerivator;
         $this->regexChecker = new RegexChecker();
 
         if ($this->config['settings']['checkRegularExpressions'] === true) {
@@ -79,6 +89,11 @@ class PropertyMapper
             /** @var Variant $variant */
             foreach ($variants as $variant) {
                 $model = $models[$variant->getIcNumber()];
+//                if ($model === null) {
+//                    // @todo: Each variant has to have a model assigned. There is an error somewhere else, which causes
+//                    // @todo: variants without models being processed here
+//                    continue;
+//                }
                 if ($first) {
                     $this->mapModelToArticle($model, $article);
                     $first = false;
@@ -90,6 +105,8 @@ class PropertyMapper
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->checkArticlePropertyMappingConsistency();
         $this->report();
+        $this->propertyDerivator->derive($this->articles);
+        $this->propertyDerivator->export();
     }
 
     /**
@@ -363,6 +380,7 @@ class PropertyMapper
         foreach ($variants as $variant) {
             $number = $variant->getIcNumber();
             $model = $models[$number];
+//            if ($model === null) continue; // @todo: This happens but it should not, error elsewhere
             $map[$this->mapArticleName($model, $article)] = $number;
         }
         if (count($map) === 1) return [];
