@@ -3,11 +3,9 @@
 namespace MxcDropshipInnocigs\Import;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\EventSubscriber;
-use Doctrine\ORM\Event\LifecycleEventArgs;
-use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -19,7 +17,7 @@ use Zend\Config\Config;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
-class ImportMapper implements EventSubscriber
+class ImportMapper
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;
@@ -29,6 +27,9 @@ class ImportMapper implements EventSubscriber
 
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
+
+    /** @var ArticleMapper $articleMapper */
+    protected $articleMapper;
 
     /** @var BulkOperation $bulkOperation */
     protected $bulkOperation;
@@ -49,13 +50,13 @@ class ImportMapper implements EventSubscriber
     protected $articles;
 
     /** @var array */
+    protected $updates;
+
+    /** @var array */
     protected $images;
 
     /** @var LoggerInterface $log */
     protected $log;
-
-    /** @var array */
-    protected $importLog;
 
     /** @var array */
     protected $fields;
@@ -66,6 +67,7 @@ class ImportMapper implements EventSubscriber
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
+     * @param ArticleMapper $articleMapper
      * @param BulkOperation $bulkOperation
      * @param Config $config
      * @param LoggerInterface $log
@@ -74,6 +76,7 @@ class ImportMapper implements EventSubscriber
         ModelManager $modelManager,
         ApiClient $apiClient,
         PropertyMapper $propertyMapper,
+        ArticleMapper $articleMapper,
         BulkOperation $bulkOperation,
         Config $config,
         LoggerInterface $log
@@ -81,15 +84,10 @@ class ImportMapper implements EventSubscriber
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
+        $this->articleMapper = $articleMapper;
         $this->bulkOperation = $bulkOperation;
         $this->config = $config->toArray();
         $this->log = $log;
-    }
-
-    public function getStock(Variant $variant)
-    {
-        $raw = $this->apiClient->getStockInfo($variant->getNumber());
-        return $raw['QUANTITIES']['PRODUCT']['QUANTITY'];
     }
 
     protected function getGroup(string $groupName)
@@ -216,11 +214,13 @@ class ImportMapper implements EventSubscriber
             $article = $variant->getArticle();
             $article->removeVariant($variant);
             $this->modelManager->remove($variant);
-            unset($this->variants[$variant->getIcNumber()]);
+            $icNumber = $variant->getIcNumber();
+            unset($this->variants[$icNumber]);
             if ($article->getVariants()->count() === 0) {
-                $this->modelManager->remove($article);
+                $article->setAccepted(false);
                 unset($this->articles[$article->getIcNumber()]);
             }
+            $this->updates[$article->getIcNumber()] = $article;
         }
     }
 
@@ -297,12 +297,14 @@ class ImportMapper implements EventSubscriber
 
     protected function changeVariants(array $changes)
     {
-        foreach ($changes as $number => $change) {
+        foreach ($changes as $icNumber => $change) {
             /** @var Variant $variant */
-            $variant = $this->variants[$number];
+            $variant = $this->variants[$icNumber];
             $model = $change['model'];
             $fields = $change['fields'];
             $this->changeVariant($variant, $model, $fields);
+            $article = $variant->getArticle();
+            $this->updates[$article->getIcNumber()] = $article;
         }
     }
 
@@ -331,32 +333,10 @@ class ImportMapper implements EventSubscriber
         $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
     }
 
-    protected function initFields()
-    {
-        foreach ([Article::class, Variant::class, Group::class, Option::class, Image::class] as $class) {
-            /** @var Article $o */
-            $o = new $class();
-            $this->fields[$class] = $o->getPrivatePropertyNames();
-        }
-    }
-
-    protected function getClass($object)
-    {
-        foreach ([Article::class, Variant::class, Group::class, Option::class, Image::class] as $class) {
-            if ($object instanceof $class) {
-                return $class;
-            }
-        }
-        return null;
-    }
-
     public function import(array $import)
     {
-        $evm = $this->modelManager->getEventManager();
-        $evm->addEventSubscriber($this);
-        $this->importLog = [];
+        $this->updates = [];
         $this->initCache();
-        $this->initFields();
 
         $this->addVariants($import['additions']);
         $this->deleteVariants($import['deletions']);
@@ -364,13 +344,13 @@ class ImportMapper implements EventSubscriber
         $this->propertyMapper->mapProperties($this->articles);
         $this->modelManager->flush();
 
-        $evm->removeEventSubscriber($this);
-
         if ($this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {
                 $this->bulkOperation->update($filter);
             }
         }
+
+        $this->articleMapper->updateShopwareArticles($this->updates);
         $this->propertyMapper->report();
 
         $flavorist = new Flavorist($this->modelManager, $this->log);
@@ -378,54 +358,5 @@ class ImportMapper implements EventSubscriber
         $flavorist->updateFlavors();
 
         return true;
-    }
-
-    public function preUpdate(PreUpdateEventArgs $args)
-    {
-        /** @var PreUpdateEventArgs $args */
-        $entity = $args->getEntity();
-        $class = $this->getClass($entity);
-        $fields = $this->fields[$class];
-        if (null === $fields) {
-            return;
-        }
-
-        $changes['entity'] = $entity;
-        foreach ($this->fields as $field) {
-            if ($args->hasChangedField($field)) {
-                $changes['fields'][$field] = [
-                    'oldValue' => $args->getOldValue($field),
-                    'newValue' => $args->getNewValue($field)
-                ];
-            }
-        }
-        $this->importLog['changes'][$class][] = $changes;
-    }
-
-    public function postPersist(LifecycleEventArgs $args)
-    {
-        $entity = $args->getEntity();
-        $class = $this->getClass($entity);
-
-        $changes['entity'] = $entity;
-        $this->importLog['additions'][$class][] = $entity;
-    }
-
-    public function postRemove(LifecycleEventArgs $args) {
-        $entity = $args->getEntity();
-        $class = $this->getClass($entity);
-
-        $changes['entity'] = $entity;
-        $this->importLog['deletions'][$class][] = $entity;
-    }
-
-    /**
-     * Returns an array of events this subscriber wants to listen to.
-     *
-     * @return array
-     */
-    public function getSubscribedEvents()
-    {
-        return [ 'preUpdate', 'postPersist', 'postRemove'];
     }
 }

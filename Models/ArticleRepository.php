@@ -15,6 +15,9 @@ class ArticleRepository extends BaseEntityRepository
         'getLinkedIndexed'                   => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
                                                     . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
+        'getLinkedArticleIds'                => 'SELECT a.icNumber FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+                                                . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
+                                                . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
                                                 // get all articles which have an associated Shopware Article
                                                 // that have related articles with :relatedIds
         'getAllHavingRelatedArticles'        => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
@@ -67,9 +70,14 @@ class ArticleRepository extends BaseEntityRepository
             ->setParameter('similarIds', $relatedIds)->getResult();
     }
 
-    public function getLinkedArticles()
+    public function getLinkedIndexed()
     {
         return $this->getQuery(__FUNCTION__)->getResult();
+    }
+
+    public function getLinkedArticleIds()
+    {
+        return $this->getQuery(__FUNCTION__)->getScalarResult();
     }
 
     public function getFlavoredArticles()

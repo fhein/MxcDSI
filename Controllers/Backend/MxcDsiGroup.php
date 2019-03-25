@@ -1,27 +1,40 @@
 <?php
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
+use MxcDropshipInnocigs\Mapping\ArticleMapper;
+use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
+use MxcDropshipInnocigs\Models\Option;
+use MxcDropshipInnocigs\Models\Variant;
 
 class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationController
 {
     protected $model = Group::class;
     protected $alias = 'innocigs_group';
 
-//    public function indexAction()
-//    {
-//        $this->log->enter();
-//        /**
-//         * @var \Shopware\Components\Model\ModelManager $modelManager
-//         */
-//        try {
-//            $this->services->get(ImportClient::class)->import();
-//            parent::indexAction();
-//        } catch (Throwable $e) {
-//            $this->log->except($e);
-//        }
-//        $this->log->leave();
-//    }
+    public function indexAction()
+    {
+        $this->log->enter();
+        try {
+            parent::indexAction();
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $this->log->leave();
+    }
+
+    public function updateAction()
+    {
+        $this->log->enter();
+        try {
+            parent::updateAction();
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $this->log->leave();
+    }
 
     protected function getAdditionalDetailData(array $data)
     {
@@ -33,9 +46,14 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
     {
         $this->log->enter();
         /** @var Group $group */
+        $oldOptionValues = [];
         if (!empty($data['id'])) {
             // this is a request to update an existing group
             $group = $this->getRepository()->find($data['id']);
+            $options = $group->getOptions();
+            foreach ($options as $option) {
+                $oldOptionValues[$option->getName()] = $option->isAccepted();
+            }
             // currently stored $accepted state
             $sAccepted = $group->isAccepted();
         } else {
@@ -47,10 +65,8 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
         }
         // Option data is empty only if the request comes from the list view (not the detail view)
         // We prevent storing an group with empty variant list by unsetting empty variant data.
-        if (isset($data['options']) && empty($data['options'])) {
+        if ($data['options'] && empty($data['options'])) {
             unset($data['options']);
-        } else {
-            $this->log->debug('Group Detail: ' . var_export($data['options'], true));
         }
 
         // hydrate (new or existing) group from UI data
@@ -59,22 +75,8 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
         // updated $accepted state
         $uAccepted = $group->isAccepted();
+        $groupChanged = $uAccepted !== $sAccepted;
 
-        if ($uAccepted !== $sAccepted) {
-            // propagate state change to all options belonging to this group
-            /** @var \MxcDropshipInnocigs\Models\Option $option */
-            foreach ($group->getOptions() as $option) {
-                $option->setAccepted($uAccepted);
-                $variants = $option->getVariants();
-                // propagate state change to all variants employing this option
-                /** @var \MxcDropshipInnocigs\Models\Variant $variant */
-                foreach ($variants as $variant) {
-                    $variant->setAccepted($uAccepted);
-                }
-            }
-        }
-        // Our customization ends here.
-        // The rest below is default Shopware behaviour copied from parent implementation
         $violations = $this->getManager()->validate($group);
         $errors = [];
         /** @var Symfony\Component\Validator\ConstraintViolation $violation */
@@ -93,8 +95,56 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->getManager()->flush();
 
+        // Important!
+        $this->getManager()->clear();
+
+        $articleMapper = $this->getServices()->get(ArticleMapper::class);
+
+        $articleUpdates = $this->getInvolvedArticles($group->getId(), $groupChanged, $oldOptionValues);
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $articleMapper->updateShopwareArticles($articleUpdates);
+
         $detail = $this->getDetail($group->getId());
         $this->log->leave();
         return ['success' => true, 'data' => $detail['data']];
+    }
+
+
+    /**
+     * Get all InnoCigs article having related Shopware Articles which are involved with the group
+     * update. If $groupChanged is true, all articles having variants using any of the group's options
+     * are added to the list. Otherwise only articles having variants using options with changed value
+     * are added to the list.
+     *
+     * @param int $groupId
+     * @param bool $groupChanged
+     * @param array $oldOptionValue
+     * @return array
+     */
+    protected function getInvolvedArticles(int $groupId, bool $groupChanged, array $oldOptionValue): array
+    {
+        $group = $this->getRepository()->find($groupId);
+        $options = $group->getOptions();
+
+        // get all InnoCigs articles which are linked to Shopware articles
+        $linkedArticleIds = $this->getManager()->getRepository(Article::class)->getLinkedArticleIds();
+        $involvedArticles = [];
+        /** @var Option $option */
+        foreach ($options as $option) {
+            if (!$groupChanged && ($option->isAccepted() === $oldOptionValue[$option->getName()])) {
+                continue;
+            }
+            $variants = $option->getVariants();
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                /** @var Article $article */
+                $article = $variant->getArticle();
+                $icNumber = $article->getIcNumber();
+                if ($linkedArticleIds[$icNumber]) {
+                    $involvedArticles[$icNumber] = $article;
+                }
+            }
+        }
+        return $involvedArticles;
     }
 }

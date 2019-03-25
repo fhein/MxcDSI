@@ -25,9 +25,9 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Group', {
      */
     onGroupSave: function(record) {
         record.save({
-            params: {
-                 resource: 'innocigs_group'
-            },
+            // params: {
+            //      resource: 'innocigs_group'
+            // },
             success: function(record, operation) {
                 if (operation.success) {
                     // Update the modified record by the data, the controller returned

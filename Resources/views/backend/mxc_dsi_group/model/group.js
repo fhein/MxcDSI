@@ -3,7 +3,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.model.Group', {
 
     configure: function() {
         return {
-            controller: 'MxcDsiTest',
+            controller: 'MxcDsiGroup',
             detail: 'Shopware.apps.MxcDsiGroup.view.detail.Group'
         };
     },

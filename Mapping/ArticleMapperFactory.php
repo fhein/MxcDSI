@@ -4,7 +4,7 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
-use MxcDropshipInnocigs\Import\ImportMapper;
+use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -25,7 +25,7 @@ class ArticleMapperFactory implements FactoryInterface
         $log = $container->get(Logger::class);
         $config = $this->getClassConfig($container, $requestedName);
         $attributeMapper = $container->get(ArticleOptionMapper::class);
-        $client = $container->get(ImportMapper::class);
+        $client = $container->get(ApiClient::class);
         $mediaTool = $container->get(MediaTool::class);
         $modelManager = $container->get('modelManager');
         $articleMapper = new ArticleMapper(

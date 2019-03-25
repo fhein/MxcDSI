@@ -151,6 +151,7 @@ class MediaTool
     }
 
     public function setArticleImages(Article $icArticle) {
+        /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 

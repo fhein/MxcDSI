@@ -96,15 +96,15 @@ class ApiClient
         return $this->xmlToArray($this->send($cmd)->getBody());
     }
 
-    /**
-     * @param string $model
-     * @return array
-     */
-    public function getStockInfo($model = null)
+    public function getStockInfo(string $model)
     {
-        $cmd = is_string($model)
-            ? $this->authUrl . '&command=quantity&model=' . urlencode($model)
-            : $this->authUrl . '&command=quantity_all';
+        $cmd = $this->authUrl . '&command=quantity&model=' . urlencode($model);
+        $data = $this->xmlToArray($this->send($cmd)->getBody());
+        return $data['QUANTITIES']['PRODUCT']['QUANTITY'];
+    }
+
+    public function getAllStockInfo() {
+        $cmd = $this->authUrl . '&command=quantity_all';
         return $this->xmlToArray($this->send($cmd)->getBody());
     }
 

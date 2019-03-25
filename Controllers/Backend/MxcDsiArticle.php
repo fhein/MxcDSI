@@ -55,6 +55,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         try {
             $modelManager = $this->getModelManager();
             $articles = $modelManager->getRepository(Article::class)->findAll();
+            /** @var Article $article */
             foreach ($articles as $article) {
                 if ($article->isActive() && ! $article->getArticle()) {
                     $article->setActive(false);
@@ -84,7 +85,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $icArticles = $modelManager->getRepository(Article::class)->getArticlesByIds($ids);
 
             $articleMapper = $services->get(ArticleMapper::class);
-            $articleMapper->handleActiveStateChanges($icArticles, $field, $value);
+            $articleMapper->updateArticleState($icArticles, $field, $value);
 
             $this->view->assign(['success' => true, 'message' => 'Articles were successfully updated.']);
         } catch (Throwable $e) {
@@ -117,6 +118,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     }
 
     public function save($data) {
+        $this->log->enter();
+        $this->log->leave();
         /** @var Article $article */
         if (! empty($data['id'])) {
             // this is a request to update an existing article
@@ -153,7 +156,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
 
         if ($uActive !== $sActive) {
             // User request to change active state of article
-            if ($articleMapper->handleActiveStateChange($article) !== $uActive) {
+            if ($articleMapper->updateShopwareArticle($article) !== $uActive) {
                 if ($uActive) {
                     $message = 'Shopware article not created because it failed to validate.';
                 } else {
@@ -163,7 +166,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             }
         } elseif ($uAccepted !== $sAccepted) {
             // User request to change accepted state of article
-            $articleMapper->handleActiveStateChange($article);
+            $articleMapper->updateShopwareArticle($article);
             if ($article->isAccepted() !== $uAccepted) {
                 $message = 'Failed to set article\'s accepted state to ' . var_export($uAccepted, true) . '.';
                 return [ 'success' => false, 'message' => $message ];

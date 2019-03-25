@@ -54,40 +54,26 @@ return [
             's_articles_attributes' => [
                 'mxc_dsi_supplier'       => [
                     'type'     => 'string',
-                    'settings' => [
-                        'label'            => '',
-                        'supportText'      => '',
-                        'helpText'         => '',
-                        'translatable'     => false,
-                        'displayInBackend' => false,
-                        'position'         => 10000,
-                        'custom'           => false
-                    ]
+//                    'settings' => [
+//                        'label'            => '',
+//                        'supportText'      => '',
+//                        'helpText'         => '',
+//                        'translatable'     => false,
+//                        'displayInBackend' => false,
+//                        'position'         => 10000,
+//                        'custom'           => false
+//                    ]
                 ],
                 'mxc_dsi_brand'          => [
                     'type'     => 'string',
-                    'settings' => [
-                        'label'            => '',
-                        'supportText'      => '',
-                        'helpText'         => '',
-                        'translatable'     => false,
-                        'displayInBackend' => false,
-                        'position'         => 10100,
-                        'custom'           => false
-                    ],
                 ],
                 'mxc_dsi_flavor'          => [
                     'type'     => 'string',
-                    'settings' => [
-                        'label'            => '',
-                        'supportText'      => '',
-                        'helpText'         => '',
-                        'translatable'     => false,
-                        'displayInBackend' => false,
-                        'position'         => 10200,
-                        'custom'           => false
-                    ],
                 ],
+//                'mxc_dsi_type' => [
+//                    'type' => 'string',
+//                ],
+
                 'dc_ic_ordernumber'      => [
                     'type' => 'string',
                 ],

@@ -11,7 +11,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.store.Group', {
 
     configure: function() {
         return {
-            controller: 'MxcDsiTest'
+            controller: 'MxcDsiGroup'
         };
     }
 });

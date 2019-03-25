@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Mapping;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Import\ImportMapper;
+use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
@@ -46,7 +46,7 @@ class ArticleMapper
     protected $optionMapper;
 
     /**
-     * @var ImportMapper $client
+     * @var ApiClient $client
      */
     protected $client;
     /**
@@ -69,7 +69,7 @@ class ArticleMapper
      * @param ModelManager $modelManager
      * @param ArticleOptionMapper $optionMapper
      * @param MediaTool $mediaTool
-     * @param ImportMapper $client
+     * @param ApiClient $client
      * @param Config $config
      * @param LoggerInterface $log
      */
@@ -77,7 +77,7 @@ class ArticleMapper
         ModelManager $modelManager,
         ArticleOptionMapper $optionMapper,
         MediaTool $mediaTool,
-        ImportMapper $client,
+        ApiClient $client,
         Config $config,
         LoggerInterface $log
     ) {
@@ -102,20 +102,14 @@ class ArticleMapper
      * updated.
      *
      * @param array $icArticles
-     * @param string $field
-     * @param bool $value
      * @throws \Doctrine\ORM\OptimisticLockException
      */
-    public function handleActiveStateChanges(array $icArticles, string $field, bool $value)
+    public function updateShopwareArticles(array $icArticles)
     {
-        $setter = 'set' . ucfirst($field);
-        if (! method_exists(Article::class, $setter)) return;
-
         $this->createdArticles = [];
         $activeArticles = [];
         /** @var Article $icArticle */
         foreach ($icArticles as $icArticle) {
-            $icArticle->$setter($value);
             if (! $this->setShopwareArticle($icArticle)) {
                 $this->setShopwareArticleActive($icArticle);
                 continue;
@@ -151,6 +145,26 @@ class ArticleMapper
         $this->modelManager->flush();
     }
 
+    /**
+     * Set active or accepted state of all provided articles to the given value.
+     * Then update all articles.
+     *
+     * @param array $icArticles
+     * @param string $field
+     * @param bool $value
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
+    public function updateArticleState(array $icArticles, string $field, bool $value)
+    {
+        $setter = 'set' . ucfirst($field);
+        if (! method_exists(Article::class, $setter)) return;
+
+        /** @var Article $icArticle */
+        foreach ($icArticles as $icArticle) {
+            $icArticle->$setter($value);
+        }
+        $this->updateShopwareArticles($icArticles);
+    }
 
     /**
      * Main entry point if the $active state of an InnoCigs article changes.
@@ -162,7 +176,7 @@ class ArticleMapper
      * @param Article $icArticle
      * @return bool
      */
-    public function handleActiveStateChange(Article $icArticle)
+    public function updateShopwareArticle(Article $icArticle)
     {
         $this->createdArticles = [];
         $activeArticles = [];
@@ -284,9 +298,9 @@ class ArticleMapper
 
         $active = $icArticle->isActive() && $icArticle->isValid();
         $icArticle->setActive($active);
-        if (! $active) return false;
 
         if ($create) {
+            if (! $active) return false;
             // Create Shopware Article
             $swArticle = new ShopwareArticle();
             $this->modelManager->persist($swArticle);
@@ -322,6 +336,7 @@ class ArticleMapper
      */
     protected function setShopwareDetails(Article $icArticle): void
     {
+        /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 
@@ -331,6 +346,7 @@ class ArticleMapper
         /** @var Variant $icVariant */
         foreach ($icVariants as $icVariant) {
             $swDetail = $this->setShopwareDetail($icVariant);
+            if ($swDetail === null) continue;
             $swDetail->setKind(2);
             if ($isMainDetail) {
                 $swDetail->setKind(1);
@@ -354,41 +370,42 @@ class ArticleMapper
 
         if ($swDetail) {
             // Update existing detail
-            $this->setShopwareDetailProperties($icVariant, false);
+            $this->setShopwareDetailProperties($icVariant);
             $configuratorOptions = $swDetail->getConfiguratorOptions();
             $configuratorOptions->clear();
-            // Next line is necessary to avoid Doctrine duplicte relation exception
-            $swDetail->getConfiguratorOptions()->clear();
             $swDetail->setConfiguratorOptions(new ArrayCollection($icVariant->getShopwareOptions()));
             return $swDetail;
         }
 
-        // Create new detail
+        // Create new detail if this variant is valid
+        if (! $icVariant->isValid()) return null;
         $swArticle = $icVariant->getArticle()->getArticle();
         if (! $swArticle) return null;
 
-        $detail = new Detail();
-        $this->modelManager->persist($detail);
+        $swDetail = new Detail();
+        $this->modelManager->persist($swDetail);
         // The next two settings have to be made upfront because the later code relies on these
-        $icVariant->setDetail($detail);
-        $detail->setArticle($swArticle);
+        $icVariant->setDetail($swDetail);
+        $swDetail->setArticle($swArticle);
 
         // The class \Shopware\Models\Attribute\Article ist part of the Shopware attribute system.
         // It gets (re)generated automatically by Shopware core, when attributes are added/removed
         // via the attribute crud service. It is located in \var\cache\production\doctrine\attributes.
         $attribute = new \Shopware\Models\Attribute\Article();
-        $detail->setAttribute($attribute);
+        $swDetail->setAttribute($attribute);
 
-        $this->setShopwareDetailProperties($icVariant,  true);
-        $detail->setActive(false);
+        $this->setShopwareDetailProperties($icVariant);
+        $swDetail->setActive(false);
 
-        // set retail price only if detail gets created
+        // set next three properties only on detail creation
         $this->setRetailPrice($icVariant);
+        $swDetail->setShippingTime(5);
+        $swDetail->setLastStock(0);
 
         // Note: shopware options were added non persistently to variants when configurator set was created
-        $detail->setConfiguratorOptions(new ArrayCollection($icVariant->getShopwareOptions()));
+        $swDetail->setConfiguratorOptions(new ArrayCollection($icVariant->getShopwareOptions()));
 
-        return $detail;
+        return $swDetail;
     }
 
     /**
@@ -399,6 +416,7 @@ class ArticleMapper
      */
     protected function setShopwareArticleProperties(Article $icArticle, bool $force)
     {
+        /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 
@@ -438,57 +456,25 @@ class ArticleMapper
      * Set the properties of the Shopware detail associated to the given InnoCigs variant.
      *
      * @param Variant $icVariant
-     * @param bool $force           true: overwrite
      */
-    protected function setShopwareDetailProperties(Variant $icVariant, bool $force)
+    public function setShopwareDetailProperties(Variant $icVariant)
     {
         $swDetail = $icVariant->getDetail();
-        $icArticle = $icVariant->getArticle();
+        if (! $swDetail) return;
 
         $swDetail->setNumber($icVariant->getNumber());
         $swDetail->setEan($icVariant->getEan());
         $swDetail->setPurchasePrice($icVariant->getPurchasePrice());
 
         $attribute = $swDetail->getAttribute();
+        $icArticle = $icVariant->getArticle();
+
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setMxcDsiBrand($icArticle->getBrand());
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setMxcDsiSupplier($icArticle->getSupplier());
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setMxcDsiFlavor($icArticle->getFlavor());
-
-        $probe = $swDetail->getShippingTime();
-        if ($force || ! $probe ) {
-            $swDetail->setShippingTime(5);
-        }
-
-        $probe = $swDetail->getLastStock();
-        if ($force || ! $probe) {
-            $swDetail->setLastStock(0);
-        }
-
-        // The next properties are nullable. As long as we do not provide
-        // default values we ignore them.
-
-//        $probe = $swDetail->getStockMin();
-//        if ($force || ! $probe) {
-//            $swDetail->setStockMin(null);
-//        }
-//
-//        $probe = $swDetail->getSupplierNumber();
-//        if ($force || ! $probe) {
-//            $swDetail->setSupplierNumber(null);
-//        }
-//
-//        $probe = $swDetail->getAdditionalText();
-//        if ($force || ! $probe) {
-//            $swDetail->setAdditionalText(null);
-//        }
-//
-//        $probe = $swDetail->getPackUnit();
-//        if ($force || ! $probe) {
-//            $swDetail->setPackUnit(null);
-//        }
     }
 
     /**
@@ -509,12 +495,14 @@ class ArticleMapper
     /**
      * Delete the detached Detail records of the Shopware article associated to the
      * given InnoCigs article from the database. A Detail record is detached if the
-     * InnoCigs article does not have a variant associated to the particular Detail record.
+     * InnoCigs article does not have a variant associated to the particular Detail
+     * record or if the variant is not accepted.
      *
      * @param Article $icArticle
      */
     protected function removeDetachedShopwareDetails(Article $icArticle)
     {
+        /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 
@@ -531,10 +519,8 @@ class ArticleMapper
         /** @var Variant $icVariant */
         $icVariants = $icArticle->getVariants();
         foreach ($icVariants as $icVariant) {
-            $number = $icVariant->getNumber();
-            if ($deletedDetails[$number]) {
-                unset($deletedDetails[$number]);
-            }
+            if (! $icVariant->isValid()) continue;
+            unset($deletedDetails[$icVariant->getNumber()]);
         }
 
         foreach ($deletedDetails as $deletedDetail) {
@@ -557,6 +543,7 @@ class ArticleMapper
      */
     public function setShopwareArticleActive(Article $icArticle)
     {
+        /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         $active = $icArticle->isValid() && $icArticle->isActive() && $swArticle !== null;
 
@@ -617,7 +604,7 @@ class ArticleMapper
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcRetailPrice($icVariant->getRetailPrice());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcInstock($this->client->getStock($icVariant));
+        $attribute->setDcIcInstock($this->client->getStockInfo($icVariant->getIcNumber()));
     }
 
     /**
@@ -676,6 +663,7 @@ class ArticleMapper
      */
     protected function setCategories(Article $icArticle)
     {
+        /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 
@@ -751,7 +739,9 @@ class ArticleMapper
     }
 
     /**
-     * Set the reference price for liquid articles.
+     * Set the reference price for liquid articles. The article name must
+     * include the content in ml and the category name must include 'Liquid',
+     * 'Aromen', 'Basen' or 'Shake & Vape'.
      *
      * @param Article $icArticle
      */
@@ -907,6 +897,7 @@ class ArticleMapper
      */
     protected function setRelatedArticles(Article $icArticle, bool $replace = false)
     {
+        /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 
@@ -926,6 +917,7 @@ class ArticleMapper
      */
     public function setSimilarArticles(Article $icArticle, bool $replace = false)
     {
+        /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 
