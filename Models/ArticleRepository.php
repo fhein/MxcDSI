@@ -77,7 +77,7 @@ class ArticleRepository extends BaseEntityRepository
 
     public function getLinkedArticleIds()
     {
-        return $this->getQuery(__FUNCTION__)->getScalarResult();
+        return $this->getQuery(__FUNCTION__)->getResult();
     }
 
     public function getFlavoredArticles()
