@@ -16,8 +16,12 @@ class ArticleRepository extends BaseEntityRepository
                                                     . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
         'getLinkedArticleIds'                => 'SELECT a.icNumber FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
+                                                    . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
+                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
+        'getLinkedArticlesHavingOptions'    => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+                                                    . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
+                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+                                                    . 'JOIN v.options o WHERE o.id IN (:optionIds)',
                                                 // get all articles which have an associated Shopware Article
                                                 // that have related articles with :relatedIds
         'getAllHavingRelatedArticles'        => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
@@ -83,6 +87,11 @@ class ArticleRepository extends BaseEntityRepository
     public function getFlavoredArticles()
     {
         return $this->getQuery(__FUNCTION__)->getResult();
+    }
+
+    public function getLinkedArticlesHavingOptions($optionIds) {
+        return $this->getQuery(__FUNCTION__)
+            ->setParameter('optionIds', $optionIds)->getResult();
     }
 
     public function getValidVariants(Article $article) : array

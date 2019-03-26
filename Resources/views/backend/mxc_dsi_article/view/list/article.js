@@ -32,35 +32,29 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         let me = this;
         me.callParent(arguments);
         me.addEvents(
-            /**
-             * @event mxcSaveArticle
-             */
+            /** @event mxcSaveArticle */
             'mxcSaveArticle',
 
-            /**
-             * @event mxcRemapProperties
-             */
+            /** @event mxcRemapProperties */
             'mxcRemapProperties',
 
-            /**
-             * @event mxcSetActiveMultiple
-             */
+            /** @event mxcSetActiveMultiple */
             'mxcSetActiveMultiple',
 
-            /**
-             * @event mxcSetActiveMultiple
-             */
+            /** @event mxcSetActiveMultiple */
             'mxcSetAcceptedMultiple',
 
-            /**
-             * @event mxcImportItems
-             */
+            /** @event mxcImportItems */
             'mxcImportItems',
 
-            /**
-             * @event mxcRefreshItems
-             */
-            'mxcRefreshItems'
+            /** @event mxcRefreshItems */
+            'mxcRefreshItems',
+
+            /** @event mxcCheckRegularExpressions */
+            'mxcCheckRegularExpressions',
+
+            /** @event mxcCheckNameMappingConsistency */
+            'mxcCheckNameMappingConsistency'
         );
     },
 
@@ -68,10 +62,9 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         let me = this;
         let items = me.callParent(arguments);
         items = Ext.Array.insert(items, 0, [
-            me.createSelectionButton(),
             me.createImportButton(),
-            me.createRefreshButton(),
-            me.createRemapButton()
+            me.createToolsButton(),
+            me.createSelectionButton()
         ]);
         return items;
     },
@@ -112,7 +105,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         let me = this;
 
         var menu = Ext.create('Ext.menu.Menu', {
-            id: 'mxcSelectionMenu',
+            id: 'mxcDsiArticleSelectionMenu',
             style: {
                 overflow: 'visible'
             },
@@ -148,42 +141,68 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                 }
             ]
         });
-        return Ext.create('Ext.button.Button', {
+        me.selectionButton = Ext.create('Ext.button.Button', {
             text: 'Selection',
+            disabled: true,
             iconCls: 'sprite-ui-check-box',
             menu: menu
         });
+        return me.selectionButton;
     },
 
-    createRemapButton: function() {
+    createToolsButton: function() {
         let me = this;
+
+        var menu = Ext.create('Ext.menu.Menu', {
+          id: 'mxcDsiToolsMenu',
+            style: {
+                overflow: 'visible'
+            },
+            items: [
+                {
+                    text: 'Deactivate unlinked',
+                    iconCls: 'sprite-arrow-circle',
+                    handler: function() {
+                        me.fireEvent('mxcRefreshItems', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Remap Properties',
+                    iconCls: 'sprite-maps',
+                    handler: function() {
+                        me.fireEvent('mxcRemapProperties', me);
+                    }
+                },
+                '-',
+                {
+                    text : 'Check regular expressions',
+                    handler: function() {
+                        me.fireEvent('mxcCheckRegularExpressions', me);
+                    }
+                },
+                {
+                    text : 'Check name mapping consistency',
+                    handler: function() {
+                        me.fireEvent('mxcCheckNameMappingConsistency', me);
+                    }
+                },
+            ]
+        });
         return Ext.create('Ext.button.Button', {
-            text: 'Remap Properties',
-            iconCls: 'sprite-maps',
-            handler: function() {
-                me.fireEvent('mxcRemapProperties', me);
-            }
+            text: 'Tools',
+            iconCls: 'sprite-wrench-screwdriver',
+            menu: menu
         });
     },
 
     createImportButton: function() {
         let me = this;
         return Ext.create('Ext.button.Button', {
-            text: 'Update',
+            text: 'Import/Update',
             iconCls: 'sprite-download-cloud',
             handler: function() {
                 me.fireEvent('mxcImportItems', me);
-            }
-        });
-    },
-
-    createRefreshButton: function() {
-        let me = this;
-        return Ext.create('Ext.button.Button', {
-            text: 'Refresh',
-            iconCls: 'sprite-arrow-circle',
-            handler: function() {
-                me.fireEvent('mxcRefreshItems', me);
             }
         });
     },
@@ -204,8 +223,6 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                     return (
                         e.column.text === 'Brand'
                         || e.column.text === 'Supplier'
-                        || e.column.text === 'Category'
-                        || e.column.text === 'Name'
                         || e.column.text === 'Flavor'
                         || e.column.text === 'new'
                         || e.column.text === 'related'
@@ -227,6 +244,11 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         return items;
     },
 
+    onSelectionChange: function(selModel, selection) {
+        var me = this;
+        me.selectionButton.setDisabled(selection.length === 0);
+    },
+
     destroy: function() {
         let me = this;
         // If the window gets closed while the cell editor is active
@@ -234,4 +256,5 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         me.cellEditor.completeEdit();
         me.callParent(arguments);
     }
+
 });

@@ -9,7 +9,6 @@ use MxcDropshipInnocigs\Exception\ApiException;
 use Zend\Http\Client;
 use Zend\Http\Exception\RuntimeException as ZendClientException;
 use Zend\Log\LoggerInterface;
-use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 
 class ApiClient
 {
@@ -50,17 +49,6 @@ class ApiClient
         $this->log = $log;
         $this->apiEntry = 'https://www.innocigs.com/xmlapi/api.php';
         $this->authUrl = $this->apiEntry . '?cid=' . $credentials->getUser() . '&auth=' . $credentials->getPassword();
-        $this->connect();
-    }
-
-    private function connect()
-    {
-        $response = null;
-        try {
-            $this->getItemInfo('mxc_connection_test');
-        } catch (ApiException $e) {
-            throw new ServiceNotCreatedException($e->getMessage());
-        }
     }
 
     /**

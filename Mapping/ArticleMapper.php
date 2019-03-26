@@ -156,8 +156,8 @@ class ArticleMapper
      */
     public function updateArticleState(array $icArticles, string $field, bool $value)
     {
+        if (! in_array($field, ['accepted', 'active'])) return;
         $setter = 'set' . ucfirst($field);
-        if (! method_exists(Article::class, $setter)) return;
 
         /** @var Article $icArticle */
         foreach ($icArticles as $icArticle) {
@@ -178,39 +178,41 @@ class ArticleMapper
      */
     public function updateShopwareArticle(Article $icArticle)
     {
-        $this->createdArticles = [];
-        $activeArticles = [];
-
-        if ($this->setShopwareArticle($icArticle)) {
-            $activeArticles[$icArticle->getIcNumber()] = $icArticle;
-
-            // Recursively build a list of all articles associated to this article
-            // which need to get created or activated
-            $this->associatedArticles = [];
-            $this->prepareAssociatedArticles($icArticle);
-
-            foreach ($this->associatedArticles as $article) {
-                if ($this->setShopwareArticle($article)) {
-                    $activeArticles[$article->getIcNumber()] = $article;
-                }
-                $this->setShopwareArticleActive($article);
-            }
-
-            foreach ($activeArticles as $icArticle) {
-                $this->setRelatedArticles($icArticle);
-                $this->setSimilarArticles($icArticle);
-            }
-        }
-
-        $this->setShopwareArticleActive($icArticle);
-
-        // Update all articles with similar or related articles referencing articles
-        // that we just created.
-        if (! empty($this->createdArticles)) {
-            $this->updateArticleLinks($this->createdArticles);
-        }
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
+        $this->updateShopwareArticles([$icArticle]);
+//        $this->createdArticles = [];
+//        $activeArticles = [];
+//
+//        if ($this->setShopwareArticle($icArticle)) {
+//            $activeArticles[$icArticle->getIcNumber()] = $icArticle;
+//
+//            // Recursively build a list of all articles associated to this article
+//            // which need to get created or activated
+//            $this->associatedArticles = [];
+//            $this->prepareAssociatedArticles($icArticle);
+//
+//            foreach ($this->associatedArticles as $article) {
+//                if ($this->setShopwareArticle($article)) {
+//                    $activeArticles[$article->getIcNumber()] = $article;
+//                }
+//                $this->setShopwareArticleActive($article);
+//            }
+//
+//            foreach ($activeArticles as $icArticle) {
+//                $this->setRelatedArticles($icArticle);
+//                $this->setSimilarArticles($icArticle);
+//            }
+//        }
+//
+//        $this->setShopwareArticleActive($icArticle);
+//
+//        // Update all articles with similar or related articles referencing articles
+//        // that we just created.
+//        if (! empty($this->createdArticles)) {
+//            $this->updateArticleLinks($this->createdArticles);
+//        }
+//        /** @noinspection PhpUnhandledExceptionInspection */
+//        $this->modelManager->flush();
 
         return $icArticle->isActive();
     }
@@ -475,6 +477,10 @@ class ArticleMapper
         $attribute->setMxcDsiSupplier($icArticle->getSupplier());
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setMxcDsiFlavor($icArticle->getFlavor());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setMxcDsiMaster($icArticle->getIcNumber());
+        /** @noinspection PhpUndefinedMethodInspection */
+        $attribute->setMxcDsiType($icArticle->getType());
     }
 
     /**

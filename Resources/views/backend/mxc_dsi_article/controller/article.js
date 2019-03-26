@@ -5,124 +5,103 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         { ref: 'articleListing', selector: 'mxc-dsi-article-list-window mxc-dsi-article-listing-grid' },
     ],
 
-    init: function() {
+    init: function () {
         let me = this;
 
         me.control({
             'mxc-dsi-article-listing-grid': {
-                mxcSaveArticle:         me.onSaveArticle,
-                mxcSaveMultiple:        me.onSaveMultiple,
-                mxcImportItems:         me.onImportItems,
-                mxcRemapProperties:     me.onRemapProperties,
-                mxcSetActiveMultiple:   me.onSetActiveMultiple,
-                mxcSetAcceptedMultiple: me.onSetAcceptedMultiple,
-                mxcRefreshItems:        me.onRefreshItems,
-
+                mxcSaveArticle:                 me.onSaveArticle,
+                mxcImportItems:                 me.onImportItems,
+                mxcRemapProperties:             me.onRemapProperties,
+                mxcSetActiveMultiple:           me.onSetActiveMultiple,
+                mxcSetAcceptedMultiple:         me.onSetAcceptedMultiple,
+                mxcRefreshItems:                me.onRefreshItems,
+                mxcCheckNameMappingConsistency: me.onCheckNameMappingConsistency,
+                mxcCheckRegularExpressions:     me.onCheckRegularExpressions
             }
         });
-        me.mainWindow = me.getView('list.Window').create({ }).show();
+        me.mainWindow = me.getView('list.Window').create({}).show();
     },
 
-    onRefreshItems: function(grid) {
+    onRefreshItems: function (grid) {
         let me = this;
-        let mask = new Ext.LoadMask(grid, { msg: 'Refreshing active state ...'});
-        mask.show();
-        Ext.Ajax.request({
-            method: 'POST',
-            url: '{url controller=MxcDsiArticle action=refresh}',
-            params: {},
-
-            success: function (response) {
-                mask.hide();
-                let result = Ext.JSON.decode(response.responseText);
-                console.log(result);
-                if (!result) {
-                    me.showError(response.responseText);
-                } else if (result.success) {
-                    Shopware.Notification.createGrowlMessage('Refresh', result.message);
-                    grid.store.load();
-                } else {
-                    me.showError(result.message);
-                }
-            },
-
-            failure: function (response) {
-                mask.hide();
-                if (response.responseText) {
-                    me.showError(response.responseText);
-                } else {
-                    me.showError('An unknown error occurred, please check your server logs.');
-                }
-            },
-        });
+        let url = '{url controller=MxcDsiArticle action=refresh}';
+        let params = {};
+        let growlTitle = 'Refresh';
+        let maskText = 'Refreshing articles ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onImportItems: function(grid) {
+    onImportItems: function (grid) {
         let me = this;
-        let mask = new Ext.LoadMask(grid, { msg: 'Updating items ...'});
-        mask.show();
-        Ext.Ajax.request({
-            method: 'POST',
-            url: '{url controller=MxcDsiArticle action=import}',
-            params: {},
-
-            success: function (response) {
-                mask.hide();
-                let result = Ext.JSON.decode(response.responseText);
-                console.log(result);
-                if (!result) {
-                    me.showError(response.responseText);
-                } else if (result.success) {
-                    Shopware.Notification.createGrowlMessage('Update', result.message);
-                    grid.store.load();
-                } else {
-                    me.showError(result.message);
-                }
-            },
-
-            failure: function (response) {
-                mask.hide();
-                if (response.responseText) {
-                    me.showError(response.responseText);
-                } else {
-                    me.showError('An unknown error occurred, please check your server logs.');
-                }
-            },
-        });
+        let url = '{url controller=MxcDsiArticle action=import}';
+        let params = {};
+        let growlTitle = 'Update';
+        let maskText = 'Updating articles from InnoCigs ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onRemapProperties: function(grid) {
+    onRemapProperties: function (grid) {
         let me = this;
-        let mask = new Ext.LoadMask(grid, { msg: 'Remapping properties ...'});
-        mask.show();
-        Ext.Ajax.request({
-            method: 'POST',
-            url: '{url controller=MxcDsiArticle action=remap}',
-            params: {},
+        let url = '{url controller=MxcDsiArticle action=remap}';
+        let params = {};
+        let growlTitle = 'Remap properties';
+        let maskText = 'Reapplying article property mapping ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
 
-            success: function (response) {
-                mask.hide();
-                let result = Ext.JSON.decode(response.responseText);
-                console.log(result);
-                if (!result) {
-                    me.showError(response.responseText);
-                } else if (result.success) {
-                    Shopware.Notification.createGrowlMessage('Remap Properties', result.message);
-                    grid.store.load();
-                } else {
-                    me.showError(result.message);
-                }
-            },
+    onCheckRegularExpressions: function(grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=checkRegularExpressions}';
+        let params = {};
+        let growlTitle = 'Check regular expresions';
+        let maskText = 'Checking regular expresions ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, false);
+    },
 
-            failure: function (response) {
-                mask.hide();
-                if (response.responseText) {
-                    me.showError(response.responseText);
-                } else {
-                    me.showError('An unknown error occurred, please check your server logs');
-                }
-            },
+    onCheckNameMappingConsistency: function(grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=checkNameMappingConsistency}';
+        let params = {};
+        let growlTitle = 'Check name mapping consistency';
+        let maskText = 'Checking name mapping consistency ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, false);
+    },
+
+    onSetActiveMultiple: function (grid, selectionModel) {
+        let me = this;
+        let field = 'active';
+        let value = selectionModel.getSelection()[0].get(field);
+        let maskText = value ? 'Activating articles.' : 'Deactivating articles.';
+        let growlTitle = value ? 'Activate selected' : 'Deactivate selected';
+        me.setStateMultiple(grid, selectionModel, field, value, growlTitle, maskText);
+    },
+
+    onSetAcceptedMultiple: function (grid, selectionModel) {
+        let me = this;
+        let field = 'accepted';
+        let value = selectionModel.getSelection()[0].get(field);
+        let maskText = value ? 'Setting articles to accepted ...' : 'Setting articles to ignored ...';
+        let growlTitle = value ? 'Accept selected' : 'Ignore selected';
+        me.setStateMultiple(grid, selectionModel, field, value, growlTitle, maskText);
+    },
+
+    setStateMultiple: function (grid, selectionModel, field, value, growlTitle, maskText) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=setStateMultiple}';
+
+        let ids = [];
+        Ext.each(selectionModel.getSelection(), function (record) {
+            ids.push(record.get('id'));
         });
+
+        let params = {
+            field: field,
+            value: value,
+            ids: Ext.JSON.encode(ids)
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
     /**
@@ -130,11 +109,11 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
      *
      * @param record
      */
-    onSaveArticle: function(record) {
+    onSaveArticle: function (record) {
         let me = this;
         // @todo: Errors do not get displayed
         record.save({
-            success: function(record, operation) {
+            success: function (record, operation) {
                 console.log('Success (onSaveArticle)');
                 console.log(record);
                 if (operation.success) {
@@ -146,7 +125,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                     });
                 }
             },
-            failure: function(record, operation) {
+            failure: function (record, operation) {
                 console.log('Failure (onSaveArticle)');
                 console.log(record);
                 me.handleError(record, operation);
@@ -154,62 +133,15 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         });
     },
 
-    onSetActiveMultiple: function(grid, selectionModel) {
+    doRequest: function(grid, url, params, growlTitle, maskText, reloadGrid) {
         let me = this;
-        let field = 'active';
-        let value = selectionModel.getSelection()[0].get(field);
-        let maskMessage = value ? 'Activating articles.' : 'Deactivating articles.';
-        me.setFieldMultiple(grid, selectionModel, field, value, maskMessage);
-    },
-
-
-    onSetAcceptedMultiple: function(grid, selectionModel) {
-        let me = this;
-        let field = 'accepted';
-        let value = selectionModel.getSelection()[0].get(field);
-        let maskMessage = value ? 'Setting articles to accepted.' : 'Setting articles to ignored.';
-        me.setFieldMultiple(grid, selectionModel, field, value, maskMessage);
-    },
-
-    handleError: function(record, operation) {
-        let me = this;
-
-        let rawData = operation.records[0].proxy.reader.rawData;
-        let message = '{s name=unknownError}An unknown error occurred, please check your server logs.{/s}';
-        if (rawData.message) {
-            record.set('active', false);
-            message = rawData.message;
-        }
-        me.showError(message);
-    },
-
-    showError: function (message) {
-        Shopware.Notification.createStickyGrowlMessage({
-                title: 'Error',
-                text: message,
-                log: true
-            },
-            'MxcDropshipInnoCigs');
-    },
-
-    setFieldMultiple: function(grid, selectionModel, field, value, maskMessage) {
-        let me = this;
-        let mask = new Ext.LoadMask(grid, { msg: maskMessage});
-        let ids = [];
-
-        Ext.each(selectionModel.getSelection(), function (record) {
-            ids.push(record.get('id'));
-        });
-
+        let mask = new Ext.LoadMask(grid, { msg: maskText });
         mask.show();
+        console.log(url);
         Ext.Ajax.request({
             method: 'POST',
-            url: '{url controller=MxcDsiArticle action=setStateMultiple}',
-            params: {
-                field: field,
-                value: value,
-                ids: Ext.JSON.encode(ids)
-            },
+            url: url,
+            params: params,
 
             success: function (response) {
                 mask.hide();
@@ -218,8 +150,10 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 if (!result) {
                     me.showError(response.responseText);
                 } else if (result.success) {
-                    Shopware.Notification.createGrowlMessage('Success', result.message);
-                    grid.store.load();
+                    Shopware.Notification.createGrowlMessage(growlTitle, result.message);
+                    if (reloadGrid === true) {
+                        grid.store.load();
+                    }
                 } else {
                     me.showError(result.message);
                 }
@@ -234,5 +168,26 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 }
             },
         });
+    },
+
+    showError: function (message) {
+        Shopware.Notification.createStickyGrowlMessage({
+                title: 'Error',
+                text: message,
+                log: true
+            },
+            'MxcDropshipInnoCigs');
+    },
+
+    handleError: function (record, operation) {
+        let me = this;
+
+        let rawData = operation.records[0].proxy.reader.rawData;
+        let message = '{s name=unknownError}An unknown error occurred, please check your server logs.{/s}';
+        if (rawData.message) {
+            record.set('active', false);
+            message = rawData.message;
+        }
+        me.showError(message);
     },
 });

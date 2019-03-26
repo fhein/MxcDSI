@@ -95,6 +95,42 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->leave();
     }
 
+    public function checkRegularExpressionsAction()
+    {
+        $this->log->enter();
+        try {
+            $propertyMapper = $this->getServices()->get(PropertyMapper::class);
+            if (! $propertyMapper->checkRegularExpressions()) {
+                $this->view->assign(['success' => false, 'message' => 'Found errors in regular expressions. See log for details.']);
+            } else {
+                $this->view->assign(['success' => true, 'message' => 'No errors found in regular expressions.']);
+            }
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
+    public function checkNameMappingConsistencyAction()
+    {
+        $this->log->enter();
+        try {
+            $propertyMapper = $this->getServices()->get(PropertyMapper::class);
+            $issueCount = $propertyMapper->checkNameMappingConsistency();
+            if ($issueCount > 0) {
+                $issue = 'issue';
+                if ($issueCount > 1) $issue .= 's';
+                $this->view->assign(['success' => false, 'message' => 'Found ' . $issueCount . ' name mapping ' . $issue  . '. See log for details.']);
+            } else {
+                $this->view->assign(['success' => true, 'message' => 'No name mapping issues found.']);
+            }
+
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
     public function remapAction()
     {
         $this->log->enter();
@@ -104,7 +140,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $articles = $this->getModelManager()->getRepository(Article::class)->getAllIndexed();
             $mapper->mapProperties($articles);
             $this->getModelManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Item properties were successfully remapped.']);
+            $this->view->assign([ 'success' => true, 'message' => 'Article properties were successfully remapped.']);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);

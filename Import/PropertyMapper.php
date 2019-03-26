@@ -76,7 +76,6 @@ class PropertyMapper
     {
         $this->init();
         $models = $this->getModels();
-        //$articles = $this->getArticles();
         if (! $models || ! $articles) {
             $this->log->debug(__FUNCTION__ . ': no models or no articles found.');
             return;
@@ -89,11 +88,6 @@ class PropertyMapper
             /** @var Variant $variant */
             foreach ($variants as $variant) {
                 $model = $models[$variant->getIcNumber()];
-//                if ($model === null) {
-//                    // @todo: Each variant has to have a model assigned. There is an error somewhere else, which causes
-//                    // @todo: variants without models being processed here
-//                    continue;
-//                }
                 if ($first) {
                     $this->mapModelToArticle($model, $article);
                     $first = false;
@@ -102,10 +96,8 @@ class PropertyMapper
                 $this->mapModelToVariant($model, $variant);
             }
         }
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->checkArticlePropertyMappingConsistency();
         $this->report();
-        $this->propertyDerivator->derive($this->articles);
+        $this->propertyDerivator->derive($articles);
         $this->propertyDerivator->export();
     }
 
@@ -166,7 +158,7 @@ class PropertyMapper
         $this->report['supplier'][$article->getSupplier()] = true;
     }
 
-    protected function correctSupplierAndBrand(string $name, Article $article)
+    protected function applySupplierAndBrandDeocoration(string $name, Article $article)
     {
         $brand = $article->getBrand();
         if (!$brand) {
@@ -189,7 +181,6 @@ class PropertyMapper
         if ($supplier === 'Smoktech') {
             $supplier = 'SMOK';
         }
-
 
         if (! $isInnocigsSupplier ) {
             $name = str_replace($brand, $supplier, $name) . $append;
@@ -215,7 +206,7 @@ class PropertyMapper
         }
 
         // rule based name mapping applied next
-        $name = $this->correctSupplierAndBrand($name, $article);
+        $name = $this->applySupplierAndBrandDeocoration($name, $article);
         $trace['brand_prepended'] = $name;
 
         $name = $this->replace($name, 'article_name_replacements');
@@ -255,7 +246,6 @@ class PropertyMapper
         // We take the first variant's name and remove the variant descriptions
         // in order to derive the real article name
         $options = explode(MXC_DELIMITER_L2, $model->getOptions());
-//        $name = $model->getName();
 
         foreach ($options as $option) {
             $option = explode(MXC_DELIMITER_L1, $option)[1];
@@ -285,7 +275,7 @@ class PropertyMapper
     {
         // They introduced some cases where the option name is not equal
         // to the string added to the article name, so we have to check
-        // that, also. The implementation here is a hack right now.
+        // that also.
         $o = $this->config['article_name_option_fixes'][$option] ?? null;
         $fixApplied = false;
         $fixAvailable = $o !== null;
@@ -315,14 +305,7 @@ class PropertyMapper
     public function mapCategory(Model $model, Article $article): void
     {
         $category = null;
-        // article configuration has highest priority
-        // general category mapping applies next
-//        $result = $this->config['articles'][$article->getNumber()]['category'] ?? $this->config['categories'][$icCategory];
-//        if ($result !== null) {
-//            $article->setCategory($result);
-//            $this->categoryMap[$icCategory] = $result;
-//            return;
-//        }
+
         foreach ($this->config['categories'] as $key => $settings) {
             if ($key === 'category') {
                 $input = $model->getCategory();
@@ -369,7 +352,7 @@ class PropertyMapper
      * @param Article $article
      * @return array
      */
-    protected function checkMappingConsistency(Article $article): array
+    protected function getNameMappingIssues(Article $article): array
     {
         $models = $this->getModels();
         if (! $models) return [];
@@ -380,7 +363,6 @@ class PropertyMapper
         foreach ($variants as $variant) {
             $number = $variant->getIcNumber();
             $model = $models[$number];
-//            if ($model === null) continue; // @todo: This happens but it should not, error elsewhere
             $map[$this->mapArticleName($model, $article)] = $number;
         }
         if (count($map) === 1) return [];
@@ -397,23 +379,23 @@ class PropertyMapper
         return $issues;
     }
 
-    public function checkArticlePropertyMappingConsistency()
+    public function checkNameMappingConsistency()
     {
-        //$this->init();
         $articles = $this->getArticles() ?? [];
 
         /** @var Article $article */
         $topics = [];
         foreach ($articles as $article) {
-            $issues = $this->checkMappingConsistency($article);
+            $issues = $this->getNameMappingIssues($article);
             if (! empty($issues)) {
                 $topics[$article->getIcNumber()] = $issues;
             }
         }
         ksort($topics);
-        $topics = [ 'pmPropertyMappingInconsistencies' => $topics ];
-        $report = new ArrayReport();
-        $report($topics);
+        $report = [ 'pmNameMappingInconsistencies' => $topics ];
+        $reporter = new ArrayReport();
+        $reporter($report);
+        return count($topics);
     }
 
     public function checkRegularExpressions()

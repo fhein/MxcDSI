@@ -5,7 +5,6 @@ use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Option;
-use MxcDropshipInnocigs\Models\Variant;
 
 class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationController
 {
@@ -125,26 +124,22 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
     {
         $group = $this->getRepository()->find($groupId);
         $options = $group->getOptions();
+        $repository = $this->getManager()->getRepository(Article::class);
 
         // get all InnoCigs articles which are linked to Shopware articles
-        $linkedArticleIds = $this->getManager()->getRepository(Article::class)->getLinkedArticleIds();
-        $involvedArticles = [];
         /** @var Option $option */
+        $relevantOptionIds = [];
+        $time = - microtime(true);
         foreach ($options as $option) {
             if (!$groupChanged && ($option->isAccepted() === $oldOptionValue[$option->getName()])) {
                 continue;
             }
-            $variants = $option->getVariants();
-            /** @var Variant $variant */
-            foreach ($variants as $variant) {
-                /** @var Article $article */
-                $article = $variant->getArticle();
-                $icNumber = $article->getIcNumber();
-                if ($linkedArticleIds[$icNumber]) {
-                    $involvedArticles[$icNumber] = $article;
-                }
-            }
+            $relevantOptionIds[] = $option->getId();
         }
-        return $involvedArticles;
+        $linkedArticlesHavingChangedOptions = $repository->getLinkedArticlesHavingOptions($relevantOptionIds);
+        $time +=microtime(true);
+        $this->log->debug('Using SQL query: ' . sprintf('%f', $time));
+
+        return $linkedArticlesHavingChangedOptions;
     }
 }

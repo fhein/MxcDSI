@@ -70,10 +70,12 @@ return [
                 'mxc_dsi_flavor'          => [
                     'type'     => 'string',
                 ],
-//                'mxc_dsi_type' => [
-//                    'type' => 'string',
-//                ],
-
+                'mxc_dsi_master' => [
+                    'type' => 'string',
+                ],
+                'mxc_dsi_type' => [
+                    'type' => 'string',
+                ],
                 'dc_ic_ordernumber'      => [
                     'type' => 'string',
                 ],
