@@ -12,6 +12,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.model.Article', {
         { name : 'id', type: 'int', useNull: true },
         { name : 'number', type: 'string' },
         { name : 'brand', type: 'string' },
+        { name : 'type', type: 'string' },
         { name : 'category', type: 'string'},
         { name : 'active', type: 'boolean' },
         { name : 'manufacturer', type: 'string' },

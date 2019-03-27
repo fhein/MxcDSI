@@ -17,6 +17,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                 manufacturer:               { header: 'Manufacturer' },
                 supplier:                   { header: 'Supplier'},
                 brand:                      { header: 'Brand'},
+                type:                       { header: 'Type'},
                 category:                   { header: 'Category'},
                 name:                       { header: 'Name', flex: 3 },
                 flavor:                     { header: 'Flavor', flex: 3 },

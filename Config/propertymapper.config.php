@@ -1,4 +1,7 @@
 <?php
+
+use MxcDropshipInnocigs\Import\PropertyMapper;
+
 return [
     'settings' => [
         'checkRegularExpressions' => true,
@@ -6,26 +9,26 @@ return [
 
     'name_prepare'              => [
         'preg_replace' => [
-            '~\s+~'                                        => ' ',
-            '~(- )+~'                                      => '$1',
-            '~ ,~'                                         => ',',
-            '~, -~'                                        => '-',
-            '~ - ?$~'                                      => '',
-            '~10ml\/ml~'                                   => '10ml',
-            '~0ml\/ml~'                                    => '0mg/ml',
-            '~(\d+)m~'                                     => '$1 m',
-            '~(0 mg)$~'                                    => '$1/ml',
-            '~(\d) mAH~'                                   => '$1 mAh',
-            '~(\d mg)[^\/]~'                               => '$1/ml',
-            '~Sherbert~'                                   => 'Sherbet',
-            '~Americas~'                                   => 'America\'s',
-            '~America´s~'                                  => 'America\'s',
-            '~(Heads )+~'                                  => '$1',
-            '~(Head )+~'                                   => '$1',
-            '~(10er Packung)en~'                           => '$1',
-            '~((HW1)|(HW2)) (Heads)~'                      => 'HW1/HW2 $4',
-            '~artikblau~'                                  => 'arktikblau',
-            '~(K2 & K3.*) \(\d+ (St. pro Pack\))~'         => '$1 (5 $2',
+            '~\s+~'                                => ' ',
+            '~(- )+~'                              => '$1',
+            '~ ,~'                                 => ',',
+            '~, -~'                                => '-',
+            '~ - ?$~'                              => '',
+            '~10ml\/ml~'                           => '10ml',
+            '~0ml\/ml~'                            => '0mg/ml',
+            '~(\d+)m~'                             => '$1 m',
+            '~(0 mg)$~'                            => '$1/ml',
+            '~(\d) mAH~'                           => '$1 mAh',
+            '~(\d mg)[^\/]~'                       => '$1/ml',
+            '~Sherbert~'                           => 'Sherbet',
+            '~Americas~'                           => 'America\'s',
+            '~America´s~'                          => 'America\'s',
+            '~(Heads )+~'                          => '$1',
+            '~(Head )+~'                           => '$1',
+            '~(10er Packung)en~'                   => '$1',
+            '~((HW1)|(HW2)) (Heads)~'              => 'HW1/HW2 $4',
+            '~artikblau~'                          => 'arktikblau',
+            '~(K2 & K3.*) \(\d+ (St. pro Pack\))~' => '$1 (5 $2',
         ],
     ],
     'article_name_option_fixes' => [
@@ -75,6 +78,16 @@ return [
         'Kunststoff (10er Pack)'                     => 'KunstStoff (10 St. pro Pack),'
     ],
 
+    // By default occurances of an option name in the article name are removed.
+    // If an option replacement is defined here for the particular option, the
+    // occurance of the option name gets replaced with the string defined here.
+    'option_replacements'       => [
+        'Postless Deck'    => 'Deck',
+        'Series Deck'      => 'Deck',
+        'Single Coil Deck' => 'Deck',
+        'Velocity Deck'    => 'Deck',
+    ],
+
     'articles_without_brand' => [
         'Tasche mit Schulterriemen',
         'Tasche mit Griff',
@@ -90,16 +103,17 @@ return [
         'Vampire Vape Applelicious - E-Zigaretten Liquid' => 'Vampire Vape - Applelicious - E-Zigaretten Liquid',
     ],
 
-
     'name_cleanup' => [
         'preg_replace' => [
             '~\s+~'               => ' ',
             '~(- )+~'             => '$1',
             '~ ,~'                => ',',
+            '~-,~'                => '-',
             '~, -~'               => '-',
             '~ - ?$~'             => '',
             '~ $~'                => '',
             '~^ ~'                => '',
+            '~(RDTA)+~'           => '$1',
             '~-V12~'              => '- V12',
             '~-(Ersatz)~'         => '- $1',
             '~-(E-Zigarette)~'    => '- $1',
@@ -124,6 +138,9 @@ return [
         'preg_replace' => [
             '~Aster$~'                                                   => 'Aster 75 Watt',
             '~(Nautilus X Mundstück)e~'                                  => '$1',
+            '~(D19.*O-Ringe)~'                                           => 'Exceed $1',
+            '~(D22.*O-Ringe)~'                                           => 'Exceed $1',
+            '~(Exceed) Box~'                                             => 'Exceed D22',
             '~((1 Liter)|(\d+ ml)) (Basis)~'                             => '$4 - $1',
             '~1 Liter~'                                                  => '1.000 ml',
             '~E-Zigaretten (Liquid)~'                                    => '- $1',
@@ -161,6 +178,7 @@ return [
             '~- Twisted (Aroma) - (.*)(- \d+ ml)~'                       => '- $2 - $1 $3',
             '~(I VG - )(Aroma) (.*)(- \d+ ml)~'                          => '$1 $3 - $2 $4',
             '~(PlusSolt).*(\d\d ml) (Nikotinsalz).*(Shot) (- 18 mg/ml)~' => '$1 - $3-$4 - $2 $5',
+            '~(Aromamizer Plus)~'                                        => '$1 RDTA',
             '~(Bozz Liquids -) (Aroma)(.*)(- \d+ ml)~'                   => '$1 $3 - $2 $4',
             '~(Vapors Line -) (Aroma)(.*)(- \d+ ml)~'                    => '$1 $3 - $2 $4',
             '~(VapeHansa -) (Aroma)(.*) (\d+ ml)~'                       => '$1 $3 - $2 - $4',
@@ -272,11 +290,14 @@ return [
             '~(Pod) mit (Head)~'                                         => '$1 inkl. $2',
             '~6 in 1 Head Set~'                                          => 'Coil Set (20 Stück, 6 Varianten)',
             '~Base - Shake \& Vape -~'                                   => 'Base -',
+            '~(Glastank),? (\d+ ml)~'                                    => '$1 - $2',
             '~(Head) - (ARC)~'                                           => '$2 $1 -',
             '~(Hookah) (Set)~'                                           => '$1 ($2)',
             '~(Zelos) - 5~'                                              => '$1 - Akku - 5',
+            '~(iStick Nowos) (- \d\.\d+ mAh)~'                           => '$1 - Akku $2',
             '~(Typhon) (- \d+ Watt)~'                                    => '$1 - Akku $2',
             '~(Speeder) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
+            '~(Titan PWM) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Crown 4) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(x Ultroner EOS II) (- \d+ Watt)~'                         => '$1 - Akkuträger $2',
             '~(SkyStar) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
@@ -362,7 +383,7 @@ return [
         ],
     ],
     'product_names'             => [
-        'Aspire'    => [
+        'Aspire'      => [
             // Aspire
             '~(Nepho)~',
             '~(Athos)~',
@@ -387,7 +408,7 @@ return [
             '~((Revvo)( Mini)?)~',
             '~((K\d)( \& K3)?)~',
         ],
-        'asMODus'   => [
+        'asMODus'     => [
             '~(Minikin(( V2 Kodama)|( V2)|( Reborn))?)~',
             '~(C4 RDA)~',
             '~(Colossal)~',
@@ -395,20 +416,26 @@ return [
             '~(Nefarius RDTA)~',
             '~(Voluna V2 RTA)~'
         ],
-        'SC'        => [
+        'CoilArt'     => [
+            '~(Mage RTA V2)~'
+        ],
+        'HellVape'    => [
+            '~(Dead Rabbit RTA)~'
+        ],
+        'SC'          => [
             '~(iJust ((ECM)|(3))?)~',
             '~(Ello( ((Vate)|(Duro))?))~',
             '~(Basal)~',
             '~(GS ((Air 2)|(Air)|(Baby)|(Drive)|(Turbo))?)~',
             '~(iKonn)~',
             '~(Invoke)~',
-            '~(iStick ((Melo)|(Amnis)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim))?)~',
+            '~(iStick ((Melo)|(Amnis)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim)|(Nowos))?)~',
             '~(iWu)~',
             '~(Lexicon)~',
             '~(Melo \d)~',
             '~(Easy 3)~',
         ],
-        'GeekVape'  => [
+        'GeekVape'    => [
             '~(Aegis( Legend)?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
@@ -417,13 +444,13 @@ return [
             '~(Zeus Dual RTA)~',
             '~(Loop( V1.5)? RDA)~',
         ],
-        'Innokin'   => [
+        'Innokin'     => [
             '~(Endura ((T18)|(T20S)|(T22))?)~',
             '~(Prism ((S)|(T18/T22)|(T18)|(T20)|(T22))?)~',
             '~(Proton)~',
             '~(EZ.Watt)~',
         ],
-        'InnoCigs'  => [
+        'InnoCigs'    => [
             '~(Batpack)~',
             '~(Atopack)~',
             '~(Cubis 2)~',
@@ -434,7 +461,7 @@ return [
             '~(eVic Primo Fit)~',
             '~(Ultex T80)~',
             '~(NCFilm Heizplatte)~',
-            '~(Exceed (Air)|(Box)|(D19)|(D22)|(Edge))~',
+            '~(Exceed (Air)|(D19)|(D22)|(Edge))~',
             '~(Notchcore)~',
             '~(Presence)~',
             '~(ProCore (Air Plus)|(Air)|(Conquer)|(Remix)|(X))~',
@@ -442,7 +469,7 @@ return [
             '~(Teros)~',
             '~(Unimax 22)~',
         ],
-        'JustFog'   => [
+        'JustFog'     => [
             '~(C601)~',
             '~(Fog1)~',
             '~(J-Easy3)~',
@@ -450,7 +477,7 @@ return [
             '~(P16A)~',
             '~(Q16 C)~',
         ],
-        'Smok'      => [
+        'Smok'        => [
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
             '~(H-Priv 2)~',
@@ -469,7 +496,7 @@ return [
             '~(Species)~',
 
         ],
-        'Steamax'   => [
+        'Steamax'     => [
             // Smok
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
@@ -503,7 +530,14 @@ return [
             '~(Reux)~'
 
         ],
-        'Uwell'     => [
+        'Steam Crave' => [
+            '~(Aromamizer Plus RDTA)~',
+            '~(Aromamizer Supreme RDTA V2(\.1)?)~',
+            '~(Aromamizer Titan RDTA)~',
+            '~(Aromamizer Lite RTA)~',
+            '~(Glaz RDSA)~',
+        ],
+        'Uwell'       => [
             '~(Crown (3|4))~',
             '~(Fancier RTA)~',
             '~(Hypercar)~',
@@ -513,17 +547,17 @@ return [
             '~(Whirl(( 20)|( 22))?)~',
 
         ],
-        'Vapanion'  => [
+        'Vapanion'    => [
             '~(Cascade(( Baby SE)|( Baby)|( One Plus)|( One))?)~',
             '~(NRG( SE)?)~',
             '~(Switcher( LE)?)~'
 
         ],
-        'VapeOnly'  => [
+        'VapeOnly'    => [
             '~(vPipe III)~',
             '~(Zen Pipe)~',
         ],
-        'Vaporesso' => [
+        'Vaporesso'   => [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
             '~(Luxe)~',
             '~(NRG)~',
@@ -535,10 +569,10 @@ return [
             '~(Veco)~',
             '~(Zero)~'
         ],
-        'Renova'    => [
+        'Renova'      => [
             '~(Zero)~'
         ],
-        'Wismec'    => [
+        'Wismec'      => [
             '~(Tobhino BF RDA)~',
             '~(Amor NS Pro)~',
             '~(Divider)~',
@@ -553,7 +587,7 @@ return [
             '~(Sinuous(( P80)|( Ravage)|( SW))?)~',
             '~(Reux)~',
         ],
-        'ZQ'        => [
+        'ZQ'          => [
             '~(Vi)~',
         ]
 
@@ -623,34 +657,146 @@ return [
     'categories'                => [
         'name' => [
             'preg_match' => [
-                '~(Akkuzelle)|(Akkubox)|(Batteriekappe)|(Batteriehülse)~' => 'Zubehör > Akkuzellen & Zubehör',
-                '~(Leerflasche)|(Squonker Flasche)|(Liquidflasche)~'      => 'Zubehör > Squonker- und Leerflaschen',
-                '~(Akkuträger)|(Squonker Box)~'                           => 'Akkuträger',
-                '~Guillotine V2 - Base~'                                  => 'Zubehör > Selbstwickler',
-                '~Akku~'                                                  => 'Akkus',
-                '~(Clearomizer)~'                                         => 'Verdampfer',
-                '~(Cartridge)|(Pod)~'                                     => 'Zubehör > Pods & Cartridges',
-                '~E-Pfeife~'                                              => 'E-Pfeifen',
-                '~(E-Hookah)|(Vaporizer)~'                                => 'Vaporizer',
-                '~Aroma~'                                                 => 'Aromen',
-                '~(Base)|(Shot)~'                                         => 'Basen & Shots',
-                '~Liquid~'                                                => 'Liquids',
-                '~Easy 3.*Caps~'                                          => 'Liquids > Easy 3 Caps',
-                '~Shake & Vape~'                                          => 'Shake & Vape',
-                '~Head~'                                                  => 'Zubehör > Verdampferköpfe',
-                '~([Tt]asche)|(Lederschale)~'                             => 'Zubehör > Taschen',
-                '~E-Zigarette~'                                           => 'E-Zigaretten',
-                '~(Watte)|(Wickeldraht)|(Coil)~'                          => 'Zubehör > Selbstwickler',
-                '~Easy 3.*kabel~'                                         => 'Zubehör > Easy 3',
-                '~(Ladegerät)|(DigiCharger)|([Kk]abel)|([Ss]tecker)~'     => 'Zubehör > Ladegeräte',
-                '~(Werkzeug)|(pinzette)|(Heizplatte)~'                    => 'Zubehör > Werkzeug',
-                '~(Mundstück)|(Drip Tip)|(Drip Cap)~'                     => 'Zubehör > Mundstücke & Schutz',
-                '~(Glastank)|(Hollowed Out Tank)|(Tankschutz)~'           => 'Zubehör > Glastanks',
-                '~([Dd]ichtung)|(O-Ring)~'                                => 'Zubehör > Dichtungen',
-                '~(Abdeckung)|(Vitrine)|(Vape Bands)~'                    => 'Zubehör > Accessoires',
-                '~[Mm]agnet~'                                             => 'Zubehör > sonstiges',
+                '~(Akkuzelle)|(Akkubox)|(Batteriekappe)|(Batteriehülse)~'   => 'Zubehör > Akkuzellen & Zubehör',
+                '~(Leerflasche)|(Squonker Flasche)|(Liquidflasche)~'        => 'Zubehör > Squonker- und Leerflaschen',
+                '~(Akkuträger)|(Squonker Box)~'                             => 'Akkuträger',
+                '~Guillotine V2 - Base~'                                    => 'Zubehör > Selbstwickler',
+                '~Akku~'                                                    => 'Akkus',
+                '~(Clearomizer)~'                                           => 'Verdampfer',
+                '~(Cartridge)|(Pod)~'                                       => 'Zubehör > Pods & Cartridges',
+                '~E-Pfeife~'                                                => 'E-Pfeifen',
+                '~(E-Hookah)|(Vaporizer)~'                                  => 'Vaporizer',
+                '~Aroma ~'                                                  => 'Aromen',
+                '~(Base)|(Shot)~'                                           => 'Basen & Shots',
+                '~Liquid~'                                                  => 'Liquids',
+                '~Easy 3.*Caps~'                                            => 'Liquids > Easy 3 Caps',
+                '~Shake & Vape~'                                            => 'Shake & Vape',
+                '~Head~'                                                    => 'Zubehör > Verdampferköpfe',
+                '~([Tt]asche)|(Lederschale)~'                               => 'Zubehör > Taschen',
+                '~E-Zigarette~'                                             => 'E-Zigaretten',
+                '~Deck~'                                                    => 'Zubehör > Decks',
+                '~(Watte)|(Wickeldraht)|(Coil)~'                            => 'Zubehör > Selbstwickler',
+                '~Easy 3.*kabel~'                                           => 'Zubehör > Easy 3',
+                '~(Ladegerät)|(DigiCharger)|([Kk]abel)|([Ss]tecker)~'       => 'Zubehör > Ladegeräte',
+                '~(Werkzeug)|(pinzette)|(Heizplatte)~'                      => 'Zubehör > Werkzeug',
+                '~(Mundstück)|(Drip Tip)|(Drip Cap)~'                       => 'Zubehör > Mundstücke & Schutz',
+                '~(Glastank)|(Hollowed Out Tank)|(Tankschutz)|(Top-Kappe)~' => 'Zubehör > Glastanks',
+                '~(Umbausatz)|(Erweiterungssatz)~'                          => 'Zubehör > Erweiterungs- und Umbausätze',
+                '~([Dd]ichtung)|(O-Ring)~'                                  => 'Zubehör > Dichtungen',
+                '~(Abdeckung)|(Vitrine)|(Vape Bands)~'                      => 'Zubehör > Accessoires',
+                '~[Mm]agnet~'                                               => 'Zubehör > sonstiges',
             ]
         ],
+    ],
+
+    'types' => [
+        PropertyMapper::TYPE_UNKNOWN          => 'UNKNOWN',
+        PropertyMapper::TYPE_E_CIGARETTE      => 'E_CIGARETTE',
+        PropertyMapper::TYPE_BOX_MOD          => 'BOX_MOD',
+        PropertyMapper::TYPE_E_PIPE           => 'E_PIPE',
+        PropertyMapper::TYPE_CLEAROMIZER      => 'CLEAROMIZER',
+        PropertyMapper::TYPE_CLEAROMIZER_RTA  => 'CLEAROMIZER_RTA',
+        PropertyMapper::TYPE_CLEAROMIZER_RDTA => 'CLEAROMIZER_RDTA',
+        PropertyMapper::TYPE_CLEAROMIZER_RDSA => 'CLEAROMIZER_RDSA',
+        PropertyMapper::TYPE_LIQUID           => 'LIQUID',
+        PropertyMapper::TYPE_AROMA            => 'AROMA',
+        PropertyMapper::TYPE_SHAKE_VAPE       => 'SHAKE_VAPE',
+        PropertyMapper::TYPE_HEAD             => 'HEAD',
+        PropertyMapper::TYPE_TANK             => 'TANK',
+        PropertyMapper::TYPE_SEAL             => 'SEAL',
+        PropertyMapper::TYPE_DRIP_TIP         => 'DRIP_TIP',
+        PropertyMapper::TYPE_POD              => 'POD',
+        PropertyMapper::TYPE_CARTRIDGE        => 'CARTRIDGE',
+        PropertyMapper::TYPE_CELL             => 'CELL',
+        PropertyMapper::TYPE_CELL_BOX         => 'CELL_BOX',
+        PropertyMapper::TYPE_BASE             => 'BASE',
+        PropertyMapper::TYPE_CHARGER          => 'CHARGER',
+        PropertyMapper::TYPE_BAG              => 'BAG',
+        PropertyMapper::TYPE_TOOL             => 'TOOL',
+        PropertyMapper::TYPE_WADDING          => 'WADDING', // Watte
+        PropertyMapper::TYPE_WIRE             => 'WIRE',
+        PropertyMapper::TYPE_BOTTLE           => 'BOTTLE',
+        PropertyMapper::TYPE_SQUONKER_BOTTLE  => 'SQUONKER_BOTTLE',
+        PropertyMapper::TYPE_VAPORIZER        => 'VAPORIZER',
+        PropertyMapper::TYPE_SHOT             => 'SHOT',
+        PropertyMapper::TYPE_CABLE            => 'CABLE',
+        PropertyMapper::TYPE_BOX_MOD_CELL     => 'BOX_MOD_CELL',
+        PropertyMapper::TYPE_COIL             => 'COIL',
+        PropertyMapper::TYPE_RDA_BASE         => 'RDA_BASE',
+        PropertyMapper::TYPE_MAGNET           => 'MAGNET',
+        PropertyMapper::TYPE_MAGNET_ADAPTOR   => 'MAGNET_ADAPTER',
+        PropertyMapper::TYPE_ACCESSORY        => 'ACCESSORY',
+        PropertyMapper::TYPE_BATTERY_CAP      => 'BATTERY_CAP',
+        PropertyMapper::TYPE_EXTENSION_KIT    => 'EXTENSION_KIT',
+        PropertyMapper::TYPE_CONVERSION_KIT   => 'CONVERSION_KIT',
+        PropertyMapper::TYPE_E_HOOKAH         => 'E_HOOKAH',
+        PropertyMapper::TYPE_SQUONKER_BOX     => 'SQUONKER_BOX',
+        PropertyMapper::TYPE_EMPTY_BOTTLE     => 'EMPTY_BOTTLE',
+        PropertyMapper::TYPE_EASY3_CAP        => 'EASY3_CAP',
+        PropertyMapper::TYPE_DECK             => 'DECK',
+        PropertyMapper::TYPE_HEATING_PLATE    => 'HEATING_PLATE',
+        PropertyMapper::TYPE_DRIP_TIP_CAP     => 'DRIP_TIP_CAP',
+        PropertyMapper::TYPE_TANK_PROTECTION  => 'TANK_PROTECTION',
+        PropertyMapper::TYPE_STORAGE          => 'STORAGE',
+        PropertyMapper::TYPE_BATTERY_SLEEVE   => 'BATTERY_SLEEVE',
+    ],
+
+    'name_type_mapping' => [
+        '~RTA.*Clearomizer~'  => PropertyMapper::TYPE_CLEAROMIZER_RTA,
+        '~RDSA.*Clearomizer~' => PropertyMapper::TYPE_CLEAROMIZER_RDSA,
+        '~RDTA.*Clearomizer~' => PropertyMapper::TYPE_CLEAROMIZER_RDTA,
+        '~Clearomizer~'       => PropertyMapper::TYPE_CLEAROMIZER,
+        '~Cartridge~'         => PropertyMapper::TYPE_CARTRIDGE,
+        '~Pod~'               => PropertyMapper::TYPE_POD,
+        '~E-Pfeife~'          => PropertyMapper::TYPE_E_PIPE,
+        '~E-Hookah~'          => PropertyMapper::TYPE_E_HOOKAH,
+        '~Vaporizer~'         => PropertyMapper::TYPE_VAPORIZER,
+        '~Aroma ~'            => PropertyMapper::TYPE_AROMA,
+        '~Guillotine.*Base~'  => PropertyMapper::TYPE_RDA_BASE,
+        '~Base~'              => PropertyMapper::TYPE_BASE,
+        '~Shot~'              => PropertyMapper::TYPE_SHOT,
+        '~Akkuträger~'        => PropertyMapper::TYPE_BOX_MOD_CELL,
+        '~Akku~'              => PropertyMapper::TYPE_BOX_MOD,
+        '~Squonker Box~'      => PropertyMapper::TYPE_SQUONKER_BOX,
+        '~Squonker Flasche~'  => PropertyMapper::TYPE_SQUONKER_BOTTLE,
+        '~Liquid Flasche~'    => PropertyMapper::TYPE_SQUONKER_BOTTLE,
+        '~Leerflasche~'       => PropertyMapper::TYPE_EMPTY_BOTTLE,
+        '~Shake & Vape~'      => PropertyMapper::TYPE_SHAKE_VAPE,
+        '~Liquid~'            => PropertyMapper::TYPE_LIQUID,
+        '~Easy 3.*Cap~'       => PropertyMapper::TYPE_EASY3_CAP,
+        '~Head~'              => PropertyMapper::TYPE_HEAD,
+        '~[Tt]asche~'         => PropertyMapper::TYPE_BAG,
+        '~Lederschale~'       => PropertyMapper::TYPE_BAG,
+        '~E-Zigarette~'       => PropertyMapper::TYPE_E_CIGARETTE,
+        '~Deck~'              => PropertyMapper::TYPE_DECK,
+        '~Watte~'             => PropertyMapper::TYPE_WADDING,
+        '~Wickeldraht~'       => PropertyMapper::TYPE_WIRE,
+        '~Coil~'              => PropertyMapper::TYPE_COIL,
+        '~Ladegerät~'         => PropertyMapper::TYPE_CHARGER,
+        '~DigiCharger~'       => PropertyMapper::TYPE_CHARGER,
+        '~[Ss]tecker~'        => PropertyMapper::TYPE_CHARGER,
+        '~[Kk]abel~'          => PropertyMapper::TYPE_CABLE,
+        '~Werkzeug~'          => PropertyMapper::TYPE_TOOL,
+        '~[Pp]inzette~'       => PropertyMapper::TYPE_TOOL,
+        '~Heizplatte~'        => PropertyMapper::TYPE_HEATING_PLATE,
+        '~Drip Cap~'          => PropertyMapper::TYPE_DRIP_TIP_CAP,
+        '~Mundstück~'         => PropertyMapper::TYPE_DRIP_TIP,
+        '~Drip Tip~'          => PropertyMapper::TYPE_DRIP_TIP,
+        '~Glastank~'          => PropertyMapper::TYPE_TANK,
+        '~Top-Kappe~'         => PropertyMapper::TYPE_TANK,
+        '~Hollowed Out Tank~' => PropertyMapper::TYPE_TANK_PROTECTION,
+        '~Tankschutz~'        => PropertyMapper::TYPE_TANK_PROTECTION,
+        '~Umbausatz~'         => PropertyMapper::TYPE_CONVERSION_KIT,
+        '~Erweiterungssatz~'  => PropertyMapper::TYPE_EXTENSION_KIT,
+        '~[Dd]ichtung~'       => PropertyMapper::TYPE_SEAL,
+        '~O-Ring~'            => PropertyMapper::TYPE_SEAL,
+        '~Vitrine~'           => PropertyMapper::TYPE_STORAGE,
+        '~Abdeckung~'         => PropertyMapper::TYPE_ACCESSORY,
+        '~Vape Band~'         => PropertyMapper::TYPE_ACCESSORY,
+        '~Magnet.*Adapter~'   => PropertyMapper::TYPE_MAGNET_ADAPTOR,
+        '~[Mm]agnet~'         => PropertyMapper::TYPE_MAGNET,
+        '~Batteriehülse~'     => PropertyMapper::TYPE_BATTERY_SLEEVE,
+        '~Batteriekappe~'     => PropertyMapper::TYPE_BATTERY_CAP,
     ],
 
     'innocigs_brands'        => ['SC', 'Steamax', 'InnoCigs', 'Innocigs'],
@@ -676,4 +822,20 @@ return [
         ]
     ],
     'flavors'       => include __DIR__ . '/flavor.config.php',
+
+    'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
+    'mapped_article_properties' => [
+        'icNumber',
+        'number',
+        'name',
+        'commonName',
+        'type',
+        'category',
+        'supplier',
+        'brand',
+        'piecesPerPack',
+        'dosage',
+        'base'
+    ],
+
 ];

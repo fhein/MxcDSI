@@ -95,7 +95,7 @@ class ArticleMapper
     }
 
     /**
-     * Main entry point if the $active state of an InnoCigs article changes.
+     * Main entry point if the $active state of a list of InnoCigs article changes.
      * If $active === true, creates/updates the Shopware article associated to
      * the given InnoCigs article.
      * If $active === false the Shopware article gets disabled without getting
@@ -146,8 +146,8 @@ class ArticleMapper
     }
 
     /**
-     * Set active or accepted state of all provided articles to the given value.
-     * Then update all articles.
+     * Entry point for multiple updates of the $active or $accepted setting
+     * of InnoCigs articles.
      *
      * @param array $icArticles
      * @param string $field
@@ -167,7 +167,7 @@ class ArticleMapper
     }
 
     /**
-     * Main entry point if the $active state of an InnoCigs article changes.
+     * Main entry point if the $active state of a single InnoCigs article changes.
      * If $active === true, creates/updates the Shopware article associated to
      * the given InnoCigs article.
      * If $active === false the Shopware article gets disabled without getting
@@ -180,40 +180,6 @@ class ArticleMapper
     {
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->updateShopwareArticles([$icArticle]);
-//        $this->createdArticles = [];
-//        $activeArticles = [];
-//
-//        if ($this->setShopwareArticle($icArticle)) {
-//            $activeArticles[$icArticle->getIcNumber()] = $icArticle;
-//
-//            // Recursively build a list of all articles associated to this article
-//            // which need to get created or activated
-//            $this->associatedArticles = [];
-//            $this->prepareAssociatedArticles($icArticle);
-//
-//            foreach ($this->associatedArticles as $article) {
-//                if ($this->setShopwareArticle($article)) {
-//                    $activeArticles[$article->getIcNumber()] = $article;
-//                }
-//                $this->setShopwareArticleActive($article);
-//            }
-//
-//            foreach ($activeArticles as $icArticle) {
-//                $this->setRelatedArticles($icArticle);
-//                $this->setSimilarArticles($icArticle);
-//            }
-//        }
-//
-//        $this->setShopwareArticleActive($icArticle);
-//
-//        // Update all articles with similar or related articles referencing articles
-//        // that we just created.
-//        if (! empty($this->createdArticles)) {
-//            $this->updateArticleLinks($this->createdArticles);
-//        }
-//        /** @noinspection PhpUnhandledExceptionInspection */
-//        $this->modelManager->flush();
-
         return $icArticle->isActive();
     }
 

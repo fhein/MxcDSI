@@ -23,10 +23,10 @@ class PropertyDerivator
     protected $config;
     protected $articleGroups;
 
-    const TYPE_E_CIGARETTE      = 0;
-    const TYPE_BOX_MOD          = 1;
-    const TYPE_E_PIPE           = 2;
-    const TYPE_CLEAROMIZER      = 3;
+    const TYPE_UNKNOWN          = 0;
+    const TYPE_E_CIGARETTE      = 1;
+    const TYPE_BOX_MOD          = 2;
+    const TYPE_E_PIPE           = 3;
     const TYPE_LIQUID           = 4;
     const TYPE_AROMA            = 5;
     const TYPE_SHAKE_VAPE       = 6;
@@ -53,10 +53,25 @@ class PropertyDerivator
     const TYPE_COIL             = 27;
     const TYPE_RDA_BASE         = 28;
     const TYPE_MAGNET           = 29;
-    const TYPE_MAGNET_ADAPTER   = 30;
+    const TYPE_MAGNET_ADAPTOR   = 30;
     const TYPE_ACCESSORY        = 31;
     const TYPE_BATTERY_CAP      = 32;
-    const TYPE_UNKNOWN          = 33;
+    const TYPE_EXTENSION_KIT    = 33;
+    const TYPE_CONVERSION_KIT   = 34;
+    const TYPE_CLEAROMIZER      = 35;
+    const TYPE_CLEAROMIZER_RTA  = 36;
+    const TYPE_CLEAROMIZER_RDTA = 37;
+    const TYPE_CLEAROMIZER_RDSA = 38;
+    const TYPE_E_HOOKAH         = 39;
+    const TYPE_SQUONKER_BOX     = 40;
+    const TYPE_EMPTY_BOTTLE     = 41;
+    const TYPE_EASY3_CAP        = 42;
+    const TYPE_DECK             = 43;
+    const TYPE_HEATING_PLATE    = 44;
+    const TYPE_DRIP_TIP_CAP     = 45;
+    const TYPE_TANK_PROTECTION  = 46;
+    const TYPE_STORAGE          = 47;
+
 
     public function __construct(ModelManager $modelManager, Config $config, LoggerInterface $log)
     {
@@ -94,18 +109,27 @@ class PropertyDerivator
 
     public function deriveProperties(Article $article)
     {
-        $type = $this->config['types'][$this->deriveType($article)];
-        $article->setType($type);
+//        $type = $this->config['types'][$this->deriveType($article)];
+//        $article->setType($type);
+        $type = $article->getType();
 
         $commonName = $this->deriveCommonName($article);
         $article->setCommonName($commonName);
 
-        if ($commonName === 'K2 & K3') {
-            // special case where one article name indicates spare part for two articles
-            $this->articleGroups[$type]['K2'][] = $article;
-            $this->articleGroups[$type]['K3'][] = $article;
-        } else {
-            $this->articleGroups[$type][$commonName][] = $article;
+        switch ($commonName) {
+            case 'K2 & K3':
+                {
+                    // special case where one article name indicates spare part for two articles
+                    $this->articleGroups[$type]['K2'][] = $article;
+                    $this->articleGroups[$type]['K3'][] = $article;
+                }
+                break;
+            /** @noinspection PhpMissingBreakStatementInspection */
+            case 'Aromamizer Supreme RDTA V2':
+                $this->articleGroups[$type][$commonName . '.1'][] = $article;
+                // intentional fall through
+            default:
+                $this->articleGroups[$type][$commonName][] = $article;
         }
 
         $article->setPiecesPerPack($this->derivePiecesPerPack($article));

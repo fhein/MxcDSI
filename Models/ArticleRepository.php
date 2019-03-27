@@ -48,6 +48,8 @@ class ArticleRepository extends BaseEntityRepository
         'getSuppliersAndBrands'              => 'SELECT a.icNumber, a.name, a.brand, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
                                                     . 'INDEX BY a.icNumber WHERE a.manufacturer IN (:manufacturers)',
         'removeOrphaned'                     => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.variants is empty',
+
+        'getProperties'                      => 'SELECT :properties FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
     ];
 
     public function getAllIndexed()
@@ -146,6 +148,20 @@ class ArticleRepository extends BaseEntityRepository
     public function getAllSuppliersAndBrands()
     {
         return $this->getQuery(__FUNCTION__)->getResult(Query::HYDRATE_ARRAY);
+    }
+
+    public function getProperties(array $properties)
+    {
+        $parameters = [];
+        foreach ($properties as $property) {
+            $parameters[] = 'a.' . $property;
+        }
+        $parameters = implode(', ', $parameters);
+        $dql = $this->dql[__FUNCTION__];
+        $dql = str_replace(':properties', $parameters, $dql);
+        return $this->getEntityManager()
+            ->createQuery($dql)
+            ->getResult();
     }
 
     /**

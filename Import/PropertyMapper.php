@@ -11,6 +11,7 @@ use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
 use RuntimeException;
 use Shopware\Components\Model\ModelManager;
+use Zend\Config\Factory;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -57,11 +58,11 @@ class PropertyMapper
         $this->flavorist = $flavorist;
         $this->propertyDerivator = $propertyDerivator;
         $this->regexChecker = new RegexChecker();
-
-        if ($this->config['settings']['checkRegularExpressions'] === true) {
-            if (!$this->checkRegularExpressions()) {
-                throw new RuntimeException('Regular expression failure.');
-            }
+        $articleConfigFile = $this->config['articleConfigFile'];
+        $this->config['articles'] = [];
+        if (file_exists($articleConfigFile)) {
+            /** @noinspection PhpIncludeInspection */
+            $this->config['articles'] = include $articleConfigFile;
         }
     }
 
@@ -74,6 +75,11 @@ class PropertyMapper
 
     public function mapProperties(array $articles)
     {
+        if ($this->config['settings']['checkRegularExpressions'] === true) {
+            if (!$this->checkRegularExpressions()) {
+                throw new RuntimeException('Regular expression failure.');
+            }
+        }
         $this->init();
         $models = $this->getModels();
         if (! $models || ! $articles) {
@@ -96,9 +102,9 @@ class PropertyMapper
                 $this->mapModelToVariant($model, $variant);
             }
         }
-        $this->report();
         $this->propertyDerivator->derive($articles);
         $this->propertyDerivator->export();
+        ($this->reporter)($this->report, $this->config);
     }
 
     /**
@@ -115,6 +121,7 @@ class PropertyMapper
         // do not change ordering of the next lines
         $this->mapManufacturer($article, $model->getManufacturer());    // sets supplier, brand and manufacturer
         $article->setName($this->mapArticleName($model, $article));     // uses brand, sets name
+        $this->deriveArticleType($article);                             // uses name, sets type,
         $this->mapCategory($model, $article);                           // uses supplier, brand and name, sets category
         $this->mapFlavor($article);
     }
@@ -233,6 +240,20 @@ class PropertyMapper
         return $name;
     }
 
+    protected function deriveArticleType(Article $article)
+    {
+        $name = $article->getName();
+        $types = $this->config['name_type_mapping'];
+        foreach ($types as $pattern => $type) {
+            if (preg_match($pattern, $name) === 1) {
+                $article->setType($this->config['types'][$type]);
+                return;
+            }
+        }
+//        $article->setType($this->config['types'][self::TYPE_UNKNOWN]);
+        $article->setType('');
+    }
+
     protected function mapFlavor(Article $article) {
         $flavor = $this->config['flavors'][$article->getIcNumber()]['flavor'];
         if (is_array($flavor) && ! empty($flavor)) {
@@ -254,7 +275,8 @@ class PropertyMapper
             if (strpos($name, $option) !== false) {
                 // article name contains option name
                 $before = $name;
-                $name = str_replace($option, '', $name);
+                $replacement = $this->config['option_replacements'][$option] ?? '';
+                $name = str_replace($option, $replacement, $name);
                 $this->report['option'][$number] = [
                     'before' => $before,
                     'after' => $name,
@@ -421,10 +443,16 @@ class PropertyMapper
                 $errors = array_merge($errors, $this->regexChecker->getErrors());
             }
         }
+
+        if (false === $this->regexChecker->validate(array_keys($this->config['name_type_mapping']))) {
+            $errors = array_merge($errors, $this->regexChecker->getErrors());
+        }
+
         $result = empty($errors);
         if (false === $result) {
-            $this->log->debug('Errors in regular expressions.');
-            $this->log->debug(var_export($errors, true));
+            foreach ($errors as $error) {
+                $this->log->err('Invalid regular expression: \'' . $error . '\'');
+            }
         }
         return $result;
     }
@@ -452,7 +480,68 @@ class PropertyMapper
         return $this->models;
     }
 
-    public function report() {
-        ($this->reporter)($this->report, $this->config);
+    public function getPropertyMappings()
+    {
+        $repository = $this->modelManager->getRepository(Article::class);
+        return $repository->getProperties($this->config['mapped_article_properties']);
     }
+
+    public function savePropertyMappings()
+    {
+        $propertyMappings = $this->getPropertyMappings();
+        if (! empty($propertyMappings)) {
+            /** @noinspection PhpUndefinedFieldInspection */
+            Factory::toFile($this->config['articleConfigFile'], $propertyMappings);
+        }
+    }
+
+    const TYPE_UNKNOWN          = 0;
+    const TYPE_E_CIGARETTE      = 1;
+    const TYPE_BOX_MOD          = 2;
+    const TYPE_E_PIPE           = 3;
+    const TYPE_LIQUID           = 4;
+    const TYPE_AROMA            = 5;
+    const TYPE_SHAKE_VAPE       = 6;
+    const TYPE_HEAD             = 7;
+    const TYPE_TANK             = 8;
+    const TYPE_SEAL             = 9;
+    const TYPE_DRIP_TIP         = 10;
+    const TYPE_POD              = 11;
+    const TYPE_CARTRIDGE        = 12;
+    const TYPE_CELL             = 13;
+    const TYPE_CELL_BOX         = 14;
+    const TYPE_BASE             = 15;
+    const TYPE_CHARGER          = 16;
+    const TYPE_BAG              = 17;
+    const TYPE_TOOL             = 18;
+    const TYPE_WADDING          = 19; // Watte
+    const TYPE_WIRE             = 20;
+    const TYPE_BOTTLE           = 21;
+    const TYPE_SQUONKER_BOTTLE  = 22;
+    const TYPE_VAPORIZER        = 23;
+    const TYPE_SHOT             = 24;
+    const TYPE_CABLE            = 25;
+    const TYPE_BOX_MOD_CELL     = 26;
+    const TYPE_COIL             = 27;
+    const TYPE_RDA_BASE         = 28;
+    const TYPE_MAGNET           = 29;
+    const TYPE_MAGNET_ADAPTOR   = 30;
+    const TYPE_ACCESSORY        = 31;
+    const TYPE_BATTERY_CAP      = 32;
+    const TYPE_EXTENSION_KIT    = 33;
+    const TYPE_CONVERSION_KIT   = 34;
+    const TYPE_CLEAROMIZER      = 35;
+    const TYPE_CLEAROMIZER_RTA  = 36;
+    const TYPE_CLEAROMIZER_RDTA = 37;
+    const TYPE_CLEAROMIZER_RDSA = 38;
+    const TYPE_E_HOOKAH         = 39;
+    const TYPE_SQUONKER_BOX     = 40;
+    const TYPE_EMPTY_BOTTLE     = 41;
+    const TYPE_EASY3_CAP        = 42;
+    const TYPE_DECK             = 43;
+    const TYPE_HEATING_PLATE    = 44;
+    const TYPE_DRIP_TIP_CAP     = 45;
+    const TYPE_TANK_PROTECTION  = 46;
+    const TYPE_STORAGE          = 47;
+    const TYPE_BATTERY_SLEEVE   = 48;
 }

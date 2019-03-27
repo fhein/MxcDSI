@@ -135,6 +135,7 @@ class ImportMapper
         $article->setAccepted(true);
         $article->setManual($model->getManual());
         $article->setDescription($model->getDescription());
+        $article->setManufacturer($model->getManufacturer());
 
         return $article;
     }
@@ -351,7 +352,6 @@ class ImportMapper
         }
 
         $this->articleMapper->updateShopwareArticles($this->updates);
-        $this->propertyMapper->report();
 
         $flavorist = new Flavorist($this->modelManager, $this->log);
         $flavorist->updateCategories();

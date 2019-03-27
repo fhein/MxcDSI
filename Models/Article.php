@@ -25,6 +25,8 @@ class Article extends ModelEntity  {
     private $icNumber;
 
     /**
+     * PropertyMapper mapped
+     *
      * @var string $number
      * @ORM\Column(type="string", nullable=true)
      */
@@ -49,12 +51,16 @@ class Article extends ModelEntity  {
     private $similarArticles;
 
     /**
+     * PropertyMapper mapped
+     *
      * @var string $name
      * @ORM\Column(type="string", nullable=true)
      */
     private $name;
 
     /**
+     * PropertyMapper mapped
+     *
      * @var string $commonName
      *
      * @ORM\Column(name="common_name", type="string", nullable=true)
@@ -62,6 +68,8 @@ class Article extends ModelEntity  {
     private $commonName;
 
     /**
+     * PropertyMapper mapped
+     *
      * @var string $type
      *
      * @ORM\Column(type="string", nullable=true)
@@ -69,6 +77,8 @@ class Article extends ModelEntity  {
     private $type;
 
     /**
+     * PropertyMapper mapped
+     *
      * This property reflects the pieces per pack information extracted
      * from the article name (example: (5 Stück pro Packung)).
      *
@@ -113,12 +123,16 @@ class Article extends ModelEntity  {
     private $validVariants;
 
     /**
+     * PropertyMapper mapped
+     *
      * @var string $supplier
      * @ORM\Column(type="string", nullable=true)
      */
     private $supplier;
 
     /**
+     * PropertyMapper mapped
+     *
      * @var string $brand
      *
      * @ORM\Column(type="string", nullable=true)
@@ -136,7 +150,7 @@ class Article extends ModelEntity  {
     private $article;
 
     /**
-     * Aroma dosage
+     * Aroma dosage, PropertyMapper mapped
      *
      * @var string $dosage
      *
@@ -145,7 +159,7 @@ class Article extends ModelEntity  {
     private $dosage;
 
     /**
-     * VG/PG
+     * VG/PG, PropertyMapper mapped
      *
      * @var string $base
      *

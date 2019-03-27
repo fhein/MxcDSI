@@ -1,61 +1,34 @@
-<?php /** @noinspection PhpUndefinedFieldInspection */
+<?php /** @noinspection PhpMissingParentConstructorInspection */
 
 namespace MxcDropshipInnocigs\Listener;
 
 
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Article;
-use Shopware\Components\Model\ModelManager;
-use Zend\Config\Config;
-use Zend\Config\Factory;
+use MxcDropshipInnocigs\Import\PropertyMapper;
 use Zend\EventManager\EventInterface;
 
 class ArticleAttributeFilePersister extends ActionListener
 {
-    /**
-     * @var ModelManager $modelManager
-     */
-    protected $modelManager;
+    /** @var PropertyMapper $propertyMapper */
+    protected $propertyMapper;
 
     /**
      * ArticleAttributeFilePersister constructor.
-     * @param ModelManager $modelManager
-     * @param Config $config
+     * @param PropertyMapper $propertyMapper
      * @param LoggerInterface $log
      */
-    public function __construct(ModelManager $modelManager, Config $config, LoggerInterface $log)
+    public function __construct(PropertyMapper $propertyMapper, LoggerInterface $log)
     {
-        parent::__construct($config, $log);
-        $this->modelManager = $modelManager;
+        //parent::__construct([], $log);
+        $this->log = $log;
+        $this->propertyMapper = $propertyMapper;
     }
 
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
         $this->log->enter();
-        $repository = $this->modelManager->getRepository(Article::class);
-
-        // update $article.config.php.dist
-        try {
-            $config = $repository->getDist();
-        } catch (\Exception $e) {
-            // This will happen if someone removed the database tables manually meanwhile
-            $this->log->leave();
-            return;
-        }
-        if (! empty($config)) {
-            $fn = $this->config->articleConfigFile . '.php';
-            Factory::toFile($fn, $config);
-            /** @noinspection PhpUndefinedFieldInspection */
-            rename($fn, $this->config->articleConfigFile . '.dist');
-        }
-
-        // update $article.config.php
-        $config = $repository->getAllSuppliersAndBrands();
-        if (! empty($config)) {
-            /** @noinspection PhpUndefinedFieldInspection */
-            Factory::toFile($this->config->articleConfigFile, $config);
-        }
+        $this->propertyMapper->savePropertyMappings();
         $this->log->leave();
     }
 }

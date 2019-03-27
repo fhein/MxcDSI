@@ -101,7 +101,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         try {
             $propertyMapper = $this->getServices()->get(PropertyMapper::class);
             if (! $propertyMapper->checkRegularExpressions()) {
-                $this->view->assign(['success' => false, 'message' => 'Found errors in regular expressions. See log for details.']);
+                $this->view->assign(['success' => false, 'message' => 'Errors found in regular expressions. See log for details.']);
             } else {
                 $this->view->assign(['success' => true, 'message' => 'No errors found in regular expressions.']);
             }
@@ -136,10 +136,11 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->enter();
         try {
             /** @var ImportMapper $client */
-            $mapper = $this->services->get(PropertyMapper::class);
+            $propertyMapper = $this->services->get(PropertyMapper::class);
             $articles = $this->getModelManager()->getRepository(Article::class)->getAllIndexed();
-            $mapper->mapProperties($articles);
+            $propertyMapper->mapProperties($articles);
             $this->getModelManager()->flush();
+            $propertyMapper->savePropertyMappings();
             $this->view->assign([ 'success' => true, 'message' => 'Article properties were successfully remapped.']);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);

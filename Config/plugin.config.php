@@ -30,7 +30,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRe
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 
 return [
-    'plugin'         => [
+    'plugin'   => [
 //        FilterTest::class => [
 //            'options' => [
 //                'activate' => [],
@@ -39,9 +39,10 @@ return [
 //        ],
         ArticleAttributeFilePersister::class => [
             'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
+            'testConfigFile'    => __DIR__ . '/../Config/article.test.config.php'
         ],
     ],
-    'doctrine'       => [
+    'doctrine' => [
         'models'     => [
             Article::class,
             Variant::class,
@@ -53,27 +54,27 @@ return [
         'attributes' => [
             's_articles_attributes' => [
                 'mxc_dsi_supplier'       => [
-                    'type'     => 'string',
-//                    'settings' => [
-//                        'label'            => '',
-//                        'supportText'      => '',
-//                        'helpText'         => '',
-//                        'translatable'     => false,
-//                        'displayInBackend' => false,
-//                        'position'         => 10000,
-//                        'custom'           => false
-//                    ]
+                    'type' => 'string',
+                    //                    'settings' => [
+                    //                        'label'            => '',
+                    //                        'supportText'      => '',
+                    //                        'helpText'         => '',
+                    //                        'translatable'     => false,
+                    //                        'displayInBackend' => false,
+                    //                        'position'         => 10000,
+                    //                        'custom'           => false
+                    //                    ]
                 ],
                 'mxc_dsi_brand'          => [
-                    'type'     => 'string',
-                ],
-                'mxc_dsi_flavor'          => [
-                    'type'     => 'string',
-                ],
-                'mxc_dsi_master' => [
                     'type' => 'string',
                 ],
-                'mxc_dsi_type' => [
+                'mxc_dsi_flavor'         => [
+                    'type' => 'string',
+                ],
+                'mxc_dsi_master'         => [
+                    'type' => 'string',
+                ],
+                'mxc_dsi_type'           => [
                     'type' => 'string',
                 ],
                 'dc_ic_ordernumber'      => [
@@ -97,7 +98,7 @@ return [
             ],
         ],
     ],
-    'services'       => [
+    'services' => [
         'magicals' => [
             ApiClient::class,
             ArticleAttributeFilePersister::class,
