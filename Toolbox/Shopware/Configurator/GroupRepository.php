@@ -147,7 +147,7 @@ class GroupRepository
         foreach ($groups as $group) {
             $options = $group->getOptions();
             $array = [];
-            /** @var \Shopware\Models\Article\Configurator\Option $option */
+            /** @var Option $option */
             foreach ($options as $option) {
                 $array[$option->getName()] = $option;
             }

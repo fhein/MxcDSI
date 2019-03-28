@@ -4,11 +4,13 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\OptimisticLockException;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
+use RuntimeException;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Detail;
@@ -102,7 +104,7 @@ class ArticleMapper
      * updated.
      *
      * @param array $icArticles
-     * @throws \Doctrine\ORM\OptimisticLockException
+     * @throws OptimisticLockException
      */
     public function updateShopwareArticles(array $icArticles)
     {
@@ -152,7 +154,7 @@ class ArticleMapper
      * @param array $icArticles
      * @param string $field
      * @param bool $value
-     * @throws \Doctrine\ORM\OptimisticLockException
+     * @throws OptimisticLockException
      */
     public function updateArticleState(array $icArticles, string $field, bool $value)
     {
@@ -594,7 +596,7 @@ class ArticleMapper
         $child->setParent($parent);
         $child->setChanged();
         if ($parent->getArticles()->count() > 0) {
-            /** @var \Shopware\Models\Article\Article $article */
+            /** @var ShopwareArticle $article */
             foreach ($parent->getArticles() as $article) {
                 $article->removeCategory($parent);
                 $article->addCategory($child);
@@ -792,7 +794,7 @@ class ArticleMapper
     {
         $customerGroup = $this->customerGroups[$key];
         if ($customerGroup === null) {
-            throw new \RuntimeException(__FUNCTION__ . ': Invalid customer group key ' . $key . '.');
+            throw new RuntimeException(__FUNCTION__ . ': Invalid customer group key ' . $key . '.');
         }
         $price = new Price();
         $this->modelManager->persist($price);

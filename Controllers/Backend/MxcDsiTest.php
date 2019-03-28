@@ -3,6 +3,7 @@
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Models\Group;
+use Shopware\Components\Model\ModelManager;
 
 class Shopware_Controllers_Backend_MxcDsiTest extends BackendApplicationController
 {
@@ -12,7 +13,7 @@ class Shopware_Controllers_Backend_MxcDsiTest extends BackendApplicationControll
     public function indexAction() {
         $this->log->enter();
         /**
-         * @var \Shopware\Components\Model\ModelManager $modelManager
+         * @var ModelManager $modelManager
          */
         try {
             $this->services->get(ImportClient::class)->import();

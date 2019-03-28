@@ -64,14 +64,14 @@ class Variant extends ModelEntity
     private $retailPrice;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="Option", inversedBy="variants", cascade="persist")
      * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_options")
      */
     private $options;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="Image", inversedBy="variants", cascade="persist")
      * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_images")
      */

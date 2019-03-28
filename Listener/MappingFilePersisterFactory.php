@@ -3,14 +3,17 @@
 namespace MxcDropshipInnocigs\Listener;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Import\PropertyMapper;
+use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleAttributeFilePersisterFactory implements FactoryInterface
+class MappingFilePersisterFactory implements FactoryInterface
 {
+    use ClassConfigTrait;
+
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null) {
-        $propertyMapper = $container->get(PropertyMapper::class);
+        $config = $this->getClassConfig($container, $requestedName);
+        $modelManager = $container->get('modelManager');
         $log = $container->get('logger');
-        return new ArticleAttributeFilePersister($propertyMapper, $log);
+        return new MappingFilePersister($modelManager, $config, $log);
     }
 }

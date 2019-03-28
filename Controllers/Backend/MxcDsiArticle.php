@@ -140,7 +140,6 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $articles = $this->getModelManager()->getRepository(Article::class)->getAllIndexed();
             $propertyMapper->mapProperties($articles);
             $this->getModelManager()->flush();
-            $propertyMapper->savePropertyMappings();
             $this->view->assign([ 'success' => true, 'message' => 'Article properties were successfully remapped.']);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);

@@ -5,9 +5,11 @@ namespace MxcDropshipInnocigs\Import;
 use DateTime;
 use DOMDocument;
 use DomElement;
+use Exception;
 use MxcDropshipInnocigs\Exception\ApiException;
 use Zend\Http\Client;
 use Zend\Http\Exception\RuntimeException as ZendClientException;
+use Zend\Http\Response;
 use Zend\Log\LoggerInterface;
 
 class ApiClient
@@ -71,9 +73,9 @@ class ApiClient
     }
 
     /**
-     * @param \DateTime $date
+     * @param DateTime $date
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function getTrackingData($date = null)
     {
@@ -98,7 +100,7 @@ class ApiClient
 
     protected function logXML($xml)
     {
-        $dom = new \DOMDocument("1.0", "utf-8");
+        $dom = new DOMDocument("1.0", "utf-8");
         $dom->loadXML($xml);
         $dom->formatOutput = true;
         $pretty = $dom->saveXML();
@@ -129,7 +131,7 @@ class ApiClient
 
     /**
      * @param string $cmd
-     * @return \Zend\Http\Response
+     * @return Response
      */
     protected function send($cmd)
     {
@@ -148,7 +150,7 @@ class ApiClient
     }
 
     /**
-     * @return \Zend\Http\Client
+     * @return Client
      */
     protected function getClient()
     {

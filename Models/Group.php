@@ -32,7 +32,7 @@ class Group extends ModelEntity  {
     private $accepted;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var ArrayCollection
      * @ORM\OneToMany(
      *      targetEntity="Option",
      *      mappedBy="icGroup",
@@ -80,7 +80,7 @@ class Group extends ModelEntity  {
     }
 
     /**
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Collection
      */
     public function getOptions(): Collection
     {

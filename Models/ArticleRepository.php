@@ -2,8 +2,6 @@
 
 namespace MxcDropshipInnocigs\Models;
 
-use Doctrine\ORM\Query;
-
 class ArticleRepository extends BaseEntityRepository
 {
     protected $dql = [
@@ -40,16 +38,10 @@ class ArticleRepository extends BaseEntityRepository
                                                     . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
                                                     . 'JOIN MxcDropshipInnocigs\Models\Article a WHERE v.article = a.id '
                                                     . 'WHERE a.number = :number',
-        // 'getShopwareArticle'                 => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number IN (:ordernumbers)',
-        'getDist'                            => 'SELECT a.icNumber, a.name, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
-                                                    . 'INDEX BY a.icNumber WHERE a.manufacturer IN (:manufacturers)',
-        'getAllSuppliersAndBrands'           => 'SELECT a.icNumber, a.name, a.brand, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
-                                                    . 'INDEX BY a.icNumber',
-        'getSuppliersAndBrands'              => 'SELECT a.icNumber, a.name, a.brand, a.supplier, a.category FROM MxcDropshipInnocigs\Models\Article a '
-                                                    . 'INDEX BY a.icNumber WHERE a.manufacturer IN (:manufacturers)',
         'removeOrphaned'                     => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.variants is empty',
 
         'getProperties'                      => 'SELECT :properties FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
+        'getMapping'                         => 'SELECT am FROM MxcDropshipInnocigs\Models\ArticleMapping am WHERE am.icNumber = :icNumber',
     ];
 
     public function getAllIndexed()
@@ -127,29 +119,6 @@ class ArticleRepository extends BaseEntityRepository
         }
     }
 
-    public function getDist()
-    {
-        $result = $this->getQuery(__FUNCTION__)
-            ->setParameter('manufacturers', ['SC', 'InnoCigs', 'Steamax'])
-            ->getResult(Query::HYDRATE_ARRAY);
-        return array_merge($result, $this->getSuppliersAndBrands('Akkus'));
-    }
-
-    public function getSuppliersAndBrands($manufacturers = null)
-    {
-        if (null === $manufacturers) {
-            return $this->getAllSuppliersAndBrands();
-        }
-        return $this->getQuery(__FUNCTION__)
-            ->setParameter('manufacturers', is_string($manufacturers) ? [$manufacturers] : $manufacturers)
-            ->getResult(Query::HYDRATE_ARRAY);
-    }
-
-    public function getAllSuppliersAndBrands()
-    {
-        return $this->getQuery(__FUNCTION__)->getResult(Query::HYDRATE_ARRAY);
-    }
-
     public function getProperties(array $properties)
     {
         $parameters = [];
@@ -162,6 +131,13 @@ class ArticleRepository extends BaseEntityRepository
         return $this->getEntityManager()
             ->createQuery($dql)
             ->getResult();
+    }
+
+    public function getMapping(Article $article)
+    {
+        return $this->getQuery(__FUNCTION__)
+                   ->setParameter('icNumber', $article->getIcNumber())
+                   ->getResult()[0];
     }
 
     /**

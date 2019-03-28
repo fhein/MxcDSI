@@ -9,26 +9,29 @@ return [
 
     'name_prepare'              => [
         'preg_replace' => [
-            '~\s+~'                                => ' ',
-            '~(- )+~'                              => '$1',
-            '~ ,~'                                 => ',',
-            '~, -~'                                => '-',
-            '~ - ?$~'                              => '',
-            '~10ml\/ml~'                           => '10ml',
-            '~0ml\/ml~'                            => '0mg/ml',
-            '~(\d+)m~'                             => '$1 m',
-            '~(0 mg)$~'                            => '$1/ml',
-            '~(\d) mAH~'                           => '$1 mAh',
-            '~(\d mg)[^\/]~'                       => '$1/ml',
-            '~Sherbert~'                           => 'Sherbet',
-            '~Americas~'                           => 'America\'s',
-            '~America´s~'                          => 'America\'s',
-            '~(Heads )+~'                          => '$1',
-            '~(Head )+~'                           => '$1',
-            '~(10er Packung)en~'                   => '$1',
-            '~((HW1)|(HW2)) (Heads)~'              => 'HW1/HW2 $4',
-            '~artikblau~'                          => 'arktikblau',
-            '~(K2 & K3.*) \(\d+ (St. pro Pack\))~' => '$1 (5 $2',
+            '~\s+~'                                   => ' ',
+            '~(- )+~'                                 => '$1',
+            '~ ,~'                                    => ',',
+            '~, -~'                                   => '-',
+            '~ - ?$~'                                 => '',
+            '~10ml\/ml~'                              => '10ml',
+            '~0ml\/ml~'                               => '0mg/ml',
+            '~(\d+)m~'                                => '$1 m',
+            '~(0 mg)$~'                               => '$1/ml',
+            '~(\d) mAH~'                              => '$1 mAh',
+            '~(\d mg)[^\/]~'                          => '$1/ml',
+            '~Sherbert~'                              => 'Sherbet',
+            '~Americas~'                              => 'America\'s',
+            '~America´s~'                             => 'America\'s',
+            '~(Heads )+~'                             => '$1',
+            '~(Head )+~'                              => '$1',
+            '~(10er Packung)en~'                      => '$1',
+            '~(Guillotine V2 Mundstück resin-grün)$~' => '$1 (5 Stück pro Packung)',
+            '~(Aromamizer Plus) Bubble (Glastank)~'   => '$1 $2',
+            '~(JVIC)\d~'                              => '$1',
+            '~((HW1)|(HW2)) (Heads)~'                 => 'HW1/HW2 $4',
+            '~artikblau~'                             => 'arktikblau',
+            '~(K2 & K3.*) \(\d+ (St. pro Pack\))~'    => '$1 (5 $2',
         ],
     ],
     'article_name_option_fixes' => [
@@ -42,6 +45,12 @@ return [
         '2,0 ml'                                     => '2 ml',
         '2 ml'                                       => '2,0 ml',
         '4 ml'                                       => '4ml',
+        '15ml'                                       => '15 ml',
+        '10ml'                                       => '10 ml',
+        '20ml'                                       => '20 ml',
+        '18ml'                                       => '18 ml',
+        '5ml'                                        => '5 ml',
+        '28ml'                                       => '28 ml',
         'Typ A'                                      => 'Typ-A',
         'Typ B'                                      => 'Typ-B',
         '3,0ml'                                      => '3 ml',
@@ -75,7 +84,7 @@ return [
         'ProC3 0,2 Ohm'                              => '0,2 Ohm',
         'ProC4 0,15 Ohm'                             => '0,15 Ohm',
         'Edelstahl (5er Pack)'                       => 'Edelstahl (5 St. pro Pack)',
-        'Kunststoff (10er Pack)'                     => 'KunstStoff (10 St. pro Pack),'
+        'Kunststoff (10er Pack)'                     => 'KunstStoff (10 St. pro Pack),',
     ],
 
     // By default occurances of an option name in the article name are removed.
@@ -195,6 +204,7 @@ return [
             '~(Solt) (\d+ ml) (.*) - (.*), (.*)~'                        => '$1 - $3 - $4, $2, $5',
             '~(Happy Liquid)(.*)~'                                       => '$1$2 - Liquid - 10 ml',
             '~(PlusSolt) (10 ml) (Nikotinsalz) (Shot)  - (\d+ mg/ml)~'   => '$1 $3-$4 - $2, $5',
+            '~(Crown 3 Parallel) ((SUS316)|(Kanthal)) (Head)~'           => '$1 $5',
             '~(.*) (Mignon)(.*) (- .*)~'                                 => '$1 $2 $3 - Akkuzelle $4',
             '~([^\-]) (\d.\d+) (mAh)~'                                   => '$1 - $2 $3',
             '~(Liquid)$~'                                                => '$1 - 10 ml',
@@ -414,13 +424,13 @@ return [
             '~(Colossal)~',
             '~(Lustro)~',
             '~(Nefarius RDTA)~',
-            '~(Voluna V2 RTA)~'
+            '~(Voluna V2 RTA)~',
         ],
         'CoilArt'     => [
-            '~(Mage RTA V2)~'
+            '~(Mage RTA V2)~',
         ],
         'HellVape'    => [
-            '~(Dead Rabbit RTA)~'
+            '~(Dead Rabbit RTA)~',
         ],
         'SC'          => [
             '~(iJust ((ECM)|(3))?)~',
@@ -527,7 +537,7 @@ return [
             '~(Motiv 2)~',
             '~(Reuleaux RX Gen3 Dual)~',
             '~(Sinuous(( P80)|( Ravage)|( SW)|( Solo))?)~',
-            '~(Reux)~'
+            '~(Reux)~',
 
         ],
         'Steam Crave' => [
@@ -550,7 +560,7 @@ return [
         'Vapanion'    => [
             '~(Cascade(( Baby SE)|( Baby)|( One Plus)|( One))?)~',
             '~(NRG( SE)?)~',
-            '~(Switcher( LE)?)~'
+            '~(Switcher( LE)?)~',
 
         ],
         'VapeOnly'    => [
@@ -567,10 +577,10 @@ return [
             '~(SKRR(-S Mini)?)~',
             '~(Tarot Baby)~',
             '~(Veco)~',
-            '~(Zero)~'
+            '~(Zero)~',
         ],
         'Renova'      => [
-            '~(Zero)~'
+            '~(Zero)~',
         ],
         'Wismec'      => [
             '~(Tobhino BF RDA)~',
@@ -589,7 +599,7 @@ return [
         ],
         'ZQ'          => [
             '~(Vi)~',
-        ]
+        ],
 
     ],
     'group_names'               => [
@@ -613,6 +623,11 @@ return [
         '30 GA*3+38 GA'              => '30 GA * 3 + 38 GA',
         '4,2ml'                      => '4,2 ml',
         '3,0ml'                      => '3,0 ml',
+        '15ml'                       => '15 ml',
+        '10ml'                       => '10 ml',
+        '18ml'                       => '18 ml',
+        '5ml'                        => '5 ml',
+        '28ml'                       => '28 ml',
         '50PG / 50VG'                => 'VG/PG: 50/50',
         '70VG / 30PG'                => 'VG/PG: 70/30',
         '80VG / 20PG'                => 'VG/PG: 80/20',
@@ -643,7 +658,7 @@ return [
     'manufacturers'             => [
         'Smok'               => [
             'supplier' => 'Smoktech',
-            'brand'    => 'Smok'
+            'brand'    => 'Smok',
         ],
         'Renova'             => [
             'supplier' => 'Vaporesso',
@@ -652,7 +667,7 @@ return [
         'Dexter`s Juice Lab' => [
             'brand'    => 'Dexter\'s Juice Lab',
             'supplier' => 'Dexter\'s Juice Lab',
-        ]
+        ],
     ],
     'categories'                => [
         'name' => [
@@ -685,60 +700,61 @@ return [
                 '~([Dd]ichtung)|(O-Ring)~'                                  => 'Zubehör > Dichtungen',
                 '~(Abdeckung)|(Vitrine)|(Vape Bands)~'                      => 'Zubehör > Accessoires',
                 '~[Mm]agnet~'                                               => 'Zubehör > sonstiges',
-            ]
+            ],
         ],
     ],
 
     'types' => [
-        PropertyMapper::TYPE_UNKNOWN          => 'UNKNOWN',
-        PropertyMapper::TYPE_E_CIGARETTE      => 'E_CIGARETTE',
-        PropertyMapper::TYPE_BOX_MOD          => 'BOX_MOD',
-        PropertyMapper::TYPE_E_PIPE           => 'E_PIPE',
-        PropertyMapper::TYPE_CLEAROMIZER      => 'CLEAROMIZER',
-        PropertyMapper::TYPE_CLEAROMIZER_RTA  => 'CLEAROMIZER_RTA',
-        PropertyMapper::TYPE_CLEAROMIZER_RDTA => 'CLEAROMIZER_RDTA',
-        PropertyMapper::TYPE_CLEAROMIZER_RDSA => 'CLEAROMIZER_RDSA',
-        PropertyMapper::TYPE_LIQUID           => 'LIQUID',
-        PropertyMapper::TYPE_AROMA            => 'AROMA',
-        PropertyMapper::TYPE_SHAKE_VAPE       => 'SHAKE_VAPE',
-        PropertyMapper::TYPE_HEAD             => 'HEAD',
-        PropertyMapper::TYPE_TANK             => 'TANK',
-        PropertyMapper::TYPE_SEAL             => 'SEAL',
-        PropertyMapper::TYPE_DRIP_TIP         => 'DRIP_TIP',
-        PropertyMapper::TYPE_POD              => 'POD',
-        PropertyMapper::TYPE_CARTRIDGE        => 'CARTRIDGE',
-        PropertyMapper::TYPE_CELL             => 'CELL',
-        PropertyMapper::TYPE_CELL_BOX         => 'CELL_BOX',
-        PropertyMapper::TYPE_BASE             => 'BASE',
-        PropertyMapper::TYPE_CHARGER          => 'CHARGER',
-        PropertyMapper::TYPE_BAG              => 'BAG',
-        PropertyMapper::TYPE_TOOL             => 'TOOL',
-        PropertyMapper::TYPE_WADDING          => 'WADDING', // Watte
-        PropertyMapper::TYPE_WIRE             => 'WIRE',
-        PropertyMapper::TYPE_BOTTLE           => 'BOTTLE',
-        PropertyMapper::TYPE_SQUONKER_BOTTLE  => 'SQUONKER_BOTTLE',
-        PropertyMapper::TYPE_VAPORIZER        => 'VAPORIZER',
-        PropertyMapper::TYPE_SHOT             => 'SHOT',
-        PropertyMapper::TYPE_CABLE            => 'CABLE',
-        PropertyMapper::TYPE_BOX_MOD_CELL     => 'BOX_MOD_CELL',
-        PropertyMapper::TYPE_COIL             => 'COIL',
-        PropertyMapper::TYPE_RDA_BASE         => 'RDA_BASE',
-        PropertyMapper::TYPE_MAGNET           => 'MAGNET',
-        PropertyMapper::TYPE_MAGNET_ADAPTOR   => 'MAGNET_ADAPTER',
-        PropertyMapper::TYPE_ACCESSORY        => 'ACCESSORY',
-        PropertyMapper::TYPE_BATTERY_CAP      => 'BATTERY_CAP',
-        PropertyMapper::TYPE_EXTENSION_KIT    => 'EXTENSION_KIT',
-        PropertyMapper::TYPE_CONVERSION_KIT   => 'CONVERSION_KIT',
-        PropertyMapper::TYPE_E_HOOKAH         => 'E_HOOKAH',
-        PropertyMapper::TYPE_SQUONKER_BOX     => 'SQUONKER_BOX',
-        PropertyMapper::TYPE_EMPTY_BOTTLE     => 'EMPTY_BOTTLE',
-        PropertyMapper::TYPE_EASY3_CAP        => 'EASY3_CAP',
-        PropertyMapper::TYPE_DECK             => 'DECK',
-        PropertyMapper::TYPE_HEATING_PLATE    => 'HEATING_PLATE',
-        PropertyMapper::TYPE_DRIP_TIP_CAP     => 'DRIP_TIP_CAP',
-        PropertyMapper::TYPE_TANK_PROTECTION  => 'TANK_PROTECTION',
-        PropertyMapper::TYPE_STORAGE          => 'STORAGE',
-        PropertyMapper::TYPE_BATTERY_SLEEVE   => 'BATTERY_SLEEVE',
+        PropertyMapper::TYPE_UNKNOWN            => 'UNKNOWN',
+        PropertyMapper::TYPE_E_CIGARETTE        => 'E_CIGARETTE',
+        PropertyMapper::TYPE_BOX_MOD            => 'BOX_MOD',
+        PropertyMapper::TYPE_E_PIPE             => 'E_PIPE',
+        PropertyMapper::TYPE_CLEAROMIZER        => 'CLEAROMIZER',
+        PropertyMapper::TYPE_CLEAROMIZER_RTA    => 'CLEAROMIZER_RTA',
+        PropertyMapper::TYPE_CLEAROMIZER_RDTA   => 'CLEAROMIZER_RDTA',
+        PropertyMapper::TYPE_CLEAROMIZER_RDSA   => 'CLEAROMIZER_RDSA',
+        PropertyMapper::TYPE_LIQUID             => 'LIQUID',
+        PropertyMapper::TYPE_AROMA              => 'AROMA',
+        PropertyMapper::TYPE_SHAKE_VAPE         => 'SHAKE_VAPE',
+        PropertyMapper::TYPE_HEAD               => 'HEAD',
+        PropertyMapper::TYPE_TANK               => 'TANK',
+        PropertyMapper::TYPE_SEAL               => 'SEAL',
+        PropertyMapper::TYPE_DRIP_TIP           => 'DRIP_TIP',
+        PropertyMapper::TYPE_POD                => 'POD',
+        PropertyMapper::TYPE_CARTRIDGE          => 'CARTRIDGE',
+        PropertyMapper::TYPE_CELL               => 'CELL',
+        PropertyMapper::TYPE_CELL_BOX           => 'CELL_BOX',
+        PropertyMapper::TYPE_BASE               => 'BASE',
+        PropertyMapper::TYPE_CHARGER            => 'CHARGER',
+        PropertyMapper::TYPE_BAG                => 'BAG',
+        PropertyMapper::TYPE_TOOL               => 'TOOL',
+        PropertyMapper::TYPE_WADDING            => 'WADDING', // Watte
+        PropertyMapper::TYPE_WIRE               => 'WIRE',
+        PropertyMapper::TYPE_BOTTLE             => 'BOTTLE',
+        PropertyMapper::TYPE_SQUONKER_BOTTLE    => 'SQUONKER_BOTTLE',
+        PropertyMapper::TYPE_VAPORIZER          => 'VAPORIZER',
+        PropertyMapper::TYPE_SHOT               => 'SHOT',
+        PropertyMapper::TYPE_CABLE              => 'CABLE',
+        PropertyMapper::TYPE_BOX_MOD_CELL       => 'BOX_MOD_CELL',
+        PropertyMapper::TYPE_COIL               => 'COIL',
+        PropertyMapper::TYPE_RDA_BASE           => 'RDA_BASE',
+        PropertyMapper::TYPE_MAGNET             => 'MAGNET',
+        PropertyMapper::TYPE_MAGNET_ADAPTOR     => 'MAGNET_ADAPTER',
+        PropertyMapper::TYPE_ACCESSORY          => 'ACCESSORY',
+        PropertyMapper::TYPE_BATTERY_CAP        => 'BATTERY_CAP',
+        PropertyMapper::TYPE_EXTENSION_KIT      => 'EXTENSION_KIT',
+        PropertyMapper::TYPE_CONVERSION_KIT     => 'CONVERSION_KIT',
+        PropertyMapper::TYPE_E_HOOKAH           => 'E_HOOKAH',
+        PropertyMapper::TYPE_SQUONKER_BOX       => 'SQUONKER_BOX',
+        PropertyMapper::TYPE_EMPTY_BOTTLE       => 'EMPTY_BOTTLE',
+        PropertyMapper::TYPE_EASY3_CAP          => 'EASY3_CAP',
+        PropertyMapper::TYPE_DECK               => 'DECK',
+        PropertyMapper::TYPE_HEATING_PLATE      => 'HEATING_PLATE',
+        PropertyMapper::TYPE_TOOL_HEATING_PLATE => 'TOOL_HEATING_PLATE',
+        PropertyMapper::TYPE_DRIP_TIP_CAP       => 'DRIP_TIP_CAP',
+        PropertyMapper::TYPE_TANK_PROTECTION    => 'TANK_PROTECTION',
+        PropertyMapper::TYPE_STORAGE            => 'STORAGE',
+        PropertyMapper::TYPE_BATTERY_SLEEVE     => 'BATTERY_SLEEVE',
     ],
 
     'name_type_mapping' => [
@@ -778,7 +794,8 @@ return [
         '~[Kk]abel~'          => PropertyMapper::TYPE_CABLE,
         '~Werkzeug~'          => PropertyMapper::TYPE_TOOL,
         '~[Pp]inzette~'       => PropertyMapper::TYPE_TOOL,
-        '~Heizplatte~'        => PropertyMapper::TYPE_HEATING_PLATE,
+        '~NCFilm~'            => PropertyMapper::TYPE_HEATING_PLATE,
+        '~Heizplatte~'        => PropertyMapper::TYPE_TOOL_HEATING_PLATE,
         '~Drip Cap~'          => PropertyMapper::TYPE_DRIP_TIP_CAP,
         '~Mundstück~'         => PropertyMapper::TYPE_DRIP_TIP,
         '~Drip Tip~'          => PropertyMapper::TYPE_DRIP_TIP,
@@ -802,7 +819,6 @@ return [
     'innocigs_brands'        => ['SC', 'Steamax', 'InnoCigs', 'Innocigs'],
     'innocigs_manufacturers' => ['SC', 'Steamax', 'InnoCigs', 'Innocigs', 'Akkus'],
 
-    'articles'      => 'This key is reserverd for PropertyMapperFactory',
     'log'           => [
         'brand',
         'supplier',
@@ -818,12 +834,12 @@ return [
                 'supplier' => 'InnoCigs',
                 'type'     => 'LIQUID',
             ],
-            'retail_price' => 2.50
-        ]
+            'retail_price' => 2.50,
+        ],
     ],
     'flavors'       => include __DIR__ . '/flavor.config.php',
 
-    'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
+    'articleConfigFile'         => __DIR__ . '/../Config/article.config.php',
     'mapped_article_properties' => [
         'icNumber',
         'number',
@@ -835,7 +851,7 @@ return [
         'brand',
         'piecesPerPack',
         'dosage',
-        'base'
+        'base',
     ],
 
 ];

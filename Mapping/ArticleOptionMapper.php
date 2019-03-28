@@ -10,6 +10,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
 use Shopware\Components\Model\ModelManager;
+use Shopware\Models\Article\Configurator\Set;
 
 class ArticleOptionMapper
 {
@@ -111,7 +112,7 @@ class ArticleOptionMapper
      * Create and setup a configurator set for a Shopware article
      *
      * @param Article $icArticle
-     * @return null|\Shopware\Models\Article\Configurator\Set
+     * @return null|Set
      */
     public function createConfiguratorSet(Article $icArticle)
     {

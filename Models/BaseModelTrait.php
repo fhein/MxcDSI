@@ -65,9 +65,9 @@ trait BaseModelTrait
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getUpdated(): \DateTime
+    public function getUpdated(): DateTime
     {
         return $this->updated;
     }
@@ -77,11 +77,11 @@ trait BaseModelTrait
         /** @noinspection PhpUnhandledExceptionInspection */
         $r = new ReflectionClass($this);
         $properties = $r->getProperties(ReflectionProperty::IS_PRIVATE);
-        $fields = [];
+        $names = [];
         foreach ($properties as $property) {
             $name = $property->getName();
-            $fields[] = $name;
+            $names[] = $name;
         }
-        return $fields;
+        return $names;
     }
 }

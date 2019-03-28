@@ -23,54 +23,54 @@ class PropertyDerivator
     protected $config;
     protected $articleGroups;
 
-    const TYPE_UNKNOWN          = 0;
-    const TYPE_E_CIGARETTE      = 1;
-    const TYPE_BOX_MOD          = 2;
-    const TYPE_E_PIPE           = 3;
-    const TYPE_LIQUID           = 4;
-    const TYPE_AROMA            = 5;
-    const TYPE_SHAKE_VAPE       = 6;
-    const TYPE_HEAD             = 7;
-    const TYPE_TANK             = 8;
-    const TYPE_SEAL             = 9;
-    const TYPE_DRIP_TIP         = 10;
-    const TYPE_POD              = 11;
-    const TYPE_CARTRIDGE        = 12;
-    const TYPE_CELL             = 13;
-    const TYPE_CELL_BOX         = 14;
-    const TYPE_BASE             = 15;
-    const TYPE_CHARGER          = 16;
-    const TYPE_BAG              = 17;
-    const TYPE_TOOL             = 18;
-    const TYPE_WADDING          = 19; // Watte
-    const TYPE_WIRE             = 20;
-    const TYPE_BOTTLE           = 21;
-    const TYPE_SQUONKER_BOTTLE  = 22;
-    const TYPE_VAPORIZER        = 23;
-    const TYPE_SHOT             = 24;
-    const TYPE_CABLE            = 25;
-    const TYPE_BOX_MOD_CELL     = 26;
-    const TYPE_COIL             = 27;
-    const TYPE_RDA_BASE         = 28;
-    const TYPE_MAGNET           = 29;
-    const TYPE_MAGNET_ADAPTOR   = 30;
-    const TYPE_ACCESSORY        = 31;
-    const TYPE_BATTERY_CAP      = 32;
-    const TYPE_EXTENSION_KIT    = 33;
-    const TYPE_CONVERSION_KIT   = 34;
-    const TYPE_CLEAROMIZER      = 35;
-    const TYPE_CLEAROMIZER_RTA  = 36;
-    const TYPE_CLEAROMIZER_RDTA = 37;
-    const TYPE_CLEAROMIZER_RDSA = 38;
-    const TYPE_E_HOOKAH         = 39;
-    const TYPE_SQUONKER_BOX     = 40;
-    const TYPE_EMPTY_BOTTLE     = 41;
-    const TYPE_EASY3_CAP        = 42;
-    const TYPE_DECK             = 43;
-    const TYPE_HEATING_PLATE    = 44;
-    const TYPE_DRIP_TIP_CAP     = 45;
-    const TYPE_TANK_PROTECTION  = 46;
-    const TYPE_STORAGE          = 47;
+//    const TYPE_UNKNOWN          = 0;
+//    const TYPE_E_CIGARETTE      = 1;
+//    const TYPE_BOX_MOD          = 2;
+//    const TYPE_E_PIPE           = 3;
+//    const TYPE_LIQUID           = 4;
+//    const TYPE_AROMA            = 5;
+//    const TYPE_SHAKE_VAPE       = 6;
+//    const TYPE_HEAD             = 7;
+//    const TYPE_TANK             = 8;
+//    const TYPE_SEAL             = 9;
+//    const TYPE_DRIP_TIP         = 10;
+//    const TYPE_POD              = 11;
+//    const TYPE_CARTRIDGE        = 12;
+//    const TYPE_CELL             = 13;
+//    const TYPE_CELL_BOX         = 14;
+//    const TYPE_BASE             = 15;
+//    const TYPE_CHARGER          = 16;
+//    const TYPE_BAG              = 17;
+//    const TYPE_TOOL             = 18;
+//    const TYPE_WADDING          = 19; // Watte
+//    const TYPE_WIRE             = 20;
+//    const TYPE_BOTTLE           = 21;
+//    const TYPE_SQUONKER_BOTTLE  = 22;
+//    const TYPE_VAPORIZER        = 23;
+//    const TYPE_SHOT             = 24;
+//    const TYPE_CABLE            = 25;
+//    const TYPE_BOX_MOD_CELL     = 26;
+//    const TYPE_COIL             = 27;
+//    const TYPE_RDA_BASE         = 28;
+//    const TYPE_MAGNET           = 29;
+//    const TYPE_MAGNET_ADAPTOR   = 30;
+//    const TYPE_ACCESSORY        = 31;
+//    const TYPE_BATTERY_CAP      = 32;
+//    const TYPE_EXTENSION_KIT    = 33;
+//    const TYPE_CONVERSION_KIT   = 34;
+//    const TYPE_CLEAROMIZER      = 35;
+//    const TYPE_CLEAROMIZER_RTA  = 36;
+//    const TYPE_CLEAROMIZER_RDTA = 37;
+//    const TYPE_CLEAROMIZER_RDSA = 38;
+//    const TYPE_E_HOOKAH         = 39;
+//    const TYPE_SQUONKER_BOX     = 40;
+//    const TYPE_EMPTY_BOTTLE     = 41;
+//    const TYPE_EASY3_CAP        = 42;
+//    const TYPE_DECK             = 43;
+//    const TYPE_HEATING_PLATE    = 44;
+//    const TYPE_DRIP_TIP_CAP     = 45;
+//    const TYPE_TANK_PROTECTION  = 46;
+//    const TYPE_STORAGE          = 47;
 
 
     public function __construct(ModelManager $modelManager, Config $config, LoggerInterface $log)
@@ -109,8 +109,6 @@ class PropertyDerivator
 
     public function deriveProperties(Article $article)
     {
-//        $type = $this->config['types'][$this->deriveType($article)];
-//        $article->setType($type);
         $type = $article->getType();
 
         $commonName = $this->deriveCommonName($article);
@@ -134,27 +132,6 @@ class PropertyDerivator
 
         $article->setPiecesPerPack($this->derivePiecesPerPack($article));
         $article->setDosage($this->deriveDosage($article));
-    }
-
-    protected function deriveType(Article $article)
-    {
-        $category = $article->getCategory();
-        foreach ($this->config['category_type_map'] as $cat => $type) {
-            if (strpos($category, $cat) === 0) {
-                return $type;
-            }
-        }
-        $type = $this->config['category_type_map'][$category];
-        if ($type !== null) {
-            return $type;
-        }
-        $name = $article->getName();
-        foreach ($this->config['name_type_map'] as $pattern => $type) {
-            if (preg_match($pattern, $name) === 1) {
-                return $type;
-            }
-        }
-        return self::TYPE_UNKNOWN;
     }
 
     protected function deriveCommonName(Article $article)

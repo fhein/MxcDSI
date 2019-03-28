@@ -112,7 +112,7 @@ class Article extends ModelEntity  {
     private $manual;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var ArrayCollection
      * @ORM\OneToMany(
      *      targetEntity="Variant",
      *      mappedBy="article",
@@ -217,6 +217,8 @@ class Article extends ModelEntity  {
      * @ORM\Column(type="string", nullable=true)
      */
     private $flavor;
+
+    private $mapping;
 
     /**
      * Article constructor.
@@ -688,4 +690,19 @@ class Article extends ModelEntity  {
         return $this->valid;
     }
 
+    /**
+     * @return ArticleMapping
+     */
+    public function getMapping()
+    {
+        if (! $this->mapping) {
+            $this->mapping = Shopware()->Models()->getRepository(Article::class)->getMapping($this);
+        }
+        return $this->mapping;
+    }
+
+    public function setMapping($mapping)
+    {
+        $this->mapping = $mapping;
+    }
 }

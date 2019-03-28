@@ -7,6 +7,7 @@ use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\ArticleMapping;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -136,6 +137,13 @@ class ImportMapper
         $article->setManual($model->getManual());
         $article->setDescription($model->getDescription());
         $article->setManufacturer($model->getManufacturer());
+
+        if (! $article->getMapping()) {
+            $mapping = new ArticleMapping();
+            $this->modelManager->persist($mapping);
+            $mapping->setIcNumber($model->getMaster());
+            $article->setMapping($mapping);
+        }
 
         return $article;
     }

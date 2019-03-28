@@ -16,10 +16,10 @@ class BaseEntityRepository extends EntityRepository
     /** @var LoggerInterface */
     protected $log;
 
-    /** @var EntityValidator $entityValidator */
-    static protected $entityValidator;
-
+    /** @var array */
     protected $dql;
+
+    /** @var array */
     protected $queries;
 
     public function __construct($em, ClassMetadata $class)

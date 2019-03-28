@@ -10,12 +10,13 @@ use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\PropertyDerivator;
 use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as PropertyMapperReport;
-use MxcDropshipInnocigs\Listener\ArticleAttributeFilePersister;
 use MxcDropshipInnocigs\Listener\FilterTest;
+use MxcDropshipInnocigs\Listener\MappingFilePersister;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\ArticleMapping;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -31,20 +32,12 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 
 return [
     'plugin'   => [
-//        FilterTest::class => [
-//            'options' => [
-//                'activate' => [],
-//                'deactivate' => [],
-//            ],
-//        ],
-        ArticleAttributeFilePersister::class => [
-            'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
-            'testConfigFile'    => __DIR__ . '/../Config/article.test.config.php'
-        ],
+        MappingFilePersister::class
     ],
     'doctrine' => [
         'models'     => [
             Article::class,
+            ArticleMapping::class,
             Variant::class,
             Group::class,
             Option::class,
@@ -101,7 +94,7 @@ return [
     'services' => [
         'magicals' => [
             ApiClient::class,
-            ArticleAttributeFilePersister::class,
+            MappingFilePersister::class,
             ArticleMapper::class,
             ArticleOptionMapper::class,
             ConfiguratorGroupRepository::class,
@@ -127,6 +120,9 @@ return [
         PropertyDerivator::class => include __DIR__ . '/propertyderivator.config.php',
         ArticleMapper::class     => [
             'root_category' => 'Deutsch',
+        ],
+        MappingFilePersister::class => [
+            'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
         ]
     ],
 ];

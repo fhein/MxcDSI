@@ -17,7 +17,7 @@ class Image extends ModelEntity
     use BaseModelTrait;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="Variant", mappedBy="images")
      */
     private $variants;

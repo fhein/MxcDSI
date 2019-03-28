@@ -5,13 +5,13 @@ namespace MxcDropshipInnocigs\Import;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\ArticleMapping;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
 use RuntimeException;
 use Shopware\Components\Model\ModelManager;
-use Zend\Config\Factory;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -35,8 +35,13 @@ class PropertyMapper
     /** @var RegexChecker $regexChecker */
     protected $regexChecker;
 
+    /** @var array */
+    protected $mappedProperties;
+
+    /** @var array */
     protected $config;
 
+    /** @var array */
     protected $report;
 
     protected $articles = null;
@@ -53,20 +58,14 @@ class PropertyMapper
         $this->config = $config;
         $this->reporter = $reporter;
         $this->log = $log;
-        $this->init();
         $this->modelManager = $modelManager;
         $this->flavorist = $flavorist;
         $this->propertyDerivator = $propertyDerivator;
         $this->regexChecker = new RegexChecker();
-        $articleConfigFile = $this->config['articleConfigFile'];
-        $this->config['articles'] = [];
-        if (file_exists($articleConfigFile)) {
-            /** @noinspection PhpIncludeInspection */
-            $this->config['articles'] = include $articleConfigFile;
-        }
+        $this->reset();
     }
 
-    public function init()
+    public function reset()
     {
         $this->report = [];
         $this->models = null;
@@ -80,7 +79,7 @@ class PropertyMapper
                 throw new RuntimeException('Regular expression failure.');
             }
         }
-        $this->init();
+        $this->reset();
         $models = $this->getModels();
         if (! $models || ! $articles) {
             $this->log->debug(__FUNCTION__ . ': no models or no articles found.');
@@ -102,6 +101,7 @@ class PropertyMapper
                 $this->mapModelToVariant($model, $variant);
             }
         }
+        $this->storeArticleMappings($articles);
         $this->propertyDerivator->derive($articles);
         $this->propertyDerivator->export();
         ($this->reporter)($this->report, $this->config);
@@ -151,9 +151,9 @@ class PropertyMapper
 
     public function mapManufacturer(Article $article, string $manufacturer): void
     {
-        $result = $this->config['articles'][$article->getNumber()];
-        $article->setBrand($result['brand'] ?? $this->config['manufacturers'][$manufacturer]['brand'] ?? $manufacturer);
-        $supplier = $result['supplier'];
+        $mapping = $article->getMapping();
+        $article->setBrand($mapping->getBrand() ?? $this->config['manufacturers'][$manufacturer]['brand'] ?? $manufacturer);
+        $supplier = $mapping->getSupplier();
         if (!$supplier) {
             if (! in_array($manufacturer, $this->config['innocigs_brands'])) {
                 $supplier = $this->config['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
@@ -267,6 +267,8 @@ class PropertyMapper
         // We take the first variant's name and remove the variant descriptions
         // in order to derive the real article name
         $options = explode(MXC_DELIMITER_L2, $model->getOptions());
+//        if (strpos($name, 'Steam Crave Aromamizer Plus Bubble Glastank') !== false)
+//            xdebug_break();
 
         foreach ($options as $option) {
             $option = explode(MXC_DELIMITER_L1, $option)[1];
@@ -480,68 +482,85 @@ class PropertyMapper
         return $this->models;
     }
 
-    public function getPropertyMappings()
+    protected function getMappedProperties()
     {
-        $repository = $this->modelManager->getRepository(Article::class);
-        return $repository->getProperties($this->config['mapped_article_properties']);
+        if (! $this->mappedProperties) {
+            $mapping = new ArticleMapping();
+            $properties = $mapping->getPrivatePropertyNames();
+            $mappedProperties = [];
+            foreach ($properties as $property) {
+                $mappedProperties[$property] = 'get' . ucfirst($property);
+            }
+            $this->mappedProperties = $mappedProperties;
+        }
+        return $this->mappedProperties;
     }
 
-    public function savePropertyMappings()
+    public function storeArticleMapping(Article $article)
     {
-        $propertyMappings = $this->getPropertyMappings();
-        if (! empty($propertyMappings)) {
-            /** @noinspection PhpUndefinedFieldInspection */
-            Factory::toFile($this->config['articleConfigFile'], $propertyMappings);
+        $settings = [];
+        $mappedProperties = $this->getMappedProperties();
+        foreach ($mappedProperties as $property => $getProperty) {
+            $settings[$property] = $article->$getProperty();
+        }
+        $article->getMapping()->fromArray($settings);
+    }
+
+    protected function storeArticleMappings(array $articles) {
+        foreach ($articles as $article) {
+            $this->storeArticleMapping($article);
         }
     }
 
-    const TYPE_UNKNOWN          = 0;
-    const TYPE_E_CIGARETTE      = 1;
-    const TYPE_BOX_MOD          = 2;
-    const TYPE_E_PIPE           = 3;
-    const TYPE_LIQUID           = 4;
-    const TYPE_AROMA            = 5;
-    const TYPE_SHAKE_VAPE       = 6;
-    const TYPE_HEAD             = 7;
-    const TYPE_TANK             = 8;
-    const TYPE_SEAL             = 9;
-    const TYPE_DRIP_TIP         = 10;
-    const TYPE_POD              = 11;
-    const TYPE_CARTRIDGE        = 12;
-    const TYPE_CELL             = 13;
-    const TYPE_CELL_BOX         = 14;
-    const TYPE_BASE             = 15;
-    const TYPE_CHARGER          = 16;
-    const TYPE_BAG              = 17;
-    const TYPE_TOOL             = 18;
-    const TYPE_WADDING          = 19; // Watte
-    const TYPE_WIRE             = 20;
-    const TYPE_BOTTLE           = 21;
-    const TYPE_SQUONKER_BOTTLE  = 22;
-    const TYPE_VAPORIZER        = 23;
-    const TYPE_SHOT             = 24;
-    const TYPE_CABLE            = 25;
-    const TYPE_BOX_MOD_CELL     = 26;
-    const TYPE_COIL             = 27;
-    const TYPE_RDA_BASE         = 28;
-    const TYPE_MAGNET           = 29;
-    const TYPE_MAGNET_ADAPTOR   = 30;
-    const TYPE_ACCESSORY        = 31;
-    const TYPE_BATTERY_CAP      = 32;
-    const TYPE_EXTENSION_KIT    = 33;
-    const TYPE_CONVERSION_KIT   = 34;
-    const TYPE_CLEAROMIZER      = 35;
-    const TYPE_CLEAROMIZER_RTA  = 36;
-    const TYPE_CLEAROMIZER_RDTA = 37;
-    const TYPE_CLEAROMIZER_RDSA = 38;
-    const TYPE_E_HOOKAH         = 39;
-    const TYPE_SQUONKER_BOX     = 40;
-    const TYPE_EMPTY_BOTTLE     = 41;
-    const TYPE_EASY3_CAP        = 42;
-    const TYPE_DECK             = 43;
-    const TYPE_HEATING_PLATE    = 44;
-    const TYPE_DRIP_TIP_CAP     = 45;
-    const TYPE_TANK_PROTECTION  = 46;
-    const TYPE_STORAGE          = 47;
-    const TYPE_BATTERY_SLEEVE   = 48;
+    const TYPE_UNKNOWN              = 0;
+    const TYPE_E_CIGARETTE          = 1;
+    const TYPE_BOX_MOD              = 2;
+    const TYPE_E_PIPE               = 3;
+    const TYPE_LIQUID               = 4;
+    const TYPE_AROMA                = 5;
+    const TYPE_SHAKE_VAPE           = 6;
+    const TYPE_HEAD                 = 7;
+    const TYPE_TANK                 = 8;
+    const TYPE_SEAL                 = 9;
+    const TYPE_DRIP_TIP             = 10;
+    const TYPE_POD                  = 11;
+    const TYPE_CARTRIDGE            = 12;
+    const TYPE_CELL                 = 13;
+    const TYPE_CELL_BOX             = 14;
+    const TYPE_BASE                 = 15;
+    const TYPE_CHARGER              = 16;
+    const TYPE_BAG                  = 17;
+    const TYPE_TOOL                 = 18;
+    const TYPE_WADDING              = 19; // Watte
+    const TYPE_WIRE                 = 20;
+    const TYPE_BOTTLE               = 21;
+    const TYPE_SQUONKER_BOTTLE      = 22;
+    const TYPE_VAPORIZER            = 23;
+    const TYPE_SHOT                 = 24;
+    const TYPE_CABLE                = 25;
+    const TYPE_BOX_MOD_CELL         = 26;
+    const TYPE_COIL                 = 27;
+    const TYPE_RDA_BASE             = 28;
+    const TYPE_MAGNET               = 29;
+    const TYPE_MAGNET_ADAPTOR       = 30;
+    const TYPE_ACCESSORY            = 31;
+    const TYPE_BATTERY_CAP          = 32;
+    const TYPE_EXTENSION_KIT        = 33;
+    const TYPE_CONVERSION_KIT       = 34;
+    const TYPE_CLEAROMIZER          = 35;
+    const TYPE_CLEAROMIZER_RTA      = 36;
+    const TYPE_CLEAROMIZER_RDTA     = 37;
+    const TYPE_CLEAROMIZER_RDSA     = 38;
+    const TYPE_E_HOOKAH             = 39;
+    const TYPE_SQUONKER_BOX         = 40;
+    const TYPE_EMPTY_BOTTLE         = 41;
+    const TYPE_EASY3_CAP            = 42;
+    const TYPE_DECK                 = 43;
+    const TYPE_TOOL_HEATING_PLATE   = 44;
+    const TYPE_HEATING_PLATE        = 45;
+    const TYPE_DRIP_TIP_CAP         = 46;
+    const TYPE_TANK_PROTECTION      = 47;
+    const TYPE_STORAGE              = 48;
+
+    const TYPE_BATTERY_SLEEVE       = 49;
 }

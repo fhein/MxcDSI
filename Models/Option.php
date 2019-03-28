@@ -37,7 +37,7 @@ class Option extends ModelEntity  {
     private $accepted;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="Variant", mappedBy="options")
      */
     private $variants;
