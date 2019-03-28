@@ -273,4 +273,9 @@ class ArticleMapping  {
         $this->flavor = $flavor;
     }
 
+    public function getMappedPropertyNames()
+    {
+        return $this->getPrivatePropertyNames();
+    }
+
 }

@@ -486,7 +486,7 @@ class PropertyMapper
     {
         if (! $this->mappedProperties) {
             $mapping = new ArticleMapping();
-            $properties = $mapping->getPrivatePropertyNames();
+            $properties = $mapping->getMappedPropertyNames();
             $mappedProperties = [];
             foreach ($properties as $property) {
                 $mappedProperties[$property] = 'get' . ucfirst($property);

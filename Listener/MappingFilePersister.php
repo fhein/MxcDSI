@@ -35,14 +35,16 @@ class MappingFilePersister extends ActionListener
     public function install(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
         $this->log->enter();
-        $this->modelManager->getRepository(ArticleMapping::class)->importMappings($this->config['articleConfigFile']);
+        $repository = $this->modelManager->getRepository(ArticleMapping::class);
+        $repository->importMappings($this->config['articleConfigFile']);
         $this->log->leave();
     }
 
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
         $this->log->enter();
-        $this->modelManager->getRepository(ArticleMapping::class)->exportMappings($this->config['articleConfigFile']);
+        $repository = $this->modelManager->getRepository(ArticleMapping::class);
+        $repository->exportMappings($this->config['articleConfigFile']);
         $this->log->leave();
     }
 }
