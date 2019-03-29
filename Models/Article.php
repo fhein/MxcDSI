@@ -168,39 +168,46 @@ class Article extends ModelEntity  {
     private $base;
 
     /**
-     * @var boolean $active
-     * @ORM\Column(type="boolean", nullable=false)
-     */
-    private $active = false;
-
-    /**
-     * @var boolean $activateRelatedArticles
-     * @ORM\Column(type="boolean", nullable=false)
-     */
-    private $activateRelatedArticles = true;
-
-    /**
      * @var boolean $createRelatedArticles
      * @ORM\Column(type="boolean", nullable=false)
      */
     private $createRelatedArticles = true;
 
     /**
-     * @var boolean $activateSimilarArticles
+     * @var boolean $activateCreatedRelatedArticles
      * @ORM\Column(type="boolean", nullable=false)
      */
-    private $activateSimilarArticles = false;
+    private $activateCreatedRelatedArticles = false;
 
     /**
      * @var boolean $activateSimilarArticles
      * @ORM\Column(type="boolean", nullable=false)
      */
     private $createSimilarArticles = false;
+
+    /**
+     * @var boolean $activateCreatedSimilarArticles
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $activateCreatedSimilarArticles = false;
+
     /**
      * @var boolean $accepted
      * @ORM\Column(type="boolean", nullable=false)
      */
     private $accepted = true;
+
+    /**
+     * @var boolean $active
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $active = false;
+
+    /**
+     * @var boolean $active
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $linked = false;
 
     /**
      * @var boolean $new
@@ -217,8 +224,6 @@ class Article extends ModelEntity  {
      * @ORM\Column(type="string", nullable=true)
      */
     private $flavor;
-
-    private $mapping;
 
     /**
      * Article constructor.
@@ -590,17 +595,17 @@ class Article extends ModelEntity  {
     /**
      * @return bool
      */
-    public function getActivateRelatedArticles(): bool
+    public function getActivateCreatedRelatedArticles(): bool
     {
-        return $this->activateRelatedArticles;
+        return $this->activateCreatedRelatedArticles;
     }
 
     /**
-     * @param bool $activateRelatedArticles
+     * @param bool $activateCreatedRelatedArticles
      */
-    public function setActivateRelatedArticles(bool $activateRelatedArticles)
+    public function setActivateCreatedRelatedArticles(bool $activateCreatedRelatedArticles)
     {
-        $this->activateRelatedArticles = $activateRelatedArticles;
+        $this->activateCreatedRelatedArticles = $activateCreatedRelatedArticles;
     }
 
     /**
@@ -622,17 +627,17 @@ class Article extends ModelEntity  {
     /**
      * @return bool
      */
-    public function getActivateSimilarArticles(): bool
+    public function getActivateCreatedSimilarArticles(): bool
     {
-        return $this->activateSimilarArticles;
+        return $this->activateCreatedSimilarArticles;
     }
 
     /**
-     * @param bool $activateSimilarArticles
+     * @param bool $activateCreatedSimilarArticles
      */
-    public function setActivateSimilarArticles(bool $activateSimilarArticles)
+    public function setActivateCreatedSimilarArticles(bool $activateCreatedSimilarArticles)
     {
-        $this->activateSimilarArticles = $activateSimilarArticles;
+        $this->activateCreatedSimilarArticles = $activateCreatedSimilarArticles;
     }
 
     /**
@@ -691,18 +696,24 @@ class Article extends ModelEntity  {
     }
 
     /**
-     * @return ArticleMapping
+     * @return bool
      */
-    public function getMapping()
+    public function isLinked(): bool
     {
-        if (! $this->mapping) {
-            $this->mapping = Shopware()->Models()->getRepository(Article::class)->getMapping($this);
-        }
-        return $this->mapping;
+        $this->linked = $this->getArticle() !== null;
+        return $this->linked;
     }
 
-    public function setMapping($mapping)
+    public function getLinked(): bool
     {
-        $this->mapping = $mapping;
+        return $this->linked;
+    }
+
+    /**
+     * @param bool $linked
+     */
+    public function setLinked(bool $linked)
+    {
+        $this->linked = $linked;
     }
 }

@@ -23,6 +23,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.model.Article', {
         { name : 'createSimilarArticles', type: 'boolean' },
         { name : 'accepted', type: 'boolean' },
         { name : 'new', type: 'boolean' },
+        { name : 'linked', type: 'boolean' },
     ],
 
     associations: [

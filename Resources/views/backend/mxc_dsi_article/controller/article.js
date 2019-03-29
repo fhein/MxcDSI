@@ -13,21 +13,33 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 mxcSaveArticle:                 me.onSaveArticle,
                 mxcImportItems:                 me.onImportItems,
                 mxcRemapProperties:             me.onRemapProperties,
-                mxcSetActiveMultiple:           me.onSetActiveMultiple,
-                mxcSetAcceptedMultiple:         me.onSetAcceptedMultiple,
+                mxcRemapPropertiesSelected:     me.onRemapPropertiesSelected,
+                mxcSetActiveSelected:           me.onSetActiveSelected,
+                mxcSetAcceptedSelected:         me.onSetAcceptedSelected,
+                mxcSetLinkedSelected:           me.onSetLinkedSelected,
                 mxcRefreshItems:                me.onRefreshItems,
                 mxcCheckNameMappingConsistency: me.onCheckNameMappingConsistency,
-                mxcCheckRegularExpressions:     me.onCheckRegularExpressions
+                mxcCheckRegularExpressions:     me.onCheckRegularExpressions,
+                mxcExportConfig:                me.onExportConfig
             }
         });
         me.mainWindow = me.getView('list.Window').create({}).show();
+    },
+
+    onExportConfig: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=exportConfig}';
+        let params = {};
+        let growlTitle = 'Export article configuration';
+        let maskText = 'Exporting article configuration ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
     onRefreshItems: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiArticle action=refresh}';
         let params = {};
-        let growlTitle = 'Refresh';
+        let growlTitle = 'Refresh link state';
         let maskText = 'Refreshing articles ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
@@ -50,6 +62,25 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
+    onRemapPropertiesSelected: function (grid) {
+        let me = this;
+        let selectionModel = grid.getSelectionModel();
+        let url = '{url controller=MxcDsiArticle action=remapSelected}';
+        let growlTitle = 'Remap properties';
+        let maskText = 'Reapplying article property mapping ...';
+
+        let ids = [];
+        Ext.each(selectionModel.getSelection(), function (record) {
+            ids.push(record.get('id'));
+        });
+
+        let params = {
+            ids: Ext.JSON.encode(ids)
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
     onCheckRegularExpressions: function(grid) {
         let me = this;
         let url = '{url controller=MxcDsiArticle action=checkRegularExpressions}';
@@ -68,27 +99,40 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         me.doRequest(grid, url, params, growlTitle, maskText, false);
     },
 
-    onSetActiveMultiple: function (grid, selectionModel) {
+    onSetActiveSelected: function (grid) {
         let me = this;
+        let selectionModel = grid.getSelectionModel();
         let field = 'active';
         let value = selectionModel.getSelection()[0].get(field);
         let maskText = value ? 'Activating articles.' : 'Deactivating articles.';
         let growlTitle = value ? 'Activate selected' : 'Deactivate selected';
-        me.setStateMultiple(grid, selectionModel, field, value, growlTitle, maskText);
+        me.setStateSelected(grid, field, value, growlTitle, maskText);
     },
 
-    onSetAcceptedMultiple: function (grid, selectionModel) {
+    onSetAcceptedSelected: function (grid) {
         let me = this;
+        let selectionModel = grid.getSelectionModel();
         let field = 'accepted';
         let value = selectionModel.getSelection()[0].get(field);
         let maskText = value ? 'Setting articles to accepted ...' : 'Setting articles to ignored ...';
         let growlTitle = value ? 'Accept selected' : 'Ignore selected';
-        me.setStateMultiple(grid, selectionModel, field, value, growlTitle, maskText);
+        me.setStateSelected(grid, field, value, growlTitle, maskText);
     },
 
-    setStateMultiple: function (grid, selectionModel, field, value, growlTitle, maskText) {
+    onSetLinkedSelected: function(grid) {
         let me = this;
-        let url = '{url controller=MxcDsiArticle action=setStateMultiple}';
+        let selectionModel = grid.getSelectionModel();
+        let field = 'linked';
+        let value = selectionModel.getSelection()[0].get(field);
+        let maskText = value ? 'Creating Shopware articles ...' : 'Deleting Shopware articles ...';
+        let growlTitle = value ? 'Create Shopware Article' : 'Delete Shopware Article';
+        me.setStateSelected(grid, field, value, growlTitle, maskText);
+    },
+
+    setStateSelected: function (grid, field, value, growlTitle, maskText) {
+        let me = this;
+        let selectionModel = grid.getSelectionModel();
+        let url = '{url controller=MxcDsiArticle action=setStateSelected}';
 
         let ids = [];
         Ext.each(selectionModel.getSelection(), function (record) {
@@ -111,7 +155,6 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
      */
     onSaveArticle: function (record) {
         let me = this;
-        // @todo: Errors do not get displayed
         record.save({
             success: function (record, operation) {
                 console.log('Success (onSaveArticle)');

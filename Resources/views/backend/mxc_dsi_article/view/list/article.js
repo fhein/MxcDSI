@@ -10,6 +10,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             detailWindow: 'Shopware.apps.MxcDsiArticle.view.detail.Window',
             columns: {
                 new:                        { header: 'new', width: 40, flex: 0 },
+                linked:                     { header: 'linked', width: 40, flex: 0 },
                 active:                     { header: 'active', width: 40, flex: 0 },
                 createRelatedArticles:      { header: 'related', width: 50, flex: 0 },
                 createSimilarArticles:      { header: 'similar', width: 50, flex: 0 },
@@ -39,11 +40,17 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             /** @event mxcRemapProperties */
             'mxcRemapProperties',
 
-            /** @event mxcSetActiveMultiple */
-            'mxcSetActiveMultiple',
+            /** @event mxcRemapPropertiesSelected */
+            'mxcRemapPropertiesSelected',
 
-            /** @event mxcSetActiveMultiple */
-            'mxcSetAcceptedMultiple',
+            /** @event mxcSetActiveSelected */
+            'mxcSetActiveSelected',
+
+             /** @event mxcSetLinkedSelected */
+            'mxcSetLinkedSelected',
+
+            /** @event mxcSetActiveSelected */
+            'mxcSetAcceptedSelected',
 
             /** @event mxcImportItems */
             'mxcImportItems',
@@ -55,7 +62,10 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             'mxcCheckRegularExpressions',
 
             /** @event mxcCheckNameMappingConsistency */
-            'mxcCheckNameMappingConsistency'
+            'mxcCheckNameMappingConsistency',
+
+            /** @event mxcCheckNameMappingConsistency */
+            'mxcExportConfig'
         );
     },
 
@@ -63,11 +73,28 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         let me = this;
         let items = me.callParent(arguments);
         items = Ext.Array.insert(items, 0, [
-            me.createImportButton(),
-            me.createToolsButton(),
-            me.createSelectionButton()
+            me.createActionsButton(),
+            me.createAllButton(),
+            me.createSelectionButton(),
+            me.createToolsButton()
         ]);
         return items;
+    },
+
+    handleLinkedState: function(changeTo) {
+        let me = this;
+        let selModel = me.getSelectionModel();
+        let records = selModel.getSelection();
+        Ext.each(records, function(record) {
+            // deselect records which already have the target states
+            // set the target state otherwise
+            if (record.get('linked') === changeTo || record.get('accepted') === false) {
+                selModel.deselect(record);
+            } else {
+                record.set('linked', changeTo);
+            }
+        });
+        me.fireEvent('mxcSetLinkedSelected', me);
     },
 
     handleActiveState: function(changeTo) {
@@ -83,7 +110,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                 record.set('active', changeTo);
             }
         });
-        me.fireEvent('mxcSetActiveMultiple', me, selModel);
+        me.fireEvent('mxcSetActiveSelected', me);
     },
 
     handleAcceptedState: function(changeTo) {
@@ -99,7 +126,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                 record.set('accepted', changeTo)
             }
         });
-        me.fireEvent('mxcSetAcceptedMultiple', me, selModel);
+        me.fireEvent('mxcSetAcceptedSelected', me);
     },
 
     createSelectionButton: function() {
@@ -111,6 +138,14 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                 overflow: 'visible'
             },
             items: [
+                {
+                    text : 'Create Shopware article',
+                    iconCls: 'sprite-plus-circle',
+                    handler: function() {
+                        me.handleLinkedState(true);
+                    }
+                },
+                '-',
                 {
                     text : 'Activate selected',
                     iconCls: 'sprite-tick',
@@ -139,14 +174,66 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                     handler: function() {
                         me.handleAcceptedState(false);
                     }
-                }
+                },
+                '-',
+                {
+                    text: 'Remap properties',
+                    iconCls: 'sprite-maps',
+                    handler: function() {
+                        me.fireEvent('mxcRemapPropertiesSelected', me);
+                    }
+                },
             ]
         });
         me.selectionButton = Ext.create('Ext.button.Button', {
-            text: 'Selection',
+            text: 'Selected articles',
             disabled: true,
             iconCls: 'sprite-ui-check-box',
-            menu: menu
+            menu: menu,
+            listeners: {
+                'mouseover': function() {
+                    this.showMenu();
+                }
+            }
+        });
+        return me.selectionButton;
+    },
+
+    createAllButton: function() {
+        let me = this;
+
+        var menu = Ext.create('Ext.menu.Menu', {
+            id: 'mxcDsiArticleAllMenu',
+            style: {
+                overflow: 'visible'
+            },
+            items: [
+                {
+                    text: 'Refresh link state',
+                    iconCls: 'sprite-arrow-circle',
+                    handler: function() {
+                        me.fireEvent('mxcRefreshItems', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Remap properties',
+                    iconCls: 'sprite-maps',
+                    handler: function() {
+                        me.fireEvent('mxcRemapProperties', me);
+                    }
+                },
+            ]
+        });
+        me.selectionButton = Ext.create('Ext.button.Button', {
+            text: 'All articles',
+            iconCls: 'sprite-duplicate-article',
+            menu: menu,
+            listeners: {
+                'mouseover': function() {
+                    this.showMenu();
+                }
+            }
         });
         return me.selectionButton;
     },
@@ -161,27 +248,12 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             },
             items: [
                 {
-                    text: 'Deactivate unlinked',
-                    iconCls: 'sprite-arrow-circle',
-                    handler: function() {
-                        me.fireEvent('mxcRefreshItems', me);
-                    }
-                },
-                '-',
-                {
-                    text: 'Remap Properties',
-                    iconCls: 'sprite-maps',
-                    handler: function() {
-                        me.fireEvent('mxcRemapProperties', me);
-                    }
-                },
-                '-',
-                {
                     text : 'Check regular expressions',
                     handler: function() {
                         me.fireEvent('mxcCheckRegularExpressions', me);
                     }
                 },
+                '-',
                 {
                     text : 'Check name mapping consistency',
                     handler: function() {
@@ -191,19 +263,50 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             ]
         });
         return Ext.create('Ext.button.Button', {
-            text: 'Tools',
+            text: 'Checks',
             iconCls: 'sprite-wrench-screwdriver',
-            menu: menu
+            menu: menu,
+            listeners: {
+                'mouseover': function() {
+                    this.showMenu();
+                }
+            }
         });
     },
 
-    createImportButton: function() {
+    createActionsButton: function() {
         let me = this;
+
+        var menu = Ext.create('Ext.menu.Menu', {
+            id: 'mxcDsiActionsMenu',
+            style: {
+                overflow: 'visible'
+            },
+            items: [
+                {
+                    text: 'Import/Update',
+                    iconCls: 'sprite-download-cloud',
+                    handler: function() {
+                        me.fireEvent('mxcImportItems', me);
+                    }
+                },
+                '-',
+                {
+                    text : 'Export article configuration',
+                    iconCls: 'sprite-document-export',
+                    handler: function() {
+                        me.fireEvent('mxcExportConfig', me);
+                    }
+                },
+            ]
+        });
         return Ext.create('Ext.button.Button', {
-            text: 'Import/Update',
-            iconCls: 'sprite-download-cloud',
-            handler: function() {
-                me.fireEvent('mxcImportItems', me);
+            text: 'Actions',
+            menu: menu,
+            listeners: {
+                'mouseover': function() {
+                    this.showMenu();
+                }
             }
         });
     },
@@ -216,19 +319,18 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             clicksToEdit: 1,
             listeners: {
                 beforeedit: function(editor, e) {
-                    if (e.column.text === 'active') {
+                    let header = e.column.text;
+                    if (header === 'active' || header === 'linked') {
                         return e.record.get('accepted') === true;
-                    }/* else if (e.column.text === 'accept') {
-                        return e.record.get('active') === false;
-                    }*/
+                    }
                     return (
-                        e.column.text === 'Brand'
-                        || e.column.text === 'Supplier'
-                        || e.column.text === 'Flavor'
-                        || e.column.text === 'new'
-                        || e.column.text === 'related'
-                        || e.column.text === 'similar'
-                        || e.column.text === 'accept'
+                        header === 'Brand'
+                        || header === 'Supplier'
+                        || header === 'Flavor'
+                        || header === 'new'
+                        || header === 'related'
+                        || header === 'similar'
+                        || header === 'accept'
                     );
                 },
                 edit: function(editor, e) {

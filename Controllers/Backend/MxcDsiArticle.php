@@ -54,15 +54,15 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     public function refreshAction() {
         try {
             $modelManager = $this->getModelManager();
-            $articles = $modelManager->getRepository(Article::class)->findAll();
+            $articles = $modelManager->getRepository(Article::class)->getBrokenLinks();
             /** @var Article $article */
             foreach ($articles as $article) {
-                if ($article->isActive() && ! $article->getArticle()) {
-                    $article->setActive(false);
-                }
+                if ($article->getArticle()) continue;
+                $article->setActive(false);
+                $article->setLinked(false);
             }
             $modelManager->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Items were successfully refreshed.']);
+            $this->view->assign([ 'success' => true, 'message' => 'Article links were successfully updated.']);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
@@ -71,7 +71,21 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->leave();
     }
 
-    public function setStateMultipleAction()
+    public function exportConfigAction()
+    {
+        try {
+            $modelManager = $this->getModelManager();
+            $modelManager->getRepository(Article::class)->exportMappedProperties();
+            $this->view->assign([ 'success' => true, 'message' => 'Article configuration was successfully exported.']);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
+            ]);
+        }
+        $this->log->leave();
+    }
+
+    public function setStateSelectedAction()
     {
         $this->log->enter();
         try {
@@ -148,6 +162,23 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->leave();
     }
 
+    public function remapSelectedAction() {
+        $this->log->enter();
+        try {
+            $params = $this->request->getParams();
+            $ids = json_decode($params['ids'], true);
+            $articles = $this->getModelManager()->getRepository(Article::class)->getArticlesByIds($ids);
+            $propertyMapper = $this->services->get(PropertyMapper::class);
+            $propertyMapper->mapProperties($articles);
+            $this->getModelManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Article properties were successfully remapped.']);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $this->log->leave();
+    }
+
     protected function getAdditionalDetailData(array $data) {
         $data['variants'] = [];
         return $data;
@@ -163,6 +194,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             // currently stored $active state
             $sActive = $article->isActive();
             $sAccepted = $article->isAccepted();
+            $sLinked = $article->isLinked();
         } else {
             // this is a request to create a new article (not supported via our UI)
             $article = new $this->model();
@@ -171,6 +203,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $sActive = false;
             // default $accepted state
             $sAccepted = true;
+            // default $linked state
+            $sLinked = false;
         }
         // Variant data is empty only if the request comes from the list view (not the detail view)
         // We prevent storing an article with empty variant list by unsetting empty variant data.
@@ -184,9 +218,9 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         unset($data['similarArticles']);
         $article->fromArray($data);
 
-        // updated $active state
         $uActive = $article->isActive();
         $uAccepted = $article->isAccepted();
+        $uLinked = $article->getLinked();
 
         $articleMapper = $this->services->get(ArticleMapper::class);
 
@@ -206,6 +240,13 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             if ($article->isAccepted() !== $uAccepted) {
                 $message = 'Failed to set article\'s accepted state to ' . var_export($uAccepted, true) . '.';
                 return [ 'success' => false, 'message' => $message ];
+            }
+        } elseif ($uLinked !== $sLinked) {
+            // User request to change the linked state of article
+            $articleMapper->updateShopwareArticle($article);
+            if ($article->isLinked() !== $uLinked) {
+                $message = 'Failed to set article\'s linked state to ' . var_export($uLinked, true) . '.';
+                return ['success' => false, 'message' => $message];
             }
         }
 

@@ -16,7 +16,6 @@ use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
 use MxcDropshipInnocigs\Models\Article;
-use MxcDropshipInnocigs\Models\ArticleMapping;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -37,7 +36,6 @@ return [
     'doctrine' => [
         'models'     => [
             Article::class,
-            ArticleMapping::class,
             Variant::class,
             Group::class,
             Option::class,

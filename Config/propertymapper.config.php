@@ -5,6 +5,7 @@ use MxcDropshipInnocigs\Import\PropertyMapper;
 return [
     'settings' => [
         'checkRegularExpressions' => true,
+        'articleConfigFile'       => __DIR__ . '/../Config/article.config.php',
     ],
 
     'name_prepare'              => [

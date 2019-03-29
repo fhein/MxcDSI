@@ -7,7 +7,6 @@ use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
-use MxcDropshipInnocigs\Models\ArticleMapping;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -137,13 +136,6 @@ class ImportMapper
         $article->setManual($model->getManual());
         $article->setDescription($model->getDescription());
         $article->setManufacturer($model->getManufacturer());
-
-        if (! $article->getMapping()) {
-            $mapping = new ArticleMapping();
-            $this->modelManager->persist($mapping);
-            $mapping->setIcNumber($model->getMaster());
-            $article->setMapping($mapping);
-        }
 
         return $article;
     }
@@ -288,7 +280,7 @@ class ImportMapper
                     $variant->setRetailPrice($price);
                     break;
                 case 'manufacturer':
-                    $this->propertyMapper->mapManufacturer($variant->getArticle(), $newValue);
+                    $this->propertyMapper->mapManufacturer($model, $variant->getArticle());
                     break;
                 case 'images':
                     $this->changeImages($variant, $oldValue, $newValue);
@@ -342,6 +334,15 @@ class ImportMapper
         $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
     }
 
+    protected function linkArticles()
+    {
+        // @todo: this should set the linked property of all articles which have an associated shopware article, but it does not
+        $articlesToLink = $this->modelManager->getRepository(Article::class)->getArticlesToLink();
+        foreach ($articlesToLink as $article) {
+            $article->setLinked = true;
+        }
+    }
+
     public function import(array $import)
     {
         $this->updates = [];
@@ -351,6 +352,9 @@ class ImportMapper
         $this->deleteVariants($import['deletions']);
         $this->changeVariants($import['changes']);
         $this->propertyMapper->mapProperties($this->articles);
+        $this->modelManager->flush();
+
+        $this->linkArticles();
         $this->modelManager->flush();
 
         if ($this->config['applyFilters']) {

@@ -41,13 +41,13 @@ return array(
     ),
     'Frisches' => array(
         0 => 'Eis',
-        1 => 'Eukalyptus',
-        2 => 'Koolada',
-        3 => 'Menthol',
-        4 => 'Minze',
-        5 => 'Pfefferminze',
-        6 => 'Eiscreme',
-        7 => 'Eisbonbon'
+        1 => 'Eisbonbon',
+        2 => 'Eiscreme',
+        3 => 'Eukalyptus',
+        4 => 'Koolada',
+        5 => 'Menthol',
+        6 => 'Minze',
+        7 => 'Pfefferminze',
     ),
     'Früchte' => array(
         0 => 'Amarenakirsche',
@@ -167,6 +167,10 @@ return array(
         0 => 'Pannacotta',
         1 => 'Pudding',
         2 => 'Wackelpudding',
+    ),
+    'Sonstige' => array(
+        0 => 'Karamell',
+        1 => 'verschiedene Melonensorten',
     ),
     'Süßigkeiten' => array(
         0 => 'Buttercreme',

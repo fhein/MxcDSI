@@ -5,7 +5,6 @@ namespace MxcDropshipInnocigs\Import;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Models\Article;
-use MxcDropshipInnocigs\Models\ArticleMapping;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
@@ -42,6 +41,9 @@ class PropertyMapper
     protected $config;
 
     /** @var array */
+    protected $mappings;
+
+    /** @var array */
     protected $report;
 
     protected $articles = null;
@@ -63,6 +65,12 @@ class PropertyMapper
         $this->propertyDerivator = $propertyDerivator;
         $this->regexChecker = new RegexChecker();
         $this->reset();
+        $this->mappings = [];
+        $fn = $this->config['settings']['articleConfigFile'];
+        if (file_exists($fn)) {
+            /** @noinspection PhpIncludeInspection */
+            $this->mappings = include $fn;
+        }
     }
 
     public function reset()
@@ -96,12 +104,10 @@ class PropertyMapper
                 if ($first) {
                     $this->mapModelToArticle($model, $article);
                     $first = false;
-
                 }
                 $this->mapModelToVariant($model, $variant);
             }
         }
-        $this->storeArticleMappings($articles);
         $this->propertyDerivator->derive($articles);
         $this->propertyDerivator->export();
         ($this->reporter)($this->report, $this->config);
@@ -118,8 +124,11 @@ class PropertyMapper
         $number = $model->getMaster();
         $article->setNumber($this->config['article_codes'][$number] ?? $number);
 
+        // this will set the linked status to true if a Shopware article with $number exists
+        $article->isLinked();
+
         // do not change ordering of the next lines
-        $this->mapManufacturer($article, $model->getManufacturer());    // sets supplier, brand and manufacturer
+        $this->mapManufacturer($model, $article);                       // sets supplier, brand and manufacturer
         $article->setName($this->mapArticleName($model, $article));     // uses brand, sets name
         $this->deriveArticleType($article);                             // uses name, sets type,
         $this->mapCategory($model, $article);                           // uses supplier, brand and name, sets category
@@ -149,20 +158,41 @@ class PropertyMapper
         return str_replace('weiss', 'weiß', $mapping);
     }
 
-    public function mapManufacturer(Article $article, string $manufacturer): void
+    protected function mapBrand(Model $model, Article $article)
     {
-        $mapping = $article->getMapping();
-        $article->setBrand($mapping->getBrand() ?? $this->config['manufacturers'][$manufacturer]['brand'] ?? $manufacturer);
-        $supplier = $mapping->getSupplier();
-        if (!$supplier) {
-            if (! in_array($manufacturer, $this->config['innocigs_brands'])) {
-                $supplier = $this->config['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
-            }
+        $brand = $article->getBrand();
+        if ($brand === null) {
+            $mapping = $this->mappings[$article->getIcNumber()] ?? [];
+            $manufacturer = $model->getManufacturer();
+            $brand = $mapping['brand'] ?? $this->config['manufacturers'][$manufacturer]['brand'] ?? $manufacturer;
+            $article->setBrand($brand);
         }
-        $article->setSupplier($supplier);
-        $article->setManufacturer($manufacturer);
+        $this->mappings[$article->getIcNumber()]['brand'] = $brand;
         $this->report['brand'][$article->getBrand()] = true;
+    }
+
+    protected function mapSupplier(Model $model, Article $article)
+    {
+        $supplier = $article->getSupplier();
+        if ($supplier === null) {
+            $mapping = $this->mappings[$article->getIcNumber()] ?? [];
+            $manufacturer = $model->getManufacturer();
+            $supplier = $mapping['supplier'];
+            if (! $supplier) {
+                if (! in_array($manufacturer, $this->config['innocigs_brands'])) {
+                    $supplier = $this->config['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
+                }
+            }
+            $this->mappings[$article->getIcNumber()]['supplier'] = $supplier;
+            $article->setSupplier($supplier);
+        }
         $this->report['supplier'][$article->getSupplier()] = true;
+    }
+
+    public function mapManufacturer(Model $model, Article $article): void
+    {
+        $this->mapBrand($model, $article);
+        $this->mapSupplier($model, $article);
     }
 
     protected function applySupplierAndBrandDeocoration(string $name, Article $article)
@@ -255,9 +285,13 @@ class PropertyMapper
     }
 
     protected function mapFlavor(Article $article) {
+        $flavor = $article->getFlavor();
+        if ($flavor !== null) return;
+
         $flavor = $this->config['flavors'][$article->getIcNumber()]['flavor'];
         if (is_array($flavor) && ! empty($flavor)) {
             $article->setFlavor(implode(', ', $flavor));
+            $this->mappings[$article->getIcNumber()]['flavor'] = $flavor;
         }
     }
 
@@ -480,36 +514,6 @@ class PropertyMapper
     {
         $this->models = $this->models ?? $this->modelManager->getRepository(Model::class)->getAllIndexed();
         return $this->models;
-    }
-
-    protected function getMappedProperties()
-    {
-        if (! $this->mappedProperties) {
-            $mapping = new ArticleMapping();
-            $properties = $mapping->getMappedPropertyNames();
-            $mappedProperties = [];
-            foreach ($properties as $property) {
-                $mappedProperties[$property] = 'get' . ucfirst($property);
-            }
-            $this->mappedProperties = $mappedProperties;
-        }
-        return $this->mappedProperties;
-    }
-
-    public function storeArticleMapping(Article $article)
-    {
-        $settings = [];
-        $mappedProperties = $this->getMappedProperties();
-        foreach ($mappedProperties as $property => $getProperty) {
-            $settings[$property] = $article->$getProperty();
-        }
-        $article->getMapping()->fromArray($settings);
-    }
-
-    protected function storeArticleMappings(array $articles) {
-        foreach ($articles as $article) {
-            $this->storeArticleMapping($article);
-        }
     }
 
     const TYPE_UNKNOWN              = 0;

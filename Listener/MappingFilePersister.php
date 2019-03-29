@@ -5,9 +5,8 @@ namespace MxcDropshipInnocigs\Listener;
 
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\ArticleMapping;
+use MxcDropshipInnocigs\Models\Article;
 use Shopware\Components\Model\ModelManager;
-use Zend\Config\Config;
 use Zend\EventManager\EventInterface;
 
 class MappingFilePersister extends ActionListener
@@ -22,29 +21,19 @@ class MappingFilePersister extends ActionListener
      * MappingFilePersister constructor.
      *
      * @param ModelManager $modelManager
-     * @param Config $config
      * @param LoggerInterface $log
      */
-    public function __construct(ModelManager $modelManager, Config $config, LoggerInterface $log)
+    public function __construct(ModelManager $modelManager, LoggerInterface $log)
     {
         $this->log = $log;
-        $this->config = $config;
         $this->modelManager = $modelManager;
-    }
-
-    public function install(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
-    {
-        $this->log->enter();
-        $repository = $this->modelManager->getRepository(ArticleMapping::class);
-        $repository->importMappings($this->config['articleConfigFile']);
-        $this->log->leave();
     }
 
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
         $this->log->enter();
-        $repository = $this->modelManager->getRepository(ArticleMapping::class);
-        $repository->exportMappings($this->config['articleConfigFile']);
+        $repository = $this->modelManager->getRepository(Article::class);
+        $repository->exportMappedProperties();
         $this->log->leave();
     }
 }

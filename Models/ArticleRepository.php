@@ -2,34 +2,39 @@
 
 namespace MxcDropshipInnocigs\Models;
 
+use Zend\Config\Factory;
+
 class ArticleRepository extends BaseEntityRepository
 {
+    protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
+
     protected $dql = [
         'getAllIndexed'                      => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
 
         'getArticlesByIds'                   => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.id in (:ids)',
 
-                                                // get all articles which have an associated Shopware Article
-        'getLinkedIndexed'                   => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                    . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
-        'getLinkedArticleIds'                => 'SELECT a.icNumber FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                    . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
-        'getLinkedArticlesHavingOptions'    => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                    . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
+        'getBrokenLinks'                     => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a '
+                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
+                                                    . 'LEFT JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+                                                    . 'WHERE d.id IS NULL',
+        'getArticlesToLink'                  => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a '
+                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
+                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+                                                    . 'WHERE a.linked = 0',
+        'getLinkedArticlesHavingOptions'     => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
                                                     . 'JOIN v.options o WHERE o.id IN (:optionIds)',
                                                 // get all articles which have an associated Shopware Article
                                                 // that have related articles with :relatedIds
         'getAllHavingRelatedArticles'        => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                    . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
+                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
                                                     . 'JOIN a.relatedArticles r  WHERE r.icNumber IN (:relatedIds)',
                                                 // get all articles which have an associated Shopware Article
                                                 // that have similar articles with :simularIds
         'getAllHavingSimilarArticles'        => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                    . 'JOIN MxcDropShipInnocigs\Models\Variant v WITH v.article = a.id '
+                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
                                                     . 'JOIN a.similarArticles s  WHERE s.icNumber IN (:similarIds)',
         'getFlavoredArticles'                => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber WHERE a.flavor IS NOT NULL',
@@ -41,7 +46,21 @@ class ArticleRepository extends BaseEntityRepository
         'removeOrphaned'                     => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.variants is empty',
 
         'getProperties'                      => 'SELECT :properties FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
-        'getMapping'                         => 'SELECT am FROM MxcDropshipInnocigs\Models\ArticleMapping am WHERE am.icNumber = :icNumber',
+    ];
+
+    private $mappedProperties = [
+        'icNumber',
+        'number',
+        'name',
+        'commonName',
+        'type',
+        'category',
+        'supplier',
+        'brand',
+        'piecesPerPack',
+        'flavor',
+        'dosage',
+        'base',
     ];
 
     public function getAllIndexed()
@@ -68,13 +87,13 @@ class ArticleRepository extends BaseEntityRepository
             ->setParameter('similarIds', $relatedIds)->getResult();
     }
 
-    public function getLinkedIndexed()
+    public function getBrokenLinks()
     {
         return $this->getQuery(__FUNCTION__)->getResult();
     }
 
-    public function getLinkedArticleIds()
-    {
+    // get all articles with $linked = false having a related shopware article
+    public function getArticlesToLink() {
         return $this->getQuery(__FUNCTION__)->getResult();
     }
 
@@ -121,23 +140,33 @@ class ArticleRepository extends BaseEntityRepository
 
     public function getProperties(array $properties)
     {
-        $parameters = [];
-        foreach ($properties as $property) {
-            $parameters[] = 'a.' . $property;
-        }
-        $parameters = implode(', ', $parameters);
+        $properties = array_map(function($property) { return 'a.' . $property; }, $properties);
+        $properties = implode(', ', $properties);
+
         $dql = $this->dql[__FUNCTION__];
-        $dql = str_replace(':properties', $parameters, $dql);
+        $dql = str_replace(':properties', $properties, $dql);
         return $this->getEntityManager()
             ->createQuery($dql)
             ->getResult();
     }
 
-    public function getMapping(Article $article)
+    public function getMappedProperties() {
+        return $this->getProperties($this->mappedProperties);
+    }
+
+    public function exportMappedProperties(string $articleConfigFile = null)
     {
-        return $this->getQuery(__FUNCTION__)
-                   ->setParameter('icNumber', $article->getIcNumber())
-                   ->getResult()[0];
+        $articleConfigFile = $articleConfigFile ?? $this->articleConfigFile;
+        $propertyMappings = $this->getMappedProperties();
+        if (! empty($propertyMappings)) {
+            /** @noinspection PhpUndefinedFieldInspection */
+            Factory::toFile($articleConfigFile, $propertyMappings);
+
+            $this->log->debug(sprintf("Exported %s article mappings to Config\\%s.",
+                count($propertyMappings),
+                basename($articleConfigFile)
+            ));
+        }
     }
 
     /**

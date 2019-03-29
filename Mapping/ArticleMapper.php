@@ -158,7 +158,7 @@ class ArticleMapper
      */
     public function updateArticleState(array $icArticles, string $field, bool $value)
     {
-        if (! in_array($field, ['accepted', 'active'])) return;
+        if (! in_array($field, ['accepted', 'active', 'linked'])) return;
         $setter = 'set' . ucfirst($field);
 
         /** @var Article $icArticle */
@@ -220,13 +220,13 @@ class ArticleMapper
         $this->prepareAssociatedArticlesCollection(
             $icArticle->getRelatedArticles(),
             $icArticle->getCreateRelatedArticles(),
-            $icArticle->getActivateRelatedArticles()
+            $icArticle->getActivateCreatedRelatedArticles()
         );
 
         $this->prepareAssociatedArticlesCollection(
             $icArticle->getSimilarArticles(),
             $icArticle->getCreateSimilarArticles(),
-            $icArticle->getActivateSimilarArticles()
+            $icArticle->getActivateCreatedSimilarArticles()
         );
     }
 
@@ -242,11 +242,12 @@ class ArticleMapper
     ) {
         /** @var Article $article */
         foreach ($icArticles as $article) {
-            if (! $createAssociated && ! $article->getArticle()) {
+            $isNew = $article->getArticle() === null;
+            if (! $createAssociated && $isNew) {
                 continue;
             }
-            if ($activateAssociated) {
-                $article->setActive(true);
+            if ($isNew) {
+                $article->setActive($activateAssociated);
             }
             $this->associatedArticles[$article->getIcNumber()] = $article;
 
@@ -263,19 +264,24 @@ class ArticleMapper
      */
     protected function setShopwareArticle(Article $icArticle): bool
     {
+        if (! $icArticle->isValid()) {
+            $icArticle->setActive(false);
+            return false;
+        }
+
         $swArticle = $icArticle->getArticle();
         $create = ($swArticle === null);
 
-        $active = $icArticle->isActive() && $icArticle->isValid();
-        $icArticle->setActive($active);
-
         if ($create) {
-            if (! $active) return false;
             // Create Shopware Article
             $swArticle = new ShopwareArticle();
             $this->modelManager->persist($swArticle);
             $icArticle->setArticle($swArticle);
+            $icArticle->setLinked(true);
             $this->createdArticles[] = $icArticle->getIcNumber();
+        } elseif (! $icArticle->isActive()) {
+            // only process articles which are active or new
+            return false;
         }
 
         $this->removeDetachedShopwareDetails($icArticle);
@@ -365,7 +371,9 @@ class ArticleMapper
         $swDetail->setAttribute($attribute);
 
         $this->setShopwareDetailProperties($icVariant);
-        $swDetail->setActive(false);
+
+        // All new valid details get marked active
+        $swDetail->setActive(true);
 
         // set next three properties only on detail creation
         $this->setRetailPrice($icVariant);
