@@ -58,7 +58,7 @@ class NameMappingConsistency
     }
 
     /**
-     * Helper function for checkNameMappingConsistency below.
+     * Helper function
      *
      * @param Article $article
      * @return array
@@ -76,7 +76,8 @@ class NameMappingConsistency
         foreach ($variants as $variant) {
             $number = $variant->getIcNumber();
             $model = $models[$number];
-            $map[$this->articleNameMapper->map($model, $article)] = $number;
+            $this->articleNameMapper->map($model, $article);
+            $map[$article->getName()] = $number;
         }
         if (count($map) === 1) {
             return [];

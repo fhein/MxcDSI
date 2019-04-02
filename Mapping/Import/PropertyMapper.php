@@ -41,9 +41,6 @@ class PropertyMapper
     protected $flavorist;
 
     /** @var array */
-    protected $mappedProperties;
-
-    /** @var array */
     protected $config;
 
     /** @var array */
@@ -142,7 +139,7 @@ class PropertyMapper
 
         // do not change ordering of the next lines
         $this->articleManufacturerMapper->map($model, $article);            // sets supplier, brand and manufacturer
-        $article->setName($this->articleNameMapper->map($model, $article)); // uses brand, sets name
+        $this->articleNameMapper->map($model, $article);                    // uses brand, sets name
         $this->derivePiecesPerPack($article);                               // uses name, sets piecesPerPack
         $this->deriveCommonName($article);                                  // uses name, sets commonName
         $this->articleTypeMapper->map($article);                            // uses name, sets type

@@ -20,7 +20,7 @@ class ArticleNameMapper
         $this->config = $config;
     }
 
-    public function map(Model $model, Article $article): string
+    public function map(Model $model, Article $article)
     {
         $modelName = $model->getName();
         $this->report['name'][$modelName]['model'] = $model->getModel();
@@ -34,7 +34,8 @@ class ArticleNameMapper
         $result = $this->config['article_names'][$model->getName()];
         if ($result !== null) {
             $trace['directly_mapped'] = $result;
-            return $result;
+            $article->setName($result);
+            return;
         }
 
         // rule based name mapping applied next
@@ -62,7 +63,7 @@ class ArticleNameMapper
 
         $trace['mapped'] = $name;
         $this->report['name'][$trace['imported']] = $trace;
-        return $name;
+        $article->setName($name);
     }
 
     /**
