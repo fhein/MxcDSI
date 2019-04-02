@@ -1,12 +1,15 @@
-<?php /** @noinspection PhpUnusedParameterInspection */
+<?php
 
-namespace MxcDropshipInnocigs\Import;
+namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Interop\Container\ContainerInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class FlavoristFactory implements FactoryInterface
+class ArticleNameMapperFactory implements FactoryInterface
 {
+    use ClassConfigTrait;
+
     /**
      * Create an object
      *
@@ -17,8 +20,11 @@ class FlavoristFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        $config = $this->getClassConfig($container, $requestedName);
+        $config = $config->toArray();
         $log = $container->get('logger');
-        $modelManager = $container->get('modelManager');
-        return new Flavorist($modelManager, $log);
+
+        return new ArticleNameMapper($config, $log);
     }
 }
+

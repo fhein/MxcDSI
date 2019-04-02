@@ -6,6 +6,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
+use MxcDropshipInnocigs\Mapping\Import\ArticleManufacturerMapper;
+use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\Flavorist;
+use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -27,6 +31,12 @@ class ImportMapper
 
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
+
+    /** @var ArticleNameMapper $articleNameMapper */
+    protected $articleNameMapper;
+
+    /** @var ArticleManufacturerMapper $articleManufacturerMapper */
+    protected $articleManufacturerMapper;
 
     /** @var ArticleMapper $articleMapper */
     protected $articleMapper;
@@ -66,6 +76,8 @@ class ImportMapper
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
+     * @param ArticleNameMapper $articleNameMapper
+     * @param ArticleManufacturerMapper $articleManufacturerMapper
      * @param PropertyMapper $propertyMapper
      * @param ArticleMapper $articleMapper
      * @param BulkOperation $bulkOperation
@@ -75,6 +87,8 @@ class ImportMapper
     public function __construct(
         ModelManager $modelManager,
         ApiClient $apiClient,
+        ArticleNameMapper $articleNameMapper,
+        ArticleManufacturerMapper $articleManufacturerMapper,
         PropertyMapper $propertyMapper,
         ArticleMapper $articleMapper,
         BulkOperation $bulkOperation,
@@ -84,6 +98,8 @@ class ImportMapper
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
+        $this->articleNameMapper = $articleNameMapper;
+        $this->articleManufacturerMapper = $articleManufacturerMapper;
         $this->articleMapper = $articleMapper;
         $this->bulkOperation = $bulkOperation;
         $this->config = $config->toArray();
@@ -269,7 +285,7 @@ class ImportMapper
                     $variant->setEan($newValue);
                     break;
                 case 'name':
-                    $this->propertyMapper->mapArticleName($model, $variant->getArticle());
+                    $this->articleNameMapper->map($model, $variant->getArticle());
                     break;
                 case 'purchasePrice':
                     $price = floatval(str_replace(',', '.', $newValue));
@@ -280,7 +296,7 @@ class ImportMapper
                     $variant->setRetailPrice($price);
                     break;
                 case 'manufacturer':
-                    $this->propertyMapper->mapManufacturer($model, $variant->getArticle());
+                    $this->articleManufacturerMapper->map($model, $variant->getArticle());
                     break;
                 case 'images':
                     $this->changeImages($variant, $oldValue, $newValue);
@@ -334,12 +350,12 @@ class ImportMapper
         $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
     }
 
-    protected function linkArticles()
+    protected function attachLinkedShopwareArticles()
     {
-        // @todo: this should set the linked property of all articles which have an associated shopware article, but it does not
         $articlesToLink = $this->modelManager->getRepository(Article::class)->getArticlesToLink();
+        /** @var Article $article */
         foreach ($articlesToLink as $article) {
-            $article->setLinked = true;
+            $article->setLinked(true);
         }
     }
 
@@ -354,16 +370,16 @@ class ImportMapper
         $this->propertyMapper->mapProperties($this->articles);
         $this->modelManager->flush();
 
-        $this->linkArticles();
+        $this->attachLinkedShopwareArticles();
         $this->modelManager->flush();
+
+        $this->articleMapper->updateShopwareArticles($this->updates);
 
         if ($this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {
                 $this->bulkOperation->update($filter);
             }
         }
-
-        $this->articleMapper->updateShopwareArticles($this->updates);
 
         $flavorist = new Flavorist($this->modelManager, $this->log);
         $flavorist->updateCategories();

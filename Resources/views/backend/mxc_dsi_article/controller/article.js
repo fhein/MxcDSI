@@ -20,7 +20,16 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 mxcRefreshItems:                me.onRefreshItems,
                 mxcCheckNameMappingConsistency: me.onCheckNameMappingConsistency,
                 mxcCheckRegularExpressions:     me.onCheckRegularExpressions,
-                mxcExportConfig:                me.onExportConfig
+                mxcExportConfig:                me.onExportConfig,
+                // for development/test purposes
+                mxcDev1:                        me.onDev1,
+                mxcDev2:                        me.onDev2,
+                mxcDev3:                        me.onDev3,
+                mxcDev4:                        me.onDev4,
+                mxcDev5:                        me.onDev5,
+                mxcDev6:                        me.onDev6,
+                mxcDev7:                        me.onDev7,
+                mxcDev8:                        me.onDev8,
             }
         });
         me.mainWindow = me.getView('list.Window').create({}).show();
@@ -233,4 +242,110 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         }
         me.showError(message);
     },
+
+    onDev1: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=dev1}';
+        let params = {};
+        let growlTitle = 'Development 1';
+        let maskText = 'Performing development 1  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onDev2: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=dev2}';
+        let params = {};
+        let growlTitle = 'Development 2';
+        let maskText = 'Performing development 2  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onDev3: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=dev3}';
+        let params = {};
+        let growlTitle = 'Development 3';
+        let maskText = 'Performing development 3  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onDev4: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=dev4}';
+        let params = {};
+        let growlTitle = 'Development 4';
+        let maskText = 'Performing development 4  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onDev5: function (grid) {
+        let me = this;
+        let selectionModel = grid.getSelectionModel();
+        let url = '{url controller=MxcDsiArticle action=dev5}';
+        let growlTitle = 'Development 5';
+        let maskText = 'Development 5 on selected ...';
+
+        let ids = [];
+        Ext.each(selectionModel.getSelection(), function (record) {
+            ids.push(record.get('id'));
+        });
+
+        let params = {
+            ids: Ext.JSON.encode(ids)
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onDev6: function (grid) {
+        let me = this;
+        let selectionModel = grid.getSelectionModel();
+        let url = '{url controller=MxcDsiArticle action=dev6}';
+        let growlTitle = 'Development 6';
+        let maskText = 'Development 6 on selected ...';
+
+        let ids = [];
+        Ext.each(selectionModel.getSelection(), function (record) {
+            ids.push(record.get('id'));
+        });
+
+        let params = {
+            ids: Ext.JSON.encode(ids)
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onDev7: function (grid) {
+        let me = this;
+        let selectionModel = grid.getSelectionModel();
+        let url = '{url controller=MxcDsiArticle action=dev7}';
+        let growlTitle = 'Development 7';
+        let maskText = 'Development 7 on selected ...';
+
+        let ids = [];
+        Ext.each(selectionModel.getSelection(), function (record) {
+            ids.push(record.get('id'));
+        });
+
+        let params = {
+            ids: Ext.JSON.encode(ids)
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onDev8: function (grid) {
+        let me = this;
+        let selectionModel = grid.getSelectionModel();
+        let url = '{url controller=MxcDsiArticle action=dev8}';
+        let growlTitle = 'Development 8';
+        let maskText = 'Development 8 on selected ...';
+
+        let ids = [];
+        Ext.each(selectionModel.getSelection(), function (record) {
+            ids.push(record.get('id'));
+        });
+
+        let params = {
+            ids: Ext.JSON.encode(ids)
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
 });

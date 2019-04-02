@@ -3,14 +3,21 @@
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
-use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
+use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
+use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
+use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Models\Article;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
 {
     protected $model = Article::class;
     protected $alias = 'innocigs_article';
+
+    protected $articleStateProperties = ['active', 'accepted', 'linked'];
+
+    /** @var array */
+    protected $articleStates;
 
     public function indexAction() {
         $this->log->enter();
@@ -99,9 +106,20 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $icArticles = $modelManager->getRepository(Article::class)->getArticlesByIds($ids);
 
             $articleMapper = $services->get(ArticleMapper::class);
-            $articleMapper->updateArticleState($icArticles, $field, $value);
 
-            $this->view->assign(['success' => true, 'message' => 'Articles were successfully updated.']);
+            if (in_array($field, ['accepted', 'active', 'linked'])) {
+                $setter = 'set' . ucfirst($field);
+                /** @var Article $icArticle */
+                foreach ($icArticles as $icArticle) {
+                    $icArticle->$setter($value);
+                }
+                $articleMapper->processStateChangesArticleList($icArticles);
+                $this->view->assign(['success' => true, 'message' => 'Articles were successfully updated.']);
+            } else {
+                $this->view->assign([ 'success' => false, 'message' => 'Unknown state property: ' . $field]);
+                $this->log->leave();
+                return;
+            }
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
@@ -113,8 +131,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $propertyMapper = $this->getServices()->get(PropertyMapper::class);
-            if (! $propertyMapper->checkRegularExpressions()) {
+            $regularExpressions = $this->getServices()->get(RegularExpressions::class);
+            if (! $regularExpressions->check()) {
                 $this->view->assign(['success' => false, 'message' => 'Errors found in regular expressions. See log for details.']);
             } else {
                 $this->view->assign(['success' => true, 'message' => 'No errors found in regular expressions.']);
@@ -129,8 +147,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $propertyMapper = $this->getServices()->get(PropertyMapper::class);
-            $issueCount = $propertyMapper->checkNameMappingConsistency();
+            $nameMappingConsistency = $this->getServices()->get(NameMappingConsistency::class);
+            $issueCount = $nameMappingConsistency->check();
             if ($issueCount > 0) {
                 $issue = 'issue';
                 if ($issueCount > 1) $issue .= 's';
@@ -184,28 +202,51 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         return $data;
     }
 
+    protected function processStateUpdates(Article $article)
+    {
+        $articleMapper = $this->services->get(ArticleMapper::class);
+        foreach ($this->articleStates as $state => $values) {
+            $newValue = $values['new'];
+            if ($values['current'] === $newValue) continue;
+            $articleMapper->processStateChangesArticle($article, true);
+            $getState = 'is' . ucFirst($state);
+            if ($article->$getState() === $newValue) continue;
+            $message = sprintf("Failed to set article's %s state to %s.", $state, var_export($newValue, true));
+            return ['success' => false, 'message' => $message];
+        }
+        return true;
+    }
+
+    public function getCurrentArticleStates(Article $article) {
+        foreach ($this->articleStateProperties as $property) {
+            $getState = 'is' . ucfirst($property);
+            $this->articleStates[$property]['current'] = $article->$getState();
+        }
+    }
+
+    public function getNewArticleStates(array $data) {
+        foreach ($this->articleStateProperties as $property) {
+            $this->articleStates[$property]['new'] = $data[$property];
+        }
+    }
+
     public function save($data) {
         $this->log->enter();
         $this->log->leave();
-        /** @var Article $article */
+
         if (! empty($data['id'])) {
             // this is a request to update an existing article
             $article = $this->getRepository()->find($data['id']);
-            // currently stored $active state
-            $sActive = $article->isActive();
-            $sAccepted = $article->isAccepted();
-            $sLinked = $article->isLinked();
         } else {
             // this is a request to create a new article (not supported via our UI)
             $article = new $this->model();
             $this->getManager()->persist($article);
-            // default $active state
-            $sActive = false;
-            // default $accepted state
-            $sAccepted = true;
-            // default $linked state
-            $sLinked = false;
         }
+        /** @var Article $article */
+        $this->articleStates = [];
+        $this->getCurrentArticleStates($article);
+        $this->getNewArticleStates($data);
+
         // Variant data is empty only if the request comes from the list view (not the detail view)
         // We prevent storing an article with empty variant list by unsetting empty variant data.
         if (isset($data['variants']) && empty($data['variants'])) {
@@ -218,37 +259,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         unset($data['similarArticles']);
         $article->fromArray($data);
 
-        $uActive = $article->isActive();
-        $uAccepted = $article->isAccepted();
-        $uLinked = $article->getLinked();
-
-        $articleMapper = $this->services->get(ArticleMapper::class);
-
-        if ($uActive !== $sActive) {
-            // User request to change active state of article
-            if ($articleMapper->updateShopwareArticle($article) !== $uActive) {
-                if ($uActive) {
-                    $message = 'Shopware article not created because it failed to validate.';
-                } else {
-                    $message = 'Shopware article was not deactivated.';
-                }
-                return [ 'success' => false, 'message' => $message ];
-            }
-        } elseif ($uAccepted !== $sAccepted) {
-            // User request to change accepted state of article
-            $articleMapper->updateShopwareArticle($article);
-            if ($article->isAccepted() !== $uAccepted) {
-                $message = 'Failed to set article\'s accepted state to ' . var_export($uAccepted, true) . '.';
-                return [ 'success' => false, 'message' => $message ];
-            }
-        } elseif ($uLinked !== $sLinked) {
-            // User request to change the linked state of article
-            $articleMapper->updateShopwareArticle($article);
-            if ($article->isLinked() !== $uLinked) {
-                $message = 'Failed to set article\'s linked state to ' . var_export($uLinked, true) . '.';
-                return ['success' => false, 'message' => $message];
-            }
-        }
+        $result = $this->processStateUpdates($article);
+        if ($result !== true) return $result;
 
         // Our customization ends here.
         // The rest below is default Shopware behaviour copied from parent implementation
@@ -273,4 +285,114 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
 
         return ['success' => true, 'data' => $detail['data']];
     }
+
+    public function dev1Action()
+    {
+        $this->log->enter();
+        try {
+            $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currrently free.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
+    public function dev2Action()
+    {
+        $this->log->enter();
+        try {
+            $dql = 'SELECT a.icNumber, a.name, a.dosage FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+                . 'WHERE a.type = \'AROMA\' ORDER BY a.name';
+            $articles = $this->getManager()->createQuery($dql)->getResult();
+            $fn = __DIR__ . '/../../Config/dosage.config.php';
+            Factory::toFile($fn, $articles);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currrently free.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
+    public function dev3Action()
+    {
+        $this->log->enter();
+        try {
+            $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
+    public function dev4Action()
+    {
+        $this->log->enter();
+        try {
+            $this->view->assign([ 'success' => true, 'message' => 'Development 4 slot is currently free.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
+    public function dev5Action() {
+        $this->log->enter();
+        try {
+            $params = $this->request->getParams();
+            /** @noinspection PhpUnusedLocalVariableInspection */
+            $ids = json_decode($params['ids'], true);
+            // Do something with the ids
+            $this->view->assign([ 'success' => true, 'message' => 'Development 5 slot is currently free.']);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $this->log->leave();
+    }
+
+    public function dev6Action() {
+        $this->log->enter();
+        try {
+            $params = $this->request->getParams();
+            /** @noinspection PhpUnusedLocalVariableInspection */
+            $ids = json_decode($params['ids'], true);
+            // Do something with the ids
+            $this->view->assign([ 'success' => true, 'message' => 'Development 6 slot is currently free.']);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $this->log->leave();
+    }
+
+    public function dev7Action() {
+        $this->log->enter();
+        try {
+            $params = $this->request->getParams();
+            /** @noinspection PhpUnusedLocalVariableInspection */
+            $ids = json_decode($params['ids'], true);
+            // Do something with the ids
+            $this->view->assign([ 'success' => true, 'message' => 'Development 7 slot is currently free.']);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $this->log->leave();
+    }
+    public function dev8Action() {
+        $this->log->enter();
+        try {
+            $params = $this->request->getParams();
+            /** @noinspection PhpUnusedLocalVariableInspection */
+            $ids = json_decode($params['ids'], true);
+            // Do something with the ids
+            $this->view->assign([ 'success' => true, 'message' => 'Development 8 slot is currently free.']);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $this->log->leave();
+    }
+
 }

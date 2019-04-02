@@ -6,8 +6,7 @@
  * Time: 14:24
  */
 
-namespace MxcDropshipInnocigs\Import;
-
+namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
@@ -81,7 +80,6 @@ class PropertyDerivator
         }
 
         $article->setPiecesPerPack($this->derivePiecesPerPack($article));
-        $article->setDosage($this->deriveDosage($article));
     }
 
     protected function deriveCommonName(Article $article)
@@ -104,14 +102,6 @@ class PropertyDerivator
             $ppp = $matches[1];
         };
         return $ppp;
-    }
-
-    protected function deriveDosage(Article $article)
-    {
-        if ($article->getType() !== 'AROMA') return null;
-        $supplier = $article->getSupplier();
-        $dosage = $this->config['recommended_dosage'][$supplier];
-        return $dosage;
     }
 
     protected function getAsscociatedArticles(Article $article, array $config) : ArrayCollection

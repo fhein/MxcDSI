@@ -65,7 +65,17 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             'mxcCheckNameMappingConsistency',
 
             /** @event mxcCheckNameMappingConsistency */
-            'mxcExportConfig'
+            'mxcExportConfig',
+
+            'mxcDev1',
+            'mxcDev2',
+            'mxcDev3',
+            'mxcDev4',
+            'mxcDev5',
+            'mxcDev6',
+            'mxcDev7',
+            'mxcDev8',
+
         );
     },
 
@@ -76,7 +86,8 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             me.createActionsButton(),
             me.createAllButton(),
             me.createSelectionButton(),
-            me.createToolsButton()
+            me.createToolsButton(),
+            me.createDevButton()
         ]);
         return items;
     },
@@ -302,6 +313,77 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         });
         return Ext.create('Ext.button.Button', {
             text: 'Actions',
+            menu: menu,
+            listeners: {
+                'mouseover': function() {
+                    this.showMenu();
+                }
+            }
+        });
+    },
+
+    createDevButton: function() {
+        let me = this;
+
+        var menu = Ext.create('Ext.menu.Menu', {
+            id: 'mxcDsiDevelopmentMenu',
+            style: {
+                overflow: 'visible'
+            },
+            items: [
+                {
+                    text: 'Dev #1',
+                    handler: function() {
+                        me.fireEvent('mxcDev1', me);
+                    }
+                },
+                {
+                    text: 'Dev #2',
+                    handler: function() {
+                        me.fireEvent('mxcDev2', me);
+                    }
+                },
+                {
+                    text: 'Dev #3',
+                    handler: function() {
+                        me.fireEvent('mxcDev3', me);
+                    }
+                },
+                {
+                    text: 'Dev #4',
+                    handler: function() {
+                        me.fireEvent('mxcDev4', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Dev #5 on selected',
+                    handler: function() {
+                        me.fireEvent('mxcDev5', me);
+                    }
+                },
+                {
+                    text: 'Dev #6 on selected',
+                    handler: function() {
+                        me.fireEvent('mxcDev6', me);
+                    }
+                },
+                {
+                    text: 'Dev #7 on selected',
+                    handler: function() {
+                        me.fireEvent('mxcDev7', me);
+                    }
+                },
+                {
+                    text: 'Dev #8 on selected',
+                    handler: function() {
+                        me.fireEvent('mxcDev8', me);
+                    }
+                },
+            ]
+        });
+        return Ext.create('Ext.button.Button', {
+            text: 'Development',
             menu: menu,
             listeners: {
                 'mouseover': function() {

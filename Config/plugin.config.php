@@ -4,17 +4,22 @@ namespace MxcDropshipInnocigs;
 
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Import\Credentials;
-use MxcDropshipInnocigs\Import\Flavorist;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
-use MxcDropshipInnocigs\Import\PropertyDerivator;
-use MxcDropshipInnocigs\Import\PropertyMapper;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as PropertyMapperReport;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\MappingFilePersister;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
+use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
+use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
+use MxcDropshipInnocigs\Mapping\Import\ArticleManufacturerMapper;
+use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\ArticleTypeMapper;
+use MxcDropshipInnocigs\Mapping\Import\Flavorist;
+use MxcDropshipInnocigs\Mapping\Import\PropertyDerivator;
+use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -23,6 +28,7 @@ use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
+use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
@@ -31,7 +37,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 
 return [
     'plugin'   => [
-        MappingFilePersister::class
+        MappingFilePersister::class,
     ],
     'doctrine' => [
         'models'     => [
@@ -94,6 +100,9 @@ return [
             ApiClient::class,
             MappingFilePersister::class,
             ArticleMapper::class,
+            ArticleNameMapper::class,
+            ArticleTypeMapper::class,
+            ArticleManufacturerMapper::class,
             ArticleOptionMapper::class,
             ConfiguratorGroupRepository::class,
             ConfiguratorSetRepository::class,
@@ -104,23 +113,29 @@ return [
             ImportClient::class,
             ImportMapper::class,
             MediaTool::class,
+            NameMappingConsistency::class,
             PropertyMapper::class,
             PropertyMapperReport::class,
             ArrayReport::class,
             PropertyDerivator::class,
+            RegularExpressions::class,
+            RegexChecker::class,
         ],
     ],
 
     'class_config' => [
-        ImportClient::class      => include __DIR__ . '/importclient.config.php',
-        PropertyMapper::class    => include __DIR__ . '/propertymapper.config.php',
-        ImportMapper::class      => include __DIR__ . '/importmapper.config.php',
-        PropertyDerivator::class => include __DIR__ . '/propertyderivator.config.php',
-        ArticleMapper::class     => [
+        ImportClient::class              => include __DIR__ . '/ImportClient.config.php',
+        PropertyMapper::class            => include __DIR__ . '/PropertyMapper.config.php',
+        ImportMapper::class              => include __DIR__ . '/ImportMapper.config.php',
+        PropertyDerivator::class         => include __DIR__ . '/PropertyDerivator.config.php',
+        ArticleNameMapper::class         => include __DIR__ . '/ArticleNameMapper.config.php',
+        ArticleTypeMapper::class         => include __DIR__ . '/ArticleTypeMapper.config.php',
+        ArticleManufacturerMapper::class => include __DIR__ . '/ArticleManufacturerMapper.config.php',
+        ArticleMapper::class             => [
             'root_category' => 'Deutsch',
         ],
-        MappingFilePersister::class => [
+        MappingFilePersister::class      => [
             'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
-        ]
+        ],
     ],
 ];

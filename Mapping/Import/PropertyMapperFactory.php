@@ -1,18 +1,17 @@
-<?php /** @noinspection PhpUnusedParameterInspection */
+<?php
 
-namespace MxcDropshipInnocigs\Import;
+namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
-use MxcDropshipInnocigs\Mapping\ArticleMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleManufacturerMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
+use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
+use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ImportMapperFactory implements FactoryInterface
+class PropertyMapperFactory implements FactoryInterface
 {
     use ClassConfigTrait;
+
     /**
      * Create an object
      *
@@ -23,25 +22,31 @@ class ImportMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $this->getClassConfig($container, $requestedName);
-        $apiClient = $container->get(ApiClient::class);
-        $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        $propertyMapper = $container->get(PropertyMapper::class);
-        $articleMapper = $container->get(ArticleMapper::class);
-        $bulkOperation = new BulkOperation($container->get('modelManager'), $log);
+        $reporter = $container->get(Reporter::class);
+        $config = $this->getClassConfig($container, $requestedName);
+        $config = $config->toArray();
+        $flavorist = $container->get(Flavorist::class);
+        $propertyDerivator = $container->get(PropertyDerivator::class);
+        $log = $container->get('logger');
+
         $articleNameMapper = $container->get(ArticleNameMapper::class);
+        $articleTypeMapper = $container->get(ArticleTypeMapper::class);
         $articleManufacturerMapper = $container->get(ArticleManufacturerMapper::class);
-        return new ImportMapper(
+        $regularExpressions = $container->get(RegularExpressions::class);
+
+        return new PropertyMapper(
             $modelManager,
-            $apiClient,
-            $propertyMapper,
             $articleNameMapper,
+            $articleTypeMapper,
             $articleManufacturerMapper,
-            $articleMapper,
-            $bulkOperation,
+            $propertyDerivator,
+            $regularExpressions,
+            $flavorist,
+            $reporter,
             $config,
             $log
         );
     }
 }
+

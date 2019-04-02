@@ -101,7 +101,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
         $articleUpdates = $this->getInvolvedArticles($group->getId(), $groupChanged, $oldOptionValues);
         /** @noinspection PhpUnhandledExceptionInspection */
-        $articleMapper->updateShopwareArticles($articleUpdates);
+        $articleMapper->processStateChangesArticleList($articleUpdates);
 
         $detail = $this->getDetail($group->getId());
         $this->log->leave();

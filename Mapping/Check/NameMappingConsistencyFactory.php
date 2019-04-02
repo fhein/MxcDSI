@@ -1,14 +1,13 @@
-<?php /** @noinspection PhpUnusedParameterInspection */
+<?php
 
-namespace MxcDropshipInnocigs\Import;
+namespace MxcDropshipInnocigs\Mapping\Check;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
+use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class PropertyDerivatorFactory implements FactoryInterface
+class NameMappingConsistencyFactory implements FactoryInterface
 {
-    use ClassConfigTrait;
     /**
      * Create an object
      *
@@ -19,9 +18,11 @@ class PropertyDerivatorFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $this->getClassConfig($container, $requestedName);
-        $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        return new PropertyDerivator($modelManager, $config, $log);
+        $articleNameMapper = $container->get(ArticleNameMapper::class);
+        $log = $container->get('logger');
+
+        return new NameMappingConsistency($modelManager, $articleNameMapper, $log);
     }
 }
+

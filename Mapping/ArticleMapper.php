@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\OptimisticLockException;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Models\Article;
@@ -97,22 +96,32 @@ class ArticleMapper
     }
 
     /**
-     * Main entry point if the $active state of a list of InnoCigs article changes.
-     * If $active === true, creates/updates the Shopware article associated to
-     * the given InnoCigs article.
-     * If $active === false the Shopware article gets disabled without getting
-     * updated.
+     * Main entry point if the $active, $accepted or $linked state of a list of
+     * InnoCigs articles changes.
+     *
+     * $accepted === false  the associated Shopware article gets deactivated
+     *                      (articles which are not accepted do not get created
+     *                      regardless of the other settings)
+     *
+     * $active === true     the Shopware article gets created/updated and activated
+     * $active === false    the associated Shopware article gets deactivated without
+     *                      getting updated
+     *
+     * $linked === true     the Shopware article gets created
+     *
+     * $createArticlesNotActive === true    create article even if it is not $active
+     * $createArticlesNotActive === false   don't create articles which are not $active
      *
      * @param array $icArticles
-     * @throws OptimisticLockException
+     * @param bool $createArticlesNotActive
      */
-    public function updateShopwareArticles(array $icArticles)
+    public function processStateChangesArticleList(array $icArticles, bool $createArticlesNotActive = false)
     {
         $this->createdArticles = [];
         $activeArticles = [];
         /** @var Article $icArticle */
         foreach ($icArticles as $icArticle) {
-            if (! $this->setShopwareArticle($icArticle)) {
+            if (! $this->setShopwareArticle($icArticle, $createArticlesNotActive)) {
                 $this->setShopwareArticleActive($icArticle);
                 continue;
             }
@@ -120,23 +129,7 @@ class ArticleMapper
             $activeArticles[$icNumber] = $activeArticles[$icNumber] ?? $icArticle;
         }
 
-        $this->associatedArticles = [];
-        foreach ($activeArticles as $icArticle) {
-            $this->prepareAssociatedArticles($icArticle);
-        }
-
-        foreach ($this->associatedArticles as $icArticle) {
-            if ($this->setShopwareArticle($icArticle)) {
-                $activeArticles[$icArticle->getIcNumber()] = $icArticle;
-            }
-            $this->setShopwareArticleActive($icArticle);
-        }
-
-        foreach ($activeArticles as $icArticle) {
-            $this->setRelatedArticles($icArticle);
-            $this->setSimilarArticles($icArticle);
-            $this->setShopwareArticleActive($icArticle);
-        }
+        $this->processAssociatedArticles($createArticlesNotActive, $activeArticles);
 
         // Update all articles with similar or related articles referencing articles
         // that we just created.
@@ -147,64 +140,48 @@ class ArticleMapper
         $this->modelManager->flush();
     }
 
-    /**
-     * Entry point for multiple updates of the $active or $accepted setting
-     * of InnoCigs articles.
-     *
-     * @param array $icArticles
-     * @param string $field
-     * @param bool $value
-     * @throws OptimisticLockException
-     */
-    public function updateArticleState(array $icArticles, string $field, bool $value)
+    public function updateShopwareArticles(array $icArticles)
     {
-        if (! in_array($field, ['accepted', 'active', 'linked'])) return;
-        $setter = 'set' . ucfirst($field);
-
-        /** @var Article $icArticle */
-        foreach ($icArticles as $icArticle) {
-            $icArticle->$setter($value);
-        }
-        $this->updateShopwareArticles($icArticles);
+        $this->processStateChangesArticleList($icArticles, false);
     }
 
     /**
-     * Main entry point if the $active state of a single InnoCigs article changes.
-     * If $active === true, creates/updates the Shopware article associated to
-     * the given InnoCigs article.
-     * If $active === false the Shopware article gets disabled without getting
-     * updated.
+     * @see processStateChangesArticleList
      *
      * @param Article $icArticle
+     * @param bool $createArticlesNotActive
      * @return bool
+     *
      */
-    public function updateShopwareArticle(Article $icArticle)
+    public function processStateChangesArticle(Article $icArticle, bool $createArticlesNotActive = false)
     {
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->updateShopwareArticles([$icArticle]);
+        $this->processStateChangesArticleList([$icArticle], $createArticlesNotActive);
         return $icArticle->isActive();
     }
 
     /**
-     * Update the related and similar article lists of all Shopware articles
-     * where the corresponding icArticle has related and similar articles from
-     * the given $icArticles array.
-     *
-     * @param array $icArticles
+     * @param bool $createArticlesNotActive
+     * @param array $activeArticles
      */
-    protected function updateArticleLinks(array $icArticles) {
-        if (count($icArticles) === 0) return;
-
-        $repository = $this->modelManager->getRepository(Article::class);
-
-        $articlesWithRelatedNewArticles = $repository->getAllHavingRelatedArticles($icArticles);
-        foreach ($articlesWithRelatedNewArticles as $icArticle) {
-            $this->setRelatedArticles($icArticle);
+    protected function processAssociatedArticles(bool $createArticlesNotActive, array $activeArticles): void
+    {
+        $this->associatedArticles = [];
+        foreach ($activeArticles as $icArticle) {
+            $this->prepareAssociatedArticles($icArticle);
         }
 
-        $articlesWithSimilarNewArticles = $repository->getAllHavingSimilarArticles($icArticles);
-        foreach ($articlesWithSimilarNewArticles as $icArticle) {
+        foreach ($this->associatedArticles as $icArticle) {
+            if ($this->setShopwareArticle($icArticle, $createArticlesNotActive)) {
+                $activeArticles[$icArticle->getIcNumber()] = $icArticle;
+            }
+            $this->setShopwareArticleActive($icArticle);
+        }
+
+        foreach ($activeArticles as $icArticle) {
+            $this->setRelatedArticles($icArticle);
             $this->setSimilarArticles($icArticle);
+            $this->setShopwareArticleActive($icArticle);
         }
     }
 
@@ -260,9 +237,10 @@ class ArticleMapper
      * Create/Update the Shopware article associated to the active InnoCigs article.
      *
      * @param Article $icArticle
+     * @param bool $allowCreate
      * @return bool
      */
-    protected function setShopwareArticle(Article $icArticle): bool
+    protected function setShopwareArticle(Article $icArticle, bool $allowCreate): bool
     {
         if (! $icArticle->isValid()) {
             $icArticle->setActive(false);
@@ -270,7 +248,7 @@ class ArticleMapper
         }
 
         $swArticle = $icArticle->getArticle();
-        $create = ($swArticle === null);
+        $create = ($swArticle === null) && $allowCreate;
 
         if ($create) {
             // Create Shopware Article
@@ -866,6 +844,29 @@ class ArticleMapper
             if (!$collection->contains($article)) {
                 $collection->add($article);
             }
+        }
+    }
+
+    /**
+     * Update the related and similar article lists of all Shopware articles
+     * where the corresponding icArticle has related and similar articles from
+     * the given $icArticles array.
+     *
+     * @param array $icArticles
+     */
+    protected function updateArticleLinks(array $icArticles) {
+        if (count($icArticles) === 0) return;
+
+        $repository = $this->modelManager->getRepository(Article::class);
+
+        $articlesWithRelatedNewArticles = $repository->getAllHavingRelatedArticles($icArticles);
+        foreach ($articlesWithRelatedNewArticles as $icArticle) {
+            $this->setRelatedArticles($icArticle);
+        }
+
+        $articlesWithSimilarNewArticles = $repository->getAllHavingSimilarArticles($icArticles);
+        foreach ($articlesWithSimilarNewArticles as $icArticle) {
+            $this->setSimilarArticles($icArticle);
         }
     }
 

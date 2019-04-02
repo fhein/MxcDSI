@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Import;
+namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;

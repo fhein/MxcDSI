@@ -19,8 +19,8 @@ class ArticleRepository extends BaseEntityRepository
                                                     . 'WHERE d.id IS NULL',
         'getArticlesToLink'                  => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a '
                                                     . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-                                                    . 'WHERE a.linked = 0',
+                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number ',
+//                                                    . 'WHERE a.linked = 0 OR a.linked IS NULL',
         'getLinkedArticlesHavingOptions'     => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
                                                     . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
                                                     . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '

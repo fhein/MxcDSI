@@ -87,6 +87,8 @@ class ImportClient implements EventSubscriber
         $this->log = $log;
         $this->config = $config;
         $this->reporter = new ArrayReport();
+        $model = new Model();
+        $this->fields = $model->getPrivatePropertyNames();
     }
 
     public function getSubscribedEvents()
@@ -104,9 +106,6 @@ class ImportClient implements EventSubscriber
         $this->importLog['changes'] = [];
         $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->optionNames = [];
-
-        $model = new Model();
-        $this->fields = $model->getPrivatePropertyNames();
 
         $evm = $this->modelManager->getEventManager();
         $evm->addEventSubscriber($this);

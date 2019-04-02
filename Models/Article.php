@@ -391,12 +391,14 @@ class Article extends ModelEntity  {
         if ($this->article === null) {
             $this->article = Shopware()->Models()->getRepository(Article::class)->getShopwareArticle($this);
         }
+        $this->linked = $this->article !== null;
         return $this->article;
     }
 
     public function setArticle(?ShopwareArticle $article)
     {
         $this->article = $article;
+        $this->linked = $article !== null;
     }
 
     public function getValidVariants()
@@ -700,12 +702,7 @@ class Article extends ModelEntity  {
      */
     public function isLinked(): bool
     {
-        $this->linked = $this->getArticle() !== null;
-        return $this->linked;
-    }
-
-    public function getLinked(): bool
-    {
+        $this->getArticle();
         return $this->linked;
     }
 
