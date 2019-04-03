@@ -6,8 +6,10 @@ use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
+use MxcDropshipInnocigs\Mapping\Csv\ArticlePrices;
+use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Toolbox\Csv\CsvTool;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
 {
@@ -290,7 +292,12 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currrently free.' ]);
+            $csv = new CsvTool();
+            $content = file_get_contents(__DIR__ . '/../../Config/test.csv');
+            $parsedCsv = $csv->import($content, ';');
+            $this->log->debug('Parsed csv' . var_export($parsedCsv, true));
+            $csv->export(__DIR__ . '/../../Config/test2.csv', $parsedCsv);
+            $this->view->assign([ 'success' => true, 'message' => 'CSV imported.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
@@ -301,12 +308,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $dql = 'SELECT a.icNumber, a.name, a.dosage FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                . 'WHERE a.type = \'AROMA\' ORDER BY a.name';
-            $articles = $this->getManager()->createQuery($dql)->getResult();
-            $fn = __DIR__ . '/../../Config/dosage.config.php';
-            Factory::toFile($fn, $articles);
-
+            $prices = $this->services->get(ArticlePrices::class);
+            $prices->export();
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currrently free.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);

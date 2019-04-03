@@ -2,23 +2,14 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
-class ArticleNameMapper
+class ArticleNameMapper extends BaseImportMapper implements ArticleMapperInterface
 {
-    protected $log;
-    protected $config;
     protected $report;
-
-    public function __construct(array $config, LoggerInterface $log)
-    {
-        $this->log = $log;
-        $this->config = $config;
-    }
 
     public function map(Model $model, Article $article)
     {

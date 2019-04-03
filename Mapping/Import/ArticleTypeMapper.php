@@ -2,10 +2,10 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\Model;
 
-class ArticleTypeMapper
+class ArticleTypeMapper extends BaseImportMapper implements ArticleMapperInterface
 {
     // Article type constants
     const TYPE_UNKNOWN              = 0;
@@ -59,25 +59,14 @@ class ArticleTypeMapper
     const TYPE_STORAGE              = 48;
     const TYPE_BATTERY_SLEEVE       = 49;
 
-    /** @var array $config */
-    protected $config;
-
-    /** @var LoggerInterface $log */
-    protected $log;
-
-    public function __construct(array $config, LoggerInterface $log)
-    {
-        $this->log = $log;
-        $this->config = $config;
-    }
-
     /**
      * Derive the type of an article. This is done via the
      * 'name_type_mapping' configuration.
      *
+     * @param Model $model
      * @param Article $article
      */
-    public function map(Article $article)
+    public function map(Model $model, Article $article)
     {
         $name = $article->getName();
         $types = $this->config['name_type_mapping'];

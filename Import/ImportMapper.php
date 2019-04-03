@@ -6,10 +6,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Mapping\ArticleMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleManufacturerMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
-use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
+use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -31,12 +29,6 @@ class ImportMapper
 
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
-
-    /** @var ArticleNameMapper $articleNameMapper */
-    protected $articleNameMapper;
-
-    /** @var ArticleManufacturerMapper $articleManufacturerMapper */
-    protected $articleManufacturerMapper;
 
     /** @var ArticleMapper $articleMapper */
     protected $articleMapper;
@@ -76,8 +68,6 @@ class ImportMapper
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
-     * @param ArticleNameMapper $articleNameMapper
-     * @param ArticleManufacturerMapper $articleManufacturerMapper
      * @param PropertyMapper $propertyMapper
      * @param ArticleMapper $articleMapper
      * @param BulkOperation $bulkOperation
@@ -87,8 +77,6 @@ class ImportMapper
     public function __construct(
         ModelManager $modelManager,
         ApiClient $apiClient,
-        ArticleNameMapper $articleNameMapper,
-        ArticleManufacturerMapper $articleManufacturerMapper,
         PropertyMapper $propertyMapper,
         ArticleMapper $articleMapper,
         BulkOperation $bulkOperation,
@@ -98,8 +86,6 @@ class ImportMapper
         $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
-        $this->articleNameMapper = $articleNameMapper;
-        $this->articleManufacturerMapper = $articleManufacturerMapper;
         $this->articleMapper = $articleMapper;
         $this->bulkOperation = $bulkOperation;
         $this->config = $config->toArray();
@@ -279,13 +265,13 @@ class ImportMapper
             $oldValue = $values['oldValue'];
             switch ($name) {
                 case 'category':
-                    $this->propertyMapper->mapCategory($model, $variant->getArticle());
+                    $this->propertyMapper->mapArticleCategory($model, $variant->getArticle());
                     break;
                 case 'ean':
                     $variant->setEan($newValue);
                     break;
                 case 'name':
-                    $this->articleNameMapper->map($model, $variant->getArticle());
+                    $this->propertyMapper->mapArticleName($model, $variant->getArticle());
                     break;
                 case 'purchasePrice':
                     $price = floatval(str_replace(',', '.', $newValue));
@@ -296,7 +282,7 @@ class ImportMapper
                     $variant->setRetailPrice($price);
                     break;
                 case 'manufacturer':
-                    $this->articleManufacturerMapper->map($model, $variant->getArticle());
+                    $this->propertyMapper->mapArticleManufacturer($model, $variant->getArticle());
                     break;
                 case 'images':
                     $this->changeImages($variant, $oldValue, $newValue);

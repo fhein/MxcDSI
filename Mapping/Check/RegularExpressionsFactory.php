@@ -4,9 +4,9 @@ namespace MxcDropshipInnocigs\Mapping\Check;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
+use MxcDropshipInnocigs\Mapping\Import\ArticleCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
 use MxcDropshipInnocigs\Mapping\Import\ArticleTypeMapper;
-use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -33,7 +33,7 @@ class RegularExpressionsFactory implements FactoryInterface
         $key = 'name_type_mapping';
         $config[$key] = $articleTypeMapperConfig[$key];
 
-        $propertyMapperConfig = $this->getClassConfig($container, PropertyMapper::class)->toArray();
+        $propertyMapperConfig = $this->getClassConfig($container, ArticleCategoryMapper::class)->toArray();
         $key = 'categories';
         $config[$key] = $propertyMapperConfig[$key];
 

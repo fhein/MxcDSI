@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnusedParameterInspection */
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
@@ -6,10 +6,9 @@ use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleManufacturerMapperFactory implements FactoryInterface
+class AssociatedArticlesMapperFactory implements FactoryInterface
 {
     use ClassConfigTrait;
-
     /**
      * Create an object
      *
@@ -21,10 +20,8 @@ class ArticleManufacturerMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $config = $this->getClassConfig($container, $requestedName);
-        $config = $config->toArray();
         $log = $container->get('logger');
-
-        return new ArticleManufacturerMapper($config, $log);
+        $modelManager = $container->get('modelManager');
+        return new AssociatedArticlesMapper($modelManager, $config, $log);
     }
 }
-

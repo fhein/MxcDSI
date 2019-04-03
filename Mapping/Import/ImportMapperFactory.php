@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleNameMapperFactory implements FactoryInterface
+class ImportMapperFactory implements FactoryInterface
 {
     use ClassConfigTrait;
 
@@ -21,10 +21,10 @@ class ArticleNameMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $config = $this->getClassConfig($container, $requestedName);
-        $config = $config->toArray();
         $log = $container->get('logger');
+        $config = $config->toArray();
 
-        return new ArticleNameMapper($config, $log);
+        return new $requestedName($config, $log);
     }
-}
 
+}

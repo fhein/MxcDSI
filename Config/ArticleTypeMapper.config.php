@@ -99,6 +99,7 @@ return [
         '~Mundstück~'         => ArticleTypeMapper::TYPE_DRIP_TIP,
         '~Drip Tip~'          => ArticleTypeMapper::TYPE_DRIP_TIP,
         '~Glastank~'          => ArticleTypeMapper::TYPE_TANK,
+        '~Ultem Tank~'        => ArticleTypeMapper::TYPE_TANK,
         '~Top-Kappe~'         => ArticleTypeMapper::TYPE_TANK,
         '~Hollowed Out Tank~' => ArticleTypeMapper::TYPE_TANK_PROTECTION,
         '~Tankschutz~'        => ArticleTypeMapper::TYPE_TANK_PROTECTION,

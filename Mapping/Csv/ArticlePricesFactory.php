@@ -1,15 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipInnocigs\Mapping\Csv;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleTypeMapperFactory implements FactoryInterface
+class ArticlePricesFactory implements FactoryInterface
 {
-    use ClassConfigTrait;
-
     /**
      * Create an object
      *
@@ -20,11 +17,10 @@ class ArticleTypeMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $this->getClassConfig($container, $requestedName);
-        $config = $config->toArray();
+        $modelManager = $container->get('modelManager');
         $log = $container->get('logger');
 
-        return new ArticleTypeMapper($config, $log);
+        return new $requestedName($modelManager, $log);
     }
-}
 
+}

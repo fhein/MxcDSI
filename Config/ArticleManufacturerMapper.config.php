@@ -15,5 +15,6 @@ return [
             'supplier' => 'Dexter\'s Juice Lab',
         ],
     ],
+    'articles' => include __DIR__ . '/article.config.php',
 
 ];

@@ -15,7 +15,7 @@ use MxcDropshipInnocigs\Report\ArrayReport;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Config;
 
-class PropertyDerivator
+class AssociatedArticlesMapper
 {
     protected $log;
     protected $modelManager;
@@ -29,13 +29,10 @@ class PropertyDerivator
         $this->modelManager = $modelManager;
     }
 
-    public function derive(array $articles)
+    public function map(array $articles)
     {
         $this->articleGroups = [];
-        //$articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
-        foreach ($articles as $number => $article) {
-            $this->deriveProperties($article);
-        }
+        $this->prepareArticleGroups($articles);
         $this->deriveRelatedArticles();
         $this->deriveSimilarArticles();
 
@@ -44,64 +41,29 @@ class PropertyDerivator
         $this->dumpSimilarArticles();
     }
 
-    protected function dumpProductNames() {
-        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
-        $products = [];
-        foreach ($articles as $number => $article) {
-            /** @var Article $article */
-            $name = $article->getCommonName();
-            $products[$name] = true;
-        }
-        ksort($products);
-        (new ArrayReport())(['peProducts' => array_keys($products)]);
-    }
-
-    public function deriveProperties(Article $article)
+    public function prepareArticleGroups(array $articles)
     {
-        $type = $article->getType();
+        $this->articleGroups = [];
+        foreach ($articles as $article) {
+            $type = $article->getType();
+            $commonName = $article->getCommonName();
 
-        $commonName = $this->deriveCommonName($article);
-        $article->setCommonName($commonName);
-
-        switch ($commonName) {
-            case 'K2 & K3':
-                {
-                    // special case where one article name indicates spare part for two articles
-                    $this->articleGroups[$type]['K2'][] = $article;
-                    $this->articleGroups[$type]['K3'][] = $article;
-                }
-                break;
-            /** @noinspection PhpMissingBreakStatementInspection */
-            case 'Aromamizer Supreme RDTA V2':
-                $this->articleGroups[$type][$commonName . '.1'][] = $article;
+            switch ($commonName) {
+                case 'K2 & K3':
+                    {
+                        // special case where one article name indicates spare part for two articles
+                        $this->articleGroups[$type]['K2'][] = $article;
+                        $this->articleGroups[$type]['K3'][] = $article;
+                    }
+                    break;
+                /** @noinspection PhpMissingBreakStatementInspection */
+                case 'Aromamizer Supreme RDTA V2':
+                    $this->articleGroups[$type][$commonName . '.1'][] = $article;
                 // intentional fall through
-            default:
-                $this->articleGroups[$type][$commonName][] = $article;
+                default:
+                    $this->articleGroups[$type][$commonName][] = $article;
+            }
         }
-
-        $article->setPiecesPerPack($this->derivePiecesPerPack($article));
-    }
-
-    protected function deriveCommonName(Article $article)
-    {
-        $name = $article->getName();
-        $raw = explode(' - ', $name);
-        $index = $this->config['common_name_index'][$raw[0]][$raw[1]] ?? 1;
-        $name = trim($raw[$index] ?? $raw[0]);
-        $replacements = [ '~ \(\d+ Stück pro Packung\)~', '~Head$~'];
-        $name = preg_replace($replacements, '', $name);
-        return trim($name);
-    }
-
-    protected function derivePiecesPerPack(Article $article)
-    {
-        $name = $article->getName();
-        $matches = [];
-        $ppp = 1;
-        if (preg_match('~\((\d+) Stück~', $name, $matches) === 1) {
-            $ppp = $matches[1];
-        };
-        return $ppp;
     }
 
     protected function getAsscociatedArticles(Article $article, array $config) : ArrayCollection
@@ -187,23 +149,6 @@ class PropertyDerivator
         }
     }
 
-    public function export() {
-        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
-        $export = [];
-        /** @var  Article $article */
-        foreach($articles as $number => $article) {
-            $base = $article->getBase();
-            if ($base !== null) {
-                $export[$number]['base'] = $base;
-            }
-            $dosage = $article->getDosage();
-            if ($dosage !== null) {
-                $export[$number]['dosage'] = $dosage;
-            }
-        }
-        (new ArrayReport())(['peProperties' => $export]);
-    }
-
     public function dumpRelatedArticles() {
         $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         /** @var Article $article */
@@ -244,6 +189,18 @@ class PropertyDerivator
             ];
         }
         (new ArrayReport())(['peSimilarArticles' => $similarArticleList]);
+    }
+
+    protected function dumpProductNames() {
+        $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        $products = [];
+        foreach ($articles as $number => $article) {
+            /** @var Article $article */
+            $name = $article->getCommonName();
+            $products[$name] = true;
+        }
+        ksort($products);
+        (new ArrayReport())(['peProducts' => array_keys($products)]);
     }
 
 }

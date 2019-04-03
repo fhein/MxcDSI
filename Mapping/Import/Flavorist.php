@@ -19,8 +19,8 @@ class Flavorist
 
     protected $reversedCategories = [];
 
-    protected $categoryFile = __DIR__ . '/../Config/flavor.categories.config.php';
-    protected $flavorFile = __DIR__ . '/../Config/flavor.config.php';
+    protected $categoryFile = __DIR__ . '/../../Config/flavor.categories.config.php';
+    protected $flavorFile = __DIR__ . '/../../Config/ArticleFlavorMapper.config.php';
 
     public function __construct(ModelManager $modelManager, LoggerInterface $log)
     {

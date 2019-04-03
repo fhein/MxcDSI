@@ -320,6 +320,7 @@ return [
             '~(Lexicon) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(iStick .*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Aegis Legend) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(Aegis Mini) (- \d\.\d+ mAh)~'                             => '$1 - Akku $2',
             '~(Nova) (- \d+ Watt)~'                                      => '$1 - Akkuträger $2',
             '~(Espion.*) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
             '~(eVic Primo SE) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
@@ -439,7 +440,7 @@ return [
             '~(Easy 3)~',
         ],
         'GeekVape'    => [
-            '~(Aegis( Legend)?)~',
+            '~(Aegis(( Legend)|( Mini))?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
             '~(Creed RTA)~',
@@ -489,6 +490,7 @@ return [
             '~(Osub King)~',
             '~(Priv M17)~',
             '~(QBox)~',
+            '~(R-Kiss)~',
             '~(R40)~',
             '~(Stick)~',
             '~(T-Priv)~',
@@ -503,6 +505,7 @@ return [
             // Smok
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
+            '~(R-Kiss)~',
             '~(H-Priv 2)~',
             '~(Mag Baby)~',
             '~(Micro One)~',
