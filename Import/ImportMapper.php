@@ -193,10 +193,11 @@ class ImportMapper
             // set properties which do not require mapping
             $variant->setIcNumber($number);
             $variant->setEan($model->getEan());
-            $price = floatval(str_replace(',', '.', $model->getPurchasePrice()));
+            $price = $model->getPurchasePrice();
             $variant->setPurchasePrice($price);
-            $price = floatVal(str_replace(',', '.', $model->getRetailPrice()));
-            $variant->setRetailPrice($price);
+            $uvp = $model->getRecommendedRetailPrice();
+            $variant->setRecommendedRetailPrice($uvp);
+            $variant->setRetailPrices('EK' . MXC_DELIMITER_L1 . $uvp);
 
             $images = $model->getImages();
             if (null !== $images) {
@@ -274,12 +275,10 @@ class ImportMapper
                     $this->propertyMapper->mapArticleName($model, $variant->getArticle());
                     break;
                 case 'purchasePrice':
-                    $price = floatval(str_replace(',', '.', $newValue));
-                    $variant->setPurchasePrice($price);
+                    $variant->setPurchasePrice($newValue);
                     break;
                 case 'retailPrice':
-                    $price = floatval(str_replace(',', '.', $newValue));
-                    $variant->setRetailPrice($price);
+                    $variant->setRecommendedRetailPrice($newValue);
                     break;
                 case 'manufacturer':
                     $this->propertyMapper->mapArticleManufacturer($model, $variant->getArticle());

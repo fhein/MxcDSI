@@ -57,11 +57,18 @@ class Variant extends ModelEntity
     private $purchasePrice;
 
     /**
-     * @var float $retailPrice
+     * @var float $recommendedRetailPrice
      *
-     * @ORM\Column(name="retail_price", type="decimal", precision=5, scale=2, nullable=false)
+     * @ORM\Column(name="uvp", type="string", nullable=false)
      */
-    private $retailPrice;
+    private $recommendedRetailPrice;
+
+    /**
+     * @var string $retailPrices
+     *
+     * @ORM\Column(name="retail_prices", type="string", nullable=true)
+     */
+    private $retailPrices;
 
     /**
      * @var ArrayCollection
@@ -218,9 +225,9 @@ class Variant extends ModelEntity
     /**
      * @return float
      */
-    public function getRetailPrice()
+    public function getRecommendedRetailPrice()
     {
-        return $this->retailPrice;
+        return $this->recommendedRetailPrice;
     }
 
     /**
@@ -284,11 +291,11 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param float $retailPrice
+     * @param float $recommendedRetailPrice
      */
-    public function setRetailPrice($retailPrice)
+    public function setRecommendedRetailPrice($recommendedRetailPrice)
     {
-        $this->retailPrice = $retailPrice;
+        $this->recommendedRetailPrice = $recommendedRetailPrice;
     }
 
     /**
@@ -476,5 +483,21 @@ class Variant extends ModelEntity
     public function setPiecesPerOrder($piecesPerOrder)
     {
         $this->piecesPerOrder = $piecesPerOrder;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRetailPrices(): string
+    {
+        return $this->retailPrices;
+    }
+
+    /**
+     * @param string $retailPrices
+     */
+    public function setRetailPrices(string $retailPrices): void
+    {
+        $this->retailPrices = $retailPrices;
     }
 }

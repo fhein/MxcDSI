@@ -9,7 +9,6 @@ use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
-use RuntimeException;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Detail;
@@ -22,6 +21,7 @@ use Shopware\Models\Plugin\Plugin;
 use Shopware\Models\Tax\Tax;
 use Zend\Config\Config;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class ArticleMapper
 {
@@ -354,7 +354,7 @@ class ArticleMapper
         $swDetail->setActive(true);
 
         // set next three properties only on detail creation
-        $this->setRetailPrice($icVariant);
+        $this->setRetailPrices($icVariant);
         $swDetail->setShippingTime(5);
         $swDetail->setLastStock(0);
 
@@ -420,7 +420,8 @@ class ArticleMapper
 
         $swDetail->setNumber($icVariant->getNumber());
         $swDetail->setEan($icVariant->getEan());
-        $swDetail->setPurchasePrice($icVariant->getPurchasePrice());
+        $purchasePrice = floatval(str_replace(',', '.', $icVariant->getPurchasePrice()));
+        $swDetail->setPurchasePrice($purchasePrice);
 
         $attribute = $swDetail->getAttribute();
         $icArticle = $icVariant->getArticle();
@@ -562,7 +563,7 @@ class ArticleMapper
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcPurchasingPrice($icVariant->getPurchasePrice());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcRetailPrice($icVariant->getRetailPrice());
+        $attribute->setDcIcRetailPrice($icVariant->getRecommendedRetailPrice());
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcInstock($this->client->getStockInfo($icVariant->getIcNumber()));
     }
@@ -645,18 +646,25 @@ class ArticleMapper
      * @param Variant $icVariant
      */
 
-    protected function setRetailPrice(Variant $icVariant)
+    public function setRetailPrices(Variant $icVariant)
     {
         $swDetail = $icVariant->getDetail();
         if (! $swDetail) return;
 
-        $price = $this->getPrice($swDetail);
-
         $tax = $swDetail->getArticle()->getTax()->getTax();
-        $netPrice = $icVariant->getRetailPrice() / (1 + ($tax / 100));
-        $price->setPrice($netPrice);
-        $price->setFrom(1);
-        $price->setTo(null);
+
+        $retailPrices = explode(MXC_DELIMITER_L2, $icVariant->getRetailPrices());
+        foreach ($retailPrices as $retailPrice) {
+            list($customerGroupKey, $retailPrice) = explode(MXC_DELIMITER_L1, $retailPrice);
+            $price = $this->getPrice($swDetail, $customerGroupKey);
+
+            if (! $price) continue;
+            $retailPrice = floatval(str_replace(',', '.', $retailPrice));
+            $netPrice = $retailPrice / (1 + ($tax / 100));
+            $price->setPrice($netPrice);
+            $price->setFrom(1);
+            $price->setTo(null);
+        }
     }
 
     /**
@@ -773,15 +781,11 @@ class ArticleMapper
      * which is related to the given Shopware detail and the assiciated Shopware article.
      *
      * @param Detail $swDetail
-     * @param string $key       customer group key
+     * @param Group $customerGroup
      * @return Price
      */
-    protected function createPrice(Detail $swDetail, string $key)
+    protected function createPrice(Detail $swDetail, Group $customerGroup)
     {
-        $customerGroup = $this->customerGroups[$key];
-        if ($customerGroup === null) {
-            throw new RuntimeException(__FUNCTION__ . ': Invalid customer group key ' . $key . '.');
-        }
         $price = new Price();
         $this->modelManager->persist($price);
         $price->setCustomerGroup($customerGroup);
@@ -796,19 +800,22 @@ class ArticleMapper
      * added to the Shopware detail object.
      *
      * @param Detail $swDetail
-     * @param string $key           customer group key
-     * @return Price
+     * @param string $customerGroupKey
+     * @return Price|null
      */
-    protected function getPrice(Detail $swDetail, string $key = 'EK')
+    protected function getPrice(Detail $swDetail, string $customerGroupKey) : ?Price
     {
+        $customerGroup = $this->customerGroups[$customerGroupKey];
+        if ($customerGroup === null) return null;
+
         $prices = $swDetail->getPrices();
         /** @var Price $price */
         foreach ($prices as $price) {
-            if ($price->getCustomerGroup()->getKey() === $key) {
+            if ($price->getCustomerGroup()->getKey() === $customerGroupKey) {
                 return $price;
             }
         }
-        $price = $this->createPrice($swDetail, $key);
+        $price = $this->createPrice($swDetail, $customerGroup);
         $swDetail->getPrices()->add($price);
         return $price;
     }
@@ -931,5 +938,10 @@ class ArticleMapper
             return false;
         };
         return true;
+    }
+
+    public function getCustomerGroups()
+    {
+        return $this->customerGroups;
     }
 }

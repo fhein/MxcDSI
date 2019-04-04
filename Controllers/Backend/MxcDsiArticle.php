@@ -9,7 +9,6 @@ use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Csv\ArticlePrices;
 use MxcDropshipInnocigs\Mapping\PropertyMapper;
 use MxcDropshipInnocigs\Models\Article;
-use MxcDropshipInnocigs\Toolbox\Csv\CsvTool;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
 {
@@ -92,6 +91,19 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             ]);
         }
         $this->log->leave();
+    }
+
+    public function exportPricesAction()
+    {
+        $this->log->enter();
+        try {
+            $prices = $this->services->get(ArticlePrices::class);
+            $prices->export();
+            $this->view->assign([ 'success' => true, 'message' => 'Prices successfully exported to Config/article.prices.xlsx.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
     }
 
     public function setStateSelectedAction()
@@ -292,12 +304,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $csv = new CsvTool();
-            $content = file_get_contents(__DIR__ . '/../../Config/test.csv');
-            $parsedCsv = $csv->import($content, ';');
-            $this->log->debug('Parsed csv' . var_export($parsedCsv, true));
-            $csv->export(__DIR__ . '/../../Config/test2.csv', $parsedCsv);
-            $this->view->assign([ 'success' => true, 'message' => 'CSV imported.' ]);
+            $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
@@ -308,9 +315,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $prices = $this->services->get(ArticlePrices::class);
-            $prices->export();
-            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currrently free.' ]);
+            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
@@ -321,6 +326,9 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
+            $prices = $this->services->get(ArticlePrices::class);
+            $prices->import();
+
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);

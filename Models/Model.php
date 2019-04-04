@@ -59,9 +59,9 @@ class Model extends ModelEntity
 
     /**
      * @var string $purchasePrice
-     * @ORM\Column(name="retail_price", type="string", nullable=false)
+     * @ORM\Column(name="uvp", type="string", nullable=false)
      */
-    private $retailPrice;
+    private $recommendedRetailPrice;
 
     /**
      * @var string $images;
@@ -201,17 +201,17 @@ class Model extends ModelEntity
     /**
      * @return string
      */
-    public function getRetailPrice(): string
+    public function getRecommendedRetailPrice(): string
     {
-        return $this->retailPrice;
+        return $this->recommendedRetailPrice;
     }
 
     /**
-     * @param string $retailPrice
+     * @param string $recommendedRetailPrice
      */
-    public function setRetailPrice(string $retailPrice)
+    public function setRecommendedRetailPrice(string $recommendedRetailPrice)
     {
-        $this->retailPrice = $retailPrice;
+        $this->recommendedRetailPrice = $recommendedRetailPrice;
     }
 
     /**

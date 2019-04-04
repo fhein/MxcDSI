@@ -44,7 +44,6 @@ class ArticleRepository extends BaseEntityRepository
                                                     . 'JOIN MxcDropshipInnocigs\Models\Article a WHERE v.article = a.id '
                                                     . 'WHERE a.number = :number',
         'removeOrphaned'                     => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.variants is empty',
-
         'getProperties'                      => 'SELECT :properties FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
     ];
 

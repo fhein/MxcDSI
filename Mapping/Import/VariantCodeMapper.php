@@ -15,7 +15,7 @@ class VariantCodeMapper extends BaseImportMapper implements VariantMapperInterfa
      */
     public function map(Model $model, Variant $variant): void
     {
-        $number = $model->getMaster();
+        $number = $model->getModel();
         $variant->setNumber($this->config['variant_codes'][$number] ?? $number);
     }
 }

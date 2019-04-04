@@ -52,19 +52,19 @@ class XmlClient
         $import = [];
         foreach ($models as $model) {
             $item = [];
-            $item['category']       = $model->getElementsByTagName('CATEGORY')->item(0)->nodeValue;
-            $item['model']          = $model->getElementsByTagName('MODEL')->item(0)->nodeValue;
-            $item['master']         = $model->getElementsByTagName('MASTER')->item(0)->nodeValue;
-            $item['ean']            = $model->getElementsByTagName('EAN')->item(0)->nodeValue;
-            $item['name']           = $model->getElementsByTagName('NAME')->item(0)->nodeValue;
-            $item['purchasePrice']  = $model->getElementsByTagName('PRODUCTS_PRICE')->item(0)->nodeValue;
-            $item['retailPrice']    = $model->getElementsByTagName('PRODUCTS_PRICE_RECOMMENDED')->item(0)->nodeValue;
-            $item['manufacturer']   = $model->getElementsByTagName('MANUFACTURER')->item(0)->nodeValue;
-            $item['manual']         = $model->getElementsByTagName('PRODUCTS_MANUAL')->item(0)->nodeValue;
-            $item['description']    = $model->getElementsByTagName('DESCRIPTION')->item(0)->nodeValue;
-            $item['image']          = $model->getElementsByTagName('PRODUCTS_IMAGE')->item(0)->nodeValue;
-            $attributes             = $model->getElementsByTagName('PRODUCTS_ATTRIBUTES')->item(0)->childNodes;
-            $addlImages             = $model->getElementsByTagName('PRODUCTS_IMAGE_ADDITIONAL')->item(0)->childNodes;
+            $item['category']                   = $model->getElementsByTagName('CATEGORY')->item(0)->nodeValue;
+            $item['model']                      = $model->getElementsByTagName('MODEL')->item(0)->nodeValue;
+            $item['master']                     = $model->getElementsByTagName('MASTER')->item(0)->nodeValue;
+            $item['ean']                        = $model->getElementsByTagName('EAN')->item(0)->nodeValue;
+            $item['name']                       = $model->getElementsByTagName('NAME')->item(0)->nodeValue;
+            $item['purchasePrice']              = $model->getElementsByTagName('PRODUCTS_PRICE')->item(0)->nodeValue;
+            $item['recommendedRetailPrice']     = $model->getElementsByTagName('PRODUCTS_PRICE_RECOMMENDED')->item(0)->nodeValue;
+            $item['manufacturer']               = $model->getElementsByTagName('MANUFACTURER')->item(0)->nodeValue;
+            $item['manual']                     = $model->getElementsByTagName('PRODUCTS_MANUAL')->item(0)->nodeValue;
+            $item['description']                = $model->getElementsByTagName('DESCRIPTION')->item(0)->nodeValue;
+            $item['image']                      = $model->getElementsByTagName('PRODUCTS_IMAGE')->item(0)->nodeValue;
+            $attributes                         = $model->getElementsByTagName('PRODUCTS_ATTRIBUTES')->item(0)->childNodes;
+            $addlImages                         = $model->getElementsByTagName('PRODUCTS_IMAGE_ADDITIONAL')->item(0)->childNodes;
             $item['images']         = [];
 
             /** @var DOMElement $attribute */

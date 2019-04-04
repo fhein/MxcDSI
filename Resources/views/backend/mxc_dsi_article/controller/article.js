@@ -21,6 +21,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 mxcCheckNameMappingConsistency: me.onCheckNameMappingConsistency,
                 mxcCheckRegularExpressions:     me.onCheckRegularExpressions,
                 mxcExportConfig:                me.onExportConfig,
+                mxcExportPrices:                me.onExportPrices,
                 // for development/test purposes
                 mxcDev1:                        me.onDev1,
                 mxcDev2:                        me.onDev2,
@@ -41,6 +42,15 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         let params = {};
         let growlTitle = 'Export article configuration';
         let maskText = 'Exporting article configuration ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onExportPrices: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=exportPrices}';
+        let params = {};
+        let growlTitle = 'Export article prices';
+        let maskText = 'Exporting article prices ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

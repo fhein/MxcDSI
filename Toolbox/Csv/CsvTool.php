@@ -4,8 +4,19 @@ namespace MxcDropshipInnocigs\Toolbox\Csv;
 
 class CsvTool
 {
+    public function export(string $fileName, array $array, string $delimiter = ';') {
+        $content = $this->arrayToCsv($array, $delimiter);
+        file_put_contents($fileName, $content);
+    }
+
+    public function import(string $fileName, string $delimiter = ';') : array
+    {
+        $content = file_get_contents($fileName);
+        return $this->csvToArray($content, $delimiter);
+    }
+
     /**
-     * Import csv content to an associative array
+     * Convert csv content to an associative array
      * The first line of the csv file should contain column headers
      * which are used as array keys.
      *
@@ -14,7 +25,7 @@ class CsvTool
      *
      * @return array
      */
-    public function import(string $content, string $delimiter)
+    public function csvToArray(string $content, string $delimiter)
     {
         $entities = str_getcsv(html_entity_decode($content), "\n");
 
@@ -32,7 +43,8 @@ class CsvTool
         return $entities;
     }
 
-    function arrayToCsv(array $array, string $delimiter)
+
+    public function arrayToCsv(array $array, string $delimiter)
     {
         if (count($array) == 0) {
             return null;
@@ -45,10 +57,5 @@ class CsvTool
         }
         fclose($df);
         return ob_get_clean();
-    }
-
-    public function export(string $filename, array $array, string $delimiter = ';') {
-        $content = $this->arrayToCsv($array, $delimiter);
-        file_put_contents($filename, $content);
     }
 }

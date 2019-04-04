@@ -67,6 +67,9 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             /** @event mxcCheckNameMappingConsistency */
             'mxcExportConfig',
 
+            /** @event mxcExportPrices */
+            'mxcExportPrices',
+
             'mxcDev1',
             'mxcDev2',
             'mxcDev3',
@@ -86,6 +89,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             me.createActionsButton(),
             me.createAllButton(),
             me.createSelectionButton(),
+            me.createExportButton(),
             me.createToolsButton(),
             me.createDevButton()
         ]);
@@ -276,6 +280,35 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         return Ext.create('Ext.button.Button', {
             text: 'Checks',
             iconCls: 'sprite-wrench-screwdriver',
+            menu: menu,
+            listeners: {
+                'mouseover': function() {
+                    this.showMenu();
+                }
+            }
+        });
+    },
+
+    createExportButton: function() {
+        let me = this;
+
+        var menu = Ext.create('Ext.menu.Menu', {
+            id: 'mxcDsiExportMenu',
+            style: {
+                overflow: 'visible'
+            },
+            items: [
+                {
+                    text : 'Export prices',
+                    handler: function() {
+                        me.fireEvent('mxcExportPrices', me);
+                    }
+                },
+            ]
+        });
+        return Ext.create('Ext.button.Button', {
+            text: 'Export',
+            iconCls: 'sprite-table-export',
             menu: menu,
             listeners: {
                 'mouseover': function() {
