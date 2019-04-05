@@ -22,6 +22,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 mxcCheckRegularExpressions:     me.onCheckRegularExpressions,
                 mxcExportConfig:                me.onExportConfig,
                 mxcExportPrices:                me.onExportPrices,
+                mxcImportPrices:                me.onImportPrices,
                 // for development/test purposes
                 mxcDev1:                        me.onDev1,
                 mxcDev2:                        me.onDev2,
@@ -51,6 +52,15 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         let params = {};
         let growlTitle = 'Export article prices';
         let maskText = 'Exporting article prices ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onImportPrices: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=importPrices}';
+        let params = {};
+        let growlTitle = 'Importing article prices';
+        let maskText = 'Importing article prices ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

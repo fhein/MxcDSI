@@ -64,11 +64,14 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             /** @event mxcCheckNameMappingConsistency */
             'mxcCheckNameMappingConsistency',
 
-            /** @event mxcCheckNameMappingConsistency */
+            /** @event mxcExportConfig */
             'mxcExportConfig',
 
             /** @event mxcExportPrices */
             'mxcExportPrices',
+
+            /** @event mxcImportPrices */
+            'mxcImportPrices',
 
             'mxcDev1',
             'mxcDev2',
@@ -89,7 +92,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             me.createActionsButton(),
             me.createAllButton(),
             me.createSelectionButton(),
-            me.createExportButton(),
+            me.createConfigButton(),
             me.createToolsButton(),
             me.createDevButton()
         ]);
@@ -289,11 +292,11 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         });
     },
 
-    createExportButton: function() {
+    createConfigButton: function() {
         let me = this;
 
         var menu = Ext.create('Ext.menu.Menu', {
-            id: 'mxcDsiExportMenu',
+            id: 'mxcDsiConfigMenu',
             style: {
                 overflow: 'visible'
             },
@@ -304,11 +307,18 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
                         me.fireEvent('mxcExportPrices', me);
                     }
                 },
+                '-',
+                {
+                    text : 'Import prices',
+                    handler: function() {
+                        me.fireEvent('mxcImportPrices', me);
+                    }
+                }
             ]
         });
         return Ext.create('Ext.button.Button', {
-            text: 'Export',
-            iconCls: 'sprite-table-export',
+            text: 'Data',
+            iconCls: 'sprite-application-form',
             menu: menu,
             listeners: {
                 'mouseover': function() {

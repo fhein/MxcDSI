@@ -8,9 +8,11 @@ use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Csv\CsvTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
+use PhpOffice\PhpSpreadsheet\Exception;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx as Writer;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Price;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
@@ -38,18 +40,27 @@ class ArticlePrices
     /** @var array */
     protected $articles;
 
-    public function __construct(ModelManager $modelManager, ArticleMapper $articleMapper, LoggerInterface $log)
-    {
+    /** @var PriceTool $priceTool */
+    protected $priceTool;
+
+    public function __construct(
+        ModelManager $modelManager,
+        ArticleMapper $articleMapper,
+        PriceTool $priceTool,
+        LoggerInterface $log
+    ) {
         $this->log = $log;
         $this->modelManager = $modelManager;
         $this->articleMapper = $articleMapper;
+        $this->priceTool = $priceTool;
     }
 
     public function import()
     {
-        $records = (new CsvTool())->import($this->articlePricesFile);
+        $records = $this->readExcelSheet();
         if (! is_array($records) || empty($records)) return;
 
+        $this->entitiesToArray($records);
 
         $this->log->debug(var_export($records[0], true));
         $keys = array_keys($records[0]);
@@ -101,6 +112,7 @@ class ArticlePrices
         );
         $data = array_merge($headers, $data);
 
+        /** @noinspection PhpUnhandledExceptionInspection */
         $this->createExcelSheet($data);
 //        $csv = new CsvTool();
 //        $csv->export($this->articlePricesCsv, $data);
@@ -113,10 +125,16 @@ class ArticlePrices
         if (! $article) return;
 
         $prices = [];
+        $uvp = $record['UVP brutto'];
+        $uvp = $uvp = '' ? null : $uvp;
 
         foreach ($this->indexMap as $column => $customerGroup) {
-            $price = $record[$column] === '' ? $record['UVP brutto'] : $record[$column];
-            $prices[] = $customerGroup . MXC_DELIMITER_L1 . $price;
+            $price = $record[$column];
+            $price = $price === '' ? null : $price;
+            $price = $price ?? $uvp;
+            if ($price) {
+                $prices[] = $customerGroup . MXC_DELIMITER_L1 . $price;
+            }
         }
         $prices = implode(MXC_DELIMITER_L2, $prices);
 
@@ -125,13 +143,14 @@ class ArticlePrices
         foreach ($variants as $variant) {
             if (! $this->isSinglePack($variant)) continue;
             $variant->setRetailPrices($prices);
-            $this->articleMapper->setRetailPrices($variant);
+            $this->priceTool->setRetailPrices($variant);
         }
     }
 
     protected function getArticles()
     {
         if (!$this->articles) {
+            /** @noinspection PhpUndefinedMethodInspection */
             $this->articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         }
         return $this->articles;
@@ -153,7 +172,7 @@ class ArticlePrices
         $info['brand'] = $article->getBrand();
         $info['name'] = $article->getName();
         list($info['EK netto'], $info['UVP brutto']) = $this->getPrices($article->getVariants());
-        $customerGroupKeys = array_keys($this->articleMapper->getCustomerGroups());
+        $customerGroupKeys = array_keys($this->priceTool->getCustomerGroups());
         $shopwarePrices = $this->getCurrentPrices($article);
         foreach ($customerGroupKeys as $key) {
             $info['VK brutto ' . $key] = $shopwarePrices[$key] ?? '';
@@ -219,7 +238,7 @@ class ArticlePrices
 
     /**
      * @param array $data
-     * @throws \PhpOffice\PhpSpreadsheet\Exception
+     * @throws Exception
      * @throws \PhpOffice\PhpSpreadsheet\Writer\Exception
      */
     protected function createExcelSheet(array $data): void
@@ -240,7 +259,37 @@ class ArticlePrices
         $highest = $sheet->getHighestRowAndColumn();
 
         $sheet->getStyle('F2:'. $highest['column'] . $highest['row'])->getNumberFormat()->setFormatCode('0.00');
-        $writer = new Xlsx($spreadSheet);
+        $writer = new Writer($spreadSheet);
         $writer->save($this->articlePricesFile);
+    }
+
+    protected function readExcelSheet() : array
+    {
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $spreadSheet = (new Reader())->load($this->articlePricesFile);
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $sheet = $spreadSheet->getSheet(0);
+        $records = $this->entitiesToArray($sheet->toArray());
+        $spreadSheet->disconnectWorksheets();
+        $spreadSheet->garbageCollect();
+        unset ($spreadSheet);
+        return $records;
+    }
+
+    protected function entitiesToArray(array $entities)
+    {
+        $headers = null;
+        foreach ($entities as &$entity) {
+//            $entity = str_getcsv($entity, $delimiter);
+            if (! $headers) {
+                $headers = $entity;
+                continue;
+            }
+            $entity = array_combine($headers, $entity);
+        }
+        // remove header entity
+        array_shift($entities);
+        return $entities;
+
     }
 }

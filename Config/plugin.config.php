@@ -43,6 +43,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 
 return [
     'plugin'   => [
@@ -136,26 +137,28 @@ return [
             MappingFilePersister::class,
             MediaTool::class,
             NameMappingConsistency::class,
+            PriceTool::class,
             PropertyMapper::class,
             PropertyMapperReport::class,
             RegexChecker::class,
             RegularExpressions::class,
         ],
     ],
-
+    // @todo: multiple includes of the same file
     'class_config' => [
-        AromaDosageMapper::class         => include __DIR__ . '/AromaDosageMapper.config.php',
+        AromaDosageMapper::class         => include __DIR__ . '/article.config.php',
         ArticleCategoryMapper::class     => include __DIR__ . '/ArticleCategoryMapper.config.php',
         ArticleCodeMapper::class         => include __DIR__ . '/ArticleCodeMapper.config.php',
-        ArticleFlavorMapper::class       => include __DIR__ . '/ArticleFlavorMapper.config.php',
+        ArticleCommonNameMapper::class   => include __DIR__ . '/ArticleCommonNameMapper.config.php',
+        ArticleFlavorMapper::class       => include __DIR__ . '/article.config.php',
         ArticleManufacturerMapper::class => include __DIR__ . '/ArticleManufacturerMapper.config.php',
         ArticleNameMapper::class         => include __DIR__ . '/ArticleNameMapper.config.php',
         ArticleTypeMapper::class         => include __DIR__ . '/ArticleTypeMapper.config.php',
-        AssociatedArticlesMapper::class  => include __DIR__ . '/PropertyDerivator.config.php',
+        AssociatedArticlesMapper::class  => include __DIR__ . '/AssociatedArticlesMapper.php',
         ImportClient::class              => include __DIR__ . '/ImportClient.config.php',
-        ImportMapper::class               => include __DIR__ . '/ImportMapper.config.php',
-        PropertyMapper::class             => include __DIR__ . '/PropertyMapper.config.php',
-        VariantCodeMapper::class          => include __DIR__ . '/VariantCodeMapper.config.php',
+        ImportMapper::class              => include __DIR__ . '/ImportMapper.config.php',
+        PropertyMapper::class            => include __DIR__ . '/PropertyMapper.config.php',
+        VariantCodeMapper::class         => include __DIR__ . '/VariantCodeMapper.config.php',
 
         ArticleMapper::class        => [
             'root_category' => 'Deutsch',

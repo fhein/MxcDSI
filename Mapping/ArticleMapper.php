@@ -9,19 +9,16 @@ use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Detail;
-use Shopware\Models\Article\Price;
-use Shopware\Models\Article\Supplier;
-use Shopware\Models\Article\Unit;
 use Shopware\Models\Category\Category;
-use Shopware\Models\Customer\Group;
 use Shopware\Models\Plugin\Plugin;
-use Shopware\Models\Tax\Tax;
 use Zend\Config\Config;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class ArticleMapper
 {
@@ -62,7 +59,8 @@ class ArticleMapper
     /** @var bool */
     protected $dropshippersCompanionPresent;
 
-    protected $customerGroups;
+    /** @var PriceTool $priceTool */
+    protected $priceTool;
 
     /**
      * ArticleMapper constructor.
@@ -70,6 +68,7 @@ class ArticleMapper
      * @param ModelManager $modelManager
      * @param ArticleOptionMapper $optionMapper
      * @param MediaTool $mediaTool
+     * @param PriceTool $priceTool
      * @param ApiClient $client
      * @param Config $config
      * @param LoggerInterface $log
@@ -78,6 +77,7 @@ class ArticleMapper
         ModelManager $modelManager,
         ArticleOptionMapper $optionMapper,
         MediaTool $mediaTool,
+        PriceTool $priceTool,
         ApiClient $client,
         Config $config,
         LoggerInterface $log
@@ -89,10 +89,7 @@ class ArticleMapper
         $this->config = $config;
         $this->log = $log;
         $this->dropshippersCompanionPresent = $this->validateDropshippersCompanion();
-        $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
-        foreach ($customerGroups as $customerGroup) {
-            $this->customerGroups[$customerGroup->getKey()] = $customerGroup;
-        }
+        $this->priceTool = $priceTool;
     }
 
     /**
@@ -257,9 +254,6 @@ class ArticleMapper
             $icArticle->setArticle($swArticle);
             $icArticle->setLinked(true);
             $this->createdArticles[] = $icArticle->getIcNumber();
-        } elseif (! $icArticle->isActive()) {
-            // only process articles which are active or new
-            return false;
         }
 
         $this->removeDetachedShopwareDetails($icArticle);
@@ -271,7 +265,7 @@ class ArticleMapper
         $this->setShopwareDetails($icArticle);
 
         $this->mediaTool->setArticleImages($icArticle);
-        $this->setReferencePrice($icArticle);
+        PriceTool::setReferencePrice($icArticle);
 
         // We have to flush each article in order to get the newly created categories
         // pushed to the database.
@@ -333,7 +327,10 @@ class ArticleMapper
 
         // Create new detail if this variant is valid
         if (! $icVariant->isValid()) return null;
-        $swArticle = $icVariant->getArticle()->getArticle();
+
+        $icArticle = $icVariant->getArticle();
+        $swArticle = $icArticle->getArticle();
+
         if (! $swArticle) return null;
 
         $swDetail = new Detail();
@@ -351,10 +348,10 @@ class ArticleMapper
         $this->setShopwareDetailProperties($icVariant);
 
         // All new valid details get marked active
-        $swDetail->setActive(true);
+        $swDetail->setActive($icArticle->isActive());
 
         // set next three properties only on detail creation
-        $this->setRetailPrices($icVariant);
+        $this->priceTool->setRetailPrices($icVariant);
         $swDetail->setShippingTime(5);
         $swDetail->setLastStock(0);
 
@@ -403,8 +400,8 @@ class ArticleMapper
             $swArticle->setName($icArticle->getName());
         }
 
-        $swArticle->setTax($this->getTax($icArticle->getTax()));
-        $swArticle->setSupplier($this->getSupplier($icArticle));
+        $swArticle->setTax(TaxTool::getTax($icArticle->getTax()));
+        $swArticle->setSupplier(SupplierTool::getSupplier($icArticle));
         $this->setCategories($icArticle);
     }
 
@@ -641,186 +638,6 @@ class ArticleMapper
     }
 
     /**
-     * Set the retail price of Shopware detail associated to the given InnoCigs variant
-     *
-     * @param Variant $icVariant
-     */
-
-    public function setRetailPrices(Variant $icVariant)
-    {
-        $swDetail = $icVariant->getDetail();
-        if (! $swDetail) return;
-
-        $tax = $swDetail->getArticle()->getTax()->getTax();
-
-        $retailPrices = explode(MXC_DELIMITER_L2, $icVariant->getRetailPrices());
-        foreach ($retailPrices as $retailPrice) {
-            list($customerGroupKey, $retailPrice) = explode(MXC_DELIMITER_L1, $retailPrice);
-            $price = $this->getPrice($swDetail, $customerGroupKey);
-
-            if (! $price) continue;
-            $retailPrice = floatval(str_replace(',', '.', $retailPrice));
-            $netPrice = $retailPrice / (1 + ($tax / 100));
-            $price->setPrice($netPrice);
-            $price->setFrom(1);
-            $price->setTo(null);
-        }
-    }
-
-    /**
-     * If supplied $article has a supplier then get it by name from Shopware or create it if necessary.
-     * Otherwise do the same with default supplier name 'unknown'
-     *
-     * @param Article $article
-     * @return Supplier
-     */
-    protected function getSupplier(Article $article)
-    {
-        $supplierName = $article->getSupplier() ?? 'unknown';
-        $supplier = $this->modelManager->getRepository(Supplier::class)->findOneBy(['name' => $supplierName]);
-        if (!$supplier) {
-            $supplier = new Supplier();
-            $this->modelManager->persist($supplier);
-            $supplier->setName($supplierName);
-        }
-        return $supplier;
-    }
-
-    /**
-     * Returns a Tax object for the given tax value. If the requested Tax object does not exist
-     * it will be created.
-     *
-     * @param float $taxValue
-     * @return object|Tax|null
-     */
-    protected function getTax(float $taxValue = 19.0)
-    {
-        $tax = $this->modelManager->getRepository(Tax::class)->findOneBy(['tax' => $taxValue]);
-        if (! $tax instanceof Tax) {
-            $name = sprintf('Tax (%.2f)', $taxValue);
-            $tax = new Tax();
-            $this->modelManager->persist($tax);
-            $tax->setName($name);
-            $tax->setTax($taxValue);
-        }
-        return $tax;
-    }
-
-    /**
-     * Set the reference price for liquid articles. The article name must
-     * include the content in ml and the category name must include 'Liquid',
-     * 'Aromen', 'Basen' or 'Shake & Vape'.
-     *
-     * @param Article $icArticle
-     */
-    protected function setReferencePrice(Article $icArticle)
-    {
-        // These products may need a reference price, unit is ml
-        if (preg_match('~(Liquid)|(Aromen)|(Basen)|(Shake \& Vape)~', $icArticle->getCategory()) !== 1) {
-            return;
-        }
-        // Do not add reference price on multi item packs
-        $name = $icArticle->getName();
-        if (preg_match('~\(\d+ Stück pro Packung\)~', $name) === 1) {
-            return;
-        }
-
-        $matches = [];
-        preg_match('~(\d+(\.\d+)?) ml~', $name, $matches);
-        // If there's there are no ml in the product name we exit
-        if (empty($matches)) {
-            return;
-        }
-
-        // remove thousands punctuation
-        $baseVolume = $matches[1];
-        $baseVolume = str_replace('.', '', $baseVolume);
-
-        $icVariants = $icArticle->getVariants();
-        /** @var Variant $icVariant */
-        foreach ($icVariants as $icVariant) {
-            $swDetail = $icVariant->getDetail();
-            if (! $swDetail) continue;
-            $pieces = $icVariant->getPiecesPerOrder();
-            // calculate the reference volume
-            $volume = $baseVolume * $pieces;
-            $reference = $volume < 100 ? 100 : ($volume < 1000 ? 1000 : 0);
-            // Exit if we have no reference volume
-            if ($reference === 0) {
-                continue;
-            }
-
-            // set reference volume and unit
-            $swDetail->setPurchaseUnit($volume);
-            $swDetail->setReferenceUnit($reference);
-            $unit = $this->getUnit('ml');
-            $swDetail->setUnit($unit);
-        }
-    }
-
-    /**
-     * Returns a Unit object for a given name. If the Unit Object is not available
-     * it will be created.
-     *
-     * @param string $name
-     * @return object|Unit|null
-     */
-    protected function getUnit(string $name)
-    {
-        $unit = $this->modelManager->getRepository(Unit::class)->findOneBy(['name' => $name]);
-        if (!$unit instanceof Unit) {
-            $unit = new Unit();
-            $this->modelManager->persist($unit);
-            $unit->setName($name);
-        }
-        return $unit;
-    }
-
-    /**
-     * Creates and returns a price object for the customer group identified by $key
-     * which is related to the given Shopware detail and the assiciated Shopware article.
-     *
-     * @param Detail $swDetail
-     * @param Group $customerGroup
-     * @return Price
-     */
-    protected function createPrice(Detail $swDetail, Group $customerGroup)
-    {
-        $price = new Price();
-        $this->modelManager->persist($price);
-        $price->setCustomerGroup($customerGroup);
-        $price->setArticle($swDetail->getArticle());
-        $price->setDetail($swDetail);
-        return $price;
-    }
-
-    /**
-     * Returns the price object for the customer group with the given key of the given
-     * Shopware detail object. If the price object is not found it will be created and
-     * added to the Shopware detail object.
-     *
-     * @param Detail $swDetail
-     * @param string $customerGroupKey
-     * @return Price|null
-     */
-    protected function getPrice(Detail $swDetail, string $customerGroupKey) : ?Price
-    {
-        $customerGroup = $this->customerGroups[$customerGroupKey];
-        if ($customerGroup === null) return null;
-
-        $prices = $swDetail->getPrices();
-        /** @var Price $price */
-        foreach ($prices as $price) {
-            if ($price->getCustomerGroup()->getKey() === $customerGroupKey) {
-                return $price;
-            }
-        }
-        $price = $this->createPrice($swDetail, $customerGroup);
-        $swDetail->getPrices()->add($price);
-        return $price;
-    }
-
-    /**
      * For a given collection of InnoCigs articles return a collection of all associated Shopware articles.
      *
      * @param Collection $icArticles
@@ -866,12 +683,12 @@ class ArticleMapper
 
         $repository = $this->modelManager->getRepository(Article::class);
 
-        $articlesWithRelatedNewArticles = $repository->getAllHavingRelatedArticles($icArticles);
+        $articlesWithRelatedNewArticles = $repository->getHavingRelatedArticles($icArticles);
         foreach ($articlesWithRelatedNewArticles as $icArticle) {
             $this->setRelatedArticles($icArticle);
         }
 
-        $articlesWithSimilarNewArticles = $repository->getAllHavingSimilarArticles($icArticles);
+        $articlesWithSimilarNewArticles = $repository->getHavingSimilarArticles($icArticles);
         foreach ($articlesWithSimilarNewArticles as $icArticle) {
             $this->setSimilarArticles($icArticle);
         }
@@ -940,8 +757,4 @@ class ArticleMapper
         return true;
     }
 
-    public function getCustomerGroups()
-    {
-        return $this->customerGroups;
-    }
 }

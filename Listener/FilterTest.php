@@ -19,14 +19,18 @@ class FilterTest extends ActionListener
         ],
     ];
 
+    protected $log;
+    protected $config;
+
     /**
      * @var GroupRepository $repo
      */
     protected $repo;
 
     public function __construct(GroupRepository $repository, Config $config, LoggerInterface $log) {
-        parent::__construct($config, $log);
         $this->repo = $repository;
+        $this->config = $config;
+        $this->log = $log;
     }
 
     public function install( /** @noinspection PhpUnusedParameterInspection */ EventInterface $e) {

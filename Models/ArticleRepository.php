@@ -9,42 +9,48 @@ class ArticleRepository extends BaseEntityRepository
     protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
 
     protected $dql = [
-        'getAllIndexed'                      => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
+        'getAllIndexed'                     => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
 
-        'getArticlesByIds'                   => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.id in (:ids)',
+        'getArticlesByIds'                  => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.id in (:ids)',
 
-        'getBrokenLinks'                     => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a '
-                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                    . 'LEFT JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-                                                    . 'WHERE d.id IS NULL',
-        'getArticlesToLink'                  => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a '
-                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-                                                    . 'WHERE a.linked = 0 OR a.linked IS NULL',
-        'getLinkedArticlesHavingOptions'     => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-                                                    . 'JOIN v.options o WHERE o.id IN (:optionIds)',
-                                                // get all articles which have an associated Shopware Article
-                                                // that have related articles with :relatedIds
-        'getAllHavingRelatedArticles'        => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-                                                    . 'JOIN a.relatedArticles r  WHERE r.icNumber IN (:relatedIds)',
-                                                // get all articles which have an associated Shopware Article
-                                                // that have similar articles with :simularIds
-        'getAllHavingSimilarArticles'        => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
-                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.article = a.id '
-                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-                                                    . 'JOIN a.similarArticles s  WHERE s.icNumber IN (:similarIds)',
-        'getFlavoredArticles'                => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber WHERE a.flavor IS NOT NULL',
-        'getShopwareArticle'                 => 'SELECT DISTINCT s FROM Shopware\Models\Article\Article s '
-                                                    . 'JOIN Shopware\Models\Article\Detail d WITH d.article = s.id '
-                                                    . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
-                                                    . 'JOIN MxcDropshipInnocigs\Models\Article a WHERE v.article = a.id '
-                                                    . 'WHERE a.number = :number',
+        'getLinkedArticlesHavingOptions'    => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+                                                . 'JOIN a.variants v '
+                                                . 'JOIN v.options o '
+                                                . 'JOIN MxcDropshipInnocigs\Models\Group g WITH o.icGroup = g.id '
+                                                . 'WHERE o.id IN (:optionIds) AND a.linked = 1',
+        // get all articles which have an associated Shopware Article that have related articles with :relatedIds
+        'getHavingRelatedArticles'          => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+                                               . 'JOIN a.variants v '
+                                               . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+                                               . 'JOIN a.relatedArticles r  WHERE r.icNumber IN (:relatedIds)',
+        // get all articles which have an associated Shopware Article that have similar articles with :simularIds
+        'getHavingSimilarArticles'          => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
+                                                . 'JOIN a.variants v '
+                                                . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+                                                . 'JOIN a.similarArticles s  WHERE s.icNumber IN (:similarIds)',
+        'getFlavoredArticles'               => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber WHERE a.flavor IS NOT NULL',
+        'getShopwareArticle'                => 'SELECT DISTINCT s FROM Shopware\Models\Article\Article s '
+                                                . 'JOIN Shopware\Models\Article\Detail d WITH d.article = s.id '
+                                                . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
+                                                . 'JOIN MxcDropshipInnocigs\Models\Article a WHERE v.article = a.id '
+                                                . 'WHERE a.number = :number',
         'removeOrphaned'                     => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.variants is empty',
+        // DQL does not support parameters in SELECT
         'getProperties'                      => 'SELECT :properties FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',
+        'getDosages'                         => 'SELECT a.icNumber, a.name, a.dosage FROM MxcDropshipInnocigs\Models\Article a '
+                                                . 'INDEX BY a.icNumber WHERE a.type = \'AROMA\'',
+    ];
+
+    protected $sql = [
+        'linkArticles'                      => 'UPDATE s_plugin_mxc_dsi_article a, s_plugin_mxc_dsi_variant v, s_articles_details d '
+                                                . 'SET a.linked = 1 '
+                                                . 'WHERE v.article_id = a.id AND d.ordernumber = v.number AND (a.linked = 0 '
+                                                . 'OR a.linked IS NULL)',
+        'refreshLinks'                      => 'UPDATE s_plugin_mxc_dsi_article a '
+                                                . 'INNER JOIN s_plugin_mxc_dsi_variant v ON v.article_id = a.id '
+                                                . 'LEFT JOIN s_articles_details d ON d.ordernumber = v.number '
+                                                . 'SET a.linked = NOT ISNULL(d.ordernumber), a.active = NOT ISNULL(d.orderNumber)'
+
     ];
 
     private $mappedProperties = [
@@ -62,46 +68,31 @@ class ArticleRepository extends BaseEntityRepository
         'base',
     ];
 
-    public function getAllIndexed()
-    {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
-
     public function getArticlesByIds(array $ids) {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('ids', $ids)
             ->getResult();
     }
 
-    public function getAllHavingRelatedArticles(array $relatedIds)
+    public function getHavingRelatedArticles(array $relatedIds)
     {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('relatedIds', $relatedIds)
             ->getResult();
     }
 
-    public function getAllHavingSimilarArticles(array $relatedIds)
+    public function getHavingSimilarArticles(array $relatedIds)
     {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('similarIds', $relatedIds)->getResult();
     }
 
-    public function getBrokenLinks()
-    {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
-
-    // get all articles with $linked = false having a related shopware article
-    public function getArticlesToLink() {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
-
-    public function getFlavoredArticles()
-    {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
-
     public function getLinkedArticlesHavingOptions($optionIds) {
+        return $this->getQuery(__FUNCTION__)
+            ->setParameter('optionIds', $optionIds)->getResult();
+    }
+
+    public function getAcceptedArticlesHavingOptions($optionIds) {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('optionIds', $optionIds)->getResult();
     }
@@ -118,7 +109,6 @@ class ArticleRepository extends BaseEntityRepository
         }
         return $validVariants;
     }
-
 
     public function getShopwareArticle(Article $article)
     {
@@ -165,6 +155,14 @@ class ArticleRepository extends BaseEntityRepository
                 count($propertyMappings),
                 basename($articleConfigFile)
             ));
+        }
+    }
+
+    public function exportDosages() {
+        $dosages = $this->getQuery('getDosages')->getResult();
+        if (! empty($dosages)) {
+            /** @noinspection PhpUndefinedFieldInspection */
+            Factory::toFile(__DIR__ . '/../Config/test.php', $dosages);
         }
     }
 

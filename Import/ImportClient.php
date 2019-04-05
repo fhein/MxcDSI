@@ -104,6 +104,7 @@ class ImportClient implements EventSubscriber
         $this->importLog['deletions'] = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         $this->importLog['additions'] = [];
         $this->importLog['changes'] = [];
+        /** @noinspection PhpUndefinedMethodInspection */
         $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->optionNames = [];
 

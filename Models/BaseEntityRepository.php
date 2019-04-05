@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs\Models;
 
 
+use Doctrine\DBAL\Driver\Statement;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Query;
@@ -17,16 +18,34 @@ class BaseEntityRepository extends EntityRepository
     protected $log;
 
     /** @var array */
-    protected $dql;
+    protected $dql = [];
 
     /** @var array */
-    protected $queries;
+    protected $sql = [];
+
+    /** @var array */
+    protected $queries = [];
+
+    /** @var array */
+    protected $statements = [];
 
     public function __construct($em, ClassMetadata $class)
     {
         parent::__construct($em, $class);
         $services = $this->getServices();
         $this->log = $services->get('logger');
+    }
+
+    public function __call($method, $arguments)
+    {
+        switch (true) {
+            case (null !== $this->dql[$method]):
+                return $this->getQuery($method)->getResult();
+            case (null !== $this->sql[$method]):
+                return $this->getStatement($method)->execute();
+            default:
+                return parent::__call($method, $arguments);
+        }
     }
 
     public function count(): int
@@ -42,5 +61,15 @@ class BaseEntityRepository extends EntityRepository
             $this->queries[$name] = $this->getEntityManager()->createQuery($this->dql[$name]);
         }
         return $this->queries[$name];
+    }
+
+    protected function getStatement(string $name) : ?Statement
+    {
+        if (! isset($this->statements[$name])) {
+            /** @noinspection PhpUnhandledExceptionInspection */
+            $this->statements[$name] = $this->getEntityManager()->getConnection()->prepare($this->sql[$name]);
+        }
+        return $this->statements[$name];
+
     }
 }

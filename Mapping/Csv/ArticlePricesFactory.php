@@ -20,9 +20,10 @@ class ArticlePricesFactory implements FactoryInterface
     {
         $modelManager = $container->get('modelManager');
         $articleMapper = $container->get(ArticleMapper::class);
+        $priceTool = $container->get(PriceTool::class);
         $log = $container->get('logger');
 
-        return new $requestedName($modelManager, $articleMapper, $log);
+        return new $requestedName($modelManager, $articleMapper, $priceTool, $log);
     }
 
 }

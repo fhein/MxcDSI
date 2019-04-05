@@ -6,20 +6,10 @@ class VariantRepository extends BaseEntityRepository
 {
     protected $dql = [
         'getAllIndexed'     => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
-        'getNewVariants'    => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber WHERE v.new = 1',
 
         'getShopwareDetail' => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
         'removeOrphaned'    => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.article = null',
    ];
-
-    public function getAllIndexed()
-    {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
-
-    public function getNewVariants() {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
 
     public function getShopwareDetail(Variant $variant)
     {

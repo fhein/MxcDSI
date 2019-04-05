@@ -43,7 +43,6 @@ class CsvTool
         return $entities;
     }
 
-
     public function arrayToCsv(array $array, string $delimiter)
     {
         if (count($array) == 0) {

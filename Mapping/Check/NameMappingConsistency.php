@@ -102,6 +102,7 @@ class NameMappingConsistency
      */
     protected function getArticles()
     {
+        /** @noinspection PhpUndefinedMethodInspection */
         $this->articles = $this->articles ?? $this->modelManager->getRepository(Article::class)->getAllIndexed();
         return $this->articles;
     }

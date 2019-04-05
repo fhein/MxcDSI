@@ -99,7 +99,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
         $articleMapper = $this->getServices()->get(ArticleMapper::class);
 
-        $articleUpdates = $this->getInvolvedArticles($group->getId(), $groupChanged, $oldOptionValues);
+        $articleUpdates = $this->getLinkedArticlesHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
         /** @noinspection PhpUnhandledExceptionInspection */
         $articleMapper->processStateChangesArticleList($articleUpdates);
 
@@ -120,7 +120,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
      * @param array $oldOptionValue
      * @return array
      */
-    protected function getInvolvedArticles(int $groupId, bool $groupChanged, array $oldOptionValue): array
+    protected function getLinkedArticlesHavingChangedOptions(int $groupId, bool $groupChanged, array $oldOptionValue): array
     {
         $group = $this->getRepository()->find($groupId);
         $options = $group->getOptions();
@@ -136,10 +136,10 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
             }
             $relevantOptionIds[] = $option->getId();
         }
-        $linkedArticlesHavingChangedOptions = $repository->getLinkedArticlesHavingOptions($relevantOptionIds);
+        $articles = $repository->getLinkedArticlesHavingOptions($relevantOptionIds);
         $time +=microtime(true);
         $this->log->debug('Using SQL query: ' . sprintf('%f', $time));
 
-        return $linkedArticlesHavingChangedOptions;
+        return $articles;
     }
 }

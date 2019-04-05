@@ -9,11 +9,6 @@ class GroupRepository extends BaseEntityRepository
         'removeOrphaned' => 'SELECT g FROM MxcDropshipInnocigs\Models\Group g WHERE g.options is empty',
     ];
 
-    public function getAllIndexed()
-    {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
-
     public function removeOrphaned()
     {
         $orphans = $this->getQuery(__FUNCTION__)->getResult();

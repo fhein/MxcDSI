@@ -1,6 +1,5 @@
 <?php
 
-
 return [
 
     'common_name_index' => [
@@ -14,6 +13,7 @@ return [
             'Mr. Bubbles'                          => 2,
             'Timelord'                             => 2,
             'Truckin Vaporz'                       => 2,
+            'Peng Juice Aroma'                     => 2,
         ],
         'Vampire Vape'   => [
             'Koncept XIX' => 2,

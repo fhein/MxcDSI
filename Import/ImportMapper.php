@@ -328,20 +328,21 @@ class ImportMapper
     {
         $this->modelManager->createQuery('UPDATE ' . Article::class . ' a set a.new = false')->execute();
         $this->modelManager->createQuery('UPDATE ' . Variant::class . ' a set a.new = false')->execute();
+        /** @noinspection PhpUndefinedMethodInspection */
         $this->articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        /** @noinspection PhpUndefinedMethodInspection */
         $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
+        /** @noinspection PhpUndefinedMethodInspection */
         $this->groups = $this->modelManager->getRepository(Group::class)->getAllIndexed();
         $this->options = $this->modelManager->getRepository(Option::class)->getAllIndexed();
+        /** @noinspection PhpUndefinedMethodInspection */
         $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
     }
 
     protected function attachLinkedShopwareArticles()
     {
-        $articlesToLink = $this->modelManager->getRepository(Article::class)->getArticlesToLink();
-        /** @var Article $article */
-        foreach ($articlesToLink as $article) {
-            $article->setLinked(true);
-        }
+        /** @noinspection PhpUndefinedMethodInspection */
+        $this->modelManager->getRepository(Article::class)->linkArticles();
     }
 
     public function import(array $import)
@@ -355,8 +356,9 @@ class ImportMapper
         $this->propertyMapper->mapProperties($this->articles);
         $this->modelManager->flush();
 
-        $this->attachLinkedShopwareArticles();
         $this->modelManager->flush();
+        /** @noinspection PhpUndefinedMethodInspection */
+        $this->modelManager->getRepository(Article::class)->linkArticles();
 
         $this->articleMapper->updateShopwareArticles($this->updates);
 

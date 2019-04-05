@@ -164,7 +164,7 @@ class MediaTool
         foreach ($variants as $variant) {
             $this->setDetailImages($variant, $swArticle);
         }
-        $swArticle->setImages($this->shopwareArticleImages);
+        $swArticle->setImages($this->shopwareArticleImages->toArray());
     }
 
     public function setDetailImages(Variant $variant, ShopwareArticle $swArticle)
@@ -212,7 +212,9 @@ class MediaTool
                 $rules->add($rule);
             }
 
+            $this->modelManager->persist($image);
             $mapping->setImage($image);
+
             $mapping->setRules($rules);
             /** @noinspection PhpParamsInspection */
             $image->setMappings([$mapping]);

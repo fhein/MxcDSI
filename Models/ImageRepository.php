@@ -9,10 +9,6 @@ class ImageRepository extends BaseEntityRepository
         'removeOrphaned'    => 'SELECT i FROM MxcDropshipInnocigs\Models\Image i WHERE i.variants is empty',
     ];
 
-    public function getAllIndexed() {
-        return $this->getQuery(__FUNCTION__)->getResult();
-    }
-
     public function removeOrphaned() {
         $orphans = $this->getQuery(__FUNCTION__)->getResult();
         /** @var Image $orphan */

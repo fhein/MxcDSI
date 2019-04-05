@@ -150,6 +150,7 @@ class AssociatedArticlesMapper
     }
 
     public function dumpRelatedArticles() {
+        /** @noinspection PhpUndefinedMethodInspection */
         $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         /** @var Article $article */
         $relatedArticleList = [];
@@ -169,6 +170,7 @@ class AssociatedArticlesMapper
     }
 
     public function dumpSimilarArticles() {
+        /** @noinspection PhpUndefinedMethodInspection */
         $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         /** @var Article $article */
         $similarArticleList = [];
@@ -192,6 +194,7 @@ class AssociatedArticlesMapper
     }
 
     protected function dumpProductNames() {
+        /** @noinspection PhpUndefinedMethodInspection */
         $articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
         $products = [];
         foreach ($articles as $number => $article) {

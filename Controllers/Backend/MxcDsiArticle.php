@@ -62,15 +62,12 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     public function refreshAction() {
         try {
             $modelManager = $this->getModelManager();
-            $articles = $modelManager->getRepository(Article::class)->getBrokenLinks();
-            /** @var Article $article */
-            foreach ($articles as $article) {
-                if ($article->getArticle()) continue;
-                $article->setActive(false);
-                $article->setLinked(false);
-            }
-            $modelManager->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Article links were successfully updated.']);
+            /** @noinspection PhpUndefinedMethodInspection */
+            if ($modelManager->getRepository(Article::class)->refreshLinks()) {
+                $this->view->assign([ 'success' => true, 'message' => 'Article links were successfully updated.']);
+            } else {
+                $this->view->assign([ 'success' => false, 'message' => 'Failed to update article links.']);
+            };
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
@@ -106,6 +103,19 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         }
     }
 
+    public function importPricesAction()
+    {
+        $this->log->enter();
+        try {
+            $prices = $this->services->get(ArticlePrices::class);
+            $prices->import();
+            $this->view->assign([ 'success' => true, 'message' => 'Prices successfully imported from Config/article.prices.xlsx.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
     public function setStateSelectedAction()
     {
         $this->log->enter();
@@ -115,11 +125,10 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $value = $params['value'] === 'true';
             $ids = json_decode($params['ids'], true);
 
-            $services = $this->getServices();
-            $modelManager = $services->get('modelManager');
+            $modelManager = $this->getModelManager();
             $icArticles = $modelManager->getRepository(Article::class)->getArticlesByIds($ids);
 
-            $articleMapper = $services->get(ArticleMapper::class);
+            $articleMapper = $this->services->get(ArticleMapper::class);
 
             if (in_array($field, ['accepted', 'active', 'linked'])) {
                 $setter = 'set' . ucfirst($field);
@@ -145,7 +154,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $regularExpressions = $this->getServices()->get(RegularExpressions::class);
+            $regularExpressions = $this->services->get(RegularExpressions::class);
             if (! $regularExpressions->check()) {
                 $this->view->assign(['success' => false, 'message' => 'Errors found in regular expressions. See log for details.']);
             } else {
@@ -161,7 +170,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $nameMappingConsistency = $this->getServices()->get(NameMappingConsistency::class);
+            $nameMappingConsistency = $this->services->get(NameMappingConsistency::class);
             $issueCount = $nameMappingConsistency->check();
             if ($issueCount > 0) {
                 $issue = 'issue';
@@ -183,6 +192,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         try {
             /** @var ImportMapper $client */
             $propertyMapper = $this->services->get(PropertyMapper::class);
+            /** @noinspection PhpUndefinedMethodInspection */
             $articles = $this->getModelManager()->getRepository(Article::class)->getAllIndexed();
             $propertyMapper->mapProperties($articles);
             $this->getModelManager()->flush();
@@ -304,6 +314,8 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
+            /** @noinspection PhpUndefinedMethodInspection */
+            $this->getRepository()->exportDosages();
             $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
