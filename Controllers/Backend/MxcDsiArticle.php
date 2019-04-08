@@ -3,11 +3,11 @@
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\ImportMapper;
-use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Csv\ArticlePrices;
-use MxcDropshipInnocigs\Mapping\PropertyMapper;
+use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
@@ -128,7 +128,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $modelManager = $this->getModelManager();
             $icArticles = $modelManager->getRepository(Article::class)->getArticlesByIds($ids);
 
-            $articleMapper = $this->services->get(ArticleMapper::class);
+            $articleMapper = $this->services->get(ShopwareArticleMapper::class);
 
             if (in_array($field, ['accepted', 'active', 'linked'])) {
                 $setter = 'set' . ucfirst($field);
@@ -136,7 +136,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
                 foreach ($icArticles as $icArticle) {
                     $icArticle->$setter($value);
                 }
-                $articleMapper->processStateChangesArticleList($icArticles);
+                $articleMapper->processStateChangesArticleList($icArticles, true);
                 $this->view->assign(['success' => true, 'message' => 'Articles were successfully updated.']);
             } else {
                 $this->view->assign([ 'success' => false, 'message' => 'Unknown state property: ' . $field]);
@@ -144,7 +144,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
                 return;
             }
         } catch (Throwable $e) {
-            $this->log->except($e, true, false);
+            $this->log->except($e, true, true);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
         $this->log->leave();
@@ -191,7 +191,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->enter();
         try {
             /** @var ImportMapper $client */
-            $propertyMapper = $this->services->get(PropertyMapper::class);
+            $propertyMapper = $this->services->get(ImportPropertyMapper::class);
             /** @noinspection PhpUndefinedMethodInspection */
             $articles = $this->getModelManager()->getRepository(Article::class)->getAllIndexed();
             $propertyMapper->mapProperties($articles);
@@ -210,7 +210,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $params = $this->request->getParams();
             $ids = json_decode($params['ids'], true);
             $articles = $this->getModelManager()->getRepository(Article::class)->getArticlesByIds($ids);
-            $propertyMapper = $this->services->get(PropertyMapper::class);
+            $propertyMapper = $this->services->get(ImportPropertyMapper::class);
             $propertyMapper->mapProperties($articles);
             $this->getModelManager()->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Article properties were successfully remapped.']);
@@ -228,7 +228,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
 
     protected function processStateUpdates(Article $article)
     {
-        $articleMapper = $this->services->get(ArticleMapper::class);
+        $articleMapper = $this->services->get(ShopwareArticleMapper::class);
         foreach ($this->articleStates as $state => $values) {
             $newValue = $values['new'];
             if ($values['current'] === $newValue) continue;
@@ -314,9 +314,10 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            /** @noinspection PhpUndefinedMethodInspection */
-            $this->getRepository()->exportDosages();
-            $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
+            $testDir = __DIR__ . '/../../Test/';
+            $xml = $testDir . 'TESTErstimport.xml';
+            $this->services->get(ImportClient::class)->import($xml, true);
+            $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
@@ -327,9 +328,12 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
+            $testDir = __DIR__ . '/../../Test/';
+            $xml = $testDir . 'TESTUpdateFeldwerte.xml';
+            $this->services->get(ImportClient::class)->import($xml);;
+            $this->view->assign([ 'success' => true, 'message' => 'Values successfully updated.' ]);
         } catch (Throwable $e) {
-            $this->log->except($e, true, false);
+            $this->log->except($e, true, true);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
     }
@@ -338,10 +342,10 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $prices = $this->services->get(ArticlePrices::class);
-            $prices->import();
-
-            $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
+            $testDir = __DIR__ . '/../../Test/';
+            $xml = $testDir . 'TESTUpdateVarianten.xml';
+            $this->services->get(ImportClient::class)->import($xml);;
+            $this->view->assign([ 'success' => true, 'message' => 'Variants successfully updated.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
@@ -352,9 +356,13 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $this->view->assign([ 'success' => true, 'message' => 'Development 4 slot is currently free.' ]);
+            $testDir = __DIR__ . '/../../Test/';
+            $xml = $testDir . 'TESTEmpty.xml';
+            $this->services->get(ImportClient::class)->import($xml);;
+            $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
+//            $this->view->assign([ 'success' => true, 'message' => 'Development 4 slot is currently free.' ]);
         } catch (Throwable $e) {
-            $this->log->except($e, true, false);
+            $this->log->except($e, true, true);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
     }

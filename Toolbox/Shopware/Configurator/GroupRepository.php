@@ -93,6 +93,7 @@ class GroupRepository
 
         // create new option
         $option = new Option();
+        $this->modelManager->persist($option);
         $option->setName($optionName);
         $option->setGroup($group);
         /**

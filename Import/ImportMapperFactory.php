@@ -5,8 +5,8 @@ namespace MxcDropshipInnocigs\Import;
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
-use MxcDropshipInnocigs\Mapping\ArticleMapper;
-use MxcDropshipInnocigs\Mapping\PropertyMapper;
+use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImportMapperFactory implements FactoryInterface
@@ -26,8 +26,8 @@ class ImportMapperFactory implements FactoryInterface
         $apiClient = $container->get(ApiClient::class);
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        $propertyMapper = $container->get(PropertyMapper::class);
-        $articleMapper = $container->get(ArticleMapper::class);
+        $propertyMapper = $container->get(ImportPropertyMapper::class);
+        $articleMapper = $container->get(ShopwareArticleMapper::class);
         $bulkOperation = new BulkOperation($container->get('modelManager'), $log);
         return new ImportMapper(
             $modelManager,

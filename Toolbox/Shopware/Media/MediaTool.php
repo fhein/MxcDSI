@@ -10,6 +10,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use Shopware\Bundle\MediaBundle\MediaService;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
+use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Image;
 use Shopware\Models\Media\Album;
 use Shopware\Models\Media\Media;
@@ -134,6 +135,9 @@ class MediaTool
         $image->setPath($media->getName());
         $image->setPosition($position);
 
+        // Important to avoid 'A new entity was detected which is not configured to cascade persist'
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush($image);
         return $image;
 
     }
@@ -178,6 +182,7 @@ class MediaTool
             $image = $this->shopwareMainImages[$icImage->getUrl()];
 
             if (null === $image) {
+                $this->log->debug($icImage->getUrl());
                 $image = $this->getImage($icImage->getUrl(), $swArticle, $i++); //entry for Image itself
                 $this->shopwareArticleImages->add($image);
                 $this->shopwareMainImages[$icImage->getUrl()] = $image;
@@ -203,7 +208,7 @@ class MediaTool
             $this->modelManager->persist($mapping);
 
             $rules = $mapping->getRules();
-
+            /** @var Option $option */
             foreach ($configuratorOptions as $option) {
                 $rule = new Image\Rule();
                 $this->modelManager->persist($rule);
@@ -212,7 +217,6 @@ class MediaTool
                 $rules->add($rule);
             }
 
-            $this->modelManager->persist($image);
             $mapping->setImage($image);
 
             $mapping->setRules($rules);

@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Shopware;
+namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
@@ -11,7 +11,7 @@ use Shopware\Models\Customer\Group;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
-class PriceTool
+class PriceMapper
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;
@@ -23,6 +23,7 @@ class PriceTool
     {
         $this->modelManager = Shopware()->Models();
         $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
+        /** @var Group $customerGroup */
         foreach ($customerGroups as $customerGroup) {
             $this->customerGroups[$customerGroup->getKey()] = $customerGroup;
         }

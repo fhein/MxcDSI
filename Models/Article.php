@@ -25,7 +25,7 @@ class Article extends ModelEntity  {
     private $icNumber;
 
     /**
-     * PropertyMapper mapped
+     * ImportPropertyMapper mapped
      *
      * @var string $number
      * @ORM\Column(type="string", nullable=true)
@@ -51,7 +51,7 @@ class Article extends ModelEntity  {
     private $similarArticles;
 
     /**
-     * PropertyMapper mapped
+     * ImportPropertyMapper mapped
      *
      * @var string $name
      * @ORM\Column(type="string", nullable=true)
@@ -59,7 +59,7 @@ class Article extends ModelEntity  {
     private $name;
 
     /**
-     * PropertyMapper mapped
+     * ImportPropertyMapper mapped
      *
      * @var string $commonName
      *
@@ -68,7 +68,7 @@ class Article extends ModelEntity  {
     private $commonName;
 
     /**
-     * PropertyMapper mapped
+     * ImportPropertyMapper mapped
      *
      * @var string $type
      *
@@ -77,7 +77,7 @@ class Article extends ModelEntity  {
     private $type;
 
     /**
-     * PropertyMapper mapped
+     * ImportPropertyMapper mapped
      *
      * This property reflects the pieces per pack information extracted
      * from the article name (example: (5 Stück pro Packung)).
@@ -113,17 +113,14 @@ class Article extends ModelEntity  {
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(
-     *      targetEntity="Variant",
-     *      mappedBy="article",
-     *      cascade={"persist", "remove"}
-     * )
+     * @ORM\OneToMany(targetEntity="Variant", mappedBy="article", cascade={"persist", "remove"})
      */
     private $variants;
+
     private $validVariants;
 
     /**
-     * PropertyMapper mapped
+     * ImportPropertyMapper mapped
      *
      * @var string $supplier
      * @ORM\Column(type="string", nullable=true)
@@ -131,7 +128,7 @@ class Article extends ModelEntity  {
     private $supplier;
 
     /**
-     * PropertyMapper mapped
+     * ImportPropertyMapper mapped
      *
      * @var string $brand
      *
@@ -150,7 +147,7 @@ class Article extends ModelEntity  {
     private $article;
 
     /**
-     * Aroma dosage, PropertyMapper mapped
+     * Aroma dosage, ImportPropertyMapper mapped
      *
      * @var string $dosage
      *
@@ -159,7 +156,7 @@ class Article extends ModelEntity  {
     private $dosage;
 
     /**
-     * VG/PG, PropertyMapper mapped
+     * VG/PG, ImportPropertyMapper mapped
      *
      * @var string $base
      *

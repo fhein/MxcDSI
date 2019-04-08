@@ -33,11 +33,7 @@ class Group extends ModelEntity  {
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(
-     *      targetEntity="Option",
-     *      mappedBy="icGroup",
-     *      cascade={"persist", "remove"}
-     * )
+     * @ORM\OneToMany(targetEntity="Option", mappedBy="icGroup", cascade={"persist", "remove"})
      */
     private $options;
 

@@ -5,9 +5,9 @@ namespace MxcDropshipInnocigs\Import;
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Mapping\ArticleMapper;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
-use MxcDropshipInnocigs\Mapping\PropertyMapper;
+use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -27,10 +27,10 @@ class ImportMapper
     /** @var ApiClient $apiClient */
     protected $apiClient;
 
-    /** @var PropertyMapper $propertyMapper */
+    /** @var ImportPropertyMapper $propertyMapper */
     protected $propertyMapper;
 
-    /** @var ArticleMapper $articleMapper */
+    /** @var ShopwareArticleMapper $articleMapper */
     protected $articleMapper;
 
     /** @var BulkOperation $bulkOperation */
@@ -68,8 +68,8 @@ class ImportMapper
      *
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
-     * @param PropertyMapper $propertyMapper
-     * @param ArticleMapper $articleMapper
+     * @param ImportPropertyMapper $propertyMapper
+     * @param ShopwareArticleMapper $articleMapper
      * @param BulkOperation $bulkOperation
      * @param Config $config
      * @param LoggerInterface $log
@@ -77,8 +77,8 @@ class ImportMapper
     public function __construct(
         ModelManager $modelManager,
         ApiClient $apiClient,
-        PropertyMapper $propertyMapper,
-        ArticleMapper $articleMapper,
+        ImportPropertyMapper $propertyMapper,
+        ShopwareArticleMapper $articleMapper,
         BulkOperation $bulkOperation,
         Config $config,
         LoggerInterface $log
@@ -217,14 +217,18 @@ class ImportMapper
             $variant->removeImagesAndOptions();
             $article = $variant->getArticle();
             $article->removeVariant($variant);
+            // @todo: this is possibly a temporary solution, could be done via articleMapper->updateArticles
+            $this->articleMapper->setShopwareDetailActive($variant, false);
             $this->modelManager->remove($variant);
             $icNumber = $variant->getIcNumber();
             unset($this->variants[$icNumber]);
             if ($article->getVariants()->count() === 0) {
                 $article->setAccepted(false);
+                // @todo: this is possibly a temporary solution, , could be done via articleMapper->updateArticles
+                $this->articleMapper->setShopwareArticleActive($article);
                 unset($this->articles[$article->getIcNumber()]);
             }
-            $this->updates[$article->getIcNumber()] = $article;
+            // $this->updates[$article->getIcNumber()] = $article;
         }
     }
 
@@ -250,12 +254,17 @@ class ImportMapper
 
         $removed = array_diff($oldImages, $newImages);
         foreach ($removed as $url) {
-            $variant->removeImage($this->images[$url]);
+            $image = $this->images[$url];
+            $variant->removeImage($image);
         }
 
-        $addedImages = implode(MXC_DELIMITER_L1, array_diff($newImages, $oldImages));
-        $addedImages = $this->getImages($addedImages);
-        $variant->addImages($addedImages);
+        $addedImages = array_diff($newImages, $oldImages);
+        if (! empty($addedImages)) {
+            $addedImages = implode(MXC_DELIMITER_L1, $addedImages);
+            $this->log->debug('Added images' . var_export($addedImages, true));
+            $addedImages = $this->getImages($addedImages);
+            $variant->addImages($addedImages);
+        }
     }
 
     protected function changeVariant(Variant $variant, Model $model, array $fields)
@@ -312,15 +321,16 @@ class ImportMapper
 
     protected function removeOrphanedItems()
     {
-        $this->modelManager->getRepository(Article::class)->removeOrphaned();
         $this->modelManager->getRepository(Variant::class)->removeOrphaned();
+        $this->modelManager->getRepository(Article::class)->removeOrphaned();
 
-        // Orphaned options must be removed before orphaned groups because groups may
-        // become orphaned during removal of orphaned options
         $this->modelManager->getRepository(Option::class)->removeOrphaned();
+        $this->modelManager->getRepository(Image::class)->removeOrphaned();
+
+        // Orphaned options must be removed before orphaned groups. Groups may become
+        // orphaned during removal of orphaned options
         $this->modelManager->getRepository(Group::class)->removeOrphaned();
 
-        $this->modelManager->getRepository(Image::class)->removeOrphaned();
     }
 
 
@@ -337,6 +347,9 @@ class ImportMapper
         $this->options = $this->modelManager->getRepository(Option::class)->getAllIndexed();
         /** @noinspection PhpUndefinedMethodInspection */
         $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
+        foreach ($this->images as $image) {
+            $this->log->debug('Image cache: ' . $image->getUrl());
+        }
     }
 
     protected function attachLinkedShopwareArticles()
@@ -354,9 +367,12 @@ class ImportMapper
         $this->deleteVariants($import['deletions']);
         $this->changeVariants($import['changes']);
         $this->propertyMapper->mapProperties($this->articles);
-        $this->modelManager->flush();
 
         $this->modelManager->flush();
+        $this->modelManager->clear();
+
+        $this->removeOrphanedItems();
+
         /** @noinspection PhpUndefinedMethodInspection */
         $this->modelManager->getRepository(Article::class)->linkArticles();
 

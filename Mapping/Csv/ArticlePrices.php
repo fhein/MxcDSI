@@ -4,11 +4,11 @@ namespace MxcDropshipInnocigs\Mapping\Csv;
 
 use Doctrine\Common\Collections\Collection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Mapping\ArticleMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 use PhpOffice\PhpSpreadsheet\Exception;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -22,7 +22,7 @@ class ArticlePrices
 {
     protected $articlePricesFile = __DIR__ . '/../../Config/article.prices.xlsx';
 
-    /** @var ArticleMapper $articleMapper */
+    /** @var ShopwareArticleMapper $articleMapper */
     protected $articleMapper;
 
     /** @var ModelManager $modelManager */
@@ -40,13 +40,13 @@ class ArticlePrices
     /** @var array */
     protected $articles;
 
-    /** @var PriceTool $priceTool */
+    /** @var PriceMapper $priceTool */
     protected $priceTool;
 
     public function __construct(
         ModelManager $modelManager,
-        ArticleMapper $articleMapper,
-        PriceTool $priceTool,
+        ShopwareArticleMapper $articleMapper,
+        PriceMapper $priceTool,
         LoggerInterface $log
     ) {
         $this->log = $log;

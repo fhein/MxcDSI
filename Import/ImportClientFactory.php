@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs\Import;
 
 use Interop\Container\ContainerInterface;
+use Mxc\Shopware\Plugin\Database\SchemaManager;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -24,7 +25,8 @@ class ImportClientFactory implements FactoryInterface
         $log = $container->get('logger');
         $importMapper = $container->get(ImportMapper::class);
         $modelManager = $container->get('modelManager');
-        $client = new ImportClient($modelManager, $apiClient, $importMapper, $config, $log);
+        $schemaManager = $container->get(SchemaManager::class);
+        $client = new ImportClient($modelManager, $schemaManager, $apiClient, $importMapper, $config, $log);
         return $client;
     }
 }

@@ -20,7 +20,7 @@ use MxcDropshipInnocigs\Mapping\Import\Flavorist;
 use MxcDropshipInnocigs\Mapping\Import\VariantCodeMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class PropertyMapperFactory implements FactoryInterface
+class ImportPropertyMapperFactory implements FactoryInterface
 {
     use ClassConfigTrait;
 
@@ -48,7 +48,7 @@ class PropertyMapperFactory implements FactoryInterface
             // requires article's manufacturer, sets brand and supplier
             'manufacturer'  => $container->get(ArticleManufacturerMapper::class),
             // requires brand, sets name
-            'mame'          => $container->get(ArticleNameMapper::class),
+            'name'          => $container->get(ArticleNameMapper::class),
             // requires name, sets piecesPerPack
             'piecesPerPack' => $container->get(ArticlePiecesPerPackMapper::class),
             // requires name, sets commonName
@@ -72,7 +72,7 @@ class PropertyMapperFactory implements FactoryInterface
 
         $regularExpressions = $container->get(RegularExpressions::class);
 
-        return new PropertyMapper(
+        return new ImportPropertyMapper(
             $modelManager,
             $associatedArticlesMapper,
             $regularExpressions,

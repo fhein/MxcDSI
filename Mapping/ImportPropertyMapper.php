@@ -13,7 +13,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use RuntimeException;
 use Shopware\Components\Model\ModelManager;
 
-class PropertyMapper
+class ImportPropertyMapper
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;
@@ -121,7 +121,7 @@ class PropertyMapper
     }
 
     /**
-     * Set all properties of Article maintained by PropertyMapper
+     * Set all properties of Article maintained by ImportPropertyMapper
      *
      * @param Model $model
      * @param Article $article
@@ -137,7 +137,7 @@ class PropertyMapper
     }
 
     /**
-     * Set all properties of Variant maintained by PropertyMapper
+     * Set all properties of Variant maintained by ImportPropertyMapper
      *
      * @param Model $model
      * @param Variant $variant

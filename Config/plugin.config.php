@@ -9,8 +9,6 @@ use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as PropertyMapperReport;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\MappingFilePersister;
-use MxcDropshipInnocigs\Mapping\ArticleMapper;
-use MxcDropshipInnocigs\Mapping\ArticleOptionMapper;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Csv\ArticlePrices;
@@ -28,7 +26,10 @@ use MxcDropshipInnocigs\Mapping\Import\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
 use MxcDropshipInnocigs\Mapping\Import\ImportMapperFactory;
 use MxcDropshipInnocigs\Mapping\Import\VariantCodeMapper;
-use MxcDropshipInnocigs\Mapping\PropertyMapper;
+use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareOptionMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -43,7 +44,6 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 
 return [
     'plugin'   => [
@@ -122,8 +122,8 @@ return [
         'magicals'  => [
             ApiClient::class,
             ArrayReport::class,
-            ArticleMapper::class,
-            ArticleOptionMapper::class,
+            ShopwareArticleMapper::class,
+            ShopwareOptionMapper::class,
             ArticlePrices::class,
             AssociatedArticlesMapper::class,
             ConfiguratorGroupRepository::class,
@@ -137,8 +137,8 @@ return [
             MappingFilePersister::class,
             MediaTool::class,
             NameMappingConsistency::class,
-            PriceTool::class,
-            PropertyMapper::class,
+            PriceMapper::class,
+            ImportPropertyMapper::class,
             PropertyMapperReport::class,
             RegexChecker::class,
             RegularExpressions::class,
@@ -157,13 +157,13 @@ return [
         AssociatedArticlesMapper::class  => include __DIR__ . '/AssociatedArticlesMapper.php',
         ImportClient::class              => include __DIR__ . '/ImportClient.config.php',
         ImportMapper::class              => include __DIR__ . '/ImportMapper.config.php',
-        PropertyMapper::class            => include __DIR__ . '/PropertyMapper.config.php',
+        ImportPropertyMapper::class      => include __DIR__ . '/ImportPropertyMapper.config.php',
         VariantCodeMapper::class         => include __DIR__ . '/VariantCodeMapper.config.php',
 
-        ArticleMapper::class        => [
+        ShopwareArticleMapper::class => [
             'root_category' => 'Deutsch',
         ],
-        MappingFilePersister::class => [
+        MappingFilePersister::class  => [
             'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
         ],
     ],

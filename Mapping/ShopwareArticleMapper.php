@@ -6,10 +6,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ApiClient;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 use Shopware\Components\Model\ModelManager;
@@ -20,7 +20,7 @@ use Shopware\Models\Plugin\Plugin;
 use Zend\Config\Config;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
-class ArticleMapper
+class ShopwareArticleMapper
 {
     /** @var array $associatedArticles */
     protected $associatedArticles;
@@ -39,7 +39,7 @@ class ArticleMapper
     protected $config;
 
     /**
-     * @var ArticleOptionMapper $optionMapper
+     * @var ShopwareOptionMapper $optionMapper
      */
     protected $optionMapper;
 
@@ -59,25 +59,25 @@ class ArticleMapper
     /** @var bool */
     protected $dropshippersCompanionPresent;
 
-    /** @var PriceTool $priceTool */
+    /** @var PriceMapper $priceTool */
     protected $priceTool;
 
     /**
-     * ArticleMapper constructor.
+     * ShopwareArticleMapper constructor.
      *
      * @param ModelManager $modelManager
-     * @param ArticleOptionMapper $optionMapper
+     * @param ShopwareOptionMapper $optionMapper
      * @param MediaTool $mediaTool
-     * @param PriceTool $priceTool
+     * @param PriceMapper $priceTool
      * @param ApiClient $client
      * @param Config $config
      * @param LoggerInterface $log
      */
     public function __construct(
         ModelManager $modelManager,
-        ArticleOptionMapper $optionMapper,
+        ShopwareOptionMapper $optionMapper,
         MediaTool $mediaTool,
-        PriceTool $priceTool,
+        PriceMapper $priceTool,
         ApiClient $client,
         Config $config,
         LoggerInterface $log
@@ -245,15 +245,18 @@ class ArticleMapper
         }
 
         $swArticle = $icArticle->getArticle();
-        $create = ($swArticle === null) && $allowCreate;
+        $created = false;
 
-        if ($create) {
+        if ($swArticle === null) {
+            if (! $allowCreate) return false;
+
             // Create Shopware Article
             $swArticle = new ShopwareArticle();
             $this->modelManager->persist($swArticle);
             $icArticle->setArticle($swArticle);
             $icArticle->setLinked(true);
             $this->createdArticles[] = $icArticle->getIcNumber();
+            $created = true;
         }
 
         $this->removeDetachedShopwareDetails($icArticle);
@@ -261,15 +264,18 @@ class ArticleMapper
         $set = $this->optionMapper->createConfiguratorSet($icArticle);
         $swArticle->setConfiguratorSet($set);
 
-        $this->setShopwareArticleProperties($icArticle, $create);
+        $this->setShopwareArticleProperties($icArticle, $created);
         $this->setShopwareDetails($icArticle);
 
-        $this->mediaTool->setArticleImages($icArticle);
-        PriceTool::setReferencePrice($icArticle);
+        PriceMapper::setReferencePrice($icArticle);
 
         // We have to flush each article in order to get the newly created categories
         // pushed to the database.
 
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
+
+        $this->mediaTool->setArticleImages($icArticle);
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
 
@@ -401,7 +407,7 @@ class ArticleMapper
         }
 
         $swArticle->setTax(TaxTool::getTax($icArticle->getTax()));
-        $swArticle->setSupplier(SupplierTool::getSupplier($icArticle));
+        $swArticle->setSupplier(SupplierTool::getSupplier($icArticle->getSupplier()));
         $this->setCategories($icArticle);
     }
 
@@ -524,7 +530,7 @@ class ArticleMapper
      * @param Variant $icVariant
      * @param bool $active
      */
-    protected function setShopwareDetailActive(Variant $icVariant, bool $active)
+    public function setShopwareDetailActive(Variant $icVariant, bool $active)
     {
         $swDetail = $icVariant->getDetail();
         $active = $active && $icVariant->isValid() && $swDetail !== null;

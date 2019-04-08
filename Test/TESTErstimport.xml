@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<INNOCIGS_API_RESPONSE>
+   <PRODUCTS>
+       <PRODUCT>
+           <CATEGORY>Zubehör</CATEGORY>
+           <MASTER>AS10000NAUT</MASTER>
+           <MODEL>AS10000A1</MODEL>
+           <EAN>4313042776687</EAN>
+           <NAME>TEST Aspire Nautilus Clearomizer Set - 2 Varianten mit Description, einem Bild und Manual</NAME>
+           <PRODUCTS_PRICE>14,14</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>31,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/aspire-nautilus-clearomizer-set.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>Aspire</MANUFACTURER>
+           <DESCRIPTION><![CDATA[Der Nautilus Clearomizer wird zusammen mit 2 Heads aus der BVC-Serie geliefert. Beide Heads sind für das moderate Dampfen geeignet, da der eine Head einen Widerstand von 1,6 Ohm und der andere von 1,8 Ohm hat. Der Tank fasst 5 Milliliter Liquid und der gesamte Clearomizer ist 8,37 cm lang.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x Nautilus Tank</li>
+<li>1x BVC Atomizer Head 1,8 Ohm</li>
+<li>1x BVC Atomizer Head 1,6 Ohm</li>
+<li>1x eGo Cone</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Tankvolumen: 5 ml</li>
+<li>Durchmesser: 2,35 cm</li>
+<li>Länge: 8,37 cm</li>
+<li>510er Gewinde</li>
+</ul>
+<br>
+<br>]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL>https://www.innocigs.com/clearomizer/aspire-nautilus-clearomizer-set1.html?info=3656&amp;dl_media=6244&amp;t=m</PRODUCTS_MANUAL>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör</CATEGORY>
+           <MASTER>AS10000NAUT</MASTER>
+           <MODEL>AS10000A1-H</MODEL>
+           <EAN/>
+           <NAME>TEST Aspire Nautilus Clearomizer Set 50er Packung - 2 Varianten mit Description, einem Bild und Manual</NAME>
+           <PRODUCTS_PRICE>706,80</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>1597,50</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/aspire-nautilus-clearomizer-set.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>Aspire</MANUFACTURER>
+           <DESCRIPTION><![CDATA[Der Nautilus Clearomizer wird zusammen mit 2 Heads aus der BVC-Serie geliefert. Beide Heads sind für das moderate Dampfen geeignet, da der eine Head einen Widerstand von 1,6 Ohm und der andere von 1,8 Ohm hat. Der Tank fasst 5 Milliliter Liquid und der gesamte Clearomizer ist 8,37 cm lang.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x Nautilus Tank</li>
+<li>1x BVC Atomizer Head 1,8 Ohm</li>
+<li>1x BVC Atomizer Head 1,6 Ohm</li>
+<li>1x eGo Cone</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Tankvolumen: 5 ml</li>
+<li>Durchmesser: 2,35 cm</li>
+<li>Länge: 8,37 cm</li>
+<li>510er Gewinde</li>
+</ul>
+<br>
+<br>]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>50er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL>https://www.innocigs.com/clearomizer/aspire-nautilus-clearomizer-set1.html?info=3656&amp;dl_media=6244&amp;t=m</PRODUCTS_MANUAL>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör</CATEGORY>
+           <MASTER>AS10000NAUTTANK</MASTER>
+           <MODEL>AS10000A15</MODEL>
+           <EAN>4313042578533</EAN>
+           <NAME>TEST Aspire Nautilus Glastank - Eine Variante ohne Description, ohne Manual</NAME>
+           <PRODUCTS_PRICE>3,13</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>7,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/aspire-nautilus-ersatztank.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>Aspire</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Clearomizer &gt; bis 2ml</CATEGORY>
+           <MASTER>IC100PRC</MASTER>
+           <MODEL>IC100PR-13</MODEL>
+           <EAN>4313042778100</EAN>
+           <NAME>TEST InnoCigs Presence Clearomizer Set schwarz - 6 Varianten mit unterschiedlichen Attributen (Farbe, Packung) und zusätzlichen Bildern</NAME>
+           <PRODUCTS_PRICE>4,33</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>9,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs-presence-clearomizer-farben_vorab.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL>
+               <IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_clearomizer_schwarz1.jpeg</IMAGE>
+           </PRODUCTS_IMAGE_ADDITIONAL>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>schwarz</FARBE>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL>https://www.innocigs.com/clearomizer/fuellmenge-2ml/innocigs-presence-clearomizer-set.html?info=12297&amp;dl_media=6437&amp;t=m</PRODUCTS_MANUAL>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Clearomizer &gt; bis 2ml</CATEGORY>
+           <MASTER>IC100PRC</MASTER>
+           <MODEL>IC100PR-13-H</MODEL>
+           <EAN>4313042815331</EAN>
+           <NAME>TEST InnoCigs Presence Clearomizer Set schwarz 20er Packung - 6 Varianten mit unterschiedlichen Attributen (Farbe, Packung)</NAME>
+           <PRODUCTS_PRICE>86,64</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>199,00</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs-presence-clearomizer-farben_vorab.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL>
+               <IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_clearomizer_schwarz1.jpeg</IMAGE>
+           </PRODUCTS_IMAGE_ADDITIONAL>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>schwarz</FARBE>
+              <PACKUNG>20er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL>https://www.innocigs.com/clearomizer/fuellmenge-2ml/innocigs-presence-clearomizer-set.html?info=12297&amp;dl_media=6437&amp;t=m</PRODUCTS_MANUAL>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Clearomizer &gt; bis 2ml</CATEGORY>
+           <MASTER>IC100PRC</MASTER>
+           <MODEL>IC100PR-14</MODEL>
+           <EAN>4313042815294</EAN>
+           <NAME>TEST InnoCigs Presence Clearomizer Set weiss - 6 Varianten mit unterschiedlichen Attributen (Farbe, Packung)</NAME>
+           <PRODUCTS_PRICE>4,33</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>9,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_clearomizer_weiss_rose3.jpeg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>weiß</FARBE>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL>https://www.innocigs.com/clearomizer/fuellmenge-2ml/innocigs-presence-clearomizer-set.html?info=12297&amp;dl_media=6437&amp;t=m</PRODUCTS_MANUAL>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Clearomizer &gt; bis 2ml</CATEGORY>
+           <MASTER>IC100PRC</MASTER>
+           <MODEL>IC100PR-14-H</MODEL>
+           <EAN>4313042815348</EAN>
+           <NAME>TEST InnoCigs Presence Clearomizer Set weiss 20er Packung - 6 Varianten mit unterschiedlichen Attributen (Farbe, Packung)</NAME>
+           <PRODUCTS_PRICE>86,64</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>199,00</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_clearomizer_weiss_rose3.jpeg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>weiß</FARBE>
+              <PACKUNG>20er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL>https://www.innocigs.com/clearomizer/fuellmenge-2ml/innocigs-presence-clearomizer-set.html?info=12297&amp;dl_media=6437&amp;t=m</PRODUCTS_MANUAL>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Clearomizer &gt; bis 2ml</CATEGORY>
+           <MASTER>IC100PRC</MASTER>
+           <MODEL>IC100PR-15</MODEL>
+           <EAN>4313042815300</EAN>
+           <NAME>TEST InnoCigs Presence Clearomizer Set silber - 6 Varianten mit unterschiedlichen Attributen (Farbe, Packung)</NAME>
+           <PRODUCTS_PRICE>4,33</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>9,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_clearomizer_silber3.jpeg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>silber</FARBE>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL>https://www.innocigs.com/clearomizer/fuellmenge-2ml/innocigs-presence-clearomizer-set.html?info=12297&amp;dl_media=6437&amp;t=m</PRODUCTS_MANUAL>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Clearomizer &gt; bis 2ml</CATEGORY>
+           <MASTER>IC100PRC</MASTER>
+           <MODEL>IC100PR-15-H</MODEL>
+           <EAN>4313042815355</EAN>
+           <NAME>TEST InnoCigs Presence Clearomizer Set silber 20er Packung - 6 Varianten mit unterschiedlichen Attributen (Farbe, Packung)</NAME>
+           <PRODUCTS_PRICE>86,64</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>199,00</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_clearomizer_silber3.jpeg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>silber</FARBE>
+              <PACKUNG>20er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL>https://www.innocigs.com/clearomizer/fuellmenge-2ml/innocigs-presence-clearomizer-set.html?info=12297&amp;dl_media=6437&amp;t=m</PRODUCTS_MANUAL>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; InnoCigs Zubehör</CATEGORY>
+           <MASTER>IC100PRB</MASTER>
+           <MODEL>IC100PR-16</MODEL>
+           <EAN>4313042778117</EAN>
+           <NAME>TEST InnoCigs Presence Akku 1100 mAh schwarz - 5 Varianten, nicht alle Attributkombinationen vorhanden</NAME>
+           <PRODUCTS_PRICE>12,10</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>24,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs-presence-1100-mah-akku-schwarz.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>schwarz</FARBE>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; InnoCigs Zubehör</CATEGORY>
+           <MASTER>IC100PRB</MASTER>
+           <MODEL>IC100PR-16-H</MODEL>
+           <EAN>4313042815362</EAN>
+           <NAME>TEST InnoCigs Presence Akku 1100 mAh schwarz 20er Packung - 5 Varianten, nicht alle Attributkombinationen vorhanden</NAME>
+           <PRODUCTS_PRICE>242,06</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>499,00</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs-presence-1100-mah-akku-schwarz.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>schwarz</FARBE>
+              <PACKUNG>20er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; InnoCigs Zubehör</CATEGORY>
+           <MASTER>IC100PRB</MASTER>
+           <MODEL>IC100PR-17</MODEL>
+           <EAN>4313042815317</EAN>
+           <NAME>TEST InnoCigs Presence Akku 1100 mAh weiss - 5 Varianten, nicht alle Attributkombinationen vorhanden</NAME>
+           <PRODUCTS_PRICE>12,10</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>24,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs-presence-1100-mah-akku-wei.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>weiß</FARBE>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; InnoCigs Zubehör</CATEGORY>
+           <MASTER>IC100PRB</MASTER>
+           <MODEL>IC100PR-17-H</MODEL>
+           <EAN>4313042815379</EAN>
+           <NAME>TEST InnoCigs Presence Akku 1100 mAh weiss 20er Packung - 5 Varianten, nicht alle Attributkombinationen vorhanden</NAME>
+           <PRODUCTS_PRICE>242,06</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>499,00</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs-presence-1100-mah-akku-wei.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>weiß</FARBE>
+              <PACKUNG>20er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; InnoCigs Zubehör</CATEGORY>
+           <MASTER>IC100PRB</MASTER>
+           <MODEL>IC100PR-18</MODEL>
+           <EAN>4313042815324</EAN>
+           <NAME>TEST InnoCigs Presence Akku 1100 mAh silber - 5 Varianten, nicht alle Attributkombinationen vorhanden</NAME>
+           <PRODUCTS_PRICE>12,10</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>24,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs-presence-1100-mah-akku-silber.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <FARBE>silber</FARBE>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; SC Zubehör &gt; SC Verdampferköpfe</CATEGORY>
+           <MASTER>SC100ECML</MASTER>
+           <MODEL>SC100ECML-10</MODEL>
+           <EAN>4313042778148</EAN>
+           <NAME>TEST SC ECML 0,75 Ohm Heads (5 Stück pro Packung) - 2 Varianten über Importdatei verteilt</NAME>
+           <PRODUCTS_PRICE>5,42</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>12,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/SCECMLHeads075Ohm5Stuck_2d_0001.png</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>SC</MANUFACTURER>
+           <DESCRIPTION><![CDATA[Die ECML Heads von SC sind für das Subohm-Dampfen ausgelegt, da sie ein Widerstand von 0,75 Ohm haben. Pro Packung erhalten Sie ingesamt fünf Verdampferköpfe.
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<ul><li>Dampfmodi: VW, Bypass, Smart</li>
+<li>Widerstand: 0,75 Ohm</li>
+<li>Leistungswerte: 8 - 25 Watt</li>
+<li>Für Lungeninhalation geeignet</li></ul><br>
+<br>]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; InnoCigs Zubehör &gt; InnoCigs Verdampferköpfe</CATEGORY>
+           <MASTER>IC100PRH</MASTER>
+           <MODEL>IC100PR-19</MODEL>
+           <EAN>4313042778124</EAN>
+           <NAME>TEST InnoCigs Presence Heads 1,6 Ohm (5 Stück pro Packung) - Viele zusäztliche Bilder, Description vorhanden</NAME>
+           <PRODUCTS_PRICE>4,73</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>12,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_heads3.jpeg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL>
+               <IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_heads1.jpeg</IMAGE>
+               <IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_heads2.jpeg</IMAGE>
+               <IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_heads_verpackung.jpeg</IMAGE>
+           </PRODUCTS_IMAGE_ADDITIONAL>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[Der Head, auch Verdampferkopf genannt, ist für den Presence Clearomizer oder für die Presence E-Zigarette geeignet. Der Head hat ein Widerstand von 1,6 Ohm und ist für das moderate Dampfen geeignet. Pro Packung erhalten Sie insgesamt 5 Verdampferköpfe. Da die Heads zu den Verschleißteilen gehören, sollten sie regelmäßig ausgetauscht werden.
+<br>
+<br>
+<b>Wichtige Merkmale:</b> 
+<ul><li>Widerstand: 1,6 Ohm</li>
+<li> Geeignet für Mundinhalation</li></ul><br>]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>1er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; InnoCigs Zubehör &gt; InnoCigs Verdampferköpfe</CATEGORY>
+           <MASTER>IC100PRH</MASTER>
+           <MODEL>IC100PR-19-H</MODEL>
+           <EAN>4313042815393</EAN>
+           <NAME>TEST InnoCigs Presence Heads 1,6 Ohm (5 Stück pro Packung) 10er Packung - Viele zusäztliche Bilder, Description vorhanden</NAME>
+           <PRODUCTS_PRICE>47,31</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>129,50</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_heads3.jpeg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL>
+               <IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_heads1.jpeg</IMAGE>
+               <IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_heads2.jpeg</IMAGE>
+               <IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/innocigs_presence_heads_verpackung.jpeg</IMAGE>
+           </PRODUCTS_IMAGE_ADDITIONAL>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[Der Head, auch Verdampferkopf genannt, ist für den Presence Clearomizer oder für die Presence E-Zigarette geeignet. Der Head hat ein Widerstand von 1,6 Ohm und ist für das moderate Dampfen geeignet. Pro Packung erhalten Sie insgesamt 5 Verdampferköpfe. Da die Heads zu den Verschleißteilen gehören, sollten sie regelmäßig ausgetauscht werden.
+<br>
+<br>
+<b>Wichtige Merkmale:</b> 
+<ul><li>Widerstand: 1,6 Ohm</li>
+<li> Geeignet für Mundinhalation</li></ul><br>]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>10er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Zubehör &gt; SC Zubehör &gt; SC Verdampferköpfe</CATEGORY>
+           <MASTER>SC100ECML</MASTER>
+           <MODEL>SC100ECML-10-H</MODEL>
+           <EAN>4313042814471</EAN>
+           <NAME>TEST SC ECML 0,75 Ohm Heads (5 Stück pro Packung) 10er Packung - 2 Varianten über Importdatei verteilt</NAME>
+           <PRODUCTS_PRICE>54,25</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>129,50</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/SCECMLHeads075Ohm5Stuck_2d_0001.png</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>SC</MANUFACTURER>
+           <DESCRIPTION><![CDATA[Die ECML Heads von SC sind für das Subohm-Dampfen ausgelegt, da sie ein Widerstand von 0,75 Ohm haben. Pro Packung erhalten Sie ingesamt fünf Verdampferköpfe.
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<ul><li>Dampfmodi: VW, Bypass, Smart</li>
+<li>Widerstand: 0,75 Ohm</li>
+<li>Leistungswerte: 8 - 25 Watt</li>
+<li>Für Lungeninhalation geeignet</li></ul><br>
+<br>]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>10er Packung</PACKUNG>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Liquids &gt; InnoCigs</CATEGORY>
+           <MASTER>IC10000L10-SS</MASTER>
+           <MODEL>IC10000L10-SS-3</MODEL>
+           <EAN>4313042777790</EAN>
+           <NAME>TEST Star Spangled Tabak Aroma - Liquid für E-Zigaretten 3 mg/ml - 2 Varianten, Description vorhanden</NAME>
+           <PRODUCTS_PRICE>1,32</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>4,95</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/clp_ss-3.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[<b>InnoCigs E-Zigaretten Liquid -  Star Spangled</b>
+<br>
+<br>
+Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
+<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
+<br>
+<br>
+In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Star Spangled dampfen, wird der Geschmack von Tabak freigesetzt.
+<br>
+<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
+<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
+<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
+]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>1er Packung</PACKUNG>
+              <STAERKE>3 mg/ml</STAERKE>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+       <PRODUCT>
+           <CATEGORY>Liquids &gt; InnoCigs</CATEGORY>
+           <MASTER>IC10000L10-SS</MASTER>
+           <MODEL>IC10000L10-SS-3-H</MODEL>
+           <EAN>4313042821585</EAN>
+           <NAME>TEST Star Spangled Tabak Aroma - Liquid für E-Zigaretten 3 mg/ml 10er Packung - 2 Varianten, Description vorhanden</NAME>
+           <PRODUCTS_PRICE>13,21</PRODUCTS_PRICE>
+           <PRODUCTS_PRICE_RECOMMENDED>49,50</PRODUCTS_PRICE_RECOMMENDED>
+           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/clp_ss-3.jpg</PRODUCTS_IMAGE>
+           <PRODUCTS_IMAGE_ADDITIONAL/>
+           <MANUFACTURER>InnoCigs</MANUFACTURER>
+           <DESCRIPTION><![CDATA[<b>InnoCigs E-Zigaretten Liquid -  Star Spangled</b>
+<br>
+<br>
+Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
+<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
+<br>
+<br>
+In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Star Spangled dampfen, wird der Geschmack von Tabak freigesetzt.
+<br>
+<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
+<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
+<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
+]]></DESCRIPTION>
+           <PRODUCTS_ATTRIBUTES>
+              <PACKUNG>10er Packung</PACKUNG>
+              <STAERKE>3 mg/ml</STAERKE>
+           </PRODUCTS_ATTRIBUTES>
+           <PRODUCTS_MANUAL/>
+       </PRODUCT>
+   </PRODUCTS>
+</INNOCIGS_API_RESPONSE>

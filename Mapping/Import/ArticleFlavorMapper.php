@@ -15,13 +15,10 @@ class ArticleFlavorMapper extends BaseImportMapper implements ArticleMapperInter
      */
     public function map(Model $model, Article $article)
     {
-        $flavor = $article->getFlavor();
-        if ($flavor !== null) {
-            return;
-        }
+        if ($article->getFlavor() !== null) return;
 
-        $flavor = $this->config[$article->getIcNumber()]['flavor'];
-        if (is_array($flavor) && !empty($flavor)) {
-            $article->setFlavor(implode(', ', $flavor));
-        }
+        $flavor = explode(',', $this->config[$article->getIcNumber()]['flavor']);
+        $flavor = array_map('trim', $flavor);
+        $flavor = implode(', ', $flavor);
+        $article->setFlavor($flavor);
     }}

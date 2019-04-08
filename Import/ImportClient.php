@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Import;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
+use Mxc\Shopware\Plugin\Database\SchemaManager;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
@@ -18,6 +19,9 @@ class ImportClient implements EventSubscriber
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;
+
+    /** @var SchemaManager $schemaManager */
+    protected $schemaManager;
 
     /** @var ApiClient $apiClient */
     protected $apiClient;
@@ -69,6 +73,7 @@ class ImportClient implements EventSubscriber
      * ImportClient constructor.
      *
      * @param ModelManager $modelManager
+     * @param SchemaManager $schemaManager
      * @param ApiClient $apiClient
      * @param ImportMapper $importMapper
      * @param Config $config
@@ -76,12 +81,14 @@ class ImportClient implements EventSubscriber
      */
     public function __construct(
         ModelManager $modelManager,
+        SchemaManager $schemaManager,
         ApiClient $apiClient,
         ImportMapper $importMapper,
         Config $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
+        $this->schemaManager = $schemaManager;
         $this->importMapper = $importMapper;
         $this->apiClient = $apiClient;
         $this->log = $log;
@@ -91,23 +98,39 @@ class ImportClient implements EventSubscriber
         $this->fields = $model->getPrivatePropertyNames();
     }
 
-    public function getSubscribedEvents()
+    protected function setupImport()
     {
-        return ['preUpdate'];
-    }
-
-    public function import()
-    {
-//        (new CategoryTool())->removeEmptyCategories();
-//        return;
-
         $this->importLog['deletions'] = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         $this->importLog['additions'] = [];
         $this->importLog['changes'] = [];
         /** @noinspection PhpUndefinedMethodInspection */
         $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->optionNames = [];
+    }
 
+    public function getSubscribedEvents()
+    {
+        return ['preUpdate'];
+    }
+
+    public function import(string $xmlFile = null, bool $recreateSchema = false)
+    {
+        if (file_exists($xmlFile)) {
+            $this->import = $this->apiClient->modelsToArray(file_get_contents($xmlFile));
+        } else {
+            $this->import = $this->apiClient->getItemList();
+        }
+        if ($recreateSchema) {
+            $this->schemaManager->drop();
+            $this->schemaManager->create();
+        }
+        $this->doImport();
+
+    }
+
+    public function doImport()
+    {
+        $this->setupImport();
         $evm = $this->modelManager->getEventManager();
         $evm->addEventSubscriber($this);
 
@@ -124,7 +147,6 @@ class ImportClient implements EventSubscriber
 
     protected function apiImport()
     {
-        $this->import = $this->apiClient->getItemList();
         $i = 1;
         $description = [];
         foreach ($this->import as &$master) {

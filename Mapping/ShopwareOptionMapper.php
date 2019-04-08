@@ -12,7 +12,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Configurator\Set;
 
-class ArticleOptionMapper
+class ShopwareOptionMapper
 {
     /** @var LoggerInterface $log */
     protected $log;
@@ -27,7 +27,7 @@ class ArticleOptionMapper
     protected $modelManager;
 
     /**
-     * ArticleOptionMapper constructor.
+     * ShopwareOptionMapper constructor.
      *
      * @param GroupRepository $groupRepository
      * @param SetRepository $setRepository

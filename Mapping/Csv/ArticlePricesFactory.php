@@ -3,7 +3,7 @@
 namespace MxcDropshipInnocigs\Mapping\Csv;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Mapping\ArticleMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ArticlePricesFactory implements FactoryInterface
@@ -19,7 +19,7 @@ class ArticlePricesFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $modelManager = $container->get('modelManager');
-        $articleMapper = $container->get(ArticleMapper::class);
+        $articleMapper = $container->get(ShopwareArticleMapper::class);
         $priceTool = $container->get(PriceTool::class);
         $log = $container->get('logger');
 

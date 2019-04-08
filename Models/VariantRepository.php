@@ -8,7 +8,7 @@ class VariantRepository extends BaseEntityRepository
         'getAllIndexed'     => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
 
         'getShopwareDetail' => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
-        'removeOrphaned'    => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.article = null',
+        'removeOrphaned'    => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.article IS NULL',
    ];
 
     public function getShopwareDetail(Variant $variant)

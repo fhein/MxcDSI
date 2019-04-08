@@ -8,7 +8,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleOptionMapperFactory implements FactoryInterface
+class ShopwareOptionMapperFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -24,7 +24,7 @@ class ArticleOptionMapperFactory implements FactoryInterface
         $modelManager = $container->get('modelManager');
         $groupRepository = $container->get(GroupRepository::class);
         $setRepository = $container->get(SetRepository::class);
-        $mapper = new ArticleOptionMapper($groupRepository, $setRepository, $modelManager, $log);
+        $mapper = new ShopwareOptionMapper($groupRepository, $setRepository, $modelManager, $log);
         return $mapper;
     }
 }
