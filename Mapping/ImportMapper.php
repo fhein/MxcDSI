@@ -1,13 +1,12 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Import;
+namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
-use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
-use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -15,7 +14,6 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Variant;
 use Shopware\Components\Model\ModelManager;
-use Zend\Config\Config;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -71,7 +69,7 @@ class ImportMapper
      * @param ImportPropertyMapper $propertyMapper
      * @param ShopwareArticleMapper $articleMapper
      * @param BulkOperation $bulkOperation
-     * @param Config $config
+     * @param array $config
      * @param LoggerInterface $log
      */
     public function __construct(
@@ -80,7 +78,7 @@ class ImportMapper
         ImportPropertyMapper $propertyMapper,
         ShopwareArticleMapper $articleMapper,
         BulkOperation $bulkOperation,
-        Config $config,
+        array $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
@@ -88,7 +86,7 @@ class ImportMapper
         $this->propertyMapper = $propertyMapper;
         $this->articleMapper = $articleMapper;
         $this->bulkOperation = $bulkOperation;
-        $this->config = $config->toArray();
+        $this->config = $config;
         $this->log = $log;
     }
 

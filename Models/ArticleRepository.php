@@ -6,7 +6,7 @@ use Zend\Config\Factory;
 
 class ArticleRepository extends BaseEntityRepository
 {
-    protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
+    protected $articleConfigFile = __DIR__ . '/../Config/ImportMappings.config.php';
 
     protected $dql = [
         'getAllIndexed'                     => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber',

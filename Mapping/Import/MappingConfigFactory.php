@@ -1,12 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Check;
+namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class NameMappingConsistencyFactory implements FactoryInterface
+class MappingConfigFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -18,11 +17,10 @@ class NameMappingConsistencyFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $modelManager = $container->get('modelManager');
-        $articleNameMapper = $container->get(ImportNameMapper::class);
+        $config = $container->get(ImportMappings::class);
         $log = $container->get('logger');
 
-        return new NameMappingConsistency($modelManager, $articleNameMapper, $log);
+        return new $requestedName($config, $log);
     }
-}
 
+}

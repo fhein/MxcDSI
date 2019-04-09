@@ -7,7 +7,7 @@ use Mxc\Shopware\Plugin\Service\LoggerInterface;
 class BaseImportMapper
 {
     /** @var array $config */
-    protected $config;
+    protected $config = [];
 
     /** @var LoggerInterface $log */
     protected $log;

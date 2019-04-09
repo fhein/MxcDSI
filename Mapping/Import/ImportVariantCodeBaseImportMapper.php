@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 
-class VariantCodeMapper extends BaseImportMapper implements VariantMapperInterface
+class ImportVariantCodeBaseImportMapper extends BaseImportMapper implements ImportVariantMapperInterface
 {
     /**
      * Map an InnoCigs article code.

@@ -2,11 +2,23 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
+use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 
-class AromaDosageMapper extends BaseImportMapper implements ArticleMapperInterface
+class ImportDosageMapper extends BaseImportMapper implements ImportArticleMapperInterface
 {
+    /**
+     * ImportDosageMapper constructor.
+     *
+     * @param ImportMappings $importMapping
+     * @param LoggerInterface $log
+     */
+    public function __construct(ImportMappings $importMapping, LoggerInterface $log)
+    {
+        parent::__construct($importMapping->getConfig(), $log);
+    }
+
     /**
      * Aromas typically come with a dosage recommendation by the supplier.
      * This recommendation is provided manually via our article configuration.

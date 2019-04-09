@@ -23,6 +23,12 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
                 mxcExportConfig:                me.onExportConfig,
                 mxcExportPrices:                me.onExportPrices,
                 mxcImportPrices:                me.onImportPrices,
+
+                mxcTestImport1:                 me.onTestImport1,
+                mxcTestImport2:                 me.onTestImport2,
+                mxcTestImport3:                 me.onTestImport3,
+                mxcTestImport4:                 me.onTestImport4,
+
                 // for development/test purposes
                 mxcDev1:                        me.onDev1,
                 mxcDev2:                        me.onDev2,
@@ -127,6 +133,40 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         let maskText = 'Checking name mapping consistency ...';
         me.doRequest(grid, url, params, growlTitle, maskText, false);
     },
+
+    onTestImport1: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=testImport1}';
+        let params = {};
+        let growlTitle = 'Importing test data';
+        let maskText = 'Importing test data  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onTestImport2: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=testImport2}';
+        let params = {};
+        let growlTitle = 'Importing value changes';
+        let maskText = 'Importing value changes  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onTestImport3: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=testImport3}';
+        let params = {};
+        let growlTitle = 'Importing variant changes ...';
+        let maskText = 'Importing variat changes  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+    onTestImport4: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiArticle action=testImport4}';
+        let params = {};
+        let growlTitle = 'Importing empty product list';
+        let maskText = 'Importing empty product list  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
 
     onSetActiveSelected: function (grid) {
         let me = this;

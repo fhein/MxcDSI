@@ -5,7 +5,6 @@ namespace MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as PropertyMapperReport;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\MappingFilePersister;
@@ -13,21 +12,27 @@ use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Csv\ArticlePrices;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
-use MxcDropshipInnocigs\Mapping\Import\AromaDosageMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleCodeMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleCommonNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleFlavorMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleManufacturerMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticlePiecesPerPackMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleTypeMapper;
-use MxcDropshipInnocigs\Mapping\Import\AssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
-use MxcDropshipInnocigs\Mapping\Import\ImportMapperFactory;
-use MxcDropshipInnocigs\Mapping\Import\VariantCodeMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportArticleCodeBaseImportMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportAssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportCommonNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportDosageMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportFlavorMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportManufacturerMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportMappings;
+use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportPiecesPerPackMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportTypeMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportVariantCodeBaseImportMapper;
+use MxcDropshipInnocigs\Mapping\Import\MappingConfigFactory;
+use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareAssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
 use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use MxcDropshipInnocigs\Mapping\ShopwareOptionMapper;
 use MxcDropshipInnocigs\Models\Article;
@@ -39,6 +44,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
 use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
+use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
@@ -46,10 +52,10 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRe
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 
 return [
-    'plugin'   => [
+    'plugin'       => [
         MappingFilePersister::class,
     ],
-    'doctrine' => [
+    'doctrine'     => [
         'models'     => [
             Article::class,
             Variant::class,
@@ -105,66 +111,70 @@ return [
             ],
         ],
     ],
-    'services' => [
+    'services'     => [
 
         'factories' => [
-            AromaDosageMapper::class          => ImportMapperFactory::class,
-            ArticleCategoryMapper::class      => ImportMapperFactory::class,
-            ArticleCodeMapper::class          => ImportMapperFactory::class,
-            ArticleCommonNameMapper::class    => ImportMapperFactory::class,
-            ArticleFlavorMapper::class        => ImportMapperFactory::class,
-            ArticleManufacturerMapper::class  => ImportMapperFactory::class,
-            ArticleNameMapper::class          => ImportMapperFactory::class,
-            ArticlePiecesPerPackMapper::class => ImportMapperFactory::class,
-            ArticleTypeMapper::class          => ImportMapperFactory::class,
-            VariantCodeMapper::class          => ImportMapperFactory::class,
+            ImportArticleCodeBaseImportMapper::class => ClassConfigFactory::class,
+            ImportCategoryMapper::class              => ClassConfigFactory::class,
+            ImportCommonNameMapper::class            => ClassConfigFactory::class,
+            ImportMappings::class                    => ClassConfigFactory::class,
+            ImportNameMapper::class                  => ClassConfigFactory::class,
+            ImportPiecesPerPackMapper::class         => ClassConfigFactory::class,
+            ImportTypeMapper::class                  => ClassConfigFactory::class,
+            ImportVariantCodeBaseImportMapper::class => ClassConfigFactory::class,
+
+            ImportDosageMapper::class => MappingConfigFactory::class,
+            ImportFlavorMapper::class => MappingConfigFactory::class,
         ],
         'magicals'  => [
             ApiClient::class,
             ArrayReport::class,
-            ShopwareArticleMapper::class,
-            ShopwareOptionMapper::class,
             ArticlePrices::class,
-            AssociatedArticlesMapper::class,
+            ShopwareCategoryMapper::class,
+            CategoryTool::class,
             ConfiguratorGroupRepository::class,
             ConfiguratorSetRepository::class,
             Credentials::class,
             FilterGroupRepository::class,
             FilterTest::class,
             Flavorist::class,
+            ShopwareImageMapper::class,
+            ImportAssociatedArticlesMapper::class,
             ImportClient::class,
+            ImportManufacturerMapper::class,
             ImportMapper::class,
+            ImportPropertyMapper::class,
             MappingFilePersister::class,
             MediaTool::class,
             NameMappingConsistency::class,
-            PriceMapper::class,
-            ImportPropertyMapper::class,
+            ShopwarePriceMapper::class,
             PropertyMapperReport::class,
             RegexChecker::class,
             RegularExpressions::class,
+            ShopwareArticleMapper::class,
+            ShopwareAssociatedArticlesMapper::class,
+            ShopwareOptionMapper::class,
         ],
     ],
-    // @todo: multiple includes of the same file
     'class_config' => [
-        AromaDosageMapper::class         => include __DIR__ . '/article.config.php',
-        ArticleCategoryMapper::class     => include __DIR__ . '/ArticleCategoryMapper.config.php',
-        ArticleCodeMapper::class         => include __DIR__ . '/ArticleCodeMapper.config.php',
-        ArticleCommonNameMapper::class   => include __DIR__ . '/ArticleCommonNameMapper.config.php',
-        ArticleFlavorMapper::class       => include __DIR__ . '/article.config.php',
-        ArticleManufacturerMapper::class => include __DIR__ . '/ArticleManufacturerMapper.config.php',
-        ArticleNameMapper::class         => include __DIR__ . '/ArticleNameMapper.config.php',
-        ArticleTypeMapper::class         => include __DIR__ . '/ArticleTypeMapper.config.php',
-        AssociatedArticlesMapper::class  => include __DIR__ . '/AssociatedArticlesMapper.php',
-        ImportClient::class              => include __DIR__ . '/ImportClient.config.php',
-        ImportMapper::class              => include __DIR__ . '/ImportMapper.config.php',
-        ImportPropertyMapper::class      => include __DIR__ . '/ImportPropertyMapper.config.php',
-        VariantCodeMapper::class         => include __DIR__ . '/VariantCodeMapper.config.php',
+        ImportMappings::class                 => 'ImportMappings.config.php',
+        ImportCategoryMapper::class           => 'ImportCategoryMapper.config.php',
+        ImportArticleCodeMapper::class        => 'ImportArticleCodeMapper.config.php',
+        ImportCommonNameMapper::class         => 'ImportCommonNameMapper.config.php',
+        ImportManufacturerMapper::class       => 'ImportManufacturerMapper.config.php',
+        ImportNameMapper::class               => 'ImportNameMapper.config.php',
+        ImportTypeMapper::class               => 'ImportTypeMapper.config.php',
+        ImportAssociatedArticlesMapper::class => 'ImportAssociatedArticlesMapper.php',
+        ImportClient::class                   => 'ImportClient.config.php',
+        ImportMapper::class                   => 'ImportMapper.config.php',
+        ImportPropertyMapper::class           => 'ImportPropertyMapper.config.php',
+        ImportVariantCodeMapper::class        => 'ImportVariantCodeMapper.config.php',
 
         ShopwareArticleMapper::class => [
             'root_category' => 'Deutsch',
         ],
         MappingFilePersister::class  => [
-            'articleConfigFile' => __DIR__ . '/../Config/article.config.php',
+            'mappingsFile' => __DIR__ . '/../Config/ImportMappings.config.php',
         ],
     ],
 ];

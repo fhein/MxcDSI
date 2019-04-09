@@ -1,13 +1,15 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Check;
+namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
+use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class NameMappingConsistencyFactory implements FactoryInterface
+class ClassConfigFactory implements FactoryInterface
 {
+    use ClassConfigTrait;
+
     /**
      * Create an object
      *
@@ -18,11 +20,10 @@ class NameMappingConsistencyFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $modelManager = $container->get('modelManager');
-        $articleNameMapper = $container->get(ImportNameMapper::class);
+        $config = $this->getClassConfig($container, $requestedName);
         $log = $container->get('logger');
 
-        return new NameMappingConsistency($modelManager, $articleNameMapper, $log);
+        return new $requestedName($config, $log);
     }
-}
 
+}

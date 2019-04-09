@@ -3,22 +3,20 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ApiClient;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareAssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Article\Detail;
-use Shopware\Models\Category\Category;
 use Shopware\Models\Plugin\Plugin;
-use Zend\Config\Config;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
 class ShopwareArticleMapper
 {
@@ -28,38 +26,31 @@ class ShopwareArticleMapper
     /** @var array $createdArticles */
     protected $createdArticles;
 
-    /**
-     * @var LoggerInterface $log
-     */
+    /** @var ShopwareAssociatedArticlesMapper $associatedArticlesMapper */
+    protected $associatedArticlesMapper;
+
+    /** @var ShopwareCategoryMapper $categoryMapper */
+    protected $categoryMapper;
+
+    /** @var LoggerInterface $log */
     protected $log;
 
-    /**
-     * @var Config $config
-     */
-    protected $config;
-
-    /**
-     * @var ShopwareOptionMapper $optionMapper
-     */
+    /** @var ShopwareOptionMapper $optionMapper */
     protected $optionMapper;
 
-    /**
-     * @var ApiClient $client
-     */
+    /** @var ApiClient $client */
     protected $client;
-    /**
-     * @var ModelManager $modelManager
-     */
+
+    /** @var ModelManager $modelManager */
     protected $modelManager;
-    /**
-     * @var MediaTool $mediaTool
-     */
-    protected $mediaTool;
+
+    /** @var ShopwareImageMapper $imageMapper */
+    protected $imageMapper;
 
     /** @var bool */
     protected $dropshippersCompanionPresent;
 
-    /** @var PriceMapper $priceTool */
+    /** @var ShopwarePriceMapper $priceTool */
     protected $priceTool;
 
     /**
@@ -67,29 +58,50 @@ class ShopwareArticleMapper
      *
      * @param ModelManager $modelManager
      * @param ShopwareOptionMapper $optionMapper
-     * @param MediaTool $mediaTool
-     * @param PriceMapper $priceTool
+     * @param ShopwareImageMapper $imageMapper
+     * @param ShopwareCategoryMapper $categoryMapper
+     * @param ShopwarePriceMapper $priceTool
+     * @param ShopwareAssociatedArticlesMapper $associatedArticlesMapper
      * @param ApiClient $client
-     * @param Config $config
      * @param LoggerInterface $log
      */
     public function __construct(
         ModelManager $modelManager,
         ShopwareOptionMapper $optionMapper,
-        MediaTool $mediaTool,
-        PriceMapper $priceTool,
+        ShopwareImageMapper $imageMapper,
+        ShopwareCategoryMapper $categoryMapper,
+        ShopwarePriceMapper $priceTool,
+        ShopwareAssociatedArticlesMapper $associatedArticlesMapper,
         ApiClient $client,
-        Config $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
         $this->optionMapper = $optionMapper;
-        $this->mediaTool = $mediaTool;
+        $this->imageMapper = $imageMapper;
+        $this->categoryMapper = $categoryMapper;
+        $this->associatedArticlesMapper = $associatedArticlesMapper;
         $this->client = $client;
-        $this->config = $config;
         $this->log = $log;
         $this->dropshippersCompanionPresent = $this->validateDropshippersCompanion();
         $this->priceTool = $priceTool;
+    }
+
+    public function setArticleAcceptedState(array $icArticles, bool $accepted)
+    {
+        /** @var Article $icArticle */
+        foreach ($icArticles as $icArticle) {
+            $icArticle->setAccepted($accepted);
+            if ($accepted) continue;
+            $this->setShopwareArticleActive($icArticle);
+        }
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
+    }
+
+
+
+    public function createArticles (array $icArticles) {
+
     }
 
     /**
@@ -161,14 +173,12 @@ class ShopwareArticleMapper
      * @param bool $createArticlesNotActive
      * @param array $activeArticles
      */
-    protected function processAssociatedArticles(bool $createArticlesNotActive, array $activeArticles): void
+    public function processAssociatedArticles(bool $createArticlesNotActive, array $activeArticles)
     {
-        $this->associatedArticles = [];
-        foreach ($activeArticles as $icArticle) {
-            $this->prepareAssociatedArticles($icArticle);
-        }
+        $associatedArticles = $this->associatedArticlesMapper->getAssociatedArticles($activeArticles);
 
-        foreach ($this->associatedArticles as $icArticle) {
+        /** @var Article $icArticle */
+        foreach ($associatedArticles as $icArticle) {
             if ($this->setShopwareArticle($icArticle, $createArticlesNotActive)) {
                 $activeArticles[$icArticle->getIcNumber()] = $icArticle;
             }
@@ -176,57 +186,9 @@ class ShopwareArticleMapper
         }
 
         foreach ($activeArticles as $icArticle) {
-            $this->setRelatedArticles($icArticle);
-            $this->setSimilarArticles($icArticle);
+            $this->associatedArticlesMapper->setRelatedArticles($icArticle);
+            $this->associatedArticlesMapper->setSimilarArticles($icArticle);
             $this->setShopwareArticleActive($icArticle);
-        }
-    }
-
-    /**
-     * Fill the $this->associatedArticles recursively
-     *
-     * @param Article $icArticle
-     */
-    protected function prepareAssociatedArticles(Article $icArticle) {
-        // exit recursion if $icArticle is registered already
-        if ($this->associatedArticles[$icArticle->getIcNumber()]) return;
-
-        $this->prepareAssociatedArticlesCollection(
-            $icArticle->getRelatedArticles(),
-            $icArticle->getCreateRelatedArticles(),
-            $icArticle->getActivateCreatedRelatedArticles()
-        );
-
-        $this->prepareAssociatedArticlesCollection(
-            $icArticle->getSimilarArticles(),
-            $icArticle->getCreateSimilarArticles(),
-            $icArticle->getActivateCreatedSimilarArticles()
-        );
-    }
-
-    /**
-     * @param Collection $icArticles
-     * @param bool $createAssociated
-     * @param bool $activateAssociated
-     */
-    protected function prepareAssociatedArticlesCollection(
-        Collection $icArticles,
-        bool $createAssociated,
-        bool $activateAssociated
-    ) {
-        /** @var Article $article */
-        foreach ($icArticles as $article) {
-            $isNew = $article->getArticle() === null;
-            if (! $createAssociated && $isNew) {
-                continue;
-            }
-            if ($isNew) {
-                $article->setActive($activateAssociated);
-            }
-            $this->associatedArticles[$article->getIcNumber()] = $article;
-
-            // Recursion
-            $this->prepareAssociatedArticles($article);
         }
     }
 
@@ -267,7 +229,7 @@ class ShopwareArticleMapper
         $this->setShopwareArticleProperties($icArticle, $created);
         $this->setShopwareDetails($icArticle);
 
-        PriceMapper::setReferencePrice($icArticle);
+        ShopwarePriceMapper::setReferencePrice($icArticle);
 
         // We have to flush each article in order to get the newly created categories
         // pushed to the database.
@@ -275,7 +237,7 @@ class ShopwareArticleMapper
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
 
-        $this->mediaTool->setArticleImages($icArticle);
+        $this->imageMapper->setArticleImages($icArticle);
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
 
@@ -408,7 +370,7 @@ class ShopwareArticleMapper
 
         $swArticle->setTax(TaxTool::getTax($icArticle->getTax()));
         $swArticle->setSupplier(SupplierTool::getSupplier($icArticle->getSupplier()));
-        $this->setCategories($icArticle);
+        $this->categoryMapper->map($icArticle);
     }
 
     /**
@@ -572,112 +534,6 @@ class ShopwareArticleMapper
     }
 
     /**
-     * Create and return a new sub-category for a given Shopware category.
-     *
-     * @param Category $parent
-     * @param string $name
-     * @return Category
-     */
-    protected function createCategory(Category $parent, string $name)
-    {
-        $child = new Category();
-        $this->modelManager->persist($child);
-        $child->setName($name);
-        $child->setParent($parent);
-        $child->setChanged();
-        if ($parent->getArticles()->count() > 0) {
-            /** @var ShopwareArticle $article */
-            foreach ($parent->getArticles() as $article) {
-                $article->removeCategory($parent);
-                $article->addCategory($child);
-            }
-            $parent->setChanged();
-        }
-        return $child;
-    }
-
-    /**
-     * Get a Shopware category object for a given category path (example: E-Zigaretten > Aspire)
-     * All categories of the path are created if they do not exist. The category path gets created
-     * below a given root category. If no root category is provided, the path will be added below
-     * the Shopware root category.
-     *
-     * @param string $path
-     * @param Category|null $root
-     * @return Category
-     */
-    protected function getCategory(string $path, Category $root = null)
-    {
-        $repository = $this->modelManager->getRepository(Category::class);
-        /** @var Category $parent */
-        $parent = ($root !== null) ? $root : $repository->findOneBy(['parentId' => null]);
-        $nodes = explode(' > ', $path);
-        foreach ($nodes as $categoryName) {
-            $child = $repository->findOneBy(['name' => $categoryName, 'parentId' => $parent->getId()]);
-            $parent = $child ?? $this->createCategory($parent, $categoryName);
-        }
-        return $parent;
-    }
-
-    /**
-     * Add Shopware categories provided as a list of '#!#' separated category paths
-     * to the Shopware article associated to the given InnoCigs article.
-     *
-     * @param Article $icArticle
-     */
-    protected function setCategories(Article $icArticle)
-    {
-        /** @var ShopwareArticle $swArticle */
-        $swArticle = $icArticle->getArticle();
-        if (! $swArticle) return;
-
-        $root = $this->config->get('root_category', 'Deutsch');
-        $rootCategory = $this->getCategory($root);
-        $catgories = explode(MXC_DELIMITER_L1, $icArticle->getCategory());
-        foreach ($catgories as $category) {
-            // if ($icArticle->getName() === 'SC - Base - 100 ml, 0 mg/ml') xdebug_break();
-            $this->log->debug('Getting category for article '. $icArticle->getName());
-            $swCategory = $this->getCategory($category, $rootCategory);
-            $swArticle->addCategory($swCategory);
-            $swCategory->setChanged();
-        }
-    }
-
-    /**
-     * For a given collection of InnoCigs articles return a collection of all associated Shopware articles.
-     *
-     * @param Collection $icArticles
-     * @return ArrayCollection
-     */
-    protected function getShopwareArticles(Collection $icArticles): ArrayCollection
-    {
-        $swArticles = [];
-        foreach ($icArticles as $icArticle) {
-            $swArticle = $icArticle->getArticle();
-            if ($swArticle !== null) {
-                $swArticles[] = $swArticle;
-            }
-        }
-        return new ArrayCollection($swArticles);
-    }
-
-    /**
-     * Add all articles of the given Shopware article collection to the target collection.
-     * No duplicates.
-     *
-     * @param Collection $swArticles
-     * @param Collection $collection
-     */
-    protected function addArticlesToCollection(Collection $swArticles, Collection $collection)
-    {
-        foreach ($swArticles as $article) {
-            if (!$collection->contains($article)) {
-                $collection->add($article);
-            }
-        }
-    }
-
-    /**
      * Update the related and similar article lists of all Shopware articles
      * where the corresponding icArticle has related and similar articles from
      * the given $icArticles array.
@@ -691,53 +547,13 @@ class ShopwareArticleMapper
 
         $articlesWithRelatedNewArticles = $repository->getHavingRelatedArticles($icArticles);
         foreach ($articlesWithRelatedNewArticles as $icArticle) {
-            $this->setRelatedArticles($icArticle);
+            $this->associatedArticlesMapper->setRelatedArticles($icArticle);
         }
 
         $articlesWithSimilarNewArticles = $repository->getHavingSimilarArticles($icArticles);
         foreach ($articlesWithSimilarNewArticles as $icArticle) {
-            $this->setSimilarArticles($icArticle);
+            $this->associatedArticlesMapper->setSimilarArticles($icArticle);
         }
-    }
-
-    /**
-     * Set the related articles of a Shopware article according to the settings of the InnoCigs article.
-     * If the $replace flag is true, the related articles of the Shopware article will be replaced. If the
-     * $replace flag is false, new related articles will be added, if any.
-     *
-     * @param Article $icArticle
-     * @param bool $replace true: replace related articles, false: add related articles
-     */
-    protected function setRelatedArticles(Article $icArticle, bool $replace = false)
-    {
-        /** @var ShopwareArticle $swArticle */
-        $swArticle = $icArticle->getArticle();
-        if (! $swArticle) return;
-
-        $related = $swArticle->getRelated();
-        if ($replace) $related->clear();
-        $relatedArticles = $this->getShopwareArticles($icArticle->getRelatedArticles());
-        $this->addArticlesToCollection($relatedArticles, $related);
-    }
-
-    /**
-     * Set the similar articles of a Shopware article according to the settings of the InnoCigs article.
-     * If the $replace flag is true, the similar articles of the Shopware article will be replaced. If the
-     * $replace flag is false, new similar articles will be added, if any.
-     *
-     * @param Article $icArticle
-     * @param bool $replace true: replace related articles, false: add related articles
-     */
-    public function setSimilarArticles(Article $icArticle, bool $replace = false)
-    {
-        /** @var ShopwareArticle $swArticle */
-        $swArticle = $icArticle->getArticle();
-        if (! $swArticle) return;
-
-        $similar = $swArticle->getSimilar();
-        if ($replace) $similar->clear();
-        $similarArticles = $this->getShopwareArticles($icArticle->getSimilarArticles());
-        $this->addArticlesToCollection($similarArticles, $similar);
     }
 
     /**

@@ -2,10 +2,10 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Import\ImportMapper;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Csv\ArticlePrices;
+use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
 use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
@@ -136,13 +136,21 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
                 foreach ($icArticles as $icArticle) {
                     $icArticle->$setter($value);
                 }
-                $articleMapper->processStateChangesArticleList($icArticles, true);
-                $this->view->assign(['success' => true, 'message' => 'Articles were successfully updated.']);
             } else {
                 $this->view->assign([ 'success' => false, 'message' => 'Unknown state property: ' . $field]);
                 $this->log->leave();
                 return;
             }
+            switch ($field) {
+                case 'accepted':
+                    $articleMapper->setArticleAcceptedState($icArticles, $value);
+                    break;
+                case 'linked':
+                case 'active':
+                $articleMapper->processStateChangesArticleList($icArticles, true);
+                break;
+            }
+            $this->view->assign(['success' => true, 'message' => 'Articles were successfully updated.']);
         } catch (Throwable $e) {
             $this->log->except($e, true, true);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
@@ -232,7 +240,14 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         foreach ($this->articleStates as $state => $values) {
             $newValue = $values['new'];
             if ($values['current'] === $newValue) continue;
-            $articleMapper->processStateChangesArticle($article, true);
+            switch ($state) {
+                case 'accepted':
+                    $articleMapper->setArticleAcceptedState([$article], $article->isAccepted());
+                    break;
+                default:
+                    $articleMapper->processStateChangesArticle($article, true);
+                    break;
+            }
             $getState = 'is' . ucFirst($state);
             if ($article->$getState() === $newValue) continue;
             $message = sprintf("Failed to set article's %s state to %s.", $state, var_export($newValue, true));
@@ -310,7 +325,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         return ['success' => true, 'data' => $detail['data']];
     }
 
-    public function dev1Action()
+    public function testImport1Action()
     {
         $this->log->enter();
         try {
@@ -324,7 +339,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         }
     }
 
-    public function dev2Action()
+    public function testImport2Action()
     {
         $this->log->enter();
         try {
@@ -338,7 +353,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         }
     }
 
-    public function dev3Action()
+    public function testImport3Action()
     {
         $this->log->enter();
         try {
@@ -352,7 +367,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         }
     }
 
-    public function dev4Action()
+    public function testImport4Action()
     {
         $this->log->enter();
         try {
@@ -361,6 +376,49 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $this->services->get(ImportClient::class)->import($xml);;
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
 //            $this->view->assign([ 'success' => true, 'message' => 'Development 4 slot is currently free.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, true);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+    public function dev1Action()
+    {
+        $this->log->enter();
+        try {
+            $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
+    public function dev2Action()
+    {
+        $this->log->enter();
+        try {
+            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, true);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
+    public function dev3Action()
+    {
+        $this->log->enter();
+        try {
+            $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
+        } catch (Throwable $e) {
+            $this->log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+    }
+
+    public function dev4Action()
+    {
+        $this->log->enter();
+        try {
+            $this->view->assign([ 'success' => true, 'message' => 'Development 4 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, true);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);

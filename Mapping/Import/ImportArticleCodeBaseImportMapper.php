@@ -6,7 +6,7 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 
-class ArticleCodeMapper extends BaseImportMapper implements ArticleMapperInterface
+class ImportArticleCodeBaseImportMapper extends BaseImportMapper implements ImportArticleMapperInterface
 {
     /**
      * Map an InnoCigs article code.

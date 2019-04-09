@@ -3,16 +3,16 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use MxcDropshipInnocigs\Import\ApiClient;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
-use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareAssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ShopwareArticleMapperFactory implements FactoryInterface
 {
-    use ClassConfigTrait;
     /**
      * Create an object
      *
@@ -24,19 +24,21 @@ class ShopwareArticleMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get(Logger::class);
-        $config = $this->getClassConfig($container, $requestedName);
         $attributeMapper = $container->get(ShopwareOptionMapper::class);
         $client = $container->get(ApiClient::class);
-        $mediaTool = $container->get(MediaTool::class);
-        $priceTool = $container->get(PriceMapper::class);
+        $imageMapper = $container->get(ShopwareImageMapper::class);
+        $categoryMapper = $container->get(ShopwareCategoryMapper::class);
+        $priceMapper = $container->get(ShopwarePriceMapper::class);
+        $associatedArticlesMapper = $container->get(ShopwareAssociatedArticlesMapper::class);
         $modelManager = $container->get('modelManager');
         $articleMapper = new ShopwareArticleMapper(
             $modelManager,
             $attributeMapper,
-            $mediaTool,
-            $priceTool,
+            $imageMapper,
+            $categoryMapper,
+            $priceMapper,
+            $associatedArticlesMapper,
             $client,
-            $config,
             $log
         );
         return $articleMapper;

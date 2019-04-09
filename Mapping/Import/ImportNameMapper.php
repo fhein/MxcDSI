@@ -7,7 +7,7 @@ use MxcDropshipInnocigs\Models\Model;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
-class ArticleNameMapper extends BaseImportMapper implements ArticleMapperInterface
+class ImportNameMapper extends BaseImportMapper implements ImportArticleMapperInterface
 {
     protected $report;
 

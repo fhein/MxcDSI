@@ -72,6 +72,11 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
 
             /** @event mxcImportPrices */
             'mxcImportPrices',
+            
+            'mxcTestImport1',
+            'mxcTestImport2',
+            'mxcTestImport3',
+            'mxcTestImport4',
 
             'mxcDev1',
             'mxcDev2',
@@ -94,6 +99,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             me.createSelectionButton(),
             me.createConfigButton(),
             me.createToolsButton(),
+            me.createTestButton(),
             me.createDevButton()
         ]);
         return items;
@@ -356,6 +362,53 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
         });
         return Ext.create('Ext.button.Button', {
             text: 'Actions',
+            menu: menu,
+            listeners: {
+                'mouseover': function() {
+                    this.showMenu();
+                }
+            }
+        });
+    },
+
+    createTestButton: function() {
+        let me = this;
+
+        var menu = Ext.create('Ext.menu.Menu', {
+            id: 'mxcDsiTestMenu',
+            style: {
+                overflow: 'visible'
+            },
+            items: [
+                {
+                    text: 'Erstimport',
+                    handler: function() {
+                        me.fireEvent('mxcTestImport1', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Update Feldwerte',
+                    handler: function() {
+                        me.fireEvent('mxcTestImport2', me);
+                    }
+                },
+                {
+                    text: 'Update Varianten',
+                    handler: function() {
+                        me.fireEvent('mxcTestImport3', me);
+                    }
+                },
+                {
+                    text: 'Empty product list',
+                    handler: function() {
+                        me.fireEvent('mxcTestImport4', me);
+                    }
+                },
+            ]
+        });
+        return Ext.create('Ext.button.Button', {
+            text: 'Tests',
             menu: menu,
             listeners: {
                 'mouseover': function() {

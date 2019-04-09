@@ -2,11 +2,23 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
+use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 
-class ArticleFlavorMapper extends BaseImportMapper implements ArticleMapperInterface
+class ImportFlavorMapper extends BaseImportMapper implements ImportArticleMapperInterface
 {
+    /**
+     * ImportFlavorMapper constructor.
+     *
+     * @param ImportMappings $importMapping
+     * @param LoggerInterface $log
+     */
+    public function __construct(ImportMappings $importMapping, LoggerInterface $log)
+    {
+        parent::__construct($importMapping->getConfig(), $log);
+    }
+
     /**
      * Assign the product flavor from article configuration.
      *

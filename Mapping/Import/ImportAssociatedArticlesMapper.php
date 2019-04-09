@@ -13,19 +13,18 @@ use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use Shopware\Components\Model\ModelManager;
-use Zend\Config\Config;
 
-class AssociatedArticlesMapper
+class ImportAssociatedArticlesMapper
 {
     protected $log;
     protected $modelManager;
     protected $config;
     protected $articleGroups;
 
-    public function __construct(ModelManager $modelManager, Config $config, LoggerInterface $log)
+    public function __construct(ModelManager $modelManager, array $config, LoggerInterface $log)
     {
         $this->log = $log;
-        $this->config = $config->toArray();
+        $this->config = $config;
         $this->modelManager = $modelManager;
     }
 

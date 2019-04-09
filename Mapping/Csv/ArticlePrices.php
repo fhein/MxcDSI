@@ -4,7 +4,7 @@ namespace MxcDropshipInnocigs\Mapping\Csv;
 
 use Doctrine\Common\Collections\Collection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
 use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
@@ -40,13 +40,13 @@ class ArticlePrices
     /** @var array */
     protected $articles;
 
-    /** @var PriceMapper $priceTool */
+    /** @var ShopwarePriceMapper $priceTool */
     protected $priceTool;
 
     public function __construct(
         ModelManager $modelManager,
         ShopwareArticleMapper $articleMapper,
-        PriceMapper $priceTool,
+        ShopwarePriceMapper $priceTool,
         LoggerInterface $log
     ) {
         $this->log = $log;

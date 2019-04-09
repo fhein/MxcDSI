@@ -18,9 +18,6 @@ class MediaToolFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get('logger');
-        $authService = $container->get('authService');
-        $modelManager = $container->get('modelManager');
-        $mediaManager = $container->get('mediaManager');
-        return new MediaTool($modelManager, $mediaManager, $authService, $log);
+        return new MediaTool($log);
     }
 }

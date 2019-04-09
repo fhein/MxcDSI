@@ -6,7 +6,7 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 
-class ArticleCommonNameMapper extends BaseImportMapper implements ArticleMapperInterface
+class ImportCommonNameMapper extends BaseImportMapper implements ImportArticleMapperInterface
 {
 
     /**

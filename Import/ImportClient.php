@@ -6,12 +6,12 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Database\SchemaManager;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Arrays\ArrayTool;
 use Shopware\Components\Model\ModelManager;
-use Zend\Config\Config;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -76,7 +76,7 @@ class ImportClient implements EventSubscriber
      * @param SchemaManager $schemaManager
      * @param ApiClient $apiClient
      * @param ImportMapper $importMapper
-     * @param Config $config
+     * @param array $config
      * @param LoggerInterface $log
      */
     public function __construct(
@@ -84,7 +84,7 @@ class ImportClient implements EventSubscriber
         SchemaManager $schemaManager,
         ApiClient $apiClient,
         ImportMapper $importMapper,
-        Config $config,
+        array $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
@@ -245,7 +245,7 @@ class ImportClient implements EventSubscriber
 
     protected function createModels()
     {
-        $limit = $this->config->get('limit', -1);
+        $limit = $this->config['limit'] ??  -1;
         $cursor = 0;
         $missingAttributes = [];
         $missingModels = [];

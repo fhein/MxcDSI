@@ -4,7 +4,7 @@
 namespace MxcDropshipInnocigs\Mapping\Check;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
@@ -13,8 +13,8 @@ use Shopware\Components\Model\ModelManager;
 
 class NameMappingConsistency
 {
-    /** @var ArticleNameMapper $articleNameMapper */
-    protected $articleNameMapper;
+    /** @var ImportNameMapper $importNameMapper */
+    protected $importNameMapper;
 
     /** @var ModelManager $modelManager */
     protected $modelManager;
@@ -28,9 +28,9 @@ class NameMappingConsistency
     /** @var array */
     protected $models;
 
-    public function __construct(ModelManager $modelManager, ArticleNameMapper $articleNameMapper, LoggerInterface $log)
+    public function __construct(ModelManager $modelManager, ImportNameMapper $importNameMapper, LoggerInterface $log)
     {
-        $this->articleNameMapper = $articleNameMapper;
+        $this->importNameMapper = $importNameMapper;
         $this->modelManager = $modelManager;
         $this->log = $log;
     }
@@ -76,7 +76,7 @@ class NameMappingConsistency
         foreach ($variants as $variant) {
             $number = $variant->getIcNumber();
             $model = $models[$number];
-            $this->articleNameMapper->map($model, $article);
+            $this->importNameMapper->map($model, $article);
             $map[$article->getName()] = $number;
         }
         if (count($map) === 1) {

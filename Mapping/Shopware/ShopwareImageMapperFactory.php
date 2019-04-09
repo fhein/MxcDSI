@@ -1,15 +1,14 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ImportMapperFactory implements FactoryInterface
+class ShopwareImageMapperFactory implements FactoryInterface
 {
-    use ClassConfigTrait;
-
     /**
      * Create an object
      *
@@ -20,11 +19,10 @@ class ImportMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $this->getClassConfig($container, $requestedName);
         $log = $container->get('logger');
-        $config = $config->toArray();
+        $mediaTool = $container->get(MediaTool::class);
 
-        return new $requestedName($config, $log);
+        $mapper = new ShopwareImageMapper($mediaTool, $log);
+        return $mapper;
     }
-
 }

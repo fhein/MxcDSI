@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\Toolbox\Shopware\UnitTool;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
@@ -11,7 +12,7 @@ use Shopware\Models\Customer\Group;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
-class PriceMapper
+class ShopwarePriceMapper
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;

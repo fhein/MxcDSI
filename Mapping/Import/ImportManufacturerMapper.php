@@ -1,15 +1,24 @@
 <?php
 
-
 namespace MxcDropshipInnocigs\Mapping\Import;
 
+use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 
-class ArticleManufacturerMapper extends BaseImportMapper implements ArticleMapperInterface
+class ImportManufacturerMapper extends BaseImportMapper implements ImportArticleMapperInterface
 {
     /** @var array */
     protected $report;
+
+    /** @var array */
+    protected $mappings;
+
+    public function __construct(ImportMappings $mappings, array $config, LoggerInterface $log)
+    {
+        parent::__construct($config, $log);
+        $this->mappings = $mappings->getConfig();
+    }
 
     public function map(Model $model, Article $article): void
     {
@@ -21,7 +30,7 @@ class ArticleManufacturerMapper extends BaseImportMapper implements ArticleMappe
     {
         $supplier = $article->getSupplier();
         if ($supplier === null) {
-            $mapping = $this->config['articles'][$article->getIcNumber()] ?? [];
+            $mapping = $this->mappings[$article->getIcNumber()] ?? [];
             $manufacturer = $model->getManufacturer();
             $supplier = $mapping['supplier'];
             if (!$supplier) {
@@ -38,7 +47,7 @@ class ArticleManufacturerMapper extends BaseImportMapper implements ArticleMappe
     {
         $brand = $article->getBrand();
         if ($brand === null) {
-            $mapping = $this->config['articles'][$article->getIcNumber()] ?? [];
+            $mapping = $this->mappings[$article->getIcNumber()] ?? [];
             $manufacturer = $model->getManufacturer();
             $brand = $mapping['brand'] ?? $this->config['manufacturers'][$manufacturer]['brand'] ?? $manufacturer;
             $article->setBrand($brand);

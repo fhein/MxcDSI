@@ -8,9 +8,6 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 class PropertyMapperFactory implements FactoryInterface
 {
-    /** @var string $articleConfigFile */
-    protected $articleConfigFile = __DIR__ . '/../Config/article.config.php';
-
     /** @var LoggerInterface $log */
     protected $log;
 

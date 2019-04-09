@@ -4,11 +4,13 @@ namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
 use Mxc\Shopware\Plugin\Service\ServicesTrait;
 use Shopware\Components\Model\ModelManager;
+use Shopware\Models\Article\Article as ShopwareArticle;
 use Shopware\Models\Category\Category;
 
 class CategoryTool
 {
     use ServicesTrait;
+
     /** @var ModelManager */
     protected $modelManager;
 
@@ -43,5 +45,53 @@ class CategoryTool
         $this->removeEmptyCategoriesRecursive($root);
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
+    }
+
+    /**
+     * Get a Shopware category object for a given category path (example: E-Zigaretten > Aspire)
+     * All categories of the path are created if they do not exist. The category path gets created
+     * below a given root category. If no root category is provided, the path will be added below
+     * the Shopware root category.
+     *
+     * @param string $path
+     * @param Category|null $root
+     * @return Category
+     */
+    public function getCategoryPath(string $path, Category $root = null)
+    {
+        $repository = $this->modelManager->getRepository(Category::class);
+        /** @var Category $parent */
+        $parent = ($root !== null) ? $root : $repository->findOneBy(['parentId' => null]);
+        $nodes = explode(' > ', $path);
+        foreach ($nodes as $categoryName) {
+            $child = $repository->findOneBy(['name' => $categoryName, 'parentId' => $parent->getId()]);
+            $parent = $child ?? $this->createCategory($parent, $categoryName);
+        }
+        return $parent;
+    }
+
+    /**
+     * Create and return a new sub-category for a given Shopware category.
+     *
+     * @param Category $parent
+     * @param string $name
+     * @return Category
+     */
+    public function createCategory(Category $parent, string $name)
+    {
+        $child = new Category();
+        $this->modelManager->persist($child);
+        $child->setName($name);
+        $child->setParent($parent);
+        $child->setChanged();
+        if ($parent->getArticles()->count() > 0) {
+            /** @var ShopwareArticle $article */
+            foreach ($parent->getArticles() as $article) {
+                $article->removeCategory($parent);
+                $article->addCategory($child);
+            }
+            $parent->setChanged();
+        }
+        return $child;
     }
 }

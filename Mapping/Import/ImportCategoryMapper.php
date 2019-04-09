@@ -7,7 +7,7 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 
-class ArticleCategoryMapper extends BaseImportMapper implements ArticleMapperInterface
+class ImportCategoryMapper extends BaseImportMapper implements ImportArticleMapperInterface
 {
     /**
      * Map an article to a category.

@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 
-interface ArticleMapperInterface
+interface ImportArticleMapperInterface
 {
     public function map(Model $model, Article $article);
 }

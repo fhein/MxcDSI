@@ -6,18 +6,19 @@ use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Import\AromaDosageMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleCodeMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleCommonNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleFlavorMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleManufacturerMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticlePiecesPerPackMapper;
-use MxcDropshipInnocigs\Mapping\Import\ArticleTypeMapper;
-use MxcDropshipInnocigs\Mapping\Import\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
-use MxcDropshipInnocigs\Mapping\Import\VariantCodeMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportArticleCodeBaseImportMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportAssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportCommonNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportDosageMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportFlavorMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportManufacturerMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportMappings;
+use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportPiecesPerPackMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportTypeMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportVariantCodeBaseImportMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImportPropertyMapperFactory implements FactoryInterface
@@ -37,43 +38,44 @@ class ImportPropertyMapperFactory implements FactoryInterface
         $modelManager = $container->get('modelManager');
         $reporter = $container->get(Reporter::class);
         $config = $this->getClassConfig($container, $requestedName);
-        $config = $config->toArray();
         $flavorist = $container->get(Flavorist::class);
         $log = $container->get('logger');
 
         // take care of the mapper dependencies
         $articleMappers = [
             // no requirements, sets Shopware number
-            'code'          => $container->get(ArticleCodeMapper::class),
+            'code'          => $container->get(ImportArticleCodeBaseImportMapper::class),
             // requires article's manufacturer, sets brand and supplier
-            'manufacturer'  => $container->get(ArticleManufacturerMapper::class),
+            'manufacturer'  => $container->get(ImportManufacturerMapper::class),
             // requires brand, sets name
-            'name'          => $container->get(ArticleNameMapper::class),
+            'name'          => $container->get(ImportNameMapper::class),
             // requires name, sets piecesPerPack
-            'piecesPerPack' => $container->get(ArticlePiecesPerPackMapper::class),
+            'piecesPerPack' => $container->get(ImportPiecesPerPackMapper::class),
             // requires name, sets commonName
-            'commonName'    => $container->get(ArticleCommonNameMapper::class),
+            'commonName'    => $container->get(ImportCommonNameMapper::class),
             // requires name, sets type
-            'type'          => $container->get(ArticleTypeMapper::class),
+            'type'          => $container->get(ImportTypeMapper::class),
             // requires type, sets dosage
-            'dosage'        => $container->get(AromaDosageMapper::class),
+            'dosage'        => $container->get(ImportDosageMapper::class),
             // requires supplier, brand and name, sets category
-            'category'      => $container->get(ArticleCategoryMapper::class),
+            'category'      => $container->get(ImportCategoryMapper::class),
             // requires manual config, sets flavor
-            'flavor'        => $container->get(ArticleFlavorMapper::class),
+            'flavor'        => $container->get(ImportFlavorMapper::class),
         ];
 
         $variantMappers = [
             // no requirements, sets Shopware number
-            'code' => $container->get(VariantCodeMapper::class),
+            'code' => $container->get(ImportVariantCodeBaseImportMapper::class),
         ];
 
-        $associatedArticlesMapper = $container->get(AssociatedArticlesMapper::class);
+        $associatedArticlesMapper = $container->get(ImportAssociatedArticlesMapper::class);
+        $mappings = $container->get(ImportMappings::class);
 
         $regularExpressions = $container->get(RegularExpressions::class);
 
         return new ImportPropertyMapper(
             $modelManager,
+            $mappings,
             $associatedArticlesMapper,
             $regularExpressions,
             $flavorist,

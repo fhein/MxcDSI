@@ -5,8 +5,9 @@ namespace MxcDropshipInnocigs\Mapping;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Import\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
+use MxcDropshipInnocigs\Mapping\Import\ImportAssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportMappings;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
@@ -27,7 +28,7 @@ class ImportPropertyMapper
     /** @var RegularExpressions $regularExpressions */
     protected $regularExpressions;
 
-    /** @var AssociatedArticlesMapper $associatedArticlesMapper */
+    /** @var ImportAssociatedArticlesMapper $associatedArticlesMapper */
     protected $associatedArticlesMapper;
 
     /** @var LoggerInterface $log */
@@ -53,7 +54,8 @@ class ImportPropertyMapper
 
     public function __construct(
         ModelManager $modelManager,
-        AssociatedArticlesMapper $associatedArticlesMapper,
+        ImportMappings $mappings,
+        ImportAssociatedArticlesMapper $associatedArticlesMapper,
         RegularExpressions $regularExpressions,
         Flavorist $flavorist,
         Reporter $reporter,
@@ -62,22 +64,17 @@ class ImportPropertyMapper
         array $config,
         LoggerInterface $log)
     {
-        $this->config = $config;
-        $this->reporter = $reporter;
         $this->articleMappers = $articleMappers;
-        $this->variantMappers = $variantMappers;
-        $this->log = $log;
-        $this->modelManager = $modelManager;
-        $this->flavorist = $flavorist;
         $this->associatedArticlesMapper = $associatedArticlesMapper;
+        $this->config = $config;
+        $this->flavorist = $flavorist;
+        $this->log = $log;
+        $this->mappings = $mappings;
+        $this->modelManager = $modelManager;
         $this->regularExpressions = $regularExpressions;
+        $this->reporter = $reporter;
+        $this->variantMappers = $variantMappers;
         $this->reset();
-        $this->mappings = [];
-        $fn = $this->config['settings']['articleConfigFile'];
-        if (file_exists($fn)) {
-            /** @noinspection PhpIncludeInspection */
-            $this->mappings = include $fn;
-        }
     }
 
     public function reset()

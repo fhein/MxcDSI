@@ -3,7 +3,6 @@
 return [
     'settings' => [
         'checkRegularExpressions' => true,
-        'articleConfigFile'       => __DIR__ . '/../Config/article.config.php',
     ],
 
     'group_names'               => [
@@ -78,8 +77,6 @@ return [
             'retail_price' => 2.50,
         ],
     ],
-
-    'articles'      => include __DIR__ . '/article.config.php',
 
     'mapped_article_properties' => [
         'icNumber',

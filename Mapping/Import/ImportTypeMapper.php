@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 
-class ArticleTypeMapper extends BaseImportMapper implements ArticleMapperInterface
+class ImportTypeMapper extends BaseImportMapper implements ImportArticleMapperInterface
 {
     // Article type constants
     const TYPE_UNKNOWN              = 0;
