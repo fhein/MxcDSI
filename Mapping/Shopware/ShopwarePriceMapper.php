@@ -70,6 +70,8 @@ class ShopwarePriceMapper
         $price = new Price();
         $this->modelManager->persist($price);
         $price->setCustomerGroup($customerGroup);
+        // important to avoid 'not configured for cascade persist
+        $this->modelManager->persist($customerGroup);
         $price->setArticle($swDetail->getArticle());
         $price->setDetail($swDetail);
         return $price;

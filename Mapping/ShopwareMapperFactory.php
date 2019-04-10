@@ -7,11 +7,12 @@ use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareAssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareOptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ShopwareArticleMapperFactory implements FactoryInterface
+class ShopwareMapperFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -31,7 +32,7 @@ class ShopwareArticleMapperFactory implements FactoryInterface
         $priceMapper = $container->get(ShopwarePriceMapper::class);
         $associatedArticlesMapper = $container->get(ShopwareAssociatedArticlesMapper::class);
         $modelManager = $container->get('modelManager');
-        $articleMapper = new ShopwareArticleMapper(
+        $articleMapper = new ShopwareMapper(
             $modelManager,
             $attributeMapper,
             $imageMapper,

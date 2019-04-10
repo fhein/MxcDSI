@@ -1,24 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Import\Flavorist;
-use MxcDropshipInnocigs\Mapping\Import\ImportArticleCodeBaseImportMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportAssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportCommonNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportDosageMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportFlavorMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportManufacturerMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportMappings;
-use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportPiecesPerPackMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportTypeMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportVariantCodeBaseImportMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImportPropertyMapperFactory implements FactoryInterface

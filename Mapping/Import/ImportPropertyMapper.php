@@ -1,13 +1,10 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Import\Flavorist;
-use MxcDropshipInnocigs\Mapping\Import\ImportAssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportMappings;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
@@ -105,6 +102,8 @@ class ImportPropertyMapper
             /** @var Variant $variant */
             foreach ($variants as $variant) {
                 $model = $models[$variant->getIcNumber()];
+                // do nothing if we do not know the model
+                if (! $model) continue;
                 if ($first) {
                     $this->mapModelToArticle($model, $article);
                     $first = false;

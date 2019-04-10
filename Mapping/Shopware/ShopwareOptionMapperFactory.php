@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Interop\Container\ContainerInterface;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;

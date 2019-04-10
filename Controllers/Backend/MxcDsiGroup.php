@@ -1,7 +1,7 @@
 <?php
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Option;
@@ -97,7 +97,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
         // Important!
         $this->getManager()->clear();
 
-        $articleMapper = $this->getServices()->get(ShopwareArticleMapper::class);
+        $articleMapper = $this->getServices()->get(ShopwareMapper::class);
 
         $articleUpdates = $this->getLinkedArticlesHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
         /** @noinspection PhpUnhandledExceptionInspection */

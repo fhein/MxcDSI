@@ -13,6 +13,14 @@ class ArticleRepository extends BaseEntityRepository
 
         'getArticlesByIds'                  => 'SELECT a FROM MxcDropshipInnocigs\Models\Article a WHERE a.id in (:ids)',
 
+        'getDetailsNotAccepted'             => 'SELECT d FROM MxcDropshipInnocigs\Models\Article a  '
+                                                . 'JOIN a.variants v '
+                                                . 'JOIN v.options o '
+                                                . 'JOIN o.icGroup g '
+                                                . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+                                                . 'WHERE a.id = (:id) AND d.kind = 2 '
+                                                . 'AND (v.accepted = 0 OR o.accepted = 0 OR g.accepted = 0)',
+
         'getLinkedArticlesHavingOptions'    => 'SELECT DISTINCT a FROM MxcDropshipInnocigs\Models\Article a INDEX BY a.icNumber '
                                                 . 'JOIN a.variants v '
                                                 . 'JOIN v.options o '
@@ -71,6 +79,13 @@ class ArticleRepository extends BaseEntityRepository
     public function getArticlesByIds(array $ids) {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('ids', $ids)
+            ->getResult();
+    }
+
+    public function getDetailsNotAccepted(Article $icArticle)
+    {
+        return $this->getQuery(__FUNCTION__)
+            ->setParameter('id', $icArticle->getId())
             ->getResult();
     }
 

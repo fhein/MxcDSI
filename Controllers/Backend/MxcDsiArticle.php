@@ -5,9 +5,9 @@ use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Csv\ArticlePrices;
+use MxcDropshipInnocigs\Mapping\Import\ImportPropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
-use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
-use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareMapper;
 use MxcDropshipInnocigs\Models\Article;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
@@ -128,7 +128,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $modelManager = $this->getModelManager();
             $icArticles = $modelManager->getRepository(Article::class)->getArticlesByIds($ids);
 
-            $articleMapper = $this->services->get(ShopwareArticleMapper::class);
+            $articleMapper = $this->services->get(ShopwareMapper::class);
 
             if (in_array($field, ['accepted', 'active', 'linked'])) {
                 $setter = 'set' . ucfirst($field);
@@ -236,7 +236,7 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
 
     protected function processStateUpdates(Article $article)
     {
-        $articleMapper = $this->services->get(ShopwareArticleMapper::class);
+        $articleMapper = $this->services->get(ShopwareMapper::class);
         foreach ($this->articleStates as $state => $values) {
             $newValue = $values['new'];
             if ($values['current'] === $newValue) continue;
@@ -330,8 +330,22 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         $this->log->enter();
         try {
             $testDir = __DIR__ . '/../../Test/';
+            $modelManager = $this->getManager();
+            $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model m')->execute();
+            $swArticles = $modelManager->getRepository(\Shopware\Models\Article\Article::class)->findAll();
+            $articleResource = new \Shopware\Components\Api\Resource\Article();
+            $articleResource->setManager($modelManager);
+            foreach ($swArticles as $swArticle) {
+                $articleResource->delete($swArticle->getId());
+            }
+
             $xml = $testDir . 'TESTErstimport.xml';
             $this->services->get(ImportClient::class)->import($xml, true);
+
+            $icArticles = $this->getManager()->getRepository(Article::class)->findAll();
+            $articleMapper = $this->services->get(ShopwareMapper::class);
+            $articleMapper->processStateChangesArticleList($icArticles, true);
+
             $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);

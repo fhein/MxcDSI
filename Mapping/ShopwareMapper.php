@@ -8,17 +8,20 @@ use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareAssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareOptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article as ShopwareArticle;
+use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Plugin\Plugin;
 
-class ShopwareArticleMapper
+class ShopwareMapper
 {
     /** @var array $associatedArticles */
     protected $associatedArticles;
@@ -54,7 +57,7 @@ class ShopwareArticleMapper
     protected $priceTool;
 
     /**
-     * ShopwareArticleMapper constructor.
+     * ShopwareMapper constructor.
      *
      * @param ModelManager $modelManager
      * @param ShopwareOptionMapper $optionMapper
@@ -315,8 +318,8 @@ class ShopwareArticleMapper
 
         $this->setShopwareDetailProperties($icVariant);
 
-        // All new valid details get marked active
-        $swDetail->setActive($icArticle->isActive());
+        // All valid details are marked active
+        $swDetail->setActive(true);
 
         // set next three properties only on detail creation
         $this->priceTool->setRetailPrices($icVariant);
@@ -404,21 +407,6 @@ class ShopwareArticleMapper
     }
 
     /**
-     * Remove a Shopware detail record from the database. Deletes the images and
-     * translations also.
-     *
-     * @param Detail $swDetail
-     */
-    protected function removeShopwareDetail(Detail $swDetail) {
-        $repository = $this->modelManager->getRepository(ShopwareArticle::class);
-        $detailId = $swDetail->getId();
-
-        $repository->getRemoveImageQuery($detailId)->execute();
-        $repository->getRemoveVariantTranslationsQuery($detailId)->execute();
-        $this->modelManager->remove($swDetail);
-    }
-
-    /**
      * Delete the detached Detail records of the Shopware article associated to the
      * given InnoCigs article from the database. A Detail record is detached if the
      * InnoCigs article does not have a variant associated to the particular Detail
@@ -426,37 +414,24 @@ class ShopwareArticleMapper
      *
      * @param Article $icArticle
      */
-    protected function removeDetachedShopwareDetails(Article $icArticle)
+    public function removeDetachedShopwareDetails(Article $icArticle)
     {
         /** @var ShopwareArticle $swArticle */
         $swArticle = $icArticle->getArticle();
         if (! $swArticle) return;
 
-        $swDetails = $swArticle->getDetails();
-        if ($swDetails->isEmpty()) return;
+        $detailsToDelete = $this->modelManager->getRepository(Article::class)->getDetailsNotAccepted($icArticle);
 
-        $deletedDetails = [];
-
-        /** @var Detail $swDetail */
-        foreach ($swDetails as $swDetail) {
-            $deletedDetails[$swDetail->getNumber()] = $swDetail;
-        }
-
-        /** @var Variant $icVariant */
-        $icVariants = $icArticle->getVariants();
-        foreach ($icVariants as $icVariant) {
-            if (! $icVariant->isValid()) continue;
-            unset($deletedDetails[$icVariant->getNumber()]);
-        }
-
-        foreach ($deletedDetails as $deletedDetail) {
-            $this->removeShopwareDetail($deletedDetail);
+        /** @var Detail $detailToDelete */
+        foreach ($detailsToDelete as $detailToDelete) {
+            /** @todo: Main detail treatment */
+            $this->removeShopwareDetail($detailToDelete);
         }
     }
 
     /**
      * Set the shopware article active state to according to the $active state
-     * of the given InnoCigs article. Can modify the active state of the
+     * of the given InnoCigs article. Can modify the dropship active state of the
      * Shopware Details. If the InnoCigs article is active, dropship gets
      * enabled for all active Shopware details and disabled for non active
      * Shopware details. If the article is not active, dropship gets disabled
@@ -487,7 +462,7 @@ class ShopwareArticleMapper
     }
 
     /**
-     * Set the Shopware detail's active state
+     * Set the Shopware detail attributes for the dropship plugin.
      *
      * @param Variant $icVariant
      * @param bool $active
@@ -495,30 +470,17 @@ class ShopwareArticleMapper
     public function setShopwareDetailActive(Variant $icVariant, bool $active)
     {
         $swDetail = $icVariant->getDetail();
+
         $active = $active && $icVariant->isValid() && $swDetail !== null;
-        $this->setDropship($icVariant, $active);
         $icVariant->setActive($active);
-        if ($swDetail) {
-            $swDetail->setActive($active);
-        }
-    }
 
-    /**
-     * Set the Shopware detail attributes for the dropship plugin.
-     *
-     * @param Variant $icVariant
-     * @param bool $active
-     */
-    protected function setDropship(Variant $icVariant, bool $active)
-    {
-        if (! $this->dropshippersCompanionPresent) return;
-
-        $swDetail = $icVariant->getDetail();
         if (! $swDetail) return;
 
-        $attribute = $swDetail->getAttribute();
-        if (! $attribute) return;
+        $swDetail->setActive($icVariant->isValid());
 
+        if (! $this->dropshippersCompanionPresent) return;
+
+        $attribute = $swDetail->getAttribute();
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcActive($active);
         /** @noinspection PhpUndefinedMethodInspection */
@@ -531,6 +493,42 @@ class ShopwareArticleMapper
         $attribute->setDcIcRetailPrice($icVariant->getRecommendedRetailPrice());
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcInstock($this->client->getStockInfo($icVariant->getIcNumber()));
+    }
+
+    public function removeVariant(Variant $icVariant)
+    {
+        $swDetail = $icVariant->getDetail();
+        if ($swDetail && $swDetail->getKind() === 2) {
+            $this->modelManager->remove($swDetail);
+        }
+    }
+
+    public function removeArticle(Article $icArticle) {
+        /** @var ShopwareArticle $swArticle */
+        $swArticle = $icArticle->getArticle();
+        if (! $swArticle) return;
+
+        $configuratorSetName = 'mxc-set-' . $icArticle->getIcNumber();
+        $set = $this->modelManager->getRepository(Set::class)->findOneBy(['name' => $configuratorSetName]);
+        if ($set) {
+            $this->modelManager->remove($set);
+        }
+
+        $articleResource = new ArticleResource();
+        $articleResource->setManager($this->modelManager);
+        /** @noinspection PhpUnhandledExceptionInspection */
+    }
+
+    public function removeShopwareDetail(Detail $swDetail)
+    {
+        if ($swDetail->getKind() == 1) {
+            $articleResource = new ArticleResource();
+            $articleResource->setManager($this->modelManager);
+            /** @noinspection PhpUnhandledExceptionInspection */
+            $articleResource->delete($swDetail->getArticle()->getId());
+        } else {
+            Shopware()->Models()->remove($swDetail);
+        }
     }
 
     /**

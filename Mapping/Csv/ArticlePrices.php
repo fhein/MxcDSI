@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Mapping\Csv;
 use Doctrine\Common\Collections\Collection;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
-use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
@@ -22,7 +22,7 @@ class ArticlePrices
 {
     protected $articlePricesFile = __DIR__ . '/../../Config/article.prices.xlsx';
 
-    /** @var ShopwareArticleMapper $articleMapper */
+    /** @var ShopwareMapper $articleMapper */
     protected $articleMapper;
 
     /** @var ModelManager $modelManager */
@@ -45,7 +45,7 @@ class ArticlePrices
 
     public function __construct(
         ModelManager $modelManager,
-        ShopwareArticleMapper $articleMapper,
+        ShopwareMapper $articleMapper,
         ShopwarePriceMapper $priceTool,
         LoggerInterface $log
     ) {
@@ -224,12 +224,10 @@ class ArticlePrices
             if (! $this->isSinglePack($variant)) continue;
             $price = $variant->getPurchasePrice();
             if ($price > $purchasePrice) {
-//                $purchasePrice = str_replace('.', ',', strval($price));
                   $purchasePrice = $price;
             }
             $price = $variant->getRecommendedRetailPrice();
             if ($price > $retailPrice) {
-//                $retailPrice = str_replace('.', ',', strval($price));
                 $retailPrice = $price;
             }
         }
@@ -251,12 +249,13 @@ class ArticlePrices
             $sheet->getColumnDimension($col)->setAutoSize(true);
         }
         $sheet->getColumnDimension('E')->setWidth(80);
-        foreach (range('F', 'K') as $col) {
+        $highest = $sheet->getHighestRowAndColumn();
+
+        foreach (range('F', $highest['column']) as $col) {
             $sheet->getColumnDimension($col)->setWidth(16);
 
         }
         $sheet->freezePane('A2');
-        $highest = $sheet->getHighestRowAndColumn();
 
         $sheet->getStyle('F2:'. $highest['column'] . $highest['row'])->getNumberFormat()->setFormatCode('0.00');
         $writer = new Writer($spreadSheet);

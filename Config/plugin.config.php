@@ -24,17 +24,17 @@ use MxcDropshipInnocigs\Mapping\Import\ImportManufacturerMapper;
 use MxcDropshipInnocigs\Mapping\Import\ImportMappings;
 use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
 use MxcDropshipInnocigs\Mapping\Import\ImportPiecesPerPackMapper;
+use MxcDropshipInnocigs\Mapping\Import\ImportPropertyMapper;
 use MxcDropshipInnocigs\Mapping\Import\ImportTypeMapper;
 use MxcDropshipInnocigs\Mapping\Import\ImportVariantCodeBaseImportMapper;
 use MxcDropshipInnocigs\Mapping\Import\MappingConfigFactory;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
-use MxcDropshipInnocigs\Mapping\ImportPropertyMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareAssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareOptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
-use MxcDropshipInnocigs\Mapping\ShopwareArticleMapper;
-use MxcDropshipInnocigs\Mapping\ShopwareOptionMapper;
+use MxcDropshipInnocigs\Mapping\ShopwareMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -151,7 +151,7 @@ return [
             PropertyMapperReport::class,
             RegexChecker::class,
             RegularExpressions::class,
-            ShopwareArticleMapper::class,
+            ShopwareMapper::class,
             ShopwareAssociatedArticlesMapper::class,
             ShopwareOptionMapper::class,
         ],
@@ -170,10 +170,10 @@ return [
         ImportPropertyMapper::class           => 'ImportPropertyMapper.config.php',
         ImportVariantCodeMapper::class        => 'ImportVariantCodeMapper.config.php',
 
-        ShopwareArticleMapper::class => [
+        ShopwareMapper::class       => [
             'root_category' => 'Deutsch',
         ],
-        MappingFilePersister::class  => [
+        MappingFilePersister::class => [
             'mappingsFile' => __DIR__ . '/../Config/ImportMappings.config.php',
         ],
     ],

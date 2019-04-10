@@ -7,6 +7,7 @@ use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
+use MxcDropshipInnocigs\Mapping\Import\ImportPropertyMapper;
 use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
@@ -28,7 +29,7 @@ class ImportMapper
     /** @var ImportPropertyMapper $propertyMapper */
     protected $propertyMapper;
 
-    /** @var ShopwareArticleMapper $articleMapper */
+    /** @var ShopwareMapper $articleMapper */
     protected $articleMapper;
 
     /** @var BulkOperation $bulkOperation */
@@ -67,7 +68,7 @@ class ImportMapper
      * @param ModelManager $modelManager
      * @param ApiClient $apiClient
      * @param ImportPropertyMapper $propertyMapper
-     * @param ShopwareArticleMapper $articleMapper
+     * @param ShopwareMapper $articleMapper
      * @param BulkOperation $bulkOperation
      * @param array $config
      * @param LoggerInterface $log
@@ -76,7 +77,7 @@ class ImportMapper
         ModelManager $modelManager,
         ApiClient $apiClient,
         ImportPropertyMapper $propertyMapper,
-        ShopwareArticleMapper $articleMapper,
+        ShopwareMapper $articleMapper,
         BulkOperation $bulkOperation,
         array $config,
         LoggerInterface $log
@@ -180,6 +181,7 @@ class ImportMapper
         foreach ($additions as $number => $model) {
             $this->log->debug('Adding variant: ' . $model->getName());
             $article = $this->getArticle($model);
+            $this->updates[$article->getIcNumber()] = $article;
 
             $variant = new Variant();
             $this->modelManager->persist($variant);
@@ -215,19 +217,18 @@ class ImportMapper
             $variant->removeImagesAndOptions();
             $article = $variant->getArticle();
             $article->removeVariant($variant);
-            // @todo: this is possibly a temporary solution, could be done via articleMapper->updateArticles
-            $this->articleMapper->setShopwareDetailActive($variant, false);
+            $this->articleMapper->removeVariant($variant);
+
             $this->modelManager->remove($variant);
             $icNumber = $variant->getIcNumber();
             unset($this->variants[$icNumber]);
             if ($article->getVariants()->count() === 0) {
-                $article->setAccepted(false);
-                // @todo: this is possibly a temporary solution, , could be done via articleMapper->updateArticles
-                $this->articleMapper->setShopwareArticleActive($article);
+                $this->articleMapper->removeArticle($article);
                 unset($this->articles[$article->getIcNumber()]);
             }
-            // $this->updates[$article->getIcNumber()] = $article;
         }
+
+        $this->modelManager->flush();
     }
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
@@ -362,13 +363,14 @@ class ImportMapper
         $this->initCache();
 
         $this->addVariants($import['additions']);
-        $this->deleteVariants($import['deletions']);
         $this->changeVariants($import['changes']);
         $this->propertyMapper->mapProperties($this->articles);
 
         $this->modelManager->flush();
-        $this->modelManager->clear();
 
+        $this->deleteVariants($import['deletions']);
+
+        $this->modelManager->clear();
         $this->removeOrphanedItems();
 
         /** @noinspection PhpUndefinedMethodInspection */
