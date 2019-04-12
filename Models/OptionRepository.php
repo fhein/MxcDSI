@@ -5,9 +5,8 @@ namespace MxcDropshipInnocigs\Models;
 class OptionRepository extends BaseEntityRepository
 {
     protected $dql = [
-        'removeOrphaned'    => 'DELETE MxcDropshipInnocigs\Models\Option o WHERE o.variants is empty'
-
-];
+        'removeOrphaned'    => 'DELETE MxcDropshipInnocigs\Models\Option o WHERE o.variants is empty',
+    ];
 
     public function getAllIndexed() {
         $options = $this->findAll();

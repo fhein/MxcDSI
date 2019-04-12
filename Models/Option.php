@@ -11,7 +11,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_option")
- * @ORM\Entity(repositoryClass="OptionRepository")
+ * @ORM\Entity(repositoryClass="OptionRepository", readOnly=true)
  */
 class Option extends ModelEntity  {
 

@@ -2,93 +2,187 @@
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
-use Shopware\Models\Article\Article;
-use Shopware\Models\Article\Detail;
+use Doctrine\DBAL\Statement;
+use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareOptionMapper;
+use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\ArticleRepository;
+use MxcDropshipInnocigs\Models\Variant;
+use Shopware\Components\Api\Resource\Article as ArticleResource;
+use Shopware\Components\Model\ModelManager;
+use Shopware\Models\Article\Article as ShopwareArticle;
+use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Repository;
 
 class ArticleTool {
 
+    /** @var LoggerInterface */
+    protected $log;
+
+    /** @var Repository */
+    protected $shopwareRepository;
+
+    /** @var ArticleRepository */
     protected $repository;
 
-    public function deleteArticle(Article $article)
+    /** @var ModelManager  */
+    protected $modelManager;
+
+    /** @var ShopwareOptionMapper */
+    protected $optionMapper;
+
+    /** @var ArticleResource */
+    protected $articleResource;
+
+    /** @var Statement */
+    protected $fixMainDetailsStatement;
+
+    /** @var Statement */
+    protected $setMainDetailsStatement;
+
+    public function __construct(ModelManager $modelManager, ShopwareOptionMapper $optionMapper, LoggerInterface $log)
     {
-        $articleId = $article->getId();
-        $this->removePrices($articleId);
-        $this->removeArticleEsd($articleId);
-        $this->removeAttributes($articleId);
-        $this->removeArticleDetails($articleId);
-        $this->removeArticleTranslations($article);
-        Shopware()->Models()->remove($article);
-        /** @noinspection PhpUnhandledExceptionInspection */
-        Shopware()->Models()->flush();
+        $this->modelManager = $modelManager;
+        $this->log = $log;
+        $this->articleResource = new ArticleResource();
+        $this->articleResource->setManager($this->modelManager);
+        $this->optionMapper = $optionMapper;
     }
 
-    public function deleteArticleDetail(Detail $detail)
+    public function deleteArticle(Article $icArticle)
     {
-        $article = $detail->getArticle();
-        if ($detail->getId() !== $article->getMainDetail()->getId()) {
-            $modelManager = Shopware()->Models();
-            $modelManager->remove($detail);
-            /** @noinspection PhpUnhandledExceptionInspection */
-            $modelManager->flush();
+        /** @var  ShopwareArticle $swArticle */
+        $swArticle = $icArticle->getArticle();
+        if (! $swArticle) return;
+
+        $configuratorSetName = 'mxc-set-' . $icArticle->getIcNumber();
+        if ($set = $this->modelManager->getRepository(Set::class)->findOneBy(['name' => $configuratorSetName]))
+        {
+            $this->modelManager->remove($set);
         }
+        $icArticle->setArticle(null);
+
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->articleResource->delete($swArticle->getId());
     }
 
-
-    protected function removePrices($articleId)
+    public function setMainDetail(Variant $variant)
     {
-        $query = $this->getRepository()->getRemovePricesQuery($articleId);
-        $query->execute();
+        $swDetail = $variant->getDetail();
+        if (! $swDetail) return;
+        /** @var ShopwareArticle $swArticle */
+        $swArticle = $variant->getArticle()->getArticle();
+        if (! $swArticle) return;
+
+        $oldMainDetail = $swArticle->getMainDetail();
+        if ($oldMainDetail) {
+            $oldMainDetail->setKind(2);
+        }
+        $swArticle->setMainDetail($swDetail);
+        $swDetail->setKind(1);
     }
 
-    protected function removeArticleEsd($articleId)
+    public function deleteInvalidVariants(array $icArticles)
     {
-        $query = $this->getRepository()->getRemoveESDQuery($articleId);
-        $query->execute();
+        foreach ($icArticles as $icArticle) {
+            $validVariants = $icArticle->getValidVariants();
+            if ( empty($validVariants)) {
+                $this->deleteArticle($icArticle);
+            } else {
+                $this->setMainDetail($validVariants[0]);
+                $this->deleteInvalidDetails($icArticle);
+            }
+        }
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
     }
 
-    protected function removeAttributes($articleId)
+    public function deleteInvalidDetails(Article $article)
     {
-        $query = $this->getRepository()->getRemoveAttributesQuery($articleId);
-        $query->execute();
-    }
+        $invalidVariants = $this->getRepository()->getInvalidVariants($article) ?? [];
+        $repository = $this->getShopwareRepository();
+        /** @var Variant $invalidVariant */
+        $changed = count($invalidVariants) !== 0;
+        foreach ($invalidVariants as $invalidVariant) {
+            $swDetail = $invalidVariant->getDetail();
+            if (! $swDetail || $swDetail->getKind === 1) continue;
 
-    protected function removeArticleDetails($articleId)
-    {
-        $sql = 'SELECT id FROM s_articles_details WHERE articleID = ? AND kind != 1';
-        $details = Shopware()->Db()->fetchAll($sql, [$articleId]);
-
-        foreach ($details as $detail) {
-            $query = $this->getRepository()->getRemoveImageQuery($detail['id']);
-            $query->execute();
+            $id = $swDetail->getId();
+            $repository->getRemoveImageQuery($id)->execute();
 
             $sql = 'DELETE FROM s_article_configurator_option_relations WHERE article_id = ?';
             /** @noinspection PhpUnhandledExceptionInspection */
-            Shopware()->Db()->query($sql, [$detail['id']]);
+            Shopware()->Db()->query($sql, [$id]);
 
-            $query = $this->getRepository()->getRemoveVariantTranslationsQuery($detail['id']);
-            $query->execute();
-
-            $query = $this->getRepository()->getRemoveDetailQuery($detail['id']);
-            $query->execute();
+            $repository->getRemoveVariantTranslationsQuery($id)->execute();
+            $repository->getRemoveDetailQuery($id)->execute();
+            $invalidVariant->setDetail(null);
         }
+        /** @var ShopwareArticle $swArticle */
+        $swArticle = $article->getArticle();
+        if (! $swArticle || ! $changed) return;
+        $swArticle->setConfiguratorSet($this->optionMapper->createConfiguratorSet($article));
     }
 
-    protected function removeArticleTranslations($articleId)
+    /**
+     * Deletes the detail record associated to the given variant object.
+     *
+     * @param Variant $icVariant
+     */
+    public function deleteDetail(Variant $icVariant)
     {
-        $query = $this->getRepository()->getRemoveArticleTranslationsQuery($articleId);
-        $query->execute();
+        $swDetail = $icVariant->getDetail();
+        if (! $swDetail) return;
 
-        $sql = 'DELETE FROM s_articles_translations WHERE articleID = ?';
-        Shopware()->Container()->get('dbal_connection')->executeQuery($sql, [$articleId]);
+        $this->modelManager->remove($swDetail);
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
     }
 
-    protected function getRepository() : Repository
+    public function cleanup()
     {
-        if ($this->repository === null) {
-            $this->repository = Shopware()->Models()->getRepository(Article::class);
-        }
+        // Find all articles pointing to a non existing main detail
+        // and fix the main detail id to the first detail belonging
+        // to the respective article.
 
-        return $this->repository;
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->getFixMainDetailsStatement()->execute();
+
+        // Set the kind of all main details to 1
+
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->getSetMainDetailKindStatement()->execute();
+    }
+
+    protected function getFixMainDetailsStatement()
+    {
+        if (! $this->fixMainDetailsStatement) {
+            /** @noinspection PhpUnhandledExceptionInspection */
+            $this->fixMainDetailsStatement = $this->modelManager->getConnection()->prepare(
+                    'UPDATE s_articles a LEFT JOIN s_articles_details d ON d.id = a.main_detail_id '
+                . 'SET a.main_detail_id = ( SELECT id FROM s_articles_details WHERE articleID = a.id LIMIT 1 ) '
+                . 'WHERE d.id IS NULL; '
+            );
+        }
+        return $this->fixMainDetailsStatement;
+    }
+
+    protected function getSetMainDetailKindStatement()
+    {
+        if (! $this->setMainDetailsStatement) {
+            /** @noinspection PhpUnhandledExceptionInspection */
+            $this->setMainDetailsStatement = $this->modelManager->getConnection()->prepare(
+                'UPDATE s_articles a, s_articles_details d SET d.kind = 1 WHERE d.id = a.main_detail_id;'
+            );
+        }
+        return $this->setMainDetailsStatement;
+    }
+
+    protected function getShopwareRepository() {
+        return $this->shopwareRepository ?? $this->shopwareRepository = $this->modelManager->getRepository(ShopwareArticle::class);
+    }
+
+    protected function getRepository() {
+        return $this->repository ?? $this->repository = $this->modelManager->getRepository(Article::class);
     }
 }

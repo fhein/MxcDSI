@@ -31,6 +31,7 @@ use MxcDropshipInnocigs\Mapping\Import\MappingConfigFactory;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareAssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareDetailMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareImageMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareOptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
@@ -44,6 +45,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
 use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
@@ -130,6 +132,7 @@ return [
             ApiClient::class,
             ArrayReport::class,
             ArticlePrices::class,
+            ArticleTool::class,
             ShopwareCategoryMapper::class,
             CategoryTool::class,
             ConfiguratorGroupRepository::class,
@@ -148,6 +151,7 @@ return [
             MediaTool::class,
             NameMappingConsistency::class,
             ShopwarePriceMapper::class,
+            ShopwareDetailMapper::class,
             PropertyMapperReport::class,
             RegexChecker::class,
             RegularExpressions::class,

@@ -3,23 +3,45 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\OptimisticLockException;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
 use MxcDropshipInnocigs\Mapping\Import\ImportPropertyMapper;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\ArticleRepository;
 use MxcDropshipInnocigs\Models\Group;
+use MxcDropshipInnocigs\Models\GroupRepository;
 use MxcDropshipInnocigs\Models\Image;
+use MxcDropshipInnocigs\Models\ImageRepository;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Option;
+use MxcDropshipInnocigs\Models\OptionRepository;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\Models\VariantRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Shopware\Components\Model\ModelManager;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class ImportMapper
 {
+    /** @var VariantRepository */
+    protected $variantRepository;
+
+    /** @var ArticleRepository */
+    protected $articleRepository;
+
+    /** @var GroupRepository */
+    protected $groupRepository;
+
+    /** @var OptionRepository */
+    protected $optionRepository;
+
+    /** @var ImageRepository */
+    protected $imageRepository;
+
     /** @var ModelManager $modelManager */
     protected $modelManager;
 
@@ -31,6 +53,9 @@ class ImportMapper
 
     /** @var ShopwareMapper $articleMapper */
     protected $articleMapper;
+
+    /** @var ArticleTool */
+    protected $articleTool;
 
     /** @var BulkOperation $bulkOperation */
     protected $bulkOperation;
@@ -54,6 +79,9 @@ class ImportMapper
     protected $updates;
 
     /** @var array */
+    protected $deletions;
+
+    /** @var array */
     protected $images;
 
     /** @var LoggerInterface $log */
@@ -66,6 +94,7 @@ class ImportMapper
      * ImportMapper constructor.
      *
      * @param ModelManager $modelManager
+     * @param ArticleTool $articleTool
      * @param ApiClient $apiClient
      * @param ImportPropertyMapper $propertyMapper
      * @param ShopwareMapper $articleMapper
@@ -75,6 +104,7 @@ class ImportMapper
      */
     public function __construct(
         ModelManager $modelManager,
+        ArticleTool $articleTool,
         ApiClient $apiClient,
         ImportPropertyMapper $propertyMapper,
         ShopwareMapper $articleMapper,
@@ -83,6 +113,7 @@ class ImportMapper
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
+        $this->articleTool = $articleTool;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
         $this->articleMapper = $articleMapper;
@@ -207,28 +238,72 @@ class ImportMapper
         }
     }
 
-    protected function deleteVariants(array $deletions)
+    /**
+     * Find the Variants associated with list of deleted Models, set their
+     * accepted state to false. Return a list of all Articles owning one
+     * of the modified Variants.
+     *
+     * @param array $deletions
+     * @return array
+     * @throws OptimisticLockException
+     */
+    protected function invalidateVariants(array $deletions): array
     {
         /** @var  Model $model */
-        $variantRepository = $this->modelManager->getRepository(Variant::class);
+        $variantRepository = $this->getVariantRepository();
+
+        $articlesWithDeletions = [];
         foreach ($deletions as $model) {
             /** @var  Variant $variant */
             $variant = $variantRepository->findOneBy(['number' => $model->getModel()]);
-            $variant->removeImagesAndOptions();
+            $variant->setAccepted(false);
             $article = $variant->getArticle();
-            $article->removeVariant($variant);
-            $this->articleMapper->removeVariant($variant);
+            $articlesWithDeletions[$article->getIcNumber()] = $article;
+        }
 
-            $this->modelManager->remove($variant);
-            $icNumber = $variant->getIcNumber();
-            unset($this->variants[$icNumber]);
-            if ($article->getVariants()->count() === 0) {
-                $this->articleMapper->removeArticle($article);
-                unset($this->articles[$article->getIcNumber()]);
+        $this->modelManager->flush();
+        return $articlesWithDeletions;
+    }
+
+    /**
+     * Remove all invalid Variants together with the Options and Images
+     * belonging to them. Remove the article also, if it has no variant
+     * left.
+     *
+     * @param array $articles
+     * @throws OptimisticLockException
+     */
+    protected function removeInvalidVariants(array $articles)
+    {
+        $variantRepository = $this->getVariantRepository();
+
+        foreach ($articles as $article) {
+            $invalidVariants = $this->getArticleRepository()->getInvalidVariants($article);
+            /** @var Variant $variant */
+            foreach ($invalidVariants as $variant) {
+                $variantRepository->removeImages($variant);
+                $variantRepository->removeOptions($variant);
+                $article->removeVariant($variant);
+                $this->modelManager->remove($variant);
+                unset($this->variants[$variant->getIcNumber()]);
+                if ($article->getVariants()->count === 0) {
+                    $this->modelManager->remove($article);
+                    unset ($this->articles[$article->getIcNumber()]);
+                }
             }
         }
 
         $this->modelManager->flush();
+
+    }
+
+    protected function deleteVariants(array $deletions)
+    {
+        if (empty($deletions)) return;
+
+        $articlesWithDeletions = $this->invalidateVariants($deletions);
+        $this->articleTool->deleteInvalidVariants($articlesWithDeletions);
+        $this->removeInvalidVariants($articlesWithDeletions);
     }
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
@@ -320,15 +395,16 @@ class ImportMapper
 
     protected function removeOrphanedItems()
     {
-        $this->modelManager->getRepository(Variant::class)->removeOrphaned();
-        $this->modelManager->getRepository(Article::class)->removeOrphaned();
+        $this->getVariantRepository()->removeOrphaned();
+        $this->getArticleRepository()->removeOrphaned();
 
-        $this->modelManager->getRepository(Option::class)->removeOrphaned();
-        $this->modelManager->getRepository(Image::class)->removeOrphaned();
+        $this->getOptionRepository()->removeOrphaned();
+        $this->getImageRepository()->removeOrphaned();
 
         // Orphaned options must be removed before orphaned groups. Groups may become
         // orphaned during removal of orphaned options
-        $this->modelManager->getRepository(Group::class)->removeOrphaned();
+        $this->getGroupRepository()->removeOrphaned();
+        $this->modelManager->flush();
 
     }
 
@@ -337,18 +413,20 @@ class ImportMapper
     {
         $this->modelManager->createQuery('UPDATE ' . Article::class . ' a set a.new = false')->execute();
         $this->modelManager->createQuery('UPDATE ' . Variant::class . ' a set a.new = false')->execute();
+
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->articles = $this->modelManager->getRepository(Article::class)->getAllIndexed();
+        $this->articles = $this->getArticleRepository()->getAllIndexed();
+
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
+        $this->variants = $this->getVariantRepository()->getAllIndexed();
+
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->groups = $this->modelManager->getRepository(Group::class)->getAllIndexed();
-        $this->options = $this->modelManager->getRepository(Option::class)->getAllIndexed();
+        $this->groups = $this->getGroupRepository()->getAllIndexed();
+
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->images = $this->modelManager->getRepository(Image::class)->getAllIndexed();
-        foreach ($this->images as $image) {
-            $this->log->debug('Image cache: ' . $image->getUrl());
-        }
+        $this->images = $this->getImageRepository()->getAllIndexed();
+
+        $this->options = $this->getOptionRepository()->getAllIndexed();
     }
 
     protected function attachLinkedShopwareArticles()
@@ -370,7 +448,7 @@ class ImportMapper
 
         $this->deleteVariants($import['deletions']);
 
-        $this->modelManager->clear();
+        //$this->modelManager->clear();
         $this->removeOrphanedItems();
 
         /** @noinspection PhpUndefinedMethodInspection */
@@ -389,5 +467,45 @@ class ImportMapper
         $flavorist->updateFlavors();
 
         return true;
+    }
+
+    /**
+     * @return ArticleRepository
+     */
+    protected function getArticleRepository()
+    {
+        return $this->articleRepository ?? $this->articleRepository = $this->modelManager->getRepository(Article::class);
+    }
+
+    /**
+     * @return VariantRepository
+     */
+    protected function getVariantRepository()
+    {
+        return $this->variantRepository ?? $this->variantRepository = $this->modelManager->getRepository(Variant::class);
+    }
+
+    /**
+     * @return GroupRepository
+     */
+    protected function getGroupRepository()
+    {
+        return $this->groupRepository ?? $this->groupRepository = $this->modelManager->getRepository(Group::class);
+    }
+
+    /**
+     * @return OptionRepository
+     */
+    protected function getOptionRepository()
+    {
+        return $this->optionRepository ?? $this->optionRepository = $this->modelManager->getRepository(Option::class);
+    }
+
+    /**
+     * @return ImageRepository
+     */
+    protected function getImageRepository()
+    {
+        return $this->imageRepository ?? $this->imageRepository = $this->modelManager->getRepository(Image::class);
     }
 }

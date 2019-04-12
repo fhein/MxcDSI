@@ -88,8 +88,6 @@ class SetRepository
             $this->groups[$groupName] = $group;
             $this->set->getGroups()->add($group);
 
-            // important to avoid 'not configured for cascade persist
-            $this->modelManager->persist($group);
         }
 
         if (! isset($this->options[$optionName])) {
@@ -101,8 +99,6 @@ class SetRepository
             $this->options[$optionName] = $option;
             $this->set->getOptions()->add($option);
 
-            // important to avoid 'not configured for cascade persist
-            $this->modelManager->persist($option);
         }
     }
 }

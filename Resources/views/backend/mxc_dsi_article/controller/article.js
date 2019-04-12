@@ -155,7 +155,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Article', {
         let url = '{url controller=MxcDsiArticle action=testImport3}';
         let params = {};
         let growlTitle = 'Importing variant changes ...';
-        let maskText = 'Importing variat changes  ...';
+        let maskText = 'Importing variant changes  ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
     onTestImport4: function (grid) {

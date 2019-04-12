@@ -9,6 +9,7 @@ use MxcDropshipInnocigs\Mapping\Import\ImportPropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ShopwareMapper;
 use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 
 class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationController
 {
@@ -320,6 +321,10 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->getManager()->flush();
 
+        // The user may have changed the accepted state of variants to false in the detail view of an article.
+        // So we need to check and remove invalid variants when the detail view gets saved.
+        $this->services->get(ArticleTool::class)->deleteInvalidVariants([$article]);
+
         $detail = $this->getDetail($article->getId());
 
         return ['success' => true, 'data' => $detail['data']];
@@ -389,7 +394,6 @@ class Shopware_Controllers_Backend_MxcDsiArticle extends BackendApplicationContr
             $xml = $testDir . 'TESTEmpty.xml';
             $this->services->get(ImportClient::class)->import($xml);;
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
-//            $this->view->assign([ 'success' => true, 'message' => 'Development 4 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, true);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);

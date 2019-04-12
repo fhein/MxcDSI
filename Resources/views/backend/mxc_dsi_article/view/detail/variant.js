@@ -10,9 +10,10 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.detail.Variant', {
         return {
              columns: {
                  new:           { header: 'new', width: 40, flex: 0 },
-                 number:        { header: 'Number', width: 150, flex: 0},
+                 number:        { header: 'Number', width: 150, flex: 0 },
                  description:   { header: 'Description'},
-                 accepted:      { header: 'accept', width: 45, flex: 0}
+                 active:        { header: 'active', width: 45, flex: 0 },
+                 accepted:      { header: 'accept', width: 45, flex: 0 }
              },
             toolbar: false,
             actionColumn: false

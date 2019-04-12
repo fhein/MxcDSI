@@ -2,14 +2,23 @@
 
 namespace MxcDropshipInnocigs\Models;
 
+use Shopware\Models\Article\Detail;
+
 class VariantRepository extends BaseEntityRepository
 {
     protected $dql = [
         'getAllIndexed'     => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
 
         'getShopwareDetail' => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
+        'getImportVariant'  => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.number = (:number)',
         'removeOrphaned'    => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.article IS NULL',
-   ];
+    ];
+
+    protected $sql = [
+        'removeImages' => 'DELETE FROM s_plugin_mxc_dsi_x_variants_images WHERE variant_id = ?',
+        'removeOptions' => 'DELETE FROM s_plugin_mxc_dsi_x_variants_options WHERE variant_id = ?',
+    ];
+
 
     public function getShopwareDetail(Variant $variant)
     {
@@ -17,6 +26,28 @@ class VariantRepository extends BaseEntityRepository
             ->setParameter('ordernumber', $variant->getNumber())
             ->getResult();
         return $result[0];
+    }
+
+    public function removeImages(Variant $variant)
+    {
+        $stmnt = $this->getStatement(__FUNCTION__);
+        $stmnt->bindValue(1, $variant->getId());
+        $stmnt->execute();
+    }
+
+    public function removeOptions(Variant $variant)
+    {
+        $stmnt = $this->getStatement(__FUNCTION__);
+        $stmnt->bindValue(1, $variant->getId());
+        $stmnt->execute();
+    }
+
+    public function getImportVariant(Detail $swDetail)
+    {
+        /** @noinspection PhpUnhandledExceptionInspection */
+        return $this->getQuery(__FUNCTION__)
+            ->setParameter('number', $swDetail->getNumber())
+            ->getSingleResult();
     }
 
     public function removeOrphaned()

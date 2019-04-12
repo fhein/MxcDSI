@@ -12,7 +12,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_group")
- * @ORM\Entity(repositoryClass="GroupRepository")
+ * @ORM\Entity(repositoryClass="GroupRepository", readOnly=true)
  */
 class Group extends ModelEntity  {
 

@@ -23,13 +23,14 @@ class GroupRepository
      */
     protected $modelManager;
 
+
     public function __construct(ModelManager $modelManager, LoggerInterface $log) {
         $this->log = $log;
         $this->modelManager = $modelManager;
-        $this->createLookupTable();
+        // $this->createLookupTable();
     }
 
-    protected function createLookupTable()
+    public function createLookupTable()
     {
         $dql = sprintf ('SELECT g FROM %s g', Group::class);
         $groups = $this->modelManager->createQuery($dql)->getResult();
@@ -74,7 +75,6 @@ class GroupRepository
         $group = $this->data[strtolower($groupName)]['group'];
         if (null === $group) return null;
 
-        // if we know the option already return it
         $option = $this->data[strtolower($groupName)]['options'][strtolower($optionName)];
         if ($option instanceof Option) {
             $this->log->notice(sprintf('%s: Using existing Shopware configurator option %s of group %s.',

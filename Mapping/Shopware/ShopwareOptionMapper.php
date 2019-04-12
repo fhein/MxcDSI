@@ -85,6 +85,10 @@ class ShopwareOptionMapper
                 continue;
             }
             array_multisort(array_keys($options), SORT_NATURAL, $options);
+
+            // for an unknown reason it is necessary to recreate the group and option lookup table
+            // allthough it is not invalid. Otherwise doctrine will duplicate group and option entities.
+            $this->groupRepository->createLookupTable();
             foreach ($options as $optionName => $icVariants) {
                 $this->groupRepository->createGroup($groupName);
                 $sortOptions[$groupName] = true;
@@ -104,7 +108,6 @@ class ShopwareOptionMapper
         foreach ($sortOptions as $groupName) {
             $this->groupRepository->sortOptions($groupName);
         }
-
         $this->log->leave();
     }
 

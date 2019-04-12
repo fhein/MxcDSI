@@ -7,6 +7,7 @@ use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Import\ImportPropertyMapper;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImportMapperFactory implements FactoryInterface
@@ -27,11 +28,13 @@ class ImportMapperFactory implements FactoryInterface
         $apiClient = $container->get(ApiClient::class);
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
+        $articleTool = $container->get(ArticleTool::class);
         $propertyMapper = $container->get(ImportPropertyMapper::class);
         $articleMapper = $container->get(ShopwareMapper::class);
         $bulkOperation = new BulkOperation($container->get('modelManager'), $log);
         return new ImportMapper(
             $modelManager,
+            $articleTool,
             $apiClient,
             $propertyMapper,
             $articleMapper,

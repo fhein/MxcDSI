@@ -183,31 +183,6 @@
            <PRODUCTS_MANUAL/>
        </PRODUCT>
        <PRODUCT>
-           <CATEGORY>Zubehör &gt; SC Zubehör &gt; SC Verdampferköpfe</CATEGORY>
-           <MASTER>SC100ECML</MASTER>
-           <MODEL>SC100ECML-10</MODEL>
-           <EAN>4313042778148</EAN>
-           <NAME>TEST SC ECML 0,75 Ohm Heads (5 Stück pro Packung) - 2 Varianten über Importdatei verteilt</NAME>
-           <PRODUCTS_PRICE>5,42</PRODUCTS_PRICE>
-           <PRODUCTS_PRICE_RECOMMENDED>12,95</PRODUCTS_PRICE_RECOMMENDED>
-           <PRODUCTS_IMAGE>https://cdn.innocigs.com/media/images/rainbow/product/big/SCECMLHeads075Ohm5Stuck_2d_0001.png</PRODUCTS_IMAGE>
-           <PRODUCTS_IMAGE_ADDITIONAL/>
-           <MANUFACTURER>SC</MANUFACTURER>
-           <DESCRIPTION><![CDATA[Die ECML Heads von SC sind für das Subohm-Dampfen ausgelegt, da sie ein Widerstand von 0,75 Ohm haben. Pro Packung erhalten Sie ingesamt fünf Verdampferköpfe.
-<br>
-<br>
-<b>Wichtige Merkmale</b>
-<ul><li>Dampfmodi: VW, Bypass, Smart</li>
-<li>Widerstand: 0,75 Ohm</li>
-<li>Leistungswerte: 8 - 25 Watt</li>
-<li>Für Lungeninhalation geeignet</li></ul><br>
-<br>]]></DESCRIPTION>
-           <PRODUCTS_ATTRIBUTES>
-              <PACKUNG>1er Packung</PACKUNG>
-           </PRODUCTS_ATTRIBUTES>
-           <PRODUCTS_MANUAL/>
-       </PRODUCT>
-       <PRODUCT>
            <CATEGORY>Zubehör &gt; InnoCigs Zubehör &gt; InnoCigs Verdampferköpfe</CATEGORY>
            <MASTER>IC100PRH</MASTER>
            <MODEL>IC100PR-19-H</MODEL>

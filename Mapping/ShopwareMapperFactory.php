@@ -3,12 +3,12 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareAssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ShopwareDetailMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareImageMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ShopwareOptionMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ShopwarePriceMapper;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -25,21 +25,21 @@ class ShopwareMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get(Logger::class);
-        $attributeMapper = $container->get(ShopwareOptionMapper::class);
-        $client = $container->get(ApiClient::class);
+        $optionMapper = $container->get(ShopwareOptionMapper::class);
+        $articleTool = $container->get(ArticleTool::class);
         $imageMapper = $container->get(ShopwareImageMapper::class);
         $categoryMapper = $container->get(ShopwareCategoryMapper::class);
-        $priceMapper = $container->get(ShopwarePriceMapper::class);
+        $detailMapper = $container->get(ShopwareDetailMapper::class);
         $associatedArticlesMapper = $container->get(ShopwareAssociatedArticlesMapper::class);
         $modelManager = $container->get('modelManager');
         $articleMapper = new ShopwareMapper(
             $modelManager,
-            $attributeMapper,
+            $articleTool,
+            $optionMapper,
+            $detailMapper,
             $imageMapper,
             $categoryMapper,
-            $priceMapper,
             $associatedArticlesMapper,
-            $client,
             $log
         );
         return $articleMapper;

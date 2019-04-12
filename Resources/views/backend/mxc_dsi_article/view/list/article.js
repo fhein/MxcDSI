@@ -428,19 +428,19 @@ Ext.define('Shopware.apps.MxcDsiArticle.view.list.Article', {
             },
             items: [
                 {
-                    text: 'Erstimport',
+                    text: 'Dev #1',
                     handler: function() {
                         me.fireEvent('mxcDev1', me);
                     }
                 },
                 {
-                    text: 'Update Feldwerte',
+                    text: 'Dev #2',
                     handler: function() {
                         me.fireEvent('mxcDev2', me);
                     }
                 },
                 {
-                    text: 'Update Varianten',
+                    text: 'Dev #3',
                     handler: function() {
                         me.fireEvent('mxcDev3', me);
                     }
