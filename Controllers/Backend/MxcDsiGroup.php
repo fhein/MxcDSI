@@ -1,10 +1,10 @@
 <?php
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use MxcDropshipInnocigs\Mapping\ShopwareMapper;
-use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Option;
+use MxcDropshipInnocigs\Models\Product;
 
 class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationController
 {
@@ -97,11 +97,11 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
         // Important!
         $this->getManager()->clear();
 
-        $articleMapper = $this->getServices()->get(ShopwareMapper::class);
+        $shopwareMapper = $this->getServices()->get(ProductMapper::class);
 
-        $articleUpdates = $this->getLinkedArticlesHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
+        $productUpdates = $this->getLinkedProductsHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
         /** @noinspection PhpUnhandledExceptionInspection */
-        $articleMapper->processStateChangesArticleList($articleUpdates);
+        $shopwareMapper->processStateChangesProductList($productUpdates);
 
         $detail = $this->getDetail($group->getId());
         $this->log->leave();
@@ -110,9 +110,9 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
 
     /**
-     * Get all InnoCigs article having related Shopware Articles which are involved with the group
-     * update. If $groupChanged is true, all articles having variants using any of the group's options
-     * are added to the list. Otherwise only articles having variants using options with changed value
+     * Get all Products having related Articles which are involved with the group update.
+     * If $groupChanged is true, all Products having variants using any of the group's options
+     * are added to the list. Otherwise only Products having Variants using Options with changed value
      * are added to the list.
      *
      * @param int $groupId
@@ -120,13 +120,13 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
      * @param array $oldOptionValue
      * @return array
      */
-    protected function getLinkedArticlesHavingChangedOptions(int $groupId, bool $groupChanged, array $oldOptionValue): array
+    protected function getLinkedProductsHavingChangedOptions(int $groupId, bool $groupChanged, array $oldOptionValue): array
     {
         $group = $this->getRepository()->find($groupId);
         $options = $group->getOptions();
-        $repository = $this->getManager()->getRepository(Article::class);
+        $repository = $this->getManager()->getRepository(Product::class);
 
-        // get all InnoCigs articles which are linked to Shopware articles
+        // get all Products which are linked to Articles
         /** @var Option $option */
         $relevantOptionIds = [];
         $time = - microtime(true);
@@ -136,10 +136,10 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
             }
             $relevantOptionIds[] = $option->getId();
         }
-        $articles = $repository->getLinkedArticlesHavingOptions($relevantOptionIds);
+        $products = $repository->getLinkedProductsHavingOptions($relevantOptionIds);
         $time +=microtime(true);
         $this->log->debug('Using SQL query: ' . sprintf('%f', $time));
 
-        return $articles;
+        return $products;
     }
 }

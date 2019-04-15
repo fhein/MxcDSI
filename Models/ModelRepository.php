@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Models;
 class ModelRepository extends BaseEntityRepository
 {
     protected $dql = [
-        'getAllIndexed' => 'SELECT m FROM MxcDropshipInnocigs\Models\Model m INDEX BY m.model WHERE m.deleted = :deleted'
+        'getAllIndexed' => 'SELECT ir FROM MxcDropshipInnocigs\Models\Model ir INDEX BY ir.model WHERE ir.deleted = :deleted'
     ];
 
     public function getAllIndexed() {

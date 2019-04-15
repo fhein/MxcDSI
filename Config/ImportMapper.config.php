@@ -1,27 +1,27 @@
 <?php
 
-// use MxcDropshipInnocigs\Models\Article;
+// use MxcDropshipInnocigs\Models\Product;
 
 return [
     'applyFilters' => false,
     'filters'     => [
         'update'     => [
 //            [
-//                'entity' => Article::class,
+//                'entity' => Product::class,
 //                'andWhere' => [
 //                    [ 'field' => 'name', 'operator' => 'LIKE', 'value' => '%iquid%' ]
 //                ],
 //                'set' => [ 'accepted' => false, 'active' => false ],
 //            ],
 //            [
-//                'entity' => Article::class,
+//                'entity' => Product::class,
 //                'andWhere' => [
 //                    [ 'field' => 'name', 'operator' => 'LIKE', 'value' => '%Aroma%' ]
 //                ],
 //                'set' => [ 'accepted' => false, 'active' => false, ]
 //            ],
 //            [
-//                'entity' => Article::class,
+//                'entity' => Product::class,
 //                'andWhere' => [
 //                    [ 'field' => 'brand', 'operator' => 'LIKE', 'value' => 'DVTCH Amsterdam' ]
 //                ],

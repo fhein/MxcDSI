@@ -5,7 +5,7 @@ Ext.define('Shopware.apps.MxcDsiTest.view.list.Window', {
     alias: 'widget.mxc-dsi-test-group-list-window',
     height: 450,
     width: 624,
-    title : '{s name=window_title}InnoCigs Configurator Groups{/s}',
+    title : 'InnoCigs Configurator Groups',
 
     configure: function() {
         return {

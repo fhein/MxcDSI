@@ -45,7 +45,7 @@ class RegularExpressions
                 $errors = array_merge($errors, $this->regexChecker->getErrors());
             }
         }
-        foreach (['name_prepare', 'name_cleanup', 'article_name_replacements'] as $entry) {
+        foreach (['name_prepare', 'name_cleanup', 'product_name_replacements'] as $entry) {
             $entries = $this->config[$entry]['preg_replace'];
             if (!is_array($entries)) {
                 continue;

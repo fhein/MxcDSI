@@ -3,7 +3,6 @@
 namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Mapping\Shopware\ShopwareOptionMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ArticleToolFactory implements FactoryInterface
@@ -20,8 +19,7 @@ class ArticleToolFactory implements FactoryInterface
     {
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        $optionMapper = $container->get(ShopwareOptionMapper::class);
-        return new ArticleTool($modelManager, $optionMapper, $log);
+        return new ArticleTool($modelManager, $log);
     }
 }
 

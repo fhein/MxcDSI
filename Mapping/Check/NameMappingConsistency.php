@@ -4,16 +4,16 @@
 namespace MxcDropshipInnocigs\Mapping\Check;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
-use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Mapping\Import\NameMapper;
 use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use Shopware\Components\Model\ModelManager;
 
 class NameMappingConsistency
 {
-    /** @var ImportNameMapper $importNameMapper */
+    /** @var NameMapper $importNameMapper */
     protected $importNameMapper;
 
     /** @var ModelManager $modelManager */
@@ -23,12 +23,12 @@ class NameMappingConsistency
     protected $log;
 
     /** @var array */
-    protected $articles;
+    protected $products;
 
     /** @var array */
-    protected $models;
+    protected $Models;
 
-    public function __construct(ModelManager $modelManager, ImportNameMapper $importNameMapper, LoggerInterface $log)
+    public function __construct(ModelManager $modelManager, NameMapper $importNameMapper, LoggerInterface $log)
     {
         $this->importNameMapper = $importNameMapper;
         $this->modelManager = $modelManager;
@@ -40,14 +40,14 @@ class NameMappingConsistency
      */
     public function check()
     {
-        $articles = $this->getArticles() ?? [];
+        $products = $this->getProducts() ?? [];
 
-        /** @var Article $article */
+        /** @var Product $product */
         $topics = [];
-        foreach ($articles as $article) {
-            $issues = $this->getNameMappingIssues($article);
+        foreach ($products as $product) {
+            $issues = $this->getNameMappingIssues($product);
             if (!empty($issues)) {
-                $topics[$article->getIcNumber()] = $issues;
+                $topics[$product->getIcNumber()] = $issues;
             }
         }
         ksort($topics);
@@ -60,24 +60,24 @@ class NameMappingConsistency
     /**
      * Helper function
      *
-     * @param Article $article
+     * @param Product $product
      * @return array
      */
-    public function getNameMappingIssues(Article $article): array
+    public function getNameMappingIssues(Product $product): array
     {
         $models = $this->getModels();
         if (!$models) {
             return [];
         }
 
-        $variants = $article->getVariants();
+        $variants = $product->getVariants();
         $map = [];
         /** @var Variant $variant */
         foreach ($variants as $variant) {
             $number = $variant->getIcNumber();
             $model = $models[$number];
-            $this->importNameMapper->map($model, $article);
-            $map[$article->getName()] = $number;
+            $this->importNameMapper->map($model, $product);
+            $map[$product->getName()] = $number;
         }
         if (count($map) === 1) {
             return [];
@@ -95,27 +95,15 @@ class NameMappingConsistency
         return $issues;
     }
 
-    /**
-     * Lazy load Articles.
-     *
-     * @return array|null
-     */
-    protected function getArticles()
+    protected function getProducts()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->articles = $this->articles ?? $this->modelManager->getRepository(Article::class)->getAllIndexed();
-        return $this->articles;
+        return $this->products ?? $this->products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
     }
 
-    /**
-     * Lazy load Models.
-     *
-     * @return array|null
-     */
     protected function getModels()
     {
-        $this->models = $this->models ?? $this->modelManager->getRepository(Model::class)->getAllIndexed();
-        return $this->models;
+        return $this->Models ?? $this->Models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
     }
 
 }

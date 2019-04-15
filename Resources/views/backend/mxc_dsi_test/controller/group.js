@@ -46,8 +46,8 @@ Ext.define('Shopware.apps.MxcDsiTest.controller.Group', {
             },
             failure: function(record, operation) {
                 Shopware.Notification.createStickyGrowlMessage({
-                        title: '{s name=error}Error{/s}',
-                        text: '{s name=unknownError}An unknown error occurred, please check your server logs{/s}',
+                        title: 'Error',
+                        text: 'An unknown error occurred, please check your server logs',
                         log: true
                     },
                     'Group'

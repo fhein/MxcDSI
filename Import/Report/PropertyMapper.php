@@ -61,7 +61,7 @@ class PropertyMapper
         ksort($optionMapping);
         $applied = array_filter($optionMapping, function($value) { return $value['fixApplied'] === true; });
         $applied = array_flip(array_flip(array_column($applied, 'option')));
-        $unused = array_diff(array_keys($this->config['article_name_option_fixes']), $applied);
+        $unused = array_diff(array_keys($this->config['product_name_option_fixes']), $applied);
         $optionReport['unused_mappings'] = $unused;
 
         foreach ($optionMapping as $key => $record) {
@@ -106,11 +106,11 @@ class PropertyMapper
             ];
         }, $this->nameTrace));
 
-        $unchangedArticleNames = array_map(function ($value) {
+        $unchangedProductNames = array_map(function ($value) {
             return ($value['imported'] === $value['mapped']);
         }, $this->nameTrace);
-        $unchangedArticleNames = array_keys(array_filter(
-            $unchangedArticleNames,
+        $unchangedProductNames = array_keys(array_filter(
+            $unchangedProductNames,
             function ($value) {
                 return $value === true;
             }
@@ -123,15 +123,15 @@ class PropertyMapper
             return $value === true;
         }));
 
-        $articleNames = array_flip(array_flip(array_column($nameMap, 'mapped  ')));
-        sort($articleNames);
+        $productNames = array_flip(array_flip(array_column($nameMap, 'mapped  ')));
+        sort($productNames);
 
 
         ($this->reporter)([
-            'pmName'                  => $articleNames,
+            'pmName'                  => $productNames,
             'pmNameTrace'             => $this->nameTrace,
             'pmNameMap'               => $nameMap,
-            'pmNameUnchanged'         => $unchangedArticleNames,
+            'pmNameUnchanged'         => $unchangedProductNames,
             'pmNameNoOptionsRemoved'  => $namesWithoutRemovedOptions,
         ]);
     }
@@ -160,7 +160,7 @@ class PropertyMapper
         $replacementLog = $mapper($replacementLog,[
             SuccessiveReplacer::class => [
                 'replacer'     => $replacer,
-                'replacements' => $this->config['article_name_replacements'][$replacer],
+                'replacements' => $this->config['product_name_replacements'][$replacer],
             ]]
         );
         return $replacementLog;

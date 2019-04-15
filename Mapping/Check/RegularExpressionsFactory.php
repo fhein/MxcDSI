@@ -4,9 +4,9 @@ namespace MxcDropshipInnocigs\Mapping\Check;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
-use MxcDropshipInnocigs\Mapping\Import\ImportCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportTypeMapper;
+use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
+use MxcDropshipInnocigs\Mapping\Import\NameMapper;
+use MxcDropshipInnocigs\Mapping\Import\TypeMapper;
 use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -24,16 +24,16 @@ class RegularExpressionsFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $articleNameMapperConfig = $this->getClassConfig($container, ImportNameMapper::class);
-        foreach (['name_prepare', 'name_cleanup', 'article_name_replacements', 'product_names'] as $key) {
+        $articleNameMapperConfig = $this->getClassConfig($container, NameMapper::class);
+        foreach (['name_prepare', 'name_cleanup', 'product_name_replacements', 'product_names'] as $key) {
             $config[$key] = $articleNameMapperConfig[$key];
         }
 
-        $articleTypeMapperConfig = $this->getClassConfig($container, ImportTypeMapper::class);
+        $articleTypeMapperConfig = $this->getClassConfig($container, TypeMapper::class);
         $key = 'name_type_mapping';
         $config[$key] = $articleTypeMapperConfig[$key];
 
-        $propertyMapperConfig = $this->getClassConfig($container, ImportCategoryMapper::class);
+        $propertyMapperConfig = $this->getClassConfig($container, CategoryMapper::class);
         $key = 'categories';
         $config[$key] = $propertyMapperConfig[$key];
 

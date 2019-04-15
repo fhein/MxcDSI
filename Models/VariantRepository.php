@@ -7,11 +7,10 @@ use Shopware\Models\Article\Detail;
 class VariantRepository extends BaseEntityRepository
 {
     protected $dql = [
-        'getAllIndexed'     => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
-
-        'getShopwareDetail' => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
-        'getImportVariant'  => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.number = (:number)',
-        'removeOrphaned'    => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.article IS NULL',
+        'getAllIndexed'      => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
+        'getDetail'          => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
+        'getVariantByDetail' => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.number = (:number)',
+        'removeOrphaned'     => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.product IS NULL',
     ];
 
     protected $sql = [
@@ -20,7 +19,7 @@ class VariantRepository extends BaseEntityRepository
     ];
 
 
-    public function getShopwareDetail(Variant $variant)
+    public function getDetail(Variant $variant)
     {
         $result = $this->getQuery(__FUNCTION__)
             ->setParameter('ordernumber', $variant->getNumber())
@@ -42,11 +41,11 @@ class VariantRepository extends BaseEntityRepository
         $stmnt->execute();
     }
 
-    public function getImportVariant(Detail $swDetail)
+    public function getVariantByDetail(Detail $detail)
     {
         /** @noinspection PhpUnhandledExceptionInspection */
         return $this->getQuery(__FUNCTION__)
-            ->setParameter('number', $swDetail->getNumber())
+            ->setParameter('number', $detail->getNumber())
             ->getSingleResult();
     }
 
@@ -63,7 +62,7 @@ class VariantRepository extends BaseEntityRepository
 
     /**
      * A variant validates true if the $accepted member of the variant is true and
-     * the $accepted member of the associated Article is true and all of the variant's
+     * the $accepted member of the associated Product is true and all of the variant's
      * options validate true
      *
      * @param Variant $variant
@@ -71,7 +70,7 @@ class VariantRepository extends BaseEntityRepository
      */
     public function validateVariant(Variant $variant) : bool
     {
-        if (! ($variant->isAccepted() && $variant->getArticle()->isAccepted())) {
+        if (! ($variant->isAccepted() && $variant->getProduct()->isAccepted())) {
             return false;
         }
         $options = $variant->getOptions();

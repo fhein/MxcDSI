@@ -7,9 +7,9 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.Group', {
 
     snippets: {
         groups: {
-            acceptedGroups: '{s name=innocigs/configurator/group/accepted_groups_header}Accepted groups{/s}',
-            ignoredGroups: '{s name=innocigs/configurator/group/ignored_groups_header}Ignored groups{/s}',
-            selected: '{s name=innocigs/configurator/group/group_header_selected}selected{/s}',
+            acceptedGroups: 'Accepted groups',
+            ignoredGroups: 'Ignored groups',
+            selected: 'selected',
         }
     },
 

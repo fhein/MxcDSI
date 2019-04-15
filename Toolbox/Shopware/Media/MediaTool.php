@@ -6,7 +6,7 @@ use DateTime;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use Shopware\Bundle\MediaBundle\MediaService;
 use Shopware\Components\Model\ModelManager;
-use Shopware\Models\Article\Article as ShopwareArticle;
+use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Image;
 use Shopware\Models\Media\Album;
@@ -89,11 +89,11 @@ class MediaTool
      * Downloads image from given url if the image is not present already
      *
      * @param string $url
-     * @param ShopwareArticle $swArticle
+     * @param Article $article
      * @param int $position
      * @return Image
      */
-    public function getImage(string $url, ShopwareArticle $swArticle, int $position):Image
+    public function getImage(string $url, Article $article, int $position):Image
     {
         $urlInfo = pathinfo($url);
         $swUrl = 'media/image/' . $urlInfo['basename'];
@@ -114,7 +114,7 @@ class MediaTool
         $image = new Image();
         $this->modelManager->persist($image);
 
-        $image->setArticle($swArticle);
+        $image->setArticle($article);
         $image->setMedia($media);
         $image->setExtension($urlInfo['extension']);
         $image->setMain(($position > 1) ? 2 : 1);
@@ -128,14 +128,14 @@ class MediaTool
 
     }
 
-    public function createDetailImage(string $url, $swDetail) {
+    public function createDetailImage(string $url, $detail) {
         $urlInfo = pathinfo($url);
 
         $image = new Image();
         $this->modelManager->persist($image);
 
         $image->setExtension($urlInfo['extension']);
-        $image->setArticleDetail($swDetail);
+        $image->setArticleDetail($detail);
 
         return $image;
     }
@@ -185,9 +185,9 @@ class MediaTool
         $this->modelManager->remove($image);
     }
 
-    public function removeImages(ShopwareArticle $swArticle)
+    public function removeImages(Article $article)
     {
-        $images = $swArticle->getImages();
+        $images = $article->getImages();
         foreach ($images as $image) {
             $this->removeImage($image);
         }

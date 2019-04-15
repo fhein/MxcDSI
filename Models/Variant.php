@@ -32,11 +32,11 @@ class Variant extends ModelEntity
     private $number;
 
     /**
-     * @var Article $article
+     * @var Product $product
      *
-     * @ORM\ManyToOne(targetEntity="Article", inversedBy="variants")
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="variants")
      */
-    private $article;
+    private $product;
 
     /**
      * @var Detail
@@ -123,10 +123,10 @@ class Variant extends ModelEntity
      * @var array $shopwareOptions
      *
      * This property will not be persisted. The array gets filled by
-     * ShopwareOptionMapper, which creates Shopware options from our
+     * ConfiguratorOptionMapper, which creates Shopware options from our
      * options and adds the created shopware options here.
      *
-     * Later on, the ShopwareMapper will create the shopware detail
+     * Later on, the ProductMapper will create the shopware detail
      * records, which get associations to the shopware options stored here.
      */
     private $shopwareOptions = [];
@@ -191,11 +191,11 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @return Article $article
+     * @return Product
      */
-    public function getArticle()
+    public function getProduct()
     {
-        return $this->article;
+        return $this->product;
     }
 
     /**
@@ -247,11 +247,11 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param null|Article $article
+     * @param null|Product $product
      */
-    public function setArticle(?Article $article)
+    public function setProduct(?Product $product)
     {
-        $this->article = $article;
+        $this->product = $product;
     }
 
     /**
@@ -429,7 +429,7 @@ class Variant extends ModelEntity
     public function getDetail(): ?Detail
     {
         if ($this->detail === null) {
-            $this->detail = Shopware()->Models()->getRepository(Variant::class)->getShopwareDetail($this);
+            $this->detail = Shopware()->Models()->getRepository(Variant::class)->getDetail($this);
         }
         return $this->detail;
     }

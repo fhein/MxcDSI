@@ -16,7 +16,7 @@ class Shopware_Controllers_Backend_MxcDsiTest extends BackendApplicationControll
          * @var ModelManager $modelManager
          */
         try {
-            $this->services->get(ImportClient::class)->import();
+            $this->services->get(ImportClient::class)->importFromFile();
             parent::indexAction();
         } catch (Throwable $e) {
             $this->log->except($e);

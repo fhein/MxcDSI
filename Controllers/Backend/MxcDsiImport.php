@@ -7,7 +7,7 @@ use MxcDropshipInnocigs\Models\Model;
 class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationController
 {
     protected $model = Model::class;
-    protected $alias = 'import_article';
+    protected $alias = 'record';
 
 //    public function indexAction() {
 //        $this->log->enter();

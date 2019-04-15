@@ -3,7 +3,7 @@
 namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\Product;
 use Shopware\Components\Model\ModelManager;
 use Zend\Config\Factory;
 
@@ -20,7 +20,7 @@ class Flavorist
     protected $reversedCategories = [];
 
     protected $categoryFile = __DIR__ . '/../../Config/flavor.categories.config.php';
-    protected $flavorFile = __DIR__ . '/../../Config/ImportFlavorMapper.config.php';
+    protected $flavorFile = __DIR__ . '/../../Config/FlavorMapper.config.php';
 
     public function __construct(ModelManager $modelManager, LoggerInterface $log)
     {
@@ -37,22 +37,22 @@ class Flavorist
         } else {
             $currentFlavors = [];
         }
-        $articles = $this->modelManager->getRepository(Article::class)->findAll();
-        /** @var Article $article */
+        $products = $this->modelManager->getRepository(Product::class)->findAll();
+        /** @var Product $product */
         $newFlavors = [];
-        foreach ($articles as $article) {
-            $isFlavored = preg_match('~(Liquid)|(Aromen)|(Shake \& Vape)~', $article->getCategory()) === 1;
-            $isMultiPack = strpos($article->getName(), 'Probierbox') !== false;
+        foreach ($products as $product) {
+            $isFlavored = preg_match('~(Liquid)|(Aromen)|(Shake \& Vape)~', $product->getCategory()) === 1;
+            $isMultiPack = strpos($product->getName(), 'Probierbox') !== false;
             if ($isFlavored && ! $isMultiPack) {
-                $number = $article->getIcNumber();
-                if ($article->getFlavor() !== null) {
-                    $flavor = array_map('trim', explode(',', $article->getFlavor()));
+                $number = $product->getIcNumber();
+                if ($product->getFlavor() !== null) {
+                    $flavor = array_map('trim', explode(',', $product->getFlavor()));
                 } else {
                     $flavor = $currentFlavors[$number]['flavor'];
                 }
                 $newFlavors[$number] = [
                     'number' => $number,
-                    'name'   => $article->getName(),
+                    'name'   => $product->getName(),
                     'flavor' => $flavor
                 ];
             }
@@ -65,10 +65,10 @@ class Flavorist
     public function updateCategories() {
         $this->revertCategories();
         /** @noinspection PhpUndefinedMethodInspection */
-        $articles = $this->modelManager->getRepository(Article::class)->getFlavoredArticles();
-        /** @var Article $article */
-        foreach ($articles as $article) {
-            $flavors = $article->getFlavor();
+        $products = $this->modelManager->getRepository(Product::class)->getFlavoredProducts();
+        /** @var Product $product */
+        foreach ($products as $product) {
+            $flavors = $product->getFlavor();
             $flavors = array_map('trim', explode(',',$flavors));
             foreach ($flavors as $flavor) {
                 if ($this->reversedCategories[$flavor] === null) {

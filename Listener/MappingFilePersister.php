@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Listener;
 
 use Mxc\Shopware\Plugin\ActionListener;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Article;
+use MxcDropshipInnocigs\Models\Product;
 use Shopware\Components\Model\ModelManager;
 use Zend\EventManager\EventInterface;
 
@@ -32,7 +32,7 @@ class MappingFilePersister extends ActionListener
     public function uninstall(/** @noinspection PhpUnusedParameterInspection */ EventInterface $e)
     {
         $this->log->enter();
-        $repository = $this->modelManager->getRepository(Article::class);
+        $repository = $this->modelManager->getRepository(Product::class);
         $repository->exportMappedProperties();
         $this->log->leave();
     }

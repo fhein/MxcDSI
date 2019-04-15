@@ -4,10 +4,10 @@
 namespace MxcDropshipInnocigs\Mapping\Import;
 
 
-use MxcDropshipInnocigs\Models\Article;
 use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Models\Product;
 
-class ImportPiecesPerPackMapper extends BaseImportMapper implements ImportArticleMapperInterface
+class ImportPiecesPerPackMapper extends BaseImportMapper implements ProductMapperInterface
 {
     /**
      * If a product in general contains several pieces, i.e. not as an option,
@@ -16,17 +16,17 @@ class ImportPiecesPerPackMapper extends BaseImportMapper implements ImportArticl
      * This xx number of pieces gets derived here.
      *
      * @param Model $model
-     * @param Article $article
+     * @param Product $product
      */
-    public function map(Model $model, Article $article)
+    public function map(Model $model, Product $product)
     {
-        $name = $article->getName();
+        $name = $product->getName();
         $matches = [];
         $ppp = 1;
         if (preg_match('~\((\d+) Stück~', $name, $matches) === 1) {
             $ppp = $matches[1];
         };
-        $article->setPiecesPerPack($ppp);
+        $product->setPiecesPerPack($ppp);
     }
 
 }

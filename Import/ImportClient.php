@@ -113,42 +113,51 @@ class ImportClient implements EventSubscriber
         return ['preUpdate'];
     }
 
-    public function import(string $xmlFile = null, bool $recreateSchema = false)
+    public function importFromXml(string $xml, bool $recreateSchema = false)
     {
-        if (file_exists($xmlFile)) {
-            $this->import = $this->apiClient->modelsToArray(file_get_contents($xmlFile));
-        } else {
-            $this->import = $this->apiClient->getItemList();
-        }
+        $this->import = $this->apiClient->modelsToArray($xml);
+
         if ($recreateSchema) {
             $this->schemaManager->drop();
             $this->schemaManager->create();
         }
         $this->doImport();
-
     }
 
-    public function doImport()
+    public function importFromFile(string $xmlFile = null, bool $recreateSchema = false)
+    {
+        if (file_exists($xmlFile)) {
+            $this->importFromXml(file_get_contents($xmlFile), $recreateSchema);
+        }
+    }
+
+    public function import() {
+        $this->import = $this->apiClient->getItemList();
+        $this->doImport();
+    }
+
+    protected function doImport()
     {
         $this->setupImport();
         $evm = $this->modelManager->getEventManager();
         $evm->addEventSubscriber($this);
 
-        $this->apiImport();
+        $this->flattenImport();
         $this->createModels();
         $this->deleteModels();
         $this->modelManager->flush();
 
         $evm->removeEventSubscriber($this);
 
+        $this->reportMissingProperties();
+
         $this->logImport();
         $this->importMapper->import($this->importLog);
     }
 
-    protected function apiImport()
+    protected function flattenImport()
     {
         $i = 1;
-        $description = [];
         foreach ($this->import as &$master) {
             foreach ($master as &$item) {
                 $item['options'] = $this->condenseOptions($item['options']);
@@ -157,6 +166,18 @@ class ImportClient implements EventSubscriber
                 }
                 $item['images'] = $this->condenseImages($item['image'], $item['images']);
                 unset ($item['image']);
+
+                $i++;
+            }
+        }
+    }
+
+    protected function reportMissingProperties()
+    {
+        $i = 1;
+        $description = [];
+        foreach ($this->import as &$master) {
+            foreach ($master as &$item) {
                 if ($item['description'] === '') {
                     $this->missingItems['missing_descriptions'][$item['model']] = $item['name'];
                 } else {
@@ -179,6 +200,7 @@ class ImportClient implements EventSubscriber
         ($this->reporter)([ 'imDescriptions' => $description]);
 
         ($this->reporter)(['imData' => $this->import]);
+
     }
 
     protected function getParamString($value)

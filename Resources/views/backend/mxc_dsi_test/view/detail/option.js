@@ -7,9 +7,9 @@ Ext.define('Shopware.apps.MxcDsiTest.view.detail.Option', {
 
     snippets: {
         options: {
-            acceptedOptions: '{s name=innocigs/configurator/option/accepted_options_header}Accepted options{/s}',
-            ignoredOptions: '{s name=innocigs/configurator/option/ignored_options_header}Ignored options{/s}',
-            selected: '{s name=innocigs/configurator/option/option_header_selected}selected{/s}',
+            acceptedOptions: 'Accepted options',
+            ignoredOptions: 'Ignored options',
+            selected: 'selected',
         }
     },
 

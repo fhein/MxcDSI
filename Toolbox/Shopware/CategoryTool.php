@@ -4,7 +4,7 @@ namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
 use Mxc\Shopware\Plugin\Service\ServicesTrait;
 use Shopware\Components\Model\ModelManager;
-use Shopware\Models\Article\Article as ShopwareArticle;
+use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
 
 class CategoryTool
@@ -85,7 +85,7 @@ class CategoryTool
         $child->setParent($parent);
         $child->setChanged();
         if ($parent->getArticles()->count() > 0) {
-            /** @var ShopwareArticle $article */
+            /** @var Article $article */
             foreach ($parent->getArticles() as $article) {
                 $article->removeCategory($parent);
                 $article->addCategory($child);

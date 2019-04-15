@@ -3,7 +3,7 @@
 namespace MxcDropshipInnocigs\Mapping\Check;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Mapping\Import\ImportNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\NameMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class NameMappingConsistencyFactory implements FactoryInterface
@@ -19,7 +19,7 @@ class NameMappingConsistencyFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $modelManager = $container->get('modelManager');
-        $articleNameMapper = $container->get(ImportNameMapper::class);
+        $articleNameMapper = $container->get(NameMapper::class);
         $log = $container->get('logger');
 
         return new NameMappingConsistency($modelManager, $articleNameMapper, $log);

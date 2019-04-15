@@ -19,10 +19,10 @@
                     <class>sprite-document-import</class>
                 </entry>
                 <entry>
-                    <name>MxcDsiArticle</name>
-                    <label lang="en">Article</label>
+                    <name>MxcDsiProduct</name>
+                    <label lang="en">Products</label>
                     <label lang="de">Artikel</label>
-                    <controller>MxcDsiArticle</controller>
+                    <controller>MxcDsiProduct</controller>
                     <action>index</action>
                     <class>sprite-documents</class>
                 </entry>

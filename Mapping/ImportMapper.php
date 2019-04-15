@@ -8,9 +8,8 @@ use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
-use MxcDropshipInnocigs\Mapping\Import\ImportPropertyMapper;
-use MxcDropshipInnocigs\Models\Article;
-use MxcDropshipInnocigs\Models\ArticleRepository;
+use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\GroupRepository;
 use MxcDropshipInnocigs\Models\Image;
@@ -18,6 +17,8 @@ use MxcDropshipInnocigs\Models\ImageRepository;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\OptionRepository;
+use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Models\VariantRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
@@ -30,8 +31,8 @@ class ImportMapper
     /** @var VariantRepository */
     protected $variantRepository;
 
-    /** @var ArticleRepository */
-    protected $articleRepository;
+    /** @var ProductRepository */
+    protected $productRepository;
 
     /** @var GroupRepository */
     protected $groupRepository;
@@ -48,11 +49,14 @@ class ImportMapper
     /** @var ApiClient $apiClient */
     protected $apiClient;
 
-    /** @var ImportPropertyMapper $propertyMapper */
+    /** @var DetailMapper */
+    protected $detailMapper;
+
+    /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
 
-    /** @var ShopwareMapper $articleMapper */
-    protected $articleMapper;
+    /** @var ProductMapper $shopwareMapper */
+    protected $shopwareMapper;
 
     /** @var ArticleTool */
     protected $articleTool;
@@ -73,7 +77,7 @@ class ImportMapper
     protected $groups;
 
     /** @var array */
-    protected $articles;
+    protected $products;
 
     /** @var array */
     protected $updates;
@@ -96,8 +100,9 @@ class ImportMapper
      * @param ModelManager $modelManager
      * @param ArticleTool $articleTool
      * @param ApiClient $apiClient
-     * @param ImportPropertyMapper $propertyMapper
-     * @param ShopwareMapper $articleMapper
+     * @param PropertyMapper $propertyMapper
+     * @param ProductMapper $shopwareMapper
+     * @param DetailMapper $detailMapper
      * @param BulkOperation $bulkOperation
      * @param array $config
      * @param LoggerInterface $log
@@ -106,17 +111,19 @@ class ImportMapper
         ModelManager $modelManager,
         ArticleTool $articleTool,
         ApiClient $apiClient,
-        ImportPropertyMapper $propertyMapper,
-        ShopwareMapper $articleMapper,
+        PropertyMapper $propertyMapper,
+        ProductMapper $shopwareMapper,
+        DetailMapper $detailMapper,
         BulkOperation $bulkOperation,
         array $config,
         LoggerInterface $log
     ) {
         $this->modelManager = $modelManager;
         $this->articleTool = $articleTool;
+        $this->detailMapper = $detailMapper;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
-        $this->articleMapper = $articleMapper;
+        $this->shopwareMapper = $shopwareMapper;
         $this->bulkOperation = $bulkOperation;
         $this->config = $config;
         $this->log = $log;
@@ -158,34 +165,34 @@ class ImportMapper
         return new ArrayCollection($options);
     }
 
-    protected function addArticle(Model $model)
+    protected function addProduct(Model $model)
     {
-        $article = new Article();
-        $this->modelManager->persist($article);
-        $article->setIcNumber($model->getMaster());
-        $article->setActive(false);
-        $article->setAccepted(true);
-        $article->setManual($model->getManual());
-        $article->setDescription($model->getDescription());
-        $article->setManufacturer($model->getManufacturer());
+        $product = new Product();
+        $this->modelManager->persist($product);
+        $product->setIcNumber($model->getMaster());
+        $product->setActive(false);
+        $product->setAccepted(true);
+        $product->setManual($model->getManual());
+        $product->setDescription($model->getDescription());
+        $product->setManufacturer($model->getManufacturer());
 
-        return $article;
+        return $product;
     }
 
-    protected function getArticle(Model $model)
+    protected function getProduct(Model $model)
     {
         $number = $model->getMaster();
 
-        // return cached article if available
-        $article = $this->articles[$number];
-        if ($article) {
-            return $article;
+        // return cached product if available
+        $product = $this->products[$number];
+        if ($product) {
+            return $product;
         }
 
-        $article = $this->addArticle($model);
-        $this->articles[$number] = $article;
+        $product = $this->addProduct($model);
+        $this->products[$number] = $product;
 
-        return $article;
+        return $product;
     }
 
     public function getImages(?string $imageString)
@@ -211,13 +218,13 @@ class ImportMapper
         /** @var  Model $model */
         foreach ($additions as $number => $model) {
             $this->log->debug('Adding variant: ' . $model->getName());
-            $article = $this->getArticle($model);
-            $this->updates[$article->getIcNumber()] = $article;
+            $product = $this->getProduct($model);
+            $this->updates[$product->getIcNumber()] = $product;
 
             $variant = new Variant();
             $this->modelManager->persist($variant);
             $this->variants[$model->getModel()] = $variant;
-            $article->addVariant($variant);
+            $product->addVariant($variant);
             $variant->setActive(false);
             $variant->setAccepted(true);
 
@@ -240,7 +247,7 @@ class ImportMapper
 
     /**
      * Find the Variants associated with list of deleted Models, set their
-     * accepted state to false. Return a list of all Articles owning one
+     * accepted state to false. Return a list of all Products owning one
      * of the modified Variants.
      *
      * @param array $deletions
@@ -252,43 +259,43 @@ class ImportMapper
         /** @var  Model $model */
         $variantRepository = $this->getVariantRepository();
 
-        $articlesWithDeletions = [];
+        $productsWithDeletions = [];
         foreach ($deletions as $model) {
             /** @var  Variant $variant */
             $variant = $variantRepository->findOneBy(['number' => $model->getModel()]);
             $variant->setAccepted(false);
-            $article = $variant->getArticle();
-            $articlesWithDeletions[$article->getIcNumber()] = $article;
+            $product = $variant->getProduct();
+            $productsWithDeletions[$product->getIcNumber()] = $product;
         }
 
         $this->modelManager->flush();
-        return $articlesWithDeletions;
+        return $productsWithDeletions;
     }
 
     /**
      * Remove all invalid Variants together with the Options and Images
-     * belonging to them. Remove the article also, if it has no variant
+     * belonging to them. Remove the Product also, if it has no variant
      * left.
      *
-     * @param array $articles
+     * @param array $products
      * @throws OptimisticLockException
      */
-    protected function removeInvalidVariants(array $articles)
+    protected function removeInvalidVariants(array $products)
     {
         $variantRepository = $this->getVariantRepository();
 
-        foreach ($articles as $article) {
-            $invalidVariants = $this->getArticleRepository()->getInvalidVariants($article);
+        foreach ($products as $product) {
+            $invalidVariants = $this->getProductRepository()->getInvalidVariants($product);
             /** @var Variant $variant */
             foreach ($invalidVariants as $variant) {
                 $variantRepository->removeImages($variant);
                 $variantRepository->removeOptions($variant);
-                $article->removeVariant($variant);
+                $product->removeVariant($variant);
                 $this->modelManager->remove($variant);
                 unset($this->variants[$variant->getIcNumber()]);
-                if ($article->getVariants()->count === 0) {
-                    $this->modelManager->remove($article);
-                    unset ($this->articles[$article->getIcNumber()]);
+                if ($product->getVariants()->count === 0) {
+                    $this->modelManager->remove($product);
+                    unset ($this->products[$product->getIcNumber()]);
                 }
             }
         }
@@ -301,9 +308,9 @@ class ImportMapper
     {
         if (empty($deletions)) return;
 
-        $articlesWithDeletions = $this->invalidateVariants($deletions);
-        $this->articleTool->deleteInvalidVariants($articlesWithDeletions);
-        $this->removeInvalidVariants($articlesWithDeletions);
+        $productsWithDeletions = $this->invalidateVariants($deletions);
+        $this->detailMapper->deleteInvalidDetails($productsWithDeletions);
+        $this->removeInvalidVariants($productsWithDeletions);
     }
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
@@ -349,13 +356,13 @@ class ImportMapper
             $oldValue = $values['oldValue'];
             switch ($name) {
                 case 'category':
-                    $this->propertyMapper->mapArticleCategory($model, $variant->getArticle());
+                    $this->propertyMapper->mapProductCategory($model, $variant->getProduct());
                     break;
                 case 'ean':
                     $variant->setEan($newValue);
                     break;
                 case 'name':
-                    $this->propertyMapper->mapArticleName($model, $variant->getArticle());
+                    $this->propertyMapper->mapProductName($model, $variant->getProduct());
                     break;
                 case 'purchasePrice':
                     $variant->setPurchasePrice($newValue);
@@ -364,7 +371,7 @@ class ImportMapper
                     $variant->setRecommendedRetailPrice($newValue);
                     break;
                 case 'manufacturer':
-                    $this->propertyMapper->mapArticleManufacturer($model, $variant->getArticle());
+                    $this->propertyMapper->mapProductManufacturer($model, $variant->getProduct());
                     break;
                 case 'images':
                     $this->changeImages($variant, $oldValue, $newValue);
@@ -373,8 +380,8 @@ class ImportMapper
                     $this->changeOptions($variant, $oldValue, $newValue);
                     break;
                 case 'master':
-                    $variant->getArticle()->removeVariant($variant);
-                    $this->getArticle($newValue)->addVariant($variant);
+                    $variant->getProduct()->removeVariant($variant);
+                    $this->getProduct($newValue)->addVariant($variant);
                     break;
             }
         }
@@ -388,15 +395,15 @@ class ImportMapper
             $model = $change['model'];
             $fields = $change['fields'];
             $this->changeVariant($variant, $model, $fields);
-            $article = $variant->getArticle();
-            $this->updates[$article->getIcNumber()] = $article;
+            $product = $variant->getProduct();
+            $this->updates[$product->getIcNumber()] = $product;
         }
     }
 
     protected function removeOrphanedItems()
     {
         $this->getVariantRepository()->removeOrphaned();
-        $this->getArticleRepository()->removeOrphaned();
+        $this->getProductRepository()->removeOrphaned();
 
         $this->getOptionRepository()->removeOrphaned();
         $this->getImageRepository()->removeOrphaned();
@@ -411,11 +418,11 @@ class ImportMapper
 
     protected function initCache()
     {
-        $this->modelManager->createQuery('UPDATE ' . Article::class . ' a set a.new = false')->execute();
+        $this->modelManager->createQuery('UPDATE ' . Product::class . ' a set a.new = false')->execute();
         $this->modelManager->createQuery('UPDATE ' . Variant::class . ' a set a.new = false')->execute();
 
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->articles = $this->getArticleRepository()->getAllIndexed();
+        $this->products = $this->getProductRepository()->getAllIndexed();
 
         /** @noinspection PhpUndefinedMethodInspection */
         $this->variants = $this->getVariantRepository()->getAllIndexed();
@@ -429,12 +436,6 @@ class ImportMapper
         $this->options = $this->getOptionRepository()->getAllIndexed();
     }
 
-    protected function attachLinkedShopwareArticles()
-    {
-        /** @noinspection PhpUndefinedMethodInspection */
-        $this->modelManager->getRepository(Article::class)->linkArticles();
-    }
-
     public function import(array $import)
     {
         $this->updates = [];
@@ -442,7 +443,7 @@ class ImportMapper
 
         $this->addVariants($import['additions']);
         $this->changeVariants($import['changes']);
-        $this->propertyMapper->mapProperties($this->articles);
+        $this->propertyMapper->mapProperties($this->products);
 
         $this->modelManager->flush();
 
@@ -452,9 +453,9 @@ class ImportMapper
         $this->removeOrphanedItems();
 
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->modelManager->getRepository(Article::class)->linkArticles();
+        $this->modelManager->getRepository(Product::class)->refreshLinks();
 
-        $this->articleMapper->updateShopwareArticles($this->updates);
+        $this->shopwareMapper->updateArticles($this->updates);
 
         if ($this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {
@@ -470,11 +471,11 @@ class ImportMapper
     }
 
     /**
-     * @return ArticleRepository
+     * @return ProductRepository
      */
-    protected function getArticleRepository()
+    protected function getProductRepository()
     {
-        return $this->articleRepository ?? $this->articleRepository = $this->modelManager->getRepository(Article::class);
+        return $this->productRepository ?? $this->productRepository = $this->modelManager->getRepository(Product::class);
     }
 
     /**
