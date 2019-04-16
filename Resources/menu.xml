@@ -11,17 +11,9 @@
             <parent identifiedBy="controller">Article</parent>
             <children>
                 <entry>
-                    <name>MxcDsiImport</name>
-                    <label lang="en">Import</label>
-                    <label lang="de">Import</label>
-                    <controller>MxcDsiImport</controller>
-                    <action>index</action>
-                    <class>sprite-document-import</class>
-                </entry>
-                <entry>
                     <name>MxcDsiProduct</name>
                     <label lang="en">Products</label>
-                    <label lang="de">Artikel</label>
+                    <label lang="de">Produkte</label>
                     <controller>MxcDsiProduct</controller>
                     <action>index</action>
                     <class>sprite-documents</class>
@@ -35,6 +27,15 @@
                     <class>sprite-category-item</class>
                 </entry>
                 <entry>
+                    <name>MxcDsiImport</name>
+                    <label lang="en">Import</label>
+                    <label lang="de">Import</label>
+                    <controller>MxcDsiImport</controller>
+                    <action>index</action>
+                    <class>sprite-document-import</class>
+                </entry>
+                <?ignore
+                <entry>
                     <name>MxcDsiTest</name>
                     <label lang="en">Playground</label>
                     <label lang="de">Spielwiese</label>
@@ -42,6 +43,7 @@
                     <action>index</action>
                     <class>sprite-smiley-cool</class>
                 </entry>
+                ?>
             </children>
         </entry>
     </entries>

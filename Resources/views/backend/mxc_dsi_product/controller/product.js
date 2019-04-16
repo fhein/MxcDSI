@@ -21,8 +21,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcCheckNameMappingConsistency: me.onCheckNameMappingConsistency,
                 mxcCheckRegularExpressions:     me.onCheckRegularExpressions,
                 mxcExportConfig:                me.onExportConfig,
-                mxcExportPrices:                me.onExportPrices,
-                mxcImportPrices:                me.onImportPrices,
+                mxcExcelExport:                 me.onExcelExport,
+                mxcExcelImport:                 me.onExcelImport,
 
                 mxcTestImport1:                 me.onTestImport1,
                 mxcTestImport2:                 me.onTestImport2,
@@ -52,21 +52,21 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onExportPrices: function (grid) {
+    onExcelExport: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=exportPrices}';
+        let url = '{url controller=MxcDsiProduct action=excelExport}';
         let params = {};
-        let growlTitle = 'Export product prices';
-        let maskText = 'Exporting product prices ...';
+        let growlTitle = 'Excel export';
+        let maskText = 'Exporting to Excel ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onImportPrices: function (grid) {
+    onExcelImport: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=importPrices}';
+        let url = '{url controller=MxcDsiProduct action=excelImport}';
         let params = {};
-        let growlTitle = 'Importing product prices';
-        let maskText = 'Importing product prices ...';
+        let growlTitle = 'Excel Import';
+        let maskText = 'Importing from Excel ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

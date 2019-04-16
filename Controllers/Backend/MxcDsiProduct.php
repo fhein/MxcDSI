@@ -1,10 +1,11 @@
 <?php
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
+use MxcDropshipInnocigs\Excel\ExcelExport;
+use MxcDropshipInnocigs\Excel\ExcelImport;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Csv\ProductPrices;
 use MxcDropshipInnocigs\Mapping\Gui\ProductUpdater;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
@@ -89,26 +90,26 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $this->log->leave();
     }
 
-    public function exportPricesAction()
+    public function excelExportAction()
     {
         $this->log->enter();
         try {
-            $prices = $this->services->get(ProductPrices::class);
-            $prices->export();
-            $this->view->assign([ 'success' => true, 'message' => 'Prices successfully exported to Config/article.prices.xlsx.' ]);
+            $excel = $this->services->get(ExcelExport::class);
+            $excel->export();
+            $this->view->assign([ 'success' => true, 'message' => 'Settings successfully exported to Config/vapee.export.xlsx.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
     }
 
-    public function importPricesAction()
+    public function excelImportAction()
     {
         $this->log->enter();
         try {
-            $prices = $this->services->get(ProductPrices::class);
-            $prices->import();
-            $this->view->assign([ 'success' => true, 'message' => 'Prices successfully imported from Config/article.prices.xlsx.' ]);
+            $excel = $this->services->get(ExcelImport::class);
+            $excel->import();
+            $this->view->assign([ 'success' => true, 'message' => 'Settings successfully imported from Config/vapee.export.xlsx.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);

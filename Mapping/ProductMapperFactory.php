@@ -4,10 +4,10 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
 use MxcDropshipInnocigs\Mapping\Shopware\ArticleCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ArticleImageMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ConfiguratorOptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -25,9 +25,9 @@ class ProductMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get(Logger::class);
-        $optionMapper = $container->get(ConfiguratorOptionMapper::class);
+        $optionMapper = $container->get(OptionMapper::class);
         $articleTool = $container->get(ArticleTool::class);
-        $imageMapper = $container->get(ArticleImageMapper::class);
+        $imageMapper = $container->get(ImageMapper::class);
         $categoryMapper = $container->get(ArticleCategoryMapper::class);
         $detailMapper = $container->get(DetailMapper::class);
         $associatedArticlesMapper = $container->get(AssociatedArticlesMapper::class);

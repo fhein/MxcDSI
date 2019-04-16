@@ -65,7 +65,7 @@ class Flavorist
     public function updateCategories() {
         $this->revertCategories();
         /** @noinspection PhpUndefinedMethodInspection */
-        $products = $this->modelManager->getRepository(Product::class)->getFlavoredProducts();
+        $products = $this->modelManager->getRepository(Product::class)->getProductsWithFlavorSet();
         /** @var Product $product */
         foreach ($products as $product) {
             $flavors = $product->getFlavor();

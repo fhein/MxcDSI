@@ -123,7 +123,7 @@ class Variant extends ModelEntity
      * @var array $shopwareOptions
      *
      * This property will not be persisted. The array gets filled by
-     * ConfiguratorOptionMapper, which creates Shopware options from our
+     * OptionMapper, which creates Shopware options from our
      * options and adds the created shopware options here.
      *
      * Later on, the ProductMapper will create the shopware detail

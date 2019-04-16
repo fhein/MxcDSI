@@ -4,11 +4,11 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Mapping\Shopware\ArticleCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ArticleImageMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ArticlePriceMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ConfiguratorOptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
@@ -37,10 +37,10 @@ class ProductMapper
     /** @var ArticleCategoryMapper $categoryMapper */
     protected $categoryMapper;
 
-    /** @var ConfiguratorOptionMapper $optionMapper */
+    /** @var OptionMapper $optionMapper */
     protected $optionMapper;
 
-    /** @var ArticleImageMapper $imageMapper */
+    /** @var ImageMapper $imageMapper */
     protected $imageMapper;
 
     protected $articleTool;
@@ -50,9 +50,9 @@ class ProductMapper
      *
      * @param ModelManager $modelManager
      * @param ArticleTool $articleTool
-     * @param ConfiguratorOptionMapper $optionMapper
+     * @param OptionMapper $optionMapper
      * @param DetailMapper $detailMapper
-     * @param ArticleImageMapper $imageMapper
+     * @param ImageMapper $imageMapper
      * @param ArticleCategoryMapper $categoryMapper
      * @param AssociatedArticlesMapper $associatedArticlesMapper
      * @param LoggerInterface $log
@@ -60,9 +60,9 @@ class ProductMapper
     public function __construct(
         ModelManager $modelManager,
         ArticleTool $articleTool,
-        ConfiguratorOptionMapper $optionMapper,
+        OptionMapper $optionMapper,
         DetailMapper $detailMapper,
-        ArticleImageMapper $imageMapper,
+        ImageMapper $imageMapper,
         ArticleCategoryMapper $categoryMapper,
         AssociatedArticlesMapper $associatedArticlesMapper,
         LoggerInterface $log
@@ -219,7 +219,7 @@ class ProductMapper
 
         $this->detailMapper->map($product);
 
-        ArticlePriceMapper::setReferencePrice($product);
+        PriceMapper::setReferencePrice($product);
 
         $this->imageMapper->setArticleImages($product);
         // We have to flush each article in order

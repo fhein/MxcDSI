@@ -12,7 +12,7 @@ use Shopware\Models\Customer\Group;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
-class ArticlePriceMapper
+class PriceMapper
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;

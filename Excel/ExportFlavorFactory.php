@@ -1,13 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipInnocigs\Excel;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleImageMapperFactory implements FactoryInterface
+class ExportFlavorFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -19,10 +17,10 @@ class ArticleImageMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        $modelManager = $container->get('modelManager');
         $log = $container->get('logger');
-        $mediaTool = $container->get(MediaTool::class);
 
-        $mapper = new ArticleImageMapper($mediaTool, $log);
-        return $mapper;
+        return new ExportFlavor($modelManager, $log);
     }
+
 }

@@ -23,13 +23,13 @@ class DetailMapper
     /** @var ModelManager $modelManager */
     protected $modelManager;
 
-    /** @var ArticlePriceMapper $priceMapper */
+    /** @var PriceMapper $priceMapper */
     protected $priceMapper;
 
     /** @var ArticleTool */
     protected $articleTool;
 
-    /** @var ConfiguratorOptionMapper */
+    /** @var OptionMapper */
     protected $optionMapper;
 
     /** @var DropshippersCompanion */
@@ -48,8 +48,8 @@ class DetailMapper
         ModelManager $modelManager,
         ArticleTool $articleTool,
         DropshippersCompanion $companion,
-        ArticlePriceMapper $priceMapper,
-        ConfiguratorOptionMapper $optionMapper,
+        PriceMapper $priceMapper,
+        OptionMapper $optionMapper,
         LoggerInterface $log)
     {
         $this->log = $log;

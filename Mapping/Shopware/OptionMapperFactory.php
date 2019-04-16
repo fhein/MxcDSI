@@ -3,11 +3,12 @@
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class DetailMapperFactory implements FactoryInterface
+class OptionMapperFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -21,11 +22,9 @@ class DetailMapperFactory implements FactoryInterface
     {
         $log = $container->get('logger');
         $modelManager = $container->get('modelManager');
-        $priceMapper = $container->get(PriceMapper::class);
-        $articleTool = $container->get(ArticleTool::class);
-        $companion = $container->get(DropshippersCompanion::class);
-        $optionMapper = $container->get(OptionMapper::class);
-
-        return new DetailMapper($modelManager, $articleTool, $companion, $priceMapper, $optionMapper, $log);
+        $groupRepository = $container->get(GroupRepository::class);
+        $setRepository = $container->get(SetRepository::class);
+        $mapper = new OptionMapper($groupRepository, $setRepository, $modelManager, $log);
+        return $mapper;
     }
 }

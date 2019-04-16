@@ -11,7 +11,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Shopware\Models\Article\Article;
 
-class ArticleImageMapper
+class ImageMapper
 {
     /** @var LoggerInterface $log */
     protected $log;

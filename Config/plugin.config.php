@@ -2,6 +2,14 @@
 
 namespace MxcDropshipInnocigs;
 
+use MxcDropshipInnocigs\Excel\ExcelExport;
+use MxcDropshipInnocigs\Excel\ExcelImport;
+use MxcDropshipInnocigs\Excel\ExportDosage;
+use MxcDropshipInnocigs\Excel\ExportFlavor;
+use MxcDropshipInnocigs\Excel\ExportPrices;
+use MxcDropshipInnocigs\Excel\ImportDosage;
+use MxcDropshipInnocigs\Excel\ImportFlavor;
+use MxcDropshipInnocigs\Excel\ImportPrices;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
@@ -10,7 +18,6 @@ use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\MappingFilePersister;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Csv\ProductPrices;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
 use MxcDropshipInnocigs\Mapping\Gui\ProductUpdater;
 use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
@@ -32,12 +39,12 @@ use MxcDropshipInnocigs\Mapping\Import\VariantNumberMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ArticleCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ArticleImageMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ArticlePriceMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ConfiguratorOptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DropshippersCompanion;
+use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -134,29 +141,36 @@ return [
             ApiClient::class,
             ArrayReport::class,
             ArticleCategoryMapper::class,
-            ArticleImageMapper::class,
-            ArticlePriceMapper::class,
             ArticleTool::class,
             AssociatedArticlesMapper::class,
             AssociatedProductsMapper::class,
             CategoryTool::class,
             ConfiguratorGroupRepository::class,
-            ConfiguratorOptionMapper::class,
             ConfiguratorSetRepository::class,
             Credentials::class,
             DetailMapper::class,
             DropshippersCompanion::class,
+            ExcelExport::class,
+            ExcelImport::class,
+            ExportDosage::class,
+            ExportFlavor::class,
+            ExportPrices::class,
             FilterGroupRepository::class,
             FilterTest::class,
             Flavorist::class,
+            ImageMapper::class,
             ImportClient::class,
+            ImportDosage::class,
+            ImportFlavor::class,
             ImportMapper::class,
+            ImportPrices::class,
             ManufacturerMapper::class,
             MappingFilePersister::class,
             MediaTool::class,
             NameMappingConsistency::class,
+            OptionMapper::class,
+            PriceMapper::class,
             ProductMapper::class,
-            ProductPrices::class,
             ProductUpdater::class,
             PropertyMapper::class,
             PropertyMapperReport::class,
@@ -183,6 +197,18 @@ return [
         ],
         MappingFilePersister::class => [
             'mappingsFile' => __DIR__ . '/../Config/ImportMappings.config.php',
+        ],
+    ],
+    'excel'        => [
+        'import' => [
+            'Preise'    => ImportPrices::class,
+            'Dosierung' => ImportDosage::class,
+            'Geschmack' => ImportFlavor::class,
+        ],
+        'export' => [
+            'Preise'    => ExportPrices::class,
+            'Dosierung' => ExportDosage::class,
+            'Geschmack' => ExportFlavor::class,
         ],
     ],
 ];

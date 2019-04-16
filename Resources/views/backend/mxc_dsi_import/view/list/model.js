@@ -38,14 +38,14 @@ Ext.define('Shopware.apps.MxcDsiImport.view.list.Model', {
         );
     },
 
-    createToolbarItems: function() {
-        let me = this;
-        let items = me.callParent(arguments);
-        items = Ext.Array.insert(items, 0, [
-            me.createImportButton(),
-        ]);
-        return items;
-    },
+    // createToolbarItems: function() {
+    //     let me = this;
+    //     let items = me.callParent(arguments);
+    //     items = Ext.Array.insert(items, 0, [
+    //         me.createImportButton(),
+    //     ]);
+    //     return items;
+    // },
 
     createImportButton: function() {
         let me = this;

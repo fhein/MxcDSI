@@ -3,12 +3,11 @@
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
+use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ConfiguratorOptionMapperFactory implements FactoryInterface
+class ImageMapperFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -21,10 +20,9 @@ class ConfiguratorOptionMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $log = $container->get('logger');
-        $modelManager = $container->get('modelManager');
-        $groupRepository = $container->get(GroupRepository::class);
-        $setRepository = $container->get(SetRepository::class);
-        $mapper = new ConfiguratorOptionMapper($groupRepository, $setRepository, $modelManager, $log);
+        $mediaTool = $container->get(MediaTool::class);
+
+        $mapper = new ImageMapper($mediaTool, $log);
         return $mapper;
     }
 }

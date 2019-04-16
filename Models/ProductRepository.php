@@ -52,11 +52,12 @@ class ProductRepository extends BaseEntityRepository
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
             . 'JOIN p.similarProducts a  WHERE p.icNumber IN (:similarIds)',
 
-        'getFlavoredProducts' =>
+        // get all Products having flavor property set
+        'getProductsWithFlavorSet' =>
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE p.flavor IS NOT NULL',
 
         'getProductsWithFlavorMissing' =>
-            'SELECT p.name FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE p.flavor IS NULL OR p.flavor = \'\''
+            'SELECT p.name FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE p.flavor IS NULL OR p.flavor = \'\' '
             . 'AND p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\') AND p.name NOT LIKE \'%Probierbox%\'',
 
         'getArticle' =>
@@ -79,6 +80,23 @@ class ProductRepository extends BaseEntityRepository
         // DQL does not support parameters in SELECT
         'getPropertiesById'  =>
             'SELECT :properties FROM MxcDropshipInnocigs\Models\Product p WHERE p.id = :id',
+
+        'getProductsByType' =>
+            'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE p.type = :type',
+
+        'getAromaExcelExport' =>
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.dosage '
+            . 'FROM MxcDropshipInnocigs\Models\Product p WHERE p.type = \'AROMA\'',
+
+        // get all Products which need a flavor setting
+        'getFlavoredProducts' =>
+            'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
+            . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\') AND p.name NOT LIKE \'%Probierbox%\'',
+
+        'getExportFlavoredProducts' =>
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.flavor '
+            . 'FROM MxcDropshipInnocigs\Models\Product p '
+            . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\') AND p.name NOT LIKE \'%Probierbox%\'',
 
         'getDosages' =>
             'SELECT p.icNumber, p.name, p.dosage FROM MxcDropshipInnocigs\Models\Product p '
@@ -112,6 +130,13 @@ class ProductRepository extends BaseEntityRepository
     {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('ids', $ids)
+            ->getResult();
+    }
+
+    public function getProductsByType(string $type)
+    {
+        return $this->getQuery(__FUNCTION__)
+            ->setParameter('type', $type)
             ->getResult();
     }
 

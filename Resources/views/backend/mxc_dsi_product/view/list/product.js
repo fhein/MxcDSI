@@ -67,11 +67,11 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             /** @event mxcExportConfig */
             'mxcExportConfig',
 
-            /** @event mxcExportPrices */
-            'mxcExportPrices',
+            /** @event mxcExcelExport */
+            'mxcExcelExport',
 
-            /** @event mxcImportPrices */
-            'mxcImportPrices',
+            /** @event mxcExcelImport */
+            'mxcExcelImport',
             
             'mxcTestImport1',
             'mxcTestImport2',
@@ -97,7 +97,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             me.createActionsButton(),
             me.createAllButton(),
             me.createSelectionButton(),
-            me.createConfigButton(),
             me.createToolsButton(),
             me.createTestButton(),
             me.createDevButton()
@@ -298,42 +297,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
         });
     },
 
-    createConfigButton: function() {
-        let me = this;
-
-        var menu = Ext.create('Ext.menu.Menu', {
-            id: 'mxcDsiConfigMenu',
-            style: {
-                overflow: 'visible'
-            },
-            items: [
-                {
-                    text : 'Export prices',
-                    handler: function() {
-                        me.fireEvent('mxcExportPrices', me);
-                    }
-                },
-                '-',
-                {
-                    text : 'Import prices',
-                    handler: function() {
-                        me.fireEvent('mxcImportPrices', me);
-                    }
-                }
-            ]
-        });
-        return Ext.create('Ext.button.Button', {
-            text: 'Data',
-            iconCls: 'sprite-application-form',
-            menu: menu,
-            listeners: {
-                'mouseover': function() {
-                    this.showMenu();
-                }
-            }
-        });
-    },
-
     createActionsButton: function() {
         let me = this;
 
@@ -358,6 +321,22 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         me.fireEvent('mxcExportConfig', me);
                     }
                 },
+                '-',
+                {
+                    text : 'Excel Export',
+                    iconCls: 'sprite-table-import',
+                    handler: function() {
+                        me.fireEvent('mxcExcelExport', me);
+                    }
+                },
+                {
+                    text : 'Excel Import',
+                    iconCls: 'sprite-table-export',
+                    handler: function() {
+                        me.fireEvent('mxcExcelImport', me);
+                    }
+                }
+
             ]
         });
         return Ext.create('Ext.button.Button', {

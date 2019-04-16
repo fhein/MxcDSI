@@ -286,6 +286,7 @@ return [
             '~Heads Heads~'                                              => 'Heads',
             '~AsMODus~'                                                  => 'asMODus',
             '~Nautilus Mini BVC Clearomizer~'                            => 'Nautilus Mini Clearomizer',
+            '~reds Apple EJuice~'                                        => 'Red\'s Apple Juice',
             '~mit -~'                                                    => 'mit',
             '~mit D22 ~'                                                 => '',
             '~Pro P~'                                                    => 'pro P',

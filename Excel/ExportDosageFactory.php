@@ -1,13 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Csv;
+namespace MxcDropshipInnocigs\Excel;
 
 use Interop\Container\ContainerInterface;
-use MxcDropshipInnocigs\Mapping\ProductMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ArticlePriceMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ProductPricesFactory implements FactoryInterface
+class ExportDosageFactory implements FactoryInterface
 {
     /**
      * Create an object
@@ -20,11 +18,9 @@ class ProductPricesFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $modelManager = $container->get('modelManager');
-        $articleMapper = $container->get(ProductMapper::class);
-        $priceMapper = $container->get(ArticlePriceMapper::class);
         $log = $container->get('logger');
 
-        return new $requestedName($modelManager, $articleMapper, $priceMapper, $log);
+        return new ExportDosage($modelManager, $log);
     }
 
 }

@@ -57,7 +57,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.controller.Group', {
     },
 
     /**
-     * Internal helper function to sort the configurator group grid.
+     * Internal helper function to compare the configurator group grid.
      */
     sortGroupGrid: function() {
         let me = this;
