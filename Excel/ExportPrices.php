@@ -8,52 +8,55 @@ use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
-use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Price;
 
-class ExportPrices
+class ExportPrices extends AbstractProductExport
 {
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
-
-    /** @var LoggerInterface $log */
-    protected $log;
-
     /** @var array */
     protected $indexMap;
 
     /** @var array */
     protected $models;
 
-    /** @var array */
-    protected $products;
-
     /** @var PriceMapper $priceMapper */
     protected $priceMapper;
+
+    protected $columnTemplate;
+    private $columnIndex;
+    
+    private $fixedColumns = [
+        'icNumber',
+        'type',
+        'supplier',
+        'brand',
+        'name',
+        'EK Netto',
+        'EK Brutto',
+        'UVP Brutto',
+        'Marge UVP',
+    ];
 
     public function __construct(
         ModelManager $modelManager,
         PriceMapper $priceMapper,
         LoggerInterface $log
     ) {
-        $this->log = $log;
-        $this->modelManager = $modelManager;
+        parent::__construct($modelManager, $log);
         $this->priceMapper = $priceMapper;
     }
 
-    public function export(Worksheet $sheet)
+    protected function setMarginColumn(array &$record, int $row, string $column, string $retailGross, string $cellPurchaseGross)
     {
-        $data = $this->getExportData();
-
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $sheet->fromArray($data);
-        $this->formatSheet($sheet);
+        $cellRetailGross = $this->columnIndex[$retailGross] . $row;
+        $condition = "AND(ISNUMBER({$cellRetailGross}), {$cellRetailGross}<>0)";
+        $then = "({$cellRetailGross}-{$cellPurchaseGross})/{$cellRetailGross}*100";
+        $else = '""';
+        $record[$column] = "=IF({$condition},{$then},{$else})";;
     }
 
-    public function getExportData()
+    protected function setSheetData(array $products)
     {
-        $products = $this->getProducts();
         $data = [];
         $headers = null;
         foreach ($products as $product) {
@@ -61,22 +64,61 @@ class ExportPrices
         }
         $headers[] = array_keys($data[0]);
         usort($data, [$this, 'compare']);
+
+        $idx = 2;
+        foreach ($data as &$record) {
+            $cellPurchaseGross = $this->columnIndex['EK Brutto']. $idx;
+            $this->setMarginColumn($record, $idx, 'Marge UVP', 'UVP Brutto', $cellPurchaseGross);
+
+            $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+            foreach ($customerGroupKeys as $key) {
+                $this->setMarginColumn($record, $idx, 'Marge ' . $key, 'VK Brutto ' . $key, $cellPurchaseGross);
+            }
+
+            $idx++;
+        }
+
         $data = array_merge($headers, $data);
-        return $data;
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->sheet->fromArray($data);
+    }
+
+    protected function getColumnTemplate()
+    {
+        if ($this->columnTemplate) return $this->columnTemplate;
+        foreach ($this->fixedColumns as $key => $name) {
+            $t[$name] = '';
+            $c[$name] = $key;
+        }
+        $cidx = count($this->fixedColumns);
+        $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+        foreach ($customerGroupKeys as $key) {
+            $name = 'VK Brutto ' . $key;
+            $t[$name] = '';
+            $c[$name] = $cidx++;
+            $name = 'Marge ' . $key;
+            $t[$name] = '';
+            $c[$name] = $cidx++;
+        }
+        $this->columnTemplate = $t;
+        $this->columnIndex = array_map(function($i) { return chr($i + 65);}, $c);
+
+        return $t;
     }
 
     protected function getProductInfo(Product $product)
     {
+        $info = $this->getColumnTemplate();
         $info['icNumber'] = $product->getIcNumber();
         $info['type'] = $product->getType();
         $info['supplier'] = $product->getSupplier();
         $info['brand'] = $product->getBrand();
         $info['name'] = $product->getName();
-        list($info['EK netto'], $info['UVP brutto']) = $this->getPrices($product->getVariants());
+        list($info['EK Netto'], $info['EK Brutto'], $info['UVP Brutto']) = $this->getPrices($product->getVariants());
         $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
         $shopwarePrices = $this->getCurrentPrices($product);
         foreach ($customerGroupKeys as $key) {
-            $info['VK brutto ' . $key] = $shopwarePrices[$key] ?? '';
+            $info['VK Brutto ' . $key] = $shopwarePrices[$key] ?? null;
         }
         return $info;
     }
@@ -98,7 +140,6 @@ class ExportPrices
         }
         $prices = [];
         foreach ($detailPrices as $key => $price) {
-            // $prices[$key] = str_replace ('.', ',', strval(max($price) * 1.19));
             $prices[$key] = max($price) * 1.19;
         }
 
@@ -113,16 +154,17 @@ class ExportPrices
         foreach ($variants as $variant) {
             /** @var Model $model */
             if (! $this->isSinglePack($variant)) continue;
-            $price = floatval($variant->getPurchasePrice());
+            $price = floatVal(str_replace(',', '.', $variant->getPurchasePrice()));
             if ($price > $purchasePrice) {
                 $purchasePrice = $price;
             }
-            $price = floatval($variant->getRecommendedRetailPrice());
+            $price = floatVal(str_replace(',', '.', $variant->getRecommendedRetailPrice()));
             if ($price > $retailPrice) {
                 $retailPrice = $price;
             }
         }
-        return [$purchasePrice, $retailPrice];
+
+        return [$purchasePrice, $purchasePrice * 1.19, $retailPrice];
     }
 
     protected function isSinglePack(Variant $variant)
@@ -134,32 +176,13 @@ class ExportPrices
         return false;
     }
 
-    /**
-     * @param Worksheet $sheet
-     */
-    protected function formatSheet(Worksheet $sheet): void
+    protected function formatSheet(): void
     {
-        foreach (range('A', 'D') as $col) {
-            $sheet->getColumnDimension($col)->setAutoSize(true);
-        }
-        $sheet->getColumnDimension('E')->setWidth(80);
-        $highest = $sheet->getHighestRowAndColumn();
-
-        foreach (range('F', $highest['column']) as $col) {
-            $sheet->getColumnDimension($col)->setWidth(16);
-
-        }
+        parent::formatSheet();
+        $highest = $this->sheet->getHighestRowAndColumn();
         /** @noinspection PhpUnhandledExceptionInspection */
-        $sheet->freezePane('A2');
-
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $sheet->getStyle('F2:'. $highest['column'] . $highest['row'])->getNumberFormat()->setFormatCode('0.00');
-    }
-
-    protected function getProducts()
-    {
-        /** @noinspection PhpUndefinedMethodInspection */
-        return $this->products ?? $this->products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
+        $this->sheet->getStyle('F2:'. $highest['column'] . $highest['row'])->getNumberFormat()->setFormatCode('0.00');
+        $this->alternateRowColors();
     }
 
     protected function getModels()
@@ -167,30 +190,9 @@ class ExportPrices
         return $this->models ?? $this->models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
     }
 
-    /**
-     * Callback for usort
-     *
-     * @param $one
-     * @param $two
-     * @return bool
-     */
-    protected function compare($one, $two)
+    protected function loadRawExportData(): ?array
     {
-        $t1 = $one['type'];
-        $t2 = $two['type'];
-        if ($t1 > $t2) {
-            return true;
-        }
-        if ($t1 === $t2) {
-            $s1 = $one['supplier'];
-            $s2 = $two['supplier'];
-            if ($s1 > $s2) {
-                return true;
-            }
-            if ($s1 === $s2) {
-                return $one['brand'] > $two['brand'];
-            }
-        }
-        return false;
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $this->modelManager->getRepository(Product::class)->getAllIndexed();
     }
 }

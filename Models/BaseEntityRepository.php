@@ -39,9 +39,9 @@ class BaseEntityRepository extends EntityRepository
     public function __call($method, $arguments)
     {
         switch (true) {
-            case (null !== $this->dql[$method]):
+            case (null !== @$this->dql[$method]):
                 return $this->getQuery($method)->getResult();
-            case (null !== $this->sql[$method]):
+            case (null !== @$this->sql[$method]):
                 return $this->getStatement($method)->execute();
             default:
                 return parent::__call($method, $arguments);

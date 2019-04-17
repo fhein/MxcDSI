@@ -131,7 +131,7 @@ class ImportMapper
 
     protected function getGroup(string $groupName)
     {
-        $group = $this->groups[$groupName];
+        $group = @$this->groups[$groupName];
         if (null === $group) {
             $group = new Group();
             $this->modelManager->persist($group);
@@ -151,7 +151,7 @@ class ImportMapper
             $param = explode(MXC_DELIMITER_L1, $option);
             $optionName = $this->propertyMapper->mapOptionName($param[1]);
             $groupName = $this->propertyMapper->mapGroupName($param[0]);
-            $option = $this->options[$groupName][$optionName];
+            $option = @$this->options[$groupName][$optionName];
             if ($option === null) {
                 $group = $this->getGroup($groupName);
                 $option = new Option();
@@ -184,10 +184,8 @@ class ImportMapper
         $number = $model->getMaster();
 
         // return cached product if available
-        $product = $this->products[$number];
-        if ($product) {
-            return $product;
-        }
+        $product = @$this->products[$number];
+        if ($product) return $product;
 
         $product = $this->addProduct($model);
         $this->products[$number] = $product;
@@ -200,7 +198,7 @@ class ImportMapper
         $imageUrls = explode(MXC_DELIMITER_L1, $imageString);
         $images = [];
         foreach ($imageUrls as $imageUrl) {
-            $image = $this->images[$imageUrl];
+            $image = @$this->images[$imageUrl];
             if (null === $image) {
                 $image = new Image();
                 $this->modelManager->persist($image);
@@ -457,7 +455,7 @@ class ImportMapper
 
         $this->shopwareMapper->updateArticles($this->updates);
 
-        if ($this->config['applyFilters']) {
+        if (@$this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {
                 $this->bulkOperation->update($filter);
             }

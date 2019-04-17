@@ -48,7 +48,7 @@ class Flavorist
                 if ($product->getFlavor() !== null) {
                     $flavor = array_map('trim', explode(',', $product->getFlavor()));
                 } else {
-                    $flavor = $currentFlavors[$number]['flavor'];
+                    $flavor = @$currentFlavors[$number]['flavor'];
                 }
                 $newFlavors[$number] = [
                     'number' => $number,
@@ -71,7 +71,7 @@ class Flavorist
             $flavors = $product->getFlavor();
             $flavors = array_map('trim', explode(',',$flavors));
             foreach ($flavors as $flavor) {
-                if ($this->reversedCategories[$flavor] === null) {
+                if (@$this->reversedCategories[$flavor] === null) {
                     $this->categories['Sonstige'][] = $flavor;
                     $this->reversedCategories[$flavor] = ['Sonstige'];
                 }

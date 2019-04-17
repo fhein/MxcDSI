@@ -28,6 +28,8 @@ class FlavorMapper extends BaseImportMapper implements ProductMapperInterface
     public function map(Model $model, Product $product)
     {
         if ($product->getFlavor() !== null) return;
+        $flavor = @$this->config[$product->getIcNumber()];
+        if (! $flavor) return;
 
         $flavor = explode(',', $this->config[$product->getIcNumber()]['flavor']);
         $flavor = array_map('trim', $flavor);

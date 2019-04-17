@@ -52,7 +52,7 @@ class Variant extends ModelEntity
 
     /**
      * @var float $purchasePrice
-     * @ORM\Column(name="purchase_price", type="decimal", precision=5, scale=2, nullable=false)
+     * @ORM\Column(name="purchase_price", type="string", nullable=false)
      */
     private $purchasePrice;
 

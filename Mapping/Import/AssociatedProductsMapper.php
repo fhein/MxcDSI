@@ -78,6 +78,8 @@ class AssociatedProductsMapper
 
     protected function deriveRelatedProducts()
     {
+        if (! isset($this->config['related_product_groups'])) return;
+
         foreach ($this->config['related_product_groups'] as $group => $setting) {
             foreach ($this->productGroups[$group] as $products) {
                 /** @var Product $product */
@@ -93,7 +95,8 @@ class AssociatedProductsMapper
     {
         $flavor1 = array_map('trim', explode(',', $product1->getFlavor()));
         $flavor2 = array_map('trim', explode(',', $product2->getFlavor()));
-        foreach ($this->config['similar_flavors'] as $flavor) {
+        $similarFlavors = $this->config['similar_flavors'] ?? [];
+        foreach ($similarFlavors as $flavor) {
             if (in_array($flavor, $flavor1) && in_array($flavor, $flavor2)) {
                 return true;
             }
@@ -107,6 +110,8 @@ class AssociatedProductsMapper
 
     protected function deriveSimilarFlavoredProducts($group)
     {
+        if (! isset($this->productGroups[$group])) return;
+
         $products = [];
         foreach ($this->productGroups[$group] as $groupProducts) {
             foreach($groupProducts as $product) {
@@ -128,7 +133,9 @@ class AssociatedProductsMapper
 
     protected function deriveSimilarProducts()
     {
-        foreach ($this->config['similar_product_groups'] as $group => $setting) {
+        $similarGroups = $this->config['similar_product_groups'] ?? [];
+        foreach ($similarGroups as $group => $setting) {
+            if (! $this->productGroups[$group]) continue;
             foreach ($this->productGroups[$group] as $products) {
                 /** @var Product $product */
                 foreach ($products as $product) {

@@ -185,14 +185,16 @@ class ApiClient
 
             /** @var DOMElement $attribute */
             foreach ($attributes as $attribute) {
-                $tagName = $attribute->tagName;
+                if (! $attribute instanceof DOMElement) continue;
+                $tagName = @$attribute->tagName;
                 if ($tagName !== null) {
                     $item['options'][$tagName] = $attribute->nodeValue;
                 }
             }
             /** @var DOMElement $image */
             foreach ($addlImages as $image) {
-                $tagName = $image->tagName;
+                if (! $attribute instanceof DOMElement) continue;
+                $tagName = @$image->tagName;
                 if ($tagName !== null) {
                     $item['images'][] = $image->nodeValue;
                 }

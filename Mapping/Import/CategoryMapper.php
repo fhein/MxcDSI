@@ -19,11 +19,12 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface
     {
         $category = null;
 
-        foreach ($this->config['categories'] as $key => $settings) {
+        $categories = $this->config['categories'] ?? [];
+        foreach ($categories as $key => $settings) {
+            $input = null;
             if ($key === 'category') {
                 $input = $model->getCategory();
             }
-            /** @noinspection PhpUndefinedVariableInspection */
             if (null === $input) {
                 $method = 'get' . ucFirst($key);
                 if (method_exists($product, $method)) {

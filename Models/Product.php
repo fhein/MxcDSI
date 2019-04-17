@@ -495,7 +495,7 @@ class Product extends ModelEntity  {
         $this->relatedProducts->add($product);
     }
 
-    public function setRelatedProducts(?Collection $relatedProducts)
+    public function setRelatedProducts(Collection $relatedProducts)
     {
         $this->relatedProducts = $relatedProducts ?? new ArrayCollection();
     }
@@ -515,7 +515,7 @@ class Product extends ModelEntity  {
         $this->similarProducts->add($product);
     }
 
-    public function setSimilarProducts(?Collection $similarProducts)
+    public function setSimilarProducts(Collection $similarProducts)
     {
         $this->similarProducts = $similarProducts ?? new ArrayCollection();
     }

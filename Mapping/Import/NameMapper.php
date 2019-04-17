@@ -23,7 +23,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         $trace['options_removed'] = $name;
 
         // general name mapping applied first
-        $result = $this->config['product_names_direct'][$model->getName()];
+        $result = @$this->config['product_names_direct'][$model->getName()];
         if ($result !== null) {
             $trace['directly_mapped'] = $result;
             $product->setName($result);
@@ -44,7 +44,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         $search[] = '~(' . $supplier . ') ([^\-])~';
         $name = preg_replace($search, '$1 - $2', $name);
         $trace['supplier_separator'] = $name;
-        $search = $this->config['product_names'][$product->getBrand()];
+        $search = $this->config['product_names'][$product->getBrand()] ?? null;
         if (null !== $search) {
             $name = preg_replace($search, '$1 -', $name);
             $trace['product_separator'] = $name;
@@ -157,7 +157,8 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         if ($supplier === 'Innocigs') {
             $supplier = 'InnoCigs';
         }
-        $isInnocigsBrand = in_array($brand, $this->config['innocigs_brands']);
+        $innocigsBrands = $this->config['innocigs_brands'] ?? [];
+        $isInnocigsBrand = in_array($brand, $innocigsBrands);
         $isInnocigsSupplier = ($supplier === 'InnoCigs');
 
         if ($isInnocigsBrand && $isInnocigsSupplier) {
@@ -181,10 +182,9 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
 
     public function replace(string $topic, string $what)
     {
-        $config = $this->config[$what];
-        if (null === $config) {
-            return $topic;
-        }
+        $config = @$this->config[$what];
+        if (null === $config) return $topic;
+
         foreach ($config as $replacer => $replacements) {
             $search = array_keys($replacements);
             $replace = array_values($replacements);

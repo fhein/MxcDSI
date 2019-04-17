@@ -14,10 +14,14 @@ class ManufacturerMapper extends BaseImportMapper implements ProductMapperInterf
     /** @var array */
     protected $mappings;
 
+    /** @var array */
+    protected $innocigsBrands;
+
     public function __construct(ImportMappings $mappings, array $config, LoggerInterface $log)
     {
         parent::__construct($config, $log);
         $this->mappings = $mappings->getConfig();
+        $this->innocigsBrands = $this->config['innocigs_brands'] ?? [];
     }
 
     public function map(Model $model, Product $product): void
@@ -32,10 +36,10 @@ class ManufacturerMapper extends BaseImportMapper implements ProductMapperInterf
         if ($supplier === null) {
             $mapping = $this->mappings[$product->getIcNumber()] ?? [];
             $manufacturer = $model->getManufacturer();
-            $supplier = $mapping['supplier'];
-            if (!$supplier) {
-                if (!in_array($manufacturer, $this->config['innocigs_brands'])) {
-                    $supplier = $this->config['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
+            $supplier = $mapping['supplier'] ?? null;
+            if (! $supplier) {
+                if (!in_array($manufacturer, $this->innocigsBrands)) {
+                    $supplier = @$this->config['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
                 }
             }
             $product->setSupplier($supplier);

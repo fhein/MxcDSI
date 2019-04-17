@@ -176,8 +176,9 @@ class ProductRepository extends BaseEntityRepository
 
     public function getArticle(Product $product)
     {
-        return $this->getQuery(__FUNCTION__)
-                   ->setParameter('number', $product->getNumber())->getResult()[0];
+        $result = $this->getQuery(__FUNCTION__)
+            ->setParameter('number', $product->getNumber())->getResult();
+        return $result[0] ?? null;
     }
 
     public function removeOrphaned()

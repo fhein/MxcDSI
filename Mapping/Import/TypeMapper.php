@@ -70,7 +70,7 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
     public function map(Model $model, Product $product)
     {
         $name = $product->getName();
-        $types = $this->config['name_type_mapping'];
+        $types = $this->config['name_type_mapping'] ?? [];
         foreach ($types as $pattern => $type) {
             if (preg_match($pattern, $name) === 1) {
                 $product->setType($this->config['types'][$type]);

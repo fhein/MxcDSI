@@ -38,7 +38,7 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface
             return;
         }
         $icNumber = $product->getIcNumber();
-        $dosage = $this->config[$icNumber]['dosage'];
+        $dosage = $this->config[$icNumber]['dosage'] ?? null;
         if ($dosage !== null) {
             $product->setDosage($dosage);
             return;

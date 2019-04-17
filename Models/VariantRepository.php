@@ -24,7 +24,7 @@ class VariantRepository extends BaseEntityRepository
         $result = $this->getQuery(__FUNCTION__)
             ->setParameter('ordernumber', $variant->getNumber())
             ->getResult();
-        return $result[0];
+        return $result[0] ?? null;
     }
 
     public function removeImages(Variant $variant)

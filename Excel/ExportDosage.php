@@ -4,10 +4,9 @@ namespace MxcDropshipInnocigs\Excel;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Product;
-use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Shopware\Components\Model\ModelManager;
 
-class ExportDosage
+class ExportDosage extends AbstractProductExport
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;
@@ -18,87 +17,31 @@ class ExportDosage
     /** @var array */
     protected $products;
 
-    public function __construct(
-        ModelManager $modelManager,
-        LoggerInterface $log
-    ) {
-        $this->log = $log;
-        $this->modelManager = $modelManager;
-    }
-
-    public function export(Worksheet $sheet)
+    public function setSheetData(array $products)
     {
-        $data = $this->getExportData();
-
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $sheet->fromArray($data);
-        $this->formatSheet($sheet);
-    }
-
-    public function getExportData()
-    {
-        $products = $this->getProducts();
+        if (! $products) return;
         usort($products, [$this, 'compare']);
         $headers[] = array_keys($products[0]);
-        $data = array_merge($headers, $products);
-        return $data;
+        $products = array_merge($headers, $products);
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->sheet->fromArray($products);
     }
 
-    /**
-     * @param Worksheet $sheet
-     */
-    protected function formatSheet(Worksheet $sheet): void
+    protected function formatSheet(): void
     {
-        foreach (range('A', 'D') as $col) {
-            $sheet->getColumnDimension($col)->setAutoSize(true);
-        }
-        $sheet->getColumnDimension('E')->setWidth(80);
-        $highest = $sheet->getHighestRowAndColumn();
-
-        foreach (range('F', $highest['column']) as $col) {
-            $sheet->getColumnDimension($col)->setWidth(16);
-
-        }
+        parent::formatSheet();
+        $highest = $this->sheet->getHighestRowAndColumn();
         /** @noinspection PhpUnhandledExceptionInspection */
-        $sheet->freezePane('A2');
-
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $sheet->getStyle('F2:'. $highest['column'] . $highest['row'])
+        $this->sheet->getStyle('F2:'. $highest['column'] . $highest['row'])
             ->getNumberFormat()->setFormatCode('@');
+        $this->alternateRowColors();
 
     }
 
-    protected function getProducts()
+    protected function loadRawExportData(): ?array
     {
         /** @noinspection PhpUndefinedMethodInspection */
         return $this->products
             ?? $this->products = $this->modelManager->getRepository(Product::class)->getAromaExcelExport();
-    }
-
-    /**
-     * Callback for usort
-     *
-     * @param $one
-     * @param $two
-     * @return bool
-     */
-    protected function compare($one, $two)
-    {
-        $t1 = $one['type'];
-        $t2 = $two['type'];
-        if ($t1 > $t2) {
-            return true;
-        }
-        if ($t1 === $t2) {
-            $s1 = $one['supplier'];
-            $s2 = $two['supplier'];
-            if ($s1 > $s2) {
-                return true;
-            }
-            if ($s1 === $s2) {
-                return $one['brand'] > $two['brand'];
-            }
-        }
-        return false;
     }
 }

@@ -83,7 +83,7 @@ class PropertyMapper
 
     public function mapProperties(array $products)
     {
-        if ($this->config['settings']['checkRegularExpressions'] === true) {
+        if (@$this->config['settings']['checkRegularExpressions'] === true) {
             if (! $this->regularExpressions->check()) {
                 throw new RuntimeException('Regular expression failure.');
             }

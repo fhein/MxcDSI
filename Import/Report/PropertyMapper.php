@@ -30,12 +30,13 @@ class PropertyMapper
 
     public function __invoke(array $topics, array $config) {
         $this->topics = $topics;
-        $this->nameTrace = $topics['name'];
+        $this->nameTrace = $topics['name'] ?? [];
         ksort($this->nameTrace);
         $this->config = $config;
+        if (! isset($this->config['log'])) return;
         foreach ($this->config['log'] as $topic) {
             $method = 'log' . ucfirst($topic);
-            if (method_exists($this, $method) && $topics[$topic] !== null) {
+            if (method_exists($this, $method) && @$topics[$topic] !== null) {
                 $this->$method();
             }
         }

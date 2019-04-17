@@ -8,5 +8,10 @@
             <argument type="service" id="template"/>
             <tag name="shopware.event_subscriber"/>
         </service>
+        <service
+                id="mxc_dropship_innocigs.commands.import_command"
+                class="MxcDropshipInnocigs\Commands\ImportCommand">
+            <tag name="console.command" command="mxcdsi:import"/>
+        </service>
     </services>
 </container>

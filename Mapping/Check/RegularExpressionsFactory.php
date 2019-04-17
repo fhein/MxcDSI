@@ -26,16 +26,16 @@ class RegularExpressionsFactory implements FactoryInterface
     {
         $articleNameMapperConfig = $this->getClassConfig($container, NameMapper::class);
         foreach (['name_prepare', 'name_cleanup', 'product_name_replacements', 'product_names'] as $key) {
-            $config[$key] = $articleNameMapperConfig[$key];
+            $config[$key] = @$articleNameMapperConfig[$key];
         }
 
         $articleTypeMapperConfig = $this->getClassConfig($container, TypeMapper::class);
         $key = 'name_type_mapping';
-        $config[$key] = $articleTypeMapperConfig[$key];
+        $config[$key] = @$articleTypeMapperConfig[$key];
 
         $propertyMapperConfig = $this->getClassConfig($container, CategoryMapper::class);
         $key = 'categories';
-        $config[$key] = $propertyMapperConfig[$key];
+        $config[$key] = @$propertyMapperConfig[$key];
 
         $regexChecker = $container->get(RegexChecker::class);
         $log = $container->get('logger');

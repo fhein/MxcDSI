@@ -45,18 +45,18 @@ class ArrayReport
         $actFile = $dir . $fn . '.php';
         $diffFile = $dir . $fn . '.diff.php';
 
-        if (file_exists($actFile)) {
-            /** @noinspection PhpIncludeInspection */
-            $old = include $actFile;
-            $diff = array_diff($topic, $old);
-            if (empty($diff)) {
-                if (file_exists($diffFile)) {
-                    unlink($diffFile);
-                }
-            } else {
-                Factory::toFile($diffFile, array_diff($topic, $old));
-            }
-        }
+//        if (file_exists($actFile)) {
+//            /** @noinspection PhpIncludeInspection */
+//            $old = include $actFile;
+//            $diff = array_diff($topic, $old);
+//            if (empty($diff)) {
+//                if (file_exists($diffFile)) {
+//                    unlink($diffFile);
+//                }
+//            } else {
+//                Factory::toFile($diffFile, array_diff($topic, $old));
+//            }
+//        }
         Factory::toFile($actFile, $topic);
     }
 

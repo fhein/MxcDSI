@@ -13,6 +13,11 @@ return [
             'Truckin Vaporz'                       => 2,
             'Peng Juice'                           => 2,
         ],
+        'Dr. Frost' => [
+            'Polar Ice Vapes' => 2,
+            'Candy Mints' => 2,
+            'Frosty Shakes' => 2,
+        ],
         '5 Stars Peine' => [
             'Flavor Monster'    => 2,
             'One'               => 2,

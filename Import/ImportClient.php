@@ -279,7 +279,7 @@ class ImportClient implements EventSubscriber
             $options = [];
             $models = [];
             foreach ($records as $number => $data) {
-                $model = $this->importLog['deletions'][$number];
+                $model = @$this->importLog['deletions'][$number];
                 if (null !== $model) {
                     /** @var Model $model */
                     $model = $this->importLog['deletions'][$number];
