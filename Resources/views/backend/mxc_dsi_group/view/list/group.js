@@ -21,7 +21,7 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.Group', {
                     me.fireEvent('mxcSelectGroup', record, false);
                 }
             },
-            viewready: function(view, opts) {
+            viewready: function() {
                 let selected = [];
                 me.store.each(function(record) {
                     if (record.get('accepted') === true) {
@@ -37,7 +37,6 @@ Ext.define('Shopware.apps.MxcDsiGroup.view.list.Group', {
     },
 
     configure: function() {
-        let me = this;
         return {
             detailWindow: 'Shopware.apps.MxcDsiGroup.view.detail.Window',
             columns: {

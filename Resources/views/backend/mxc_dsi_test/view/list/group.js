@@ -21,7 +21,7 @@ Ext.define('Shopware.apps.MxcDsiTest.view.list.Group', {
                     me.fireEvent('mxcSelectGroup', record, false);
                 }
             },
-            viewready: function(view, opts) {
+            viewready: function() {
                 let selected = [];
                 me.store.each(function(record) {
                     if (record.get('accepted') === true) {

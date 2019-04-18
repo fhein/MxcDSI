@@ -44,7 +44,7 @@ Ext.define('Shopware.apps.MxcDsiTest.controller.Group', {
                     });
                 }
             },
-            failure: function(record, operation) {
+            failure: function() {
                 Shopware.Notification.createStickyGrowlMessage({
                         title: 'Error',
                         text: 'An unknown error occurred, please check your server logs',

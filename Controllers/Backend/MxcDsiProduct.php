@@ -320,7 +320,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS/></INNOCIGS_API_RESPONSE>';
+            $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS></PRODUCTS></INNOCIGS_API_RESPONSE>';
             $this->services->get(ImportClient::class)->importFromXml($xml);;
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
         } catch (Throwable $e) {

@@ -155,7 +155,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     createSelectionButton: function() {
         let me = this;
 
-        var menu = Ext.create('Ext.menu.Menu', {
+        let menu = Ext.create('Ext.menu.Menu', {
             id: 'MxcDsiProductSelectionMenu',
             style: {
                 overflow: 'visible'
@@ -225,7 +225,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     createAllButton: function() {
         let me = this;
 
-        var menu = Ext.create('Ext.menu.Menu', {
+        let menu = Ext.create('Ext.menu.Menu', {
             id: 'MxcDsiProductAllMenu',
             style: {
                 overflow: 'visible'
@@ -264,7 +264,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     createToolsButton: function() {
         let me = this;
 
-        var menu = Ext.create('Ext.menu.Menu', {
+        let menu = Ext.create('Ext.menu.Menu', {
           id: 'mxcDsiToolsMenu',
             style: {
                 overflow: 'visible'
@@ -300,7 +300,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     createActionsButton: function() {
         let me = this;
 
-        var menu = Ext.create('Ext.menu.Menu', {
+        let menu = Ext.create('Ext.menu.Menu', {
             id: 'mxcDsiActionsMenu',
             style: {
                 overflow: 'visible'
@@ -353,7 +353,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     createTestButton: function() {
         let me = this;
 
-        var menu = Ext.create('Ext.menu.Menu', {
+        let menu = Ext.create('Ext.menu.Menu', {
             id: 'mxcDsiTestMenu',
             style: {
                 overflow: 'visible'
@@ -400,7 +400,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     createDevButton: function() {
         let me = this;
 
-        var menu = Ext.create('Ext.menu.Menu', {
+        let menu = Ext.create('Ext.menu.Menu', {
             id: 'mxcDsiDevelopmentMenu',
             style: {
                 overflow: 'visible'
@@ -505,7 +505,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     },
 
     onSelectionChange: function(selModel, selection) {
-        var me = this;
+        let me = this;
         me.selectionButton.setDisabled(selection.length === 0);
     },
 

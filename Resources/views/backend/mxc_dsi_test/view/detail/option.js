@@ -23,7 +23,7 @@ Ext.define('Shopware.apps.MxcDsiTest.view.detail.Option', {
                     me.fireEvent('mxcSelectOption', record, false);
                 }
             },
-            viewready: function(view, opts) {
+            viewready: function() {
                 let selected = [];
                 console.log(me);
                 console.log(me.getStore().data.items);
@@ -44,8 +44,7 @@ Ext.define('Shopware.apps.MxcDsiTest.view.detail.Option', {
     },
 
     configure: function() {
-        let me = this;
-        return {
+                return {
             detailWindow: 'Shopware.apps.MxcDsiTest.view.detail.Window',
             columns: {
                 name:       { header: 'Name', flex: 3 }
