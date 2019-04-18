@@ -8,6 +8,10 @@
             <argument type="service" id="template"/>
             <tag name="shopware.event_subscriber"/>
         </service>
+        <service id="Shopware_CronJob_MxcDsiImport"
+                 class="MxcDropshipInnocigs\Import\ImportCronJob">
+            <tag name="shopware.event_subscriber"/>
+        </service>
         <service
                 id="mxc_dropship_innocigs.commands.import_command"
                 class="MxcDropshipInnocigs\Commands\ImportCommand">
