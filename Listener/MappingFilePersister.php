@@ -15,7 +15,6 @@ class MappingFilePersister extends ActionListener
     protected $modelManager;
 
     protected $log;
-    protected $config;
 
     /**
      * MappingFilePersister constructor.

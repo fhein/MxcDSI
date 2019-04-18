@@ -2,28 +2,18 @@
 
 namespace MxcDropshipInnocigs\Excel;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx as Writer;
-use Shopware\Components\Model\ModelManager;
 
 class ExcelExport
 {
-    /** @var ModelManager */
-    protected $modelManager;
-
-    /** @var LoggerInterface */
-    protected $log;
-
     protected $exporters;
 
     protected $excelFile = __DIR__ . '/../Config/vapee.export.xlsx';
 
-    public function __construct(ModelManager $modelManager, array $exporters, LoggerInterface $log)
+    public function __construct(array $exporters)
     {
-        $this->modelManager = $modelManager;
         $this->exporters = $exporters;
-        $this->log = $log;
     }
 
     public function export() {

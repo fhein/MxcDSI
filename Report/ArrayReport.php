@@ -9,7 +9,6 @@ use Zend\Filter\Word\CamelCaseToUnderscore;
 class ArrayReport
 {
     protected $reportDir;
-    protected $writer;
 
     public function __construct(string $class = null)
     {
@@ -43,8 +42,10 @@ class ArrayReport
     {
         $dir = $this->reportDir . '/';
         $actFile = $dir . $fn . '.php';
+        /** @noinspection PhpUnusedLocalVariableInspection */
         $diffFile = $dir . $fn . '.diff.php';
 
+        // @todo: There is a bug in here which can be seen running console import
 //        if (file_exists($actFile)) {
 //            /** @noinspection PhpIncludeInspection */
 //            $old = include $actFile;

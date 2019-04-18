@@ -97,10 +97,6 @@ class ProductRepository extends BaseEntityRepository
             'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.flavor '
             . 'FROM MxcDropshipInnocigs\Models\Product p '
             . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\') AND p.name NOT LIKE \'%Probierbox%\'',
-
-        'getDosages' =>
-            'SELECT p.icNumber, p.name, p.dosage FROM MxcDropshipInnocigs\Models\Product p '
-            . 'INDEX BY p.icNumber WHERE p.type = \'AROMA\'',
     ];
 
     protected $sql = [
@@ -232,15 +228,6 @@ class ProductRepository extends BaseEntityRepository
         return $this->getPropertiesQuery($properties, $this->dql[__FUNCTION__])
             ->setParameter('id', $id)
             ->getResult();
-    }
-
-    public function exportDosages()
-    {
-        $dosages = $this->getQuery('getDosages')->getResult();
-        if (!empty($dosages)) {
-            /** @noinspection PhpUndefinedFieldInspection */
-            Factory::toFile(__DIR__ . '/../Config/test.php', $dosages);
-        }
     }
 
     /**

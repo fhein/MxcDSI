@@ -25,33 +25,12 @@ class ApiClient
     protected $authUrl;
 
     /**
-     * @var string $user
-     */
-    protected $user;
-
-    /**
-     * @var string $password
-     */
-    protected $password;
-
-    /**
      * @var Client $client
      */
     protected $client = null;
 
     /** @var LoggerInterface $log */
     protected $log;
-
-    protected $errorResponse =
-        '<INNOCIGS_API_RESPONSE>'
-            . '<ERRORS>'
-                . '<ERROR>'
-                    . '<CODE>10004. </CODE>'
-                    . '<MESSAGE>Unbekannter API-Aufruf.. </MESSAGE>'
-                . '</ERROR>'
-            . '</ERRORS>'
-        . '</INNOCIGS_API_RESPONSE>';
-
 
     public function __construct(Credentials $credentials, LoggerInterface $log)
     {

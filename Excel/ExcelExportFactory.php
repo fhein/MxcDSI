@@ -17,15 +17,13 @@ class ExcelExportFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $modelManager = $container->get('modelManager');
-        $log = $container->get('logger');
         $config = $container->get('config')['excel']['export'] ?? [];
 
-        $sheets = [];
+        $exporters = [];
         foreach ($config as $idx => $service) {
-            $sheets[$idx] = $container->get($service);
+            $exporters[$idx] = $container->get($service);
         }
 
-        return new ExcelExport($modelManager, $sheets, $log);
+        return new ExcelExport($exporters);
     }
 }

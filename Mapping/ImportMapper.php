@@ -83,16 +83,10 @@ class ImportMapper
     protected $updates;
 
     /** @var array */
-    protected $deletions;
-
-    /** @var array */
     protected $images;
 
     /** @var LoggerInterface $log */
     protected $log;
-
-    /** @var array */
-    protected $fields;
 
     /**
      * ImportMapper constructor.

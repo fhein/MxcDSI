@@ -18,9 +18,6 @@ class ProductUpdater
     protected $log;
 
     /** @var array */
-    protected $productStates;
-
-    /** @var array */
     protected $supportedStateProperties = ['active', 'accepted', 'linked'];
 
     /** @var ProductMapper */

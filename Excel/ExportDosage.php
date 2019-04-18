@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Excel;
 
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Product;
+use PhpOffice\PhpSpreadsheet\Style\Border;
 use Shopware\Components\Model\ModelManager;
 
 class ExportDosage extends AbstractProductExport
@@ -17,9 +18,15 @@ class ExportDosage extends AbstractProductExport
     /** @var array */
     protected $products;
 
-    public function setSheetData(array $products)
+    protected function registerColumns()
     {
-        if (! $products) return;
+        parent::registerColumns();
+        $this->registerColumn('dosage');
+    }
+
+    public function setSheetData()
+    {
+        $products = $this->data;
         usort($products, [$this, 'compare']);
         $headers[] = array_keys($products[0]);
         $products = array_merge($headers, $products);
@@ -31,11 +38,18 @@ class ExportDosage extends AbstractProductExport
     {
         parent::formatSheet();
         $highest = $this->sheet->getHighestRowAndColumn();
+        $bColumn = $this->sheet->getColumnDimension('B');
+        $bColumn->setAutoSize(false);
+        $bColumn->setWidth(15);
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->getStyle('F2:'. $highest['column'] . $highest['row'])
             ->getNumberFormat()->setFormatCode('@');
-        $this->alternateRowColors();
-
+        $this->setAlternateRowColors();
+        $this->formatHeaderLine();
+        $this->setBorders('allBorders', Border::BORDER_THIN, 'FFBFBFBF');
+        $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000');
+        $range = $this->getRange(['F', 1, 'F', $highest['row']]);
+        $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $range);
     }
 
     protected function loadRawExportData(): ?array

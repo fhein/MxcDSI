@@ -8,34 +8,17 @@ use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
+use PhpOffice\PhpSpreadsheet\Style\Border;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Price;
 
 class ExportPrices extends AbstractProductExport
 {
     /** @var array */
-    protected $indexMap;
-
-    /** @var array */
     protected $models;
 
     /** @var PriceMapper $priceMapper */
     protected $priceMapper;
-
-    protected $columnTemplate;
-    private $columnIndex;
-    
-    private $fixedColumns = [
-        'icNumber',
-        'type',
-        'supplier',
-        'brand',
-        'name',
-        'EK Netto',
-        'EK Brutto',
-        'UVP Brutto',
-        'Marge UVP',
-    ];
 
     public function __construct(
         ModelManager $modelManager,
@@ -46,36 +29,50 @@ class ExportPrices extends AbstractProductExport
         $this->priceMapper = $priceMapper;
     }
 
-    protected function setMarginColumn(array &$record, int $row, string $column, string $retailGross, string $cellPurchaseGross)
+    protected function registerColumns()
     {
-        $cellRetailGross = $this->columnIndex[$retailGross] . $row;
-        $condition = "AND(ISNUMBER({$cellRetailGross}), {$cellRetailGross}<>0)";
-        $then = "({$cellRetailGross}-{$cellPurchaseGross})/{$cellRetailGross}*100";
-        $else = '""';
-        $record[$column] = "=IF({$condition},{$then},{$else})";;
+        parent::registerColumns();
+        $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+        foreach ($customerGroupKeys as $key) {
+            $this->registerColumn('VK Brutto ' . $key);
+            $this->registerColumn('Marge ' . $key);
+        }
     }
 
-    protected function setSheetData(array $products)
+    protected function getMarginColumnFormula(string $cellRetail, string $cellPurchase)
     {
+        $condition = "AND(ISNUMBER({$cellRetail}), {$cellRetail}<>0)";
+        $then = "({$cellRetail}-{$cellPurchase})/{$cellRetail}*100";
+        $else = '""';
+        $statement = "=IF({$condition},{$then},{$else})";
+        return $statement;
+    }
+
+    protected function setSheetData()
+    {
+        $products = $this->data;
         $data = [];
         $headers = null;
         foreach ($products as $product) {
             $data[] = $this->getProductInfo($product);
         }
         $headers[] = array_keys($data[0]);
+        $this->sortColumns($data);
         usort($data, [$this, 'compare']);
 
-        $idx = 2;
+        $row = 2;
         foreach ($data as &$record) {
-            $cellPurchaseGross = $this->columnIndex['EK Brutto']. $idx;
-            $this->setMarginColumn($record, $idx, 'Marge UVP', 'UVP Brutto', $cellPurchaseGross);
+            $cellPurchase = $this->getRange([$this->getColumn('EK Brutto'), $row]);
+            $cellRetail = $this->getRange([$this->getColumn('UVP Brutto'), $row]);
+            $record['Marge UVP'] = $this->getMarginColumnFormula($cellRetail, $cellPurchase);
 
             $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
             foreach ($customerGroupKeys as $key) {
-                $this->setMarginColumn($record, $idx, 'Marge ' . $key, 'VK Brutto ' . $key, $cellPurchaseGross);
+                $cellRetail = $this->getRange([$this->getColumn('VK Brutto ' . $key), $row]);
+                $record['Marge ' . $key] = $this->getMarginColumnFormula($cellRetail, $cellPurchase);
             }
 
-            $idx++;
+            $row++;
         }
 
         $data = array_merge($headers, $data);
@@ -83,32 +80,9 @@ class ExportPrices extends AbstractProductExport
         $this->sheet->fromArray($data);
     }
 
-    protected function getColumnTemplate()
-    {
-        if ($this->columnTemplate) return $this->columnTemplate;
-        foreach ($this->fixedColumns as $key => $name) {
-            $t[$name] = '';
-            $c[$name] = $key;
-        }
-        $cidx = count($this->fixedColumns);
-        $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
-        foreach ($customerGroupKeys as $key) {
-            $name = 'VK Brutto ' . $key;
-            $t[$name] = '';
-            $c[$name] = $cidx++;
-            $name = 'Marge ' . $key;
-            $t[$name] = '';
-            $c[$name] = $cidx++;
-        }
-        $this->columnTemplate = $t;
-        $this->columnIndex = array_map(function($i) { return chr($i + 65);}, $c);
-
-        return $t;
-    }
-
     protected function getProductInfo(Product $product)
     {
-        $info = $this->getColumnTemplate();
+        $info = $this->getColumns();
         $info['icNumber'] = $product->getIcNumber();
         $info['type'] = $product->getType();
         $info['supplier'] = $product->getSupplier();
@@ -176,13 +150,33 @@ class ExportPrices extends AbstractProductExport
         return false;
     }
 
+    protected function setPriceMarginBorders()
+    {
+        $highest = $this->getHighestRowAndColumn();
+        $columnRanges = [
+            [$this->columns['UVP Brutto'], 1, $this->columns['Marge UVP'], $highest['row']]
+        ];
+        $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+        foreach ($customerGroupKeys as $key) {
+            $columnRanges[] = [$this->columns['VK Brutto ' . $key], 1, $this->columns['Marge ' . $key], $highest['row']];
+        }
+        foreach ($columnRanges as $range) {
+            $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $this->getRange($range));
+        }
+    }
+
     protected function formatSheet(): void
     {
         parent::formatSheet();
         $highest = $this->sheet->getHighestRowAndColumn();
+        $range = $this->getRange(['F','2',$highest['column'], $highest['row']]);
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->sheet->getStyle('F2:'. $highest['column'] . $highest['row'])->getNumberFormat()->setFormatCode('0.00');
-        $this->alternateRowColors();
+        $this->sheet->getStyle($range)->getNumberFormat()->setFormatCode('0.00');
+        $this->setAlternateRowColors();
+        $this->formatHeaderLine();
+        $this->setBorders('allBorders', Border::BORDER_THIN, 'FFBFBFBF');
+        $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000');
+        $this->setPriceMarginBorders();
     }
 
     protected function getModels()

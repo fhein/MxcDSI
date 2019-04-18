@@ -17,16 +17,14 @@ class ExcelImportFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $modelManager = $container->get('modelManager');
-        $log = $container->get('logger');
         $config = $container->get('config')['excel']['import'] ?? [];
 
-        $sheets = [];
+        $importers = [];
         foreach ($config as $idx => $service) {
-            $sheets[$idx] = $container->get($service);
+            $importers[$idx] = $container->get($service);
         }
 
-        return new ExcelImport($modelManager, $sheets, $log);
+        return new ExcelImport($importers);
     }
 
 }

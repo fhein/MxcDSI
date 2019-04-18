@@ -39,14 +39,6 @@ class ImportClient implements EventSubscriber
     protected $import;
 
     /** @var array */
-    protected $additions;
-
-    /** @var array */
-    protected $changes;
-
-    /** @var array */
-    protected $deletions;
-
     protected $importLog;
 
     /** @var array $options */

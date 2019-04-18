@@ -2,14 +2,11 @@
 
 namespace MxcDropshipInnocigs\Models;
 
-use Shopware\Models\Article\Detail;
-
 class VariantRepository extends BaseEntityRepository
 {
     protected $dql = [
         'getAllIndexed'      => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
         'getDetail'          => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
-        'getVariantByDetail' => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.number = (:number)',
         'removeOrphaned'     => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.product IS NULL',
     ];
 
@@ -39,14 +36,6 @@ class VariantRepository extends BaseEntityRepository
         $stmnt = $this->getStatement(__FUNCTION__);
         $stmnt->bindValue(1, $variant->getId());
         $stmnt->execute();
-    }
-
-    public function getVariantByDetail(Detail $detail)
-    {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        return $this->getQuery(__FUNCTION__)
-            ->setParameter('number', $detail->getNumber())
-            ->getSingleResult();
     }
 
     public function removeOrphaned()
