@@ -3,14 +3,14 @@
 namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class PropertyMapperFactory implements FactoryInterface
 {
-    use ClassConfigTrait;
+    use ObjectAugmentationTrait;
 
     /**
      * Create an object
@@ -22,11 +22,8 @@ class PropertyMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $modelManager = $container->get('modelManager');
         $reporter = $container->get(Reporter::class);
-        $config = $this->getClassConfig($container, $requestedName);
         $flavorist = $container->get(Flavorist::class);
-        $log = $container->get('logger');
 
         // take care of the mapper dependencies
         $productMappers = [
@@ -60,18 +57,15 @@ class PropertyMapperFactory implements FactoryInterface
 
         $regularExpressions = $container->get(RegularExpressions::class);
 
-        return new PropertyMapper(
-            $modelManager,
+        return $this->augment($container, new PropertyMapper(
             $mappings,
             $associatedProductsMapper,
             $regularExpressions,
             $flavorist,
             $reporter,
             $productMappers,
-            $variantMappers,
-            $config,
-            $log
-        );
+            $variantMappers
+        ));
     }
 }
 

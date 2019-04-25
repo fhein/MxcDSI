@@ -6,11 +6,18 @@ namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use Shopware\Models\Article\Article;
 
-class AssociatedArticlesMapper
+class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
+    use LoggerAwareTrait;
+    use ModelManagerAwareTrait;
+
     /** @var array */
     protected $associatedProducts;
 
@@ -154,5 +161,31 @@ class AssociatedArticlesMapper
             }
         }
         return new ArrayCollection($articles);
+    }
+
+    /**
+     * Update the related and similar article lists of all Shopware articles
+     * where the corresponding product has related and similar articles from
+     * the given $products array.
+     *
+     * @param array $products
+     */
+    public function updateArticleLinks(array $products)
+    {
+        if (count($products) === 0) {
+            return;
+        }
+
+        $repository = $this->modelManager->getRepository(Product::class);
+
+        $productsWithRelatedNewArticles = $repository->getProductsHavingRelatedArticles($products);
+        foreach ($productsWithRelatedNewArticles as $product) {
+            $this->setRelatedArticles($product);
+        }
+
+        $productsWithSimilarNewArticles = $repository->getProductsHavingSimilarArticles($products);
+        foreach ($productsWithSimilarNewArticles as $product) {
+            $this->setSimilarArticles($product);
+        }
     }
 }

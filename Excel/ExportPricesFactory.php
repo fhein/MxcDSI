@@ -3,11 +3,14 @@
 namespace MxcDropshipInnocigs\Excel;
 
 use Interop\Container\ContainerInterface;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ExportPricesFactory implements FactoryInterface
 {
+    use ObjectAugmentationTrait;
+
     /**
      * Create an object
      *
@@ -18,11 +21,8 @@ class ExportPricesFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $modelManager = $container->get('modelManager');
         $priceMapper = $container->get(PriceMapper::class);
-        $log = $container->get('logger');
-
-        return new $requestedName($modelManager, $priceMapper, $log);
+        return $this->augment($container, new $requestedName($priceMapper));
     }
 
 }

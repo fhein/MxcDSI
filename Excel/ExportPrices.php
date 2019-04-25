@@ -3,13 +3,11 @@
 namespace MxcDropshipInnocigs\Excel;
 
 use Doctrine\Common\Collections\Collection;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use PhpOffice\PhpSpreadsheet\Style\Border;
-use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Price;
 
 class ExportPrices extends AbstractProductExport
@@ -20,18 +18,20 @@ class ExportPrices extends AbstractProductExport
     /** @var PriceMapper $priceMapper */
     protected $priceMapper;
 
-    public function __construct(
-        ModelManager $modelManager,
-        PriceMapper $priceMapper,
-        LoggerInterface $log
-    ) {
-        parent::__construct($modelManager, $log);
+    public function __construct(PriceMapper $priceMapper)
+    {
         $this->priceMapper = $priceMapper;
     }
 
     protected function registerColumns()
     {
         parent::registerColumns();
+        $this->registerColumn('EK Netto');
+        $this->registerColumn('EK Brutto');
+        $this->registerColumn('Dampfplanet');
+        $this->registerColumn('andere');
+        $this->registerColumn('UVP Brutto');
+        $this->registerColumn('Marge UVP');
         $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
         foreach ($customerGroupKeys as $key) {
             $this->registerColumn('VK Brutto ' . $key);
@@ -83,12 +83,15 @@ class ExportPrices extends AbstractProductExport
     protected function getProductInfo(Product $product)
     {
         $info = $this->getColumns();
+        $this->log->debug(var_export($info, true));
         $info['icNumber'] = $product->getIcNumber();
         $info['type'] = $product->getType();
         $info['supplier'] = $product->getSupplier();
         $info['brand'] = $product->getBrand();
         $info['name'] = $product->getName();
         list($info['EK Netto'], $info['EK Brutto'], $info['UVP Brutto']) = $this->getPrices($product->getVariants());
+        $info['Dampfplanet'] = $product->getRetailPriceDampfPlanet();
+        $info['andere'] = $product->getRetailPriceOthers();
         $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
         $shopwarePrices = $this->getCurrentPrices($product);
         foreach ($customerGroupKeys as $key) {
@@ -172,11 +175,18 @@ class ExportPrices extends AbstractProductExport
         $range = $this->getRange(['F','2',$highest['column'], $highest['row']]);
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->getStyle($range)->getNumberFormat()->setFormatCode('0.00');
+
+        foreach (range('F', $highest['column']) as $col) {
+            $this->sheet->getColumnDimension($col)->setWidth(16);
+        }
+
         $this->setAlternateRowColors();
         $this->formatHeaderLine();
         $this->setBorders('allBorders', Border::BORDER_THIN, 'FFBFBFBF');
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000');
         $this->setPriceMarginBorders();
+        $range = [ $this->columns['Dampfplanet'], 1, $this->columns['andere'], $highest['row']];
+        $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $this->getRange($range));
     }
 
     protected function getModels()

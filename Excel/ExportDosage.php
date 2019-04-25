@@ -56,6 +56,6 @@ class ExportDosage extends AbstractProductExport
     {
         /** @noinspection PhpUndefinedMethodInspection */
         return $this->products
-            ?? $this->products = $this->modelManager->getRepository(Product::class)->getAromaExcelExport();
+            ?? $this->products = $this->modelManager->getRepository(Product::class)->getExcelExportAroma();
     }
 }

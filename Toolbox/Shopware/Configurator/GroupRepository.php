@@ -3,32 +3,21 @@
 namespace MxcDropshipInnocigs\Toolbox\Shopware\Configurator;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use Shopware\Components\Model\ModelManager;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Models\Article\Configurator\Group;
 use Shopware\Models\Article\Configurator\Option;
 
-class GroupRepository
+class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterface
 {
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
     /**
      * @var array $data
      */
     protected $data;
-    /**
-     * @var LoggerInterface $log
-     */
-    protected $log;
-    /**
-     * @var ModelManager $modelManager
-     */
-    protected $modelManager;
-
-
-    public function __construct(ModelManager $modelManager, LoggerInterface $log) {
-        $this->log = $log;
-        $this->modelManager = $modelManager;
-        // $this->createLookupTable();
-    }
 
     public function createLookupTable()
     {

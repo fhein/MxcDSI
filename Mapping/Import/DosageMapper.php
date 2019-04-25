@@ -2,21 +2,21 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 
 class DosageMapper extends BaseImportMapper implements ProductMapperInterface
 {
+    /** @var array */
+    protected $config;
     /**
      * DosageMapper constructor.
      *
-     * @param ImportMappings $importMapping
-     * @param LoggerInterface $log
+     * @param array $config
      */
-    public function __construct(ImportMappings $importMapping, LoggerInterface $log)
+    public function __construct(array $config)
     {
-        parent::__construct($importMapping->getConfig(), $log);
+        $this->config = $config;
     }
 
     /**

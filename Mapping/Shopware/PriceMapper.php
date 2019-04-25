@@ -90,9 +90,7 @@ class PriceMapper
     public function setRetailPrices(Variant $variant)
     {
         $detail = $variant->getDetail();
-        if (!$detail) {
-            return;
-        }
+        if (!$detail) return;
 
         $tax = $detail->getArticle()->getTax()->getTax();
 

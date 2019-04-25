@@ -2,10 +2,15 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
-class ImportMappings extends BaseImportMapper
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+
+class ImportMappings implements ClassConfigAwareInterface
 {
-    public function getConfig()
+    use ClassConfigAwareTrait;
+
+    public function getClassConfig()
     {
-        return $this->config;
+        return $this->classConfig ?? [];
     }
 }

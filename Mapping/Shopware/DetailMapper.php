@@ -3,25 +3,24 @@
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
-use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Attribute\Article as Attribute;
 
-class DetailMapper
+class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
-    /** @var LoggerInterface $log */
-    protected $log;
-
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
+    use LoggerAwareTrait;
+    use ModelManagerAwareTrait;
 
     /** @var PriceMapper $priceMapper */
     protected $priceMapper;
@@ -45,21 +44,17 @@ class DetailMapper
     protected $productRepository;
 
     public function __construct(
-        ModelManager $modelManager,
         ArticleTool $articleTool,
+        ArticleResource $articleResource,
         DropshippersCompanion $companion,
         PriceMapper $priceMapper,
-        OptionMapper $optionMapper,
-        LoggerInterface $log)
-    {
-        $this->log = $log;
+        OptionMapper $optionMapper
+    ) {
         $this->optionMapper = $optionMapper;
-        $this->modelManager = $modelManager;
         $this->companion = $companion;
         $this->priceMapper = $priceMapper;
         $this->articleTool = $articleTool;
-        $this->articleResource = new ArticleResource();
-        $this->articleResource->setManager($this->modelManager);
+        $this->articleResource = $articleResource;
     }
 
     /**
@@ -172,19 +167,20 @@ class DetailMapper
         $purchasePrice = floatval(str_replace(',', '.', $variant->getPurchasePrice()));
         $detail->setPurchasePrice($purchasePrice);
 
-        $attribute = $detail->getAttribute();
-        $product = $variant->getProduct();
+        // @todo: Transfer the custom attributes to shopware or not?
+//        $attribute = $detail->getAttribute();
+//        $product = $variant->getProduct();
 
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setMxcDsiBrand($product->getBrand());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setMxcDsiSupplier($product->getSupplier());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setMxcDsiFlavor($product->getFlavor());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setMxcDsiMaster($product->getIcNumber());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setMxcDsiType($product->getType());
+//        /** @noinspection PhpUndefinedMethodInspection */
+//        $attribute->setMxcDsiBrand($product->getBrand());
+//        /** @noinspection PhpUndefinedMethodInspection */
+//        $attribute->setMxcDsiSupplier($product->getSupplier());
+//        /** @noinspection PhpUndefinedMethodInspection */
+//        $attribute->setMxcDsiFlavor($product->getFlavor());
+//        /** @noinspection PhpUndefinedMethodInspection */
+//        $attribute->setMxcDsiMaster($product->getIcNumber());
+//        /** @noinspection PhpUndefinedMethodInspection */
+//        $attribute->setMxcDsiType($product->getType());
     }
 
     /**

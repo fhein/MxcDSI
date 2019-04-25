@@ -5,32 +5,31 @@ namespace MxcDropshipInnocigs\Import;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Mxc\Shopware\Plugin\Database\SchemaManager;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Arrays\ArrayTool;
-use Shopware\Components\Model\ModelManager;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
-class ImportClient implements EventSubscriber
+class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
+    use ClassConfigAwareTrait;
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
 
     /** @var SchemaManager $schemaManager */
     protected $schemaManager;
 
     /** @var ApiClient $apiClient */
     protected $apiClient;
-
-    /** @var LoggerInterface $log */
-    protected $log;
-
-    /** @var Config $config */
-    protected $config;
 
     /** @var ImportMapper $importMapper */
     protected $importMapper;
@@ -64,27 +63,18 @@ class ImportClient implements EventSubscriber
     /**
      * ImportClient constructor.
      *
-     * @param ModelManager $modelManager
      * @param SchemaManager $schemaManager
      * @param ApiClient $apiClient
      * @param ImportMapper $importMapper
-     * @param array $config
-     * @param LoggerInterface $log
      */
     public function __construct(
-        ModelManager $modelManager,
         SchemaManager $schemaManager,
         ApiClient $apiClient,
-        ImportMapper $importMapper,
-        array $config,
-        LoggerInterface $log
+        ImportMapper $importMapper
     ) {
-        $this->modelManager = $modelManager;
         $this->schemaManager = $schemaManager;
         $this->importMapper = $importMapper;
         $this->apiClient = $apiClient;
-        $this->log = $log;
-        $this->config = $config;
         $this->reporter = new ArrayReport();
         $model = new Model();
         $this->fields = $model->getPrivatePropertyNames();
@@ -259,7 +249,7 @@ class ImportClient implements EventSubscriber
 
     protected function createModels()
     {
-        $limit = $this->config['limit'] ??  -1;
+        $limit = $this->classConfig['limit'] ??  -1;
         $cursor = 0;
         $missingAttributes = [];
         $missingModels = [];
@@ -327,7 +317,7 @@ class ImportClient implements EventSubscriber
                 'attributes' => $data['options'],
                 'fixed'      => false,
             ];
-            $fix = $this->config['attribute_fixes'][$data['master']][$number]['attributes'];
+            $fix = $this->classConfig['attribute_fixes'][$data['master']][$number]['attributes'];
             if ($fix !== null) {
                 $models[$number]->setOptions($fix);
                 $record[$number]['fixed'] = $fix;

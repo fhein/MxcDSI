@@ -3,19 +3,18 @@
 namespace MxcDropshipInnocigs\Mapping\Gui;
 
 use Enlight_Controller_Request_Request as Request;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
-use Shopware\Components\Model\ModelManager;
 
-class ProductUpdater
+class ProductUpdater implements LoggerAwareInterface, ModelManagerAwareInterface
 {
-    /** @var ModelManager */
-    protected $modelManager;
-
-    /** @var LoggerInterface $log */
-    protected $log;
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
 
     /** @var array */
     protected $supportedStateProperties = ['active', 'accepted', 'linked'];
@@ -26,10 +25,8 @@ class ProductUpdater
     /** @var ProductRepository */
     protected $repository;
 
-    public function __construct(ModelManager $modelManager, ProductMapper $productMapper, LoggerInterface $log)
+    public function __construct(ProductMapper $productMapper)
     {
-        $this->log = $log;
-        $this->modelManager = $modelManager;
         $this->productMapper = $productMapper;
     }
 

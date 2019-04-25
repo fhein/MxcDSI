@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.91.5",
+            "version": "3.92.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ffd63f5d39f48e679f2dc78346fd4dad746d7f43"
+                "reference": "1ebcd8ee3bafde8421072de5cbe59c3ff64a4f3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ffd63f5d39f48e679f2dc78346fd4dad746d7f43",
-                "reference": "ffd63f5d39f48e679f2dc78346fd4dad746d7f43",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1ebcd8ee3bafde8421072de5cbe59c3ff64a4f3e",
+                "reference": "1ebcd8ee3bafde8421072de5cbe59c3ff64a4f3e",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +86,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-04-16T18:11:52+00:00"
+            "time": "2019-04-24T18:08:08+00:00"
         },
         {
             "name": "bcremer/line-reader",
@@ -2271,21 +2271,21 @@
         },
         {
             "name": "mxc-commons/mxc-shopware-plugin",
-            "version": "0.1.26",
+            "version": "0.1.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mxc-commons/mxc-shopware-plugin.git",
-                "reference": "d8d0b29922b5d3ff1991a2c083c3d3087c20e1fc"
+                "reference": "55d122a00eb5d5c57b0d77b2aff38895f9f4bc96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mxc-commons/mxc-shopware-plugin/zipball/d8d0b29922b5d3ff1991a2c083c3d3087c20e1fc",
-                "reference": "d8d0b29922b5d3ff1991a2c083c3d3087c20e1fc",
+                "url": "https://api.github.com/repos/mxc-commons/mxc-shopware-plugin/zipball/55d122a00eb5d5c57b0d77b2aff38895f9f4bc96",
+                "reference": "55d122a00eb5d5c57b0d77b2aff38895f9f4bc96",
                 "shasum": ""
             },
             "require": {
                 "mxc-commons/mxc-servicemanager": "^1.1",
-                "php": "^7.1",
+                "php": "^7.2",
                 "zendframework/zend-config": "~3.2",
                 "zendframework/zend-eventmanager": "~3.2",
                 "zendframework/zend-filter": "^2.9",
@@ -2307,7 +2307,7 @@
                 "plugin",
                 "shopware"
             ],
-            "time": "2019-04-17T13:04:43+00:00"
+            "time": "2019-04-25T16:40:43+00:00"
         },
         {
             "name": "ocramius/proxy-manager",
@@ -3655,16 +3655,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v4.2.6",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "166073407fe28beaa97415352d196d87792534d7"
+                "reference": "9e64db924324700e19ef4f21c2c279a35ff9bdff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/166073407fe28beaa97415352d196d87792534d7",
-                "reference": "166073407fe28beaa97415352d196d87792534d7",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/9e64db924324700e19ef4f21c2c279a35ff9bdff",
+                "reference": "9e64db924324700e19ef4f21c2c279a35ff9bdff",
                 "shasum": ""
             },
             "require": {
@@ -3728,7 +3728,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2019-04-07T13:57:20+00:00"
+            "time": "2019-04-16T09:36:45+00:00"
         },
         {
             "name": "symfony/class-loader",
@@ -3992,7 +3992,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.2.6",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -4119,7 +4119,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.2.6",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -4556,7 +4556,7 @@
         },
         {
             "name": "symfony/inflector",
-            "version": "v4.2.6",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/inflector.git",
@@ -4614,7 +4614,7 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v4.2.6",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
@@ -5026,7 +5026,7 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v4.2.6",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
@@ -5325,7 +5325,7 @@
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v4.2.6",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",

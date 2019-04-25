@@ -2,12 +2,10 @@
 
 namespace MxcDropshipInnocigs\Excel;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
-use Shopware\Components\Model\ModelManager;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -23,11 +21,8 @@ class ImportPrices extends AbstractProductImport
     protected $priceMapper;
 
     public function __construct(
-        ModelManager $modelManager,
-        PriceMapper $priceMapper,
-        LoggerInterface $log
+        PriceMapper $priceMapper
     ) {
-        parent::__construct($modelManager, $log);
         $this->priceMapper = $priceMapper;
     }
 
@@ -36,7 +31,7 @@ class ImportPrices extends AbstractProductImport
         $keys = array_keys($this->data[0]);
         $this->indexMap = [];
         foreach ($keys as $key) {
-            if (strpos($key, 'VK brutto') === 0) {
+            if (strpos($key, 'VK Brutto') === 0) {
                 $customerGroupKey = explode(' ', $key)[2];
                 $this->indexMap[$key] = $customerGroupKey;
             }
@@ -56,6 +51,12 @@ class ImportPrices extends AbstractProductImport
         foreach ($this->data as $record) {
             $product = $products[$record['icNumber']] ?? null;
             if (!$product) continue;
+            // we use the prices sheet to fix supplier and brand also
+            $product->setSupplier($record['supplier']);
+            $product->setBrand($record['brand']);
+            $product->setRetailPriceDampfPlanet($record['Dampfplanet']);
+            $product->setRetailPriceOthers($record['andere']);
+
             $this->updateProductPrice($product, $record);
        }
     }
@@ -63,11 +64,12 @@ class ImportPrices extends AbstractProductImport
     protected function updateProductPrice(Product $product, array $record)
     {
         $prices = [];
-        $uvp = $record['UVP brutto'];
+        $uvp = $record['UVP Brutto'];
         $uvp = $uvp = '' ? null : $uvp;
 
         foreach ($this->indexMap as $column => $customerGroup) {
             $price = $record[$column];
+            // @todo: Check type of empty price, because this does not work
             $price = $price === '' ? null : $price;
             $price = $price ?? $uvp;
             if ($price) {

@@ -4,6 +4,7 @@ namespace MxcDropshipInnocigs\Mapping\Check;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\NameMapper;
 use MxcDropshipInnocigs\Mapping\Import\TypeMapper;
@@ -13,6 +14,7 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 class RegularExpressionsFactory implements FactoryInterface
 {
     use ClassConfigTrait;
+    use ObjectAugmentationTrait;
 
     /**
      * Create an object
@@ -38,9 +40,8 @@ class RegularExpressionsFactory implements FactoryInterface
         $config[$key] = @$propertyMapperConfig[$key];
 
         $regexChecker = $container->get(RegexChecker::class);
-        $log = $container->get('logger');
 
-        return new RegularExpressions($regexChecker, $config, $log);
+        return $this->augment($container, new RegularExpressions($regexChecker, $config));
     }
 }
 

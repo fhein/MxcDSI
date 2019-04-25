@@ -84,16 +84,20 @@ class ProductRepository extends BaseEntityRepository
         'getProductsByType' =>
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE p.type = :type',
 
-        'getAromaExcelExport' =>
-            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.dosage '
-            . 'FROM MxcDropshipInnocigs\Models\Product p WHERE p.type = \'AROMA\'',
-
         // get all Products which need a flavor setting
         'getFlavoredProducts' =>
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\') AND p.name NOT LIKE \'%Probierbox%\'',
 
-        'getExportFlavoredProducts' =>
+        'getExcelExportAroma' =>
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.dosage '
+            . 'FROM MxcDropshipInnocigs\Models\Product p WHERE p.type = \'AROMA\'',
+
+        'getExcelExportDescription' =>
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.description '
+            . 'FROM MxcDropshipInnocigs\Models\Product p',
+
+        'getExcelExportFlavoredProducts' =>
             'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.flavor '
             . 'FROM MxcDropshipInnocigs\Models\Product p '
             . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\') AND p.name NOT LIKE \'%Probierbox%\'',

@@ -444,17 +444,6 @@ return array(
             1 => 'Brombeere',
         ),
     ),
-    'DJ10010-GC' => array(
-        'number' => 'DJ10010-GC',
-        'name' => 'Disco Juice - Grape Crasher - Shake & Vape - 0 mg/ml',
-        'flavor' => array(
-            0 => 'Ananas',
-            1 => 'Kokos',
-            2 => 'Koolada',
-            3 => 'Limette',
-            4 => 'Traube',
-        ),
-    ),
     'DJ10010-LG' => array(
         'number' => 'DJ10010-LG',
         'name' => 'Disco Juice - Lemoneeza Gud - Shake & Vape - 0 mg/ml',
@@ -514,6 +503,127 @@ return array(
         'flavor' => array(
             0 => 'Erdbeere',
             1 => 'Joghurt',
+        ),
+    ),
+    'DR100L10-AC' => array(
+        'number' => 'DR100L10-AC',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Apple Cranberry Ice - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfel',
+            1 => 'Cranberry',
+            2 => 'Koolada',
+        ),
+    ),
+    'DR100L10-BR' => array(
+        'number' => 'DR100L10-BR',
+        'name' => 'Dr. Frost - Frosty Shakes - Blue Razz - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Himbeere',
+            1 => 'Milchshake',
+        ),
+    ),
+    'DR100L10-CB' => array(
+        'number' => 'DR100L10-CB',
+        'name' => 'Dr. Frost - Candy Mints - Bubblegum - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Pfefferminzbonbon',
+            1 => 'Kaugummi',
+        ),
+    ),
+    'DR100L10-CC' => array(
+        'number' => 'DR100L10-CC',
+        'name' => 'Dr. Frost - Candy Mints - Original - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Pfefferminzbonbon',
+        ),
+    ),
+    'DR100L10-CR' => array(
+        'number' => 'DR100L10-CR',
+        'name' => 'Dr. Frost - Candy Mints - Raspberry - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Pfefferminzbonbon',
+            1 => 'Himbeere',
+        ),
+    ),
+    'DR100L10-CY' => array(
+        'number' => 'DR100L10-CY',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Cherry Ice - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Kirsche',
+            1 => 'Koolada',
+        ),
+    ),
+    'DR100L10-EG' => array(
+        'number' => 'DR100L10-EG',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Energy Ice - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Energy Drink',
+            1 => 'Koolada',
+        ),
+    ),
+    'DR100L10-GP' => array(
+        'number' => 'DR100L10-GP',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Grape Ice - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Traube',
+            1 => 'Koolada',
+        ),
+    ),
+    'DR100L10-HB' => array(
+        'number' => 'DR100L10-HB',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Honeydew Blackcurrant Ice - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Honigmelone',
+            1 => 'Johannisbeere',
+            2 => 'Koolada',
+        ),
+    ),
+    'DR100L10-OM' => array(
+        'number' => 'DR100L10-OM',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Orange Mango Ice - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Orange',
+            1 => 'Mango',
+            2 => 'Koolada',
+        ),
+    ),
+    'DR100L10-RM' => array(
+        'number' => 'DR100L10-RM',
+        'name' => 'Dr. Frost - Remedy - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Erdbeere',
+        ),
+    ),
+    'DR100L10-SB' => array(
+        'number' => 'DR100L10-SB',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Strawberry Ice - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Koolada',
+        ),
+    ),
+    'DR100L10-SN' => array(
+        'number' => 'DR100L10-SN',
+        'name' => 'Dr. Frost - Frosty Shakes - Banana - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Banane',
+            1 => 'Milchshake',
+        ),
+    ),
+    'DR100L10-SS' => array(
+        'number' => 'DR100L10-SS',
+        'name' => 'Dr. Frost - Frosty Shakes - Strawberry - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Milchshake',
+        ),
+    ),
+    'DR100L10-WM' => array(
+        'number' => 'DR100L10-WM',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Watermelon Ice - Shake & Vape - 0 mg/ml',
+        'flavor' => array(
+            0 => 'Wassermelone',
+            1 => 'Koolada',
         ),
     ),
     'ES100L10-AD' => array(
@@ -731,14 +841,6 @@ return array(
             2 => 'Minze',
         ),
     ),
-    'ES100L10-PP' => array(
-        'number' => 'ES100L10-PP',
-        'name' => 'Erste Sahne - Piff Paff - Liquid - 10 ml',
-        'flavor' => array(
-            0 => 'Erdbeere',
-            1 => 'Muffin',
-        ),
-    ),
     'ES100L10-PT' => array(
         'number' => 'ES100L10-PT',
         'name' => 'Erste Sahne - Pfeifentabak - Shake & Vape - 100 ml, 0 mg/ml',
@@ -798,7 +900,7 @@ return array(
         'name' => 'Erste Sahne - Red Shake - Liquid - 10 ml',
         'flavor' => array(
             0 => 'Erdbeere',
-            1 => 'Milch-Shake',
+            1 => 'Milchshake',
         ),
     ),
     'ES100L10-RT' => array(
@@ -1171,6 +1273,11 @@ return array(
             1 => 'Vanille',
         ),
     ),
+    'IC10000L10-BB' => array(
+        'number' => 'IC10000L10-BB',
+        'name' => 'Babette’s - Vanille - Pudding - Liquid - by - InnoCigs',
+        'flavor' => null,
+    ),
     'IC10000L10-BN' => array(
         'number' => 'IC10000L10-BN',
         'name' => 'InnoCigs - Brown Nutty - Liquid - 10 ml',
@@ -1184,6 +1291,11 @@ return array(
         'flavor' => array(
             0 => 'Blaubeere',
         ),
+    ),
+    'IC10000L10-BT' => array(
+        'number' => 'IC10000L10-BT',
+        'name' => 'Black - Tie - Tabak - Liquid - by - InnoCigs',
+        'flavor' => null,
     ),
     'IC10000L10-CB' => array(
         'number' => 'IC10000L10-CB',
@@ -1206,6 +1318,11 @@ return array(
         'flavor' => array(
             0 => 'Tabak',
         ),
+    ),
+    'IC10000L10-CK' => array(
+        'number' => 'IC10000L10-CK',
+        'name' => 'Courtesy - of - the - Kings - Minze-Schokoladen - Liquid - by - InnoCigs',
+        'flavor' => null,
     ),
     'IC10000L10-CV' => array(
         'number' => 'IC10000L10-CV',
@@ -1244,6 +1361,11 @@ return array(
             0 => 'Limette',
         ),
     ),
+    'IC10000L10-GC' => array(
+        'number' => 'IC10000L10-GC',
+        'name' => 'Gentleman’s - Cloud - Tabak - Liquid - by - InnoCigs',
+        'flavor' => null,
+    ),
     'IC10000L10-HF' => array(
         'number' => 'IC10000L10-HF',
         'name' => 'InnoCigs - Hairy Fluffy - Liquid - 10 ml',
@@ -1257,6 +1379,16 @@ return array(
         'flavor' => array(
             0 => 'Wassermelone',
         ),
+    ),
+    'IC10000L10-KD' => array(
+        'number' => 'IC10000L10-KD',
+        'name' => 'Kings - Dessert - Crème - Brûlée - Liquid - by - InnoCigs',
+        'flavor' => null,
+    ),
+    'IC10000L10-LK' => array(
+        'number' => 'IC10000L10-LK',
+        'name' => 'Lady-Like - Früchtemix - Liquid - by - InnoCigs',
+        'flavor' => null,
     ),
     'IC10000L10-LR' => array(
         'number' => 'IC10000L10-LR',
@@ -1273,6 +1405,11 @@ return array(
             0 => 'Himbeere',
         ),
     ),
+    'IC10000L10-LX' => array(
+        'number' => 'IC10000L10-LX',
+        'name' => 'Atlantis - Luxury - Tequila - Sunrise - Liquid - by - InnoCigs',
+        'flavor' => null,
+    ),
     'IC10000L10-MA' => array(
         'number' => 'IC10000L10-MA',
         'name' => 'InnoCigs - Monkey Around - Liquid - 10 ml',
@@ -1280,6 +1417,16 @@ return array(
             0 => 'Amarenakirsche',
             1 => 'Banane',
         ),
+    ),
+    'IC10000L10-MF' => array(
+        'number' => 'IC10000L10-MF',
+        'name' => 'Mystery - Fruits - Kaktusfeige - Liquid - by - InnoCigs',
+        'flavor' => null,
+    ),
+    'IC10000L10-MI' => array(
+        'number' => 'IC10000L10-MI',
+        'name' => 'My - Island - Virgin - Colada - Liquid - by - InnoCigs',
+        'flavor' => null,
     ),
     'IC10000L10-ML' => array(
         'number' => 'IC10000L10-ML',
@@ -1331,12 +1478,22 @@ return array(
             0 => 'Erdbeere',
         ),
     ),
+    'IC10000L10-SN' => array(
+        'number' => 'IC10000L10-SN',
+        'name' => 'Shaken- not - stirred - Orangen - Liquid - by - InnoCigs',
+        'flavor' => null,
+    ),
     'IC10000L10-SS' => array(
         'number' => 'IC10000L10-SS',
         'name' => 'InnoCigs - Star Spangled - Liquid - 10 ml',
         'flavor' => array(
             0 => 'Tabak',
         ),
+    ),
+    'IC10000L10-ST' => array(
+        'number' => 'IC10000L10-ST',
+        'name' => 'Stirred- not - Shaken - Mango - Liquid - by - InnoCigs',
+        'flavor' => null,
     ),
     'IC10000L10-SY' => array(
         'number' => 'IC10000L10-SY',
@@ -1360,6 +1517,11 @@ return array(
             0 => 'Tabak',
             1 => 'Vanille',
         ),
+    ),
+    'IC10000L10-WA' => array(
+        'number' => 'IC10000L10-WA',
+        'name' => 'MyWay - Pfeifentabak - Liquid - by - InnoCigs',
+        'flavor' => null,
     ),
     'IC10000L10-WG' => array(
         'number' => 'IC10000L10-WG',
@@ -1674,6 +1836,56 @@ return array(
             1 => 'Himbeere',
         ),
     ),
+    'ML100A10-AR' => array(
+        'number' => 'ML100A10-AR',
+        'name' => 'Military - ARI-Juice - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Kirsche',
+            1 => 'Kokos',
+        ),
+    ),
+    'ML100A10-FM' => array(
+        'number' => 'ML100A10-FM',
+        'name' => 'Military - FM-Juice - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'schwarzer Tee',
+            1 => 'Kardamom',
+            2 => 'Zimt',
+            3 => 'Ingwer',
+            4 => 'Honig',
+            5 => 'Milch',
+        ),
+    ),
+    'ML100A10-GR' => array(
+        'number' => 'ML100A10-GR',
+        'name' => 'Military - GRENI-Juice - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'roter Apfel',
+            1 => 'rote Himbeere',
+            2 => 'schwarze Himbeere',
+            3 => 'Brombeere',
+        ),
+    ),
+    'ML100A10-LW' => array(
+        'number' => 'ML100A10-LW',
+        'name' => 'Military - LW-Juice - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Mandarine',
+            1 => 'Orange',
+            2 => 'Granatapfel',
+        ),
+    ),
+    'ML100A10-MJ' => array(
+        'number' => 'ML100A10-MJ',
+        'name' => 'Military - M-Juice - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Minze',
+            1 => 'Menthol',
+            2 => 'Eukalyptus',
+            3 => 'Holunderblüte',
+            4 => 'Limette',
+        ),
+    ),
     'MR100L10-LE' => array(
         'number' => 'MR100L10-LE',
         'name' => 'Miami Drippers - Lemon E11even - Liquid - 10 ml',
@@ -1880,7 +2092,7 @@ return array(
         'name' => 'Pink Spot - Strawberry Blonde - Shake & Vape - 50 ml, 0 mg/ml',
         'flavor' => array(
             0 => 'Erdbeere',
-            1 => 'Milch-Shake',
+            1 => 'Milchshake',
         ),
     ),
     'PS100L10-SG' => array(
@@ -2025,53 +2237,176 @@ return array(
     ),
     'RD100L10-AJ' => array(
         'number' => 'RD100L10-AJ',
-        'name' => 'reds Apple EJuice - Apple Juice - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Apple Juice - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+        ),
     ),
     'RD100L10-BI' => array(
         'number' => 'RD100L10-BI',
-        'name' => 'reds Apple EJuice - Berries Ice - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Berries Ice - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Blaubeere',
+            2 => 'Himbeere',
+            3 => 'Granatapfel',
+            4 => 'Koolada',
+        ),
     ),
     'RD100L10-BR' => array(
         'number' => 'RD100L10-BR',
-        'name' => 'reds Apple EJuice - Berries - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Berries - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Blaubeere',
+            2 => 'Himbeere',
+            3 => 'Granatapfel',
+        ),
     ),
     'RD100L10-GI' => array(
         'number' => 'RD100L10-GI',
-        'name' => 'reds Apple EJuice - Grape Ice - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Grape Ice - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Traube',
+            2 => 'Koolada',
+        ),
     ),
     'RD100L10-GR' => array(
         'number' => 'RD100L10-GR',
-        'name' => 'reds Apple EJuice - Grape - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Grape - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Traube',
+        ),
     ),
     'RD100L10-IC' => array(
         'number' => 'RD100L10-IC',
-        'name' => 'reds Apple EJuice - Apple Juice Ice - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Apple Juice Ice - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Koolada',
+        ),
     ),
     'RD100L10-MI' => array(
         'number' => 'RD100L10-MI',
-        'name' => 'reds Apple EJuice - Mango Ice - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Mango Ice - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Mango',
+            2 => 'Koolada',
+        ),
     ),
     'RD100L10-MN' => array(
         'number' => 'RD100L10-MN',
-        'name' => 'reds Apple EJuice - Mango - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Mango - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Mango',
+        ),
     ),
     'RD100L10-WI' => array(
         'number' => 'RD100L10-WI',
-        'name' => 'reds Apple EJuice - Watermelon Ice - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Watermelon Ice - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Wassermelone',
+            2 => 'Koolada',
+        ),
     ),
     'RD100L10-WM' => array(
         'number' => 'RD100L10-WM',
-        'name' => 'reds Apple EJuice - Watermelon - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => null,
+        'name' => 'Red\'s Apple Juice - Watermelon - Shake & Vape - 50 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Apfelsaft',
+            1 => 'Wassermelone',
+        ),
+    ),
+    'SA100A10-BA' => array(
+        'number' => 'SA100A10-BA',
+        'name' => 'Shark Attack - Berryato - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Waldfrüchte',
+            1 => 'Vanille',
+            2 => 'Lakritz',
+            3 => 'Menthol',
+        ),
+    ),
+    'SA100A10-BL' => array(
+        'number' => 'SA100A10-BL',
+        'name' => 'Shark Attack - Boogaloo - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Käsekuchen',
+            1 => 'Blaubeere',
+            2 => 'Erdbeere',
+            3 => 'Sahne',
+            4 => 'Keks',
+        ),
+    ),
+    'SA100A10-CB' => array(
+        'number' => 'SA100A10-CB',
+        'name' => 'Shark Attack - Cocobolo - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'tropische Früchte',
+            1 => 'Ananas',
+            2 => 'Papaya',
+            3 => 'Kokosmilch',
+        ),
+    ),
+    'SA100A10-DL' => array(
+        'number' => 'SA100A10-DL',
+        'name' => 'Shark Attack - Don Limon - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Limette',
+            1 => 'Traube',
+            2 => 'Agave',
+        ),
+    ),
+    'SA100A10-FD' => array(
+        'number' => 'SA100A10-FD',
+        'name' => 'Shark Attack - Foggy Daddy - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Ananas',
+            1 => 'Vanille',
+            2 => 'Cream',
+        ),
+    ),
+    'SA100A10-MS' => array(
+        'number' => 'SA100A10-MS',
+        'name' => 'Shark Attack - Melon Shark - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Wassermelone',
+            1 => 'Kirsche',
+            2 => 'Koolada',
+        ),
+    ),
+    'SA100A10-OB' => array(
+        'number' => 'SA100A10-OB',
+        'name' => 'Shark Attack - Orange Ball - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Orangenbonbon',
+            1 => 'Vanille',
+        ),
+    ),
+    'SA100A10-PS' => array(
+        'number' => 'SA100A10-PS',
+        'name' => 'Shark Attack - Pink Shark - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Himbeere',
+            2 => 'schwarze Johannisbeere',
+            3 => 'Konfitüre',
+        ),
+    ),
+    'SA100A10-RS' => array(
+        'number' => 'SA100A10-RS',
+        'name' => 'Shark Attack - Royal Strudel - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Apfel',
+            1 => 'Rosine',
+            2 => 'Zimt',
+            3 => 'Blätterteig',
+        ),
     ),
     'SB10010-AP' => array(
         'number' => 'SB10010-AP',
@@ -2835,78 +3170,6 @@ return array(
             0 => 'Wassermelone',
         ),
     ),
-    'SC100E3P-BS' => array(
-        'number' => 'SC100E3P-BS',
-        'name' => 'SC - Easy 3 - Blue Spot - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Blaubeere',
-        ),
-    ),
-    'SC100E3P-DD' => array(
-        'number' => 'SC100E3P-DD',
-        'name' => 'SC - Easy 3 - Devil\'s Darling - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Tabak',
-        ),
-    ),
-    'SC100E3P-FM' => array(
-        'number' => 'SC100E3P-FM',
-        'name' => 'SC - Easy 3 - First Man - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Apfel',
-        ),
-    ),
-    'SC100E3P-ML' => array(
-        'number' => 'SC100E3P-ML',
-        'name' => 'SC - Easy 3 - Milli - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Vanille',
-        ),
-    ),
-    'SC100E3P-PS' => array(
-        'number' => 'SC100E3P-PS',
-        'name' => 'SC - Easy 3 - Pretty Sweetheart - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Erdbeere',
-            1 => 'Sahne',
-        ),
-    ),
-    'SC100E3P-RC' => array(
-        'number' => 'SC100E3P-RC',
-        'name' => 'SC - Easy 3 - Red Cyclone - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'rote Früchte',
-        ),
-    ),
-    'SC100E3P-RV' => array(
-        'number' => 'SC100E3P-RV',
-        'name' => 'SC - Easy 3 - Red Violet - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Amarenakirsche',
-        ),
-    ),
-    'SC100E3P-SS' => array(
-        'number' => 'SC100E3P-SS',
-        'name' => 'SC - Easy 3 - Star Spangled - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Tabak',
-        ),
-    ),
-    'SC100E3P-TR' => array(
-        'number' => 'SC100E3P-TR',
-        'name' => 'SC - Easy 3 - The Rebels - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Tabak',
-            1 => 'Vanille',
-        ),
-    ),
-    'SC100E3P-WG' => array(
-        'number' => 'SC100E3P-WG',
-        'name' => 'SC - Easy 3 - White Glacier - Caps (2 Stück pro Packung)',
-        'flavor' => array(
-            0 => 'Menthol',
-        ),
-    ),
     'SC100VB10-AM' => array(
         'number' => 'SC100VB10-AM',
         'name' => 'SC - Apfelmix-Menthol - Shake & Vape - 50 ml, 0 mg/ml',
@@ -3072,6 +3335,206 @@ return array(
             0 => 'Wassermelone',
         ),
     ),
+    'SP100A10-BC' => array(
+        'number' => 'SP100A10-BC',
+        'name' => '5 Stars Peine - Tea Edition - Black Ceylon Vanilla Twist- Aroma - 9 ml',
+        'flavor' => array(
+            0 => 'Ceylon Tee',
+            1 => 'Vanille',
+            2 => 'Cream',
+            3 => 'brauner Zucker',
+        ),
+    ),
+    'SP100A10-CM' => array(
+        'number' => 'SP100A10-CM',
+        'name' => '5 Stars Peine - Cocktail Edition - Cosmopolitan - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Wodka',
+            1 => 'Cranberry',
+            2 => 'Curaçao',
+            3 => 'Orange',
+            4 => 'Limette',
+            5 => 'Koolada',
+        ),
+    ),
+    'SP100A10-GR' => array(
+        'number' => 'SP100A10-GR',
+        'name' => '5 Stars Peine - Tea Edition - Green Tea Lime Infused- Aroma - 9 ml',
+        'flavor' => array(
+            0 => 'Matcha',
+            1 => 'Zitronentee',
+            2 => 'Limettenschale',
+        ),
+    ),
+    'SP100A10-MM' => array(
+        'number' => 'SP100A10-MM',
+        'name' => '5 Stars Peine - Cocktail Edition - Moscow Mule - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Wodka',
+            1 => 'Ingwerbier',
+            2 => 'Curaçao',
+            3 => 'Limette',
+            4 => 'Gurke',
+        ),
+    ),
+    'SP100A10-MR' => array(
+        'number' => 'SP100A10-MR',
+        'name' => '5 Stars Peine - Cocktail Edition - Melon Rumballa - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Cantaloupe-Melone',
+            1 => 'karibischer Rum',
+            2 => 'Limette',
+            3 => 'Koolada',
+        ),
+    ),
+    'SP100A10-NN' => array(
+        'number' => 'SP100A10-NN',
+        'name' => '5 Stars Peine - Niki’s Nörgel Nougat - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Nougat',
+            1 => 'Schokolade',
+        ),
+    ),
+    'SP100A10-ON' => array(
+        'number' => 'SP100A10-ON',
+        'name' => '5 Stars Peine - One - Onkel Niki’s Eierflip - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Eierlikör',
+        ),
+    ),
+    'SP100A10-RG' => array(
+        'number' => 'SP100A10-RG',
+        'name' => '5 Stars Peine - Cocktail Edition - Raspberry Gin Smash - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Gin',
+            1 => 'Himbeere',
+            2 => 'Zitrone',
+            3 => 'Grenadine',
+            4 => 'Limette',
+            5 => 'Basilikum',
+        ),
+    ),
+    'SP100A10-SC' => array(
+        'number' => 'SP100A10-SC',
+        'name' => '5 Stars Peine - Tea Edition - Spiced Chai Latte- Aroma - 9 ml',
+        'flavor' => array(
+            0 => 'schwarzer Tee',
+            1 => 'Masala-Gewürze',
+            2 => 'Sojamilch',
+        ),
+    ),
+    'SP100A10-SP' => array(
+        'number' => 'SP100A10-SP',
+        'name' => '5 Stars Peine - Cocktail Edition - Swimming Pool - Aroma - 10 ml',
+        'flavor' => array(
+            0 => 'Ananas',
+            1 => 'karibischer Rum',
+            2 => 'Sahne',
+            3 => 'Curaçao',
+            4 => 'Koolada',
+        ),
+    ),
+    'SP100L10-AB' => array(
+        'number' => 'SP100L10-AB',
+        'name' => '5 Stars Peine - Flavor Monster - Anna Banana - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Banane',
+            1 => 'Milchshake',
+        ),
+    ),
+    'SP100L10-CI' => array(
+        'number' => 'SP100L10-CI',
+        'name' => '5 Stars Peine - Flavor Monster - Cassius Ice - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Cassis',
+            1 => 'Koolada',
+        ),
+    ),
+    'SP100L10-CR' => array(
+        'number' => 'SP100L10-CR',
+        'name' => '5 Stars Peine - Flavor Monster - Coolia Rouge - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'rote Früchte',
+            1 => 'Koolada',
+        ),
+    ),
+    'SP100L10-CT' => array(
+        'number' => 'SP100L10-CT',
+        'name' => '5 Stars Peine - Flavor Monster - Chillbert Tang - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Mandarine',
+            1 => 'Koolada',
+        ),
+    ),
+    'SP100L10-IG' => array(
+        'number' => 'SP100L10-IG',
+        'name' => '5 Stars Peine - Flavor Monster - Igor Strawkiwski - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Kiwi',
+        ),
+    ),
+    'SP100L10-JC' => array(
+        'number' => 'SP100L10-JC',
+        'name' => '5 Stars Peine - Flavor Monster - Jack Currant - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'schwarze Johannisbeere',
+        ),
+    ),
+    'SP100L10-KC' => array(
+        'number' => 'SP100L10-KC',
+        'name' => '5 Stars Peine - Flavor Monster - Katie Cherry - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'süße Kirsche',
+        ),
+    ),
+    'SP100L10-MF' => array(
+        'number' => 'SP100L10-MF',
+        'name' => '5 Stars Peine - Flavor Monster - Melonia Frost - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Melone',
+            1 => 'Koolada',
+        ),
+    ),
+    'SP100L10-ML' => array(
+        'number' => 'SP100L10-ML',
+        'name' => '5 Stars Peine - Flavor Monster - Morgan Latte - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Café Latte',
+        ),
+    ),
+    'SP100L10-MS' => array(
+        'number' => 'SP100L10-MS',
+        'name' => '5 Stars Peine - Flavor Monster - Marlice Summer - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Eisbonbon',
+            1 => 'Melone',
+        ),
+    ),
+    'SP100L10-OC' => array(
+        'number' => 'SP100L10-OC',
+        'name' => '5 Stars Peine - Flavor Monster - Orange County - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Orange',
+            1 => 'Kokos',
+        ),
+    ),
+    'SP100L10-PG' => array(
+        'number' => 'SP100L10-PG',
+        'name' => '5 Stars Peine - Flavor Monster - Pepino Granada - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Gurke',
+            1 => 'Granatapfel',
+        ),
+    ),
+    'SP100L10-SG' => array(
+        'number' => 'SP100L10-SG',
+        'name' => '5 Stars Peine - Flavor Monster - Straw Garry - Shake & Vape - 20 ml, 0 mg/ml',
+        'flavor' => array(
+            0 => 'Erdbeere',
+            1 => 'Milchshake',
+        ),
+    ),
     'ST100L10-BJ' => array(
         'number' => 'ST100L10-BJ',
         'name' => 'SOLT - Blackjack - Nikotinsalz-Liquid',
@@ -3118,13 +3581,17 @@ return array(
     ),
     'TB100A10-BS' => array(
         'number' => 'TB100A10-BS',
-        'name' => 'Tobacco Time - Aroma Burley Silver - 20 ml',
-        'flavor' => null,
+        'name' => 'Tobacco Time - Burley Silver - Aroma - 20 ml',
+        'flavor' => array(
+            0 => 'Burley Tabak',
+        ),
     ),
     'TB100A10-VG' => array(
         'number' => 'TB100A10-VG',
-        'name' => 'Tobacco Time - Aroma Virginia Gold - 20 ml',
-        'flavor' => null,
+        'name' => 'Tobacco Time - Virginia Gold - Aroma - 20 ml',
+        'flavor' => array(
+            0 => 'Virginia Tabak',
+        ),
     ),
     'TE100L10-BL' => array(
         'number' => 'TE100L10-BL',
@@ -3753,12 +4220,57 @@ return array(
             3 => 'Vanille',
         ),
     ),
+    'TW100L10-P9' => array(
+        'number' => 'TW100L10-P9',
+        'name' => 'Twisted - Peng Juice - 9 mm - Aroma - 20 ml',
+        'flavor' => array(
+            0 => 'Litschi',
+            1 => 'Mango',
+            2 => 'Papaya',
+        ),
+    ),
     'TW100L10-PA' => array(
         'number' => 'TW100L10-PA',
         'name' => 'Twisted - Peach Tea - Aroma - 10 ml',
         'flavor' => array(
             0 => 'Pfirsich',
             1 => 'Tee',
+        ),
+    ),
+    'TW100L10-PI' => array(
+        'number' => 'TW100L10-PI',
+        'name' => 'Twisted - Peng Juice - Sniper - Aroma - 20 ml',
+        'flavor' => array(
+            0 => 'Pfirsich',
+            1 => 'Joghurt',
+        ),
+    ),
+    'TW100L10-PN' => array(
+        'number' => 'TW100L10-PN',
+        'name' => 'Twisted - Peng Juice - Nuclear - Aroma - 20 ml',
+        'flavor' => array(
+            0 => 'Guave',
+            1 => 'rote Früchte',
+            2 => 'Cream',
+        ),
+    ),
+    'TW100L10-PO' => array(
+        'number' => 'TW100L10-PO',
+        'name' => 'Twisted - Peng Juice - Soldier - Aroma - 20 ml',
+        'flavor' => array(
+            0 => 'Keks',
+            1 => 'Vanille',
+            2 => 'weiße Schokolade',
+            3 => 'Karamell',
+        ),
+    ),
+    'TW100L10-PP' => array(
+        'number' => 'TW100L10-PP',
+        'name' => 'Twisted - Peng Juice - Napalm - Aroma - 20 ml',
+        'flavor' => array(
+            0 => 'Marshmallow',
+            1 => 'Rice Crispies',
+            2 => 'Baiser',
         ),
     ),
     'TW100L10-PS' => array(
@@ -3983,14 +4495,6 @@ return array(
             2 => 'Crumble',
         ),
     ),
-    'VG10010-BB' => array(
-        'number' => 'VG10010-BB',
-        'name' => 'I VG - Menthol - Blueberg Burst - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Früchte',
-            1 => 'Menthol',
-        ),
-    ),
     'VG10010-BC' => array(
         'number' => 'VG10010-BC',
         'name' => 'I VG - Menthol - Blueberry Crush - Shake & Vape - 50 ml, 0 mg/ml',
@@ -4012,15 +4516,6 @@ return array(
         'flavor' => array(
             0 => 'Kaugummi',
             1 => 'Koolada',
-        ),
-    ),
-    'VG10010-BL' => array(
-        'number' => 'VG10010-BL',
-        'name' => 'I VG - Menthol - Blackberg - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Blaubeere',
-            1 => 'Menthol',
-            2 => 'schwarze Johannisbeere',
         ),
     ),
     'VG10010-BM' => array(
@@ -4087,29 +4582,11 @@ return array(
             1 => 'Koolada',
         ),
     ),
-    'VG10010-CP' => array(
-        'number' => 'VG10010-CP',
-        'name' => 'I VG - Desserts - Choco Haze Pancake - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Cream',
-            1 => 'Haselnuss',
-            2 => 'Pfannkuchen',
-            3 => 'Schokolade',
-        ),
-    ),
     'VG10010-CR' => array(
         'number' => 'VG10010-CR',
         'name' => 'I VG - Pops - Caramel Lollipop - Shake & Vape - 50 ml, 0 mg/ml',
         'flavor' => array(
             0 => 'Karamell',
-        ),
-    ),
-    'VG10010-CW' => array(
-        'number' => 'VG10010-CW',
-        'name' => 'I VG - Menthol - Cherry Wave - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Kirsche',
-            1 => 'Menthol',
         ),
     ),
     'VG10010-GC' => array(
@@ -4197,14 +4674,6 @@ return array(
             1 => 'Limette',
         ),
     ),
-    'VG10010-OM' => array(
-        'number' => 'VG10010-OM',
-        'name' => 'I VG - Sweets - Orange - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Kaubonbon',
-            1 => 'Orange',
-        ),
-    ),
     'VG10010-PL' => array(
         'number' => 'VG10010-PL',
         'name' => 'I VG - Sweets - Pink Lemonade - Shake & Vape - 50 ml, 0 mg/ml',
@@ -4223,14 +4692,6 @@ return array(
             3 => 'schwarze Traube',
         ),
     ),
-    'VG10010-RB' => array(
-        'number' => 'VG10010-RB',
-        'name' => 'I VG - Menthol - Rainbow Blast- Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Früchte',
-            1 => 'Koolada',
-        ),
-    ),
     'VG10010-RD' => array(
         'number' => 'VG10010-RD',
         'name' => 'I VG - Tobacco - Red - Shake & Vape - 50 ml, 0 mg/ml',
@@ -4239,13 +4700,6 @@ return array(
             1 => 'Beeren',
             2 => 'Tabak',
             3 => 'Vanille',
-        ),
-    ),
-    'VG10010-RL' => array(
-        'number' => 'VG10010-RL',
-        'name' => 'I VG - Pops - Rainbow Lollipop - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Früchte',
         ),
     ),
     'VG10010-RS' => array(
@@ -4263,14 +4717,6 @@ return array(
         'flavor' => array(
             0 => 'Erdbeere',
             1 => 'Kaugummi',
-        ),
-    ),
-    'VG10010-SP' => array(
-        'number' => 'VG10010-SP',
-        'name' => 'I VG - Sweets - Spearmint - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Kaubonbon',
-            1 => 'Minze',
         ),
     ),
     'VG10010-SS' => array(
@@ -4306,51 +4752,12 @@ return array(
             1 => 'Koolada',
         ),
     ),
-    'VG100A10-CL' => array(
-        'number' => 'VG100A10-CL',
-        'name' => 'I VG - Cola - Aroma - 30 ml',
-        'flavor' => array(
-            0 => 'Cola',
-        ),
-    ),
-    'VG100A10-LL' => array(
-        'number' => 'VG100A10-LL',
-        'name' => 'I VG - Lemon Lime Mojito - Aroma - 30 ml',
-        'flavor' => array(
-            0 => 'Limette',
-            1 => 'Mojito',
-            2 => 'Zitrone',
-        ),
-    ),
-    'VG100A10-RB' => array(
-        'number' => 'VG100A10-RB',
-        'name' => 'I VG - Rainbow - Aroma - 30 ml',
-        'flavor' => array(
-            0 => 'Fruchtbonbon',
-            1 => 'Koolada',
-        ),
-    ),
-    'VG100A10-RY' => array(
-        'number' => 'VG100A10-RY',
-        'name' => 'I VG - Raspberry - Aroma - 30 ml',
-        'flavor' => array(
-            0 => 'Himbeere',
-        ),
-    ),
     'VG100A10-SM' => array(
         'number' => 'VG100A10-SM',
         'name' => 'I VG - Sweet Mint - Aroma - 30 ml',
         'flavor' => array(
             0 => 'Kaubonbon',
             1 => 'Minze',
-        ),
-    ),
-    'VG100A10-VM' => array(
-        'number' => 'VG100A10-VM',
-        'name' => 'I VG - Vanilla Milkshake - Aroma - 30 ml',
-        'flavor' => array(
-            0 => 'Milch-Shake',
-            1 => 'Vanille',
         ),
     ),
     'VH100A10-CA' => array(
@@ -4624,7 +5031,13 @@ return array(
     'VH100A10-SM' => array(
         'number' => 'VH100A10-SM',
         'name' => 'VapeHansa - Saint Cloudz Mahafuka - Aroma - 20 ml',
-        'flavor' => null,
+        'flavor' => array(
+            0 => 'Mango',
+            1 => 'Litschi',
+            2 => 'Kokos',
+            3 => 'Vanille',
+            4 => 'Menthol',
+        ),
     ),
     'VH100A10-SO' => array(
         'number' => 'VH100A10-SO',
@@ -4938,6 +5351,15 @@ return array(
             1 => 'Koolada',
         ),
     ),
+    'VV100A10-AF' => array(
+        'number' => 'VV100A10-AF',
+        'name' => 'Vampire Vape - Arctic Fruit - Aroma - 30 ml',
+        'flavor' => array(
+            0 => 'Beeren',
+            1 => 'Anis',
+            2 => 'Koolada',
+        ),
+    ),
     'VV100A10-AP' => array(
         'number' => 'VV100A10-AP',
         'name' => 'Vampire Vape - Applelicious - Aroma - 30 ml',
@@ -5093,6 +5515,14 @@ return array(
         'flavor' => array(
             0 => 'Kirsche',
             1 => 'Minze',
+        ),
+    ),
+    'VV100A10-CM' => array(
+        'number' => 'VV100A10-CM',
+        'name' => 'Vampire Vape - Caramel Crunch - Aroma - 30 ml',
+        'flavor' => array(
+            0 => 'Karamell',
+            1 => 'Butterscotch Candy',
         ),
     ),
     'VV100A10-CP' => array(
@@ -5312,6 +5742,14 @@ return array(
             0 => 'Zitrone',
         ),
     ),
+    'VV100A10-LP' => array(
+        'number' => 'VV100A10-LP',
+        'name' => 'Vampire Vape - Sweet Lemon Pie - Aroma - 30 ml',
+        'flavor' => array(
+            0 => 'Zitronentorte',
+            1 => 'Zuckersirup',
+        ),
+    ),
     'VV100A10-MT' => array(
         'number' => 'VV100A10-MT',
         'name' => 'Vampire Vape - Marmalade On Toast - Limited Edition - Aroma - 30 ml',
@@ -5465,7 +5903,7 @@ return array(
         'name' => 'Vampire Vape - Strawberry Milkshake - Aroma - 30 ml',
         'flavor' => array(
             0 => 'Erdbeere',
-            1 => 'Milch-Shake',
+            1 => 'Milchshake',
         ),
     ),
     'VV100A10-SP' => array(
@@ -5498,6 +5936,14 @@ return array(
             1 => 'Karamell',
         ),
     ),
+    'VV100A10-TB' => array(
+        'number' => 'VV100A10-TB',
+        'name' => 'Vampire Vape - Tobacco 1961 - Aroma - 30 ml',
+        'flavor' => array(
+            0 => 'Tabak',
+            1 => 'Nuss',
+        ),
+    ),
     'VV100A10-TI' => array(
         'number' => 'VV100A10-TI',
         'name' => 'Vampire Vape - Tiger Ice - Aroma - 30 ml',
@@ -5513,6 +5959,14 @@ return array(
         'name' => 'Vampire Vape - Tropical Island - Aroma - 30 ml',
         'flavor' => array(
             0 => 'tropische Früchte',
+        ),
+    ),
+    'VV100A10-TT' => array(
+        'number' => 'VV100A10-TT',
+        'name' => 'Vampire Vape - Tropical Tsunami - Aroma - 30 ml',
+        'flavor' => array(
+            0 => 'Ananas',
+            1 => 'Mango',
         ),
     ),
     'VV100A10-VO' => array(
@@ -6012,7 +6466,7 @@ return array(
         'name' => 'Vampire Vape - Strawberry Milkshake - Liquid - 10 ml',
         'flavor' => array(
             0 => 'Erdbeere',
-            1 => 'Milch-Shake',
+            1 => 'Milchshake',
         ),
     ),
     'VV100L10-SP' => array(
@@ -6161,16 +6615,6 @@ return array(
             2 => 'Erdbeere',
             3 => 'Marmelade',
             4 => 'Waldfrüchte',
-        ),
-    ),
-    'YG100L10-BG' => array(
-        'number' => 'YG100L10-BG',
-        'name' => 'Yogi - Blueberry Granola Bar - Shake & Vape - 50 ml, 0 mg/ml',
-        'flavor' => array(
-            0 => 'Blaubeere',
-            1 => 'Haferflocken',
-            2 => 'Honig',
-            3 => 'Müsliriegel',
         ),
     ),
     'YG100L10-OG' => array(

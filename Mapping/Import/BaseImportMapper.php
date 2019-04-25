@@ -2,22 +2,13 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 
-class BaseImportMapper
+class BaseImportMapper implements LoggerAwareInterface, ClassConfigAwareInterface
 {
-    /** @var array $config */
-    protected $config = [];
-
-    /** @var LoggerInterface $log */
-    protected $log;
-
-    /** @var array */
-    protected $report;
-
-    public function __construct(array $config, LoggerInterface $log)
-    {
-        $this->log = $log;
-        $this->config = $config;
-    }
+    use LoggerAwareTrait;
+    use ClassConfigAwareTrait;
 }

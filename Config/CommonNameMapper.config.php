@@ -35,4 +35,9 @@ return [
             'Deserts'  => 2,
         ],
     ],
+
+    // @todo: Direct common name mapping for some products, overrides mapping algorithm
+    'common_names' => [
+        '~ARC Head~' => 'Revvo',
+    ]
 ];

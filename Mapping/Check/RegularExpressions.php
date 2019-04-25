@@ -4,25 +4,24 @@
 namespace MxcDropshipInnocigs\Mapping\Check;
 
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
 
-class RegularExpressions
+class RegularExpressions implements LoggerAwareInterface
 {
+    use LoggerAwareTrait;
+
     /** @var array */
     protected $config;
-
-    /** @var LoggerInterface $log */
-    protected $log;
 
     /** @var RegexChecker $regexChecker */
     protected $regexChecker;
 
-    public function __construct(RegexChecker $regexChecker, array $config, LoggerInterface $log)
+    public function __construct(RegexChecker $regexChecker, array $config)
     {
         $this->config = $config;
         $this->regexChecker = $regexChecker;
-        $this->log = $log;
     }
 
     /**

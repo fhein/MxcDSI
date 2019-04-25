@@ -3,24 +3,23 @@
 
 namespace MxcDropshipInnocigs\Mapping\Check;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Mapping\Import\NameMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
-use Shopware\Components\Model\ModelManager;
 
-class NameMappingConsistency
+class NameMappingConsistency implements LoggerAwareInterface, ModelManagerAwareInterface
 {
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
+
     /** @var NameMapper $importNameMapper */
     protected $importNameMapper;
-
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
-
-    /** @var LoggerInterface $log */
-    protected $log;
 
     /** @var array */
     protected $products;
@@ -28,11 +27,9 @@ class NameMappingConsistency
     /** @var array */
     protected $Models;
 
-    public function __construct(ModelManager $modelManager, NameMapper $importNameMapper, LoggerInterface $log)
+    public function __construct(NameMapper $importNameMapper)
     {
         $this->importNameMapper = $importNameMapper;
-        $this->modelManager = $modelManager;
-        $this->log = $log;
     }
 
     /**

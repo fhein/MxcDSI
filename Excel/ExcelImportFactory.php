@@ -24,7 +24,7 @@ class ExcelImportFactory implements FactoryInterface
             $importers[$idx] = $container->get($service);
         }
 
-        return new ExcelImport($importers);
+        return new $requestedName($importers);
     }
 
 }

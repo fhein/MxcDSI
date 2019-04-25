@@ -4,31 +4,28 @@
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Models\Variant;
-use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Plugin\Plugin;
 
-class DropshippersCompanion
+class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareInterface
 {
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
+
     /** @var bool */
     protected $valid;
-
-    /** @var ModelManager */
-    protected $modelManager;
-
-    /** @var LoggerInterface */
-    protected $log;
 
     /** @var ApiClient */
     private $apiClient;
 
-    public function __construct(ModelManager $modelManager, ApiClient $apiClient, LoggerInterface $log)
+    public function __construct(ApiClient $apiClient)
     {
-        $this->modelManager = $modelManager;
         $this->apiClient = $apiClient;
-        $this->log = $log;
     }
 
     public function configureDropship(Variant $variant, bool $active = true)

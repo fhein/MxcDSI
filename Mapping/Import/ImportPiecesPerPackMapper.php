@@ -7,7 +7,7 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 
-class ImportPiecesPerPackMapper extends BaseImportMapper implements ProductMapperInterface
+class ImportPiecesPerPackMapper implements ProductMapperInterface
 {
     /**
      * If a product in general contains several pieces, i.e. not as an option,

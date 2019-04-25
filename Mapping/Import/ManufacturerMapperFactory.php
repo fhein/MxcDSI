@@ -3,12 +3,13 @@
 namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ManufacturerMapperFactory implements FactoryInterface
 {
-    use ClassConfigTrait;
+    use ObjectAugmentationTrait;
+
     /**
      * Create an object
      *
@@ -19,11 +20,8 @@ class ManufacturerMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $mapping = $container->get(ImportMappings::class);
-        $config = $this->getClassConfig($container, $requestedName);
-        $log = $container->get('logger');
-
-        return new ManufacturerMapper($mapping, $config, $log);
+        $config = $container->get(ImportMappings::class)->getClassConfig();
+        return $this->augment($container, new ManufacturerMapper($config));
     }
 
 }

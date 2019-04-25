@@ -3,24 +3,22 @@
 namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Report\ArrayReport;
-use Shopware\Components\Model\ModelManager;
 
-class AssociatedProductsMapper
+class AssociatedProductsMapper implements ClassConfigAwareInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
-    protected $log;
-    protected $modelManager;
-    protected $config;
-    protected $productGroups;
+    use ClassConfigAwareTrait;
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
 
-    public function __construct(ModelManager $modelManager, array $config, LoggerInterface $log)
-    {
-        $this->log = $log;
-        $this->config = $config;
-        $this->modelManager = $modelManager;
-    }
+    protected $productGroups;
 
     public function map(array $products)
     {
@@ -78,9 +76,9 @@ class AssociatedProductsMapper
 
     protected function deriveRelatedProducts()
     {
-        if (! isset($this->config['related_product_groups'])) return;
+        if (! isset($this->classConfig['related_product_groups'])) return;
 
-        foreach ($this->config['related_product_groups'] as $group => $setting) {
+        foreach ($this->classConfig['related_product_groups'] as $group => $setting) {
             foreach ($this->productGroups[$group] as $products) {
                 /** @var Product $product */
                 foreach ($products as $product) {
@@ -95,7 +93,7 @@ class AssociatedProductsMapper
     {
         $flavor1 = array_map('trim', explode(',', $product1->getFlavor()));
         $flavor2 = array_map('trim', explode(',', $product2->getFlavor()));
-        $similarFlavors = $this->config['similar_flavors'] ?? [];
+        $similarFlavors = $this->classConfig['similar_flavors'] ?? [];
         foreach ($similarFlavors as $flavor) {
             if (in_array($flavor, $flavor1) && in_array($flavor, $flavor2)) {
                 return true;
@@ -133,7 +131,7 @@ class AssociatedProductsMapper
 
     protected function deriveSimilarProducts()
     {
-        $similarGroups = $this->config['similar_product_groups'] ?? [];
+        $similarGroups = $this->classConfig['similar_product_groups'] ?? [];
         foreach ($similarGroups as $group => $setting) {
             if (! $this->productGroups[$group]) continue;
             foreach ($this->productGroups[$group] as $products) {

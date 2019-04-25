@@ -29,7 +29,7 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
     const TYPE_TOOL                 = 18;
     const TYPE_WADDING              = 19; // Watte
     const TYPE_WIRE                 = 20;
-    const TYPE_BOTTLE               = 21;
+    const TYPE_CLEAROMIZER_RDA      = 21;
     const TYPE_SQUONKER_BOTTLE      = 22;
     const TYPE_VAPORIZER            = 23;
     const TYPE_SHOT                 = 24;
@@ -60,6 +60,8 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
     const TYPE_BATTERY_SLEEVE       = 49;
     const TYPE_CLEANING_SUPPLY      = 50;
 
+    protected $types;
+
     /**
      * Derive the type of an article. This is done via the
      * 'name_type_mapping' configuration.
@@ -70,13 +72,21 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
     public function map(Model $model, Product $product)
     {
         $name = $product->getName();
-        $types = $this->config['name_type_mapping'] ?? [];
+        $types = $this->classConfig['name_type_mapping'] ?? [];
         foreach ($types as $pattern => $type) {
             if (preg_match($pattern, $name) === 1) {
-                $product->setType($this->config['types'][$type]);
+                $product->setType($this->classConfig['types'][$type]);
                 return;
             }
         }
         $product->setType('');
+    }
+
+    public function getType(string $strType)
+    {
+        if (!$this->types) {
+            $this->types = array_flip($this->classConfig['types']);
+        }
+        return $this->types[$strType] ?? null;
     }
 }

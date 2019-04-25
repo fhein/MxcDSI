@@ -2,28 +2,21 @@
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use Shopware\Components\Model\ModelManager;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Repository;
 
-class ArticleTool {
-
-    /** @var LoggerInterface */
-    protected $log;
+class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
+{
+    use LoggerAwareTrait;
+    use ModelManagerAwareTrait;
 
     /** @var Repository */
     protected $articleRepository;
-
-    /** @var ModelManager  */
-    protected $modelManager;
-
-    public function __construct(ModelManager $modelManager, LoggerInterface $log)
-    {
-        $this->modelManager = $modelManager;
-        $this->log = $log;
-    }
 
     public function setMainDetail(Detail $detail)
     {

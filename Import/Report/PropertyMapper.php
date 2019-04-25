@@ -2,18 +2,17 @@
 
 namespace MxcDropshipInnocigs\Import\Report;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use MxcDropshipInnocigs\Report\ArrayMap;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Report\Mapper\SuccessiveReplacer;
 
-class PropertyMapper
+class PropertyMapper implements LoggerAwareInterface
 {
+    use LoggerAwareTrait;
     /** @var ArrayReport $reporter */
     protected $reporter;
-
-    /** @var LoggerInterface $log */
-    protected $log;
 
     /** @var array $topics */
     protected $topics;
@@ -22,10 +21,9 @@ class PropertyMapper
 
     protected $config;
 
-    public function __construct(LoggerInterface $log)
+    public function __construct()
     {
         $this->reporter = new ArrayReport();
-        $this->log = $log;
     }
 
     public function __invoke(array $topics, array $config) {

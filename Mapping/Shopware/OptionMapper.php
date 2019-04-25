@@ -2,20 +2,22 @@
 
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
-use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Configurator\Set;
 
-class OptionMapper
+class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
-    /** @var LoggerInterface $log */
-    protected $log;
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
 
     /** @var GroupRepository $groupRepository */
     protected $groupRepository;
@@ -23,27 +25,18 @@ class OptionMapper
     /** @var SetRepository $setRepository */
     protected $setRepository;
 
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
-
     /**
      * OptionMapper constructor.
      *
      * @param GroupRepository $groupRepository
      * @param SetRepository $setRepository
-     * @param ModelManager $modelManager
-     * @param LoggerInterface $log
      */
     public function __construct(
         GroupRepository $groupRepository,
-        SetRepository $setRepository,
-        ModelManager $modelManager,
-        LoggerInterface $log
+        SetRepository $setRepository
     ) {
-        $this->log = $log;
         $this->groupRepository = $groupRepository;
         $this->setRepository = $setRepository;
-        $this->modelManager = $modelManager;
     }
 
     /**

@@ -2,18 +2,17 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
-use Shopware\Components\Model\ModelManager;
 use Zend\Config\Factory;
 
-class Flavorist
+class Flavorist implements ModelManagerAwareInterface, LoggerAwareInterface
 {
-    /** @var LoggerInterface $log */
-    protected $log;
-
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
+    use LoggerAwareTrait;
+    use ModelManagerAwareTrait;
 
     protected $categories = [];
 
@@ -22,10 +21,8 @@ class Flavorist
     protected $categoryFile = __DIR__ . '/../../Config/flavor.categories.config.php';
     protected $flavorFile = __DIR__ . '/../../Config/FlavorMapper.config.php';
 
-    public function __construct(ModelManager $modelManager, LoggerInterface $log)
+    public function __construct()
     {
-        $this->log = $log;
-        $this->modelManager = $modelManager;
         $this->getFlavorCategories();
     }
 
@@ -37,30 +34,26 @@ class Flavorist
         } else {
             $currentFlavors = [];
         }
-        $products = $this->modelManager->getRepository(Product::class)->findAll();
+        /** @noinspection PhpUndefinedMethodInspection */
+        $products = $this->modelManager->getRepository(Product::class)->getFlavoredProducts();
         /** @var Product $product */
         $newFlavors = [];
         foreach ($products as $product) {
-            $isFlavored = preg_match('~(Liquid)|(Aromen)|(Shake \& Vape)~', $product->getCategory()) === 1;
-            $isMultiPack = strpos($product->getName(), 'Probierbox') !== false;
-            if ($isFlavored && ! $isMultiPack) {
-                $number = $product->getIcNumber();
-                if ($product->getFlavor() !== null) {
-                    $flavor = array_map('trim', explode(',', $product->getFlavor()));
-                } else {
-                    $flavor = @$currentFlavors[$number]['flavor'];
-                }
-                $newFlavors[$number] = [
-                    'number' => $number,
-                    'name'   => $product->getName(),
-                    'flavor' => $flavor
-                ];
+            $number = $product->getIcNumber();
+            if ($product->getFlavor() !== null) {
+                $flavor = array_map('trim', explode(',', $product->getFlavor()));
+            } else {
+                $flavor = @$currentFlavors[$number]['flavor'];
             }
+            $newFlavors[$number] = [
+                'number' => $number,
+                'name'   => $product->getName(),
+                'flavor' => $flavor
+            ];
         }
         ksort($newFlavors);
         Factory::toFile($this->flavorFile, $newFlavors);
     }
-
 
     public function updateCategories() {
         $this->revertCategories();

@@ -2,14 +2,20 @@
 
 namespace MxcDropshipInnocigs;
 
+use Mxc\Shopware\Plugin\Service\AugmentedObjectFactory;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelImport;
+use MxcDropshipInnocigs\Excel\ExcelProductImport;
+use MxcDropshipInnocigs\Excel\ExportDescription;
 use MxcDropshipInnocigs\Excel\ExportDosage;
 use MxcDropshipInnocigs\Excel\ExportFlavor;
 use MxcDropshipInnocigs\Excel\ExportPrices;
+use MxcDropshipInnocigs\Excel\ExportSheetFactory;
+use MxcDropshipInnocigs\Excel\ImportDescription;
 use MxcDropshipInnocigs\Excel\ImportDosage;
 use MxcDropshipInnocigs\Excel\ImportFlavor;
 use MxcDropshipInnocigs\Excel\ImportPrices;
+use MxcDropshipInnocigs\Excel\ImportSheetFactory;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
@@ -125,55 +131,65 @@ return [
     'services'     => [
 
         'factories' => [
-            CategoryMapper::class            => ClassConfigFactory::class,
-            CommonNameMapper::class          => ClassConfigFactory::class,
-            ImportMappings::class            => ClassConfigFactory::class,
-            ImportPiecesPerPackMapper::class => ClassConfigFactory::class,
-            NameMapper::class                => ClassConfigFactory::class,
-            ProductNumberMapper::class       => ClassConfigFactory::class,
-            TypeMapper::class                => ClassConfigFactory::class,
-            VariantNumberMapper::class       => ClassConfigFactory::class,
+            CategoryMapper::class            => AugmentedObjectFactory::class,
+            CommonNameMapper::class          => AugmentedObjectFactory::class,
+            ImportMappings::class            => AugmentedObjectFactory::class,
+            ImportPiecesPerPackMapper::class => AugmentedObjectFactory::class,
+            NameMapper::class                => AugmentedObjectFactory::class,
+            ProductNumberMapper::class       => AugmentedObjectFactory::class,
+            TypeMapper::class                => AugmentedObjectFactory::class,
+            VariantNumberMapper::class       => AugmentedObjectFactory::class,
+            AssociatedProductsMapper::class  => AugmentedObjectFactory::class,
+            AssociatedArticlesMapper::class  => AugmentedObjectFactory::class,
+
+            ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
+            ConfiguratorSetRepository::class   => AugmentedObjectFactory::class,
+            FilterGroupRepository::class => AugmentedObjectFactory::class,
+            MappingFilePersister::class => AugmentedObjectFactory::class,
+            MediaTool::class => AugmentedObjectFactory::class,
+            ArticleTool::class => AugmentedObjectFactory::class,
+
+            PropertyMapperReport::class => AugmentedObjectFactory::class,
+            CategoryTool::class => AugmentedObjectFactory::class,
+
+            Flavorist::class => AugmentedObjectFactory::class,
 
             DosageMapper::class => MappingConfigFactory::class,
             FlavorMapper::class => MappingConfigFactory::class,
+
+            ImportDosage::class      => AugmentedObjectFactory::class,
+            ImportFlavor::class      => AugmentedObjectFactory::class,
+            ImportDescription::class => AugmentedObjectFactory::class,
+
+            ExportDosage::class      => AugmentedObjectFactory::class,
+            ExportFlavor::class      => AugmentedObjectFactory::class,
+            ExportDescription::class => AugmentedObjectFactory::class,
+
+            ExcelProductImport::class => ExcelImportFactory::class,
         ],
         'magicals'  => [
             ApiClient::class,
             ArrayReport::class,
             ArticleCategoryMapper::class,
-            ArticleTool::class,
-            AssociatedArticlesMapper::class,
-            AssociatedProductsMapper::class,
-            CategoryTool::class,
-            ConfiguratorGroupRepository::class,
             ConfiguratorSetRepository::class,
             Credentials::class,
             DetailMapper::class,
             DropshippersCompanion::class,
             ExcelExport::class,
             ExcelImport::class,
-            ExportDosage::class,
-            ExportFlavor::class,
             ExportPrices::class,
-            FilterGroupRepository::class,
             FilterTest::class,
-            Flavorist::class,
             ImageMapper::class,
             ImportClient::class,
-            ImportDosage::class,
-            ImportFlavor::class,
             ImportMapper::class,
             ImportPrices::class,
             ManufacturerMapper::class,
-            MappingFilePersister::class,
-            MediaTool::class,
             NameMappingConsistency::class,
             OptionMapper::class,
             PriceMapper::class,
             ProductMapper::class,
             ProductUpdater::class,
             PropertyMapper::class,
-            PropertyMapperReport::class,
             RegexChecker::class,
             RegularExpressions::class,
         ],
@@ -201,14 +217,16 @@ return [
     ],
     'excel'        => [
         'import' => [
-            'Preise'    => ImportPrices::class,
-            'Dosierung' => ImportDosage::class,
-            'Geschmack' => ImportFlavor::class,
+            'Preise'       => ImportPrices::class,
+            'Dosierung'    => ImportDosage::class,
+            'Geschmack'    => ImportFlavor::class,
+            'Beschreibung' => ImportDescription::class,
         ],
         'export' => [
-            'Preise'    => ExportPrices::class,
-            'Dosierung' => ExportDosage::class,
-            'Geschmack' => ExportFlavor::class,
+            'Preise'       => ExportPrices::class,
+            'Dosierung'    => ExportDosage::class,
+            'Geschmack'    => ExportFlavor::class,
+            'Beschreibung' => ExportDescription::class,
         ],
     ],
 ];

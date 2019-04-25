@@ -23,7 +23,7 @@ class CommonNameMapper extends BaseImportMapper implements ProductMapperInterfac
     {
         $name = $product->getName();
         $raw = explode(' - ', $name);
-        $index = @$this->config['common_name_index'][$raw[0]][$raw[1]] ?? 1;
+        $index = @$this->classConfig['common_name_index'][$raw[0]][$raw[1]] ?? 1;
         $name = trim($raw[$index] ?? $raw[0]);
         $replacements = ['~ \(\d+ Stück pro Packung\)~', '~Head$~'];
         $name = preg_replace($replacements, '', $name);

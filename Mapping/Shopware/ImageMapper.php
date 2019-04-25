@@ -5,16 +5,16 @@ namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Shopware\Models\Article\Article;
 
-class ImageMapper
+class ImageMapper implements LoggerAwareInterface
 {
-    /** @var LoggerInterface $log */
-    protected $log;
+    use LoggerAwareTrait;
 
     /** @var MediaTool mediaTool */
     protected $mediaTool;
@@ -25,9 +25,8 @@ class ImageMapper
     /** @var array $mainImages */
     protected $mainImages;
 
-    public function __construct(MediaTool $mediaTool, LoggerInterface $log)
+    public function __construct(MediaTool $mediaTool)
     {
-        $this->log = $log;
         $this->mediaTool = $mediaTool;
     }
 

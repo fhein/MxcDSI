@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php
 
 namespace MxcDropshipInnocigs\Excel;
 
@@ -7,7 +7,7 @@ use MxcDropshipInnocigs\Models\Product;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use Shopware\Components\Model\ModelManager;
 
-class ExportFlavor extends AbstractProductExport
+class ExportDescription extends AbstractProductExport
 {
     /** @var ModelManager $modelManager */
     protected $modelManager;
@@ -15,42 +15,47 @@ class ExportFlavor extends AbstractProductExport
     /** @var LoggerInterface $log */
     protected $log;
 
+    /** @var array */
+    protected $products;
+
+    protected function registerColumns()
+    {
+        parent::registerColumns();
+        $this->registerColumn('description');
+    }
+
     public function setSheetData()
     {
         $products = $this->data;
         usort($products, [$this, 'compare']);
         $headers[] = array_keys($products[0]);
-        $data = array_merge($headers, $products);
+        $products = array_merge($headers, $products);
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->sheet->fromArray($data);
-    }
-
-    protected function registerColumns()
-    {
-        parent::registerColumns();
-        $this->registerColumn('flavor');
+        $this->sheet->fromArray($products);
     }
 
     protected function formatSheet(): void
     {
         parent::formatSheet();
-        $highest = $this->getHighestRowAndColumn();
+        $highest = $this->sheet->getHighestRowAndColumn();
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->getStyle('F2:'. $highest['column'] . $highest['row'])
             ->getNumberFormat()->setFormatCode('@');
-        $this->sheet->getColumnDimension('F')->setWidth(80);
+
+        $this->sheet->getColumnDimension('F')->setWidth(150);
 
         $this->setAlternateRowColors();
         $this->formatHeaderLine();
         $this->setBorders('allBorders', Border::BORDER_THIN, 'FFBFBFBF');
+        $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000');
         $range = $this->getRange(['F', 1, 'F', $highest['row']]);
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $range);
-        $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000');
     }
 
     protected function loadRawExportData(): ?array
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        return $this->modelManager->getRepository(Product::class)->getExcelExportFlavoredProducts();
+        return $this->products
+            ?? $this->products = $this->modelManager->getRepository(Product::class)->getExcelExportDescription();
     }
 }

@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Interop\Container\ContainerInterface;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
@@ -10,6 +11,7 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 class OptionMapperFactory implements FactoryInterface
 {
+    use ObjectAugmentationTrait;
     /**
      * Create an object
      *
@@ -20,11 +22,8 @@ class OptionMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $log = $container->get('logger');
-        $modelManager = $container->get('modelManager');
         $groupRepository = $container->get(GroupRepository::class);
         $setRepository = $container->get(SetRepository::class);
-        $mapper = new OptionMapper($groupRepository, $setRepository, $modelManager, $log);
-        return $mapper;
+        return $this->augment($container, new OptionMapper($groupRepository, $setRepository));
     }
 }

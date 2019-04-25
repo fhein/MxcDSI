@@ -4,16 +4,16 @@
 namespace MxcDropshipInnocigs\Excel;
 
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use Shopware\Components\Model\ModelManager;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
-abstract class AbstractProductExport extends AbstractSheetExport
+abstract class AbstractProductExport extends AbstractSheetExport implements ModelManagerAwareInterface, LoggerAwareInterface
 {
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
-
-    /** @var LoggerInterface $log */
-    protected $log;
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
 
     private $fixedColumns = [
         'icNumber',
@@ -21,21 +21,9 @@ abstract class AbstractProductExport extends AbstractSheetExport
         'supplier',
         'brand',
         'name',
-        'EK Netto',
-        'EK Brutto',
-        'UVP Brutto',
-        'Marge UVP',
     ];
 
     protected $columnSort = ['type', 'supplier', 'brand', 'name'];
-
-    public function __construct(
-        ModelManager $modelManager,
-        LoggerInterface $log
-    ) {
-        $this->log = $log;
-        $this->modelManager = $modelManager;
-    }
 
     protected function registerColumns()
     {
@@ -51,10 +39,12 @@ abstract class AbstractProductExport extends AbstractSheetExport
         }
         $this->sheet->getColumnDimension('E')->setWidth(80);
         $highest = $this->getHighestRowAndColumn();
+        $range = $this->getRange(['A', 1, $highest['column'], $highest['row']]);
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $alignment = $this->sheet->getStyle($range)->getAlignment();
 
-        foreach (range('F', $highest['column']) as $col) {
-            $this->sheet->getColumnDimension($col)->setWidth(16);
-        }
+        $alignment->setVertical(Alignment::VERTICAL_TOP);
+        $alignment->setWrapText(true);
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->freezePane('A2');
     }

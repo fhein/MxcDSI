@@ -2,27 +2,25 @@
 
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
-class ArticleCategoryMapper
+class ArticleCategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
 {
-    /** @var LoggerInterface $log */
-    protected $log;
-
-    /** @var array  */
-    protected $config;
+    use LoggerAwareTrait;
+    use ClassConfigAwareTrait;
 
     /** @var CategoryTool $categoryTool */
     protected $categoryTool;
 
-    public function __construct(CategoryTool $categoryTool, array $config, LoggerInterface $log)
+    public function __construct(CategoryTool $categoryTool)
     {
-        $this->log = $log;
-        $this->config = $config;
         $this->categoryTool = $categoryTool;
     }
 
@@ -38,7 +36,7 @@ class ArticleCategoryMapper
         $article = $product->getArticle();
         if (!$article) return;
 
-        $root = $this->config['root_category'] ?? 'Deutsch';
+        $root = $this->classConfig['root_category'] ?? 'Deutsch';
         $rootCategory = $this->categoryTool->getCategoryPath($root);
         $icCategories = explode(MXC_DELIMITER_L1, $product->getCategory());
         foreach ($icCategories as $icCategory) {

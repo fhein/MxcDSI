@@ -2,7 +2,10 @@
 
 namespace MxcDropshipInnocigs\Mapping;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Mapping\Shopware\ArticleCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
@@ -14,16 +17,12 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
-use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 
-class ProductMapper
+class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {
-    /** @var LoggerInterface $log */
-    protected $log;
-
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
 
     /** @var DetailMapper */
     protected $detailMapper;
@@ -48,33 +47,27 @@ class ProductMapper
     /**
      * ProductMapper constructor.
      *
-     * @param ModelManager $modelManager
      * @param ArticleTool $articleTool
      * @param OptionMapper $optionMapper
      * @param DetailMapper $detailMapper
      * @param ImageMapper $imageMapper
      * @param ArticleCategoryMapper $categoryMapper
      * @param AssociatedArticlesMapper $associatedArticlesMapper
-     * @param LoggerInterface $log
      */
     public function __construct(
-        ModelManager $modelManager,
         ArticleTool $articleTool,
         OptionMapper $optionMapper,
         DetailMapper $detailMapper,
         ImageMapper $imageMapper,
         ArticleCategoryMapper $categoryMapper,
-        AssociatedArticlesMapper $associatedArticlesMapper,
-        LoggerInterface $log
+        AssociatedArticlesMapper $associatedArticlesMapper
     ) {
-        $this->modelManager = $modelManager;
         $this->articleTool = $articleTool;
         $this->optionMapper = $optionMapper;
         $this->detailMapper = $detailMapper;
         $this->imageMapper = $imageMapper;
         $this->categoryMapper = $categoryMapper;
         $this->associatedArticlesMapper = $associatedArticlesMapper;
-        $this->log = $log;
     }
 
     public function setArticleAcceptedState(array $products, bool $accepted)
@@ -131,7 +124,7 @@ class ProductMapper
         // Update all articles with similar or related articles referencing articles
         // that we just created.
         if (! empty($this->createdArticles)) {
-            $this->updateArticleLinks($this->createdArticles);
+            $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
         }
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
@@ -303,29 +296,6 @@ class ProductMapper
 
         if ($article) {
             $article->setActive($active);
-        }
-    }
-
-    /**
-     * Update the related and similar article lists of all Shopware articles
-     * where the corresponding product has related and similar articles from
-     * the given $products array.
-     *
-     * @param array $products
-     */
-    protected function updateArticleLinks(array $products) {
-        if (count($products) === 0) return;
-
-        $repository = $this->modelManager->getRepository(Product::class);
-
-        $productsWithRelatedNewArticles = $repository->getProductsHavingRelatedArticles($products);
-        foreach ($productsWithRelatedNewArticles as $product) {
-            $this->associatedArticlesMapper->setRelatedArticles($product);
-        }
-
-        $productsWithSimilarNewArticles = $repository->getProductsHavingSimilarArticles($products);
-        foreach ($productsWithSimilarNewArticles as $product) {
-            $this->associatedArticlesMapper->setSimilarArticles($product);
         }
     }
 

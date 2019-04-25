@@ -3,12 +3,14 @@
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Interop\Container\ContainerInterface;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImageMapperFactory implements FactoryInterface
 {
+    use ObjectAugmentationTrait;
     /**
      * Create an object
      *
@@ -19,10 +21,7 @@ class ImageMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $log = $container->get('logger');
         $mediaTool = $container->get(MediaTool::class);
-
-        $mapper = new ImageMapper($mediaTool, $log);
-        return $mapper;
+        return $this->augment($container, new ImageMapper($mediaTool));
     }
 }

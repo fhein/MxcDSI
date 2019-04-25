@@ -5,7 +5,12 @@ namespace MxcDropshipInnocigs\Mapping;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\OptimisticLockException;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
@@ -26,8 +31,15 @@ use Shopware\Components\Model\ModelManager;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
-class ImportMapper
+class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, ClassConfigAwareInterface
 {
+    use LoggerAwareTrait;
+    use ModelManagerAwareTrait;
+    use ClassConfigAwareTrait;
+
+    /** @var Flavorist */
+    protected $flavorist;
+
     /** @var VariantRepository */
     protected $variantRepository;
 
@@ -44,7 +56,7 @@ class ImportMapper
     protected $imageRepository;
 
     /** @var ModelManager $modelManager */
-    protected $modelManager;
+//    protected $modelManager;
 
     /** @var ApiClient $apiClient */
     protected $apiClient;
@@ -85,43 +97,44 @@ class ImportMapper
     /** @var array */
     protected $images;
 
-    /** @var LoggerInterface $log */
-    protected $log;
-
     /**
      * ImportMapper constructor.
      *
-     * @param ModelManager $modelManager
      * @param ArticleTool $articleTool
      * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
      * @param ProductMapper $shopwareMapper
      * @param DetailMapper $detailMapper
      * @param BulkOperation $bulkOperation
-     * @param array $config
-     * @param LoggerInterface $log
+     * @param Flavorist $flavorist
      */
     public function __construct(
-        ModelManager $modelManager,
         ArticleTool $articleTool,
         ApiClient $apiClient,
         PropertyMapper $propertyMapper,
         ProductMapper $shopwareMapper,
         DetailMapper $detailMapper,
         BulkOperation $bulkOperation,
-        array $config,
-        LoggerInterface $log
+        Flavorist $flavorist
     ) {
-        $this->modelManager = $modelManager;
         $this->articleTool = $articleTool;
         $this->detailMapper = $detailMapper;
         $this->apiClient = $apiClient;
         $this->propertyMapper = $propertyMapper;
         $this->shopwareMapper = $shopwareMapper;
         $this->bulkOperation = $bulkOperation;
-        $this->config = $config;
-        $this->log = $log;
+        $this->flavorist = $flavorist;
     }
+
+//    public function setModelManager(ModelManager $modelManager)
+//    {
+//        $this->modelManager = $modelManager;
+//    }
+//
+//    public function setLog(LoggerInterface $log)
+//    {
+//        $this->log = $log;
+//    }
 
     protected function getGroup(string $groupName)
     {
@@ -455,9 +468,8 @@ class ImportMapper
             }
         }
 
-        $flavorist = new Flavorist($this->modelManager, $this->log);
-        $flavorist->updateCategories();
-        $flavorist->updateFlavors();
+        $this->flavorist->updateCategories();
+        $this->flavorist->updateFlavors();
 
         return true;
     }

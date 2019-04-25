@@ -4,13 +4,13 @@ namespace MxcDropshipInnocigs\Import;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Database\SchemaManager;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImportClientFactory implements FactoryInterface
 {
-    use ClassConfigTrait;
+    use ObjectAugmentationTrait;
     /**
      * Create an object
      *
@@ -21,13 +21,10 @@ class ImportClientFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $this->getClassConfig($container, $requestedName);
         $apiClient = $container->get(ApiClient::class);
-        $log = $container->get('logger');
         $importMapper = $container->get(ImportMapper::class);
-        $modelManager = $container->get('modelManager');
         $schemaManager = $container->get(SchemaManager::class);
-        $client = new ImportClient($modelManager, $schemaManager, $apiClient, $importMapper, $config, $log);
-        return $client;
+        $client = new ImportClient($schemaManager, $apiClient, $importMapper);
+        return $this->augment($container, $client);
     }
 }

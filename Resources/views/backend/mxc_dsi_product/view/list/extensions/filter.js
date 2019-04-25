@@ -20,6 +20,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.extensions.Filter', {
                 brand: {
                     expression: 'LIKE',
                 },
+                type: {
+                    expression: 'LIKE',
+                },
                 manufacturer: {
                     expression: 'LIKE',
                 },

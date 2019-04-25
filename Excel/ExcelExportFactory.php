@@ -3,10 +3,12 @@
 namespace MxcDropshipInnocigs\Excel;
 
 use Interop\Container\ContainerInterface;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ExcelExportFactory implements FactoryInterface
 {
+    use ObjectAugmentationTrait;
     /**
      * Create an object
      *
@@ -24,6 +26,6 @@ class ExcelExportFactory implements FactoryInterface
             $exporters[$idx] = $container->get($service);
         }
 
-        return new ExcelExport($exporters);
+        return $this->augment($container, new ExcelExport($exporters));
     }
 }

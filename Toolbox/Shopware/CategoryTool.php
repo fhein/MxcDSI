@@ -2,25 +2,17 @@
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
-use Mxc\Shopware\Plugin\Service\ServicesTrait;
-use Shopware\Components\Model\ModelManager;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
 
-class CategoryTool
+class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
 {
-    use ServicesTrait;
-
-    /** @var ModelManager */
-    protected $modelManager;
-
-    protected $log;
-
-    public function __construct()
-    {
-        $this->modelManager = Shopware()->Models();
-        $this->log = $this->getServices()->get('logger');
-    }
+    use LoggerAwareTrait;
+    use ModelManagerAwareTrait;
 
     protected function removeEmptyCategoriesRecursive(Category $root)
     {

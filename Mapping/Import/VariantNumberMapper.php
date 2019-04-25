@@ -16,7 +16,7 @@ class VariantNumberMapper extends BaseImportMapper implements VariantMapperInter
     public function map(Model $model, Variant $variant): void
     {
         $number = $model->getModel();
-        $variant->setNumber($this->config['variant_codes'][$number] ?? $number);
+        $variant->setNumber($this->classConfig['variant_codes'][$number] ?? $number);
     }
 }
 

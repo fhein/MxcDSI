@@ -1,64 +1,57 @@
 <?php
 
-
 namespace MxcDropshipInnocigs\Mapping\Import;
-
 
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 
 class CategoryMapper extends BaseImportMapper implements ProductMapperInterface
 {
-    /**
-     * Map an article to a category.
-     *
-     * @param Model $model
-     * @param Product $product
-     */
-    public function map(Model $model, Product $product): void
-    {
-        $category = null;
+    public function map(Model $model, Product $product) {
+        $type = $product->getType();
+        $category = $this->classConfig['categories'][$type] ?? null;
 
-        $categories = $this->config['categories'] ?? [];
-        foreach ($categories as $key => $settings) {
-            $input = null;
-            if ($key === 'category') {
-                $input = $model->getCategory();
-            }
-            if (null === $input) {
-                $method = 'get' . ucFirst($key);
-                if (method_exists($product, $method)) {
-                    $input = $product->$method();
-                }
-            }
-            foreach ($settings as $matcher => $mappings) {
-                foreach ($mappings as $pattern => $mappedCategory) {
-                    if (preg_match('~Easy 3~', $product->getName())) {
-                        $supplierTag = $product->getBrand();
-                    } else {
-                        $supplierTag = preg_match('~(Liquid)|(Aromen)|(Basen)|(Shake \& Vape)~',
-                            $mappedCategory) === 1 ? $product->getBrand() : $product->getSupplier();
-                    }
-                    if ($matcher($pattern, $input) === 1) {
-                        $category = $this->addSubCategory($mappedCategory, $supplierTag);
-                        $category = preg_replace('~(Easy 3( Caps)?) > (.*)~', '$3 > $1', $category);
-                        break 3;
-                    }
-                }
-            }
+        switch ($type) {
+            case 'LIQUID':
+            case 'AROMA':
+            case 'SHAKE_VAPE':
+            case 'BASE':
+            case 'SHOT':
+                $category = $this->addSubCategory($category, $product->getBrand());
+                break;
+
+            case 'E_PIPE':
+            case 'E_CIGARETTE':
+            case 'BOX_MOD':
+            case 'BOX_MOD_CELL':
+            case 'SQUONKER_BOX':
+            case 'CLEAROMIZER':
+            case 'HEAD':
+            case 'DRIP_TIP':
+            case 'TANK':
+            case 'SEAL':
+            case 'TOOL':
+            case 'CLEAROMIZER_RTA':
+            case 'CLEAROMIZER_RDA':
+            case 'CLEAROMIZER_RDTA':
+            case 'CLEAROMIZER_RDSA':
+                $category = $this->addSubCategory($category, $product->getSupplier());
+                break;
+
+            case 'CARTRIDGE':
+            case 'POD':
+            case 'BATTERY_CAP':
+            case 'BATTERY_SLEEVE':
+            case 'MAGNET':
+            case 'MAGNET_ADAPTOR':
+                $category = $this->addSubCategory($category, $product->getCommonName());
+                break;
         }
-        if (!$category) {
-            $category = '';
-        }
-        $this->report['category'][$category][$product->getName()] = true;
         $product->setCategory($category);
     }
 
-    public function addSubCategory(string $name, ?string $subcategory)
+    protected function addSubCategory(string $category, ?string $subCategory)
     {
-        if ($subcategory !== null && $subcategory !== '') {
-            $name .= ' > ' . $subcategory;
-        }
-        return $name;
+        return $subCategory = null ? $category : $category . ' > ' . $subCategory;
     }
 }

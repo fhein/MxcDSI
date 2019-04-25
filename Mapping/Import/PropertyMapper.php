@@ -2,19 +2,24 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use RuntimeException;
-use Shopware\Components\Model\ModelManager;
 
-class PropertyMapper
+class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
 {
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
+    use ModelManagerAwareTrait;
+    use ClassConfigAwareTrait;
+    use LoggerAwareTrait;
 
     /** @var array */
     protected $productMappers;
@@ -28,17 +33,11 @@ class PropertyMapper
     /** @var AssociatedProductsMapper $associatedProductsMapper */
     protected $associatedProductsMapper;
 
-    /** @var LoggerInterface $log */
-    protected $log;
-
     /** @var Reporter $reporter */
     protected $reporter;
 
     /** @var Flavorist $flavorist */
     protected $flavorist;
-
-    /** @var array */
-    protected $config;
 
     /** @var array */
     protected $mappings;
@@ -50,24 +49,18 @@ class PropertyMapper
     protected $Models = null;
 
     public function __construct(
-        ModelManager $modelManager,
         ImportMappings $mappings,
         AssociatedProductsMapper $associatedProductsMapper,
         RegularExpressions $regularExpressions,
         Flavorist $flavorist,
         Reporter $reporter,
         array $productMappers,
-        array $variantMappers,
-        array $config,
-        LoggerInterface $log)
-    {
+        array $variantMappers
+    ) {
         $this->productMappers = $productMappers;
         $this->associatedProductsMapper = $associatedProductsMapper;
-        $this->config = $config;
         $this->flavorist = $flavorist;
-        $this->log = $log;
         $this->mappings = $mappings;
-        $this->modelManager = $modelManager;
         $this->regularExpressions = $regularExpressions;
         $this->reporter = $reporter;
         $this->variantMappers = $variantMappers;
@@ -83,7 +76,7 @@ class PropertyMapper
 
     public function mapProperties(array $products)
     {
-        if (@$this->config['settings']['checkRegularExpressions'] === true) {
+        if (@$this->classConfig['settings']['checkRegularExpressions'] === true) {
             if (! $this->regularExpressions->check()) {
                 throw new RuntimeException('Regular expression failure.');
             }
@@ -114,7 +107,7 @@ class PropertyMapper
         $this->associatedProductsMapper->map($products);
         $this->productMappers['name']->report();
 
-        ($this->reporter)($this->report, $this->config);
+        ($this->reporter)($this->report, $this->classConfig);
     }
 
     /**
@@ -158,12 +151,12 @@ class PropertyMapper
 
     public function mapGroupName($name)
     {
-        return $this->config['group_names'][$name] ?? $name;
+        return $this->classConfig['group_names'][$name] ?? $name;
     }
 
     public function mapOptionName($name)
     {
-        $mapping = $this->config['option_names'][$name] ?? $name;
+        $mapping = $this->classConfig['option_names'][$name] ?? $name;
         return str_replace('weiss', 'weiß', $mapping);
     }
 

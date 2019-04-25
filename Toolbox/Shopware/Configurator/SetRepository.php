@@ -2,13 +2,17 @@
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware\Configurator;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use Shopware\Components\Model\ModelManager;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Configurator\Set;
 
-class SetRepository
+class SetRepository implements ModelManagerAwareInterface, LoggerAwareInterface
 {
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
     /**
      * @var Set $set
      */
@@ -23,20 +27,6 @@ class SetRepository
      * @var array $groups
      */
     private $groups;
-
-    /**
-     * @var LoggerInterface $log
-     */
-    private $log;
-    /**
-     * @var ModelManager $modelManager
-     */
-    protected $modelManager;
-
-    public function __construct(ModelManager $modelManager, LoggerInterface $log) {
-        $this->log = $log;
-        $this->modelManager = $modelManager;
-    }
 
     protected function createSet(string $name) {
         $set = new Set();

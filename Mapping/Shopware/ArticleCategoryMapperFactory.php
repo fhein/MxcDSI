@@ -3,14 +3,14 @@
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
+use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ArticleCategoryMapperFactory implements FactoryInterface
 {
-    use ClassConfigTrait;
+    use ObjectAugmentationTrait;
 
     /**
      * Create an object
@@ -22,11 +22,8 @@ class ArticleCategoryMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $log = $container->get('logger');
-        $config = $this->getClassConfig($container, $requestedName);
-
         $categoryTool = $container->get(CategoryTool::class);
-        $mapper = new ArticleCategoryMapper($categoryTool, $config, $log);
-        return $mapper;
+        $mapper = new ArticleCategoryMapper($categoryTool);
+        return $this->augment($container, $mapper);
     }
 }

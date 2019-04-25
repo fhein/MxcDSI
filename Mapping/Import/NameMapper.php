@@ -23,7 +23,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         $trace['options_removed'] = $name;
 
         // general name mapping applied first
-        $result = @$this->config['product_names_direct'][$model->getName()];
+        $result = @$this->classConfig['product_names_direct'][$model->getName()];
         if ($result !== null) {
             $trace['directly_mapped'] = $result;
             $product->setName($result);
@@ -44,7 +44,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         $search[] = '~(' . $supplier . ') ([^\-])~';
         $name = preg_replace($search, '$1 - $2', $name);
         $trace['supplier_separator'] = $name;
-        $search = $this->config['product_names'][$product->getBrand()] ?? null;
+        $search = $this->classConfig['product_names'][$product->getBrand()] ?? null;
         if (null !== $search) {
             $name = preg_replace($search, '$1 -', $name);
             $trace['product_separator'] = $name;
@@ -87,7 +87,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
             if (strpos($name, $option) !== false) {
                 // prodcut name contains option name
                 $before = $name;
-                $replacement = $this->config['option_replacements'][$option] ?? '';
+                $replacement = $this->classConfig['option_replacements'][$option] ?? '';
                 $name = str_replace($option, $replacement, $name);
                 $this->report['option'][$number] = [
                     'before' => $before,
@@ -121,7 +121,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         // They introduced some cases where the option name is not equal
         // to the string added to the product name, so we have to check
         // that also.
-        $o = $this->config['product_name_option_fixes'][$option] ?? null;
+        $o = $this->classConfig['product_name_option_fixes'][$option] ?? null;
         $fixApplied = false;
         $fixAvailable = $o !== null;
         $before = $name;
@@ -157,13 +157,13 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         if ($supplier === 'Innocigs') {
             $supplier = 'InnoCigs';
         }
-        $innocigsBrands = $this->config['innocigs_brands'] ?? [];
+        $innocigsBrands = $this->classConfig['innocigs_brands'] ?? [];
         $isInnocigsBrand = in_array($brand, $innocigsBrands);
         $isInnocigsSupplier = ($supplier === 'InnoCigs');
 
         if ($isInnocigsBrand && $isInnocigsSupplier) {
             // There are some products from supplier InnoCigs which are not branded
-            if (strpos($name, $brand) !== 0 && !in_array($name, $this->config['products_without_brand'])) {
+            if (strpos($name, $brand) !== 0 && !in_array($name, $this->classConfig['products_without_brand'])) {
                 $name = $brand . ' - ' . $name;
             }
             return $name;
@@ -182,7 +182,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
 
     public function replace(string $topic, string $what)
     {
-        $config = @$this->config[$what];
+        $config = @$this->classConfig[$what];
         if (null === $config) return $topic;
 
         foreach ($config as $replacer => $replacements) {

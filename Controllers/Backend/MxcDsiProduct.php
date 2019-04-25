@@ -10,6 +10,7 @@ use MxcDropshipInnocigs\Mapping\Gui\ProductUpdater;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Report\ArrayReport;
@@ -252,7 +253,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
         // The user may have changed the accepted state of variants to false in the detail view of an product.
         // So we need to check and remove invalid variants when the detail view gets saved.
-        $this->services->get(ArticleTool::class)->deleteInvalidVariants([$product]);
+        $this->services->get(DetailMapper::class)->deleteInvalidDetails([$product]);
 
         $detail = $this->getDetail($product->getId());
 

@@ -19,6 +19,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 supplier:                   { header: 'Supplier'},
                 brand:                      { header: 'Brand'},
                 type:                       { header: 'Type'},
+                commonName:                 { header: 'Common' },
                 category:                   { header: 'Category'},
                 name:                       { header: 'Name', flex: 3 },
                 flavor:                     { header: 'Flavor', flex: 3 },

@@ -1,24 +1,14 @@
 <?php
 
-
 namespace MxcDropshipInnocigs\Excel;
 
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use Shopware\Components\Model\ModelManager;
-
-abstract class AbstractProductImport extends AbstractSheetImport
+abstract class AbstractProductImport extends AbstractSheetImport implements ModelManagerAwareInterface, LoggerAwareInterface
 {
-    /** @var ModelManager $modelManager */
-    protected $modelManager;
-
-    /** @var LoggerInterface $log */
-    protected $log;
-
-    public function __construct(ModelManager $modelManager, LoggerInterface $log)
-    {
-        $this->log = $log;
-        $this->modelManager = $modelManager;
-    }
-
+    use LoggerAwareTrait;
+    use ModelManagerAwareTrait;
 }

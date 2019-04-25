@@ -3,9 +3,11 @@
 namespace MxcDropshipInnocigs\Toolbox\Shopware\Media;
 
 use DateTime;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Bundle\MediaBundle\MediaService;
-use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Image;
@@ -13,16 +15,11 @@ use Shopware\Models\Media\Album;
 use Shopware\Models\Media\Media;
 use Shopware_Components_Auth;
 
-class MediaTool
+class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
 {
-    /**
-     * @var ModelManager $modelManager
-     */
-    protected $modelManager;
-    /**
-     * @var LoggerInterface $log
-     */
-    protected $log;
+    use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
+
     /**
      * @var Shopware_Components_Auth $authService
      */
@@ -35,14 +32,11 @@ class MediaTool
     /**
      * MediaService constructor.
      *
-     * @param LoggerInterface $log
      */
-    public function __construct(LoggerInterface $log) {
-        $this->modelManager = Shopware()->Models();
+    public function __construct() {
         $container = Shopware()->Container();
         $this->authService = $container->get('Auth');
         $this->mediaService = $container->get('shopware_media.media_service');
-        $this->log = $log;
     }
 
     protected function getMedia(string $swUrl, string $url){
