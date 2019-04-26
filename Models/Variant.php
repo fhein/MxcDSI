@@ -475,7 +475,7 @@ class Variant extends ModelEntity
     /**
      * @return string
      */
-    public function getRetailPrices(): string
+    public function getRetailPrices()
     {
         return $this->retailPrices;
     }
@@ -483,7 +483,7 @@ class Variant extends ModelEntity
     /**
      * @param string $retailPrices
      */
-    public function setRetailPrices(string $retailPrices): void
+    public function setRetailPrices($retailPrices)
     {
         $this->retailPrices = $retailPrices;
     }

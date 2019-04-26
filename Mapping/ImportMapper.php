@@ -27,7 +27,6 @@ use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Models\VariantRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use Shopware\Components\Model\ModelManager;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -54,9 +53,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
     /** @var ImageRepository */
     protected $imageRepository;
-
-    /** @var ModelManager $modelManager */
-//    protected $modelManager;
 
     /** @var ApiClient $apiClient */
     protected $apiClient;

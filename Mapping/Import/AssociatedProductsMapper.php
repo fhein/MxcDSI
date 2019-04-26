@@ -12,7 +12,8 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Report\ArrayReport;
 
-class AssociatedProductsMapper implements ClassConfigAwareInterface, ModelManagerAwareInterface, LoggerAwareInterface
+class AssociatedProductsMapper
+    implements ClassConfigAwareInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
     use ClassConfigAwareTrait;
     use ModelManagerAwareTrait;
@@ -26,10 +27,6 @@ class AssociatedProductsMapper implements ClassConfigAwareInterface, ModelManage
         $this->prepareProductGroups($products);
         $this->deriveRelatedProducts();
         $this->deriveSimilarProducts();
-
-        $this->dumpProductNames();
-        $this->dumpRelatedProducts();
-        $this->dumpSimilarProducts();
     }
 
     public function prepareProductGroups(array $products)
@@ -148,7 +145,7 @@ class AssociatedProductsMapper implements ClassConfigAwareInterface, ModelManage
         }
     }
 
-    public function dumpRelatedProducts() {
+    public function reportRelatedProducts() {
         /** @noinspection PhpUndefinedMethodInspection */
         $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
         /** @var Product $product */
@@ -165,10 +162,10 @@ class AssociatedProductsMapper implements ClassConfigAwareInterface, ModelManage
                 'related_products' => $list,
             ];
         }
-        (new ArrayReport())(['peRelatedProducts' => $relatedProductList]);
+        (new ArrayReport())(['pmRelatedProducts' => $relatedProductList]);
     }
 
-    public function dumpSimilarProducts() {
+    public function reportSimilarProducts() {
         /** @noinspection PhpUndefinedMethodInspection */
         $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
         /** @var Product $product */
@@ -189,20 +186,12 @@ class AssociatedProductsMapper implements ClassConfigAwareInterface, ModelManage
                 'similar_products' => $list,
             ];
         }
-        (new ArrayReport())(['peSimilarProducts' => $similarProductList]);
+        (new ArrayReport())(['pmSimilarProducts' => $similarProductList]);
     }
 
-    protected function dumpProductNames() {
-        /** @noinspection PhpUndefinedMethodInspection */
-        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
-        $productNames = [];
-        foreach ($products as $number => $product) {
-            /** @var Product $product */
-            $name = $product->getCommonName();
-            $productNames[$name] = true;
-        }
-        ksort($productNames);
-        (new ArrayReport())(['peProducts' => array_keys($productNames)]);
+    public function report()
+    {
+        $this->reportRelatedProducts();
+        $this->reportSimilarProducts();
     }
-
 }

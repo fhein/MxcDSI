@@ -14,6 +14,7 @@ return [
         'GLAS'        => 'Glas',
         'MODEL'       => 'Ausführung',
     ],
+
     'option_names'              => [
         '100PG'                      => '100% PG',
         '100VG'                      => '100% VG',

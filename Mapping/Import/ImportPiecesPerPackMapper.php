@@ -29,4 +29,9 @@ class ImportPiecesPerPackMapper implements ProductMapperInterface
         $product->setPiecesPerPack($ppp);
     }
 
+    public function report()
+    {
+        // add reporting here
+    }
+
 }

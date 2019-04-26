@@ -6,6 +6,7 @@ use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\Report\ArrayReport;
 
 class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInterface
 {
@@ -60,4 +61,16 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
         }
         $this->report['brand'][$product->getBrand()] = true;
     }
+
+    public function report()
+    {
+        $reporter = new ArrayReport();
+        ksort($this->report['brand']);
+        ksort($this->report['supplier']);
+        $reporter([
+            'pmBrands' => array_keys($this->report['brand']),
+            'pmSupplier' => array_keys($this->report['supplier'])
+        ]);
+    }
+
 }

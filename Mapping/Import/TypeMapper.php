@@ -89,4 +89,9 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
         }
         return $this->types[$strType] ?? null;
     }
+
+    public function report()
+    {
+        // add reporting here
+    }
 }

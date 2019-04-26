@@ -124,6 +124,8 @@ class ProductRepository extends BaseEntityRepository
         'flavor',
         'dosage',
         'base',
+        'retailPriceDampfplanet',
+        'retailPriceOthers'
     ];
 
     public function getByIds(array $ids)

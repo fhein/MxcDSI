@@ -19,5 +19,10 @@ class ProductNumberMapper extends BaseImportMapper implements ProductMapperInter
         $number = $model->getMaster();
         $product->setNumber($this->classConfig['product_number'][$number] ?? $number);
     }
+
+    public function report()
+    {
+        // add reporting here
+    }
 }
 

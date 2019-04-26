@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -22,7 +21,6 @@ class PropertyMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $reporter = $container->get(Reporter::class);
         $flavorist = $container->get(Flavorist::class);
 
         // take care of the mapper dependencies
@@ -43,6 +41,8 @@ class PropertyMapperFactory implements FactoryInterface
             'dosage'        => $container->get(DosageMapper::class),
             // requires supplier, brand and name, sets category
             'category'      => $container->get(CategoryMapper::class),
+            // requires manual config, sets retailPriceDampfplanet and retailPriceOthers
+            'competitor'    => $container->get(CompetitorPricesMapper::class),
             // requires manual config, sets flavor
             'flavor'        => $container->get(FlavorMapper::class),
         ];
@@ -62,7 +62,6 @@ class PropertyMapperFactory implements FactoryInterface
             $associatedProductsMapper,
             $regularExpressions,
             $flavorist,
-            $reporter,
             $productMappers,
             $variantMappers
         ));

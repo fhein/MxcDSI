@@ -348,7 +348,19 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         $this->log->enter();
         try {
-            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
+            /** @var Product $product */
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $this->getRepository()->getAllIndexed();
+            foreach ($products as $product) {
+                if ($product->getRetailPriceOthers() === '-') $product->setRetailPriceOthers(null);
+                if ($product->getRetailPriceDampfplanet() === '-') $product->setRetailPriceDampfPlanet(null);
+                $variants = $product->getVariants();
+                foreach ($variants as $variant) {
+
+                }
+            }
+            $this->getModelManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Retail prices cleaned up.' ]);
         } catch (Throwable $e) {
             $this->log->except($e, true, true);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);

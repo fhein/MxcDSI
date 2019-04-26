@@ -8,7 +8,6 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Import\Report\PropertyMapper as Reporter;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
@@ -33,9 +32,6 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     /** @var AssociatedProductsMapper $associatedProductsMapper */
     protected $associatedProductsMapper;
 
-    /** @var Reporter $reporter */
-    protected $reporter;
-
     /** @var Flavorist $flavorist */
     protected $flavorist;
 
@@ -43,17 +39,15 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     protected $mappings;
 
     /** @var array */
-    protected $report;
     protected $products = null;
 
-    protected $Models = null;
+    protected $models = null;
 
     public function __construct(
         ImportMappings $mappings,
         AssociatedProductsMapper $associatedProductsMapper,
         RegularExpressions $regularExpressions,
         Flavorist $flavorist,
-        Reporter $reporter,
         array $productMappers,
         array $variantMappers
     ) {
@@ -62,15 +56,13 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->flavorist = $flavorist;
         $this->mappings = $mappings;
         $this->regularExpressions = $regularExpressions;
-        $this->reporter = $reporter;
         $this->variantMappers = $variantMappers;
         $this->reset();
     }
 
     public function reset()
     {
-        $this->report = [];
-        $this->Models = null;
+        $this->models = null;
         $this->products = null;
     }
 
@@ -105,9 +97,7 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             }
         }
         $this->associatedProductsMapper->map($products);
-        $this->productMappers['name']->report();
-
-        ($this->reporter)($this->report, $this->classConfig);
+        $this->report();
     }
 
     /**
@@ -162,6 +152,13 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
     protected function getModels()
     {
-        return $this->Models ?? $this->Models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
+        return $this->models ?? $this->models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
+    }
+
+    protected function report()
+    {
+        foreach ($this->productMappers as $productMapper) {
+            $productMapper->report();
+        }
     }
 }

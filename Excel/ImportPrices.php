@@ -76,6 +76,7 @@ class ImportPrices extends AbstractProductImport
                 $prices[] = $customerGroup . MXC_DELIMITER_L1 . $price;
             }
         }
+
         $prices = implode(MXC_DELIMITER_L2, $prices);
 
         $variants = $product->getVariants();

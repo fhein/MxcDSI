@@ -8,4 +8,5 @@ use MxcDropshipInnocigs\Models\Product;
 interface ProductMapperInterface
 {
     public function map(Model $model, Product $product);
+    public function report();
 }

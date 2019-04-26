@@ -19,7 +19,6 @@ use MxcDropshipInnocigs\Excel\ImportSheetFactory;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Import\Report\PropertyMapper as PropertyMapperReport;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\MappingFilePersister;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
@@ -30,6 +29,7 @@ use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
 use MxcDropshipInnocigs\Mapping\Import\CommonNameMapper;
+use MxcDropshipInnocigs\Mapping\Import\CompetitorPricesMapper;
 use MxcDropshipInnocigs\Mapping\Import\DosageMapper;
 use MxcDropshipInnocigs\Mapping\Import\Flavorist;
 use MxcDropshipInnocigs\Mapping\Import\FlavorMapper;
@@ -149,13 +149,13 @@ return [
             MediaTool::class => AugmentedObjectFactory::class,
             ArticleTool::class => AugmentedObjectFactory::class,
 
-            PropertyMapperReport::class => AugmentedObjectFactory::class,
             CategoryTool::class => AugmentedObjectFactory::class,
 
             Flavorist::class => AugmentedObjectFactory::class,
 
             DosageMapper::class => MappingConfigFactory::class,
             FlavorMapper::class => MappingConfigFactory::class,
+            CompetitorPricesMapper::class => MappingConfigFactory::class,
 
             ImportDosage::class      => AugmentedObjectFactory::class,
             ImportFlavor::class      => AugmentedObjectFactory::class,

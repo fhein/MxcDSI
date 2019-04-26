@@ -4,7 +4,9 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\Report\ArrayMap;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcDropshipInnocigs\Report\Mapper\SuccessiveReplacer;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -16,7 +18,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
     {
         $modelName = $model->getName();
         $this->report['name'][$modelName]['model'] = $model->getModel();
-        $trace['imported'] = $model->getName();
+        $trace['imported'] = $modelName;
         $name = $this->replace($modelName, 'name_prepare');
         $trace['name_prepared'] = $name;
         $name = $this->removeOptionsFromModelName($name, $model);
@@ -47,8 +49,8 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         $search = $this->classConfig['product_names'][$product->getBrand()] ?? null;
         if (null !== $search) {
             $name = preg_replace($search, '$1 -', $name);
-            $trace['product_separator'] = $name;
         }
+        $trace['product_separator'] = $name;
 
         $name = $this->replace($name, 'name_cleanup');
         $name = preg_replace('~\s+~', ' ', $name);
@@ -56,6 +58,21 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         $trace['mapped'] = $name;
         $this->report['name'][$trace['imported']] = $trace;
         $product->setName($name);
+    }
+
+    public function replace(string $topic, string $what)
+    {
+        $config = @$this->classConfig[$what];
+        if (null === $config) {
+            return $topic;
+        }
+
+        foreach ($config as $replacer => $replacements) {
+            $search = array_keys($replacements);
+            $replace = array_values($replacements);
+            $topic = $replacer($search, $replace, $topic);
+        }
+        return $topic;
     }
 
     /**
@@ -180,20 +197,119 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         return $name;
     }
 
-    public function replace(string $topic, string $what)
+    public function report()
     {
-        $config = @$this->classConfig[$what];
-        if (null === $config) return $topic;
+        $reporter = new ArrayReport();
+        $report = $this->getNameReport();
+        $report['pmOptionMapping'] = $this->getOptionReport();
+        $reporter($report);
+        $reporter($this->getReplacementReport());
+    }
 
-        foreach ($config as $replacer => $replacements) {
-            $search = array_keys($replacements);
-            $replace = array_values($replacements);
-            $topic = $replacer($search, $replace, $topic);
+    protected function getNameReport()
+    {
+
+        $nameMap = array_values(array_map(function($value) {
+            return [
+                'imported' => $value['imported'],
+                'mapped  ' => $value['mapped'],
+            ];
+        }, $this->report['name']));
+
+        $unchangedProductNames = array_map(function($value) {
+            return ($value['imported'] === $value['mapped']);
+        }, $this->report['name']);
+        $unchangedProductNames = array_keys(array_filter(
+            $unchangedProductNames,
+            function($value) {
+                return $value === true;
+            }
+        ));
+
+        $namesWithoutRemovedOptions = array_map(function($value) {
+            return ($value['imported'] === $value['options_removed']);
+        }, $this->report['name']);
+        $namesWithoutRemovedOptions = array_keys(array_filter($namesWithoutRemovedOptions, function($value) {
+            return $value === true;
+        }));
+
+        $productNames = array_flip(array_flip(array_column($nameMap, 'mapped  ')));
+        sort($productNames);
+
+        return [
+            'pmName'                 => $productNames,
+            'pmNameTrace'            => $this->report['name'],
+            'pmNameMap'              => $nameMap,
+            'pmNameUnchanged'        => $unchangedProductNames,
+            'pmNameNoOptionsRemoved' => $namesWithoutRemovedOptions,
+        ];
+    }
+
+    protected function getOptionReport()
+    {
+        $optionMapping = $this->report['option'];
+        ksort($optionMapping);
+        $applied = array_filter($optionMapping, function($value) {
+            return $value['fixApplied'] === true;
+        });
+        $applied = array_flip(array_flip(array_column($applied, 'option')));
+        $unused = array_diff(array_keys($this->classConfig['product_name_option_fixes']), $applied);
+        $optionReport['unused_mappings'] = $unused;
+
+        foreach ($optionMapping as $key => $record) {
+            $entry = ['option' => $record['option'], 'before' => $record['before'], 'after ' => $record['after']];
+            if ($record['mapped']) {
+                $optionReport['mapped'][$key] = $entry;
+                continue;
+            }
+
+            if ($record['fixAvailable']) {
+                if ($record['fixApplied']) {
+                    $optionReport['mapped via fix'][$key] = $entry;;
+                } else {
+                    $optionReport['fix not applicable'][$key] = $entry;;
+                }
+                continue;
+            }
+            $optionReport['no fix avalable'][$key] = $entry;;
         }
-        return $topic;
+        return $optionReport;
     }
 
-    public function report() {
-        (new ArrayReport())(['pmNameTrace' => $this->report]);
+    protected function getReplacementReport()
+    {
+        $namePrepare = $this->getReplacementTrace('name_prepare', 'preg_replace', 'imported');
+        $nameReplace = $this->getReplacementTrace('product_name_replacements', 'preg_replace', 'brand_prepended');
+        $nameCleanup = $this->getReplacementTrace('name_cleanup', 'preg_replace', 'product_separator');
+        return [
+            'pmReplacementNamePrepare' => $namePrepare,
+            'pmReplacementNameReplace' => $nameReplace,
+            'pmReplacementNameCleanup' => $nameCleanup,
+        ];
     }
+
+    /**
+     * @param string $idx
+     * @param string $replacer
+     * @param string $nameIdx
+     * @return array
+     */
+    protected function getReplacementTrace(string $idx, string $replacer, string $nameIdx): array
+    {
+        $replacementLog = [];
+        foreach ($this->report['name'] as $key => $entry) {
+            $replacementLog[$key] = $entry[$nameIdx];
+        }
+        $mapper = new ArrayMap();
+        $replacementLog = $mapper($replacementLog, [
+                SuccessiveReplacer::class => [
+                    'replacer'                => $replacer,
+                    'replacements'            => $this->classConfig[$idx][$replacer],
+                    'reportUnmatchedPatterns' => false,
+                ],
+            ]
+        );
+        return $replacementLog;
+    }
+
 }

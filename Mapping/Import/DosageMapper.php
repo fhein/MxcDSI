@@ -54,4 +54,10 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface
         }
 
         $product->setDosage($dosage);
-    }}
+    }
+
+    public function report()
+    {
+        // add reporting here
+    }
+}

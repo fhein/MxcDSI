@@ -91,6 +91,7 @@ class PriceMapper
     {
         $detail = $variant->getDetail();
         if (!$detail) return;
+        if (!$variant->getRetailPrices()) return;
 
         $tax = $detail->getArticle()->getTax()->getTax();
 

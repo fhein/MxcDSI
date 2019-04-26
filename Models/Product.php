@@ -167,7 +167,7 @@ class Product extends ModelEntity  {
      * @var string
      * @ORM\Column(name="retail_dp",type="string", nullable=true)
      */
-    private $retailPriceDampfPlanet;
+    private $retailPriceDampfplanet;
 
     /**
      * @var string
@@ -725,17 +725,17 @@ class Product extends ModelEntity  {
     /**
      * @return string
      */
-    public function getRetailPriceDampfPlanet()
+    public function getRetailPriceDampfplanet()
     {
-        return $this->retailPriceDampfPlanet;
+        return $this->retailPriceDampfplanet;
     }
 
     /**
-     * @param string $retailPriceDampfPlanet
+     * @param string $retailPriceDampfplanet
      */
-    public function setRetailPriceDampfPlanet($retailPriceDampfPlanet)
+    public function setRetailPriceDampfPlanet($retailPriceDampfplanet)
     {
-        $this->retailPriceDampfPlanet = $retailPriceDampfPlanet;
+        $this->retailPriceDampfplanet = $retailPriceDampfplanet;
     }
 
     /**

@@ -4,9 +4,13 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\Report\ArrayReport;
 
 class CategoryMapper extends BaseImportMapper implements ProductMapperInterface
 {
+    /** @var array */
+    protected $report;
+
     public function map(Model $model, Product $product) {
         $type = $product->getType();
         $category = $this->classConfig['categories'][$type] ?? null;
@@ -48,10 +52,24 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface
                 break;
         }
         $product->setCategory($category);
+        $this->report[$category][] = $product->getName();
     }
 
     protected function addSubCategory(string $category, ?string $subCategory)
     {
         return $subCategory = null ? $category : $category . ' > ' . $subCategory;
+    }
+
+    public function report()
+    {
+        ksort($this->report);
+        foreach ($this->report as &$array) {
+            sort($array);
+        }
+
+        (new ArrayReport())([
+            'pmCategoryUsage' => $this->report,
+            'pmCategory'      => array_keys($this->report),
+        ]);
     }
 }
