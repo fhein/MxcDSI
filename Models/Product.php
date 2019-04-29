@@ -234,6 +234,13 @@ class Product extends ModelEntity  {
     private $flavor;
 
     /**
+     * @var string $flavorCategory
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $flavorCategory;
+
+    /**
      * Product constructor.
      */
     public function __construct() {
@@ -723,7 +730,7 @@ class Product extends ModelEntity  {
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getRetailPriceDampfplanet()
     {
@@ -731,7 +738,7 @@ class Product extends ModelEntity  {
     }
 
     /**
-     * @param string $retailPriceDampfplanet
+     * @param string|null $retailPriceDampfplanet
      */
     public function setRetailPriceDampfPlanet($retailPriceDampfplanet)
     {
@@ -739,7 +746,7 @@ class Product extends ModelEntity  {
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getRetailPriceOthers()
     {
@@ -747,10 +754,26 @@ class Product extends ModelEntity  {
     }
 
     /**
-     * @param string $retailPriceOthers
+     * @param string|null $retailPriceOthers
      */
     public function setRetailPriceOthers($retailPriceOthers)
     {
         $this->retailPriceOthers = $retailPriceOthers;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFlavorCategory()
+    {
+        return $this->flavorCategory;
+    }
+
+    /**
+     * @param string|null $flavorCategory
+     */
+    public function setFlavorCategory($flavorCategory)
+    {
+        $this->flavorCategory = $flavorCategory;
     }
 }

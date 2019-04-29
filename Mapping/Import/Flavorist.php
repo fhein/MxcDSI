@@ -19,7 +19,7 @@ class Flavorist implements ModelManagerAwareInterface, LoggerAwareInterface
     protected $reversedCategories = [];
 
     protected $categoryFile = __DIR__ . '/../../Config/flavor.categories.config.php';
-    protected $flavorFile = __DIR__ . '/../../Config/FlavorMapper.config.php';
+    protected $flavorFile = __DIR__ . '/../../Config/flavor.config.php';
 
     public function __construct()
     {

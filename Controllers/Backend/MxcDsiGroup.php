@@ -1,7 +1,6 @@
 <?php
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
@@ -13,26 +12,28 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
     public function indexAction()
     {
-        $this->log->enter();
+        $log = $this->getLog();
+        $log->enter();
         try {
             parent::indexAction();
         } catch (Throwable $e) {
-            $this->log->except($e, true, false);
+            $log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
-        $this->log->leave();
+        $log->leave();
     }
 
     public function updateAction()
     {
-        $this->log->enter();
+        $log = $this->getLog();
+        $log->enter();
         try {
             parent::updateAction();
         } catch (Throwable $e) {
-            $this->log->except($e, true, false);
+            $log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
-        $this->log->leave();
+        $log->leave();
     }
 
     protected function getAdditionalDetailData(array $data)
@@ -43,7 +44,8 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
     public function save($data)
     {
-        $this->log->enter();
+        $log = $this->getLog();
+        $log->enter();
         /** @var Group $group */
         $oldOptionValues = [];
         if (!empty($data['id'])) {
@@ -87,27 +89,25 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
         }
 
         if (!empty($errors)) {
-            $this->log->leave();
+            $log->leave();
             return ['success' => false, 'violations' => $errors];
         }
+        $modelManager = $this->getManager();
 
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->getManager()->flush();
+        $modelManager->flush();
+        //$modelManager->clear();
 
-        // Important!
-        $this->getManager()->clear();
-
-        $shopwareMapper = $this->getServices()->get(ProductMapper::class);
+        $productMapper = $this->getServices()->get(ProductMapper::class);
 
         $productUpdates = $this->getLinkedProductsHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
         /** @noinspection PhpUnhandledExceptionInspection */
-        $shopwareMapper->processStateChangesProductList($productUpdates);
+        $productMapper->processStateChangesProductList($productUpdates);
 
         $detail = $this->getDetail($group->getId());
-        $this->log->leave();
+        $log->leave();
         return ['success' => true, 'data' => $detail['data']];
     }
-
 
     /**
      * Get all Products having related Articles which are involved with the group update.
@@ -131,14 +131,14 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
         $relevantOptionIds = [];
         $time = - microtime(true);
         foreach ($options as $option) {
-            if (!$groupChanged && ($option->isAccepted() === $oldOptionValue[$option->getName()])) {
+            if (! $groupChanged && ($option->isAccepted() === $oldOptionValue[$option->getName()])) {
                 continue;
             }
             $relevantOptionIds[] = $option->getId();
         }
         $products = $repository->getLinkedProductsHavingOptions($relevantOptionIds);
         $time +=microtime(true);
-        $this->log->debug('Using SQL query: ' . sprintf('%f', $time));
+        $this->getLog()->debug('Using SQL query: ' . sprintf('%f', $time));
 
         return $products;
     }

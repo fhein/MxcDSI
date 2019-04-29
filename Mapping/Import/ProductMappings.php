@@ -5,11 +5,11 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
 
-class ImportMappings implements ClassConfigAwareInterface
+class ProductMappings implements ClassConfigAwareInterface
 {
     use ClassConfigAwareTrait;
 
-    public function getClassConfig()
+    public function getConfig()
     {
         return $this->classConfig ?? [];
     }

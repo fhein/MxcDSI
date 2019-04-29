@@ -26,12 +26,12 @@ class ExportDosage extends AbstractProductExport
 
     public function setSheetData()
     {
-        $products = $this->data;
-        usort($products, [$this, 'compare']);
-        $headers[] = array_keys($products[0]);
-        $products = array_merge($headers, $products);
+        $this->sortColumns($this->data);
+
+        $headers[] = array_keys($this->data[0]);
+        $data = array_merge($headers, $this->data);
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->sheet->fromArray($products);
+        $this->sheet->fromArray($data);
     }
 
     protected function formatSheet(): void

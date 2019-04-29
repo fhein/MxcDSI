@@ -34,16 +34,6 @@
                     <action>index</action>
                     <class>sprite-document-import</class>
                 </entry>
-                <?ignore
-                <entry>
-                    <name>MxcDsiTest</name>
-                    <label lang="en">Playground</label>
-                    <label lang="de">Spielwiese</label>
-                    <controller>MxcDsiTest</controller>
-                    <action>index</action>
-                    <class>sprite-smiley-cool</class>
-                </entry>
-                ?>
             </children>
         </entry>
     </entries>

@@ -10,7 +10,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_image")
- * @ORM\Entity(repositoryClass="ImageRepository", readOnly=true)
+ * @ORM\Entity(repositoryClass="ImageRepository")
  */
 class Image extends ModelEntity
 {

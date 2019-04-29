@@ -20,7 +20,7 @@ class ManufacturerMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $container->get(ImportMappings::class)->getClassConfig();
+        $config = $container->get(ProductMappings::class)->getConfig();
         return $this->augment($container, new ManufacturerMapper($config));
     }
 

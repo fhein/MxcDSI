@@ -2,11 +2,16 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\Report\ArrayReport;
 
-class DosageMapper extends BaseImportMapper implements ProductMapperInterface
+class DosageMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
 {
+    use ModelManagerAwareTrait;
+
     /** @var array */
     protected $config;
     /**
@@ -39,25 +44,23 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface
         }
         $icNumber = $product->getIcNumber();
         $dosage = $this->config[$icNumber]['dosage'] ?? null;
-        if ($dosage !== null) {
-            $product->setDosage($dosage);
-            return;
+        if (! $dosage) {
+            // try to find dosage recommendation in product description
+            $description = preg_replace('~\n~', '', $product->getDescription());
+            $search = '~.*Dosierung[^\d]*(\d+).*(-|(bis)) *(\d+).*~';
+            $replace = '$1-$4';
+            $dosage = preg_replace($search, $replace, $description);
+            if ($dosage === $description) return;
         }
-
-        $description = preg_replace('~\n~', '', $product->getDescription());
-        $search = '~.*Dosierung[^\d]*(\d+).*(-|(bis)) *(\d+).*~';
-        $replace = '$1-$4';
-        $dosage = preg_replace($search, $replace, $description);
-
-        if ($dosage === $description) {
-            return;
-        }
-
         $product->setDosage($dosage);
     }
 
     public function report()
     {
-        // add reporting here
+        /** @noinspection PhpUndefinedMethodInspection */
+        $dosageMissing = $this->modelManager->getRepository(Product::class)->getProductsWithDosageMissing();
+        (new ArrayReport())([
+           'pmMissingDosage' => $dosageMissing,
+        ]);
     }
 }

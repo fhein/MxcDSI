@@ -11,7 +11,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_option")
- * @ORM\Entity(repositoryClass="OptionRepository", readOnly=true)
+ * @ORM\Entity(repositoryClass="OptionRepository")
  */
 class Option extends ModelEntity  {
 
@@ -106,6 +106,11 @@ class Option extends ModelEntity  {
      * @return bool
      */
     public function isAccepted(): bool
+    {
+        return $this->accepted;
+    }
+
+    public function getAccepted(): bool
     {
         return $this->accepted;
     }

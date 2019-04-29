@@ -19,7 +19,7 @@ class MappingConfigFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $importMappings = $container->get(ImportMappings::class);
-        return $this->augment($container, new $requestedName($importMappings->getClassConfig()));
+        $productMappings = $container->get(ProductMappings::class);
+        return $this->augment($container, new $requestedName($productMappings->getConfig()));
     }
 }

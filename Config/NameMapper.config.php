@@ -176,6 +176,7 @@ return [
             '~(Military) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 - $4',
             '~(Tobacco Time) (- Aroma)(.*)(- \d+ ml)~'                   => '$1 - $3 $2 - $4',
             '~(Twisted) - (Peng Juice) (Aroma)(.*)(- \d+ ml)~'           => '$1 - $2 $4 - $3 $5',
+            '~Okolom~'                                                   => 'Lomoko',
             '~Vape( -)?( Aroma)(.*)(- \d+ ml)~'                          => 'Vape - $3 -$2 $4',
             '~(Vampire Vape) ([^\-])~'                                   => '$1 - $2',
             '~(VLADS VG) Liquid (-.*)~'                                  => '$1 $2 - Liquid',
@@ -283,7 +284,7 @@ return [
             '~(Lady-Like) Früchtemix~'                                   => '$1',
             '~(Kings Dessert) Crème Brûlée~'                             => '$1',
             '~(Atlantis Luxury) Tequila Sunrise~'                        => '$1',
-            '~(My Island Virgin) Colada~'                                => '$1',
+            '~(My Island) Virgin Colada~'                                => '$1',
             '~(Mystery Fruits) Kaktusfeige~'                             => '$1',
             '~(Babette)’s~'                                              => '$1\'s',
 
@@ -495,7 +496,7 @@ return [
         ],
         'InnoCigs'    => [
             '~(Batpack)~',
-            '~(Atopack)~',
+            '~(Atopack( Magic)?)~',
             '~(Cubis 2)~',
             '~(Cubis Max)~',
             '~(RunAbout)~',
@@ -566,6 +567,8 @@ return [
 
             // Wismec
             '~(Amor NS Pro)~',
+            '~(Amor NSE)~',
+            '~(Column)~',
             '~(Divider)~',
             '~(Elabo Mini)~',
             '~(Gnome( King)?)~',
@@ -576,7 +579,8 @@ return [
             '~(Luxotic NC)~',
             '~(Motiv 2)~',
             '~(Reuleaux RX Gen3 Dual)~',
-            '~(Sinuous(( P80)|( Ravage)|( SW)|( Solo))?)~',
+            '~(Reuleaux Tinker)~',
+            '~(Sinuous(( P80)|( V80)|( Ravage)|( SW)|( Solo))?)~',
             '~(Reux)~',
 
         ],
@@ -627,6 +631,8 @@ return [
         'Wismec'      => [
             '~(Tobhino BF RDA)~',
             '~(Amor NS Pro)~',
+            '~(Amor NSE)~',
+            '~(Column)~',
             '~(Divider)~',
             '~(Elabo Mini)~',
             '~(Gnome( King)?)~',
@@ -637,7 +643,7 @@ return [
             '~(Luxotic NC)~',
             '~(Motiv 2)~',
             '~(Reuleaux RX Gen3 Dual)~',
-            '~(Sinuous(( P80)|( Ravage)|( SW))?)~',
+            '~(Sinuous(( P80)|( V80)|( Ravage)|( SW))?)~',
             '~(Reux)~',
         ],
         'Wotofo' => [

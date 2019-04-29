@@ -169,7 +169,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
         // @todo: Transfer the custom attributes to shopware or not?
 //        $attribute = $detail->getAttribute();
-//        $product = $variant->getProduct();
+//        $product = $variant->mapProduct();
 
 //        /** @noinspection PhpUndefinedMethodInspection */
 //        $attribute->setMxcDsiBrand($product->getBrand());

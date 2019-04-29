@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.92.2",
+            "version": "3.92.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1ebcd8ee3bafde8421072de5cbe59c3ff64a4f3e"
+                "reference": "aefba18e3e2bfe776521e085c93b1739f49514c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1ebcd8ee3bafde8421072de5cbe59c3ff64a4f3e",
-                "reference": "1ebcd8ee3bafde8421072de5cbe59c3ff64a4f3e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aefba18e3e2bfe776521e085c93b1739f49514c5",
+                "reference": "aefba18e3e2bfe776521e085c93b1739f49514c5",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +86,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-04-24T18:08:08+00:00"
+            "time": "2019-04-26T18:07:09+00:00"
         },
         {
             "name": "bcremer/line-reader",
@@ -2271,16 +2271,16 @@
         },
         {
             "name": "mxc-commons/mxc-shopware-plugin",
-            "version": "0.1.29",
+            "version": "0.1.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mxc-commons/mxc-shopware-plugin.git",
-                "reference": "55d122a00eb5d5c57b0d77b2aff38895f9f4bc96"
+                "reference": "e829305a1c96d8baff15aa001fedbf155e3a1efa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mxc-commons/mxc-shopware-plugin/zipball/55d122a00eb5d5c57b0d77b2aff38895f9f4bc96",
-                "reference": "55d122a00eb5d5c57b0d77b2aff38895f9f4bc96",
+                "url": "https://api.github.com/repos/mxc-commons/mxc-shopware-plugin/zipball/e829305a1c96d8baff15aa001fedbf155e3a1efa",
+                "reference": "e829305a1c96d8baff15aa001fedbf155e3a1efa",
                 "shasum": ""
             },
             "require": {
@@ -2307,7 +2307,7 @@
                 "plugin",
                 "shopware"
             ],
-            "time": "2019-04-25T16:40:43+00:00"
+            "time": "2019-04-29T16:48:51+00:00"
         },
         {
             "name": "ocramius/proxy-manager",

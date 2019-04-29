@@ -9,6 +9,8 @@ return [
         'STAERKE'     => 'Nikotinstärke',
         'WIDERSTAND'  => 'Widerstand',
         'PACKUNG'     => 'Packungsgröße',
+        'GROEE'       => 'Größe',
+        'GROESSE'     => 'Größe',
         'FARBE'       => 'Farbe',
         'DURCHMESSER' => 'Durchmesser',
         'GLAS'        => 'Glas',

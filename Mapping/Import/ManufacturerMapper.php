@@ -35,31 +35,26 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
 
     protected function mapSupplier(Model $model, Product $product)
     {
-        $supplier = $product->getSupplier();
-        if ($supplier === null) {
-            $mapping = $this->mappings[$product->getIcNumber()] ?? [];
+        $supplier = $this->mappings[$product->getIcNumber()]['supplier'] ?? null;
+        if (! $supplier) {
             $manufacturer = $model->getManufacturer();
-            $supplier = $mapping['supplier'] ?? null;
-            if (! $supplier) {
-                if (!in_array($manufacturer, $this->innocigsBrands)) {
-                    $supplier = @$this->classConfig['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
-                }
+            if (!in_array($manufacturer, $this->innocigsBrands)) {
+                $supplier = @$this->classConfig['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
             }
-            $product->setSupplier($supplier);
         }
-        $this->report['supplier'][$product->getSupplier()] = true;
+        $product->setSupplier($supplier);
+        $this->report['supplier'][$supplier] = true;
     }
 
     protected function mapBrand(Model $model, Product $product)
     {
-        $brand = $product->getBrand();
-        if ($brand === null) {
-            $mapping = $this->mappings[$product->getIcNumber()] ?? [];
+        $brand = $this->mappings[$product->getIcNumber()]['brand'] ?? null;
+        if (! $brand) {
             $manufacturer = $model->getManufacturer();
-            $brand = $mapping['brand'] ?? $this->classConfig['manufacturers'][$manufacturer]['brand'] ?? $manufacturer;
-            $product->setBrand($brand);
+            $brand = $this->classConfig['manufacturers'][$manufacturer]['brand'] ?? $manufacturer;
         }
-        $this->report['brand'][$product->getBrand()] = true;
+        $product->setBrand($brand);
+        $this->report['brand'][$brand] = true;
     }
 
     public function report()

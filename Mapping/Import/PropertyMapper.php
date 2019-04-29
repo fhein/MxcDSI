@@ -44,7 +44,7 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     protected $models = null;
 
     public function __construct(
-        ImportMappings $mappings,
+        ProductMappings $mappings,
         AssociatedProductsMapper $associatedProductsMapper,
         RegularExpressions $regularExpressions,
         Flavorist $flavorist,

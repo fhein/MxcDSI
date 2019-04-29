@@ -8,7 +8,8 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use PhpOffice\PhpSpreadsheet\Style\Border;
-use Shopware\Models\Article\Price;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
+use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class ExportPrices extends AbstractProductExport
 {
@@ -58,7 +59,7 @@ class ExportPrices extends AbstractProductExport
         }
         $headers[] = array_keys($data[0]);
         $this->sortColumns($data);
-        usort($data, [$this, 'compare']);
+        //usort($data, [$this, 'compare']);
 
         $row = 2;
         foreach ($data as &$record) {
@@ -89,41 +90,52 @@ class ExportPrices extends AbstractProductExport
         $info['supplier'] = $product->getSupplier();
         $info['brand'] = $product->getBrand();
         $info['name'] = $product->getName();
-        list($info['EK Netto'], $info['EK Brutto'], $info['UVP Brutto']) = $this->getPrices($product->getVariants());
+        list($info['EK Netto'], $info['EK Brutto'], $info['UVP Brutto']) = $this->getInnocigsPrices($product->getVariants());
         $info['Dampfplanet'] = $product->getRetailPriceDampfPlanet();
         $info['andere'] = $product->getRetailPriceOthers();
         $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
-        $shopwarePrices = $this->getCurrentPrices($product);
+        $vapeePrices = $this->getVapeePrices($product);
         foreach ($customerGroupKeys as $key) {
-            $info['VK Brutto ' . $key] = $shopwarePrices[$key] ?? null;
+            $price = $vapeePrices[$key] ?? null;
+            $price = $price === $info['UVP Brutto'] ? null : $price;
+            $info['VK Brutto ' . $key] = $price;
         }
         return $info;
     }
 
-    protected function getCurrentPrices(Product $product)
+    /**
+     * Get the maximum retail prices for each variant. Single Pack only (1er Packung)
+     *
+     * @param Product $product
+     * @return array
+     */
+    protected function getVapeePrices(Product $product)
     {
         $variants = $product->getVariants();
+        $variantPrices = [];
         /** @var Variant $variant */
-        $detailPrices = [];
         foreach ($variants as $variant) {
             if (! $this->isSinglePack($variant)) continue;
-            $detail = $variant->getDetail();
-            if (! $detail) continue;
-            $shopwarePrices = $detail->getPrices();
-            /** @var Price $price */
-            foreach ($shopwarePrices as $price) {
-                $detailPrices[$price->getCustomerGroup()->getKey()][$variant->getIcNumber()] = $price->getPrice();
+            $sPrices = explode(MXC_DELIMITER_L2, $variant->getRetailPrices());
+            foreach ($sPrices as $sPrice) {
+                list($key, $price) = explode(MXC_DELIMITER_L1, $sPrice);
+                $variantPrices[$key][$variant->getIcNumber()] = floatVal(str_replace(',', '.', $price));
             }
         }
         $prices = [];
-        foreach ($detailPrices as $key => $price) {
-            $prices[$key] = max($price) * 1.19;
+        foreach ($variantPrices as $key => $price) {
+            $prices[$key] = max($price);
         }
-
         return $prices;
     }
 
-    protected function getPrices(Collection $variants)
+    /**
+     * Get the maximum purchase price and recommended retail price for each variant. Single Pack only (1er Packung)
+     *
+     * @param Collection $variants
+     * @return array
+     */
+    protected function getInnocigsPrices(Collection $variants)
     {
         $purchasePrice = 0.0;
         $retailPrice = 0.0;
@@ -157,7 +169,7 @@ class ExportPrices extends AbstractProductExport
     {
         $highest = $this->getHighestRowAndColumn();
         $columnRanges = [
-            [$this->columns['UVP Brutto'], 1, $this->columns['Marge UVP'], $highest['row']]
+            [$this->columns['UVP Brutto'], 1, $this->columns['Marge UVP'], $highest['row']],
         ];
         $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
         foreach ($customerGroupKeys as $key) {

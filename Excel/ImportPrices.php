@@ -54,6 +54,7 @@ class ImportPrices extends AbstractProductImport
             // we use the prices sheet to fix supplier and brand also
             $product->setSupplier($record['supplier']);
             $product->setBrand($record['brand']);
+            $product->setType($record['type']);
             $product->setRetailPriceDampfPlanet($record['Dampfplanet']);
             $product->setRetailPriceOthers($record['andere']);
 

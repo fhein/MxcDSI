@@ -23,7 +23,7 @@ class PropertyMapperFactory implements FactoryInterface
     {
         $flavorist = $container->get(Flavorist::class);
 
-        // take care of the mapper dependencies
+        // mappers are applied in the order below, take care of mapper dependencies
         $productMappers = [
             // no requirements, sets Shopware number
             'code'          => $container->get(ProductNumberMapper::class),
@@ -39,12 +39,12 @@ class PropertyMapperFactory implements FactoryInterface
             'type'          => $container->get(TypeMapper::class),
             // requires type, sets dosage
             'dosage'        => $container->get(DosageMapper::class),
-            // requires supplier, brand and name, sets category
+            // requires manual config, sets flavor and flavorCategory
+            'flavor'        => $container->get(FlavorMapper::class),
+            // requires supplier, brand and name, flavor and flavorCategory, sets category
             'category'      => $container->get(CategoryMapper::class),
             // requires manual config, sets retailPriceDampfplanet and retailPriceOthers
             'competitor'    => $container->get(CompetitorPricesMapper::class),
-            // requires manual config, sets flavor
-            'flavor'        => $container->get(FlavorMapper::class),
         ];
 
         $variantMappers = [
@@ -53,7 +53,7 @@ class PropertyMapperFactory implements FactoryInterface
         ];
 
         $associatedProductsMapper = $container->get(AssociatedProductsMapper::class);
-        $mappings = $container->get(ImportMappings::class);
+        $mappings = $container->get(ProductMappings::class);
 
         $regularExpressions = $container->get(RegularExpressions::class);
 

@@ -6,7 +6,7 @@ use Zend\Config\Factory;
 
 class ProductRepository extends BaseEntityRepository
 {
-    protected $productConfigFile = __DIR__ . '/../Config/ImportMappings.config.php';
+    protected $productConfigFile = __DIR__ . '/../Config/ProductMappings.config.php';
 
     protected $dql = [
         'getAllIndexed' =>
@@ -57,8 +57,12 @@ class ProductRepository extends BaseEntityRepository
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE p.flavor IS NOT NULL',
 
         'getProductsWithFlavorMissing' =>
-            'SELECT p.name FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE p.flavor IS NULL OR p.flavor = \'\' '
+            'SELECT p.name FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE (p.flavor IS NULL OR p.flavor = \'\') '
             . 'AND p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\') AND p.name NOT LIKE \'%Probierbox%\'',
+
+        'getProductsWithDosageMissing' =>
+            'SELECT p.name FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
+            . 'WHERE (p.dosage IS NULL OR p.dosage = \'\') AND p.type = \'AROMA\'',
 
         'getArticle' =>
             'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
@@ -88,6 +92,10 @@ class ProductRepository extends BaseEntityRepository
         'getFlavoredProducts' =>
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\') AND p.name NOT LIKE \'%Probierbox%\'',
+
+        'getExcelExportMapping' =>
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.commonName '
+            . 'FROM MxcDropshipInnocigs\Models\Product p',
 
         'getExcelExportAroma' =>
             'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.dosage '

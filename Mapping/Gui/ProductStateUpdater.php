@@ -11,7 +11,7 @@ use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 
-class ProductUpdater implements LoggerAwareInterface, ModelManagerAwareInterface
+class ProductStateUpdater implements LoggerAwareInterface, ModelManagerAwareInterface
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

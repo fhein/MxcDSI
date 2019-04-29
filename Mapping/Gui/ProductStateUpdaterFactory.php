@@ -7,7 +7,7 @@ use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ProductUpdaterFactory implements FactoryInterface
+class ProductStateUpdaterFactory implements FactoryInterface
 {
     use ObjectAugmentationTrait;
     /**
@@ -21,6 +21,6 @@ class ProductUpdaterFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $productMapper = $container->get(ProductMapper::class);
-        return $this->augment($container, new ProductUpdater($productMapper));
+        return $this->augment($container, new ProductStateUpdater($productMapper));
     }
 }

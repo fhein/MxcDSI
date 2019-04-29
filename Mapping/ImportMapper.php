@@ -132,7 +132,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 //        $this->log = $log;
 //    }
 
-    protected function getGroup(string $groupName)
+    protected function mapGroup(string $groupName)
     {
         $group = @$this->groups[$groupName];
         if (null === $group) {
@@ -146,7 +146,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $group;
     }
 
-    public function getOptions(string $optionString): ArrayCollection
+    public function mapOptions(string $optionString): ArrayCollection
     {
         $optionArray = explode(MXC_DELIMITER_L2, $optionString);
         $options = [];
@@ -156,7 +156,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $groupName = $this->propertyMapper->mapGroupName($param[0]);
             $option = @$this->options[$groupName][$optionName];
             if ($option === null) {
-                $group = $this->getGroup($groupName);
+                $group = $this->mapGroup($groupName);
                 $option = new Option();
                 $option->setAccepted(true);
                 $option->setName($optionName);
@@ -182,7 +182,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $product;
     }
 
-    protected function getProduct(Model $model)
+    protected function mapProduct(Model $model)
     {
         $number = $model->getMaster();
 
@@ -196,7 +196,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $product;
     }
 
-    public function getImages(?string $imageString)
+    public function mapImages(?string $imageString)
     {
         $imageUrls = explode(MXC_DELIMITER_L1, $imageString);
         $images = [];
@@ -219,7 +219,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         /** @var  Model $model */
         foreach ($additions as $number => $model) {
             $this->log->debug('Adding variant: ' . $model->getName());
-            $product = $this->getProduct($model);
+            $product = $this->mapProduct($model);
             $this->updates[$product->getIcNumber()] = $product;
 
             $variant = new Variant();
@@ -240,9 +240,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
             $images = $model->getImages();
             if (null !== $images) {
-                $variant->setImages($this->getImages($images));
+                $variant->setImages($this->mapImages($images));
             }
-            $variant->setOptions($this->getOptions($model->getOptions()));
+            $variant->setOptions($this->mapOptions($model->getOptions()));
         }
     }
 
@@ -325,8 +325,8 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         }
         $addedOptions = array_diff($newOptions, $oldOptions);
         $addedOptions = implode(MXC_DELIMITER_L2, $addedOptions);
-        $addedOptions = $this->getOptions($addedOptions);
-        $variant->addOptions($this->getOptions($addedOptions));
+        $addedOptions = $this->mapOptions($addedOptions);
+        $variant->addOptions($this->mapOptions($addedOptions));
     }
 
     protected function changeImages(Variant $variant, string $oldValue, string $newValue)
@@ -344,7 +344,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         if (! empty($addedImages)) {
             $addedImages = implode(MXC_DELIMITER_L1, $addedImages);
             $this->log->debug('Added images' . var_export($addedImages, true));
-            $addedImages = $this->getImages($addedImages);
+            $addedImages = $this->mapImages($addedImages);
             $variant->addImages($addedImages);
         }
     }
@@ -382,7 +382,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                     break;
                 case 'master':
                     $variant->getProduct()->removeVariant($variant);
-                    $this->getProduct($newValue)->addVariant($variant);
+                    $this->mapProduct($newValue)->addVariant($variant);
                     break;
             }
         }
@@ -478,12 +478,22 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $this->productRepository ?? $this->productRepository = $this->modelManager->getRepository(Product::class);
     }
 
+    protected function getProducts() {
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $this->products ?? $this->products = $this->getProductRepository()->getAllIndexed();
+    }
+
     /**
      * @return VariantRepository
      */
     protected function getVariantRepository()
     {
         return $this->variantRepository ?? $this->variantRepository = $this->modelManager->getRepository(Variant::class);
+    }
+
+    protected function getVariants() {
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $this->variants ?? $this->variants = $this->getVariantRepository()->getAllIndexed();
     }
 
     /**
@@ -494,12 +504,22 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $this->groupRepository ?? $this->groupRepository = $this->modelManager->getRepository(Group::class);
     }
 
+    protected function getGroups() {
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $this->groups ?? $this->groups = $this->getGroupRepository()->getAllIndexed();
+    }
+
     /**
      * @return OptionRepository
      */
     protected function getOptionRepository()
     {
         return $this->optionRepository ?? $this->optionRepository = $this->modelManager->getRepository(Option::class);
+    }
+
+    protected function getOptions()
+    {
+        return $this->options ?? $this->options = $this->getOptionRepository()->getAllIndexed();
     }
 
     /**
@@ -509,4 +529,11 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     {
         return $this->imageRepository ?? $this->imageRepository = $this->modelManager->getRepository(Image::class);
     }
+
+    protected function getImages()
+    {
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $this->images ?? $this->images = $this->getImageRepository()->getAllIndexed();
+    }
+
 }

@@ -12,7 +12,7 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="s_plugin_mxc_dsi_group")
- * @ORM\Entity(repositoryClass="GroupRepository", readOnly=true)
+ * @ORM\Entity(repositoryClass="GroupRepository")
  */
 class Group extends ModelEntity  {
 
@@ -57,28 +57,14 @@ class Group extends ModelEntity  {
         $this->name = $name;
     }
 
-    // This API gets implicitly called when the user saves an article.
-    //
-    // If the 'Save' button gets clicked on the article detail window
-    // updated variant information is provided (accepted status of each variant).
-    //
-    // If the 'Save' action gets triggered via the article listing
-    // (cell editing, 'Activate selected', etc), an empty variant array
-    // is provided.
-    //
-    // So we apply the variant array only if it is not empty. Otherwise
-    // the variants, which are all well defined and present, would be removed.
-    //
     public function setOptions($options) {
-        if (! empty($options)) {
-            $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Option', 'options');
-        }
+        $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Option', 'options');
     }
 
     /**
      * @return Collection
      */
-    public function getOptions(): Collection
+    public function getOptions()
     {
         return $this->options;
     }
