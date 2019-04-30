@@ -53,8 +53,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $log->enter();
         try {
             $client = $this->getServices()->get(ImportClient::class);
-            $client->import();
-            $this->view->assign([ 'success' => true, 'message' => 'Items were successfully updated.']);
+            if ($client->import()) {
+                $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
+            } else {
+                $this->view->assign(['success' => false, 'message' => 'Failed to import/update items.']);
+            }
         } catch (Throwable $e) {
             $log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
@@ -215,6 +218,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     protected function getAdditionalDetailData(array $data) {
         $data['variants'] = [];
+        $product = $this->getRepository()->find($data['id']);
+        $data['linked'] = $product->getArticle() !== null;
         return $data;
     }
 

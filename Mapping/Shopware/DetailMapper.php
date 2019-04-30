@@ -202,7 +202,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->companion->configureDropship($variant);
     }
 
-    protected function deleteArticle(Product $product)
+    public function deleteArticle(Product $product)
     {
         /** @var Article $article */
         $article = $product->getArticle();
@@ -215,9 +215,12 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             $this->modelManager->remove($set);
         }
 
+        $product->setArticle(null);
+        $product->setActive(false);
+        $product->setLinked(false);
+
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->articleResource->delete($article->getId());
-        $product->setArticle(null);
     }
 
     protected function setMainDetail(Variant $variant)

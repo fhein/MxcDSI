@@ -16,7 +16,7 @@ class Model extends ModelEntity
     use BaseModelTrait;
 
     /**
-     * @var string $category
+     * @var string
      * @ORM\Column(type="string", nullable=true)
      */
     private $category;
@@ -34,16 +34,34 @@ class Model extends ModelEntity
     private $model;
 
     /**
-     * @var string $ean
+     * @var string
      * @ORM\Column(type="string", nullable=true)
      */
     private $ean;
 
     /**
-     * @var string $name
+     * @var string
      * @ORM\Column(type="string", nullable=false)
      */
     private $name;
+
+    /**
+     * @var string
+     * @ORM\Column(name="product_name", type="string", nullable=true)
+     */
+    private $productName;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $unit;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $content;
 
     /**
      * @var string $description
@@ -58,19 +76,19 @@ class Model extends ModelEntity
     private $purchasePrice;
 
     /**
-     * @var string $purchasePrice
+     * @var string
      * @ORM\Column(name="uvp", type="string", nullable=false)
      */
     private $recommendedRetailPrice;
 
     /**
-     * @var string $images;
+     * @var string
      * @ORM\Column(name="images", type="text", nullable=true)
      */
     private $images;
 
     /**
-     * @var string $manufacturer
+     * @var string
      * @ORM\Column(type="string", nullable=true)
      */
     private $manufacturer;
@@ -305,7 +323,7 @@ class Model extends ModelEntity
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->description;
     }
@@ -313,8 +331,56 @@ class Model extends ModelEntity
     /**
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProductName()
+    {
+        return $this->productName;
+    }
+
+    /**
+     * @param mixed $productName
+     */
+    public function setProductName($productName)
+    {
+        $this->productName = $productName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUnit()
+    {
+        return $this->unit;
+    }
+
+    /**
+     * @param mixed $unit
+     */
+    public function setUnit($unit)
+    {
+        $this->unit = $unit;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
     }
 }

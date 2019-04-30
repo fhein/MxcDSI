@@ -36,7 +36,8 @@ class ProductRepository extends BaseEntityRepository
             . 'JOIN p.variants v '
             . 'JOIN v.options o '
             . 'JOIN MxcDropshipInnocigs\Models\Group g WITH o.icGroup = g.id '
-            . 'WHERE o.id IN (:optionIds) AND p.linked = 1',
+            . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+            . 'WHERE o.id IN (:optionIds)',
 
         // get all Products which have an associated Shopware article that has related articles with :relatedIds
         'getProductsHavingRelatedArticles' =>

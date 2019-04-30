@@ -8,6 +8,7 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 
@@ -21,6 +22,9 @@ class ProductStateUpdater implements LoggerAwareInterface, ModelManagerAwareInte
 
     /** @var ProductMapper */
     protected $productMapper;
+
+    /** @var DetailMapper */
+    protected $detailMapper;
 
     /** @var ProductRepository */
     protected $repository;
@@ -49,7 +53,12 @@ class ProductStateUpdater implements LoggerAwareInterface, ModelManagerAwareInte
             case 'accepted':
                 $this->productMapper->setArticleAcceptedState($products, $value);
                 break;
+            /** @noinspection PhpMissingBreakStatementInspection */
             case 'linked':
+                if ($value === false) {
+                    $this->productMapper->deleteArticles($products);
+                    break;
+                }
             case 'active':
                 $this->productMapper->processStateChangesProductList($products, true);
                 break;

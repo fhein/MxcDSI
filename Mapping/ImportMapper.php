@@ -122,16 +122,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->flavorist = $flavorist;
     }
 
-//    public function setModelManager(ModelManager $modelManager)
-//    {
-//        $this->modelManager = $modelManager;
-//    }
-//
-//    public function setLog(LoggerInterface $log)
-//    {
-//        $this->log = $log;
-//    }
-
     protected function mapGroup(string $groupName)
     {
         $group = @$this->groups[$groupName];

@@ -85,6 +85,13 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         }
     }
 
+    public function deleteArticles(array $products)
+    {
+        foreach ($products as $product) {
+            $this->detailMapper->deleteArticle($product);
+        }
+    }
+
     /**
      * Main entry point if the $active, $accepted or $linked state of a list of
      * InnoCigs articles changes.

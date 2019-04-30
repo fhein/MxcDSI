@@ -28,6 +28,7 @@ return [
         ],
     ],
     'product_name_option_fixes' => [
+        // option text                                  // option found in name
         'prisma-blau'                                => 'blau-prisma',
         'prisma-chrom'                               => 'chrom-prisma',
         'prisma-gold'                                => 'gold-prisma',
@@ -469,6 +470,7 @@ return [
         'SC'          => [
             '~(iJust ((21700)|(ECM)|(3))?)~',
             '~(Ello( ((Vate)|(Duro))?))~',
+            '~(Elven)~',
             '~(Basal)~',
             '~(GS ((Air 2)|(Air)|(Baby)|(Drive)|(Turbo))?)~',
             '~(iKonn)~',

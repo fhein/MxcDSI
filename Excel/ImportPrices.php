@@ -51,10 +51,6 @@ class ImportPrices extends AbstractProductImport
         foreach ($this->data as $record) {
             $product = $products[$record['icNumber']] ?? null;
             if (!$product) continue;
-            // we use the prices sheet to fix supplier and brand also
-            $product->setSupplier($record['supplier']);
-            $product->setBrand($record['brand']);
-            $product->setType($record['type']);
             $product->setRetailPriceDampfPlanet($record['Dampfplanet']);
             $product->setRetailPriceOthers($record['andere']);
 

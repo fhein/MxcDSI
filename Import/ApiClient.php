@@ -49,138 +49,72 @@ class ApiClient
         return $this->modelsToArray($this->send($cmd)->getBody());
     }
 
-    /**
-     * @return array
-     */
-    public function getItemList()
+    public function modelsToArray(string $xml): ?array
     {
-        $cmd = $this->authUrl . '&command=products&type=extended';
-        return $this->modelsToArray($this->send($cmd)->getBody());
-    }
-
-    /**
-     * @param DateTime $date
-     * @return array
-     * @throws Exception
-     */
-    public function getTrackingData($date = null)
-    {
-        if (!$date instanceof DateTime) {
-            $date = (new DateTime())->format('Y-m-d');
-        }
-        $cmd = $this->authUrl . '&command=tracking&day=' . $date;
-        return $this->xmlToArray($this->send($cmd)->getBody());
-    }
-
-    public function getStockInfo(string $model)
-    {
-        $cmd = $this->authUrl . '&command=quantity&model=' . urlencode($model);
-        $data = $this->xmlToArray($this->send($cmd)->getBody());
-        return $data['QUANTITIES']['PRODUCT']['QUANTITY'];
-    }
-
-    public function getAllStockInfo() {
-        $cmd = $this->authUrl . '&command=quantity_all';
-        return $this->xmlToArray($this->send($cmd)->getBody());
-    }
-
-    /**
-     * @param string $cmd
-     * @return Response
-     */
-    protected function send($cmd)
-    {
-        $client = $this->getClient();
-        $client->setUri($cmd);
-        try {
-            $response = $client->send();
-            if (! $response->isSuccess()) {
-                throw new ApiException('HTTP status: ' . $response->getStatusCode());
-            }
-            return $client->send();
-        } catch (ZendClientException $e) {
-            // no response or response empty
-            throw new ApiException($e->getMessage());
-        }
-    }
-
-    /**
-     * @return Client
-     */
-    protected function getClient()
-    {
-        if (null === $this->client) {
-            $this->client = new Client(
-                "",
-                [
-                    'maxredirects' => 0,
-                    'timeout'      => 30,
-                    'useragent'    => 'maxence Dropship',
-                ]
-            );
-        }
-        return $this->client;
-    }
-    protected function checkXmlResult(string $xml)
-    {
-        if (strpos($xml, '<ERRORS>') !== false) {
-            $this->xmlToArray($xml);
-        }
-    }
-
-    protected function checkArrayResult(array $response)
-    {
-        $error = $response['ERRORS']['ERROR'];
-        if ($error) {
-            throw new ApiException('InnoCigs API: <br/>'.$error['MESSAGE']);
-        }
-    }
-
-    public function modelsToArray(string $xml): array
-    {
+        //$xml = preg_replace('~\& ~', '&amp; ', $xml);
         $this->checkXmlResult($xml);
+//        $this->dumpXML($xml);
         $this->logXML($xml);
         $dom = new DOMDocument();
-        $dom->loadXML($xml);
+        $result = $dom->loadXML($xml);
+        if ($result === false) {
+            $this->log->err('Invalid XML data: Failed to load InnoCigs products.');
+            return null;
+        }
         $models = $dom->getElementsByTagName('PRODUCT');
         /** @var DOMElement $model */
         $import = [];
         foreach ($models as $model) {
             $item = [];
-            $item['category']                   = $model->getElementsByTagName('CATEGORY')->item(0)->nodeValue;
-            $item['model']                      = $model->getElementsByTagName('MODEL')->item(0)->nodeValue;
-            $item['master']                     = $model->getElementsByTagName('MASTER')->item(0)->nodeValue;
-            $item['ean']                        = $model->getElementsByTagName('EAN')->item(0)->nodeValue;
-            $item['name']                       = $model->getElementsByTagName('NAME')->item(0)->nodeValue;
-            $item['purchasePrice']              = $model->getElementsByTagName('PRODUCTS_PRICE')->item(0)->nodeValue;
-            $item['recommendedRetailPrice']     = $model->getElementsByTagName('PRODUCTS_PRICE_RECOMMENDED')->item(0)->nodeValue;
-            $item['manufacturer']               = $model->getElementsByTagName('MANUFACTURER')->item(0)->nodeValue;
-            $item['manual']                     = $model->getElementsByTagName('PRODUCTS_MANUAL')->item(0)->nodeValue;
-            $item['description']                = $model->getElementsByTagName('DESCRIPTION')->item(0)->nodeValue;
-            $item['image']                      = $model->getElementsByTagName('PRODUCTS_IMAGE')->item(0)->nodeValue;
-            $attributes                         = $model->getElementsByTagName('PRODUCTS_ATTRIBUTES')->item(0)->childNodes;
-            $addlImages                         = $model->getElementsByTagName('PRODUCTS_IMAGE_ADDITIONAL')->item(0)->childNodes;
-            $item['images']         = [];
+            $item['category']               = $this->getNodeValue($model, 'CATEGORY');
+            $item['model']                  = $this->getNodeValue($model, 'MODEL');
+            $item['master']                 = $this->getNodeValue($model, 'MASTER');
+            $item['ean']                    = $this->getNodeValue($model, 'EAN');
+            $item['name']                   = $this->getNodeValue($model, 'NAME');
+            $item['productName']            = $this->getNodeValue($model, 'PARENT_NAME');
+            $item['purchasePrice']          = $this->getNodeValue($model, 'PRODUCTS_PRICE');
+            $item['recommendedRetailPrice'] = $this->getNodeValue($model, 'PRODUCTS_PRICE_RECOMMENDED');
+            $item['manufacturer']           = $this->getNodeValue($model, 'MANUFACTURER');
+            $item['manual']                 = $this->getNodeValue($model, 'PRODUCTS_MANUAL');
+            $item['description']            = $this->getNodeValue($model, 'DESCRIPTION');
+            $item['image']                  = $this->getNodeValue($model, 'PRODUCTS_IMAGE');
 
+            $attributes = $model->getElementsByTagName('PRODUCTS_ATTRIBUTES')->item(0)->childNodes;
             /** @var DOMElement $attribute */
             foreach ($attributes as $attribute) {
-                if (! $attribute instanceof DOMElement) continue;
-                $tagName = @$attribute->tagName;
-                if ($tagName !== null) {
-                    $item['options'][$tagName] = $attribute->nodeValue;
+                if (!$attribute instanceof DOMElement) {
+                    continue;
                 }
+                $item['options'][$attribute->tagName] = $attribute->nodeValue;
             }
-            /** @var DOMElement $image */
-            foreach ($addlImages as $image) {
-                if (! $attribute instanceof DOMElement) continue;
-                $tagName = @$image->tagName;
-                if ($tagName !== null) {
+
+            $item['images'] = [];
+            /** @var DOMElement $addlImages */
+            $addlImages = $model->getElementsByTagName('PRODUCTS_IMAGE_ADDITIONAL')->item(0);
+            if ($addlImages) {
+                $images = $addlImages->getElementsByTagName('IMAGE');
+                foreach ($images as $image) {
                     $item['images'][] = $image->nodeValue;
                 }
             }
+
+            /** @var DOMElement $vpe */
+            $vpe = $model->getElementsByTagName('VPE')->item(0);
+            if ($vpe) {
+                $item['content'] = $this->getNodeValue($vpe, 'CONTENT');
+                $item['unit'] = $this->getNodeValue($vpe, 'UNIT');
+            }
+
             $import[$item['master']][$item['model']] = $item;
         }
         return $import;
+    }
+
+    protected function checkXmlResult(string $xml)
+    {
+        if (strpos($xml, '<ERRORS>') !== false) {
+            $this->xmlToArray($xml);
+        }
     }
 
     /**
@@ -242,5 +176,103 @@ class ApiClient
                 $error->line,
                 $error->column));
         }
+    }
+
+    protected function checkArrayResult(array $response)
+    {
+        $error = $response['ERRORS']['ERROR'];
+        if ($error) {
+            throw new ApiException('InnoCigs API: <br/>' . $error['MESSAGE']);
+        }
+    }
+
+    protected function getNodeValue(DOMElement $model, string $tagName)
+    {
+        $element = $model->getElementsByTagName($tagName)->item(0);
+        if ($element) {
+            return $element->nodeValue;
+        }
+        return null;
+    }
+
+    /**
+     * @param string $cmd
+     * @return Response
+     */
+    protected function send($cmd)
+    {
+        $client = $this->getClient();
+        $client->setUri($cmd);
+        try {
+            $response = $client->send();
+            if (!$response->isSuccess()) {
+                throw new ApiException('HTTP status: ' . $response->getStatusCode());
+            }
+            return $client->send();
+        } catch (ZendClientException $e) {
+            // no response or response empty
+            throw new ApiException($e->getMessage());
+        }
+    }
+
+    /**
+     * @return Client
+     */
+    protected function getClient()
+    {
+        if (null === $this->client) {
+            $this->client = new Client(
+                "",
+                [
+                    'maxredirects' => 0,
+                    'timeout'      => 30,
+                    'useragent'    => 'maxence Dropship',
+                ]
+            );
+        }
+        return $this->client;
+    }
+
+    /**
+     * @return array
+     */
+    public function getItemList()
+    {
+        // $cmd = $this->authUrl . '&command=products&type=extended';
+        $cmd = $this->authUrl . '&command=products';
+        return $this->modelsToArray($this->send($cmd)->getBody());
+    }
+
+    /**
+     * @param DateTime $date
+     * @return array
+     * @throws Exception
+     */
+    public function getTrackingData($date = null)
+    {
+        if (!$date instanceof DateTime) {
+            $date = (new DateTime())->format('Y-m-d');
+        }
+        $cmd = $this->authUrl . '&command=tracking&day=' . $date;
+        return $this->xmlToArray($this->send($cmd)->getBody());
+    }
+
+    public function getStockInfo(string $model)
+    {
+        $cmd = $this->authUrl . '&command=quantity&model=' . urlencode($model);
+        $data = $this->xmlToArray($this->send($cmd)->getBody());
+        return $data['QUANTITIES']['PRODUCT']['QUANTITY'];
+    }
+
+    public function getAllStockInfo()
+    {
+        $cmd = $this->authUrl . '&command=quantity_all';
+        return $this->xmlToArray($this->send($cmd)->getBody());
+    }
+
+    protected function dumpXML($xml)
+    {
+        $fn = Shopware()->DocPath() . '/var/log/mxc_dropship_innocigs/raw_data_' . date('Y-m-d-H-i-s') . '.xml';
+        file_put_contents($fn, $xml);
     }
 }

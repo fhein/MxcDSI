@@ -80,6 +80,7 @@ return [
         '~Base~'              => TypeMapper::TYPE_BASE,
         '~Shot~'              => TypeMapper::TYPE_SHOT,
         '~Akkuzelle~'         => TypeMapper::TYPE_CELL,
+        '~Akkubox~'           => TypeMapper::TYPE_CELL_BOX,
         '~Akkuträger~'        => TypeMapper::TYPE_BOX_MOD_CELL,
         '~Akku~'              => TypeMapper::TYPE_BOX_MOD,
         '~Squonker Box~'      => TypeMapper::TYPE_SQUONKER_BOX,

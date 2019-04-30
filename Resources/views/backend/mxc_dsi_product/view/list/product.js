@@ -163,10 +163,17 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             },
             items: [
                 {
-                    text : 'Create Shopware article',
+                    text : 'Create Shopware articles',
                     iconCls: 'sprite-plus-circle',
                     handler: function() {
                         me.handleLinkedState(true);
+                    }
+                },
+                {
+                    text : 'Delete Shopware articles',
+                    iconCls: 'sprite-minus-circle',
+                    handler: function() {
+                        me.handleLinkedState(false);
                     }
                 },
                 '-',

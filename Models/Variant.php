@@ -26,6 +26,12 @@ class Variant extends ModelEntity
     private $icNumber;
 
     /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $name;
+
+    /**
      * @var string $number
      * @ORM\Column(name="number", type="string", nullable=true)
      */
@@ -62,6 +68,18 @@ class Variant extends ModelEntity
      * @ORM\Column(name="uvp", type="string", nullable=false)
      */
     private $recommendedRetailPrice;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $unit;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $content;
 
     /**
      * @var string $retailPrices
@@ -486,5 +504,53 @@ class Variant extends ModelEntity
     public function setRetailPrices($retailPrices)
     {
         $this->retailPrices = $retailPrices;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUnit()
+    {
+        return $this->unit;
+    }
+
+    /**
+     * @param mixed $unit
+     */
+    public function setUnit($unit)
+    {
+        $this->unit = $unit;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
     }
 }

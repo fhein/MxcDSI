@@ -115,7 +115,9 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
 
     public function import() {
         $this->import = $this->apiClient->getItemList();
+        if (! $this->import) return false;
         $this->doImport();
+        return true;
     }
 
     protected function doImport()
@@ -222,11 +224,11 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         if (is_string($image) && $image !== '') {
             $images[] = $image;
         }
-        if (!empty($addlImages)) {
+        if (! empty($addlImages)) {
             sort($addlImages);
-            $images[] = implode(MXC_DELIMITER_L1, $addlImages);
+            $images = array_merge($images, $addlImages);
         }
-        return implode(MXC_DELIMITER_L1, $images);
+        return implode(MXC_DELIMITER_L1, array_unique($images));
     }
 
     protected function getParamArray($value)
