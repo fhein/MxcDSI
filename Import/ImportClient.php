@@ -127,7 +127,7 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         $evm->addEventSubscriber($this);
 
         $this->flattenImport();
-        $this->createModels();
+        $this->updateModels();
         $this->deleteModels();
         $this->modelManager->flush();
 
@@ -144,15 +144,103 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         $i = 1;
         foreach ($this->import as &$master) {
             foreach ($master as &$item) {
-                $item['options'] = $this->condenseOptions($item['options']);
+                $item['options'] = $this->flattenOptions($item['options']);
                 if (! empty($item['images'])) {
                     $this->missingItems['additional_images_available'][$item['model']] = $item['name'];
                 }
-                $item['images'] = $this->condenseImages($item['image'], $item['images']);
+                $item['images'] = $this->flattenImages($item['image'], $item['images']);
                 unset ($item['image']);
 
                 $i++;
             }
+        }
+    }
+
+    protected function flattenOptions(array $attributes)
+    {
+        $options = [];
+        foreach ($attributes as $group => $option) {
+            $option = trim($option);
+            $options[] = trim($group) . MXC_DELIMITER_L1 . $option;
+            $this->optionNames[$option] = true;
+        }
+        sort($options);
+        return implode(MXC_DELIMITER_L2, $options);
+    }
+
+    protected function flattenImages(?string $image, array $addlImages)
+    {
+        $images = $addlImages;
+        sort($images);
+        if (is_string($image) && $image !== '') {
+            array_unshift($images, $image);
+        }
+        return implode(MXC_DELIMITER_L1, array_unique($images));
+    }
+
+    protected function updateModels()
+    {
+        $limit = $this->classConfig['limit'] ??  -1;
+        $cursor = 0;
+        $missingAttributes = [];
+        $missingModels = [];
+        foreach ($this->import as $master => $records) {
+            if ($cursor === $limit) {
+                return;
+            }
+            $cursor++;
+            $options = [];
+            $models = [];
+            foreach ($records as $number => $data) {
+                $model = @$this->importLog['deletions'][$number];
+                if (null === $model) {
+                    $model = new Model();
+                    $this->importLog['additions'][$number] = $model;
+                    $this->modelManager->persist($model);
+                } else {
+                    /** @var Model $model */
+                    $model = $this->importLog['deletions'][$number];
+                    unset($this->importLog['deletions'][$number]);
+
+                    // If this model does not have an associated variant, put it
+                    // on the additions list in order to get the variant created later.
+                    $variant = $this->variants[$number];
+                    if (! $variant) {
+                        $this->importLog['additions'][$number] = $model;
+                    }
+                }
+                $model->fromImport($data);
+                $models[$model->getModel()] = $model;
+                $options[$model->getOptions()] = true;
+                $category = $data['category'];
+                $this->categoryUsage[$category][] = $model->getName();
+                $this->categories[$category] = true;
+            }
+            // The option strings of all models with the same master id
+            // must be different, otherwise attributes are missing
+            if (count($records) !== count($options)) {
+                $record = $this->checkMissingAttributes($records, $models);
+                $missingAttributes[$master] = $record;
+            }
+            $issue = $this->checkMissingModels($records, $models);
+            if (! empty($issue)) {
+                $missingModels[$master] = $issue;
+            }
+        }
+        ($this->reporter)([
+            'imMissingAttributes' => $missingAttributes,
+            'imMissingModels'     => $missingModels,
+        ]);
+    }
+
+    protected function deleteModels()
+    {
+        /**
+         * @var string $number
+         * @var Model $model
+         */
+        foreach ($this->importLog['deletions'] as $number => $model) {
+            $model->setDeleted(true);
         }
     }
 
@@ -187,129 +275,6 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
 
     }
 
-    protected function getParamString($value)
-    {
-        if (is_string($value)) {
-            return trim($value);
-        }
-        if ($value === null || is_array($value)) {
-            return '';
-        }
-        throw new InvalidArgumentException(
-            sprintf('String or empty array expected, got %s.',
-                is_object($value) ? get_class($value) : gettype($value)
-            )
-        );
-    }
-
-    /**
-     * @param array $attributes
-     * @return array
-     */
-    protected function condenseOptions(array $attributes)
-    {
-        $options = [];
-        foreach ($attributes as $group => $option) {
-            $option = trim($option);
-            $options[] = trim($group) . MXC_DELIMITER_L1 . $option;
-            $this->optionNames[$option] = true;
-        }
-        sort($options);
-        return implode(MXC_DELIMITER_L2, $options);
-    }
-
-    protected function condenseImages(?string $image, array $addlImages)
-    {
-        $images = [];
-        if (is_string($image) && $image !== '') {
-            $images[] = $image;
-        }
-        if (! empty($addlImages)) {
-            sort($addlImages);
-            $images = array_merge($images, $addlImages);
-        }
-        return implode(MXC_DELIMITER_L1, array_unique($images));
-    }
-
-    protected function getParamArray($value)
-    {
-        if (null === $value) {
-            return [];
-        }
-        if (is_string($value)) {
-            return [$value];
-        }
-        if (is_array($value)) {
-            return $value;
-        }
-        throw new InvalidArgumentException(
-            sprintf('String or array expected, got %s.',
-                is_object($value) ? get_class($value) : gettype($value)
-            )
-        );
-    }
-
-    protected function createModels()
-    {
-        $limit = $this->classConfig['limit'] ??  -1;
-        $cursor = 0;
-        $missingAttributes = [];
-        $missingModels = [];
-        foreach ($this->import as $master => $records) {
-            if ($cursor === $limit) {
-                return;
-            }
-            $cursor++;
-            $options = [];
-            $models = [];
-            foreach ($records as $number => $data) {
-                $model = @$this->importLog['deletions'][$number];
-                if (null !== $model) {
-                    /** @var Model $model */
-                    $model = $this->importLog['deletions'][$number];
-                    unset($this->importLog['deletions'][$number]);
-
-                    // If this model does not have an associated variant, put it
-                    // on the additions list in order to get the variant created later.
-                    $variant = $this->variants[$number];
-                    if (! $variant) {
-                        $this->importLog['additions'][$number] = $model;
-                    }
-
-                } else {
-                    $model = new Model();
-                    $this->importLog['additions'][$number] = $model;
-                    $this->modelManager->persist($model);
-                }
-                $model->fromImport($data);
-                $models[$model->getModel()] = $model;
-                $options[$model->getOptions()] = true;
-                $category = $data['category'];
-                $this->categoryUsage[$category][] = $model->getName();
-                $this->categories[$category] = true;
-            }
-            // The option strings of all models with the same master id
-            // must be different, otherwise attributes are missing
-            if (count($records) !== count($options)) {
-                $record = $this->checkMissingAttributes($records, $models);
-                $missingAttributes[$master] = $record;
-            }
-            $issue = $this->checkMissingModels($records, $models);
-            if (! empty($issue)) {
-                $missingModels[$master] = $issue;
-            }
-        }
-        ($this->reporter)([
-            'imMissingAttributes' => $missingAttributes,
-            'imMissingModels'     => $missingModels,
-        ]);
-    }
-
-    /**
-     * @param array $records
-     * @param array $models
-     * @return array
-     */
     protected function checkMissingAttributes(array $records, array $models): array
     {
         $record = [];
@@ -321,6 +286,7 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
             ];
             $fix = $this->classConfig['attribute_fixes'][$data['master']][$number]['attributes'];
             if ($fix !== null) {
+                $this->log->debug('Attribute fix applied.');
                 $models[$number]->setOptions($fix);
                 $record[$number]['fixed'] = $fix;
             }
@@ -374,17 +340,6 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
             $record['models_missing'] = array_keys($set);
         }
         return $record;
-    }
-
-    protected function deleteModels()
-    {
-        /**
-         * @var string $number
-         * @var Model $model
-         */
-        foreach ($this->importLog['deletions'] as $number => $model) {
-            $model->setDeleted(true);
-        }
     }
 
     public function preUpdate(PreUpdateEventArgs $args)

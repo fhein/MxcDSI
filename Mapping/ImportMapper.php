@@ -12,7 +12,6 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Import\ApiClient;
-use MxcDropshipInnocigs\Mapping\Import\Flavorist;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Models\Group;
@@ -35,9 +34,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
     use ClassConfigAwareTrait;
-
-    /** @var Flavorist */
-    protected $flavorist;
 
     /** @var VariantRepository */
     protected $variantRepository;
@@ -102,7 +98,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
      * @param ProductMapper $shopwareMapper
      * @param DetailMapper $detailMapper
      * @param BulkOperation $bulkOperation
-     * @param Flavorist $flavorist
      */
     public function __construct(
         ArticleTool $articleTool,
@@ -110,8 +105,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         PropertyMapper $propertyMapper,
         ProductMapper $shopwareMapper,
         DetailMapper $detailMapper,
-        BulkOperation $bulkOperation,
-        Flavorist $flavorist
+        BulkOperation $bulkOperation
     ) {
         $this->articleTool = $articleTool;
         $this->detailMapper = $detailMapper;
@@ -119,7 +113,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->propertyMapper = $propertyMapper;
         $this->shopwareMapper = $shopwareMapper;
         $this->bulkOperation = $bulkOperation;
-        $this->flavorist = $flavorist;
     }
 
     protected function mapGroup(string $groupName)
@@ -341,7 +334,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
     protected function changeVariant(Variant $variant, Model $model, array $fields)
     {
-        $this->log->debug('Changing variant: ' . $model->getName());
         foreach ($fields as $name => $values) {
             $newValue = $values['newValue'];
             $oldValue = $values['oldValue'];
@@ -374,7 +366,12 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                     $variant->getProduct()->removeVariant($variant);
                     $this->mapProduct($newValue)->addVariant($variant);
                     break;
+                default:
+                    $this->log->debug(sprintf("Untreated variant change: %s: %s (old value: '%s', new value: '%s')",
+                        $model->getName(), $name, $oldValue, $newValue));
             }
+            $this->log->info(sprintf("Changing variant: %s: %s changed from '%s' to '%s'",
+                $model->getName(), $name, $oldValue, $newValue));
         }
     }
 
@@ -453,9 +450,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                 $this->bulkOperation->update($filter);
             }
         }
-
-        $this->flavorist->updateCategories();
-        $this->flavorist->updateFlavors();
 
         return true;
     }

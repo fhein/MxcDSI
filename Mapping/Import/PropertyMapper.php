@@ -32,9 +32,6 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     /** @var AssociatedProductsMapper $associatedProductsMapper */
     protected $associatedProductsMapper;
 
-    /** @var Flavorist $flavorist */
-    protected $flavorist;
-
     /** @var array */
     protected $mappings;
 
@@ -47,13 +44,11 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         ProductMappings $mappings,
         AssociatedProductsMapper $associatedProductsMapper,
         RegularExpressions $regularExpressions,
-        Flavorist $flavorist,
         array $productMappers,
         array $variantMappers
     ) {
         $this->productMappers = $productMappers;
         $this->associatedProductsMapper = $associatedProductsMapper;
-        $this->flavorist = $flavorist;
         $this->mappings = $mappings;
         $this->regularExpressions = $regularExpressions;
         $this->variantMappers = $variantMappers;

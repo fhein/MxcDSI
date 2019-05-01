@@ -34,7 +34,6 @@ use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
 use MxcDropshipInnocigs\Mapping\Import\CommonNameMapper;
 use MxcDropshipInnocigs\Mapping\Import\CompetitorPricesMapper;
 use MxcDropshipInnocigs\Mapping\Import\DosageMapper;
-use MxcDropshipInnocigs\Mapping\Import\Flavorist;
 use MxcDropshipInnocigs\Mapping\Import\FlavorMapper;
 use MxcDropshipInnocigs\Mapping\Import\ImportPiecesPerPackMapper;
 use MxcDropshipInnocigs\Mapping\Import\ManufacturerMapper;
@@ -153,8 +152,6 @@ return [
             ArticleTool::class                 => AugmentedObjectFactory::class,
 
             CategoryTool::class => AugmentedObjectFactory::class,
-
-            Flavorist::class => AugmentedObjectFactory::class,
 
             DosageMapper::class           => MappingConfigFactory::class,
             FlavorMapper::class           => MappingConfigFactory::class,

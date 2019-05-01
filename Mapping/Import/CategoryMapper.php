@@ -2,13 +2,17 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use Zend\Config\Factory;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
-class CategoryMapper extends BaseImportMapper implements ProductMapperInterface
+class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
 {
+    use ModelManagerAwareTrait;
     /** @var array */
     protected $report;
 
@@ -76,6 +80,68 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface
         return $subCategory = null ? $category : $category . ' > ' . $subCategory;
     }
 
+    protected function setupCategoryPositions(array $categoryTree, array &$positions, string $path = null)
+    {
+        $idx = 1;
+        foreach ($categoryTree as $key => $value) {
+            $pathKey = $path ? $path . ' > ' . $key : $key;
+            $positions[$pathKey] = $idx++;
+            if (is_array($value)) {
+                $this->setupCategoryPositions($categoryTree[$key], $positions, $pathKey);
+            }
+        }
+    }
+
+    protected function setupCategoryTree(array &$categoryTree, array $newTree)
+    {
+        $obsoleteKeys = array_diff(array_keys($categoryTree), array_keys($newTree));
+        foreach ($obsoleteKeys as $key) {
+            unset($categoryTree[$key]);
+        }
+        foreach (array_keys($newTree) as $key) {
+            if (is_array($categoryTree[$key])) {
+                $this->setupCategoryTree($categoryTree[$key], $newTree[$key]);
+            } else {
+                $categoryTree[$key] = $newTree[$key];
+            }
+        }
+    }
+
+    protected function updateCategoryTree() {
+        $categoryTreeFile = __DIR__ . '/../../Config/category.tree.php';
+
+        /** @noinspection PhpUndefinedMethodInspection */
+        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
+
+        $newTree = [];
+        /** @var Product $product */
+        foreach ($products as $product) {
+            $categories = explode(MXC_DELIMITER_L1, $product->getCategory());
+            foreach ($categories as $category) {
+                $path = array_map('trim', explode('>', $category));
+                $temp = &$newTree;
+                foreach ($path as $idx) {
+                    $temp = &$temp[$idx];
+                }
+                $temp++;
+                unset($temp);
+            }
+        }
+
+        $categoryTree = file_exists($categoryTreeFile) ? Factory::fromFile($categoryTreeFile) : [];
+        $this->setupCategoryTree($categoryTree, $newTree);
+        $positions = [];
+        $this->setupCategoryPositions($categoryTree, $positions);
+        $this->log->debug('Category positions: ' . var_export($positions, true));
+
+        Factory::toFile($categoryTreeFile,
+            [
+                'category_tree' => $categoryTree,
+                'category_positions' => $positions,
+            ]
+        );
+    }
+
     public function report()
     {
         ksort($this->report);
@@ -87,5 +153,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface
             'pmCategoryUsage' => $this->report,
             'pmCategory'      => array_keys($this->report),
         ]);
+
+        $this->updateCategoryTree();
     }
 }

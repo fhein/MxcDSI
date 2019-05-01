@@ -4,15 +4,15 @@ namespace MxcDropshipInnocigs\Report\Filter;
 
 class ContainsAllOf
 {
-    protected $matches;
+    protected $patterns;
 
-    public function __construct(array $matches) {
-        $this->matches = $matches;
+    public function __construct(array $patterns) {
+        $this->patterns = $patterns;
     }
 
     public function filter($value) {
-        foreach ($this->matches as $match) {
-            if (strpos($value, $match) === false) return false;
+        foreach ($this->patterns as $pattern) {
+            if (strpos($value, $pattern) === false) return false;
         }
         return true;
     }

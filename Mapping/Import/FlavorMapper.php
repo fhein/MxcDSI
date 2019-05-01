@@ -9,11 +9,15 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use Zend\Config\Factory;
 
 class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
 {
     use ModelManagerAwareTrait;
     use ClassConfigAwareTrait;
+
+    protected $categoryFile = __DIR__ . '/../../Config/FlavorMapper.config.php';
+
     /**
      * FlavorMapper constructor.
      *
@@ -80,6 +84,29 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
         return $this->categoriesByFlavor;
     }
 
+    protected function updateCategories() {
+        $categoriesByFlavor = $this->getCategoriesByFlavor();
+        /** @noinspection PhpUndefinedMethodInspection */
+        $products = $this->modelManager->getRepository(Product::class)->getProductsWithFlavorSet();
+        /** @var Product $product */
+        foreach ($products as $product) {
+            $flavors = $product->getFlavor();
+            $flavors = array_map('trim', explode(',',$flavors));
+            foreach ($flavors as $flavor) {
+                if (@$categoriesByFlavor[$flavor] === null) {
+                    $this->classConfig['Sonstige'][] = $flavor;
+                    $this->categoriesByFlavor[$flavor] = ['Sonstige'];
+                }
+            }
+        }
+        ksort($this->classConfig);
+        foreach ($this->classConfig as &$category) {
+            sort($category);
+            $category = array_values($category);
+        }
+        Factory::toFile($this->categoryFile, $this->classConfig);
+    }
+
     public function report()
     {
         $report = new ArrayReport();
@@ -89,6 +116,7 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
             'pmMissingFlavors' => $missingFlavors,
             'pmMissingFlavorCategory' => $this->report['flavor_category_missing'] ?? []
         ]);
+        $this->updateCategories();
     }
 
 }
