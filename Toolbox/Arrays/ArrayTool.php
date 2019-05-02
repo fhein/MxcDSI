@@ -42,4 +42,39 @@ class ArrayTool
 
         return $result;
     }
+
+    public static function ksort_recursive(array &$tree, int $flags = SORT_NATURAL | SORT_FLAG_CASE)
+    {
+        foreach ($tree as &$node) {
+            if (is_array($node)) {
+                if (self::ksort_recursive($node, $flags) === false) return false;
+            }
+        }
+        $result = ksort($tree, $flags);
+        return $result;
+    }
+
+    public static function uksort_recursive(array &$tree, callable $compare)
+    {
+        foreach ($tree as &$node) {
+            if (is_array($node)) {
+                if (self::uksort_recursive($node, $compare) === false) return false;
+            }
+        }
+        $result = uksort($tree, $compare);
+        return $result;
+    }
+
+    public static function krsort_recursive(array &$tree, int $flags = SORT_NATURAL | SORT_FLAG_CASE)
+    {
+        if (krsort($tree, $flags) === false) return false;
+        foreach ($tree as &$node) {
+            if (is_array($node)) {
+                if (self::krsort_recursive($node, $flags) === false) return false;
+            }
+        }
+        return krsort($tree, $flags);
+    }
+
+
 }

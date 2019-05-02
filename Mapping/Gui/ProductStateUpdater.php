@@ -51,7 +51,7 @@ class ProductStateUpdater implements LoggerAwareInterface, ModelManagerAwareInte
 
         switch ($property) {
             case 'accepted':
-                $this->productMapper->setArticleAcceptedState($products, $value);
+                $this->productMapper->acceptArticles($products, $value);
                 break;
             /** @noinspection PhpMissingBreakStatementInspection */
             case 'linked':
@@ -90,7 +90,7 @@ class ProductStateUpdater implements LoggerAwareInterface, ModelManagerAwareInte
         foreach ($updates as $property => $value) {
             switch ($property) {
                 case 'accepted':
-                    $this->productMapper->setArticleAcceptedState([$product], $product->isAccepted());
+                    $this->productMapper->acceptArticles([$product], $product->isAccepted());
                     break;
                 default:
                     $this->productMapper->processStateChangesArticle($product, true);

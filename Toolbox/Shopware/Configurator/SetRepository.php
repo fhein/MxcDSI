@@ -70,7 +70,7 @@ class SetRepository implements ModelManagerAwareInterface, LoggerAwareInterface
         $setName = $this->set->getName();
 
         if (! isset($this->groups[$groupName])) {
-            $this->log->info(sprintf('%s: Adding group %s to set %s.',
+            $this->log->debug(sprintf('%s: Adding group %s to set %s.',
                 __FUNCTION__,
                 $groupName,
                 $setName
@@ -81,7 +81,7 @@ class SetRepository implements ModelManagerAwareInterface, LoggerAwareInterface
         }
 
         if (! isset($this->options[$optionName])) {
-            $this->log->info(sprintf('%s: Adding option %s to set %s.',
+            $this->log->debug(sprintf('%s: Adding option %s to set %s.',
                 __FUNCTION__,
                 $optionName,
                 $setName

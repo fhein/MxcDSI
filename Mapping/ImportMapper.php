@@ -12,6 +12,7 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Import\ApiClient;
+use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Models\Group;
@@ -59,8 +60,11 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     /** @var PropertyMapper $propertyMapper */
     protected $propertyMapper;
 
-    /** @var ProductMapper $shopwareMapper */
-    protected $shopwareMapper;
+    /** @var ProductMapper $productMapper */
+    protected $productMapper;
+
+    /** @var CategoryMapper */
+    protected $categoryMapper;
 
     /** @var ArticleTool */
     protected $articleTool;
@@ -95,7 +99,8 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
      * @param ArticleTool $articleTool
      * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
-     * @param ProductMapper $shopwareMapper
+     * @param CategoryMapper $categoryMapper
+     * @param ProductMapper $productMapper
      * @param DetailMapper $detailMapper
      * @param BulkOperation $bulkOperation
      */
@@ -103,15 +108,17 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         ArticleTool $articleTool,
         ApiClient $apiClient,
         PropertyMapper $propertyMapper,
-        ProductMapper $shopwareMapper,
+        CategoryMapper $categoryMapper,
+        ProductMapper $productMapper,
         DetailMapper $detailMapper,
         BulkOperation $bulkOperation
     ) {
         $this->articleTool = $articleTool;
         $this->detailMapper = $detailMapper;
         $this->apiClient = $apiClient;
+        $this->categoryMapper = $categoryMapper;
         $this->propertyMapper = $propertyMapper;
-        $this->shopwareMapper = $shopwareMapper;
+        $this->productMapper = $productMapper;
         $this->bulkOperation = $bulkOperation;
     }
 
@@ -432,6 +439,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->addVariants($import['additions']);
         $this->changeVariants($import['changes']);
         $this->propertyMapper->mapProperties($this->products);
+        $this->categoryMapper->buildCategoryTree();
 
         $this->modelManager->flush();
 
@@ -443,7 +451,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         /** @noinspection PhpUndefinedMethodInspection */
         $this->modelManager->getRepository(Product::class)->refreshLinks();
 
-        $this->shopwareMapper->updateArticles($this->updates);
+        $this->productMapper->updateArticles($this->updates);
 
         if (@$this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {

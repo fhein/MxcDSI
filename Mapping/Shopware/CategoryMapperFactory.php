@@ -8,7 +8,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ArticleCategoryMapperFactory implements FactoryInterface
+class CategoryMapperFactory implements FactoryInterface
 {
     use ObjectAugmentationTrait;
 
@@ -23,7 +23,7 @@ class ArticleCategoryMapperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $categoryTool = $container->get(CategoryTool::class);
-        $mapper = new ArticleCategoryMapper($categoryTool);
+        $mapper = new CategoryMapper($categoryTool);
         return $this->augment($container, $mapper);
     }
 }

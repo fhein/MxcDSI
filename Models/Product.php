@@ -726,7 +726,6 @@ class Product extends ModelEntity  {
      */
     public function setLinked(bool $linked)
     {
-        $this->linked = $linked;
     }
 
     /**

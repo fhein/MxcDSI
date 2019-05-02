@@ -31,6 +31,13 @@ class ProductRepository extends BaseEntityRepository
             . 'WHERE p.id = :id AND '
             . '(p.accepted = 0 OR v.accepted = 0 OR o.accepted = 0 OR g.accepted = 0)',
 
+        'getLinkedProducts'   =>
+            'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
+            . 'JOIN p.variants v '
+            . 'JOIN v.options o '
+            . 'JOIN MxcDropshipInnocigs\Models\Group g WITH o.icGroup = g.id '
+            . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
+
         'getLinkedProductsHavingOptions'   =>
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'JOIN p.variants v '

@@ -9,9 +9,10 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
+use Zend\Config\Factory;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
-class ArticleCategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
+class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
 {
     use LoggerAwareTrait;
     use ClassConfigAwareTrait;
@@ -19,9 +20,13 @@ class ArticleCategoryMapper implements ClassConfigAwareInterface, LoggerAwareInt
     /** @var CategoryTool $categoryTool */
     protected $categoryTool;
 
+    protected $categoryTreeFile = __DIR__ . '/../../Config/category.tree.php';
+    protected $categoryTree;
+
     public function __construct(CategoryTool $categoryTool)
     {
         $this->categoryTool = $categoryTool;
+        $this->categoryTree = file_exists($this->categoryTreeFile) ? Factory::fromFile($this->categoryTreeFile) : [];
     }
 
     /**
@@ -37,14 +42,25 @@ class ArticleCategoryMapper implements ClassConfigAwareInterface, LoggerAwareInt
         if (!$article) return;
 
         $root = $this->classConfig['root_category'] ?? 'Deutsch';
-        $rootCategory = $this->categoryTool->getCategoryPath($root);
+        $rootCategory = $this->categoryTool->findCategoryPath($root);
         $icCategories = explode(MXC_DELIMITER_L1, $product->getCategory());
         foreach ($icCategories as $icCategory) {
             // if ($product->getName() === 'SC - Base - 100 ml, 0 mg/ml') xdebug_break();
             $this->log->debug('Getting category for article ' . $product->getName());
-            $category = $this->categoryTool->getCategoryPath($icCategory, $rootCategory);
+            $category = $this->categoryTool->getCategoryPath($this->getCategoryPositions($icCategory), $rootCategory);
             $article->addCategory($category);
             $category->setChanged();
         }
+    }
+
+    protected function getCategoryPositions(string $category) {
+        $nodes = array_map('trim', explode('>', $category));
+        $idx = null;
+        $path = [];
+        foreach ($nodes as $node) {
+            $idx = $idx ? $idx . ' > ' . $node : $node;
+            $path[$node] = $this->categoryTree['category_positions'][$idx] ?? 1;
+        }
+        return $path;
     }
 }

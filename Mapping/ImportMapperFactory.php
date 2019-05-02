@@ -6,6 +6,7 @@ use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Import\ApiClient;
+use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
@@ -27,6 +28,7 @@ class ImportMapperFactory implements FactoryInterface
         $apiClient = $container->get(ApiClient::class);
         $articleTool = $container->get(ArticleTool::class);
         $propertyMapper = $container->get(PropertyMapper::class);
+        $categoryMapper = $container->get(CategoryMapper::class);
         $productMapper = $container->get(ProductMapper::class);
         $detailMapper = $container->get(DetailMapper::class);
         $bulkOperation = $container->get(BulkOperation::class);
@@ -34,6 +36,7 @@ class ImportMapperFactory implements FactoryInterface
             $articleTool,
             $apiClient,
             $propertyMapper,
+            $categoryMapper,
             $productMapper,
             $detailMapper,
             $bulkOperation

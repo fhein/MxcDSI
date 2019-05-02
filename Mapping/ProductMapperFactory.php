@@ -4,8 +4,8 @@ namespace MxcDropshipInnocigs\Mapping;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Mapping\Shopware\ArticleCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
@@ -28,7 +28,7 @@ class ProductMapperFactory implements FactoryInterface
         $optionMapper = $container->get(OptionMapper::class);
         $articleTool = $container->get(ArticleTool::class);
         $imageMapper = $container->get(ImageMapper::class);
-        $categoryMapper = $container->get(ArticleCategoryMapper::class);
+        $categoryMapper = $container->get(CategoryMapper::class);
         $detailMapper = $container->get(DetailMapper::class);
         $associatedArticlesMapper = $container->get(AssociatedArticlesMapper::class);
         $articleMapper = new ProductMapper(

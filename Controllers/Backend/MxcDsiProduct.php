@@ -7,6 +7,7 @@ use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Gui\ProductStateUpdater;
+use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
@@ -50,20 +51,18 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function importAction()
     {
         $log = $this->getLog();
-        $log->enter();
         try {
             $client = $this->getServices()->get(ImportClient::class);
-            if ($client->import()) {
-                $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
-            } else {
+            if (! $client->import()) {
                 $this->view->assign(['success' => false, 'message' => 'Failed to import/update items.']);
+                return;
             }
+            $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
         } catch (Throwable $e) {
             $log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
             ]);
         }
-        $log->leave();
     }
 
     public function refreshAction() {
@@ -185,10 +184,13 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $log->enter();
         try {
             /** @var ImportMapper $client */
-            $propertyMapper = $this->getServices()->get(PropertyMapper::class);
+            $services = $this->getServices();
+            $propertyMapper = $services->get(PropertyMapper::class);
+            $categoryMapper = $services->get(CategoryMapper::class);
             /** @noinspection PhpUndefinedMethodInspection */
             $articles = $this->getModelManager()->getRepository(Product::class)->getAllIndexed();
             $propertyMapper->mapProperties($articles);
+            $categoryMapper->buildCategoryTree();
             $this->getModelManager()->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Product properties were successfully remapped.']);
         } catch (Throwable $e) {
@@ -297,8 +299,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->getServices()->get(ImportClient::class)->importFromFile($xmlFile, true);
 
             $products = $this->getManager()->getRepository(Product::class)->findAll();
-            $articleMapper = $this->services->get(ProductMapper::class);
-            $articleMapper->processStateChangesProductList($products, true);
+            $productMapper = $this->services->get(ProductMapper::class);
+            $productMapper->updateArticles($products, true);
 
             $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
         } catch (Throwable $e) {

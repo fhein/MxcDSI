@@ -6,6 +6,7 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipInnocigs\Exception\RuntimeException;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
 
@@ -39,25 +40,42 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->modelManager->flush();
     }
 
+    public function findCategoryPath(string $path)
+    {
+        $repository = $this->modelManager->getRepository(Category::class);
+        /** @var Category $parent */
+        $parent = $repository->findOneBy(['parentId' => null]);
+        $nodes = array_map('trim', explode('>', $path));
+        foreach ($nodes as $name) {
+            $child = $repository->findOneBy(['name' => $name, 'parentId' => $parent->getId()]);
+            if (! $child) {
+                throw new RuntimeException('Root category \'' . $path . '\' not found.');
+            }
+            $parent = $child ?? $this->createCategory($parent, $name);
+        }
+        return $parent;
+    }
+
     /**
-     * Get a Shopware category object for a given category path (example: E-Zigaretten > Aspire)
+     * Get a Shopware category object for a given category path array. The array holds a list of
+     * node => position entries.
      * All categories of the path are created if they do not exist. The category path gets created
      * below a given root category. If no root category is provided, the path will be added below
      * the Shopware root category.
      *
-     * @param string $path
+     * @param array $path
      * @param Category|null $root
      * @return Category
      */
-    public function getCategoryPath(string $path, Category $root = null)
+    public function getCategoryPath(array $path, Category $root = null)
     {
         $repository = $this->modelManager->getRepository(Category::class);
         /** @var Category $parent */
-        $parent = ($root !== null) ? $root : $repository->findOneBy(['parentId' => null]);
-        $nodes = explode(' > ', $path);
-        foreach ($nodes as $categoryName) {
-            $child = $repository->findOneBy(['name' => $categoryName, 'parentId' => $parent->getId()]);
-            $parent = $child ?? $this->createCategory($parent, $categoryName);
+        $parent = $root ?? $repository->findOneBy(['parentId' => null]);
+        foreach ($path as $name => $position) {
+            $child = $repository->findOneBy(['name' => $name, 'parentId' => $parent->getId()]);
+            $parent = $child ?? $this->createCategory($parent, $name);
+            $parent->setPosition($position);
         }
         return $parent;
     }
@@ -84,6 +102,8 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
             }
             $parent->setChanged();
         }
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush($child);
         return $child;
     }
 }

@@ -40,14 +40,14 @@ class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterfac
     public function createGroup(string $name) {
         $group = $this->getGroup($name);
         if ($group instanceof Option) {
-            $this->log->info(sprintf('%s: Returning existing Shopware filter option %s.',
+            $this->log->debug(sprintf('%s: Returning existing Shopware filter option %s.',
                 __FUNCTION__,
                 $name
             ));
             return $group;
         }
 
-        $this->log->info(sprintf('%s: Creating shopware filter option %s',
+        $this->log->debug(sprintf('%s: Creating shopware filter option %s',
             __FUNCTION__,
             $name
         ));
@@ -80,7 +80,7 @@ class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterfac
         // if we already have the option return it
         $option = $this->getOption($groupName, $optionName);
         if ($option instanceof Value) {
-            $this->log->info(sprintf('%s: Returning existing option %s of property group %s.',
+            $this->log->debug(sprintf('%s: Returning existing option %s of property group %s.',
                 __FUNCTION__,
                 $optionName,
                 $groupName
@@ -88,7 +88,7 @@ class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterfac
             return $option;
         }
 
-        $this->log->info(sprintf('%s: Creating option %s for property group %s.',
+        $this->log->debug(sprintf('%s: Creating option %s for property group %s.',
             __FUNCTION__,
             $optionName,
             $groupName

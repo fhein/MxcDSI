@@ -6,8 +6,8 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Mapping\Shopware\ArticleCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
@@ -33,7 +33,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     /** @var AssociatedArticlesMapper $associatedArticlesMapper */
     protected $associatedArticlesMapper;
 
-    /** @var ArticleCategoryMapper $categoryMapper */
+    /** @var CategoryMapper $categoryMapper */
     protected $categoryMapper;
 
     /** @var OptionMapper $optionMapper */
@@ -51,7 +51,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
      * @param OptionMapper $optionMapper
      * @param DetailMapper $detailMapper
      * @param ImageMapper $imageMapper
-     * @param ArticleCategoryMapper $categoryMapper
+     * @param CategoryMapper $categoryMapper
      * @param AssociatedArticlesMapper $associatedArticlesMapper
      */
     public function __construct(
@@ -59,7 +59,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         OptionMapper $optionMapper,
         DetailMapper $detailMapper,
         ImageMapper $imageMapper,
-        ArticleCategoryMapper $categoryMapper,
+        CategoryMapper $categoryMapper,
         AssociatedArticlesMapper $associatedArticlesMapper
     ) {
         $this->articleTool = $articleTool;
@@ -70,7 +70,48 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $this->associatedArticlesMapper = $associatedArticlesMapper;
     }
 
-    public function setArticleAcceptedState(array $products, bool $accepted)
+    public function updateArticles(array $products, bool $create = false)
+    {
+        foreach ($products as $product) {
+            $valid = $product->isValid();
+            $article = $product->getArticle();
+
+            // delete shopware article if product is not valid
+            if (! $valid && $article) {
+                $this->detailMapper->deleteArticle($product);
+            }
+            if (! $valid) continue;
+
+            // create article if it does not exist already and creation is requested
+            $isNew  = false;
+            if (! $article && $create) {
+                $article = new Article();
+                $this->modelManager->persist($article);
+                $product->setArticle($article);
+                $isNew = true;
+            }
+            if (! $article) continue;
+            $this->configureArticle($product, $article, $isNew);
+            $this->log->debug('Article updated: ' . $product->getName());
+        }
+
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $this->modelManager->flush();
+    }
+
+    public function deleteArticles(array $products)
+    {
+        foreach ($products as $product) {
+            $this->detailMapper->deleteArticle($product);
+        }
+    }
+
+    public function activateArticles(array $products, bool $active)
+    {
+
+    }
+
+    public function acceptArticles(array $products, bool $accepted)
     {
         /** @var Product $product */
         foreach ($products as $product) {
@@ -85,11 +126,13 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         }
     }
 
-    public function deleteArticles(array $products)
+    public function createRelatedArticles(array $products)
     {
-        foreach ($products as $product) {
-            $this->detailMapper->deleteArticle($product);
-        }
+
+    }
+
+    public function createSimilarArticles(array $products) {
+
     }
 
     /**
@@ -118,12 +161,11 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $activeArticles = [];
         /** @var Product $product */
         foreach ($products as $product) {
-            if (! $this->setArticle($product, $createArticlesNotActive)) {
+            if (! $this->getArticle($product, $createArticlesNotActive)) {
                 $this->setArticleActive($product);
                 continue;
             }
-            $icNumber = $product->getIcNumber();
-            $activeArticles[$icNumber] = $activeArticles[$icNumber] ?? $product;
+            $activeArticles[$product->getIcNumber()] = $product;
         }
 
         $this->processAssociatedArticles($createArticlesNotActive, $activeArticles);
@@ -135,11 +177,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         }
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
-    }
-
-    public function updateArticles(array $products)
-    {
-        $this->processStateChangesProductList($products, false);
     }
 
     /**
@@ -167,7 +204,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
         /** @var Product $product */
         foreach ($associatedArticles as $product) {
-            if ($this->setArticle($product, $createArticlesNotActive)) {
+            if ($this->getArticle($product, $createArticlesNotActive)) {
                 $activeArticles[$product->getIcNumber()] = $product;
             }
             $this->setArticleActive($product);
@@ -180,15 +217,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         }
     }
 
-    protected function createArticle(Product $product)
-    {
-        $article = new Article();
-        $this->modelManager->persist($article);
-        $product->setArticle($article);
-        $product->setLinked(true);
-        $this->createdArticles[] = $product->getIcNumber();
-        return $article;
-    }
 
     /**
      * Create/Update the Shopware article associated to the active InnoCigs article.
@@ -197,37 +225,57 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
      * @param bool $allowCreate
      * @return bool
      */
-    protected function setArticle(Product $product, bool $allowCreate): bool
+    protected function getArticle(Product $product, bool $allowCreate): bool
     {
+        $article = $product->getArticle();
+
         if (! $product->isValid()) {
             $product->setActive(false);
+            if ($article) {
+                $this->deleteArticles([$article]);
+            }
             return false;
         }
 
-        $article = $product->getArticle();
         $created = false;
-
         if ($article === null) {
             if (! $allowCreate) return false;
-            $article = $this->createArticle($product);
+            $article = $this->createShopwareArticle($product);
             $created = true;
         }
 
-        $article->setConfiguratorSet($this->optionMapper->createConfiguratorSet($product));
+        $this->configureArticle($product, $article, $created);
 
-        $this->setArticleProperties($product, $created);
-
-        $this->detailMapper->map($product);
-
-        PriceMapper::setReferencePrice($product);
-
-        $this->imageMapper->setArticleImages($product);
         // We have to flush each article in order
         // to get the newly created categories
         /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
+        //$this->modelManager->flush();
 
         return true;
+    }
+
+    protected function createShopwareArticle(Product $product)
+    {
+        $article = new Article();
+        $this->modelManager->persist($article);
+        $product->setArticle($article);
+        $this->createdArticles[] = $product->getIcNumber();
+        return $article;
+    }
+
+    /**
+     * @param Product $product
+     * @param Article $article
+     * @param bool $created
+     */
+    protected function configureArticle(Product $product, Article $article, bool $created): void
+    {
+        $configuratorSet = $this->optionMapper->createConfiguratorSet($product);
+        $article->setConfiguratorSet($configuratorSet);
+        $this->setArticleProperties($product, $created);
+        $this->detailMapper->map($product);
+        PriceMapper::setReferencePrice($product);
+        $this->imageMapper->setArticleImages($product);
     }
 
     /**

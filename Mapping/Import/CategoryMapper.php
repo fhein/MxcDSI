@@ -13,8 +13,11 @@ use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
 {
     use ModelManagerAwareTrait;
+
     /** @var array */
     protected $report;
+
+    protected $categoryTreeFile = __DIR__ . '/../../Config/category.tree.php';
 
     public function map(Model $model, Product $product) {
         $type = $product->getType();
@@ -33,9 +36,6 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                         $categories[] = $this->addSubCategory($category, $flavorCategory);
                     }
                 }
-                // intentional fall through
-            case 'BASE':
-            case 'SHOT':
                 $categories[] = $this->addSubCategory($category, $product->getBrand());
                 break;
 
@@ -49,7 +49,6 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             case 'DRIP_TIP':
             case 'TANK':
             case 'SEAL':
-            case 'TOOL':
             case 'CLEAROMIZER_RTA':
             case 'CLEAROMIZER_RDA':
             case 'CLEAROMIZER_RDTA':
@@ -80,36 +79,55 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         return $subCategory = null ? $category : $category . ' > ' . $subCategory;
     }
 
-    protected function setupCategoryPositions(array $categoryTree, array &$positions, string $path = null)
+    /**
+     * Create
+     *
+     * @param array $categoryTree
+     * @param array $positions
+     * @param string|null $path
+     */
+    protected function updateCategoryPositions(array $categoryTree, array &$positions, string $path = null)
     {
         $idx = 1;
         foreach ($categoryTree as $key => $value) {
             $pathKey = $path ? $path . ' > ' . $key : $key;
             $positions[$pathKey] = $idx++;
             if (is_array($value)) {
-                $this->setupCategoryPositions($categoryTree[$key], $positions, $pathKey);
+                $this->updateCategoryPositions($categoryTree[$key], $positions, $pathKey);
             }
         }
     }
 
-    protected function setupCategoryTree(array &$categoryTree, array $newTree)
+    /**
+     * Update an existing category tree from a new category tree. This function maintains the category sort order
+     * of the existing tree.
+     *
+     * @param array $categoryTree
+     * @param array $newTree
+     */
+    protected function updateCategoryTree(array &$categoryTree, array $newTree)
     {
         $obsoleteKeys = array_diff(array_keys($categoryTree), array_keys($newTree));
         foreach ($obsoleteKeys as $key) {
             unset($categoryTree[$key]);
         }
         foreach (array_keys($newTree) as $key) {
-            if (is_array($categoryTree[$key])) {
-                $this->setupCategoryTree($categoryTree[$key], $newTree[$key]);
+            if (is_array($newTree[$key])) {
+                $this->updateCategoryTree($categoryTree[$key], $newTree[$key]);
             } else {
                 $categoryTree[$key] = $newTree[$key];
             }
         }
     }
 
-    protected function updateCategoryTree() {
-        $categoryTreeFile = __DIR__ . '/../../Config/category.tree.php';
-
+    /**
+     * Create a nested category array from the product's categories. Sets the number of articles
+     * for each leaf category.
+     *
+     * @return array
+     */
+    protected function createCategoryTree()
+    {
         /** @noinspection PhpUndefinedMethodInspection */
         $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
 
@@ -127,14 +145,24 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                 unset($temp);
             }
         }
+        return $newTree;
+    }
 
-        $categoryTree = file_exists($categoryTreeFile) ? Factory::fromFile($categoryTreeFile) : [];
-        $this->setupCategoryTree($categoryTree, $newTree);
+    public function buildCategoryTree()
+    {
+        $categoryTree = file_exists($this->categoryTreeFile) ? Factory::fromFile($this->categoryTreeFile) : [];
+        $categoryTree = $categoryTree['category_tree'] ?? [];
+
+        $newTree = $this->createCategoryTree();
+        $this->updateCategoryTree($categoryTree, $newTree);
+
+        // Use ArrayTool and enable the next line to enforce a recursive alphabetical sort of all categories in the tree
+        // $result = ArrayTool::ksort_recursive($categoryTree);
+
         $positions = [];
-        $this->setupCategoryPositions($categoryTree, $positions);
-        $this->log->debug('Category positions: ' . var_export($positions, true));
+        $this->updateCategoryPositions($categoryTree, $positions);
 
-        Factory::toFile($categoryTreeFile,
+        Factory::toFile($this->categoryTreeFile,
             [
                 'category_tree' => $categoryTree,
                 'category_positions' => $positions,
@@ -153,7 +181,5 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             'pmCategoryUsage' => $this->report,
             'pmCategory'      => array_keys($this->report),
         ]);
-
-        $this->updateCategoryTree();
-    }
+   }
 }

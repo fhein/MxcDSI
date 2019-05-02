@@ -132,7 +132,7 @@ class ApiClient
             $this->logXmlErrors($errors);
             $dump = Shopware()->DocPath() . 'var/log/invalid-innocigs-api-response-' . date('Y-m-d-H-i-s') . '.txt';
             file_put_contents($dump, $xml);
-            $this->log->info('Invalid InnoCigs API response dumped to ' . $dump);
+            $this->log->err('Invalid InnoCigs API response dumped to ' . $dump);
             throw new ApiException('InnoCigs API returned invalid XML. See log file for detailed information.');
         }
         $json = json_encode($xml);

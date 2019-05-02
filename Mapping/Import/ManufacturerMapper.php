@@ -37,6 +37,7 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
     {
         $supplier = $this->mappings[$product->getIcNumber()]['supplier'] ?? null;
         if (! $supplier) {
+            // @todo: Shark Attack und Military werden mit falschem Manufacturer Mule Fuel ausgeliefert
             $manufacturer = $model->getManufacturer();
             if (!in_array($manufacturer, $this->innocigsBrands)) {
                 $supplier = @$this->classConfig['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
@@ -50,6 +51,7 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
     {
         $brand = $this->mappings[$product->getIcNumber()]['brand'] ?? null;
         if (! $brand) {
+            // @todo: Shark Attack und Military werden mit falschem Manufacturer Mule Fuel ausgeliefert
             $manufacturer = $model->getManufacturer();
             $brand = $this->classConfig['manufacturers'][$manufacturer]['brand'] ?? $manufacturer;
         }

@@ -102,7 +102,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
         $productUpdates = $this->getLinkedProductsHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
         /** @noinspection PhpUnhandledExceptionInspection */
-        $productMapper->processStateChangesProductList($productUpdates);
+        $productMapper->updateArticles($productUpdates);
 
         $detail = $this->getDetail($group->getId());
         $log->leave();
