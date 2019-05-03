@@ -27,7 +27,6 @@ use MxcDropshipInnocigs\Listener\MappingFilePersister;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
-use MxcDropshipInnocigs\Mapping\Gui\ProductStateUpdater;
 use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
@@ -190,7 +189,6 @@ return [
             OptionMapper::class,
             PriceMapper::class,
             ProductMapper::class,
-            ProductStateUpdater::class,
             PropertyMapper::class,
             RegexChecker::class,
             RegularExpressions::class,

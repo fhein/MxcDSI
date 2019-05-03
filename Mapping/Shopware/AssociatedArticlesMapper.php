@@ -10,6 +10,7 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Models\Product;
 use Shopware\Models\Article\Article;
 
@@ -18,42 +19,64 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
 
-    /** @var array */
-    protected $associatedProducts;
+    /**
+     * @param ProductMapper $productMapper
+     * @param array $products
+     * @param bool $create
+     */
+    public function processAssociatedProducts(ProductMapper $productMapper, array $products, bool $create)
+    {
+        $associatedProducts = $this->getAssociatedProducts($products);
+
+        /** @var Product $product */
+        foreach ($associatedProducts as $product) {
+            if ($productMapper->updateArticle($product, $create)) {
+                $products[$product->getIcNumber()] = $product;
+            }
+        }
+
+        foreach ($products as $product) {
+            $this->setRelatedArticles($product);
+            $this->setSimilarArticles($product);
+        }
+    }
 
     /**
-     * @param array $activeProducts
+     * @param array $products
      * @return array
      */
-    public function getAssociatedProducts(array $activeProducts): array
+    protected function getAssociatedProducts(array $products): array
     {
-        $this->associatedProducts = [];
-        foreach ($activeProducts as $product) {
-            $this->prepareAssociatedProducts($product);
+        $associatedProducts = [];
+        foreach ($products as $product) {
+            $this->prepareAssociatedProducts($product, $associatedProducts);
         }
-        return $this->associatedProducts;
+        return $associatedProducts;
     }
 
     /**
      * Fill the $this->associatedArticles recursively
      *
      * @param Product $product
+     * @param array $associatedProducts
      */
-    public function prepareAssociatedProducts(Product $product)
+    protected function prepareAssociatedProducts(Product $product, array &$associatedProducts)
     {
         // exit recursion if $product is registered already
-        if ($this->associatedProducts[$product->getIcNumber()]) {
+        if ($associatedProducts[$product->getIcNumber()]) {
             return;
         }
 
         $this->prepareAssociatedProductsCollection(
             $product->getRelatedProducts(),
+            $associatedProducts,
             $product->getCreateRelatedProducts(),
             $product->getActivateCreatedRelatedProducts()
         );
 
         $this->prepareAssociatedProductsCollection(
             $product->getSimilarProducts(),
+            $associatedProducts,
             $product->getCreateSimilarProducts(),
             $product->getActivateCreatedSimilarProducts()
         );
@@ -61,11 +84,13 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
 
     /**
      * @param Collection $products
+     * @param array $associatedProducts
      * @param bool $createAssociated
      * @param bool $activateAssociated
      */
-    public function prepareAssociatedProductsCollection(
+    protected function prepareAssociatedProductsCollection(
         Collection $products,
+        array &$associatedProducts,
         bool $createAssociated,
         bool $activateAssociated
     ) {
@@ -78,10 +103,10 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
             if ($isNew) {
                 $product->setActive($activateAssociated);
             }
-            $this->associatedProducts[$product->getIcNumber()] = $product;
+            $associatedProducts[$product->getIcNumber()] = $product;
 
             // Recursion
-            $this->prepareAssociatedProducts($product);
+            $this->prepareAssociatedProducts($product, $associatedProducts);
         }
     }
 
@@ -93,7 +118,7 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
      * @param Product $product
      * @param bool $replace true: replace related articles, false: add related articles
      */
-    public function setRelatedArticles(Product $product, bool $replace = false)
+    protected function setRelatedArticles(Product $product, bool $replace = false)
     {
         /** @var Article $article */
         $article = $product->getArticle();
@@ -115,7 +140,7 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
      * @param Product $product
      * @param bool $replace true: replace related articles, false: add related articles
      */
-    public function setSimilarArticles(Product $product, bool $replace = false)
+    protected function setSimilarArticles(Product $product, bool $replace = false)
     {
         /** @var Article $article */
         $article = $product->getArticle();
@@ -136,7 +161,7 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
      * @param Collection $articles
      * @param Collection $collection
      */
-    public function addArticlesToCollection(Collection $articles, Collection $collection)
+    protected function addArticlesToCollection(Collection $articles, Collection $collection)
     {
         foreach ($articles as $article) {
             if (!$collection->contains($article)) {
@@ -151,7 +176,7 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
      * @param Collection $products
      * @return ArrayCollection
      */
-    public function getArticles(Collection $products): ArrayCollection
+    protected function getArticles(Collection $products): ArrayCollection
     {
         $articles = [];
         foreach ($products as $product) {

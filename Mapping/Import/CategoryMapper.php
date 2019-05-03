@@ -112,7 +112,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             unset($categoryTree[$key]);
         }
         foreach (array_keys($newTree) as $key) {
-            if (is_array($newTree[$key])) {
+            if (is_array($newTree[$key]) && is_array($categoryTree[$key])) {
                 $this->updateCategoryTree($categoryTree[$key], $newTree[$key]);
             } else {
                 $categoryTree[$key] = $newTree[$key];

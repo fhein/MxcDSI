@@ -142,6 +142,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let maskText = 'Importing test data  ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
+
     onTestImport2: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=testImport2}';
@@ -150,6 +151,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let maskText = 'Importing value changes  ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
+
     onTestImport3: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=testImport3}';
@@ -158,6 +160,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let maskText = 'Importing variant changes  ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
+
     onTestImport4: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=testImport4}';
@@ -167,7 +170,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-
     onSetActiveSelected: function (grid) {
         let me = this;
         let selectionModel = grid.getSelectionModel();
@@ -175,7 +177,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let value = selectionModel.getSelection()[0].get(field);
         let maskText = value ? 'Activating products.' : 'Deactivating products.';
         let growlTitle = value ? 'Activate selected' : 'Deactivate selected';
-        me.setStateSelected(grid, field, value, growlTitle, maskText);
+        let url = '{url controller=MxcDsiProduct action=activateSelectedProducts}';
+        me.setStateSelected(grid, field, value, growlTitle, maskText, url);
     },
 
     onSetAcceptedSelected: function (grid) {
@@ -185,7 +188,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let value = selectionModel.getSelection()[0].get(field);
         let maskText = value ? 'Setting products to accepted ...' : 'Setting products to ignored ...';
         let growlTitle = value ? 'Accept selected' : 'Ignore selected';
-        me.setStateSelected(grid, field, value, growlTitle, maskText);
+        let url = '{url controller=MxcDsiProduct action=acceptSelectedProducts}';
+        me.setStateSelected(grid, field, value, growlTitle, maskText, url);
     },
 
     onSetLinkedSelected: function(grid) {
@@ -195,13 +199,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let value = selectionModel.getSelection()[0].get(field);
         let maskText = value ? 'Creating Shopware articles ...' : 'Deleting Shopware articles ...';
         let growlTitle = value ? 'Create Shopware Article' : 'Delete Shopware Article';
-        me.setStateSelected(grid, field, value, growlTitle, maskText);
+        let url = '{url controller=MxcDsiProduct action=linkSelectedProducts}';
+        me.setStateSelected(grid, field, value, growlTitle, maskText, url);
     },
 
-    setStateSelected: function (grid, field, value, growlTitle, maskText) {
+    setStateSelected: function (grid, field, value, growlTitle, maskText, url) {
         let me = this;
         let selectionModel = grid.getSelectionModel();
-        let url = '{url controller=MxcDsiProduct action=setStateSelected}';
 
         let ids = [];
         Ext.each(selectionModel.getSelection(), function (record) {

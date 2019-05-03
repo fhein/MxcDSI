@@ -118,7 +118,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 record.set('linked', changeTo);
             }
         });
-        me.fireEvent('mxcSetLinkedSelected', me);
+        if (selModel.getCount() > 0) {
+            me.fireEvent('mxcSetLinkedSelected', me);
+        }
     },
 
     handleActiveState: function(changeTo) {
@@ -134,7 +136,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 record.set('active', changeTo);
             }
         });
-        me.fireEvent('mxcSetActiveSelected', me);
+        if (selModel.getCount() > 0) {
+            me.fireEvent('mxcSetActiveSelected', me);
+        }
     },
 
     handleAcceptedState: function(changeTo) {
@@ -150,7 +154,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 record.set('accepted', changeTo)
             }
         });
-        me.fireEvent('mxcSetAcceptedSelected', me);
+        if (selModel.getCount() > 0) {
+            me.fireEvent('mxcSetAcceptedSelected', me);
+        }
     },
 
     createSelectionButton: function() {

@@ -67,9 +67,10 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     {
         /** @var Article $article */
         $article = $product->getArticle();
-        if (!$article) {
-            return;
-        }
+        if (!$article) return;
+
+        $configuratorSet = $this->optionMapper->createConfiguratorSet($product);
+        $article->setConfiguratorSet($configuratorSet);
 
         $variants = $product->getVariants();
 
@@ -77,9 +78,8 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         /** @var Variant $variant */
         foreach ($variants as $variant) {
             $detail = $this->setDetail($variant);
-            if ($detail === null) {
-                continue;
-            }
+            if ($detail === null) continue;
+
             $detail->setKind(2);
             if ($isMainDetail) {
                 $detail->setKind(1);
@@ -118,9 +118,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $product = $variant->getProduct();
         $article = $product->getArticle();
 
-        if (!$article) {
-            return null;
-        }
+        if (!$article) return null;
 
         $detail = new Detail();
         $this->modelManager->persist($detail);

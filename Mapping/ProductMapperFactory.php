@@ -8,7 +8,6 @@ use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -25,7 +24,6 @@ class ProductMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $optionMapper = $container->get(OptionMapper::class);
         $articleTool = $container->get(ArticleTool::class);
         $imageMapper = $container->get(ImageMapper::class);
         $categoryMapper = $container->get(CategoryMapper::class);
@@ -33,7 +31,6 @@ class ProductMapperFactory implements FactoryInterface
         $associatedArticlesMapper = $container->get(AssociatedArticlesMapper::class);
         $articleMapper = new ProductMapper(
             $articleTool,
-            $optionMapper,
             $detailMapper,
             $imageMapper,
             $categoryMapper,

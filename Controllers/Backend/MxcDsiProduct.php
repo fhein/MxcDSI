@@ -6,7 +6,6 @@ use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Gui\ProductStateUpdater;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
@@ -126,13 +125,97 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function setStateSelectedAction()
+    protected function setStatePropertyOnSelected()
+    {
+        $params = $this->request->getParams();
+        $property = $params['field'];
+        $value = $params['value'] === 'true';
+        $ids = json_decode($params['ids'], true);
+        $this->getRepository()->setStateByIds($property, $value, $ids);
+        $products = $this->getRepository()->getByIds($ids);
+        return [$value, $products];
+    }
+
+    public function linkSelectedProductsAction()
     {
         $log = $this->getLog();
         $log->enter();
         try {
-            $productUpdater = $this->getServices()->get(ProductStateUpdater::class);
-            $this->view->assign($productUpdater->setStateOnSelectedProducts($this->request));
+            list($value, $products) = $this->setStatePropertyOnSelected();
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            switch ($value) {
+                case true:
+                    $productMapper->controllerUpdateArticles($products, true);
+                    $message = 'Products were successfully created.';
+                    break;
+                case false:
+                    $productMapper->deleteArticles($products);
+                    $message = 'Products were successfully deleted.';
+                    break;
+                default:
+                    $message = 'Nothing done.';
+            }
+            /** @noinspection PhpUndefinedMethodInspection */
+            $this->getRepository()->refreshLinks();
+            $this->view->assign(['success' => true, 'message' => $message]);
+        } catch (Throwable $e) {
+            $log->except($e, true, true);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $log->leave();
+    }
+
+    public function acceptSelectedProductsAction() {
+        $log = $this->getLog();
+        $log->enter();
+        try {
+            list($value, $products) = $this->setStatePropertyOnSelected();
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            switch ($value) {
+                case true:
+                    $productMapper->controllerUpdateArticles($products, false);
+                    $message = 'Product states were successfully set to accepted.';
+                    break;
+                case false:
+                    $productMapper->deleteArticles($products);
+                    $message = 'Product states were successfully set to ignored '
+                        . 'and associated Shopware products were deleted.';
+                    break;
+                default:
+                    $message = 'Nothing done.';
+            }
+            /** @noinspection PhpUndefinedMethodInspection */
+            $this->getRepository()->refreshLinks();
+            $this->view->assign(['success' => true, 'message' => $message]);
+        } catch (Throwable $e) {
+            $log->except($e, true, true);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $log->leave();
+    }
+
+    public function activateSelectedProductsAction()
+    {
+        $log = $this->getLog();
+        $log->enter();
+        try {
+            list($value, $products) = $this->setStatePropertyOnSelected();
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            switch ($value) {
+                case true:
+                    $productMapper->controllerActivateArticles($products, true, true);
+                    $message = 'Shopware products were successfully created and activated';
+                    break;
+                case false:
+                    $productMapper->controllerActivateArticles($products, false, false);
+                    $message = 'Shopware products were successfully deactivated.';
+                    break;
+                default:
+                    $message = 'Nothing done.';
+            }
+            /** @noinspection PhpUndefinedMethodInspection */
+            $this->getRepository()->refreshLinks();
+            $this->view->assign(['success' => true, 'message' => $message]);
         } catch (Throwable $e) {
             $log->except($e, true, true);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
@@ -225,57 +308,75 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return $data;
     }
 
+    protected function getStateUpdates(array $data)
+    {
+        $product = isset($data['id']) ? $this->getRepository()->find($data['id']) : null;
+        if (! $product) return [null, null];
+
+        $changes = [];
+        foreach (['accepted', 'active', 'linked'] as $property) {
+            $getState = 'is' . ucfirst($property);
+            if ($product->$getState() === $data[$property]) continue;
+            $changes[$property] = $data[$property];
+        }
+        return [$product, $changes];
+    }
+
+    protected function updateProductStates($product, $changes)
+    {
+        $productMapper = $this->getServices()->get(ProductMapper::class);
+
+        $change = $changes['linked'] ?? null;
+        if ($change === false) {
+            $productMapper->deleteArticles([$product]);
+            return;
+        } elseif ($change === true) {
+            $productMapper->controllerUpdateArticles([$product], true);
+        }
+
+        $change = $changes['accepted'] ?? null;
+        if ($change !== null) {
+            $productMapper->acceptArticle($product, $change);
+            if ($change === false) return;
+        }
+
+        $change = $changes['active'] ?? null;
+        if ($change === true) {
+            $productMapper->controllerActivateArticles([$product], true, true);
+        } elseif ($change === false) {
+            $productMapper->controllerActivateArticles([$product], false, false);
+        }
+    }
+
     public function save($data) {
-        if (! empty($data['id'])) {
-            // this is a request to update an existing product
-            $product = $this->getRepository()->find($data['id']);
-        } else {
-            // this is a request to create a new product (not supported via our UI)
-            $product = new $this->model();
-            $this->getManager()->persist($product);
+        list($product, $changes) = $this->getStateUpdates($data);
+        if (! $product) {
+            return [ 'success' => false, 'message' => 'Creation of new products via GUI is not supported.'];
         }
 
         // Variant data is empty only if the request comes from the list view (not the detail view)
         // We prevent storing an article with empty variant list by unsetting empty variant data.
-        if (isset($data['variants']) && empty($data['variants'])) {
-            unset($data['variants']);
-        }
+        $fromListView = isset($data['variants']) && empty($data['variants']);
+        if ($fromListView) unset($data['variants']);
 
         // hydrate (new or existing) article from UI data
         $data = $this->resolveExtJsData($data);
         unset($data['relatedProducts']);
         unset($data['similarProducts']);
         $product->fromArray($data);
-
-        /** @var Product $product */
-        $result = $this->getServices()->get(ProductStateUpdater::class)->updateProductStates($product, $data);
-        if ($result !== true) return $result;
-
-        // Our customization ends here.
-        // The rest below is default Shopware behaviour copied from parent implementation
-        $violations = $this->getManager()->validate($product);
-        $errors = [];
-        /** @var Symfony\Component\Validator\ConstraintViolation $violation */
-        foreach ($violations as $violation) {
-            $errors[] = [
-                'message' => $violation->getMessage(),
-                'property' => $violation->getPropertyPath(),
-            ];
-        }
-
-        if (!empty($errors)) {
-            return ['success' => false, 'violations' => $errors];
-        }
-
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->getManager()->flush();
 
+        /** @var Product $product */
+        $this->updateProductStates($product, $changes);
+
         // The user may have changed the accepted state of variants to false in the detail view of an product.
         // So we need to check and remove invalid variants when the detail view gets saved.
-        $this->getServices()->get(DetailMapper::class)->deleteInvalidDetails([$product]);
+        if (! $fromListView) {
+            $this->getServices()->get(DetailMapper::class)->map($product);
+        }
 
         $detail = $this->getDetail($product->getId());
-
         return ['success' => true, 'data' => $detail['data']];
     }
 
