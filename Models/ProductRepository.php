@@ -15,28 +15,23 @@ class ProductRepository extends BaseEntityRepository
         'getByIds' =>
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p WHERE p.id in (:ids)',
 
-        'getValidVariants' =>
-            'SELECT v FROM MxcDropshipInnocigs\Models\Variant v '
-            . 'JOIN v.product p '
-            . 'JOIN v.options o '
-            . 'JOIN o.icGroup g '
-            . 'WHERE p.id = :id '
-            . 'AND (p.accepted = 1 AND v.accepted = 1 AND o.accepted = 1 AND g.accepted = 1)',
-
-        'getInvalidVariants' =>
-            'SELECT v FROM MxcDropshipInnocigs\Models\Variant v '
-            . 'JOIN v.product p '
-            . 'JOIN v.options o '
-            . 'JOIN o.icGroup g '
-            . 'WHERE p.id = :id AND '
-            . '(p.accepted = 0 OR v.accepted = 0 OR o.accepted = 0 OR g.accepted = 0)',
-
         'getLinkedProducts'   =>
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'JOIN p.variants v '
+            . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
+
+        'getLinkedProductsFromProductIds'   =>
+            'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
+            . 'JOIN p.variants v '
+            . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+            . ' WHERE p.id IN (:productIds)',
+
+        'getProductIdsByOptionIds'   =>
+            'SELECT DISTINCT p.id FROM MxcDropshipInnocigs\Models\Product p '
+            . 'JOIN p.variants v '
             . 'JOIN v.options o '
             . 'JOIN MxcDropshipInnocigs\Models\Group g WITH o.icGroup = g.id '
-            . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
+            . 'WHERE o.id IN (:optionIds)',
 
         'getLinkedProductsHavingOptions'   =>
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
@@ -72,13 +67,6 @@ class ProductRepository extends BaseEntityRepository
             'SELECT p.name FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'WHERE (p.dosage IS NULL OR p.dosage = \'\') AND p.type = \'AROMA\'',
 
-        'updateArticle' =>
-            'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
-            . 'JOIN Shopware\Models\Article\Detail d WITH d.article = a.id '
-            . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
-            . 'JOIN MxcDropshipInnocigs\Models\Product p WHERE v.product = p.id '
-            . 'WHERE p.number = :number',
-
         'getArticle' =>
             'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.article = a.id '
@@ -99,9 +87,6 @@ class ProductRepository extends BaseEntityRepository
         // DQL does not support parameters in SELECT
         'getPropertiesById'  =>
             'SELECT :properties FROM MxcDropshipInnocigs\Models\Product p WHERE p.id = :id',
-
-        'getProductsByType' =>
-            'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber WHERE p.type = :type',
 
         // get all Products which need a flavor setting
         'getFlavoredProducts' =>
@@ -158,26 +143,12 @@ class ProductRepository extends BaseEntityRepository
             ->getResult();
     }
 
-    public function getProductsByType(string $type)
-    {
-        return $this->getQuery(__FUNCTION__)
-            ->setParameter('type', $type)
-            ->getResult();
-    }
-
     public function setStateByIds(string $property, bool $value, array $ids)
     {
         $dql = str_replace(':state', $property, $this->dql[__FUNCTION__]);
         return $this->getEntityManager()->createQuery($dql)
             ->setParameters(['value' => $value, 'ids' => $ids])
             ->execute();
-    }
-
-    public function getInvalidVariants(Product $product)
-    {
-        return $this->getQuery(__FUNCTION__)
-            ->setParameter('id', $product->getId())
-            ->getResult();
     }
 
     public function getProductsHavingRelatedArticles(array $relatedIds)
@@ -193,10 +164,21 @@ class ProductRepository extends BaseEntityRepository
             ->setParameter('similarIds', $relatedIds)->getResult();
     }
 
-    public function getLinkedProductsHavingOptions($optionIds)
+    public function getProductIdsByOptionIds($optionIds)
     {
+        $result = $this->getQuery(__FUNCTION__)
+            ->setParameter('optionIds', $optionIds)->getScalarResult();
+        return array_column($result, 'id');
+    }
+
+    public function getLinkedProductsFromProductIds($productIds) {
         return $this->getQuery(__FUNCTION__)
-            ->setParameter('optionIds', $optionIds)->getResult();
+            ->setParameter('productIds', $productIds)->getResult();
+    }
+
+    public function getLinkedProductsByOptionIds($optionIds) {
+        $productIds = $this->getProductIdsByOptionIds($optionIds);
+        return $this->getLinkedProductsFromProductIds($productIds);
     }
 
     public function getArticle(Product $product)
@@ -269,13 +251,9 @@ class ProductRepository extends BaseEntityRepository
     public function validate(Product $product): bool
     {
         if (! $product->isAccepted()) return false;
-        return (! empty($this->getValidVariants($product)));
-    }
-
-    public function getValidVariants(Product $product)
-    {
-        return $this->getQuery(__FUNCTION__)
-            ->setParameter('id', $product->getId())
-            ->getResult();
+        foreach ($product->getVariants() as $variant) {
+            if ($variant->isValid()) return true;
+        }
+        return false;
     }
 }

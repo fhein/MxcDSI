@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Excel;
 
@@ -16,7 +16,6 @@ class ExcelImport
     }
 
     public function import() {
-        /** @noinspection PhpUnhandledExceptionInspection */
         $spreadSheet = (new Reader())->load($this->excelFile);
         foreach ($this->importers as $title => $importer)
         {

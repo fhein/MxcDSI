@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
 namespace MxcDropshipInnocigs\Excel;
@@ -50,7 +50,7 @@ abstract class AbstractSheetExport
 
             if (! $color) continue;
             $range = 'A' . $i . ':'. $highest['column'] . $i;
-            /** @noinspection PhpUnhandledExceptionInspection */
+
             $this->sheet->getStyle($range)->applyFromArray([
                     'fill' => [
                         'fillType' => Fill::FILL_SOLID,
@@ -62,7 +62,7 @@ abstract class AbstractSheetExport
     protected function formatHeaderLine(string $color = 'FFBFBFBF')
     {
         $highest = $this->getHighestRowAndColumn();
-        /** @noinspection PhpUnhandledExceptionInspection */
+
         $this->sheet->getStyle('A1:'. $highest['column']. '1')->applyFromArray(
             [
                 'fill'    => [
@@ -79,7 +79,7 @@ abstract class AbstractSheetExport
     protected function setBorders($which, $style, $color, $range = null) {
         $highest = $this->getHighestRowAndColumn();
         $range = $range ?? $this->getRange(['A', 1, $highest['column'], $highest['row']]);
-        /** @noinspection PhpUnhandledExceptionInspection */
+
         $this->sheet->getStyle($range)->applyFromArray(
             [
                 'borders' => [

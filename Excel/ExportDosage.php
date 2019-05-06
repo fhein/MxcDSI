@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Excel;
 
@@ -30,7 +30,6 @@ class ExportDosage extends AbstractProductExport
 
         $headers[] = array_keys($this->data[0]);
         $data = array_merge($headers, $this->data);
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->fromArray($data);
     }
 
@@ -41,7 +40,6 @@ class ExportDosage extends AbstractProductExport
         $bColumn = $this->sheet->getColumnDimension('B');
         $bColumn->setAutoSize(false);
         $bColumn->setWidth(15);
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->getStyle('F2:'. $highest['column'] . $highest['row'])
             ->getNumberFormat()->setFormatCode('@');
         $this->setAlternateRowColors();

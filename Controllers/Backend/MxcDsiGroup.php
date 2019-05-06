@@ -1,6 +1,7 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
+use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
@@ -42,71 +43,17 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
         return $data;
     }
 
-    public function save($data)
-    {
-        $log = $this->getLog();
-        $log->enter();
-        /** @var Group $group */
-        $oldOptionValues = [];
-        if (!empty($data['id'])) {
-            // this is a request to update an existing group
-            $group = $this->getRepository()->find($data['id']);
-            $options = $group->getOptions();
-            foreach ($options as $option) {
-                $oldOptionValues[$option->getName()] = $option->isAccepted();
-            }
-            // currently stored $accepted state
-            $sAccepted = $group->isAccepted();
-        } else {
-            // this is a request to create a new group (not supported via our UI)
-            $group = new $this->model();
-            $this->getManager()->persist($group);
-            // default $Accepted state
-            $sAccepted = true;
+
+    protected function getOldOptionValues($data) {
+        $group = isset($data['id']) ? $this->getRepository()->find($data['id']) : null;
+        if (! $group) return [null, null];
+        $options = $group->getOptions();
+        $optionValue = [];
+        /** @var Option $option */
+        foreach ($options as $option) {
+            $optionValue[$option->getName()] = $option->isAccepted();
         }
-        // Option data is empty only if the request comes from the list view (not the detail view)
-        // We prevent storing an group with empty variant list by unsetting empty variant data.
-        if ($data['options'] && empty($data['options'])) {
-            unset($data['options']);
-        }
-
-        // hydrate (new or existing) group from UI data
-        $data = $this->resolveExtJsData($data);
-        $group->fromArray($data);
-
-        // updated $accepted state
-        $uAccepted = $group->isAccepted();
-        $groupChanged = $uAccepted !== $sAccepted;
-
-        $violations = $this->getManager()->validate($group);
-        $errors = [];
-        /** @var Symfony\Component\Validator\ConstraintViolation $violation */
-        foreach ($violations as $violation) {
-            $errors[] = [
-                'message'  => $violation->getMessage(),
-                'property' => $violation->getPropertyPath(),
-            ];
-        }
-
-        if (!empty($errors)) {
-            $log->leave();
-            return ['success' => false, 'violations' => $errors];
-        }
-        $modelManager = $this->getManager();
-
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $modelManager->flush();
-        //$modelManager->clear();
-
-        $productMapper = $this->getServices()->get(ProductMapper::class);
-
-        $productUpdates = $this->getLinkedProductsHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $productMapper->updateArticles($productUpdates);
-
-        $detail = $this->getDetail($group->getId());
-        $log->leave();
-        return ['success' => true, 'data' => $detail['data']];
+        return [$group, $optionValue];
     }
 
     /**
@@ -128,18 +75,51 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
         // get all Products which are linked to Articles
         /** @var Option $option */
-        $relevantOptionIds = [];
-        $time = - microtime(true);
+        $optionIds = [];
         foreach ($options as $option) {
             if (! $groupChanged && ($option->isAccepted() === $oldOptionValue[$option->getName()])) {
                 continue;
             }
-            $relevantOptionIds[] = $option->getId();
+            $optionIds[] = $option->getId();
         }
-        $products = $repository->getLinkedProductsHavingOptions($relevantOptionIds);
-        $time +=microtime(true);
-        $this->getLog()->debug('Using SQL query: ' . sprintf('%f', $time));
+        return $repository->getLinkedProductsByOptionIds($optionIds);
+    }
 
-        return $products;
+    public function save($data)
+    {
+        $log = $this->getLog();
+        $log->enter();
+
+        list($group, $oldOptionValues) = $this->getOldOptionValues($data);
+
+        if (! $group) {
+            return [ 'success' => false, 'message' => 'Creation of new groups via GUI is not supported.'];
+        }
+        $sAccepted = $group->isAccepted();
+
+        // Option data is empty only if the request comes from the list view (not the detail view)
+        // We prevent storing an group with empty variant list by unsetting empty variant data.
+        if ($data['options'] && empty($data['options'])) {
+            unset($data['options']);
+        }
+
+        // hydrate (new or existing) group from UI data
+        $data = $this->resolveExtJsData($data);
+        $group->fromArray($data);
+
+        // updated $accepted state
+        $uAccepted = $group->isAccepted();
+        $groupChanged = $uAccepted !== $sAccepted;
+
+        $this->getManager()->flush();
+        $this->getManager()->clear();
+
+        $productUpdates = $this->getLinkedProductsHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
+        $this->getServices()->get(ProductMapper::class)->controllerUpdateArticles($productUpdates, false);
+        $this->getManager()->flush();
+
+        $detail = $this->getDetail($group->getId());
+        $log->leave();
+        return ['success' => true, 'data' => $detail['data']];
     }
 }

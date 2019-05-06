@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
@@ -40,7 +40,6 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $articleRepository->getRemoveImageQuery($id)->execute();
 
         $sql = 'DELETE FROM s_article_configurator_option_relations WHERE article_id = ?';
-        /** @noinspection PhpUnhandledExceptionInspection */
         Shopware()->Db()->query($sql, [$id]);
 
         $articleRepository->getRemoveVariantTranslationsQuery($id)->execute();

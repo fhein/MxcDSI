@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
 namespace MxcDropshipInnocigs\Excel;
@@ -40,12 +40,12 @@ abstract class AbstractProductExport extends AbstractSheetExport implements Mode
         $this->sheet->getColumnDimension('E')->setWidth(80);
         $highest = $this->getHighestRowAndColumn();
         $range = $this->getRange(['A', 1, $highest['column'], $highest['row']]);
-        /** @noinspection PhpUnhandledExceptionInspection */
+
         $alignment = $this->sheet->getStyle($range)->getAlignment();
 
         $alignment->setVertical(Alignment::VERTICAL_TOP);
         $alignment->setWrapText(true);
-        /** @noinspection PhpUnhandledExceptionInspection */
+
         $this->sheet->freezePane('A2');
     }
 }

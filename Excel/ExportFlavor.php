@@ -13,7 +13,6 @@ class ExportFlavor extends AbstractProductExport
 
         $headers[] = array_keys($this->data[0]);
         $data = array_merge($headers, $this->data);
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->fromArray($data);
     }
 
@@ -27,7 +26,6 @@ class ExportFlavor extends AbstractProductExport
     {
         parent::formatSheet();
         $highest = $this->getHighestRowAndColumn();
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->getStyle('F2:'. $highest['column'] . $highest['row'])
             ->getNumberFormat()->setFormatCode('@');
         $this->sheet->getColumnDimension('F')->setWidth(80);

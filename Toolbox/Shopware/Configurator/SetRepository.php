@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware\Configurator;
 
@@ -38,28 +38,16 @@ class SetRepository implements ModelManagerAwareInterface, LoggerAwareInterface
     }
 
     public function getSet(string $name) {
-        $setRepo = $this->modelManager->getRepository(Set::class);
-        /**
-         * @var Set $set
-         */
-        $set = $setRepo->findOneBy(['name' => $name]);
-        if ($set === null) {
-            $this->log->debug(sprintf('%s: Creating new configurator set %s.',
-                __FUNCTION__,
-                $name));
-            $set = $this->createSet($name);
-        } else {
-            $this->log->debug(sprintf('%s: Resetting existing configurator set %s.',
-                __FUNCTION__,
-                $name));
-            // discard group and option and article links of existing set
-            $set->getOptions()->clear();
-            $set->getGroups()->clear();
-            $set->getArticles()->clear();
+        $set = $this->modelManager->getRepository(Set::class)->findOneBy(['name' => $name]);
+        if ($set !== null) {
+            $this->modelManager->remove($set);
+            $this->modelManager->flush();
         }
-        $this->set = $set;
+
+        $this->set = $this->createSet($name);
         $this->groups = [];
         $this->options = [];
+
         return $this->set;
     }
 

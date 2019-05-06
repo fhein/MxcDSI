@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
+
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
@@ -25,7 +26,6 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
             $this->modelManager->remove($category);
             $this->log->debug('Empty category: ' . $category->getName());
         }
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
         $this->modelManager->clear();
         if (! $done) $this->removeEmptyCategoriesRecursive($root);
@@ -36,7 +36,6 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $parentId = $root ? $root->getId() : null;
         $root = $root ?? $this->modelManager->getRepository(Category::class)->findOneBy(['parentId' => $parentId]);
         $this->removeEmptyCategoriesRecursive($root);
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
     }
 
@@ -102,7 +101,6 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
             }
             $parent->setChanged();
         }
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush($child);
         return $child;
     }

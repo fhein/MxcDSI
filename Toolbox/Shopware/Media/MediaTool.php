@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware\Media;
 
@@ -67,7 +67,6 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $media->setExtension($urlInfo['extension']);
         $media->setDescription('');
         $media->setUserId($this->authService->getIdentity()->id);
-        /** @noinspection PhpUnhandledExceptionInspection */
         $media->setCreated(new DateTime());
         $media->setFileSize(filesize($url));
 
@@ -116,7 +115,6 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $image->setPosition($position);
 
         // Important to avoid 'A new entity was detected which is not configured to cascade persist'
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush($image);
         return $image;
 

@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
+
 
 namespace MxcDropshipInnocigs\Models;
 
@@ -40,7 +41,6 @@ trait BaseModelTrait
      * @ORM\PreUpdate
      */
     public function updateTimestamps() {
-        /** @noinspection PhpUnhandledExceptionInspection */
         $now = new DateTime();
         $this->updated = $now;
         if ( null === $this->created) {
@@ -74,7 +74,6 @@ trait BaseModelTrait
 
     public function getPrivatePropertyNames(): array
     {
-        /** @noinspection PhpUnhandledExceptionInspection */
         $r = new ReflectionClass($this);
         $properties = $r->getProperties(ReflectionProperty::IS_PRIVATE);
         $names = [];

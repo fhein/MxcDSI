@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Excel;
 
@@ -38,7 +38,7 @@ class ImportPrices extends AbstractProductImport
         }
         $this->updatePrices();
 
-        /** @noinspection PhpUnhandledExceptionInspection */
+
         $this->modelManager->flush();
     }
 

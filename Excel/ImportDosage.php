@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Excel;
 
@@ -21,7 +21,7 @@ class ImportDosage extends AbstractProductImport
             $product->setDosage($dosage);
         }
 
-        /** @noinspection PhpUnhandledExceptionInspection */
+
         $this->modelManager->flush();
     }
 }

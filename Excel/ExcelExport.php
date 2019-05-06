@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Excel;
 
@@ -20,15 +20,12 @@ class ExcelExport
         $spreadSheet = new Spreadsheet();
         /** @var ExportPrices $exporter */
         foreach ($this->exporters as $title => $exporter) {
-            /** @noinspection PhpUnhandledExceptionInspection */
             $workSheet = $spreadSheet->createSheet();
             $workSheet->setTitle($title);
             $exporter->export($workSheet);
         }
-        /** @noinspection PhpUnhandledExceptionInspection */
         $spreadSheet->removeSheetByIndex(0);
         $writer = new Writer($spreadSheet);
-        /** @noinspection PhpUnhandledExceptionInspection */
         $writer->save($this->excelFile);
     }
 }

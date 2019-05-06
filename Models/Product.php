@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php
 
 namespace MxcDropshipInnocigs\Models;
 
@@ -414,14 +414,6 @@ class Product extends ModelEntity  {
     {
         $this->article = $article;
         $this->linked = $article !== null;
-    }
-
-    public function getValidVariants()
-    {
-        if (! $this->validVariants) {
-            $this->validVariants = Shopware()->Models()->getRepository(Product::class)->getValidVariants($this);
-        }
-        return $this->validVariants;
     }
 
     /**

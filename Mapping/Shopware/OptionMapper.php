@@ -48,12 +48,14 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->log->enter();
         $groupOptions = [];
         foreach ($variants as $variant) {
+            // if (! $variant->isValid()) continue;
             /** @var Variant $variant */
             $icOptions = $variant->getOptions();
             $variant->setShopwareOptions([]);
             /** @var Option $icOption */
             foreach ($icOptions as $icOption) {
                 $groupName = $icOption->getIcGroup()->getName();
+                // if (! $icOption->isValid()) continue;
                 $optionName = $icOption->getName();
 
                 $this->log->debug(sprintf('ImportVariant %s (%s) has option %s from group %s.',
@@ -112,7 +114,12 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
      */
     public function createConfiguratorSet(Product $product)
     {
-        $validVariants = $product->getValidVariants();
+        $validVariants = [];
+        foreach ($product->getVariants() as $variant) {
+            if (! $variant->isValid()) continue;
+            $validVariants[] = $variant;
+        }
+        // $validVariants = $product->getValidVariants();
         if (count($validVariants) < 2) {
             $this->log->notice(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does '
                 . 'not provide more than one variant which is set not to get ignored.',
@@ -121,6 +128,19 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             ));
             return null;
         }
+
+        /** @var Variant $variant */
+        $descriptions = [];
+        foreach ($validVariants as $variant) {
+            /** @var Option $option */
+            $description = '';
+            foreach ($variant->getOptions() as $option) {
+                $description .= $option->getIcGroup()->getName() . ': ' . $option->getName() . ', ';
+            }
+            $descriptions[] = $description;
+        }
+        $this->log->debug('Valid variants for product: ' . $product->getName());
+        $this->log->debug(var_export($descriptions, true));
 
         $this->createShopwareGroupsAndOptions($validVariants);
 

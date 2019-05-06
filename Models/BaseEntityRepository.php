@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Models;
 
@@ -51,7 +51,6 @@ class BaseEntityRepository extends EntityRepository
     public function count(): int
     {
         $dql = sprintf('SELECT count(c.id) FROM %s c', $this->getClassName());
-        /** @noinspection PhpUnhandledExceptionInspection */
         return $this->getEntityManager()->createQuery($dql)->getSingleScalarResult();
     }
 
@@ -66,7 +65,6 @@ class BaseEntityRepository extends EntityRepository
     protected function getStatement(string $name) : ?Statement
     {
         if (! isset($this->statements[$name])) {
-            /** @noinspection PhpUnhandledExceptionInspection */
             $this->statements[$name] = $this->getEntityManager()->getConnection()->prepare($this->sql[$name]);
         }
         return $this->statements[$name];

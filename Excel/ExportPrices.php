@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Excel;
 
@@ -77,7 +77,6 @@ class ExportPrices extends AbstractProductExport
         }
 
         $data = array_merge($headers, $data);
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->fromArray($data);
     }
 
@@ -185,7 +184,6 @@ class ExportPrices extends AbstractProductExport
         parent::formatSheet();
         $highest = $this->sheet->getHighestRowAndColumn();
         $range = $this->getRange(['F','2',$highest['column'], $highest['row']]);
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->sheet->getStyle($range)->getNumberFormat()->setFormatCode('0.00');
 
         foreach (range('F', $highest['column']) as $col) {

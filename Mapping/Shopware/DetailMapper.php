@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
@@ -67,7 +67,12 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     {
         /** @var Article $article */
         $article = $product->getArticle();
-        if (!$article) return;
+        if (! $article) return;
+
+        if (! $product->isValid()) {
+            $this->deleteArticle($product);
+            return;
+        }
 
         $configuratorSet = $this->optionMapper->createConfiguratorSet($product);
         $article->setConfiguratorSet($configuratorSet);
@@ -101,6 +106,12 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     {
         $detail = $variant->getDetail();
 
+        if ($detail && ! $variant->isValid()) {
+            $this->articleTool->deleteDetail($detail);
+            $variant->setDetail(null);
+            return null;
+        }
+
         if ($detail) {
             // Update existing detail
             $this->setShopwareDetailProperties($variant);
@@ -110,8 +121,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             return $detail;
         }
 
-        // Create new detail if this variant is valid
-        if (!$variant->isValid()) {
+        if (! $variant->isValid()) {
             return null;
         }
 
@@ -206,7 +216,6 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $article = $product->getArticle();
         if (! $article) return;
 
-        /** @noinspection PhpUnhandledExceptionInspection */
         $configuratorSetName = 'mxc-set-' . $product->getIcNumber();
         if ($set = $this->getSetRepository()->findOneBy(['name' => $configuratorSetName]))
         {
@@ -217,48 +226,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $product->setActive(false);
         $product->setLinked(false);
 
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->articleResource->delete($article->getId());
-    }
-
-    protected function setMainDetail(Variant $variant)
-    {
-        $detail = $variant->getDetail();
-        if (! $detail) return;
-
-        $this->articleTool->setMainDetail($detail);
-    }
-
-    public function deleteInvalidDetails(array $products)
-    {
-        foreach ($products as $product) {
-            $validVariants = $product->getValidVariants();
-            if (empty($validVariants)) {
-                $this->deleteArticle($product);
-                $product->setArticle(null);
-                continue;
-            }
-
-            $this->setMainDetail($validVariants[0]);
-            $invalidVariants = $this->getProductRepository()->getInvalidVariants($product) ?? [];
-            $changed = count($invalidVariants) !== 0;
-            foreach ($invalidVariants as $variant) {
-                /** @var Detail $detail */
-                $detail = $variant->getDetail();
-                if (!$detail) continue;
-
-                $this->articleTool->deleteDetail($detail);
-                $variant->setDetail(null);
-            }
-
-            /** @var Article $article */
-            $article = $product->getArticle();
-            if ($article && $changed) {
-                $article->setConfiguratorSet($this->optionMapper->createConfiguratorSet($product));
-            }
-        }
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->modelManager->flush();
     }
 
     protected function getProductRepository()

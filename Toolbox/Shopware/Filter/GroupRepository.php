@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
+
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware\Filter;
 
@@ -158,7 +159,6 @@ class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterfac
         }
     }
     public function flush() {
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
     }
 }

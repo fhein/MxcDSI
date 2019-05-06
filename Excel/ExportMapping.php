@@ -13,7 +13,7 @@ class ExportMapping extends AbstractProductExport
 
         $headers[] = array_keys($this->data[0]);
         $data = array_merge($headers, $this->data);
-        /** @noinspection PhpUnhandledExceptionInspection */
+
         $this->sheet->fromArray($data);
     }
 

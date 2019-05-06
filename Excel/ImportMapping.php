@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Excel;
 
@@ -24,7 +24,7 @@ class ImportMapping extends AbstractProductImport
             $product->setName($record['name']);
         }
 
-        /** @noinspection PhpUnhandledExceptionInspection */
+
         $this->modelManager->flush();
     }
 }

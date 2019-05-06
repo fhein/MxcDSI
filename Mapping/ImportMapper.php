@@ -237,71 +237,71 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     }
 
     /**
-     * Find the Variants associated with list of deleted Models, set their
-     * accepted state to false. Return a list of all Products owning one
-     * of the modified Variants.
+     * The Shopware details associated to obsolete variants must get removed before
+     * the variants get deleted.
      *
      * @param array $deletions
-     * @return array
-     * @throws OptimisticLockException
      */
-    protected function invalidateVariants(array $deletions): array
+    protected function removeDetails(array $deletions)
     {
         /** @var  Model $model */
         $variantRepository = $this->getVariantRepository();
 
-        $productsWithDeletions = [];
+        $products = [];
         foreach ($deletions as $model) {
             /** @var  Variant $variant */
             $variant = $variantRepository->findOneBy(['number' => $model->getModel()]);
             $variant->setAccepted(false);
             $product = $variant->getProduct();
-            $productsWithDeletions[$product->getIcNumber()] = $product;
+            $products[$product->getIcNumber()] = $product;
         }
-
         $this->modelManager->flush();
-        return $productsWithDeletions;
+        $this->productMapper->updateArticles($products, false);
     }
 
     /**
-     * Remove all invalid Variants together with the Options and Images
-     * belonging to them. Remove the Product also, if it has no variant
-     * left.
+     * Remove all variants associated with deleted models together with the Options and Images
+     * belonging to them. Remove the Product also, if it has no variant left.
      *
-     * @param array $products
+     * @param array $deletions
      * @throws OptimisticLockException
      */
-    protected function removeInvalidVariants(array $products)
+    protected function removeVariants(array $deletions)
     {
         $variantRepository = $this->getVariantRepository();
 
-        foreach ($products as $product) {
-            $invalidVariants = $this->getProductRepository()->getInvalidVariants($product);
-            /** @var Variant $variant */
-            foreach ($invalidVariants as $variant) {
-                $variantRepository->removeImages($variant);
-                $variantRepository->removeOptions($variant);
-                $product->removeVariant($variant);
-                $this->modelManager->remove($variant);
-                unset($this->variants[$variant->getIcNumber()]);
-                if ($product->getVariants()->count === 0) {
-                    $this->modelManager->remove($product);
-                    unset ($this->products[$product->getIcNumber()]);
-                }
+        // make sure that $this->products is initialized
+        $this->getProducts();
+
+        foreach ($deletions as $model) {
+            $variant = $this->getVariants()[$model->getModel()] ?? null;
+            if (!$variant) {
+                continue;
+            }
+
+            /** @var Product $product */
+            $product = $variant->getProduct();
+            $product->removeVariant($variant);
+
+            $variantRepository->removeImages($variant);
+            $variantRepository->removeOptions($variant);
+            $this->modelManager->remove($variant);
+            unset($this->variants[$variant->getIcNumber()]);
+            if ($product->getVariants()->count === 0) {
+                $this->modelManager->remove($product);
+                unset($this->products[$product->getIcNumber()]);
             }
         }
 
         $this->modelManager->flush();
-
     }
 
     protected function deleteVariants(array $deletions)
     {
-        if (empty($deletions)) return;
+        if ( empty($deletions)) return;
 
-        $productsWithDeletions = $this->invalidateVariants($deletions);
-        $this->detailMapper->deleteInvalidDetails($productsWithDeletions);
-        $this->removeInvalidVariants($productsWithDeletions);
+        $this->removeDetails($deletions);
+        $this->removeVariants($deletions);
     }
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
@@ -407,7 +407,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         // orphaned during removal of orphaned options
         $this->getGroupRepository()->removeOrphaned();
         $this->modelManager->flush();
-
     }
 
 
@@ -445,7 +444,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
         $this->deleteVariants($import['deletions']);
 
-        //$this->modelManager->clear();
         $this->removeOrphanedItems();
 
         /** @noinspection PhpUndefinedMethodInspection */

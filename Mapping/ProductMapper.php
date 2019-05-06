@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpDocMissingThrowsInspection */
+<?php /** @noinspection PhpUnhandledExceptionInspection */
+
+/** @noinspection PhpDocMissingThrowsInspection */
 
 namespace MxcDropshipInnocigs\Mapping;
 
@@ -87,7 +89,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
         // delete article if the product is not valid
         if (! $valid && $article) {
-            $this->deleteArticles([$article]);
+            $this->deleteArticles([$product]);
         }
         if (! $valid) return false;
 
@@ -115,7 +117,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             $this->updateArticle($product, $create);
         }
 
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
     }
 
@@ -127,7 +128,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
      */
     public function controllerUpdateArticle(Product $product, bool $create = false)
     {
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->controllerUpdateArticles([$product], $create);
         return $product->isActive();
     }
@@ -144,7 +144,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         if (! empty($this->createdArticles)) {
             $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
         }
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->modelManager->flush();
 
     }

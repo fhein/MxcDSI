@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Excel\ExcelExport;
@@ -10,7 +10,6 @@ use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Report\ArrayReport;
@@ -308,78 +307,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return $data;
     }
 
-    protected function getStateUpdates(array $data)
-    {
-        $product = isset($data['id']) ? $this->getRepository()->find($data['id']) : null;
-        if (! $product) return [null, null];
-
-        $changes = [];
-        foreach (['accepted', 'active', 'linked'] as $property) {
-            $getState = 'is' . ucfirst($property);
-            if ($product->$getState() === $data[$property]) continue;
-            $changes[$property] = $data[$property];
-        }
-        return [$product, $changes];
-    }
-
-    protected function updateProductStates($product, $changes)
-    {
-        $productMapper = $this->getServices()->get(ProductMapper::class);
-
-        $change = $changes['linked'] ?? null;
-        if ($change === false) {
-            $productMapper->deleteArticles([$product]);
-            return;
-        } elseif ($change === true) {
-            $productMapper->controllerUpdateArticles([$product], true);
-        }
-
-        $change = $changes['accepted'] ?? null;
-        if ($change !== null) {
-            $productMapper->acceptArticle($product, $change);
-            if ($change === false) return;
-        }
-
-        $change = $changes['active'] ?? null;
-        if ($change === true) {
-            $productMapper->controllerActivateArticles([$product], true, true);
-        } elseif ($change === false) {
-            $productMapper->controllerActivateArticles([$product], false, false);
-        }
-    }
-
-    public function save($data) {
-        list($product, $changes) = $this->getStateUpdates($data);
-        if (! $product) {
-            return [ 'success' => false, 'message' => 'Creation of new products via GUI is not supported.'];
-        }
-
-        // Variant data is empty only if the request comes from the list view (not the detail view)
-        // We prevent storing an article with empty variant list by unsetting empty variant data.
-        $fromListView = isset($data['variants']) && empty($data['variants']);
-        if ($fromListView) unset($data['variants']);
-
-        // hydrate (new or existing) article from UI data
-        $data = $this->resolveExtJsData($data);
-        unset($data['relatedProducts']);
-        unset($data['similarProducts']);
-        $product->fromArray($data);
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $this->getManager()->flush();
-
-        /** @var Product $product */
-        $this->updateProductStates($product, $changes);
-
-        // The user may have changed the accepted state of variants to false in the detail view of an product.
-        // So we need to check and remove invalid variants when the detail view gets saved.
-        if (! $fromListView) {
-            $this->getServices()->get(DetailMapper::class)->map($product);
-        }
-
-        $detail = $this->getDetail($product->getId());
-        return ['success' => true, 'data' => $detail['data']];
-    }
-
     public function testImport1Action()
     {
         $log = $this->getLog();
@@ -453,6 +380,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
     }
+
     public function dev1Action()
     {
         $log = $this->getLog();
@@ -488,7 +416,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
     }
-
     public function dev3Action()
     {
         $log = $this->getLog();
@@ -575,6 +502,78 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
         $log->leave();
+    }
+
+    protected function getStateUpdates(array $data)
+    {
+        $product = isset($data['id']) ? $this->getRepository()->find($data['id']) : null;
+        if (! $product) return [null, null];
+
+        $changes = [];
+        foreach (['accepted', 'active', 'linked'] as $property) {
+            $getState = 'is' . ucfirst($property);
+            if ($product->$getState() === $data[$property]) continue;
+            $changes[$property] = $data[$property];
+        }
+        return [$product, $changes];
+    }
+
+    protected function updateProductStates(Product $product, array $changes)
+    {
+        $productMapper = $this->getServices()->get(ProductMapper::class);
+
+        $change = $changes['linked'] ?? null;
+        if ($change === false) {
+            $productMapper->deleteArticles([$product]);
+            return;
+        } elseif ($change === true) {
+            $productMapper->controllerUpdateArticles([$product], true);
+        }
+
+        $change = $changes['accepted'] ?? null;
+        if ($change !== null) {
+            $productMapper->acceptArticle($product, $change);
+            if ($change === false) return;
+        }
+
+        $change = $changes['active'] ?? null;
+        if ($change === true) {
+            $productMapper->controllerActivateArticles([$product], true, true);
+        } elseif ($change === false) {
+            $productMapper->controllerActivateArticles([$product], false, false);
+        }
+    }
+
+    public function save($data) {
+        list($product, $changes) = $this->getStateUpdates($data);
+        if (! $product) {
+            return [ 'success' => false, 'message' => 'Creation of new products via GUI is not supported.'];
+        }
+
+        // Variant data is empty only if the request comes from the list view (not the detail view)
+        // We prevent storing an article with empty variant list by unsetting empty variant data.
+        $fromListView = isset($data['variants']) && empty($data['variants']);
+        if ($fromListView) unset($data['variants']);
+
+        // hydrate (new or existing) article from UI data
+        $data = $this->resolveExtJsData($data);
+        unset($data['relatedProducts']);
+        unset($data['similarProducts']);
+        $product->fromArray($data);
+        $this->getManager()->flush();
+
+        /** @var Product $product */
+        $this->updateProductStates($product, $changes);
+
+        // The user may have changed the accepted state of variants to false in the detail view of an product.
+        // So we need to check and remove invalid variants when the detail view gets saved.
+        if (! $fromListView) {
+            $this->getServices()->get(ProductMapper::class)->updateArticle($product, false);
+            $this->getManager()->flush();
+        }
+
+        $detail = $this->getDetail($product->getId());
+        return ['success' => true, 'data' => $detail['data']];
     }
 
     protected function getRepository() : ProductRepository
