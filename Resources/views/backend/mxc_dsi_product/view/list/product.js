@@ -327,7 +327,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text : 'Excel Export',
                     iconCls: 'sprite-table-import',
                     handler: function() {
-                        me.fireEvent('mxcExcelExport', me);
+                        window.open('/backend/MxcDsiProduct/excelExport');
                     }
                 },
                 {
@@ -385,6 +385,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         me.fireEvent('mxcTestImport4', me);
                     }
                 },
+                '-',
+                {
+                    text : 'Open Url Export',
+                    handler: function() {
+                        //window.open('/backend/MediaManager/download?mediaId=182');
+                        window.open('/backend/MxcDsiProduct/excelExport');
+                    }
+                }
             ]
         });
         return Ext.create('Ext.button.Button', {

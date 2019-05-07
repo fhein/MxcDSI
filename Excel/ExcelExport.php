@@ -9,11 +9,23 @@ class ExcelExport
 {
     protected $exporters;
 
-    protected $excelFile = __DIR__ . '/../Config/vapee.export.xlsx';
+    const FILENAME = 'vapee.export.xlsx';
+
+    protected $excelFile = __DIR__ . '/../Config/' . self::FILENAME;
+
+
 
     public function __construct(array $exporters)
     {
         $this->exporters = $exporters;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExcelFile(): string
+    {
+        return $this->excelFile;
     }
 
     public function export() {
