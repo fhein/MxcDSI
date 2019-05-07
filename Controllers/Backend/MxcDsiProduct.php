@@ -15,11 +15,26 @@ use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use Shopware\Models\Article\Article;
+use Shopware\Components\CSRFWhitelistAware;
 
-class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController
+class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
     protected $model = Product::class;
     protected $alias = 'product';
+
+    public function getWhitelistedCSRFActions()
+    {
+        return [
+            'excelExport',
+        ];
+    }
+
+    public function postDispatch()
+    {
+       /* if ($this->Request()->getActionName() !== 'excelExport') {
+            parent::postDispatch();
+        }*/
+    }
 
     public function indexAction() {
         $log = $this->getLog();
@@ -101,9 +116,28 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $log = $this->getLog();
         $log->enter();
         try {
+            //necessary for correct download file
+            Shopware()->Plugins()->Controller()->ViewRenderer()->setNoRender();
+            $this->Front()->Plugins()->Json()->setRenderer(false);
+
             $excel = $this->getServices()->get(ExcelExport::class);
             $excel->export();
-            $this->view->assign([ 'success' => true, 'message' => 'Settings successfully exported to Config/vapee.export.xlsx.' ]);
+
+            $filepath = $excel->getExcelFile();
+            $batchfile = file_get_contents($filepath);
+            $size = filesize($filepath);
+
+            $response = $this->Response();
+            $response->setHeader('Cache-Control', 'must-revalidate');
+            $response->setHeader('Content-Description', 'File Transfer');
+            $response->setHeader('Content-disposition', 'attachment; filename=' . 'vapee.export.xlsx');
+            $response->setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'); //'application/octet-stream'); //
+            $response->setHeader('Content-Transfer-Encoding', 'binary');
+            $response->setHeader('Content-Length', $size);
+            $response->setHeader('Pragma', 'public');
+
+            echo $batchfile;
+
         } catch (Throwable $e) {
             $log->except($e, true, false);
             $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
