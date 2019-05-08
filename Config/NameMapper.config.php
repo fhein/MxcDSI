@@ -53,6 +53,9 @@ return [
         'V2-XL'                                      => 'XL',
         'matt-schwarz'                               => 'matt schwarz',
         'schwarz-weiß'                               => 'schwarz-weiss',
+        'schwarz-rot'                                => 'schwarz rot',
+        'schwarz-weiss-resin'                        => 'schwarz-weiß-resin',
+        'camouflage-grau'                            => 'camouflage grau',
         'Flasche schwarz transparent + schwarze Cap' => 'schwarz-transparent mit schwarzer Cap',
         'Flasche schwarz + schwarze Cap'             => 'schwarz mit schwarzer Cap',
         'Flasche transparent + schwarze Cap'         => 'mit schwarzer Cap',
@@ -339,6 +342,7 @@ return [
             '~(Minikin.*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Lustro) (- \d+ Watt)~'                                    => '$1 - Akkuträger $2',
             '~(Amighty) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
+            '~(Puma) (- \d+ Watt)~'                                      => '$1 - Akkuträger $2',
             '~(Amnis) (- \d+ mAh)~'                                      => '$1 - Akku $2',
             '~(Pumper.*) (- \d+ Watt)~'                                  => '$1 - Squonker Box $2',
             '~(Blocks.*) (\d+ Watt)~'                                    => '$1 - Squonker Box - $2',
@@ -475,7 +479,7 @@ return [
             '~(GS ((Air 2)|(Air)|(Baby)|(Drive)|(Turbo))?)~',
             '~(iKonn)~',
             '~(Invoke)~',
-            '~(iStick ((Melo)|(Amnis)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim)|(Nowos))?)~',
+            '~(iStick ((Melo)|(Amnis)|(Pico X)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim)|(Nowos))?)~',
             '~(iWu)~',
             '~(Lexicon)~',
             '~(Melo \d)~',
@@ -530,6 +534,7 @@ return [
         'Smok'        => [
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
+            '~(Nord)~',
             '~(H-Priv 2)~',
             '~(Mag Baby)~',
             '~(Micro One)~',
@@ -551,6 +556,7 @@ return [
             // Smok
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
+            '~(Nord)~',
             '~(R-Kiss)~',
             '~(H-Priv 2)~',
             '~(Mag Baby)~',
@@ -626,6 +632,9 @@ return [
             '~(Tarot Baby)~',
             '~(Veco)~',
             '~(Zero)~',
+        ],
+        'Vapor Storm' => [
+            '~(Puma)~'
         ],
         'Renova'      => [
             '~(Zero)~',

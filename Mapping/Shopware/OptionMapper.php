@@ -129,19 +129,6 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             return null;
         }
 
-        /** @var Variant $variant */
-        $descriptions = [];
-        foreach ($validVariants as $variant) {
-            /** @var Option $option */
-            $description = '';
-            foreach ($variant->getOptions() as $option) {
-                $description .= $option->getIcGroup()->getName() . ': ' . $option->getName() . ', ';
-            }
-            $descriptions[] = $description;
-        }
-        $this->log->debug('Valid variants for product: ' . $product->getName());
-        $this->log->debug(var_export($descriptions, true));
-
         $this->createShopwareGroupsAndOptions($validVariants);
 
         $name = 'mxc-set-' . $product->getNumber();

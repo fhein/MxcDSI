@@ -17,11 +17,11 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
     /** @var array */
     protected $report;
 
-    protected $categoryTreeFile = __DIR__ . '/../../Config/category.tree.php';
+    protected $classConfigFile = __DIR__ . '/../../Config/CategoryMapper.config.php';
 
     public function map(Model $model, Product $product) {
         $type = $product->getType();
-        $category = $this->classConfig['categories'][$type] ?? null;
+        $category = $this->classConfig['product_type_category_map'][$type] ?? null;
         $categories = [];
 
         switch ($type) {
@@ -150,8 +150,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
     public function buildCategoryTree()
     {
-        $categoryTree = file_exists($this->categoryTreeFile) ? Factory::fromFile($this->categoryTreeFile) : [];
-        $categoryTree = $categoryTree['category_tree'] ?? [];
+        $categoryTree = $this->classConfig['category_tree'] ?? [];
 
         $newTree = $this->createCategoryTree();
         $this->updateCategoryTree($categoryTree, $newTree);
@@ -159,15 +158,12 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         // Use ArrayTool and enable the next line to enforce a recursive alphabetical sort of all categories in the tree
         // $result = ArrayTool::ksort_recursive($categoryTree);
 
-        $positions = [];
-        $this->updateCategoryPositions($categoryTree, $positions);
+        $categoryPositions = [];
+        $this->updateCategoryPositions($categoryTree, $categoryPositions);
+        $this->classConfig['category_tree'] = $categoryTree;
+        $this->classConfig['category_positions'] = $categoryPositions;
 
-        Factory::toFile($this->categoryTreeFile,
-            [
-                'category_tree' => $categoryTree,
-                'category_positions' => $positions,
-            ]
-        );
+        Factory::toFile($this->classConfigFile, $this->classConfig);
     }
 
     public function report()

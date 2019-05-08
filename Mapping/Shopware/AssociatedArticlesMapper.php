@@ -125,9 +125,8 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
         if (!$article) return;
 
         $related = $article->getRelated();
-        if ($replace) {
-            $related->clear();
-        }
+        if ($replace) $related->clear();
+
         $relatedArticles = $this->getArticles($product->getRelatedProducts());
         $this->addArticlesToCollection($relatedArticles, $related);
     }
@@ -147,9 +146,8 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
         if (!$article) return;
 
         $similar = $article->getSimilar();
-        if ($replace) {
-            $similar->clear();
-        }
+        if ($replace) $similar->clear();
+
         $similarArticles = $this->getArticles($product->getSimilarProducts());
         $this->addArticlesToCollection($similarArticles, $similar);
     }
@@ -164,7 +162,7 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
     protected function addArticlesToCollection(Collection $articles, Collection $collection)
     {
         foreach ($articles as $article) {
-            if (!$collection->contains($article)) {
+            if (! $collection->contains($article)) {
                 $collection->add($article);
             }
         }
@@ -205,7 +203,7 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
 
         $productsWithRelatedNewArticles = $repository->getProductsHavingRelatedArticles($products);
         foreach ($productsWithRelatedNewArticles as $product) {
-            $this->setRelatedArticles($product);
+            $this->setRelatedArticles($product );
         }
 
         $productsWithSimilarNewArticles = $repository->getProductsHavingSimilarArticles($products);

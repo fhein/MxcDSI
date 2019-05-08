@@ -59,6 +59,8 @@ return [
         'schwarz / grün sprayed'     => 'schwarz-grün (sprayed)',
         'schwarz / rot sprayed'      => 'schwarz-rot (sprayed)',
         'schwarz / weiss sprayed'    => 'schwarz-weiß (sprayed)',
+        'schwarz-weiss-resin'        => 'schwarz-weiß (resin)',
+        'regenbogen-resin'           => 'regenbogen (resin)'
     ],
 
     'log'           => [

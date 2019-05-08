@@ -20,35 +20,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     protected $model = Product::class;
     protected $alias = 'product';
 
-    public function indexAction() {
-        $log = $this->getLog();
-        $log->enter();
-        try {
-            parent::indexAction();
-        } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
-            ]);
-        }
-        $log->leave();
-    }
-
-    public function updateAction()
-    {
-        $log = $this->getLog();
-        $log->enter();
-        try {
-            parent::updateAction();
-        } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
-        }
-        $log->leave();
-    }
-
     public function importAction()
     {
-        $log = $this->getLog();
         try {
             $client = $this->getServices()->get(ImportClient::class);
             if (! $client->import()) {
@@ -57,14 +30,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
-            ]);
+            $this->handleException($e);
         }
     }
 
     public function refreshAction() {
-        $log = $this->getLog();
         try {
             $modelManager = $this->getModelManager();
             /** @noinspection PhpUndefinedMethodInspection */
@@ -74,53 +44,56 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $this->view->assign([ 'success' => false, 'message' => 'Failed to update product links.']);
             };
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
-            ]);
+            $this->handleException($e);
         }
-        $log->leave();
+    }
+
+    public function updateAssociatedProductsAction() {
+        try {
+            $modelManager = $this->getManager();
+            /** @noinspection PhpUndefinedMethodInspection */
+            $associatedProducts = $modelManager->getRepository(Product::class)->getLinkedProducts();
+
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            $productMapper->updateAssociatedProducts($associatedProducts);
+            $modelManager->flush();
+
+            $this->view->assign([ 'success' => true, 'message' => 'Associated products were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
     }
 
     public function exportConfigAction()
     {
-        $log = $this->getLog();
         try {
             $modelManager = $this->getModelManager();
             $modelManager->getRepository(Product::class)->exportMappedProperties();
             $this->view->assign([ 'success' => true, 'message' => 'Product configuration was successfully exported.']);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
-            ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     public function excelExportAction()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $excel = $this->getServices()->get(ExcelExport::class);
             $excel->export();
             $this->view->assign([ 'success' => true, 'message' => 'Settings successfully exported to Config/vapee.export.xlsx.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function excelImportAction()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $excel = $this->getServices()->get(ExcelProductImport::class);
             $excel->import();
             $this->view->assign([ 'success' => true, 'message' => 'Settings successfully imported from Config/vapee.export.xlsx.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
@@ -137,8 +110,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function linkSelectedProductsAction()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             list($value, $products) = $this->setStatePropertyOnSelected();
             $productMapper = $this->getServices()->get(ProductMapper::class);
@@ -158,15 +129,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->getRepository()->refreshLinks();
             $this->view->assign(['success' => true, 'message' => $message]);
         } catch (Throwable $e) {
-            $log->except($e, true, true);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     public function acceptSelectedProductsAction() {
-        $log = $this->getLog();
-        $log->enter();
         try {
             list($value, $products) = $this->setStatePropertyOnSelected();
             $productMapper = $this->getServices()->get(ProductMapper::class);
@@ -187,16 +154,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->getRepository()->refreshLinks();
             $this->view->assign(['success' => true, 'message' => $message]);
         } catch (Throwable $e) {
-            $log->except($e, true, true);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     public function activateSelectedProductsAction()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             list($value, $products) = $this->setStatePropertyOnSelected();
             $productMapper = $this->getServices()->get(ProductMapper::class);
@@ -216,16 +179,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->getRepository()->refreshLinks();
             $this->view->assign(['success' => true, 'message' => $message]);
         } catch (Throwable $e) {
-            $log->except($e, true, true);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     public function checkRegularExpressionsAction()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $regularExpressions = $this->getServices()->get(RegularExpressions::class);
             if (! $regularExpressions->check()) {
@@ -234,15 +193,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $this->view->assign(['success' => true, 'message' => 'No errors found in regular expressions.']);
             }
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function checkNameMappingConsistencyAction()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $nameMappingConsistency = $this->getServices()->get(NameMappingConsistency::class);
             $issueCount = $nameMappingConsistency->check();
@@ -255,62 +211,64 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
 
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function remapAction()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             /** @var ImportMapper $client */
             $services = $this->getServices();
             $propertyMapper = $services->get(PropertyMapper::class);
             $categoryMapper = $services->get(CategoryMapper::class);
+            $productMapper = $services->get(ProductMapper::class);
+            $repository = $this->getModelManager()->getRepository(Product::class);
+
             /** @noinspection PhpUndefinedMethodInspection */
-            $articles = $this->getModelManager()->getRepository(Product::class)->getAllIndexed();
-            $propertyMapper->mapProperties($articles);
+            $products = $repository->getAllIndexed();
+            $propertyMapper->mapProperties($products);
             $categoryMapper->buildCategoryTree();
             $this->getModelManager()->flush();
+
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $repository->getLinkedProducts();
+            $productMapper->updateArticles($products, false);
+            $this->getModelManager()->flush();
+
             $this->view->assign([ 'success' => true, 'message' => 'Product properties were successfully remapped.']);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     public function remapSelectedAction() {
-        $log = $this->getLog();
-        $log->enter();
         try {
+            $services = $this->getServices();
+            $propertyMapper = $services->get(PropertyMapper::class);
+            $productMapper = $services->get(ProductMapper::class);
+            $modelManager = $this->getManager();
+            $repository = $modelManager->getRepository(Product::class);
+
             $params = $this->request->getParams();
             $ids = json_decode($params['ids'], true);
-            $articles = $this->getModelManager()->getRepository(Product::class)->getByIds($ids);
-            $propertyMapper = $this->getServices()->get(PropertyMapper::class);
-            $propertyMapper->mapProperties($articles);
-            $this->getModelManager()->flush();
+
+            $products = $repository->getByIds($ids);
+            $propertyMapper->mapProperties($products);
+            $modelManager->flush();
+
+            $products = $repository->getLinkedProductsFromProductIds($ids);
+            $productMapper->updateArticles($products, false);
+            $modelManager->flush();
+
             $this->view->assign([ 'success' => true, 'message' => 'Product properties were successfully remapped.']);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
-    }
-
-    protected function getAdditionalDetailData(array $data) {
-        $data['variants'] = [];
-        $product = $this->getRepository()->find($data['id']);
-        $data['linked'] = $product->getArticle() !== null;
-        return $data;
     }
 
     public function testImport1Action()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $testDir = __DIR__ . '/../../Test/';
             $modelManager = $this->getManager();
@@ -332,59 +290,47 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function testImport2Action()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateFeldwerte.xml';
             $this->getServices()->get(ImportClient::class)->importFromFile($xmlFile);;
             $this->view->assign([ 'success' => true, 'message' => 'Values successfully updated.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, true);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function testImport3Action()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateVarianten.xml';
             $this->getServices()->get(ImportClient::class)->importFromFile($xmlFile);;
             $this->view->assign([ 'success' => true, 'message' => 'Variants successfully updated.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function testImport4Action()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS></PRODUCTS></INNOCIGS_API_RESPONSE>';
             $this->getServices()->get(ImportClient::class)->importFromXml($xml);;
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, true);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function dev1Action()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             /** @noinspection PhpUndefinedMethodInspection */
             $missingFlavors = $this->getRepository()->getProductsWithFlavorMissing();
@@ -392,15 +338,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function dev2Action()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             /** @var Product $product */
             /** @noinspection PhpUndefinedMethodInspection */
@@ -412,37 +355,28 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->getModelManager()->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Retail prices cleaned up.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, true);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
-        }
-    }
-    public function dev3Action()
-    {
-        $log = $this->getLog();
-        $log->enter();
-        try {
-            $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
-        } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
+    public function dev3Action()
+    {
+        try {
+            $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
     public function dev4Action()
     {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $this->view->assign([ 'success' => true, 'message' => 'Development 4 slot is currently free.' ]);
         } catch (Throwable $e) {
-            $log->except($e, true, true);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
     }
 
     public function dev5Action() {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
@@ -450,15 +384,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             // Do something with the ids
             $this->view->assign([ 'success' => true, 'message' => 'Development 5 slot is currently free.']);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     public function dev6Action() {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
@@ -466,15 +396,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             // Do something with the ids
             $this->view->assign([ 'success' => true, 'message' => 'Development 6 slot is currently free.']);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     public function dev7Action() {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
@@ -482,15 +408,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             // Do something with the ids
             $this->view->assign([ 'success' => true, 'message' => 'Development 7 slot is currently free.']);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     public function dev8Action() {
-        $log = $this->getLog();
-        $log->enter();
         try {
             $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
@@ -498,10 +420,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             // Do something with the ids
             $this->view->assign([ 'success' => true, 'message' => 'Development 8 slot is currently free.']);
         } catch (Throwable $e) {
-            $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->handleException($e);
         }
-        $log->leave();
     }
 
     protected function getStateUpdates(array $data)
@@ -581,4 +501,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return $this->getManager()->getRepository(Product::class);
     }
 
+    protected function getAdditionalDetailData(array $data) {
+        $data['variants'] = [];
+        return $data;
+    }
 }

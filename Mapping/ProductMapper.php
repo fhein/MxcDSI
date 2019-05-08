@@ -28,21 +28,22 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     /** @var DetailMapper */
     protected $detailMapper;
 
-    /** @var array $createdArticles */
+    /** @var array */
     protected $createdArticles;
 
     /** @var array */
     protected $updatedProducts;
 
-    /** @var AssociatedArticlesMapper $associatedArticlesMapper */
+    /** @var AssociatedArticlesMapper */
     protected $associatedArticlesMapper;
 
-    /** @var CategoryMapper $categoryMapper */
+    /** @var CategoryMapper */
     protected $categoryMapper;
 
-    /** @var ImageMapper $imageMapper */
+    /** @var ImageMapper */
     protected $imageMapper;
 
+    /** @var ArticleTool */
     protected $articleTool;
 
     /**
@@ -113,6 +114,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     public function updateArticles(array $products, bool $create = false)
     {
+        $this->createdArticles = [];
         foreach ($products as $product) {
             $this->updateArticle($product, $create);
         }
@@ -134,16 +136,15 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     public function controllerUpdateArticles(array $products, bool $create = false)
     {
-        $this->createdArticles = [];
         $this->updatedProducts = [];
 
         $this->updateArticles($products, $create);
         $this->activateArticles($products);
-        $this->associatedArticlesMapper->processAssociatedProducts($this, $this->updatedProducts, $create);
+        // $this->associatedArticlesMapper->processAssociatedProducts($this, $this->updatedProducts, $create);
 
-        if (! empty($this->createdArticles)) {
-            $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
-        }
+//        if (! empty($this->createdArticles)) {
+//            $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
+//        }
         $this->modelManager->flush();
 
     }
@@ -153,6 +154,15 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         foreach ($products as $product) {
             $this->detailMapper->deleteArticle($product);
         }
+    }
+
+    /**
+     * Update all related and similar articles
+     * @param array $associatedProducts
+     */
+    public function updateAssociatedProducts(array $associatedProducts)
+    {
+        $this->associatedArticlesMapper->updateArticleLinks($associatedProducts);
     }
 
     ///////////////////////////////////////////////////////////////
@@ -190,6 +200,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
         if ($article) $article->setActive($active);
     }
+
 
     ///////////////////////////////////////////////////////////////
     /// Article acceptance

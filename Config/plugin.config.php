@@ -24,6 +24,7 @@ use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\MappingFilePersister;
+use MxcDropshipInnocigs\Mapping\Check\MappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
@@ -142,6 +143,7 @@ return [
             VariantNumberMapper::class       => AugmentedObjectFactory::class,
             AssociatedProductsMapper::class  => AugmentedObjectFactory::class,
             AssociatedArticlesMapper::class  => AugmentedObjectFactory::class,
+            MappingConsistency::class        => AugmentedObjectFactory::class,
 
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
             ConfiguratorSetRepository::class   => AugmentedObjectFactory::class,

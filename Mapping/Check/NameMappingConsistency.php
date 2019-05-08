@@ -25,7 +25,7 @@ class NameMappingConsistency implements LoggerAwareInterface, ModelManagerAwareI
     protected $products;
 
     /** @var array */
-    protected $Models;
+    protected $models;
 
     public function __construct(NameMapper $importNameMapper)
     {
@@ -63,9 +63,7 @@ class NameMappingConsistency implements LoggerAwareInterface, ModelManagerAwareI
     public function getNameMappingIssues(Product $product): array
     {
         $models = $this->getModels();
-        if (!$models) {
-            return [];
-        }
+        if (! $models) return [];
 
         $variants = $product->getVariants();
         $map = [];
@@ -73,6 +71,10 @@ class NameMappingConsistency implements LoggerAwareInterface, ModelManagerAwareI
         foreach ($variants as $variant) {
             $number = $variant->getIcNumber();
             $model = $models[$number];
+            if (! $models[$number]) {
+                $this->log->debug('No model for variant: ' . $number);
+                continue;
+            }
             $this->importNameMapper->map($model, $product);
             $map[$product->getName()] = $number;
         }
@@ -100,7 +102,7 @@ class NameMappingConsistency implements LoggerAwareInterface, ModelManagerAwareI
 
     protected function getModels()
     {
-        return $this->Models ?? $this->Models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
+        return $this->models ?? $this->models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
     }
 
 }

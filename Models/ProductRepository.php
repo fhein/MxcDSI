@@ -112,11 +112,12 @@ class ProductRepository extends BaseEntityRepository
     ];
 
     protected $sql = [
-        'refreshLinks' =>
+            'refreshLinks' =>
             'UPDATE s_plugin_mxc_dsi_product p '
             . 'INNER JOIN s_plugin_mxc_dsi_variant v ON v.product_id = p.id '
             . 'LEFT JOIN s_articles_details d ON d.ordernumber = v.number '
-            . 'SET p.linked = NOT ISNULL(d.ordernumber), p.active = NOT ISNULL(d.orderNumber)',
+            . 'JOIN s_articles a ON d.articleID = a.id '
+            . 'SET p.linked = NOT ISNULL(d.ordernumber), p.active = IF(NOT ISNULL(d.orderNumber), a.active, false)',
     ];
 
     private $mappedProperties = [

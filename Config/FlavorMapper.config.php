@@ -43,8 +43,13 @@ return array(
     ),
     'Cremiges' => array(
         0 => 'Cream',
-        1 => 'Eiscreme',
-        2 => 'Konfitüre',
+        1 => 'Crème Brûlée',
+        2 => 'Eiscreme',
+        3 => 'Konfitüre',
+        4 => 'Pannacotta',
+        5 => 'Pudding',
+        6 => 'Vanillepudding',
+        7 => 'Wackelpudding',
     ),
     'Frisches' => array(
         0 => 'Eis',
@@ -191,13 +196,6 @@ return array(
         6 => 'Marula',
         7 => 'Rhabarber',
         8 => 'Waldmeister',
-    ),
-    'Pudding' => array(
-        0 => 'Crème Brûlée',
-        1 => 'Pannacotta',
-        2 => 'Pudding',
-        3 => 'Vanillepudding',
-        4 => 'Wackelpudding',
     ),
     'Süßigkeiten' => array(
         0 => 'Buttercreme',

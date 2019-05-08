@@ -20,7 +20,7 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
     /** @var CategoryTool $categoryTool */
     protected $categoryTool;
 
-    protected $categoryTreeFile = __DIR__ . '/../../Config/category.tree.php';
+    protected $categoryTreeFile = __DIR__ . '/../../Config/CategoryMapper.config.php';
     protected $categoryTree;
 
     public function __construct(CategoryTool $categoryTool)

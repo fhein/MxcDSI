@@ -35,43 +35,19 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
         let me = this;
         me.callParent(arguments);
         me.addEvents(
-            /** @event mxcSaveProduct */
             'mxcSaveProduct',
-
-            /** @event mxcRemapProperties */
             'mxcRemapProperties',
-
-            /** @event mxcRemapPropertiesSelected */
             'mxcRemapPropertiesSelected',
-
-            /** @event mxcSetActiveSelected */
+            'mxcRefreshAssociated',
             'mxcSetActiveSelected',
-
-             /** @event mxcSetLinkedSelected */
             'mxcSetLinkedSelected',
-
-            /** @event mxcSetActiveSelected */
             'mxcSetAcceptedSelected',
-
-            /** @event mxcImportItems */
             'mxcImportItems',
-
-            /** @event mxcRefreshItems */
             'mxcRefreshItems',
-
-            /** @event mxcCheckRegularExpressions */
             'mxcCheckRegularExpressions',
-
-            /** @event mxcCheckNameMappingConsistency */
             'mxcCheckNameMappingConsistency',
-
-            /** @event mxcExportConfig */
             'mxcExportConfig',
-
-            /** @event mxcExcelExport */
             'mxcExcelExport',
-
-            /** @event mxcExcelImport */
             'mxcExcelImport',
             
             'mxcTestImport1',
@@ -260,6 +236,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         me.fireEvent('mxcRemapProperties', me);
                     }
                 },
+                '-',
+                {
+                    text: 'Refresh associated products',
+                    iconCls: 'sprite-tables-relation',
+                    handler: function() {
+                        me.fireEvent('mxcRefreshAssociated', me);
+                    }
+                }
             ]
         });
         me.selectionButton = Ext.create('Ext.button.Button', {
