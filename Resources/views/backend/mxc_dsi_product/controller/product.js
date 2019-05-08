@@ -61,10 +61,12 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onExcelImport: function (grid) {
+    onExcelImport: function (grid, filePath) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=excelImport}';
-        let params = {};
+        let params = {
+            filename: filePath
+        };
         let growlTitle = 'Excel Import';
         let maskText = 'Importing from Excel ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);

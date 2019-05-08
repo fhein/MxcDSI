@@ -15,9 +15,11 @@ class ExcelImport
         $this->importers = $importers;
     }
 
-    public function import() {
+    public function import($filepath = null) {
         /** @noinspection PhpUnhandledExceptionInspection */
-        $spreadSheet = (new Reader())->load($this->excelFile);
+
+        $importFile = $filepath ? $filepath : $this->excelFile;
+        $spreadSheet = (new Reader())->load($importFile);
         foreach ($this->importers as $title => $importer)
         {
             $sheet = $spreadSheet->getSheetByName($title);

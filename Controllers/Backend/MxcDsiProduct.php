@@ -131,7 +131,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $response->setHeader('Cache-Control', 'must-revalidate');
             $response->setHeader('Content-Description', 'File Transfer');
             $response->setHeader('Content-disposition', 'attachment; filename=' . 'vapee.export.xlsx');
-            $response->setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'); //'application/octet-stream'); //
+            $response->setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             $response->setHeader('Content-Transfer-Encoding', 'binary');
             $response->setHeader('Content-Length', $size);
             $response->setHeader('Pragma', 'public');
@@ -149,8 +149,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $log = $this->getLog();
         $log->enter();
         try {
+
+            $params = $this->request->getParams();
+
             $excel = $this->getServices()->get(ExcelProductImport::class);
-            $excel->import();
+            $excel->import($params['filename']);
             $this->view->assign([ 'success' => true, 'message' => 'Settings successfully imported from Config/vapee.export.xlsx.' ]);
         } catch (Throwable $e) {
             $log->except($e, true, false);
