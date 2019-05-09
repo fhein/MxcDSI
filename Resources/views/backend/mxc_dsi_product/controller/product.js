@@ -61,15 +61,106 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onExcelImport: function (grid, filePath) {
-        let me = this;
+    onExcelImport: function (grid, files) {
+        debugger;
+        //let me = this;
+        //uploadUrl: '{url action=singleReplace controller=MediaManager}'
         let url = '{url controller=MxcDsiProduct action=excelImport}';
+
+        //var testKatrin2 = fileInput.fileInputEl.dom.files;
+        //me.value[me.index]
+        //var testKatrin = fileSelection.value;
+/*
         let params = {
             filename: filePath
         };
         let growlTitle = 'Excel Import';
         let maskText = 'Importing from Excel ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
+        */
+
+        let me = this,
+            fileForm = new FormData(),
+            scope = me,
+            request;
+
+        let file = files[0];
+
+        /* necessary if callback function is needed
+        if (!Ext.isFunction(callback)) {
+            callback = Ext.emptyFn
+        }*/
+
+        //request = me.createRequest(scope)//(callback, scope);
+        request = new XMLHttpRequest();
+
+        fileForm.append('file', file, file.name);
+        fileForm.append('file2', file);
+        fileForm.append('TEST', 'TEST');
+
+        let test1 = fileForm.get('file');
+        let test2 = fileForm.get('file2');
+        let test3 = fileForm.get('TEST');
+
+
+        request.open('POST', url, true);
+        request.setRequestHeader('X-CSRF-Token', Ext.CSRFService.getToken());
+        request.send(fileForm);
+    },
+
+    createRequest: function(scope){ //(callback, scope) {
+        var me = this,
+            request = new XMLHttpRequest(),
+            responseText;
+
+        request.onload = function() {
+            debugger;
+            if (request.status === 200) {
+                try {
+                    responseText = Ext.JSON.decode(request.response);
+                } catch (exception) {
+                    // me.showMessage(me.config.fileUploadErrorMessageTitle, request.response);
+                    me.showMessage(me.config.fileUploadErrorMessageTitle, me.config.fileUploadErrorMessage);
+                    me.fireEvent('upload-error', me, me.value[me.index], me.index);
+                    return;
+                }
+
+                if (!responseText.success) {
+                    if (responseText.exception) {
+                        switch (responseText.exception['_class']) {
+                            case 'Shopware\\Bundle\\MediaBundle\\Exception\\WrongMediaTypeForReplaceException':
+                                me.showMessage(
+                                    me.config.fileUploadErrorMessageTitle,
+                                    Ext.String.format(me.config.fileUploadWrongTypeErrorMessage, responseText.exception.requiredType)
+                                );
+                                break;
+                            case 'Shopware\\Bundle\\MediaBundle\\Exception\\MediaFileExtensionIsBlacklistedException':
+                            case 'Shopware\\Bundle\\MediaBundle\\Exception\\MediaFileExtensionNotAllowedException':
+                                me.showMessage(
+                                    me.config.fileUploadErrorMessageTitle,
+                                    Ext.String.format(me.config.fileUploadExtensionError, responseText.exception.extension)
+                                );
+                                break;
+                        }
+                    } else {
+                        me.showMessage(me.config.fileUploadErrorMessageTitle, responseText.message);
+                    }
+
+                    me.fireEvent('upload-error', me, me.value[me.index], me.index);
+                    return;
+                }
+
+                me.fireEvent('upload-fileUploaded', me, me.value[me.index], me.index);
+                //Ext.callback(callback, scope);
+
+            } else {
+                me.index = null;
+                me.showMessage(me.config.fileUploadErrorMessageTitle, me.config.fileUploadErrorMessage);
+                me.fireEvent('upload-error', me, me.value[me.index], me.index);
+            }
+        };
+
+        return request;
     },
 
     onRefreshItems: function (grid) {

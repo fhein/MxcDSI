@@ -408,12 +408,18 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     xtype: 'filefield',
                     name: 'excelFile',
                     margin: 0,
-                    buttonOnly: true,
+                    //buttonOnly: true,
                     buttonText: 'Import',
                     accept: 'xlsx,.xls',
+                    cls: 'x-menu-item-link',
+                    buttonMargin: 0,
+                    baseBodyCls:'x-menu-item-link', //surrounding table
+                    baseCls:  'x-menu-item-link', //field
+                    iconCls: 'sprite-table-export',
                     buttonConfig: {
-                        cls: 'form-toolbar-button',
-                        tooltip: 'Upload Excel Template'
+                        tooltip: 'Upload Excel Template',
+                        style: 'background:transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;',
+                        border: 0
                     },
                     reset: function () {
                         var me = this,
@@ -436,9 +442,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     listeners: {
                         scope: me,
                         change: function(fileSelection) {
-                            debugger;
-                            var testKatrin = fileSelection.value;
-                            me.fireEvent('mxcExcelImport', me, testKatrin);
+                            me.fireEvent('mxcExcelImport', me, fileSelection.fileInputEl.dom.files);
                         }
                     }
 

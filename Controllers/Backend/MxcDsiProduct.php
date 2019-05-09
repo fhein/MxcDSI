@@ -148,17 +148,43 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         $log = $this->getLog();
         $log->enter();
+
+        $params = $this->Request()->getParams();
+
+        // Try to get the transferred file
         try {
+            $file = $_FILES['excelFile'];
 
-            $params = $this->request->getParams();
+            $log->debug((string) var_dump($_FILES));
 
-            $excel = $this->getServices()->get(ExcelProductImport::class);
-            $excel->import($params['filename']);
-            $this->view->assign([ 'success' => true, 'message' => 'Settings successfully imported from Config/vapee.export.xlsx.' ]);
-        } catch (Throwable $e) {
+            if ($file === null) $log->debug('file is null');
+            $log->debug('filename: ' . $file['name']);
+            $log->debug('filesize: ' . $file['size']);
+
+            /*if (($file['size'] < 1 && $file['error'] === 1) || empty($_FILES)) {
+                throw new Exception('The file exceeds the max file size.');
+            }*/
+
+            $fileInfo = pathinfo($file['name']);
+            $fileExtension = strtolower($fileInfo['extension']);
+            $file['name'] = $fileInfo['filename'] . '.' . $fileExtension;
+            $_FILES['fileId']['name'] = $file['name'];
+
+            $fileBag = new FileBag($_FILES);
+
+            /** @var UploadedFile $file */
+            $file = $fileBag->get('fileId');
+        } catch (Exception $e) {
             $log->except($e, true, false);
-            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            die(json_encode(['success' => false, 'message' => $e->getMessage()]));
+            //$this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
+        if ($file === null) {
+            die(json_encode(['success' => false]));
+        }
+
+        $log->leave();
+
     }
 
     public function setStateSelectedAction()
