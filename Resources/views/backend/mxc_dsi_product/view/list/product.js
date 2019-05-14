@@ -408,17 +408,29 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     xtype: 'filefield',
                     name: 'excelFile',
                     margin: 0,
-                    //buttonOnly: true,
+                    buttonOnly: true,
+                    //hideLabel: true,
                     buttonText: 'Import',
                     accept: 'xlsx,.xls',
                     cls: 'x-menu-item-link',
-                    buttonMargin: 0,
-                    baseBodyCls:'x-menu-item-link', //surrounding table
-                    baseCls:  'x-menu-item-link', //field
+                    //fieldStyle: 'border: none;',
+                    //labelStyle: 'border: none;',
+                    //frameSize: 0,
+                    borderBoxCls: 'x-form-item-body',
+                    //buttonMargin: 0,
+                    componentCls: 'x-form-item-body',
+                    baseBodyCls:'x-menu-item', //table surrounding input field and button
+                    baseCls:  'x-form-item-body', //input field
                     iconCls: 'sprite-table-export',
                     buttonConfig: {
                         tooltip: 'Upload Excel Template',
-                        style: 'background:transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;',
+                        style: 'background:transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;', //Button style
+                        //baseCls:  'c-testclass', //surrounding div
+                        //componentCls: 'b-testclass', //surrounding div
+                        //baseBodyCls:'a-testclass', //table surrounding input field and button
+                        //autoEl: 'div',
+                        //renderTpl: null, //bezieht sich auf button / div
+                        flex: 100,
                         border: 0
                     },
                     reset: function () {

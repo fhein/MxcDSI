@@ -16,6 +16,8 @@ use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use Shopware\Models\Article\Article;
 use Shopware\Components\CSRFWhitelistAware;
+use Symfony\Component\HttpFoundation\FileBag;
+use Shopware\Components\SwagImportExport\UploadPathProvider;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -153,27 +155,29 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
         // Try to get the transferred file
         try {
-            $file = $_FILES['excelFile'];
-
-            $log->debug((string) var_dump($_FILES));
+            $file = $_FILES['file'];
 
             if ($file === null) $log->debug('file is null');
             $log->debug('filename: ' . $file['name']);
-            $log->debug('filesize: ' . $file['size']);
+            //$log->debug('filesize: ' . $file['size']);
 
-            /*if (($file['size'] < 1 && $file['error'] === 1) || empty($_FILES)) {
-                throw new Exception('The file exceeds the max file size.');
-            }*/
-
-            $fileInfo = pathinfo($file['name']);
-            $fileExtension = strtolower($fileInfo['extension']);
-            $file['name'] = $fileInfo['filename'] . '.' . $fileExtension;
-            $_FILES['fileId']['name'] = $file['name'];
+            //$fileInfo = pathinfo($file['name']);
+            //$fileExtension = strtolower($fileInfo['extension']);
+            //$file['name'] = $fileInfo['filename'] . '.' . $fileExtension;
+            //$_FILES['fileId']['name'] = $file['name'];
 
             $fileBag = new FileBag($_FILES);
 
             /** @var UploadedFile $file */
-            $file = $fileBag->get('fileId');
+            $file = $fileBag->get('file');
+            $clientOriginalName = '';
+            /** @var UploadedFile $file */
+            /*$uploadPathProvider = $this->get('swag_import_export.upload_path_provider');
+            foreach ($fileBag->getIterator() as $file) {
+                $clientOriginalName = $file->getClientOriginalName();
+                $file->move($uploadPathProvider->getPath(), $clientOriginalName);
+            }*/
+
         } catch (Exception $e) {
             $log->except($e, true, false);
             die(json_encode(['success' => false, 'message' => $e->getMessage()]));

@@ -95,13 +95,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         request = new XMLHttpRequest();
 
         fileForm.append('file', file, file.name);
-        fileForm.append('file2', file);
-        fileForm.append('TEST', 'TEST');
-
-        let test1 = fileForm.get('file');
-        let test2 = fileForm.get('file2');
-        let test3 = fileForm.get('TEST');
-
 
         request.open('POST', url, true);
         request.setRequestHeader('X-CSRF-Token', Ext.CSRFService.getToken());
