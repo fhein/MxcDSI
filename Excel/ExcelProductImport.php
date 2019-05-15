@@ -14,9 +14,9 @@ class ExcelProductImport extends ExcelImport
         $this->modelManager = Shopware()->Models();
     }
 
-    public function import()
+    public function import($filepath = null)
     {
-        parent::import();
+        parent::import($filepath);
         $this->modelManager->getRepository(Product::class)->exportMappedProperties();
     }
 }

@@ -151,32 +151,27 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $log = $this->getLog();
         $log->enter();
 
-        $params = $this->Request()->getParams();
-
         // Try to get the transferred file
         try {
             $file = $_FILES['file'];
 
             if ($file === null) $log->debug('file is null');
             $log->debug('filename: ' . $file['name']);
-            //$log->debug('filesize: ' . $file['size']);
-
-            //$fileInfo = pathinfo($file['name']);
-            //$fileExtension = strtolower($fileInfo['extension']);
-            //$file['name'] = $fileInfo['filename'] . '.' . $fileExtension;
-            //$_FILES['fileId']['name'] = $file['name'];
+            $fileName = $file['name'];
+            $tmpName = $_FILES['file']['tmp_name'];
 
             $fileBag = new FileBag($_FILES);
 
             /** @var UploadedFile $file */
             $file = $fileBag->get('file');
-            $clientOriginalName = '';
-            /** @var UploadedFile $file */
-            /*$uploadPathProvider = $this->get('swag_import_export.upload_path_provider');
-            foreach ($fileBag->getIterator() as $file) {
-                $clientOriginalName = $file->getClientOriginalName();
-                $file->move($uploadPathProvider->getPath(), $clientOriginalName);
-            }*/
+            $fileNamePos= strrpos ($tmpName, '/');
+            $tmpPath= substr($tmpName, 0, $fileNamePos);
+            $newFilePath = $tmpPath.'/' . $fileName; //'/../Config/' . $file['originalName'];
+            $moveResult = move_uploaded_file($tmpName, $newFilePath);
+
+            $excel = $this->getServices()->get(ExcelProductImport::class);
+            $excel->import($newFilePath);
+            $this->view->assign([ 'success' => true, 'message' => 'Settings successfully imported from Config/vapee.export.xlsx.' ]);
 
         } catch (Exception $e) {
             $log->except($e, true, false);

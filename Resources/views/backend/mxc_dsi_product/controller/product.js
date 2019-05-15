@@ -62,22 +62,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
     },
 
     onExcelImport: function (grid, files) {
-        debugger;
-        //let me = this;
-        //uploadUrl: '{url action=singleReplace controller=MediaManager}'
         let url = '{url controller=MxcDsiProduct action=excelImport}';
-
-        //var testKatrin2 = fileInput.fileInputEl.dom.files;
-        //me.value[me.index]
-        //var testKatrin = fileSelection.value;
-/*
-        let params = {
-            filename: filePath
-        };
-        let growlTitle = 'Excel Import';
-        let maskText = 'Importing from Excel ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
-        */
 
         let me = this,
             fileForm = new FormData(),
@@ -86,12 +71,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
         let file = files[0];
 
-        /* necessary if callback function is needed
-        if (!Ext.isFunction(callback)) {
-            callback = Ext.emptyFn
-        }*/
-
-        //request = me.createRequest(scope)//(callback, scope);
         request = new XMLHttpRequest();
 
         fileForm.append('file', file, file.name);
