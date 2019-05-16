@@ -10,7 +10,6 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Models\Product;
 use Shopware\Models\Article\Article;
 
@@ -19,94 +18,39 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
 
-    /**
-     * @param ProductMapper $productMapper
-     * @param array $products
-     * @param bool $create
-     */
-    public function processAssociatedProducts(ProductMapper $productMapper, array $products, bool $create)
-    {
-        $associatedProducts = $this->getAssociatedProducts($products);
-
-        /** @var Product $product */
-        foreach ($associatedProducts as $product) {
-            if ($productMapper->updateArticle($product, $create)) {
-                $products[$product->getIcNumber()] = $product;
-            }
-        }
-
-        foreach ($products as $product) {
-            $this->setRelatedArticles($product);
-            $this->setSimilarArticles($product);
-        }
-    }
-
-    /**
-     * @param array $products
-     * @return array
-     */
-    protected function getAssociatedProducts(array $products): array
+    public function getRelatedProducts(array $products, bool $recursive): array
     {
         $associatedProducts = [];
         foreach ($products as $product) {
-            $this->prepareAssociatedProducts($product, $associatedProducts);
+            $this->findRelatedProducts($product, $associatedProducts, $recursive);
         }
         return $associatedProducts;
     }
 
-    /**
-     * Fill the $this->associatedArticles recursively
-     *
-     * @param Product $product
-     * @param array $associatedProducts
-     */
-    protected function prepareAssociatedProducts(Product $product, array &$associatedProducts)
+    protected function findRelatedProducts(Product $product, array &$associatedProducts, bool $recursive)
     {
-        // exit recursion if $product is registered already
-        if ($associatedProducts[$product->getIcNumber()]) {
-            return;
+        foreach ($product->getRelatedProducts() as $relatedProduct) {
+            if ($associatedProducts[$relatedProduct->getIcNumber()]) continue;
+            $associatedProducts[$relatedProduct->getIcNumber()] = $relatedProduct;
+            if ($recursive) $this->findRelatedProducts($relatedProduct, $associatedProducts, $recursive);
         }
-
-        $this->prepareAssociatedProductsCollection(
-            $product->getRelatedProducts(),
-            $associatedProducts,
-            $product->getCreateRelatedProducts(),
-            $product->getActivateCreatedRelatedProducts()
-        );
-
-        $this->prepareAssociatedProductsCollection(
-            $product->getSimilarProducts(),
-            $associatedProducts,
-            $product->getCreateSimilarProducts(),
-            $product->getActivateCreatedSimilarProducts()
-        );
     }
 
-    /**
-     * @param Collection $products
-     * @param array $associatedProducts
-     * @param bool $createAssociated
-     * @param bool $activateAssociated
-     */
-    protected function prepareAssociatedProductsCollection(
-        Collection $products,
-        array &$associatedProducts,
-        bool $createAssociated,
-        bool $activateAssociated
-    ) {
-        /** @var Product $product */
+    public function getSimilarProducts(array $products, bool $recursive): array
+    {
+        $associatedProducts = [];
         foreach ($products as $product) {
-            $isNew = $product->getArticle() === null;
-            if (!$createAssociated && $isNew) {
-                continue;
-            }
-            if ($isNew) {
-                $product->setActive($activateAssociated);
-            }
-            $associatedProducts[$product->getIcNumber()] = $product;
+            $this->findSimilarProducts($product, $associatedProducts, $recursive);
+        }
+        return $associatedProducts;
+    }
 
-            // Recursion
-            $this->prepareAssociatedProducts($product, $associatedProducts);
+    protected function findSimilarProducts(Product $product, array &$associatedProducts, bool $recursive)
+    {
+        foreach ($product->getRelatedProducts() as $relatedProduct) {
+            if ($associatedProducts[$relatedProduct->getIcNumber()]) continue;
+            $associatedProducts[$relatedProduct->getIcNumber()] = $relatedProduct;
+            if ($recursive) $this->findRelatedProducts($relatedProduct, $associatedProducts, $recursive);
         }
     }
 
@@ -191,23 +135,32 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
      * where the corresponding product has related and similar articles from
      * the given $products array.
      *
-     * @param array $products
+     * @param array $productIds
      */
-    public function updateArticleLinks(array $products)
+    public function updateArticleLinks(array $productIds)
     {
-        if (count($products) === 0) {
-            return;
-        }
+        if (empty($productIds)) return;
 
         $repository = $this->modelManager->getRepository(Product::class);
 
-        $productsWithRelatedNewArticles = $repository->getProductsHavingRelatedArticles($products);
+        $productsWithRelatedNewArticles = $repository->getProductsHavingRelatedArticles($productIds);
         foreach ($productsWithRelatedNewArticles as $product) {
-            $this->setRelatedArticles($product );
+            $this->setRelatedArticles($product);
         }
 
-        $productsWithSimilarNewArticles = $repository->getProductsHavingSimilarArticles($products);
+        $productsWithSimilarNewArticles = $repository->getProductsHavingSimilarArticles($productIds);
         foreach ($productsWithSimilarNewArticles as $product) {
+            $this->setSimilarArticles($product);
+        }
+    }
+
+    public function setAssociatedArticles(array $productIds) {
+        if (empty($productIds)) return;
+
+        $repository = $this->modelManager->getRepository(Product::class);
+        $products = $repository->getProductsByIds($productIds);
+        foreach ($products as $product) {
+            $this->setRelatedArticles($product);
             $this->setSimilarArticles($product);
         }
     }

@@ -24,9 +24,9 @@ use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Listener\FilterTest;
 use MxcDropshipInnocigs\Listener\MappingFilePersister;
-use MxcDropshipInnocigs\Mapping\Check\MappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
+use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
 use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
@@ -68,7 +68,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository as Configu
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
-use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 
 return [
     'plugin'       => [
@@ -77,7 +77,6 @@ return [
     'doctrine'     => [
         'models'     => [
             Group::class,
-            Image::class,
             Model::class,
             Option::class,
             Product::class,
@@ -143,7 +142,7 @@ return [
             VariantNumberMapper::class       => AugmentedObjectFactory::class,
             AssociatedProductsMapper::class  => AugmentedObjectFactory::class,
             AssociatedArticlesMapper::class  => AugmentedObjectFactory::class,
-            MappingConsistency::class        => AugmentedObjectFactory::class,
+            VariantMappingConsistency::class => AugmentedObjectFactory::class,
 
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
             ConfiguratorSetRepository::class   => AugmentedObjectFactory::class,

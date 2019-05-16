@@ -58,8 +58,7 @@ class ApiClient
         $dom = new DOMDocument();
         $result = $dom->loadXML($xml);
         if ($result === false) {
-            $this->log->err('Invalid XML data: Failed to load InnoCigs products.');
-            return null;
+            throw new ApiException('InnoCigs API: <br/>Invalid XML data received.');
         }
         $models = $dom->getElementsByTagName('PRODUCT');
         /** @var DOMElement $model */
@@ -133,15 +132,15 @@ class ApiClient
             $dump = Shopware()->DocPath() . 'var/log/invalid-innocigs-api-response-' . date('Y-m-d-H-i-s') . '.txt';
             file_put_contents($dump, $xml);
             $this->log->err('Invalid InnoCigs API response dumped to ' . $dump);
-            throw new ApiException('InnoCigs API returned invalid XML. See log file for detailed information.');
+            throw new ApiException('InnoCigs API: <br/>Invalid XML data received. See log file for details.');
         }
         $json = json_encode($xml);
         if ($json === false) {
-            throw new ApiException('Failed to encode to JSON: ' . var_export($xml, true));
+            throw new ApiException('InnoCigs API: <br/>Failed to encode XML data to JSON.');
         }
         $result = json_decode($json, true);
         if ($result === false) {
-            throw new ApiException('Failed to decode JSON: ' . var_export($json, true));
+            throw new ApiException('InnoCigs API: <br/>Failed to decode JSON data to XML.');
         }
         $this->checkArrayResult($result);
         return $result;
@@ -180,7 +179,7 @@ class ApiClient
 
     protected function checkArrayResult(array $response)
     {
-        $error = $response['ERRORS']['ERROR'];
+        $error = $response['ERRORS']['ERROR'] ?? null;
         if ($error) {
             throw new ApiException('InnoCigs API: <br/>' . $error['MESSAGE']);
         }
@@ -206,7 +205,7 @@ class ApiClient
         try {
             $response = $client->send();
             if (!$response->isSuccess()) {
-                throw new ApiException('HTTP status: ' . $response->getStatusCode());
+                throw new ApiException('InnoCigs API: <br/>' . 'HTTP status: ' . $response->getStatusCode());
             }
             return $client->send();
         } catch (ZendClientException $e) {
@@ -238,8 +237,7 @@ class ApiClient
      */
     public function getItemList()
     {
-        // $cmd = $this->authUrl . '&command=products&type=extended';
-        $cmd = $this->authUrl . '&command=products';
+        $cmd = $this->authUrl . '&command=products&type=extended';
         return $this->modelsToArray($this->send($cmd)->getBody());
     }
 

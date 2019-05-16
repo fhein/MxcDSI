@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
@@ -93,6 +93,7 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         }
         $this->associatedProductsMapper->map($products);
         $this->report();
+        $this->modelManager->flush();
     }
 
     /**

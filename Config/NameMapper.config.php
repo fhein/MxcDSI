@@ -374,6 +374,7 @@ return [
             '~(Sinuous.*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Revenger.*) (- \d+ Watt)~'                                => '$1 - Akkuträger $2',
             '~(SX Mini.*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
+            '~(Delta) (- \d+ Watt)~'                                     => '$1 - Akkuträger $2',
             '~(RX Gen3)~'                                                => 'Reuleaux RX Gen3',
             '~(RX GEN3)~'                                                => 'RX Gen3',
             '~(Reuleaux.*) (- \d+ Watt)~'                                => '$1 - Akkuträger $2',
@@ -421,6 +422,9 @@ return [
         ],
     ],
     'product_names'             => [
+        'Advken' => [
+            '~(Twirl RDA)~',
+        ],
         'Aspire'      => [
             // Aspire
             '~(Nepho)~',
@@ -460,8 +464,33 @@ return [
         'CoilArt'     => [
             '~(Mage RTA V2)~',
         ],
+        'Cthulhu' => [
+            '~(Iris Mesh RDA)~',
+            '~(1928 MTL RDA)~',
+            '~(Hastur MTL RTA)~',
+            '~(Zathog RDA)~',
+        ],
         'Digiflavor' => [
             '~(Siren 2 RTA)~',
+            '~(Drop RDA)~',
+            '~(Drop Solo RDA)~',
+        ],
+        'Ehpro' => [
+            '~(Panther RDA)~',
+        ],
+        'GeekVape' => [
+            '~(Ammit 25 RTA)~',
+            '~(Blitzen RTA)~',
+            '~(Ammit MTL RTA)~',
+            '~(Creed RTA)~',
+            '~(Zeus Dual RTA)~',
+            '~(Ammit Dual Coil RTA)~',
+            '~(Aegis(( Legend)|( Mini))?)~',
+            '~(Aero Mesh)~',
+            '~(Cerberus)~',
+            '~(Creed RTA)~',
+            '~(Nova)~',
+            '~(Loop( V1.5)? RDA)~',
         ],
         'HellVape'    => [
             '~(Dead Rabbit RTA)~',
@@ -470,6 +499,7 @@ return [
             '~(Drop Dead RDA)~',
             '~(Hellbeast)~',
             '~(Rebirth RDA)~',
+            '~(Rebirth RTA)~',
         ],
         'SC'          => [
             '~(iJust ((21700)|(ECM)|(3))?)~',
@@ -484,15 +514,6 @@ return [
             '~(Lexicon)~',
             '~(Melo \d)~',
             '~(Easy 3)~',
-        ],
-        'GeekVape'    => [
-            '~(Aegis(( Legend)|( Mini))?)~',
-            '~(Aero Mesh)~',
-            '~(Cerberus)~',
-            '~(Creed RTA)~',
-            '~(Nova)~',
-            '~(Zeus Dual RTA)~',
-            '~(Loop( V1.5)? RDA)~',
         ],
         'Innokin'     => [
             '~(Endura ((T18)|(T20S)|(T22))?)~',
@@ -530,6 +551,7 @@ return [
         'OBS' => [
             '~(Crius 2 RTA)~',
             '~(Engine 2 RTA)~',
+            '~(Cube)~',
         ],
         'Smok'        => [
             '~(G-Priv ((2)|(Baby)))~',
@@ -551,6 +573,9 @@ return [
             '~(Baby V2)~',
             '~(Species)~',
 
+        ],
+        'Revenant Vape' => [
+            '~(Delta)~',
         ],
         'Steamax'     => [
             // Smok

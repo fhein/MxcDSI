@@ -12,7 +12,12 @@ class ProductRepository extends BaseEntityRepository
         'getAllIndexed' =>
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber',
 
-        'getByIds' =>
+        'getLinkedProductIds' =>
+            'SELECT DISTINCT p.id FROM MxcDropshipInnocigs\Models\Product p '
+            . 'JOIN p.variants v '
+            . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
+
+        'getProductsByIds' =>
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p WHERE p.id in (:ids)',
 
         'getLinkedProducts'   =>
@@ -24,7 +29,7 @@ class ProductRepository extends BaseEntityRepository
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'JOIN p.variants v '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-            . ' WHERE p.id IN (:productIds)',
+            . 'WHERE p.id IN (:productIds)',
 
         'getProductIdsByOptionIds'   =>
             'SELECT DISTINCT p.id FROM MxcDropshipInnocigs\Models\Product p '
@@ -41,19 +46,19 @@ class ProductRepository extends BaseEntityRepository
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
             . 'WHERE o.id IN (:optionIds)',
 
-        // get all Products which have an associated Shopware article that has related articles with :relatedIds
+        // get all products which have an associated Shopware article and which have a related product from :relatedIds
         'getProductsHavingRelatedArticles' =>
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'JOIN p.variants v '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-            . 'JOIN p.relatedProducts r  WHERE r.icNumber IN (:relatedIds)',
+            . 'JOIN p.relatedProducts r  WHERE r.id IN (:relatedIds)',
 
-        // get all Products which have an associated Shopware article that has similar articles with :similarIds
+        // get all products which have an associated Shopware article and which have a similar product from :similarIds
         'getProductsHavingSimilarArticles' =>
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'JOIN p.variants v '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-            . 'JOIN p.similarProducts a  WHERE p.icNumber IN (:similarIds)',
+            . 'JOIN p.similarProducts s  WHERE s.id IN (:similarIds)',
 
         // get all Products having flavor property set
         'getProductsWithFlavorSet' =>
@@ -112,12 +117,17 @@ class ProductRepository extends BaseEntityRepository
     ];
 
     protected $sql = [
-            'refreshLinks' =>
+        'refreshLinks' =>
             'UPDATE s_plugin_mxc_dsi_product p '
-            . 'INNER JOIN s_plugin_mxc_dsi_variant v ON v.product_id = p.id '
+            . 'JOIN s_plugin_mxc_dsi_variant v ON v.product_id = p.id '
             . 'LEFT JOIN s_articles_details d ON d.ordernumber = v.number '
             . 'JOIN s_articles a ON d.articleID = a.id '
             . 'SET p.linked = NOT ISNULL(d.ordernumber), p.active = IF(NOT ISNULL(d.orderNumber), a.active, false)',
+        'updateLinkState' =>
+            'UPDATE s_plugin_mxc_dsi_product p '
+            . 'JOIN s_plugin_mxc_dsi_variant v ON v.product_id = p.id '
+            . 'LEFT JOIN s_articles_details d ON d.ordernumber = v.number '
+            . 'SET p.linked = NOT ISNULL(d.ordernumber)',
     ];
 
     private $mappedProperties = [
@@ -137,7 +147,7 @@ class ProductRepository extends BaseEntityRepository
         'retailPriceOthers'
     ];
 
-    public function getByIds(array $ids)
+    public function getProductsByIds(array $ids)
     {
         return $this->getQuery(__FUNCTION__)
             ->setParameter('ids', $ids)
@@ -169,6 +179,11 @@ class ProductRepository extends BaseEntityRepository
     {
         $result = $this->getQuery(__FUNCTION__)
             ->setParameter('optionIds', $optionIds)->getScalarResult();
+        return array_column($result, 'id');
+    }
+
+    public function getLinkedProductIds() {
+        $result = $this->getQuery(__FUNCTION__)->getScalarResult();
         return array_column($result, 'id');
     }
 

@@ -17,56 +17,42 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
     /** @var array */
     protected $report;
 
+    protected $categoryMap;
+
     protected $classConfigFile = __DIR__ . '/../../Config/CategoryMapper.config.php';
 
     public function map(Model $model, Product $product) {
         $type = $product->getType();
-        $category = $this->classConfig['product_type_category_map'][$type] ?? null;
+        $categoryMap = $this->getCategoryMap();
+
+        $category = $categoryMap[$type]['base_category'] ?? null;
         $categories = [];
 
-        switch ($type) {
-            case 'LIQUID':
-            case 'AROMA':
-            /** @noinspection PhpMissingBreakStatementInspection */
-            case 'SHAKE_VAPE':
-                $flavorCategories = $product->getFlavorCategory();
-                if ($flavorCategories) {
-                    $flavorCategories = array_map('trim', explode(',', $flavorCategories));
-                    foreach ($flavorCategories as $flavorCategory) {
-                        $categories[] = $this->addSubCategory($category, $flavorCategory);
-                    }
-                }
-                $categories[] = $this->addSubCategory($category, $product->getBrand());
-                break;
+        $flavorCategories = $product->getFlavorCategory();
+        if ($flavorCategories) {
+            $flavorCategories = array_map('trim', explode(',', $flavorCategories));
+            foreach ($flavorCategories as $flavorCategory) {
+                $categories[] = $category . ' > ' . $flavorCategory;
+            }
+        }
 
-            case 'E_PIPE':
-            case 'E_CIGARETTE':
-            case 'BOX_MOD':
-            case 'BOX_MOD_CELL':
-            case 'SQUONKER_BOX':
-            case 'CLEAROMIZER':
-            case 'HEAD':
-            case 'DRIP_TIP':
-            case 'TANK':
-            case 'SEAL':
-            case 'CLEAROMIZER_RTA':
-            case 'CLEAROMIZER_RDA':
-            case 'CLEAROMIZER_RDTA':
-            case 'CLEAROMIZER_RDSA':
-                $categories[] = $this->addSubCategory($category, $product->getSupplier());
+        $appendSubcategory = $categoryMap[$type]['append_subcategory'] ?? null;
+        switch (is_string($appendSubcategory)) {
+            case 'supplier':
+                $appendSubcategory = $product->getSupplier();
                 break;
-
-            case 'CARTRIDGE':
-            case 'POD':
-            case 'BATTERY_CAP':
-            case 'BATTERY_SLEEVE':
-            case 'MAGNET':
-            case 'MAGNET_ADAPTOR':
-                $categories[] = $this->addSubCategory($category, $product->getCommonName());
+            case 'brand':
+                $appendSubcategory = $product->getBrand();
+                break;
+            case 'common_name':
+                $appendSubcategory = $product->getCommonName();
                 break;
             default:
-                $categories[] = $category;
+                $appendSubcategory = null;
         }
+
+        $categories[] = $appendSubcategory ? $category . ' > ' . $appendSubcategory : $category;
+
         if (! empty($categories)) {
             $category = implode(MXC_DELIMITER_L1, $categories);
             $product->setCategory($category);
@@ -74,18 +60,6 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         }
     }
 
-    protected function addSubCategory(string $category, ?string $subCategory)
-    {
-        return $subCategory = null ? $category : $category . ' > ' . $subCategory;
-    }
-
-    /**
-     * Create
-     *
-     * @param array $categoryTree
-     * @param array $positions
-     * @param string|null $path
-     */
     protected function updateCategoryPositions(array $categoryTree, array &$positions, string $path = null)
     {
         $idx = 1;
@@ -128,8 +102,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
      */
     protected function createCategoryTree()
     {
-        /** @noinspection PhpUndefinedMethodInspection */
-        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
+        $products = $this->modelManager->getRepository(Product::class)->findAll();
 
         $newTree = [];
         /** @var Product $product */
@@ -156,7 +129,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         $this->updateCategoryTree($categoryTree, $newTree);
 
         // Use ArrayTool and enable the next line to enforce a recursive alphabetical sort of all categories in the tree
-        // $result = ArrayTool::ksort_recursive($categoryTree);
+        //ArrayTool::ksort_recursive($categoryTree);
 
         $categoryPositions = [];
         $this->updateCategoryPositions($categoryTree, $categoryPositions);
@@ -164,6 +137,21 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         $this->classConfig['category_positions'] = $categoryPositions;
 
         Factory::toFile($this->classConfigFile, $this->classConfig);
+    }
+
+    protected function getCategoryMap()
+    {
+        if ($this->categoryMap) return $this->categoryMap;
+        $map = [];
+        $typeMap = $this->classConfig['type_category_map'] ?? [];
+        foreach ($typeMap as $item) {
+            foreach ($item['types'] as $type) {
+                $map[$type]['base_category'] = $item['base_category'];
+                $map[$type]['append_subcategory'] = $item['append_subcategory'];
+            }
+        }
+        $this->categoryMap = $map;
+        return $map;
     }
 
     public function report()

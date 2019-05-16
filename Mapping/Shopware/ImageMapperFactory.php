@@ -5,7 +5,7 @@ namespace MxcDropshipInnocigs\Mapping\Shopware;
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Shopware\Media\MediaTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImageMapperFactory implements FactoryInterface

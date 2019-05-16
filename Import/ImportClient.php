@@ -11,11 +11,11 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Arrays\ArrayTool;
+use RuntimeException;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -31,14 +31,11 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
     /** @var ApiClient $apiClient */
     protected $apiClient;
 
-    /** @var ImportMapper $importMapper */
-    protected $importMapper;
-
     /** @var array $import */
     protected $import;
 
     /** @var array */
-    protected $importLog;
+    protected $changeLog;
 
     /** @var array $options */
     protected $optionNames;
@@ -65,15 +62,12 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
      *
      * @param SchemaManager $schemaManager
      * @param ApiClient $apiClient
-     * @param ImportMapper $importMapper
      */
     public function __construct(
         SchemaManager $schemaManager,
-        ApiClient $apiClient,
-        ImportMapper $importMapper
+        ApiClient $apiClient
     ) {
         $this->schemaManager = $schemaManager;
-        $this->importMapper = $importMapper;
         $this->apiClient = $apiClient;
         $this->reporter = new ArrayReport();
         $model = new Model();
@@ -82,9 +76,7 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
 
     protected function setupImport()
     {
-        $this->importLog['deletions'] = $this->modelManager->getRepository(Model::class)->getAllIndexed();
-        $this->importLog['additions'] = [];
-        $this->importLog['changes'] = [];
+        $this->changeLog = [];
         /** @noinspection PhpUndefinedMethodInspection */
         $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->optionNames = [];
@@ -103,21 +95,20 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
             $this->schemaManager->drop();
             $this->schemaManager->create();
         }
-        $this->doImport();
+        return $this->doImport();
     }
 
     public function importFromFile(string $xmlFile = null, bool $recreateSchema = false)
     {
-        if (file_exists($xmlFile)) {
-            $this->importFromXml(file_get_contents($xmlFile), $recreateSchema);
+        if (! file_exists($xmlFile)) {
+            throw new RuntimeException('File does not exist: ' . $xmlFile);
         }
+        return $this->importFromXml(file_get_contents($xmlFile), $recreateSchema);
     }
 
     public function import() {
         $this->import = $this->apiClient->getItemList();
-        if (! $this->import) return false;
-        $this->doImport();
-        return true;
+        return $this->doImport();
     }
 
     protected function doImport()
@@ -128,15 +119,13 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
 
         $this->flattenImport();
         $this->updateModels();
-        $this->deleteModels();
-        $this->modelManager->flush();
 
         $evm->removeEventSubscriber($this);
 
         $this->reportMissingProperties();
 
         $this->logImport();
-        $this->importMapper->import($this->importLog);
+        return $this->changeLog;
     }
 
     protected function flattenImport()
@@ -172,10 +161,12 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
     {
         $images = $addlImages;
         sort($images);
-        if (is_string($image) && $image !== '') {
+        if (is_string($image)) {
             array_unshift($images, $image);
         }
-        return implode(MXC_DELIMITER_L1, array_unique($images));
+        // array_filter removes false strings (empty strings in this case)
+        // arraykeys(array_flip) does the same as array_unique but is faster
+        return implode(MXC_DELIMITER_L1, array_keys(array_flip(array_filter($images))));
     }
 
     protected function updateModels()
@@ -184,6 +175,8 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         $cursor = 0;
         $missingAttributes = [];
         $missingModels = [];
+        $deletions = $this->modelManager->getRepository(Model::class)->getAllIndexed();
+
         foreach ($this->import as $master => $records) {
             if ($cursor === $limit) {
                 return;
@@ -192,22 +185,14 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
             $options = [];
             $models = [];
             foreach ($records as $number => $data) {
-                $model = @$this->importLog['deletions'][$number];
+                $model = @$deletions[$number];
                 if (null === $model) {
                     $model = new Model();
-                    $this->importLog['additions'][$number] = $model;
                     $this->modelManager->persist($model);
                 } else {
                     /** @var Model $model */
-                    $model = $this->importLog['deletions'][$number];
-                    unset($this->importLog['deletions'][$number]);
-
-                    // If this model does not have an associated variant, put it
-                    // on the additions list in order to get the variant created later.
-                    $variant = $this->variants[$number];
-                    if (! $variant) {
-                        $this->importLog['additions'][$number] = $model;
-                    }
+                    $model = $deletions[$number];
+                    unset($deletions[$number]);
                 }
                 $model->fromImport($data);
                 $models[$model->getModel()] = $model;
@@ -227,21 +212,17 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
                 $missingModels[$master] = $issue;
             }
         }
+
+        foreach ($deletions as $model) {
+            $this->modelManager->remove($model);
+        }
+
+        $this->modelManager->flush();
+
         ($this->reporter)([
             'imMissingAttributes' => $missingAttributes,
             'imMissingModels'     => $missingModels,
         ]);
-    }
-
-    protected function deleteModels()
-    {
-        /**
-         * @var string $number
-         * @var Model $model
-         */
-        foreach ($this->importLog['deletions'] as $number => $model) {
-            $model->setDeleted(true);
-        }
     }
 
     protected function reportMissingProperties()
@@ -361,7 +342,7 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
             }
         }
         if (!empty($fields)) {
-            $this->importLog['changes'][$number] = [
+            $this->changeLog[$number] = [
                 'model'  => $model,
                 'fields' => $fields,
             ];
@@ -370,36 +351,6 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
 
     protected function logImport()
     {
-        $importLog = [];
-        foreach ($this->importLog as $topic => $entries) {
-            switch ($topic) {
-                case 'changes' :
-                    foreach ($entries as $entry) {
-                        /** @var Model $model */
-                        $model = $entry['model'];
-                        $importLog[$model->getMaster()]['changes'][$model->getModel()] = [
-                            'name'   => $model->getName(),
-                            'fields' => $entry['fields'],
-                        ];
-                    }
-                    break;
-
-                default:
-                    foreach ($entries as $model) {
-                        /** @var Model $model */
-                        $importLog[$model->getMaster()][$topic][$model->getModel()] = $model->getName();
-                    }
-                    break;
-            }
-        }
-        ksort($importLog);
-        foreach ($importLog as $master => &$entries) {
-            ksort($entries);
-            foreach ($entries as &$entry) {
-                ksort($entry);
-            }
-        }
-
         $this->categories = array_keys($this->categories);
         sort($this->categories);
         ksort($this->categoryUsage);
@@ -412,7 +363,6 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
             'imCategoryUsageInnocigs' => $this->categoryUsage,
             'imOptionNamesInnocigs'   => array_keys($this->optionNames),
             'imMissingItems'          => $this->missingItems,
-            'imImportLog'             => $importLog,
         ];
 
         ($this->reporter)($topics);

@@ -31,9 +31,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     /** @var array */
     protected $createdArticles;
 
-    /** @var array */
-    protected $updatedProducts;
-
     /** @var AssociatedArticlesMapper */
     protected $associatedArticlesMapper;
 
@@ -72,7 +69,24 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     public function init()
     {
         $this->createdArticles = [];
-        $this->updatedProducts = [];
+    }
+
+    public function createArticle(Product $product)
+    {
+        $valid = $product->isValid();
+        if (! $valid) return false;
+        $article = $product->getArticle();
+        if ($article) return true;
+
+        $article = new Article();
+        $this->modelManager->persist($article);
+        $product->setArticle($article);
+        $this->createdArticles[] = $product->getId();
+
+        $this->configureArticle($product, true);
+        $this->activateArticle($product);
+        $this->modelManager->flush(); //temporary
+        return true;
     }
 
     /**
@@ -85,30 +99,19 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
      */
     public function updateArticle(Product $product, bool $create):  bool
     {
-        $valid = $product->isValid();
         $article = $product->getArticle();
-
-        // delete article if the product is not valid
-        if (! $valid && $article) {
+        if (! $article) {
+            if ($create) return $this->createArticle($product);
+            return false;
+        }
+        if (! $product->isValid()) {
             $this->deleteArticles([$product]);
+            return false;
         }
-        if (! $valid) return false;
 
-        // create article if it does not exist already and creation is requested
-        $created  = false;
-        if (! $article && $create) {
-            $article = new Article();
-            $this->modelManager->persist($article);
-            $product->setArticle($article);
-            $this->createdArticles[] = $product->getIcNumber();
-            $created = true;
-        }
-        if (! $article) return false;
-
-        $this->configureArticle($product, $created);
+        $this->configureArticle($product, false);
         $this->activateArticle($product);
-        $this->updatedProducts[$product->getIcNumber()] = $product;
-
+        $this->modelManager->flush(); // temporary
         return true;
     }
 
@@ -118,7 +121,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         foreach ($products as $product) {
             $this->updateArticle($product, $create);
         }
-
         $this->modelManager->flush();
     }
 
@@ -136,17 +138,37 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     public function controllerUpdateArticles(array $products, bool $create = false)
     {
-        $this->updatedProducts = [];
-
         $this->updateArticles($products, $create);
-        $this->activateArticles($products);
-        // $this->associatedArticlesMapper->processAssociatedProducts($this, $this->updatedProducts, $create);
-
-//        if (! empty($this->createdArticles)) {
-//            $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
-//        }
+        // @todo: Temporary
+        $this->activateArticles($products, true);
+        $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
+        $this->associatedArticlesMapper->setAssociatedArticles($this->createdArticles);
         $this->modelManager->flush();
+    }
 
+    public function createRelatedArticles(array $products, bool $recursive = false)
+    {
+        $associatedProducts = $this->associatedArticlesMapper->getRelatedProducts($products, $recursive);
+
+        $this->createdArticles = [];
+        foreach ($associatedProducts as $product) {
+            $this->createArticle($product);
+        }
+        $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
+        $this->associatedArticlesMapper->setAssociatedArticles($this->createdArticles);
+        $this->modelManager->flush();
+    }
+
+    public function createSimilarArticles(array $products, bool $recursive = false)
+    {
+        $associatedProducts = $this->associatedArticlesMapper->getSimilarProducts($products, $recursive);
+        $this->createdArticles = [];
+        foreach ($associatedProducts as $product) {
+            $this->createArticle($product);
+        }
+        $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
+        $this->associatedArticlesMapper->setAssociatedArticles($this->createdArticles);
+        $this->modelManager->flush();
     }
 
     public function deleteArticles(array $products)
@@ -158,11 +180,11 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     /**
      * Update all related and similar articles
-     * @param array $associatedProducts
+     * @param array $associatedProductIds
      */
-    public function updateAssociatedProducts(array $associatedProducts)
+    public function updateAssociatedProducts(array $associatedProductIds)
     {
-        $this->associatedArticlesMapper->updateArticleLinks($associatedProducts);
+        $this->associatedArticlesMapper->updateArticleLinks($associatedProductIds);
     }
 
     ///////////////////////////////////////////////////////////////
@@ -179,6 +201,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         foreach ($products as $product) {
             $this->activateArticle($product, $active);
         }
+        $this->modelManager->flush();
     }
 
     protected function activateArticle(Product $product, bool $active = null)

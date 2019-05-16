@@ -5,16 +5,17 @@ namespace MxcDropshipInnocigs\Models;
 class VariantRepository extends BaseEntityRepository
 {
     protected $dql = [
-        'getAllIndexed'      => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
-        'getDetail'          => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
-        'removeOrphaned'     => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.product IS NULL',
+        'getAllIndexed'             => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
+        'getDetail'                 => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
+        'removeOrphaned'            => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.product IS NULL',
+        'getVariantsWithoutModel'   => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v '
+                                        . 'LEFT JOIN MxcDropshipInnocigs\Models\Model m WITH m.model = v.icNumber '
+                                        . 'WHERE m.id IS NULL',
     ];
 
     protected $sql = [
-        'removeImages' => 'DELETE FROM s_plugin_mxc_dsi_x_variants_images WHERE variant_id = ?',
         'removeOptions' => 'DELETE FROM s_plugin_mxc_dsi_x_variants_options WHERE variant_id = ?',
     ];
-
 
     public function getDetail(Variant $variant)
     {
@@ -22,13 +23,6 @@ class VariantRepository extends BaseEntityRepository
             ->setParameter('ordernumber', $variant->getNumber())
             ->getResult();
         return $result[0] ?? null;
-    }
-
-    public function removeImages(Variant $variant)
-    {
-        $stmnt = $this->getStatement(__FUNCTION__);
-        $stmnt->bindValue(1, $variant->getId());
-        $stmnt->execute();
     }
 
     public function removeOptions(Variant $variant)

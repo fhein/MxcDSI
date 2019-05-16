@@ -16,27 +16,28 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
 
-    protected function removeEmptyCategoriesRecursive(Category $root)
+    protected $childrenQuery;
+    protected $categoryCache;
+
+    public function removeEmptyCategories()
     {
         $dql = 'SELECT c FROM Shopware\Models\Category\Category c WHERE c.parentId IS NOT null AND c.blog = 0 AND c.articles IS EMPTY AND c.children IS EMPTY';
-        $emptyCategories = $this->modelManager->createQuery($dql)->getResult();
-        $done = empty($emptyCategories);
-        /** @var Category $category */
-        foreach ($emptyCategories as $category) {
-            $this->modelManager->remove($category);
-            $this->log->debug('Empty category: ' . $category->getName());
+        $query = $this->modelManager->createQuery($dql);
+        $count = 0;
+        while (true) {
+            $emptyCategories = $query->getResult();
+            if (empty($emptyCategories)) return $count;
+            /** @var Category $category */
+            foreach ($emptyCategories as $category) {
+                $count++;
+                $this->modelManager->remove($category);
+                $this->log->debug('Empty category: ' . $category->getName());
+            }
+            $this->log->debug('-----');
+            $this->modelManager->flush();
+            $this->modelManager->clear();
         }
-        $this->modelManager->flush();
-        $this->modelManager->clear();
-        if (! $done) $this->removeEmptyCategoriesRecursive($root);
-    }
-
-    public function removeEmptyCategories(Category $root = null)
-    {
-        $parentId = $root ? $root->getId() : null;
-        $root = $root ?? $this->modelManager->getRepository(Category::class)->findOneBy(['parentId' => $parentId]);
-        $this->removeEmptyCategoriesRecursive($root);
-        $this->modelManager->flush();
+        return $count;
     }
 
     public function findCategoryPath(string $path)
@@ -103,5 +104,33 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
         }
         $this->modelManager->flush($child);
         return $child;
+    }
+
+    public function createCategoryCache() {
+        $root = $this->findCategoryPath('Deutsch');
+        $list = [];
+        $this->getChildrenTree($root->getId(), $list);
+        $this->categoryCache = $list;
+    }
+
+    protected function getChildrenTree(int $id, array &$list, string $parentPath = null)
+    {
+        $children = $this->getChildrenQuery()->setParameter('id', $id)->getResult();
+        /** @var Category $child */
+        foreach ($children as $child) {
+            $name = $child->getName();
+            $path = $parentPath ? $parentPath . ' > ' . $name : $name;
+            $list[$path] = $child;
+            $this->getChildrenTree($child->getId(), $list, $path);
+        }
+    }
+
+    protected function getChildrenQuery() {
+        if (! $this->childrenQuery) {
+            $class = Category::class;
+            $dql = "SELECT c FROM {$class} c INDEX BY c.id WHERE c.blog = 0 AND c.parentId = :id";
+            $this->childrenQuery = $this->modelManager->createQuery($dql);
+        }
+        return $this->childrenQuery;
     }
 }

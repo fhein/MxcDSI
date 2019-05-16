@@ -36,6 +36,9 @@ class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareIn
         if (! $this->validate()) return;
 
         $attribute = $detail->getAttribute();
+        // @todo: $attribute null happens but it should not
+        if (! $attribute) return;
+
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcActive($active);
         /** @noinspection PhpUndefinedMethodInspection */

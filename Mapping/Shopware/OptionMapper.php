@@ -12,6 +12,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
+use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 
 class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
@@ -106,20 +107,67 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->log->leave();
     }
 
+    protected function needsUpdate(Product $product)
+    {
+        $variants = $product->getVariants();
+        /** @var Variant $variant */
+        foreach ($variants as $variant) {
+            $valid = $variant->isValid();
+            if ($valid && ($variant->getDetail() === null)) return true;
+            if (! $valid && ($variant->getDetail() !== null)) return true;
+        }
+        return false;
+    }
+
+    protected function getValidVariants(Product $product)
+    {
+        $variants = $product->getVariants();
+        $validVariants = [];
+        /** @var Variant $variant */
+        foreach ($variants as $variant) {
+            if ($variant->isValid()) $validVariants[] = $variant;
+        }
+        return $validVariants;
+    }
+
+    /**
+     * @param Product $product
+     * @param array $validVariants
+     * @return Set
+     */
+    protected function createConfiguratorSet(Product $product, array $validVariants): Set
+    {
+        $name = 'mxc-set-' . $product->getNumber();
+        $set = $this->setRepository->getSet($name);
+
+        // add the options belonging to this article and variants
+        foreach ($validVariants as $variant) {
+            /** @var Variant $variant */
+            $options = $variant->getShopwareOptions();
+            foreach ($options as $option) {
+                $this->setRepository->addOption($option);
+            }
+        }
+        $set->getArticles()->add($product->getArticle());
+        return $set;
+    }
+
     /**
      * Create and setup a configurator set for a Shopware article
      *
      * @param Product $product
      * @return null|Set
      */
-    public function createConfiguratorSet(Product $product)
+    public function updateConfiguratorSet(Product $product)
     {
-        $validVariants = [];
-        foreach ($product->getVariants() as $variant) {
-            if (! $variant->isValid()) continue;
-            $validVariants[] = $variant;
+        if (! $this->needsUpdate($product)) {
+            /** @var Article $article */
+            $article = $product->getArticle();
+            return $article->getConfiguratorSet();
         }
-        // $validVariants = $product->getValidVariants();
+
+        $validVariants = $this->getValidVariants($product);
+
         if (count($validVariants) < 2) {
             $this->log->notice(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does '
                 . 'not provide more than one variant which is set not to get ignored.',
@@ -130,21 +178,6 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         }
 
         $this->createShopwareGroupsAndOptions($validVariants);
-
-        $name = 'mxc-set-' . $product->getNumber();
-        $set = $this->setRepository->getSet($name);
-
-        // add the options belonging to this article and variants
-        foreach ($validVariants as $variant) {
-            /**
-             * @var Variant $variant
-             */
-            $options = $variant->getShopwareOptions();
-            foreach ($options as $option) {
-                $this->setRepository->addOption($option);
-            }
-        }
-        $set->getArticles()->add($product->getArticle());
-        return $set;
+        return $this->createConfiguratorSet($product, $validVariants);
     }
 }

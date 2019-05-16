@@ -35,17 +35,28 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
         let me = this;
         me.callParent(arguments);
         me.addEvents(
+            'mxcBuildCategoryTree',
             'mxcSaveProduct',
             'mxcRemapProperties',
             'mxcRemapPropertiesSelected',
+            'mxcUpdateImages',
+            'mxcUpdateImagesSelected',
+            'mxcUpdateCategories',
+            'mxcUpdateCategoriesSelected',
+            'mxcRemoveEmptyCategories',
+            'mxcDeleteAll',
+            'mxcCreateAll',
             'mxcRefreshAssociated',
             'mxcSetActiveSelected',
             'mxcSetLinkedSelected',
             'mxcSetAcceptedSelected',
+            'mxcCreateRelatedSelected',
+            'mxcCreateSimilarSelected',
             'mxcImportItems',
             'mxcRefreshItems',
             'mxcCheckRegularExpressions',
             'mxcCheckNameMappingConsistency',
+            'mxcCheckVariantMappingConsistency',
             'mxcExportConfig',
             'mxcExcelExport',
             'mxcExcelImport',
@@ -190,10 +201,38 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
+                    text: 'Create related articles',
+                    handler: function() {
+                        me.fireEvent('mxcCreateRelatedSelected', me);
+                    }
+                },
+                {
+                    text: 'Create similar articles',
+                    handler: function() {
+                        me.fireEvent('mxcCreateSimilarSelected', me);
+                    }
+                },
+                '-',
+                {
                     text: 'Remap properties',
                     iconCls: 'sprite-maps',
                     handler: function() {
                         me.fireEvent('mxcRemapPropertiesSelected', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Update images',
+                    iconCls: 'sprite-images-stack',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateImagesSelected', me);
+                    }
+                },
+                {
+                    text: 'Update categories',
+                    iconCls: 'sprite-category',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateCategoriesSelected', me);
                     }
                 },
             ]
@@ -222,6 +261,21 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             },
             items: [
                 {
+                    text : 'Create Shopware articles',
+                    iconCls: 'sprite-plus-circle',
+                    handler: function() {
+                        me.fireEvent('mxcCreateAll', me);
+                    }
+                },
+                {
+                    text : 'Delete Shopware articles',
+                    iconCls: 'sprite-minus-circle',
+                    handler: function() {
+                        me.fireEvent('mxcDeleteAll', me);
+                    }
+                },
+                '-',
+                {
                     text: 'Refresh link state',
                     iconCls: 'sprite-arrow-circle',
                     handler: function() {
@@ -243,7 +297,30 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     handler: function() {
                         me.fireEvent('mxcRefreshAssociated', me);
                     }
-                }
+                },
+                '-',
+                {
+                    text: 'Update images',
+                    iconCls: 'sprite-images-stack',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateImages', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Build category tree',
+                    iconCls: 'sprite-folder-tree',
+                    handler: function() {
+                        me.fireEvent('mxcBuildCategoryTree', me);
+                    }
+                },
+                {
+                    text: 'Update categories',
+                    iconCls: 'sprite-category',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateCategories', me);
+                    }
+                },
             ]
         });
         me.selectionButton = Ext.create('Ext.button.Button', {
@@ -281,6 +358,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         me.fireEvent('mxcCheckNameMappingConsistency', me);
                     }
                 },
+                '-',
+                {
+                    text : 'Check variant mapping consistency',
+                    handler: function() {
+                        me.fireEvent('mxcCheckVariantMappingConsistency', me);
+                    }
+                },
             ]
         });
         return Ext.create('Ext.button.Button', {
@@ -309,6 +393,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-download-cloud',
                     handler: function() {
                         me.fireEvent('mxcImportItems', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Remove empty categories',
+                    iconCls: 'sprite-bin-metal-full',
+                    handler: function() {
+                        me.fireEvent('mxcRemoveEmptyCategories', me);
                     }
                 },
                 '-',

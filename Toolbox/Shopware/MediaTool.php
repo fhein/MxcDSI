@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Toolbox\Shopware\Media;
+namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
 use DateTime;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
@@ -20,19 +20,16 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;
 
-    /**
-     * @var Shopware_Components_Auth $authService
-     */
+    /** @var Shopware_Components_Auth $authService */
     protected $authService;
-    /**
-     * @var MediaService $mediaService
-     */
+
+    /** @var MediaService */
     protected $mediaService;
 
-    /**
-     * MediaService constructor.
-     *
-     */
+    protected $removeImagesQuery;
+    protected $albumRepository;
+    protected $mediaRepository;
+
     public function __construct() {
         $container = Shopware()->Container();
         $this->authService = $container->get('Auth');
@@ -41,7 +38,7 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
 
     protected function getMedia(string $swUrl, string $url){
 
-        $media = $this->modelManager->getRepository(Media::class)->findOneBy(['path' => $swUrl]);
+        $media = $this->getMediaRepository()->findOneBy(['path' => $swUrl]);
         if (null === $media) {
             $media = $this->createMedia($swUrl, $url);
         }
@@ -54,7 +51,7 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $urlInfo = pathinfo($url);
 
         /** @var Album $album */
-        $album = $this->modelManager->getRepository(Album::class)->findOneBy(['id' => -1]);
+        $album = $this->getAlbumRepository()->findOneBy(['id' => -1]);
 
         $media = new Media();
         $this->modelManager->persist($media);
@@ -82,11 +79,10 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
      * Downloads image from given url if the image is not present already
      *
      * @param string $url
-     * @param Article $article
      * @param int $position
      * @return Image
      */
-    public function getImage(string $url, Article $article, int $position):Image
+    public function getImage(string $url, int $position):Image
     {
         $urlInfo = pathinfo($url);
         $swUrl = 'media/image/' . $urlInfo['basename'];
@@ -107,7 +103,6 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $image = new Image();
         $this->modelManager->persist($image);
 
-        $image->setArticle($article);
         $image->setMedia($media);
         $image->setExtension($urlInfo['extension']);
         $image->setMain(($position > 1) ? 2 : 1);
@@ -164,7 +159,6 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
             $this->removeImage($child);
         }
         $children->clear();
-
         $mappings = $image->getMappings();
         /** @var Image\Mapping $mapping */
         foreach ($mappings as $mapping) {
@@ -184,5 +178,23 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
             $this->removeImage($image);
         }
         $images->clear();
+    }
+
+    protected function getMediaRepository() {
+        return $this->mediaRepository ?? $this->mediaRepository = $this->modelManager->getRepository(Media::class);
+    }
+
+    protected function getAlbumRepository() {
+        return $this->albumRepository ?? $this->albumRepository = $this->modelManager->getRepository(Album::class);
+    }
+
+    protected function getRemoveImagesQuery()
+    {
+        if ($this->removeImagesQuery) return $this->removeImagesQuery;
+        $this->removeImagesQuery = $this->modelManager->createQueryBuilder()
+            ->delete(Image::class, 'i')
+            ->where('i.articleId = :id')
+            ->getQuery();
+        return $this->removeImagesQuery;
     }
 }

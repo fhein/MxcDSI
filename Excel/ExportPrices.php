@@ -96,7 +96,9 @@ class ExportPrices extends AbstractProductExport
         $vapeePrices = $this->getVapeePrices($product);
         foreach ($customerGroupKeys as $key) {
             $price = $vapeePrices[$key] ?? null;
-            $price = $price === $info['UVP Brutto'] ? null : $price;
+            if ($key !== 'EK') {
+                $price = $price === $info['UVP Brutto'] ? null : $price;
+            }
             $info['VK Brutto ' . $key] = $price;
         }
         return $info;

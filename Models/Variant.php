@@ -96,9 +96,8 @@ class Variant extends ModelEntity
     private $options;
 
     /**
-     * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Image", inversedBy="variants", cascade="persist")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_variants_images")
+     * @var string
+     * @ORM\Column(type="text", nullable=true)
      */
     private $images;
 
@@ -371,45 +370,14 @@ class Variant extends ModelEntity
         }
     }
 
-    /**
-     * @return Collection
-     */
     public function getImages()
     {
         return $this->images;
     }
 
-    /**
-     * @param Collection $images
-     */
-    public function setImages(Collection $images)
+    public function setImages($images)
     {
         $this->images = $images;
-        foreach ($images as $image) {
-            $image->addVariant($this);
-        }
-    }
-
-    /**
-     * @param Image $image
-     */
-    public function addImage(Image $image)
-    {
-        $this->images->add($image);
-        $image->addVariant($this);
-    }
-
-    public function addImages(ArrayCollection $images)
-    {
-        foreach ($images as $image) {
-            $this->addImage($image);
-        }
-    }
-
-    public function removeImage(Image $image)
-    {
-        $this->images->removeElement($image);
-        $image->removeVariant($this);
     }
 
     /**

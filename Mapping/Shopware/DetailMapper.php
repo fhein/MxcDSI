@@ -74,7 +74,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             return;
         }
 
-        $configuratorSet = $this->optionMapper->createConfiguratorSet($product);
+        $configuratorSet = $this->optionMapper->updateConfiguratorSet($product);
         $article->setConfiguratorSet($configuratorSet);
 
         $variants = $product->getVariants();

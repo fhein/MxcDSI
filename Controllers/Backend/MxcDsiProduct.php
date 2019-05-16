@@ -6,13 +6,18 @@ use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
+use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
+use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController
@@ -24,10 +29,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $client = $this->getServices()->get(ImportClient::class);
-            if (! $client->import()) {
-                $this->view->assign(['success' => false, 'message' => 'Failed to import/update items.']);
-                return;
-            }
+            $mapper = $this->getServices()->get(ImportMapper::class);
+            $mapper->import($client->import());
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -48,17 +51,150 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function updateAssociatedProductsAction() {
+    public function createRelatedSelectedAction()
+    {
+        try {
+            $params = $this->request->getParams();
+            $ids = json_decode($params['ids'], true);
+            $products = $this->getRepository()->getProductsByIds($ids);
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            $productMapper->createRelatedArticles($products);
+            $this->view->assign([ 'success' => true, 'message' => 'Related articles were successfully created.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function createSimilarSelectedAction()
+    {
+        try {
+            $params = $this->request->getParams();
+            $ids = json_decode($params['ids'], true);
+            $products = $this->getRepository()->getProductsByIds($ids);
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            $productMapper->createSimilarArticles($products);
+            $this->view->assign([ 'success' => true, 'message' => 'Similar articles were successfully created.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function updateAssociatedProductsAction()
+    {
         try {
             $modelManager = $this->getManager();
             /** @noinspection PhpUndefinedMethodInspection */
-            $associatedProducts = $modelManager->getRepository(Product::class)->getLinkedProducts();
+            $associatedProducts = $modelManager->getRepository(Product::class)->getLinkedProductIds();
 
             $productMapper = $this->getServices()->get(ProductMapper::class);
             $productMapper->updateAssociatedProducts($associatedProducts);
             $modelManager->flush();
 
             $this->view->assign([ 'success' => true, 'message' => 'Associated products were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function updateImagesAction()
+    {
+        try {
+            $modelManager = $this->getManager();
+            $imageMapper = $this->getServices()->get(ImageMapper::class);
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $this->getRepository()->getLinkedProducts();
+            foreach ($products as $product) {
+                $imageMapper->setArticleImages($product);
+            }
+            $modelManager->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Images were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function updateImagesSelectedAction()
+    {
+        try {
+            $params = $this->request->getParams();
+            $ids = json_decode($params['ids'], true);
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $this->getRepository()->getLinkedProductsFromProductIds($ids);
+            $imageMapper = $this->getServices()->get(ImageMapper::class);
+            foreach ($products as $product) {
+                $imageMapper->setArticleImages($product);
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Images were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function updateCategoriesAction()
+    {
+        try {
+            $modelManager = $this->getManager();
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $this->getRepository()->getLinkedProducts();
+
+            $categoryMapper = $this->getServices()->get(ShopwareCategoryMapper::class);
+            foreach ($products as $product) {
+                $categoryMapper->map($product);
+            }
+            $modelManager->flush();
+
+            $this->view->assign([ 'success' => true, 'message' => 'Categories were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function removeEmptyCategoriesAction()
+    {
+        try {
+            $count = $this->getServices()->get(CategoryTool::class)->removeEmptyCategories();
+            switch ($count) {
+                case 0: $message = 'No empty categories found.'; break;
+                case 1: $message = 'One empty category was successfully removed.'; break;
+                default: $message = $count . ' empty categories were successfully removed.'; break;
+            }
+            $this->view->assign([ 'success' => true, 'message' => $message]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function buildCategoryTreeAction() {
+        try {
+            $categoryMapper = $this->getServices()->get(CategoryMapper::class);
+            $products = $this->getRepository()->findAll();
+            $model = new Model();
+            foreach ($products as $product) {
+                $categoryMapper->map($model, $product);
+            }
+            $this->getManager()->flush();
+            $categoryMapper->buildCategoryTree();
+            $this->view->assign([ 'success' => true, 'message' => 'Category tree configuration successfully rebuilt.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+
+    }
+
+    public function updateCategoriesSelectedAction()
+    {
+        try {
+            $params = $this->request->getParams();
+            $ids = json_decode($params['ids'], true);
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $this->getRepository()->getLinkedProductsFromProductIds($ids);
+            $categoryMapper = $this->getServices()->get(ShopwareCategoryMapper::class);
+            foreach ($products as $product) {
+                $categoryMapper->map($product);
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Categories were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -104,7 +240,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $value = $params['value'] === 'true';
         $ids = json_decode($params['ids'], true);
         $this->getRepository()->setStateByIds($property, $value, $ids);
-        $products = $this->getRepository()->getByIds($ids);
+        $products = $this->getRepository()->getProductsByIds($ids);
         return [$value, $products];
     }
 
@@ -215,6 +351,54 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function checkVariantMappingConsistencyAction()
+    {
+        try {
+            $variantMappingConsistency = $this->getServices()->get(VariantMappingConsistency::class);
+            $issueCount = $variantMappingConsistency->check();
+            if ($issueCount > 0) {
+                $issue = 'issue';
+                if ($issueCount > 1) $issue .= 's';
+                $this->view->assign(['success' => false, 'message' => 'Found ' . $issueCount . ' variant mapping ' . $issue  . '. See log for details.']);
+            } else {
+                $this->view->assign(['success' => true, 'message' => 'No variant mapping issues found.']);
+            }
+
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function createAllAction()
+    {
+        try {
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            $products = $this->getRepository()->findAll();
+            $productMapper->controllerUpdateArticles($products, true);
+            $message = 'Products were successfully created.';
+            $this->view->assign(['success' => true, 'message' => $message]);
+            /** @noinspection PhpUndefinedMethodInspection */
+            $this->getRepository()->updateLinkState();
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function deleteAllAction()
+    {
+        try {
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            $products = $this->getRepository()->findAll();
+            $productMapper->deleteArticles($products);
+            $message = 'Products were successfully deleted.';
+            $this->view->assign(['success' => true, 'message' => $message]);
+            /** @noinspection PhpUndefinedMethodInspection */
+            $this->getRepository()->updateLinkState();
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function remapAction()
     {
         try {
@@ -229,7 +413,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $products = $repository->getAllIndexed();
             $propertyMapper->mapProperties($products);
             $categoryMapper->buildCategoryTree();
-            $this->getModelManager()->flush();
 
             /** @noinspection PhpUndefinedMethodInspection */
             $products = $repository->getLinkedProducts();
@@ -253,7 +436,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $params = $this->request->getParams();
             $ids = json_decode($params['ids'], true);
 
-            $products = $repository->getByIds($ids);
+            $products = $repository->getProductsByIds($ids);
             $propertyMapper->mapProperties($products);
             $modelManager->flush();
 
@@ -282,7 +465,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
 
             $xmlFile = $testDir . 'TESTErstimport.xml';
-            $this->getServices()->get(ImportClient::class)->importFromFile($xmlFile, true);
+            $services = $this->getServices();
+            $client = $services->get(ImportClient::class);
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->import($client->importFromFile($xmlFile, true));
 
             $products = $this->getManager()->getRepository(Product::class)->findAll();
             $productMapper = $this->services->get(ProductMapper::class);
@@ -299,7 +485,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateFeldwerte.xml';
-            $this->getServices()->get(ImportClient::class)->importFromFile($xmlFile);;
+
+            $services = $this->getServices();
+            $client = $services->get(ImportClient::class);
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->import($client->importFromFile($xmlFile));
             $this->view->assign([ 'success' => true, 'message' => 'Values successfully updated.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -311,7 +501,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateVarianten.xml';
-            $this->getServices()->get(ImportClient::class)->importFromFile($xmlFile);;
+            $services = $this->getServices();
+            $client = $services->get(ImportClient::class);
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->import($client->importFromFile($xmlFile));
             $this->view->assign([ 'success' => true, 'message' => 'Variants successfully updated.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -322,7 +515,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS></PRODUCTS></INNOCIGS_API_RESPONSE>';
-            $this->getServices()->get(ImportClient::class)->importFromXml($xml);;
+            $services = $this->getServices();
+            $client = $services->get(ImportClient::class);
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->import($client->importFromXml($xml));
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -362,6 +558,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
+            $categoryMapper = $this->getServices()->get(ShopwareCategoryMapper::class);
+            $categoryTool = $this->getServices()->get(CategoryTool::class);
+            //$categoryMapper->createCategoryTree();
+            $categoryTool->createCategoryCache();
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

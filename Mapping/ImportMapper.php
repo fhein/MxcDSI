@@ -17,9 +17,8 @@ use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\GroupRepository;
-use MxcDropshipInnocigs\Models\Image;
-use MxcDropshipInnocigs\Models\ImageRepository;
 use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Models\ModelRepository;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\OptionRepository;
 use MxcDropshipInnocigs\Models\Product;
@@ -48,8 +47,8 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     /** @var OptionRepository */
     protected $optionRepository;
 
-    /** @var ImageRepository */
-    protected $imageRepository;
+    /** @var ModelRepository */
+    protected $modelRepository;
 
     /** @var ApiClient $apiClient */
     protected $apiClient;
@@ -89,9 +88,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
     /** @var array */
     protected $updates;
-
-    /** @var array */
-    protected $images;
 
     /**
      * ImportMapper constructor.
@@ -186,28 +182,12 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $product;
     }
 
-    public function mapImages(?string $imageString)
+    protected function addNewVariants()
     {
-        $imageUrls = explode(MXC_DELIMITER_L1, $imageString);
-        $images = [];
-        foreach ($imageUrls as $imageUrl) {
-            $image = @$this->images[$imageUrl];
-            if (null === $image) {
-                $image = new Image();
-                $this->modelManager->persist($image);
-                $image->setAccepted(true);
-                $image->setUrl($imageUrl);
-                $this->images[$imageUrl] = $image;
-            }
-            $images[] = $image;
-        }
-        return new ArrayCollection($images);
-    }
-
-    protected function addVariants(array $additions)
-    {
+        /** @noinspection PhpUndefinedMethodInspection */
+        $additions = $this->getModelRepository()->getModelsWithoutVariant();
         /** @var  Model $model */
-        foreach ($additions as $number => $model) {
+        foreach ($additions as $model) {
             $this->log->debug('Adding variant: ' . $model->getName());
             $product = $this->mapProduct($model);
             $this->updates[$product->getIcNumber()] = $product;
@@ -220,20 +200,18 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $variant->setAccepted(true);
 
             // set properties which do not require mapping
-            $variant->setIcNumber($number);
+            $variant->setIcNumber($model->getModel());
             $variant->setEan($model->getEan());
             $price = $model->getPurchasePrice();
             $variant->setPurchasePrice($price);
             $uvp = $model->getRecommendedRetailPrice();
             $variant->setRecommendedRetailPrice($uvp);
+            $variant->setImages($model->getImages());
             $variant->setRetailPrices('EK' . MXC_DELIMITER_L1 . $uvp);
 
-            $images = $model->getImages();
-            if (null !== $images) {
-                $variant->setImages($this->mapImages($images));
-            }
             $variant->setOptions($this->mapOptions($model->getOptions()));
         }
+        $this->modelManager->flush();
     }
 
     /**
@@ -244,23 +222,19 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
      */
     protected function removeDetails(array $deletions)
     {
-        /** @var  Model $model */
-        $variantRepository = $this->getVariantRepository();
-
         $products = [];
-        foreach ($deletions as $model) {
-            /** @var  Variant $variant */
-            $variant = $variantRepository->findOneBy(['number' => $model->getModel()]);
+        /** @var  Variant $variant */
+        foreach ($deletions as $variant) {
             $variant->setAccepted(false);
             $product = $variant->getProduct();
             $products[$product->getIcNumber()] = $product;
         }
         $this->modelManager->flush();
-        $this->productMapper->updateArticles($products, false);
+        // $this->productMapper->updateArticles($products, false);
     }
 
     /**
-     * Remove all variants associated with deleted models together with the Options and Images
+     * Remove all variants together with the Options and Images
      * belonging to them. Remove the Product also, if it has no variant left.
      *
      * @param array $deletions
@@ -272,18 +246,13 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
         // make sure that $this->products is initialized
         $this->getProducts();
+        $this->getVariants();
 
-        foreach ($deletions as $model) {
-            $variant = $this->getVariants()[$model->getModel()] ?? null;
-            if (!$variant) {
-                continue;
-            }
-
+        foreach ($deletions as $variant) {
             /** @var Product $product */
             $product = $variant->getProduct();
             $product->removeVariant($variant);
 
-            $variantRepository->removeImages($variant);
             $variantRepository->removeOptions($variant);
             $this->modelManager->remove($variant);
             unset($this->variants[$variant->getIcNumber()]);
@@ -296,8 +265,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->modelManager->flush();
     }
 
-    protected function deleteVariants(array $deletions)
+    protected function deleteVariantsWithoutModel()
     {
+        /** @noinspection PhpUndefinedMethodInspection */
+        $deletions = $this->getVariantRepository()->getVariantsWithoutModel();
         if ( empty($deletions)) return;
 
         $this->removeDetails($deletions);
@@ -317,26 +288,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $addedOptions = implode(MXC_DELIMITER_L2, $addedOptions);
         $addedOptions = $this->mapOptions($addedOptions);
         $variant->addOptions($this->mapOptions($addedOptions));
-    }
-
-    protected function changeImages(Variant $variant, string $oldValue, string $newValue)
-    {
-        $oldImages = explode(MXC_DELIMITER_L1, $oldValue);
-        $newImages = explode(MXC_DELIMITER_L1, $newValue);
-
-        $removed = array_diff($oldImages, $newImages);
-        foreach ($removed as $url) {
-            $image = $this->images[$url];
-            $variant->removeImage($image);
-        }
-
-        $addedImages = array_diff($newImages, $oldImages);
-        if (! empty($addedImages)) {
-            $addedImages = implode(MXC_DELIMITER_L1, $addedImages);
-            $this->log->debug('Added images' . var_export($addedImages, true));
-            $addedImages = $this->mapImages($addedImages);
-            $variant->addImages($addedImages);
-        }
     }
 
     protected function changeVariant(Variant $variant, Model $model, array $fields)
@@ -364,7 +315,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                     $this->propertyMapper->mapProductManufacturer($model, $variant->getProduct());
                     break;
                 case 'images':
-                    $this->changeImages($variant, $oldValue, $newValue);
+                    $variant->setImages($model->getImages());
                     break;
                 case 'options':
                     $this->changeOptions($variant, $oldValue, $newValue);
@@ -393,6 +344,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $product = $variant->getProduct();
             $this->updates[$product->getIcNumber()] = $product;
         }
+        $this->modelManager->flush();
     }
 
     protected function removeOrphanedItems()
@@ -401,7 +353,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->getProductRepository()->removeOrphaned();
 
         $this->getOptionRepository()->removeOrphaned();
-        $this->getImageRepository()->removeOrphaned();
 
         // Orphaned options must be removed before orphaned groups. Groups may become
         // orphaned during removal of orphaned options
@@ -424,32 +375,26 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         /** @noinspection PhpUndefinedMethodInspection */
         $this->groups = $this->getGroupRepository()->getAllIndexed();
 
-        /** @noinspection PhpUndefinedMethodInspection */
-        $this->images = $this->getImageRepository()->getAllIndexed();
-
         $this->options = $this->getOptionRepository()->getAllIndexed();
     }
 
-    public function import(array $import)
+    public function import(array $changes)
     {
         $this->updates = [];
         $this->initCache();
 
-        $this->addVariants($import['additions']);
-        $this->changeVariants($import['changes']);
+        $this->addNewVariants();
+        $this->changeVariants($changes);
+        $this->deleteVariantsWithoutModel();
         $this->propertyMapper->mapProperties($this->products);
-        $this->categoryMapper->buildCategoryTree();
-
-        $this->modelManager->flush();
-
-        $this->deleteVariants($import['deletions']);
-
         $this->removeOrphanedItems();
 
-        /** @noinspection PhpUndefinedMethodInspection */
-        $this->modelManager->getRepository(Product::class)->refreshLinks();
+        $this->categoryMapper->buildCategoryTree();
 
-        $this->productMapper->updateArticles($this->updates);
+        /** @noinspection PhpUndefinedMethodInspection */
+        $this->getProductRepository()->refreshLinks();
+
+        // $this->productMapper->updateArticles($this->updates);
 
         if (@$this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {
@@ -513,17 +458,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     }
 
     /**
-     * @return ImageRepository
+     * @return ModelRepository
      */
-    protected function getImageRepository()
+    protected function getModelRepository()
     {
-        return $this->imageRepository ?? $this->imageRepository = $this->modelManager->getRepository(Image::class);
+        return $this->modelRepository ?? $this->modelRepository = $this->modelManager->getRepository(Model::class);
     }
-
-    protected function getImages()
-    {
-        /** @noinspection PhpUndefinedMethodInspection */
-        return $this->images ?? $this->images = $this->getImageRepository()->getAllIndexed();
-    }
-
 }

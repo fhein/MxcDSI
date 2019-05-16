@@ -43,13 +43,32 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
 
         $root = $this->classConfig['root_category'] ?? 'Deutsch';
         $rootCategory = $this->categoryTool->findCategoryPath($root);
-        $icCategories = explode(MXC_DELIMITER_L1, $product->getCategory());
-        foreach ($icCategories as $icCategory) {
-            // if ($product->getName() === 'SC - Base - 100 ml, 0 mg/ml') xdebug_break();
+        $categories = explode(MXC_DELIMITER_L1, $product->getCategory());
+        foreach ($categories as $category) {
             $this->log->debug('Getting category for article ' . $product->getName());
-            $category = $this->categoryTool->getCategoryPath($this->getCategoryPositions($icCategory), $rootCategory);
-            $article->addCategory($category);
-            $category->setChanged();
+            $swCategory = $this->categoryTool->getCategoryPath($this->getCategoryPositions($category), $rootCategory);
+            $article->addCategory($swCategory);
+            $swCategory->setChanged();
+        }
+    }
+
+    public function createCategories(array $products)
+    {
+        $map = [];
+        foreach ($products as $product) {
+            if (! $product->isValid()) continue;
+            $categories = explode(MXC_DELIMITER_L1, $product->getCategory());
+            foreach ($categories as $category) {
+                $map[$category] = true;
+            }
+        }
+    }
+
+    public function createCategoryTree() {
+        $pathes = array_keys($this->categoryTree['category_positions']);
+        $root = $this->categoryTool->findCategoryPath('Deutsch');
+        foreach ($pathes as $path) {
+            $swCategory = $this->categoryTool->getCategoryPath($this->getCategoryPositions($path), $root);
         }
     }
 
