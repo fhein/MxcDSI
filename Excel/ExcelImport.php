@@ -20,11 +20,14 @@ class ExcelImport
 
         $importFile = $filepath ? $filepath : $this->excelFile;
         $spreadSheet = (new Reader())->load($importFile);
+        $isFileImported = false;
         foreach ($this->importers as $title => $importer)
         {
             $sheet = $spreadSheet->getSheetByName($title);
             if (! $sheet) continue;
             $importer->import($sheet);
+            $isFileImported = true;
         }
+        return $isFileImported;
     }
 }

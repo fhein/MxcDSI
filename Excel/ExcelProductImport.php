@@ -16,7 +16,8 @@ class ExcelProductImport extends ExcelImport
 
     public function import($filepath = null)
     {
-        parent::import($filepath);
+        $result = parent::import($filepath);
         $this->modelManager->getRepository(Product::class)->exportMappedProperties();
+        return $result;
     }
 }

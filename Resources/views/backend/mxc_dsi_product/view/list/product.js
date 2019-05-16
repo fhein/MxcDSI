@@ -101,28 +101,10 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             me.createToolsButton(),
             me.createTestButton(),
             me.createDevButton(),
-            //me.createUploadButton()
         ]);
         return items;
     },
 
-    /*createUploadButton: function() {
-        let me = this;
-
-        me.uploadButton = Ext.create('Shopware.app.FileUpload', {
-            requestURL: '{url controller="mediaManager" action="upload"}',
-            padding: '6 0 0',
-            fileInputConfig: {
-                buttonOnly: true,
-                width: 190,
-                buttonText : me.snippets.fieldsText.addButton,
-                buttonConfig : {
-                    iconCls:'sprite-plus-circle'
-                }
-            }
-        });
-        return me.uploadButton;
-    },*/
     handleLinkedState: function(changeTo) {
         let me = this;
         let selModel = me.getSelectionModel();
@@ -354,10 +336,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         click: function(event) {
                             var menu = event.container;
                             var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportField');
-
-
-                            var filefield2 = filefield[0].el.query('input[type=file]');
-                            filefield2[0].click();
+                            var button = filefield[0].el.query('input[type=file]');
+                            button[0].click();
                         }
 
                     }
@@ -367,41 +347,18 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     xtype: 'filefield',
                     name: 'excelFile',
                     itemId:'mxcDsiExcelImportField',
-                    margin: 0,
-                    buttonOnly: true,
-                    accept: '.xlsx',
+                    accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                     hidden: true,
-                    baseBodyCls:'x-menu-item',
 
-                    buttonConfig: {
-                        text: 'Import',
-                        itemId:'mxcDsiExcelImportButton',
-                        iconCls: 'sprite-table-export',
-                        tooltip: 'Upload Excel Template',
-                        style: 'background:transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;', //Button style
-                        flex: 100,
-                        border: 0
-                    },
-                    reset: function () {
-                        alert('reset');
-                        var me = this,
-                            clear = me.clearOnSubmit;
-                        if (me.rendered) {
-                            me.button.reset(clear);
-                            me.fileInputEl = me.button.fileInputEl;
-                            me.fileInputEl.set({
-                                accept: '.xlsx'
-                            });
-                            if (clear) {
-                                me.inputEl.dom.value = '';
-                            }
-                            me.callParent();
-                        }
-                    },
                     listeners: {
                         scope: me,
                         change: function(fileSelection) {
-                            me.fireEvent('mxcExcelImport', me, fileSelection.fileInputEl.dom.files);
+                            me.fireEvent('mxcExcelImport', me, fileSelection.fileInputEl.dom.files[0]);
+                        },
+                        afterrender:function(cmp){
+                            cmp.fileInputEl.set({
+                                accept:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                            });
                         }
                     }
                 }
@@ -455,28 +412,12 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
-                    text: 'Import Menu Click',
-                    listeners: {
-                        click: function(event) {
-                            var menu = event.container;
-                            var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportField');
-
-
-                            var filefield2 = filefield[0].el.query('input[type=file]');
-                            filefield2[0].click();
-                        }
-
-                    }
-                }
-                ,
-                {
                     xtype: 'filefield',
                     name: 'excelFile',
                     itemId:'mxcDsiExcelImportField',
                     margin: 0,
                     buttonOnly: true,
                     accept: '.xlsx',
-                    hidden: true,
                     baseBodyCls:'x-menu-item',
 
                     buttonConfig: {
@@ -510,24 +451,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                             me.fireEvent('mxcExcelImport', me, fileSelection.fileInputEl.dom.files);
                         }
                     }
-
-                    /*,
-                    listeners: {
-                        change: 'onImport',
-                        afterrender: function (cmp) {
-                            cmp.fileInputEl.set({
-                                accept: '.xlsx,.xls'
-                            });
-                        }
-                    }*/
-                },
-                {
-                    text : 'Excel Import ALT',
-                    iconCls: 'sprite-table-export',
-                    handler: function() {
-                        // me.fireEvent('mxcExcelImport', me);
-                    }
-                },
+                }
             ]
         });
 

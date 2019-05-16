@@ -170,18 +170,18 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $moveResult = move_uploaded_file($tmpName, $newFilePath);
 
             $excel = $this->getServices()->get(ExcelProductImport::class);
-            $excel->import($newFilePath);
-            $this->view->assign([ 'success' => true, 'message' => 'Settings successfully imported from Config/vapee.export.xlsx.' ]);
+            $result = $excel->import($newFilePath);
 
+            unlink($newFilePath);
+            if ($result){
+                $this->view->assign([ 'success' => $result, 'message' => 'Settings successfully imported from ' . $fileName . '.' ]);
+            }else{
+                $this->view->assign([ 'success' => $result, 'message' => 'File ' . $fileName . ' could not be imported.' ]);
+            }
         } catch (Exception $e) {
             $log->except($e, true, false);
-            die(json_encode(['success' => false, 'message' => $e->getMessage()]));
-            //$this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
         }
-        if ($file === null) {
-            die(json_encode(['success' => false]));
-        }
-
         $log->leave();
 
     }

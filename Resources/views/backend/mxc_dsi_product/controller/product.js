@@ -61,25 +61,32 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onExcelImport: function (grid, files) {
+    onExcelImport: function (grid, file) {
+        let me = this;
+
+        if (file.type != 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+            me.showError('Please select a valid import file (.xlsx)');
+            return;
+        }
+
         let url = '{url controller=MxcDsiProduct action=excelImport}';
 
-        let me = this,
-            fileForm = new FormData(),
-            scope = me,
-            request;
-
-        let file = files[0];
-
-        request = new XMLHttpRequest();
-
+        let fileForm = new FormData();
         fileForm.append('file', file, file.name);
 
+        let params = {};
+        let growlTitle = 'Importing Excel file';
+        let maskText = 'Importing Excel file ...';
+
+        me.doSubmit(grid, url, fileForm, growlTitle, maskText, true);
+/*
+        request = new XMLHttpRequest();
         request.open('POST', url, true);
         request.setRequestHeader('X-CSRF-Token', Ext.CSRFService.getToken());
         request.send(fileForm);
+        */
     },
-
+/*
     createRequest: function(scope){ //(callback, scope) {
         var me = this,
             request = new XMLHttpRequest(),
@@ -134,7 +141,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
         return request;
     },
-
+*/
     onRefreshItems: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=refresh}';
@@ -341,6 +348,47 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 }
             },
         });
+    },
+
+    doSubmit: function(grid, url, form, growlTitle, maskText, reloadGrid) {
+        let me = this,
+            request = new XMLHttpRequest(),
+            responseText;
+
+        let mask = new Ext.LoadMask(grid, { msg: maskText });
+        mask.show();
+        console.log(url);
+
+        request.onload = function() {
+            mask.hide();
+
+            if (request.status === 200) {
+                try {
+                    responseText = Ext.JSON.decode(request.response);
+                    console.log(responseText);
+                } catch (exception) {
+                    me.showError('An unknown error occurred, please check your server logs.');
+                    return;
+                }
+
+                if (!responseText.success) {
+                    if (responseText.message) {
+                        me.showError(responseText.message);
+                    } else {
+                        me.showError('An unknown error occurred, please check your server logs.');
+                    }
+                } else {
+                    Shopware.Notification.createGrowlMessage(growlTitle, responseText.message);
+                    if (reloadGrid === true) {
+                        grid.store.load();
+                    }
+                }
+            }
+        };
+
+        request.open('POST', url, true);
+        request.setRequestHeader('X-CSRF-Token', Ext.CSRFService.getToken());
+        request.send(form);
     },
 
     showError: function (message) {
