@@ -161,6 +161,7 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     public function updateConfiguratorSet(Product $product)
     {
         if (! $this->needsUpdate($product)) {
+            $this->log->debug('Configurator set does not require an update.');
             /** @var Article $article */
             $article = $product->getArticle();
             return $article->getConfiguratorSet();
