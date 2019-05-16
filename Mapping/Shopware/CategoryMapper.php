@@ -46,7 +46,8 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
         $categories = explode(MXC_DELIMITER_L1, $product->getCategory());
         foreach ($categories as $category) {
             $this->log->debug('Getting category for article ' . $product->getName());
-            $swCategory = $this->categoryTool->getCategoryPath($this->getCategoryPositions($category), $rootCategory);
+            $categoryPositions = $this->getCategoryPositions($category);
+            $swCategory = $this->categoryTool->getCategoryPath($categoryPositions, $rootCategory);
             $article->addCategory($swCategory);
             $swCategory->setChanged();
         }
@@ -68,7 +69,7 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
         $pathes = array_keys($this->categoryTree['category_positions']);
         $root = $this->categoryTool->findCategoryPath('Deutsch');
         foreach ($pathes as $path) {
-            $swCategory = $this->categoryTool->getCategoryPath($this->getCategoryPositions($path), $root);
+            $this->categoryTool->getCategoryPath($this->getCategoryPositions($path), $root);
         }
     }
 

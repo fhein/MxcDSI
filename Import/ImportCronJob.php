@@ -16,7 +16,7 @@ class ImportCronJob implements SubscriberInterface
         ];
     }
 
-    public function onImportCronJob($job)
+    public function onImportCronJob(/** @noinspection PhpUnusedParameterInspection */ $job)
     {
         $this->getServices();
         $this->services->get(ImportClient::class)->import();

@@ -95,9 +95,10 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
      *
      * @param Product $product
      * @param bool $create
+     * @param bool|null $forceUpdate
      * @return bool
      */
-    public function updateArticle(Product $product, bool $create):  bool
+    public function updateArticle(Product $product, bool $create, bool $forceUpdate = null):  bool
     {
         $article = $product->getArticle();
         if (! $article) {
@@ -108,11 +109,20 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             $this->deleteArticles([$product]);
             return false;
         }
+        $forceUpdate = $forceUpdate ?? false;
 
-        $this->configureArticle($product, false);
+        $this->configureArticle($product, $forceUpdate);
         $this->activateArticle($product);
         $this->modelManager->flush(); // temporary
         return true;
+    }
+
+    public function updateArticleStructure(Product $product)
+    {
+        $article = $product->getArticle();
+        if (! $article) return;
+        if (! $this->detailMapper->needsStructureUpdate($product)) return;
+        $this->detailMapper->map($product);
     }
 
     public function updateArticles(array $products, bool $create = false)
@@ -236,11 +246,11 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     /**
      * @param Product $product
-     * @param bool $created
+     * @param bool $forceUpdate
      */
-    protected function configureArticle(Product $product, bool $created): void
+    protected function configureArticle(Product $product, bool $forceUpdate): void
     {
-        $this->setArticleProperties($product, $created);
+        $this->setArticleProperties($product, $forceUpdate);
         $this->detailMapper->map($product);
         PriceMapper::setReferencePrice($product);
         $this->imageMapper->setArticleImages($product);

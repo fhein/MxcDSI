@@ -164,6 +164,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $product->setManual($model->getManual());
         $product->setDescription($model->getDescription());
         $product->setManufacturer($model->getManufacturer());
+        $this->propertyMapper->mapModelToProduct($model, $product);
 
         return $product;
     }
@@ -196,20 +197,18 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $this->modelManager->persist($variant);
             $this->variants[$model->getModel()] = $variant;
             $product->addVariant($variant);
-            $variant->setActive(false);
-            $variant->setAccepted(true);
-
             // set properties which do not require mapping
             $variant->setIcNumber($model->getModel());
             $variant->setEan($model->getEan());
-            $price = $model->getPurchasePrice();
-            $variant->setPurchasePrice($price);
-            $uvp = $model->getRecommendedRetailPrice();
-            $variant->setRecommendedRetailPrice($uvp);
+            $variant->setPurchasePrice($model->getPurchasePrice());
+            $variant->setRecommendedRetailPrice($model->getRecommendedRetailPrice());
             $variant->setImages($model->getImages());
-            $variant->setRetailPrices('EK' . MXC_DELIMITER_L1 . $uvp);
 
+            $variant->setActive(false);
+            $variant->setAccepted(true);
+            $variant->setRetailPrices('EK' . MXC_DELIMITER_L1 . $model->getRecommendedRetailPrice());
             $variant->setOptions($this->mapOptions($model->getOptions()));
+            $this->propertyMapper->mapModelToVariant($model, $variant);
         }
         $this->modelManager->flush();
     }
@@ -230,7 +229,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $products[$product->getIcNumber()] = $product;
         }
         $this->modelManager->flush();
-        // $this->productMapper->updateArticles($products, false);
+        $this->productMapper->updateArticles($products, false);
     }
 
     /**
@@ -287,60 +286,55 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $addedOptions = array_diff($newOptions, $oldOptions);
         $addedOptions = implode(MXC_DELIMITER_L2, $addedOptions);
         $addedOptions = $this->mapOptions($addedOptions);
-        $variant->addOptions($this->mapOptions($addedOptions));
+        $variant->addOptions($addedOptions);
     }
 
     protected function changeVariant(Variant $variant, Model $model, array $fields)
     {
+        $remap = false;
         foreach ($fields as $name => $values) {
-            $newValue = $values['newValue'];
-            $oldValue = $values['oldValue'];
             switch ($name) {
-                case 'category':
-                    $this->propertyMapper->mapProductCategory($model, $variant->getProduct());
+                // case 'category': Category is not currently used for mapping
+                case 'manufacturer':
+                case 'name':
+                    $remap = true;
                     break;
                 case 'ean':
-                    $variant->setEan($newValue);
+                    $variant->setEan($model->getEan());
                     break;
-                case 'name':
-                    $this->propertyMapper->mapProductName($model, $variant->getProduct());
+                case 'recommendedRetailPrice':
+                    $variant->setRecommendedRetailPrice($model->getRecommendedRetailPrice());
                     break;
                 case 'purchasePrice':
-                    $variant->setPurchasePrice($newValue);
-                    break;
-                case 'retailPrice':
-                    $variant->setRecommendedRetailPrice($newValue);
-                    break;
-                case 'manufacturer':
-                    $this->propertyMapper->mapProductManufacturer($model, $variant->getProduct());
+                    $variant->setPurchasePrice($model->getPurchasePrice());
                     break;
                 case 'images':
                     $variant->setImages($model->getImages());
                     break;
                 case 'options':
-                    $this->changeOptions($variant, $oldValue, $newValue);
-                    break;
-                case 'master':
-                    $variant->getProduct()->removeVariant($variant);
-                    $this->mapProduct($newValue)->addVariant($variant);
+                    $this->changeOptions($variant, $values['oldValue'], $values['newValue']);
                     break;
                 default:
-                    $this->log->debug(sprintf("Untreated variant change: %s: %s (old value: '%s', new value: '%s')",
-                        $model->getName(), $name, $oldValue, $newValue));
+                    $this->log->debug(
+                        sprintf("Untreated variant change: %s: %s (old value: '%s', new value: '%s')",
+                            $model->getName(), $name, $values['oldValue'], $values['newValue']));
             }
             $this->log->info(sprintf("Changing variant: %s: %s changed from '%s' to '%s'",
-                $model->getName(), $name, $oldValue, $newValue));
+                $model->getName(), $name, $values['oldValue'], $values['newValue']));
         }
+        return $remap;
     }
 
-    protected function changeVariants(array $changes)
+    protected function changeExistingVariants(array $changes)
     {
         foreach ($changes as $icNumber => $change) {
             /** @var Variant $variant */
             $variant = $this->variants[$icNumber];
             $model = $change['model'];
             $fields = $change['fields'];
-            $this->changeVariant($variant, $model, $fields);
+            $remap = $this->changeVariant($variant, $model, $fields);
+            if (! $remap) continue;
+
             $product = $variant->getProduct();
             $this->updates[$product->getIcNumber()] = $product;
         }
@@ -349,13 +343,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
     protected function removeOrphanedItems()
     {
+        // this function will get obsolete once it is made sure that all removals work correctly
         $this->getVariantRepository()->removeOrphaned();
         $this->getProductRepository()->removeOrphaned();
-
         $this->getOptionRepository()->removeOrphaned();
-
-        // Orphaned options must be removed before orphaned groups. Groups may become
-        // orphaned during removal of orphaned options
         $this->getGroupRepository()->removeOrphaned();
         $this->modelManager->flush();
     }
@@ -383,10 +374,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->updates = [];
         $this->initCache();
 
+        $this->changeExistingVariants($changes);
         $this->addNewVariants();
-        $this->changeVariants($changes);
         $this->deleteVariantsWithoutModel();
-        $this->propertyMapper->mapProperties($this->products);
+        $this->propertyMapper->mapProperties($this->updates);
         $this->removeOrphanedItems();
 
         $this->categoryMapper->buildCategoryTree();
@@ -394,7 +385,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         /** @noinspection PhpUndefinedMethodInspection */
         $this->getProductRepository()->refreshLinks();
 
-        // $this->productMapper->updateArticles($this->updates);
+        $this->productMapper->updateArticles($this->updates);
 
         if (@$this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {

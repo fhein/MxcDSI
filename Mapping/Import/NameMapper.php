@@ -208,46 +208,49 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
 
     protected function getNameReport()
     {
+        if (isset($this->report['name'])) {
+            $nameMap = array_values(array_map(function($value) {
+                return [
+                    'imported' => $value['imported'],
+                    'mapped  ' => $value['mapped'],
+                ];
+            }, $this->report['name']));
 
-        $nameMap = array_values(array_map(function($value) {
-            return [
-                'imported' => $value['imported'],
-                'mapped  ' => $value['mapped'],
-            ];
-        }, $this->report['name']));
+            $unchangedProductNames = array_map(function($value) {
+                return ($value['imported'] === $value['mapped']);
+            }, $this->report['name']);
+            $unchangedProductNames = array_keys(array_filter(
+                $unchangedProductNames,
+                function($value) {
+                    return $value === true;
+                }
+            ));
 
-        $unchangedProductNames = array_map(function($value) {
-            return ($value['imported'] === $value['mapped']);
-        }, $this->report['name']);
-        $unchangedProductNames = array_keys(array_filter(
-            $unchangedProductNames,
-            function($value) {
+            $namesWithoutRemovedOptions = array_map(function($value) {
+                return ($value['imported'] === $value['options_removed']);
+            }, $this->report['name']);
+            $namesWithoutRemovedOptions = array_keys(array_filter($namesWithoutRemovedOptions, function($value) {
                 return $value === true;
-            }
-        ));
+            }));
 
-        $namesWithoutRemovedOptions = array_map(function($value) {
-            return ($value['imported'] === $value['options_removed']);
-        }, $this->report['name']);
-        $namesWithoutRemovedOptions = array_keys(array_filter($namesWithoutRemovedOptions, function($value) {
-            return $value === true;
-        }));
-
-        $productNames = array_flip(array_flip(array_column($nameMap, 'mapped  ')));
-        sort($productNames);
+            $productNames = array_flip(array_flip(array_column($nameMap, 'mapped  ')));
+            sort($productNames);
+        }
 
         return [
-            'pmName'                 => $productNames,
-            'pmNameTrace'            => $this->report['name'],
-            'pmNameMap'              => $nameMap,
-            'pmNameUnchanged'        => $unchangedProductNames,
-            'pmNameNoOptionsRemoved' => $namesWithoutRemovedOptions,
+            'pmName'                 => $productNames ?? [],
+            'pmNameTrace'            => $this->report['name'] ?? [],
+            'pmNameMap'              => $nameMap ?? [],
+            'pmNameUnchanged'        => $unchangedProductNames ?? [],
+            'pmNameNoOptionsRemoved' => $namesWithoutRemovedOptions ?? [],
         ];
     }
 
     protected function getOptionReport()
     {
-        $optionMapping = $this->report['option'];
+        $optionMapping = $this->report['option'] ?? [];
+        if (! empty($optionMapping)) return $optionMapping;
+
         ksort($optionMapping);
         $applied = array_filter($optionMapping, function($value) {
             return $value['fixApplied'] === true;
@@ -282,9 +285,9 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         $nameReplace = $this->getReplacementTrace('product_name_replacements', 'preg_replace', 'brand_prepended');
         $nameCleanup = $this->getReplacementTrace('name_cleanup', 'preg_replace', 'product_separator');
         return [
-            'pmReplacementNamePrepare' => $namePrepare,
-            'pmReplacementNameReplace' => $nameReplace,
-            'pmReplacementNameCleanup' => $nameCleanup,
+            'pmReplacementNamePrepare' => $namePrepare ?? [],
+            'pmReplacementNameReplace' => $nameReplace ?? [],
+            'pmReplacementNameCleanup' => $nameCleanup ?? [],
         ];
     }
 

@@ -15,7 +15,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
     use ModelManagerAwareTrait;
 
     /** @var array */
-    protected $report;
+    protected $report = [];
 
     protected $categoryMap;
 

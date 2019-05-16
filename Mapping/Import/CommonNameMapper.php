@@ -10,7 +10,7 @@ use MxcDropshipInnocigs\Report\ArrayReport;
 class CommonNameMapper extends BaseImportMapper implements ProductMapperInterface
 {
     /** @var array */
-    protected $report;
+    protected $report = [];
 
     /**
      * The common name of an article is the pure product name without

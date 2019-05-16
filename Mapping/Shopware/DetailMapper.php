@@ -57,6 +57,11 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->articleResource = $articleResource;
     }
 
+    public function needsStructureUpdate(Product $product)
+    {
+        return $this->optionMapper->needsUpdate($product);
+    }
+
     /**
      * Create/Update all Shopware details associated to the InnoCogs article's
      * variants.
@@ -82,7 +87,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $isMainDetail = true;
         /** @var Variant $variant */
         foreach ($variants as $variant) {
-            $detail = $this->setDetail($variant);
+            $detail = $this->getDetail($variant);
             if ($detail === null) continue;
 
             $detail->setKind(2);
@@ -102,7 +107,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
      * @param Variant $variant
      * @return Detail|null
      */
-    public function setDetail(Variant $variant)
+    public function getDetail(Variant $variant)
     {
         $detail = $variant->getDetail();
 
@@ -166,29 +171,12 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     public function setShopwareDetailProperties(Variant $variant)
     {
         $detail = $variant->getDetail();
-        if (!$detail) {
-            return;
-        }
+        if (!$detail) return;
 
         $detail->setNumber($variant->getNumber());
         $detail->setEan($variant->getEan());
         $purchasePrice = floatval(str_replace(',', '.', $variant->getPurchasePrice()));
         $detail->setPurchasePrice($purchasePrice);
-
-        // @todo: Transfer the custom attributes to shopware or not?
-//        $attribute = $detail->getAttribute();
-//        $product = $variant->mapProduct();
-
-//        /** @noinspection PhpUndefinedMethodInspection */
-//        $attribute->setMxcDsiBrand($product->getBrand());
-//        /** @noinspection PhpUndefinedMethodInspection */
-//        $attribute->setMxcDsiSupplier($product->getSupplier());
-//        /** @noinspection PhpUndefinedMethodInspection */
-//        $attribute->setMxcDsiFlavor($product->getFlavor());
-//        /** @noinspection PhpUndefinedMethodInspection */
-//        $attribute->setMxcDsiMaster($product->getIcNumber());
-//        /** @noinspection PhpUndefinedMethodInspection */
-//        $attribute->setMxcDsiType($product->getType());
     }
 
     /**

@@ -25,6 +25,12 @@ class ProductRepository extends BaseEntityRepository
             . 'JOIN p.variants v '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
 
+        'getArticlesWithoutProduct' =>
+            'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
+            . 'JOIN Shopware\Models\Article\Detail d WITH d.article = a.id '
+            . 'LEFT JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
+            . 'WHERE v.id IS NULL',
+
         'getLinkedProductsFromProductIds'   =>
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'JOIN p.variants v '

@@ -308,7 +308,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
-                    text: 'Build category tree',
+                    text: 'Rebuild category positions',
                     iconCls: 'sprite-folder-tree',
                     handler: function() {
                         me.fireEvent('mxcBuildCategoryTree', me);

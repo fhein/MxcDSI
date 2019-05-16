@@ -70,8 +70,8 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         }
         $this->reset();
         $models = $this->getModels();
-        if (! $models || ! $products) {
-            $this->log->debug(__FUNCTION__ . ': no import models or products found.');
+        if (! $models) {
+            $this->log->debug(__FUNCTION__ . ': no import models found.');
             return;
         }
 
@@ -122,15 +122,15 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         }
     }
 
-    public function mapProductCategory(Model $model, Product $product) {
+    public function mapCategory(Model $model, Product $product) {
         $this->productMappers['category']->map($model, $product);
     }
 
-    public function mapProductName(Model $model, Product $product) {
+    public function mapName(Model $model, Product $product) {
         $this->productMappers['name']->map($model, $product);
     }
 
-    public function mapProductManufacturer(Model $model, Product $product)
+    public function mapManufacturer(Model $model, Product $product)
     {
         $this->productMappers['manufacturer']->map($model, $product);
     }

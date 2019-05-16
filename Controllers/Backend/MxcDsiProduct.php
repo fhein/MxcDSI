@@ -18,6 +18,7 @@ use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
+use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Models\Article\Article;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController
@@ -457,7 +458,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $modelManager = $this->getManager();
             $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model ir')->execute();
             $articles = $modelManager->getRepository(Article::class)->findAll();
-            $articleResource = new \Shopware\Components\Api\Resource\Article();
+            $articleResource = new ArticleResource();
             $articleResource->setManager($modelManager);
             /** @var Article $article */
             foreach ($articles as $article) {
@@ -558,9 +559,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $categoryMapper = $this->getServices()->get(ShopwareCategoryMapper::class);
             $categoryTool = $this->getServices()->get(CategoryTool::class);
-            //$categoryMapper->createCategoryTree();
             $categoryTool->createCategoryCache();
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
@@ -570,7 +569,18 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev4Action()
     {
         try {
-            $this->view->assign([ 'success' => true, 'message' => 'Development 4 slot is currently free.' ]);
+            /** @noinspection PhpUndefinedMethodInspection */
+            $articles = $this->getRepository()->getArticlesWithoutProduct();
+            /** @var Article $article */
+            $log = $this->getLog();
+            $articleResource = new ArticleResource();
+            $articleResource->setManager($this->getManager());
+            foreach ($articles as $article) {
+                $log->debug('Article without product: ' . $article->getName());
+                $articleResource->delete($article->getId());
+            }
+            $log->debug('Articles without details deleted.');
+            $this->view->assign([ 'success' => true, 'message' => 'Articles without product written to log file.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -687,10 +697,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
         // The user may have changed the accepted state of variants to false in the detail view of an product.
         // So we need to check and remove invalid variants when the detail view gets saved.
+        $services = $this->getServices();
+        $productMapper = $services->get(ProductMapper::class);
         if (! $fromListView) {
-            $this->getServices()->get(ProductMapper::class)->updateArticle($product, false);
+            $productMapper->updateArticleStructure($product);
             $this->getManager()->flush();
         }
+
+        $this->getRepository()->exportMappedProperties();
 
         $detail = $this->getDetail($product->getId());
         return ['success' => true, 'data' => $detail['data']];

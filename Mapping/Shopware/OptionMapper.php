@@ -107,7 +107,7 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->log->leave();
     }
 
-    protected function needsUpdate(Product $product)
+    public function needsUpdate(Product $product)
     {
         $variants = $product->getVariants();
         /** @var Variant $variant */

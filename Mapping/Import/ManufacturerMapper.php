@@ -13,7 +13,7 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
     use ClassConfigAwareTrait;
 
     /** @var array */
-    protected $report;
+    protected $report = [];
 
     /** @var array */
     protected $mappings;
@@ -61,6 +61,7 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
 
     public function report()
     {
+        if (empty($this->report)) return;
         $reporter = new ArrayReport();
         ksort($this->report['brand']);
         ksort($this->report['supplier']);
