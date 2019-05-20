@@ -20,8 +20,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.model.Product', {
         { name : 'commonName', type: 'string' },
         { name : 'flavor', type: 'string' },
         { name : 'supplier', type: 'string' },
-        { name : 'createRelatedProducts', type: 'boolean' },
-        { name : 'createSimilarProducts', type: 'boolean' },
         { name : 'accepted', type: 'boolean' },
         { name : 'new', type: 'boolean' },
         { name : 'linked', type: 'boolean' },

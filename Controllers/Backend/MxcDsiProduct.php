@@ -3,6 +3,7 @@
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
+use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
@@ -42,11 +43,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $modelManager = $this->getModelManager();
             /** @noinspection PhpUndefinedMethodInspection */
-            if ($modelManager->getRepository(Product::class)->refreshLinks()) {
-                $this->view->assign([ 'success' => true, 'message' => 'Product links were successfully updated.']);
-            } else {
-                $this->view->assign([ 'success' => false, 'message' => 'Failed to update product links.']);
-            };
+            $modelManager->getRepository(Product::class)->refreshProductStates();
+            $this->view->assign([ 'success' => true, 'message' => 'Product links were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -263,7 +261,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                     $message = 'Nothing done.';
             }
             /** @noinspection PhpUndefinedMethodInspection */
-            $this->getRepository()->refreshLinks();
+            $this->getRepository()->refreshProductStates();
             $this->view->assign(['success' => true, 'message' => $message]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -288,7 +286,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                     $message = 'Nothing done.';
             }
             /** @noinspection PhpUndefinedMethodInspection */
-            $this->getRepository()->refreshLinks();
+            $this->getRepository()->refreshProductStates();
             $this->view->assign(['success' => true, 'message' => $message]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -313,7 +311,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                     $message = 'Nothing done.';
             }
             /** @noinspection PhpUndefinedMethodInspection */
-            $this->getRepository()->refreshLinks();
+            $this->getRepository()->refreshProductStates();
             $this->view->assign(['success' => true, 'message' => $message]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -379,7 +377,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $message = 'Products were successfully created.';
             $this->view->assign(['success' => true, 'message' => $message]);
             /** @noinspection PhpUndefinedMethodInspection */
-            $this->getRepository()->updateLinkState();
+            $this->getRepository()->refreshProductStates();
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -389,12 +387,13 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $productMapper = $this->getServices()->get(ProductMapper::class);
-            $products = $this->getRepository()->findAll();
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $this->getRepository()->getLinkedProducts();
             $productMapper->deleteArticles($products);
             $message = 'Products were successfully deleted.';
             $this->view->assign(['success' => true, 'message' => $message]);
             /** @noinspection PhpUndefinedMethodInspection */
-            $this->getRepository()->updateLinkState();
+            $this->getRepository()->refreshProductStates();
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -569,18 +568,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev4Action()
     {
         try {
-            /** @noinspection PhpUndefinedMethodInspection */
-            $articles = $this->getRepository()->getArticlesWithoutProduct();
-            /** @var Article $article */
-            $log = $this->getLog();
-            $articleResource = new ArticleResource();
-            $articleResource->setManager($this->getManager());
-            foreach ($articles as $article) {
-                $log->debug('Article without product: ' . $article->getName());
-                $articleResource->delete($article->getId());
-            }
-            $log->debug('Articles without details deleted.');
-            $this->view->assign([ 'success' => true, 'message' => 'Articles without product written to log file.' ]);
+            $stockInfo = $this->getServices()->get(ApiClient::class)->getAllStockInfo();
+            $this->getLog()->debug(var_export($stockInfo, true));
+            $this->view->assign([ 'success' => true, 'message' => 'Stock info successfully received.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

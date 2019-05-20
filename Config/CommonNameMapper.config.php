@@ -18,6 +18,9 @@ return [
             'Candy Mints' => 2,
             'Frosty Shakes' => 2,
         ],
+        'The Fog Clown' => [
+            'Energy Series' => 2,
+        ],
         '5 Stars Peine' => [
             'Flavor Monster'    => 2,
             'One'               => 2,

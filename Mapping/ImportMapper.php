@@ -162,7 +162,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $product->setActive(false);
         $product->setAccepted(true);
         $product->setManual($model->getManual());
-        $product->setDescription($model->getDescription());
+        $description = $model->getDescription();
+        $product->setDescription($description);
+        $product->setIcDescription($description);
         $product->setManufacturer($model->getManufacturer());
         $this->propertyMapper->mapModelToProduct($model, $product);
 
@@ -228,7 +230,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $product = $variant->getProduct();
             $products[$product->getIcNumber()] = $product;
         }
-        $this->modelManager->flush();
+        // $this->modelManager->flush();
         $this->productMapper->updateArticles($products, false);
     }
 
@@ -299,14 +301,23 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                 case 'name':
                     $remap = true;
                     break;
+                case 'description':
+                    $variant->getProduct()->setIcDescription($model->getDescription());
+                    break;
                 case 'ean':
-                    $variant->setEan($model->getEan());
+                    $ean = $model->getEan();
+                    $variant->setEan($ean);
+                    $detail = $variant->getDetail();
+                    if ($detail) $detail->setEan($ean);
                     break;
                 case 'recommendedRetailPrice':
                     $variant->setRecommendedRetailPrice($model->getRecommendedRetailPrice());
                     break;
                 case 'purchasePrice':
-                    $variant->setPurchasePrice($model->getPurchasePrice());
+                    $purchasePrice = $model->getPurchasePrice();
+                    $variant->setPurchasePrice($purchasePrice);
+                    $detail = $variant->getDetail();
+                    if ($detail) $detail->setPurchasePrice($purchasePrice);
                     break;
                 case 'images':
                     $variant->setImages($model->getImages());
@@ -374,18 +385,18 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->updates = [];
         $this->initCache();
 
-        $this->changeExistingVariants($changes);
-        $this->addNewVariants();
         $this->deleteVariantsWithoutModel();
+        $this->addNewVariants();
+        $this->changeExistingVariants($changes);
         $this->propertyMapper->mapProperties($this->updates);
         $this->removeOrphanedItems();
 
         $this->categoryMapper->buildCategoryTree();
 
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->getProductRepository()->refreshLinks();
+        $this->getProductRepository()->refreshProductStates();
 
-        $this->productMapper->updateArticles($this->updates);
+        // $this->productMapper->updateArticles($this->updates);
 
         if (@$this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {

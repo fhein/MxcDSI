@@ -37,18 +37,20 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         }
 
         $appendSubcategory = $categoryMap[$type]['append_subcategory'] ?? null;
-        switch (is_string($appendSubcategory)) {
-            case 'supplier':
-                $appendSubcategory = $product->getSupplier();
-                break;
-            case 'brand':
-                $appendSubcategory = $product->getBrand();
-                break;
-            case 'common_name':
-                $appendSubcategory = $product->getCommonName();
-                break;
-            default:
-                $appendSubcategory = null;
+        if (is_string($appendSubcategory)) {
+            switch ($appendSubcategory) {
+                case 'supplier':
+                    $appendSubcategory = $product->getSupplier();
+                    break;
+                case 'brand':
+                    $appendSubcategory = $product->getBrand();
+                    break;
+                case 'common_name':
+                    $appendSubcategory = $product->getCommonName();
+                    break;
+                default:
+                    $appendSubcategory = null;
+            }
         }
 
         $categories[] = $appendSubcategory ? $category . ' > ' . $appendSubcategory : $category;

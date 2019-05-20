@@ -493,6 +493,7 @@ return [
             '~(Loop( V1.5)? RDA)~',
         ],
         'HellVape'    => [
+            '~(Anglo RDA)~',
             '~(Dead Rabbit RTA)~',
             '~(Dead Rabbit RDA)~',
             '~(Dead Rabbit SQ RDA)~',
@@ -504,9 +505,10 @@ return [
         'SC'          => [
             '~(iJust ((21700)|(ECM)|(3))?)~',
             '~(Ello( ((Vate)|(Duro))?))~',
+            '~(iKuu Lite)~',
             '~(Elven)~',
             '~(Basal)~',
-            '~(GS ((Air 2)|(Air)|(Baby)|(Drive)|(Turbo))?)~',
+            '~(GS ((Air 2)|(Air 3)|(Air)|(Baby)|(Drive)|(Turbo))?)~',
             '~(iKonn)~',
             '~(Invoke)~',
             '~(iStick ((Melo)|(Amnis)|(Pico X)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim)|(Nowos))?)~',
@@ -648,6 +650,7 @@ return [
         'Vaporesso'   => [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
             '~(Sky Solo( Plus)?)~',
+            '~(Aurora Play)~',
             '~(Luxe)~',
             '~(NRG)~',
             '~(Orca Solo)~',

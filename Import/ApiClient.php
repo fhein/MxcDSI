@@ -265,7 +265,12 @@ class ApiClient
     public function getAllStockInfo()
     {
         $cmd = $this->authUrl . '&command=quantity_all';
-        return $this->xmlToArray($this->send($cmd)->getBody());
+        $data = $this->xmlToArray($this->send($cmd)->getBody());
+        $stockInfo = [];
+        foreach($data['QUANTITIES']['PRODUCT'] as $record) {
+            $stockInfo[$record['PRODUCTS_MODEL']] = $record['QUANTITY'];
+        };
+        return $stockInfo;
     }
 
     protected function dumpXML($xml)

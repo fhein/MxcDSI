@@ -23,6 +23,9 @@ class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareIn
     /** @var ApiClient */
     private $apiClient;
 
+    /** @var array */
+    private $stockInfo;
+
     public function __construct(ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
@@ -50,7 +53,7 @@ class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareIn
         /** @noinspection PhpUndefinedMethodInspection */
         $attribute->setDcIcRetailPrice($variant->getRecommendedRetailPrice());
         /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcInstock($this->apiClient->getStockInfo($variant->getIcNumber()));
+        $attribute->setDcIcInstock($this->getStockInfo()[$variant->getIcNumber()] ?? 0);
     }
 
     /**
@@ -78,5 +81,10 @@ class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareIn
             }
         };
         return $this->valid;
+    }
+
+    protected function getStockInfo()
+    {
+        return $this->stockInfo ?? $this->stockInfo = $this->apiClient->getAllStockInfo();
     }
 }

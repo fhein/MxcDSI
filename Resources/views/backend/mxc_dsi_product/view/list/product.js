@@ -12,8 +12,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 new:                        { header: 'new', width: 40, flex: 0 },
                 linked:                     { header: 'linked', width: 40, flex: 0 },
                 active:                     { header: 'active', width: 40, flex: 0 },
-                createRelatedProducts:      { header: 'related', width: 50, flex: 0 },
-                createSimilarProducts:      { header: 'similar', width: 50, flex: 0 },
                 number:                     { header: 'Number'},
                 manufacturer:               { header: 'Manufacturer' },
                 supplier:                   { header: 'Supplier'},

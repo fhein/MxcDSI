@@ -99,6 +99,12 @@ class Product extends ModelEntity  {
     private $description;
 
     /**
+     * @var string $icDescription
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $icDescription;
+
+    /**
      * @var string $manufacturer;
      * @ORM\Column(name="manufacturer", type="string", nullable=true)
      */
@@ -174,30 +180,6 @@ class Product extends ModelEntity  {
      * @ORM\Column(name="retail_others",type="string", nullable=true)
      */
     private $retailPriceOthers;
-
-    /**
-     * @var boolean $createRelatedProducts
-     * @ORM\Column(type="boolean", nullable=false)
-     */
-    private $createRelatedProducts = true;
-
-    /**
-     * @var boolean $activateCreatedRelatedProducts
-     * @ORM\Column(type="boolean", nullable=false)
-     */
-    private $activateCreatedRelatedProducts = false;
-
-    /**
-     * @var boolean
-     * @ORM\Column(type="boolean", nullable=false)
-     */
-    private $createSimilarProducts = false;
-
-    /**
-     * @var boolean
-     * @ORM\Column(type="boolean", nullable=false)
-     */
-    private $activateCreatedSimilarProducts = false;
 
     /**
      * @var boolean $accepted
@@ -602,22 +584,6 @@ class Product extends ModelEntity  {
     }
 
     /**
-     * @return bool
-     */
-    public function getActivateCreatedRelatedProducts(): bool
-    {
-        return $this->activateCreatedRelatedProducts;
-    }
-
-    /**
-     * @param bool $activateCreatedRelatedProducts
-     */
-    public function setActivateCreatedRelatedProducts(bool $activateCreatedRelatedProducts)
-    {
-        $this->activateCreatedRelatedProducts = $activateCreatedRelatedProducts;
-    }
-
-    /**
      * @return string|null
      */
     public function getBase()
@@ -634,22 +600,6 @@ class Product extends ModelEntity  {
     }
 
     /**
-     * @return bool
-     */
-    public function getActivateCreatedSimilarProducts(): bool
-    {
-        return $this->activateCreatedSimilarProducts;
-    }
-
-    /**
-     * @param bool $activateCreatedSimilarProducts
-     */
-    public function setActivateCreatedSimilarProducts(bool $activateCreatedSimilarProducts)
-    {
-        $this->activateCreatedSimilarProducts = $activateCreatedSimilarProducts;
-    }
-
-    /**
      * @return float
      */
     public function getTax(): float
@@ -663,38 +613,6 @@ class Product extends ModelEntity  {
     public function setTax(float $tax)
     {
         $this->tax = $tax;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getCreateSimilarProducts(): bool
-    {
-        return $this->createSimilarProducts;
-    }
-
-    /**
-     * @param bool $createSimilarProducts
-     */
-    public function setCreateSimilarProducts(bool $createSimilarProducts)
-    {
-        $this->createSimilarProducts = $createSimilarProducts;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getCreateRelatedProducts(): bool
-    {
-        return $this->createRelatedProducts;
-    }
-
-    /**
-     * @param bool $createRelatedProducts
-     */
-    public function setCreateRelatedProducts(bool $createRelatedProducts)
-    {
-        $this->createRelatedProducts = $createRelatedProducts;
     }
 
     public function isValid() {
@@ -766,5 +684,21 @@ class Product extends ModelEntity  {
     public function setFlavorCategory($flavorCategory)
     {
         $this->flavorCategory = $flavorCategory;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getIcDescription()
+    {
+        return $this->icDescription;
+    }
+
+    /**
+     * @param string|null $icDescription
+     */
+    public function setIcDescription($icDescription)
+    {
+        $this->icDescription = $icDescription;
     }
 }

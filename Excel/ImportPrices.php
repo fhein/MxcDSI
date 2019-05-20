@@ -66,7 +66,6 @@ class ImportPrices extends AbstractProductImport
 
         foreach ($this->indexMap as $column => $customerGroup) {
             $price = $record[$column];
-            // @todo: Check type of empty price, because this does not work
             $price = $price === '' ? null : $price;
             $price = $price ?? $uvp;
             if ($price) {
