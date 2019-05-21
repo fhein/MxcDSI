@@ -73,13 +73,24 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onExcelImport: function (grid) {
+    onExcelImport: function (grid, file) {
         let me = this;
+
+        if (file.type != 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+            me.showError('Please select a valid import file (.xlsx)');
+            return;
+        }
+
         let url = '{url controller=MxcDsiProduct action=excelImport}';
+
+        let fileForm = new FormData();
+        fileForm.append('file', file, file.name);
+
         let params = {};
-        let growlTitle = 'Excel Import';
-        let maskText = 'Importing from Excel ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        let growlTitle = 'Importing Excel file';
+        let maskText = 'Importing Excel file ...';
+
+        me.doSubmit(grid, url, fileForm, growlTitle, maskText, true);
     },
 
     onRefreshItems: function (grid) {
@@ -365,6 +376,105 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 me.handleError(record, operation);
             }
         });
+    },
+
+    doRequest: function(grid, url, params, growlTitle, maskText, reloadGrid) {
+        let me = this;
+        let mask = new Ext.LoadMask(grid, { msg: maskText });
+        mask.show();
+        console.log(url);
+        Ext.Ajax.request({
+            method: 'POST',
+            url: url,
+            params: params,
+
+            success: function (response) {
+                mask.hide();
+                let result = Ext.JSON.decode(response.responseText);
+                console.log(result);
+                if (!result) {
+                    me.showError(response.responseText);
+                } else if (result.success) {
+                    Shopware.Notification.createGrowlMessage(growlTitle, result.message);
+                    if (reloadGrid === true) {
+                        grid.store.load();
+                    }
+                } else {
+                    me.showError(result.message);
+                }
+            },
+
+            failure: function (response) {
+                mask.hide();
+                if (response.responseText) {
+                    me.showError(response.responseText);
+                } else {
+                    me.showError('An unknown error occurred, please check your server logs.');
+                }
+            },
+        });
+    },
+
+    doSubmit: function(grid, url, form, growlTitle, maskText, reloadGrid) {
+        let me = this,
+            request = new XMLHttpRequest(),
+            responseText;
+
+        let mask = new Ext.LoadMask(grid, { msg: maskText });
+        mask.show();
+        console.log(url);
+
+        request.onload = function() {
+            mask.hide();
+
+            if (request.status === 200) {
+                try {
+                    responseText = Ext.JSON.decode(request.response);
+                    console.log(responseText);
+                } catch (exception) {
+                    me.showError('An unknown error occurred, please check your server logs.');
+                    return;
+                }
+
+                if (!responseText.success) {
+                    if (responseText.message) {
+                        me.showError(responseText.message);
+                    } else {
+                        me.showError('An unknown error occurred, please check your server logs.');
+                    }
+                } else {
+                    Shopware.Notification.createGrowlMessage(growlTitle, responseText.message);
+                    if (reloadGrid === true) {
+                        grid.store.load();
+                    }
+                }
+            }
+        };
+
+        request.open('POST', url, true);
+        request.setRequestHeader('X-CSRF-Token', Ext.CSRFService.getToken());
+        request.send(form);
+    },
+
+    showError: function (message) {
+        Shopware.Notification.createStickyGrowlMessage({
+                title: 'Error',
+                text: message,
+                log: true
+            },
+            'MxcDropshipInnoCigs');
+    },
+
+    handleError: function (record, operation) {
+        let me = this;
+
+        let rawData = operation.records[0].proxy.reader.rawData;
+        let message = 'An unknown error occurred, please check your server logs.';
+        if (rawData.message) {
+            record.set('active', false);
+            message = rawData.message;
+        }
+        me.showError(message);
     },
 
     onDev1: function (grid) {

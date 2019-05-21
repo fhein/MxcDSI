@@ -21,11 +21,54 @@ use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Models\Article\Article;
+use Shopware\Components\CSRFWhitelistAware;
+use Symfony\Component\HttpFoundation\FileBag;
+use Shopware\Components\SwagImportExport\UploadPathProvider;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController
 {
     protected $model = Product::class;
     protected $alias = 'product';
+
+    public function getWhitelistedCSRFActions()
+    {
+        return [
+            'excelExport',
+        ];
+    }
+
+    public function postDispatch()
+    {
+       /* if ($this->Request()->getActionName() !== 'excelExport') {
+            parent::postDispatch();
+        }*/
+    }
+
+    public function indexAction() {
+        $log = $this->getLog();
+        $log->enter();
+        try {
+            parent::indexAction();
+        } catch (Throwable $e) {
+            $log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage(),
+            ]);
+        }
+        $log->leave();
+    }
+
+    public function updateAction()
+    {
+        $log = $this->getLog();
+        $log->enter();
+        try {
+            parent::updateAction();
+        } catch (Throwable $e) {
+            $log->except($e, true, false);
+            $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        }
+        $log->leave();
+    }
 
     public function importAction()
     {
@@ -213,9 +256,28 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function excelExportAction()
     {
         try {
+            //necessary for correct download file
+            Shopware()->Plugins()->Controller()->ViewRenderer()->setNoRender();
+            $this->Front()->Plugins()->Json()->setRenderer(false);
+
             $excel = $this->getServices()->get(ExcelExport::class);
             $excel->export();
-            $this->view->assign([ 'success' => true, 'message' => 'Settings successfully exported to Config/vapee.export.xlsx.' ]);
+
+            $filepath = $excel->getExcelFile();
+            $batchfile = file_get_contents($filepath);
+            $size = filesize($filepath);
+
+            $response = $this->Response();
+            $response->setHeader('Cache-Control', 'must-revalidate');
+            $response->setHeader('Content-Description', 'File Transfer');
+            $response->setHeader('Content-disposition', 'attachment; filename=' . 'vapee.export.xlsx');
+            $response->setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            $response->setHeader('Content-Transfer-Encoding', 'binary');
+            $response->setHeader('Content-Length', $size);
+            $response->setHeader('Pragma', 'public');
+
+            echo $batchfile;
+
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -223,10 +285,35 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function excelImportAction()
     {
+        $log = $this->getLog();
+        $log->enter();
+
+        // Try to get the transferred file
         try {
+            $file = $_FILES['file'];
+
+            if ($file === null) $log->debug('file is null');
+            $fileName = $file['name'];
+            $tmpName = $_FILES['file']['tmp_name'];
+
+            $fileBag = new FileBag($_FILES);
+
+            /** @var UploadedFile $file */
+            $file = $fileBag->get('file');
+            $fileNamePos= strrpos ($tmpName, '/');
+            $tmpPath= substr($tmpName, 0, $fileNamePos);
+            $newFilePath = $tmpPath.'/' . $fileName; //'/../Config/' . $file['originalName'];
+            $moveResult = move_uploaded_file($tmpName, $newFilePath);
+
             $excel = $this->getServices()->get(ExcelProductImport::class);
-            $excel->import();
-            $this->view->assign([ 'success' => true, 'message' => 'Settings successfully imported from Config/vapee.export.xlsx.' ]);
+            $result = $excel->import($newFilePath);
+
+            unlink($newFilePath);
+            if ($result){
+                $this->view->assign([ 'success' => $result, 'message' => 'Settings successfully imported from ' . $fileName . '.' ]);
+            }else{
+                $this->view->assign([ 'success' => $result, 'message' => 'File ' . $fileName . ' could not be imported.' ]);
+            }
         } catch (Throwable $e) {
             $this->handleException($e);
         }

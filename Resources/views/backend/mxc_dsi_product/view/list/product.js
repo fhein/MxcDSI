@@ -414,14 +414,39 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text : 'Excel Export',
                     iconCls: 'sprite-table-import',
                     handler: function() {
-                        me.fireEvent('mxcExcelExport', me);
+                        window.open('/backend/MxcDsiProduct/excelExport');
                     }
                 },
                 {
-                    text : 'Excel Import',
-                    iconCls: 'sprite-table-export',
-                    handler: function() {
-                        me.fireEvent('mxcExcelImport', me);
+                    text: 'Excel Import',
+                    listeners: {
+                        click: function(event) {
+                            var menu = event.container;
+                            var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportField');
+                            var button = filefield[0].el.query('input[type=file]');
+                            button[0].click();
+                        }
+
+                    }
+                }
+                ,
+                {
+                    xtype: 'filefield',
+                    name: 'excelFile',
+                    itemId:'mxcDsiExcelImportField',
+                    accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                    hidden: true,
+
+                    listeners: {
+                        scope: me,
+                        change: function(fileSelection) {
+                            me.fireEvent('mxcExcelImport', me, fileSelection.fileInputEl.dom.files[0]);
+                        },
+                        afterrender:function(cmp){
+                            cmp.fileInputEl.set({
+                                accept:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                            });
+                        }
                     }
                 }
 
