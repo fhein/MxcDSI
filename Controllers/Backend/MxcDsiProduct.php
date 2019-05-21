@@ -25,7 +25,7 @@ use Shopware\Components\CSRFWhitelistAware;
 use Symfony\Component\HttpFoundation\FileBag;
 use Shopware\Components\SwagImportExport\UploadPathProvider;
 
-class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController
+class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
     protected $model = Product::class;
     protected $alias = 'product';
