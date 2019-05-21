@@ -15,13 +15,19 @@ class ExcelImport
         $this->importers = $importers;
     }
 
-    public function import() {
-        $spreadSheet = (new Reader())->load($this->excelFile);
+    public function import($filepath = null) {
+        /** @noinspection PhpUnhandledExceptionInspection */
+
+        $importFile = $filepath ? $filepath : $this->excelFile;
+        $spreadSheet = (new Reader())->load($importFile);
+        $isFileImported = false;
         foreach ($this->importers as $title => $importer)
         {
             $sheet = $spreadSheet->getSheetByName($title);
             if (! $sheet) continue;
             $importer->import($sheet);
+            $isFileImported = true;
         }
+        return $isFileImported;
     }
 }

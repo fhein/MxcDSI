@@ -230,8 +230,8 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $product = $variant->getProduct();
             $products[$product->getIcNumber()] = $product;
         }
-        // $this->modelManager->flush();
-        $this->productMapper->updateArticles($products, false);
+        $this->modelManager->flush();
+        $this->productMapper->updateArticles($products);
     }
 
     /**
@@ -253,6 +253,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             /** @var Product $product */
             $product = $variant->getProduct();
             $product->removeVariant($variant);
+            $variant->setProduct(null);
 
             $variantRepository->removeOptions($variant);
             $this->modelManager->remove($variant);
@@ -262,7 +263,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                 unset($this->products[$product->getIcNumber()]);
             }
         }
-
         $this->modelManager->flush();
     }
 
