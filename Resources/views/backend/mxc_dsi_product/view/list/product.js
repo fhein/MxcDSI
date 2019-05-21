@@ -412,13 +412,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 '-',
                 {
                     text : 'Excel Export',
-                    iconCls: 'sprite-table-import',
+                    iconCls: 'sprite-table-export',
                     handler: function() {
                         window.open('/backend/MxcDsiProduct/excelExport');
                     }
                 },
                 {
                     text: 'Excel Import',
+                    iconCls: 'sprite-table-import',
                     listeners: {
                         click: function(event) {
                             var menu = event.container;
