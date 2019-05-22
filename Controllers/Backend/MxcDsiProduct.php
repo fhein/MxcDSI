@@ -21,9 +21,7 @@ use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
-use Shopware\Components\SwagImportExport\UploadPathProvider;
 use Shopware\Models\Article\Article;
-use Symfony\Component\HttpFoundation\FileBag;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -224,7 +222,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             //necessary for correct download file
-            Shopware()->Plugins()->Controller()->ViewRenderer()->setNoRender();
+            $this->get('plugins')->Controller()->ViewRenderer()->setNoRender();
             $this->Front()->Plugins()->Json()->setRenderer(false);
 
             $excel = $this->getServices()->get(ExcelExport::class);
@@ -262,15 +260,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             if ($file === null) $log->debug('file is null');
             $fileName = $file['name'];
             $tmpName = $_FILES['file']['tmp_name'];
-
-            $fileBag = new FileBag($_FILES);
-
-            /** @var UploadedFile $file */
-            $file = $fileBag->get('file');
             $fileNamePos= strrpos ($tmpName, '/');
             $tmpPath= substr($tmpName, 0, $fileNamePos);
             $newFilePath = $tmpPath.'/' . $fileName; //'/../Config/' . $file['originalName'];
-            $moveResult = move_uploaded_file($tmpName, $newFilePath);
+            move_uploaded_file($tmpName, $newFilePath);
 
             $excel = $this->getServices()->get(ExcelProductImport::class);
             $result = $excel->import($newFilePath);

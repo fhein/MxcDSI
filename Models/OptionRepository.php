@@ -5,7 +5,9 @@ namespace MxcDropshipInnocigs\Models;
 class OptionRepository extends BaseEntityRepository
 {
     protected $dql = [
-        'removeOrphaned'    => 'DELETE MxcDropshipInnocigs\Models\Option o WHERE o.variants is empty',
+        'removeOrphaned'    =>  'DELETE MxcDropshipInnocigs\Models\Option o WHERE o.variants is empty',
+        'getOption'         =>  'SELECT o FROM MxcDropshipInnocigs\Models\Option o '
+                                . 'JOIN o.icGroup g WHERE o.name = :optionName AND g.name = :groupName',
     ];
 
     public function getAllIndexed() {
@@ -18,6 +20,15 @@ class OptionRepository extends BaseEntityRepository
             $result[$gname][$oname] = $option;
         }
         return $result;
+    }
+
+    public function getOption($groupName, $optionName)
+    {
+        $result = $this->getQuery(__FUNCTION__)
+            ->setParameter('groupName', $groupName)
+            ->setParameter('optionName', $optionName)
+            ->getResult();
+        return $result[0] ?? null;
     }
 
     public function removeOrphaned() {

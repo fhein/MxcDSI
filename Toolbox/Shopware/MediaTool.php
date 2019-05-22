@@ -10,6 +10,7 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Bundle\MediaBundle\MediaService;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Option;
+use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Image;
 use Shopware\Models\Media\Album;
 use Shopware\Models\Media\Media;
@@ -115,7 +116,7 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
 
     }
 
-    public function createDetailImage(string $url, $detail) {
+    public function createDetailImage(string $url, Detail $detail) {
         $urlInfo = pathinfo($url);
 
         $image = new Image();
@@ -174,6 +175,7 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
     public function removeImages(Article $article)
     {
         $images = $article->getImages();
+        /** @var Image $image */
         foreach ($images as $image) {
             $this->removeImage($image);
         }

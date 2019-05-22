@@ -203,6 +203,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         /** @var Article $article */
         $article = $product->getArticle();
         if (! $article) return;
+        $this->articleResource->delete($article->getId());
 
         $configuratorSetName = 'mxc-set-' . $product->getIcNumber();
         if ($set = $this->getSetRepository()->findOneBy(['name' => $configuratorSetName]))
@@ -213,8 +214,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $product->setArticle(null);
         $product->setActive(false);
         $product->setLinked(false);
-
-        $this->articleResource->delete($article->getId());
+        $this->modelManager->flush();
     }
 
     protected function getProductRepository()

@@ -1,9 +1,10 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php /** @noinspection PhpUndefinedMethodInspection */
+
+/** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\ORM\OptimisticLockException;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
@@ -34,6 +35,8 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
     use ClassConfigAwareTrait;
+
+    protected $useCache = false;
 
     /** @var VariantRepository */
     protected $variantRepository;
@@ -74,9 +77,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     /** @var array $config */
     protected $config;
 
-    /** @var array $variants */
-    protected $variants;
-
     /** @var array $options */
     protected $options;
 
@@ -85,6 +85,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
     /** @var array */
     protected $products;
+
+    /** @var array */
+    protected $variants;
 
     /** @var array */
     protected $updates;
@@ -118,17 +121,29 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->bulkOperation = $bulkOperation;
     }
 
+    /**
+     * @param string $groupName
+     * @return Group
+     */
+    protected function addGroup(string $groupName): Group
+    {
+        $group = new Group();
+        $this->modelManager->persist($group);
+        $group->setAccepted(true);
+        $group->setName($groupName);
+        return $group;
+    }
+
     protected function mapGroup(string $groupName)
     {
         $group = @$this->groups[$groupName];
-        if (null === $group) {
-            $group = new Group();
-            $this->modelManager->persist($group);
-
-            $group->setAccepted(true);
-            $group->setName($groupName);
-            $this->groups[$groupName] = $group;
+        if ($group) return $group;
+        if ($this->useCache) {
+            $group = $this->addGroup($groupName);
+        } else {
+            $group = $this->getGroupRepository()->findOneBy(['name' => $groupName]) ?? $this->addGroup($groupName);
         }
+        $this->groups[$groupName] = $group;
         return $group;
     }
 
@@ -141,6 +156,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $optionName = $this->propertyMapper->mapOptionName($param[1]);
             $groupName = $this->propertyMapper->mapGroupName($param[0]);
             $option = @$this->options[$groupName][$optionName];
+            if ($option === null && ! $this->useCache) {
+                $option = $this->getOptionRepository()->getOption($groupName, $optionName);
+            }
             if ($option === null) {
                 $group = $this->mapGroup($groupName);
                 $option = new Option();
@@ -179,7 +197,12 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $product = @$this->products[$number];
         if ($product) return $product;
 
-        $product = $this->addProduct($model);
+        if ($this->useCache) {
+            $product = $this->addProduct($model);
+        } else {
+            $product = $this->getProductRepository()->findOneBy(['icNumber' => $number]) ?? $this->addProduct($model);
+        }
+
         $this->products[$number] = $product;
 
         return $product;
@@ -197,7 +220,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
             $variant = new Variant();
             $this->modelManager->persist($variant);
-            $this->variants[$model->getModel()] = $variant;
             $product->addVariant($variant);
             // set properties which do not require mapping
             $variant->setIcNumber($model->getModel());
@@ -218,11 +240,12 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     /**
      * The Shopware details associated to obsolete variants must get removed before
      * the variants get deleted.
-     *
-     * @param array $deletions
      */
-    protected function removeDetails(array $deletions)
+    protected function removeDetails()
     {
+        $deletions = $this->getVariantRepository()->getVariantsWithoutModel();
+        if ( empty($deletions)) return;
+
         $products = [];
         /** @var  Variant $variant */
         foreach ($deletions as $variant) {
@@ -230,37 +253,30 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $product = $variant->getProduct();
             $products[$product->getIcNumber()] = $product;
         }
-        $this->modelManager->flush();
+
         $this->productMapper->updateArticles($products);
     }
 
     /**
      * Remove all variants together with the Options and Images
      * belonging to them. Remove the Product also, if it has no variant left.
-     *
-     * @param array $deletions
-     * @throws OptimisticLockException
      */
-    protected function removeVariants(array $deletions)
+    protected function removeVariants()
     {
         $variantRepository = $this->getVariantRepository();
+        $deletions = $variantRepository->getVariantsWithoutModel();
+        if (empty($deletions)) return;
 
-        // make sure that $this->products is initialized
-        $this->getProducts();
-        $this->getVariants();
-
+        /** @var Variant $variant */
         foreach ($deletions as $variant) {
             /** @var Product $product */
             $product = $variant->getProduct();
             $product->removeVariant($variant);
-            $variant->setProduct(null);
 
             $variantRepository->removeOptions($variant);
             $this->modelManager->remove($variant);
-            unset($this->variants[$variant->getIcNumber()]);
             if ($product->getVariants()->count === 0) {
                 $this->modelManager->remove($product);
-                unset($this->products[$product->getIcNumber()]);
             }
         }
         $this->modelManager->flush();
@@ -269,11 +285,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     protected function deleteVariantsWithoutModel()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        $deletions = $this->getVariantRepository()->getVariantsWithoutModel();
-        if ( empty($deletions)) return;
 
-        $this->removeDetails($deletions);
-        $this->removeVariants($deletions);
+        $this->removeDetails();
+        $this->removeVariants();
     }
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
@@ -340,7 +354,11 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     {
         foreach ($changes as $icNumber => $change) {
             /** @var Variant $variant */
-            $variant = $this->variants[$icNumber];
+            if ($this->useCache) {
+                $variant = $this->variants[$icNumber];
+            } else {
+                $variant = $this->getVariantRepository()->findOneBy(['icNumber' => $icNumber]);
+            }
             $model = $change['model'];
             $fields = $change['fields'];
             $remap = $this->changeVariant($variant, $model, $fields);
@@ -367,17 +385,12 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     {
         $this->modelManager->createQuery('UPDATE ' . Product::class . ' a set a.new = false')->execute();
         $this->modelManager->createQuery('UPDATE ' . Variant::class . ' a set a.new = false')->execute();
-
-        /** @noinspection PhpUndefinedMethodInspection */
-        $this->products = $this->getProductRepository()->getAllIndexed();
-
-        /** @noinspection PhpUndefinedMethodInspection */
-        $this->variants = $this->getVariantRepository()->getAllIndexed();
-
-        /** @noinspection PhpUndefinedMethodInspection */
-        $this->groups = $this->getGroupRepository()->getAllIndexed();
-
-        $this->options = $this->getOptionRepository()->getAllIndexed();
+        if ($this->useCache) {
+            $this->products = $this->getProductRepository()->getAllIndexed();
+            $this->groups = $this->getGroupRepository()->getAllIndexed();
+            $this->options = $this->getOptionRepository()->getAllIndexed();
+            $this->variants = $this->getVariantRepository()->getAllIndexed();
+        }
     }
 
     public function import(array $changes)
@@ -385,9 +398,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->updates = [];
         $this->initCache();
 
-        $this->deleteVariantsWithoutModel();
         $this->addNewVariants();
         $this->changeExistingVariants($changes);
+        $this->deleteVariantsWithoutModel();
         $this->propertyMapper->mapProperties($this->updates);
         $this->removeOrphanedItems();
 
@@ -396,7 +409,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         /** @noinspection PhpUndefinedMethodInspection */
         $this->getProductRepository()->refreshProductStates();
 
-        // $this->productMapper->updateArticles($this->updates);
+        $this->productMapper->updateArticles($this->updates);
 
         if (@$this->config['applyFilters']) {
             foreach ($this->config['filters']['update'] as $filter) {
@@ -415,22 +428,12 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $this->productRepository ?? $this->productRepository = $this->modelManager->getRepository(Product::class);
     }
 
-    protected function getProducts() {
-        /** @noinspection PhpUndefinedMethodInspection */
-        return $this->products ?? $this->products = $this->getProductRepository()->getAllIndexed();
-    }
-
     /**
      * @return VariantRepository
      */
     protected function getVariantRepository()
     {
         return $this->variantRepository ?? $this->variantRepository = $this->modelManager->getRepository(Variant::class);
-    }
-
-    protected function getVariants() {
-        /** @noinspection PhpUndefinedMethodInspection */
-        return $this->variants ?? $this->variants = $this->getVariantRepository()->getAllIndexed();
     }
 
     /**
@@ -441,22 +444,12 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $this->groupRepository ?? $this->groupRepository = $this->modelManager->getRepository(Group::class);
     }
 
-    protected function getGroups() {
-        /** @noinspection PhpUndefinedMethodInspection */
-        return $this->groups ?? $this->groups = $this->getGroupRepository()->getAllIndexed();
-    }
-
     /**
      * @return OptionRepository
      */
     protected function getOptionRepository()
     {
         return $this->optionRepository ?? $this->optionRepository = $this->modelManager->getRepository(Option::class);
-    }
-
-    protected function getOptions()
-    {
-        return $this->options ?? $this->options = $this->getOptionRepository()->getAllIndexed();
     }
 
     /**

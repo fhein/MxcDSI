@@ -1,7 +1,5 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-/** @noinspection PhpDocMissingThrowsInspection */
-
 namespace MxcDropshipInnocigs\Mapping;
 
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
@@ -241,7 +239,9 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     public function acceptArticle(Product $product, bool $accepted)
     {
         $product->setAccepted($accepted);
-        if (! $accepted) $this->detailMapper->deleteArticle($product);
+        if (! $accepted) {
+            $this->detailMapper->deleteArticle($product);
+        }
     }
 
     /**

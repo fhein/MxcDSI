@@ -116,9 +116,18 @@ class Product extends ModelEntity  {
      */
     private $manual;
 
+    // fetch="EAGER" is necessary for the next property to push Doctrine to eagerly load
+    // all the variants of a product. Without this setting Doctrine throws with message
+    //
+    // 'A new entity was found through the relationship 'MxcDropshipInnocigs\Models\Variant#product'
+    // that was not configured to cascade persist operations for entity:
+    // Shopware\Proxies\__CG__\MxcDropshipInnocigs\Models\Product@0000000014024956000000006670c47b. ...'
+    //
+    // when ImportMapper tries to delete products or to map properties
+
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Variant", mappedBy="product", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="Variant", mappedBy="product", fetch="EAGER")
      */
     private $variants;
 
@@ -281,8 +290,8 @@ class Product extends ModelEntity  {
     }
 
     public function removeVariant(Variant $variant) {
-        $this->variants->removeElement($variant);
         $variant->setProduct(null);
+        $this->variants->removeElement($variant);
     }
 
     public function setVariants($variants) {

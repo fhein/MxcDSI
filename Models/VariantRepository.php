@@ -43,29 +43,6 @@ class VariantRepository extends BaseEntityRepository
         }
     }
 
-    /**
-     * A variant validates true if the $accepted member of the variant is true and
-     * the $accepted member of the associated Product is true and all of the variant's
-     * options validate true
-     *
-     * @param Variant $variant
-     * @return bool
-     */
-    public function validateVariant(Variant $variant) : bool
-    {
-        if (! ($variant->isAccepted() && $variant->getProduct()->isAccepted())) {
-            return false;
-        }
-        $options = $variant->getOptions();
-        /** @var Option $option */
-        foreach ($options as $option) {
-            if (! $option->isValid()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public function getPiecesPerOrder(Variant $variant) {
         $options = $variant->getOptions();
         $matches = [];
@@ -78,5 +55,26 @@ class VariantRepository extends BaseEntityRepository
             $pieces =  $matches[1];
         }
         return $pieces;
+    }
+
+    /**
+     * A variant validates true if the $accepted member of the variant is true and
+     * the $accepted member of the associated Product is true and all of the variant's
+     * options validate true
+     *
+     * @param Variant $variant
+     * @return bool
+     */
+    public function validate(Variant $variant) : bool
+    {
+        if (! ($variant->isAccepted() && $variant->getProduct()->isAccepted())) {
+            return false;
+        }
+        $options = $variant->getOptions();
+        /** @var Option $option */
+        foreach ($options as $option) {
+            if (! $option->isValid()) return false;
+        }
+        return true;
     }
 }

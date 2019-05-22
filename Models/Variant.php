@@ -434,7 +434,7 @@ class Variant extends ModelEntity
     public function isValid()
     {
         if ($this->valid === null) {
-            $this->valid = Shopware()->Models()->getRepository(Variant::class)->validateVariant($this);
+            $this->valid = Shopware()->Models()->getRepository(Variant::class)->validate($this);
         }
         return $this->valid;
     }
