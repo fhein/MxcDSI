@@ -37,13 +37,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         ];
     }
 
-    public function postDispatch()
-    {
-       /* if ($this->Request()->getActionName() !== 'excelExport') {
-            parent::postDispatch();
-        }*/
-    }
-
     public function importAction()
     {
         try {

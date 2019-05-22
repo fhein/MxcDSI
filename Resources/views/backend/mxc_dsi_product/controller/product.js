@@ -86,7 +86,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let fileForm = new FormData();
         fileForm.append('file', file, file.name);
 
-        let params = {};
         let growlTitle = 'Importing Excel file';
         let maskText = 'Importing Excel file ...';
 

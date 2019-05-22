@@ -421,7 +421,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text: 'Excel Import',
                     listeners: {
                         click: function(event) {
-                            var menu = event.container;
                             var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportField');
                             var button = filefield[0].el.query('input[type=file]');
                             button[0].click();
