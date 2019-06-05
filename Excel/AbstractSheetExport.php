@@ -6,6 +6,7 @@ namespace MxcDropshipInnocigs\Excel;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Conditional;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 abstract class AbstractSheetExport
@@ -59,6 +60,39 @@ abstract class AbstractSheetExport
             );
         }
     }
+
+    protected function setConditionalFormatByColumn($column, $conditionType, $operatorType, $conditionColumnName, $color = '0000FF'){
+
+        $formatColumn = $this->getColumn($column);
+        $conditionColumn = $this->getColumn($conditionColumnName);
+
+        $highest = $this->getHighestRowAndColumn();
+
+        for($row = 2;$row<=$highest['row'];$row++){
+
+            $conditionCell = $conditionColumn . $row;
+            $formatCell= $formatColumn . $row;
+
+            $conditional = $this->createConditionalFormat($conditionType, $operatorType, $conditionCell, $color);
+
+            $conditionalStyles = $this->sheet->getStyle($formatCell)->getConditionalStyles();
+            $conditionalStyles[] = $conditional;
+
+            $this->sheet->getStyle($formatCell)->setConditionalStyles($conditionalStyles);
+        }
+    }
+
+    private function createConditionalFormat($conditionType, $operatorType, $conditionCell, $color){
+        $conditional = new Conditional();
+        $conditional->setConditionType($conditionType);
+        $conditional->setOperatorType($operatorType);
+        $conditional->getStyle()->getFont()->getColor()->setARGB($color);
+        $conditional->setConditions([$conditionCell]);
+
+        return $conditional;
+    }
+
+
     protected function formatHeaderLine(string $color = 'FFBFBFBF')
     {
         $highest = $this->getHighestRowAndColumn();
