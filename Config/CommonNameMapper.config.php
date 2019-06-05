@@ -36,6 +36,9 @@ return [
         'I VG'           => [
             'Custards' => 2,
             'Deserts'  => 2,
+            'Menthol' => 2,
+            'Sweets' => 2,
+            'Pops' => 2,
         ],
     ],
 

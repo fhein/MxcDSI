@@ -304,14 +304,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         me.fireEvent('mxcUpdateImages', me);
                     }
                 },
-                '-',
-                {
-                    text: 'Rebuild category positions',
-                    iconCls: 'sprite-folder-tree',
-                    handler: function() {
-                        me.fireEvent('mxcBuildCategoryTree', me);
-                    }
-                },
                 {
                     text: 'Update categories',
                     iconCls: 'sprite-category',
@@ -395,18 +387,25 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
-                    text: 'Remove empty categories',
-                    iconCls: 'sprite-bin-metal-full',
-                    handler: function() {
-                        me.fireEvent('mxcRemoveEmptyCategories', me);
-                    }
-                },
-                '-',
-                {
                     text : 'Export product configuration',
                     iconCls: 'sprite-document-export',
                     handler: function() {
                         me.fireEvent('mxcExportConfig', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Rebuild category positions',
+                    iconCls: 'sprite-folder-tree',
+                    handler: function() {
+                        me.fireEvent('mxcBuildCategoryTree', me);
+                    }
+                },
+                {
+                    text: 'Remove empty categories',
+                    iconCls: 'sprite-bin-metal-full',
+                    handler: function() {
+                        me.fireEvent('mxcRemoveEmptyCategories', me);
                     }
                 },
                 '-',

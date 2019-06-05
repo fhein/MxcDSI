@@ -8,6 +8,7 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use PhpOffice\PhpSpreadsheet\Style\Border;
+use PhpOffice\PhpSpreadsheet\Style\Conditional;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -199,6 +200,14 @@ class ExportPrices extends AbstractProductExport
         $this->setPriceMarginBorders();
         $range = [ $this->columns['Dampfplanet'], 1, $this->columns['andere'], $highest['row']];
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $this->getRange($range));
+        $this->setConditionalFormat('VK Brutto EK',Conditional::CONDITION_CELLIS,
+            Conditional::OPERATOR_EQUAL,'UVP Brutto','	C5D9F1');//light blue
+        $this->setConditionalFormat('VK Brutto EK',Conditional::CONDITION_CELLIS,
+            Conditional::OPERATOR_GREATERTHAN,'UVP Brutto','FFC000');//orange
+        $this->setConditionalFormat('Dampfplanet',Conditional::CONDITION_CONTAINSBLANKS,
+            Conditional::OPERATOR_NONE,null,'C5D9F1');
+        $this->setConditionalFormat('andere',Conditional::CONDITION_CONTAINSBLANKS,
+            Conditional::OPERATOR_NONE,null,'C5D9F1');
     }
 
     protected function getModels()

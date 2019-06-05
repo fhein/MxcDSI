@@ -93,7 +93,7 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
             $flavors = $product->getFlavor();
             $flavors = array_map('trim', explode(',',$flavors));
             foreach ($flavors as $flavor) {
-                if (@$categoriesByFlavor[$flavor] === null) {
+                if ($flavor !== '' && @$categoriesByFlavor[$flavor] === null) {
                     $this->classConfig['Sonstige'][] = $flavor;
                     $this->categoriesByFlavor[$flavor] = ['Sonstige'];
                 }

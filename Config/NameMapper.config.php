@@ -144,6 +144,9 @@ return [
         'preg_replace' => [
             '~Aster$~'                                                   => 'Aster 75 Watt',
             '~(Nautilus X Mundstück)e~'                                  => '$1',
+            '~80er (Mesh Wire) (1,5 m)~'                                 => '$1 - $2',
+            '~100er (Mesh Wire) (1,5 m)~'                                => '$1 - $2',
+            '~150er (Mesh Wire) (1,5 m)~'                                => '$1 - $2',
             '~(D19.*O-Ringe)~'                                           => 'Exceed $1',
             '~(D22.*O-Ringe)~'                                           => 'Exceed $1',
             '~(Exceed) Box~'                                             => 'Exceed D22',
@@ -151,7 +154,8 @@ return [
             '~1 Liter~'                                                  => '1.000 ml',
             '~E-Zigaretten (Liquid)~'                                    => '- $1',
             '~(Liquid) für E-Zigaretten~'                                => '$1',
-            '~Aroma (- Liquid)~'                                         => '$1',
+            '~
+             (- Liquid)~'                                                => '$1',
             '~(Shortz.*) - (0 mg/ml)~'                                   => '$1 - 50 ml, $2',
             '~(Koncept XIX.*) (0 mg/ml)~'                                => '$1 - 50 ml, $2',
             '~EZ.WATT~'                                                  => 'EZ.Watt',
@@ -174,11 +178,19 @@ return [
             '~(\d+ mg/ml),? (\d+ ml)~'                                   => '$2, $1',
             '~([^,\-]) (\d+ ml, \d+ mg/ml)~'                             => '$1 - $2',
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
-            '~Rebelz (- Aroma)(.*)(- \d+ ml)~'                           => 'Rebelz - $2 $1 $3',
-            '~(Mule Fuel) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 - $4',
-            '~(Shark Attack) (- Aroma)(.*)(- \d+ ml)~'                   => '$1 - $3 $2 - $4',
-            '~(Military) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 - $4',
-            '~(Tobacco Time) (- Aroma)(.*)(- \d+ ml)~'                   => '$1 - $3 $2 - $4',
+            '~(Vape Rebelz) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
+            '~(Foozy Juice) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
+            '~(Mr\. Niks) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
+            '~(7 Todsünden) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
+            '~(Mule Fuel) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
+            '~(Shark Attack) (- Aroma)(.*)(- \d+ ml)~'                   => '$1 - $3 $2 $4',
+            '~(Military) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
+            '~(Tobacco Time) (- Aroma)(.*)(- \d+ ml)~'                   => '$1 - $3 $2 $4',
+            '~(Bozz Liquids -) (Aroma)(.*)(- \d+ ml)~'                   => '$1 - $3 $2 $4',
+            '~(Vapors Line) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
+            '~(VapeHansa) (- Aroma)(.*) (- \d+ ml)~'                     => '$1 - $3 $2 $4',
+            '~(Flavorist) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
+            '~(VapeTastic -) (Aroma) - (.*)(- \d+ ml)~'                  => '$1 $3 - $2 $4',
             '~(Twisted) - (Peng Juice) (Aroma)(.*)(- \d+ ml)~'           => '$1 - $2 $4 - $3 $5',
             '~Okolom~'                                                   => 'Lomoko',
             '~Vape( -)?( Aroma)(.*)(- \d+ ml)~'                          => 'Vape - $3 -$2 $4',
@@ -195,11 +207,6 @@ return [
             '~(I VG - )(Aroma) (.*)(- \d+ ml)~'                          => '$1 $3 - $2 $4',
             '~(PlusSolt).*(\d\d ml) (Nikotinsalz).*(Shot) (- 18 mg/ml)~' => '$1 - $3-$4 - $2 $5',
             '~(Aromamizer Plus)~'                                        => '$1 RDTA',
-            '~(Bozz Liquids -) (Aroma)(.*)(- \d+ ml)~'                   => '$1 $3 - $2 $4',
-            '~(Vapors Line -) (Aroma)(.*)(- \d+ ml)~'                    => '$1 $3 - $2 $4',
-            '~(VapeHansa -) (Aroma)(.*) (\d+ ml)~'                       => '$1 $3 - $2 - $4',
-            '~(Flavorist -) (Aroma)(.*)(- \d+ ml)~'                      => '$1 $3 - $2 $4',
-            '~(VapeTastic -) (Aroma) - (.*)(- \d+ ml)~'                  => '$1 $3 - $2 $4',
             '~(Twisted -) (Cryostasis|Road Trip) (Aroma)(.*)(- \d+ ml)~' => '$1 $2 $4 - $3 $5',
             '~((SC)|(InnoCigs))(.*)((- )?(Liquid)|(Aroma))$~'            => '$1$4$6$5 - 10 ml',
             '~(SC) (- Vape Base)(.*-)(.*)~'                              => '$1 $3 - $4',
@@ -218,6 +225,7 @@ return [
             '~(Liquid)$~'                                                => '$1 - 10 ml',
             '~(\d+(\.\d+)? ml, 0 mg/ml)$~'                               => '- Shake & Vape - $1',
             '~(Chicken Shop.*) (- 0 mg/ml)~'                             => '$1 - Shake & Vape $2',
+            '~(Skull Plus.*) - 0 mg/ml~'                                 => '$1 - Shake & Vape - 100 ml, 0 mg/ml',
             '~(Disco Juice.*) (- 0 mg/ml)~'                              => '$1 - Shake & Vape $2',
             '~(Dr\. Frost.*) (- 0 mg/ml)~'                               => '$1 - Shake & Vape $2',
             '~(Basis -) - Shake \& Vape -~'                              => '$1',
@@ -304,7 +312,9 @@ return [
             '~Ersatz-Dichtung~'                                          => 'Ersatzdichtung',
             '~Dichtungs-Set~'                                            => 'Ersatzdichtungen',
             '~Heads Heads~'                                              => 'Heads',
+            '~Mr\. Niks~'                                                => 'Mr. Nik\'s',
             '~AsMODus~'                                                  => 'asMODus',
+            '~Asmodus~'                                                  => 'asMODus',
             '~Nautilus Mini BVC Clearomizer~'                            => 'Nautilus Mini Clearomizer',
             '~reds Apple EJuice~'                                        => 'Red\'s Apple Juice',
             '~mit -~'                                                    => 'mit',
@@ -343,6 +353,7 @@ return [
             '~(Lustro) (- \d+ Watt)~'                                    => '$1 - Akkuträger $2',
             '~(Amighty) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(Puma) (- \d+ Watt)~'                                      => '$1 - Akkuträger $2',
+            '~(V-IT) (- \d+ Watt)~'                                      => '$1 - Akkuträger $2',
             '~(Amnis) (- \d+ mAh)~'                                      => '$1 - Akku $2',
             '~(Pumper.*) (- \d+ Watt)~'                                  => '$1 - Squonker Box $2',
             '~(Blocks.*) (\d+ Watt)~'                                    => '$1 - Squonker Box - $2',
@@ -354,6 +365,7 @@ return [
             '~(Lexicon) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(iStick .*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Aegis Legend) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(Edge.*) (- \d+ Watt)~'                                    => '$1 - Akkuträger $2',
             '~(Aegis Mini) (- \d\.\d+ mAh)~'                             => '$1 - Akku $2',
             '~(Nova) (- \d+ Watt)~'                                      => '$1 - Akkuträger $2',
             '~(Espion.*) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
@@ -362,6 +374,7 @@ return [
             '~(G-Priv Baby) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(iJust 21700) (- \d+ Watt)~'                               => '$1 - Akkuträger - $2',
             '~(X-Priv Baby) (- \d\.\d+ mAh)~'                            => '$1 - Akku $2',
+            '~(Drag Mini) (- \d\.\d+ mAh)~'                              => '$1 - Akku $2',
             '~OSUB (King) (- \d+ Watt)~'                                 => 'Osub $1 - Akkuträger $2',
             '~(Mag Baby) (- \d+ Watt)~'                                  => '$1 - Akku $2',
             '~(Ironfist) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
@@ -374,6 +387,9 @@ return [
             '~(Sinuous.*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Revenger.*) (- \d+ Watt)~'                                => '$1 - Akkuträger $2',
             '~(SX Mini.*) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
+            '~(VK530.*) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
+            '~(Subverter 1.*) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(Drag 2.*) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
             '~(Delta) (- \d+ Watt)~'                                     => '$1 - Akkuträger $2',
             '~(RX Gen3)~'                                                => 'Reuleaux RX Gen3',
             '~(RX GEN3)~'                                                => 'RX Gen3',
@@ -452,13 +468,13 @@ return [
             '~((K\d)( \& K3)?)~',
         ],
         'asMODus'     => [
-            '~(Minikin(( V2 Kodama)|( V2)|( Reborn))?)~',
+            '~((Minikin V3S mit Viento)|(Minikin(( V2 Kodama)|( V2)|( V3S)|( Reborn))?))~',
             '~(C4 RDA)~',
             '~(Colossal)~',
             '~(Lustro)~',
             '~(Nefarius RDTA)~',
             '~(Voluna V2 RTA)~',
-            '~(Amighty)~',
+            '~((Amighty mit Viento)|(Amighty))~',
             '~(X VapersMD Dawg RTA)~'
         ],
         'CoilArt'     => [
@@ -474,6 +490,7 @@ return [
             '~(Siren 2 RTA)~',
             '~(Drop RDA)~',
             '~(Drop Solo RDA)~',
+            '~(Edge)~'
         ],
         'Ehpro' => [
             '~(Panther RDA)~',
@@ -501,6 +518,9 @@ return [
             '~(Hellbeast)~',
             '~(Rebirth RDA)~',
             '~(Rebirth RTA)~',
+        ],
+        'iPV' => [
+            '~(V-IT)~',
         ],
         'SC'          => [
             '~(iJust ((21700)|(ECM)|(3))?)~',
@@ -576,8 +596,14 @@ return [
             '~(Species)~',
 
         ],
+        'Renova'      => [
+            '~(Zero)~',
+        ],
         'Revenant Vape' => [
             '~(Delta)~',
+        ],
+        'Sigelei' => [
+            '~(Chronus mit Shikra)~'
         ],
         'Steamax'     => [
             // Smok
@@ -647,6 +673,10 @@ return [
             '~(vPipe III)~',
             '~(Zen Pipe)~',
         ],
+        'VooPoo' => [
+            '~(Drag 2)~',
+            '~(Drag Mini)~',
+        ],
         'Vaporesso'   => [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
             '~(Sky Solo( Plus)?)~',
@@ -662,10 +692,14 @@ return [
             '~(Zero)~',
         ],
         'Vapor Storm' => [
-            '~(Puma)~'
+            '~(Puma)~',
+            '~(Subverter 1)~',
         ],
-        'Renova'      => [
-            '~(Zero)~',
+        'Vsticking' => [
+            '~(VK530)~',
+        ],
+        'Vzone' => [
+            '~(Scado)~',
         ],
         'Wismec'      => [
             '~(Tobhino BF RDA)~',
@@ -688,6 +722,10 @@ return [
         'Wotofo' => [
             '~(Warrior RDA)~',
             '~(Recurve RDA)~',
+        ],
+        'Yihi' => [
+            '~(SX Mini Mi Class)~',
+            '~(SX Mini SL Class)~',
         ],
         'ZQ'          => [
             '~(Vi)~',
