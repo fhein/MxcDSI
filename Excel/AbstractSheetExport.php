@@ -61,15 +61,17 @@ abstract class AbstractSheetExport
         }
     }
 
-    protected function setConditionalFormatByColumn($column, $operatorType, $conditionColumnName, $color = '0000FF'){
+    protected function setConditionalFormat($column, $conditionType, $operatorType, $condition, $color = '0000FF'){
         $formatColumn = $this->getColumn($column);
-        $conditionColumn = $this->getColumn($conditionColumnName);
+
+        $conditionColumn = $condition ? $this->getColumn($condition): null;
 
         $highest = $this->getHighestRowAndColumn();
 
         for($row = 2;$row<=$highest['row'];$row++){
-            $conditional = $this->createConditionalFormat(Conditional::CONDITION_CELLIS,
-                $operatorType, $conditionColumn . $row, $color);
+
+            $condition = $conditionColumn ? $conditionColumn . $row : $condition; //if condition is a column, use coordinates else use condition value
+            $conditional = $this->createConditionalFormat($conditionType, $operatorType, $condition, $color);
 
             $conditionalStyles = $this->sheet->getStyle($formatColumn . $row)->getConditionalStyles();
             $conditionalStyles[] = $conditional;
@@ -78,12 +80,20 @@ abstract class AbstractSheetExport
         }
     }
 
-    private function createConditionalFormat($conditionType, $operatorType, $conditionCell, $color){
+    private function createConditionalFormat($conditionType, $operatorType, $condition, $color){
         $conditional = new Conditional();
         $conditional->setConditionType($conditionType);
-        $conditional->setOperatorType($operatorType);
-        $conditional->getStyle()->getFont()->getColor()->setARGB($color);
-        $conditional->setConditions([$conditionCell]);
+        $operatorType ? $conditional->setOperatorType($operatorType) : null;
+        //$conditional->getStyle()->getFill()->getColor()->setFillType(Fill::FILL_SOLID); //ARGB($color);
+        $conditional->getStyle()->applyFromArray(
+            [
+                'fill'    => [
+                    'fillType'  => Fill::FILL_SOLID,
+                    'color' => ['argb' => $color]
+                ]
+            ]
+        );
+        $condition ? $conditional->setConditions([$condition]) : null;
 
         return $conditional;
     }

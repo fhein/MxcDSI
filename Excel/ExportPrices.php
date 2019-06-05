@@ -200,10 +200,14 @@ class ExportPrices extends AbstractProductExport
         $this->setPriceMarginBorders();
         $range = [ $this->columns['Dampfplanet'], 1, $this->columns['andere'], $highest['row']];
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $this->getRange($range));
-        $this->setConditionalFormatByColumn('VK Brutto EK',
-            Conditional::OPERATOR_EQUAL,
-            'UVP Brutto',
-            '0000FF');
+        $this->setConditionalFormat('VK Brutto EK',Conditional::CONDITION_CELLIS,
+            Conditional::OPERATOR_EQUAL,'UVP Brutto','	C5D9F1');//light blue
+        $this->setConditionalFormat('VK Brutto EK',Conditional::CONDITION_CELLIS,
+            Conditional::OPERATOR_GREATERTHAN,'UVP Brutto','FFC000');//orange
+        $this->setConditionalFormat('Dampfplanet',Conditional::CONDITION_CONTAINSBLANKS,
+            OPERATOR_NONE,null,'C5D9F1');
+        $this->setConditionalFormat('andere',Conditional::CONDITION_CONTAINSBLANKS,
+            OPERATOR_NONE,null,'C5D9F1');
     }
 
     protected function getModels()
