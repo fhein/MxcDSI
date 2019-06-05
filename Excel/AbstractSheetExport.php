@@ -61,24 +61,20 @@ abstract class AbstractSheetExport
         }
     }
 
-    protected function setConditionalFormatByColumn($column, $conditionType, $operatorType, $conditionColumnName, $color = '0000FF'){
-
+    protected function setConditionalFormatByColumn($column, $operatorType, $conditionColumnName, $color = '0000FF'){
         $formatColumn = $this->getColumn($column);
         $conditionColumn = $this->getColumn($conditionColumnName);
 
         $highest = $this->getHighestRowAndColumn();
 
         for($row = 2;$row<=$highest['row'];$row++){
+            $conditional = $this->createConditionalFormat(Conditional::CONDITION_CELLIS,
+                $operatorType, $conditionColumn . $row, $color);
 
-            $conditionCell = $conditionColumn . $row;
-            $formatCell= $formatColumn . $row;
-
-            $conditional = $this->createConditionalFormat($conditionType, $operatorType, $conditionCell, $color);
-
-            $conditionalStyles = $this->sheet->getStyle($formatCell)->getConditionalStyles();
+            $conditionalStyles = $this->sheet->getStyle($formatColumn . $row)->getConditionalStyles();
             $conditionalStyles[] = $conditional;
 
-            $this->sheet->getStyle($formatCell)->setConditionalStyles($conditionalStyles);
+            $this->sheet->getStyle($formatColumn . $row)->setConditionalStyles($conditionalStyles);
         }
     }
 

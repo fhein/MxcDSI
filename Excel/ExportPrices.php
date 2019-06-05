@@ -201,7 +201,6 @@ class ExportPrices extends AbstractProductExport
         $range = [ $this->columns['Dampfplanet'], 1, $this->columns['andere'], $highest['row']];
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $this->getRange($range));
         $this->setConditionalFormatByColumn('VK Brutto EK',
-            Conditional::CONDITION_CELLIS,
             Conditional::OPERATOR_EQUAL,
             'UVP Brutto',
             '0000FF');
