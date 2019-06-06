@@ -63,16 +63,13 @@ abstract class AbstractSheetExport
 
     protected function setConditionalFormat($column, $conditionType, $operatorType, $condition, $color = '0000FF'){
         $formatColumn = $this->getColumn($column);
-
         $conditionColumn = $condition ? $this->getColumn($condition): null;
-
         $highest = $this->getHighestRowAndColumn();
 
         for($row = 2;$row<=$highest['row'];$row++){
-
             $condition = $conditionColumn ? $conditionColumn . $row : $condition; //if condition is a column, use coordinates else use condition value
-            $conditional = $this->createConditionalFormat($conditionType, $operatorType, $condition, $color);
 
+            $conditional = $this->createConditionalFormat($conditionType, $operatorType, $condition, $color);
             $conditionalStyles = $this->sheet->getStyle($formatColumn . $row)->getConditionalStyles();
             $conditionalStyles[] = $conditional;
 
@@ -84,7 +81,6 @@ abstract class AbstractSheetExport
         $conditional = new Conditional();
         $conditional->setConditionType($conditionType);
         $operatorType ? $conditional->setOperatorType($operatorType) : null;
-        //$conditional->getStyle()->getFill()->getColor()->setFillType(Fill::FILL_SOLID); //ARGB($color);
         $conditional->getStyle()->applyFromArray(
             [
                 'fill'    => [
