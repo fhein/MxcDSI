@@ -221,7 +221,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function excelExportAction()
     {
         try {
-            //necessary for correct download file
             $this->get('plugins')->Controller()->ViewRenderer()->setNoRender();
             $this->Front()->Plugins()->Json()->setRenderer(false);
 
