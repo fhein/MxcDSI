@@ -8,8 +8,16 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.detail.Product', {
 
     configure: function() {
         return {
+            items: {
+                new:           { header: 'new', width: 40, flex: 0 },
+                number:        { header: 'Number', width: 150, flex: 0 },
+                description:   { header: 'Description'},
+                active:        { header: 'active', width: 45, flex: 0 },
+                accepted:      { header: 'accept', width: 45, flex: 0 }
+            },
             controller: 'MxcDsiProduct',
             associations: [ 'variants' ]
         };
     }
+
 });
