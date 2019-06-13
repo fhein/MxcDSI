@@ -150,7 +150,8 @@ class ProductRepository extends BaseEntityRepository
         'dosage',
         'base',
         'retailPriceDampfplanet',
-        'retailPriceOthers'
+        'retailPriceOthers',
+        'description',
     ];
 
     public function refreshProductStates()

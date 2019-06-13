@@ -268,12 +268,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $article = $product->getArticle();
         if (! $article) return;
 
-        // update description if not already set or if force is set
-        $probe = $article->getDescriptionLong();
-        if ($created || !$probe || $probe === '') {
-            $article->setDescriptionLong($product->getDescription());
-        }
-
         $probe = $article->getDescription();
         if ($created || !$probe || $probe === '') {
             $article->setDescription('');
@@ -290,10 +284,8 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             $article->setMetaTitle($metaTitle);
         }
 
-        $probe = $article->getName();
-        if ($created || !$probe || $probe === '') {
-            $article->setName($product->getName());
-        }
+        $article->setName($product->getName());
+        $article->setDescriptionLong($product->getDescription());
 
         $article->setTax(TaxTool::getTax($product->getTax()));
         $article->setSupplier(SupplierTool::getSupplier($product->getSupplier()));

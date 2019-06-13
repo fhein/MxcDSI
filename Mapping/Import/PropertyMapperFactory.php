@@ -39,6 +39,8 @@ class PropertyMapperFactory implements FactoryInterface
             'dosage'        => $container->get(DosageMapper::class),
             // requires manual config, sets flavor and flavorCategory
             'flavor'        => $container->get(FlavorMapper::class),
+            // requires type and flavor, sets description
+            'description'   => $container->get(DescriptionMapper::class),
             // requires supplier, brand and name, flavor and flavorCategory, sets category
             'category'      => $container->get(CategoryMapper::class),
             // requires manual config, sets retailPriceDampfplanet and retailPriceOthers

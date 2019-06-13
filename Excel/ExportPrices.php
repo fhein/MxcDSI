@@ -84,7 +84,6 @@ class ExportPrices extends AbstractProductExport
     protected function getProductInfo(Product $product)
     {
         $info = $this->getColumns();
-        $this->log->debug(var_export($info, true));
         $info['icNumber'] = $product->getIcNumber();
         $info['type'] = $product->getType();
         $info['supplier'] = $product->getSupplier();

@@ -8,8 +8,9 @@ class ImportDescription extends AbstractProductImport
 {
     protected function processImportData()
     {
+        $repository = $this->modelManager->getRepository(Product::class);
         /** @noinspection PhpUndefinedMethodInspection */
-        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
+        $products = $repository->getAllIndexed();
         foreach ($this->data as $record) {
             /** @var Product $product */
             $product = $products[$record['icNumber']];
@@ -17,8 +18,7 @@ class ImportDescription extends AbstractProductImport
 
             $product->setDescription($record['description']);
         }
-
-
         $this->modelManager->flush();
+        $repository->exportMappedProperties();
     }
 }

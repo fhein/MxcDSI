@@ -1,6 +1,7 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
+use MxcDropshipInnocigs\Description\DescriptionExport;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ApiClient;
@@ -491,6 +492,45 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $modelManager->flush();
 
             $this->view->assign([ 'success' => true, 'message' => 'Product properties were successfully remapped.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function pullShopwareDescriptionsAction()
+    {
+        try {
+            /** @var ImportMapper $client */
+            $services = $this->getServices();
+            $descriptions = $services->get(DescriptionExport::class);
+            $repository = $this->getModelManager()->getRepository(Product::class);
+
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $repository->getAllIndexed();
+            $descriptions->pullDescriptions($products);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Successfully pulled Shopware descriptions.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function pullShopwareDescriptionsSelectedAction()
+    {
+        try {
+            /** @var ImportMapper $client */
+            $services = $this->getServices();
+            $descriptions = $services->get(DescriptionExport::class);
+            $repository = $this->getModelManager()->getRepository(Product::class);
+
+            $params = $this->request->getParams();
+            $ids = json_decode($params['ids'], true);
+
+            /** @noinspection PhpUndefinedMethodInspection */
+            $products = $repository->getProductsByIds($ids);
+            $descriptions->pullDescriptions($products);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Successfully pulled Shopware descriptions.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

@@ -10,46 +10,48 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
         me.control({
             'mxc-dsi-product-listing-grid': {
-                mxcSaveProduct:                     me.onSaveProduct,
-                mxcImportItems:                     me.onImportItems,
-                mxcRefreshAssociated:               me.onRefreshAssociatedItems,
-                mxcBuildCategoryTree:               me.onBuildCategoryTree,
-                mxcRemapProperties:                 me.onRemapProperties,
-                mxcCreateAll:                       me.onCreateAll,
-                mxcDeleteAll:                       me.onDeleteAll,
-                mxcRemapPropertiesSelected:         me.onRemapPropertiesSelected,
-                mxcCreateSimilarSelected:           me.onCreateSimilarSelected,
-                mxcCreateRelatedSelected:           me.onCreateRelatedSelected,
-                mxcSetActiveSelected:               me.onSetActiveSelected,
-                mxcSetAcceptedSelected:             me.onSetAcceptedSelected,
-                mxcUpdateImages:                    me.onUpdateImages,
-                mxcUpdateImagesSelected:            me.onUpdateImagesSelected,
-                mxcUpdateCategories:                me.onUpdateCategories,
-                mxcUpdateCategoriesSelected:        me.onUpdateCategoriesSelected,
-                mxcRemoveEmptyCategories:           me.onRemoveEmptyCategories,
-                mxcSetLinkedSelected:               me.onSetLinkedSelected,
-                mxcRefreshItems:                    me.onRefreshItems,
-                mxcCheckNameMappingConsistency:     me.onCheckNameMappingConsistency,
-                mxcCheckRegularExpressions:         me.onCheckRegularExpressions,
-                mxcCheckVariantMappingConsistency:  me.onCheckVariantMappingConsistency,
-                mxcExportConfig:                    me.onExportConfig,
-                mxcExcelExport:                     me.onExcelExport,
-                mxcExcelImport:                     me.onExcelImport,
+                mxcSaveProduct:                      me.onSaveProduct,
+                mxcImportItems:                      me.onImportItems,
+                mxcRefreshAssociated:                me.onRefreshAssociatedItems,
+                mxcBuildCategoryTree:                me.onBuildCategoryTree,
+                mxcRemapProperties:                  me.onRemapProperties,
+                mxcPullShopwareDescriptions:         me.onPullShopwareDescriptions,
+                mxcPullShopwareDescriptionsSelected: me.onPullShopwareDescriptionsSelected,
+                mxcCreateAll:                        me.onCreateAll,
+                mxcDeleteAll:                        me.onDeleteAll,
+                mxcRemapPropertiesSelected:          me.onRemapPropertiesSelected,
+                mxcCreateSimilarSelected:            me.onCreateSimilarSelected,
+                mxcCreateRelatedSelected:            me.onCreateRelatedSelected,
+                mxcSetActiveSelected:                me.onSetActiveSelected,
+                mxcSetAcceptedSelected:              me.onSetAcceptedSelected,
+                mxcUpdateImages:                     me.onUpdateImages,
+                mxcUpdateImagesSelected:             me.onUpdateImagesSelected,
+                mxcUpdateCategories:                 me.onUpdateCategories,
+                mxcUpdateCategoriesSelected:         me.onUpdateCategoriesSelected,
+                mxcRemoveEmptyCategories:            me.onRemoveEmptyCategories,
+                mxcSetLinkedSelected:                me.onSetLinkedSelected,
+                mxcRefreshItems:                     me.onRefreshItems,
+                mxcCheckNameMappingConsistency:      me.onCheckNameMappingConsistency,
+                mxcCheckRegularExpressions:          me.onCheckRegularExpressions,
+                mxcCheckVariantMappingConsistency:   me.onCheckVariantMappingConsistency,
+                mxcExportConfig:                     me.onExportConfig,
+                mxcExcelExport:                      me.onExcelExport,
+                mxcExcelImport:                      me.onExcelImport,
 
-                mxcTestImport1:                     me.onTestImport1,
-                mxcTestImport2:                     me.onTestImport2,
-                mxcTestImport3:                     me.onTestImport3,
-                mxcTestImport4:                     me.onTestImport4,
+                mxcTestImport1:                      me.onTestImport1,
+                mxcTestImport2:                      me.onTestImport2,
+                mxcTestImport3:                      me.onTestImport3,
+                mxcTestImport4:                      me.onTestImport4,
 
                 // for development/test purposes
-                mxcDev1:                            me.onDev1,
-                mxcDev2:                            me.onDev2,
-                mxcDev3:                            me.onDev3,
-                mxcDev4:                            me.onDev4,
-                mxcDev5:                            me.onDev5,
-                mxcDev6:                            me.onDev6,
-                mxcDev7:                            me.onDev7,
-                mxcDev8:                            me.onDev8,
+                mxcDev1:                             me.onDev1,
+                mxcDev2:                             me.onDev2,
+                mxcDev3:                             me.onDev3,
+                mxcDev4:                             me.onDev4,
+                mxcDev5:                             me.onDev5,
+                mxcDev6:                             me.onDev6,
+                mxcDev7:                             me.onDev7,
+                mxcDev8:                             me.onDev8,
             }
         });
         me.mainWindow = me.getView('list.Window').create({}).show();
@@ -160,6 +162,29 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let url = '{url controller=MxcDsiProduct action=remapSelected}';
         let growlTitle = 'Remap properties';
         let maskText = 'Reapplying product property mapping ...';
+
+        let params = {
+            ids: me.getSelectedIds(grid.getSelectionModel())
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onPullShopwareDescriptions: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=pullShopwareDescriptions}';
+        let params = {};
+        let growlTitle = 'Pull Shopware descriptions';
+        let maskText = 'Pulling Shopware descriptions ...';
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onPullShopwareDescriptionsSelected: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=pullShopwareDescriptionsSelected}';
+        let growlTitle = 'Pull Shopware descriptions';
+        let maskText = 'Pulling Shopware descriptions ...';
 
         let params = {
             ids: me.getSelectedIds(grid.getSelectionModel())

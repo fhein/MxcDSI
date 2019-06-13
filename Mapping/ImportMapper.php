@@ -180,10 +180,8 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $product->setActive(false);
         $product->setAccepted(true);
         $product->setManual($model->getManual());
-        $description = $model->getDescription();
-        $product->setDescription($description);
-        $product->setIcDescription($description);
         $product->setManufacturer($model->getManufacturer());
+        $product->setIcDescription($model->getDescription());
         $this->propertyMapper->mapModelToProduct($model, $product);
 
         return $product;

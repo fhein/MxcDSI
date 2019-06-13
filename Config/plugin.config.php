@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs;
 
 use Mxc\Shopware\Plugin\Service\AugmentedObjectFactory;
+use MxcDropshipInnocigs\Description\DescriptionExport;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelImport;
 use MxcDropshipInnocigs\Excel\ExcelImportFactory;
@@ -33,6 +34,7 @@ use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
 use MxcDropshipInnocigs\Mapping\Import\CommonNameMapper;
 use MxcDropshipInnocigs\Mapping\Import\CompetitorPricesMapper;
+use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
 use MxcDropshipInnocigs\Mapping\Import\DosageMapper;
 use MxcDropshipInnocigs\Mapping\Import\FlavorMapper;
 use MxcDropshipInnocigs\Mapping\Import\ImportPiecesPerPackMapper;
@@ -150,6 +152,7 @@ return [
             MappingFilePersister::class        => AugmentedObjectFactory::class,
             MediaTool::class                   => AugmentedObjectFactory::class,
             ArticleTool::class                 => AugmentedObjectFactory::class,
+            DescriptionExport::class           => AugmentedObjectFactory::class,
 
             CategoryTool::class => AugmentedObjectFactory::class,
 
@@ -186,6 +189,7 @@ return [
             ImportMapper::class,
             ImportPrices::class,
             ManufacturerMapper::class,
+            DescriptionMapper::class,
             NameMappingConsistency::class,
             OptionMapper::class,
             PriceMapper::class,

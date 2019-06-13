@@ -36,6 +36,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             'mxcBuildCategoryTree',
             'mxcSaveProduct',
             'mxcRemapProperties',
+            'mxcPullShopwareDescriptions',
+            'mxcPullShopwareDescriptionsSelected',
             'mxcRemapPropertiesSelected',
             'mxcUpdateImages',
             'mxcUpdateImagesSelected',
@@ -218,6 +220,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         me.fireEvent('mxcRemapPropertiesSelected', me);
                     }
                 },
+                {
+                    text : 'Pull Shopware descriptions',
+                    iconCls: 'sprite-blue-document-horizontal-text',
+                    handler: function() {
+                        me.fireEvent('mxcPullShopwareDescriptionsSelected', me);
+                    }
+
+                },
+
                 '-',
                 {
                     text: 'Update images',
@@ -287,6 +298,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     handler: function() {
                         me.fireEvent('mxcRemapProperties', me);
                     }
+                },
+                {
+                    text : 'Pull Shopware descriptions',
+                    iconCls: 'sprite-blue-document-horizontal-text',
+                    handler: function() {
+                        me.fireEvent('mxcPullShopwareDescriptions', me);
+                    }
+
                 },
                 '-',
                 {

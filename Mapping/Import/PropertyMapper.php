@@ -135,6 +135,11 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->productMappers['manufacturer']->map($model, $product);
     }
 
+    public function mapDescription(Model $model, Product $product)
+    {
+        $this->productMappers['description']->map($model, $product);
+    }
+
     public function mapGroupName($name)
     {
         return $this->classConfig['group_names'][$name] ?? $name;
