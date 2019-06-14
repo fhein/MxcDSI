@@ -38,6 +38,12 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcExcelExport:                      me.onExcelExport,
                 mxcExcelImport:                      me.onExcelImport,
 
+                mxcExcelImportDescriptions:          me.onExcelImportDescriptions,
+                mxcExcelImportDosages:               me.onExcelImportDosages,
+                mxcExcelImportFlavors:               me.onExcelImportFlavors,
+                mxcExcelImportPrices:                me.onExcelImportPrices,
+                mxcExcelImportMappings:              me.onExcelImportMappings,
+
                 mxcTestImport1:                      me.onTestImport1,
                 mxcTestImport2:                      me.onTestImport2,
                 mxcTestImport3:                      me.onTestImport3,
@@ -90,6 +96,60 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
         let growlTitle = 'Importing Excel file';
         let maskText = 'Importing Excel file ...';
+
+        me.doSubmit(grid, url, fileForm, growlTitle, maskText, true);
+    },
+
+    onExcelImportPrices: function(grid, file) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=excelImportPrices}';
+        let growlTitle = 'Import prices';
+        let maskText = 'Importing prices from Excel file ...';
+        me.excelImportSheet(grid, file, url, growlTitle, maskText)
+    },
+
+    onExcelImportDescriptions: function(grid, file) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=excelImportDescriptions}';
+        let growlTitle = 'Import descriptions';
+        let maskText = 'Importing descriptions from Excel file ...';
+        me.excelImportSheet(grid, file, url, growlTitle, maskText)
+    },
+
+    onExcelImportFlavors: function(grid, file) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=excelImportFlavors}';
+        let growlTitle = 'Import flavors';
+        let maskText = 'Importing flavors from Excel file ...';
+        me.excelImportSheet(grid, file, url, growlTitle, maskText)
+    },
+
+    onExcelImportDosages: function(grid, file) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=excelImportDosages}';
+        let growlTitle = 'Import dosages';
+        let maskText = 'Importing dosages from Excel file ...';
+        me.excelImportSheet(grid, file, url, growlTitle, maskText)
+    },
+
+    onExcelImportMappings: function(grid, file) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=excelImportMappings}';
+        let growlTitle = 'Import mappings';
+        let maskText = 'Importing mappings from Excel file ...';
+        me.excelImportSheet(grid, file, url, growlTitle, maskText)
+    },
+
+    excelImportSheet: function (grid, file, url, growlTitle, maskText) {
+        let me = this;
+
+        if (file.type !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+            me.showError('Please select a valid import file (.xlsx)');
+            return;
+        }
+
+        let fileForm = new FormData();
+        fileForm.append('file', file, file.name);
 
         me.doSubmit(grid, url, fileForm, growlTitle, maskText, true);
     },

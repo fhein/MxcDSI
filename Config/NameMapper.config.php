@@ -211,6 +211,7 @@ return [
             '~(Aromamizer Plus)~'                                        => '$1 RDTA',
             '~(Twisted -) (Cryostasis|Road Trip) (Aroma)(.*)(- \d+ ml)~' => '$1 $2 $4 - $3 $5',
             '~((SC)|(InnoCigs))(.*)((- )?(Liquid)|(Aroma))$~'            => '$1$4$6$5 - 10 ml',
+            '~(InnoCigs)(.*) Aroma (- Liquid)~'                          => '$1$2 $3',
             '~(SC) (- Vape Base)(.*-)(.*)~'                              => '$1 $3 - $4',
             '~^(Erste Sahne) ([^\-])~'                                   => '$1 - $2',
             '~(Cleaner) (Reinigung)~'                                    => '$1 - $2',

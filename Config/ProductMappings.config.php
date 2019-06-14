@@ -1389,10 +1389,10 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'IC10000L10-SS' => array(
         'icNumber' => 'IC10000L10-SS',
         'number' => 'IC10000L10-SS',
-        'name' => 'InnoCigs - Star Spangled Aroma - Liquid - 10 ml',
-        'commonName' => 'Star Spangled Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Star Spangled - Liquid - 10 ml',
+        'commonName' => 'Star Spangled',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1418,10 +1418,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-AN' => array(
         'icNumber' => 'IC10000L10-AN',
         'number' => 'IC10000L10-AN',
-        'name' => 'InnoCigs - Afternoon Aroma - Liquid - 10 ml',
-        'commonName' => 'Afternoon Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Gebäck#!#AROMEN > Gewürze#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Afternoon - Liquid - 10 ml',
+        'commonName' => 'Afternoon',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Gebäck#!#LIQUIDS > Gewürze#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1448,10 +1448,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-IR' => array(
         'icNumber' => 'IC10000L10-IR',
         'number' => 'IC10000L10-IR',
-        'name' => 'InnoCigs - Inside Red Aroma - Liquid - 10 ml',
-        'commonName' => 'Inside Red Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Melonen#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Inside Red - Liquid - 10 ml',
+        'commonName' => 'Inside Red',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Melonen#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1478,10 +1478,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-RY' => array(
         'icNumber' => 'IC10000L10-RY',
         'number' => 'IC10000L10-RY',
-        'name' => 'InnoCigs - Rounded Yellow Aroma - Liquid - 10 ml',
-        'commonName' => 'Rounded Yellow Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Melonen#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Rounded Yellow - Liquid - 10 ml',
+        'commonName' => 'Rounded Yellow',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Melonen#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1507,10 +1507,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-WG' => array(
         'icNumber' => 'IC10000L10-WG',
         'number' => 'IC10000L10-WG',
-        'name' => 'InnoCigs - White Glacier Aroma - Liquid - 10 ml',
-        'commonName' => 'White Glacier Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Frisches#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - White Glacier - Liquid - 10 ml',
+        'commonName' => 'White Glacier',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Frisches#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1536,10 +1536,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-CJ' => array(
         'icNumber' => 'IC10000L10-CJ',
         'number' => 'IC10000L10-CJ',
-        'name' => 'InnoCigs - Commander Joe Aroma - Liquid - 10 ml',
-        'commonName' => 'Commander Joe Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Commander Joe - Liquid - 10 ml',
+        'commonName' => 'Commander Joe',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1565,10 +1565,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-BS' => array(
         'icNumber' => 'IC10000L10-BS',
         'number' => 'IC10000L10-BS',
-        'name' => 'InnoCigs - Blue Spot Aroma - Liquid - 10 ml',
-        'commonName' => 'Blue Spot Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Beeren#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Blue Spot - Liquid - 10 ml',
+        'commonName' => 'Blue Spot',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Beeren#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1595,10 +1595,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-FM' => array(
         'icNumber' => 'IC10000L10-FM',
         'number' => 'IC10000L10-FM',
-        'name' => 'InnoCigs - First Man Aroma - Liquid - 10 ml',
-        'commonName' => 'First Man Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - First Man - Liquid - 10 ml',
+        'commonName' => 'First Man',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1625,10 +1625,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-CV' => array(
         'icNumber' => 'IC10000L10-CV',
         'number' => 'IC10000L10-CV',
-        'name' => 'InnoCigs - Cold Vacci Aroma - Liquid - 10 ml',
-        'commonName' => 'Cold Vacci Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Beeren#!#AROMEN > Frisches#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Cold Vacci - Liquid - 10 ml',
+        'commonName' => 'Cold Vacci',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Beeren#!#LIQUIDS > Frisches#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -1654,10 +1654,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-LR' => array(
         'icNumber' => 'IC10000L10-LR',
         'number' => 'IC10000L10-LR',
-        'name' => 'InnoCigs - La Renaissance Aroma - Liquid - 10 ml',
-        'commonName' => 'La Renaissance Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Süßigkeiten#!#AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - La Renaissance - Liquid - 10 ml',
+        'commonName' => 'La Renaissance',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Süßigkeiten#!#LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2366,10 +2366,10 @@ Die Liquids von SC überzeugen durch Qualität und Geschmack.
     'IC10000L10-RV' => array(
         'icNumber' => 'IC10000L10-RV',
         'number' => 'IC10000L10-RV',
-        'name' => 'InnoCigs - Red Violet Aroma - Liquid - 10 ml',
-        'commonName' => 'Red Violet Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Red Violet - Liquid - 10 ml',
+        'commonName' => 'Red Violet',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2395,10 +2395,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-CD' => array(
         'icNumber' => 'IC10000L10-CD',
         'number' => 'IC10000L10-CD',
-        'name' => 'InnoCigs - Celestial Dragon Aroma - Liquid - 10 ml',
-        'commonName' => 'Celestial Dragon Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Celestial Dragon - Liquid - 10 ml',
+        'commonName' => 'Celestial Dragon',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2424,10 +2424,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-AH' => array(
         'icNumber' => 'IC10000L10-AH',
         'number' => 'IC10000L10-AH',
-        'name' => 'InnoCigs - Angels in Heaven Aroma - Liquid - 10 ml',
-        'commonName' => 'Angels in Heaven Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Angels in Heaven - Liquid - 10 ml',
+        'commonName' => 'Angels in Heaven',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2453,10 +2453,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-MA' => array(
         'icNumber' => 'IC10000L10-MA',
         'number' => 'IC10000L10-MA',
-        'name' => 'InnoCigs - Monkey Around Aroma - Liquid - 10 ml',
-        'commonName' => 'Monkey Around Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Monkey Around - Liquid - 10 ml',
+        'commonName' => 'Monkey Around',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2482,10 +2482,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-CB' => array(
         'icNumber' => 'IC10000L10-CB',
         'number' => 'IC10000L10-CB',
-        'name' => 'InnoCigs - Caribbean Aroma - Liquid - 10 ml',
-        'commonName' => 'Caribbean Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Süßigkeiten#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Caribbean - Liquid - 10 ml',
+        'commonName' => 'Caribbean',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > exotische Früchte#!#LIQUIDS > Süßigkeiten#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2512,10 +2512,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-PS' => array(
         'icNumber' => 'IC10000L10-PS',
         'number' => 'IC10000L10-PS',
-        'name' => 'InnoCigs - Pretty Sweetheart Aroma - Liquid - 10 ml',
-        'commonName' => 'Pretty Sweetheart Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Beeren#!#AROMEN > Milch & Co.#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Pretty Sweetheart - Liquid - 10 ml',
+        'commonName' => 'Pretty Sweetheart',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Beeren#!#LIQUIDS > Milch & Co.#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2542,10 +2542,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-AL' => array(
         'icNumber' => 'IC10000L10-AL',
         'number' => 'IC10000L10-AL',
-        'name' => 'InnoCigs - Always Aroma - Liquid - 10 ml',
-        'commonName' => 'Always Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Getränke#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Always - Liquid - 10 ml',
+        'commonName' => 'Always',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Getränke#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2572,10 +2572,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-GA' => array(
         'icNumber' => 'IC10000L10-GA',
         'number' => 'IC10000L10-GA',
-        'name' => 'InnoCigs - Green Angry Aroma - Liquid - 10 ml',
-        'commonName' => 'Green Angry Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Green Angry - Liquid - 10 ml',
+        'commonName' => 'Green Angry',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Zitrusfrüchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2601,10 +2601,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-DD' => array(
         'icNumber' => 'IC10000L10-DD',
         'number' => 'IC10000L10-DD',
-        'name' => 'InnoCigs - Devil\'s Darling Aroma - Liquid - 10 ml',
-        'commonName' => 'Devil\'s Darling Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Devil\'s Darling - Liquid - 10 ml',
+        'commonName' => 'Devil\'s Darling',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2630,10 +2630,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-BN' => array(
         'icNumber' => 'IC10000L10-BN',
         'number' => 'IC10000L10-BN',
-        'name' => 'InnoCigs - Brown Nutty Aroma - Liquid - 10 ml',
-        'commonName' => 'Brown Nutty Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Nüsse#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Brown Nutty - Liquid - 10 ml',
+        'commonName' => 'Brown Nutty',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Nüsse#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2660,10 +2660,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-FY' => array(
         'icNumber' => 'IC10000L10-FY',
         'number' => 'IC10000L10-FY',
-        'name' => 'InnoCigs - First Money Aroma - Liquid - 10 ml',
-        'commonName' => 'First Money Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Getränke#!#AROMEN > Zitrusfrüchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - First Money - Liquid - 10 ml',
+        'commonName' => 'First Money',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Getränke#!#LIQUIDS > Zitrusfrüchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2689,10 +2689,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-HF' => array(
         'icNumber' => 'IC10000L10-HF',
         'number' => 'IC10000L10-HF',
-        'name' => 'InnoCigs - Hairy Fluffy Aroma - Liquid - 10 ml',
-        'commonName' => 'Hairy Fluffy Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Hairy Fluffy - Liquid - 10 ml',
+        'commonName' => 'Hairy Fluffy',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2718,10 +2718,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-LS' => array(
         'icNumber' => 'IC10000L10-LS',
         'number' => 'IC10000L10-LS',
-        'name' => 'InnoCigs - Little Soft Aroma - Liquid - 10 ml',
-        'commonName' => 'Little Soft Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Beeren#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Little Soft - Liquid - 10 ml',
+        'commonName' => 'Little Soft',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Beeren#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2747,10 +2747,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-SH' => array(
         'icNumber' => 'IC10000L10-SH',
         'number' => 'IC10000L10-SH',
-        'name' => 'InnoCigs - Sweetheart Aroma - Liquid - 10 ml',
-        'commonName' => 'Sweetheart Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Beeren#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Sweetheart - Liquid - 10 ml',
+        'commonName' => 'Sweetheart',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Beeren#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2777,10 +2777,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-TE' => array(
         'icNumber' => 'IC10000L10-TE',
         'number' => 'IC10000L10-TE',
-        'name' => 'InnoCigs - The Empire Aroma - Liquid - 10 ml',
-        'commonName' => 'The Empire Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Nüsse#!#AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - The Empire - Liquid - 10 ml',
+        'commonName' => 'The Empire',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Nüsse#!#LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2806,10 +2806,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-TR' => array(
         'icNumber' => 'IC10000L10-TR',
         'number' => 'IC10000L10-TR',
-        'name' => 'InnoCigs - The Rebels Aroma - Liquid - 10 ml',
-        'commonName' => 'The Rebels Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > Gewürze#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - The Rebels - Liquid - 10 ml',
+        'commonName' => 'The Rebels',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > Gewürze#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2835,10 +2835,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-ML' => array(
         'icNumber' => 'IC10000L10-ML',
         'number' => 'IC10000L10-ML',
-        'name' => 'InnoCigs - Milli Aroma - Liquid - 10 ml',
-        'commonName' => 'Milli Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Gewürze#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Milli - Liquid - 10 ml',
+        'commonName' => 'Milli',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Gewürze#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2866,10 +2866,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-MW' => array(
         'icNumber' => 'IC10000L10-MW',
         'number' => 'IC10000L10-MW',
-        'name' => 'InnoCigs - Master Wood Aroma - Liquid - 10 ml',
-        'commonName' => 'Master Wood Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Pflanzen#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Master Wood - Liquid - 10 ml',
+        'commonName' => 'Master Wood',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Pflanzen#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2896,10 +2896,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-RC' => array(
         'icNumber' => 'IC10000L10-RC',
         'number' => 'IC10000L10-RC',
-        'name' => 'InnoCigs - Red Cyclone Aroma - Liquid - 10 ml',
-        'commonName' => 'Red Cyclone Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Red Cyclone - Liquid - 10 ml',
+        'commonName' => 'Red Cyclone',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -2925,10 +2925,10 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
     'IC10000L10-SY' => array(
         'icNumber' => 'IC10000L10-SY',
         'number' => 'IC10000L10-SY',
-        'name' => 'InnoCigs - Spiky Aroma - Liquid - 10 ml',
-        'commonName' => 'Spiky Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > exotische Früchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Spiky - Liquid - 10 ml',
+        'commonName' => 'Spiky',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > exotische Früchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -19272,64 +19272,6 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
 <br>
 ',
     ),
-    'GV100AL' => array(
-        'icNumber' => 'GV100AL',
-        'number' => 'GV100AL',
-        'name' => 'GeekVape - Aegis Legend - E-Zigarette (Set)',
-        'commonName' => 'Aegis Legend',
-        'type' => 'E_CIGARETTE',
-        'category' => 'E-ZIGARETTEN > GeekVape',
-        'supplier' => 'GeekVape',
-        'brand' => 'GeekVape',
-        'piecesPerPack' => 1,
-        'flavor' => null,
-        'dosage' => null,
-        'base' => null,
-        'retailPriceDampfplanet' => '79.85',
-        'retailPriceOthers' => '84.80',
-        'description' => 'Aus dem Hause GeekVape stammt das E-Zigaretten Set namens Aegis Legend. Das Set besteht aus dem Aegis Legend Akkuträger und dem Aero Mesh Verdampfer. Der Akkuträger wird über zwei 18650er Akkuzellen betrieben, die nicht Teil des Lieferumfangs sind. Sie können die E-Zigarette in folgenden Ausgabemodi: VW/ VPC/TC/TCR/BYPASS verwenden und diese erreicht eine maximale Leistung von bis zu 200 Watt. Der Aero Mesh Verdampfer fasst bis zu 4ml Liquid, das Sie via Top Filling in den Tank geben. Im Lieferumfang ist ein IM4 Verdampfer mit 0,15 Ohm enthalten, der für das Dampfen im Subohm-Bereich ausgelegt ist. 
-<br>
-<br>
-<strong>Lieferumfang</strong>
-<ul>
-<li>1x Aegis Legend 200 Watt</li>
-<li>1x Aero Mesh Clearomizer</li>
-<li>1x IM4 Head 0,15 Ohm</li>
-<li>1x Ersatzteil-Set</li>
-<li>1x Ersatzglastank</li>
-<li>1x USB-Kabel</li>
-<li>2x Bedienungsanleitung</li>
-</ul>
-<strong>18650 Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>Aegis Legend Akkuträger</strong>
-<ul>
-<li>Ausgangsleistung: 200 Watt</li>
-<li>Ausgabemodi: VW/ VPC/TC/TCR/BYPASS</li>
-<li>Temperaturbereich: 100°C – 315°C </li>
-<li>Widerstandsbereich: 0,05 – 3,0 Ohm</li>
-<li>Gewindetyp: 510</li>
-<li>Farb-Display</li>
-<li>wasserdicht, stoßfest,staubdicht</li>
-<li>Maße: 90,5 mm x 58,5 mm x 30,6 mm</li>
-</ul>
-<br>
-<br>
-<strong>Aero Mesh</strong>
-<ul>
-<li>Tankvolumen: 4 ml</li>
-<li>Höhe (inkl. Mundstück): 45 mm</li>
-<li>Durchmesser: 25 mm</li>
-<li>Gewindetyp: 510</li>
-<li>subohm-fähig</li>
-<li>Top Filling</li>
-<li>Airflow-Control</li>
-</ul>
-<br>
-<br>
-',
-    ),
     'GV100ALM' => array(
         'icNumber' => 'GV100ALM',
         'number' => 'GV100ALM',
@@ -20591,7 +20533,31 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'base' => null,
         'retailPriceDampfplanet' => '21.85',
         'retailPriceOthers' => '22.90',
-        'description' => null,
+        'description' => 'Der Exceed Air Plus Verdampfer ist eine weiteres Modell aus der Exceed Reihe. Er besitzt ein Tankvolumen von 3 Milliliter Liquid, welches Sie via Top Filling System in den Tank geben. Die Airflow Control ist individuell einstellbar und befindet sich in der Base. Im Lieferumfang sind insgesamt zwei EX Heads enthalten, die unterschiedliche Widerstandswerte aufweisen. Der EX Head mit 0,5 Ohm ist für das Subohm-Dampfen und der EX Head mit 1,2 Ohm für das moderate Dampfen ausgelegt. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Exceed Air Plus Clearomizer</li>
+<li>1x EX Head 0,5 Ohm DL</li>
+<li>1x EX Head 1,2 Ohm ML</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Exceed Air Plus</strong>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Höhe (inkl. Mundstück): 44 mm</li>
+<li>Durchmesser: 22 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+</ul>
+<br>
+<br>',
     ),
     'IC100XPG' => array(
         'icNumber' => 'IC100XPG',
@@ -25175,38 +25141,6 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
 <b>Geeignet Für:</b>
 <ul>
 <li>Steamax TFV8 Clearomizer Set</li>
-</ul>
-<br>
-<br>',
-    ),
-    'SK100PX2' => array(
-        'icNumber' => 'SK100PX2',
-        'number' => 'SK100PX2',
-        'name' => 'SMOK - TFV12 Prince - X2 Clapton Head - 0,4 Ohm (3 Stück pro Packung)',
-        'commonName' => 'TFV12 Prince',
-        'type' => 'HEAD',
-        'category' => 'ZUBEHÖR > Verdampferköpfe > Smoktech',
-        'supplier' => 'Smoktech',
-        'brand' => 'Smok',
-        'piecesPerPack' => 3,
-        'flavor' => null,
-        'dosage' => null,
-        'base' => null,
-        'retailPriceDampfplanet' => '11.55',
-        'retailPriceOthers' => null,
-        'description' => 'Die TFV12 Prince X2 Clapton Heads haben einen Widerstand von 0,4 Ohm und sind kompatibel mit dem Smok TFV12 Prince Clearomizer. Sie können die Verdampferköpfe in einem Leistungsbereich von 40 bis 80 Watt verwenden. Der empfohlene Leistungsbereich liegt zwischen 60 Watt und 70 Watt. In einer Packung sind drei TFV12 Prince X2 Clapton Heads enthalten.
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
-<ul><li>Widerstand: 0,4 Ohm</li>
-<li>Leistungsbereich: 40 - 80 Watt</li>
-<li>Empfohlener Leistungsbereich: 60 - 70 Watt</li>
-<li>für Lungeninhalation</li></ul>
-<br>
-<b>Geeignet Für:</b>
-<ul>
-<li>Steamax TFV12 Prince Clearomizer</li>
-<li>SMOK TFV12 Prince Clearomizer Set</li>
 </ul>
 <br>
 <br>',
@@ -32517,7 +32451,28 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<h2>Die InnoCigs Atopack E-Zigarette mit Cartridge-System</h2>
+Das Atopack Magic E-Zigaretten Set von InnoCigs ist ein Mitglied der Atopack Serie. Der Akku ist fest verbaut und verfügt über eine Akkukapazität von 1300Ah. Über das beiliegende USB-Kabel können Sie den Akku mit Energie versorgen. Der Tank ist ein sogenanntes Kartuschen- bzw. Cartridge-System. Sie können das Cartridge von dem Akku entfernen und über ein Bottom-Filling System von unten mit Liquid befüllen. Es fasst bis zu 7ml Liquid. 
+<br>
+<br> 
+<strong>Lieferumfang:</strong>
+<li>1x Atopack Magic Akku 1300 mAh</li>
+<li>1x Cartridge 7ml</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+<br>
+<br> 
+<strong>Atopack Magic:</strong>
+<li>Akkukapazität: 1300 mAh</li>
+<li>Ausgabemodi: konstante Leistungsabgabe</li>
+<li>NCFilm Heater 0,6 Ohm</li>
+<li>Tankvolumen: 7 Milliliter</li>
+<li>Bottom Filling System</li>
+<li>Maße: 38mm x 18mm x 101mm</li>
+</ul>
+<br>
+<br>',
     ),
     'IC100AMC' => array(
         'icNumber' => 'IC100AMC',
@@ -32534,7 +32489,23 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => 'Die InnoCigs Atopack Magic-Kartusche bzw. auch Cartridge genannt kann bis zu 7ml Liquid fassen und eignet sich für die gleichnamige E-Zigarette. Um die Kartusche mit Liquid befüllen zu können, muss diese vom Akku durch Ziehen getrennt werden. Anschließend muss die am Boden angebrachte Silikonabdeckung an der Kartusche geöffnet werden, sodass das Einfüllloch freigelegt wird. Pro Packung ist eine InnoCigs Atopack Magic Kartusche enthalten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Atopack Magic Cartridge</li>
+<li>1x NCFilm Heizplatte 0,6 Ohm</li>
+</ul>
+<br>
+<br>
+<strong>Atopack Magic Cartridge</strong>
+<ul>
+<li>Tankvolumen: 7ml</li>
+<li>Widerstand: 0,6 Ohm I DL</li>
+</ul>
+<br>
+<br>',
     ),
     'IC100AMW' => array(
         'icNumber' => 'IC100AMW',
@@ -32551,7 +32522,15 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => 'Die von der Marke InnoCigs stammt die Atopack Magic Watte, welche Sie für Ihre Atopack Magic E-Zigarette verwenden können. Pro Packung erhalten Sie 48 zurechtgeschnittenen Wattestücke für Ihre Atopack Magic E-Zigarette. Bitte bedenken Sie, dass es sich hierbei um ein Verschleißartikel handelt und dieser regelmäßig ausgetauscht werden muss.
+<br
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Material: Baumwolle</li>
+<li>Geschmacksneutral</li>
+</ul>
+',
     ),
     'SK100MG' => array(
         'icNumber' => 'SK100MG',
@@ -36058,7 +36037,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Military - GRENI-Juice - Aroma - 10 ml',
         'commonName' => 'GRENI-Juice',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > Beeren#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Beeren#!#AROMEN > Military',
         'supplier' => 'Military',
         'brand' => 'Military',
         'piecesPerPack' => 1,
@@ -36082,7 +36061,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Military - LW-Juice - Aroma - 10 ml',
         'commonName' => 'LW-Juice',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > exotische Früchte#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > exotische Früchte#!#AROMEN > Military',
         'supplier' => 'Military',
         'brand' => 'Military',
         'piecesPerPack' => 1,
@@ -36129,7 +36108,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Military - ARI-Juice - Aroma - 10 ml',
         'commonName' => 'ARI-Juice',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > exotische Früchte#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Früchte#!#AROMEN > exotische Früchte#!#AROMEN > Military',
         'supplier' => 'Military',
         'brand' => 'Military',
         'piecesPerPack' => 1,
@@ -36153,7 +36132,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Military - M-Juice - Aroma - 10 ml',
         'commonName' => 'M-Juice',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Frisches#!#AROMEN > Pflanzen#!#AROMEN > Zitrusfrüchte#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Frisches#!#AROMEN > Pflanzen#!#AROMEN > Zitrusfrüchte#!#AROMEN > Military',
         'supplier' => 'Military',
         'brand' => 'Military',
         'piecesPerPack' => 1,
@@ -36200,7 +36179,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Military - FM-Juice - Aroma - 10 ml',
         'commonName' => 'FM-Juice',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Tee & Kaffee#!#AROMEN > Gewürze#!#AROMEN > Pflanzen#!#AROMEN > Süßigkeiten#!#AROMEN > Milch & Co.#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Tee & Kaffee#!#AROMEN > Gewürze#!#AROMEN > Pflanzen#!#AROMEN > Süßigkeiten#!#AROMEN > Milch & Co.#!#AROMEN > Military',
         'supplier' => 'Military',
         'brand' => 'Military',
         'piecesPerPack' => 1,
@@ -36224,7 +36203,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Cocobolo - Aroma - 10 ml',
         'commonName' => 'Cocobolo',
         'type' => 'AROMA',
-        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Früchte#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Früchte#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -36271,7 +36250,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Royal Strudel - Aroma - 10 ml',
         'commonName' => 'Royal Strudel',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > Süßigkeiten#!#AROMEN > Gewürze#!#AROMEN > Gebäck#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Süßigkeiten#!#AROMEN > Gewürze#!#AROMEN > Gebäck#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -36295,7 +36274,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Pink Shark - Aroma - 10 ml',
         'commonName' => 'Pink Shark',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Beeren#!#AROMEN > Cremiges#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Cremiges#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -36342,7 +36321,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Don Limon - Aroma - 10 ml',
         'commonName' => 'Don Limon',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > Trauben#!#AROMEN > Pflanzen#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > Trauben#!#AROMEN > Pflanzen#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -36359,7 +36338,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Melon Shark - Aroma - 10 ml',
         'commonName' => 'Melon Shark',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Melonen#!#AROMEN > Früchte#!#AROMEN > Frisches#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Melonen#!#AROMEN > Früchte#!#AROMEN > Frisches#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -36406,7 +36385,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Boogaloo - Aroma - 10 ml',
         'commonName' => 'Boogaloo',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Gebäck#!#AROMEN > Beeren#!#AROMEN > Milch & Co.#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Gebäck#!#AROMEN > Beeren#!#AROMEN > Milch & Co.#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -36446,7 +36425,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Foggy Daddy - Aroma - 10 ml',
         'commonName' => 'Foggy Daddy',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > Gewürze#!#AROMEN > Cremiges#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Gewürze#!#AROMEN > Cremiges#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -36470,7 +36449,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Berryato - Aroma - 10 ml',
         'commonName' => 'Berryato',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Früchte#!#AROMEN > Gewürze#!#AROMEN > Frisches#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Gewürze#!#AROMEN > Frisches#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -36517,7 +36496,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'name' => 'Shark Attack - Orange Ball - Aroma - 10 ml',
         'commonName' => 'Orange Ball',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Bonbons & Kaugummi#!#AROMEN > Gewürze#!#AROMEN > Mule Fuel',
+        'category' => 'AROMEN > Bonbons & Kaugummi#!#AROMEN > Gewürze#!#AROMEN > Shark Attack',
         'supplier' => 'Shark Attack',
         'brand' => 'Shark Attack',
         'piecesPerPack' => 1,
@@ -37754,7 +37733,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'Twenty Eight Monkeys',
         'piecesPerPack' => 1,
         'flavor' => 'Energy Drink, Acai',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '9.95',
@@ -38464,7 +38443,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'schwarze Johannisbeere, Limonade',
-        'dosage' => '',
+        'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -38486,7 +38465,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Kaugummi',
-        'dosage' => '',
+        'dosage' => '13-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -38508,7 +38487,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Cola',
-        'dosage' => '',
+        'dosage' => '13-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -38530,7 +38509,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Apfel, Martini',
-        'dosage' => '',
+        'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -38552,7 +38531,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Mojito, Limette, Zitrone',
-        'dosage' => '',
+        'dosage' => '13-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -38574,7 +38553,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Himbeere',
-        'dosage' => '',
+        'dosage' => '13-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -38596,7 +38575,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Früchte, Bonbon, Koolada',
-        'dosage' => '',
+        'dosage' => '13-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -38640,7 +38619,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Blaubeere, Slush Eis',
-        'dosage' => '',
+        'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -38662,7 +38641,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Mango',
-        'dosage' => '',
+        'dosage' => '13-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -39290,10 +39269,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-GC' => array(
         'icNumber' => 'IC10000L10-GC',
         'number' => 'IC10000L10-GC',
-        'name' => 'InnoCigs - Gentleman\'s Cloud Aroma - Liquid - 10 ml',
-        'commonName' => 'Gentleman\'s Cloud Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Gentleman\'s Cloud - Liquid - 10 ml',
+        'commonName' => 'Gentleman\'s Cloud',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39307,10 +39286,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-WA' => array(
         'icNumber' => 'IC10000L10-WA',
         'number' => 'IC10000L10-WA',
-        'name' => 'InnoCigs - MyWay Aroma - Liquid - 10 ml',
-        'commonName' => 'MyWay Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - MyWay - Liquid - 10 ml',
+        'commonName' => 'MyWay',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39324,10 +39303,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-SN' => array(
         'icNumber' => 'IC10000L10-SN',
         'number' => 'IC10000L10-SN',
-        'name' => 'InnoCigs - Shaken, not stirred Aroma - Liquid - 10 ml',
-        'commonName' => 'Shaken, not stirred Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > Frisches#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Shaken, not stirred - Liquid - 10 ml',
+        'commonName' => 'Shaken, not stirred',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Zitrusfrüchte#!#LIQUIDS > Frisches#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39341,10 +39320,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-BT' => array(
         'icNumber' => 'IC10000L10-BT',
         'number' => 'IC10000L10-BT',
-        'name' => 'InnoCigs - Black Tie Aroma - Liquid - 10 ml',
-        'commonName' => 'Black Tie Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Tabak#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Black Tie - Liquid - 10 ml',
+        'commonName' => 'Black Tie',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Tabak#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39358,10 +39337,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-CK' => array(
         'icNumber' => 'IC10000L10-CK',
         'number' => 'IC10000L10-CK',
-        'name' => 'InnoCigs - Courtesy of the Kings Aroma - Liquid - 10 ml',
-        'commonName' => 'Courtesy of the Kings Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Frisches#!#AROMEN > Süßigkeiten#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Courtesy of the Kings - Liquid - 10 ml',
+        'commonName' => 'Courtesy of the Kings',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Frisches#!#LIQUIDS > Süßigkeiten#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39375,10 +39354,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-LK' => array(
         'icNumber' => 'IC10000L10-LK',
         'number' => 'IC10000L10-LK',
-        'name' => 'InnoCigs - Lady-Like Aroma - Liquid - 10 ml',
-        'commonName' => 'Lady-Like Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > exotische Früchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Lady-Like - Liquid - 10 ml',
+        'commonName' => 'Lady-Like',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > exotische Früchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39392,10 +39371,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-KD' => array(
         'icNumber' => 'IC10000L10-KD',
         'number' => 'IC10000L10-KD',
-        'name' => 'InnoCigs - Kings Dessert Aroma - Liquid - 10 ml',
-        'commonName' => 'Kings Dessert Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Cremiges#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Kings Dessert - Liquid - 10 ml',
+        'commonName' => 'Kings Dessert',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Cremiges#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39409,10 +39388,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-LX' => array(
         'icNumber' => 'IC10000L10-LX',
         'number' => 'IC10000L10-LX',
-        'name' => 'InnoCigs - Atlantis Luxury Aroma - Liquid - 10 ml',
-        'commonName' => 'Atlantis Luxury Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Getränke#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Atlantis Luxury - Liquid - 10 ml',
+        'commonName' => 'Atlantis Luxury',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Getränke#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39426,10 +39405,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-MI' => array(
         'icNumber' => 'IC10000L10-MI',
         'number' => 'IC10000L10-MI',
-        'name' => 'InnoCigs - My Island Aroma - Liquid - 10 ml',
-        'commonName' => 'My Island Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Getränke#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - My Island - Liquid - 10 ml',
+        'commonName' => 'My Island',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Getränke#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39443,10 +39422,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-BB' => array(
         'icNumber' => 'IC10000L10-BB',
         'number' => 'IC10000L10-BB',
-        'name' => 'InnoCigs - Babette\'s Vanille Pudding Aroma - Liquid - 10 ml',
-        'commonName' => 'Babette\'s Vanille Pudding Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Gewürze#!#AROMEN > Cremiges#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Babette\'s Vanille Pudding - Liquid - 10 ml',
+        'commonName' => 'Babette\'s Vanille Pudding',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Gewürze#!#LIQUIDS > Cremiges#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39460,10 +39439,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-MF' => array(
         'icNumber' => 'IC10000L10-MF',
         'number' => 'IC10000L10-MF',
-        'name' => 'InnoCigs - Mystery Fruits Aroma - Liquid - 10 ml',
-        'commonName' => 'Mystery Fruits Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > exotische Früchte#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Mystery Fruits - Liquid - 10 ml',
+        'commonName' => 'Mystery Fruits',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > exotische Früchte#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39477,10 +39456,10 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
     'IC10000L10-ST' => array(
         'icNumber' => 'IC10000L10-ST',
         'number' => 'IC10000L10-ST',
-        'name' => 'InnoCigs - Stirred, not shaken Aroma - Liquid - 10 ml',
-        'commonName' => 'Stirred, not shaken Aroma',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Frisches#!#AROMEN > InnoCigs',
+        'name' => 'InnoCigs - Stirred, not shaken - Liquid - 10 ml',
+        'commonName' => 'Stirred, not shaken',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > exotische Früchte#!#LIQUIDS > Frisches#!#LIQUIDS > InnoCigs',
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -39863,7 +39842,7 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
 </ul>
 <p><strong>Eigenschaften Minikin V3 Akkuträger:</strong></p>
 <ul>
-<li>Stromversorgung: 2 x 18650er Akkuzelle (nicht im Lieferumfang enthalten)</li>
+<li>Stromversorgung: 2 x 18650er Akkuzelle (<strong>nicht im Lieferumfang enthalten</strong>)</li>
 <li>Ausgabemodi: VW | TC (Ni, Ti, SS) | TCR | CCW</li>
 <li>Ausgangsleistung: 5 – 200 Watt</li>
 <li>Temperaturbereich: 100 °C – 300 °C | 212° - 572° F</li>
@@ -39891,7 +39870,9 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p>Dieses E-Zigaretten-Set besteht aus dem formschönen und leistungsstarken Akkuträger asMODus Minikin V3S und dem asMODus Viento Verdampfer. Der Viento ist auf das Dampfen im sog. Direct-Lung Stil ausgelegt, bei dem der Dampf direkt in die Lunge inhaliert wird.</p>
+        'description' => '<p>&nbsp;</p>
+<p>Dieses E-Zigaretten-Set besteht aus dem formschönen und leistungsstarken Akkuträger asMODus Minikin V3S und dem asMODus Viento Verdampfer. Der Viento ist auf das Dampfen im sog. Direct-Lung Stil ausgelegt, bei dem der Dampf direkt in die Lunge inhaliert wird.</p>
+<p><strong>asMODus Minikin V3S</strong></p>
 <p>Der Minikin V3S liegt durch sein ergonomisch abgerundetes Design besonders angenehm in der Hand. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet, der im Unterschied zur Minikin V3 Variante zusätzlich über einen Fingerabdrucksensor verfügt.</p>
 <p>Der Minikin V3S wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den Micro-USB Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3S für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
 <p>Das Herz des Minikin V3S ist der sehr effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Minikin V3S über den USB Anschluss mit einem Laptop oder PC. Der USB Anschluss des Minikin V3S unterstützt USB 3.0.</p>
@@ -39901,10 +39882,92 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
 <p>Der Minikin V3S verfügt über einen eingebauten Beschleunigungssensor. Durch dreimaliges Schütteln des Geräts lässt sich das Farbschema des Displays ändern. Diese Funktion ist im Menu abschaltbar. Die Farbe des Displays kann dann über das Menu manuell angepasst werden.</p>
 <p>In die Feuertaste ist in der Minikin V3S Varianate ein Fingerabdrucksensor integriert, der dafür sorgt, dass niemand außer Ihnen den Akkuträger nutzen kann. Zusätzlich können Sie einen sechsstelligen PIN-Code zum Entsperren des Geräts hinterlegen.</p>
 <p>Der Minikin V3S verfügt über die von asMODus bekannten ausgereiften Schutzschaltungen. Sie schützen die Akkuzellen vor Tiefenentladung, Überladung, Verpolung, Kurzschluss und Überhitzung. Bei einem Kurzschluss oder niedrigem Akkustand wird dies auf dem Display angezeigt und über eine kurze Vibration signalisiert. Die Vibrationsfunktion kann über das Menu abgeschaltet werden.</p>
+<p>Der Minikin V3S ist mit einem leicht versenkt gestalteten 510er Gewindeanschluss ausgestattet. Sie können mit diesem Gerät Verdampfer bis zu einem maximalen Durchmesser von 27 mm an der Basis verwenden.&nbsp;</p>
+<p><strong>asMODus Viento</strong></p>
 <p>Der im Lieferumfang befindliche Viento Verdampfer wird über ein Top Filling-System von oben mit E-Liquid befüllt. Über eine regelbare Airflow-Control können Sie die Luftbeimischung durch die drei Lufteinlässe nach Ihren Wünschen anpassen. Die Regelung erfolgt über einen in der Basis des Verdampfers eingebauten Einstellring für alle Lufteinlässe gleichzeitig.</p>
-<p>Der Durchmesser des Viento beträgt 26,9 mm bei einem Tankvolumen von 3,5 ml in der Standard-Variante. Das Tankvolumen lässt sich durch Einsatz des separat erhältlichen Bubble-Glastanks auf 5 ml erweitern. Der Glastank des Viento besteht aus Pyrex-Glas. Die Oberfläche von Pyrex-Glas ist sehr glatt und verhält sich deshalb auch bei einem Wechsel des E-Liquids geschmacksneutral. Das 810er Mundstück des Viento sorgt für einen großzügigen Dampfstrom.</p>
+<p>Das Tankvolumen des Viento beträgt 3,5 ml in der Standard-Variante. Es lässt sich durch Einsatz des separat erhältlichen Bubble-Glastanks auf 5 ml erweitern. Der Glastank besteht aus Pyrex-Glas. Die Oberfläche dieses Materials ist besonders glatt und verhält sich deshalb auch bei einem Wechsel des E-Liquids weitestgehend geschmacksneutral.</p>
 <p>Die mitgelieferten beiden Verdampferköpfe mit jeweils 0,18 Ohm können in einem Leistungsbereich von 40 Watt bis 60 Watt betrieben werden. Anders als bei klassischen Verdampferköpfen verdampft das Liquid bei diesen Mesh Heads nicht an einem einfachen Draht, sondern an einer Netzstruktur (Mesh). Die im Vergleich zum einfachen Draht deutlich größere Oberfläche ermöglicht ein gleichmäßigeres Verdampfen des E-Liquids auch bei hohem Volumen. Neben den Original-Verdampferköpfen können Sie im asMODus Viento auch Verdampferköpfe für die Smok Baby Beast Serie verwenden, da diese kompatibel sind.</p>
-<p>Sowohl der Viento Verdampfer als auch der Minikin V3S sind mit 510er Gewindeanschlüssen ausgestattet. Dieser ist beim asMODus Minikin V3S Akkuträger leicht versenkt, so dass Verdampfer mit einem maximalen Durchmesser von 27 mm verwendet werden können.&nbsp;</p>
+<p>Der Viento Verdampfer ist mit einem 510er Gewindeanschluss ausgestattet. Der Durchmesser des Viento beträgt an der Basis 26,9 mm.&nbsp;Das 810er Mundstück des Viento sorgt für einen angenehm großzügigen Dampfstrom.</p>
+<p><strong>Eigenschaften asMODus Minikin V3S Akkuträger</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Stromversorgung</td>
+<td>2 x 18650 Akkuzelle (<strong>nicht im Lieferumfang enthalten</strong>)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW | TC (Ni, Ti, SS) | TCR | CCW</td>
+</tr>
+<tr>
+<td>Prozessor</td>
+<td>GX-200UTC</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 – 200 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 °C – 300 °C | 212° - 572° F</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,1 – 3 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>max. 2 Ampere</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>HD Farb Touch Display, Fingerabdrucksensor, Beschleunigungssensor, Vibrationsfeedback</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Eigenschaften asMODus Viento Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3,5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>26,9 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Mundstück</td>
+<td>810</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>3 Einlässe, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
 <p><strong>Lieferumfang:</strong></p>
 <ul>
 <li>1 x Minikin V3S</li>
@@ -39914,31 +39977,6 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
 <li>1 x USB-C Ladekabel</li>
 <li>1 x Bedienungsanleitung</li>
 <li>1 x Ersatzteil-Set</li>
-</ul>
-<p><strong>Eigenschaften Minikin V3S Akkuträger:</strong></p>
-<ul>
-<li>Akkuzelle: 2 x 18650 (nicht im Lieferumfang enthalten)</li>
-<li>Ausgabemodi: VW | TC (Ni, Ti, SS) | TCR | CCW</li>
-<li>Ausgangsleistung: 5 – 200 Watt</li>
-<li>Temperaturbereich: 100 °C – 300 °C | 212° - 572° F</li>
-<li>Widerstandsbereich: 0,1 – 3 Ohm</li>
-<li>Ladestrom: max. 1 Ampere</li>
-<li>Gewindetyp: 510</li>
-<li>Fingerabdrucksensor</li>
-<li>Beschleunigungssensor</li>
-<li>Vibrationsfeedback</li>
-<li>HD Farb Touch Display</li>
-</ul>
-<p><strong><strong><strong>Eigenschaften Viento Clearomizer:</strong></strong></strong></p>
-<ul>
-<li>Tankvolumen: 3,5 ml</li>
-<li>Durchmesser: 26,9 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Glas und Edelstahl</li>
-<li>subohm-fähig</li>
-<li>Top Filling</li>
-<li>Airflow Control</li>
-<li>810er Mundstück</li>
 </ul>',
     ),
     'A100AV' => array(
@@ -40631,7 +40669,7 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
         'brand' => 'Foozy Juice',
         'piecesPerPack' => 1,
         'flavor' => 'Mango, Litschi, Koolada',
-        'dosage' => '',
+        'dosage' => '10',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -40651,7 +40689,7 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
         'brand' => 'Foozy Juice',
         'piecesPerPack' => 1,
         'flavor' => 'Keks, Erdbeere, Banane, Sahne',
-        'dosage' => '',
+        'dosage' => '10',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -40999,7 +41037,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Mr. Nik\'s',
         'piecesPerPack' => 1,
         'flavor' => 'Waffel, Zitrone',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41016,7 +41054,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Mr. Nik\'s',
         'piecesPerPack' => 1,
         'flavor' => 'Orange, Koolada',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41033,7 +41071,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Mr. Nik\'s',
         'piecesPerPack' => 1,
         'flavor' => 'Sahne, Pudding, Erdbeere',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41050,7 +41088,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Mr. Nik\'s',
         'piecesPerPack' => 1,
         'flavor' => 'dunkle Traube, Koolada',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41067,7 +41105,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Mr. Nik\'s',
         'piecesPerPack' => 1,
         'flavor' => 'Wassermelone, Minze',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41084,7 +41122,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Mr. Nik\'s',
         'piecesPerPack' => 1,
         'flavor' => 'Cappuccino, Banane',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41314,7 +41352,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Bozz Liquids',
         'piecesPerPack' => 1,
         'flavor' => 'Pina Colada',
-        'dosage' => '',
+        'dosage' => '20',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41331,7 +41369,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Bozz Liquids',
         'piecesPerPack' => 1,
         'flavor' => 'Cola, Rum',
-        'dosage' => '',
+        'dosage' => '20',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41348,7 +41386,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Bozz Liquids',
         'piecesPerPack' => 1,
         'flavor' => 'Waldbeeren, Lakritz, Minze',
-        'dosage' => '',
+        'dosage' => '20',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41365,7 +41403,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Bozz Liquids',
         'piecesPerPack' => 1,
         'flavor' => 'Apfel, Himbeere, Aronia, Maracuja',
-        'dosage' => '',
+        'dosage' => '20',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41382,7 +41420,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Military',
         'piecesPerPack' => 1,
         'flavor' => 'schwarze Johannisbeere, dunkle Traube',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41406,7 +41444,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Military',
         'piecesPerPack' => 1,
         'flavor' => 'Erdbeere, Melone, Minze',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41727,7 +41765,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => '7 Todsünden',
         'piecesPerPack' => 1,
         'flavor' => 'roter Apfel, grüner Apfel, Karamell',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41747,7 +41785,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => '7 Todsünden',
         'piecesPerPack' => 1,
         'flavor' => 'Pistazie, Sahne, Karamell',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41767,7 +41805,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => '7 Todsünden',
         'piecesPerPack' => 1,
         'flavor' => 'Cappuccino, Schokolade, Sahne',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41787,7 +41825,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => '7 Todsünden',
         'piecesPerPack' => 1,
         'flavor' => 'Erdbeere, Himbeere, Blaubeere',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41807,7 +41845,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => '7 Todsünden',
         'piecesPerPack' => 1,
         'flavor' => 'Melone, Papaya, Kokos',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41827,7 +41865,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => '7 Todsünden',
         'piecesPerPack' => 1,
         'flavor' => 'Tabak, Pflaume',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41847,7 +41885,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => '7 Todsünden',
         'piecesPerPack' => 1,
         'flavor' => 'Zitrone, Limonade',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -41867,7 +41905,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => '7 Todsünden',
         'piecesPerPack' => 1,
         'flavor' => 'Blaubeere, schwarze Johannisbeere, Menthol',
-        'dosage' => '',
+        'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -42790,7 +42828,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Flavour Trade',
         'piecesPerPack' => 1,
         'flavor' => 'Waldmeister, Brause',
-        'dosage' => '',
+        'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -42807,7 +42845,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Flavour Trade',
         'piecesPerPack' => 1,
         'flavor' => 'Cola, Brause',
-        'dosage' => '',
+        'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -42824,7 +42862,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Flavour Trade',
         'piecesPerPack' => 1,
         'flavor' => 'Himbeere, Brause',
-        'dosage' => '',
+        'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -42841,7 +42879,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Flavour Trade',
         'piecesPerPack' => 1,
         'flavor' => 'Zitrone, Brause',
-        'dosage' => '',
+        'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -43051,7 +43089,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Arschkalt',
         'piecesPerPack' => 1,
         'flavor' => 'Erdbeere, Koolada',
-        'dosage' => '',
+        'dosage' => '20',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -43071,7 +43109,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Arschkalt',
         'piecesPerPack' => 1,
         'flavor' => 'Wassermelone, Koolada',
-        'dosage' => '',
+        'dosage' => '20',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -43091,7 +43129,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Arschkalt',
         'piecesPerPack' => 1,
         'flavor' => 'Zitrone, Koolada',
-        'dosage' => '',
+        'dosage' => '20',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -43111,7 +43149,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'brand' => 'Arschkalt',
         'piecesPerPack' => 1,
         'flavor' => 'Apfel, Koolada',
-        'dosage' => '',
+        'dosage' => '20',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,

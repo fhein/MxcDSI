@@ -5,6 +5,7 @@ namespace MxcDropshipInnocigs\Excel;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Models\Product;
 use PhpOffice\PhpSpreadsheet\Style\Border;
+use PhpOffice\PhpSpreadsheet\Style\Conditional;
 use Shopware\Components\Model\ModelManager;
 
 class ExportDescription extends AbstractProductExport
@@ -22,6 +23,7 @@ class ExportDescription extends AbstractProductExport
     {
         parent::registerColumns();
         $this->registerColumn('description');
+        $this->registerColumn('icDescription');
     }
 
     public function setSheetData()
@@ -43,6 +45,7 @@ class ExportDescription extends AbstractProductExport
             ->getNumberFormat()->setFormatCode('@');
 
         $this->sheet->getColumnDimension('F')->setWidth(150);
+        $this->sheet->getColumnDimension('G')->setWidth(150);
 
         $this->setAlternateRowColors();
         $this->formatHeaderLine();
@@ -50,6 +53,15 @@ class ExportDescription extends AbstractProductExport
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000');
         $range = $this->getRange(['F', 1, 'F', $highest['row']]);
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $range);
+        $this->setConditionalStyles();
+    }
+
+    protected function setConditionalStyles(){
+        $this->setConditionalFormat('description',
+            Conditional::CONDITION_CELLIS,
+            Conditional::OPERATOR_EQUAL,
+            'icDescription',
+            '	C5D9F1');//light blue
     }
 
     protected function loadRawExportData(): ?array

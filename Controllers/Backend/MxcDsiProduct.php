@@ -18,7 +18,6 @@ use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
-use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
@@ -250,14 +249,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function excelImportAction()
     {
-        $log = $this->getLog();
-        $log->enter();
-
         // Try to get the transferred file
         try {
             $file = $_FILES['file'];
 
-            if ($file === null) $log->debug('file is null');
+            if ($file === null) $this->getLog()->debug('file is null');
             $fileName = $file['name'];
             $tmpName = $_FILES['file']['tmp_name'];
             $fileNamePos= strrpos ($tmpName, '/');
@@ -271,6 +267,67 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             unlink($newFilePath);
             if ($result){
                 $this->view->assign([ 'success' => $result, 'message' => 'Settings successfully imported from ' . $fileName . '.' ]);
+            }else{
+                $this->view->assign([ 'success' => $result, 'message' => 'File ' . $fileName . ' could not be imported.' ]);
+            }
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function excelImportPricesAction()
+    {
+        $this->excelImportSheet('Preise');
+    }
+
+    public function excelImportDescriptionsAction()
+    {
+        $this->excelImportSheet('Beschreibung');
+    }
+
+    public function excelImportFlavorsAction()
+    {
+        $this->excelImportSheet('Geschmack');
+    }
+
+    public function excelImportDosagesAction()
+    {
+        $this->excelImportSheet('Dosierung');
+    }
+
+    public function excelImportMappingsAction()
+    {
+        $this->excelImportSheet('Mapping');
+    }
+
+    protected function excelImportSheet(string $sheet)
+    {
+        // Try to get the transferred file
+        try {
+            $file = $_FILES['file'];
+
+            if ($file === null) $this->getLog()->debug('file is null');
+            $fileName = $file['name'];
+            $tmpName = $_FILES['file']['tmp_name'];
+            $fileNamePos= strrpos ($tmpName, '/');
+            $tmpPath= substr($tmpName, 0, $fileNamePos);
+            $newFilePath = $tmpPath.'/' . $fileName; //'/../Config/' . $file['originalName'];
+            move_uploaded_file($tmpName, $newFilePath);
+
+
+            $excel = $this->getServices()->get(ExcelProductImport::class);
+            $result = $excel->importSheet($sheet, $newFilePath);
+
+            unlink($newFilePath);
+            if ($result){
+                $msg = [
+                    'Preise'        => 'Prices',
+                    'Dosierung'     => 'Dosages',
+                    'Geschmack'     => 'Flavours',
+                    'Beschreibung'  => 'Descriptions',
+                    'Mapping'       => 'Mappings',
+                ];
+                $this->view->assign([ 'success' => $result, 'message' => $msg[$sheet] . ' successfully imported from ' . $fileName . '.' ]);
             }else{
                 $this->view->assign([ 'success' => $result, 'message' => 'File ' . $fileName . ' could not be imported.' ]);
             }
@@ -614,10 +671,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev1Action()
     {
         try {
-            /** @noinspection PhpUndefinedMethodInspection */
-            $missingFlavors = $this->getRepository()->getProductsWithFlavorMissing();
-            (new ArrayReport())(['pmMissingFlavors' => $missingFlavors]);
-
             $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -627,15 +680,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
-            /** @var Product $product */
-            /** @noinspection PhpUndefinedMethodInspection */
-            $products = $this->getRepository()->getAllIndexed();
-            foreach ($products as $product) {
-                if ($product->getRetailPriceOthers() === '-') $product->setRetailPriceOthers(null);
-                if ($product->getRetailPriceDampfplanet() === '-') $product->setRetailPriceDampfPlanet(null);
-            }
-            $this->getModelManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Retail prices cleaned up.' ]);
+            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -644,8 +689,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $categoryTool = $this->getServices()->get(CategoryTool::class);
-            $categoryTool->createCategoryCache();
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

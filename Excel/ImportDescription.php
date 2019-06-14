@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs\Excel;
 
 use MxcDropshipInnocigs\Models\Product;
+use Shopware\Models\Article\Article;
 
 class ImportDescription extends AbstractProductImport
 {
@@ -15,8 +16,14 @@ class ImportDescription extends AbstractProductImport
             /** @var Product $product */
             $product = $products[$record['icNumber']];
             if (! $product) continue;
+            $description = $record['description'];
 
-            $product->setDescription($record['description']);
+            $product->setDescription($description);
+
+            /** @var Article $article */
+            $article = $product->getArticle();
+            if (! $article) continue;
+            $article->setDescriptionLong($description);
         }
         $this->modelManager->flush();
         $repository->exportMappedProperties();

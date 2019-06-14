@@ -113,7 +113,7 @@ class ProductRepository extends BaseEntityRepository
             . 'FROM MxcDropshipInnocigs\Models\Product p WHERE p.type = \'AROMA\'',
 
         'getExcelExportDescription' =>
-            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.description '
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.description, p.icDescription '
             . 'FROM MxcDropshipInnocigs\Models\Product p',
 
         'getExcelExportFlavoredProducts' =>

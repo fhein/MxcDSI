@@ -154,7 +154,6 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
         // set next three properties only on detail creation
         $this->priceMapper->setRetailPrices($variant);
-        $detail->setShippingTime(5);
         $detail->setLastStock(0);
 
         // Note: shopware options were added non persistently to variants when configurator set was created
