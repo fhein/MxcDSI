@@ -70,18 +70,7 @@ return array(
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>America´s Finest Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC America´s Finest Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-DM' => array(
         'icNumber' => 'SC10000L10-DM',
@@ -98,18 +87,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Delicate Mild Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Delicate Mild Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach einem milden Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-TA' => array(
         'icNumber' => 'SC10000L10-TA',
@@ -126,18 +104,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Taste of America Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Taste of America Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'AS10000MININAUTHEADS' => array(
         'icNumber' => 'AS10000MININAUTHEADS',
@@ -180,18 +147,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>RY4 Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC RY4 Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-DS' => array(
         'icNumber' => 'SC10000L10-DS',
@@ -208,18 +164,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Desert Safari Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Desert Safari Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-VB' => array(
         'icNumber' => 'SC10000L10-VB',
@@ -236,18 +181,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Virginias Best Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Virginias Best Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-ST' => array(
         'icNumber' => 'SC10000L10-ST',
@@ -264,18 +198,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Strong Taste Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Strong Taste Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-PB' => array(
         'icNumber' => 'SC10000L10-PB',
@@ -292,18 +215,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Pipes Best Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Pipes Best Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'AS10000NAUTMINITANK' => array(
         'icNumber' => 'AS10000NAUTMINITANK',
@@ -373,18 +285,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Himbeere E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Himbeere E-Zigaretten Liquid schmeckt beim Dampfen nach Himbeeren.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-VA' => array(
         'icNumber' => 'SC10000L10-VA',
@@ -401,18 +302,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Vanille E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Vanille E-Zigaretten Liquid schmeckt beim Dampfen nach Vanille.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'AS10000BVCHEADS' => array(
         'icNumber' => 'AS10000BVCHEADS',
@@ -575,7 +465,23 @@ Das Liquid erreicht die Heizdrähte durch spezielle Keramikfasern. Diese stellen
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '19.95',
-        'description' => null,
+        'description' => '<p><br>Set mit zehn Flaschen gebrauchsfertigen Liquids in verschiedenen  Tabak Geschmacksrichtungen zum Ausprobieren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen! Im Set sind folgende Liquids enthalten:</p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr><td>SC -America\'s Finest</td></tr>
+<tr><td>SC -Strong Taste</td></tr>
+<tr><td>SC -Pipe\'s Best</td></tr>
+<tr><td>SC -Delicate Mild</td></tr>
+<tr><td>SC -Virginia\'s Best</td></tr>
+<tr><td>SC -RY4</td></tr>
+<tr><td>SC - Desert Safari</td></tr>
+<tr><td>SC - Taste of America</td></tr>
+<tr><td>SC - Wild West</td></tr>
+<tr><td>SC - Pure</td></tr>
+</tbody>
+</table>
+<p><br></p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche </td></tr><tr><td>Geschmack </td><td>verschiedene Tabake</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000EGOEGOCASE' => array(
         'icNumber' => 'IC10000EGOEGOCASE',
@@ -606,8 +512,8 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'IC10000XLCASE' => array(
         'icNumber' => 'IC10000XLCASE',
         'number' => 'IC10000XLCASE',
-        'name' => 'InnoCigs - Tasche X -L für E-Zigaretten schwarz',
-        'commonName' => 'Tasche X -L für E-Zigaretten schwarz',
+        'name' => 'InnoCigs - Tasche XL für E-Zigaretten schwarz',
+        'commonName' => 'Tasche XL für E-Zigaretten schwarz',
         'type' => 'BAG',
         'category' => 'ZUBEHÖR > Taschen & Etuis',
         'supplier' => 'InnoCigs',
@@ -644,18 +550,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Pfirsich E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Pfirsich E-Zigaretten Liquid schmeckt beim Dampfen nach Pfirsichen.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pfirsich. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-FRT' => array(
         'icNumber' => 'SC10000L10-FRT',
@@ -672,19 +567,23 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '19.95',
-        'description' => 'Sie können sich einfach nicht entscheiden? – Kein Problem! Mit der SC Fruit Taste Probierbox sichern Sie sich gleich 10 Aromen bester Qualität aus der Welt der Früchte zum Ausprobieren und genussvollem Dampfen. So finden Sie sicher Ihr ganz individuelles Lieblingsliquid! <br>
-<br>
-Die sorgsam getroffene Auswahl enthält eine breite Palette von Fruchtaromen und das ganz ohne Nikotin. Alle Liquids sind komplett nikotinfrei. Lassen Sie sich von den Geschmacksrichtungen Wassermelone, Kaktusfeige, Blaubeere, Ananas, Apfel, Himbeere, Kirsche, Limette, Walderdbeere und Früchte Mix begeistern.    <br>
-<br>
-Die Liquids kommen zu Ihnen in großzügigen 10 Milliliter Fläschchen. Für die außergewöhnliche Qualität wird Sorge getragen, indem die gesamte Produktion von der Zutatenauswahl bis zur Lieferung dem ISO „Zertifikat 9001:2008“ folgt. Dabei werden die Liquids in Europa hergestellt, so können Sie sich auf europäische Standards verlassen.<br>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Ice E-Zigaretten Liquid schmeckt beim Dampfen nach einem Ice-Bonbon.
-<br>',
+        'description' => '<p><br>Set mit zehn Flaschen gebrauchsfertigen Liquids in verschiedenen fruchtigen Geschmacksrichtungen zum Ausprobieren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen! Im Set sind folgende Liquids enthalten:</p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr><td>SC -Maracuja</td></tr>
+<tr><td>SC -Blue</td></tr>
+<tr><td>SC -Pfirsich</td></tr>
+<tr><td>SC -Blaubeer Käsekuchen</td></tr>
+<tr><td>SC -Sauerkirsche</td></tr>
+<tr><td>SC -Melonenmix</td></tr>
+<tr><td>SC - Erdbeere</td></tr>
+<tr><td>SC - Himbeere</td></tr>
+<tr><td>SC - Apfelmix</td></tr>
+<tr><td>SC - Exotische Früchte</td></tr>
+</tbody>
+</table>
+<p><br></p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche </td></tr><tr><td>Geschmack </td><td>verschiedene Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-KS' => array(
         'icNumber' => 'SC10000L10-KS',
@@ -701,18 +600,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Kokos Schokolade E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Kokos Schokolade E-Zigaretten Liquid schmeckt beim Dampfen nach Kokosnuss und Schokolade.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kokos, Schokolade. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kokos, Schokolade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-EN' => array(
         'icNumber' => 'SC10000L10-EN',
@@ -729,18 +617,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>E-Taste E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC E-Taste E-Zigaretten Liquid schmeckt beim Dampfen nach einem Energy-Drink.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Energy Drink. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Energy Drink</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-EB' => array(
         'icNumber' => 'SC10000L10-EB',
@@ -757,18 +634,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Erdbeere E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Erdbeere E-Zigaretten Liquid schmeckt beim Dampfen nach Erdbeeren.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-AX' => array(
         'icNumber' => 'SC10000L10-AX',
@@ -785,18 +651,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Apfelmix E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Apfelmix E-Zigaretten Liquid schmeckt beim Dampfen nach Äpfeln.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000GSP' => array(
         'icNumber' => 'SC10000GSP',
@@ -1401,19 +1256,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Star Spangled</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Star Spangled dampfen, wird der Geschmack von Tabak freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-AN' => array(
         'icNumber' => 'IC10000L10-AN',
@@ -1430,20 +1273,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Afternoon</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Afternoon dampfen, wird der Geschmack von Käsekuchen und Vanille freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Käsekuchen, Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Käsekuchen, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-IR' => array(
         'icNumber' => 'IC10000L10-IR',
@@ -1460,20 +1290,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Inside Red</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Inside Red dampfen, wird der Geschmack von Wassermelonen freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml & 9mg/ml </b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 18/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Wassermelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-RY' => array(
         'icNumber' => 'IC10000L10-RY',
@@ -1490,19 +1307,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Rounded Yellow</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Rounded Yellow dampfen, wird der Geschmack von Honigmelonen freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Honigmelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Honigmelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-WG' => array(
         'icNumber' => 'IC10000L10-WG',
@@ -1519,19 +1324,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  White Glacier</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid White Glacier dampfen, wird der Geschmack von Menthol freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-CJ' => array(
         'icNumber' => 'IC10000L10-CJ',
@@ -1548,19 +1341,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Commander Joe</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Commander Joe dampfen, wird der Geschmack von Tabak freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-BS' => array(
         'icNumber' => 'IC10000L10-BS',
@@ -1577,20 +1358,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Blue Spot</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Blue Spot dampfen, wird der Geschmack von Blaubeeren freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3/ml</b>\\n<ul><li>Propylenglycol (60% PG), Glycerin (35% VG), Wasser (5%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-FM' => array(
         'icNumber' => 'IC10000L10-FM',
@@ -1607,20 +1375,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  First Man</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid First Man dampfen, wird der Geschmack von Äpfeln freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3/ml</b>\\n<ul><li>Propylenglycol (60% PG), Glycerin (35% VG), Wasser (5%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-CV' => array(
         'icNumber' => 'IC10000L10-CV',
@@ -1637,19 +1392,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Cold Vacci</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Cold Vacci dampfen, wird der Geschmack von Heidelbeeren und Menthol freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80% PG), Glycerin (15% VG), Ethanol (5%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80% PG), Glycerin (15% VG), Ethanol (5%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-LR' => array(
         'icNumber' => 'IC10000L10-LR',
@@ -1666,19 +1409,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  La Renaissance</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid La Renaissance dampfen, wird der Geschmack von Tabak und Schokolade freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Schokolade, Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Schokolade, Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'AS10000NXSET' => array(
         'icNumber' => 'AS10000NXSET',
@@ -1929,18 +1660,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Wild West Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Wild West Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-TO' => array(
         'icNumber' => 'SC10000L10-TO',
@@ -1957,18 +1677,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Pure Tabak E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Pure Tabak E-Zigaretten Liquid schmeckt beim Dampfen nach Tabak.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-PU' => array(
         'icNumber' => 'SC10000L10-PU',
@@ -1985,18 +1694,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Maracuja E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Maracuja E-Zigaretten Liquid schmeckt beim Dampfen nach Maracuja.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Maracuja. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Maracuja</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-IC' => array(
         'icNumber' => 'SC10000L10-IC',
@@ -2013,18 +1711,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Ice E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Ice E-Zigaretten Liquid schmeckt beim Dampfen nach einem Ice-Bonbon.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-BU' => array(
         'icNumber' => 'SC10000L10-BU',
@@ -2041,18 +1728,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Blue E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Blue E-Zigaretten Liquid schmeckt beim Dampfen nach einem Minz-Kaubonbon.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kaubonbon, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaubonbon, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-EL' => array(
         'icNumber' => 'SC10000L10-EL',
@@ -2069,18 +1745,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Erdbeermilch E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Erdbeermilch E-Zigaretten Liquid schmeckt beim Dampfen nach einer Erdbeermilch.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Milch. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Milch</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-HC' => array(
         'icNumber' => 'SC10000L10-HC',
@@ -2097,18 +1762,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Honey Crunch E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Honey Crunch E-Zigaretten Liquid schmeckt beim Dampfen nach gerösteten Nüssen, Cerealien, Milch und Honig.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Cerealien, Honig, Milch, geröstete Nüsse. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Cerealien, Honig, Milch, geröstete Nüsse</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-BK' => array(
         'icNumber' => 'SC10000L10-BK',
@@ -2125,18 +1779,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Blaubeer Käsekuchen E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Blaubeer Käsekuchen E-Zigaretten Liquid schmeckt beim Dampfen nach einem Blaubeer-Käsekuchen.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Käsekuchen. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Käsekuchen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-SK' => array(
         'icNumber' => 'SC10000L10-SK',
@@ -2153,18 +1796,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Sauerkirsche E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Sauerkirsche E-Zigaretten Liquid schmeckt beim Dampfen nach Sauerkirschen.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Sauerkirsche. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Sauerkirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-CK' => array(
         'icNumber' => 'SC10000L10-CK',
@@ -2181,18 +1813,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Cookie E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Cookie E-Zigaretten Liquid schmeckt beim Dampfen nach Cookies.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kuchen. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kuchen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-EK' => array(
         'icNumber' => 'SC10000L10-EK',
@@ -2209,18 +1830,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Erdbeer Käsekuchen E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Erdbeer Käsekuchen E-Zigaretten Liquid schmeckt beim Dampfen nach einem Erdbeer-Käsekuchen.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Käsekuchen. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Käsekuchen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-TR' => array(
         'icNumber' => 'SC10000L10-TR',
@@ -2237,18 +1847,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>T-Ride E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC T-Ride E-Zigaretten Liquid schmeckt beim Dampfen nach karamellisiertem Popcorn.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Karamell, Popcorn. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Karamell, Popcorn</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-MM' => array(
         'icNumber' => 'SC10000L10-MM',
@@ -2265,18 +1864,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Melonenmix E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Melonenmix E-Zigaretten Liquid schmeckt beim Dampfen nach einem Melonenmix.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Melonenmix. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Melonenmix</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-MJ' => array(
         'icNumber' => 'SC10000L10-MJ',
@@ -2293,18 +1881,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Mojito E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Mojito E-Zigaretten Liquid schmeckt beim Dampfen nach Mojito.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Mojito. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Mojito</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-EF' => array(
         'icNumber' => 'SC10000L10-EF',
@@ -2321,18 +1898,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Exotische Früchte E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Exotische Früchte E-Zigaretten Liquid schmeckt beim Dampfen nach exotischen Früchten.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: exotische Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>exotische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-GOU' => array(
         'icNumber' => 'SC10000L10-GOU',
@@ -2349,19 +1915,23 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '19.95',
-        'description' => '<b>SC E-Liquid für E-Zigaretten</b>
-<br>
-<br>
-Die Liquid von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, diese gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Set mit zehn Flaschen gebrauchsfertigen Liquids in verschiedenen Geschmacksrichtungen zum Ausprobieren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen! Im Set sind folgende Liquids enthalten:</p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr><td>SC -Erdbeer Käsekuchen</td></tr>
+<tr><td>SC -T-Ride</td></tr>
+<tr><td>SC -Vanille</td></tr>
+<tr><td>SC -E-Taste</td></tr>
+<tr><td>SC -Mojito</td></tr>
+<tr><td>SC -Ice</td></tr>
+<tr><td>SC - Erdbeermilch</td></tr>
+<tr><td>SC - Honey Crunch</td></tr>
+<tr><td>SC - Kokos Schokolade</td></tr>
+<tr><td>SC - Cookie</td></tr>
+</tbody>
+</table>
+<p><br></p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche </td></tr><tr><td>Geschmack </td><td>verschiedene Geschmacksrichungen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-RV' => array(
         'icNumber' => 'IC10000L10-RV',
@@ -2378,19 +1948,7 @@ Die Liquids von SC überzeugen durch Qualität und Geschmack.
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Red Violet</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Red Violet dampfen, wird der Geschmack von Amarenakirschen freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 9mg/ml  & 18mg/ml </b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Amarenakirsche. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Amarenakirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-CD' => array(
         'icNumber' => 'IC10000L10-CD',
@@ -2407,19 +1965,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Celestial Dragon</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Celestial Dragon dampfen, wird der Geschmack von Tabak freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml &18mg/ml</b>\\n<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-AH' => array(
         'icNumber' => 'IC10000L10-AH',
@@ -2436,19 +1982,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Angels in Heaven</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Angels in Heaven dampfen, wird der Geschmack von Tabak freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-MA' => array(
         'icNumber' => 'IC10000L10-MA',
@@ -2465,19 +1999,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Monkey Around</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Monkey Around dampfen, wird der Geschmack von Amarenakirschen und Bananen freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Amarenakirsche, Banane. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Amarenakirsche, Banane</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-CB' => array(
         'icNumber' => 'IC10000L10-CB',
@@ -2494,20 +2016,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Caribbean</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Caribbean dampfen, wird der Geschmack von Kokosnuss undn Schokolade freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken:18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kokos, Schokolade. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kokos, Schokolade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-PS' => array(
         'icNumber' => 'IC10000L10-PS',
@@ -2524,20 +2033,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Pretty Sweetheart</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Pretty Sweetheart dampfen, wird der Geschmack von Erdbeeren und Sahne freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken:18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Sahne. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Sahne</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-AL' => array(
         'icNumber' => 'IC10000L10-AL',
@@ -2554,20 +2050,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid - Always</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Always dampfen, wird der Geschmack von Cola freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (84% PG), Glycerin (15% VG), Aroma, Ethanol (1%)</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml</b>\\n<ul><li>Propylenglycol (84% PG), Glycerin (15% VG), Aroma, Ethanol (1%), Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (84% PG), Glycerin (15% VG), Aroma, Nikotin, Ethanol (1%)</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Cola. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-GA' => array(
         'icNumber' => 'IC10000L10-GA',
@@ -2584,19 +2067,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Green Angry</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Green Angry dampfen, wird der Geschmack von Limetten freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80% PG), Glycerin (15% VG), Aroma, Ethanol (5%)</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml &18mg/ml </b>\\n<ul><li>Propylenglycol (80% PG), Glycerin (15% VG), Aroma, Ethanol (5%), Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Limette. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Limette</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-DD' => array(
         'icNumber' => 'IC10000L10-DD',
@@ -2613,19 +2084,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Devils Darling</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Devils Darling dampfen, wird der Geschmack von Tabak freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-BN' => array(
         'icNumber' => 'IC10000L10-BN',
@@ -2642,20 +2101,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Brown Nutty</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Brown Nutty dampfen, wird der Geschmack von Nougat freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 9mg/ml &18mg/ml </b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Nougat. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Nougat</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-FY' => array(
         'icNumber' => 'IC10000L10-FY',
@@ -2672,19 +2118,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid - First Money</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid First Money dampfen, wird der Geschmack von Orangenlimonade freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80% PG), Glycerin (15% VG), Aroma, Ethanol (5%)</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80% PG), Glycerin (15% VG), Aroma, Ethanol (5%), Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Limonade, Orange. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Limonade, Orange</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-HF' => array(
         'icNumber' => 'IC10000L10-HF',
@@ -2701,19 +2135,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Hairy Fluffy</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Hairy Fluffy dampfen, wird der Geschmack von Pfirsichen freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pfirsich. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-LS' => array(
         'icNumber' => 'IC10000L10-LS',
@@ -2730,19 +2152,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Little Soft</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Little Soft dampfen, wird der Geschmack von Himbeeren freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-SH' => array(
         'icNumber' => 'IC10000L10-SH',
@@ -2759,20 +2169,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Sweetheart</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Sweetheart dampfen, wird der Geschmack von Erdbeeren freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken:18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-TE' => array(
         'icNumber' => 'IC10000L10-TE',
@@ -2789,19 +2186,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  The Empire</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid The Empire dampfen, wird der Geschmack von Tabak und Nuss freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Nuss, Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Nuss, Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-TR' => array(
         'icNumber' => 'IC10000L10-TR',
@@ -2818,19 +2203,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  The Rebels</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid The Rebels dampfen, wird der Geschmack von Tabak und Vanille freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (35% VG), Propylenglycol (55% PG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml 6mg/ml, 9mg/ml & 18mg/ml </b>\\n<ul><li>Glycerin (35% VG), Propylenglycol (55% PG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak, Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-ML' => array(
         'icNumber' => 'IC10000L10-ML',
@@ -2847,21 +2220,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Milli</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Milli dampfen, wird der Geschmack von Vanille freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 9mg/ml</b>\\n<ul><li>Propylenglycol (60% PG), Glycerin (35% VG), Wasser (5%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-MW' => array(
         'icNumber' => 'IC10000L10-MW',
@@ -2878,20 +2237,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid - Master Wood</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Master Wood dampfen, wird der Geschmack von Waldmeister freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Nikotin, Aroma</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Waldmeister. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldmeister</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-RC' => array(
         'icNumber' => 'IC10000L10-RC',
@@ -2908,19 +2254,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Red Cyclone</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Red Cyclone dampfen, wird der Geschmack von roten Früchten freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (55% PG), Glycerin (35% VG), Wasser (10%), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: rote Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>rote Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-SY' => array(
         'icNumber' => 'IC10000L10-SY',
@@ -2937,19 +2271,7 @@ In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke un
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.45',
-        'description' => '<b>InnoCigs E-Zigaretten Liquid -  Spiky</b>
-<br>
-<br>
-Die InnoCigs Liquids werden Ihnen in einer 10ml Flasche geliefert.
-<b>InnoCigs E-Liquids</b> werden in E-Zigaretten und Verdampfern eingesetzt. 
-<br>
-<br>
-In jeder Flasche InnoCigs Liquid sind 10ml Liquid in Ihrer gewählten Stärke und Geschmack enthalten. Die Liquids sind sowohl mit Nikotin als auch ohne Nikotin erhältlich. Wenn Sie das InnoCigs Liquid Spiky dampfen, wird der Geschmack von Maracujas freigesetzt.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (85% PG), Glycerin (15% VG), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 9mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (85% PG), Glycerin (15% VG), Aroma, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Maracuja. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Maracuja</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SONYVT6' => array(
         'icNumber' => 'SONYVT6',
@@ -3018,7 +2340,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'supplier' => 'Joyfect',
         'brand' => 'Joyfect',
         'piecesPerPack' => 1,
-        'flavor' => null,
+        'flavor' => '',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -3139,18 +2461,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Menthol-Erdbeere E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Menthol-Erdbeere E-Zigaretten Liquid schmeckt beim Dampfen nach Erdbeeren und Menthol.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-MB' => array(
         'icNumber' => 'SC10000L10-MB',
@@ -3167,18 +2478,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Menthol-Blaubeere E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Menthol-Blaubeere E-Zigaretten Liquid schmeckt beim Dampfen nach Blaubeeren und Menthol.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-MH' => array(
         'icNumber' => 'SC10000L10-MH',
@@ -3195,18 +2495,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Menthol-Himbeere E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Menthol-Himbeere E-Zigaretten Liquid schmeckt beim Dampfen nach Himbeeren und Menthol.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-MK' => array(
         'icNumber' => 'SC10000L10-MK',
@@ -3223,18 +2512,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Menthol-Kirsche E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Menthol-Kirsche E-Zigaretten Liquid schmeckt beim Dampfen nach Kirschen und Menthol.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kirsche, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-MA' => array(
         'icNumber' => 'SC10000L10-MA',
@@ -3251,18 +2529,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Menthol-Apfel E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Menthol-Apfel E-Zigaretten Liquid schmeckt beim Dampfen nach Äpfeln und Menthol.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfel, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-MW' => array(
         'icNumber' => 'SC10000L10-MW',
@@ -3279,18 +2546,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Menthol-Wassermelone E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Menthol-Wassermelone E-Zigaretten Liquid schmeckt beim Dampfen nach Wassermelone und Menthol.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol, Wassermelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol, Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC10000L10-MT' => array(
         'icNumber' => 'SC10000L10-MT',
@@ -3307,18 +2563,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Menthol E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Menthol E-Zigaretten Liquid schmeckt beim Dampfen nach Menthol.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'CG10000DT' => array(
         'icNumber' => 'CG10000DT',
@@ -3485,14 +2730,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Adam gedampft wird, entfaltet sich der Geschmack von einem grünen Apfel. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: grüner Apfel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>grüner Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-BR' => array(
         'icNumber' => 'ES100L10-BR',
@@ -3509,14 +2747,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Black & Red gedampft wird, entfaltet sich der Geschmack von Cola und Kirschen. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Cola, Kirsche. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola, Kirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-BM' => array(
         'icNumber' => 'ES100L10-BM',
@@ -3533,14 +2764,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Blue Mountain gedampft wird, entfaltet sich der Geschmack von Beeren, Anis und Menthol.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Beeren, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-CG' => array(
         'icNumber' => 'ES100L10-CG',
@@ -3557,14 +2781,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Cigarillo gedampft wird, entfaltet sich der Geschmack von Tabak.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-DG' => array(
         'icNumber' => 'ES100L10-DG',
@@ -3581,14 +2798,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Double Green gedampft wird, entfaltet sich der Geschmack von Äpfeln und Kiwis. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfel, Kiwi. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Kiwi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-DS' => array(
         'icNumber' => 'ES100L10-DS',
@@ -3605,14 +2815,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Double Shock gedampft wird, entfaltet sich der Geschmack von Zitronen und Limetten. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Limette, Zitrone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Limette, Zitrone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-FR' => array(
         'icNumber' => 'ES100L10-FR',
@@ -3629,14 +2832,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Frost gedampft wird, entfaltet sich der Geschmack von Eisbonbons.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Eisbonbon. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Eisbonbon</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-GU' => array(
         'icNumber' => 'ES100L10-GU',
@@ -3653,14 +2849,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Guma gedampft wird, entfaltet sich der Geschmack von Pfefferminz. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pfefferminze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfefferminze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-JE' => array(
         'icNumber' => 'ES100L10-JE',
@@ -3677,14 +2866,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Jerry gedampft wird, entfaltet sich der Geschmack von Kirschen.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kirsche. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-KA' => array(
         'icNumber' => 'ES100L10-KA',
@@ -3701,14 +2883,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Karma gedampft wird, entfaltet sich der Geschmack von einem grünen Tee. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: grüner Tee. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>grüner Tee</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-LP' => array(
         'icNumber' => 'ES100L10-LP',
@@ -3725,14 +2900,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Loops gedampft wird, entfaltet sich der Geschmack von einem Früchte-Müsli.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Früchte, Müsli. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Früchte, Müsli</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-MI' => array(
         'icNumber' => 'ES100L10-MI',
@@ -3749,14 +2917,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Milly Illy gedampft wird, entfaltet sich der Geschmack von Vanille. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-PF' => array(
         'icNumber' => 'ES100L10-PF',
@@ -3773,14 +2934,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Pfituja gedampft wird, entfaltet sich der Geschmack von Pfirsichen und Maracujas. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Maracuja, Pfirsich. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Maracuja, Pfirsich</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-PK' => array(
         'icNumber' => 'ES100L10-PK',
@@ -3797,14 +2951,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Pink gedampft wird, entfaltet sich der Geschmack von Beeren mit Menthol und Minze. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren, Menthol, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Menthol, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-PU' => array(
         'icNumber' => 'ES100L10-PU',
@@ -3821,14 +2968,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Purple Passion gedampft wird, entfaltet sich der Geschmack von Heidelbeeren und Brombeeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Brombeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Brombeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-RE' => array(
         'icNumber' => 'ES100L10-RE',
@@ -3845,14 +2985,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Red gedampft wird, entfaltet sich der Geschmack von Erdbeeren.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-RY' => array(
         'icNumber' => 'ES100L10-RY',
@@ -3869,14 +3002,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Red & Yellow gedampft wird, entfaltet sich der Geschmack von Erdbeeren und Bananen.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Banane, Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Banane, Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-RA' => array(
         'icNumber' => 'ES100L10-RA',
@@ -3893,14 +3019,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Red Air gedampft wird, entfaltet sich der Geschmack von roten Beeren und Anis.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, rote Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, rote Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-RC' => array(
         'icNumber' => 'ES100L10-RC',
@@ -3917,14 +3036,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Red Artic gedampft wird, entfaltet sich der Geschmack von Eisbonbons und Erdbeeren.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Eisbonbon, Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Eisbonbon, Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-RU' => array(
         'icNumber' => 'ES100L10-RU',
@@ -3941,14 +3053,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Rub gedampft wird, entfaltet sich der Geschmack von Erdbeeren und Rharbarber. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Rhabarber. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Rhabarber</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-SH' => array(
         'icNumber' => 'ES100L10-SH',
@@ -3965,14 +3070,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Shizo gedampft wird, entfaltet sich der Geschmack von Erdbeeren und Minze.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-ST' => array(
         'icNumber' => 'ES100L10-ST',
@@ -3989,14 +3087,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Storm gedampft wird, entfaltet sich der Geschmack von frischer Minze.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-T3' => array(
         'icNumber' => 'ES100L10-T3',
@@ -4013,14 +3104,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Tobacco No.3 gedampft wird, entfaltet sich der Geschmack von Tabak. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-T4' => array(
         'icNumber' => 'ES100L10-T4',
@@ -4037,14 +3121,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Tobacco No.4 gedampft wird, entfaltet sich der Geschmack von Tabak mit Honigaroma.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-TW' => array(
         'icNumber' => 'ES100L10-TW',
@@ -4061,14 +3138,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Twister gedampft wird, entfaltet sich der Geschmack von einer Himbeerbrause mit Limette. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Brause, Himbeere, Limette. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Brause, Himbeere, Limette</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-WA' => array(
         'icNumber' => 'ES100L10-WA',
@@ -4085,14 +3155,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Wave gedampft wird, entfaltet sich der Geschmack von einer Wassermelone.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Wassermelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-AP' => array(
         'icNumber' => 'VV100L10-AP',
@@ -4109,17 +3172,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Applelicious dampfen, entsteht der Geschmack von grünen Äpfeln. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br> 
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), süßer Apfel-Aromastoff </li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), süßer Apfel-Aromastoff, Nikotin </li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), süßer Apfel-Aromastoff, Nikotin </li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Bonbon, grüner Apfel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Bonbon, grüner Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-AT' => array(
         'icNumber' => 'VV100L10-AT',
@@ -4136,14 +3189,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Banana dampfen, entsteht der Geschmack von einem Beerenmix. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), rote Früchte und Menthol Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), rote Früchte und Menthol Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), rote Früchte und Menthol Aromastoffe</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BA' => array(
         'icNumber' => 'VV100L10-BA',
@@ -4160,14 +3206,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Banana dampfen, entsteht der Geschmack von Bananen. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Bananen-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Bananen-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Bananen-Aromastoff</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Banane. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Banane</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BU' => array(
         'icNumber' => 'VV100L10-BU',
@@ -4184,14 +3223,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Bat Juice dampfen, entsteht der Geschmack von Beeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), gemischte Früchte und Anis Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), gemischte Früchte und Anis Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), gemischte Früchte und Anis Aromastoffe</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BM' => array(
         'icNumber' => 'VV100L10-BM',
@@ -4208,14 +3240,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Berry Menthol dampfen, entsteht der Geschmack von Beeren und Menthol. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%),  Beerenobst & Menthol Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%),  Beerenobst & Menthol Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%),  Beerenobst & Menthol Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BI' => array(
         'icNumber' => 'VV100L10-BI',
@@ -4232,14 +3257,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Black Ice dampfen, entsteht der Geschmack von Beeren und Menthol. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Anis und Menthol Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Anis und Menthol Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Anis und Menthol Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Lakritz, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Lakritz, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BJ' => array(
         'icNumber' => 'VV100L10-BJ',
@@ -4256,14 +3274,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Black Jack dampfen, entsteht der Geschmack von Lakritze. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Anis-Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Anis-Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Anis-Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Lakritz. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Lakritz</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BC' => array(
         'icNumber' => 'VV100L10-BC',
@@ -4280,14 +3291,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Blackcurrant dampfen, entsteht der Geschmack von schwarzen Johannisbeeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), schwarze Johannisbeeren-Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), schwarze Johannisbeeren-Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), schwarze Johannisbeeren-Aromastoffe</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: schwarze Johannisbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>schwarze Johannisbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BR' => array(
         'icNumber' => 'VV100L10-BR',
@@ -4304,14 +3308,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Blueberry dampfen, entsteht der Geschmack von schwarzen Johannisbeeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), schwarze Johannisbeeren-Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), schwarze Johannisbeeren-Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Heidelbeere-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BG' => array(
         'icNumber' => 'VV100L10-BG',
@@ -4328,14 +3325,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Bubblegum dampfen, entsteht der Geschmack von einem Kaugummi. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Kaugummi-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Kaugummi-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Kaugummi-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Früchte, Kaugummi. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Früchte, Kaugummi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-CT' => array(
         'icNumber' => 'VV100L10-CT',
@@ -4352,14 +3342,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Cherry Tree dampfen, entsteht der Geschmack von Kirschen. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Kirsche-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Kirsche-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Kirsche-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kirsche. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-CR' => array(
         'icNumber' => 'VV100L10-CR',
@@ -4376,7 +3359,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kirsche, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-DW' => array(
         'icNumber' => 'VV100L10-DW',
@@ -4388,19 +3371,12 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, dunkle Waldfrüchte',
+        'flavor' => 'dunkle Waldfrüchte, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Dawn dampfen, entsteht der Geschmack von dunklen Waldfrüchten. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Waldfrüchte-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Waldfrüchte-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Waldfrüchte-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Koolada, dunkle Waldfrüchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Koolada, dunkle Waldfrüchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-DK' => array(
         'icNumber' => 'VV100L10-DK',
@@ -4417,14 +3393,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '3.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Dusk dampfen, entsteht der Geschmack von pinker Limonade, Himbeeren und Citrus. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Beerenlimonade-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Beerenlimonade-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Beerenlimonade-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere, Limonade, Zitrusfrüchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere, Limonade, Zitrusfrüchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-EY' => array(
         'icNumber' => 'VV100L10-EY',
@@ -4441,14 +3410,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Energy dampfen, entsteht der Geschmack von einem Energy-Drink. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Energy-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Energy-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Energy-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Energy Drink. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Energy Drink</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-HB' => array(
         'icNumber' => 'VV100L10-HB',
@@ -4465,14 +3427,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Heisenberg dampfen, entsteht der Geschmack von Früchten und Menthol-Minze. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Früchte-Mix, Anis & Menthol Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Früchte-Mix, Anis & Menthol Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Früchte-Mix, Anis & Menthol Aromastoffe</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Beeren, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-IM' => array(
         'icNumber' => 'VV100L10-IM',
@@ -4489,14 +3444,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Ice Menthol dampfen, entsteht der Geschmack von Minze. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Früche-Mix Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Früche-Mix Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Früche-Mix Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PD' => array(
         'icNumber' => 'VV100L10-PD',
@@ -4513,14 +3461,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Pear Drops dampfen, entsteht der Geschmack von Birnen. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Birne-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Birne-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Birne-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Birne. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Birne</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PK' => array(
         'icNumber' => 'VV100L10-PK',
@@ -4537,14 +3478,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Pinkman dampfen, entsteht der Geschmack von roten Beeren und roten Früchten. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Früche-Mix-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Früche-Mix-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Früche-Mix-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: rote Beeren, rote Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>rote Beeren, rote Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-WM' => array(
         'icNumber' => 'VV100L10-WM',
@@ -4561,14 +3495,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.10',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Watermelon dampfen, entsteht der Geschmack von Wassermelone. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Wassermelonen-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Wassermelonen-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Wassermelonen-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Wassermelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-RS' => array(
         'icNumber' => 'VV100L10-RS',
@@ -4585,14 +3512,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Raspberry Sorbet dampfen, entsteht der Geschmack von einem Himbeer-Eis. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Himbeer-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Himbeer-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Himbeer-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-VT' => array(
         'icNumber' => 'VV100L10-VT',
@@ -4609,14 +3529,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.10',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Vamp Toes dampfen, entsteht der Geschmack von gemischten Beeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), schwarze Johannisbeeren und Beeren Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), schwarze Johannisbeeren und Beeren Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), schwarze Johannisbeeren und Beeren Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: süße Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>süße Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-RL' => array(
         'icNumber' => 'VV100L10-RL',
@@ -4633,7 +3546,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kirsche, rote Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, rote Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-TI' => array(
         'icNumber' => 'VV100L10-TI',
@@ -4650,14 +3563,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Tropical Island dampfen, entsteht der Geschmack von Mangos.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), tropische Früchte Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), tropische Früchte Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), tropische Früchte Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: tropische Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>tropische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-RC' => array(
         'icNumber' => 'VV100L10-RC',
@@ -4674,14 +3580,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '3.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Rhubarb Custard dampfen, entsteht der Geschmack von Rhabarber und Vanille-Pudding. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Rhabarber und Vanillepudding-Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Rhabarber und Vanillepudding-Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Rhabarber und Vanillepudding-Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pudding, Rhabarber, Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pudding, Rhabarber, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-ST' => array(
         'icNumber' => 'VV100L10-ST',
@@ -4698,14 +3597,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquids Sweet Tabak dampfen, entsteht der Geschmack von Tabak. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Tabak-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Tabak-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Tabak-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-SM' => array(
         'icNumber' => 'VV100L10-SM',
@@ -4722,14 +3614,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Strawberry Milkshake dampfen, entsteht der Geschmack von einem Erdbeer-Milchshake. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Erdbeer und Sahne Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Erdbeer und Sahne Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Erdbeer und Sahne Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Milchshake. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Milchshake</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-SK' => array(
         'icNumber' => 'VV100L10-SK',
@@ -4746,14 +3631,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Strawberry Kiwi dampfen, entsteht der Geschmack von Erdbeeren und Kiwis. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Erdbeer und Kiwi Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Erdbeer und Kiwi Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Erdbeer und Kiwi Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Kiwi. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Kiwi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-SL' => array(
         'icNumber' => 'VV100L10-SL',
@@ -4770,14 +3648,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.69',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Sherbet Lemon dampfen, entsteht der Geschmack von Zitronenbonbons mit Brausepulver. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Zitrone-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Zitrone-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Zitrone-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Bonbon, Brause, Zitrone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Bonbon, Brause, Zitrone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-SB' => array(
         'icNumber' => 'VV100L10-SB',
@@ -4794,14 +3665,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Strawberry dampfen, entsteht der Geschmack von Erdbeeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Erdbeer-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Erdbeer-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Erdbeer-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-SW' => array(
         'icNumber' => 'VV100L10-SW',
@@ -4818,7 +3682,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-SP' => array(
         'icNumber' => 'VV100L10-SP',
@@ -4835,14 +3699,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Spearmint dampfen, entsteht der Geschmack von einem Minzkaugummi. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), grüne Minze-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), grüne Minze-Aromastoff, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), grüne Minze-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kaugummi, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaugummi, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC100KTV8' => array(
         'icNumber' => 'IC100KTV8',
@@ -4909,25 +3766,75 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.45',
         'retailPriceOthers' => '22.95',
-        'description' => 'Der Aspire Nautilus 2 ist ein weiterer Clearomizer aus der Serie Nautilus. Der Tank fasst 2 ml Liquid und verfügt über eine Airflow Control. Dank des Airflow Control Systems können Sie die Luftzirkulation individuell regulieren bzw. einstellen. Zudem verfügt der Nautilus 2 über ein Top Filling System, sodass Sie Ihren Verdampfer direkt von oben mit Liquid befüllen. Im Lieferumfang befinden sich 2 Aspire BVC Heads mit jeweils 0,7 Ohm und 1,8 Ohm. Der Nautilus 2 Verdampfer ist der passende Zubehörartikel für den Zelos 50 Watt Akkuträger.
-<br>
-<br>
-<b>Lieferumfang:</b>
-<ul><li>1x Aspire Nautilus 2 Clearomizer</li>
-<li>1x Aspire BVC Head 0,7 Ohm</li>
-<li>1x Aspire BVC Head 1,8 Ohm </li>
+        'description' => '<p><br>Der Aspire Nautilus 2 ist die erste Weiterentwicklung des legendären Aspire Nautilus, der viele Jahre unbestritten als bester Verdampfer für&nbsp;den Mouth-To-Lung-Stil (MTL) galt. Bei diesem Stil&nbsp; zieht man wie bei einer Zigarette den Dampf zunächst in den Mund, setzt die E-Zigarette ab, und inhaliert dann den Dampf aus dem Mund in die Lunge.</p>
+<p>Um das Geschmackserlebnis zu verbessern,&nbsp;hat der Aspire Nautilus 2 einen deutlich kürzeren Kamin als sein Vorgänger. Auch kann der Aspire Nautilus 2 anders als der Nautilus von oben befüllt werden</p>
+<p>Diese Konstruktionsänderungen erforderten eine vollständige Überarbeitung des Designs. Das neue Design wirkt moderner und frischer, es bleibt aber beim gefälligen Vintage-Look. Die charakteristische Kuppelwölbung des Aspire Nautilus bleibt als Wiedererkennungsmerkmal erhalten. Allerdings verschwindet das Glas des Tanks nun unter einer Metallhaube mit zwei runden Öffnungen, durch die man den Füllstand des Verdampfers erkennen kann. Die Öffnungen erinnern an Bullaugen, der ganze Verdampfer ein wenig an einen Taucherhelm. Eine sehr gelungene und schöne Referenz auf den Namen: Nautilus. Die Metallhaube bietet einen guten Schutz für das Glas und ermöglicht die farbliche Gestaltung des Geräts.&nbsp;</p>
+<p>Der Aspire Nautilus 2 verwendet die gleichen Aspire BVC-Verdampferköpfe (Bottom Vertical Coil) wie sein Vorgänger. Diese verfügen über eine einzige Heizwendel, die senkrecht in den Kopf eingebaut ist. Umgeben ist die Heizwendel von einer porösen Keramik, die als Liquidspeicher dient. Anders als andere Speichermaterialen garantiert die Keramik einen sehr authentischen Geschmack gleich vom ersten Zug an.</p>
+<p>Neben den Versionen mit 1,6 Ohm und 1,8 Ohm steht ein weiterer Verdampferkopf mit 0,7 Ohm zur Verfügung. Der neue Verdampferkopf mit 0,7 Ohm verbessert die ohnehin gute Dampfentwicklung kaum. Er heizt ein bisschen schneller auf und produziert einen etwas wärmeren Dampf. Hier müssen Sie ausprobieren, was Ihnen besser gefällt. Unserer Ansicht nach ist der Nautilus 2 auch mit dem 0,7 Ohm Verdampferkopf ein reiner MTL-Verdampfer.</p>
+<p>Der Aspire Nautilus 2 wird mit zwei Mundstücken (oder neu-deutsch: Drip Tips) ausgeliefert, eines aus Edelstahl und eines aus Kunststoff. Das Edelstahl-Mundstück erwärmt sich schneller als das Kunststoff-Mundstück. Der Unterschied können Sie&nbsp; aber in der Praxis beim Aspire Nautilus 2 vernachlässigen. Der Verdampfer wird im Betrieb nur mässig warm, weil er mit niedriger Wattleistung betrieben wird. Dennoch fühlen sich die Mundstücke verschieden an. Das Kunststoff-Mundstück fühlt sich vielleicht ein bisschen eher wie eine Zigarette an. Probieren Sie es aus!</p>
+<p>Der Tank des Aspire Nautilus 2 ist deutlich kleiner als der seines älteren Bruders: Hier müssen dem Genießer 2 ml Tankvolumen reichen. Es empfiehlt sich, unterwegs ein Fläschchen Liquid dabei zu haben, um nachfüllen zu können. Oder Sie greifen unterwegs zum großen Bruder Aspire Nautilus.</p>
+<p>Die Befüllung des Nautilus 2 mit Liquid erfolgt von oben. Dazu wird die Metallkuppel, die den Glastank schützt, abgeschraubt und abgezogen. Wenn die Metallkuppel zuvor sehr fest auf die Basis geschraubt war, kann es erforderlich sein, den Verdampfer vom Akkuträger zu trennen, weil die Basis des Verdampfers für den dann erforderlichen sehr festen Griff zu schmal ist: Man bekommt keinen Pack-An. Es empfiehlt sich daher, die Metallkuppel nicht zu stark anzuschrauben. In jedem Fall benötigen Sie für das Befüllen beide Hände.</p>
+<p>Im Unterschied zu seinem Vorgänger ist es beim Nautilus 2 nicht möglich, den Verdampferkopf auszuwechseln, wenn der Tank noch Liquid enthält.</p>
+<p>Der über den unteren Ring verstellbare Luftstromregler ist anders als beim Vorgänger stufenlos verstellbar. Wählen Sie die Einstellung so, dass Ihnen der Widerstand, den Sie beim Ziehen spüren, am angenehmsten ist. Mit fast geschlossenem Luftstromregler können Sie einen Zugwiderstand einstellen, der recht genau dem einer Zigarette entspricht.</p>
+<p>Geschmacklich übertrifft der Nautilus 2 sowohl seinen großen Vorfahren als auch seinen Nachfolger Nautilus 2S. Der Unterschied ist nicht weltenbewegend, aber doch zweifelsfrei vorhanden. Wegen seines größeren Tanks bleibt aber auch der große Nautilus ein lieber Begleiter durch den Tag. Die kleinen Abstriche im Geschmack tun dem keinen Abbruch. Am schönsten ist es, man hat beide.</p>
+<p>Der Aspire Nautilus 2 ist ein wirklich besonderer und eigenwilliger Verdampfer. Er sieht sehr gut aus und bietet Ihnen ein Geschmacks- und Dampf-Erlebnis, das bis heute nur selten übertroffen wurde. Die aufwändigere und etwas unbequemere Befüllung verglichen mit anderen Verdampfern nehmen Sie dafür sicher gern in Kauf.</p>
+<p><strong>Eigenschaften Nautilus 2 Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>22 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>53 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas, Edelstahl, Aluminium</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Lochraster, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lieferumfang</strong></p>
+<div class="row-fluid pconstruction mtm">
+<div class="col col-xs-12">
+<div class="pinfos enavm-div">
+<div class="pcharacteristics_delivery ">
+<div class="pdelivery">
+<ul>
+<li>1x Nautilus 2 Clearomizer</li>
+<li>1x BVC Head 0,7 Ohm</li>
+<li>1x BVC Head 1,8 Ohm</li>
 <li>1x Ersatz-Glastank</li>
-<li>1x Ersatz-Mundstück </li>
-<li>8x Dichtungsringe</li>
-<li>1x Bedienungsanleitung</li></ul><br>
-<br>
-<b>Wichtige Merkmale:</b>\\n<ul><li>Tankvolumen: 2 ml</li>
-<li>Airflow Control</li>
-<li>Top Filling</li>
-<li>Gewindetyp: 510</li>
-<li>Höhe: 53 mm </li>
-<li>Durchmesser: 22 mm</li></ul><br>
-<br>',
+<li>1x Ersatz-Mundstück</li>
+<li>8x Dichtungsring</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>',
     ),
     'AS100ZEM' => array(
         'icNumber' => 'AS100ZEM',
@@ -4974,14 +3881,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Tobacco No.1 gedampft wird, entfaltet sich der Geschmack von Tabak.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-RT' => array(
         'icNumber' => 'ES100L10-RT',
@@ -4998,14 +3898,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Rip Tight gedampft wird, entfaltet sich der Geschmack von Erdbeeren und blauen Himbeeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Menthol, blaue Himbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Menthol, blaue Himbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-BC' => array(
         'icNumber' => 'ES100L10-BC',
@@ -5022,14 +3915,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '3.95',
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Blue daCapo gedampft wird, entfaltet sich der Geschmack von blauen und roten Himbeeren.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC100CM' => array(
         'icNumber' => 'IC100CM',
@@ -5474,13 +4360,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Raspberry Blast dampfen, entsteht der Geschmack von Pfefferminz und Himbeeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Himbeer-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Himbeer-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-AZ' => array(
         'icNumber' => 'VV100L10-AZ',
@@ -5492,18 +4372,12 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Früchte, Koolada, rote Beeren',
+        'flavor' => 'Früchte, rote Beeren, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Attraction Fatal dampfen, entsteht der Geschmack von roten Beeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Rote Früchte und Mentohl Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Rote Früchte und Mentohl Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Früchte, Koolada, rote Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Früchte, Koolada, rote Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BB' => array(
         'icNumber' => 'VV100L10-BB',
@@ -5520,13 +4394,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Black Ice Breaking Point dampfen, entsteht der Geschmack von Menthol und Anis.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Anis und Menthol-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Anis und Menthol-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Lakritz, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Lakritz, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BN' => array(
         'icNumber' => 'VV100L10-BN',
@@ -5543,13 +4411,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Blue Gun Breaking Point dampfen, entsteht der Geschmack von Blaubeer-Kaugummi. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Heidelbeere-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Anis und Menthol-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Kaugummi. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Kaugummi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-HI' => array(
         'icNumber' => 'VV100L10-HI',
@@ -5566,13 +4428,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Heisenberg No Ice dampfen, entsteht der Geschmack von Beeren, Anis und einer leichten Mentholnote. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix und Anis Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix und Anis Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-HW' => array(
         'icNumber' => 'VV100L10-HW',
@@ -5589,13 +4445,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Heisenberg White dampfen, entsteht der Geschmack von Anis, Menthol und Beeren. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix und Anis Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix und Anis Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Beeren, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-LR' => array(
         'icNumber' => 'VV100L10-LR',
@@ -5612,13 +4462,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Loser dampfen, entsteht der Geschmack von Mangos und Ananas. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix-Aromastoff</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix-Aromastoff, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Ananas, Mango. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Ananas, Mango</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PI' => array(
         'icNumber' => 'VV100L10-PI',
@@ -5635,13 +4479,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Pinkman on Ice dampfen, entsteht der Geschmack von roten Beeren, roten Früchten und Menthol. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix und Menthol Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix und Menthol Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol, rote Beeren, rote Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol, rote Beeren, rote Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PE' => array(
         'icNumber' => 'VV100L10-PE',
@@ -5658,13 +4496,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid Pinkman Revamped dampfen, entsteht der Geschmack von roten Beeren, rote Früchte und einer Erdbeernote. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix und Erdbeer Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Früchte-Mix und Erdbeer Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, rote Beeren, rote Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, rote Beeren, rote Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-TR' => array(
         'icNumber' => 'VV100L10-TR',
@@ -5681,13 +4513,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => 'Die Vampire Vape VLADS VG Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vape VLADS VG Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape VLADS VG Liquid The Ryder dampfen, entsteht der Geschmack von einem Erdbeer-Donut. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml </b>
-<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%), Erdbeer-und Donut Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 1,5mg/ml & 3mg/ml & 6mg/ml </b>\\n<ul><li>Propylenglycol (30%), Pflanzenglycerin (70%),Erdbeer-und Donut Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Donut, Erdbeere, Zucker. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Donut, Erdbeere, Zucker</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'UW100CR3' => array(
         'icNumber' => 'UW100CR3',
@@ -5788,14 +4614,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Black & Green gedampft wird, entfaltet sich der Geschmack von Äpfeln. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-DB' => array(
         'icNumber' => 'ES100L10-DB',
@@ -5812,14 +4631,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Deep Blue gedampft wird, entfaltet sich der Geschmack von einem Blaubeer-Käsekuchen.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Käsekuchen. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Käsekuchen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-RB' => array(
         'icNumber' => 'ES100L10-RB',
@@ -5836,14 +4648,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Red Breeze gedampft wird, entfaltet sich der Geschmack von einem roten Beerenmix. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-EL' => array(
         'icNumber' => 'ES100L10-EL',
@@ -5860,14 +4665,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Ella gedampft wird, entfaltet sich der Geschmack von einer Haselnuss-Nougat-Creme.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Cream, Haselnuss, Nougat. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Cream, Haselnuss, Nougat</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-MG' => array(
         'icNumber' => 'ES100L10-MG',
@@ -5884,14 +4682,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Mrs. Green gedampft wird, entfaltet sich der Geschmack von einem Waldmeister-Wackelpudding. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Wackelpudding, Waldmeister. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Wackelpudding, Waldmeister</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-RS' => array(
         'icNumber' => 'ES100L10-RS',
@@ -5908,14 +4699,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Red Shake gedampft wird, entfaltet sich der Geschmack von einem Erdbeer-Milchshake.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Milchshake. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Milchshake</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-T5' => array(
         'icNumber' => 'ES100L10-T5',
@@ -5932,14 +4716,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Tobacco No.5 gedampft wird, entfaltet sich der Geschmack von Blend Tabak. 
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-T6' => array(
         'icNumber' => 'ES100L10-T6',
@@ -5956,14 +4733,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => 'Die Liquids von der Marke Erste Sahne werden in Deutschland entwickelt und produziert. Verwenden Sie das Erste Sahne Liquid für Ihre E-Zigarette. Die 10ml Flaschen mit Liquid sind in unterschiedlichen Nikotin-Stärken erhältlich. Wenn das Erste Sahne Liquid Tobacco No.6 gedampft wird, entfaltet sich der Geschmack von hellem und  dunklem Tabak.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin, 1,2-Propylenglycol, Aromagemisch</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin, 1,2-Propylenglycol, Nikotin, Aromagemisch</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'AS100CEDC' => array(
         'icNumber' => 'AS100CEDC',
@@ -6376,7 +5146,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, dunkle Waldfrüchte',
+        'flavor' => 'dunkle Waldfrüchte, Koolada',
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
@@ -6450,7 +5220,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Waldfrüchte',
+        'flavor' => 'Waldfrüchte, Koolada',
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
@@ -6536,7 +5306,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Minze',
+        'flavor' => 'Minze, Koolada',
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
@@ -6696,7 +5466,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Zitrusfrüchte',
+        'flavor' => 'Zitrusfrüchte, Koolada',
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
@@ -6982,7 +5752,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Minze, Toffee, Vanille',
+        'flavor' => 'Minze, Toffee, Vanille, Koolada',
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
@@ -7714,16 +6484,16 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'name' => 'Vampire Vape - Koncept XIX - All Day Grape - Fresh - Shake & Vape - 50 ml, 0 mg/ml',
         'commonName' => 'All Day Grape',
         'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Frisches#!#SHAKE & VAPE > Trauben#!#SHAKE & VAPE > Vampire Vape',
+        'category' => 'SHAKE & VAPE > Trauben#!#SHAKE & VAPE > Frisches#!#SHAKE & VAPE > Vampire Vape',
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, rote Traube',
+        'flavor' => 'rote Traube, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: rote Traube, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>rote Traube, Koolada</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BSO' => array(
         'icNumber' => 'VV100L10-BSO',
@@ -7740,7 +6510,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Anis, Eukalyptus, Kirsche, Menthol, Waldfrüchte. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Eukalyptus, Kirsche, Menthol, Waldfrüchte</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-GCS' => array(
         'icNumber' => 'VV100L10-GCS',
@@ -7757,7 +6527,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Cola, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola, Koolada</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-GTS' => array(
         'icNumber' => 'VV100L10-GTS',
@@ -7774,7 +6544,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Mango. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-HO' => array(
         'icNumber' => 'VV100L10-HO',
@@ -7791,7 +6561,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Anis, Beeren, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-KKF' => array(
         'icNumber' => 'VV100L10-KKF',
@@ -7803,12 +6573,12 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Zitrone',
+        'flavor' => 'Zitrone, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Koolada, Zitrone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Koolada, Zitrone</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PDB' => array(
         'icNumber' => 'VV100L10-PDB',
@@ -7825,7 +6595,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Biskuit, Cream, Karamell, Vanille. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Biskuit, Cream, Karamell, Vanille</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PEB' => array(
         'icNumber' => 'VV100L10-PEB',
@@ -7842,7 +6612,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Blätterteig, Zitrone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Blätterteig, Zitrone</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PO' => array(
         'icNumber' => 'VV100L10-PO',
@@ -7859,7 +6629,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: rote Beeren, rote Früchte. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>rote Beeren, rote Früchte</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PRB' => array(
         'icNumber' => 'VV100L10-PRB',
@@ -7876,7 +6646,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Marmelade, Pudding, Vanille. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Marmelade, Pudding, Vanille</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-SSS' => array(
         'icNumber' => 'VV100L10-SSS',
@@ -7893,7 +6663,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Erdbeere, Toffee. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Toffee</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-TTF' => array(
         'icNumber' => 'VV100L10-TTF',
@@ -7905,12 +6675,12 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Orange',
+        'flavor' => 'Orange, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '20.85',
         'retailPriceOthers' => '15.84',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Koolada, Orange. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Koolada, Orange</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC100E' => array(
         'icNumber' => 'SC100E',
@@ -8475,15 +7245,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Erdbeer-Menthol gedampft wird, entwickelt sich das Aroma von Erdbeeren und Menthol.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Erdbeer-Menthol-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Erdbeer-Menthol-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-MB' => array(
         'icNumber' => 'HL100L10-MB',
@@ -8500,15 +7262,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid MAXX Tobacco Blend gedampft wird, entwickelt sich das Aroma von mildem Tabak.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), MAXX Tobacco Blend-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), MAXX Tobacco Blend-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-MT' => array(
         'icNumber' => 'HL100L10-MT',
@@ -8525,15 +7279,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Menthol gedampft wird, entwickelt sich das Aroma von Menthol.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Menthol-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Menthol-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-AB' => array(
         'icNumber' => 'HL100L10-AB',
@@ -8550,15 +7296,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid American Blend gedampft wird, entwickelt sich das Aroma von Tabak.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), American Blend-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), American Blend-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-MC' => array(
         'icNumber' => 'HL100L10-MC',
@@ -8575,15 +7313,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Maracuja gedampft wird, entwickelt sich das Aroma von Maracuja.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Maracuja-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Maracuja-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Maracuja. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Maracuja</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-VN' => array(
         'icNumber' => 'HL100L10-VN',
@@ -8600,15 +7330,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Vanille gedampft wird, entwickelt sich das Aroma von Vanille.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Vanille-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Vanille-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-TS' => array(
         'icNumber' => 'HL100L10-TS',
@@ -8625,15 +7347,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Tabak Silver gedampft wird, entwickelt sich das Aroma von Tabak.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), Tabak Silver-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), Tabak Silver-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-ML' => array(
         'icNumber' => 'HL100L10-ML',
@@ -8650,15 +7364,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Melone gedampft wird, entwickelt sich das Aroma von Melonen.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Melone-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Melone-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Melone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Melone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-BI' => array(
         'icNumber' => 'HL100L10-BI',
@@ -8675,15 +7381,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Blue Ice gedampft wird, entwickelt sich das Aroma von Eisbonbons.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Blue Ice-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Blue Ice-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Eisbonbon. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Eisbonbon</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-AP' => array(
         'icNumber' => 'HL100L10-AP',
@@ -8700,15 +7398,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Apfel gedampft wird, entwickelt sich das Aroma von Äpfeln.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Apfel-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Apfel-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-SB' => array(
         'icNumber' => 'HL100L10-SB',
@@ -8725,15 +7415,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Spring Break gedampft wird, entwickelt sich das Aroma von einem Früchte-Mix.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (70%), Propylenglycol (30%), Spring Break-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin (70%), Propylenglycol (30%), Spring Break-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-AS' => array(
         'icNumber' => 'HL100L10-AS',
@@ -8750,15 +7432,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Apfelstrudel gedampft wird, entwickelt sich das Aroma von einem Apfelstrudel.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (70%), Propylenglycol (30%), Apfelstrudel-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin (70%), Propylenglycol (30%), Apfelstrudel-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfelstrudel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelstrudel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-BB' => array(
         'icNumber' => 'HL100L10-BB',
@@ -8775,15 +7449,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Boysenbeere gedampft wird, entwickelt sich das Aroma von Boysenbeeren.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), Boysenbeere-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), Boysenbeere-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Boysenbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Boysenbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-EG' => array(
         'icNumber' => 'HL100L10-EG',
@@ -8800,15 +7466,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Earl-Grey gedampft wird, entwickelt sich das Aroma von einem Earl Grey Tee.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), Earl Grey-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), Earl Grey-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: schwarzer Tee. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>schwarzer Tee</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-KF' => array(
         'icNumber' => 'HL100L10-KF',
@@ -8825,15 +7483,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Kaffee gedampft wird, entwickelt sich das Aroma von Kaffee.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Kaffee-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Kaffee-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kaffee. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaffee</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-HM' => array(
         'icNumber' => 'HL100L10-HM',
@@ -8850,15 +7500,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Heidelbeer-Menthol gedampft wird, entwickelt sich das Aroma von Heidelbeeren und Menthol.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Heidelbeer-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Heidelbeer-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-EB' => array(
         'icNumber' => 'HL100L10-EB',
@@ -8875,15 +7517,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Êrdbeere gedampft wird, entwickelt sich das Aroma von Erdbeeren.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Erdbeer-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Erdbeer-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-KR' => array(
         'icNumber' => 'HL100L10-KR',
@@ -8900,15 +7534,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Kirsche gedampft wird, entwickelt sich das Aroma von Kirsche.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Kirsche-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Propylenglycol (80%), Glycerin (10%), bidestilliertes Wasser (10%), Kirsche-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kirsche. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-RG' => array(
         'icNumber' => 'HL100L10-RG',
@@ -8925,15 +7551,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Roter Gallier gedampft wird, entwickelt sich das Aroma von Tabak.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), Roter Gallier-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), Roter Gallier-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'HL100L10-R4' => array(
         'icNumber' => 'HL100L10-R4',
@@ -8950,15 +7568,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid RY4 gedampft wird, entwickelt sich das Aroma von Tabak.
-<br>
-<br> 
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), RY4-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 6mg/ml & 12mg/ml & 18mg/ml</b>\\n<ul><li>Glycerin (60%), Propylenglycol (20%), bidestilliertes Wasser (20%), RY4-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC100PCBF' => array(
         'icNumber' => 'IC100PCBF',
@@ -10364,15 +8974,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '6.90',
-        'description' => 'Die Liquids von Happy Liquid werden Ihnen in einer 10ml Flasche in unterschiedlichen Nikotin-Stärken ausgeliefert. Verwenden Sie die Liquids in einer E-Zigarette. Wenn das Happy Liquid Black Coffee gedampft wird, entwickelt sich das Aroma von Kaffee mit Cream.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Glycerin (70%), Propylenglycol (30%), Black Coffee-Aroma und andere natürliche und naturidentische Aromen</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml & 6mg/ml & 12mg/ml</b>\\n<ul><li>Glycerin (70%), Propylenglycol (30%), Black Coffee-Aroma und andere natürliche und naturidentische Aromen, Nikotin</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Cream, Kaffee. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Cream, Kaffee</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SC100TR' => array(
         'icNumber' => 'SC100TR',
@@ -10549,18 +9151,7 @@ Vampire Vape Liquid in unterschiedlichen Stärken mit und ohne Nikotin.<br>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '2.95',
-        'description' => '<b>Kaktusfeige E-Zigaretten Liquid - SC</b>
-<br>
-<br>
-Die Liquids von SC überzeugen durch Qualität und Geschmack.
-<b>SC E-Liquids</b>können mit allen E-Zigaretten bzw. Verdampfern genutzt werden, das gilt für das moderate Dampfen sowie auch für den Sub-Ohm-Bereich.
-<br>
-<br>
-Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid Aroma und der gewählten Stärke. Ihnen stehen insgesamt 5 Stärken mit und ohne Nikotin zu Auswahl. Das SC Kaktusfeige E-Zigaretten Liquid schmeckt beim Dampfen nach Kaktusfeige.
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma</li></ul><br>
-<b>Inhaltsstoffe für die Stärken: 3mg/ml, 6mg/ml, 12mg/ml & 18mg/ml </b>\\n<ul><li>Propylenglycol (50% PG), pflanzliches Glycerin (38% VG), demineralisiertes Wasser (12%), Aroma, Nikotin</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kaktusfeige. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaktusfeige</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-SK' => array(
         'icNumber' => 'PS100L10-SK',
@@ -10577,7 +9168,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Menthol, Pfefferminze. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol, Pfefferminze</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-BM' => array(
         'icNumber' => 'PS100L10-BM',
@@ -10594,7 +9185,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Brombeere, Cranberry, Zitrone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Brombeere, Cranberry, Zitrone</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-UV' => array(
         'icNumber' => 'PS100L10-UV',
@@ -10611,7 +9202,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Granatapfel. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Granatapfel</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-XW' => array(
         'icNumber' => 'PS100L10-XW',
@@ -10628,7 +9219,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Honigmelone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Honigmelone</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-PS' => array(
         'icNumber' => 'PS100L10-PS',
@@ -10645,7 +9236,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Ananas, Himbeere, Limone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Ananas, Himbeere, Limone</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-RT' => array(
         'icNumber' => 'PS100L10-RT',
@@ -10662,7 +9253,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: blaue Himbeere, Erdbeere, Menthol. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>blaue Himbeere, Erdbeere, Menthol</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-FD' => array(
         'icNumber' => 'PS100L10-FD',
@@ -10679,7 +9270,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Limette, Menthol. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Limette, Menthol</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-GP' => array(
         'icNumber' => 'PS100L10-GP',
@@ -10696,8 +9287,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => '
-',
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Pfirsich. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-GB' => array(
         'icNumber' => 'PS100L10-GB',
@@ -10714,7 +9304,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Gummibärchen. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Gummibärchen</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-BC' => array(
         'icNumber' => 'PS100L10-BC',
@@ -10731,7 +9321,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Blaubeere, Zuckerwatte. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Zuckerwatte</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-WW' => array(
         'icNumber' => 'PS100L10-WW',
@@ -10748,7 +9338,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Wassermelone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-TA' => array(
         'icNumber' => 'PS100L10-TA',
@@ -10765,7 +9355,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Karamell, Tabak, Vanille. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Karamell, Tabak, Vanille</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-AT' => array(
         'icNumber' => 'PS100L10-AT',
@@ -10782,7 +9372,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Cranberry, grüner Apfel. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Cranberry, grüner Apfel</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-JC' => array(
         'icNumber' => 'PS100L10-JC',
@@ -10799,7 +9389,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: karibische Früchte. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>karibische Früchte</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-SB' => array(
         'icNumber' => 'PS100L10-SB',
@@ -10816,7 +9406,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Erdbeere, Milchshake. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Milchshake</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-BB' => array(
         'icNumber' => 'PS100L10-BB',
@@ -10833,7 +9423,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Banane, Kuchen. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Banane, Kuchen</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-PC' => array(
         'icNumber' => 'PS100L10-PC',
@@ -10850,7 +9440,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Erdnussbutter, Streuselkuchen. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdnussbutter, Streuselkuchen</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-SG' => array(
         'icNumber' => 'PS100L10-SG',
@@ -10867,7 +9457,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Donut, Erdbeere. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Donut, Erdbeere</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-ML' => array(
         'icNumber' => 'PS100L10-ML',
@@ -10884,7 +9474,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Menthol. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-PT' => array(
         'icNumber' => 'PS100L10-PT',
@@ -10901,7 +9491,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Pfirsich, grüner Tee. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich, grüner Tee</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-TK' => array(
         'icNumber' => 'ES100L10-TK',
@@ -11232,7 +9822,7 @@ Mit jeder SC Liquid Flasche, erhalten Sie 10 ml Liquid von dem gewählten Liquid
         'supplier' => 'The Fog Clown',
         'brand' => 'The Fog Clown',
         'piecesPerPack' => 1,
-        'flavor' => 'Barley Water, Koolada, Zitrone',
+        'flavor' => 'Barley Water, Zitrone, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -12769,7 +11359,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Kaffee, Kokos, Koolada, Sahne',
+        'flavor' => 'Kaffee, Kokos, Sahne, Koolada',
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
@@ -12859,7 +11449,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Bozz Liquids',
         'brand' => 'Bozz Liquids',
         'piecesPerPack' => 1,
-        'flavor' => 'Blutorange, Koolada, Orange',
+        'flavor' => 'Blutorange, Orange, Koolada',
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
@@ -12881,7 +11471,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Bozz Liquids',
         'brand' => 'Bozz Liquids',
         'piecesPerPack' => 1,
-        'flavor' => 'Kaktusfeige, Koolada, Menthol, Zitrone',
+        'flavor' => 'Kaktusfeige, Zitrone, Menthol, Koolada',
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
@@ -13152,7 +11742,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Smoking Bull',
         'brand' => 'Smoking Bull',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Waldbeeren',
+        'flavor' => 'Waldbeeren, Koolada',
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
@@ -13196,7 +11786,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Smoking Bull',
         'brand' => 'Smoking Bull',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, süße Früchte',
+        'flavor' => 'süße Früchte, Koolada',
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
@@ -13435,7 +12025,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Smoking Bull',
         'brand' => 'Smoking Bull',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Waldbeeren',
+        'flavor' => 'Waldbeeren, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '13.85',
@@ -14677,7 +13267,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Pudding, Vanille. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Pudding, Vanille</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-MB' => array(
         'icNumber' => 'PS100L10-MB',
@@ -14694,7 +13284,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Sahne, Waldbeeren. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Sahne, Waldbeeren</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-SW' => array(
         'icNumber' => 'PS100L10-SW',
@@ -14711,7 +13301,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Erdbeere. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-HE' => array(
         'icNumber' => 'PS100L10-HE',
@@ -14728,7 +13318,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Marshmellow, Minze, Vanille. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Marshmellow, Minze, Vanille</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-PW' => array(
         'icNumber' => 'PS100L10-PW',
@@ -14745,7 +13335,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Ananas, Cream, Sahne. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Ananas, Cream, Sahne</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-BL' => array(
         'icNumber' => 'PS100L10-BL',
@@ -14762,7 +13352,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Lakritz, Salz. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Lakritz, Salz</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'PS100L10-BG' => array(
         'icNumber' => 'PS100L10-BG',
@@ -14779,7 +13369,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '15.95',
-        'description' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Kaugummi. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaugummi</td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>40:60</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'XTARMC2' => array(
         'icNumber' => 'XTARMC2',
@@ -14842,7 +13432,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Limette',
+        'flavor' => 'Limette, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '14.45',
@@ -14876,7 +13466,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, tropische Früchte',
+        'flavor' => 'tropische Früchte, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '14.45',
@@ -14961,7 +13551,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'I VG',
         'brand' => 'I VG',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, blaue Himbeere',
+        'flavor' => 'blaue Himbeere, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -14978,7 +13568,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'I VG',
         'brand' => 'I VG',
         'piecesPerPack' => 1,
-        'flavor' => 'Kaugummi, Koolada, Limette, schwarze Traube',
+        'flavor' => 'Kaugummi, Limette, schwarze Traube, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -15493,14 +14083,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => 'Die Vampire Vape Liquids werden in UK konzipiert und gefertigt. Sie erhalten pro bestellter Flasche insgesamt 10ml Ihres Vampire Vapes Liquids. Die Liquids sind für die Verwendung in einer E-Zigarette ausgelegt. Die Liquids sind in verschiedenen Stärken erhältlich. Wenn Sie das Vampire Vape Liquid Blood Sukka dampfen, entsteht der Geschmack von Kirschen, Beeren, roten Früchten, Eukalyptus, Anis. Jede Flasche enthält 10ml Liquid in Ihrer gewählten Stärke.
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml</b>
-<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Früchtemix, Anis und Menthol Aromastoffe</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 3mg/ml</b>\\n<ul><li>Propylenglycol (50%), Pflanzenglycerin (50%), Früchtemix, Anis und Menthol Aromastoffe, Nikotin</li></ul><br>
-<b>Inhaltsstoffe für die Stärke: 6mg/ml & 12mg/ml </b>\\n<ul><li>Propylenglycol (60%), Pflanzenglycerin (40%), Früchtemix, Anis und Menthol Aromastoffe, Nikotin</li></ul><br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Eukalyptus, Kirsche, Menthol, Waldfrüchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Eukalyptus, Kirsche, Menthol, Waldfrüchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'AS100PXD' => array(
         'icNumber' => 'AS100PXD',
@@ -15565,7 +14148,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
-        'flavor' => null,
+        'flavor' => '',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -15835,7 +14418,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Twelve Monkeys',
         'brand' => 'Twelve Monkeys',
         'piecesPerPack' => 1,
-        'flavor' => 'Erdbeere, Kiwi, Koolada, Wassermelone',
+        'flavor' => 'Erdbeere, Kiwi, Wassermelone, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '17.75',
@@ -15852,7 +14435,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Twelve Monkeys',
         'brand' => 'Twelve Monkeys',
         'piecesPerPack' => 1,
-        'flavor' => 'Apfel, Koolada, Traube',
+        'flavor' => 'Apfel, Traube, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '17.75',
@@ -15869,7 +14452,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Twelve Monkeys',
         'brand' => 'Twelve Monkeys',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, Limonade, Wassermelone',
+        'flavor' => 'Limonade, Wassermelone, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '17.75',
@@ -16055,7 +14638,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'supplier' => 'Vape Rebelz',
         'brand' => 'Vape Rebelz',
         'piecesPerPack' => 1,
-        'flavor' => 'Koolada, rote Beeren',
+        'flavor' => 'rote Beeren, Koolada',
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -16343,10 +14926,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Äpfeln entwickelt das Liquid namens Apple Apple von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. <br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Apfelaroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-BA' => array(
         'icNumber' => 'SE100L10-BA',
@@ -16363,10 +14943,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Bananen entwickelt das Liquid namens Banana von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert.<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Bananenaroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Banane. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Banane</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-CE' => array(
         'icNumber' => 'SE100L10-CE',
@@ -16383,11 +14960,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Kirschen entwickelt das Liquid namens CHERRY von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. 
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Kirscharoma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kirsche. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-DT' => array(
         'icNumber' => 'SE100L10-DT',
@@ -16404,11 +14977,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Tabak entwickelt das Liquid namens DELUXE TOBACCO von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. 
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Tabakaroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-MA' => array(
         'icNumber' => 'SE100L10-MA',
@@ -16425,10 +14994,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Mangos entwickelt das Liquid namens Mango von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. <br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Mango Aroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Mango. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-ME' => array(
         'icNumber' => 'SE100L10-ME',
@@ -16445,11 +15011,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von MENTHOL entwickelt das Liquid namens MENTHOL von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. 
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Mentholaroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-VC' => array(
         'icNumber' => 'SE100L10-VC',
@@ -16466,10 +15028,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Vanillepudding entwickelt das Liquid namens Vanilla Custard von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. <br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Vanillepudding Geschmack, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pudding, Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pudding, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-WM' => array(
         'icNumber' => 'SE100L10-WM',
@@ -16486,11 +15045,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Wassermelone entwickelt das Liquid namens WATERMELON von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. 
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Wassermelonen Geschmack, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Wassermelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-BB' => array(
         'icNumber' => 'SE100L10-BB',
@@ -16507,10 +15062,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Blaubeeren entwickelt das Liquid namens Blue Berry von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. <br>
-<br>
-<b>Inhalsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Blaubeeren Aroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-PG' => array(
         'icNumber' => 'SE100L10-PG',
@@ -16527,11 +15079,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Trauben entwickelt das Liquid namens Purple Grape von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. 
-<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Trauben Aroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: dunkle Traube. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>dunkle Traube</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-SM' => array(
         'icNumber' => 'SE100L10-SM',
@@ -16548,10 +15096,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von grüne Minze entwickelt das Liquid namens Spearmint von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert.<br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), grüne Minze Aroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-SB' => array(
         'icNumber' => 'SE100L10-SB',
@@ -16568,10 +15113,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => 'Den Geschmack von Erdbeere entwickelt das Liquid namens Strawberry von der Marke Simple Essentials. Es besteht unter anderem aus 50% PG und 50% VG und stammt aus UK. Pro Packung und Sorte wird das Liquid in einer 10ml Flasche geliefert. <br>
-<br>
-<b>Inhaltsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Erdbeeraroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'CT100L10-SS' => array(
         'icNumber' => 'CT100L10-SS',
@@ -16588,11 +15130,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => '4.15',
         'retailPriceOthers' => '3.95',
-        'description' => 'Das Liquid von der Marke Cheap Thrills setzt sich unter anderem aus 50% PG und 50% VG zusammen. Die Sorte Sunset Strip entwickelt beim Dampfen den Geschmack von Blaubeeren & Brombeeren. Pro Packung und Sorte sind 10ml Liquid enthalten. 
-<br>
-<br>
-<b>Inhalsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Beerenaroma, Erdbeeraroma, Sucralose, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Brombeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Brombeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'CT100L10-GG' => array(
         'icNumber' => 'CT100L10-GG',
@@ -16609,10 +15147,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => '4.15',
         'retailPriceOthers' => '3.95',
-        'description' => 'Das Liquid von der Marke Cheap Thrills setzt sich unter anderem aus 50% PG und 50% VG zusammen. Die Sorte Glory Glaze entwickelt beim Dampfen den Geschmack von Donut, Zucker & Blaubeeren. Pro Packung und Sorte sind 10ml Liquid enthalten. <br>
-<br>
-<b>Inhalsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Sucralose, Blaubeeren-Geschmack, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Donut, Zucker. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Donut, Zucker</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'CT100L10-RR' => array(
         'icNumber' => 'CT100L10-RR',
@@ -16629,10 +15164,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => '4.15',
         'retailPriceOthers' => '3.95',
-        'description' => 'Das Liquid von der Marke Cheap Thrills setzt sich unter anderem aus 50% PG und 50% VG zusammen. Die Sorte Rush Rush entwickelt beim Dampfen den Geschmack von Wassermelone & Erdbeere. Pro Packung und Sorte sind 10ml Liquid enthalten. <br>
-<br>
-<b>Inhalsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Apfel Geschmack, Wassermelonen-Aroma, Sucralose, Erdbeergeschmack, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Wassermelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'MR100L10-LH' => array(
         'icNumber' => 'MR100L10-LH',
@@ -16649,7 +15181,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.85',
-        'description' => 'Wenn Sie das Liquid Little Havana der Marke Miami Drippers mit Ihrer E-Zigarette verdampfen, entwickelt es den Geschmack von Tabak, Karamell & Zimt. Pro Flasche sind insgesamt 10ml Liquid enthalten, das unter anderem aus 50% PG und 50% VG besteht. <br> <br> <b>Inhalsstoffe für die Stärke: 0mg/ml:</b> <ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Biscuit Geschmack, Tabak Aromatisierung, Sucralose, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Karamell, Tabak, Zimt. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Karamell, Tabak, Zimt</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'MR100L10-OL' => array(
         'icNumber' => 'MR100L10-OL',
@@ -16666,10 +15198,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.85',
-        'description' => 'Wenn Sie das Liquid Ocean Lime der Marke Miami Drippers mit Ihrer E-Zigarette verdampfen, entwickelt es den Geschmack von Zitrone & Limette. Pro Flasche sind insgesamt 10ml Liquid enthalten, das unter anderem aus 50% PG und 50% VG besteht. <br>
-<br>
-<b>Inhalsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Cantaloupe Geschmack, Melonen-Aroma, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Zitrusfrüchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitrusfrüchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'MR100L10-LE' => array(
         'icNumber' => 'MR100L10-LE',
@@ -16686,9 +15215,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.85',
-        'description' => 'Wenn Sie das Liquid Lemon E11even der Marke Miami Drippers mit Ihrer E-Zigarette verdampfen, entwickelt es den Geschmack von Zitronen. Pro Flasche sind insgesamt 10ml Liquid enthalten, das unter anderem aus 50% PG und 50% VG besteht. <br><br>
-<b>Inhalsstoffe für die Stärke: 0mg/ml:</b>
-<ul><li>Pflanzliches Glycerin (< 50%), Propylenglykol (< 50%), Zitronenaroma, Sucralose, andere Aromen</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Zitrone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitrone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'TE100L10-BL' => array(
         'icNumber' => 'TE100L10-BL',
@@ -18739,7 +17266,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'supplier' => 'Disco Juice',
         'brand' => 'Disco Juice',
         'piecesPerPack' => 1,
-        'flavor' => 'Himbeere, Koolada, Pfirsich, Zitrone',
+        'flavor' => 'Himbeere, Pfirsich, Zitrone, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -19904,7 +18431,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'supplier' => 'eLeaf',
         'brand' => 'SC',
         'piecesPerPack' => 1,
-        'flavor' => null,
+        'flavor' => '',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '84.75',
@@ -22194,7 +20721,7 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SE100L10-TC' => array(
         'icNumber' => 'SE100L10-TC',
@@ -22211,7 +20738,7 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '3.90',
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SM100M2' => array(
         'icNumber' => 'SM100M2',
@@ -23864,7 +22391,7 @@ strong>Lieferumfang</strong>
         'supplier' => 'TWIST',
         'brand' => 'TWIST',
         'piecesPerPack' => 1,
-        'flavor' => 'Erdbeere, Himbeere, Koolada, Limonade',
+        'flavor' => 'Erdbeere, Himbeere, Limonade, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -24329,12 +22856,7 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.95',
-        'description' => 'Bei den SOLT E-Zigaretten Nikotinsalz Liquids haben Sie die Wahl zwischen 10mg/ml und 20mg/ml. Pro Variante und Flasche sind insgesamt 10ml SOLT E-Zigaretten Nikotinsalz Liquid enthalten. Die Sorte Berry entwickelt beim Vapen den Geschmack von Beeren und kann pur gedampft werden.
-<br>
-<strong>Inhaltsstoffe für die Stärke 10mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 18mg/ml (1,8%), natürliche und künstliche Aromen.</li></ul><br>
-<strong>Inhaltsstoffe für die Stärke 20mg/ml:</strong><ul>
-<li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 36mg/ml (3,6%), natürliche und künstliche Aromen.</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ST100L10-VN' => array(
         'icNumber' => 'ST100L10-VN',
@@ -24351,12 +22873,7 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.95',
-        'description' => 'Bei den SOLT E-Zigaretten Nikotinsalz Liquids haben Sie die Wahl zwischen 10mg/ml und 20mg/ml. Pro Variante und Flasche sind insgesamt 10ml SOLT E-Zigaretten Nikotinsalz Liquid enthalten. Die Sorte Vanilla entwickelt beim Vapen den Geschmack von Vanille und kann pur gedampft werden.
-<br>
-<strong>Inhaltsstoffe für die Stärke 10mg/ml</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 18mg/ml (1,8%), natürliche und künstliche Aromen.</li></ul><br>
-<strong>Inhaltsstoffe für die Stärke 20mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 36mg/ml (3,6%), natürliche und künstliche Aromen.</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ST100L10-BJ' => array(
         'icNumber' => 'ST100L10-BJ',
@@ -24373,12 +22890,7 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.95',
-        'description' => 'Bei den SOLT E-Zigaretten Nikotinsalz Liquids haben Sie die Wahl zwischen 10mg/ml und 20mg/ml. Pro Variante und Flasche sind insgesamt 10ml SOLT E-Zigaretten Nikotinsalz Liquid enthalten. Die Sorte Blackjack entwickelt beim Vapen den Geschmack von Anis, Lakritze, Waldfrüchte und kann pur gedampft werden.
-<br>
-<strong>Inhaltsstoffe für die Stärke 10mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 18mg/ml (1,8%), natürliche und künstliche Aromen.</li></ul><br>
-<strong>Inhaltsstoffe für die Stärke 20mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 36mg/ml (3,6%), natürliche und künstliche Aromen.</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Lakritz, Waldfrüchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Lakritz, Waldfrüchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ST100L10-MN' => array(
         'icNumber' => 'ST100L10-MN',
@@ -24395,12 +22907,7 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.95',
-        'description' => 'Bei den SOLT E-Zigaretten Nikotinsalz Liquids haben Sie die Wahl zwischen 10mg/ml und 20mg/ml. Pro Variante und Flasche sind insgesamt 10ml SOLT E-Zigaretten Nikotinsalz Liquid enthalten. Die Sorte Mango entwickelt beim Vapen den Geschmack von Mangos und kann pur gedampft werden.
-<br>
-<strong>Inhaltsstoffe für die Stärke 10mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 18mg/ml (1,8%), natürliche und künstliche Aromen.</li></ul><br>
-<strong>Inhaltsstoffe für die Stärke 20mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 36mg/ml (3,6%), natürliche und künstliche Aromen.</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Mango. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ST100L10-MT' => array(
         'icNumber' => 'ST100L10-MT',
@@ -24417,12 +22924,7 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.95',
-        'description' => 'Bei den SOLT E-Zigaretten Nikotinsalz Liquids haben Sie die Wahl zwischen 10mg/ml und 20mg/ml. Pro Variante und Flasche sind insgesamt 10ml SOLT E-Zigaretten Nikotinsalz Liquid enthalten. Die Sorte Menthol entwickelt beim Vapen den Geschmack von Menthol und kann pur gedampft werden.
-<br>
-<strong>Inhaltsstoffe für die Stärke 10mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 18mg/ml (1,8%), natürliche und künstliche Aromen.</li></ul><br>
-<strong>Inhaltsstoffe für die Stärke 20mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 36mg/ml (3,6%), natürliche und künstliche Aromen.</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ST100L10-TB' => array(
         'icNumber' => 'ST100L10-TB',
@@ -24439,12 +22941,7 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.95',
-        'description' => 'Bei den SOLT E-Zigaretten Nikotinsalz Liquids haben Sie die Wahl zwischen 10mg/ml und 20mg/ml. Pro Variante und Flasche sind insgesamt 10ml SOLT E-Zigaretten Nikotinsalz Liquid enthalten. Die Sorte Tobacco entwickelt beim Vapen den Geschmack von Tabak und kann pur gedampft werden.
-<br>
-<strong>Inhaltsstoffe für die Stärke 10mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 18mg/ml (1,8%), natürliche und künstliche Aromen.</li></ul><br>
-<strong>Inhaltsstoffe für die Stärke 20mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 36mg/ml (3,6%), natürliche und künstliche Aromen.</li></ul><br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'CN100TH' => array(
         'icNumber' => 'CN100TH',
@@ -26332,7 +24829,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'supplier' => 'Twisted',
         'brand' => 'Twisted',
         'piecesPerPack' => 1,
-        'flavor' => 'Blaubeere, Koolada, Limonade',
+        'flavor' => 'Blaubeere, Limonade, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '9.85',
@@ -26416,7 +24913,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'supplier' => 'Twisted',
         'brand' => 'Twisted',
         'piecesPerPack' => 1,
-        'flavor' => 'Apfel, Erdbeere, Kiwi, Koolada, Wassermelone',
+        'flavor' => 'Apfel, Erdbeere, Kiwi, Wassermelone, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '9.85',
@@ -28052,15 +26549,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'base' => null,
         'retailPriceDampfplanet' => '5.95',
         'retailPriceOthers' => '5.55',
-        'description' => 'Bei den Vampire Vape E-Zigaretten Nikotinsalz Liquids haben Sie die Wahl zwischen 10mg/ml und 20mg/ml. Pro Variante und Flasche sind insgesamt 10ml Vampire Vape E-Zigaretten Nikotinsalz Liquid enthalten. Die Sorte Heisenberg entwickelt beim Dampfen den Geschmack von Menthol und einer Beerenmischung und kann pur gedampft werden.
-<br>
-<br>
-<strong>Inhaltsstoffe für die Stärke 10mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 18mg/ml (1,8%)</li></ul><br>
-<strong>Inhaltsstoffe für die Stärke 20mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 36mg/ml (3,6%)</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Anis, Beeren, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-PN' => array(
         'icNumber' => 'VV100L10-PN',
@@ -28077,15 +26566,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'base' => null,
         'retailPriceDampfplanet' => '5.95',
         'retailPriceOthers' => '5.55',
-        'description' => 'Bei den Vampire Vape E-Zigaretten Nikotinsalz Liquids haben Sie die Wahl zwischen 10mg/ml und 20mg/ml. Pro Variante und Flasche sind insgesamt 10ml Vampire Vape E-Zigaretten Nikotinsalz Liquid enthalten. Die Sorte Pinkman entwickelt beim Dampfen den fruchtig-frischen Geschmack von verschiedenen Beeren und Früchten und kann pur gedampft werden.
-<br>
-<br>
-<strong>Inhaltsstoffe für die Stärke 10mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 18mg/ml (1,8%)</li></ul><br>
-<strong>Inhaltsstoffe für die Stärke 20mg/ml:</strong>
-<ul><li>Pflanzliches Glycerin 50%, Propylenglykol 50%, Nikotin Benzoat 36mg/ml (3,6%)</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: rote Beeren, rote Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>rote Beeren, rote Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VS100LN' => array(
         'icNumber' => 'VS100LN',
@@ -29971,7 +28452,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'supplier' => 'Vapors Line',
         'brand' => 'Vapors Line',
         'piecesPerPack' => 1,
-        'flavor' => 'Früchte, Joghurt, Koolada, Smoothie',
+        'flavor' => 'Früchte, Joghurt, Smoothie, Koolada',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '14.75',
@@ -30377,7 +28858,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'supplier' => 'VapeHansa',
         'brand' => 'VapeHansa',
         'piecesPerPack' => 1,
-        'flavor' => 'Blaubeere, Himbeere, Koolada, Cream, Vanille',
+        'flavor' => 'Blaubeere, Himbeere, Cream, Vanille, Koolada',
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => '12.95',
@@ -30841,7 +29322,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'supplier' => 'VapeHansa',
         'brand' => 'VapeHansa',
         'piecesPerPack' => 1,
-        'flavor' => 'Eistee, Koolada, Beeren, Guave',
+        'flavor' => 'Eistee, Beeren, Guave, Koolada',
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => '12.95',
@@ -31797,7 +30278,33 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => 'Das TFV12 P-Verdampfer Set von Smok fasst bis zu 8 Milliliter Liquid, das direkt von oben via Top Filling System in den Tank eingefüllt wird. Im Lieferumfang sind insgesamt drei Verdampferköpfe der TFV12 V12 P-Serie enthalten, die für das Dampfen im Subohm-Bereich sorgen. Ein geeigneter Akkuträger ist zum Beispiel der G-Priv 2 von Smok, der über 18650er Akkuzellen betrieben wird und bis zu 230 Watt Ausgangsleistung erreicht.
+<br>
+<br>
+<strong>Lieferumfang</strung>
+<ul>
+<li>1x TFV12 P-Clearomizer</li>
+<li>1x V12 P-Q4 Quadruple Head 0,4 Ohm </li>
+<li>1x V12 P-X6 Sextuple Head 0,15 Ohm </li>
+<li>1x V12 P-T10 Decuple Head 0,12 Ohm </li>
+<li>1x Ersatz-Glastank </li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>TFV12 P-CLEAROMIZER</strong>
+<ul>
+<li>Tankvolumen: 8 ml</li>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 63 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Pyrexglas und Edelstahl</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+</ul>
+',
     ),
     'SK100SP' => array(
         'icNumber' => 'SK100SP',
@@ -35502,10 +34009,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '39.80',
-        'description' => 'Nutzen Sie das Coil Master Werkzeug-Set V3 für die Herstellung eigener Wicklungen für Ihren Selbstwickel-Verdampfer. Im Lieferumfang ist Werkzeug, Draht und auch Baumwolle enthalten, mit dem Sie Ihre eigenen Wicklungen fertigen und in Ihren Selbstwickel-Verdampfer einsetzen können.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p><br>Das Coil Master Werkzeug-Set V3 enthält alles, was Sie für die Herstellung und Montage eigener Wicklungen brauchen. Neben den benötigten Werkzeugen enthält dieses Set auch Wickeldraht und Watte für den Start, so dass Sie sofort damit beginnen können, Ihre erste Wicklung zu bauen.</p>
+<p><strong>Lieferumfang</strong></p>
 <ul>
 <li>1x Seitenschneider</li>
 <li>1x 521 Tab Mini</li>
@@ -35513,13 +34018,12 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
 <li>1x Kreuzschlitzschraubenzieher</li>
 <li>1x Flachkopfschraubenzieher</li>
 <li>1x Keramik-Pinzette</li>
-<li>1x Pinzette (gebogen, mit Gummiaufsatz)
+<li>1x Pinzette (gebogen, mit Gummiaufsatz)</li>
 <li>1x T-Sechskantschlüssel</li>
 <li>1x 3m 24 GA Kanthal A1 Draht</li>
 <li>1x Wickelhilfe V4</li>
 <li>3x Japanische Bio-Baumwolle</li>
-</ul>
-',
+</ul>',
     ),
     'CM100TM' => array(
         'icNumber' => 'CM100TM',
@@ -38597,7 +37101,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'brand' => 'I VG',
         'piecesPerPack' => 1,
         'flavor' => 'Vanille, Milchshake',
-        'dosage' => '',
+        'dosage' => '15-17',
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
@@ -39281,7 +37785,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-WA' => array(
         'icNumber' => 'IC10000L10-WA',
@@ -39298,7 +37802,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pfeifentabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfeifentabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-SN' => array(
         'icNumber' => 'IC10000L10-SN',
@@ -39315,7 +37819,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Orange, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Orange, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-BT' => array(
         'icNumber' => 'IC10000L10-BT',
@@ -39332,7 +37836,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-CK' => array(
         'icNumber' => 'IC10000L10-CK',
@@ -39349,7 +37853,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Minze, Schokolade. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Minze, Schokolade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-LK' => array(
         'icNumber' => 'IC10000L10-LK',
@@ -39366,7 +37870,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: tropische Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>tropische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-KD' => array(
         'icNumber' => 'IC10000L10-KD',
@@ -39383,7 +37887,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Crème Brûlée. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Crème Brûlée</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-LX' => array(
         'icNumber' => 'IC10000L10-LX',
@@ -39400,7 +37904,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tequila Sunrise. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tequila Sunrise</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-MI' => array(
         'icNumber' => 'IC10000L10-MI',
@@ -39417,7 +37921,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Virgin Colada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Virgin Colada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-BB' => array(
         'icNumber' => 'IC10000L10-BB',
@@ -39434,7 +37938,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Vanille, Pudding. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille, Pudding</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-MF' => array(
         'icNumber' => 'IC10000L10-MF',
@@ -39451,7 +37955,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kaktusfeige. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaktusfeige</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'IC10000L10-ST' => array(
         'icNumber' => 'IC10000L10-ST',
@@ -39468,7 +37972,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Mango, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SP100L10-YL' => array(
         'icNumber' => 'SP100L10-YL',
@@ -39646,15 +38150,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<h2>Spever Lady Marmelade - E-Zigaretten Liquid</h2>
-Das Liquid Lady Marmelade der Marke Spever entfaltet beim Dampfen den Geschmack von Erdbeeren und einer leichten Minznote.  Das Liquid Lady Marmelade von Spever erhalten Sie in 1 Nikotinstärken: 0 mg/ml. Pro Flasche erhalten Sie 10ml Liquid.
-<br>
-<br>
-<strong>Zusammensetzung 0 mg/ml:</strong>
-<br>
-50% Glycerin (VG), 50% Propylenglycol (PG), Aroma.
-<br>
-<br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SV100L10-BE' => array(
         'icNumber' => 'SV100L10-BE',
@@ -39671,15 +38167,7 @@ Das Liquid Lady Marmelade der Marke Spever entfaltet beim Dampfen den Geschmack 
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<h2>E-Zigaretten Liquid von Spever - Big Eyes</h2>
-Das Liquid der Hamburger Marke Spever kommt in einer Variante: 0 mg/ml Nikotin. Es ist also kein Nikotin enthalten. Beim Dampfen des Big Eyes Liquids entwickelt sich der Geschmack von Grapefruit und einer leichten Frische. Pro Flasche erhalten Sie 10ml Liquid
-<br>
-<br>
-<strong>Zusammensetzung 0 mg/ml:</strong>
-<br>
-50% Glycerin (VG), 50% Propylenglycol (PG), Aroma.
-<br>
-<br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Grapefruit, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Grapefruit, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SV100L10-DG' => array(
         'icNumber' => 'SV100L10-DG',
@@ -39696,15 +38184,7 @@ Das Liquid der Hamburger Marke Spever kommt in einer Variante: 0 mg/ml Nikotin. 
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<h2>Dr. Greenthumb E-Zigaretten Liquid - von Spever</h2>
-Das Liquid der aus Hamburg stammenden Marke schmeckt beim Dampfen nach dem Cocktail „Gin Basil Smash“. Pro Flasche erhalten Sie 10ml des Dr. Greenthumb Liquids. Das Liquid hat 0 mg/ml Nikotin. Es ist also kein Nikotin enthalten.
-<br>
-<br>
-<strong>Zusammensetzung 0 mg/ml:</strong>
-<br>
-50% Glycerin (VG), 50% Propylenglycol (PG), Aroma.
-<br>
-<br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kräuter, Gin Basil Smash. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kräuter, Gin Basil Smash</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SV100L10-FF' => array(
         'icNumber' => 'SV100L10-FF',
@@ -39721,15 +38201,7 @@ Das Liquid der aus Hamburg stammenden Marke schmeckt beim Dampfen nach dem Cockt
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<h2>Spever E-Zigaretten Liquid - Fidels Finest</h2>
-Von der Hamburger Marke Spever kommt das Liquid Fidels Finest für Ihre E-Zigarette. Das Liquid entwickelt beim Dampfen den Geschmack Tabak mit einer Vanillenote. Das Liquid enthält kein Nikotin.
-<br>
-<br>
-<strong>Zusammensetzung 0 mg/ml:</strong>
-<br>
-50% Glycerin (VG), 50% Propylenglycol (PG), Aroma.
-<br>
-<br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak, Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SV100L10-TS' => array(
         'icNumber' => 'SV100L10-TS',
@@ -39746,15 +38218,7 @@ Von der Hamburger Marke Spever kommt das Liquid Fidels Finest für Ihre E-Zigare
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<h2>Turtle Soup Liquid - Spever</h2>
-Die Spever Turtle Soup Liquids erhalten Sie in einer Flasche mit 10ml Liquid. Das Liquid enthält kein Nikotin.  Das Liquid entfaltet beim Dampfen den Geschmack von Pfannkuchen mit karamellisierten Früchten und Beerensoße.
-<br>
-<br>
-<strong>Zusammensetzung 0 mg/ml:</strong>
-<br>
-50% Glycerin (VG), 50% Propylenglycol (PG), Aroma.
-<br>
-<br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pfannkuchen, Karamell, Früchte, Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfannkuchen, Karamell, Früchte, Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SV100L10-BS' => array(
         'icNumber' => 'SV100L10-BS',
@@ -39771,15 +38235,7 @@ Die Spever Turtle Soup Liquids erhalten Sie in einer Flasche mit 10ml Liquid. Da
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<h2>Beirut Sunset Liquid - Spever</h2>
-Von der aus Hamburg stammenden Marke Spever kommt das E-Zigaretten Liquid Beirut Sunset. Dieses Liquid entfaltet beim Dampfen den Geschmack von Zimt, Zucker und Keks. Das Liquid ist mit 0 mg/ml Nikotin erhältlich. Es enthält also kein Nikotin. Je Flasche ist 10ml Liquid abgefüllt.
-<br>
-<br>
-<strong>Zusammensetzung 0 mg/ml:</strong>
-<br>
-50% Glycerin (VG), 50% Propylenglycol (PG), Aroma.
-<br>
-<br>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Zimt, Zucker, Keks. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Zimt, Zucker, Keks</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SV100L10-JB' => array(
         'icNumber' => 'SV100L10-JB',
@@ -39796,18 +38252,7 @@ Von der aus Hamburg stammenden Marke Spever kommt das E-Zigaretten Liquid Beirut
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<h2>Jungle Boogie Liquid by Spever</h2>
-Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen einen Geschmack, der an exotischen Früchten und Pfirsichen erinnert. Das Jungle Boogie Liquid ist erhältlich mit 0 mg/ml Nikotin. Dem Liquid ist also kein Nikotin beigemischt. Pro gewählter Nikotinstärkelaschen erhalten Sie 10ml Liquid.
-<br>
-<br>
-<strong>Zusammensetzung 0 mg/ml:</strong>
-<br>
-50% Glycerin (VG), 50% Propylenglycol (PG), Aroma.
-<br>
-<br>
-
-
-',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: exotische Früchte, Pfirsich. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>exotische Früchte, Pfirsich</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'A100M3' => array(
         'icNumber' => 'A100M3',
@@ -39824,35 +38269,63 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p>Der asMODus Minikin V3 ist ein sehr forschöner Akkuträger, der durch sein ergonomisch abgerundetes Design besonders angenehm in der Hand liegt. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet.</p>
+        'description' => '<p><br>Der asMODus Minikin V3 ist ein sehr formschöner und leistungsstarker Akkuträger, der durch sein ergonomisch abgerundetes Design besonders angenehm in der Hand liegt. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet.</p>
 <p>Der Minikin V3 wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den Micro-USB Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3 für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
-<p>Das Herz des Minikin V3 ist der sehr effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Minikin V3 über den USB Anschluss mit einem Laptop oder PC. Der USB Anschluss des Minikin V3 unterstützt USB 3.0.</p>
-<p>Der Minikin V3 verfügt über die Dampfmodi VW (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CCW-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
+<p>Das Herz des Minikin V3 ist der sehr effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Minikin V3 über den USB Anschluss mit einem Laptop oder PC. Der USB Anschluss des Minikin V3S unterstützt USB 3.0.</p>
+<p>Der Minikin V3 verfügt über die Dampf Modi VW (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CCW-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
 <p>Im Watt-Modus liegt die Ausgangsleistung des Minikin V3 zwischen 5 und 200 Watt.&nbsp;Im Temperatur-Modus liegt die Leistung zwischen 5&nbsp; und 120 Watt bei einem einstellbaren Temperaturbereich von 100° bis 300° Celsius.&nbsp;</p>
 <p>Auf dem farbigen HD Touch Display werden Ihnen die eingestellte Wattzahl oder Temperatur, die Anzahl der getätigten Züge, der Ladestand des Akkus sowie der Widerstand des Verdampferkopfs angezeigt. Über das Touch Display nehmen Sie auch Ihre individuellen Einstellungen vor.</p>
 <p>Der Minikin V3 verfügt über einen eingebauten Beschleunigungssensor. Durch dreimaliges Schütteln des Geräts lässt sich das Farbschema des Displays ändern. Diese Funktion ist im Menu abschaltbar. Die Farbe des Displays kann dann über das Menu manuell angepasst werden.</p>
-<p>Um den Minikin V3 vor unberechtigtem Zugriff zu schützen, kann ein sechsstelliger PIN-Code hinterlegt werden, der zum Entsperren des Geräts eingegeben werden muss.</p>
+<p>In die Feuertaste ist in der Minikin V3 Varianate ein Fingerabdrucksensor integriert, der dafür sorgt, dass niemand außer Ihnen den Akkuträger nutzen kann. Zusätzlich können Sie einen sechsstelligen PIN-Code zum Entsperren des Geräts hinterlegen.</p>
 <p>Der Minikin V3 verfügt über die von asMODus bekannten ausgereiften Schutzschaltungen. Sie schützen die Akkuzellen vor Tiefenentladung, Überladung, Verpolung, Kurzschluss und Überhitzung. Bei einem Kurzschluss oder niedrigem Akkustand wird dies auf dem Display angezeigt und über eine kurze Vibration signalisiert. Die Vibrationsfunktion kann über das Menu abgeschaltet werden.</p>
-<p>Der Minikin V3 ist mit einem 510er Gewindeanschluss ausgestattet. Dieser liegt leicht versenkt, so dass Verdampfer mit einem maximalen Durchmesser von 27 mm verwendet werden können.&nbsp;</p>
-<p><strong>Lieferumfang:</strong></p>
+<p>Der Minikin V3 ist mit einem leicht versenkt gestalteten 510er Gewindeanschluss ausgestattet. Sie können mit diesem Gerät Verdampfer bis zu einem maximalen Durchmesser von 27 mm an der Basis verwenden.&nbsp;</p>
+<p><strong>Eigenschaften asMODus Minikin V3S Akkuträger</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Stromversorgung</td>
+<td>2 x 18650 Akkuzelle (<strong>nicht im Lieferumfang enthalten</strong>)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW | TC (Ni, Ti, SS) | TCR | CCW</td>
+</tr>
+<tr>
+<td>Prozessor</td>
+<td>GX-200UTC</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 – 200 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 °C – 300 °C | 212° - 572° F</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,1 – 3 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>max. 2 Ampere</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>HD Farb Touch Display, Beschleunigungssensor, Vibrationsfeedback</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Lieferumfang</strong></p>
 <ul>
 <li>1x Minikin V3</li>
 <li>1x USB-C Ladekabel (Micro-USB)</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<p><strong>Eigenschaften Minikin V3 Akkuträger:</strong></p>
-<ul>
-<li>Stromversorgung: 2 x 18650er Akkuzelle (<strong>nicht im Lieferumfang enthalten</strong>)</li>
-<li>Ausgabemodi: VW | TC (Ni, Ti, SS) | TCR | CCW</li>
-<li>Ausgangsleistung: 5 – 200 Watt</li>
-<li>Temperaturbereich: 100 °C – 300 °C | 212° - 572° F</li>
-<li>Widerstandsbereich: 0,1 – 3 Ohm</li>
-<li>Ladestrom: max. 2 Ampere</li>
-<li>Gewindetyp: 510</li>
-<li>Pinsperre</li>
-<li>Beschleunigungssensor</li>
-<li>Vibrationsfeedback</li>
-<li>HD Farb Touch Display</li>
 </ul>',
     ),
     'A100M3V' => array(
@@ -39870,8 +38343,7 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p>&nbsp;</p>
-<p>Dieses E-Zigaretten-Set besteht aus dem formschönen und leistungsstarken Akkuträger asMODus Minikin V3S und dem asMODus Viento Verdampfer. Der Viento ist auf das Dampfen im sog. Direct-Lung Stil ausgelegt, bei dem der Dampf direkt in die Lunge inhaliert wird.</p>
+        'description' => '<p><br>Dieses E-Zigaretten-Set besteht aus dem formschönen und leistungsstarken Akkuträger asMODus Minikin V3S und dem asMODus Viento Verdampfer. Der Viento ist auf das Dampfen im sog. Direct-Lung Stil ausgelegt, bei dem der Dampf direkt in die Lunge inhaliert wird.</p>
 <p><strong>asMODus Minikin V3S</strong></p>
 <p>Der Minikin V3S liegt durch sein ergonomisch abgerundetes Design besonders angenehm in der Hand. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet, der im Unterschied zur Minikin V3 Variante zusätzlich über einen Fingerabdrucksensor verfügt.</p>
 <p>Der Minikin V3S wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den Micro-USB Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3S für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
@@ -39968,7 +38440,7 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
 </tbody>
 </table>
 <p>&nbsp;</p>
-<p><strong>Lieferumfang:</strong></p>
+<p><strong>Lieferumfang</strong></p>
 <ul>
 <li>1 x Minikin V3S</li>
 <li>1 x Viento Clearomizer</li>
@@ -39982,7 +38454,7 @@ Das E-Zigaretten Liquid Jungle Boogie der Marke Spever entfaltet beim Dampfen ei
     'A100AV' => array(
         'icNumber' => 'A100AV',
         'number' => 'A100AV',
-        'name' => 'asMODus - Amighty mit Viento - E-Zigarette (Set) e',
+        'name' => 'asMODus - Amighty mit Viento - E-Zigarette (Set)',
         'commonName' => 'Amighty mit Viento',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > asMODus',
@@ -42360,7 +40832,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'VS100SSG' => array(
         'icNumber' => 'VS100SSG',
         'number' => 'VS100SSG',
-        'name' => 'Vaporesso - Sky Solo - Glastank 3.5 ml',
+        'name' => 'Vaporesso - Sky Solo - Glastank',
         'commonName' => 'Sky Solo',
         'type' => 'TANK',
         'category' => 'ZUBEHÖR > Glastanks & Schutz > Vaporesso',
@@ -42888,7 +41360,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'GV100ALA' => array(
         'icNumber' => 'GV100ALA',
         'number' => 'GV100ALA',
-        'name' => 'Geekvape - Aegis Legend - mit Alpha E-Zigarette (Set) jeans',
+        'name' => 'Geekvape - Aegis Legend - mit Alpha E-Zigarette (Set)',
         'commonName' => 'Aegis Legend',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > GeekVape',
@@ -43157,5 +41629,558 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
 <br>
 <br>
 ',
+    ),
+    'GV100ZX' => array(
+        'icNumber' => 'GV100ZX',
+        'number' => 'GV100ZX',
+        'name' => 'GeekVape - Zeus X RTA - Clearomizer (Set)',
+        'commonName' => 'Zeus X RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 1,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Bei dem Zeus X RTA Clearomizer ist ein Verdampfer, der für das Selbstwickeln ausgelegt ist. RTA steht für Rebuildable Tank Atomizer also einem Selbstwicklerverdampfer mit Tank. Das Tankvolumen des Zeus X RTA liegt bei 4,5ml. Über ein Top-Filling-System wird der Tank direkt von oben mit Liquid befüllt. Der Zeus X RTA Verdampfer bietet Ihnen die Möglichkeit Single und auch Dual-Wicklungen zu verwenden. Im Lieferumfang sind bereits zwei N80 Wicklungen mit einem Widerstand von je 0,4 Ohm enthalten, sodass das Dampfen im Subohm-Bereich möglich ist. Sie ziehen Watte durch die Wicklungen, befüllen den Tank mit Liquid und können anschließend dampfen. Für ein optimales Dampferlebnis ist es empfehlenswert, die Watte und Wicklungen regelmäßig zu tauschen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Blitzen X RTA CLEAROMIZER </li>
+<li>2x N80 Coil 0,4 Ohm</li>
+<li>1x 810er Drip Tip</li>
+<li>1x 510er Drip Tip</li>
+<li>1x 510er Drip Tip Adapter</li>
+<li>1x Ersatzglastank 3ml</li>
+<li>2x Schraubenschlüssel</li>
+<li>2x Feather Cotton</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Zeus X RTA CLEAROMIZER</strong>
+<ul>
+<li>Tankvolumen: 4,5 ml</li>
+<li>Durchmesser: 25 mm</li>
+<li>Höhe: 47,8 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling-System</li>
+<li>Side Airflow </li>
+<li>Rebuildable Tank Atomizer</li>
+<li>im Dual- oder Single-Coil Betrieb nutzbar</li>
+</ul>
+',
+    ),
+    'IC100EG' => array(
+        'icNumber' => 'IC100EG',
+        'number' => 'IC100EG',
+        'name' => 'Joyetech - Exceed Grip - E-Zigarette (Set) - by InnoCigs',
+        'commonName' => 'Exceed Grip',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > Joyetech',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'flavor' => '',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Die E-Zigarette Exceed Grip von der Marke InnoCigs verwendet wahlweise ein Kartuschen-System mit einem Tankvolumen von 4,5ml oder ein Pod-System, welches ein Fassungsvermögen von 3,5ml aufweist. Wenn Sie das Kartuschen-System nutzen, verwenden Sie die mitgelieferten EX-M Verdampferköpfe mit einem Widerstand von 0,4 Ohm. Das Pod-System besitzt einen fest verbauten Verdampferkopf mit einem Widerstand von 0,8 Ohm. Aufgrund der Widerstände ist das Dampfen im Subohm-Bereich (direkte Lungeninhalation) möglich. Wenn die Dampfentwicklung oder der Geschmack nachlässt, sollten Sie das Pod-System gegen ein neues austauschen, nutzen Sie die Kartusche müssen Sie lediglich den eingesetzen Verdampferkopf tauschen. Der Akku der Exceed Grip ist fest verbaut und weist eine Kapazität von 1.000mAh auf.
+<br>
+<br>
+<b>Lieferumfang:<b>
+<ul>
+<li>1x Exceed Grip Akku 1000mAh</li>
+<li>1x Cartridge 4,5ml</li>
+<li>1x Pod 3,5ml inkl. 0,8 Ohm Head</li>
+<li>2x EX-M Heads 0,4 Ohm</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>EXCEED Grip E-ZIGARETTE</strong>
+<ul>
+<li>Akkukapazität: 1000 mAh</li>
+<li>Ausgabemodi: Intelligent variable voltage output</li>
+<li>Tankvolumen: 3,5 / 4,5 ml</li>
+<li>Bottom Filling</li>
+<li>Widerstand: 0,4 Ohm</li>
+<li>LED-Indikator</li>
+<li>Dry Burn Protection (DBP)</li>
+<li>Gewicht: 56g</li>
+<li>Maße: 21 mm x 40 mm x 62 mm</li>
+<li>Geeignet: Nikotin und Nikotinsalze</li>
+</ul>
+',
+    ),
+    'IC100EGC' => array(
+        'icNumber' => 'IC100EGC',
+        'number' => 'IC100EGC',
+        'name' => 'Joyetech - Exceed Grip - Cartridge (5 Stück pro Packung) - by InnoCigs',
+        'commonName' => 'Exceed Grip',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges > Exceed Grip',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 5,
+        'flavor' => '',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<h2>Cartridge-System mit 4,5ml Tankvolumen</h2>
+Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigaretten Set aus dem Hause InnoCigs. Ein Cartridge-System vereint den Tank und den Verdampferkopf. Das Fassungsvermögen der Exceed Grip Cartridge liegt bei 4,5ml. Damit Sie die Cartridge mit Liquid befüllen können, entfernen Sie den Stopper und legen so das seitliche Einfüllloch frei und können so Ihr Liquid in den Tank füllen. Sie setzen einen EX-M Head in die Kartusche ein und können so dampfen. Bitte beachten Sie, dass Sie die Verdampferköpfe regelmäßig tauschen, da es sich um Verschleißteile handelt. Im Lieferumfang der InnoCigs Exceed Grip Cartridge sind keine Heads enthalten. Insgesamt erhalten Sie fünf Cartridges ausgeliefert.
+<br>
+<br>
+',
+    ),
+    'IC100EGP' => array(
+        'icNumber' => 'IC100EGP',
+        'number' => 'IC100EGP',
+        'name' => 'Joyetech - Exceed Grip - Pod - 0,8 Head (5 Stück pro Packung) - by InnoCigs',
+        'commonName' => 'Exceed Grip',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges > Exceed Grip',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 5,
+        'flavor' => '',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Sie erhalten pro bestellter Packung fünf der Exceed Grip Pod-Systeme. Ein Pod-System ist eine fest verbaute Kombination aus Tank und Verdampferkopf. Der Widerstand liegt bei 0,8 Ohm, sodass das direkte Inhalieren in die Lunge möglich ist. Das Pod-System kann maximal 3,5ml aufnehmen. Bitte beachten Sie, dass wenn Sie eine Geschmacksveränderung feststellen, das gesamte Pod-System auszutauschen.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>5x Exceed Grip Pod mit 0,8 Mesh Head</li>
+</ul>
+<br>
+<br>
+<strong>Exceed Grip Pod</strong>
+<ul>
+<li>Tankvolumen: 3,5 ml</li>
+<li>Widerstand: 0,8 Ohm</li>
+<li>Bottom Filling</li>
+<li>Gewicht: 9,2g</li>
+<li>Maße: 41,5 mm x 21 mm x 13,9 mm</li>
+</ul>
+',
+    ),
+    'IC100XM' => array(
+        'icNumber' => 'IC100XM',
+        'number' => 'IC100XM',
+        'name' => 'Joyetech - EX-M Mesh Head - 0,4 Ohm (5 Stück pro Packung) - by InnoCigs',
+        'commonName' => 'EX-M Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > Joyetech',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 5,
+        'flavor' => '',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Insgesamt erhalten Sie fünf der EX-M Verdampferköpfe von InnoCigs. Sie sind kombinierbar mit der Kartusche des Exceed Grip E-Zigaretten Sets. Jeder Verdampferkopf weist einen Widerstand von 0,4 Ohm auf. Mit den Verdampferköpfen sind direkte Lungenzüge möglich. Sollten Sie eine Veränderung des Geschmacks oder der Dampfentwicklung feststellen, ist es an der Zeit, den zu den Verschleißteilen zählenden Verdampferkopf gegen einen Neuen zu wechseln.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,4 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Material: SS316</li>
+<li>Leistungsbereich: 10 - 13 Watt</li>
+<li>empfohlener Leistungsbereich: 12 - 13 Watt</li>
+</ul>
+<br>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>Exceed Grip E-Zigaretten Set</li>
+</ul>
+',
+    ),
+    'SK100TRL' => array(
+        'icNumber' => 'SK100TRL',
+        'number' => 'SK100TRL',
+        'name' => 'SMOK - V12 P-T10 Red Light Head - 0,12 Ohm (3 Stück pro Packung)',
+        'commonName' => 'V12 P-T10 Red Light',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > Smoktech',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Von der Marke Smok sind die V12 P-T10 Red Light Heads. Pro Packung sind insgesamt drei Verdampferköpfe enthalten. Sie haben ein Widerstand von 0,12 Ohm und können zwischen 60 - 120 Watt betrieben werden.
+<br>
+<br>
+<b>Wichtige Merkmale:</b><ul>
+<li>Leuchtet Rot</li>
+<li>Widerstand: 0,12 Ohm</li>
+<li>Zehnfache Wicklung</li>
+<li>Leistungsbereich: 60 - 120 Watt</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100N19' => array(
+        'icNumber' => 'SK100N19',
+        'number' => 'SK100N19',
+        'name' => 'SMOK - Nord AIO 19 - E-Zigarette (Set)',
+        'commonName' => 'Nord AIO 19',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > Smoktech',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Die Nord AiO 19 aus dem Hause Smok ist eine E-Zigarette in einem All-In-One-Design. Der Akku mit 1300 mAh und der Verdampfer mit 2ml Tankvolumen bilden hier eine fließende Einheit. Ihre Nord AiO 19 E-Zigarette laden Sie bei Bedarf über das mitgelieferte USB-Kabel. Den Ladestand erkennen Sie über die verbaute LED, die in der Feuertaste platziert ist. Diese leuchtet in verschiedenen Farben (grün, orange und rot) auf, sobald sich die Akkuspannung ändert. Nicht nur die Feuertaste inkl. LED befindet sich am Akku, sondern auch die Airflow-Löcher, die hier nicht regulierbar sind. Im Lieferumfang befinden sich zwei unterschiedliche Verdampferköpfe von der Smok Nord-Reihe. Der Nord Mesh Verdampferkopf mit 0,6 Ohm ist für das Subohm-Dampfen ausgelegt. Wenn Sie im moderaten Bereich dampfen wollen, so ist der Nord Regular mit 1,4 Ohm die richtige Wahl. Ihre Nord AiO 19 bedienen Sie über eine Feuertaste und die Ausgangsleistung (15 bis 25 Watt) sowie die Ausgangsspannung (2,9 bis 3,8 Volt) werden an Ihrem Dampfverhalten automatisch angepasst. Ihren Tank füllen Sie via Top-Filling-System direkt von oben mit Liquid auf. Dafür muss lediglich die Top-Kappe inkl. Mundstück beiseite geschoben werden, sodass das Einfüllloch freigelegt wird. Bei diesem Gerät sind trotz der Kompaktheit alle sicherheitsrelevanten Funktionen inbegriffen, wie eine acht Sekunden Zugautomatik, Kurzschluss- und ein Tiefentladeschutz. Sie können die Smok Nord AiO 19 in 6 Farben erwerben.
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Smok Nord AiO 19</li>
+<li>1x Smok Nord Mesh Head 0,6 Ohm </li>
+<li>1x Smok Nord Regular Head 1,4 Ohm</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Nord AiO 19</strong>
+<ul>
+<li>Akkukapazität: 1300mAh</li>
+<li>Ausgangsleistung: 15 bis 25 Watt</li>
+<li>Ausgangsspannung: 2,9 bis 3,8 Volt</li>
+<li>8 Sekunden Zugautomatik</li>
+<li>Tiefentladeschutz</li>
+<li>Kurzschlussschutz</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Top Filling</li>
+<li>Airflow</li>
+<li>Maße: 19 mm x 122 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100N22' => array(
+        'icNumber' => 'SK100N22',
+        'number' => 'SK100N22',
+        'name' => 'SMOK - Nord AIO 22 - E-Zigarette (Set)',
+        'commonName' => 'Nord AIO 22',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > Smoktech',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Die Nord Aio 22 E-Zigarette der Marke Smok hat einen fest verbauten 2000mAh Akku und einen im Gerät integriertem 3,5 ml Tank. Sie bekommen hier ein Gerät welches sich an Um- und Einsteiger orientiert. Die Bedienung des Gerätes erfolgt nur über eine einzelne Funktionstaste (Feuertaste). Die E-Zigarette Nord Aio 22 von Smok kann über eine LED im Feuertaster den Akkustand der E-Zigarette anzeigen sobald ein bestimmter Ladezustand erreicht ist. Die Farben Grün, Orange und Rot signalisieren Ihnen den aktuellen Akkustand. 
+<br>
+<br>
+Der Tank der Smok Nord Aio 22 E-Zigarette fasst bis zu 3,5ml Liquid. Das Liquid wird via Top-Fill System von oben in den Tank eingefüllt. Zusammen mit der Nord Aio 22 E-Zigarette erhalten Sie einen Nord Mesh Verdampferkopf und einen Nord Regular Verdampferkopf. Der Nord Regular hat einen Widerstand von 1,4 Ohm und ist somit für das Dampfen von Mund zur Lunge ausgelegt. Für das Dampfen mit direkten Lungenzügen, eignet sich der der Nord Mesh Heads mit einem Widerstand von 0,6 Ohm. 
+<br>
+<br>
+Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem Gerät alleine ein, da Sie über die Heads gesteuert wird. Bei diesem Gerät sind trotz der kompakten Bauform  Sicherheitsrelevanten Funktionen inbegriffen, wie eine acht Sekunden Zugautomatik, Kurzschluss- und ein Tiefentladeschutz.
+Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertaster den Akkustand der E-Zigarette anzeigen sobald ein bestimmter Ladezustand erreicht ist. Die Farben Grün, Orange und Rot signalisieren Ihnen den aktuellen Akkustand, ist dieser Leer können Sie über das mitgelieferte USB-Kabel Laden.',
+    ),
+    'AK100MA' => array(
+        'icNumber' => 'AK100MA',
+        'number' => 'AK100MA',
+        'name' => 'Advken - Manta RTA - Clearomizer (Set)',
+        'commonName' => 'Manta RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'VERDAMPFER > Selbstwickler > Advken',
+        'supplier' => 'Advken',
+        'brand' => 'Advken',
+        'piecesPerPack' => 1,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Aus dem Hause Advken kommt ein Rebuildable Tank Atomizer kurz RTA mit dem Namen Manta. Dieser ist durch den genormten 510er Pin mit den meisten Akkus/Akkuträgern kombinierbar. Der Manta kommt mit einem vorinstallierten 4,5ml Bubble Glastank, kann allerdings auch auf 3,5ml gewechselt werden. Bei dem Dual-Coil Clearomizer müssen die die Wicklungen selber verbaut werden. Dies können Sie mit dem im Lieferumfang enthaltenen Sechskantschlüssel machen. Die Airflow Control wird durch je drei Öffnungen an den Seiten der Verdampferbasis geregelt und ist stufenlos einstellbar.
+<br>
+<br>
+<b>Lieferumfang</b>
+<li>1x Manta RTA Clearomizer</li>
+<li>1x Ersatzglas 3,5ml</li>
+<li>1x Sechskantschlüssel</li>
+<li>1x Ersatzteil-Set</li>
+<br>
+<br>
+<b>Wichtige Merkmale/b>
+<ul>
+<li>Durchmesser: 24 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Top Filling</li>
+<li>Tankvolumen: 4,5ml</li>
+<li>Rebuildable Tank Atomizer</li>
+<li>subohm-fähig</li>
+<li>Dual-Coil Clearomizer</li>
+</ul>
+',
+    ),
+    'AK100MAG' => array(
+        'icNumber' => 'AK100MAG',
+        'number' => 'AK100MAG',
+        'name' => 'Advken - Manta RTA - Glastank',
+        'commonName' => 'Manta RTA',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz > Advken',
+        'supplier' => 'Advken',
+        'brand' => 'Advken',
+        'piecesPerPack' => 1,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Der Advken Manta RTA Glastank ist der passende Zubehörartikel für den Advken Manta Clearomizer. Der Glastank ist in zwei Varianten zu haben. Es gibt eine 4,5ml Bubble Variante oder eine normale 3,5ml Variante. Bei Bedarf sind die Glastanks eigenständig austauschbar.
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<li>Tankvolumen: 3,5ml oder 4,5ml</li>
+<br>',
+    ),
+    'DR100L10-WN' => array(
+        'icNumber' => 'DR100L10-WN',
+        'number' => 'DR100L10-WN',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Watermelon Ice - Nikotinsalz Liquid - 10 ml',
+        'commonName' => 'Watermelon Ice',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Dr. Frost',
+        'supplier' => 'Dr. Frost',
+        'brand' => 'Dr. Frost',
+        'piecesPerPack' => 1,
+        'flavor' => 'Wassermelone, Koolada',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'DR100L10-BN' => array(
+        'icNumber' => 'DR100L10-BN',
+        'number' => 'DR100L10-BN',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Strawberry Ice - Nikotinsalz Liquid - 10 ml',
+        'commonName' => 'Strawberry Ice',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Dr. Frost',
+        'supplier' => 'Dr. Frost',
+        'brand' => 'Dr. Frost',
+        'piecesPerPack' => 1,
+        'flavor' => 'Erdbeere, Koolada',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'DR100L10-ON' => array(
+        'icNumber' => 'DR100L10-ON',
+        'number' => 'DR100L10-ON',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Orange Mango Ice - Nikotinsalz Liquid - 10 ml',
+        'commonName' => 'Orange Mango Ice',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Dr. Frost',
+        'supplier' => 'Dr. Frost',
+        'brand' => 'Dr. Frost',
+        'piecesPerPack' => 1,
+        'flavor' => 'Orange, Mango, Koolada',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'DR100L10-GN' => array(
+        'icNumber' => 'DR100L10-GN',
+        'number' => 'DR100L10-GN',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Grape Ice - Nikotinsalz Liquid - 10 ml',
+        'commonName' => 'Grape Ice',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Dr. Frost',
+        'supplier' => 'Dr. Frost',
+        'brand' => 'Dr. Frost',
+        'piecesPerPack' => 1,
+        'flavor' => 'Traube, Koolada',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'DR100L10-HN' => array(
+        'icNumber' => 'DR100L10-HN',
+        'number' => 'DR100L10-HN',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Honeydew Blackcurrant Ice - Nikotinsalz Liquid - 10 ml',
+        'commonName' => 'Honeydew Blackcurrant Ice',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Dr. Frost',
+        'supplier' => 'Dr. Frost',
+        'brand' => 'Dr. Frost',
+        'piecesPerPack' => 1,
+        'flavor' => 'Honigmelone, schwarze Johannisbeere, Koolada',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'DR100L10-CN' => array(
+        'icNumber' => 'DR100L10-CN',
+        'number' => 'DR100L10-CN',
+        'name' => 'Dr. Frost - Polar Ice Vapes - Cherry Ice - Nikotinsalz Liquid - 10 ml',
+        'commonName' => 'Cherry Ice',
+        'type' => 'LIQUID',
+        'category' => 'LIQUIDS > Dr. Frost',
+        'supplier' => 'Dr. Frost',
+        'brand' => 'Dr. Frost',
+        'piecesPerPack' => 1,
+        'flavor' => 'Kirsche, Koolada',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'MA100A10-GT' => array(
+        'icNumber' => 'MA100A10-GT',
+        'number' => 'MA100A10-GT',
+        'name' => 'Mùa - Grüntee mit Zitrone - Aroma - 20 ml',
+        'commonName' => 'Grüntee mit Zitrone',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Mùa',
+        'supplier' => 'Mùa',
+        'brand' => 'Mùa',
+        'piecesPerPack' => 1,
+        'flavor' => 'grüner Tee, Zitrone',
+        'dosage' => '17',
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Das Mùa Arome Grüntee mit Zitrone entfaltet beim Dampfen den Geschmack von einem Grünentee und Zitrone. Sie erhalten insgesamt 20ml Arome, welches in einer 120ml Flasche vorgefüllt ist. Beachten Sie, das Aromen nicht zum puren Dampfen geeignet. sind.
+',
+    ),
+    'MA100A10-KB' => array(
+        'icNumber' => 'MA100A10-KB',
+        'number' => 'MA100A10-KB',
+        'name' => 'Mùa - Kirsche Banane - Aroma - 20 ml',
+        'commonName' => 'Kirsche Banane',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Mùa',
+        'supplier' => 'Mùa',
+        'brand' => 'Mùa',
+        'piecesPerPack' => 1,
+        'flavor' => 'Kirsche, Banane',
+        'dosage' => '17',
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Mit einer Flasche erhalten Sie 20ml Mùa Aroma Kirsche Banane. Das Aroma ist abgefüllt in einer 120ml Leeflasche. Das Aroma Kirsche Banane entfalten beim Dampfen das Aroma von Kirsche und Banane. Achten Sie darauf, das es sich um hochkonzentriertes Konzentrat handelt und deshalb nicht pur gedampft werden sollte. ',
+    ),
+    'MA100A10-PT' => array(
+        'icNumber' => 'MA100A10-PT',
+        'number' => 'MA100A10-PT',
+        'name' => 'Mùa - Pfirsichtee - Aroma - 20 ml',
+        'commonName' => 'Pfirsichtee',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Mùa',
+        'supplier' => 'Mùa',
+        'brand' => 'Mùa',
+        'piecesPerPack' => 1,
+        'flavor' => 'Pfirsichtee',
+        'dosage' => '17',
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Das Pfirischtett Aroma von Mùa ist dochdosierit und eigentet sich nicht zum purfen Dampfen. Beim Dampfen wird der Geschmack von einem Pfirsichtett frei gesetzt. Mit einer Flasche erhalten Sie 20ml, das in einer 120ml Flasche abgefüllt ist.',
+    ),
+    'MA100A10-WN' => array(
+        'icNumber' => 'MA100A10-WN',
+        'number' => 'MA100A10-WN',
+        'name' => 'Mùa - Waffelnuss - Aroma - 20 ml',
+        'commonName' => 'Waffelnuss',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Mùa',
+        'supplier' => 'Mùa',
+        'brand' => 'Mùa',
+        'piecesPerPack' => 1,
+        'flavor' => 'Waffel, Nuss',
+        'dosage' => '17',
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Den Geschmack von eiiner Schokoladen-Waffel bekommen Sie mit dem Mùa Aroma Waffelnuss. Das Aroma bekommen Sie in der Longfill-Varianten, dabei sind 20ml von dem Aroma in der 120ml Flasche abgefüllt. Zum puren Dampfen sind die Aroman von Mùa nicht geeignet.',
+    ),
+    'FC100L10-BA' => array(
+        'icNumber' => 'FC100L10-BA',
+        'number' => 'FC100L10-BA',
+        'name' => 'The Fog Clown - Ice Cream - Banos - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Banos',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > The Fog Clown',
+        'supplier' => 'The Fog Clown',
+        'brand' => 'The Fog Clown',
+        'piecesPerPack' => 1,
+        'flavor' => 'Bananensplit',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: . Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'FC100L10-TW' => array(
+        'icNumber' => 'FC100L10-TW',
+        'number' => 'FC100L10-TW',
+        'name' => 'The Fog Clown - Ice Cream - Twistos - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Twistos',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > The Fog Clown',
+        'supplier' => 'The Fog Clown',
+        'brand' => 'The Fog Clown',
+        'piecesPerPack' => 1,
+        'flavor' => 'Limette, Vanille, Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: . Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'FC100L10-RA' => array(
+        'icNumber' => 'FC100L10-RA',
+        'number' => 'FC100L10-RA',
+        'name' => 'The Fog Clown - Ice Cream - Raspos - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Raspos',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > The Fog Clown',
+        'supplier' => 'The Fog Clown',
+        'brand' => 'The Fog Clown',
+        'piecesPerPack' => 1,
+        'flavor' => 'Himbeere, Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: . Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
 );

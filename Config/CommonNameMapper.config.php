@@ -20,6 +20,7 @@ return [
         ],
         'The Fog Clown' => [
             'Energy Series' => 2,
+            'Ice Cream' => 2,
         ],
         '5 Stars Peine' => [
             'Flavor Monster'    => 2,

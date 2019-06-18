@@ -23,8 +23,6 @@ class ImportMapping extends AbstractProductImport
             $product->setType($record['type']);
             $product->setName($record['name']);
         }
-
-
         $this->modelManager->flush();
     }
 }

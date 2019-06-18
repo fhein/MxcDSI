@@ -8,8 +8,9 @@ class ImportDosage extends AbstractProductImport
 {
     protected function processImportData()
     {
+        $repository = $this->modelManager->getRepository(Product::class);
         /** @noinspection PhpUndefinedMethodInspection */
-        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
+        $products = $repository->getAllIndexed();
         foreach ($this->data as $record) {
             /** @var Product $product */
             $product = $products[$record['icNumber']];
@@ -20,7 +21,6 @@ class ImportDosage extends AbstractProductImport
             $dosage = implode('-', $values);
             $product->setDosage($dosage);
         }
-
 
         $this->modelManager->flush();
     }

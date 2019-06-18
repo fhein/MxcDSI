@@ -79,7 +79,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             'mxcDev6',
             'mxcDev7',
             'mxcDev8',
-
         );
     },
 
@@ -89,8 +88,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
         items = Ext.Array.insert(items, 0, [
             me.createActionsButton(),
             me.createExcelButton(),
-            me.createAllButton(),
             me.createSelectionButton(),
+            me.createAllButton(),
             me.createToolsButton(),
             me.createTestButton(),
             me.createDevButton()
@@ -338,7 +337,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
             ]
         });
-        me.selectionButton = Ext.create('Ext.button.Button', {
+        me.allButton = Ext.create('Ext.button.Button', {
             text: 'All products',
             iconCls: 'sprite-duplicate-article',
             menu: menu,
@@ -348,7 +347,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 }
             }
         });
-        return me.selectionButton;
+        return me.allButton;
     },
 
     createToolsButton: function() {

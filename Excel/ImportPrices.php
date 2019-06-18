@@ -38,7 +38,6 @@ class ImportPrices extends AbstractProductImport
         }
         $this->updatePrices();
 
-
         $this->modelManager->flush();
     }
 

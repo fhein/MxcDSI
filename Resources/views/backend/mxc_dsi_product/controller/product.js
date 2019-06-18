@@ -196,7 +196,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Create all Shopware articles';
         let maskText = 'Creating all Shopware articles ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
     },
 
     onDeleteAll: function (grid) {
@@ -205,7 +205,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Delete all Shopware articles';
         let maskText = 'Delete all Shopware articles ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
     },
 
     onRemapProperties: function (grid) {
@@ -214,7 +214,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Remap properties';
         let maskText = 'Reapplying product property mapping ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
     },
 
     onRemapPropertiesSelected: function (grid) {
@@ -259,7 +259,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Update images';
         let maskText = 'Updating images ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
     },
 
     onUpdateImagesSelected: function (grid) {
@@ -289,7 +289,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Update categories';
         let maskText = 'Updating categories ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
     },
 
     onUpdateCategoriesSelected: function (grid) {
@@ -555,6 +555,16 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         });
         console.log(ids);
         return Ext.JSON.encode(ids);
+    },
+
+    doRequestConfirm: function(grid, url, params, growlTitle, maskText, reloadGrid) {
+        let me = this;
+        Ext.MessageBox.confirm(growlTitle, 'Für alle Produkte durchführen?', function (response) {
+            if (response !== 'yes') {
+                return false;
+            }
+            me.doRequest(grid, url, params, growlTitle, maskText, reloadGrid);
+        });
     },
 
     doRequest: function(grid, url, params, growlTitle, maskText, reloadGrid) {

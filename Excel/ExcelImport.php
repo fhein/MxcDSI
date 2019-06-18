@@ -2,11 +2,16 @@
 
 namespace MxcDropshipInnocigs\Excel;
 
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipInnocigs\Models\Product;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
 use RuntimeException;
 
-class ExcelImport
+class ExcelImport implements ModelManagerAwareInterface
 {
+    use ModelManagerAwareTrait;
+
     protected $importers;
 
     protected $excelFile = __DIR__ . '/../Config/vapee.export.xlsx';
@@ -28,6 +33,9 @@ class ExcelImport
             $importer->import($sheet);
             $isFileImported = true;
         }
+        if ($isFileImported) {
+            $this->modelManager->getRepository(Product::class)->exportMappedProperties();
+        }
         return $isFileImported;
     }
 
@@ -43,6 +51,7 @@ class ExcelImport
         $sheet = $spreadSheet->getSheetByName($sheetName);
         if (! $sheet) return false;
         $importer->import($sheet);
+        $this->modelManager->getRepository(Product::class)->exportMappedProperties();
         return true;
     }
 

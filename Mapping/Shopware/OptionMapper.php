@@ -156,15 +156,16 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
      * Create and setup a configurator set for a Shopware article
      *
      * @param Product $product
-     * @return null|Set
+     * @return array|null
      */
     public function updateConfiguratorSet(Product $product)
     {
-        if (! $this->needsUpdate($product)) {
+        $needsUpdate = $this->needsUpdate($product);
+        if (! $needsUpdate) {
             $this->log->debug('Configurator set does not require an update.');
             /** @var Article $article */
             $article = $product->getArticle();
-            return $article->getConfiguratorSet();
+            return [ $needsUpdate, $article->getConfiguratorSet()];
         }
 
         $validVariants = $this->getValidVariants($product);
@@ -175,10 +176,10 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
                 __FUNCTION__,
                 $product->getNumber()
             ));
-            return null;
+            return [ $needsUpdate, null ];
         }
 
         $this->createShopwareGroupsAndOptions($validVariants);
-        return $this->createConfiguratorSet($product, $validVariants);
+        return [$needsUpdate, $this->createConfiguratorSet($product, $validVariants)];
     }
 }

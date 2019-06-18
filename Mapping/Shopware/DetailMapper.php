@@ -79,7 +79,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             return;
         }
 
-        $configuratorSet = $this->optionMapper->updateConfiguratorSet($product);
+        list($needsOptionUpdate, $configuratorSet) = $this->optionMapper->updateConfiguratorSet($product);
         $article->setConfiguratorSet($configuratorSet);
 
         $variants = $product->getVariants();
@@ -87,7 +87,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $isMainDetail = true;
         /** @var Variant $variant */
         foreach ($variants as $variant) {
-            $detail = $this->getDetail($variant);
+            $detail = $this->getDetail($variant, $needsOptionUpdate);
             if ($detail === null) continue;
 
             $detail->setKind(2);
@@ -105,9 +105,10 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
      * If the detail does not exist, it will be created.
      *
      * @param Variant $variant
+     * @param bool $needsOptionUpdate
      * @return Detail|null
      */
-    public function getDetail(Variant $variant)
+    public function getDetail(Variant $variant, bool $needsOptionUpdate)
     {
         $detail = $variant->getDetail();
 
@@ -120,9 +121,11 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         if ($detail) {
             // Update existing detail
             $this->setShopwareDetailProperties($variant);
-            $configuratorOptions = $detail->getConfiguratorOptions();
-            $configuratorOptions->clear();
-            $detail->setConfiguratorOptions(new ArrayCollection($variant->getShopwareOptions()));
+            if ($needsOptionUpdate) {
+                $configuratorOptions = $detail->getConfiguratorOptions();
+                $configuratorOptions->clear();
+                $detail->setConfiguratorOptions(new ArrayCollection($variant->getShopwareOptions()));
+            }
             return $detail;
         }
 
