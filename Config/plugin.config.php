@@ -34,6 +34,7 @@ use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
 use MxcDropshipInnocigs\Mapping\Import\CommonNameMapper;
 use MxcDropshipInnocigs\Mapping\Import\CompetitorPricesMapper;
+use MxcDropshipInnocigs\Mapping\Import\ContentMapper;
 use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
 use MxcDropshipInnocigs\Mapping\Import\DosageMapper;
 use MxcDropshipInnocigs\Mapping\Import\FlavorMapper;
@@ -73,10 +74,10 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRe
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 
 return [
-    'plugin'       => [
+    'plugin'   => [
         MappingFilePersister::class,
     ],
-    'doctrine'     => [
+    'doctrine' => [
         'models'     => [
             Group::class,
             Model::class,
@@ -146,17 +147,18 @@ return [
             AssociatedArticlesMapper::class  => AugmentedObjectFactory::class,
             VariantMappingConsistency::class => AugmentedObjectFactory::class,
 
+            ArticleTool::class                 => AugmentedObjectFactory::class,
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
             ConfiguratorSetRepository::class   => AugmentedObjectFactory::class,
+            DescriptionExport::class           => AugmentedObjectFactory::class,
             FilterGroupRepository::class       => AugmentedObjectFactory::class,
             MappingFilePersister::class        => AugmentedObjectFactory::class,
             MediaTool::class                   => AugmentedObjectFactory::class,
-            ArticleTool::class                 => AugmentedObjectFactory::class,
-            DescriptionExport::class           => AugmentedObjectFactory::class,
 
             CategoryTool::class => AugmentedObjectFactory::class,
 
             DosageMapper::class           => MappingConfigFactory::class,
+            ContentMapper::class          => MappingConfigFactory::class,
             FlavorMapper::class           => MappingConfigFactory::class,
             CompetitorPricesMapper::class => MappingConfigFactory::class,
 

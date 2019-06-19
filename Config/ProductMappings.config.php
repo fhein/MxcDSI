@@ -15,28 +15,61 @@ return array(
         'base' => null,
         'retailPriceDampfplanet' => '20.95',
         'retailPriceOthers' => '22.95',
-        'description' => 'Der Nautilus Clearomizer wird zusammen mit 2 Heads aus der BVC-Serie geliefert. Beide Heads sind für das moderate Dampfen geeignet, da der eine Head einen Widerstand von 1,6 Ohm und der andere von 1,8 Ohm hat. Der Tank fasst 5 Milliliter Liquid und der gesamte Clearomizer ist 8,37 cm lang.
-<br>
-<br>
-<b>Lieferumfang:</b>
+        'description' => '<p><br>Der Aspire Nautilus galt viele Jahre unbestritten als&nbsp;bester Verdampfer den Mouth-To-Lung-Stil (MTL). Beim MTL-Stil zieht man wie bei einer Zigarette den Dampf zunächst in den Mund, setzt dann die E-Zigarette ab, und inhaliert dann den Dampf aus dem Mund in die Lunge.</p>
+<p>Charakteristisch ist das eigenwillige und edle Vintage-Design des Aspire Nautilus. Dieser Verdampfer zieht die Blicke auf sich. Ob am Arbeitsplatz oder beim Theaterbesuch: Der Nautilus passt zu jedem Outfit und sieht in jedem Rahmen einfach schön und edel aus.</p>
+<p>Der Aspire Nautilus verwendet Aspire BVC-Verdampferköpfe (Bottom Vertical Coil). Diese verfügen über eine einzige Heizwendel, die senkrecht in den Kopf eingebaut ist. Umgeben ist die Heizwendel von einer porösen Keramik, die als Liquidspeicher dient. Anders als andere Speichermaterialen garantiert die Keramik einen sehr authentischen Geschmack gleich vom ersten Zug an.&nbsp;</p>
+<p>Für den Aspire Nautilus werden BVC-Verdampferköpfe mit Widerstandswerten von 1,6 und 1,8 Ohm angeboten. Beide Köpfe sind gut und unterscheiden sich im Erleben kaum. Der 1,8 Ohm Kopf entwickelt den Geschmack unserer Ansicht nach allenfalls geringfügig besser als der 1,6 Ohm Kopf.&nbsp;</p>
+<p>Der großzügige 5 ml Glas-Pyrex-Tank gibt Ihnen die Sicherheit, dass Ihnen nicht so leicht das Liquid ausgeht. Die allermeisten Anwender kommen mit einer Füllung mindestens gut über den Tag.</p>
+<p>Zum Nachfüllen von Liquid schrauben Sie den Verdampfer vom Akkuträger und drehen ihn auf den Kopf. Nun schrauben Sie die Basis des Verdampfers ab und füllen Liquid nach. Auch wenn dies nicht die bequemste Methode der Befüllung ist, so hat sie doch den großen Vorteil, dass sie es Ihnen ermöglicht, einen defekten oder verbrauchten Verdampferkopf auszuwechseln, ohne dass der der Tank des Nautilus dafür entleert werden müsste, wie es bei den meisten anderen Verdampfern nötig ist.</p>
+<p>Der über den unteren Ring verstellbare Luftstromregler hat vier feste Einstellungen. Wählen Sie die Einstellung so, dass Ihnen der Widerstand, den Sie beim Ziehen spüren, am angenehmsten ist.</p>
+<p>Aufgrund seiner ausgewogenen Konstruktion ist der Aspire Nautilus ein besonderer Verdampfer mit einer Geschmacks- und Dampfentwicklung, die bis heute nur selten übertroffen wurde. Der Nachfolger und jüngere Bruder des Aspire Nautilus hat das allerdings geschafft. Der Aspire Nautilus 2 schmeckt noch besser. Sein Tank fasst allerdings nur 2 ml, mit denen Sie nicht unbedingt über den Tag kommen. Deshalb kann der Aspire Nautilus 2 seinen älteren Bruder nicht ersetzen. Aber bereichern kann er ihn. Am schönsten ist es, man hat beide.</p>
+<p><strong>Eigenschaften Nautilus Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>23,5 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>83,7 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas, Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>4 Stufen, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Basis entfernen zum Befüllen des Tanks</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<p><br><strong>Lieferumfang</strong></p>
 <ul>
-<li>1x Nautilus Tank</li>
-<li>1x BVC Atomizer Head 1,8 Ohm</li>
-<li>1x BVC Atomizer Head 1,6 Ohm</li>
-<li>1x eGo Cone</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
-<ul>
-<li>Tankvolumen: 5 ml</li>
-<li>Durchmesser: 2,35 cm</li>
-<li>Länge: 8,37 cm</li>
-<li>510er Gewinde</li>
-</ul>
-<br>
-<br>',
+<li>1 x Nautilus Clearomizer</li>
+<li>1 x BVC Head 1,6 Ohm</li>
+<li>1 x BVC Head 1,8 Ohm</li>
+<li>1 x Mundstück</li>
+<li>1 x Ersatz-Glastank</li>
+<li>1 x Adapter auf EGO Akkus</li>
+<li>1 x Bedienungsanleitung</li>
+</ul>',
     ),
     'AS10000NAUTTANK' => array(
         'icNumber' => 'AS10000NAUTTANK',
@@ -455,7 +488,7 @@ Das Liquid erreicht die Heizdrähte durch spezielle Keramikfasern. Diese stellen
         'number' => 'SC10000L10-TOT',
         'name' => 'SC - Tobacco Probierbox - Liquid (10 Stück pro Packung)',
         'commonName' => 'Tobacco Probierbox',
-        'type' => 'LIQUID',
+        'type' => 'LIQUID_BOX',
         'category' => 'LIQUIDS > SC',
         'supplier' => 'InnoCigs',
         'brand' => 'SC',
@@ -557,7 +590,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'number' => 'SC10000L10-FRT',
         'name' => 'SC - Fruit Probierbox - Liquid (10 Stück pro Packung)',
         'commonName' => 'Fruit Probierbox',
-        'type' => 'LIQUID',
+        'type' => 'LIQUID_BOX',
         'category' => 'LIQUIDS > SC',
         'supplier' => 'InnoCigs',
         'brand' => 'SC',
@@ -1905,7 +1938,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'number' => 'SC10000L10-GOU',
         'name' => 'SC - Gourmet Probierbox - Liquid (10 Stück pro Packung)',
         'commonName' => 'Gourmet Probierbox',
-        'type' => 'LIQUID',
+        'type' => 'LIQUID_BOX',
         'category' => 'LIQUIDS > SC',
         'supplier' => 'InnoCigs',
         'brand' => 'SC',
@@ -3367,7 +3400,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'name' => 'Vampire Vape - Dawn - Liquid - 10 ml',
         'commonName' => 'Dawn',
         'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Frisches#!#LIQUIDS > Früchte#!#LIQUIDS > Vampire Vape',
+        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > Frisches#!#LIQUIDS > Vampire Vape',
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
@@ -3376,7 +3409,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
         'retailPriceOthers' => '4.80',
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Koolada, dunkle Waldfrüchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Koolada, dunkle Waldfrüchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: dunkle Waldfrüchte, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>dunkle Waldfrüchte, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-DK' => array(
         'icNumber' => 'VV100L10-DK',
@@ -4368,7 +4401,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'name' => 'Vampire Vape - VLADS VG - Attraction Fatal - Liquid - 10 ml',
         'commonName' => 'Attraction Fatal',
         'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > Frisches#!#LIQUIDS > Beeren#!#LIQUIDS > Vampire Vape',
+        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > Beeren#!#LIQUIDS > Frisches#!#LIQUIDS > Vampire Vape',
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
@@ -4377,7 +4410,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'base' => null,
         'retailPriceDampfplanet' => '5.90',
         'retailPriceOthers' => '4.85',
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Früchte, Koolada, rote Beeren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Früchte, Koolada, rote Beeren</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Früchte, rote Beeren, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Früchte, rote Beeren, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'VV100L10-BB' => array(
         'icNumber' => 'VV100L10-BB',
@@ -9661,31 +9694,109 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'base' => null,
         'retailPriceDampfplanet' => '21.85',
         'retailPriceOthers' => '22.90',
-        'description' => 'Das Exceed D19 E-Zigaretten Set von der Marke InnoCigs verfügt über einen fest verbauten Akku mit einer Kapazität von 1.500 mAh. Der Tank des im Set enthaltenen Exceed D19 Verdampfers kann bis zu 2ml Liquid aufnehmen und wird per Top-Filling-System befüllt. Den Akku des Gerätes können Sie mit dem beiliegenden Micro-USB Kabel aufladen. Die Ausgangsleistung liegt zwischen 8 bis maximal 35 Watt. Über eine in der Base integrierte Airflow-Control lässt sich der Luftwiderstand des Verdampfers Ihren persönlichen Dampfgewohnheiten anpassen. Im Lieferumfang erhalten Sie passend zwei Verdampferköpfe der EX-Serie, diese haben einen Widerstand von 0,5 Ohm und 1,2 Ohm. Daher ist die E-Zigarette sowohl für das Subohm- als auch für das moderate Dampfen geeignet.
-<br>
-<br>
-<b>Lieferumfang:</b>
-<ul><li>1x Exceed D19 Akku</li>
-<li>1x Exceed D19 Clearomizer</li>
-<li>1x EX Head 0,5 Ohm</li>
-<li>1x EX Head 1,2 Ohm</li>
-<li>1x Ersatzteil-Set</li>
-<li>1x QC-USB-Ladekabel</li>
-<li>2x Bedienungsanleitungen</li></ul><br>
-<br>
-<b>Wichtige Merkmale Exceed D19 Akku:</b>\\n<ul><li>Akkukapazität: 1.500 mAh</li>
-<li>Ausgabemodi: direkte Ausgabe / konstante Spannungsausgabe</li>
-<li>Ausgangsleistung: 8 bis 35 Watt</li>
-<li>Maße: 19,0 mm x 19,0 mm x 76,0 mm</li></ul><br>
-<br>
-<b>Wichtige Merkmale Exceed D19 Clearomizer:</b>\\n<ul><li>Tankvolumen: 2 ml</li>
-<li>Top-Filling-System</li>
-<li>Airflow-Control</li>
-<li>Höhe: 46,5 mm</li>
-<li>Durchmesser: 19 mm</li>
-<li>510er Gewinde</li></ul><br>
-<br>
-',
+        'description' => '<p><br>Mit dem Joyetech Exceed D19 Starterset, das wir unter der Marke InnoCigs vertreiben, erwerben Sie eine kompakte, elegante und dezente E-Zigarette. Außer einem Liquid, das Ihnen gut schmeckt, benötigen Sie nichts weiter. Sie können direkt loslegen.</p>
+<p>Zwar ist die Exceed D19 länger und dicker als eine Zigarette, aber der Unterschied ist nicht sehr groß. Sie passt deshalb gut in die Tasche Ihrer Jeans, und selbst in der Innentasche Ihres Jackets trägt sie nicht auf. Auch sitzt Ihr Anzug mit Exceed D19 in der Innentasche weiterhin perfekt. Das ist bei schwereren Geräten nicht unbedingt der Fall.</p>
+<p>Wenn Sie nicht darauf aus sind, mit Ihrer E-Zigarette großes Aufsehen zu erregen, sondern einen etwas zurückhaltenderen Auftritt bevorzugen, wird die Exceed D19 Ihnen ein guter Begleiter sein.</p>
+<p>Die Dampf- und Geschmacksentwicklung ist für eine solch kleine E-Zigarette sehr gut. So gut sogar, dass auch erfahrene Anwender gern zur Exceed D19 greifen, wenn sie z.B. beruflich unterwegs sind oder sich in Gesellschaft bewegen möchten. Mit der Exceed D19 können Sie sicher sein, die Mitmenschen in Ihrer Umgebung nicht mit Ihrer Leidenschaft für das Dampfen zu stören.</p>
+<p><strong>Exceed D19 Akku</strong></p>
+<p>Die Exceed D19 verfügt über zwei Betriebsarten. Voreingestellt ist der Betrieb mit Konstantspannung. Das bedeutet, dass die Exceed D19 unabhängig vom Ladezustand des Akkus die Spannung, die am Stromkreis der Heizwendel anliegt, konstant hält. Für ein gleichmäßiges und zufriedenstellendes Dampferlebnis empfehlen wir, die Exceed D19 in dieser Voreinstellung zu belassen.</p>
+<p>Die andere Betriebsart ist der Direktmodus. In diesem Modus sinkt die Spannung im Stromkreis der Heizwendel zusammen mit der Akkuladung. Dies ermöglicht eine etwas höhere Dampfleistung bei gut geladenem Akku, die aber nicht lange anhält.</p>
+<p>Weitere Einstellpflichten erlegt Ihnen die Exceed D19 nicht auf. Damit macht sie Einsteigern das Leben leicht. Einfach Feuerknopf drücken und an der E-Zigarette ziehen. Weitere Einstellmöglichkeiten bietet die Exceed D19 allerdings auch nicht an, so dass sie für einen erfahrenen Dampfer eher ein Gerät für zwischendurch sein kann, wenn es mal klein und einfach sein soll.</p>
+<p>Der fest eingebaute Akku der Exceed D19 verfügt über eine Kapazität von 1.500 mAh. Das Gerät wird über seinen USB-C Anschluss (Micro-USB) aufgeladen. Die Ladezeit bei 1 A Ladestrom beträgt etwa 2 Stunden. Das Gerät kann während des Aufladens benutzt werden. Wenn Sie Vieldampfer sind, ist es wahrscheinlich, dass Sie mit einer Akkuladung nicht über den Tag kommen. Auch deswegen wird die Exceed D19 häufig als zusätzliches Gerät für die besondere Gelegenheit eingesetzt.</p>
+<p><strong>Exceed D19 Verdampfer</strong></p>
+<p>Befüllt wird der Verdampfer von oben (Top-Filling-System). Dazu ziehen Sie das Mundstück etwas heraus, wodurch der Mechanismus entriegelt wird. Diese Sicherung schützt Ihre kleinen Kinder, die das Gerät nicht leicht öffnen können. Und sie schützt Ihre Kleidung, da sich der Verdampfer nicht unbeabsichtigt in der Hosentasche öffnen kann.</p>
+<p>Nach der Entriegelung kann der obere Teil des Verdampfers zur Seite geschoben werden, und die Öffnungen zum Nachfüllen werden sichtbar. Die Öffnungen sind wegen des geringen Durchmessers des Verdampfers recht klein geraten, so dass das Nachfüllen aus der Liquid-Flasche sehr sorgfältig und mit geringem Druck erfolgen sollte, um ein Überlaufen zu vermeiden.</p>
+<p>Der Verdampfer der Exceed D19 verfügt über einen Einstellring, mit dem Sie den Zugwiderstand nach Ihrem Geschmack stufenlos regulieren können. Bei fast geschlossener Luftzufuhr entspricht der Zugwiderstand recht gut dem Zugwiderstand einer Zigarette.</p>
+<p>Das Mundstück der Exceed D19 ist nicht wechselbar. Der Verdampfer der Exceed D19 verfügt über einen 510er Gewindeanschluss.</p>
+<p>Es werden zwei Verdampferköpfe mitgeliefert, einer mit 1,2 Ohm und einer mit 0,5 Ohm. Der 1,2 Ohm Kopf ist für das Dampfen im MTL-Stil (Mouth To Lung) gedacht, bei dem Sie wie bei der Zigarette zunächst Dampf in den Mund ziehen, und ihn dann inhalieren. Der 0,5 Ohm Kopf soll den DL-Stil (Direct Lung) ermöglichen, bei dem Sie den Dampf aus der E-Zigarette direkt bis in die Lunge ziehen.</p>
+<p>Tatsächlich ist die Exceed D19 für Liebhaber des DL-Stils nicht gut geeignet, da die Leistung und Dampfentwicklung unzureichend und der Zugwiderstand selbst bei voll geöffneter Luftzufuhr zu hoch ist. Wir empfehlen diese E-Zigarette daher nur für den MTL-Stil, der auch mit dem 0,5 Ohm Verdampferkopf angenehm ist.</p>
+<p><strong>Eigenschaften Joyetech Exceed D19 Akku</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Stromversorgung</td>
+<td>eingebauter Akku</td>
+</tr>
+<tr>
+<td>Kapazität</td>
+<td>1.500 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>direkt | konstante Spannung</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>8 – 35 Watt</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>1 A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>19 mm x 19 mm x 76 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Eigenschaften Exceed D19 Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>46,5 mm</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>19 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Mundstück</td>
+<td>proprietär</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Befüllung von oben, verschiebbarer Deckel</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<p><br><strong>Lieferumfang:</strong></p>
+<ul>
+<li>1 x Exceed D19 Akku</li>
+<li>1 x Exceed D19 Clearomizer</li>
+<li>1 x EX Verdampferkopf 0,5 Ohm</li>
+<li>1 x EX Verdampferkopf 1,2 Ohm</li>
+<li>1 x Ersatzteil-Set</li>
+<li>1 x USB-C Ladekabel</li>
+<li>2 x Bedienungsanleitung</li>
+</ul>
+<p><strong>Hinweis:&nbsp;</strong>Dieses Produkt wird von Joyetech hergestellt und ist mit einer InnoCigs Markenbezeichnung versehen.</p>
+<p>&nbsp;&nbsp;</p>',
     ),
     'IC100EXA' => array(
         'icNumber' => 'IC100EXA',
@@ -22770,32 +22881,75 @@ strong>Lieferumfang</strong>
         'base' => null,
         'retailPriceDampfplanet' => '29.85',
         'retailPriceOthers' => '28.50',
-        'description' => 'Der Aspire Nautilus 2S ist ein Clearomizer für E-Zigaretten mit einem Tankvolumen von 2,6ml, integriertem Top Filling-System und regelbarer Airflow Control. Im Lieferumfang finden Sie zwei Heads aus der Nautilus 2S-Serie mit 0,4 und 1,8 Ohm. Der Head mit 0,4 Ohm ist für das Dampfen im Subohm-Bereich und der mit 1,8 Ohm für das Dampfen im moderaten Bereich ausgelegt. Der Nautilus 2S von Aspire kann mit Akkus/Akkuträgern mit 510er Gewinde kombiniert werden.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p><br>Der Aspire Nautilus 2S ist das Nachfolgemodell des geschmacklich überragenden Aspire Nautilus 2, der seinerseits dem Aspire Nautilus folgte, der viele Jahre unbestritten als bester Verdampfer für&nbsp;den Mouth-To-Lung-Stil (MTL) galt. Bei diesem Stil&nbsp; zieht man wie bei einer Zigarette den Dampf zunächst in den Mund, setzt die E-Zigarette ab, und inhaliert dann den Dampf aus dem Mund in die Lunge.</p>
+<p>Wesentliche Änderungen und Verbesserungen des Nautilus 2S betreffen das Befüllungssystem und das Belüftungssystem, das - zusammen mit neuen 0,4 Ohm Verdampferkopf - nun auch das Dampfen im Direct Lung-Stil (DL) ermöglicht. Dabei wird der Dampf direkt - ohne Zwischenstopp im Mund - aus dem Verdampfer in die Lunge inhaliert.</p>
+<p>Die für das neue Befüllungssystems nötigen Konstruktionsänderungen erforderten eine&nbsp; Überarbeitung des Designs. Es bleibt aber beim gefälligen Vintage-Look. Die charakteristische Kuppelwölbung des Aspire Nautilus&nbsp; 2 bleibt als Wiedererkennungsmerkmal erhalten. Das Dach der Kuppel ist flacher gestaltet als beim Nautilus 2. Die Kuppel muss nur dann vollständig abgeschraubt werden, wenn der Verdampferkopf gewechselt werden soll. Wie beim Nautilus 2 ist das Glas des Tanks durch zwei breite Öffnungen in der Kuppel sichtbar, so dass man den Füllstand des Verdampfers erkennen kann.</p>
+<p>Die Befüllung des Nautilus 2S wurde wesentlich verbessert und vereinfacht. Um Liquid nachzufüllen, wird die Verschraubung des Deckels der Metallkuppel, der das Mundstück trägt, gelöst. Anschließend kann der Deckel zur Seite geschoben werden und eine Einfüllöffnung wird sichtbar. Diese ist ausreichend groß, um aus üblichen Liquidflachen den Tank bequem befüllen zu können. Anschließend den Deckel zurückschieben und wieder festschrauben. Im verschraubten Zustand ist es nicht möglich, den Deckel zu verschieben. Es ist also ausgeschlossen, dass sich der Tankdeckel versehentlich in der Hosentasche öffnet.</p>
+<p>Wie beim Nautilus 2 ist es beim Nautilus 2S nicht möglich, den Verdampferkopf auszuwechseln, wenn der Tank noch Liquid enthält.</p>
+<p>Der Aspire Nautilus 2S verwendet die gleichen Aspire BVC-Verdampferköpfe (Bottom Vertical Coil) wie sein Vorgänger. Diese verfügen über eine einzige Heizwendel, die senkrecht in den Kopf eingebaut ist. Umgeben ist die Heizwendel von einer porösen Keramik, die als Liquidspeicher dient. Anders als andere Speichermaterialen garantiert die Keramik einen sehr authentischen Geschmack gleich vom ersten Zug an.</p>
+<p>Neben den von den Vorgängerversionen bekannten Versionen mit 0,7 Ohm, 1,6 Ohm und 1,8 Ohm steht für den Nautilus 2S ein weiterer Verdampferkopf mit 0,4 Ohm zur Verfügung. Der neue Verdampferkopf mit 0,4 Ohm ermöglicht das Dampfen im Direct-Lung-Stil (DL). Die Dampfentwicklung bleibt zwar hinter der von Verdampfern, die speziell für den DL-Stil entwickelt wurden, zurück, ist aber für einen Hybriden, der beide Dampf-Stile ermöglichen will, sehr ordentlich.&nbsp;</p>
+<p>Der Aspire Nautilus 2S wird mit zwei Mundstücken (Drip Tips) ausgeliefert. Das längere Mundstück besteht aus Edelstahl und erinnert an das Mundstück des ersten Nautilus Verdampfers. Das kürzere Mundstück besteht aus Kunststoff und erinnert an das Mundstück des Nautilus 2 Verdampfers. Die Geschmacksentwicklung ist mit dem kürzeren Mundstück etwas besser als mit dem langen Mundstück. Wir empfehlen dieses Mundstück für das Dampfen im MTL-Stil. Das längere Mundstück bietet sich für das größere Dampfvolumen im DL-Stil an.&nbsp;</p>
+<p>Der Tankvolumen des Aspire Nautilus 2S ist mit 2,6 ml größer als das des Nautilus 2: Dort mussten dem Genießer 2 ml Tankvolumen reichen. Dennoch empfiehlt es sich auch beim Nautilus 2S, unterwegs ein Fläschchen Liquid dabei zu haben, um nachfüllen zu können. Die meisten Dampfer kommen mit 2,6 ml nicht über den Tag.</p>
+<p>Der über den unteren Ring verstellbare Luftstromregler ist anders als beim Vorgänger stufenlos verstellbar. Dabei ist sowohl die großvolumige Öffnung der Luftzufuhr als auch die Regulierung über ein Raster von Belüftungsöffnungen vorgesehen. Möchten Sie Sie im DL-Stil mit dem 0,4 Ohm Verdampferkopf dampfen, so wählen Sie die großvolumige Öffnung nach Geschmack. Für den MTL-Stil wählen Sie die Einstellung über das Lochraster so, dass Ihnen der Widerstand, den Sie beim Ziehen spüren, am angenehmsten ist. Mit fast geschlossenem Luftstromregler können Sie einen Zugwiderstand einstellen, der recht genau dem einer Zigarette entspricht.</p>
+<p>Geschmacklich entspricht der Nautilus 2S in etwa dem originalen Aspire Nautilus. Er bleibt leicht hinter dem Nautilus 2 zurück. Da sich beide Verdampfer aber geschmacklich auf allerhöchstem Niveau bewegen, spüren Sie das im Alltag nicht. Die deutlich einfachere Handhabung des Nautilus 2S bei der Befüllung und der größere Tank machen den minimalen Unterschied ohnehin mehr als wett.</p>
+<p>Auch der Aspire Nautilus 2S ist wie seine Vorgänger ein besonderer Verdampfer. Die Eigenwilligkeiten der Vorgänger in der Handhabung sind aber nun Geschichte. Auch für weniger erfahrene Dampfer ist der Nautilus 2S deshalb sehr gut geeignet. Der Nautilus 2S sieht sehr gut aus und bietet Ihnen ein Geschmacks- und Dampf-Erlebnis, das nur von sehr wenigen anderen Geräten übertroffen wird.&nbsp;</p>
+<p><strong>Eigenschaften Nautilus 2S Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2,6 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>23 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>61,5 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas, Edelstahl, Aluminium</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Lochraster, großvolumiger Lüftungsschlitz, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Befüllung von oben, Schraub- und Schiebmechanismus des Deckels</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>MTL, DL</td>
+</tr>
+</tbody>
+</table>
+<p><br><strong>Lieferumfang</strong></p>
+<div class="row-fluid pconstruction mtm">
+<div class="col col-xs-12">
+<div class="pinfos enavm-div">
+<div class="pcharacteristics_delivery ">
+<div class="pdelivery">
 <ul>
-<li>1x Aspire Nautilus 2S Clearomizer</li>
-<li>1x Aspire Nautilus 2S Head 0,4 Ohm</li>
-<li>1x Aspire Nautilus 2S Head 1,8 Ohm</li>
-<li>1x Ersatz-Glastank</li>
-<li>1x Ersatz-Mundstück</li>
-<li>9x Dichtungsringe</li>
-<li>1x Bedienungsanleitung</li>
+<li>1 x Nautilus 2 Clearomizer</li>
+<li>1 x BVC Verdampferkopf 0,4 Ohm</li>
+<li>1 x BVC Verdampferkopf 1,8 Ohm</li>
+<li>1 x Ersatz-Glastank</li>
+<li>2 x Mundstück</li>
+<li>9 x Dichtungsring</li>
+<li>1 x Bedienungsanleitung&nbsp;</li>
 </ul>
-<br>
-<br>
-<strong>Nautilus 2S</strong>
-<ul>
-<li>Tankvolumen: 2,6 ml</li>
-<li>Airflow Control</li>
-<li>Top-Filling-System</li>
-<li>Gewindetyp: 510</li>
-<li>Höhe: 61,5 mm </li>
-<li>Durchmesser: 23 mm</li>
-</ul>
-<br>
-<br>',
+</div>
+</div>
+</div>
+</div>
+</div>',
     ),
     'FC100L10-GA' => array(
         'icNumber' => 'FC100L10-GA',
@@ -23440,25 +23594,6 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
 <li>Vaporesso NRG SE Clearomizer Set </li>
 <li>Vaporesso NRG Clearomizer</li>
 </ul>
-<br>
-<br>',
-    ),
-    'VS100TRVC' => array(
-        'icNumber' => 'VS100TRVC',
-        'number' => 'VS100TRVC',
-        'name' => 'Vaporesso - Veco - Clearomizer (Set)',
-        'commonName' => 'Veco',
-        'type' => 'CLEAROMIZER',
-        'category' => 'VERDAMPFER > Vaporesso',
-        'supplier' => 'Vaporesso',
-        'brand' => 'Vaporesso',
-        'piecesPerPack' => 1,
-        'flavor' => null,
-        'dosage' => null,
-        'base' => null,
-        'retailPriceDampfplanet' => '16.75',
-        'retailPriceOthers' => '17.50',
-        'description' => 'Der Clearomizer Veco Tank von der Marke Vaporesso kann mit seinem aus Pyrexglas hergestellten Tank bis zu 2 ml Liquid fassen. Über ein Top-Filling-System wird der Tank von oben befüllt. Hiefür lösen Sie vorsichtig die Top Cap vom Tank und können ihn anschließend mit Ihrem Liquid auffüllen. Der Veco Tank Clearomizer verfügt außerdem über eine Airflow-Control, welche in der Top Cap verbaut ist. Über die Airflow-Control können Sie die Luftzirkulation des Clearomizers einstellen. Je weiter die Airflow-Control offen steht, desto mehr Luft wird während des Vapens in den Verdampfer gezogen. Sie erhalten zwei kompatible Verdampferköpfe. Einen EUC Ceramic Head, der einen Widerstand von 0,5 Ohm aufweist und einen Traditional EUC Clapton Head mit einem Widerstand von 0,4 Ohm. Beide Heads liegen im Subohm-Bereich, Sie können den entstehenden Dampf direkt in die Lunge ziehen. Wenn Sie eine Veränderung Ihres Liquidgeschmacks feststellen muss der Verdampferkopf, der zu den Verschleißteilen zählt, gewechselt werden. Im Lieferumfang ist noch ein Ersatzglastank für Ihren Veco Tank Verdampfer enthalten. Im Bedarfsfall können Sie den Glastank ohne großen Aufwand und den Einsatz von Werkzeug eigenständig wechseln.
 <br>
 <br>',
     ),
@@ -40281,7 +40416,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => 'Das 7 Todsünden Aroma 3. Wollust schmeckt nach einem Cappucino mit Schokolade und Sahne. Bitte dampfen Sie Aromen nicht pur, sie sind hochkonzentiert und eigenen sich nicht dafür. Insgesamt erhalten Sie eine 60ml Flasche, die mit 10ml Ihres Aromas vorgefüllt sind.
+        'description' => 'Das 7 Todsünden Aroma 3. Wollust schmeckt nach einem Cappuccino mit Schokolade und Sahne. Bitte dampfen Sie Aromen nicht pur, sie sind hochkonzentiert und eigenen sich nicht dafür. Insgesamt erhalten Sie eine 60ml Flasche, die mit 10ml Ihres Aromas vorgefüllt sind.
 <br>
 <br>
 ',
@@ -41967,7 +42102,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'name' => 'Dr. Frost - Polar Ice Vapes - Watermelon Ice - Nikotinsalz Liquid - 10 ml',
         'commonName' => 'Watermelon Ice',
         'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Dr. Frost',
+        'category' => 'LIQUIDS > Melonen#!#LIQUIDS > Frisches#!#LIQUIDS > Dr. Frost',
         'supplier' => 'Dr. Frost',
         'brand' => 'Dr. Frost',
         'piecesPerPack' => 1,
@@ -41976,7 +42111,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Wassermelone, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'DR100L10-BN' => array(
         'icNumber' => 'DR100L10-BN',
@@ -41984,7 +42119,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'name' => 'Dr. Frost - Polar Ice Vapes - Strawberry Ice - Nikotinsalz Liquid - 10 ml',
         'commonName' => 'Strawberry Ice',
         'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Dr. Frost',
+        'category' => 'LIQUIDS > Beeren#!#LIQUIDS > Frisches#!#LIQUIDS > Dr. Frost',
         'supplier' => 'Dr. Frost',
         'brand' => 'Dr. Frost',
         'piecesPerPack' => 1,
@@ -41993,7 +42128,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'DR100L10-ON' => array(
         'icNumber' => 'DR100L10-ON',
@@ -42001,7 +42136,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'name' => 'Dr. Frost - Polar Ice Vapes - Orange Mango Ice - Nikotinsalz Liquid - 10 ml',
         'commonName' => 'Orange Mango Ice',
         'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Dr. Frost',
+        'category' => 'LIQUIDS > Zitrusfrüchte#!#LIQUIDS > exotische Früchte#!#LIQUIDS > Frisches#!#LIQUIDS > Dr. Frost',
         'supplier' => 'Dr. Frost',
         'brand' => 'Dr. Frost',
         'piecesPerPack' => 1,
@@ -42010,7 +42145,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Orange, Mango, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Orange, Mango, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'DR100L10-GN' => array(
         'icNumber' => 'DR100L10-GN',
@@ -42018,7 +42153,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'name' => 'Dr. Frost - Polar Ice Vapes - Grape Ice - Nikotinsalz Liquid - 10 ml',
         'commonName' => 'Grape Ice',
         'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Dr. Frost',
+        'category' => 'LIQUIDS > Trauben#!#LIQUIDS > Frisches#!#LIQUIDS > Dr. Frost',
         'supplier' => 'Dr. Frost',
         'brand' => 'Dr. Frost',
         'piecesPerPack' => 1,
@@ -42027,7 +42162,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Traube, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Traube, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'DR100L10-HN' => array(
         'icNumber' => 'DR100L10-HN',
@@ -42035,7 +42170,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'name' => 'Dr. Frost - Polar Ice Vapes - Honeydew Blackcurrant Ice - Nikotinsalz Liquid - 10 ml',
         'commonName' => 'Honeydew Blackcurrant Ice',
         'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Dr. Frost',
+        'category' => 'LIQUIDS > Melonen#!#LIQUIDS > Beeren#!#LIQUIDS > Frisches#!#LIQUIDS > Dr. Frost',
         'supplier' => 'Dr. Frost',
         'brand' => 'Dr. Frost',
         'piecesPerPack' => 1,
@@ -42044,7 +42179,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Honigmelone, schwarze Johannisbeere, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Honigmelone, schwarze Johannisbeere, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'DR100L10-CN' => array(
         'icNumber' => 'DR100L10-CN',
@@ -42052,7 +42187,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'name' => 'Dr. Frost - Polar Ice Vapes - Cherry Ice - Nikotinsalz Liquid - 10 ml',
         'commonName' => 'Cherry Ice',
         'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Dr. Frost',
+        'category' => 'LIQUIDS > Früchte#!#LIQUIDS > Frisches#!#LIQUIDS > Dr. Frost',
         'supplier' => 'Dr. Frost',
         'brand' => 'Dr. Frost',
         'piecesPerPack' => 1,
@@ -42061,7 +42196,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: . Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kirsche, Koolada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'MA100A10-GT' => array(
         'icNumber' => 'MA100A10-GT',
@@ -42182,5 +42317,188 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => null,
         'description' => '<p><br>Shake & Vape Liquid. Geschmack: . Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Basis (PG/VG)<sup>1</sup></td><td>20:80</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'SK100PQ4' => array(
+        'icNumber' => 'SK100PQ4',
+        'number' => 'SK100PQ4',
+        'name' => 'SMOK - V12 P-Q4 Head - 0,4 Ohm (3 Stück pro Packung)',
+        'commonName' => 'V12 P-Q4',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > Smoktech',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Pro bestellter Packung erhalten Sie drei V12 P-Q4 Heads mit einem Widerstand von je 0,4 Ohm. Aufgrund des geringen Widerstandes sind direkte Lungenzüge möglich. Sollten Sie eine Veränderung des Geschmacks feststellen, ist es an der Zeit, die zu den Verschleißteilen zählenden Verdampferköpfe zu tauschen. Verwenden Sie die Verdampferköpfe in einem Leistungsbereich von 40 bis maximal 100 Watt um ein zufriedenstellendes Dampferlebnis zu gewährleisten.
+<br>
+<br>
+<ul>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,4 Ohm</li>
+<li>Vierfache Wicklung</li>
+<li>Leistungsbereich: 40 - 100 Watt</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SG100SB' => array(
+        'icNumber' => 'SG100SB',
+        'number' => 'SG100SB',
+        'name' => 'Sigelei - Sobra - E-Zigarette (Set)',
+        'commonName' => 'Sobra',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > Sigelei',
+        'supplier' => 'Sigelei',
+        'brand' => 'Sigelei',
+        'piecesPerPack' => 1,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Das E-Zigaretten Set Sobra von der Marke Sigelei ist eine Kombination aus dem Sobra 198 Watt Akkuträger und dem moonshot 120 Verdampfer. Sie können mit dem E-Zigaretten Set mit bis zu 198 Watt Leistung dampfen. Bitte beachten Sie, dass Sie zwei 18650er Akkuzellen in den Akkuträger einsetzen, damit Sie das Set verwenden können. Es befinden sich keine Akkuzellen im Lieferumfang befinden. Ihre getätigten Einstellungen und Akkustand können Sie auf dem 1,3 Zoll großem TFT-Farbdisplay ablesen. Der Moonshot 120 Verdampfer nimmt bis zu 5,5ml Liquid auf, welche über ein Top-Filling-System direkt von oben in Tank gefüllt werden können. Sie können aufgrund der im Lieferumfang enthaltenen Verdampferköpfe (MS-H 0,2 Ohm und MS 0,25 Ohm) direkte Lungenzüge tätigen. Bitte beachten Sie, dass Verdampferköpfe Verschleißteile sind und Sie sie für ein gleichmäßiges Dampferlebnis regelmäßig austauschen sollten.
+<br>
+<br>
+<b>Das Sigelei Sobra E-Zigaretten Set wird ohne Akkus ausgeliefert</b>
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Sobra 198 Watt</li>
+<li>1x Moonshot 120 Clearomizer (1x MS-H 0,2 Ohm Head vorinstalliert) </li>
+<li>1x MS 0,25 Ohm Head</li>
+<li>1x Glastank 3,5ml</li>
+<li>1x USB-Kabel</li>
+<li>1x Ersatz O-Ringe</li>
+<li>2x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Sobra 198 Watt</strong>
+<ul>
+<li>Ausgabemodi: Power</li>
+<li>Ausgangsleistung: 10 - 198 Watt</li>
+<li>Widerstandsbereich: 0,05 – 3,0 Ohm</li>
+<li>1,3” TFT-Farbdisplay</li>
+<li>Maße: 55,4 mm x 39,5 mm x 88,9 mm</li>
+</ul>
+<br>
+<br>
+<strong>Moonshot 120 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 5,5 ml</li>
+<li>Höhe (inkl. Mundstück): 44,4 mm</li>
+<li>Durchmesser: 24 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'GV100AP' => array(
+        'icNumber' => 'GV100AP',
+        'number' => 'GV100AP',
+        'name' => 'GeekVape - Alpha - Clearomizer (Set)',
+        'commonName' => 'Alpha',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER > GeekVape',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 1,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Das GeekVape Alpha Clearomizer Set hat ein Tankvolumen von 4ml und wird über ein Top-Filling System mit frischem Liquid befüllt. Der Alpha Tank hat einen Durchmesser von 25mm. Die variable Airflow kann selbstständig eingestellt werden um die von Ihnen bevorzugte Luftmenge einzustellen. Die mitgelieferten MM Verdampferköpfe eignen sich durch ihren geringen Widerstand für das Dampfen direkt auf Lunge. Der MM X1 Verdampferkopf hat einen Widerstand von 0,2 Ohm und der X2 Verdampferkopf einen Widerstand von 0,4 Ohm. Bitte achten Sie darauf, dass Verdampferköpfe zu den Verschleißteilen gehören und Sie diese regelmäßig selbstständig wechseln müssen. 
+Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite des Verdampfers drücken und die Top-Kappe zur Seite schieben. Anschließend können Sie den Tank mit Ihrem Liquid befüllen. ',
+    ),
+    'GV100X1' => array(
+        'icNumber' => 'GV100X1',
+        'number' => 'GV100X1',
+        'name' => 'GeekVape - MM X1 Head - 0,2 Ohm (3 Stück pro Packung)',
+        'commonName' => 'MM X1',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > GeekVape',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 3,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'Der Widerstand der GeekVape MM X1 Verdampferköpfe beträgt 0,2 Ohm und sind für Dampfen mit direkten Lungenzügen ausgelegt. Die Heads arbeiten in einem Leistungsbereich von 60 bis 100 Watt und sind kompatibel mit dem GeekVape Alpha Clearomizer. Bitte beachten Sie, das es sich bei den Verdampferköpfen um Verschleißartikel handelt und diese regelmäßig getauscht werden sollten.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<li>3 Stück pro Packung</li>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Widerstand: 0,2 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Material: Kanthal</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Leistungsbereich: 60 - 100 Watt</li>
+<li>empfohlener Leistungsbereich: 75 - 95 Watt</li>
+<li>geeignet für DL</li>
+</ul>
+<br>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>GeekVape Alpha Clearomizer Set</li>
+<li>GeekVape Aegis Legend mit Alpha E-Zigaretten Set</li>
+</ul>
+',
+    ),
+    'GV100X2' => array(
+        'icNumber' => 'GV100X2',
+        'number' => 'GV100X2',
+        'name' => 'GeekVape - MM X2 Head - 0,4 Ohm (3 Stück pro Packung)',
+        'commonName' => 'MM X2',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > GeekVape',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 3,
+        'flavor' => null,
+        'dosage' => null,
+        'base' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => null,
+        'description' => 'In den MM X2 Heads von der Marke GeekVape wurden insgesamt Mesh-Wicklungen verbaut mit einem Widerstand von 0,4 Ohm. Die Heads sind Aufgrund ihres Widerstandes für das Dampfen mit Zügen direkten in Lunge ausgelegt. Die Heads sind für eine Leistung von 50 bis 80 Watt ausgelegt. Empfohlen wird eine Bereich von 60 bis 70 Watt.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<li>3 Stück pro Packung</li>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Widerstand: 0,4 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Material: Kanthal</li>
+<li>Anzahl der Wicklung: zwei</li>
+<li>Leistungsbereich: 50 - 80 Watt</li>
+<li>empfohlener Leistungsbereich: 60 - 70 Watt</li>
+<li>geeignet für DL</li>
+</ul>
+<br>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>GeekVape Alpha Clearomizer Set</li>
+<li>GeekVape Aegis Legend mit Alpha E-Zigaretten Set</li>
+</ul>',
     ),
 );

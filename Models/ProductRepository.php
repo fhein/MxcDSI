@@ -146,6 +146,8 @@ class ProductRepository extends BaseEntityRepository
         'supplier',
         'brand',
         'piecesPerPack',
+        'content',
+        'capacity',
         'flavor',
         'dosage',
         'base',

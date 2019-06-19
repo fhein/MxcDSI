@@ -166,8 +166,6 @@ return [
             '~1 Liter~'                                                  => '1.000 ml',
             '~E-Zigaretten (Liquid)~'                                    => '- $1',
             '~(Liquid) für E-Zigaretten~'                                => '$1',
-            '~
-             (- Liquid)~'                                    => '$1',
             '~(Shortz.*) - (0 mg/ml)~'                                   => '$1 - 50 ml, $2',
             '~(Koncept XIX.*) (0 mg/ml)~'                                => '$1 - 50 ml, $2',
             '~EZ.WATT~'                                                  => 'EZ.Watt',
@@ -238,6 +236,7 @@ return [
             '~(Crown 3 Parallel) ((SUS316)|(Kanthal)) (Head)~'           => '$1 $5',
             '~(.*) (Mignon)(.*) (- .*)~'                                 => '$1 $2 $3 - Akkuzelle $4',
             '~([^\-]) (\d.\d+) (mAh)~'                                   => '$1 - $2 $3',
+            '~(Liquid) -$~'                                              => '$1',
             '~(Liquid)$~'                                                => '$1 - 10 ml',
             '~(\d+(\.\d+)? ml, 0 mg/ml)$~'                               => '- Shake & Vape - $1',
             '~(Chicken Shop.*) (- 0 mg/ml)~'                             => '$1 - Shake & Vape $2',
@@ -529,6 +528,7 @@ return [
             '~(Panther RDA)~',
         ],
         'GeekVape'      => [
+            '~(Alpha)~',
             '~(Ammit 25 RTA)~',
             '~(Blitzen RTA)~',
             '~(Ammit MTL RTA)~',
@@ -644,6 +644,7 @@ return [
         'Sigelei'       => [
             '~(Chronus mit Shikra)~',
             '~(Sibra E2)~',
+            '~(Sobra)~',
         ],
         'Steamax'       => [
             // Smok

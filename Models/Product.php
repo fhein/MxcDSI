@@ -170,6 +170,22 @@ class Product extends ModelEntity  {
     private $dosage;
 
     /**
+     * Capacity of the bottle of Shake & Vapes and Aromas
+     *
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $capacity;
+
+    /**
+     * Content of the bottle of Shake & Vapes and Aromas
+     *
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $content;
+
+    /**
      * VG/PG, PropertyMapper mapped
      *
      * @var string $base
@@ -709,5 +725,37 @@ class Product extends ModelEntity  {
     public function setIcDescription($icDescription)
     {
         $this->icDescription = $icDescription;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCapacity()
+    {
+        return $this->capacity;
+    }
+
+    /**
+     * @param string|null $capacity
+     */
+    public function setCapacity($capacity)
+    {
+        $this->capacity = $capacity;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param string|null $content
+     */
+    public function setContent($content): void
+    {
+        $this->content = $content;
     }
 }

@@ -87,7 +87,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $isMainDetail = true;
         /** @var Variant $variant */
         foreach ($variants as $variant) {
-            $detail = $this->getDetail($variant, $needsOptionUpdate);
+            $detail = $this->setDetail($variant, $needsOptionUpdate);
             if ($detail === null) continue;
 
             $detail->setKind(2);
@@ -108,7 +108,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
      * @param bool $needsOptionUpdate
      * @return Detail|null
      */
-    public function getDetail(Variant $variant, bool $needsOptionUpdate)
+    public function setDetail(Variant $variant, bool $needsOptionUpdate)
     {
         $detail = $variant->getDetail();
 
