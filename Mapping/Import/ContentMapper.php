@@ -36,7 +36,7 @@ class ContentMapper extends BaseImportMapper implements ProductMapperInterface, 
         $icNumber = $product->getIcNumber();
 
         $content = $this->config[$icNumber]['content'] ?? null;
-        $capacity = $this->config[$icNumber]['content'] ?? null;
+        $capacity = $this->config[$icNumber]['capacity'] ?? null;
 
         if (! $content) {
             $name = $product->getName();

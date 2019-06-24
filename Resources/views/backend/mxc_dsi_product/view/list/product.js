@@ -404,197 +404,29 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             items: [
                 {
                     text: 'Excel Export',
-                    iconCls: 'sprite-table-import',
+                    iconCls: 'sprite-table-export',
                     handler: function () {
                         window.open('/backend/MxcDsiProduct/excelExport');
                     }
                 },
-                {
-                    text: 'Excel Import',
-                    listeners: {
-                        click: function (event) {
-                            var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportField');
-                            var button = filefield[0].el.query('input[type=file]');
-                            button[0].click();
-                        }
-
-                    }
-                }
-                ,
-                {
-                    xtype: 'filefield',
-                    name: 'excelFile',
-                    itemId: 'mxcDsiExcelImportField',
-                    accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    hidden: true,
-
-                    listeners: {
-                        scope: me,
-                        change: function (fileSelection) {
-                            me.fireEvent('mxcExcelImport', me, fileSelection.fileInputEl.dom.files[0]);
-                        },
-                        afterrender: function (cmp) {
-                            cmp.fileInputEl.set({
-                                accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-                            });
-                        }
-                    }
-                },
+                me.createImportMenuItem('Excel Import', 'mxcExcelImport'),
+                me.createImportFileField('mxcExcelImport', me),
                 '-',
-                {
-                    text: 'Import prices only',
-                    listeners: {
-                        click: function(event) {
-                            var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportPricesField');
-                            var button = filefield[0].el.query('input[type=file]');
-                            button[0].click();
-                        }
+                me.createImportMenuItem('Import prices only', 'mxcExcelImportPrices'),
+                me.createImportFileField('mxcExcelImportPrices', me),
 
-                    }
-                },
-                {
-                    xtype: 'filefield',
-                    name: 'excelFile',
-                    itemId:'mxcDsiExcelImportPricesField',
-                    accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    hidden: true,
+                me.createImportMenuItem('Import descriptions only', 'mxcExcelImportDescriptions'),
+                me.createImportFileField('mxcExcelImportDescriptions', me),
 
-                    listeners: {
-                        scope: me,
-                        change: function(fileSelection) {
-                            me.fireEvent('mxcExcelImportPrices', me, fileSelection.fileInputEl.dom.files[0]);
-                        },
-                        afterrender:function(cmp){
-                            cmp.fileInputEl.set({
-                                accept:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-                            });
-                        }
-                    }
-                },
-                {
-                    text: 'Import descriptions only',
-                    listeners: {
-                        click: function(event) {
-                            var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportDescriptionsField');
-                            var button = filefield[0].el.query('input[type=file]');
-                            button[0].click();
-                        }
+                me.createImportMenuItem('Import flavors only', 'mxcExcelImportFlavors'),
+                me.createImportFileField('mxcExcelImportFlavors', me),
 
-                    }
-                }
-                ,
-                {
-                    xtype: 'filefield',
-                    name: 'excelFile',
-                    itemId:'mxcDsiExcelImportDescriptionsField',
-                    accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    hidden: true,
+                me.createImportMenuItem('Import dosages only', 'mxcExcelImportDosages'),
+                me.createImportFileField('mxcExcelImportDosages', me),
 
-                    listeners: {
-                        scope: me,
-                        change: function(fileSelection) {
-                            me.fireEvent('mxcExcelImportDescriptions', me, fileSelection.fileInputEl.dom.files[0]);
-                        },
-                        afterrender:function(cmp){
-                            cmp.fileInputEl.set({
-                                accept:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-                            });
-                        }
-                    }
-                },
-                {
-                    text: 'Import flavors only',
-                    listeners: {
-                        click: function(event) {
-                            var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportFlavorsField');
-                            var button = filefield[0].el.query('input[type=file]');
-                            button[0].click();
-                        }
+                me.createImportMenuItem('Import mappings only', 'mxcExcelImportMappings'),
+                me.createImportFileField('mxcExcelImportMappings', me),
 
-                    }
-                }
-                ,
-                {
-                    xtype: 'filefield',
-                    name: 'excelFile',
-                    itemId:'mxcDsiExcelImportFlavorsField',
-                    accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    hidden: true,
-
-                    listeners: {
-                        scope: me,
-                        change: function(fileSelection) {
-                            me.fireEvent('mxcExcelImportFlavors', me, fileSelection.fileInputEl.dom.files[0]);
-                        },
-                        afterrender:function(cmp){
-                            cmp.fileInputEl.set({
-                                accept:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-                            });
-                        }
-                    }
-                },
-                {
-                    text: 'Import dosages only',
-                    listeners: {
-                        click: function(event) {
-                            var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportDosagesField');
-                            var button = filefield[0].el.query('input[type=file]');
-                            button[0].click();
-                        }
-
-                    }
-                }
-                ,
-                {
-                    xtype: 'filefield',
-                    name: 'excelFile',
-                    itemId:'mxcDsiExcelImportDosagesField',
-                    accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    hidden: true,
-
-                    listeners: {
-                        scope: me,
-                        change: function(fileSelection) {
-                            me.fireEvent('mxcExcelImportDosages', me, fileSelection.fileInputEl.dom.files[0]);
-                        },
-                        afterrender:function(cmp){
-                            cmp.fileInputEl.set({
-                                accept:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-                            });
-                        }
-                    }
-                },
-                {
-                    text: 'Import mappings only',
-                    listeners: {
-                        click: function(event) {
-                            var filefield = Ext.ComponentQuery.query('#mxcDsiExcelImportMappingsField');
-                            var button = filefield[0].el.query('input[type=file]');
-                            button[0].click();
-                        }
-
-                    }
-                }
-                ,
-                {
-                    xtype: 'filefield',
-                    name: 'excelFile',
-                    itemId:'mxcDsiExcelImportMappingsField',
-                    accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    hidden: true,
-
-                    listeners: {
-                        scope: me,
-                        change: function(fileSelection) {
-                            me.fireEvent('mxcExcelImportMappings', me, fileSelection.fileInputEl.dom.files[0]);
-                        },
-                        afterrender:function(cmp){
-                            cmp.fileInputEl.set({
-                                accept:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-                            });
-                        }
-                    }
-                },
             ]
         });
         return Ext.create('Ext.button.Button', {
@@ -814,6 +646,48 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
         items.push(me.cellEditor);
 
         return items;
+    },
+
+    createImportMenuItem: function(menuText, eventName){ //, scope) {
+        return {
+            text: menuText, //'Excel Import',
+            iconCls: 'sprite-table-import',
+            listeners: {
+                click: function (event) {
+                    var filefield = Ext.ComponentQuery.query('#'+eventName+'Field');
+                    var button = filefield[0].el.query('input[type=file]');
+                    button[0].click();
+                }
+
+            }
+        };
+    },
+
+    createImportFileField: function(eventName, scope){
+        return {
+            xtype: 'filefield',
+            name: 'excelFile',
+            itemId: eventName + 'Field',
+            accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            hidden: true,
+
+            listeners: {
+                scope: scope,
+                change: function (fileSelection) {
+                    if (fileSelection !== '') {
+                        scope.fireEvent(eventName, scope, fileSelection.fileInputEl.dom.files[0]);
+
+                        //clear filefield
+                        fileSelection.fileInputEl.dom.value = '';
+                    }
+                },
+                afterrender: function (cmp) {
+                    cmp.fileInputEl.set({
+                        accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                    });
+                }
+            }
+        };
     },
 
     onSelectionChange: function(selModel, selection) {

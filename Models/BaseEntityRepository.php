@@ -40,7 +40,9 @@ class BaseEntityRepository extends EntityRepository
     {
         switch (true) {
             case (null !== @$this->dql[$method]):
-                return $this->getQuery($method)->getResult();
+                $query = $this->getQuery($method);
+                $result = $query->getResult();
+                return $result;
             case (null !== @$this->sql[$method]):
                 return $this->getStatement($method)->execute();
             default:

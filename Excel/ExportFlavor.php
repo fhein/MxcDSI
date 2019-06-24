@@ -20,6 +20,8 @@ class ExportFlavor extends AbstractProductExport
     {
         parent::registerColumns();
         $this->registerColumn('flavor');
+        $this->registerColumn('content');
+        $this->registerColumn('capacity');
     }
 
     protected function formatSheet(): void

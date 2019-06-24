@@ -55,7 +55,7 @@ return array(
         7 => 'Vanillepudding',
         8 => 'Wackelpudding',
     ),
-    'Frisches' => array(
+    'Frisches & Eiscreme' => array(
         0 => 'Eis',
         1 => 'Eisbonbon',
         2 => 'Eiscreme',
@@ -65,6 +65,7 @@ return array(
         6 => 'Minze',
         7 => 'Pfefferminze',
         8 => 'Slush Eis',
+        9 => 'Bananensplit',
     ),
     'Früchte' => array(
         0 => 'Amarenakirsche',
@@ -92,6 +93,7 @@ return array(
         22 => 'saure Früchte',
         23 => 'süße Früchte',
         24 => 'süße Kirsche',
+        25 => 'gelber Apfel',
     ),
     'Gebäck' => array(
         0 => 'Apfelstrudel',
@@ -148,6 +150,8 @@ return array(
         25 => 'Wodka',
         26 => 'Zitronentee',
         27 => 'karibischer Rum',
+        28 => 'Jamaica Rum',
+        29 => 'Pfirsichtee',
     ),
     'Gewürze' => array(
         0 => 'Anis',
@@ -167,6 +171,7 @@ return array(
         14 => 'Zucker',
         15 => 'brauner Zucker',
         16 => 'schwarzer Trüffel',
+        17 => 'Bourbon Vanille',
     ),
     'Melonen' => array(
         0 => 'Cantaloupe-Melone',
@@ -197,6 +202,7 @@ return array(
         6 => 'Pekanuss',
         7 => 'Pistazie',
         8 => 'geröstete Nüsse',
+        9 => 'Walnuss',
     ),
     'Pflanzen' => array(
         0 => 'Agave',
@@ -277,5 +283,6 @@ return array(
         12 => 'exotische Früchte',
         13 => 'karibische Früchte',
         14 => 'tropische Früchte',
+        15 => 'Feige',
     ),
 );

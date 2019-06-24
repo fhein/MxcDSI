@@ -77,8 +77,9 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
     protected function setupImport()
     {
         $this->changeLog = [];
+        $repository = $this->modelManager->getRepository(Variant::class);
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
+        $this->variants = $repository->getAllIndexed();
         $this->optionNames = [];
     }
 
