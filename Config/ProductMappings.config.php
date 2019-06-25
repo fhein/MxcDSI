@@ -503,7 +503,7 @@ Das Liquid erreicht die Heizdrähte durch spezielle Keramikfasern. Diese stellen
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.95',
         'description' => '',
     ),
     'SC10000MUND' => array(
@@ -522,7 +522,7 @@ Das Liquid erreicht die Heizdrähte durch spezielle Keramikfasern. Diese stellen
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '0.69',
         'description' => '',
     ),
     'SC10000L10-TOT' => array(
@@ -1419,7 +1419,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-AN' => array(
@@ -1438,7 +1438,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Käsekuchen, Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Käsekuchen, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-IR' => array(
@@ -1457,7 +1457,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Wassermelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-RY' => array(
@@ -1476,7 +1476,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Honigmelone. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Honigmelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-WG' => array(
@@ -1495,7 +1495,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-CJ' => array(
@@ -1514,7 +1514,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-BS' => array(
@@ -1533,7 +1533,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-FM' => array(
@@ -1552,7 +1552,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Apfel. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-CV' => array(
@@ -1571,7 +1571,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Blaubeere, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-LR' => array(
@@ -1590,7 +1590,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Schokolade, Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Schokolade, Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'AS10000NXSET' => array(
@@ -2183,7 +2183,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Amarenakirsche. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Amarenakirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-CD' => array(
@@ -2202,7 +2202,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-AH' => array(
@@ -2221,7 +2221,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-MA' => array(
@@ -2240,7 +2240,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Amarenakirsche, Banane. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Amarenakirsche, Banane</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-CB' => array(
@@ -2259,7 +2259,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kokos, Schokolade. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kokos, Schokolade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-PS' => array(
@@ -2278,7 +2278,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Sahne. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Sahne</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-AL' => array(
@@ -2297,7 +2297,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Cola. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-GA' => array(
@@ -2316,7 +2316,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Limette. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Limette</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-DD' => array(
@@ -2335,7 +2335,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-BN' => array(
@@ -2354,7 +2354,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Nougat. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Nougat</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-FY' => array(
@@ -2373,7 +2373,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Limonade, Orange. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Limonade, Orange</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-HF' => array(
@@ -2392,7 +2392,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pfirsich. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-LS' => array(
@@ -2411,7 +2411,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-SH' => array(
@@ -2430,7 +2430,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-TE' => array(
@@ -2449,7 +2449,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Nuss, Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Nuss, Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-TR' => array(
@@ -2468,7 +2468,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak, Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-ML' => array(
@@ -2487,7 +2487,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Vanille. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-MW' => array(
@@ -2506,7 +2506,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Waldmeister. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldmeister</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-RC' => array(
@@ -2525,7 +2525,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: rote Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>rote Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-SY' => array(
@@ -2544,7 +2544,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '3.45',
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Maracuja. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Maracuja</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'SONYVT6' => array(
@@ -2620,7 +2620,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'piecesPerPack' => 1,
         'content' => null,
         'capacity' => null,
-        'flavor' => null,
+        'flavor' => '',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -5294,7 +5294,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Bonbon, grüner Apfel. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Bonbon, grüner Apfel</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-AT' => array(
@@ -5313,7 +5313,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Beeren, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BA' => array(
@@ -5332,7 +5332,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Banane. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Banane</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BP' => array(
@@ -5351,7 +5351,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Banane, Cream, Karamell. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Banane, Cream, Karamell</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BU' => array(
@@ -5370,7 +5370,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Beeren, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BS' => array(
@@ -5389,7 +5389,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Beeren. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Beeren</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BM' => array(
@@ -5408,7 +5408,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Menthol. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Beeren, Menthol</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BI' => array(
@@ -5427,7 +5427,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Anis, Lakritz, Menthol. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Anis, Lakritz, Menthol</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BC' => array(
@@ -5446,7 +5446,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: schwarze Johannisbeere. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>schwarze Johannisbeere</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BK' => array(
@@ -5465,7 +5465,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Anis, Eukalyptus, Kirsche, Menthol, Waldfrüchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Anis, Eukalyptus, Kirsche, Menthol, Waldfrüchte</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BR' => array(
@@ -5484,7 +5484,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Blaubeere. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-BG' => array(
@@ -5503,7 +5503,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Früchte, Kaugummi. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Früchte, Kaugummi</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CT' => array(
@@ -5522,7 +5522,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kirsche. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CB' => array(
@@ -5541,7 +5541,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Blaubeere, Himbeere, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere, Himbeere, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CL' => array(
@@ -5560,7 +5560,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kirsche, Minze. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kirsche, Minze</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CS' => array(
@@ -5579,7 +5579,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Himbeere, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Himbeere, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CA' => array(
@@ -5598,7 +5598,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Pudding, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Vanille</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-DP' => array(
@@ -5617,7 +5617,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Anis, Süßholz, schwarze Johannisbeere. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Anis, Süßholz, schwarze Johannisbeere</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-DW' => array(
@@ -5636,7 +5636,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: dunkle Waldfrüchte, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>dunkle Waldfrüchte, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-DK' => array(
@@ -5655,7 +5655,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Himbeere, Limonade, Zitrusfrüchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Himbeere, Limonade, Zitrusfrüchte</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-EY' => array(
@@ -5674,7 +5674,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Energy Drink. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Energy Drink</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-FG' => array(
@@ -5693,7 +5693,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Dragee, Traubenzucker. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Dragee, Traubenzucker</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-FA' => array(
@@ -5712,7 +5712,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Waldfrüchte, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Waldfrüchte, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-FV' => array(
@@ -5731,7 +5731,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cream, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cream, Vanille</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-GR' => array(
@@ -5750,7 +5750,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: rote Traube. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>rote Traube</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-HB' => array(
@@ -5769,7 +5769,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Anis, Beeren, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-IM' => array(
@@ -5788,7 +5788,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Minze, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Minze, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-JT' => array(
@@ -5807,7 +5807,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Marmelade, Toast. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Marmelade, Toast</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-KO' => array(
@@ -5826,7 +5826,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-KF' => array(
@@ -5845,7 +5845,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Gin, Tonic, Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Gin, Tonic, Zitrone</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-NY' => array(
@@ -5864,7 +5864,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Blaubeere, Cream, Erdbeere, Käsekuchen, Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere, Cream, Erdbeere, Käsekuchen, Zitrone</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-PD' => array(
@@ -5883,7 +5883,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Birne. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Birne</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-PR' => array(
@@ -5902,7 +5902,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Minze, Pfefferminze. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Minze, Pfefferminze</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-PK' => array(
@@ -5921,7 +5921,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: rote Beeren, rote Früchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>rote Beeren, rote Früchte</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-RW' => array(
@@ -5940,7 +5940,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Zitrusfrüchte, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Zitrusfrüchte, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-RS' => array(
@@ -5959,7 +5959,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Himbeere, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Himbeere, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-RL' => array(
@@ -5978,7 +5978,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kirsche, rote Beeren. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kirsche, rote Beeren</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-RC' => array(
@@ -5997,7 +5997,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Pudding, Rhabarber, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Rhabarber, Vanille</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-RB' => array(
@@ -6016,7 +6016,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cream, Soda, Zucker. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cream, Soda, Zucker</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SC' => array(
@@ -6035,7 +6035,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Schokolade. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Schokolade</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SL' => array(
@@ -6054,7 +6054,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Bonbon, Brause, Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Bonbon, Brause, Zitrone</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SW' => array(
@@ -6073,7 +6073,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Tabak. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SP' => array(
@@ -6092,7 +6092,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kaugummi, Minze. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kaugummi, Minze</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SB' => array(
@@ -6111,7 +6111,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SK' => array(
@@ -6130,7 +6130,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Kiwi. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Kiwi</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SM' => array(
@@ -6149,7 +6149,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Milchshake. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Milchshake</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-LM' => array(
@@ -6168,7 +6168,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Zitrone</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-ST' => array(
@@ -6187,7 +6187,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Tabak. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-TI' => array(
@@ -6206,7 +6206,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Minze, Toffee, Vanille, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Minze, Toffee, Vanille, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-TS' => array(
@@ -6225,7 +6225,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: tropische Früchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>tropische Früchte</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-VT' => array(
@@ -6244,7 +6244,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: süße Früchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>süße Früchte</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-GT' => array(
@@ -6263,7 +6263,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Tabak. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-WM' => array(
@@ -6282,7 +6282,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Wassermelone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'IC100PCS' => array(
@@ -6335,7 +6335,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'piecesPerPack' => 1,
         'content' => null,
         'capacity' => null,
-        'flavor' => null,
+        'flavor' => '',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -6500,7 +6500,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'name' => 'SC - Ice - Aroma - 10 ml',
         'commonName' => 'Ice',
         'type' => 'AROMA',
-        'category' => 'AROMEN > unknown#!#AROMEN > SC',
+        'category' => 'AROMEN > Frisches & Eiscreme#!#AROMEN > SC',
         'supplier' => 'InnoCigs',
         'brand' => 'SC',
         'piecesPerPack' => 1,
@@ -6511,7 +6511,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'base' => null,
         'retailPriceDampfplanet' => null,
         'retailPriceOthers' => '4.19',
-        'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Eis. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Eis</td></tr><tr><td>Dosierung</td><td>3-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Eis. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Eis</td></tr><tr><td>Dosierung</td><td>3-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SC100A10-HB' => array(
         'icNumber' => 'SC100A10-HB',
@@ -7201,7 +7201,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '13.90',
         'description' => 'Für das Aspire PockeX E-Zigaretten Set eignen sich die PockeX U-Tech Heads von Aspire. Sie haben ein Widerstand von 0,6 Ohm und sind daher für die Lungeninhalation geeignet oder einen Widerstand von 1,2 Ohm womit Sie den Dampf erst in die Mundhöhle ziehen und dann in die Lunge inhalieren. Damit Ihr Liquidgeschmack unverfälscht bleibt, tauschen Sie die Heads in regelmäßigen Zeitabständen um. Sie erhalten insgesamt 5 PockeX U-Tech Heads pro Packung
 <br>
 <br>
@@ -9432,7 +9432,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.95',
         'description' => 'Die Exceed D22 Mundstücke von InnoCigs eignen sich ideal für den gleichnamigen Exceed D22 Verdampfer. Das Mundstück verfügt über einen 510er Anschluss und kann unkompliziert bei bedarf ausgetauscht werden. Aus hygienischen Gründen sollten Sie die Mundstücke regelmäßig austauschen. Pro Packung sind insgesamt 5 Exceed D22 Mundstücke enthalten.
 <br>
 <br>',
@@ -10281,17 +10281,17 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'description' => '<p><br>Mit dem Joyetech Exceed D19 Starterset, das wir unter der Marke InnoCigs vertreiben, erwerben Sie eine kompakte, elegante und dezente E-Zigarette. Außer einem Liquid, das Ihnen gut schmeckt, benötigen Sie nichts weiter. Sie können direkt loslegen.</p>
 <p>Zwar ist die Exceed D19 länger und dicker als eine Zigarette, aber der Unterschied ist nicht sehr groß. Sie passt deshalb gut in die Tasche Ihrer Jeans, und selbst in der Innentasche Ihres Jackets trägt sie nicht auf. Auch sitzt Ihr Anzug mit Exceed D19 in der Innentasche weiterhin perfekt. Das ist bei schwereren Geräten nicht unbedingt der Fall.</p>
 <p>Wenn Sie nicht darauf aus sind, mit Ihrer E-Zigarette großes Aufsehen zu erregen, sondern einen etwas zurückhaltenderen Auftritt bevorzugen, wird die Exceed D19 Ihnen ein guter Begleiter sein.</p>
-<p>Die Dampf- und Geschmacksentwicklung ist für eine solch kleine E-Zigarette sehr gut. So gut sogar, dass auch erfahrene Anwender gern zur Exceed D19 greifen, wenn sie z.B. beruflich unterwegs sind oder sich in Gesellschaft bewegen möchten. Mit der Exceed D19 können Sie sicher sein, die Mitmenschen in Ihrer Umgebung nicht mit Ihrer Leidenschaft für das Dampfen zu stören.</p>
+<p>Die Dampf- und Geschmacksentwicklung ist für eine solch kleine E-Zigarette sehr gut. So gut sogar, dass auch erfahrene Anwender gern zur Exceed D19 greifen, wenn sie z.B. beruflich unterwegs sind oder sich in Gesellschaft bewegen möchten. Mit der Exceed D19 können Sie sich eines guten Damperlebnisses sicher sein, ohne die Menschen in Ihrer Umgebung mit Ihrer Leidenschaft zu stören.</p>
 <p><strong>Exceed D19 Akku</strong></p>
 <p>Die Exceed D19 verfügt über zwei Betriebsarten. Voreingestellt ist der Betrieb mit Konstantspannung. Das bedeutet, dass die Exceed D19 unabhängig vom Ladezustand des Akkus die Spannung, die am Stromkreis der Heizwendel anliegt, konstant hält. Für ein gleichmäßiges und zufriedenstellendes Dampferlebnis empfehlen wir, die Exceed D19 in dieser Voreinstellung zu belassen.</p>
 <p>Die andere Betriebsart ist der Direktmodus. In diesem Modus sinkt die Spannung im Stromkreis der Heizwendel zusammen mit der Akkuladung. Dies ermöglicht eine etwas höhere Dampfleistung bei gut geladenem Akku, die aber nicht lange anhält.</p>
 <p>Weitere Einstellpflichten erlegt Ihnen die Exceed D19 nicht auf. Damit macht sie Einsteigern das Leben leicht. Einfach Feuerknopf drücken und an der E-Zigarette ziehen. Weitere Einstellmöglichkeiten bietet die Exceed D19 allerdings auch nicht an, so dass sie für einen erfahrenen Dampfer eher ein Gerät für zwischendurch sein kann, wenn es mal klein und einfach sein soll.</p>
-<p>Der fest eingebaute Akku der Exceed D19 verfügt über eine Kapazität von 1.500 mAh. Das Gerät wird über seinen USB-C Anschluss (Micro-USB) aufgeladen. Die Ladezeit bei 1 A Ladestrom beträgt etwa 2 Stunden. Das Gerät kann während des Aufladens benutzt werden. Wenn Sie Vieldampfer sind, ist es wahrscheinlich, dass Sie mit einer Akkuladung nicht über den Tag kommen. Auch deswegen wird die Exceed D19 häufig als zusätzliches Gerät für die besondere Gelegenheit eingesetzt.</p>
+<p>Der fest eingebaute Akku der Exceed D19 verfügt über eine Kapazität von 1.500 mAh. Das Gerät wird über seinen Micro-USB Anschluss aufgeladen. Die Ladezeit bei 1 A Ladestrom beträgt etwa 2 Stunden. Das Gerät kann während des Aufladens benutzt werden. Wenn Sie Vieldampfer sind, ist es wahrscheinlich, dass Sie mit einer Akkuladung nicht über den Tag kommen. Auch deswegen wird die Exceed D19 häufig als zusätzliches Gerät für die besondere Gelegenheit eingesetzt.</p>
 <p><strong>Exceed D19 Verdampfer</strong></p>
 <p>Befüllt wird der Verdampfer von oben (Top-Filling-System). Dazu ziehen Sie das Mundstück etwas heraus, wodurch der Mechanismus entriegelt wird. Diese Sicherung schützt Ihre kleinen Kinder, die das Gerät nicht leicht öffnen können. Und sie schützt Ihre Kleidung, da sich der Verdampfer nicht unbeabsichtigt in der Hosentasche öffnen kann.</p>
 <p>Nach der Entriegelung kann der obere Teil des Verdampfers zur Seite geschoben werden, und die Öffnungen zum Nachfüllen werden sichtbar. Die Öffnungen sind wegen des geringen Durchmessers des Verdampfers recht klein geraten, so dass das Nachfüllen aus der Liquid-Flasche sehr sorgfältig und mit geringem Druck erfolgen sollte, um ein Überlaufen zu vermeiden.</p>
 <p>Der Verdampfer der Exceed D19 verfügt über einen Einstellring, mit dem Sie den Zugwiderstand nach Ihrem Geschmack stufenlos regulieren können. Bei fast geschlossener Luftzufuhr entspricht der Zugwiderstand recht gut dem Zugwiderstand einer Zigarette.</p>
-<p>Das Mundstück der Exceed D19 ist nicht wechselbar. Der Verdampfer der Exceed D19 verfügt über einen 510er Gewindeanschluss.</p>
+<p>Das Mundstück des Verdampfers hat keinen Standardanschluss. Deshalb können zum Austausch nur Exceed D19 Mundstücke verwendet werden. Der Verdampfer der Exceed D19 verfügt über einen 510er Gewindeanschluss.</p>
 <p>Es werden zwei Verdampferköpfe mitgeliefert, einer mit 1,2 Ohm und einer mit 0,5 Ohm. Der 1,2 Ohm Kopf ist für das Dampfen im MTL-Stil (Mouth To Lung) gedacht, bei dem Sie wie bei der Zigarette zunächst Dampf in den Mund ziehen, und ihn dann inhalieren. Der 0,5 Ohm Kopf soll den DL-Stil (Direct Lung) ermöglichen, bei dem Sie den Dampf aus der E-Zigarette direkt bis in die Lunge ziehen.</p>
 <p>Tatsächlich ist die Exceed D19 für Liebhaber des DL-Stils nicht gut geeignet, da die Leistung und Dampfentwicklung unzureichend und der Zugwiderstand selbst bei voll geöffneter Luftzufuhr zu hoch ist. Wir empfehlen diese E-Zigarette daher nur für den MTL-Stil, der auch mit dem 0,5 Ohm Verdampferkopf angenehm ist.</p>
 <p><strong>Eigenschaften Joyetech Exceed D19 Akku</strong></p>
@@ -10466,7 +10466,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.95',
         'description' => 'Hier finden Sie die passenden Mundstücke für Ihren Exceed D19 Clearomizer. Pro besteller Packung erhalten Sie insgesamt fünf Mundstücke. Es wird empfohlen Mundstücke regelmäßig zu tauschen, da es sich hierbei um einen Hygieneartikel handelt.
 <br>
 <br>
@@ -10628,7 +10628,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kuchen, Zitrusfrüchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kuchen, Zitrusfrüchte</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-FT' => array(
@@ -10647,7 +10647,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '4-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Karamell, Mandarine, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Mandarine, Vanille</td></tr><tr><td>Dosierung</td><td>4-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-FM' => array(
@@ -10666,7 +10666,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '4-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Himbeere, Pudding. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Himbeere, Pudding</td></tr><tr><td>Dosierung</td><td>4-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-GS' => array(
@@ -10685,7 +10685,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '4-6',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Apfelstrudel. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfelstrudel</td></tr><tr><td>Dosierung</td><td>4-6 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-CM' => array(
@@ -10704,7 +10704,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '3,5-5',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Apfel, Banane, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel, Banane, Vanille</td></tr><tr><td>Dosierung</td><td>3,5-5 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-SP' => array(
@@ -10723,7 +10723,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Früchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Früchte</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-NL' => array(
@@ -10742,7 +10742,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Baklava. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Baklava</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-IM' => array(
@@ -10761,7 +10761,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Menthol, Wassermelone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Menthol, Wassermelone</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-AR' => array(
@@ -10780,7 +10780,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.44',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Blaubeere, Muffin. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere, Muffin</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-PB' => array(
@@ -10799,7 +10799,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Joghurt, Pfirsich. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Joghurt, Pfirsich</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '12M100L10-OP' => array(
@@ -10951,7 +10951,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '7-12',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kokos, Mandel, Tabak, Zimt. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kokos, Mandel, Tabak, Zimt</td></tr><tr><td>Dosierung</td><td>7-12 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-TW' => array(
@@ -10970,7 +10970,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Karamell, Tabak, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Tabak, Vanille</td></tr><tr><td>Dosierung</td><td>10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100l10-PT' => array(
@@ -10989,7 +10989,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Tabak. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Dosierung</td><td>10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-RM' => array(
@@ -11008,7 +11008,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '4-8',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Mango, Menthol. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Mango, Menthol</td></tr><tr><td>Dosierung</td><td>4-8 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-AP' => array(
@@ -11027,7 +11027,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Apfel, Menthol. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel, Menthol</td></tr><tr><td>Dosierung</td><td>5-10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-AW' => array(
@@ -11046,7 +11046,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Menthol, Wassermelone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Menthol, Wassermelone</td></tr><tr><td>Dosierung</td><td>5-10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-GP' => array(
@@ -11065,7 +11065,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Menthol, Traube. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Menthol, Traube</td></tr><tr><td>Dosierung</td><td>5-10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-DT' => array(
@@ -11084,7 +11084,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Ananas, Apfel, Früchte, Menthol. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Ananas, Apfel, Früchte, Menthol</td></tr><tr><td>Dosierung</td><td>5-10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-TI' => array(
@@ -11103,7 +11103,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-8',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Bonbon, Menthol, Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Bonbon, Menthol, Zitrone</td></tr><tr><td>Dosierung</td><td>5-8 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-EM' => array(
@@ -11122,7 +11122,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '4-8',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Menthol. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Menthol</td></tr><tr><td>Dosierung</td><td>4-8 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-RA' => array(
@@ -11141,7 +11141,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '4-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Apfel. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel</td></tr><tr><td>Dosierung</td><td>4-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-CR' => array(
@@ -11160,7 +11160,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '6-11',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kirsche. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Dosierung</td><td>6-11 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-KA' => array(
@@ -11179,7 +11179,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Kiwi, Wassermelone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Kiwi, Wassermelone</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-FM' => array(
@@ -11198,7 +11198,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-9',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Milch. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Milch</td></tr><tr><td>Dosierung</td><td>5-9 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-BF' => array(
@@ -11217,7 +11217,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '6-11',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Buttermilch, Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Buttermilch, Zitrone</td></tr><tr><td>Dosierung</td><td>6-11 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-CC' => array(
@@ -11236,7 +11236,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '7-12',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdnuss, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdnuss, Vanille</td></tr><tr><td>Dosierung</td><td>7-12 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-CM' => array(
@@ -11255,7 +11255,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kokos, Macaron. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kokos, Macaron</td></tr><tr><td>Dosierung</td><td>5-10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-MT' => array(
@@ -11274,7 +11274,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '8-13',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Maracuja, Papaya, Vanille, Eiscreme. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Maracuja, Papaya, Vanille, Eiscreme</td></tr><tr><td>Dosierung</td><td>8-13 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-VC' => array(
@@ -11293,7 +11293,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '6-11',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Pudding, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Vanille</td></tr><tr><td>Dosierung</td><td>6-11 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-FV' => array(
@@ -11312,7 +11312,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '4.90',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cream, Erdbeere, Keks, Sahne. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cream, Erdbeere, Keks, Sahne</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-WF' => array(
@@ -11331,7 +11331,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '5-9',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Himbeere, Kaktusfeige, Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Himbeere, Kaktusfeige, Zitrone</td></tr><tr><td>Dosierung</td><td>5-9 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-VK' => array(
@@ -11350,7 +11350,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '4-8',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Zitrone</td></tr><tr><td>Dosierung</td><td>4-8 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-MF' => array(
@@ -11369,7 +11369,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '3-6',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Mango, Orange. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Mango, Orange</td></tr><tr><td>Dosierung</td><td>3-6 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-SD' => array(
@@ -11388,7 +11388,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '3.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Donut, Zitrone, Zucker. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Donut, Zitrone, Zucker</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SC100IV' => array(
@@ -11755,30 +11755,109 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'retailPriceDampfplanet' => '29.85',
         'retailPriceOthers' => '39.75',
-        'description' => 'Das InnoCigs Exceed Box mit D22 E-Zigaretten Set unterstützt das Dampfen bei direkter Ausgabe / konstanter Spannungsabgabe. Der Akku ist fest verbaut und wird über das beiliegende QC-USB-Ladekabel mit Energie versorgt und besitzt eine Kapazität von 3.000mAh. Fünf LED-Anzeigen informieren Sie über den aktuellen Ladestand des Akkus. Der Exceed D22 Cleraromizer weist ein Fassungsvermögen von 3,5ml Liquid auf. Zur Befüllung nutzen Sie ein Top-Filling-System, indem Sie lediglich die Top Kappe des Clearomizers durch drehen entfernen. Zusätzlich im Lieferumfang enthalten sind zwei Verdampferköpfe der EX-Reihe. Ein EX Head mit einem Widerstand von 1,2 Ohm und einen EX Head, der einen Widerstand von 0,5 Ohm aufweist. Aufgrund der unterschiedlichen Widerständen ist das Dampfen sowohl im moderaten, als auch im Subohm-Bereich möglich. Eine Airflow-Control untertstützt das jeweilige Dampfen, je nachdem wie weit die AFC offen steht. Es gilt, je weiter die AFC offen steht, desto besser ist es für das Subohm-Dampfen ausgelegt. Schließen Sie die AFC hingegen, ist es empfehlenswert moderate Backenzüge zu tätigen.
-<br>
-<br>
-<b>Lieferumfang:</b>
-<ul><li>1x Exceed Box Akku</li>
-<li>1x Exceed D22 Clearomizer</li>
-<li>1x EX Head 0,5 Ohm</li>
-<li>1x EX Head 1,2 Ohm</li>
-<li>1x Ersatzglastank</li>
-<li>1x Ersatzteil-Set</li>
-<li>1x QC-USB-Ladekabel</li>
-<li>2x Bedienungsanleitungen</li></ul><br>
-<br>
-<b>Wichtige Merkmale Exceed Box Akku:</b>\\n<ul><li>Akkukapazität: 3.000 mAh</li>
-<li>Ausgabemodi: direkte Ausgabe / konstante Spannungsausgabe</li>
-<li>Maße: 25mm x 41mm x 67mm</li></ul><br>
-<br>
-<b>Wichtige Merkmale Exceed D22 Clearomizer:</b>\\n<ul><li>Tankvolumen: 3,5ml</li>
-<li>Top-Filling-System</li>
-<li>Airflow-Control</li>
-<li>Höhe: 41,6mm</li>
-<li>Durchmesser: 22mm</li>
-<li>510er Gewinde</li></ul><br>
-<br>',
+        'description' => '<p><br>Mit der Joyetech Exceed D22, die wir unter der Marke InnoCigs vertreiben, erwerben Sie eine dezente E-Zigarette mit unaufgeregtem Design, die sehr gut auch für Anfänger geeignet ist. Außer einem Liquid, das Ihnen gut schmeckt, benötigen Sie nichts weiter. Sie können direkt loslegen.</p>
+<p>Die Geschmacksentwicklung ist für für ein Gerät dieser Klasse sehr gut. Die Dampfentwicklung ist moderat. Die Exceed D22 ist daher gut auch als Gerät für unterwegs geeignet, wenn sie z.B. Auto fahren oder sich in Gesellschaft bewegen möchten. Mit der Exceed D22 können Sie sicher sein, die Menschen in Ihrer Umgebung nicht mit Ihrer Leidenschaft zu stören und dennoch ein schönes Dampferlebnis zu erfahren.</p>
+<p><strong>Exceed D22 Akku</strong></p>
+<p>Der Akku der Exceed D22 verfügt über zwei Betriebsarten. Voreingestellt ist der Betrieb mit Konstantspannung. Das bedeutet, dass die Exceed D22 unabhängig vom Ladezustand des Akkus die Spannung, die am Stromkreis der Heizwendel anliegt, konstant hält. Für ein gleichmäßiges und zufriedenstellendes Dampferlebnis empfehlen wir, die Exceed D22 in dieser Voreinstellung zu belassen.</p>
+<p>Die andere Betriebsart ist der Direktmodus. In diesem Modus sinkt die Spannung im Stromkreis der Heizwendel zusammen mit der Akkuladung. Dies ermöglicht eine etwas höhere Dampfleistung bei gut geladenem Akku, die aber nicht lange anhält.</p>
+<p>Weitere Einstellpflichten erlegt Ihnen die Exceed D22 nicht auf. Damit macht sie Einsteigern das Leben leicht. Einfach den Feuerknopf, das einzige Bedienelement, drücken und an der E-Zigarette ziehen. Weitere Einstellmöglichkeiten bietet die Exceed D22 allerdings auch nicht an, so dass sie für einen erfahrenen Dampfer eher ein Gerät für zwischendurch sein kann, wenn es einfach mal unkompliziert sein soll.</p>
+<p>Der fest eingebaute Akku der Exceed D22 verfügt über eine Kapazität von 3.000 mAh, sie ist damit doppelt so hoch wie die der kleinen Schwester Exceed D19. Mit einer Akkuladung sollten Sie gut über den Tag kommen, auch wenn Sie das Gerät häufig benutzen. Die Exceed D22 wird über einen Micro-USB Anschluss aufgeladen. Die Ladezeit bei 1 A Ladestrom beträgt etwa 3 Stunden. Während das Gerät aufgeladen wird, kann es weiter benutzt werden.</p>
+<p>Der Ladestand des Akkus wird Ihnen durch ein fünfteiliges, ringförmig angeordnetes LED-Display auf der Oberseite des Akkus angezeigt. Die Farbe des Displays gibt Aufschluss darüber, ob die Exceed D22 im Direktmodus oder mit konstanter Spannungsabgabe betrieben wird.</p>
+<p><strong>Exceed D22 Verdampfer</strong></p>
+<p>Befüllt wird der Verdampfer von oben (Top-Filling-System). Dazu ziehen Sie das Mundstück etwas heraus, wodurch der Mechanismus entriegelt wird. Diese Sicherung schützt Ihre kleinen Kinder, die das Gerät nicht leicht öffnen können. Und sie schützt Ihre Kleidung, da sich der Verdampfer nicht unbeabsichtigt in der Hosentasche öffnen kann.</p>
+<p>Nach der Entriegelung kann der obere Teil des Verdampfers zur Seite geschoben werden, und die Öffnungen zum Nachfüllen werden sichtbar. Die Öffnungen des Exceed D22 Verdampfers sind ausreichend groß, dass das Nachfüllen aus handelsüblichen Liquid-Flaschen bequem möglich ist.</p>
+<p>Der Verdampfer der Exceed D22 verfügt über einen Einstellring, mit dem Sie den Zugwiderstand nach Ihrem Geschmack stufenlos regulieren können. Bei fast geschlossener Luftzufuhr entspricht der Zugwiderstand recht gut dem Zugwiderstand einer Zigarette.</p>
+<p>Das Mundstück des Exceed D22 Verdampfers kann kann nur gegen für dieses Gerät bestimmte Ersatzmundstücke ausgetauscht werden. Der Verdampfer verfügt über einen 510er Gewindeanschluss, so dass er mit den meisten Akkuträgern verwendet werden kann.</p>
+<p>Es werden zwei Verdampferköpfe mitgeliefert, einer mit 1,2 Ohm und einer mit 0,5 Ohm. Der 1,2 Ohm Kopf ist für das Dampfen im MTL-Stil (Mouth To Lung) gedacht, bei dem Sie wie bei der Zigarette zunächst Dampf in den Mund ziehen, und ihn dann inhalieren. Der 0,5 Ohm Kopf soll den DL-Stil (Direct Lung) ermöglichen, bei dem Sie den Dampf aus der E-Zigarette direkt bis in die Lunge ziehen.</p>
+<p>Tatsächlich ist die Exceed D22 für Liebhaber des DL-Stils nicht gut geeignet, da die Leistung und Dampfentwicklung unzureichend und der Zugwiderstand selbst bei voll geöffneter Luftzufuhr zu hoch ist. Wir empfehlen diese E-Zigarette daher nur für den MTL-Stil, der auch mit dem 0,5 Ohm Verdampferkopf angenehm ist.</p>
+<p><strong>Eigenschaften Exceed D22 Akku</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Stromversorgung</td>
+<td>eingebauter Akku</td>
+</tr>
+<tr>
+<td>Kapazität</td>
+<td>3.000 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>direkt | konstante Spannung</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>8 – 35 Watt&nbsp;</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>1 A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>25 mm x 41 mm x 67 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Eigenschaften Exceed D22 Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3,5 ml</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>41,6 mm</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>22 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Mundstück</td>
+<td>proprietär</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Befüllung von oben, verschiebbarer Deckel</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Lieferumfang:</strong></p>
+<ul>
+<li>1 x Exceed D22 Akku</li>
+<li>1 x Exceed D22 Clearomizer</li>
+<li>1 x EX Head 0,5 Ohm</li>
+<li>1 x EX Head 1,2 Ohm</li>
+<li>1 x Ersatzglastank</li>
+<li>1 x Ersatzteil-Set</li>
+<li>1 x Micro-USB-Ladekabel</li>
+<li>2 x Bedienungsanleitungen</li>
+</ul>
+<p><strong>Hinweis:&nbsp;</strong>Dieses Produkt wird von Joyetech hergestellt und ist mit einer InnoCigs Markenbezeichnung versehen.</p>',
     ),
     'IC100EBA' => array(
         'icNumber' => 'IC100EBA',
@@ -11922,7 +12001,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Sambuca. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Sambuca</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SM100SRM' => array(
@@ -12030,8 +12109,8 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SC100PR' => array(
         'icNumber' => 'SC100PR',
         'number' => 'SC100PR',
-        'name' => 'eLeaf - iStick Pico - Resin mit Melo 4 - D22 E-Zigarette (Set) - by SC',
-        'commonName' => 'iStick Pico',
+        'name' => 'eLeaf - iStick Pico Resin mit Melo 4 D22 - E-Zigarette (Set) - by SC',
+        'commonName' => 'iStick Pico Resin mit Melo 4 D22',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
         'supplier' => 'eLeaf',
@@ -12081,7 +12160,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kaffee, Kuchen. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kaffee, Kuchen</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-HL' => array(
@@ -12100,7 +12179,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Haselnuss, Kaffee, Milch. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Haselnuss, Kaffee, Milch</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-IF' => array(
@@ -12119,7 +12198,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kaffee, Kokos, Sahne, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kaffee, Kokos, Sahne, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-LC' => array(
@@ -12138,7 +12217,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '6-11',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kuchen, Zitrone, Zucker. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kuchen, Zitrone, Zucker</td></tr><tr><td>Dosierung</td><td>6-11 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'AS100B18' => array(
@@ -12195,7 +12274,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Drachenfrucht, grüner Tee, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Drachenfrucht, grüner Tee, Koolada</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-BE' => array(
@@ -12214,7 +12293,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.55',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Blutorange, Orange, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blutorange, Orange, Koolada</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-DJ' => array(
@@ -12233,7 +12312,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kaktusfeige, Zitrone, Menthol, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kaktusfeige, Zitrone, Menthol, Koolada</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'A100LM' => array(
@@ -12271,7 +12350,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cream, Kuchen, Zitrone, Zucker. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cream, Kuchen, Zitrone, Zucker</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-TA' => array(
@@ -12290,7 +12369,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Apfel, Karamell. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel, Karamell</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SB100A10-RH' => array(
@@ -13133,7 +13212,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.95',
         'description' => 'Die P16A Mundstücke von Justfog sind für den gleichnamigen Clearomizer geeignet. Pro Packung erhalten Sie insgesamt 5 Mundstücke. Tauschen Sie die Mundstücke regelmäßig aus, da diese zu den Hygieneartikeln gehören.
 <br>
 <br>
@@ -13426,7 +13505,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '8-13',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Cassis, Menthol. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Beeren, Cassis, Menthol</td></tr><tr><td>Dosierung</td><td>8-13 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-ML' => array(
@@ -13445,7 +13524,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '4-7',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Honigmelone, Wassermelone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Honigmelone, Wassermelone</td></tr><tr><td>Dosierung</td><td>4-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-UC' => array(
@@ -13464,7 +13543,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.35',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Himbeere, Milch, Sahne. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Himbeere, Milch, Sahne</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-TR2' => array(
@@ -13483,7 +13562,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '9-14',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Traube, blaue Himbeere. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Traube, blaue Himbeere</td></tr><tr><td>Dosierung</td><td>9-14 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-TX' => array(
@@ -13502,7 +13581,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '3-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: tropische Früchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>tropische Früchte</td></tr><tr><td>Dosierung</td><td>3-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-CZ' => array(
@@ -13521,7 +13600,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cola, Zitrone, Zitrusfrüchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cola, Zitrone, Zitrusfrüchte</td></tr><tr><td>Dosierung</td><td>5-10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-FF' => array(
@@ -13540,7 +13619,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '7-12',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.90',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kaugummi, saure Früchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kaugummi, saure Früchte</td></tr><tr><td>Dosierung</td><td>7-12 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-VM' => array(
@@ -13559,7 +13638,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '5-10',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kaffee, Mocca, Schokolade, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kaffee, Mocca, Schokolade, Vanille</td></tr><tr><td>Dosierung</td><td>5-10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-HJ' => array(
@@ -13578,7 +13657,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '11-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Haselnuss, Joghurt. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Haselnuss, Joghurt</td></tr><tr><td>Dosierung</td><td>11-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-BM' => array(
@@ -13597,7 +13676,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-14',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.90',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Blaubeere, Mojito. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere, Mojito</td></tr><tr><td>Dosierung</td><td>10-14 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-MB' => array(
@@ -13616,7 +13695,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '8-13',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Mango, Melone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Mango, Melone</td></tr><tr><td>Dosierung</td><td>8-13 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-BN' => array(
@@ -13635,7 +13714,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Nuss. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Nuss</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-CB' => array(
@@ -13654,7 +13733,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Kirsche. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Beeren, Kirsche</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-TV2' => array(
@@ -13673,7 +13752,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '5-9',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Eisbonbon, Früchte. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Eisbonbon, Früchte</td></tr><tr><td>Dosierung</td><td>5-9 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-MH' => array(
@@ -13692,7 +13771,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cream, Erdnussbutter, Honig, Marshmellow, Milch. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cream, Erdnussbutter, Honig, Marshmellow, Milch</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-SV2' => array(
@@ -13711,7 +13790,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '6-11',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Blaubeere, Cream, Erdbeere. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere, Cream, Erdbeere</td></tr><tr><td>Dosierung</td><td>6-11 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BB100L-MB' => array(
@@ -13806,7 +13885,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Früchte, Kaugummi. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Früchte, Kaugummi</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-CE' => array(
@@ -13825,7 +13904,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '8-13',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '4.90',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cream, Honigmelone, Wassermelone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cream, Honigmelone, Wassermelone</td></tr><tr><td>Dosierung</td><td>8-13 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-HL' => array(
@@ -13844,7 +13923,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '4-8',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Himbeere, Limonade. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Himbeere, Limonade</td></tr><tr><td>Dosierung</td><td>4-8 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-RH' => array(
@@ -13863,7 +13942,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Käsekuchen. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Käsekuchen</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-PA' => array(
@@ -13882,7 +13961,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '4.90',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Pfirsich, Tee. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pfirsich, Tee</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-EB' => array(
@@ -13901,7 +13980,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '4-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Eisbonbon. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Eisbonbon</td></tr><tr><td>Dosierung</td><td>4-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-MN' => array(
@@ -13920,7 +13999,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '3-6',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Menthol, Minze. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Menthol, Minze</td></tr><tr><td>Dosierung</td><td>3-6 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-FD' => array(
@@ -13939,7 +14018,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '5-9',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Menthol, Traube. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Beeren, Menthol, Traube</td></tr><tr><td>Dosierung</td><td>5-9 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-NC' => array(
@@ -13958,7 +14037,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdnuss, Keks, Schokolade, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdnuss, Keks, Schokolade, Vanille</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-CF' => array(
@@ -13977,7 +14056,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdnuss, Karamell, Schokolade. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdnuss, Karamell, Schokolade</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-EJ' => array(
@@ -13996,7 +14075,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '5-9',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Joghurt. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Joghurt</td></tr><tr><td>Dosierung</td><td>5-9 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-R5' => array(
@@ -14015,7 +14094,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Anis, Früchte, Minze, schwarze Johannisbeere. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Anis, Früchte, Minze, schwarze Johannisbeere</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-FM3' => array(
@@ -14034,7 +14113,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '2-5',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cream, Erdbeere, Keks, Sahne. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cream, Erdbeere, Keks, Sahne</td></tr><tr><td>Dosierung</td><td>2-5 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-PW' => array(
@@ -14053,7 +14132,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Cerealien, Cream, Donut, Zimt, Zucker. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cerealien, Cream, Donut, Zimt, Zucker</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-MW' => array(
@@ -14072,7 +14151,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '3-6',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Apfel, Kuchen, Zimt. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel, Kuchen, Zimt</td></tr><tr><td>Dosierung</td><td>3-6 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'PS100L10-WU' => array(
@@ -14357,7 +14436,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => '3-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.44',
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Bier, Zitrone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Bier, Zitrone</td></tr><tr><td>Dosierung</td><td>3-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VG10010-SS' => array(
@@ -14505,7 +14584,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'piecesPerPack' => 1,
         'content' => null,
         'capacity' => null,
-        'flavor' => null,
+        'flavor' => '',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -14991,7 +15070,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'piecesPerPack' => 1,
         'content' => null,
         'capacity' => null,
-        'flavor' => null,
+        'flavor' => '',
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
@@ -15430,7 +15509,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '59.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '39.95',
         'description' => 'Der Akkuträger H-Priv von der Marke Steamax wird mit 18650er Akkuzellen betrieben. Bitte beachten Sie, dass die Akkuzellen im Lieferumfang nicht enthalten sind. Der Akkuträger erreicht eine maximale Ausgangsleistung von 225 Watt und kann in den Ausgabemodi: VW oder  TC betrieben werden. Ein passender Verdampfer ist zum Beispiel der TFV12 Prince von der Marke Steamax.
 <br>
 <br>
@@ -17580,7 +17659,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '13.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Apfel, Martini. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel, Martini</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VG100A10-RB' => array(
@@ -17599,7 +17678,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'dosage' => '13-15',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '13.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Früchte, Bonbon, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Früchte, Bonbon, Koolada</td></tr><tr><td>Dosierung</td><td>13-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VG100A10-SM' => array(
@@ -17617,8 +17696,8 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavor' => 'Kaubonbon, Minze',
         'dosage' => '13-15',
         'base' => null,
-        'retailPriceDampfplanet' => '11.90',
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => null,
+        'retailPriceOthers' => '13.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Kaubonbon, Minze. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kaubonbon, Minze</td></tr><tr><td>Dosierung</td><td>13-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VP100CE' => array(
@@ -17980,7 +18059,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.80',
+        'retailPriceOthers' => '3.95',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Anis, Beeren, Koolada. Die 10 ml Aroma sind in eine 30 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 30 ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-PM' => array(
@@ -17999,7 +18078,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => '4.80',
+        'retailPriceOthers' => '3.95',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: rote Beeren, rote Früchte. Die 10 ml Aroma sind in eine 30 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 30 ml Flasche </td></tr><tr><td>Geschmack </td><td>rote Beeren, rote Früchte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SC100E3' => array(
@@ -18762,7 +18841,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.55',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Ananas, Limette. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Ananas, Limette</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-IM2' => array(
@@ -18781,7 +18860,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.90',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Eisbonbon, Wassermelone. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Eisbonbon, Wassermelone</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'AS100SA' => array(
@@ -18922,7 +19001,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '54.75',
-        'retailPriceOthers' => '64.90',
+        'retailPriceOthers' => '62.95',
         'description' => 'Der Aegis Legend Akkuträger der Marke GeekVape wird über insgesamt 2 18650er Akkuzellen betrieben und kann bis zu 200 Watt Ausgangsleistung erreichen. Zudem kann er in folgenden Ausgabemodi: VW/ VPC/TC/TCR/BYPASS betrieben werden. Der Temperaturbereich liegt hier zwischen 100°C und 315°C und der Widerstandsbereich zwischen 0,05 Ohm und 3,0 Ohm. Über das Farben-Display haben Sie Ihre Einstellungen im Blick. Die 18650er Akkuzellen sind nicht im Lieferumfang enthalten und müssen separat erworben werden.
 <br>
 <br>
@@ -20077,7 +20156,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Toast, schwarze Johannisbeere, Marmelade. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Toast, schwarze Johannisbeere, Marmelade</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CST' => array(
@@ -20096,7 +20175,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Nougat, Toast. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Nougat, Toast</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CSC' => array(
@@ -20115,7 +20194,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Keks, Kokos, Zucker. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Keks, Kokos, Zucker</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-LD' => array(
@@ -20134,7 +20213,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Donut, Zitrone, Zucker. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Donut, Zitrone, Zucker</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-MT' => array(
@@ -20153,7 +20232,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Marmelade, Orange, Toast. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Marmelade, Orange, Toast</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-OP' => array(
@@ -20172,7 +20251,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Orange, Pfirsich. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Orange, Pfirsich</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SCK' => array(
@@ -20191,7 +20270,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Käsekuchen. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Käsekuchen</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'IC100PFM' => array(
@@ -20315,7 +20394,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.95',
         'description' => '',
     ),
     'AS100DY' => array(
@@ -20618,7 +20697,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '25',
         'base' => null,
         'retailPriceDampfplanet' => '9.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.69',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Pfefferminze, Zitrusfrüchte. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Pfefferminze, Zitrusfrüchte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'FV100A10-TR' => array(
@@ -20637,7 +20716,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '25',
         'base' => null,
         'retailPriceDampfplanet' => '9.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.80',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Karamell, Keks, Pistazie, Tabak, Vanille. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Karamell, Keks, Pistazie, Tabak, Vanille</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'UW100HC' => array(
@@ -20847,7 +20926,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.55',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Banane, Kaffee. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Banane, Kaffee</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-DF' => array(
@@ -20866,7 +20945,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '5-7',
         'base' => null,
         'retailPriceDampfplanet' => '4.85',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.70',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Drachenfrucht, Litschi. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Drachenfrucht, Litschi</td></tr><tr><td>Dosierung</td><td>5-7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VP100NR5D' => array(
@@ -23887,7 +23966,7 @@ strong>Lieferumfang</strong>
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => '64.75',
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '59.95',
         'description' => 'Damit Sie den Nova 200 Watt Akkuträger einsetzen können, setzen Sie bitte zwei 18650er Akkuzellen ein. Es befinden sich keine Akkuzellen im Lieferumfang des Akkuträgers. Sie dampfen wahlweise im VW / TCR / VPC / BYPASS Modus. Die einstellbare Ausgangsleistung liegt zwischen 5 und maximal 200 Watt. Verwenden Sie das mitgelieferte USB-Ladekabel um im Bedarfsfall die Firmware des Geräts zu updaten.
 <br>
 <br>
@@ -25054,8 +25133,8 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '46.95',
+        'retailPriceOthers' => '45.80',
         'description' => 'Das Tigon E-Zigaretten Set kommt von der Marke Aspire. Sie dampfen mit dem E-Zigaretten Set im Bypass-Modus bei einer Ausgangsspannung von 3,3 - 4,2 Volt. Der Akku des Aspire Tigon E-Zigaretten Sets ist fest verbaut und besitzt eine Kapazität von 2.600mAh. Der Tigon  Clearomizer wird direkt von oben befüllt (Top-Filling-System) und der Glastank kann so bis zu 3,5ml Liquid aufnehmen. Im Lieferumfang enthalten ist ein Tigon Head mit einem Widerstand von 0,4 Ohm, den Sie für direkte Lungenzüge verwenden können, sowie ein Tigon Head, der einen Widerstand von 1,2 Ohm aufweist mit welchem Sie den Dampf erst im Mundraum und dann inhalieren können. 
 <br>
 <br>
@@ -26151,7 +26230,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'name' => 'Twisted - Mr. Bubbles - Bubble Twist - Shake & Vape - 50 ml, 0 mg/ml',
         'commonName' => 'Bubble Twist',
         'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > unknown#!#SHAKE & VAPE > exotische Früchte#!#SHAKE & VAPE > Gewürze#!#SHAKE & VAPE > Twisted',
+        'category' => 'SHAKE & VAPE > Frisches & Eiscreme#!#SHAKE & VAPE > exotische Früchte#!#SHAKE & VAPE > Gewürze#!#SHAKE & VAPE > Twisted',
         'supplier' => 'Twisted',
         'brand' => 'Twisted',
         'piecesPerPack' => 1,
@@ -26445,7 +26524,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => '64.75',
+        'retailPriceDampfplanet' => '43.85',
         'retailPriceOthers' => '59.95',
         'description' => 'Das E-Zigaretten Set Zelos 2.0 von Aspire besteht aus dem Zelos 2500 mAh Akku und dem Nautilus 2S Verdampfer. Der Nautilus 2S Verdampfer wird direkt von oben befüllt und das Tankvolumen beträgt 2,6ml. Über eine Airflow-Control im unteren Ende können Sie den Luftwiderstand individuell regulieren. Sie erhalten je einen BVC Head mit 0,4 Ohm und einen mit 1,8 Ohm. Dies bietet Ihnen die Möglichkeit wahlweise direkte Lungenzüge zu tätigen oder den entstehenden Dampf erst im Mundraum zu sammeln und anschließend zu inhalieren. Die maximale Ausgangsleistung des Zelos Akkus liegt bei 50 Watt und es werden unterschiedliche Modi unterstützt. Ihre Einstellungen können Sie auf dem OLED-Display ablesen.
 <br>
@@ -28237,7 +28316,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => '69.85',
+        'retailPriceDampfplanet' => '62.95',
         'retailPriceOthers' => '69.80',
         'description' => 'Das Species E-Zigaretten Set aus dem Hause Smok wird via zwei 18650er Akkuzellen mit Energie versorgt. Diese sind nicht Teil des Lieferumfangs und müssen separat bestellt werden. Mit dem Species E-Zigaretten Set können Sie in den Modi VW und TC dampfen. Über den verbauten 1,45 Zoll großen Touchscreen können Sie zwischen diesen Modi jederzeit wechseln und auch jegliche verfügbaren Einstellungen tätigen. Das Screen-Setting ist zudem in sechs verschiedenen Farben wählbar. Außerdem ist ein Puff-Setting verfügbar. Mit diesem können Sie eine maximale Anzahl an Zügen einstellen, die Sie tätigen möchten. Dazu werden die getätigten Züge auch gezählt. Komplettiert wird das Set durch den dazugehörige TFV8 Baby V2 Verdampfer der sich durch ein Tankvolumen von 5ml auszeichnet. Das Liquid wird über ein Top-Filling System in den Tank gefüllt. Zwei Verdampferköpfe der Baby V2 Serie sind im Lieferumfang enthalten. 
 <br>
@@ -28485,7 +28564,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.95',
         'description' => 'Verwenden Sie Baby V2 Mundstück für den TFV8 Baby V2 Clearomizer von Smok. Mundstücke zählen zu den Hygieneartikeln und Sie sollten diese regelmäßig auswechseln. 
 <br>
 <br>
@@ -30181,7 +30260,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Sommerfrüchte, schwarze Johannisbeere, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Sommerfrüchte, schwarze Johannisbeere, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CH' => array(
@@ -30200,7 +30279,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Früchte, Zitrusfrüchte, Anis, Menthol. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Früchte, Zitrusfrüchte, Anis, Menthol</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CR' => array(
@@ -30219,7 +30298,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Wassermelone, Kaugummi. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Wassermelone, Kaugummi</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-RM' => array(
@@ -30238,7 +30317,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Rhabarber, Crumble. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Rhabarber, Crumble</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-VO' => array(
@@ -30257,7 +30336,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Tabak, Vanille. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak, Vanille</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VH100A10-HP' => array(
@@ -31365,7 +31444,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '44.85',
         'description' => 'Das Stick P25 E-Zigaretten Set setzt sich aus dem Stick P25 Akku und dem TFV12 P-Clearomizer zusammen. Das Set erreicht eine maximale Ausgangsleistung von 100 Watt. Das Set unterstützt eine konstante Leistungsabgabe. Der Akku ist fest verbaut und verfügt über eine Kapazität von 3.000mAh. Ein eingebauter LED-Indikator gibt den aktuellen Akkustand des Geräts an. Der subohmfähige Verdampfer TFV12 P-Verdampfer weist mit einem aus Pyrexglas gefertigtem Tank ein Fassungsvermögen von 8ml auf. Zur Befüllung des Tanks mit Liquids nutzen Sie ein Top-Filling-System. Drücken Sie den an der Top Kappe befindlichen Knopf und Sie können anschließend die Top Kappe entgegen des Uhrzeigersinns drehen und legen so einen seitlichen Einfüllschlitz frei, über welchen Liquid in den Tank gelangt. Über eine Airflow-Control können Sie die Luftzufuhr individuell Ihren Bedürfnissen anpassen. Über eine Drehbewegung an der Base öffnen bzw. schließen Sie die Airflow-Control. Je weiter die Airflow-Control geöffnet ist, desto geringer ist der Luftwiderstand während des Vapens. Zwei subohmfähige Verdampferköpfe sind im Lieferumfang enthalten - zwei V12 P-M4 Verdampferköpfe mit einem Widerstand von je 0,17 Ohm. Verdampferköpfe zählen zu den Verschleißteilen und sollten in regelmäßigen Zeitabständen ausgewechselt werden.
 <br>
 <br>
@@ -32202,7 +32281,7 @@ Das SC Elven E-Zigaretten besteht aus dem Elven Akku und dem Elven Cartridge Sys
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '16.90',
         'description' => 'Die Super Mesh X2 Verdampferköpfe von der Marke GeekVape weisen einen Widerstand von 0,3 Ohm aus. Der Leistungsbereich liegt zwischen 30 Watt und 45 Watt. Der vom Hersteller empfohlene Leistungsbereich liegt zwischen 30 und 40 Watt. Pro Packung bekommen Sie insgesamt 5 Verdampferöpfe. Sobald Ihr Liquid verfälscht schmeckt, tauschen Sie bitte den Verdampfer gegen einen Neuen aus.
 <br>
 <br>
@@ -32236,7 +32315,7 @@ Das SC Elven E-Zigaretten besteht aus dem Elven Akku und dem Elven Cartridge Sys
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '27.80',
         'description' => '<h2>Die InnoCigs Atopack E-Zigarette mit Cartridge-System</h2>
 Das Atopack Magic E-Zigaretten Set von InnoCigs ist ein Mitglied der Atopack Serie. Der Akku ist fest verbaut und verfügt über eine Akkukapazität von 1300Ah. Über das beiliegende USB-Kabel können Sie den Akku mit Energie versorgen. Der Tank ist ein sogenanntes Kartuschen- bzw. Cartridge-System. Sie können das Cartridge von dem Akku entfernen und über ein Bottom-Filling System von unten mit Liquid befüllen. Es fasst bis zu 7ml Liquid. 
 <br>
@@ -32276,7 +32355,7 @@ Das Atopack Magic E-Zigaretten Set von InnoCigs ist ein Mitglied der Atopack Ser
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.95',
         'description' => 'Die InnoCigs Atopack Magic-Kartusche bzw. auch Cartridge genannt kann bis zu 7ml Liquid fassen und eignet sich für die gleichnamige E-Zigarette. Um die Kartusche mit Liquid befüllen zu können, muss diese vom Akku durch Ziehen getrennt werden. Anschließend muss die am Boden angebrachte Silikonabdeckung an der Kartusche geöffnet werden, sodass das Einfüllloch freigelegt wird. Pro Packung ist eine InnoCigs Atopack Magic Kartusche enthalten.
 <br>
 <br>
@@ -33426,7 +33505,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '39.90',
+        'retailPriceOthers' => '34.90',
         'description' => 'Der Steam Crave Aromamizer Lite RTA Verdampfer ist ein Selbstwickelverdampfer mit Tank. Sie verwenden keine vorgefertigten Coils, sondern eigene hergestellte Wicklungen mit denen Sie dampfen. Je nachdem was für eine Wicklung Sie verwenden unterstützt der Aromamizer Lite RTA das Dampfen im moderaten oder im Subohm-Bereich. Der Glastank aus Pyrexglas kann bis zu 3,5ml Ihres Liquids fassen, im Lieferumfang ist noch ein Bulb-Glastank mit einem Fassungsvermögen von 4,5ml enthalten.
 <br>  
 <br>
@@ -33466,8 +33545,8 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '24.75',
+        'retailPriceOthers' => '28.80',
         'description' => '"Advken’s Twirl RDA Clearomizer können Sie wahlweise als Tröpflerverdampfer oder auch als Bottom-Feed Variante nutzen. Für die Bottom-Feed Variante benötigen Sie den passenden Akkuträger, der über eine Squonfunktion verfügt. RDA steht für Rebuildable Dripping Atomizer. Das bedeutet, dass der Twirl keine herkömmlichen Verdapferköpfe benötigt, sondern Wicklungen oder auch Coils genannt. Diese können Sie mit einem passenden Draht selber herstellen oder Sie benutzen vorgefertigte Wicklungen. Zudem benötigen Sie dazu noch die entsprechende Watte, welche sich mit dem Liquid vollsaugt. Der Twirl RDA besitzt dazu noch eine Airflow-Control mit der Sie den Luftwiderstand jederzeit und individuell anpassen können.
 <br>  
 <br>
@@ -33949,7 +34028,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => '5.85',
-        'retailPriceOthers' => '5.55',
+        'retailPriceOthers' => '5.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Litschi, Mango, Papaya. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Litschi, Mango, Papaya</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-PN' => array(
@@ -33968,7 +34047,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => '5.95',
-        'retailPriceOthers' => '5.55',
+        'retailPriceOthers' => '5.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Guave, rote Früchte, Cream. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Guave, rote Früchte, Cream</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-PO' => array(
@@ -33987,7 +34066,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => '5.95',
-        'retailPriceOthers' => '5.55',
+        'retailPriceOthers' => '5.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Keks, Vanille, weiße Schokolade, Karamell. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Keks, Vanille, weiße Schokolade, Karamell</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-PP' => array(
@@ -34006,7 +34085,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => '5.85',
-        'retailPriceOthers' => '5.55',
+        'retailPriceOthers' => '5.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Marshmallow, Rice Crispies, Baiser. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Marshmallow, Rice Crispies, Baiser</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-PI' => array(
@@ -34025,7 +34104,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => '5.85',
-        'retailPriceOthers' => '5.55',
+        'retailPriceOthers' => '5.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Pfirsich, Joghurt. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich, Joghurt</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'A100VV' => array(
@@ -34044,7 +34123,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '29.90',
         'description' => 'Der X VapePorn Vice RDA Clearomizer ist aus einer Kooperation von VapePorn und AsMODus entstanden. Der X VapePorn Vice RDA ist ein subohm-fähiger Verdampfer der als Tröpfer oder Bottom Feeder verwendet werden kann. Die am Gehäuse platzierte Luftregulierung (Airflow-Control) ist einstellbar. Mit dieser kontrolilieren Sie die Luftzufuhr und haben somit direkten Einfluss auf die Dampfentwicklung. Für die Nutzung müssen eigene Wicklungen in den Vice RDA von AsMODus eingesetzt werden. Klassiche vorgefefertigte Verdampferlöpfe können nicht verwendet werden. 
 <br>  
 <br>
@@ -34412,8 +34491,8 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '51.95',
+        'retailPriceOthers' => '52.23',
         'description' => 'Das SC E-Zigaretten Set setzt sich aus dem iStick Pico X Akkuträger mit einer Ausgangsleistung von 75 Watt und dem subohm-fähigen Melo 4 D22 Clearomizer zusammen. Der Pico X 75 Watt Akkuträger bezieht seine Leistung über eine 18650er Akkuzelle, die vor dem Betrieb eingesetzt werden muss. Eine 18650er Akkuzelle ist nicht im Lieferumfang enthalten. Mit dem iStick Pico X können Sie im variablen Watt-, variablen Temperature- und im Bypass-Modus vapen. Der SC Melo 4 D22 Clearomizer verfügt über einen Tankvolumen von 2 Millilitern. Das Liquid können Sie über das Top Filling-System von oben in den Tank einfüllen. Mit im Set enthalten sind zwei EC-M Heads mit einem Widerstand von 0,15 Ohm, ein QC USB-Kabel, Ersatz-Teile sowie zwei Bedienungsanleitungen. 
 <br>  
 <br>
@@ -34463,8 +34542,8 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '32.95',
+        'retailPriceOthers' => '32.90',
         'description' => 'Der SC iStick Pico X 75 Watt Akkuträger weist eine handliche und kompakte Maße von 31 mm x 50 mm x 73mm auf. Bevor Sie den Akkuträger in Betrieb nehmen können, muss eine 18650er Akkuzellen eingesetzt werden, welche nicht im Lieferumfang enthalten ist. Der SC iStick Pico X Akkuträger unterstützt das Dampfen im Temperaturgesteuerten-, Bypass und Leistungsgeregelten Modus. Im Leistungsgeregelten Modus können Sie eine maximale Leistung von 75 Watt einstellen. Der Temperaturgesteuerte Modus arbeitet in einem Bereich von 100°C – 315°C. Die von Ihnen vorgenommenen Einstellungen können Sie dem 0,69" großem Display entnehmen. Einstellung nehmen Sie über die Feuertaste und zwei Einstelltasten vor. 
 <br>  
 <br>
@@ -34504,7 +34583,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '12.50',
+        'retailPriceOthers' => '10.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Virginia Tabak. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Virginia Tabak</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TB100A10-BS' => array(
@@ -34523,7 +34602,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '12.50',
+        'retailPriceOthers' => '10.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Burley Tabak. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Burley Tabak</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'RA100D' => array(
@@ -34542,7 +34621,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '78.80',
         'description' => 'Das Delta E-Zigaretten Set von der Marke Revenant Vape ist ein Squonker-Set. Im Akkuträger befindet sich ein Behälter, den Sie mit Liquid befüllen. Und durch das Betätigen der Squonk-Taste füllen Sie Ihren Verdampfer mit Liquid. Die Squonk-Taste befindet sich oberhalb der Feuertaste. Unten am Akkuträger finden Sie das Einfüllloch, das für den Liquid-Behälter gedacht ist. Der Behälter kann bis zu 6,5ml Liquid fassen. Der Akkuträger verfügt über ein 0,96" großes TFT-Farbdisplay, worüber Sie die getätigten Einstellungen ablesen können. Der TVL ist ein RDA Tank und unterstützt einzelne Wicklungen und Watte. Passende Coils mit 0,2 Ohm sind im Lieferumfang enthalten, sowie das passende Zubehör/Werkzeug für das umbauen/austauschen der Coils und Watte.
 <br>  
 <br>
@@ -34604,7 +34683,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '59.80',
         'description' => 'Aus dem Hause Revenant Vape stammt der Delta Akkuträger, der bis zu 100 Watt Ausgangsleistung erreichen kann. Das Besondere an dem Akkuträger ist der Liquidbehälter, der sich im Akkuträger befindet. Zudem nimmt eine Batterie-Hülse dort ebenso Platz. Über das 0,96" große TFT-Farbdisplay können Sie die relevanten Infos jederzeit ablesen und Ihre Einstellungen nehmen Sie über zwei Einstelltasten und eine Feuertaste vor. Ein weitere Taste befindet sich oberhalb der Feuertaste. Über diese Taste befüllen Sie den passenden TVL Reload RDA Tank mit Liquid.
 <br>  
 <br>
@@ -34673,7 +34752,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '33.80',
         'description' => 'Mit der Vaporesso Aurora Play E-Zigarette erhalten Sie eine E-Zigarette im sogenannten All-In-One-Design. Hierbei bilden der Akku mit einer Kapazität von 650mAh und das Pod-System eine fließende Einheit. Das Tankvolumen vom Pod liegt bei 2ml und zur Befüllung nutzen Sie ein Press-to-Fill System. Sie drücken die Spitze der Liquidflasche in das Pod-System und füllen so den Tank mit Liquid. Dafür brauchen Sie das Pod-System nicht vom Akku trennen. Der Widerstand vom Head liegt bei 1,3 Ohm, sodass das moderate Backendampfen unterstützt wird.
 <br>
 Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10,5 oder 12,5 Watt wählen. Durch dreimaliges Betätigen der Feuertaste können Sie die Stufen einstellen. Eine integrierte LED sagt Ihnen über ein Farbschema an, welche Stufe ausgewählt ist. 
@@ -34750,7 +34829,7 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '29.95',
         'description' => 'Das Nord E-Zigaretten Set hat ein All-In-One-Design. Es besteht aus einem Akku und einem Pod-System, die Sie voneinander trennen können, um zum Beispiel Ihren Tank mit Liquid zu füllen oder den Head gegen einen neuen auszutauschen. Der Akku hat eine Kapazität von 1100mAh und kann über das mitgelieferte USB-Kabel geladen werden. Den Ladestand können Sie über die in der Feuertaste eingebaute LED ablesen (grün = 70%-100%, orange = 30%-70%, rot = weniger als 30%). Zudem verfügt er über einen 8-Sekunden Zug-Schutz. Das heißt, wenn Sie länger als 8 Sekungen an Ihrer E-Zigarette ziehen, so schaltet sich Ihre E-Zigarette automatisch aus. Diese können Sie nach wenigen Sekunden wieder einschalten. Das Pod-System fasst bis zu 3ml Liquid, das Sie via Side-Filling seitlich in den Tank geben. Über das E-Liquid-Fenster am Mundstück/Pod-System können Sie Ihren Liquidstand im Auge behalten. Im Lieferumfang sind 2 Verdampferköpfe von der Nord-Serie enthalten. 1x Nord Regular Verdampferkopf mit 1,4 Ohm und 1x Nord Mesh Verdampferkopf mit 0,6 Ohm. Die E-Zigarette ist daher für das moderate- und Subohm-Dampfen geeignet. Die Nord E-Zigarette bekommen Sie in insgesamt 13 Farben.
 <br>
 <br>
@@ -34939,8 +35018,8 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '27.85',
+        'retailPriceOthers' => '29.50',
         'description' => 'Die aus dem Hause Uwell stammende Caliburn ist eine All-In-One E-Zigarette. Dabei bilden der festverbaute Akku mit einer Kapazität von 520mAh und der wechselbare Pod mit einem integriertem Verdampferkopf (1,4 Ohm) eine fließende Einheit. Das Pod können Sie per Top-Filling von oben mit frischem Liquid befüllen. Die Uwell Caliburn E-Zigarette verfügt über eine Zugautomatik, mit der Sie nach dem Einschalten (5-Klick-Automatik) ohne weiteres betätigen der Feuertaste Vapen können. Die Caliburn ist für das moderate Dampfen (MTL) bzw. Backdampfen ausgelegt.  
 <br>
 <br>
@@ -35121,8 +35200,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '32.95',
+        'retailPriceOthers' => '29.90',
         'description' => 'Der GeekVape Lucid 80 Watt hat eine kompakte Bauform von 52,9 mm x 26 mm x 75 mm. Für den Betrieb muss eine 18650er Akkuzelle eingesetzt werden. Sie können den Lucid sowohl in einem Leistungsbereich zwischen 5 und 80 Watt, als auch einem Temperaturbereich zwischen 100°C und 315°C (200°F-600°F) betreiben. Der Widerstandsbereich liegt zwischen 0,05 - 3,0 Ohm. Der GeekVape Lucas 80 Watt verfügt über mehrere verschiedene Ausgabemodi ( VW| TC (Ni, Ti, SS) | TCR | VPC | BYPASS). Die von Ihnen vorgenommen Einstellungen, können Sie dem 0,69 Zoll großen OLED-Display entnehmen.
 <br>
 <br>
@@ -35165,7 +35244,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '29.90',
         'description' => 'Bei dem HellVape Anglo RDA handelt es sich um einen Verdampfer, der für das Wickeln eigener Wicklungen ausgelegt ist. Sie können wahlweise Single oder Dual Wicklungen einsetzen. Es handelt sich um einen RDA Verdampfer (Rebuildable Dripping Atomizer) einem Tröpflerverdampfer, der keinen Glastank besitzt. Sie träufeln Ihr Liquid direkt von oben auf Ihre mit Watte durchzogene Wicklung. Im Lieferumfang befindet sich ein BF-Pin welchen Sie in den Anglo RDA Verdampfer einsetzen können um ihn mit Squonker-Akkuträgern verwenden zu können.
 <br>  
 <br>
@@ -35209,8 +35288,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '59.85',
+        'retailPriceOthers' => '59.80',
         'description' => 'Sie können mit dem Digiflavor Edge in unterschiedlichen Modi dampfen. Sie können frei zwischen den Modi VW/TC(Ni200/Ti/SS)/TCR/VPC/Bypass wählen und jederzeit wechseln. Die Ausgangsleistung liegt zwischen 5 und 200 Watt. Alle Ihre getätigten Parameter können Sie auf dem 1,54 Zoll großem Farb-Display ablesen. Bitte beachten Sie, dass Sie zwei 18650er Akkuzellen für die Inbetriebnahme benötigen. Es befinden sich keine Akkuzellen im Lieferumfang, bitte bestellen Sie diese separat.
 <br>
 <br> 
@@ -35251,8 +35330,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '16.95',
+        'retailPriceOthers' => '16.95',
         'description' => 'Mit dem kabellosen Ladegerät von Digiflavor können Sie beispielsweise die Akkuzellen Ihres Digiflavor Edge Akkuträgers wieder aufladen. Das Laden der Zellen erfolgt lediglich über Berührung bei einer maximalen Ausgabespannung von 15 Watt. Ein Überladungs- sowie ein Kurzschlussschutz geben Ihnen eine zusätzliche Sicherheit beim Laden der Akkuzellen.
 <br>
 <br> 
@@ -35292,8 +35371,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '30.95',
+        'retailPriceOthers' => '31.90',
         'description' => 'Das E-Zigaretten Set Flint von der Marke GeekVape hat eine Akkukapazität von 1000mAh und kann über ein USB-Kabel geladen werden. Das entsprechende USB-Kabel finden Sie im Lieferumfang. Ein LED-Indikator informiert Sie über den Akkuladestand. Zudem können Sie über die Feuertaste die Ausgangsspannung auswählen. Wenn die LED rot leuchtet, so haben Sie 3,2V ausgewählt; bei blau herschen 3,5V und bei grün 3,8V). Der Flint Verdampfer hat ein Tankvolumen von 2ml. Diesen befüllen Sie via Top-Filling System direkt von oben mit Liquid. Im Set sind zwei unterschiedliche NS-Verdampferköpfe enthalten, die aber für das moderate Dampfen ausgelegt sind. 1x NS Verdampferkopf mit 1,6 Ohm und 1x NS Verdampferkopf mit 1,2 Ohm. Bitte tauschen Sie die Verdampferköpfe in regelmäßigen Zeitabständen, damit Ihr Liquidgeschmack unverfälscht bleibt.
 <br>  
 <br>
@@ -35350,7 +35429,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '7.90',
         'description' => 'Für das moderate Dampfen sind die NS-Verdampferköpfe der Marke GeekVape ausgelegt. Sie haben die Wahl zwischen 1,6 Ohm oder 1,2 Ohm. Je Varainte und Packung sind 5x NS-Verdampferköpfe enthalten. Bitte tauschen Sie den alten Verdampferkopf gegen einen neuen, sobald Sie eine Geschmacksverfälschung wahrnehmen.
 <br>
 <br>
@@ -35383,7 +35462,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '29.90',
         'description' => 'Der Clearomizer Rebirth RTA aus dem Hause HellVape kann 2ml bis 5ml Liquid fassen und ist ein Rebuildable Tank Atomizer. Das bedeutet, dass der Clearomizer keine vorgefertigten Heads unterstützt. Damit Sie mit dem Cleaomizer dampfen können, müssen lediglich passende Watte und Wicklungen Ihrer Wahl in dem Deck verbaut werden. Das passende Werkzeug ist im Lieferumfang enthalten. Zudem können Sie Munstücke mit einem 810er oder 510er Anschluss verwenden. Ein Adapter für das 510er-Mundstück und ein 810er Mundstück befinden sich im Lieferumfang. Ihren Tank befüllen Sie mit Liquid über das Top Filling System und über die Bottom-Airflow-Control regulieren Sie den Luftwiderstand. Den Rebirth RTA Clearomizer bekommen Sie folgenden Farben: silber, gold, regenbogen, schwarz, blau, gunmetal, lila und in komplett schwarz.
 <br>  
 <br>
@@ -35469,7 +35548,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Ananas, Mango. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Ananas, Mango</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-AF' => array(
@@ -35488,7 +35567,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Anis, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Beeren, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CM' => array(
@@ -35507,7 +35586,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Karamell, Butterscotch Candy. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Butterscotch Candy</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-LP' => array(
@@ -35526,7 +35605,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Zitronentorte, Zuckersirup. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Zitronentorte, Zuckersirup</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-TB' => array(
@@ -35545,7 +35624,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '10-15',
         'base' => null,
         'retailPriceDampfplanet' => '12.45',
-        'retailPriceOthers' => '13.80',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Tabak, Nuss. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak, Nuss</td></tr><tr><td>Dosierung</td><td>10-15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'GV100ZX' => array(
@@ -35813,7 +35892,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '24.95',
         'description' => 'Mit dem BARON RDA bekommen Sie einen Selbstwickel Verdampfer aus dem Haus GeekVape. Dieser verwendet keine fertigten Heads. Ihre Heads bzw. Wicklungen müssen eigenständig mit dem passenden Wickeldraht und Watte angefertigt werden. Das Deck vom Baron RDA ist ein sogenanntes Dual-Coil Deck. Sie können den Baron RDA also mit zwei Wicklungen oder auch nur mit einer benutzen. Dank der stufenlosen Airflow-Control, können Sie Ihren Zugwiderstand individuell anpassen. Den Baron RDA können Sie als Squonker oder Tröpfler nutzen. Aufgrund des genormten 510er Gewindes können Sie den Baron RDA mit einer Vielzahl von Akkuträgern und dank der Squonk-Funktion auch mit squonkfähigen Akkuträgern benutzen.
 <br>
 <br>
@@ -35858,7 +35937,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '49.80',
         'description' => 'Der Amor NSE Verdampfer mit einem Tankvolumen von 3 Millilitern und der Steamax SINUOUS V80 Akkuträger mit einer max. Leistung von 80 Watt, sind in diesem E-Zigaretten Set enthalten. Beim Steamax SINUOUS V80 Akkuträger ist das 510er Gewinde für den Verdampfer nicht oben seitlich platziert, sondern oben mittig. Und die Front ist bei dem Akkuträger transparent, sodass Sie ein Teil vom Inneren sehen können. Dadurch unterscheidet sich der Steamax SINUOUS V80 optisch von anderen Akkuträgern. Der subohm-fähige und MTL-fähige Amor NSE Clearomizer wird über das Top-Filling-System von oben mit Liquid befüllt. Mit dem Steamax WS-M 0,27 Ohm Verdampferkopf, der im Set enthalten ist, ist das Vapen im Subohm-Bereich möglich. Wenn Sie sich für das moderate Dampfen entscheiden, so verwenden Sie bitte den WS04 Verdampferkopf mit 1,3 Ohm.
 <br>
 <br>
@@ -35921,7 +36000,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '35.45',
         'description' => 'Der Steamax SINUOUS V80 80 Watt Akkuträger erreicht eine Leistung von bis zu 80 Watt. Er ist auf den Einsatz von 18650er Akkuzellen ausgelegt, welche nicht mit im Lieferumfang enthalten sind. Mit dem SINUOUS V80 Watt können Sie in den folgenden Dampf-Modi vapen: VW, TC (Ni, Ti, SS), TCR und Bypass. Der Steamax SINUOUS V80 Watt hat ein ergonomisches Design und hat abgerundete Kanten. Zudem wurde das Gewinde beim V80 mittig verbaut und die Front ist transparent.
 <br>
 <br>
@@ -35966,8 +36045,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '12.95',
+        'retailPriceOthers' => '14.95',
         'description' => 'Mit dem Amor NSE Verdampfer Set von der Marke Steamax erhalten Sie 1x Amor NSE Verdampfer, 1x WS-M Verdampferkopf mit 0,27 Ohm, 1x WS04 Verdampferkopf mit 1,3 Ohm, 1x Ersatzteil-Set und eine Bedienungsanleitung. Der Amor NSE Verdampfer eignet sich für das MTL und DL Dampfen. Das heißt, wenn Sie den WS04 Verdampferkopf mit 1,3 Ohm verwenden, so ist das moderate Dampfe gewährleistet. Wenn Sie sich für den WS-M Verdampferkopf mit 0,27 Ohm entscheiden, so dampfen Sie im Subohm-Bereich. Ein passender Akkuträger dafür ist beispielsweise der Sinuous V80 mit max. 80 Watt Ausgangsleistung der Marke Steamax.
 <br>
 <strong>Lieferumfang</strong>
@@ -37007,8 +37086,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => 'roter Apfel, rote Himbeere, schwarze Himbeere, Brombeere',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.85',
+        'retailPriceDampfplanet' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: roter Apfel, rote Himbeere, schwarze Himbeere, Brombeere. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>roter Apfel, rote Himbeere, schwarze Himbeere, Brombeere</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'ML100A10-LW' => array(
@@ -37026,8 +37105,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => 'Mandarine, Orange, Granatapfel',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceDampfplanet' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Mandarine, Orange, Granatapfel. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mandarine, Orange, Granatapfel</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SP100L10-CT' => array(
@@ -37064,8 +37143,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => 'Kirsche, Kokos',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceDampfplanet' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Kirsche, Kokos. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Kokos</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'ML100A10-MJ' => array(
@@ -37083,8 +37162,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => 'Minze, Menthol, Eukalyptus, Holunderblüte, Limette',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceDampfplanet' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Minze, Menthol, Eukalyptus, Holunderblüte, Limette. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Minze, Menthol, Eukalyptus, Holunderblüte, Limette</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SP100L10-IG' => array(
@@ -37121,8 +37200,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => 'schwarzer Tee, Kardamom, Zimt, Ingwer, Honig, Milch',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceDampfplanet' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: schwarzer Tee, Kardamom, Zimt, Ingwer, Honig, Milch. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>schwarzer Tee, Kardamom, Zimt, Ingwer, Honig, Milch</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SA100A10-CB' => array(
@@ -37141,7 +37220,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: tropische Früchte, Ananas, Papaya, Kokosmilch. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>tropische Früchte, Ananas, Papaya, Kokosmilch</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SP100L10-JC' => array(
@@ -37179,7 +37258,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Apfel, Rosine, Zimt, Blätterteig. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Rosine, Zimt, Blätterteig</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SA100A10-PS' => array(
@@ -37198,7 +37277,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Himbeere, schwarze Johannisbeere, Konfitüre. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Himbeere, schwarze Johannisbeere, Konfitüre</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SP100L10-KC' => array(
@@ -37236,7 +37315,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Limette, Traube, Agave. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Limette, Traube, Agave</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SA100A10-MS' => array(
@@ -37255,7 +37334,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Wassermelone, Kirsche, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone, Kirsche, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SP100L10-MS' => array(
@@ -37293,7 +37372,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Käsekuchen, Blaubeere, Erdbeere, Sahne, Keks. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Käsekuchen, Blaubeere, Erdbeere, Sahne, Keks</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SP100L10-MF' => array(
@@ -37331,7 +37410,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Ananas, Vanille, Cream. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Ananas, Vanille, Cream</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SA100A10-BA' => array(
@@ -37350,7 +37429,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Waldfrüchte, Vanille, Lakritz, Menthol. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldfrüchte, Vanille, Lakritz, Menthol</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SP100L10-ML' => array(
@@ -37388,7 +37467,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Orangenbonbon, Vanille. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Orangenbonbon, Vanille</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SP100L10-OC' => array(
@@ -37482,8 +37561,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '72.95',
+        'retailPriceOthers' => '69.80',
         'description' => 'Das E-Zigaretten Set Tinker der Marke Steamax erreicht mit seinen drei nicht im Lieferumfang enthaltenen 18650er Akkuzellen bis zu 300 Watt. Sie haben die Wahl zwischen diversen Dampfmodi wie: VW, TC, TCR. Der im Lieferumfang enthaltene Column Clearomizer hat ein Fassungsvolumen von 6,5ml und wird über ein Top-Filling System mit Liquid befüllt. Sie müssen lediglich die Top-Kappe zur Seite schieben um an die Öffnung zu gelangen. Ebenfalls im Set enthalten sind ein Ersatz-Glastank sowie zwei WL01 Heads mit einem Widerstand von jeweils 0,15 Ohm. Die Verdampferköpfe können zwischen 30 und 100 Watt gedampft werden, wobei der Hersteller eine Leistung von 50 bis 70 Watt empfiehlt. Beachten Sie bitte, dass die Verdampferköpfe einen Widerstand von unter 1,0 Ohm haben und somit für das Dampfen mit Zügen direkt auf die Lunge gedacht sind. 
 <br>
 <br>
@@ -37534,8 +37613,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '56.95',
+        'retailPriceOthers' => '58.75',
         'description' => 'Der optisch vom Aussehen eines Sportschuhs inspirierte Reuleaux Tinker von Steamax ist ein Akkuträger für E-Zigaretten mit einer maximalen Ausgangsleistung von bis zu 300 Watt. Für seinen Betrieb stehen Ihnen drei verschiedene Betriebsmodi zur Verfügung. Leistungsgeregelt arbeitet Ihr Gerät im Variable Wattage-Modus (VW). Für den temperaturgesteuerten Betrieb bestimmen Sie im Temperature Control-Modus (TC), bis zu welcher Temperatur die Wicklung des Verdampferkopfes maximal erhitzt wird. Ihnen steht eine Range von 100 °C – 315 °C zur Verfügung. Der TCR-Modus bietet Ihnen darüber hinaus die Option, den Temperaturkoeffizienten des Widerstandes für bestimmte Wicklungen zu spezifizieren. Der Reuleaux Tinker aus dem Hause Steamax wird über drei Tasten gesteuert. Festlegen der Betriebsart und individuelle Einstellungen nehmen Sie über ein Menü vor. Das 0,96 Zoll OLED-Display verschafft Ihnen einen Überblick über die wesentlichen Betriebsparameter. Die genormte, federnd gelagerte 510er Gewindeaufnahme des Steamax Reuleaux Tinker erlaubt eine Kombination mit den allermeisten marktüberlichen Clearomizern
 <br>
 <br>
@@ -37574,8 +37653,8 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '21.85',
+        'retailPriceOthers' => '23.80',
         'description' => 'Der Column von Steamax ist ein Clearomizer mit einem Tankvolumen von vergleichsweise reichlichen 6,5 Millilitern, Top Filling-System und stufenlos regelbarer Airflow Control. Sein Durchmesser misst 28 Millimeter und seine Höhe beträgt 54 Millimeter. Die beiden im Lieferumfang des Kit gehörenden WL01 Single Heads unterstützen mit einem Widerstandswert von 0,15 Ohm das Vapen mit direkter Lungeninhalation. Ihre Architektur weicht von den anderen Verdampferköpfen ab, da hier ein von Baumwollwatte ummanteltes Mesa-Gewebe in Röhrenform verbaut ist. So soll beim Dampfen besonders ausgewogener Geschmack und reichlich Dampf in einem Leistungsbereich zwischen 30 und 100  Watt erzeugt werden.
 <br>
 <br>
@@ -37750,7 +37829,7 @@ Die Vaporesso Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomize
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '48.80',
         'description' => 'Das Stick V9 E-Zigaretten Set von der Marke Smok setzt sich aus dem Stick V9 Akku und dem TFV8 Baby V2 Verdampfer zusammen. Der Akku ist fest verbaut und verfügt über eine Kapazität von 3000mAh. Sie können Ihn mit dem beiliegenden USB-Ladekabel laden. Ihren Akkuladestand können Sie der LED-Leuchte in der Feuertaste entnehmen. Die maximale Ausgangsleistung liegt bei 60 Watt. Der im Set enthaltene Verdampfer TFV8 Baby V2 kann bis zu 5ml Liquid aufnehmen. Zur Befüllung nutzen Sie ein Top-Filling-System und über eine in der Base integrierte Airflow-Control lässt sich der Luftwiderstand des Verdampfers Ihren persönlichen Dampfgewohnheiten anpassen. Mit im Lieferumfang enthalten sind zwei Verdampferköpfe der Baby V2-Serie. Beide Verdampferköpfe haben einen Widerstand von 0,15 Ohm und sind daher für das Dampfen im Subohm-Bereich geeignet. Trotz der kompakten Bauform sind einige Sicherheitsfeatures eingebaut, wie beispielsweise die acht Sekunden Zugautomatik, der Tiefen- und Kurzschlussschutz.
 <br>
 <br>
@@ -38242,8 +38321,8 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '49.85',
+        'retailPriceOthers' => '51.80',
         'description' => 'Das Stick V9 Max E-Zigaretten Set ist eine Kombination aus dem Stick V9 Max Akku und gleichnamigen Verdampfer. Der Akku ist fest verbaut und weist eine Akkukapazität von 4000mAh auf. Der Verdampfer kommt mit einem Tankvolumen von 8,5ml. Diese 8,5 Milliliter werden via Top-Filling System befüllt. Dazu müssen Sie die Top-Cap zur Seite schieben und das Einfüllloch freilegen. Darüberhinaus verfügt der Verdampfer über eine Airflow, welche sich in der Base befindet. Mit dieser können Sie Ihren Luftwiderstand individuell regulieren. Mit im Lieferumfang sind zudem noch zwei subohmfähige Heads enthalten. Zum einen der Baby V2 S1 Single Mesh Verdampferkopf mit 0,15 Ohm und zum anderen der Baby V2 S2 Quadruple Verdampferkopf ebenfalls mit 0,15 Ohm. Zudem haben Sie die Möglichkeit mit dem mitgelieferten USB-Kabel Ihre E-Zigarette mit neuer Energie zu versorgen.
 <br>
 <br>
@@ -38330,7 +38409,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-WA' => array(
@@ -38349,7 +38428,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Pfeifentabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfeifentabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-SN' => array(
@@ -38368,7 +38447,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Orange, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Orange, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-BT' => array(
@@ -38387,7 +38466,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tabak. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-CK' => array(
@@ -38406,7 +38485,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Minze, Schokolade. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Minze, Schokolade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-LK' => array(
@@ -38425,7 +38504,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: tropische Früchte. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>tropische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-KD' => array(
@@ -38444,7 +38523,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Crème Brûlée. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Crème Brûlée</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-LX' => array(
@@ -38463,7 +38542,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Tequila Sunrise. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Tequila Sunrise</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-MI' => array(
@@ -38482,7 +38561,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Virgin Colada. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Virgin Colada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-BB' => array(
@@ -38501,7 +38580,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Vanille, Pudding. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille, Pudding</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-MF' => array(
@@ -38520,7 +38599,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Kaktusfeige. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaktusfeige</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'IC10000L10-ST' => array(
@@ -38539,7 +38618,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '2.95',
         'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Mango, Minze. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'TO100L10-AC' => array(
@@ -38918,8 +38997,8 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '83.85',
+        'retailPriceOthers' => '86.80',
         'description' => 'Das E-Zigaretten Set Crown 4 setzt sich aus dem Akkuträger Crown 4 200 Watt und dem Crown 4 Verdampfer von Uwell zusammen. Damit Sie das E-Zigaretten Set in Betrieb nehmen können, setzen Sie bitte zwei 18650er Akkuzellen ein. Im Lieferumfang sind keine 18650er Akkuzellen enthalten, sodass Sie diese separat bestellen müssen. Sie können in den Modi: Power / TCR / SS904 TC dampfen und jederzeit zwischen den Modi wechseln. Der Leistungsbereich des Crown 4 E-Zigaretten Sets liegt zwischen 5 und 200 Watt. Der Crown 4 Verdampfer kann bis zu 5ml Liquid fassen. Im Lieferumfang ist noch ein Bulb-Glastank enthalten, mit welchem Sie das Tankvolumen auf 6ml erweitern können. Über ein Top-Filling-System können Sie den Tank von oben mit Liquid befüllen. Die im Lieferumfang enthaltenen Verdampferköpfe können für das Subohm-Dampfen verwenden (direkte Lungenzüge). Bitte beachten Sie, dass Verdampferköpfe regelmäßig ausgewechselt werden sollten um ein gleichbleibendes Dampferlebnis zu gewährleisten.
 <br>
 <br>
@@ -38979,8 +39058,8 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '49.85',
+        'retailPriceOthers' => '59.80',
         'description' => 'Das OBS Cube E-Zigaretten Set hat einen fest verbauten 3000mAh Akku der über das mitgelieferte USB Kabel geladen wird. Sie können sowohl im Variablen Watt Modus (VW) als auch im Temperatur Kontrollierten Modus (TC) Dampfen. Der im Set enthaltene Cube Clearomizer verfügt über einen 4ml großen Tank welchen Sie über ein Top-Filling System mit Liquid befüllen. Hierzu schrauben Sie lediglich Die Top-Kappe ab um an die Befüllöffnung zu gelangen. Die M1 Mesh Heads haben einen Widerstand von 0,2 Ohm und sind für eine Leistung von 50 bis 80 Watt ausgelegt wobei die empfohlene Watt Einstellung zwischen 65 und 75 Watt liegt. Bitte beachten Sie dass Verdampferköpfe Verschleißteile sind und diese regelmäßig bei Geschmacks- oder Leistungsverlust getauscht werden müssen. Auf dem 0,96 Zoll LED-Display können Sie alle relevanten Informationen ablesen wie zum Beispiel die eingestellte Leistung, den Widerstand der Heads, Zugzeit und die Anzahl der getätigten Züge. Trotz der kompakten Bauweise die durch den mittig sitzenden 510er Anschluss kommt müssen Sie nicht auf die Üblichen Sicherheits Features verzichten. Es sind Zugzeit begrenzer, Kuzschluss-, Tiefenentlade-, Überlade- und Überhitzungsschutz auf dem Chip im OBS Cube E-zigaretten Set enthalten. 
 <strong>Lieferumfang:</strong>
 <ul>         
@@ -39031,8 +39110,8 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '38.95',
+        'retailPriceOthers' => '44.80',
         'description' => 'Der OBS Cube 80 Watt Akkuträger hat trotz seinem Fest verbauten 3000mAh Akkus alle Sicherheitsfunktionen integriert, es kommen Kurzschluss-, Tiefenentlade, Überlade- und Überhitzungsschutz zum Einsatz sowie eine zehn Sekunden Zugzeit sperre. Der mittig sitzende 510er Anschluss bietet Ihnen Platz für Clearomizer mit bis zu 25 mm. Der Cube 80 Watt feuert mit bis zu 80 Watt und erkennt Widerstände zwischen 0,1 und 3 Ohm an. Der Akku kann mittels des Mitgelieferten USB-Kabels geladen werden, das sogar in zwei bis drei Stunden bei einem Ladestrom von maximal 1,5 Ampere. Sie können frei zwischen zwei Betriebsmodi wählen, es stehen ein Variabler Watt Modus (VW) als auch ein Temperaturgeregelter Modus (TC) zur verfügung. 
 <strong>Lieferumfang:</strong>
 <ul>         
@@ -39175,7 +39254,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '19.90',
         'description' => '<p><br>Shake & Vape Liquid. Geschmack: Espresso, Karamell. Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 Flasche </td></tr><tr><td>Geschmack </td><td>Espresso, Karamell</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SP100L10-WH' => array(
@@ -39184,7 +39263,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'name' => 'Skull Plus - White - Shake & Vape - 100 ml, 0 mg/ml',
         'commonName' => 'White',
         'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Gewürze#!#SHAKE & VAPE > Beeren#!#SHAKE & VAPE > unknown#!#SHAKE & VAPE > Skull Plus',
+        'category' => 'SHAKE & VAPE > Gewürze#!#SHAKE & VAPE > Beeren#!#SHAKE & VAPE > Frisches & Eiscreme#!#SHAKE & VAPE > Skull Plus',
         'supplier' => 'Skull Plus',
         'brand' => 'Skull Plus',
         'piecesPerPack' => 1,
@@ -39272,8 +39351,8 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'flavor' => null,
         'dosage' => null,
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '96.95',
+        'retailPriceOthers' => '89.90',
         'description' => 'Die VapeOnly vPipe III Ebony wird über eine 18350er Akkuzelle betrieben und ist eine E-Zigarette, die aussieht wie eine Pfeife. Im Set sind 2 18350er Akkuzellen enthalten und das passende Ladegerät ebenso. Das Dampfen erfolgt in einem variablen Wattbereich zwischen 15 und max. 24 Watt. Der Tank fasst bis zu 1,2 Milliliter Liquid. Im Lieferumfang ist ein Head mit 0,7 Ohm enthalten.
 <br>
 <br>
@@ -39320,7 +39399,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '81.80',
         'description' => 'Das Vaporesso Luxe S E-Zigaretten Set besteht aus dem Luxe 220 Watt und dem SKRR S Verdampfer. Der Akkuträger benötigt zwei 18650er um in Betrieb genommen zu werden. Es befinden sich keine Akkuzellen im Lieferumfang und Sie müssen diese separat bestellen. Der einstellbare Leistungsbereich beläuft sich auf 5 bis maximal 220 Watt. Der SKRR S Verdampfer ist für das direkte Inhalieren in die Lunge ausgelegt. Sie erhalten zwei passende Verdampferköpfe, einen  QF Strip 0,15 Ohm Head und einen QF Meshed Head, der einen Widerstand von 0,2 Ohm aufweist. Verdampferköpfe sollten regelmäßig getauscht werden um ein gleichbleibendes Dampferlebnis zu gewährleisten. Der Glastank des SKRR S Verdampfers kann maximal 8ml fassen.
 <br>
 <br>
@@ -39409,7 +39488,7 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '39.95',
         'description' => 'Der Vapor Storm Puma 200 Watt hat eine maximale Ausgangsleistung 200 Watt und der Widerstandbereich liegt zwichen 0,06 Ohm und 3 Ohm. Das integrierte OLED Display zeigt Ihnen alle relevanten Informationen an, wie zum Beispiel die eingestellte Leistung, den Widerstand des Verdampfers oder die Zugzeit. Der Puma 200 Watt wird mit zwei 18650 Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Ihnen stehen insgesamt vier Modi zur Auswahl, mit denen Sie Dampfen können: VW, TC, Bypass und CCW. Im CCW Modus (Benutzerdefinierte Watt kurve) haben Sie die möglichkeit sekunden genau festzulegen mit welcher Spannung Ihr Akkuträger die Leistung abgibt. Beispiel: 1. bis 3. Sekunde 50 Watt, 4. bis 6. Sekunde mit 90 Watt. Der Vapor Storm Puma wird aus zwei unterschiedlichen Materialien hergestellt, Sie haben die Wahl zwischen robustem ABS welcher ein gewicht von 70,6g (Ohne Akkus) hat oder dem schwereren Edelstahl. 
 <b>Lieferumfang:</b>
 <ul>         
@@ -39593,7 +39672,7 @@ Die von Chubby Gorilla hergestellte Stubby PET Leerflasche verfügt über ein Fa
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '21.95',
         'description' => 'Der 1928 MTL RDA von Cthulhu ist ein MTL-fähiger (Mund-zur-Lunge) Selbstwickel-Verdampfer. Dieser verwendet keine herkömmlichen Verdampferköpfe, sondern Coils/Wicklungen die eigenständig angefertigt werden. Der 1928 MTL RDA kann gleichermaßen als Tröpfler oder Bottom Feeder verwendet werden. Bei der Tröpfle-Variante geben Sie einige Tropfen von Ihrem Liquid direkt auf die eingebaute Wicklungen. Wenn Sie den 1928 MTL RDA als Bottom Feeder verwenden, müssen Sie vorher den BF-Pin einsetzen. Achten Sie darauf, das Sie einen sqounker-fähigen Akkuträger verwenden. Die Bottom Airflow-Control ist frei einstellbar und verfügt über vier verschieden große Aussparungen.
 <br>
 <br>
@@ -39635,7 +39714,7 @@ Die von Chubby Gorilla hergestellte Stubby PET Leerflasche verfügt über ein Fa
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '28.90',
         'description' => 'Der Cthulhu Hastur MTL RTA Mini Verdampfer ist ein Selbstwickelverdampfer für das Dampfen im Moderaten Mund zu Lunge Bereich. Im Lieferumfang erhalten Sie einen zweiten Glastank in Milchglas Optik und ein 510er Delrin Mundstück, welches etwas kürzer als das verbaute Edelstahl Mundstück ist. Das Tankvolumen des Hastur MTL RTA Mini beträgt 2ml. Sie haben die Möglichkeit den Tank von oben über eine Topkappe welche ein Bajonettverschluss hat mit frischem Liquid zu befüllen. Über die Airflow Control haben Sie drei Möglichkeiten den Zug im moderaten Bereich zu regulieren. Es stehen zur Auswahl: 0,8mm, 1,2mm und 1,8mm Luftlöcher mit denen Sie Geschmack und Dampfmenge weiter regulieren können. Das absichtlich klein gehaltene Deck und die Verdampferkammer sorgen für einen intensiveren Geschmack. Über die zwei Schrauben auf dem Deck ist dennoch ausreichend Platz für eine selbst hergestellte Wicklung im moderaten Bereich. Das dem Genesis Prinzip ähnliche Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Tankinhalt leeren zu müssen. Der Durchmesser des Hastur MTL RTA Mini beträgt 22 mm bei einer Höhe von 30mm. Der standardisierte 510er Anschluss am Verdampfer ist mit allen Akkuträgern kompatibel die ebenfalls über einen 510er Anschluss verfügen. 
 <br><br>
 <strong>Lieferumfang:</strong>
@@ -39867,7 +39946,7 @@ Die von Chubby Gorilla hergestellte Stubby PET Leerflasche verfügt über ein Fa
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '34.90',
         'description' => '<h2>Der Zathog RDA von Cthulhu</h2>
 Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer. Das RDA im Namen steht für Rebuildable Drippin Atomizer. Es handelt sich hierbei also um einen Tröpfler-Verdampfer. Sie müssen das Liquid also auf die von Ihnen selbst gewickelten Coils und auf die Watte im Coil tröpfeln. Es ist Ihnen auch möglich den Zathog RDA auch als Bottom-Feeder Variante verwenden. Hierzu brauchen Sie einen squonkfähigen Akkuträger. Bei dieser Variante wird das Liquid aus der sich im Akkuträger befundenen Squonkflasche und den Verdampfer hochgepumpt. So saugt sich die Watte mit Liquid voll. Zudem besitzt der Zathog RDA zwei Airflow-Systeme. Eine Side-Ariflow und eine Top-Airflow. Beide können Sie je nach Belieben einstellen.
 <br>
@@ -39912,9 +39991,9 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '89.90',
         'description' => '<p><br>Der asMODus Minikin V3 ist ein sehr formschöner und leistungsstarker Akkuträger, der durch sein ergonomisch abgerundetes Design besonders angenehm in der Hand liegt. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet.</p>
-<p>Der Minikin V3 wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den Micro-USB Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3 für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
+<p>Der Minikin V3 wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den USB-C Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3 für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
 <p>Das Herz des Minikin V3 ist der sehr effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Minikin V3 über den USB Anschluss mit einem Laptop oder PC. Der USB Anschluss des Minikin V3S unterstützt USB 3.0.</p>
 <p>Der Minikin V3 verfügt über die Dampf Modi VW (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CCW-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
 <p>Im Watt-Modus liegt die Ausgangsleistung des Minikin V3 zwischen 5 und 200 Watt.&nbsp;Im Temperatur-Modus liegt die Leistung zwischen 5&nbsp; und 120 Watt bei einem einstellbaren Temperaturbereich von 100° bis 300° Celsius.&nbsp;</p>
@@ -39988,11 +40067,11 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '105.90',
         'description' => '<p><br>Dieses E-Zigaretten-Set besteht aus dem formschönen und leistungsstarken Akkuträger asMODus Minikin V3S und dem asMODus Viento Verdampfer. Der Viento ist auf das Dampfen im sog. Direct-Lung Stil ausgelegt, bei dem der Dampf direkt in die Lunge inhaliert wird.</p>
 <p><strong>asMODus Minikin V3S</strong></p>
 <p>Der Minikin V3S liegt durch sein ergonomisch abgerundetes Design besonders angenehm in der Hand. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet, der im Unterschied zur Minikin V3 Variante zusätzlich über einen Fingerabdrucksensor verfügt.</p>
-<p>Der Minikin V3S wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den Micro-USB Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3S für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
+<p>Der Minikin V3S wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den USB-C Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3S für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
 <p>Das Herz des Minikin V3S ist der sehr effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Minikin V3S über den USB Anschluss mit einem Laptop oder PC. Der USB Anschluss des Minikin V3S unterstützt USB 3.0.</p>
 <p>Der Minikin V3S verfügt über die Dampf Modi VW (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CCW-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
 <p>Im Watt-Modus liegt die Ausgangsleistung des Minikin V3S zwischen 5 und 200 Watt.&nbsp;Im Temperatur-Modus liegt die Leistung zwischen 5&nbsp; und 120 Watt bei einem einstellbaren Temperaturbereich von 100° bis 300° Celsius.&nbsp;</p>
@@ -40113,7 +40192,7 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '97.90',
         'description' => 'In diesem E-Zigaretten Set von asMODus sind der Viento Clearomizer mit einem Tankvolumen von 3,5ml, sowie der asMODus Amighty Akkuträger mit einer maximalen Ausgangsleistung von 100 Watt enthalten. Damit Sie das Set nutzen können, müssen Sie vorher wahlweise eine 18650er, 20700er oder 21700er Akkuzelle in den Akkuträger einsetzen. Achten Sie darauf, dass diese nicht im Lieferumfang sind und separat erworben werden müssen. Der Viento wird über ein Top Filling-System von oben mit frischem Liquid befüllt. Mit dem Amighty mit Viento E-Zigaretten Set können Sie in den folgenden Modi vapen: VW, TC, TCR, TFR und Curve. Neben dem Akkuträger und Verdampfer erhalten Sie zwei asMODus Mesh Heads. Diese haben einen Widerstand von 0,18 Ohm und sind für das Dampfen im Subohm-Bereich ausgelegt. 
 <br>
 <br>
@@ -40348,7 +40427,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '37.80',
         'description' => 'Das E-Zigaretten Set der Marke SC, welches sich aus dem iKuu Light 2200mAh Akku und dem GS Air 3 Verdampfer zusammensetzt, ist für das Dampfen im moderaten Bereich ausgelegt. Der SC GS Air 3 Verdampfer hat ein Füllvolumen von 2 ml, welches Sie über ein Top-Filling Prinzip auffüllen können. Hierzu ziehen Sie lediglich die Top-Kappe nach oben und dann zur Seite um an die Öffnung zu gelangen. Anschließend können Sie den Tank mit frischem E-Liquid befüllen. Im Lieferumfang sind zwei Verdampferköpfe enthalten, welche sich für das Dampfen von Mund zu Lunge eignen. Ein Verdampferkopf mit 1,6 Ohm mit einem Leistungsbereich von 8 bis 13 Watt und einer mit 0,75 Ohm mit einem Leistungsbereich von 8 bis 25 Watt. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen gehören und diese regelmäßig ausgetauscht werden müssen. Über eine Akkustands-Anzeige können Sie den Ladestand des Akkus erfahren. Dieser wird in Form von Punkten angezeigt. Der SC iKuu Light Akku erkennt automatisch den Widerstand des aufgeschraubten Verdampfers und stellt selbstständig die benötigte Leistung ein. Trotz der kleingehaltenen Maße des iKuu Light Akkus sind alle sicherheitsrelevanten Optionen verbaut. So kommen ein Kurzschluss-, Tiefenentlade-, Überladeschutz, sowie eine zehn Sekunden Zugabschaltung zum Einsatz. Der Akku wird über das mitgelieferte USB Kabel geladen. 
 <br>
 <br>
@@ -40404,7 +40483,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '19.90',
         'description' => 'Der SC iKuu Lite Akku besitzt eine Akkukapazität von 2200mAh und eine maximale Ausgangsspannung von 22 Watt. Er erkennt den Widerstand des Verdampfers automatisch und regelt aufgrund dessen selbständig die Leistung. Zudem unterstützt er Verdampferköpfe in einem Widerstandsbereich von 0,2 Ohm bis 3 Ohm. Der Akku hat keinerlei Einstelltasten und wird nur über die Feuertaste bedient. Trotzdem sind alle sicherheitsrelevanten Funktionen verbaut. Es sind Tiefenentlade-, Überlade-, Kurzschluss-, und ein Überspannungsschutz vorhanden. Anhand der Ladestandsanzeige, welche in Form von Punkten auf dem Display angezeigt wird, erfahren Sie den Ladestand des Akkus. Geladen wird der iKuu Lite Akku mit dem im Lieferumfang enthaltenen Micro-USB Kabel.
 <br>
 <br>
@@ -40442,7 +40521,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '12.95',
         'description' => 'Das GS Air 3 Verdampfer Set stammt aus dem Hause SC. Er kommt mit einem transparenten Tank mit dem Sie die Füllmenge Ihres Liquids stets im Auge behalten können. Dazu wurde noch eine Airflow-Control verbaut. Mit dieser ist es Ihnen möglich den Luftwiderstand beim Dampfen individuell nach Ihren Bedürfnissen anzupassen. Das Set enthält zudem noch 1 Head mit einem Widerstand von 1,6 Ohm. So ist es Ihnen möglich im moderaten Bereich, auch MTL genannt, zu dampfen. Der GS Air 3 Verdampfer ist der passende Verdampfer für Ihr SC iKuu Lite Akku mit einer Akkukapazität von 2200mAh.
 <br>
 <br>
@@ -40576,7 +40655,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '39.90',
         'description' => 'Den Subverter 1 Akkuträger von Vapor Storm nehmen Sie über zwei 18650er Akkuzelle in Betrieb. Beachten Sie aber bitte, dass die Akkuzellen kein Teil des Lieferumfangs darstellen. Der Vapor Storm Subverter 1 verfügt über eine maximale Ausgangsleistung von 200 Watt. Mit dem Subverter 1 ist es Ihnen möglich in zwei verschiedenen Modi zu dampfen. Zum einen im Power Modus und zum anderen im TC-Modus. Entscheiden Sie sich für ersteren, so liegt hier der Widerstandsbereich zwischen 0,05 und 3 Ohm. Beim Verwenden des TC-Modus dampfen Sie in einem Widerstandsbereich zwischen 0,05 und 1 Ohm. Zudem verfügt der Akkuträger über ein TFT-Display. Über dieses Display haben Sie jederzeit einen Überblick über Ihre getätigten Einstellungen. Zudem unterstützt der Vapor Storm Subverter 1 200 Watt unter anderem das Dampfen mit Coils aus den Materialien Kanthal, Ni200, Ti und SS.
 <br>
 <br>
@@ -40697,7 +40776,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.95',
         'description' => 'Sie erhalten zwei mal vier fertig Wicklungen in einer Box inklusive Wickelhilfe. Vier Wicklungen bestehen aus folgendem Aufbau: zwei Kerne mit einem Drahtdurchmesser von 24GA/0,51mm aus KA1 oder Kanthal A1 die mit einem Mantel umwickelt sind der aus 32GA/0,20mm dünnem N80 oder auch Nickel 80 Draht besteht. Pro Wicklung liegt der Widerstand bei 0,25 Ohm. Die anderen vier Wicklungen bestehen aus drei Kernen mit einem Drahtdurchmesser von 26GA/0,40mm die ummantelt sind von einem 36GA/0,12mm dünnem N80 Draht. Pro Wicklung liegt der Widerstand bei 0,3 Ohm. Bitte achten Sie darauf das der Widerstand sich halbiert sobald Sie die Wicklungen in einem Dual Coil Clearomizer nutzen. 
 <br>
 <br>
@@ -40736,7 +40815,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.95',
         'description' => 'Sie erhalten acht GeekVape Framed Staple Clapton Coils in einer Box inklusive Wickelhilfe. Die Wicklungen teilen sich in zweimal vier unterschiedlichen Widerständen auf. Sie erhalten vier Wicklungen mit 0,2 Ohm und vier Wicklungen mit je 0,25 Ohm. Die Wicklungen bestehen in diesem Set alle aus Kanthal A1 und Nickel 80. Bei Framed Staple Clapton Wicklungen handelt es sich um zwei dickere Drähte welche einen Rahmen bilden für mehrere dünnere Drähte, die wiederum von einem Mantel umwickelt sind. Achten Sie darauf, dass sich der Widerstand der Wicklungen halbiert. sobald diese in einem Dual Coil Verdampfer genutzt werden. 
 <br>
 <br>
@@ -40956,7 +41035,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.95',
         'description' => 'In diesem Set von GeekVape erhalten Sie zwei Alien Clapton aus Kanthal A1 und ein Stück Watte. Die Alien Claptons bestehen komplett aus Kanthal A1 Drähten. Der Innendurchmesser der Coils liegt bei 3mm. Da Sie die Watte im Set gleich dabei haben können Sie direkt die verbauten Coils mit Watte bestücken. 
 <br>
 <br>
@@ -41029,7 +41108,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '48.80',
         'description' => 'Der Sinuous V200 Akkuträger mit max. 200 Watt Ausgangsleistung und der Amor NSE Verdampfer mit 3,5ml Tankvolumen bilden das E-Zigaretten Set der Marke Steamax. Der Akkuträger wird über zwei 18650er Akkuzellen betrieben, die im Lieferumfang <b>nicht</b> enthalten sind. Sie können in den Modi VW / TCR / TC (Ni/Ti/SS) Vapen und diese über die Feuertaste und zwei Einstelltasten auswählen. Der 0,91" große OLED Bildschirm befindet sich zwischen der Feuertaste und den Einstelltasten, worüber Sie Ihre Parameter ablesen können. Der Amor NSE Verdampfer wird über das Top Filling System von oben mit Liquid befüllt, sodass Sie den Verdampfer dafür nicht vom Akkuträger trennen müssen. Im Set sind zwei verschiedene Verdampferköpfe der WS-Reihe enthalten. 1x WS-M Verdampferkopf mit 0,27 Ohm und 1x WS04 MTL Verdampferkopf 1,3 Ohm. Der WS-M Verdampferkopf ist für das Dampfen im Subohm-Bereich vorgesehen und der WS04 MTL für das Dampfen im moderaten Bereich. Das heißt, das Sinuous V200 mit Amor NSE E-Zigaretten Set ist sowohl für das Subohm-Dampfen als auch für das Dampfen im moderaten Bereich ausgelegt. 
 <br>
 <br>
@@ -41093,7 +41172,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '35.90',
         'description' => 'Der Steamax Sinuous V200 Akkuträger kann in folgende Ausgabemodi: VW / TCR / TC (Ni/Ti/SS) und erreicht eine maximale Ausgangsleistung von 200 Watt. Die Inbetriebnahme erfolgt über zwei 18650er Akkuzellen, die im Lieferumfang <b>nicht</b> enthalten sind. Der Sinuous V200 Akkuträger verfügt über sicherheitsrelevanten Features wie: 10 Sekunden Zugautomatik, Kurzschlussschutz, Überladungsschutz, Niederspannungsschutz. Über das mitgelieferte QC-USB-Kabel können Sie die Firmware bei Bedarf aktualisieren.
 <br>
 <br>
@@ -41141,7 +41220,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '29.90',
         'description' => 'Der Intake RTA Verdampfer von Augvape ist ein Verdampfer, der für das Selbstwickeln ausgelegt ist. RTA steht für Rebuildable Tank Atomizer, einem Selbstwickelverdampfer, der über einen Tank verfügt. Der Glastank kann bis zu 4,2ml Liquid aufnehmen und wird direkt von oben befüllt. In das Deck des Verdampfers können Sie eine einzelne Wicklung einsetzten, durch diese Wicklung Watte hindurchziehen, das ganze mit Liquid beträufeln und anschließend Dampfen. Bitte tauschen Sie die Wicklung und die Watte regelmäßig um ein gleichbleibendes Dampferlebnis zu gewährleisten.
 <br>
 <br>
@@ -41184,7 +41263,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '4.95',
         'description' => 'Das Kanthal A1 und Nickel 80 Fused Clapton Set von GeekVape beinhaltet zwei Wicklungen. Sie erhalten zusätzlich noch ein Wattepad um direkt nach dem Verbauen der Wicklungen diese mit Watte zu bestücken. Die Wicklungen sind aus dem Material Kanthal A1 und Nickel 80, pro Wicklung ist der Widerstand 0,9 Ohm. Bitte beachten Sie dass der Widerstand sich halbiert sobald Sie die Coils in einem Dual Coil Verdampfer nutzen. Bitte Messen Sie den Widerstand nach dem Einbau der Wicklungen um gegebenenfalls Kurzschlüsse zu vermeiden. 
 <strong>Lieferumfang</strong>
 <ul>
@@ -41219,7 +41298,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '65.90',
         'description' => 'Der Vsticking VK530 200 Watt wird mit zwei wechselbaren 18650er Akkus betrieben und erreicht eine Leistung von bis zu 200 Watt. Neben den Watt- und Power-Modus können Sie den VK530 im Temperaturmodus nutzen, dabei können Sie einen Temperaturbereich zwischen 100°C bis 300°C einstellen. Den eingestellten Modus oder auch den Akkustand, kann dem TFT IPS HD entnommen werden. Die Einstellung des Akkuträger nehmen Sie per Joystick vor. Der VK530 200 Watt Akkuträger von Vsticking verfügt eine verbauten SX530 Chip von Yihi.
 <br>
 <br>
@@ -41265,7 +41344,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '29.90',
         'description' => 'Der Templar RDA Verdampfer aus dem Hause Augvape ist ein Selbstwickel-Verdampfer. Sie können aufgrund des Decks des Templar’s bis zu zwei Ihrer Wicklungen einsetzen. RDA ist die Abkürzung für Rebuildable Dripping Atomizer also einem Selbstwickler, bei dem das Liquid direkt von oben auf die mit Watte durchgezogenen Wicklungen geträufelt wird. Aufgrund dessen besitzt der Templar RDA keinen Glastank. Setzen Sie den im Lieferumfang enthaltenen BF-Pin in das Gewinde ein und Sie können den Templar RDA Verdampfer mit einem Akuträger verwenden, der über eine Sqounkerfunktion verfügt.
 <br>
 <br>
@@ -41370,8 +41449,8 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'flavor' => 'Mango, Litschi, Koolada',
         'dosage' => '10',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '13.95',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Mango, Litschi, Koolada. Die 20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, Litschi, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'FJ100A10-BB' => array(
@@ -41389,8 +41468,8 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'flavor' => 'Keks, Erdbeere, Banane, Sahne',
         'dosage' => '10',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '13.95',
+        'retailPriceOthers' => '10.95',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Keks, Erdbeere, Banane, Sahne. Die 20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Keks, Erdbeere, Banane, Sahne</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'HE100AGM' => array(
@@ -41473,7 +41552,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '63.80',
         'description' => 'Der Drag 2 Akkuträger von der Marke VooPoo ist ein subohmfähiges Gerät, welches Ihnen ermöglicht zwischen den Dampfmodi VW, TC, VPC, TCR, Bypass und FIT wählen zu können. Der Drag 2 Akkuträger ist für einen maximalen Widerstandsbereich von 5,0 Ohm ausgelegt. Die maximale Ausgangsleistung des Akkuträgers beträgt zudem177 Watt. Um diese Leistung abrufen zu können, müssen Sie zwei 18650er Akkuzellen in das Gerät einlegen. Bitte beachten Sie bitte, dass der Lieferumfang keine 18650er Akkuzellen beinhaltet. Diese müssen Sie separat erwerben. Mit dem integrierten OLED-Display ist es Ihnen jederzeit möglich Ihre Einstellung einzusehen und den Ladestand zu verfolgen. Der Drag 2 Akkuträger ist dank seines 510er Gewindes mit einer Vielzahl von Verdampfern kompatibel.
 <br>
 <br>
@@ -41518,7 +41597,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '65.50',
         'description' => 'Mit dem Cut Premium E-Zigaretten Set dampfen Sie entweder im VW- oder im TC-Modus. Die maximale Ausgangsleistung beträgt 220 Watt und wird zusammen mit einer wechselbaren 18650er Akkuzelle erzeugt. Eine Akkuzelle ist nicht Bestandteil des Lieferumfangs. Der Bulldog unterstützt direkte Lungenzüge und wird im Set zusammen mit zwei Mesh 0,18 Ohm Heads geliefert. Der Tank kann bis zu 4,3ml Liquid aufnehmen und wird über ein Side-Filling-System von oben befüllt. Eine Airflow-Control lässt Sie den Luftwiderstand beim Dampfen individuell einstellen.
 <br>
 <br>
@@ -41579,7 +41658,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '49.90',
         'description' => 'Der von Desire Design hergestellte Cut Premium Akkuträger unterstützt das Dampfen im VW, TC, TCR, Bypass, PMG und Novice-Modus. Den Akkuträger nehmen Sie in Betrieb, in dem Sie eine 18650er Akkuzelle in den Akkuträger einsetzen. Diese ist nicht im Lieferumfang enthalten. Sie dampfen im Variabel Wattmodus bei einer maximalen Ausgangsleistung von 220 Watt. Im Temperaturgergegelten Modus legen Sie einen Temperaturwert zwischen 100°C und 315°C fest, mit welchem Sie anschließend dampfen. Die vorgenommenen Einstellungen können Sie dem 1,3 Zoll großem TFT-Display entnehmen. Durch den genormten 510er Anschluss können Sie den Akkuträger mit einer Vielzahl an Verdampfern kombinieren.; wie beispielsweise mit dem Bulldog Verdampfer mit 4,3ml Tankvolumen.
 <br>
 <br>
@@ -41619,7 +41698,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '26.90',
         'description' => 'Der Bulldog Clearomizer von Desire Design hat eine Fassungsvolumen von 4,3ml und wird über ein Side-Filling-System von oben mit Liquid befüllt. Schieben Sie dazu die Top-Kappe zur Seite, um so die Einfüllöffnung freizulegen. Der Bulldog wurde aus Edelstahl gefertigt und der Glastank besteht aus hitzebeständigem Pryrex. Sie erhalten den Clearomizer zusammen mit zwei Mesh Heads. Diese haben einen Widerstand von je 0,18 Ohm und sind für das Dampfen im Subohm-Bereich ausgelegt. Über die Bottom-Airflow-Control können Sie den Zugwiderstand auf Ihre persönlichen Bedürfnissen anpassen.
 <br>
 <br>
@@ -41661,7 +41740,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '15.90',
         'description' => 'Die BCC Mesh Heads von Desire Design haben einen Widerstand von 0,18 Ohm. Mit einer Packung erhalten Sie vier Verdampferköpfe. Die Mesh Heads können mit einer Leistung von 50 bis 110 Watt betrieben werden. Der empfohlene Leistungsbereich von Hersteller liegt zwischen 60 bis 80 Watt. Die Mesh Heads von Desire Design sind für das Dampfen im Subohm-Bereich ausgelegt. 
 <br>
 <br>
@@ -41694,7 +41773,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '74.90',
         'description' => 'Der Rage Akkuträger aus dem Hause Desire Design erreicht eine maximale Ausgangsleistung von 155 Watt. Die Leistung bezieht der Akkuträger über zwei 18650er Akkuzellen, welche vor den Betrieb eingesetzt werden müssen. Achten Sie bitte darauf, dass die Akkuzellen nicht im Lieferumfang enthalten sind. Der Desire Design Rage Akkuträger verfügt über eine Liquidflasche, mit welcher Sie Liquid in einen passenden Verdampfer mit BF-Funkion (Bottom Feeder) pumpen können. Die Liquidflaschen fasst bis zu 7 Milliliter. Der Akkuträger unterstützt das Vapen in einem Widerstandsbereich von 0,08 Ohm und 3,0 Ohm.
 <br>
 <br>
@@ -41918,7 +41997,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '34.95',
         'description' => 'Der Chronus Akkuträger und der Shikra Verdampfer bilden das E-Zigaretten Set von der Marke Sigelei. Der Akkuträger wird über zwei 18650er Akkuzellen betrieben, die im Lieferumfang nicht enthalten sind. Zudem erreicht der Chronus bis zu 200 Watt und kann in den Ausgabemodi: Power / TCR / SS304 / SS316 / SS317 / Ti1 / Ni200 verwendet werden. Die Steuerung erfolgt über die Feuertaste und über den Joystick. Ihre Einstellungen können Sie dem 1,3" großen TFT-Display entnehmen. Der Shikra Verdampfern wird direkt von oben via Top-Filling-System mit Liquid befüllt und kann dieses bis zu 5,5ml aufnehmen. Im Set befindet sich ein Ersatzglastank, womit 3,5ml Liquid gefasst werden kann. Über die Bottom-Airflow-Control stellen Sie die Luftzufuhr ein. Empfehlenswert ist es, die Airflow-Control weit geöffnet zu haben, wenn Sie sich für das Subohm-Dampfen entscheiden. Im Lieferumfang sind zwei entsprechende Verdampferköpfe enthalten: 1x MS-H Head mit 0,2 Ohm und 1x MS Head mit 0,25 Ohm.
 <br>
 <br>
@@ -41982,7 +42061,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '29.95',
         'description' => 'Das E-Zigaretten Set mit dem Namen Sibra E2 entstammt der Marke Sigelei. Es ist eine Kombination aus dem Sibra E2 Akkuträger und dem Sobra Mini Verdampfer. Der Sibra E2 Akkuträger kommt mit einer maximalen Ausgangsleistung von 80 Watt. Diese wird durch eine 18650er Akkuzelle erreicht. Diese befindet sich allerdings nicht Im Lieferumfang und muss separat erworben werden. Bedient wird der Akkuträger über eine Feuertaste und zwei Einstellungstaste. Die getätigte Einstellungen können Sie über das integrierte 0,91 Zoll große OLED-Display ablesen. Hier können Sie zum Beispiel die verwendeten Modi (Power und TC) einsehen, Akkustand oder auch die Wattleistung in der gedampft wird. Falls Sie sich für das Dampfen im TC-Modus entscheiden, unterstützt das Set den Gebrauch von Verdampferköpfen, welche aus den Materialien Nickel, Titan und verschiedenen Edelstahl-Varianten bestehen. Set Der Sobra Mini Verdampfer besitzt eine Füllmenge von 5ml Liquid. Dieses lässt sich über das Top-Filling System in den Verdampfer einfüllen. Im Set sind zudem noch zwei WF Mini Verdampferköpfe mit einem Widerstand von 0,28 Ohm enthalten. Somit sind diese für das Dampfen im Subohm-Bereich gedacht. Ein empfohlener Leistungsbereich für die Verdampferköpfe liegt zwischen 30 und 60 Watt. Generell können Sie mit dem Set in einem Widerstandsbereich zwischen 0,05 und 3,0 Ohm dampfen.
 <br>
 <br>
@@ -42041,7 +42120,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '4-8',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Himbeere, Kaktusfeige, Zitrone, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Himbeere, Kaktusfeige, Zitrone, Koolada</td></tr><tr><td>Dosierung</td><td>4-8 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'TW100L10-PM' => array(
@@ -42060,7 +42139,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '7-11',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '3.49',
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Limette, schwarze Johannisbeere, Zitrone, Koolada. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Limette, schwarze Johannisbeere, Zitrone, Koolada</td></tr><tr><td>Dosierung</td><td>7-11 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MN100A10-WB' => array(
@@ -42079,7 +42158,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.59',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Waffel, Zitrone. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waffel, Zitrone</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MN100A10-TO' => array(
@@ -42098,7 +42177,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.59',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Orange, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Orange, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MN100A10-PB' => array(
@@ -42117,7 +42196,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.59',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Sahne, Pudding, Erdbeere. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Sahne, Pudding, Erdbeere</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MN100A10-GM' => array(
@@ -42136,7 +42215,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.59',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: dunkle Traube, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>dunkle Traube, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MN100A10-FM' => array(
@@ -42155,7 +42234,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.59',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Wassermelone, Minze. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone, Minze</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MN100A10-CA' => array(
@@ -42174,7 +42253,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '5.59',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Cappuccino, Banane. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cappuccino, Banane</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VZ100SQ' => array(
@@ -42193,7 +42272,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '35.80',
         'description' => 'Die Vzone E-Zigarette Scado besitzt einen fest verbauten Akku mit einer Kapazität von 500mAh. Zum dampfen verwenden Sie ein Pod-System, eine Kombination aus Verdampferkopf und Tank. Sie dampfen mit einem Widerstand von 1,2 Ohm, ergo wird das moderate Backendampfen unterstützt. Sie können das Pod-System mit bis zu 3ml Liquid befüllen. Bitte beachten Sie, dass Verdampferköpfe Verschleißteile sind und es empfehlenswert ist, das Pod-System periodisch auszuwechseln um ein gleichbleibendes Dampferlebnis zu gewährleisten. Sie dampfen mit maximal 12,5 Watt in 4 einstellbaren Powerleveln.
 <br>
 <br> 
@@ -42273,7 +42352,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '16.95',
         'description' => 'Für den Minkin V3S von Asmodus gibt es mit dem Wireless-Charger eine kabellose Möglichkeit Ihren Akku aufzuladen. Somit brauchen Sie Ihren Minikin V3S nicht mehr mit einem USB-Kabel zu verbinden, sondern stellen diesen einfach auf die Ladestation. Ein USB-Kabel um den Wireless-Charger mit Strom zu versorgen ist im Lieferumfang enthalten. Ein Kurzschlussschutz ist integriert.
 <br>
 <br>
@@ -42504,7 +42583,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Pina Colada',
         'dosage' => '20',
         'base' => null,
-        'retailPriceDampfplanet' => null,
+        'retailPriceDampfplanet' => '9.85',
         'retailPriceOthers' => null,
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Pina Colada. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pina Colada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
@@ -42523,7 +42602,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Cola, Rum',
         'dosage' => '20',
         'base' => null,
-        'retailPriceDampfplanet' => null,
+        'retailPriceDampfplanet' => '9.85',
         'retailPriceOthers' => null,
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Cola, Rum. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola, Rum</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
@@ -42542,7 +42621,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Waldbeeren, Lakritz, Minze',
         'dosage' => '20',
         'base' => null,
-        'retailPriceDampfplanet' => null,
+        'retailPriceDampfplanet' => '9.85',
         'retailPriceOthers' => null,
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Waldbeeren, Lakritz, Minze. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldbeeren, Lakritz, Minze</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
@@ -42561,7 +42640,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Apfel, Himbeere, Aronia, Maracuja',
         'dosage' => '20',
         'base' => null,
-        'retailPriceDampfplanet' => null,
+        'retailPriceDampfplanet' => '9.85',
         'retailPriceOthers' => null,
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Apfel, Himbeere, Aronia, Maracuja. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Himbeere, Aronia, Maracuja</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
@@ -42612,7 +42691,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '59.90',
         'description' => 'Der V-IT Akkuträger von iPV wird über zwei wechselbare wiederaufladbare 18650er Akkuzellen mit Energie versorgt. Diese sind nicht Teil des Lieferumfangs und müssen bei Bedarf erworben werden. Zusammen mit den Akkuzellen erreicht der V-IT Akkuträger eine maximale Ausgangsleistung von 200 Watt. Der Akkuträger unterstützt das Vapen in verschiedenen Betriebsmodus. Je nach gewähltem Modus können Sie Verdampferköpfe bzw. Verdampfer mit einem Widerstandsbereich von 0,1  bis 3,0 Ohm verwenden. Das HD TFT-Display bietet eine deutliche und erkennbare Darstellung der vorgenommen Einstellungen. Über das mitgelieferte Mirco-USB-Kabel können Sie die Firmware von Ihrem iPV V-IT 200 Watt Akkuträger updaten, in dem Sie den Akkuträger mit einem internetfähigen PC und Laptop verbinden.
 <br>
 <br>
@@ -42653,7 +42732,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '17.95',
         'description' => 'Der iPV V-IT Clearomizer wird mit einem vorinstallierten Glastank mit einem Fassungsvolumen von 6 Millimetern geliefert. Im Lieferumfang befindet sich zudem ein Ersatzgastank mit einem Fassungsvolumen von 4 Millimetern. Der V-IT Clearomizer besteht aus hochwertigem Edelstahl und der Tank aus Pyrexglas. Frisches Liquid können Sie über ein Top-Filling System von oben in den Tank einfüllen. Über die in der Base integrierte Airflow-Control können Sie den Zugwiderstand sowie die Luftzufuhr des V-IT regulieren. Die beiden im Set enthalten Mesh Heads weisen einen Widerstand von 0,1 und 0,2 Ohm auf.
 <br>
 <br>
@@ -42797,8 +42876,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'schwarze Johannisbeere, dunkle Traube',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: schwarze Johannisbeere, dunkle Traube. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>schwarze Johannisbeere, dunkle Traube</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'ML100A10-FL' => array(
@@ -42816,8 +42895,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Erdbeere, Melone, Minze',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '8.90',
+        'retailPriceOthers' => '8.00',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Melone, Minze. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Melone, Minze</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '7T100A10-HM' => array(
@@ -42835,8 +42914,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'roter Apfel, grüner Apfel, Karamell',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.20',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: roter Apfel, grüner Apfel, Karamell. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>roter Apfel, grüner Apfel, Karamell</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '7T100A10-HG' => array(
@@ -42854,8 +42933,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Pistazie, Sahne, Karamell',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.20',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Pistazie, Sahne, Karamell. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pistazie, Sahne, Karamell</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '7T100A10-WL' => array(
@@ -42873,8 +42952,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Cappuccino, Schokolade, Sahne',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.20',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Cappuccino, Schokolade, Sahne. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cappuccino, Schokolade, Sahne</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '7T100A10-ND' => array(
@@ -42892,8 +42971,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Erdbeere, Himbeere, Blaubeere',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.20',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Himbeere, Blaubeere. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Himbeere, Blaubeere</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '7T100A10-VL' => array(
@@ -42911,8 +42990,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Melone, Papaya, Kokos',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.20',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Melone, Papaya, Kokos. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Melone, Papaya, Kokos</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '7T100A10-ZR' => array(
@@ -42930,8 +43009,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Tabak, Pflaume',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.20',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Tabak, Pflaume. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak, Pflaume</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '7T100A10-TH' => array(
@@ -42949,8 +43028,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Zitrone, Limonade',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.20',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Zitrone, Limonade. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitrone, Limonade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     '7T100A10-SH' => array(
@@ -42968,8 +43047,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Blaubeere, schwarze Johannisbeere, Menthol',
         'dosage' => '17',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.20',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Blaubeere, schwarze Johannisbeere, Menthol. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, schwarze Johannisbeere, Menthol</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VZ100EM' => array(
@@ -42988,7 +43067,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '62.91',
         'description' => 'Der Akkuträger eMASK 218 Watt wird über zwei 18650er Akkuzellen in Betrieb genommen. Bitte beachten Sie, dass sich keine Akkuzellen im Lieferumfang befinden und Sie sie separat bestellen müssen. Die maximale Ausgangsleistung beträgt 218 Watt. Sie können in unterschiedlichen Dampfmodi dampfen. Um zwischen den Modi zu wechseln, verwenden Sie die Feuer- und die zwei Einstelltasten des eMASK 218 Watt. Sämtliche von Ihnen vorgenommen Einstellungen haben Sie auf dem 0,96 Zoll großem OLED-Display im Überblick.
 <br>
 <br>
@@ -43028,7 +43107,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '109.90',
         'description' => 'Der Valyrian II Akkuträger und der Valyrian II Verdampfer bilden das Uwell E-Zigaretten Set namens Valyrian II. Der Akkuträger wird über drei 18650er Akkuzellen betrieben und erreicht eine maximale Leistung von 300 Watt. Über die Feuertaste und zwei Einstelltasten können Sie die Ausgabemodi wie: VW / Power / TCR / TC auswählen und der OLED Bildschirm informiert Sie über Ihre Parameter. Der OLED Bildschirm befindet sich zwischen der Feuertaste und den Einstelltasten. Wenn Sie sich für den VM-Modus entscheiden, so können Sie zwischen 5 Watt und 300 Watt dampfen und einen Widerstandbereich zwischen 0,1 Ohm und 3,0 Ohm auswählen. Im TCR/TC Modus liegt der Temperaturbereich zwischen 100°C und 315°C und der Widerstandsbereich liegt zwischen 0,1 Ohm und 1,0 Ohm. Der Valyrian II Verdampfer fasst bis zu 6ml Liquid, das über das Flip Top Filling-System in den Tank gegeben wird. Das bedeutet, dass Sie die Topkappe inkl. dem Mundstück vorsichtig zur Seite schieben, sodass Sie die Top Kappe anschließend aufklappen können und somit das Einfüllloch freilegen. Bitte achten Sie hierbei, dass sich die Einfülllöcher seitlich am Verdampfer befinden. Das mittig liegende Loch ist der Luftkanal; bitte füllen Sie das Liquid dort <b>nicht</b> ein. Im Lieferumfang finden Sie zwei unterschiedliche Verdampferköpfe der Valyrian II UN2 Reihe: 1x Valyrian II UN2 Single Mesh mit 0,32 Ohm und 1x Valyrian II UN2-2 Dual Mesh mit 0,14 Ohm. Beide sind für das Dampfen im Subohm-Bereich ausgelegt.
 <br>
 <br>
@@ -43092,7 +43171,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '69.90',
         'description' => 'Der Valyrian II Akkuträger von Uwell wird über insgesamt drei 18650er Akkuzellen betrieben und erreicht eine maximale Ausgangsleistung von 300 Watt. Die 18650er Akkuzellen sind im Lieferumfang nicht enthalten und müssen separat erworben werden. Ihr Valyrian II Akkuträger unterstützt 3 Ausgabemodi: VW | TC | TCR. Im VW Modus können Sie einen Leistungsbereich von 5 Watt bis 300 Watt einstellen; dabei können Sie Verdampferköpfe verwenden mit einem Widerstandsbereich zwischen 0,1 und 3,0 Ohm. Der Widerstandsbereich liegt im Temperatur-Modus zwischen 0,1 und 1,0 Ohm. Im TC Modus können Sie zum Dampfen einen Bereich von 100°C und 315°C einstellen. Der Valyrian II Akkuträger verfügt über ein OLED Display, worüber Sie zum Beispiel den Akkuladestand oder Ihre Einstellungen ablesen können. Über die Feuertaste und zwei Einstelltasten können Sie sämtliche Einstellungen vornehmen. Die Tasten befinden sich oberhalb bzw. unterhalb von dem OLED Display.
 <br>
 <br>
@@ -43135,7 +43214,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '39.90',
         'description' => 'Das Valyrian II Verdampfer Set besteht aus dem Verdampfer, den Verdampferköpfen aus der Valyrian II UN2-Reihe und dem Zubehör. Ihr Valyrian II Verdampfer kann bis zu 6ml Liquid über das Flip Top Filling-System aufnehmen und ist für das Subohm-Dampfen ausgelegt. Damit Sie den Tank mit Liquid befüllen können, muss die Top-Kappe inkl. Mundstück vorsichtig zur Seite und anschließend aufgeklappt werden, sodass Sie die zwei Einfüll-Schlitze freilegen. Bitte geben Sie das Liquid <b>nicht</b> in den mittig sitzenden Luftkanal. Im Lieferumfang finden Sie zwei Verdampferköpfe von Uwell: 1x Valyrian II UN2 Single Mesh mit  0,32 Ohm und 1x Valyrian II UN2-2 Dual Mesh mit 0,14 Ohm. Beide sind für das Dampfen im Subohm-Bereich ausgelegt. Da der Valyrian II Verdampfer über ein 510er Gewinde verfügt, kann er beispielsweise mit dem Uwell Valyrian II Akkuträger kombiniert werden.
 <br>
 <br>
@@ -43388,7 +43467,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '59.90',
         'description' => 'Der Akkuträger Soulkeeper wird von Uwell hergestellt und besitzt einen Durchmesser von 25,6mm sowie eine Höhe von 93,5mm. Da der Mod mit einem 510er Gewinde versehen ist, ist das Verwenden von verschiedenen Clearomizern möglich. Bei der schwarzen und weißen Farbvariante hat Uwell eine spezielle Antihaftbeschichtung verwendet, wodurch Fingerabdrücke nicht mehr auf dem Soulkeeper zu sehen sind. Bei der goldenen Variante wurden dagegen fluoreszierende Elemente verarbeitet. Diese bringen Ihren Soulkeeper in der Dunkelheit zum Leuchten. Um Ihren Akkuträger zum Arbeiten zu bringen, haben Sie die Möglichkeit eine 18650er / 20700er / 21700er Akkuzelle zu verwenden. Sollten Sie z.B von einer 20700er / 21700er Akkuzelle zu einer 18650er Akkuzelle wechseln wollen, können Sie diese ohne eine Adapter problemlos tauschen. Sie müssen dafür lediglich den oberen und unteren Drehverschluss tauschen. Wie voll Ihr Akku ist, können Sie einer LED am oberen Drehverschluss entnehmen. Diese signalisiert den Ladestand mit drei Farben. Am unteren Drehverschluss finden Sie die Feuertaste des Akkuträgers.
 <br>
 <br>
@@ -43426,7 +43505,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.50',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Waldmeister, Brause. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldmeister, Brause</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'FT100A10-CB' => array(
@@ -43445,7 +43524,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.50',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Cola, Brause. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola, Brause</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'FT100A10-HB' => array(
@@ -43464,7 +43543,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.50',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Himbeere, Brause. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere, Brause</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'FT100A10-ZB' => array(
@@ -43483,7 +43562,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => '33',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.50',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Zitrone, Brause. Die 20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitrone, Brause</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'GV100ALA' => array(
@@ -43502,7 +43581,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '89.90',
         'description' => 'Das GeekVape Aegis Legend E-Zigaretten Set wird über zwei 18650er Akkuzellen mit Energie versorgt. Bitte beachten Sie, dass sich keine Akkuzellen im Lieferumfang befinden. Die maximale Ausgangsleistung beträgt 200 Watt. Sie dampfen wahlweise im VW/ VPC/TC/TCR/BYPASS-Modus. Der Alpha Verdampfer kann bis zu 4ml Liquid aufnehmen und wird über ein Top-Filling-System von oben befüllt. Der im Set enthaltene MM X2 Verdampferkopf mit einem Widerstand von 0,4 Ohm, unterstützt das Dampfen im Subohm-Bereich. Eine in der Base befindliche Airflow-Control lässt Sie den Luftwiderstand individuell einstellen.
 <br>
 <br>
@@ -43562,7 +43641,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '54.90',
         'description' => 'Sie können mit dem Akkuträger Medea 218 Watt von Nikola in unterschiedlichen Modi dampfen. Die maximale Ausgangsleistung liegt bei 218 Watt. Damit Sie den Medea Akkuträger in Betrieb nehmen können, müssen zwei 18650er Akkuzellen eingesetzt werden, welche nicht Teil des Lieferumfangs sind. Der Medea Akkuträger aus dem Hause Nikola verfügt über ein 0,96 Zoll großes OLED-Display über welches Sie alle Ihre Einstellungen einsehen  können. Den Akkuträger richten Sie über die Feuer-, sowie zwei Einstelltasten ein.
 <br>
 <br>
@@ -43603,7 +43682,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'dosage' => null,
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '29.90',
         'description' => 'Der Lapetus der Marke Nikola kann für direkte Lungenzüge verwendet werden. Der Pyrexglastank kann maximal 6ml Liquid aufnehmen, ein weiterer mit einem Tankvolumen von 4,5ml liegt bei. Aufgrund der zwei im Lieferumfang enthaltenen Lapetus Mesh Heads (0,18 Ohm) können Sie den entstehenden Dampf direkt in die Lungen inhalieren. Tauschen Sie die Verdampferköpfe regelmäßig gegen neue um ein gleichbleibendes Dampferlebnis zu gewährleiten.
 <br>
 <br>
@@ -43704,8 +43783,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Erdbeere, Koolada',
         'dosage' => '20',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.29',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Koolada. Die 20 ml Aroma sind in eine 100 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 100 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'AR100A10-WM' => array(
@@ -43723,8 +43802,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Wassermelone, Koolada',
         'dosage' => '20',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.29',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Wassermelone, Koolada. Die 20 ml Aroma sind in eine 100 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 100 ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'AR100A10-ZT' => array(
@@ -43742,8 +43821,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Zitrone, Koolada',
         'dosage' => '20',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.29',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Zitrone, Koolada. Die 20 ml Aroma sind in eine 100 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 100 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitrone, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'AR100A10-AP' => array(
@@ -43761,8 +43840,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavor' => 'Apfel, Koolada',
         'dosage' => '20',
         'base' => null,
-        'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceDampfplanet' => '9.85',
+        'retailPriceOthers' => '9.29',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Apfel, Koolada. Die 20 ml Aroma sind in eine 100 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 100 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'GV100AP' => array(
@@ -44000,7 +44079,7 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: grüner Tee, Zitrone. Die 20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>grüner Tee, Zitrone</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MA100A10-KB' => array(
@@ -44019,7 +44098,7 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Kirsche, Banane. Die 20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Banane</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MA100A10-PT' => array(
@@ -44038,7 +44117,7 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Pfirsichtee. Die 20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsichtee</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'MA100A10-WN' => array(
@@ -44057,7 +44136,7 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
         'dosage' => '17',
         'base' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceOthers' => null,
+        'retailPriceOthers' => '9.90',
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Waffel, Nuss. Die 20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Anschließend sollte das fertige Liquid vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waffel, Nuss</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'FC100L10-BA' => array(
@@ -44120,8 +44199,8 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
     'SK100VN9' => array(
         'icNumber' => 'SK100VN9',
         'number' => 'SK100VN9',
-        'name' => 'SMOK - Vape Pen Nord - 19 E-Zigarette (Set)',
-        'commonName' => 'Vape Pen Nord',
+        'name' => 'SMOK - Vape Pen Nord 19 - E-Zigarette (Set)',
+        'commonName' => 'Vape Pen Nord 19',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
         'supplier' => 'Smoktech',
@@ -44166,8 +44245,8 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
     'SK100VN9G' => array(
         'icNumber' => 'SK100VN9G',
         'number' => 'SK100VN9G',
-        'name' => 'SMOK - Vape Pen Nord - 19 Glastank',
-        'commonName' => 'Vape Pen Nord',
+        'name' => 'SMOK - Vape Pen Nord 19 - Glastank',
+        'commonName' => 'Vape Pen Nord 19',
         'type' => 'TANK',
         'category' => 'ZUBEHÖR > Glastanks & Schutz > Smoktech',
         'supplier' => 'Smoktech',
@@ -44185,8 +44264,8 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
     'SK100VN2' => array(
         'icNumber' => 'SK100VN2',
         'number' => 'SK100VN2',
-        'name' => 'SMOK - Vape Pen Nord - 22 E-Zigarette (Set)',
-        'commonName' => 'Vape Pen Nord',
+        'name' => 'SMOK - Vape Pen Nord 22 - E-Zigarette (Set)',
+        'commonName' => 'Vape Pen Nord 22',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
         'supplier' => 'Smoktech',
@@ -44210,8 +44289,8 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'SK100VN2G' => array(
         'icNumber' => 'SK100VN2G',
         'number' => 'SK100VN2G',
-        'name' => 'SMOK - Vape Pen Nord - 22 Glastank',
-        'commonName' => 'Vape Pen Nord',
+        'name' => 'SMOK - Vape Pen Nord 22 - Glastank',
+        'commonName' => 'Vape Pen Nord 22',
         'type' => 'TANK',
         'category' => 'ZUBEHÖR > Glastanks & Schutz > Smoktech',
         'supplier' => 'Smoktech',

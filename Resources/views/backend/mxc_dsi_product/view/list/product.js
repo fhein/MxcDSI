@@ -49,6 +49,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             'mxcRefreshAssociated',
             'mxcSetActiveSelected',
             'mxcSetLinkedSelected',
+            'mxcRelinkSelected',
             'mxcSetAcceptedSelected',
             'mxcCreateRelatedSelected',
             'mxcCreateSimilarSelected',
@@ -95,6 +96,24 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             me.createDevButton()
         ]);
         return items;
+    },
+
+    handleRelink: function() {
+        let me = this;
+        let selModel = me.getSelectionModel();
+        let records = selModel.getSelection();
+        Ext.each(records, function(record) {
+            // deselect records which already have the target states
+            // set the target state otherwise
+            if (record.get('linked') === false || record.get('accepted') === false) {
+                selModel.deselect(record);
+            } else {
+                record.set('linked', true);
+            }
+        });
+        if (selModel.getCount() > 0) {
+            me.fireEvent('mxcRelinkSelected', me);
+        }
     },
 
     handleLinkedState: function(changeTo) {
@@ -172,6 +191,12 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-minus-circle',
                     handler: function() {
                         me.handleLinkedState(false);
+                    }
+                },
+                {
+                    text : 'Recreate Shopware articles',
+                    handler: function() {
+                        me.handleRelink();
                     }
                 },
                 '-',

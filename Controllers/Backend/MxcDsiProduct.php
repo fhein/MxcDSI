@@ -347,6 +347,27 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return [$value, $products];
     }
 
+    public function relinkSelectedProductsAction() {
+        try {
+            $params = $this->request->getParams();
+            $ids = json_decode($params['ids'], true);
+            $repository = $this->getRepository();
+            $repository->setStateByIds('linked', false, $ids);
+            $products = $this->getRepository()->getProductsByIds($ids);
+
+            $productMapper = $this->getServices()->get(ProductMapper::class);
+            $productMapper->deleteArticles($products);
+
+            $repository->setStateByIds('linked', true, $ids);
+            $productMapper->controllerUpdateArticles($products, true);
+
+            $this->getRepository()->refreshProductStates();
+            $this->view->assign(['success' => true, 'message' => 'Articles were successfully recreated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function linkSelectedProductsAction()
     {
         try {

@@ -19,6 +19,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcPullShopwareDescriptionsSelected: me.onPullShopwareDescriptionsSelected,
                 mxcCreateAll:                        me.onCreateAll,
                 mxcDeleteAll:                        me.onDeleteAll,
+                mxcRelinkSelected:                   me.onRelinkSelected,
                 mxcRemapPropertiesSelected:          me.onRemapPropertiesSelected,
                 mxcCreateSimilarSelected:            me.onCreateSimilarSelected,
                 mxcCreateRelatedSelected:            me.onCreateRelatedSelected,
@@ -424,6 +425,18 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let growlTitle = value ? 'Create Shopware Article' : 'Delete Shopware Article';
         let url = '{url controller=MxcDsiProduct action=linkSelectedProducts}';
         me.setStateSelected(grid, field, value, growlTitle, maskText, url);
+    },
+
+    onRelinkSelected: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=relinkSelectedProducts}';
+        let growlTitle = 'Recreate Shopware articles';
+        let maskText = 'Recreating Shopware articles ...';
+        let params = {
+            ids: me.getSelectedIds(grid.getSelectionModel())
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
     setStateSelected: function (grid, field, value, growlTitle, maskText, url) {
