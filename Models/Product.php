@@ -196,7 +196,7 @@ class Product extends ModelEntity  {
 
     /**
      * @var string
-     * @ORM\Column(name="retail_dp",type="string", nullable=true)
+     * @ORM\Column(name="retail_dampfplanet",type="string", nullable=true)
      */
     private $retailPriceDampfplanet;
 

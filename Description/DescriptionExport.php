@@ -27,6 +27,5 @@ class DescriptionExport implements ModelManagerAwareInterface, LoggerAwareInterf
             $product->setDescription($description);
         }
         $this->modelManager->flush();
-        $this->modelManager->getRepository(Product::class)->exportMappedProperties();
     }
 }

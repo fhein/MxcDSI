@@ -581,11 +581,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @var ImportMapper $client */
             $services = $this->getServices();
             $descriptions = $services->get(DescriptionExport::class);
-            $repository = $this->getModelManager()->getRepository(Product::class);
+            $repository = $this->getManager()->getRepository(Product::class);
 
             /** @noinspection PhpUndefinedMethodInspection */
             $products = $repository->getAllIndexed();
             $descriptions->pullDescriptions($products);
+            $repository->exportMappedProperties();
 
             $this->view->assign([ 'success' => true, 'message' => 'Successfully pulled Shopware descriptions.']);
         } catch (Throwable $e) {
@@ -692,6 +693,24 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev1Action()
     {
         try {
+//            $products = $this->getManager()->getRepository(Product::class)->getAllIndexed();
+//            $log = $this->getLog();
+//            /** @var Product $product */
+//            foreach ($products as $product) {
+//                $variants = $product->getVariants();
+//                /** @var Variant $variant */
+//                foreach ($variants as $variant) {
+//                    if (! $variant->isValid()) continue;
+//                    $options = $variant->getOptions();
+//                    /** @var Option $option */
+//                    foreach ($options as $option) {
+//                        $groupName = $option->getIcGroup()->getName();
+//                        if ($groupName === 'Ausführung') {
+//                            $log->debug('Product: ' . $product->getName() . ', Ausführung: ' . $option->getName());
+//                        }
+//                    }
+//                }
+//            }
             $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

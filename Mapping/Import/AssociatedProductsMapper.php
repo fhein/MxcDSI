@@ -19,19 +19,22 @@ class AssociatedProductsMapper
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;
 
-    protected $productGroups;
+    protected $productGroups = null;
 
-    public function map(array $products)
+    public function map(/** @noinspection PhpUnusedParameterInspection */ array $products)
     {
-        $this->productGroups = [];
-        $this->prepareProductGroups($products);
+        $this->productGroups = $this->getProductGroups();
         $this->deriveRelatedProducts();
         $this->deriveSimilarProducts();
     }
 
-    public function prepareProductGroups(array $products)
+    public function getProductGroups()
     {
+        if (null !== $this->productGroups) return $this->productGroups;
         $this->productGroups = [];
+        /** @noinspection PhpUndefinedMethodInspection */
+        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
+        /** @var Product $product */
         foreach ($products as $product) {
             $type = $product->getType();
             $commonName = $product->getCommonName();
@@ -52,6 +55,7 @@ class AssociatedProductsMapper
                     $this->productGroups[$type][$commonName][] = $product;
             }
         }
+        return $this->productGroups;
     }
 
     protected function getAsscociatedProducts(Product $product, array $config) : ArrayCollection

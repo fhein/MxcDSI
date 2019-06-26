@@ -61,6 +61,7 @@ return [
             'match_common_name' => true,
             'groups'            => [
                 'DRIP_TIP',
+                'WADDING',
                 'TANK',
                 'TANK_PROTECTION',
                 'HEAD',
@@ -94,6 +95,7 @@ return [
             'groups'            => [
                 'POD',
                 'CARTRIDGE',
+                'WADDING',
                 'LIQUID',
                 'ACCESSORY',
                 'SQUONKER_BOTTLE',
@@ -114,6 +116,7 @@ return [
             'groups'            => [
                 'POD',
                 'CARTRIDGE',
+                'WADDING',
                 'LIQUID',
                 'ACCESSORY',
                 'SQUONKER_BOTTLE',
@@ -134,6 +137,7 @@ return [
             'groups'            => [
                 'POD',
                 'CARTRIDGE',
+                'WADDING',
                 'LIQUID',
                 'ACCESSORY',
                 'SQUONKER_BOTTLE',

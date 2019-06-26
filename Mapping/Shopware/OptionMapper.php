@@ -70,15 +70,14 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         }
         $sortOptions = [];
         foreach ($groupOptions as $groupName => $options) {
-            // Because some variants may be set to be ignored (accepted = false) there is a chance that we have
-            // groups with just a single option. We do not apply such groups, because selecting from a single
-            // choice is not meaningful.
-            if (count($options) <  2) {
-                $this->log->notice(sprintf('Skipping creation/update of group %s because there are less than two options available.',
-                    $groupName
-                ));
-                // @todo: Product name should reflect the single option name if not "1er Packung"
-                continue;
+            // We do not create a Packungsgröße configurator if only one valid option is available (usually 1er Packung.)
+            // We do create single option configurators for other options, because InnoCigs delivers degraded
+            // products, which once were multi-option, but now have a single option left. This is necessary
+            // because the remaining option identifies a product property, which would not get displayed to
+            // the shop user if we skipped the configurator.
+            if (count($options) <  2 && $groupName === 'Packungsgröße') {
+                $optionName = array_keys($options)[0];
+                if ($optionName === '1er Packung') continue;
             }
             array_multisort(array_keys($options), SORT_NATURAL, $options);
 
@@ -169,15 +168,9 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         }
 
         $validVariants = $this->getValidVariants($product);
+        $count = count($validVariants);
 
-        if (count($validVariants) < 2) {
-            $this->log->notice(sprintf('%s: No Shopware configurator set required. InnoCigs article %s does '
-                . 'not provide more than one variant which is set not to get ignored.',
-                __FUNCTION__,
-                $product->getNumber()
-            ));
-            return [ $needsUpdate, null ];
-        }
+        if ($count < 1) return [$needsUpdate, false];
 
         $this->createShopwareGroupsAndOptions($validVariants);
         return [$needsUpdate, $this->createConfiguratorSet($product, $validVariants)];

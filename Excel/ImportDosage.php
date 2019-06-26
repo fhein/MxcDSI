@@ -18,7 +18,7 @@ class ImportDosage extends AbstractProductImport
 
             $values = explode('-', $record['dosage']);
             $values = array_map('trim', $values);
-            $dosage = implode('-', $values);
+            $dosage = implode(' - ', $values);
             $product->setDosage($dosage);
         }
 
