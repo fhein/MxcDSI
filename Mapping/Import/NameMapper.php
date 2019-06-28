@@ -14,22 +14,37 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
 {
     protected $report = [];
 
-    public function map(Model $model, Product $product)
+    protected $config;
+
+    public function __construct(array $config)
     {
-        $modelName = $model->getName();
+        $this->config = $config;
+    }
+
+    public function map(Model $model, Product $product, bool $remap = false)
+    {
+        $name = $this->config[$product->getIcNumber()]['name'] ?? null;
+        if ($remap || ! $name) {
+            $name = $this->remap($model, $product);
+        }
+        $product->setName($name);
+    }
+
+    public function remap(Model $model, Product $product)
+    {
+        $modelName = $model->getProductName();
         $this->report['name'][$modelName]['model'] = $model->getModel();
         $trace['imported'] = $modelName;
         $name = $this->replace($modelName, 'name_prepare');
         $trace['name_prepared'] = $name;
-        $name = $this->removeOptionsFromModelName($name, $model);
-        $trace['options_removed'] = $name;
+//        $name = $this->removeOptionsFromModelName($name, $model);
+//        $trace['options_removed'] = $name;
 
         // general name mapping applied first
         $result = @$this->classConfig['product_names_direct'][$model->getName()];
         if ($result !== null) {
             $trace['directly_mapped'] = $result;
-            $product->setName($result);
-            return;
+            return $name;
         }
 
         // rule based name mapping applied next
@@ -57,7 +72,7 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
 
         $trace['mapped'] = $name;
         $this->report['name'][$trace['imported']] = $trace;
-        $product->setName($name);
+        return $name;
     }
 
     public function replace(string $topic, string $what)
@@ -88,6 +103,9 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
      * Anyway, for update reasons all models with the same master id should map to
      * the same product name after name mapping. This can be checked via the GUI
      * 'Check name mapping consistency'.
+     *
+     * NOTE: We are now using the new PARENT_NAME property supplied by the API, so
+     * this function is not in use currently.
      *
      * @param string $name
      * @param Model $model

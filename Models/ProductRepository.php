@@ -150,10 +150,9 @@ class ProductRepository extends BaseEntityRepository
         'content',
         'capacity',
         'flavor',
+        'flavorCategory',
         'dosage',
         'base',
-        'retailPriceDampfplanet',
-        'retailPriceOthers',
         'description',
     ];
 

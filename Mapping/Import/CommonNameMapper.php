@@ -12,6 +12,22 @@ class CommonNameMapper extends BaseImportMapper implements ProductMapperInterfac
     /** @var array */
     protected $report = [];
 
+    protected $config;
+
+    public function __construct(array $config)
+    {
+        $this->config = $config;
+    }
+
+    public function map(Model $model, Product $product, bool $remap = false)
+    {
+        $commonName = @$this->config[$product->getIcNumber()]['commonName'];
+        if ($remap || ! $commonName) {
+            $commonName = $this->remap($product);
+        }
+        $product->setCommonName($commonName);
+    }
+
     /**
      * The common name of an article is the pure product name without
      * supplier, article group and without any other info.
@@ -19,10 +35,10 @@ class CommonNameMapper extends BaseImportMapper implements ProductMapperInterfac
      * The common name gets determined here and is utilized to identify
      * related products.
      *
-     * @param Model $model
      * @param Product $product
+     * @return string|null
      */
-    public function map(Model $model, Product $product)
+    public function remap(Product $product)
     {
         $name = $product->getName();
         $raw = explode(' - ', $name);
@@ -30,8 +46,8 @@ class CommonNameMapper extends BaseImportMapper implements ProductMapperInterfac
         $name = trim($raw[$index] ?? $raw[0]);
         $replacements = ['~ \(\d+ Stück pro Packung\)~', '~Head$~'];
         $name = trim(preg_replace($replacements, '', $name));
-        $product->setCommonName($name);
         $this->report[$name][] = $product->getName();
+        return $name;
     }
 
     public function report()

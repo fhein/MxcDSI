@@ -96,6 +96,7 @@ return [
         '~Head~'                => TypeMapper::TYPE_HEAD,
         '~[Tt]asche~'           => TypeMapper::TYPE_BAG,
         '~Lederschale~'         => TypeMapper::TYPE_BAG,
+        '~Steam Bag~'           => TypeMapper::TYPE_BAG,
         '~E-Zigarette~'         => TypeMapper::TYPE_E_CIGARETTE,
         '~Deck~'                => TypeMapper::TYPE_DECK,
         '~Mesh Wire~'           => TypeMapper::TYPE_WIRE,

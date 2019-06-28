@@ -15,7 +15,7 @@ abstract class AbstractProductExport extends AbstractSheetExport implements Mode
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;
 
-    private $fixedColumns = [
+    protected $fixedColumns = [
         'icNumber',
         'type',
         'supplier',

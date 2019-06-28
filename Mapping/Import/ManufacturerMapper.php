@@ -26,7 +26,7 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
         $this->mappings = $mappings;
     }
 
-    public function map(Model $model, Product $product): void
+    public function map(Model $model, Product $product, bool $remap = false)
     {
         $this->innocigsBrands = $this->classConfig['innocigs_brands'] ?? [];
         $this->mapBrand($model, $product);

@@ -11,6 +11,7 @@ class UnitTool
         $unit = new Unit();
         Shopware()->Models()->persist($unit);
         $unit->setName($name);
+        $unit->setUnit($name);
         return $unit;
     }
 

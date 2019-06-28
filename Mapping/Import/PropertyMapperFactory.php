@@ -45,8 +45,6 @@ class PropertyMapperFactory implements FactoryInterface
             'description'   => $container->get(DescriptionMapper::class),
             // requires supplier, brand and name, flavor and flavorCategory, sets category
             'category'      => $container->get(CategoryMapper::class),
-            // requires manual config, sets retailPriceDampfplanet and retailPriceOthers
-            'competitor'    => $container->get(CompetitorPricesMapper::class),
         ];
 
         $variantMappers = [

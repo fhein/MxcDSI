@@ -24,42 +24,49 @@ class ContentMapper extends BaseImportMapper implements ProductMapperInterface, 
         $this->config = $config;
     }
 
-    /**
-     * @param Model $model
-     * @param Product $product
-     */
-    public function map(Model $model, Product $product)
+    public function map(Model $model, Product $product, bool $remap = false)
     {
-
         $type = $product->getType();
         if (! in_array($type, ['AROMA', 'SHAKE_VAPE', 'LIQUID'])) return;
+
         $icNumber = $product->getIcNumber();
+        $content = @$this->config[$icNumber]['content'];
+        $capacity = @$this->config[$icNumber]['capacity'];
 
-        $content = $this->config[$icNumber]['content'] ?? null;
-        $capacity = $this->config[$icNumber]['capacity'] ?? null;
-
-        if (! $content) {
-            $name = $product->getName();
-            $matches = [];
-
-            if (preg_match('~(\d+) ?ml~', $name, $matches) === 1) {
-                $content = $matches[1];
-            }
+        if ($remap || ! $content) {
+            $content = $this->remapContent($product);
         }
-
         if (! $capacity && $type === 'LIQUID') {
             $capacity = $content;
         }
 
-        if (! $capacity) {
-            $description = $product->getIcDescription();
-            if (preg_match('~(\d+) ?ml Flasche~', $description, $matches) === 1) {
-                $capacity = $matches[1];
-            }
+        if ($remap || ! $capacity) {
+            $capacity = $this->remapCapacity($product);
         }
 
-        $product->setCapacity($capacity);
         $product->setContent($content);
+        $product->setCapacity($capacity);
+    }
+
+    protected function remapContent(Product $product)
+    {
+        $name = $product->getName();
+        $content = null;
+        $matches = [];
+        if (preg_match('~(\d+) ?ml~', $name, $matches) === 1) {
+            $content = $matches[1];
+        }
+        return $content;
+    }
+
+    protected function remapCapacity(Product $product)
+    {
+        $capacity = null;
+        $description = $product->getIcDescription();
+        if (preg_match('~(\d+) ?ml Flasche~', $description, $matches) === 1) {
+            $capacity = $matches[1];
+        }
+        return $capacity;
     }
 
     public function report()

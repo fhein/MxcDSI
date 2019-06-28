@@ -27,6 +27,49 @@ return [
             '~(K2 & K3.*) \(\d+ (St. pro Pack\))~'  => '$1 (5 $2',
         ],
     ],
+
+    'name_cleanup' => [
+        'preg_replace' => [
+            '~\s+~'                                        => ' ',
+            '~(- )+~'                                      => '$1',
+            '~ ,~'                                         => ',',
+            '~-,~'                                         => '-',
+            '~, -~'                                        => '-',
+            '~ - ?$~'                                      => '',
+            '~ $~'                                         => '',
+            '~^ ~'                                         => '',
+            '~(RDTA)+~'                                    => '$1',
+            '~-V12~'                                       => '- V12',
+            '~-(Ersatz)~'                                  => '- $1',
+            '~-(E-Zigarette)~'                             => '- $1',
+            '~-(Netzstecker)~'                             => '- $1',
+            '~-(Mundstücke)~'                              => '- $1',
+            '~- (mit Ello)~'                               => '$1',
+            '~-(V8-)~'                                     => '- $1',
+            '~(10er Packung)en~'                           => '$1',
+            '~-(Anniversary)~'                             => '- $1',
+            '~(GS) -(Basal)~'                              => '$1 $2',
+            '~-(Glastank)~'                                => '- $1',
+            '~-(Clearomizer)~'                             => '- $1',
+            '~(Head) - Head~'                              => '$1',
+            '~- (Head)~'                                   => '$1',
+            '~^(\p{L}*) (Head)~'                           => '$1 - $2',
+            '~(JustFog) ([^\-])~'                          => '$1 - $2',
+            '~ XXer Packung~'                              => '',
+            '~(Revvo) - (Boost)~'                          => '$1 $2',
+            '~(EX) --M (Mesh)~'                            => '$1-M $2',
+            '~(Tasche) X -L~'                              => '$1 XL',
+            '~(E-Zigarette \(Set\)) e$~'                   => '$1',
+            '~(iStick Pico) - (Resin mit Melo 4) - (D22)~' => '$1 $2 $3 -',
+            '~(mit TFV8 Baby) - (V2)~'                     => '$1 $2 -',
+            '~(Leerflasche), (\d+ ml)~'                    => '$1 - $2',
+        ],
+    ],
+
+
+    // NOTE: Since we use the new API property PARENT_NAME now, we do not have
+    // to replace options in product names any longer, so this setting is not
+    // used any more.
     'product_name_option_fixes' => [
         // option text                                  // option found in name
         'prisma-blau'                                => 'blau-prisma',
@@ -46,7 +89,11 @@ return [
         '0,4 Ohm'                                    => '0,4',
         '2,0 ml'                                     => ['2 ml', '2ml'],
         '2 ml'                                       => '2,0 ml',
-        '3,5 ml'                                     => '3.5 ml',
+        '3,5 ml'                                     => [
+            '3.5 ml',
+            '3,5ml',
+        ],
+        '4,5 ml'                                     => '4,5ml',
         '4 ml'                                       => '4ml',
         '15ml'                                       => '15 ml',
         '10ml'                                       => '10 ml',
@@ -60,6 +107,7 @@ return [
         '4,2ml'                                      => '4,2 ml',
         'V2-M'                                       => 'M',
         'V2-XL'                                      => 'XL',
+        'Coral'                                      => 'coral',
         'matt-schwarz'                               => 'matt schwarz',
         'schwarz-weiß'                               => 'schwarz-weiss',
         'schwarz-weiss-resin'                        => 'schwarz-weiß-resin',
@@ -95,6 +143,10 @@ return [
     // By default occurances of an option name in the article name are removed.
     // If an option replacement is defined here for the particular option, the
     // occurance of the option name gets replaced with the string defined here.
+
+    // NOTE: Since we use the new API property PARENT_NAME now, we do not have
+    // to replace options in product names any longer, so this setting is not
+    // used any more.
     'option_replacements'       => [
         'Postless Deck'    => 'Deck',
         'Series Deck'      => 'Deck',
@@ -116,45 +168,10 @@ return [
         'Vampire Vape Applelicious - E-Zigaretten Liquid' => 'Vampire Vape - Applelicious - E-Zigaretten Liquid',
     ],
 
-    'name_cleanup' => [
-        'preg_replace' => [
-            '~\s+~'                                => ' ',
-            '~(- )+~'                              => '$1',
-            '~ ,~'                                 => ',',
-            '~-,~'                                 => '-',
-            '~, -~'                                => '-',
-            '~ - ?$~'                              => '',
-            '~ $~'                                 => '',
-            '~^ ~'                                 => '',
-            '~(RDTA)+~'                            => '$1',
-            '~-V12~'                               => '- V12',
-            '~-(Ersatz)~'                          => '- $1',
-            '~-(E-Zigarette)~'                     => '- $1',
-            '~-(Netzstecker)~'                     => '- $1',
-            '~-(Mundstücke)~'                      => '- $1',
-            '~- (mit Ello)~'                       => '$1',
-            '~-(V8-)~'                             => '- $1',
-            '~(10er Packung)en~'                   => '$1',
-            '~-(Anniversary)~'                     => '- $1',
-            '~(GS) -(Basal)~'                      => '$1 $2',
-            '~-(Glastank)~'                        => '- $1',
-            '~-(Clearomizer)~'                     => '- $1',
-            '~(Head) - Head~'                      => '$1',
-            '~- (Head)~'                           => '$1',
-            '~^(\p{L}*) (Head)~'                   => '$1 - $2',
-            '~(JustFog) ([^\-])~'                  => '$1 - $2',
-            '~ XXer Packung~'                      => '',
-            '~(Revvo) - (Boost)~'                  => '$1 $2',
-            '~(EX) --M (Mesh)~'                    => '$1-M $2',
-            '~(Tasche) X -L~'                      => '$1 XL',
-            '~(E-Zigarette \(Set\)) e$~'           => '$1',
-            '~(iStick Pico) - (Resin mit Melo 4) - (D22)~' => '$1 $2 $3 -',
-        ],
-    ],
-
     'product_name_replacements' => [
         'preg_replace' => [
             '~(Manta) (Glastank)~'                                       => '$1 RTA $2',
+            '~(Manta) Bubble (Glastank)~'                                => '$1 RTA $2',
             '~Aster$~'                                                   => 'Aster 75 Watt',
             '~(Nautilus X Mundstück)e~'                                  => '$1',
             '~80er (Mesh Wire) (1,5 m)~'                                 => '$1 - $2',
@@ -215,6 +232,7 @@ return [
             '~(Remedy) - Remedy~'                                        => '$1',
             '~(5 Stars Peine) (- Aroma)(.*)(-|,)?( \d+ ml)~'             => '$1 - $3 $2 -$5',
             '~(5 Stars Peine) (- .* Edition)~'                           => '$1 - $2 -',
+            '~,( - Aroma - 9 ml)~'                                       => '$1',
             '~(SC -) (Aroma) (.*)~'                                      => '$1 $3 - $2',
             '~- Twisted (Aroma) - (.*)(- \d+ ml)~'                       => '- $2 - $1 $3',
             '~(VC4) 4~'                                                  => '$1',
@@ -243,6 +261,7 @@ return [
             '~(\d+(\.\d+)? ml, 0 mg/ml)$~'                               => '- Shake & Vape - $1',
             '~(Chicken Shop.*) (- 0 mg/ml)~'                             => '$1 - Shake & Vape $2',
             '~(Skull Plus.*) - 0 mg/ml~'                                 => '$1 - Shake & Vape - 100 ml, 0 mg/ml',
+            '~(Koncept XIX.*) - (50 ml)~'                                => '$1 - Shake & Vape - 50 ml, 0 mg/ml',
             '~(Disco Juice.*) (- 0 mg/ml)~'                              => '$1 - Shake & Vape $2',
             '~(Dr\. Frost.*) (- 0 mg/ml)~'                               => '$1 - Shake & Vape $2',
             '~(Basis -) - Shake \& Vape -~'                              => '$1',
@@ -368,6 +387,10 @@ return [
             '~(J-Easy \d) (Akku)~'                                   => '$1 - $2',
             '~(RX Gen3)~'                                            => 'Reuleaux RX Gen3',
             '~(RX GEN3)~'                                            => 'RX Gen3',
+            '~(Lux) 200~'                                            => '$1',
+            '~(Lux) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
+            '~(ECO) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
+            '~(Helix) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Reuleaux RX Gen3) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
             '~(Speeder) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Cut Premium) (- \d+ Watt)~'                           => '$1 - Akkuträger $2',
@@ -466,6 +489,7 @@ return [
         'Advken'        => [
             '~(Twirl RDA)~',
             '~(Manta RTA)~',
+            '~(Owl)~'
         ],
         'Aspire'        => [
             // Aspire
@@ -491,13 +515,15 @@ return [
             '~(SkyStar)~',
             '~(Feedlink)~',
             '~((Revvo)( Mini)?)~',
-            '~((K\d)( \& K3)?)~',
+            '~((K1 Plus)|((K\d)( \& K3)?))~',
         ],
         'asMODus'       => [
             '~((Minikin V3S mit Viento)|(Minikin(( V2 Kodama)|( V2)|( V3S)|( V3)|( Reborn))?))~',
             '~(C4 RDA)~',
             '~(Colossal)~',
+            '~(Pumper 18/21)~',
             '~(Lustro)~',
+            '~(Bunker RDA)~',
             '~(Nefarius RDTA)~',
             '~(Voluna V2 RTA)~',
             '~(X VapePorn Vice RDA)~',
@@ -510,6 +536,8 @@ return [
         ],
         'CoilArt'       => [
             '~(Mage RTA V2)~',
+            '~(Lux( Mesh)?)~',
+            '~(Mino)~',
         ],
         'Cthulhu'       => [
             '~(Iris Mesh RDA)~',
@@ -526,6 +554,7 @@ return [
             '~(Drop RDA)~',
             '~(Drop Solo RDA)~',
             '~(Edge)~',
+            '~(Helix)~',
         ],
         'Ehpro'         => [
             '~(Panther RDA)~',
@@ -725,7 +754,7 @@ return [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
             '~(Sky Solo( Plus)?)~',
             '~(Aurora Play)~',
-            '~(Luxe)~',
+            '~(Luxe( S)?)~',
             '~(NRG)~',
             '~(Orca Solo)~',
             '~(Polar)~',
@@ -738,6 +767,7 @@ return [
         'Vapor Storm'   => [
             '~(Puma)~',
             '~(Subverter 1)~',
+            '~(ECO)~',
         ],
         'Vsticking'     => [
             '~(VK530)~',
@@ -767,6 +797,14 @@ return [
         'Wotofo'        => [
             '~(Warrior RDA)~',
             '~(Recurve RDA)~',
+        ],
+        'XTAR' => [
+            '~(Queen ANT MC6C)~',
+            '~(VC4)~',
+            '~(MC1)~',
+            '~(MC2 Plus)~',
+            '~(PB2)~',
+            '~(VC2S)~',
         ],
         'Yihi'          => [
             '~(SX Mini Mi Class)~',

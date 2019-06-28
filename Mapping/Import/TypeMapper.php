@@ -69,8 +69,9 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
      *
      * @param Model $model
      * @param Product $product
+     * @param bool $remap
      */
-    public function map(Model $model, Product $product)
+    public function map(Model $model, Product $product, bool $remap = false)
     {
         $name = $product->getName();
         $types = $this->classConfig['name_type_mapping'] ?? [];

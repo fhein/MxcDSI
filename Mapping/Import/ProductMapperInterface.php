@@ -7,6 +7,6 @@ use MxcDropshipInnocigs\Models\Product;
 
 interface ProductMapperInterface
 {
-    public function map(Model $model, Product $product);
+    public function map(Model $model, Product $product, bool $remap = false);
     public function report();
 }

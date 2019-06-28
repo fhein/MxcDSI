@@ -18,14 +18,8 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
 
     protected $categoryFile = __DIR__ . '/../../Config/FlavorMapper.config.php';
 
-    /**
-     * FlavorMapper constructor.
-     *
-     * @param ProductMappings $importMapping
-     */
-
     /** @var array */
-    protected $config;
+    protected $mappings;
 
     /** @var array */
     protected $categoriesByFlavor;
@@ -35,20 +29,28 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
 
     public function __construct(array $config)
     {
-        $this->config = $config;
+        $this->mappings = $config;
+    }
+
+    public function map(Model $model, Product $product, bool $remap = false)
+    {
+        $flavor = @$this->mappings[$product->getIcNumber()]['flavor'];
+        if (! $flavor || $product->getType() === 'EASY3_CAP') return;
+
+        list($flavor, $flavorCategory) = $this->remap($flavor);
+
+        $product->setFlavor($flavor);
+        $product->setFlavorCategory($flavorCategory);
     }
 
     /**
      * Assign the product flavor from article configuration.
      *
-     * @param Model $model
-     * @param Product $product
+     * @param string $flavors
+     * @return array
      */
-    public function map(Model $model, Product $product)
+    public function remap(string $flavors)
     {
-        $flavors = @$this->config[$product->getIcNumber()]['flavor'];
-        if (! $flavors || $product->getType() === 'EASY3_CAP') return;
-
         $flavors = explode(',', $flavors);
         $flavors = array_map('trim', $flavors);
         $flavorCategories = [];
@@ -66,9 +68,8 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
         }
 
         $flavors = implode(', ', $flavors);
-        $product->setFlavor($flavors);
         $flavorCategories = implode(', ', array_keys($flavorCategories));
-        $product->setFlavorCategory($flavorCategories);
+        return [$flavors, $flavorCategories];
     }
 
     protected function getCategoriesByFlavor()

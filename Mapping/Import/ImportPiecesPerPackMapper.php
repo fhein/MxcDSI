@@ -17,8 +17,9 @@ class ImportPiecesPerPackMapper implements ProductMapperInterface
      *
      * @param Model $model
      * @param Product $product
+     * @param bool $remap
      */
-    public function map(Model $model, Product $product)
+    public function map(Model $model, Product $product, bool $remap = false)
     {
         $name = $product->getName();
         $matches = [];

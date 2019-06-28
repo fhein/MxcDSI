@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Excel;
 
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
@@ -44,29 +43,30 @@ class ImportPrices extends AbstractProductImport
     protected function updatePrices()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
+        $variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
-        /** @var Product $product */
+        /** @var Variant $variant */
         foreach ($this->data as $record) {
-            $product = $products[$record['icNumber']] ?? null;
-            if (!$product) continue;
-            $product->setRetailPriceDampfPlanet($record['Dampfplanet']);
-            $product->setRetailPriceOthers($record['andere']);
+            $variant = $variants[$record['icNumber']] ?? null;
+            if (!$variant) continue;
+            $variant->setRetailPriceDampfPlanet($record['Dampfplanet']);
+            $variant->setRetailPriceOthers($record['andere']);
 
-            $this->updateProductPrice($product, $record);
+            $this->updateVariantPrice($variant, $record);
        }
     }
 
-    protected function updateProductPrice(Product $product, array $record)
+    protected function updateVariantPrice(Variant $variant, array $record)
     {
         $prices = [];
-        $uvp = $record['UVP Brutto'];
-        $uvp = $uvp = '' ? null : $uvp;
+        $customerPrice = $record['VK Brutto EK'];
+        if (! $customerPrice || $customerPrice === '') $customerPrice = $record['UVP Brutto'];
+        $customerPrice = $customerPrice === '' ? null : $customerPrice;
 
         foreach ($this->indexMap as $column => $customerGroup) {
             $price = $record[$column];
             $price = $price === '' ? null : $price;
-            $price = $price ?? $uvp;
+            $price = $price ?? $customerPrice;
             if ($price) {
                 $prices[] = $customerGroup . MXC_DELIMITER_L1 . $price;
             }
@@ -74,22 +74,7 @@ class ImportPrices extends AbstractProductImport
 
         $prices = implode(MXC_DELIMITER_L2, $prices);
 
-        $variants = $product->getVariants();
-        /** @var Variant $variant */
-        foreach ($variants as $variant) {
-            if (! $this->isSinglePack($variant)) continue;
-            $variant->setRetailPrices($prices);
-            $this->priceMapper->setRetailPrices($variant);
-        }
-    }
-
-    protected function isSinglePack(Variant $variant)
-    {
-        $model = @$this->models[$variant->getIcNumber()];
-        if (! $model) return false;
-        if (strpos($model->getOptions(), '1er Packung') !== false) {
-            return true;
-        }
-        return false;
+        $variant->setRetailPrices($prices);
+        $this->priceMapper->setRetailPrices($variant);
     }
 }

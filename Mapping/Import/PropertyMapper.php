@@ -61,7 +61,7 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->products = null;
     }
 
-    public function mapProperties(array $products)
+    public function mapProperties(array $products, bool $remap)
     {
         if (@$this->classConfig['settings']['checkRegularExpressions'] === true) {
             if (! $this->regularExpressions->check()) {
@@ -85,13 +85,14 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
                 // do nothing if we do not know the model
                 if (! $model) continue;
                 if ($first) {
-                    $this->mapModelToProduct($model, $product);
+                    $this->mapModelToProduct($model, $product, $remap);
                     $first = false;
                 }
                 $this->mapModelToVariant($model, $variant);
             }
         }
-        $this->associatedProductsMapper->map($products);
+        // todo: This has to be done at the end, but it consumes tons of time
+        // $this->associatedProductsMapper->map($products);
         $this->report();
         $this->modelManager->flush();
     }
@@ -101,11 +102,12 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
      *
      * @param Model $model
      * @param Product $product
+     * @param bool $remap
      */
-    public function mapModelToProduct(Model $model, Product $product)
+    public function mapModelToProduct(Model $model, Product $product, bool $remap)
     {
         foreach ($this->productMappers as $productMapper) {
-            $productMapper->map($model, $product);
+            $productMapper->map($model, $product, $remap);
         }
     }
 

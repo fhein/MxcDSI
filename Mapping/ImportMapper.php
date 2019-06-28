@@ -182,7 +182,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $product->setManual($model->getManual());
         $product->setManufacturer($model->getManufacturer());
         $product->setIcDescription($model->getDescription());
-        $this->propertyMapper->mapModelToProduct($model, $product);
+        $this->propertyMapper->mapModelToProduct($model, $product, true);
 
         return $product;
     }
@@ -382,7 +382,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     protected function initCache()
     {
         $this->modelManager->createQuery('UPDATE ' . Product::class . ' a set a.new = false')->execute();
-        $this->modelManager->createQuery('UPDATE ' . Variant::class . ' a set a.new = false')->execute();
+        $this->modelManager->createQuery('UPDATE ' . Variant::class . ' a '
+            . 'set a.new = false, a.recommendedRetailPriceOld = a.recommendedRetailPrice, '
+            . 'a.purchasePriceOld = a.purchasePrice')->execute();
         if ($this->useCache) {
             $this->products = $this->getProductRepository()->getAllIndexed();
             $this->groups = $this->getGroupRepository()->getAllIndexed();
@@ -399,7 +401,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->addNewVariants();
         $this->changeExistingVariants($changes);
         $this->deleteVariantsWithoutModel();
-        $this->propertyMapper->mapProperties($this->updates);
+        $this->propertyMapper->mapProperties($this->updates, true);
         $this->removeOrphanedItems();
 
         $this->categoryMapper->buildCategoryTree();

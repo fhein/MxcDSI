@@ -195,18 +195,6 @@ class Product extends ModelEntity  {
     private $base;
 
     /**
-     * @var string
-     * @ORM\Column(name="retail_dampfplanet",type="string", nullable=true)
-     */
-    private $retailPriceDampfplanet;
-
-    /**
-     * @var string
-     * @ORM\Column(name="retail_others",type="string", nullable=true)
-     */
-    private $retailPriceOthers;
-
-    /**
      * @var boolean $accepted
      * @ORM\Column(type="boolean", nullable=false)
      */
@@ -661,38 +649,6 @@ class Product extends ModelEntity  {
      */
     public function setLinked(bool $linked)
     {
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getRetailPriceDampfplanet()
-    {
-        return $this->retailPriceDampfplanet;
-    }
-
-    /**
-     * @param string|null $retailPriceDampfplanet
-     */
-    public function setRetailPriceDampfPlanet($retailPriceDampfplanet)
-    {
-        $this->retailPriceDampfplanet = $retailPriceDampfplanet;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getRetailPriceOthers()
-    {
-        return $this->retailPriceOthers;
-    }
-
-    /**
-     * @param string|null $retailPriceOthers
-     */
-    public function setRetailPriceOthers($retailPriceOthers)
-    {
-        $this->retailPriceOthers = $retailPriceOthers;
     }
 
     /**

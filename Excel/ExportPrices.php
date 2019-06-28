@@ -2,9 +2,9 @@
 
 namespace MxcDropshipInnocigs\Excel;
 
-use Doctrine\Common\Collections\Collection;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use PhpOffice\PhpSpreadsheet\Style\Border;
@@ -28,6 +28,8 @@ class ExportPrices extends AbstractProductExport
     protected function registerColumns()
     {
         parent::registerColumns();
+        $this->registerColumn('Product Number');
+        $this->registerColumn('options');
         $this->registerColumn('EK Netto');
         $this->registerColumn('EK Brutto');
         $this->registerColumn('Dampfplanet');
@@ -55,13 +57,55 @@ class ExportPrices extends AbstractProductExport
         $products = $this->data;
         $data = [];
         $headers = null;
+        /** @var Product $product */
         foreach ($products as $product) {
-            $data[] = $this->getProductInfo($product);
-        }
-        $headers[] = array_keys($data[0]);
-        $this->sortColumns($data);
-        //usort($data, [$this, 'compare']);
+            $info = $this->getColumns();
+            $info['type'] = $product->getType();
+            $info['supplier'] = $product->getSupplier();
+            $info['brand'] = $product->getBrand();
+            $info['name'] = $product->getName();
+            $info['Product Number'] = $product->getIcNumber();
 
+            $variants = $product->getVariants();
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                if (! $this->isSinglePack($variant)) continue;
+                $info['icNumber'] = $variant->getIcNumber();
+                $price = floatVal(str_replace(',', '.', $variant->getPurchasePrice()));
+                $info['EK Netto'] = $price;
+                $info['EK Brutto'] = $price * 1.19;
+                $price = floatVal(str_replace(',', '.', $variant->getRecommendedRetailPrice()));
+                $info['UVP Brutto'] = $price;
+                $info['Dampfplanet'] = $variant->getRetailPriceDampfplanet();
+                $info['andere'] = $variant->getRetailPriceOthers();
+                $options = $variant->getOptions();
+                $optionNames = [];
+                /** @var Option $option */
+                foreach ($options as $option) {
+                    $optionName = $option->getName();
+                    if ($optionName === '1er Packung') continue;
+                    $optionNames[] = $option->getIcGroup()->getName() . ': ' . $option->getName();
+                }
+                $optionText = implode(', ', $optionNames);
+                $info['options'] = $optionText;
+
+                $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+                $vapeePrices = $this->getVapeePrices($variant);
+                foreach ($customerGroupKeys as $key) {
+                    $price = $vapeePrices[$key] ?? null;
+                    if ($key !== 'EK') {
+                        $price = $price === $info['UVP Brutto'] ? null : $price;
+                    }
+                    $info['VK Brutto ' . $key] = $price;
+                }
+
+                $data[] = $info;
+            }
+        }
+
+        $headers[] = array_keys($data[0]);
+
+        $this->sortColumns($data);
         $row = 2;
         foreach ($data as &$record) {
             $cellPurchase = $this->getRange([$this->getColumn('EK Brutto'), $row]);
@@ -79,82 +123,25 @@ class ExportPrices extends AbstractProductExport
 
         $data = array_merge($headers, $data);
         $this->sheet->fromArray($data);
-    }
 
-    protected function getProductInfo(Product $product)
-    {
-        $info = $this->getColumns();
-        $info['icNumber'] = $product->getIcNumber();
-        $info['type'] = $product->getType();
-        $info['supplier'] = $product->getSupplier();
-        $info['brand'] = $product->getBrand();
-        $info['name'] = $product->getName();
-        list($info['EK Netto'], $info['EK Brutto'], $info['UVP Brutto']) = $this->getInnocigsPrices($product->getVariants());
-        $info['Dampfplanet'] = $product->getRetailPriceDampfPlanet();
-        $info['andere'] = $product->getRetailPriceOthers();
-        $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
-        $vapeePrices = $this->getVapeePrices($product);
-        foreach ($customerGroupKeys as $key) {
-            $price = $vapeePrices[$key] ?? null;
-            if ($key !== 'EK') {
-                $price = $price === $info['UVP Brutto'] ? null : $price;
-            }
-            $info['VK Brutto ' . $key] = $price;
-        }
-        return $info;
     }
 
     /**
      * Get the maximum retail prices for each variant. Single Pack only (1er Packung)
      *
-     * @param Product $product
+     * @param Variant $variant
      * @return array
      */
-    protected function getVapeePrices(Product $product)
+    protected function getVapeePrices(Variant $variant)
     {
-        $variants = $product->getVariants();
         $variantPrices = [];
         /** @var Variant $variant */
-        foreach ($variants as $variant) {
-            if (! $this->isSinglePack($variant)) continue;
-            $sPrices = explode(MXC_DELIMITER_L2, $variant->getRetailPrices());
-            foreach ($sPrices as $sPrice) {
-                list($key, $price) = explode(MXC_DELIMITER_L1, $sPrice);
-                $variantPrices[$key][$variant->getIcNumber()] = floatVal(str_replace(',', '.', $price));
-            }
+        $sPrices = explode(MXC_DELIMITER_L2, $variant->getRetailPrices());
+        foreach ($sPrices as $sPrice) {
+            list($key, $price) = explode(MXC_DELIMITER_L1, $sPrice);
+            $variantPrices[$key] = floatVal(str_replace(',', '.', $price));
         }
-        $prices = [];
-        foreach ($variantPrices as $key => $price) {
-            $prices[$key] = max($price);
-        }
-        return $prices;
-    }
-
-    /**
-     * Get the maximum purchase price and recommended retail price for each variant. Single Pack only (1er Packung)
-     *
-     * @param Collection $variants
-     * @return array
-     */
-    protected function getInnocigsPrices(Collection $variants)
-    {
-        $purchasePrice = 0.0;
-        $retailPrice = 0.0;
-        /** @var Variant $variant */
-        foreach ($variants as $variant) {
-            /** @var Model $model */
-            if (! $this->isSinglePack($variant)) continue;
-            $price = floatVal(str_replace(',', '.', $variant->getPurchasePrice()));
-            if ($price > $purchasePrice) {
-                $purchasePrice = $price;
-            }
-            $price = floatVal(str_replace(',', '.', $variant->getRecommendedRetailPrice()));
-            if ($price > $retailPrice) {
-                $retailPrice = $price;
-            }
-        }
-
-        return [$purchasePrice, $purchasePrice * 1.19, $retailPrice];
+        return $variantPrices;
     }
 
     protected function isSinglePack(Variant $variant)
@@ -185,10 +172,17 @@ class ExportPrices extends AbstractProductExport
     {
         parent::formatSheet();
         $highest = $this->sheet->getHighestRowAndColumn();
-        $range = $this->getRange(['F','2',$highest['column'], $highest['row']]);
+
+        // options
+        $this->sheet->getColumnDimension('G')->setWidth(60);
+
+        // variant number
+        $this->sheet->getColumnDimension('F')->setWidth(20);
+
+        $range = $this->getRange(['H','2',$highest['column'], $highest['row']]);
         $this->sheet->getStyle($range)->getNumberFormat()->setFormatCode('0.00');
 
-        foreach (range('F', $highest['column']) as $col) {
+        foreach (range('H', $highest['column']) as $col) {
             $this->sheet->getColumnDimension($col)->setWidth(16);
         }
 

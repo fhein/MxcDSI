@@ -18,10 +18,26 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
     protected $report = [];
 
     protected $categoryMap;
-
     protected $classConfigFile = __DIR__ . '/../../Config/CategoryMapper.config.php';
 
-    public function map(Model $model, Product $product) {
+    protected $config;
+
+    public function __construct(array $config)
+    {
+        $this->config = $config;
+    }
+
+    public function map(Model $model, Product $product, bool $remap = false)
+    {
+        $category = @$this->config[$product->getIcNumber()]['category'];
+        if ($remap || ! $category) {
+            $category = $this->remap($product);
+        }
+        $product->setCategory($category);
+    }
+
+    public function remap(Product $product)
+    {
         $type = $product->getType();
         $categoryMap = $this->getCategoryMap();
 
@@ -55,11 +71,13 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
         $categories[] = $appendSubcategory ? $category . ' > ' . $appendSubcategory : $category;
 
+        $category = null;
         if (! empty($categories)) {
             $category = implode(MXC_DELIMITER_L1, $categories);
             $product->setCategory($category);
             $this->report[$category][] = $product->getName();
         }
+        return $category;
     }
 
     protected function updateCategoryPositions(array $categoryTree, array &$positions, string $path = null)

@@ -57,17 +57,24 @@ class Variant extends ModelEntity
     private $ean;
 
     /**
-     * @var float $purchasePrice
      * @ORM\Column(name="purchase_price", type="string", nullable=false)
      */
     private $purchasePrice;
 
     /**
-     * @var float $recommendedRetailPrice
-     *
+     * @ORM\Column(name="purchase_price_old", type="string", nullable=true)
+     */
+    private $purchasePriceOld;
+
+    /**
      * @ORM\Column(name="uvp", type="string", nullable=false)
      */
     private $recommendedRetailPrice;
+
+    /**
+     * @ORM\Column(name="uvp_old", type="string", nullable=true)
+     */
+    private $recommendedRetailPriceOld;
 
     /**
      * @ORM\Column(name="retail_dampfplanet",type="string", nullable=true)
@@ -562,5 +569,37 @@ class Variant extends ModelEntity
     public function setRetailPriceOthers($retailPriceOthers)
     {
         $this->retailPriceOthers = $retailPriceOthers;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPurchasePriceOld()
+    {
+        return $this->purchasePriceOld;
+    }
+
+    /**
+     * @param mixed $purchasePriceOld
+     */
+    public function setPurchasePriceOld($purchasePriceOld)
+    {
+        $this->purchasePriceOld = $purchasePriceOld;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRecommendedRetailPriceOld()
+    {
+        return $this->recommendedRetailPriceOld;
+    }
+
+    /**
+     * @param mixed $recommendedRetailPriceOld
+     */
+    public function setRecommendedRetailPriceOld($recommendedRetailPriceOld)
+    {
+        $this->recommendedRetailPriceOld = $recommendedRetailPriceOld;
     }
 }

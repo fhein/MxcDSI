@@ -257,6 +257,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             $description = str_replace('##fillup##', $fillup, $description);
             $description = str_replace('##content##', $content[0], $description);
             $description = str_replace('##capacity##', $capacity[0], $description);
+
             return $description;
         }
 
@@ -270,31 +271,44 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             $description = str_replace('##capacity1##', $capacity[0], $description);
             $description = str_replace('##content2##', $content[1], $description);
             $description = str_replace('##capacity2##', $capacity[1], $description);
+
             return $description;
         }
 
-        return $this->descriptionShakeVape[$product->getBrand()] ?? null;
+        return @$this->descriptionShakeVape[$product->getBrand()];
     }
 
-    public function map(Model $model, Product $product)
+    public function map(Model $model, Product $product, bool $remap = false)
     {
-        $this->log->debug('Mapping description for ' . $product->getName());
-        $description = $this->mappings[$product->getIcNumber()]['description'] ?? null;
-        $type = $product->getType();
-        $flavor = $product->getFlavor();
-        if ($type === 'LIQUID') {
-            $description = $this->descriptionLiquidDefault;
-            $description = str_replace('##flavor##', $flavor, $description);
-        } elseif ($type === 'SHAKE_VAPE') {
-            $description = $this->getShakeVapeDescription($product);
-            $description = str_replace('##flavor##', $flavor, $description);
-        } elseif ($type === 'AROMA') {
-            $description = $this->getAromaDescription($product);
-        }
-        if (! $description) {
-            $description = $model->getDescription();
+        $description = @$this->mappings[$product->getIcNumber()]['description'];
+        if ($remap || ! $description) {
+            $description = $this->remap($product);
         }
         $product->setDescription($description);
+    }
+
+    public function remap(Product $product)
+    {
+        $type = $product->getType();
+        $flavor = $product->getFlavor();
+
+        switch ($type) {
+            case 'LIQUID':
+                $description = $this->descriptionLiquidDefault;
+                $description = str_replace('##flavor##', $flavor, $description);
+                break;
+            case 'SHAKE_VAPE':
+                $description = $this->getShakeVapeDescription($product);
+                $description = str_replace('##flavor##', $flavor, $description);
+                break;
+            case 'AROMA':
+                $description = $this->getAromaDescription($product);
+                break;
+            default:
+                $description = $this->mappings[$product->getIcNumber()]['description'] ?? $product->getIcDescription();
+        }
+
+        return $description;
     }
 
     public function report()

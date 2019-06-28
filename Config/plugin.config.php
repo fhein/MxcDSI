@@ -33,7 +33,6 @@ use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
 use MxcDropshipInnocigs\Mapping\Import\CommonNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\CompetitorPricesMapper;
 use MxcDropshipInnocigs\Mapping\Import\ContentMapper;
 use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
 use MxcDropshipInnocigs\Mapping\Import\DosageMapper;
@@ -135,11 +134,8 @@ return [
 
     'services'     => [
         'factories' => [
-            CategoryMapper::class            => AugmentedObjectFactory::class,
-            CommonNameMapper::class          => AugmentedObjectFactory::class,
             ProductMappings::class           => AugmentedObjectFactory::class,
             ImportPiecesPerPackMapper::class => AugmentedObjectFactory::class,
-            NameMapper::class                => AugmentedObjectFactory::class,
             ProductNumberMapper::class       => AugmentedObjectFactory::class,
             TypeMapper::class                => AugmentedObjectFactory::class,
             VariantNumberMapper::class       => AugmentedObjectFactory::class,
@@ -157,10 +153,13 @@ return [
 
             CategoryTool::class => AugmentedObjectFactory::class,
 
+            CommonNameMapper::class       => MappingConfigFactory::class,
             DosageMapper::class           => MappingConfigFactory::class,
             ContentMapper::class          => MappingConfigFactory::class,
             FlavorMapper::class           => MappingConfigFactory::class,
-            CompetitorPricesMapper::class => MappingConfigFactory::class,
+            NameMapper::class             => MappingConfigFactory::class,
+            CategoryMapper::class         => MappingConfigFactory::class,
+            DescriptionMapper::class      => MappingConfigFactory::class,
 
             ImportDosage::class      => AugmentedObjectFactory::class,
             ImportFlavor::class      => AugmentedObjectFactory::class,
@@ -191,7 +190,6 @@ return [
             ImportMapper::class,
             ImportPrices::class,
             ManufacturerMapper::class,
-            DescriptionMapper::class,
             NameMappingConsistency::class,
             OptionMapper::class,
             PriceMapper::class,
@@ -229,11 +227,11 @@ return [
             'Mapping'      => ImportMapping::class,
         ],
         'export' => [
-            'Preise'       => ExportPrices::class,
-            'Dosierung'    => ExportDosage::class,
-            'Geschmack'    => ExportFlavor::class,
-            'Beschreibung' => ExportDescription::class,
-            'Mapping'      => ExportMapping::class,
+            'Preise'          => ExportPrices::class,
+            'Dosierung'       => ExportDosage::class,
+            'Geschmack'       => ExportFlavor::class,
+            'Beschreibung'    => ExportDescription::class,
+            'Mapping'         => ExportMapping::class,
         ],
     ],
 ];

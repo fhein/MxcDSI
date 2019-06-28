@@ -13,7 +13,7 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface, M
     use ModelManagerAwareTrait;
 
     /** @var array */
-    protected $config;
+    protected $mappings;
     /**
      * DosageMapper constructor.
      *
@@ -21,7 +21,18 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface, M
      */
     public function __construct(array $config)
     {
-        $this->config = $config;
+        $this->mappings = $config;
+    }
+
+    public function map(Model $model, Product $product, bool $remap = false)
+    {
+        if ($product->getType() !== 'AROMA') return;
+
+        $dosage = @$this->mappings[$product->getIcNumber()]['dosage'];
+        if ($remap || ! $dosage) {
+            $dosage = $this->remap($product);
+        }
+        $product->setDosage($dosage);
     }
 
     /**
@@ -34,25 +45,18 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface, M
      * This function checks if a manual configuration is available and otherwise
      * tries to extract the dosage recommendation from the article's description.
      *
-     * @param Model $model
      * @param Product $product
+     * @return string|null
      */
-    public function map(Model $model, Product $product)
+    public function remap(Product $product)
     {
-        if ($product->getType() !== 'AROMA') {
-            return;
-        }
-        $icNumber = $product->getIcNumber();
-        $dosage = $this->config[$icNumber]['dosage'] ?? null;
-        if (! $dosage) {
-            // try to find dosage recommendation in product description
-            $description = preg_replace('~\n~', '', $product->getDescription());
-            $search = '~.*Dosierung[^\d]*(\d+).*(-|(bis)) *(\d+).*~';
-            $replace = '$1-$4';
-            $dosage = preg_replace($search, $replace, $description);
-            if ($dosage === $description) return;
-        }
-        $product->setDosage($dosage);
+        // try to find dosage recommendation in product description
+        $description = preg_replace('~\n~', '', $product->getDescription());
+        $search = '~.*Dosierung[^\d]*(\d+).*(-|(bis)) *(\d+).*~';
+        $replace = '$1-$4';
+        $dosage = preg_replace($search, $replace, $description);
+        if ($dosage === $description) $dosage = null;
+        return $dosage;
     }
 
     public function report()
