@@ -54,6 +54,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             'mxcCreateRelatedSelected',
             'mxcCreateSimilarSelected',
             'mxcImportItems',
+            'mxcUpdatePrices',
             'mxcRefreshItems',
             'mxcCheckRegularExpressions',
             'mxcCheckNameMappingConsistency',
@@ -481,6 +482,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-download-cloud',
                     handler: function() {
                         me.fireEvent('mxcImportItems', me);
+                    }
+                },
+                {
+                    text: 'Update InnoCigs prices',
+                    iconCls: 'sprite-money--arrow',
+                    handler: function() {
+                        me.fireEvent('mxcUpdatePrices', me);
                     }
                 },
                 '-',

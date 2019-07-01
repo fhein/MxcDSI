@@ -66,6 +66,7 @@ return array(
         7 => 'Minze',
         8 => 'Pfefferminze',
         9 => 'Slush Eis',
+        10 => 'Zitronensorbet',
     ),
     'Früchte' => array(
         0 => 'Amarenakirsche',
@@ -94,6 +95,7 @@ return array(
         23 => 'saure Früchte',
         24 => 'süße Früchte',
         25 => 'süße Kirsche',
+        26 => 'Wildfrüchte',
     ),
     'Gebäck' => array(
         0 => 'Apfelstrudel',
@@ -230,6 +232,7 @@ return array(
         11 => 'Zuckersirup',
         12 => 'Zuckerwatte',
         13 => 'weiße Schokolade',
+        14 => 'saures Weingummi',
     ),
     'Tabak' => array(
         0 => 'Burley Tabak',

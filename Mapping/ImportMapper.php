@@ -12,7 +12,6 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
@@ -52,9 +51,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
     /** @var ModelRepository */
     protected $modelRepository;
-
-    /** @var ApiClient $apiClient */
-    protected $apiClient;
 
     /** @var DetailMapper */
     protected $detailMapper;
@@ -96,7 +92,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
      * ImportMapper constructor.
      *
      * @param ArticleTool $articleTool
-     * @param ApiClient $apiClient
      * @param PropertyMapper $propertyMapper
      * @param CategoryMapper $categoryMapper
      * @param ProductMapper $productMapper
@@ -105,7 +100,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
      */
     public function __construct(
         ArticleTool $articleTool,
-        ApiClient $apiClient,
         PropertyMapper $propertyMapper,
         CategoryMapper $categoryMapper,
         ProductMapper $productMapper,
@@ -114,7 +108,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     ) {
         $this->articleTool = $articleTool;
         $this->detailMapper = $detailMapper;
-        $this->apiClient = $apiClient;
         $this->categoryMapper = $categoryMapper;
         $this->propertyMapper = $propertyMapper;
         $this->productMapper = $productMapper;

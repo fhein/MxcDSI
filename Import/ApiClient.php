@@ -19,6 +19,8 @@ class ApiClient
      */
     protected $apiEntry;
 
+    protected $loadExtendedList;
+
     /**
      * @var string $authUrl
      */
@@ -37,6 +39,7 @@ class ApiClient
         $this->log = $log;
         $this->apiEntry = 'https://www.innocigs.com/xmlapi/api.php';
         $this->authUrl = $this->apiEntry . '?cid=' . $credentials->getUser() . '&auth=' . $credentials->getPassword();
+        $this->loadExtendedList = false;
     }
 
     /**
@@ -163,6 +166,8 @@ class ApiClient
 
         $fn = Shopware()->DocPath() . 'var/log/mxc_dropship_innocigs/api_data.xml';
         file_put_contents($fn, $pretty);
+        $fn = Shopware()->DocPath() . 'var/log/mxc_dropship_innocigs/api_data_raw.xml';
+        file_put_contents($fn, $xml);
     }
 
     protected function logXMLErrors(array $errors)
@@ -207,7 +212,7 @@ class ApiClient
             if (!$response->isSuccess()) {
                 throw new ApiException('InnoCigs API: <br/>' . 'HTTP status: ' . $response->getStatusCode());
             }
-            return $client->send();
+            return $response;
         } catch (ZendClientException $e) {
             // no response or response empty
             throw new ApiException($e->getMessage());
@@ -237,7 +242,10 @@ class ApiClient
      */
     public function getItemList()
     {
-        $cmd = $this->authUrl . '&command=products&type=extended';
+        $cmd = $this->authUrl . '&command=products';
+        if ($this->loadExtendedList === true) {
+            $cmd .= '&type=extended';
+        }
         return $this->modelsToArray($this->send($cmd)->getBody());
     }
 
@@ -277,5 +285,10 @@ class ApiClient
     {
         $fn = Shopware()->DocPath() . '/var/log/mxc_dropship_innocigs/raw_data_' . date('Y-m-d-H-i-s') . '.xml';
         file_put_contents($fn, $xml);
+    }
+
+    public function setLoadExtendedList(bool $extended)
+    {
+        $this->loadExtendedList = $extended;
     }
 }

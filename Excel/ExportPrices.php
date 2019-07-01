@@ -30,6 +30,8 @@ class ExportPrices extends AbstractProductExport
         parent::registerColumns();
         $this->registerColumn('Product Number');
         $this->registerColumn('options');
+        $this->registerColumn('EK Netto alt');
+        $this->registerColumn('UVP Brutto alt');
         $this->registerColumn('EK Netto');
         $this->registerColumn('EK Brutto');
         $this->registerColumn('Dampfplanet');
@@ -76,6 +78,10 @@ class ExportPrices extends AbstractProductExport
                 $info['EK Brutto'] = $price * 1.19;
                 $price = floatVal(str_replace(',', '.', $variant->getRecommendedRetailPrice()));
                 $info['UVP Brutto'] = $price;
+                $price = floatVal(str_replace(',', '.', $variant->getRecommendedRetailPriceOld()));
+                $info['UVP Brutto alt'] = $price;
+                $price = floatVal(str_replace(',', '.', $variant->getPurchasePriceOld()));
+                $info['EK Netto alt'] = $price;
                 $info['Dampfplanet'] = $variant->getRetailPriceDampfplanet();
                 $info['andere'] = $variant->getRetailPriceOthers();
                 $options = $variant->getOptions();

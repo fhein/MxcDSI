@@ -5,7 +5,6 @@ namespace MxcDropshipInnocigs\Mapping;
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Database\BulkOperation;
 use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
@@ -25,7 +24,6 @@ class ImportMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $apiClient = $container->get(ApiClient::class);
         $articleTool = $container->get(ArticleTool::class);
         $propertyMapper = $container->get(PropertyMapper::class);
         $categoryMapper = $container->get(CategoryMapper::class);
@@ -34,7 +32,6 @@ class ImportMapperFactory implements FactoryInterface
         $bulkOperation = $container->get(BulkOperation::class);
         return $this->augment($container, new ImportMapper(
             $articleTool,
-            $apiClient,
             $propertyMapper,
             $categoryMapper,
             $productMapper,

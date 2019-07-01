@@ -22,6 +22,9 @@ return [
             'Energy Series' => 2,
             'Ice Cream' => 2,
         ],
+        'Yankee Juice' => [
+            'Sweets' => 2,
+        ],
         '5 Stars Peine' => [
             'Flavor Monster'    => 2,
             'One'               => 2,

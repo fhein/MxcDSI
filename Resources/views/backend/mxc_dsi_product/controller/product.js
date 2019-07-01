@@ -12,6 +12,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
             'mxc-dsi-product-listing-grid': {
                 mxcSaveProduct:                      me.onSaveProduct,
                 mxcImportItems:                      me.onImportItems,
+                mxcUpdatePrices:                     me.onUpdatePrices,
                 mxcRefreshAssociated:                me.onRefreshAssociatedItems,
                 mxcBuildCategoryTree:                me.onBuildCategoryTree,
                 mxcRemapProperties:                  me.onRemapProperties,
@@ -188,6 +189,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Update';
         let maskText = 'Updating products from InnoCigs ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onUpdatePrices: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=updatePrices}';
+        let params = {};
+        let growlTitle = 'Update';
+        let maskText = 'Updating product prices from InnoCigs ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

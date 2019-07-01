@@ -47,6 +47,7 @@ use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\Import\TypeMapper;
 use MxcDropshipInnocigs\Mapping\Import\VariantNumberMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
+use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ArticleCategoryMapper;
@@ -142,6 +143,7 @@ return [
             AssociatedProductsMapper::class  => AugmentedObjectFactory::class,
             AssociatedArticlesMapper::class  => AugmentedObjectFactory::class,
             VariantMappingConsistency::class => AugmentedObjectFactory::class,
+            ImportPriceMapper::class         => AugmentedObjectFactory::class,
 
             ArticleTool::class                 => AugmentedObjectFactory::class,
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,

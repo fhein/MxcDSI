@@ -12,6 +12,7 @@ use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
+use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
@@ -22,7 +23,6 @@ use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
-
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -40,6 +40,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $client = $this->getServices()->get(ImportClient::class);
+            $client->setLoadExtendedList(true);
             $mapper = $this->getServices()->get(ImportMapper::class);
             $mapper->import($client->import());
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
@@ -47,6 +48,20 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->handleException($e);
         }
     }
+
+    public function updatePricesAction()
+    {
+        try {
+            $client = $this->getServices()->get(ImportClient::class);
+            $client->setLoadExtendedList(false);
+            $mapper = $this->getServices()->get(ImportPriceMapper::class);
+            $mapper->import($client->import());
+            $this->view->assign(['success' => true, 'message' => 'Prices were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
 
     public function refreshAction() {
         try {
