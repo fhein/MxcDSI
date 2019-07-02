@@ -29,7 +29,7 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface, M
         if ($product->getType() !== 'AROMA') return;
 
         $dosage = @$this->mappings[$product->getIcNumber()]['dosage'];
-        if ($remap || ! $dosage) {
+        if (! $dosage) {
             $dosage = $this->remap($product);
         }
         $product->setDosage($dosage);
@@ -53,7 +53,7 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface, M
         // try to find dosage recommendation in product description
         $description = preg_replace('~\n~', '', $product->getDescription());
         $search = '~.*Dosierung[^\d]*(\d+).*(-|(bis)) *(\d+).*~';
-        $replace = '$1-$4';
+        $replace = '$1 - $4';
         $dosage = preg_replace($search, $replace, $description);
         if ($dosage === $description) $dosage = null;
         return $dosage;

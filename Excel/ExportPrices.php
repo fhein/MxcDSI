@@ -31,13 +31,13 @@ class ExportPrices extends AbstractProductExport
         $this->registerColumn('Product Number');
         $this->registerColumn('options');
         $this->registerColumn('EK Netto alt');
-        $this->registerColumn('UVP Brutto alt');
         $this->registerColumn('EK Netto');
         $this->registerColumn('EK Brutto');
-        $this->registerColumn('Dampfplanet');
-        $this->registerColumn('andere');
+        $this->registerColumn('UVP Brutto alt');
         $this->registerColumn('UVP Brutto');
         $this->registerColumn('Marge UVP');
+        $this->registerColumn('Dampfplanet');
+        $this->registerColumn('andere');
         $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
         foreach ($customerGroupKeys as $key) {
             $this->registerColumn('VK Brutto ' . $key);
@@ -163,7 +163,7 @@ class ExportPrices extends AbstractProductExport
     {
         $highest = $this->getHighestRowAndColumn();
         $columnRanges = [
-            [$this->columns['UVP Brutto'], 1, $this->columns['Marge UVP'], $highest['row']],
+            [$this->columns['UVP Brutto alt'], 1, $this->columns['Marge UVP'], $highest['row']],
         ];
         $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
         foreach ($customerGroupKeys as $key) {
@@ -191,6 +191,12 @@ class ExportPrices extends AbstractProductExport
         foreach (range('H', $highest['column']) as $col) {
             $this->sheet->getColumnDimension($col)->setWidth(16);
         }
+        // set old uvp and old purchase price text color grey
+        $columns = [$this->columns['UVP Brutto alt'], $this->columns['EK Netto alt']];
+        foreach ($columns as $column) {
+            $range = $this->getRange([$column, 2, $column, $highest['row']]);
+            $this->sheet->getStyle($range)->getFont()->getColor()->setARGB('FF808080');
+        }
 
         $this->setAlternateRowColors();
         $this->formatHeaderLine();
@@ -198,6 +204,8 @@ class ExportPrices extends AbstractProductExport
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000');
         $this->setPriceMarginBorders();
         $range = [ $this->columns['Dampfplanet'], 1, $this->columns['andere'], $highest['row']];
+        $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $this->getRange($range));
+        $range = [ $this->columns['EK Netto alt'], 1, $this->columns['EK Brutto'], $highest['row']];
         $this->setBorders('outline', Border::BORDER_MEDIUM, 'FF000000', $this->getRange($range));
         $this->setConditionalStyles();
     }
@@ -223,6 +231,16 @@ class ExportPrices extends AbstractProductExport
             Conditional::OPERATOR_EQUAL,
             '""',
             'C5D9F1');
+        $this->setConditionalFormat('UVP Brutto',
+            Conditional::CONDITION_CELLIS,
+            Conditional::OPERATOR_NOTEQUAL,
+            'UVP Brutto alt',
+            'FFC000');
+        $this->setConditionalFormat('EK Netto',
+            Conditional::CONDITION_CELLIS,
+            Conditional::OPERATOR_NOTEQUAL,
+            'EK Netto alt',
+            'FFC000');
     }
 
     protected function getModels()

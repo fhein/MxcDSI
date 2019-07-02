@@ -33,15 +33,12 @@ class ContentMapper extends BaseImportMapper implements ProductMapperInterface, 
         $content = @$this->config[$icNumber]['content'];
         $capacity = @$this->config[$icNumber]['capacity'];
 
-        if ($remap || ! $content) {
+        if (! $content) {
             $content = $this->remapContent($product);
         }
-        if (! $capacity && $type === 'LIQUID') {
-            $capacity = $content;
-        }
 
-        if ($remap || ! $capacity) {
-            $capacity = $this->remapCapacity($product);
+        if (! $capacity) {
+            $capacity = $type === 'LIQUID' ? $content : $this->remapCapacity($product);
         }
 
         $product->setContent($content);

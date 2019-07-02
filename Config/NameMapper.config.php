@@ -393,6 +393,7 @@ return [
             '~(Lux) 200~'                                            => '$1',
             '~(Lux) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(ECO) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
+            '~(ECO Pro) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Helix) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(Reuleaux RX Gen3) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
             '~(Speeder) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
@@ -568,6 +569,7 @@ return [
             '~(Ammit 25 RTA)~',
             '~(Blitzen RTA)~',
             '~(Ammit MTL RTA)~',
+            '~(Tengu RDA)~',
             '~(Creed RTA)~',
             '~(Zeus X RTA)~',
             '~(Zeus Dual RTA)~',
@@ -771,7 +773,7 @@ return [
         'Vapor Storm'   => [
             '~(Puma)~',
             '~(Subverter 1)~',
-            '~(ECO)~',
+            '~(ECO( Pro)?)~',
         ],
         'Vsticking'     => [
             '~(VK530)~',

@@ -51,6 +51,8 @@ class ImportPrices extends AbstractProductImport
             if (!$variant) continue;
             $variant->setRetailPriceDampfPlanet($record['Dampfplanet']);
             $variant->setRetailPriceOthers($record['andere']);
+            $variant->setPurchasePrice($record['EK Netto']);
+            $variant->setRecommendedRetailPrice($record['UVP Brutto']);
 
             $this->updateVariantPrice($variant, $record);
        }
@@ -73,7 +75,6 @@ class ImportPrices extends AbstractProductImport
         }
 
         $prices = implode(MXC_DELIMITER_L2, $prices);
-
         $variant->setRetailPrices($prices);
         $this->priceMapper->setRetailPrices($variant);
     }
