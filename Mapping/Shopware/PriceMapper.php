@@ -20,6 +20,8 @@ class PriceMapper
     /** @var array */
     protected $customerGroups;
 
+    protected $customerGroupRepository;
+
     public function __construct()
     {
         $this->modelManager = Shopware()->Models();
@@ -29,6 +31,7 @@ class PriceMapper
             $this->customerGroups[$customerGroup->getKey()] = $customerGroup;
         }
     }
+
     /**
      * Returns the price object for the customer group with the given key of the given
      * Shopware detail object. If the price object is not found it will be created and
@@ -40,7 +43,8 @@ class PriceMapper
      */
     public function getPrice(Detail $detail, string $customerGroupKey): ?Price
     {
-        $customerGroup = $this->customerGroups[$customerGroupKey];
+        /** @var Group $customerGroup */
+        $customerGroup = $this->getCustomerGroupRepository()->findOneBy(['key' => $customerGroupKey]);
         if ($customerGroup === null) {
             return null;
         }
@@ -70,8 +74,6 @@ class PriceMapper
         $price = new Price();
         $this->modelManager->persist($price);
         $price->setCustomerGroup($customerGroup);
-        // important to avoid 'not configured for cascade persist
-        $this->modelManager->persist($customerGroup);
         $price->setArticle($detail->getArticle());
         $price->setDetail($detail);
         return $price;
@@ -162,5 +164,10 @@ class PriceMapper
             $detail->setReferenceUnit($reference);
             $detail->setUnit(UnitTool::getUnit('ml'));
         }
+    }
+
+    protected function getCustomerGroupRepository()
+    {
+        return $this->customerGroupRepository ?? $this->customerGroupRepository = $this->modelManager->getRepository(Group::class);
     }
 }

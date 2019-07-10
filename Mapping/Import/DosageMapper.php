@@ -29,7 +29,7 @@ class DosageMapper extends BaseImportMapper implements ProductMapperInterface, M
         if ($product->getType() !== 'AROMA') return;
 
         $dosage = @$this->mappings[$product->getIcNumber()]['dosage'];
-        if (! $dosage) {
+        if ($dosage === null) {
             $dosage = $this->remap($product);
         }
         $product->setDosage($dosage);

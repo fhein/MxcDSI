@@ -165,11 +165,12 @@ return [
     ],
 
     'product_names_direct' => [
-        'Vampire Vape Applelicious - E-Zigaretten Liquid' => 'Vampire Vape - Applelicious - E-Zigaretten Liquid',
     ],
 
     'product_name_replacements' => [
         'preg_replace' => [
+            '~(Elli)´s~'                                                 => 'Elli\'s',
+            '~(Roofy)`s~'                                                => 'Roofy\'s',
             '~(Manta) (Glastank)~'                                       => '$1 RTA $2',
             '~(Manta) Bubble (Glastank)~'                                => '$1 RTA $2',
             '~Aster$~'                                                   => 'Aster 75 Watt',
@@ -183,6 +184,7 @@ return [
             '~((1 Liter)|(\d+ ml)) (Basis)~'                             => '$4 - $1',
             '~1 Liter~'                                                  => '1.000 ml',
             '~E-Zigaretten (Liquid)~'                                    => '- $1',
+            '~-( - Liquid)~'                                             => '$1',
             '~(Liquid) für E-Zigaretten~'                                => '$1',
             '~(Shortz.*) - (0 mg/ml)~'                                   => '$1 - 50 ml, $2',
             '~(Koncept XIX.*) (0 mg/ml)~'                                => '$1 - 50 ml, $2',
@@ -206,7 +208,9 @@ return [
             '~(\d+ mg/ml),? (\d+ ml)~'                                   => '$2, $1',
             '~([^,\-]) (\d+ ml, \d+ mg/ml)~'                             => '$1 - $2',
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
-            '~(Roofys) (- Aroma)(.*)(- \d+ ml)~'                         => '$1 - $3 $2 $4',
+            '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
+            '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
+            '~(Roofy\'s) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
             '~(Vape Rebelz) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
             '~(Mùa) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
             '~(Arschkalt) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
@@ -549,6 +553,8 @@ return [
             '~(Hastur MTL RTA)~',
             '~(Zathog RDA)~',
             '~(Mjölnir RDA)~',
+            '~(Hastur)~',
+            '~(Furai 510)~'
         ],
         'Desire Design' => [
             '~(Cut Premium)~',
@@ -647,10 +653,15 @@ return [
             '~(P16A)~',
             '~(Q16 C)~',
         ],
+        'Lost Vape' => [
+            '~(Original Q)~',
+        ],
         'OBS'           => [
             '~(Crius 2 RTA)~',
             '~(Engine 2 RTA)~',
             '~(Cube)~',
+            '~(Engine MTL)~',
+            '~(Cheetah 3 RDA)~',
         ],
         'Smok'          => [
             '~(G-Priv ((2)|(Baby)))~',

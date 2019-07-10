@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
 namespace MxcDropshipInnocigs\Mapping\Shopware;
@@ -7,14 +7,17 @@ namespace MxcDropshipInnocigs\Mapping\Shopware;
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 use Shopware\Models\Article\Article;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
-class ImageMapper implements LoggerAwareInterface
+class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
+    use ModelManagerAwareTrait;
     use LoggerAwareTrait;
 
     /** @var MediaTool mediaTool */
@@ -75,7 +78,9 @@ class ImageMapper implements LoggerAwareInterface
             $detailImg->setParent($image);
             $detailImg->setMain($image->getMain());
             $detailImg->setPosition($image->getPosition());
-            $this->articleImages->add($detailImg);
+            $this->modelManager->flush($detailImg);
+            //if the detailimage is added to an article, the article id is written into the data record. In this case, the mapping to the article detail gets lost when the article is saved again via shopware backend
+            //$this->articleImages->add($detailImg);
         }
     }
 }

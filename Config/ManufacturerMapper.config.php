@@ -14,5 +14,9 @@ return [
             'brand'    => 'Dexter\'s Juice Lab',
             'supplier' => 'Dexter\'s Juice Lab',
         ],
+        'Elli´s Aromen' => [
+            'brand' => 'Elli\'s Aromen',
+            'supplier' => 'Elli\'s Aromen',
+        ]
     ],
 ];

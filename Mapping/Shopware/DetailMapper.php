@@ -177,8 +177,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
         $detail->setNumber($variant->getNumber());
         $detail->setEan($variant->getEan());
-        $purchasePrice = floatval(str_replace(',', '.', $variant->getPurchasePrice()));
-        $detail->setPurchasePrice($purchasePrice);
+        $detail->setPurchasePrice($variant->getPurchasePrice());
     }
 
     /**

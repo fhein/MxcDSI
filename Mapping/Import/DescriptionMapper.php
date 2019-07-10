@@ -67,6 +67,34 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         .'</tbody>'
         . '</table>';
 
+    protected $descriptionAroma = [
+        'Elli\'s Aromen' =>
+            '<p><br>Lebensmittelaroma. Geschmack: ##flavor##. Zur Herstellung von E-Liquid fügen Sie das Aroma entsprechend der Dosierempfehlung '
+            . 'des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige '
+            . 'Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können.</p>'
+            . '<p>Detaillierte Angaben zu Dosierung und Reifezeit von Elli\'s Aromen finden Sie unter diesem Link: <a title="Ellifiziert!" href="http://www.ellifiziert.de/?page=labor" target="_blank">Ellifiziert!</a></p>'
+            . '<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>'
+            . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
+            . '<tbody>'
+            . '<tr>'
+            . '<td>Produkt</td>'
+            . '<td>##content## ml Lebensmittelaroma</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Geschmack </td>'
+            . '<td>##flavor##</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Dosierung</td>'
+            . '<td>##dosage## %</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Inhaltsstoffe</td>'
+            . '<td>Propylenglykol, Aromastoffe</td>'
+            . '</tr>'
+            .'</tbody>'
+            . '</table>',
+    ];
 
     protected $descriptionShakeVapeDefault =
         '<p><br>Shake & Vape Liquid. Geschmack: ##flavor##. Die ##capacity## ml Flasche enthält ##content## ml überaromatisiertes, nikotinfreies E-Liquid. '
@@ -75,7 +103,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         . '<tbody>'
         . '<tr>'
         . '<td>Produkt</td>'
-        . '<td>##content## ml überaromatisiertes E-Liquid in ##capacity## Flasche </td>'
+        . '<td>##content## ml überaromatisiertes E-Liquid in ##capacity## ml Flasche </td>'
         . '</tr>'
         . '<tr>'
         . '<td>Geschmack </td>'
@@ -144,7 +172,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             . '<tbody>'
             . '<tr>'
             . '<td>Produkt</td>'
-            . '<td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td>'
+            . '<td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td>'
             . '</tr>'
             . '<tr>'
             . '<td>Geschmack </td>'
@@ -168,7 +196,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             . '<tbody>'
             . '<tr>'
             . '<td>Produkt</td>'
-            . '<td>50 ml überaromatisiertes E-Liquid in 60ml Flasche </td>'
+            . '<td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td>'
             . '</tr>'
             . '<tr>'
             . '<td>Geschmack </td>'
@@ -193,7 +221,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             . '<tbody>'
                 . '<tr>'
                     . '<td>Produkt</td>'
-                    . '<td>Gebrauchsfertiges E-Liquid, 10ml Flasche </td>'
+                    . '<td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td>'
                 . '</tr>'
                 . '<tr>'
                     . '<td>Geschmack </td>'
@@ -216,16 +244,27 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     {
         $content = strval($product->getContent());
         $capacity = strval($product->getCapacity());
+        $supplier = $product->getSupplier();
+        $flavor = ucfirst($product->getFlavor());
         $description = null;
+
+        $description = $this->descriptionAroma[$supplier] ?? null;
+        if ($description !== null) {
+            $description = str_replace('##flavor##', $flavor, $description);
+            $description = str_replace('##dosage##', $product->getDosage(), $description);
+            $description = str_replace('##content##', $product->getContent(), $description);
+            $description = str_replace('##capacity##', $product->getCapacity(), $description);
+            return $description;
+        }
 
         if ($content === $capacity) {
             $description = $this->descriptionAromaDefault;
-            $description = str_replace('##flavor##', $product->getFlavor(), $description);
+            $description = str_replace('##flavor##', $flavor, $description);
             $description = str_replace('##dosage##', $product->getDosage(), $description);
             $description = str_replace('##content##', $product->getContent(), $description);
         } else {
             $description = $this->descriptionAromaLongfill;
-            $description = str_replace('##flavor##', $product->getFlavor(), $description);
+            $description = str_replace('##flavor##', $flavor, $description);
             $description = str_replace('##content##', $product->getContent(), $description);
             $description = str_replace('##capacity##', $product->getCapacity(), $description);
         }
@@ -290,7 +329,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     public function remap(Product $product)
     {
         $type = $product->getType();
-        $flavor = $product->getFlavor();
+        $flavor = ucfirst($product->getFlavor());
 
         switch ($type) {
             case 'LIQUID':

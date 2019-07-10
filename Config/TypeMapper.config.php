@@ -56,6 +56,7 @@ return [
         TypeMapper::TYPE_STORAGE            => 'STORAGE',
         TypeMapper::TYPE_BATTERY_SLEEVE     => 'BATTERY_SLEEVE',
         TypeMapper::TYPE_CLEANING_SUPPLY    => 'CLEANING_SUPPLY',
+        TypeMapper::TYPE_COVER              => 'COVER',
     ],
 
     'name_type_mapping' => [
@@ -70,6 +71,7 @@ return [
         '~RDSA.*Clearomizer~'   => TypeMapper::TYPE_CLEAROMIZER_RDSA,
         '~RDTA.*Clearomizer~'   => TypeMapper::TYPE_CLEAROMIZER_RDTA,
         '~RDA.*Clearomizer~'    => TypeMapper::TYPE_CLEAROMIZER_RDA,
+        '~Clearomizer Ständer~' => TypeMapper::TYPE_STORAGE,
         '~Clearomizer~'         => TypeMapper::TYPE_CLEAROMIZER,
         '~Cartridge~'           => TypeMapper::TYPE_CARTRIDGE,
         '~Pod~'                 => TypeMapper::TYPE_POD,
@@ -101,6 +103,7 @@ return [
         '~Deck~'                => TypeMapper::TYPE_DECK,
         '~Mesh Wire~'           => TypeMapper::TYPE_WIRE,
         '~Wickeldraht~'         => TypeMapper::TYPE_WIRE,
+        '~Competition Wire~'    => TypeMapper::TYPE_WIRE,
         '~Coil~'                => TypeMapper::TYPE_COIL,
         '~Watte~'               => TypeMapper::TYPE_WADDING,
         '~Ladegerät~'           => TypeMapper::TYPE_CHARGER,
@@ -126,7 +129,7 @@ return [
         '~[Dd]ichtung~'         => TypeMapper::TYPE_SEAL,
         '~O-Ring~'              => TypeMapper::TYPE_SEAL,
         '~Vitrine~'             => TypeMapper::TYPE_STORAGE,
-        '~Abdeckung~'           => TypeMapper::TYPE_ACCESSORY,
+        '~Abdeckung~'           => TypeMapper::TYPE_COVER,
         '~Vape Band~'           => TypeMapper::TYPE_ACCESSORY,
         '~Magnet.*Adapter~'     => TypeMapper::TYPE_MAGNET_ADAPTOR,
         '~[Mm]agnet~'           => TypeMapper::TYPE_MAGNET,

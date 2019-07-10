@@ -216,13 +216,14 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             // set properties which do not require mapping
             $variant->setIcNumber($model->getModel());
             $variant->setEan($model->getEan());
-            $variant->setPurchasePrice($model->getPurchasePrice());
-            $variant->setRecommendedRetailPrice($model->getRecommendedRetailPrice());
+            $variant->setPurchasePrice(str_replace(',', '.', $model->getPurchasePrice()));
+            $recommendedRetailPrice = str_replace(',', '.', $model->getRecommendedRetailPrice());
+            $variant->setRecommendedRetailPrice($recommendedRetailPrice);
             $variant->setImages($model->getImages());
 
             $variant->setActive(false);
             $variant->setAccepted(true);
-            $variant->setRetailPrices('EK' . MXC_DELIMITER_L1 . $model->getRecommendedRetailPrice());
+            $variant->setRetailPrices('EK' . MXC_DELIMITER_L1 . $recommendedRetailPrice);
             $variant->setOptions($this->mapOptions($model->getOptions()));
             $this->propertyMapper->mapModelToVariant($model, $variant);
         }
@@ -314,16 +315,17 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                     $ean = $model->getEan();
                     $variant->setEan($ean);
                     $detail = $variant->getDetail();
-                    if ($detail) $detail->setEan($ean);
+                    if ($detail !== null) $detail->setEan($ean);
                     break;
                 case 'recommendedRetailPrice':
-                    $variant->setRecommendedRetailPrice($model->getRecommendedRetailPrice());
+                    $recommendedRetailPrice = str_replace(',', '.', $model->getRecommendedRetailPrice());
+                    $variant->setRecommendedRetailPrice($recommendedRetailPrice);
                     break;
                 case 'purchasePrice':
-                    $purchasePrice = $model->getPurchasePrice();
+                    $purchasePrice = str_replace(',', '.', $model->getPurchasePrice());
                     $variant->setPurchasePrice($purchasePrice);
                     $detail = $variant->getDetail();
-                    if ($detail) $detail->setPurchasePrice($purchasePrice);
+                    if ($detail !== null) $detail->setPurchasePrice(floatval($purchasePrice));
                     break;
                 case 'images':
                     $variant->setImages($model->getImages());

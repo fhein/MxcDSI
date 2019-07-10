@@ -9,6 +9,7 @@ use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
+use Shopware\Models\Customer\Group;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
@@ -19,6 +20,8 @@ class ExportPrices extends AbstractProductExport
 
     /** @var PriceMapper $priceMapper */
     protected $priceMapper;
+
+    private $customerGroupKeys;
 
     public function __construct(PriceMapper $priceMapper)
     {
@@ -38,7 +41,7 @@ class ExportPrices extends AbstractProductExport
         $this->registerColumn('Marge UVP');
         $this->registerColumn('Dampfplanet');
         $this->registerColumn('andere');
-        $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+        $customerGroupKeys = $this->getCustomerGroupKeys();
         foreach ($customerGroupKeys as $key) {
             $this->registerColumn('VK Brutto ' . $key);
             $this->registerColumn('Marge ' . $key);
@@ -73,14 +76,14 @@ class ExportPrices extends AbstractProductExport
             foreach ($variants as $variant) {
                 if (! $this->isSinglePack($variant)) continue;
                 $info['icNumber'] = $variant->getIcNumber();
-                $price = floatVal(str_replace(',', '.', $variant->getPurchasePrice()));
+                $price = floatVal($variant->getPurchasePrice());
                 $info['EK Netto'] = $price;
                 $info['EK Brutto'] = $price * 1.19;
-                $price = floatVal(str_replace(',', '.', $variant->getRecommendedRetailPrice()));
+                $price = floatVal($variant->getRecommendedRetailPrice());
                 $info['UVP Brutto'] = $price;
-                $price = floatVal(str_replace(',', '.', $variant->getRecommendedRetailPriceOld()));
+                $price = floatVal($variant->getRecommendedRetailPriceOld());
                 $info['UVP Brutto alt'] = $price;
-                $price = floatVal(str_replace(',', '.', $variant->getPurchasePriceOld()));
+                $price = floatVal($variant->getPurchasePriceOld());
                 $info['EK Netto alt'] = $price;
                 $info['Dampfplanet'] = $variant->getRetailPriceDampfplanet();
                 $info['andere'] = $variant->getRetailPriceOthers();
@@ -95,7 +98,7 @@ class ExportPrices extends AbstractProductExport
                 $optionText = implode(', ', $optionNames);
                 $info['options'] = $optionText;
 
-                $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+                $customerGroupKeys = $this->getCustomerGroupKeys();
                 $vapeePrices = $this->getVapeePrices($variant);
                 foreach ($customerGroupKeys as $key) {
                     $price = $vapeePrices[$key] ?? null;
@@ -118,7 +121,7 @@ class ExportPrices extends AbstractProductExport
             $cellRetail = $this->getRange([$this->getColumn('UVP Brutto'), $row]);
             $record['Marge UVP'] = $this->getMarginColumnFormula($cellRetail, $cellPurchase);
 
-            $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+            $customerGroupKeys = $this->getCustomerGroupKeys();
             foreach ($customerGroupKeys as $key) {
                 $cellRetail = $this->getRange([$this->getColumn('VK Brutto ' . $key), $row]);
                 $record['Marge ' . $key] = $this->getMarginColumnFormula($cellRetail, $cellPurchase);
@@ -165,7 +168,7 @@ class ExportPrices extends AbstractProductExport
         $columnRanges = [
             [$this->columns['UVP Brutto alt'], 1, $this->columns['Marge UVP'], $highest['row']],
         ];
-        $customerGroupKeys = array_keys($this->priceMapper->getCustomerGroups());
+        $customerGroupKeys = $this->getCustomerGroupKeys();
         foreach ($customerGroupKeys as $key) {
             $columnRanges[] = [$this->columns['VK Brutto ' . $key], 1, $this->columns['Marge ' . $key], $highest['row']];
         }
@@ -241,6 +244,27 @@ class ExportPrices extends AbstractProductExport
             Conditional::OPERATOR_NOTEQUAL,
             'EK Netto alt',
             'FFC000');
+        foreach ($this->getCustomerGroupKeys() as $key) {
+            $column = 'Marge ' . $key;
+            $this->setConditionalFormat($column,
+                Conditional::CONDITION_CELLIS,
+                Conditional::OPERATOR_LESSTHAN,
+                25,
+                'FFCCCC');
+        }
+    }
+
+    protected function getCustomerGroupKeys()
+    {
+        if ($this->customerGroupKeys !== null) return $this->customerGroupKeys;
+
+        $this->modelManager = Shopware()->Models();
+        $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
+        /** @var Group $customerGroup */
+        foreach ($customerGroups as $customerGroup) {
+            $this->customerGroupKeys[] = $customerGroup->getKey();
+        }
+        return $this->customerGroupKeys;
     }
 
     protected function getModels()
@@ -253,4 +277,5 @@ class ExportPrices extends AbstractProductExport
         /** @noinspection PhpUndefinedMethodInspection */
         return $this->modelManager->getRepository(Product::class)->getAllIndexed();
     }
+
 }

@@ -30,7 +30,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
     public function map(Model $model, Product $product, bool $remap = false)
     {
         $category = @$this->config[$product->getIcNumber()]['category'];
-        if ($remap || ! $category) {
+        if ($remap || $category === null) {
             $category = $this->remap($product);
         }
         $product->setCategory($category);
