@@ -21,8 +21,9 @@ class ImportClientFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $apiClient = $container->get(ApiClient::class);
+        $apiClientSeq = $container->get(ApiClientSequential::class);
         $schemaManager = $container->get(SchemaManager::class);
-        $client = new ImportClient($schemaManager, $apiClient);
+        $client = new ImportClient($schemaManager, $apiClient, $apiClientSeq);
         return $this->augment($container, $client);
     }
 }

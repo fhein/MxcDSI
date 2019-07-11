@@ -21,6 +21,7 @@ use MxcDropshipInnocigs\Excel\ImportMapping;
 use MxcDropshipInnocigs\Excel\ImportPrices;
 use MxcDropshipInnocigs\Excel\ImportSheetFactory;
 use MxcDropshipInnocigs\Import\ApiClient;
+use MxcDropshipInnocigs\Import\ApiClientSequential;
 use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Listener\FilterTest;
@@ -177,6 +178,7 @@ return [
         ],
         'magicals'  => [
             ApiClient::class,
+            ApiClientSequential::class,
             ArrayReport::class,
             ArticleCategoryMapper::class,
             ConfiguratorSetRepository::class,

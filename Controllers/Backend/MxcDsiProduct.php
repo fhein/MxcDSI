@@ -49,6 +49,19 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function importSequentialAction()
+    {
+        try {
+            $client = $this->getServices()->get(ImportClient::class);
+            $client->setLoadExtendedList(true);
+            $mapper = $this->getServices()->get(ImportMapper::class);
+            $mapper->import($client->importSequential());
+            $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function updatePricesAction()
     {
         try {
@@ -705,6 +718,68 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->handleException($e);
         }
     }
+
+    public function testImport5Action()
+    {
+        try {
+            $testDir = __DIR__ . '/../../Test/';
+            $modelManager = $this->getManager();
+            $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model ir')->execute();
+            $articles = $modelManager->getRepository(Article::class)->findAll();
+            $articleResource = new ArticleResource();
+            $articleResource->setManager($modelManager);
+            /** @var Article $article */
+            foreach ($articles as $article) {
+                $articleResource->delete($article->getId());
+            }
+
+            $xmlFile = $testDir . 'TESTHugeImport.xml';
+            $services = $this->getServices();
+            $client = $services->get(ImportClient::class);
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->import($client->importFromFileSequential($xmlFile, true));
+
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            $productMapper = $this->services->get(ProductMapper::class);
+            $productMapper->updateArticles($products, true);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+
+    public function testImport6Action()
+    {
+        try {
+            $testDir = __DIR__ . '/../../Test/';
+            $modelManager = $this->getManager();
+            $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model ir')->execute();
+            $articles = $modelManager->getRepository(Article::class)->findAll();
+            $articleResource = new ArticleResource();
+            $articleResource->setManager($modelManager);
+            /** @var Article $article */
+            foreach ($articles as $article) {
+                $articleResource->delete($article->getId());
+            }
+
+            $xmlFile = $testDir . 'TESTHugeImport.xml';
+            $services = $this->getServices();
+            $client = $services->get(ImportClient::class);
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->import($client->importFromFile($xmlFile, true));
+
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            $productMapper = $this->services->get(ProductMapper::class);
+            $productMapper->updateArticles($products, true);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
 
     public function dev1Action()
     {
