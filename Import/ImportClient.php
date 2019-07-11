@@ -31,6 +31,9 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
     /** @var ApiClient $apiClient */
     protected $apiClient;
 
+    /** @var ApiClientSequential $apiClientSequential */
+    protected $apiClientSeq;
+
     /** @var array $import */
     protected $import;
 
@@ -64,13 +67,16 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
      *
      * @param SchemaManager $schemaManager
      * @param ApiClient $apiClient
+     * @param ApiClientSequential $apiClientSeq
      */
     public function __construct(
         SchemaManager $schemaManager,
-        ApiClient $apiClient
+        ApiClient $apiClient,
+        ApiClientSequential $apiClientSeq
     ) {
         $this->schemaManager = $schemaManager;
         $this->apiClient = $apiClient;
+        $this->apiClientSeq = $apiClientSeq;
         $this->reporter = new ArrayReport();
         $model = new Model();
         $this->fields = $model->getPrivatePropertyNames();
@@ -104,6 +110,16 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         }
         return $this->doImport();
     }
+    public function importFromXmlSequential(string $xmlFile, bool $recreateSchema = false)
+    {
+        $this->import = $this->apiClientSeq->getItemListfromFile($xmlFile);
+
+        if ($recreateSchema) {
+            $this->schemaManager->drop();
+            $this->schemaManager->create();
+        }
+        return $this->doImport();
+    }
 
     public function importFromFile(string $xmlFile = null, bool $recreateSchema = false)
     {
@@ -113,9 +129,23 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         return $this->importFromXml(file_get_contents($xmlFile), $recreateSchema);
     }
 
+    public function importFromFileSequential(string $xmlFile = null, bool $recreateSchema = false)
+    {
+        if (! file_exists($xmlFile)) {
+            throw new RuntimeException('File does not exist: ' . $xmlFile);
+        }
+        return $this->importFromXmlSequential($xmlFile, $recreateSchema);
+    }
+
     public function import() {
         $this->apiClient->setLoadExtendedList($this->loadExtendedList);
         $this->import = $this->apiClient->getItemList();
+        return $this->doImport();
+    }
+
+    public function importSequential() {
+        $this->apiClientSeq->setLoadExtendedList($this->loadExtendedList);
+        $this->import = $this->apiClientSeq->getItemList();
         return $this->doImport();
     }
 

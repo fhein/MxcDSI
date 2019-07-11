@@ -78,8 +78,9 @@ class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             $detailImg->setParent($image);
             $detailImg->setMain($image->getMain());
             $detailImg->setPosition($image->getPosition());
-            $this->modelManager->flush($detailImg);
-            //if the detailimage is added to an article, the article id is written into the data record. In this case, the mapping to the article detail gets lost when the article is saved again via shopware backend
+            // @todo: check if the next line is required
+            // $this->modelManager->flush($detailImg);
+            // if the detailimage is added to an article, the article id is written into the data record. In this case, the mapping to the article detail gets lost when the article is saved again via shopware backend
             //$this->articleImages->add($detailImg);
         }
     }

@@ -5,6 +5,7 @@ namespace MxcDropshipInnocigs\Excel;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\Toolbox\Shopware\DatabaseTool;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
 use RuntimeException;
 
@@ -23,6 +24,7 @@ class ExcelImport implements ModelManagerAwareInterface
 
     public function import($filepath = null)
     {
+        DatabaseTool::removeOrphanedDetails();
         $importFile = $filepath ? $filepath : $this->excelFile;
         $spreadSheet = (new Reader())->load($importFile);
         $isFileImported = false;

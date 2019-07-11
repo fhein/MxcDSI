@@ -3,7 +3,6 @@
 namespace MxcDropshipInnocigs;
 
 use Mxc\Shopware\Plugin\Service\AugmentedObjectFactory;
-use MxcDropshipInnocigs\Description\DescriptionExport;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelImport;
 use MxcDropshipInnocigs\Excel\ExcelImportFactory;
@@ -21,6 +20,7 @@ use MxcDropshipInnocigs\Excel\ImportMapping;
 use MxcDropshipInnocigs\Excel\ImportPrices;
 use MxcDropshipInnocigs\Excel\ImportSheetFactory;
 use MxcDropshipInnocigs\Import\ApiClient;
+use MxcDropshipInnocigs\Import\ApiClientSequential;
 use MxcDropshipInnocigs\Import\Credentials;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Listener\FilterTest;
@@ -49,6 +49,7 @@ use MxcDropshipInnocigs\Mapping\Import\VariantNumberMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
+use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ArticleCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
@@ -148,7 +149,7 @@ return [
             ArticleTool::class                 => AugmentedObjectFactory::class,
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
             ConfiguratorSetRepository::class   => AugmentedObjectFactory::class,
-            DescriptionExport::class           => AugmentedObjectFactory::class,
+            DescriptionPullback::class         => AugmentedObjectFactory::class,
             FilterGroupRepository::class       => AugmentedObjectFactory::class,
             MappingFilePersister::class        => AugmentedObjectFactory::class,
             MediaTool::class                   => AugmentedObjectFactory::class,
@@ -177,6 +178,7 @@ return [
         ],
         'magicals'  => [
             ApiClient::class,
+            ApiClientSequential::class,
             ArrayReport::class,
             ArticleCategoryMapper::class,
             ConfiguratorSetRepository::class,

@@ -8,6 +8,8 @@
     "ext-simplexml": "*",
     "ext-fileinfo": "*",
     "ext-libxml": "*",
-    "ext-dom": "*"
+    "ext-dom": "*",
+    "ext-xmlreader": "*",
+    "ext-tidy": "*"
   }
 }

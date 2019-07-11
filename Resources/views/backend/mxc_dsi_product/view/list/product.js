@@ -20,7 +20,10 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 commonName:                 { header: 'Common' },
                 category:                   { header: 'Category'},
                 name:                       { header: 'Name', flex: 3 },
-                flavor:                     { header: 'Flavor', flex: 3 },
+                flavor:                     { header: 'Flavor' },
+                content:                    { header: 'Content' },
+                capacity:                   { header: 'Capacity' },
+                dosage:                     { header: 'Dosage' },
                 accepted:                   { header: 'accept', width:45, flex: 0}
             },
             addButton: false,
@@ -54,6 +57,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             'mxcCreateRelatedSelected',
             'mxcCreateSimilarSelected',
             'mxcImportItems',
+            'mxcImportItemsSequential',
             'mxcUpdatePrices',
             'mxcRefreshItems',
             'mxcCheckRegularExpressions',
@@ -72,6 +76,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             'mxcTestImport2',
             'mxcTestImport3',
             'mxcTestImport4',
+            'mxcTestImport5',
+            'mxcTestImport6',
 
             'mxcDev1',
             'mxcDev2',
@@ -485,6 +491,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     }
                 },
                 {
+                    text: 'Import/Update Sequential',
+                    iconCls: 'sprite-download-cloud',
+                    handler: function() {
+                        me.fireEvent('mxcImportItemsSequential', me);
+                    }
+                },
+                {
                     text: 'Update InnoCigs prices',
                     iconCls: 'sprite-money--arrow',
                     handler: function() {
@@ -559,6 +572,19 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text: 'Empty product list',
                     handler: function() {
                         me.fireEvent('mxcTestImport4', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Import Huge File Sequential',
+                    handler: function() {
+                        me.fireEvent('mxcTestImport5', me);
+                    }
+                },
+                {
+                    text: 'Import Huge File',
+                    handler: function() {
+                        me.fireEvent('mxcTestImport6', me);
                     }
                 },
             ]

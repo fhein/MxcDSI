@@ -1,7 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use MxcDropshipInnocigs\Description\DescriptionExport;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ApiClient;
@@ -14,12 +13,14 @@ use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
+use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\DatabaseTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
@@ -43,6 +44,19 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $client->setLoadExtendedList(true);
             $mapper = $this->getServices()->get(ImportMapper::class);
             $mapper->import($client->import());
+            $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function importSequentialAction()
+    {
+        try {
+            $client = $this->getServices()->get(ImportClient::class);
+            $client->setLoadExtendedList(true);
+            $mapper = $this->getServices()->get(ImportMapper::class);
+            $mapper->import($client->importSequential());
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -596,7 +610,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             /** @var ImportMapper $client */
             $services = $this->getServices();
-            $descriptions = $services->get(DescriptionExport::class);
+            $descriptions = $services->get(DescriptionPullback::class);
             $repository = $this->getManager()->getRepository(Product::class);
 
             /** @noinspection PhpUndefinedMethodInspection */
@@ -615,7 +629,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             /** @var ImportMapper $client */
             $services = $this->getServices();
-            $descriptions = $services->get(DescriptionExport::class);
+            $descriptions = $services->get(DescriptionPullback::class);
             $repository = $this->getModelManager()->getRepository(Product::class);
 
             $params = $this->request->getParams();
@@ -706,27 +720,73 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function testImport5Action()
+    {
+        try {
+            $testDir = __DIR__ . '/../../Test/';
+            $modelManager = $this->getManager();
+            $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model ir')->execute();
+            $articles = $modelManager->getRepository(Article::class)->findAll();
+            $articleResource = new ArticleResource();
+            $articleResource->setManager($modelManager);
+            /** @var Article $article */
+            foreach ($articles as $article) {
+                $articleResource->delete($article->getId());
+            }
+
+            $xmlFile = $testDir . 'TESTHugeImport.xml';
+            $services = $this->getServices();
+            $client = $services->get(ImportClient::class);
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->import($client->importFromFileSequential($xmlFile, true));
+
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            $productMapper = $this->services->get(ProductMapper::class);
+            $productMapper->updateArticles($products, true);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+
+    public function testImport6Action()
+    {
+        try {
+            $testDir = __DIR__ . '/../../Test/';
+            $modelManager = $this->getManager();
+            $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model ir')->execute();
+            $articles = $modelManager->getRepository(Article::class)->findAll();
+            $articleResource = new ArticleResource();
+            $articleResource->setManager($modelManager);
+            /** @var Article $article */
+            foreach ($articles as $article) {
+                $articleResource->delete($article->getId());
+            }
+
+            $xmlFile = $testDir . 'TESTHugeImport.xml';
+            $services = $this->getServices();
+            $client = $services->get(ImportClient::class);
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->import($client->importFromFile($xmlFile, true));
+
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            $productMapper = $this->services->get(ProductMapper::class);
+            $productMapper->updateArticles($products, true);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+
     public function dev1Action()
     {
         try {
-//            $products = $this->getManager()->getRepository(Product::class)->getAllIndexed();
-//            $log = $this->getLog();
-//            /** @var Product $product */
-//            foreach ($products as $product) {
-//                $variants = $product->getVariants();
-//                /** @var Variant $variant */
-//                foreach ($variants as $variant) {
-//                    if (! $variant->isValid()) continue;
-//                    $options = $variant->getOptions();
-//                    /** @var Option $option */
-//                    foreach ($options as $option) {
-//                        $groupName = $option->getIcGroup()->getName();
-//                        if ($groupName === 'Ausführung') {
-//                            $log->debug('Product: ' . $product->getName() . ', Ausführung: ' . $option->getName());
-//                        }
-//                    }
-//                }
-//            }
+            $repair = $this->getServices()->get(DatabaseTool::class);
+            $repair->removeOrphanedDetails();
             $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

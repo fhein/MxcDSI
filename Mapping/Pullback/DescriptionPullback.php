@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Description;
+namespace MxcDropshipInnocigs\Mapping\Pullback;
 
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
@@ -9,7 +9,7 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use Shopware\Models\Article\Article;
 
-class DescriptionExport implements ModelManagerAwareInterface, LoggerAwareInterface
+class DescriptionPullback implements ModelManagerAwareInterface, LoggerAwareInterface
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

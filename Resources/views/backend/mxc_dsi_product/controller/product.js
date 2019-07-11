@@ -12,6 +12,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
             'mxc-dsi-product-listing-grid': {
                 mxcSaveProduct:                      me.onSaveProduct,
                 mxcImportItems:                      me.onImportItems,
+                mxcImportItemsSequential:            me.onImportItemsSequential,
                 mxcUpdatePrices:                     me.onUpdatePrices,
                 mxcRefreshAssociated:                me.onRefreshAssociatedItems,
                 mxcBuildCategoryTree:                me.onBuildCategoryTree,
@@ -50,6 +51,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcTestImport2:                      me.onTestImport2,
                 mxcTestImport3:                      me.onTestImport3,
                 mxcTestImport4:                      me.onTestImport4,
+                mxcTestImport5:                      me.onTestImport5,
+                mxcTestImport6:                      me.onTestImport6,
 
                 // for development/test purposes
                 mxcDev1:                             me.onDev1,
@@ -186,6 +189,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
     onImportItems: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=import}';
+        let params = {};
+        let growlTitle = 'Update';
+        let maskText = 'Updating products from InnoCigs ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onImportItemsSequential: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=importSequential}';
         let params = {};
         let growlTitle = 'Update';
         let maskText = 'Updating products from InnoCigs ...';
@@ -401,6 +413,24 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Import empty product list';
         let maskText = 'Importing empty product list  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onTestImport5: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=testImport5}';
+        let params = {};
+        let growlTitle = 'Importing test data';
+        let maskText = 'Importing test data  ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onTestImport6: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=testImport6}';
+        let params = {};
+        let growlTitle = 'Importing test data';
+        let maskText = 'Importing test data  ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
