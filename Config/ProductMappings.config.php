@@ -824,7 +824,88 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p class="h4"><br>Der Murata (vormals Sony)&nbsp;US18650VTC5A ist ein Akku in der Bauform 18650. Er ist der derzeit sicherste Akku für die Verwendung in E-Zigaretten. Als Nachfolger des Sony US18650VTC5 weist&nbsp; der VTC5A einige Verbesserungen auf.</p>
+<p class="h4">Die Hitzeentwicklung fällt deutlich geringer als beimVorgänger aus und der konstante Entladestrom wurde auf 35A erhöht. Die für einen Akku mit dieser Chemie hohe Kapazität von 2600 mAh garantiert, dass ihm nicht zu rasch die Puste ausgeht.</p>
+<p class="h4">Der Murata/Sony US18650VTC5A ist für jeden elektronisch geregelten Akkuträger das richtige Kraftwerk, egal, ob Sie mit hohem Strombedarf dampfen für viel Dampf oder eher mit moderatem Strombedarf für viel Geschmack. Ohne eigene Schutzelektronik ist der Murata/Sony US18650VTC5A für jeden elektronisch geregelten Akkuträger die beste Wahl. Verfügt nämlich ein Akku über eine eigene Schutzschaltung, kann es passieren, dass durch Wechselwirkungen mit der Schutzschaltung des Akkuträgers die Funktion des Gerätes beeinträchtigt wird.</p>
+<p class="h4">Wenn Sie sicher sein wollen, dass Ihr Akku den Anforderungen einer E-Zigarette gewachsen ist, ohne bereits zu wissen,&nbsp; ob und wie sich diese Anforderungen im Laufe der Zeit vielleicht ändern, sind Sie mit dem Murata/Sony US18650VTC5A auf der sicheren Seite. Mit seiner maximalen Stromabgabe von 35 A konstant kann er in jeder Kombination von elektronisch geregeltem Akkuträger und Verdampfer eingesetzt werden, wobei Sie größtmögliche Betriebssicherheit genießen. Der&nbsp;Murata/Sony US18650VTC5A kommt nicht ins Schwitzen, auch wenn Sie vielleicht versehentlich was Falsches einstellen.</p>
+<p class="h4">Ihre Vorlieben für Geräte und Verdampfer mögen sich ändern. Dieser Akku ist immer richtig!</p>
+<p class="h4">Technische Daten:</p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Typ. Kapazität</td>
+<td>2600mAh</td>
+</tr>
+<tr>
+<td>Min. Kapazität</td>
+<td>2500mAh</td>
+</tr>
+<tr>
+<td>Nennspannung</td>
+<td>3,6V - 3,7V</td>
+</tr>
+<tr>
+<td>Ladeschlussspannung</td>
+<td>4,2V ± 0,05V</td>
+</tr>
+<tr>
+<td>Entladeschlussspannung</td>
+<td>2V</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>0,25A - 2,5A</td>
+</tr>
+<tr>
+<td>Max. Ladestrom&nbsp;</td>
+<td>6A</td>
+</tr>
+<tr>
+<td>max. Stromabgabe konstant</td>
+<td>35A</td>
+</tr>
+<tr>
+<td>Chemische Zusammensetzung</td>
+<td>LiNiMnCoO2</td>
+</tr>
+<tr>
+<td>Schutzschaltung</td>
+<td>nein</td>
+</tr>
+<tr>
+<td>Pluspol</td>
+<td>flach (Flat Top)</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>18,2 mm ± 0,05 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>65,0 mm ± 0,15 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>45 g ± 0,1 g</td>
+</tr>
+<tr>
+<td>Ladeverfahren</td>
+<td>CC-CV</td>
+</tr>
+<tr>
+<td>Testergebnisse (Entladekurve)</td>
+<td><a href="http://www.dampfakkus.de/akkutest.php?id=610" target="_blank">Dampfakkus</a></td>
+</tr>
+<tr>
+<td>Testergebnisse</td>
+<td><a href="https://lygte-info.dk/review/batteries2012/Sony%20US18650VTC5A%202600mAh%20(Green)%20UK.html" target="_blank">Lygte-Info</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Sicherheitshinweise</h4>
+<p>Lithium Zellen dürfen nur mit Schutzelektronik (elektronisch geregelter Akkusträger) betrieben werden!<br>Zur Vermeidung von Kurzschlüssen transportieren Sie Lithium Zellen nie lose, sondern immer so verpackt, dass die Pole isoliert sind.<br>Falsche Handhabung oder Kurzschluss können zur Brandentwicklung oder Explosion führen.</p>
+<p><strong>Weitere Eigenschaften</strong></p>
+<p>Lithium-Ionen Akkus sind thermisch stabil. Sie unterliegen keinem Memory-Effekt und verfügen übe eine hohe Energiedichte,</p>',
     ),
     'SAMSINR25R' => array(
         'icNumber' => 'SAMSINR25R',
