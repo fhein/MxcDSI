@@ -25,6 +25,9 @@ return [
             '~((HW1)|(HW2)) (Heads)~'               => 'HW1/HW2 $4',
             '~artikblau~'                           => 'arktikblau',
             '~(K2 & K3.*) \(\d+ (St. pro Pack\))~'  => '$1 (5 $2',
+            '~Freemax~'                             => 'FreeMax',
+            // separator different from '-'
+            '~–~'                                   => '-',
         ],
     ],
 
@@ -237,7 +240,7 @@ return [
             '~(VLADS VG) Liquid (-.*)~'                                  => '$1 $2 - Liquid',
             '~(Bull) (- Aroma)(.*)(- \d+ ml)~'                           => '$1 - $3 $2 $4',
             '~(Remedy) - Remedy~'                                        => '$1',
-            '~(5 Stars Peine) (- Aroma)(.*)(-|,)?( \d+ ml)~'             => '$1 - $3 $2 -$5',
+            '~(5 Stars Peine.*) (- Aroma)(.*)(-|,)?( \d+ ml)~'           => '$1 - $3 $2 -$5',
             '~(5 Stars Peine) (- .* Edition)~'                           => '$1 - $2 -',
             '~,( - Aroma - 9 ml)~'                                       => '$1',
             '~(SC -) (Aroma) (.*)~'                                      => '$1 $3 - $2',
@@ -537,6 +540,7 @@ return [
             '~(X VapePorn Vice RDA)~',
             '~((Amighty mit Viento)|(Amighty))~',
             '~(X VapersMD Dawg RTA)~',
+            '~(\.Blank RDA)~',
         ],
         'Augvape'       => [
             '~(Intake RTA)~',
@@ -569,6 +573,12 @@ return [
         ],
         'Ehpro'         => [
             '~(Panther RDA)~',
+        ],
+        'FreeMax' => [
+            '~(Twister mit Fireluke 2)~',
+            '~(Fireluke 2)~',
+            '~(Fireluke Mesh)~',
+            '~(M Pro)~',
         ],
         'GeekVape'      => [
             '~(Alpha)~',
@@ -659,9 +669,9 @@ return [
         'OBS'           => [
             '~(Crius 2 RTA)~',
             '~(Engine 2 RTA)~',
-            '~(Cube)~',
             '~(Engine MTL)~',
             '~(Cheetah 3 RDA)~',
+            '~(Cube(( Mini)|( MTL))?)~',
         ],
         'Smok'          => [
             '~(G-Priv ((2)|(Baby)))~',
@@ -694,6 +704,8 @@ return [
             '~(Chronus mit Shikra)~',
             '~(Sibra E2)~',
             '~(Sobra)~',
+            '~(Moonshot 120)~',
+            '~(Wolf Mini)~',
         ],
         'Steamax'       => [
             // Smok

@@ -60,7 +60,7 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
             $categories = $categoriesByFlavor[$flavor] ?? null;
             if (! $categories) {
                 $this->report['flavor_category_missing'][] = $flavor;
-                $categories = ['unknown'];
+                $categories = ['sonstige'];
             }
             foreach ($categories as $category) {
                 $flavorCategories[$category] = true;

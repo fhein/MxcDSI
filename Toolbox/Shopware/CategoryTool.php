@@ -21,7 +21,7 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
 
     public function removeEmptyCategories()
     {
-        $dql = 'SELECT c FROM Shopware\Models\Category\Category c WHERE c.parentId IS NOT null AND c.blog = 0 AND c.articles IS EMPTY AND c.children IS EMPTY';
+        $dql = 'SELECT c FROM Shopware\Models\Category\Category c WHERE c.parentId IS NOT null AND c.blog = 0 AND c.articles IS EMPTY AND c.children IS EMPTY AND c.name <> \'Deutsch\'';
         $query = $this->modelManager->createQuery($dql);
         $count = 0;
         while (true) {
@@ -33,7 +33,6 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
                 $this->modelManager->remove($category);
                 $this->log->debug('Empty category: ' . $category->getName());
             }
-            $this->log->debug('-----');
             $this->modelManager->flush();
             $this->modelManager->clear();
         }

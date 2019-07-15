@@ -219,6 +219,9 @@ return array(
         7 => 'Marula',
         8 => 'Rhabarber',
         9 => 'Waldmeister',
+        10 => 'Orchidee',
+        11 => 'Hibiskus',
+        12 => 'Holunder',
     ),
     'Süßigkeiten' => array(
         0 => 'Buttercreme',

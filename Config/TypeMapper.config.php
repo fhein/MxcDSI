@@ -95,6 +95,7 @@ return [
         '~Probierbox - Liquid~' => TypeMapper::TYPE_LIQUID_BOX,
         '~Liquid~'              => TypeMapper::TYPE_LIQUID,
         '~Easy 3.*Cap~'         => TypeMapper::TYPE_EASY3_CAP,
+        '~Fused Clapton Head~'  => TypeMapper::TYPE_COIL,
         '~Head~'                => TypeMapper::TYPE_HEAD,
         '~[Tt]asche~'           => TypeMapper::TYPE_BAG,
         '~Lederschale~'         => TypeMapper::TYPE_BAG,

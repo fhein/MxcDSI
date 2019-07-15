@@ -30,6 +30,9 @@ return [
             'One'               => 2,
             'Tea Edition'       => 2,
             'Cocktail Edition'  => 2,
+            'Poison I'          => 2,
+            'Poison II'         => 2,
+            'Poison III'        => 2,
 
         ],
         'Vampire Vape'   => [

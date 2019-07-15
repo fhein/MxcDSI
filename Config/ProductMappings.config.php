@@ -3536,7 +3536,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => 'Beeren, Frisches & Eiscreme',
         'dosage' => null,
         'base' => null,
-        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+        'description' => '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Beeren, Menthol. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'VV100L10-BI' => array(
         'icNumber' => 'VV100L10-BI',
@@ -4040,7 +4040,17 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p><br>Die Keramik Multifunktionspinzette Tweezer V8 ist ein nützliches Werkzeug mit einer Reihe von Einsatzmöglichkeiten.</p>
+<p>Mit der runden Seite der Pinzette können Sie einen festsitzenden Verdampfer lösen oder einen vielleicht schwergängigen Einstellring für den Luftstrom (Airflow-Control) verstellen. Die Tweezer V8 ist geeignet für Verdampfer mit einem Durchmesser zwischen 7 mm und 27 mm.</p>
+<p>Die Keramikspitzen sind für das Formen und Korrigieren von sebstgewickelten Verdampferspulen (Coils) gut geeignet. Die Keramikspitzen sind nicht leitend und hitzebeständig, so dass Sie mit der Tweezer V7 auch heiße Spulen bearbeiten oder die Watte richten können.</p>
+<p><strong>Eigenschaften</strong></p>
+<ul>
+<li>einfache Handhabung</li>
+<li>Kunststoffgriff</li>
+<li>Keramikspitzen</li>
+<li>hitzebeständig</li>
+<li>nicht leitend</li>
+</ul>',
     ),
     'SC100M3ES' => array(
         'icNumber' => 'SC100M3ES',
@@ -8374,7 +8384,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'name' => 'Wismec - Sinuous SW - Abdeckung - by Steamax',
         'commonName' => 'Sinuous SW',
         'type' => 'COVER',
-        'category' => 'ZUBEHÖR > Covers / Abdeckungen',
+        'category' => 'ZUBEHÖR > Abdeckungen',
         'supplier' => 'Wismec',
         'brand' => 'Steamax',
         'piecesPerPack' => 1,
@@ -16355,27 +16365,70 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Aspire Breeze 2 E-Zigaretten Set besitzt ein Kartuschen-System mit einem Tankvolumen von 3ml. Der Akku ist fest verbaut und weist eine Kapazität von 1.000mAh auf. Sie dampfen mit einer konstanten Leistungsabgabe. Sie erhalten zwei passende Verdampferköpfe mit einem Widerstand von 0,6 und 1,0 Ohm.
-
-Das Aspire E-Zigaretten Set namens Breeze 2 besteht aus dem Breeze 2 Akku und dem Breeze 2 Kartuschen-System. Der Akku hat eine Kapazität von 1000 mAh und wird hat eine konstante Leistungsabgabe. Das Kartuschen-System fasst bis zu 3ml Liquid, das von unten (Bottom Filling System) in die Kartusche gegeben wird. Im Set ist ein Aspire Breeze 2 Verdampferkopf mit 0,6 Ohm und ein Verdampferkopf mit 1,0 Ohm enthalten. Der Verdampferkopf mit 0,6 Ohm ist für das Subohm- und der mit 1,0 für das moderate Dampfen ausgelegt. Über das Micro-USB-Ladekabel laden Sie Ihre Breeze 2 E-Zigarette von Aspire. 
-<br>
-<br> 
-<b>Lieferumfang:</b>
-<ul><li>1x Aspire Breeze 2 Akku 1.000 mAh</li>
-<li>1x Aspire Breeze 2 Cartridge 3ml</li>
-<li>1x Aspire Breeze Head 0,6 Ohm</li>
-<li>1x Aspire Breeze Head 1,0 Ohm</li>
-<li>1x Micro-USB-Ladekabel</li>
-<li>1x Ersatzteile</li>
-<li>1x Bedienungsanleitung</li></ul><br>
-<br> 
-<b>Wichtige Merkmale:</b>\\n<ul><li>Akkukapazität: 1.000 mAh</li>
-<li>Ausgabemodi: konstante Leistungsabgabe</li>
-<li>Tankvolumen: 3ml</li>
-<li>Maße: 19mm x 35mm x 96mm</li>
-<li>Airflow-Control</li></ul><br>
-<br> 
-',
+        'description' => '<p>Die Aspire Breeze 2 ist eine E-Zigarette, die sich besonders gut für den Umstieg vom Rauchen auf das Dampfen eignet. Sie ist aus leichtem Aluminium gefertigt und hat ein kompaktes, schlichtes unaufdringliches Design.</p>
+<p>Die Aspire Breeze 2 ist so einfach zu bedienen wie andere Pod-Systeme auch, bietet Ihnen aber anders als meisten Pod-Systeme darüber hinaus die Möglichkeit, verschiedene Verdampferköpfe einzusetzen und die Luftzufuhr individuell einzustellen. Deshalb ist die Aspire Breeze 2 E-Zigarette besonders gut geeignet, die eigenen Vorlieben zu erforschen und einen eigenen Dampfstil zu entwickeln.</p>
+<p><strong>Breeze 2 Akku</strong></p>
+<p>Die Breeze 2 ist sehr einfach und komfortabel zu bedienen. Das einzige Bedienelement ist der Feuerknopf, der gut erreichbar in der Mitte des Systems platziert ist. Durch 5-maliges Drücken des Feuerknopfs wird das Gerät ein- und ausgeschaltet. Während Sie an der E-Zigarette ziehen, halten Sie den Feuerknopf gedrückt, um Dampf zu erzeugen.</p>
+<p>Im Vergleich zur Vorgängerin Aspire Breeze wurde die Ladekapazität des integrierten Akkus deutlich verbessert. Der Akku der Breeze 2 hat nun eine Kapazität von 1.000 mAh. Die Leistung des Akkus ist nicht einstellbar. Er gibt eine konstante Spannung an den Verdampfer ab. Trotz der verbesserten Kapazität des Akkus ist die Breeze 2 nur unwesentlich größer als Ihre Vorgängerin.</p>
+<p>Aufgeladen wird der Akku über das mitgelieferte Micro-USB-Kabel. Der USB-Anschluss befindet sich auf der Seite, so dass das Gerät <br>auch aufrecht stehend geladen werden kann. Sie können die Breeze 2 E-Zigarette während des Aufladens weiter benutzen.</p>
+<p>Der Aspire Breeze 2 Akku ist mit Sicherheitsfunktionen ausgestattet, die das System vor Kurschluss, Niedrigspannung und Überladung zu schützen. Weiter verfügt die Breeze 2 über eine automatische Abschaltung, wenn der Feuerknopf versehentlich länger als 10 s gedrückt wird. Damit entspricht die Breeze 2 den Sicherheitsstandards moderner E-Zigaretten.</p>
+<p><strong>Breeze 2 Pod</strong></p>
+<p>Die Geschmacksentwicklung des Breeze 2 Pods ist sehr in Ordnung. Auch die Dampfentwicklung ist ordentlich, wenn auch natürlich vom Volumen her nicht vergleichbar mit Geräten, die auf starke Dampfentwicklung hin ausgelegt sind.</p>
+<p>Der Tank des Breeze 2 Pods fasst 3 ml E-Liquid, was für ein Pod-System großzügig ist und mehr, als einige vergleichbare Geräte bieten. Mit einer Tankfüllung sollten Sie also gut über den Tag kommen. Und wenn Sie viel dampfen, so doch zumindest über den Arbeitstag.</p>
+<p>Zum Befüllen des Tanks lösen Sie das Pod aus der passgenauen Halterung. Drücken Sie dazu einfach auf den Seiten des Pods die gefederten Knöpfe mit Daumen und Zeigefinger, um die Arretierung zu lösen. Nun können sie das Pod aus dem Gerät herausziehen. Die Einfüllöffnung befindet sich am Boden des Pods. Sie ist mit einem Gummistopfe verschlossen um Auslaufen zu verhindern. Die Öffnung ist groß genug, um das Pod mit üblichen Liquidflaschen bequem befüllen zu können.</p>
+<p>Wie bei der Aspire Breeze kommen bei der Aspire Breeze 2 die bewährten U-Tech Verdampferköpfe zum Einsatz. Diese gibt es in Ausführungen mit 0,6 Ohm und 1,0 Ohm, die beide im Lieferumfang enthalten sind. Der Kopf mit 0,6 Ohm ist eher für den DL-Stil (Direct Lung) geeignet, bei dem der Dampf direkt in die Lunge inhaliert wird. Der 1,0 Ohm Kopf ist für den MTL-Stil (Mouth To Lung) gedacht, bei dem der Dampf zunächst in den Mund gezogen, und anschließend in die Lunge inhaliert wird.</p>
+<p>Anders als bei den meisten Pod-Systemen ist der Verdampferkopf nicht fest in das Pod verbaut, sondern kann separat gewechselt werden. Sie brauchen also kein neues Pod, wenn der Verdampferkopf verbraucht ist.</p>
+<p>Der Breeze 2 Pod verfügt über eine stufenlose Luftstromregulierung (Air Flow Control). Zur Einstellung des Luftstroms entfernen Sie das Mundstück und drehen dann das Rändelrad am Kamin, bis der Luftstrom für Sie passt.</p>
+<p>Die Aspire Breeze 2 E-Zigarette ist ein ideales Gerät für den Umstieg von der Zigarette, weil Sie sehr einfach in der Handhabung ist und trotzdem in gewissem Umfang Raum für Experimente lässt.</p>
+<p><strong>Eigenschaften</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Akkukapazität</td>
+<td>1.000 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodus</td>
+<td>konstante Spannung</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>3 ml</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Bottom Filling, Befüllung von unten</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos, Rändelrad am Kamin</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>MTL, vom Mund in die Lunge<br>DL, direkte Inhalation in die Lunge</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>19 mm x 35 mm x 96 mm</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lieferumfang</strong></p>
+<ul>
+<li>1 x Aspire Breeze 2 Akku 1.000 mAh</li>
+<li>1 x Aspire Breeze 2 Cartridge 3ml</li>
+<li>1 x Aspire Breeze Head 0,6 Ohm</li>
+<li>1 x Aspire Breeze Head 1,0 Ohm</li>
+<li>1 x Micro-USB-Ladekabel</li>
+<li>1 x Ersatzteile</li>
+<li>1 x Bedienungsanleitung</li>
+</ul>',
     ),
     'AS100BS2H' => array(
         'icNumber' => 'AS100BS2H',
@@ -18952,7 +19005,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'name' => 'Aspire - Puxos - Abdeckung',
         'commonName' => 'Puxos',
         'type' => 'COVER',
-        'category' => 'ZUBEHÖR > Covers / Abdeckungen',
+        'category' => 'ZUBEHÖR > Abdeckungen',
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
@@ -21885,7 +21938,7 @@ strong>Lieferumfang</strong>
         'name' => 'eLeaf - iWu - Abdeckung - by SC',
         'commonName' => 'iWu',
         'type' => 'COVER',
-        'category' => 'ZUBEHÖR > Covers / Abdeckungen',
+        'category' => 'ZUBEHÖR > Abdeckungen',
         'supplier' => 'eLeaf',
         'brand' => 'SC',
         'piecesPerPack' => 1,
@@ -31104,34 +31157,72 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Ein weiterer Akkuträger von der Marke AsMODus ist der Amighty, der bis zu 100 Watt Ausgangsleistung erreichen kann. Der Akkuträger unterstützt 3 verschiedene Akkuzelle und wird aber über eine einzige betrieben. Sie können entweder die 18650er, 20700er oder doe 21700er Akkuzelle dafür verwenden. Im Lieferumfang ist aber <b>keine</b> enthalten. Der Amighty hat folgende Ausgabemodi: VW/TFC/TRC/Curve Mode, die über das Touch-Display ausgewählt werden können. Bitte beachten Sie, dass Sie im TCR-Modus bis max. 60 Watt einstellen können. Die 100 Watt erreicht der Akkuträger im VW-Modus. Ein Verdampfer, der über ein 510er Gewinde verfügt, kann mit dem Amighty verbunden und genutzt werden.
-<br>
-<br>
-<b>18650er, 20700er oder 21700er Akkuzellen sind nicht im Lieferumfang enthalten!</b>
-<br>  
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p><br>Der asMODus Amighty ist ein ergonomisch gestalteter Akkuträger in cooler Optik. Er leistet mit einer einzelnen Akkuzelle bis zu 100 Watt.</p>
+<p>Wahlweise kann der Amighty mit einer 20700er oder einer 21700er Akkuzelle betrieben werden. Über einen Adapter kann auch ein 18650er Akku eingesetzt werden. Die Akkuzelle kann über ein externes Akku-Ladegerät oder über den Micro-USB Anschluss des Gerätes aufgeladen werden.</p>
+<p>Das Herz des Amighty ist der effiziente GX-100UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Amighty über den USB Anschluss mit einem Laptop oder PC.&nbsp;</p>
+<p>Der Amighty verfügt über die Dampf Modi POWER (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CURVE-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
+<p>Im Watt-Modus liegt die Ausgangsleistung des Amighty zwischen 5 und 100 Watt.&nbsp;Im Temperatur-Modus liegt die Leistung zwischen 5&nbsp; und 60 Watt bei einem einstellbaren Temperaturbereich von 100° bis 300° Celsius.&nbsp;</p>
+<p>Auf dem farbigen HD Touch Display werden Ihnen die eingestellte Wattzahl oder Temperatur, die Anzahl der getätigten Züge, der Ladestand des Akkus sowie der Widerstand des Verdampferkopfs angezeigt. Über das Touch Display nehmen Sie auch Ihre individuellen Einstellungen vor. Das Farbschema des Displays ist anpassbar.</p>
+<p>Der Amighty verfügt über die von asMODus bekannten ausgereiften Schutzschaltungen. Sie schützen die Akkuzellen vor Tiefenentladung, Überladung, Verpolung, Kurzschluss und Überhitzung. Bei einem Kurzschluss oder niedrigem Akkustand wird dies auf dem Display angezeigt und über eine kurze Vibration signalisiert. Die Vibrationsfunktion kann über das Menu abgeschaltet werden.</p>
+<p>Der Amighty ist mit einem&nbsp; 510er Gewindeanschluss ausgestattet. Sie können mit diesem Gerät auch sehr große Verdampfer bis zu einem maximalen Durchmesser von 29 mm an der Basis ohne Überstand verwenden.&nbsp;</p>
+<p><strong>Eigenschaften asMODus Amighty Akkuträger</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>20700er oder 21700er Akkuzelle, 18650er Akkuzelle über Adapter<br><strong>Akkuzellen sind nicht im Lieferumfang enthalten</strong></td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>POWER | TEMP (SS304, SS316, SS317, Ti, Ni200) | TCR | TFR | CURVE</td>
+</tr>
+<tr>
+<td>Prozessor</td>
+<td>GX-100UTC</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 – 100 Watt (POWER) | 5 - 60 Watt (TEMP)</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>1 - 7,5 Volt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 °C – 300 °C | 212° - 572° F</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,1 – 3 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V/1A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>HD Farb Touch Display, update-fähig</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>88 mm x 51,4 mm x 31,1 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Lieferumfang</strong></p>
 <ul>
-<li>1x Amighty 100 Watt</li>
-<li>1x 18650er Adapter</li>
-<li>1x USB-Kabel </li>
-<li>1x Bedienungsanleitung</li>
+<li>1 x Amighty 100 Watt</li>
+<li>1 x 18650er Adapter</li>
+<li>1 x USB-Kabel</li>
+<li>1 x Bedienungsanleitung</li>
 </ul>
-<br>
-<strong>Amighty 100 Watt</strong>
-<ul>
-<li>Ausgabemodi: VW/TFC/TRC/Curve Mode</li>
-<li>Ausgangsleistung VW: 5 - 100 Watt</li>
-<li>Ausgangsleistung TCR: 5 - 60 Watt</li>
-<li>Widerstandsbereich: 0,1 Ohm - 3,0 Ohm</li>
-<li>Temperaturbereich: 100 °C - 300 °C</li>
-<li>Touch-Screen-Funktion</li>
-<li>upgradefähig</li>
-<li>Gewindetyp: 510</li>
-<li>Geeignete Akkuzelle: 18650er, 20700er, 21700er</li>
-</ul>
-<br>
-',
+<p><br>&nbsp;&nbsp;</p>',
     ),
     'SR100AP' => array(
         'icNumber' => 'SR100AP',
@@ -32529,11 +32620,11 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'supplier' => 'Vavo',
         'brand' => 'Vavo',
         'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
         'flavorCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
         'description' => 'Mit dem Vavo Nikotinshot können Sie beim Selbstmischen den Nikotingehalt Ihres Liquids erhöhen. Der Shot besteht zu 50% aus VG und 50% PG und weist einen Nikotingehalt von 18mg/ml auf.
 <br>
@@ -38161,40 +38252,118 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p>In diesem E-Zigaretten Set von asMODus sind der Viento Clearomizer mit einem Tankvolumen von 3,5ml, sowie der asMODus Amighty Akkuträger mit einer maximalen Ausgangsleistung von 100 Watt enthalten. Damit Sie das Set nutzen können, müssen Sie vorher wahlweise eine 18650er, 20700er oder 21700er Akkuzelle in den Akkuträger einsetzen. Achten Sie darauf, dass diese nicht im Lieferumfang sind und separat erworben werden müssen. Der Viento wird über ein Top Filling-System von oben mit frischem Liquid befüllt. Mit dem Amighty mit Viento E-Zigaretten Set können Sie in den folgenden Modi vapen: VW, TC, TCR, TFR und Curve. Neben dem Akkuträger und Verdampfer erhalten Sie zwei asMODus Mesh Heads. Diese haben einen Widerstand von 0,18 Ohm und sind für das Dampfen im Subohm-Bereich ausgelegt. <br> <br> <strong>Lieferumfang</strong></p>
+        'description' => '<p><br>Dieses E-Zigaretten-Set besteht aus dem ergonomisch gestalteten Akkuträger asMODus Amighty und dem asMODus Viento Verdampfer. Der Viento ist auf das Dampfen im sog. Direct-Lung Stil ausgelegt, bei dem der Dampf direkt in die Lunge inhaliert wird.</p>
+<p><strong>asMODus Amighty</strong></p>
+<p>Der Amighty liegt durch sein ergonomisches Design besonders angenehm in der Hand. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet.</p>
+<p>Der Amighty wird wahlweise mit einer 20700er oder 21700er Akkuzelle betrieben. Über einen Adapter kann auch ein 18650er Akku verwendet werden. Die Akkuzelle kann über ein externes Akku-Ladegerät oder über den Micro-USB Anschluss des Gerätes aufgeladen werden.</p>
+<p>Das Herz des Amighty ist der effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Amighty über den USB Anschluss mit einem Laptop oder PC.&nbsp;</p>
+<p>Der Amighty verfügt über die Dampf Modi POWER (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CURVE-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
+<p>Im Watt-Modus liegt die Ausgangsleistung des Amighty zwischen 5 und 100 Watt.&nbsp;Im Temperatur-Modus liegt die Leistung zwischen 5&nbsp; und 60 Watt bei einem einstellbaren Temperaturbereich von 100° bis 300° Celsius.&nbsp;</p>
+<p>Auf dem farbigen HD Touch Display werden Ihnen die eingestellte Wattzahl oder Temperatur, die Anzahl der getätigten Züge, der Ladestand des Akkus sowie der Widerstand des Verdampferkopfs angezeigt. Über das Touch Display nehmen Sie auch Ihre individuellen Einstellungen vor. Das Farbschema des Displays lässt sich durch einen Wisch nach unten ändern.</p>
+<p>Der Amighty verfügt über die von asMODus bekannten ausgereiften Schutzschaltungen. Sie schützen die Akkuzellen vor Tiefenentladung, Überladung, Verpolung, Kurzschluss und Überhitzung. Bei einem Kurzschluss oder niedrigem Akkustand wird dies auf dem Display angezeigt und über eine kurze Vibration signalisiert. Die Vibrationsfunktion kann über das Menu abgeschaltet werden.</p>
+<p>Der Amighty ist mit einem&nbsp; 510er Gewindeanschluss ausgestattet. Sie können mit diesem Gerät Verdampfer bis zu einem maximalen Durchmesser von 29 mm an der Basis ohne Überstand verwenden.&nbsp;</p>
+<p><strong>asMODus Viento</strong></p>
+<p>Der im Lieferumfang befindliche Viento Verdampfer wird über ein Top Filling-System von oben mit E-Liquid befüllt. Über eine regelbare Airflow-Control können Sie die Luftbeimischung durch die drei Lufteinlässe nach Ihren Wünschen anpassen. Die Regelung erfolgt über einen in der Basis des Verdampfers eingebauten Einstellring für alle Lufteinlässe gleichzeitig.</p>
+<p>Das Tankvolumen des Viento beträgt 3,5 ml in der Standard-Variante. Es lässt sich durch Einsatz des separat erhältlichen Bubble-Glastanks auf 5 ml erweitern. Der Glastank besteht aus Pyrex-Glas. Die Oberfläche dieses Materials ist besonders glatt und verhält sich deshalb auch bei einem Wechsel des E-Liquids weitestgehend geschmacksneutral.</p>
+<p>Die mitgelieferten beiden Verdampferköpfe mit jeweils 0,18 Ohm können in einem Leistungsbereich von 40 Watt bis 60 Watt betrieben werden. Anders als bei klassischen Verdampferköpfen verdampft das Liquid bei diesen Mesh Heads nicht an einem einfachen Draht, sondern an einer Netzstruktur (Mesh). Die im Vergleich zum einfachen Draht deutlich größere Oberfläche ermöglicht ein gleichmäßigeres Verdampfen des E-Liquids auch bei hohem Volumen. Neben den Original-Verdampferköpfen können Sie im asMODus Viento auch Verdampferköpfe für die Smok Baby Beast Serie verwenden, da diese kompatibel sind.</p>
+<p>Der Viento Verdampfer ist mit einem 510er Gewindeanschluss ausgestattet. Der Durchmesser des Viento beträgt an der Basis 26,9 mm.&nbsp;Das 810er Mundstück des Viento sorgt für einen angenehm großzügigen Dampfstrom.</p>
+<p><strong>Eigenschaften asMODus Amighty Akkuträger</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>20700er oder 21700er Akkuzelle, 18650er Akkuzelle über Adapter<br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>POWER | TEMP (SS304, SS316, SS317, Ti, Ni200) | TCR | TFR | CURVE</td>
+</tr>
+<tr>
+<td>Prozessor</td>
+<td>GX-100UTC</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 – 100 Watt (POWER) | 5 - 60 Watt (TEMP)</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>1 - 7,5 Volt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 °C – 300 °C | 212° - 572° F</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,1 – 3 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V/1A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>HD Farb Touch Display, update-fähig</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>88 mm x 51,4 mm x 31,1 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Eigenschaften asMODus Viento Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3,5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>26,9 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Mundstück</td>
+<td>810</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>3 Einlässe, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Lieferumfang</strong></p>
 <ul>
-<li>1x Amighty 100 Watt Akkuträger</li>
-<li>1x Viento Clearomizer</li>
-<li>2x 0.18 Ohm Mesh Heas</li>
-<li>1x Micro USB Kabel</li>
-<li>1x Ersatz-Teile</li>
-<li>1x Ersatz-Glastank</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<p><br> <br> <strong>AMIGHTY AKKUTRÄGER</strong></p>
-<ul>
-<li>Ausgabemodi: POWER | TEMP (SS304, SS316, SS317, Ti, Ni200) | TCR | TFR | CURVE</li>
-<li>Ausgangsleistung: 5 – 100 Watt (POWER) | 5 – 60 Watt (TEMP)</li>
-<li>Ausgangsspannung: 1 – 7,5 Volt</li>
-<li>Temperaturbereich: 100 °C – 300 °C | 212°F bis 572°F</li>
-<li>Widerstandsbereich: 0,1 – 3 Ohm</li>
-<li>Ladestrom: DC 5V/1A</li>
-<li>Maße: 88 mm x 51,4 mm x 31,1 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Steuerung über Touchscreen</li>
-<li>Farb-Display</li>
-<li>update-fähig</li>
-</ul>
-<p><br> <br> <strong>VIENTO CLEAROMIZER</strong>&gt;</p>
-<ul>
-<li>Tankvolumen: 3,5 ml</li>
-<li>Durchmesser: 26,9 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Glas und Edelstahl</li>
-<li>subohm-fähig</li>
-<li>Top Filling</li>
-<li>Airflow Control</li>
-<li>810er Mundstück</li>
+<li>1 x Amighty 100 Watt Akkuträger</li>
+<li>1 x Viento Clearomizer</li>
+<li>2 x 0.18 Ohm Mesh Heas</li>
+<li>1 x Micro USB Kabel</li>
+<li>1 x Ersatz-Teile</li>
+<li>1 x Ersatz-Glastank</li>
+<li>1 x Bedienungsanleitung</li>
 </ul>',
     ),
     'A100MH' => array(
@@ -40482,8 +40651,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'SG100MSG' => array(
         'icNumber' => 'SG100MSG',
         'number' => 'SG100MSG',
-        'name' => 'Sigelei - Moonshot 120 Glastank',
-        'commonName' => 'Moonshot 120 Glastank',
+        'name' => 'Sigelei - Moonshot 120 - Glastank',
+        'commonName' => 'Moonshot 120',
         'type' => 'TANK',
         'category' => 'ZUBEHÖR > Glastanks & Schutz > Sigelei',
         'supplier' => 'Sigelei',
@@ -40500,8 +40669,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'SG100WMG' => array(
         'icNumber' => 'SG100WMG',
         'number' => 'SG100WMG',
-        'name' => 'Sigelei - Wolf Mini Glastank',
-        'commonName' => 'Wolf Mini Glastank',
+        'name' => 'Sigelei - Wolf Mini - Glastank',
+        'commonName' => 'Wolf Mini',
         'type' => 'TANK',
         'category' => 'ZUBEHÖR > Glastanks & Schutz > Sigelei',
         'supplier' => 'Sigelei',
@@ -42705,8 +42874,8 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'OS100CM' => array(
         'icNumber' => 'OS100CM',
         'number' => 'OS100CM',
-        'name' => 'OBS - Cube - MTL E-Zigarette (Set)',
-        'commonName' => 'Cube',
+        'name' => 'OBS - Cube MTL - E-Zigarette (Set)',
+        'commonName' => 'Cube MTL',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > OBS',
         'supplier' => 'OBS',
@@ -43808,8 +43977,8 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'number' => 'HE100FCW',
         'name' => 'HellVape - NI90 Fused Clapton Head (10 Stück pro Packung)',
         'commonName' => 'NI90 Fused Clapton',
-        'type' => 'HEAD',
-        'category' => 'ZUBEHÖR > Verdampferköpfe > HellVape',
+        'type' => 'COIL',
+        'category' => 'ZUBEHÖR > Selbstwickler > Coils',
         'supplier' => 'HellVape',
         'brand' => 'HellVape',
         'piecesPerPack' => 10,
@@ -43826,8 +43995,8 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'number' => 'HE100TCF',
         'name' => 'HellVape - NI90 Triple Fused Clapton Head (10 Stück pro Packung)',
         'commonName' => 'NI90 Triple Fused Clapton',
-        'type' => 'HEAD',
-        'category' => 'ZUBEHÖR > Verdampferköpfe > HellVape',
+        'type' => 'COIL',
+        'category' => 'ZUBEHÖR > Selbstwickler > Coils',
         'supplier' => 'HellVape',
         'brand' => 'HellVape',
         'piecesPerPack' => 10,
@@ -44279,5 +44448,604 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
 <li>Airflow Control</li>
 <li>Maße: 122 mm x 32 mm x 21 mm</li>
 </ul>',
+    ),
+    'FM100TF' => array(
+        'icNumber' => 'FM100TF',
+        'number' => 'FM100TF',
+        'name' => 'FreeMax - Twister mit Fireluke 2 - E-Zigarette (Set)',
+        'commonName' => 'Twister mit Fireluke 2',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'In dem Twister E-Zigaretten Set von Freemax sind der Firluke 2 Verdampfer und der Twist 80 Watt Akku enthalten. Der Twist 80 Watt ist mit einem festverbauten 2300 mAh ausgestattet und erreicht eine Ausgangsleistung von 80 Watt. Über ein Drehrad am Ende des Akkus können Sie die Leistung einstellen. Die Feuertaste mit integrierten LED-Indikator, gibt Ihnen farblich Auskunft über den Ladezustand vom Akku.<br>
+<br>
+Der FreeMax Firluke 2 Verdampfer ist subohm-fähig und hat ein Tankvolumen von 5 Millilitern. Zum Einfüllen von Liquid schieben Sie die Top-Cap von Fireluke 2 zur Seite. Anschließend können Sie das Liquid von oben über die vorgesehene Öffnung einfüllen. Die Airflow-Control wurde mit in der Base verbaut. Diese kann frei eingestellt und auf die persönlichen Vorlieben angepasst werden. Zu dem erhalten Sie mit die Set ein X1 Mesh Head 0,15 Ohm und einen X2 Mesh Heads mit einem Widerstand von 0,2 Ohm.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Twister 80 Watt</li>
+<li>1x Fireluke 2 Clearomizer</li> 
+<li>1x X1 Mesh 0,15 Ohm Head </li>
+<li>1x X2 Mesh 0,2 Ohm Head </li>
+<li>1x Bubble Glastank 5ml</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale: Twister 80 Watt Akku</strong>
+<ul>
+<li>Akkukapazität: 2300mAh</li>
+<li>Ausgabemodi: VW</li>
+<li>Ausgangsleistung: 5 - 80 Watt</li>
+<li>Ausgangsspannung: 0,5 bis 9 Volt</li>
+<li>Widerstandsbereich: 0,1 bis 3 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 24,7 mm x 101,6 mm</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale: Firluke 2 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 5 ml</li>
+<li>Höhe: 47,8 mm</li>
+<li>Durchmesser: 24 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Mundstück: 810er</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+</ul>',
+    ),
+    'FM100X1M' => array(
+        'icNumber' => 'FM100X1M',
+        'number' => 'FM100X1M',
+        'name' => 'FreeMax - X1 Mesh Head - 0,15 Ohm (5 Stück pro Packung)',
+        'commonName' => 'X1 Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'In den Freemax Mesh Heads kommt ein spezielles Watte-Gemisch zum Einsatz, statt wie üblich reine Baumwolle wird hier auf ein Gemisch aus Leinen und Baumwolle gesetzt. Das soll zur folge haben, dass das Liquid schneller zum Verdampfer transportiert wird und der Geschmack nicht so schnell verfälscht. Die X1 Mesh Verdampferköpfe mit einem Widerstand von 0,15 Ohm werden bei 40 bis 90 Watt gedampft. Da die X1 Mesh Verdampferköpfe einen geringen Widerstand unterhalb von 1,00 Ohm aufweisen, wird empfohlen die Züge direkt auf Lunge zu tätigen (DL).
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand X1 Heads: 0,15 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: eine</li>
+<li>Leistungsbereich:: 40 - 90 Watt
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>Freemax Fireluke 2 Clearomizer Set</li>
+<li>Freemax Twister mit Fireluke 2 E-Zigaretten Set</li>
+</ul>
+<br>',
+    ),
+    'FM100X2M' => array(
+        'icNumber' => 'FM100X2M',
+        'number' => 'FM100X2M',
+        'name' => 'FreeMax - X2 Mesh Head - 0,20 Ohm (5 Stück pro Packung)',
+        'commonName' => 'X2 Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die X2 Mesh Verdampferköpfe haben einen Widerstand von 0,2 Ohm und sind für den Einsatz in einem Leistungsbereich von 40 Watt bis 80 Watt ausgelegt. Durch den hohen Leistungsbereich wird empfohlen Züge direkt auf Lunge zu tätigen (DL). In den X2 Heads
+wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sich aus 90% Leinen und 10% Baumwolle zusammen. Dieses soll sich auf die Liquidzufuhr und die Lebensdauer auswirken.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand X2 Heads: 0,2 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: zwei</li>
+<li>Leistungsbereich:: 40 - 80 Watt
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>Freemax Fireluke 2 Clearomizer Set</li>
+<li>Freemax Twister mit Fireluke 2 E-Zigaretten Set</li>
+</ul>
+<br>',
+    ),
+    'FM100BG' => array(
+        'icNumber' => 'FM100BG',
+        'number' => 'FM100BG',
+        'name' => 'FreeMax - Fireluke 2 - Bubble Glastank',
+        'commonName' => 'Fireluke 2',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro Bestellung erhalten Sie einen Bubble Glastank für den Fireluke 2 Clearomizer von FreeMax. Der Tank hat einen Durchmesser von 28mm und eine Höhe von 18mm. Das Tankvolumen vom Fireluke 2 Glastank beträgt insgesamt 5 Milliliter. Sie können den FreeMax Bubble Glastank bei bedarf Eigenständig tauschen.',
+    ),
+    'FM100X1S' => array(
+        'icNumber' => 'FM100X1S',
+        'number' => 'FM100X1S',
+        'name' => 'FreeMax - SS316L X1 Mesh Head - 0,12 Ohm (5 Stück pro Packung)',
+        'commonName' => 'SS316L X1 Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die SS316L X1 Mesh Heads von FreeMax haben einen Widerstand von je 0,12 Ohm und sind für das temperaturgeregelte Dampfen ausgelegt. Der Hersteller empfiehlt hier einen Wert von 200° bis 290° Celsius. In den Heads kommt ein Wattegemisch zum Einsatz, welches 90% aus Leinen und 10% aus Baumwolle besteht. Diese Mischung sorgt für einen bessere Liquid-Nachfluss und schützt die Heads so vor dem Trockenlaufen. Pro Bestellter Packung erhalten Sie 5x SS316L X1 Mesh Heads. Bedenken Sie bitte, dass Verdampferköpfe Verschleißteile sind; wechseln Sie diese, sobald Ihnen Veränderungen im Geschmack oder der Leistung auffallen.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,12 Ohm</li>
+<li>Wicklung: SS316L Mesh</li>
+<li>Anzahl der Wicklungen: eine</li>
+<li>Temperaturbereich: 200°C bis 290°C</li>
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>Freemax Fireluke 2 Clearomizer Set</li>
+<li>Freemax Twister mit Fireluke 2 E-Zigaretten Set</li>
+</ul>
+<br>',
+    ),
+    'FM100FM' => array(
+        'icNumber' => 'FM100FM',
+        'number' => 'FM100FM',
+        'name' => 'FreeMax - Fireluke Mesh - Clearomizer (Set)',
+        'commonName' => 'Fireluke Mesh',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der FreeMax Fireluke Mesh Verdampfer ist ausgestattet mit einem Fassungsvermögen von 3ml, welches Sie über das verbaute Top-Filling System mit Liquid befüllen können. Das Mundstück kann nach Bedarf durch ein anderes 810er Mundstück ersetzt werden. Die im Lieferumfang enthaltenen Kanthal Mesh Heads 0,15 Ohm sind durch ihren geringen Widerstand für das Dampfen im Subohm-Bereich geeignet. Die Heads sind für eine Leistung von 40 bis 80 Watt ausgelegt und sollten bei Veränderungen im Geschmack oder Dampfverhalten getauscht werden. Die Airflow-Control ist in der Base des Clearomizers angebracht und kann nach je nach Zugverhalten eingestellt werden.
+<br>
+<br> 
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Fireluke Mesh Clearomizer</li>
+<li>1x Kanthal mesh Head 0,15 Ohm (40 - 90 Watt) </li>
+<li>1x Glastank 3ml</li>
+<li>1x Ersatzteil-Tütchen</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Fireluke Mesh Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 46,5 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Mundstück: 810er</li>
+<li>Material: Glas und Edelstahl</li>
+<li>Material: Resin und Edelstahl</li>
+<li>Material: Carbon und Edelstahl</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+</ul>
+',
+    ),
+    'FM100FMT' => array(
+        'icNumber' => 'FM100FMT',
+        'number' => 'FM100FMT',
+        'name' => 'FreeMax - Fireluke Mesh - Ersatztank, 5 ml',
+        'commonName' => 'Fireluke Mesh',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Fireluke Mesh Erweiterungstank mit 5ml Fassungsvermögen. Der Tank ermöglicht Ihnen ein erweitertes Tank Volumen als das Original verbaute Glas mit 3ml Volumen. Pro Bestellung erhalten Sie 1x Freemax Fireluke Mesh Ersatztank 5ml. Sie können den Tank selbstständig tauschen ohne weiteres Werkzeug zu benötigen. 
+',
+    ),
+    'FM100X3M' => array(
+        'icNumber' => 'FM100X3M',
+        'number' => 'FM100X3M',
+        'name' => 'FreeMax - X3 Mesh Head - 0,15 Ohm (5 Stück pro Packung)',
+        'commonName' => 'X3 Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die X3 Mesh Heads von FreeMax haben drei verbaute Wicklungen mit einem Widerstand von 0,15 Ohm. Somit sind die X3 Heads für das Dampfen mit direkten Lungenzügen ausgelegt. Der Leistungsbereich der FreeMax X3 Mesh beträgt 50 Watt bis 90 Watt. Mit einer Packung erhalten Sie fünf X3 Mesh Heads von FreeMax. Die sind kompatibel mit dem FreeMax Fireluke 2 Clearomizer. 
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: drei</li>
+<li>Leistungsbereich: 50 - 90 Watt</li>
+<li>empfohlener Leistungsbereich: 80 Watt</li>
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>FreeMax Fireluke 2 Clearomizer Set</li>
+<li>FreeMax Twister mit Fireluke 2 E-Zigaretten Set</li>
+</ul>
+<br>',
+    ),
+    'FM100MP' => array(
+        'icNumber' => 'FM100MP',
+        'number' => 'FM100MP',
+        'name' => 'FreeMax - M Pro - Clearomizer (Set)',
+        'commonName' => 'M Pro',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause FreeMax kommt der Pro M Verdampfer. Der Pro M Verdampfer hat einen vorinstallierten Kanthal Double Mesh Verdampferkopf mit einem Widerstand von 0,2 Ohm und einen weiteren Kanthal Single Mesh Verdampferkopf, der einen Widerstand von 0,15 Ohm aufweist. Bitte tauschen Sie die zu den Verschleiteilen zählenden Verdampferköpfe regelmäßig um ein gleichbleibendes Dampferlebnis zu gewährleisten. Der Clearomizer wird direkt von oben mit Liquid befüllt und kann so bis zu 6ml aufnehmen.
+<br>
+<br> 
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x M Pro Clearomizer</li>
+<li>1x Kanthal Double Mesh Head 0,2 Ohm (60 - 90 Watt / vorinstalliert)</li>
+<li>1x Kanthal Single Mesh Head 0,15 Ohm (40 - 70 Watt)</li>
+<li>1x Ersatz O-Ringe</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>FreeMax M Pro Clearomizer</strong>
+<ul>
+<li>Tankvolumen: max. 6 ml</li>
+<li>Durchmesser: 25 mm</li>
+<li>Höhe: 59,8 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Mundstück: 810er</li>
+<li>Material: Glas und Edelstahl</li>
+<li>Material: Resin und Edelstahl</li>
+<li>Material: Carbon und Edelstahl</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+</ul>
+',
+    ),
+    'FM100MPG' => array(
+        'icNumber' => 'FM100MPG',
+        'number' => 'FM100MPG',
+        'name' => 'FreeMax - M Pro - Bubble Glastank',
+        'commonName' => 'M Pro',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Nutzen Sie den Glastank für den FreeMax M Pro Verdampfer. Sie können den aus Pyrexglas hergestellten Glastank mit unterschiedlichen Fassungsvermögen erwerben. Pyrexglas ist besonders stabil und hitzebeständig. Mit einem trockenen Tuch und warmen Wasser können Sie den Glastank reinigen. Pro bestellter Packung wird Ihnen ein Glastank ausgeliefert. Der Austausch des Glastanks ist simpel und erfolgt ohne zusätzlichem Werkzeug.
+<br>
+<br>
+',
+    ),
+    'FM100DM' => array(
+        'icNumber' => 'FM100DM',
+        'number' => 'FM100DM',
+        'name' => 'FreeMax - Kanthal Double Mesh Head - 0,2 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Kanthal Double Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Nutzen Sie die FreeMax Double Mesh Verdampferköpfe in ihrem vorgesehenen Leistungsbereich von 60 bis 90 Watt (empfohlen werden 80 Watt). Jeder der Verdampferköpfe verfügt über einen Widerstand von 0,2 Ohm und ist für direkte Lungenzüge geeignet. Bitte beachten Sie, dass Verdampferköpfe Verschleißartikel sind und Sie sie daher regelmäßig austauschen müssen.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,20 Ohm</li>
+<li>Material: Kanthal</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: zwei</li>
+<li>Leistungsbereich: 80 - 110 Watt</li>
+<li>empfohlener Leistungsbereich: 100 Watt</li>
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>FreeMax Mesh Pro Clearomizer Set</li>
+</ul>
+<br> 
+',
+    ),
+    'FM100TM' => array(
+        'icNumber' => 'FM100TM',
+        'number' => 'FM100TM',
+        'name' => 'FreeMax - Kanthal Triple Mesh Head - 0,15 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Kanthal Triple Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit einer Packung erhalten Sie drei Kanthal Triple Mesh Heads von FreeMax. Diese sind für den Einsatz im FreeMax M Pro Clearomizer vorgesehen und weisen einen Widerstand von jeweils 0,15 Ohm auf. Die Kanthal Triple Mesh sind für eine Leistung von 80 bis 110 Watt ausgelegt. 
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Material: Kanthal</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: drei</li>
+<li>Leistungsbereich: 80 - 110 Watt</li>
+<li>empfohlener Leistungsbereich: 100 Watt</li>
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>FreeMax Mesh Pro Clearomizer Set</li>
+</ul>
+<br> ',
+    ),
+    'FM100QM' => array(
+        'icNumber' => 'FM100QM',
+        'number' => 'FM100QM',
+        'name' => 'FreeMax - Kanthal Quad Mesh Head - 0,15 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Kanthal Quad Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit einer Packung erhalten Sie insgesamt drei FreeMax Kanthal Quad Mesh Heads. Diese haben einen Widerstand von 0,15 Ohm und verfügen über vier verbaute Mesh Wicklungen. Die Quad Mesh Heads von FreeMax können mit einer Leistung von 80 bis 120 Watt betrieben werden und sind für das Dampfen mit Lungeninhalation ausgelegt. Sie können die Heads mit dem FreeMax Mesh Pro Clearomizer verwenden.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Material: Kanthal</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: vier</li>
+<li>Leistungsbereich: 80 - 120 Watt</li>
+<li>empfohlener Leistungsbereich: 100 Watt</li>
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>FreeMax Mesh Pro Clearomizer Set</li>
+</ul>
+<br>',
+    ),
+    'FM100SM' => array(
+        'icNumber' => 'FM100SM',
+        'number' => 'FM100SM',
+        'name' => 'FreeMax - SS316L Single Mesh Head - 0,12 Ohm (3 Stück pro Packung)',
+        'commonName' => 'SS316L Single Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Freemax SS316L Single Mesh Heads mit 0,12 Ohm Widerstand sind für das Dampfen im Temperaturgeregelten Modus ausgelegt. Dabei können Sie die SS316L Single Mesh in einem Temperaturbereich von 200° bis 260° Celsius bzw. 400° bis 550° Grad Fahrenheit. Die Heads sind für den Einsatz im FreeMax M Pro Clearomizer Set vorgesehen. Mit einer bestellten Packungen werden Ihnen drei SS316 Single Mesh Heads von FreeMax geliefert. 
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,12 Ohm</li>
+<li>Material: SS316L</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: eine</li>
+<li>Temperaturbereich: 200 - 260 °C</li>
+<li>empfohlener Temperaturbereich: 260 °C</li>
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>FreeMax Mesh Pro Clearomizer Set</li>
+</ul>
+<br> ',
+    ),
+    'FM100KM' => array(
+        'icNumber' => 'FM100KM',
+        'number' => 'FM100KM',
+        'name' => 'FreeMax - Kanthal Single Mesh Head - 0,15 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Kanthal Single Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > FreeMax',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die FreeMax Kanthal Single Mesh Heads sind durch den Widerstand von 0,15 Ohm für das Dampfen im Subohm-Bereich ausgelegt. Der beim Dampfen entstehende Dampfen sollte direkt in die Lunge (DL) inhaliert werden. Bei den Verdampferköpfen aus der Kanthal-Serie wird eine Watt-Gemisch verwendet, welche sich aus 90% Leinen und 10% Baumwolle zusammensetzt. Dieses Mischung soll den Liquidfluss optimieren und Gleichmaßes ein vorzeitigen Dry-Born verhindern. Die verbaute Mesa-Wicklung sieht optisch aus wie ein Gittnetz, bietet aber gegenüber normalen Wicklungen ein Größe Oberfläche worüber das Liquid Verdampfer werden kanne. Die Wicklung im inneren sieht optisch aus wie ein Gitternetz und bietet somit ein größere Oberfläche. Somit 
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Material: Kanthal</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: eine</li>
+<li>Leistungsbereich: 40 - 70 Watt</li>
+<li>empfohlener Leistungsbereich: 65 °C</li>
+<li>Für Lungeninhalation | DL</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>FreeMax Mesh Pro Clearomizer Set</li>
+</ul>
+<br> ',
+    ),
+    'A100BL' => array(
+        'icNumber' => 'A100BL',
+        'number' => 'A100BL',
+        'name' => 'asMODus - .Blank RDA - Clearomizer (Set)',
+        'commonName' => '.Blank RDA',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'VERDAMPFER > Selbstwickler > asMODus',
+        'supplier' => 'asMODus',
+        'brand' => 'asMODus',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das asMODus .Blank RDA Verdampfer Set wird mit einem vorinstallierten Squonker Pin ausgeliefert. Im Lieferumfang befindet sich ein weiterer Pluspol ohne die squonk-typische Bohrung zur Nutzung auf einem herkömmlichen Akkuträger. Sie erhalten im Lieferumfang zwei Oni 0,2 Ohm Triple Fused Clapton Cois sowie zwei Innensechskantschlüssel zur Befestigung der Coils. Das Mundstück des .Bunker RDA Verdampfers ist ein 810er Mundstück, welches Sie nach Bedarf auch gegen ein anderes 810er Mundstück tauschen können. Der Durchmesser des .Bunker RDA Verdampfers beträgt 24mm. Die Luft bezieht er über sechs Luftschlitze an der Oberseite der Top-Kappe. Die Luftzufuhr können Sie nach belieben regulieren, egal ob moderat oder für direkte Lungenzüge. Der asMODus .Bunker RDA ist für die Nutzung mit einem Coil ausgelegt. Bitte beachten Sie dass Sie vor der Inbetriebnahme den Widerstand der Coils messen um gegebenenfalls Kurzschlüsse zu vermeiden. ',
+    ),
+    'OS100CMS' => array(
+        'icNumber' => 'OS100CMS',
+        'number' => 'OS100CMS',
+        'name' => 'OBS - Cube Mini - E-Zigarette (Set)',
+        'commonName' => 'Cube Mini',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > OBS',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '',
+    ),
+    'SP100A10-HB' => array(
+        'icNumber' => 'SP100A10-HB',
+        'number' => 'SP100A10-HB',
+        'name' => '5 Stars Peine - Poison I - Holunder Birne - Aroma - 10 ml',
+        'commonName' => 'Holunder Birne',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Pflanzen#!#AROMEN > Früchte#!#AROMEN > 5 Stars Peine',
+        'supplier' => '5 Stars Peine',
+        'brand' => '5 Stars Peine',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Holunder, Birne',
+        'flavorCategory' => 'Pflanzen, Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Holunder, Birne. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Holunder, Birne</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'SP100A10-OH' => array(
+        'icNumber' => 'SP100A10-OH',
+        'number' => 'SP100A10-OH',
+        'name' => '5 Stars Peine - Poison II - Orchidee Himbeere - Aroma - 10 ml',
+        'commonName' => 'Orchidee Himbeere',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Pflanzen#!#AROMEN > Beeren#!#AROMEN > 5 Stars Peine',
+        'supplier' => '5 Stars Peine',
+        'brand' => '5 Stars Peine',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Orchidee, Himbeere',
+        'flavorCategory' => 'Pflanzen, Beeren',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Orchidee, Himbeere. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Orchidee, Himbeere</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'SP100A10-HW' => array(
+        'icNumber' => 'SP100A10-HW',
+        'number' => 'SP100A10-HW',
+        'name' => '5 Stars Peine - Poison III - Hibiskus Waldfrucht - Aroma - 10 ml',
+        'commonName' => 'Hibiskus Waldfrucht',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Pflanzen#!#AROMEN > Früchte#!#AROMEN > 5 Stars Peine',
+        'supplier' => '5 Stars Peine',
+        'brand' => '5 Stars Peine',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Hibiskus, Waldfrüchte',
+        'flavorCategory' => 'Pflanzen, Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Hibiskus, Waldfrüchte. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Hibiskus, Waldfrüchte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
 );
