@@ -313,7 +313,8 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                     $oldIcDescription = $product->getIcDescription();
                     $newIcDescription = $model->getDescription();
                     $product->setIcDescription($newIcDescription);
-                    if ($oldIcDescription !== $newIcDescription && $product->getDescription() === $oldIcDescription) {
+                    // update product description if it uses the text provided by InnoCigs
+                    if ($product->getDescription() === $oldIcDescription) {
                         $product->setDescription($newIcDescription);
                     }
                     break;
