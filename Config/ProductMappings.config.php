@@ -88,7 +88,7 @@ return array(
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC10000L10-AF' => array(
         'icNumber' => 'SC10000L10-AF',
@@ -277,7 +277,7 @@ return array(
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS10000NAUTMINISET' => array(
         'icNumber' => 'AS10000NAUTMINISET',
@@ -484,7 +484,7 @@ Das Liquid erreicht die Heizdrähte durch spezielle Keramikfasern. Diese stellen
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC10000MUND' => array(
         'icNumber' => 'SC10000MUND',
@@ -502,7 +502,7 @@ Das Liquid erreicht die Heizdrähte durch spezielle Keramikfasern. Diese stellen
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC10000L10-TOT' => array(
         'icNumber' => 'SC10000L10-TOT',
@@ -1373,7 +1373,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS10000K2CL' => array(
         'icNumber' => 'AS10000K2CL',
@@ -1683,7 +1683,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC10000LVC' => array(
         'icNumber' => 'IC10000LVC',
@@ -1741,7 +1741,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'XTARVC4' => array(
         'icNumber' => 'XTARVC4',
@@ -1759,7 +1759,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS10000EVOH' => array(
         'icNumber' => 'AS10000EVOH',
@@ -1850,7 +1850,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC10000L10-WW' => array(
         'icNumber' => 'SC10000L10-WW',
@@ -2640,7 +2640,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC10000TA' => array(
         'icNumber' => 'IC10000TA',
@@ -2658,7 +2658,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC10000TAG' => array(
         'icNumber' => 'IC10000TAG',
@@ -2676,7 +2676,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC10000TAM' => array(
         'icNumber' => 'IC10000TAM',
@@ -2694,7 +2694,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC10000L10-MS' => array(
         'icNumber' => 'SC10000L10-MS',
@@ -2838,7 +2838,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CG10000BCD' => array(
         'icNumber' => 'CG10000BCD',
@@ -2856,7 +2856,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CG10000BCQ' => array(
         'icNumber' => 'CG10000BCQ',
@@ -2874,7 +2874,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC10000PDM' => array(
         'icNumber' => 'SC10000PDM',
@@ -2892,7 +2892,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC10000PDH' => array(
         'icNumber' => 'SC10000PDH',
@@ -2942,7 +2942,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS10000K3AK' => array(
         'icNumber' => 'AS10000K3AK',
@@ -2960,7 +2960,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS10000K4AK' => array(
         'icNumber' => 'AS10000K4AK',
@@ -2978,7 +2978,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'ES100L10-AD' => array(
         'icNumber' => 'ES100L10-AD',
@@ -4273,7 +4273,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100EM' => array(
         'icNumber' => 'IC100EM',
@@ -4291,7 +4291,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100KM' => array(
         'icNumber' => 'IC100KM',
@@ -4309,7 +4309,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100PR' => array(
         'icNumber' => 'IC100PR',
@@ -4327,7 +4327,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100PRC' => array(
         'icNumber' => 'IC100PRC',
@@ -4345,7 +4345,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100PRB' => array(
         'icNumber' => 'IC100PRB',
@@ -4363,7 +4363,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100PRH' => array(
         'icNumber' => 'IC100PRH',
@@ -4511,7 +4511,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100SP' => array(
         'icNumber' => 'SC100SP',
@@ -4529,7 +4529,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100SPM' => array(
         'icNumber' => 'SC100SPM',
@@ -4583,7 +4583,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SM100P228NS' => array(
         'icNumber' => 'SM100P228NS',
@@ -4607,7 +4607,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
 <b>Wichtige Merkmale:</b>
 <ul><li>Widerstand: 0,25 Ohm</li>
 <li>Leistungsbereich: 40 Watt - 120 Watt</li>
-<li>Leistungsbereich-Empfehlung: 40 Watt - 96 Watt</li>
+<li>Leistungsbereich-Empfehlung: 40 Watt - 95 Watt</li>
 <li>Geeignet für Lungenzüge</li></ul><br>
 <br>
 <b>Geeignet Für:</b>
@@ -5074,7 +5074,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VV100A10-AP' => array(
         'icNumber' => 'VV100A10-AP',
@@ -6046,7 +6046,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100PGJ' => array(
         'icNumber' => 'IC100PGJ',
@@ -6064,7 +6064,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100VB' => array(
         'icNumber' => 'IC100VB',
@@ -6082,7 +6082,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100A10-KF' => array(
         'icNumber' => 'SC100A10-KF',
@@ -6849,7 +6849,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100PXH' => array(
         'icNumber' => 'AS100PXH',
@@ -6915,7 +6915,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CG100LDPE60' => array(
         'icNumber' => 'CG100LDPE60',
@@ -6933,7 +6933,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100VT' => array(
         'icNumber' => 'AS100VT',
@@ -6951,7 +6951,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'TS100L10-AT' => array(
         'icNumber' => 'TS100L10-AT',
@@ -7116,7 +7116,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'UW100CR3DT' => array(
         'icNumber' => 'UW100CR3DT',
@@ -7134,7 +7134,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS1000N2ED' => array(
         'icNumber' => 'AS1000N2ED',
@@ -7152,7 +7152,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SM100P80M' => array(
         'icNumber' => 'SM100P80M',
@@ -7207,7 +7207,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100IK2' => array(
         'icNumber' => 'SC100IK2',
@@ -7328,7 +7328,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'HL100L10-EM' => array(
         'icNumber' => 'HL100L10-EM',
@@ -7826,7 +7826,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VV100L10-SC' => array(
         'icNumber' => 'VV100L10-SC',
@@ -8138,7 +8138,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100MD2' => array(
         'icNumber' => 'SC100MD2',
@@ -8156,7 +8156,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100EC2' => array(
         'icNumber' => 'SC100EC2',
@@ -8304,7 +8304,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CG100V3100' => array(
         'icNumber' => 'CG100V3100',
@@ -8322,7 +8322,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CG100V3120' => array(
         'icNumber' => 'CG100V3120',
@@ -8340,7 +8340,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CG100V3200' => array(
         'icNumber' => 'CG100V3200',
@@ -8358,7 +8358,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'HS100L10-BS' => array(
         'icNumber' => 'HS100L10-BS',
@@ -8451,7 +8451,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'UW100VYH' => array(
         'icNumber' => 'UW100VYH',
@@ -8494,7 +8494,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100VB10-AP' => array(
         'icNumber' => 'SC100VB10-AP',
@@ -8656,7 +8656,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VP100RXM' => array(
         'icNumber' => 'VP100RXM',
@@ -8674,7 +8674,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     '12M100L10-CC' => array(
         'icNumber' => '12M100L10-CC',
@@ -9011,7 +9011,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC10000AV21' => array(
         'icNumber' => 'SC10000AV21',
@@ -9029,7 +9029,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'HL100L10-BC' => array(
         'icNumber' => 'HL100L10-BC',
@@ -10017,7 +10017,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'FC100L10-BM' => array(
         'icNumber' => 'FC100L10-BM',
@@ -10395,7 +10395,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CG100S75' => array(
         'icNumber' => 'CG100S75',
@@ -10413,7 +10413,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'TW100L10-BH' => array(
         'icNumber' => 'TW100L10-BH',
@@ -10942,7 +10942,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SM100WS3' => array(
         'icNumber' => 'SM100WS3',
@@ -11120,7 +11120,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100BLC' => array(
         'icNumber' => 'SC100BLC',
@@ -11138,7 +11138,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100BLG' => array(
         'icNumber' => 'SC100BLG',
@@ -11534,7 +11534,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VR10010-BS' => array(
         'icNumber' => 'VR10010-BS',
@@ -11642,7 +11642,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100B21' => array(
         'icNumber' => 'AS100B21',
@@ -11660,7 +11660,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'BL100A10-MD' => array(
         'icNumber' => 'BL100A10-MD',
@@ -11732,7 +11732,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VV100A10-KS' => array(
         'icNumber' => 'VV100A10-KS',
@@ -12128,7 +12128,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SB10010-RH' => array(
         'icNumber' => 'SB10010-RH',
@@ -12403,7 +12403,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100BK' => array(
         'icNumber' => 'SC100BK',
@@ -12531,7 +12531,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'icNumber' => 'JF100P16H',
         'number' => 'JF100P16H',
         'name' => 'JustFog - Head (5 Stück pro Packung)',
-        'commonName' => '',
+        'commonName' => null,
         'type' => 'HEAD',
         'category' => 'ZUBEHÖR > Verdampferköpfe > JustFog',
         'supplier' => 'JustFog',
@@ -13610,7 +13610,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'XTARPB2' => array(
         'icNumber' => 'XTARPB2',
@@ -13628,7 +13628,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VV100L10-BH' => array(
         'icNumber' => 'VV100L10-BH',
@@ -13718,7 +13718,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'TW100L10-RD' => array(
         'icNumber' => 'TW100L10-RD',
@@ -13826,7 +13826,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CG100DV' => array(
         'icNumber' => 'CG100DV',
@@ -13844,7 +13844,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'UW100NS' => array(
         'icNumber' => 'UW100NS',
@@ -13880,7 +13880,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SM100RX21M' => array(
         'icNumber' => 'SM100RX21M',
@@ -13898,7 +13898,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'UW100NC' => array(
         'icNumber' => 'UW100NC',
@@ -13916,7 +13916,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'UW100NH' => array(
         'icNumber' => 'UW100NH',
@@ -13959,7 +13959,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SM100PBM' => array(
         'icNumber' => 'SM100PBM',
@@ -13977,7 +13977,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SB10010-JY' => array(
         'icNumber' => 'SB10010-JY',
@@ -14138,7 +14138,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VO100VPH' => array(
         'icNumber' => 'VO100VPH',
@@ -14254,7 +14254,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100AB' => array(
         'icNumber' => 'IC100AB',
@@ -14272,7 +14272,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VR10010-MH' => array(
         'icNumber' => 'VR10010-MH',
@@ -15436,7 +15436,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100FR' => array(
         'icNumber' => 'AS100FR',
@@ -15537,7 +15537,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100FRM' => array(
         'icNumber' => 'AS100FRM',
@@ -15955,7 +15955,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100AE' => array(
         'icNumber' => 'IC100AE',
@@ -16811,7 +16811,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100EIM' => array(
         'icNumber' => 'IC100EIM',
@@ -16829,7 +16829,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100PO' => array(
         'icNumber' => 'IC100PO',
@@ -16847,7 +16847,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100J3' => array(
         'icNumber' => 'SC100J3',
@@ -16912,7 +16912,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100EDG' => array(
         'icNumber' => 'SC100EDG',
@@ -16930,7 +16930,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100EDM' => array(
         'icNumber' => 'SC100EDM',
@@ -16948,7 +16948,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100J3A' => array(
         'icNumber' => 'SC100J3A',
@@ -16966,7 +16966,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100HWN' => array(
         'icNumber' => 'SC100HWN',
@@ -17141,7 +17141,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-SS' => array(
         'icNumber' => 'SC100E3P-SS',
@@ -17159,7 +17159,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-TR' => array(
         'icNumber' => 'SC100E3P-TR',
@@ -17177,7 +17177,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-WG' => array(
         'icNumber' => 'SC100E3P-WG',
@@ -17195,7 +17195,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-RV' => array(
         'icNumber' => 'SC100E3P-RV',
@@ -17213,7 +17213,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-FM' => array(
         'icNumber' => 'SC100E3P-FM',
@@ -17231,7 +17231,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-BS' => array(
         'icNumber' => 'SC100E3P-BS',
@@ -17249,7 +17249,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-ML' => array(
         'icNumber' => 'SC100E3P-ML',
@@ -17267,7 +17267,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-PS' => array(
         'icNumber' => 'SC100E3P-PS',
@@ -17285,7 +17285,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3P-RC' => array(
         'icNumber' => 'SC100E3P-RC',
@@ -17303,7 +17303,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SC100E3U' => array(
         'icNumber' => 'SC100E3U',
@@ -17321,7 +17321,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CS10010-HS' => array(
         'icNumber' => 'CS10010-HS',
@@ -17411,7 +17411,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => 'Beeren, Früchte, Zitrusfrüchte, Frisches & Eiscreme',
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'DJ10010-LG' => array(
         'icNumber' => 'DJ10010-LG',
@@ -17429,7 +17429,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => 'Gewürze, Getränke, Zitrusfrüchte',
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'DJ10010-MM' => array(
         'icNumber' => 'DJ10010-MM',
@@ -17447,7 +17447,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => 'Beeren, Getränke, exotische Früchte',
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SM100V8B' => array(
         'icNumber' => 'SM100V8B',
@@ -17844,7 +17844,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100SAP' => array(
         'icNumber' => 'AS100SAP',
@@ -17862,7 +17862,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100NS' => array(
         'icNumber' => 'AS100NS',
@@ -18282,7 +18282,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100NSH' => array(
         'icNumber' => 'AS100NSH',
@@ -18350,7 +18350,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100CA' => array(
         'icNumber' => 'AS100CA',
@@ -18368,7 +18368,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100CAP' => array(
         'icNumber' => 'AS100CAP',
@@ -18386,7 +18386,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'UW100NG' => array(
         'icNumber' => 'UW100NG',
@@ -18807,6 +18807,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
 <li>Steamax Amor NS Plus Clearomizer</li>
 <li>Steamax Amor NS Pro Clearomizer</li>
 <li>Steamax Amor NS Clearomizer</li>
+<li>Steamax Amor NSE Clearomizer</li>
 <li>Steamax Elabo SW Clearomizer</li>
 <li>Steamax Elabo mini Clearomizer</li>
 <li>Steamax Elabo Clearomizer</li>
@@ -18892,7 +18893,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100PS' => array(
         'icNumber' => 'AS100PS',
@@ -19245,7 +19246,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100XPM' => array(
         'icNumber' => 'IC100XPM',
@@ -19263,7 +19264,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100DY' => array(
         'icNumber' => 'AS100DY',
@@ -19976,7 +19977,7 @@ Die Vapanion Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomizer
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100NCG' => array(
         'icNumber' => 'IC100NCG',
@@ -20054,7 +20055,7 @@ Die Vapanion Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomizer
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100RFC' => array(
         'icNumber' => 'IC100RFC',
@@ -20321,7 +20322,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'IC100EIAS' => array(
         'icNumber' => 'IC100EIAS',
@@ -20433,7 +20434,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'AS100COH' => array(
         'icNumber' => 'AS100COH',
@@ -20543,6 +20544,7 @@ strong>Lieferumfang</strong>
 <li>1x Glastank</li>
 <li>Ersatz-Silikondichtung</li>
 <li>1x USB-Ladekabel</li>
+<li>1x Ladegerät</li>
 <li>1x Ständer</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
@@ -20932,7 +20934,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SM100M2C' => array(
         'icNumber' => 'SM100M2C',
@@ -20984,7 +20986,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VS100CC' => array(
         'icNumber' => 'VS100CC',
@@ -21108,7 +21110,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VS100GT8' => array(
         'icNumber' => 'VS100GT8',
@@ -21339,7 +21341,7 @@ strong>Lieferumfang</strong>
 <br>
 <b>Geeignet Für:</b>
 <ul>
-<li>Steamax TFV12 Clearomizer Set</li>
+<li>Smok TFV12 Clearomizer Set</li>
 </ul>
 <br>
 <br>',
@@ -21360,7 +21362,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Pro Packung erhalten Sie insgesamt 3 TFV12 V12-T6 Sextuple Verdampferköpfe von der Marke Smok. Sie haben ein Widerstand von 0,17 Ohm und verfügen über 6 Wicklungen. Die Verdampferköpfe gehören zu den Verschleißteilen, sodass sie egelmäßig ausgetauscht werden sollen.
+        'description' => 'Pro Packung erhalten Sie insgesamt 3 TFV12 V12-T6 Sextuple Verdampferköpfe von der Marke Smok. Sie haben ein Widerstand von 0,17 Ohm und verfügen über 6 Wicklungen. Die Verdampferköpfe gehören zu den Verschleißteilen, sodass sie regelmäßig ausgetauscht werden sollen.
 <br>
 <br>
 <b>Wichtige Merkmale:</b>
@@ -21371,7 +21373,7 @@ strong>Lieferumfang</strong>
 <br>
 <b>Geeignet Für:</b>
 <ul>
-<li>Steamax TFV12 Clearomizer Set</li>
+<li>Smok TFV12 Clearomizer Set</li>
 </ul>
 <br>
 <br>',
@@ -21403,7 +21405,7 @@ strong>Lieferumfang</strong>
 <br>
 <b>Geeignet Für:</b>
 <ul>
-<li>Steamax TFV12 Clearomizer Set</li>
+<li>Smok TFV12 Clearomizer Set</li>
 </ul>
 <br>
 <br>',
@@ -21574,7 +21576,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SK100PR' => array(
         'icNumber' => 'SK100PR',
@@ -21592,7 +21594,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SK100PRG' => array(
         'icNumber' => 'SK100PRG',
@@ -21610,7 +21612,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SK100XPM' => array(
         'icNumber' => 'SK100XPM',
@@ -21663,7 +21665,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SK100V8BT6' => array(
         'icNumber' => 'SK100V8BT6',
@@ -21840,7 +21842,7 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'ZQ10018' => array(
         'icNumber' => 'ZQ10018',
@@ -23312,7 +23314,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VS100GT6' => array(
         'icNumber' => 'VS100GT6',
@@ -23479,7 +23481,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SK100BQ' => array(
         'icNumber' => 'SK100BQ',
@@ -23539,7 +23541,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
 <br>
 <b>Geeignet Für:</b>
 <ul>
-<li>Steamax TFV8 Clearomizer Set</li>
+<li>Smok TFV8 Clearomizer Set</li>
 </ul>
 <br>
 <br>',
@@ -23570,7 +23572,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
 <br>
 <b>Geeignet Für:</b>
 <ul>
-<li>Steamax TFV8 Clearomizer Set</li>
+<li>Smok TFV8 Clearomizer Set</li>
 </ul>
 <br>
 <br>',
@@ -26266,7 +26268,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'VV100L10-HN' => array(
         'icNumber' => 'VV100L10-HN',
@@ -26688,7 +26690,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SK100V8C' => array(
         'icNumber' => 'SK100V8C',
@@ -27864,6 +27866,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
 <li>Steamax Amor NS Plus Clearomizer</li>
 <li>Steamax Amor NS Pro Clearomizer</li>
 <li>Steamax Amor NS Clearomizer</li>
+<li>Steamax Amor NSE Clearomizer</li>
 <li>Steamax Elabo SW Clearomizer</li>
 <li>Steamax Elabo mini Clearomizer</li>
 <li>Steamax Elabo Clearomizer</li>
@@ -29384,7 +29387,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Für den Tigon Clearomizer von Aspire ist der Tigon Glastank geeignet. Er ist durchsichtig, sodass Sie den Füllstand im Blick haben. Wenn Sie den Glastank in den Clearomizer einbauen, fasst er bis zu 3,5ml Liquid. Je Packung ist 1 Aspire Tigon Glastank enthalten. 
+        'description' => 'Für den Tigon Clearomizer von Aspire ist der Tigon Glastank geeignet. Er ist durchsichtig, sodass Sie den Füllstand im Blick haben. Wenn Sie den Glastank in den Clearomizer einbauen, fasst er bis zu 3,5ml oder 5ml Liquid. Je Packung und Variante ist 1 Aspire Tigon Glastank enthalten. 
 <br>
 <br>',
     ),
@@ -30575,6 +30578,12 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
 <li>empfohlener Leistungsbereich: 90 - 120 Watt</li>
 </ul>
 <br>
+<b>Geeignet für:</b>
+<li>Smok TFV8 Baby V2 Clearomizer Set</li>
+<li>Smok Species E-Zigaretten Set</li>
+<li>Smok Mag Grip mit TFV8 Baby V2 E-Zigaretten Set</li>
+<li>Smok R-Kiss E-Zigaretten Set</li>
+<br>
 <br>
 ',
     ),
@@ -30603,6 +30612,13 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
 <li>Leistungsbereich: 50 - 110 Watt</li>
 <li>empfohlener Leistungsbereich: 60 - 80 Watt</li>
 </ul>
+<br>
+<br>
+<b>Geeignet für:</b>
+<li>Smok TFV8 Baby V2 Clearomizer Set</li>
+<li>Smok Species E-Zigaretten Set</li>
+<li>Smok Mag Grip mit TFV8 Baby V2 E-Zigaretten Set</li>
+<li>Smok R-Kiss E-Zigaretten Set</li>
 <br>
 <br>
 ',
@@ -31635,7 +31651,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SR100AS5' => array(
         'icNumber' => 'SR100AS5',
@@ -31697,6 +31713,14 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'base' => null,
         'description' => 'Die Decks sind für den gleichnamigen Aromamizer Supreme RDTA V2 Verdampfer aus dem Hause Steam Crave ausgelegt. Es sind Decks, die mit selbst hergestellten Wicklungen verwendet werden. Sie können zwischen drei Arten wählen: Postless Deck, Single Coil Deck oder Velocity Deck. Pro bestellter Packung und Deckart wird Ihnen ein Deck ausgeliefert.
 <br>
+<br>
+</ul>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Postless Deck: Keine Pfosten im Deck vorhanden, sodass mehr Platz für Wicklungen vorhanden ist</li>
+<li>Plus Single Coil: Ermöglicht den Einsatz von nur einer Wicklung</li>
+<li>Velocity Deck: Zwei seitliche Pfosten mit je zwei Polen ermöglichen den Einsatz von doppelten Wicklungen </li>
+</ul>
 <br>
 ',
     ),
@@ -33981,7 +34005,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'MB100AL' => array(
         'icNumber' => 'MB100AL',
@@ -34626,7 +34650,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'CM100UT' => array(
         'icNumber' => 'CM100UT',
@@ -35540,7 +35564,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SM100CLM' => array(
         'icNumber' => 'SM100CLM',
@@ -35558,7 +35582,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'WFR100GV2M' => array(
         'icNumber' => 'WFR100GV2M',
@@ -36222,13 +36246,14 @@ Die All in One E-Zigarette Nord AiO 22 von Smok kann über eine LED im Feuertast
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Lux Mesh von der Marke CoilArt ist ein subohm-fähiger Verdampfer und wird via Top Filling System direkt von oben mit Liquid befüllt. An der Base ist der Airflow-Ring platziert, worüber Sie durch eine Dreh-Bewegung die Luftzirkulation einstellen können. Wenn Sie im Subohm-Bereich Dampfen, dann ist eine weit geöffnet Airflow-Control empfehlenswert. Im Lieferumfang befinden sich zwei Lux M4 Quad Mesh Verdampferköpfe mit je 0,15 Ohm. Diese sind für das Subohm-Dampfen ausgelegt.
+        'description' => 'Der Lux Mesh von der Marke CoilArt ist ein subohm-fähiger Verdampfer und wird via Top Filling System direkt von oben mit Liquid befüllt. An der Base ist der Airflow-Ring platziert, worüber Sie durch eine Dreh-Bewegung die Luftzirkulation einstellen können. Wenn Sie im Subohm-Bereich Dampfen, dann ist eine weit geöffnet Airflow-Control empfehlenswert. Im Lieferumfang befinden sich zwei Verdampferköpfe der Lux M-Reihe mit je 0,15 Ohm. Diese sind für das Subohm-Dampfen ausgelegt.
 <br>
 <br>
 <strong>Lieferumfang</strong>
 <ul>
 <li>1x Lux Mesh Clearomizer</li>
-<li>2x Lux M4 Quad Mesh Heads 0,15 Ohm I DL</li>
+<li>1x Lux M1 Single Mesh Head 0,15 Ohm I DL</li>
+<li>1x Lux M4 Quad Mesh Head 0,15 Ohm I DL</li>
 <li>1x Ersatz-Glastank</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
@@ -40153,7 +40178,6 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
 <li>1x MS-H Head 0,2 Ohm (vorinstaliiert)</li>
 <li>1x MS Head 0,25 Ohm</li>
 <li>1x Ersatzglastank 3,5ml</li>
-<li>1x Ersatzteil-Set</li>
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
@@ -40664,7 +40688,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SG100WMG' => array(
         'icNumber' => 'SG100WMG',
@@ -43988,7 +44012,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'HE100TCF' => array(
         'icNumber' => 'HE100TCF',
@@ -44006,7 +44030,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'HE100C3' => array(
         'icNumber' => 'HE100C3',
@@ -44992,7 +45016,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => null,
     ),
     'SP100A10-HB' => array(
         'icNumber' => 'SP100A10-HB',
