@@ -309,7 +309,13 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
                     $remap = true;
                     break;
                 case 'description':
-                    $variant->getProduct()->setIcDescription($model->getDescription());
+                    $product = $variant->getProduct();
+                    $oldIcDescription = $product->getIcDescription();
+                    $newIcDescription = $model->getDescription();
+                    $product->setIcDescription($newIcDescription);
+                    if ($oldIcDescription !== $newIcDescription && $product->getDescription() === $oldIcDescription) {
+                        $product->setDescription($newIcDescription);
+                    }
                     break;
                 case 'ean':
                     $ean = $model->getEan();
