@@ -6460,29 +6460,20 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Basis von SC ist ein sogenanntes Basis-Liquid. Die SC Basis setzt sich aus Propylenglycol (PG) und Glycerin (VG) in unterschiedliche Mischungsverhältnissen zusammen. Das Basis-Liquid enthält kein Aroma und ist dementsprechend auch ohne Geschmack. Sie haben die Auswahl zwischen folgenden Varianten: 50PG/50VG, 80VG/20PG, 70VG/30PG, 100VG oder 100 PG.
-<br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 50PG/50VG</b>
-<li>Propylenglycol (PG), pflanzliches Glycerin (VG)</li>
-<br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 20PG/80VG</b>
-<li> Propylenglycol (PG), Pflanzliches Glycerin (VG)</li>
-<br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 70VG/30PG</b>
-<li>Pflanzliches Glycerin (VG), Propylenglycol (PG)</li>
-<br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 100VG</b>
-<li>Pflanzliches Glycerin (VG)</li>
-<br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 100PG</b>
-<li>Propylenglycol (PG)</li>
-<br>
-<br>',
+        'description' => '<p><br>Basis-Liquid in verschiedenen Mischungsverhältnissen von Propylenglykol (abgekürzt PG) und pflanzlichem Glycerin (vegetable glycerine, abgekürzt VG). PG dient in einem Liquid als Geschmacksträger. Die Substanz ist gut geeignet, Aromastoffe zu binden und für deren gute Verteilung zu sorgen. VG ist in einem Liquid für die Dampfbildung verantwortlich. Je höher der VG Anteil eines Liquids ist, umso dichter wird der Dampf.</p>
+<p>Wir bieten das Basis-Liquid in den folgenden Mischungsverhältnissen an:</p>
+<ul>
+<li>reines VG</li>
+<li>reines PG</li>
+<li>VG/PG: 80/20</li>
+<li>VG/PG: 70/30</li>
+<li>VG/PG: 50/50</li>
+</ul>
+<p>Unser Basis-Liquid ist nikotinfrei und geschmacksneutral. Es wird zur Herstellung einer nikotinhaltigen Basis verwendet. Dazu werden der nikotinfreien Basis sog. Nikotin-Shots hinzugefügt, so dass die gewünschte Nikotinkonzentration erreicht wird.</p>
+<p>Fügen Sie Ihrer nikotinhaltigen Basis nun noch ein Aroma nach Ihrem Geschmack hinzu, und Sie erhalten gebrauchsfertig für Ihre E-Zigarette das Liquid, das Ihnen gefällt.</p>
+<p><strong>Kleines Rechenbeispiel</strong></p>
+<p>Zur Herstellung von 60 ml Basis mit einer Nikotinkonzentration von 6 mg/ml fügen Sie 40 ml nikotinfreier Basis zwei Nikotin-Shots - also 20 ml - mit einem Nikotingehalt von 18 mg/ml hinzu und vermischen das Ergebnis gut durch, etwa durch Schütteln.</p>
+<p>Es entstehen 60 ml Gemisch mit einer Gesamtnikotinmenge von 20 ml * 18 mg/ml = 360 mg. Damit ergibt sich der Nikotingehalt des Gemischs pro ml zu 360 mg / 60 ml = 6 mg/ml.</p>',
     ),
     'SC10000L10-S' => array(
         'icNumber' => 'SC10000L10-S',
@@ -7116,7 +7107,20 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p><br>Basis-Liquid in verschiedenen Mischungsverhältnissen von Propylenglykol (abgekürzt PG) und pflanzlichem Glycerin (vegetable glycerine, abgekürzt VG). PG dient in einem Liquid als Geschmacksträger. Die Substanz ist gut geeignet, Aromastoffe zu binden und für deren gute Verteilung zu sorgen. VG ist in einem Liquid für die Dampfbildung verantwortlich. Je höher der VG Anteil eines Liquids ist, umso dichter wird der Dampf.</p>
+<p>Wir bieten das Basis-Liquid in den folgenden Mischungsverhältnissen an:</p>
+<ul>
+<li>reines VG</li>
+<li>reines PG</li>
+<li>VG/PG: 80/20</li>
+<li>VG/PG: 70/30</li>
+<li>VG/PG: 50/50</li>
+</ul>
+<p>Unser Basis-Liquid ist nikotinfrei und geschmacksneutral. Es wird zur Herstellung einer nikotinhaltigen Basis verwendet. Dazu werden der nikotinfreien Basis sog. Nikotin-Shots hinzugefügt, so dass die gewünschte Nikotinkonzentration erreicht wird.</p>
+<p>Fügen Sie Ihrer nikotinhaltigen Basis nun noch ein Aroma nach Ihrem Geschmack hinzu, und Sie erhalten gebrauchsfertig für Ihre E-Zigarette das Liquid, das Ihnen gefällt.</p>
+<p><strong>Kleines Rechenbeispiel</strong></p>
+<p>Zur Herstellung von 60 ml Basis mit einer Nikotinkonzentration von 6 mg/ml fügen Sie 40 ml nikotinfreier Basis zwei Nikotin-Shots - also 20 ml - mit einem Nikotingehalt von 18 mg/ml hinzu und vermischen das Ergebnis gut durch, etwa durch Schütteln.</p>
+<p>Es entstehen 60 ml Gemisch mit einer Gesamtnikotinmenge von 20 ml * 18 mg/ml = 360 mg. Damit ergibt sich der Nikotingehalt des Gemischs pro ml zu 360 mg / 60 ml = 6 mg/ml.</p>',
     ),
     'UW100CR3DT' => array(
         'icNumber' => 'UW100CR3DT',
@@ -22243,20 +22247,20 @@ strong>Lieferumfang</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Basis-Liquid von SC erhalten Sie in unterschiedlichen Mischungsverhältnissen: 50PG/50VG, 80VG/20PG, 70VG/30PG, 100VG oder 100PG. Die Basis besteht nur aus Propylenglycol (PG) und Glycerin (VG). Das Basis-Liquid ist geschmacksneutral und enthält kein Aroma und kein Nikotin. Mit der einer Flaschen erhalten Sie 500ml.
-<br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 50PG/50VG</b>
-<ul><li>Propylenglycol (PG), pflanzliches Glycerin (VG)</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 20PG/80VG</b>\\n<ul><li> Propylenglycol (PG), Pflanzliches Glycerin (VG)</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 70VG/30PG</b>\\n<ul><li>Pflanzliches Glycerin (VG), Propylenglycol (PG)</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 100VG</b>\\n<ul><li>Pflanzliches Glycerin (VG)</li></ul><br>
-<br>
-<b>Inhaltsstoffe für die Zusammensetzung 100PG</b>\\n<ul><li>Propylenglycol (PG)</li></ul><br>
-<br>',
+        'description' => '<p><br>Basis-Liquid in verschiedenen Mischungsverhältnissen von Propylenglykol (abgekürzt PG) und pflanzlichem Glycerin (vegetable glycerine, abgekürzt VG). PG dient in einem Liquid als Geschmacksträger. Die Substanz ist gut geeignet, Aromastoffe zu binden und für deren gute Verteilung zu sorgen. VG ist in einem Liquid für die Dampfbildung verantwortlich. Je höher der VG Anteil eines Liquids ist, umso dichter wird der Dampf.</p>
+<p>Wir bieten das Basis-Liquid in den folgenden Mischungsverhältnissen an:</p>
+<ul>
+<li>reines VG</li>
+<li>reines PG</li>
+<li>VG/PG: 80/20</li>
+<li>VG/PG: 70/30</li>
+<li>VG/PG: 50/50</li>
+</ul>
+<p>Unser Basis-Liquid ist nikotinfrei und geschmacksneutral. Es wird zur Herstellung einer nikotinhaltigen Basis verwendet. Dazu werden der nikotinfreien Basis sog. Nikotin-Shots hinzugefügt, so dass die gewünschte Nikotinkonzentration erreicht wird.</p>
+<p>Fügen Sie Ihrer nikotinhaltigen Basis nun noch ein Aroma nach Ihrem Geschmack hinzu, und Sie erhalten gebrauchsfertig für Ihre E-Zigarette das Liquid, das Ihnen gefällt.</p>
+<p><strong>Kleines Rechenbeispiel</strong></p>
+<p>Zur Herstellung von 60 ml Basis mit einer Nikotinkonzentration von 6 mg/ml fügen Sie 40 ml nikotinfreier Basis zwei Nikotin-Shots - also 20 ml - mit einem Nikotingehalt von 18 mg/ml hinzu und vermischen das Ergebnis gut durch, etwa durch Schütteln.</p>
+<p>Es entstehen 60 ml Gemisch mit einer Gesamtnikotinmenge von 20 ml * 18 mg/ml = 360 mg. Damit ergibt sich der Nikotingehalt des Gemischs pro ml zu 360 mg / 60 ml = 6 mg/ml.</p>',
     ),
     'VS100TB' => array(
         'icNumber' => 'VS100TB',
@@ -45150,17 +45154,17 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'name' => 'Brateflavour - X-TRM - Coffee kisses Toffee - Shake & Vape - 50 ml, 0 mg/ml',
         'commonName' => 'Coffee kisses Toffee',
         'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Tee & Kaffee#!#SHAKE & VAPE > Sonstige#!#SHAKE & VAPE > Brateflavour',
+        'category' => 'SHAKE & VAPE > Tee & Kaffee#!#SHAKE & VAPE > Süßigkeiten#!#SHAKE & VAPE > Brateflavour',
         'supplier' => 'Brateflavour',
         'brand' => 'Brateflavour',
         'piecesPerPack' => 1,
         'content' => '50',
         'capacity' => '60',
-        'flavor' => 'Kaffee, Karemell',
-        'flavorCategory' => 'Tee & Kaffee, Sonstige',
-        'dosage' => null,
+        'flavor' => 'Kaffee, Karamell',
+        'flavorCategory' => 'Tee & Kaffee, Süßigkeiten',
+        'dosage' => '',
         'base' => null,
-        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Kaffee, Karemell. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaffee, Karemell</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Kaffee, Karamell. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaffee, Karamell</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'BF100L10-HC' => array(
         'icNumber' => 'BF100L10-HC',
