@@ -158,6 +158,7 @@ return [
     ],
 
     'products_without_brand' => [
+        'Keramik Multifunktionspinzette Tweezer V8',
         'Tasche mit Schulterriemen',
         'Tasche mit Griff',
         'Multifunktionstasche',

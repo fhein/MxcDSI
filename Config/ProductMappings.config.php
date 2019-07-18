@@ -4027,7 +4027,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'IC100KTV8' => array(
         'icNumber' => 'IC100KTV8',
         'number' => 'IC100KTV8',
-        'name' => 'InnoCigs - Keramik Multifunktionspinzette Tweezer V8',
+        'name' => 'Keramik Multifunktionspinzette Tweezer V8',
         'commonName' => 'Keramik Multifunktionspinzette Tweezer V8',
         'type' => 'TOOL',
         'category' => 'ZUBEHÖR > Selbstwickler > Werkzeug',
@@ -4042,7 +4042,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'base' => null,
         'description' => '<p><br>Die Keramik Multifunktionspinzette Tweezer V8 ist ein nützliches Werkzeug mit einer Reihe von Einsatzmöglichkeiten.</p>
 <p>Mit der runden Seite der Pinzette können Sie einen festsitzenden Verdampfer lösen oder einen vielleicht schwergängigen Einstellring für den Luftstrom (Airflow-Control) verstellen. Die Tweezer V8 ist geeignet für Verdampfer mit einem Durchmesser zwischen 7 mm und 27 mm.</p>
-<p>Die Keramikspitzen sind für das Formen und Korrigieren von sebstgewickelten Verdampferspulen (Coils) gut geeignet. Die Keramikspitzen sind nicht leitend und hitzebeständig, so dass Sie mit der Tweezer V7 auch heiße Spulen bearbeiten oder die Watte richten können.</p>
+<p>Die Keramikspitzen sind für das Formen und Korrigieren von sebstgewickelten Verdampferspulen (Coils) gut geeignet. Die Keramikspitzen sind nicht leitend und hitzebeständig, so dass Sie mit der Tweezer V8 auch heiße Spulen bearbeiten oder die Watte richten können.</p>
 <p><strong>Eigenschaften</strong></p>
 <ul>
 <li>einfache Handhabung</li>
