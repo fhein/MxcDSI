@@ -40,6 +40,7 @@ class ExportPrices extends AbstractProductExport
         $this->registerColumn('UVP Brutto');
         $this->registerColumn('Marge UVP');
         $this->registerColumn('Dampfplanet');
+        $this->registerColumn('MaxVapor');
         $this->registerColumn('andere');
         $customerGroupKeys = $this->getCustomerGroupKeys();
         foreach ($customerGroupKeys as $key) {
@@ -86,6 +87,7 @@ class ExportPrices extends AbstractProductExport
                 $price = floatVal($variant->getPurchasePriceOld());
                 $info['EK Netto alt'] = $price;
                 $info['Dampfplanet'] = $variant->getRetailPriceDampfplanet();
+                $info['MaxVapor'] = $variant->getRetailPriceMaxVapor();
                 $info['andere'] = $variant->getRetailPriceOthers();
                 $options = $variant->getOptions();
                 $optionNames = [];
@@ -225,6 +227,11 @@ class ExportPrices extends AbstractProductExport
             'UVP Brutto',
             'FFC000');//orange
         $this->setConditionalFormat('Dampfplanet',
+            Conditional::CONDITION_CELLIS,
+            Conditional::OPERATOR_EQUAL,
+            '""',
+            'C5D9F1');
+        $this->setConditionalFormat('MaxVapor',
             Conditional::CONDITION_CELLIS,
             Conditional::OPERATOR_EQUAL,
             '""',

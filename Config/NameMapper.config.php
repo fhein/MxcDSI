@@ -222,6 +222,7 @@ return [
             '~(Dutty Juice) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
             '~(Flavour Trade) (- Aroma)(.*)(- \d+ ml)~'                  => '$1 - $3 $2 $4',
             '~(Foozy Juice) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
+            '~(TNYVPS) (- Aroma)(.*)(- \d+ ml)~'                         => '$1 - $3 $2 $4',
             '~(Mr\. Niks) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
             '~(7 Todsünden) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
             '~(Twenty Eight Monkeys) (- Aroma)(.*)(- \d+ ml)~'           => '$1 - $3 $2 $4',

@@ -82,6 +82,11 @@ class Variant extends ModelEntity
     private $retailPriceDampfplanet;
 
     /**
+     * @ORM\Column(name="retail_maxvapor",type="string", nullable=true)
+     */
+    private $retailPriceMaxVapor;
+
+    /**
      * @ORM\Column(name="retail_others",type="string", nullable=true)
      */
     private $retailPriceOthers;
@@ -601,5 +606,21 @@ class Variant extends ModelEntity
     public function setRecommendedRetailPriceOld($recommendedRetailPriceOld)
     {
         $this->recommendedRetailPriceOld = $recommendedRetailPriceOld;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRetailPriceMaxVapor()
+    {
+        return $this->retailPriceMaxVapor;
+    }
+
+    /**
+     * @param mixed $retailPriceMaxVapor
+     */
+    public function setRetailPriceMaxVapor($retailPriceMaxVapor)
+    {
+        $this->retailPriceMaxVapor = $retailPriceMaxVapor;
     }
 }

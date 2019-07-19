@@ -271,11 +271,11 @@ return array(
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
+        'content' => '',
+        'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
         'description' => '',
     ),
@@ -4303,24 +4303,6 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'supplier' => 'InnoCigs',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 5,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '',
-    ),
-    'IC100PR' => array(
-        'icNumber' => 'IC100PR',
-        'number' => 'IC100PR',
-        'name' => 'Joyetech - Presence - E-Zigarette (Set) - by InnoCigs',
-        'commonName' => 'Presence',
-        'type' => 'E_CIGARETTE',
-        'category' => 'E-ZIGARETTEN > Joyetech',
-        'supplier' => 'Joyetech',
-        'brand' => 'InnoCigs',
-        'piecesPerPack' => 1,
         'content' => null,
         'capacity' => null,
         'flavor' => null,
@@ -11108,24 +11090,6 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
 <li>subohm-fähig</li></ul><br>
 <br>',
     ),
-    'SC100BLA' => array(
-        'icNumber' => 'SC100BLA',
-        'number' => 'SC100BLA',
-        'name' => 'eLeaf - Basal - Akku - 30 Watt - by SC',
-        'commonName' => 'Basal',
-        'type' => 'BOX_MOD',
-        'category' => 'BOXEN > eLeaf',
-        'supplier' => 'eLeaf',
-        'brand' => 'SC',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '',
-    ),
     'SC100BLC' => array(
         'icNumber' => 'SC100BLC',
         'number' => 'SC100BLC',
@@ -14602,24 +14566,6 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'dosage' => null,
         'base' => null,
         'description' => '<p><br>Shake & Vape Liquid. Geschmack: Apfel, Traube, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Traube, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
-    '12M100L10-NI' => array(
-        'icNumber' => '12M100L10-NI',
-        'number' => '12M100L10-NI',
-        'name' => 'Twelve Monkeys - Nikko Iced - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Nikko Iced',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Melonen#!#SHAKE & VAPE > Frisches & Eiscreme#!#SHAKE & VAPE > Twelve Monkeys',
-        'supplier' => 'Twelve Monkeys',
-        'brand' => 'Twelve Monkeys',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Limonade, Wassermelone, Koolada',
-        'flavorCategory' => 'Getränke, Melonen, Frisches & Eiscreme',
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Limonade, Wassermelone, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Limonade, Wassermelone, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'SB100A10-LF' => array(
         'icNumber' => 'SB100A10-LF',
@@ -18163,42 +18109,6 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
 <li>Passend für: ARC-Coils</li>
 </ul>',
     ),
-    'AS100RM' => array(
-        'icNumber' => 'AS100RM',
-        'number' => 'AS100RM',
-        'name' => 'Aspire - Revvo Mini - Clearomizer (Set)',
-        'commonName' => 'Revvo Mini',
-        'type' => 'CLEAROMIZER',
-        'category' => 'VERDAMPFER > Aspire',
-        'supplier' => 'Aspire',
-        'brand' => 'Aspire',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Der Revvo Mini Clearomizer ist ein weiterer Verdampfer von Aspire. Der aus Pyrexglas bestehende Glastank fasst bis zu 2,0ml Liquid. Der Tank des Revvo Minis wird via Top-Filling System befüllt. Jedoch nicht indem Sie die Top Kappe abnehmen, sondern direkt über das Mundstück. Die ARC-Verdampferköpfe befinden sich horizontal im Tank. Mit der Airflow-Control, die sich in der Top Kappe befindet können, Sie die Luftzufuhr in den Verdampfer individuell einstellen. Im Lieferumfang befinden sich noch zwei ARC-Verdampferköpfe mit variablen Widerständen.
-<br>
-<br>
-<b>Lieferumfang:</b>
-<ul><li>1x Aspire Revvo Mini Clearomizer</li>
-<li>2x ARC Head 0,23-0,28 Ohm</li>
-<li>10x Dichtungsringe </li>
-<li>1x Ersatz-Glastank </li>
-<li>1x Bedienungsanleitung</li></ul><br>
-<br>
-<b>Wichtige Merkmale:</b>\\n<ul><li>Tankvolumen: 2,0 ml</li>
-<li>Top-Filling</li>
-<li>Airflow-Control</li>
-<li>Gewindetyp: 510</li>
-<li>Höhe: 42 mm</li>
-<li>Durchmesser 22 mm</li>
-<li>Passend für: ARC-Coils</li></ul><br>
-<br>
-',
-    ),
     'AS100ARM' => array(
         'icNumber' => 'AS100ARM',
         'number' => 'AS100ARM',
@@ -18412,26 +18322,6 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
 <br>
 <br>
 ',
-    ),
-    'UW100W20G' => array(
-        'icNumber' => 'UW100W20G',
-        'number' => 'UW100W20G',
-        'name' => 'Uwell - Whirl 20 - Glastank',
-        'commonName' => 'Whirl 20',
-        'type' => 'TANK',
-        'category' => 'ZUBEHÖR > Glastanks & Schutz > Uwell',
-        'supplier' => 'Uwell',
-        'brand' => 'Uwell',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Der aus Quarzglas bestehenden Uwell Whirl 20 Glastank verfügt über ein Fassungsvolumen von 2ml. Sie brauchen für den Austausch des Glastanks kein weiteres Werkzeug. Ziehen Sie ihn lediglich ab und setzen den neuen Glastank drauf.
-<br>
-<br>',
     ),
     'UW100WH' => array(
         'icNumber' => 'UW100WH',
@@ -19804,28 +19694,6 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => '5 - 7',
         'base' => null,
         'description' => '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: Drachenfrucht, Litschi. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Drachenfrucht, Litschi</td></tr><tr><td>Dosierung</td><td>5 - 7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
-    ),
-    'VP100NR5D' => array(
-        'icNumber' => 'VP100NR5D',
-        'number' => 'VP100NR5D',
-        'name' => 'Vapanion - NRG - Ersatzdichtungen',
-        'commonName' => 'NRG',
-        'type' => 'SEAL',
-        'category' => 'ZUBEHÖR > Dichtungen > Vapanion',
-        'supplier' => 'Vapanion',
-        'brand' => 'Vapanion',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<h2>NRG Dichtungs-Set von Vapanion</h2>
-Die Vapanion Dichtungen sind passende Ersatz-Dichtungen für den NRG Clearomizer von der Marke Vapanion. Eine Dichtung stabilisiert den Tank und verhindert das Auslaufen von Liquid aus dem Tank. Sie erhalten insgesamt je eine Top Filling Dichtung, eine Glastank Dichtung oben und eine Glastank Dichtung unten. Sämtliche Dichtungen wurden aus Kunststoff gefertigt.
-<br>
-<br>
-',
     ),
     'IC100SK' => array(
         'icNumber' => 'IC100SK',
@@ -22358,24 +22226,6 @@ strong>Lieferumfang</strong>
 <br>
 <br>',
     ),
-    'TT100L10-TP' => array(
-        'icNumber' => 'TT100L10-TP',
-        'number' => 'TT100L10-TP',
-        'name' => 'TWIST - Tropical Pucker Punch - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Tropical Pucker Punch',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > exotische Früchte#!#SHAKE & VAPE > TWIST',
-        'supplier' => 'TWIST',
-        'brand' => 'TWIST',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'tropische Früchte',
-        'flavorCategory' => 'exotische Früchte',
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Tropische Früchte. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tropische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
     'TT100L10-PP' => array(
         'icNumber' => 'TT100L10-PP',
         'number' => 'TT100L10-PP',
@@ -22393,24 +22243,6 @@ strong>Lieferumfang</strong>
         'dosage' => null,
         'base' => null,
         'description' => '<p><br>Shake & Vape Liquid. Geschmack: Erdbeere, Grapefruit, Menthol, Zitrusfrüchte. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Grapefruit, Menthol, Zitrusfrüchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
-    'TT100L10-IP' => array(
-        'icNumber' => 'TT100L10-IP',
-        'number' => 'TT100L10-IP',
-        'name' => 'TWIST - Iced Pink Punch Lemonade - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Iced Pink Punch Lemonade',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Beeren#!#SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Frisches & Eiscreme#!#SHAKE & VAPE > TWIST',
-        'supplier' => 'TWIST',
-        'brand' => 'TWIST',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Erdbeere, Himbeere, Limonade, Koolada',
-        'flavorCategory' => 'Beeren, Getränke, Frisches & Eiscreme',
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Erdbeere, Himbeere, Limonade, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Himbeere, Limonade, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'TT100L10-WW' => array(
         'icNumber' => 'TT100L10-WW',
@@ -22447,24 +22279,6 @@ strong>Lieferumfang</strong>
         'dosage' => null,
         'base' => null,
         'description' => '<p><br>Shake & Vape Liquid. Geschmack: Erdbeere, Limonade, Zitrone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Limonade, Zitrone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
-    'TT100L10-PB' => array(
-        'icNumber' => 'TT100L10-PB',
-        'number' => 'TT100L10-PB',
-        'name' => 'TWIST - Peach Blossom Lemonade - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Peach Blossom Lemonade',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Früchte#!#SHAKE & VAPE > TWIST',
-        'supplier' => 'TWIST',
-        'brand' => 'TWIST',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Limonade, Pfirsich',
-        'flavorCategory' => 'Getränke, Früchte',
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p><br>Shake & Vape Liquid. Geschmack: Limonade, Pfirsich. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Limonade, Pfirsich</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'TT100L10-CM' => array(
         'icNumber' => 'TT100L10-CM',
@@ -26008,45 +25822,6 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
 <li>Länge: 4,57 m</li></ul><br>
 <br>',
     ),
-    'A100VL' => array(
-        'icNumber' => 'A100VL',
-        'number' => 'A100VL',
-        'name' => 'asMODus - Voluna V2 RTA - Clearomizer (Set)',
-        'commonName' => 'Voluna V2 RTA',
-        'type' => 'CLEAROMIZER_RTA',
-        'category' => 'VERDAMPFER > Selbstwickler > asMODus',
-        'supplier' => 'asMODus',
-        'brand' => 'asMODus',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Der AsMODus Voluna V2 RTA Verdampfer ist ein Selbstwickel-Verdampfer. Sie erhalten zwei Oni Fused Clapton Wicklungen mit einem Widerstand von je 0,2 Ohm. Sie müssen Watte zwischen die Wicklungen ziehen, damit Sie sie im Voluna V2 RTA Verdampfer nutzen können. Aufgrund des Widerstandes von 0,2 Ohm wird das Dampfen mit direkten Lungenzügen unterstützt. Der Glastank wird von oben befüllt und kann so bis zu 3,2ml Liquid aufnehmen.
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>
-<li>1x Voluna V2 RTA Clearomizer</li>
-<li>2x Oni Fused Clapton Coils 0,2 Ohm</li>
-<li>1x Ersatzglastank</li>
-<li>1x Sechskant-Schlüsselset</li>
-<li>1x Ersatzteile</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Voluna V2 RTA Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 3,2 ml</li>
-<li>Durchmesser: 25 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Airflow Control</li>
-<li>Top-Filling-System</li>
-</ul>',
-    ),
     'VS100LXM' => array(
         'icNumber' => 'VS100LXM',
         'number' => 'VS100LXM',
@@ -26512,43 +26287,6 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
 <li>subohm-fähig</li>
 <li>Top Filling</li>
 <li>Airflow Control</li>
-</ul>
-<br>
-<br>
-',
-    ),
-    'SC100NWA' => array(
-        'icNumber' => 'SC100NWA',
-        'number' => 'SC100NWA',
-        'name' => 'eLeaf - iStick Nowos - Akku - 4.400 mAh - by SC',
-        'commonName' => 'iStick Nowos',
-        'type' => 'BOX_MOD',
-        'category' => 'BOXEN > eLeaf',
-        'supplier' => 'eLeaf',
-        'brand' => 'SC',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Der fest verbaute iStick Nowos Akku verfügt über eine Kapazität von 4400mAh. Sie können mit maximal 80 Watt dampfen. Über ein LED Touchdisplay richten Sie den iStick Nowos Akku von SC ein. <br>
-<br>
-<strong>Lieferumfang</strong>
-<ul>
-<li>1x iStick Nowos Akku 4400 mAh</li>
-<li>1x QC 3.0 USB-Kabel</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>iStick Nowos Akku</strong>
-<ul>
-<li>Akkukapazität: 4400 mAh</li>
-<li>Ausgangsleistung: max. 80 Watt</li>
-<li>Widerstandsbereich: 0,1 - 3,0 Ohm</li>
-<li>Maße: 83,5 mm x 43 mm x 28 mm</li>
 </ul>
 <br>
 <br>
@@ -29439,58 +29177,6 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
 </ul>
 ',
     ),
-    'SK100SP' => array(
-        'icNumber' => 'SK100SP',
-        'number' => 'SK100SP',
-        'name' => 'SMOK - Stick - P25 E-Zigarette (Set)',
-        'commonName' => 'Stick',
-        'type' => 'E_CIGARETTE',
-        'category' => 'E-ZIGARETTEN > Smoktech',
-        'supplier' => 'Smoktech',
-        'brand' => 'Smok',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Das Stick P25 E-Zigaretten Set setzt sich aus dem Stick P25 Akku und dem TFV12 P-Clearomizer zusammen. Das Set erreicht eine maximale Ausgangsleistung von 100 Watt. Das Set unterstützt eine konstante Leistungsabgabe. Der Akku ist fest verbaut und verfügt über eine Kapazität von 3.000mAh. Ein eingebauter LED-Indikator gibt den aktuellen Akkustand des Geräts an. Der subohmfähige Verdampfer TFV12 P-Verdampfer weist mit einem aus Pyrexglas gefertigtem Tank ein Fassungsvermögen von 8ml auf. Zur Befüllung des Tanks mit Liquids nutzen Sie ein Top-Filling-System. Drücken Sie den an der Top Kappe befindlichen Knopf und Sie können anschließend die Top Kappe entgegen des Uhrzeigersinns drehen und legen so einen seitlichen Einfüllschlitz frei, über welchen Liquid in den Tank gelangt. Über eine Airflow-Control können Sie die Luftzufuhr individuell Ihren Bedürfnissen anpassen. Über eine Drehbewegung an der Base öffnen bzw. schließen Sie die Airflow-Control. Je weiter die Airflow-Control geöffnet ist, desto geringer ist der Luftwiderstand während des Vapens. Zwei subohmfähige Verdampferköpfe sind im Lieferumfang enthalten - zwei V12 P-M4 Verdampferköpfe mit einem Widerstand von je 0,17 Ohm. Verdampferköpfe zählen zu den Verschleißteilen und sollten in regelmäßigen Zeitabständen ausgewechselt werden.
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>
-<li>1x Smok Stick P25 Akku</li>
-<li>1x Smok TFV12 P-Clearomizer</li>
-<li>1x Smok V12 P-M4 Head 0,17 Ohm (vorinstalliert)</li>
-<li>1x Smok V12 P-M4 Head 0,17 Ohm</li>
-<li>1x Ersatzteil-Set</li>
-<li>1x Micro-USB-Ladekabel</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Smok Stick P25 Akku:</strong>
-<li>Akkukapazität: 3000 mAh</li>
-<li>Spannungsbereich: 3,4V - 4,2V</li>
-<li>Anschluss: 510er-Gewinde</li>
-<li>Gewicht: 88,5 Gramm</li>
-<li>Höhe: 85,0 mm</li>
-<li>Durchmesser: 24,5 mm</li>
-</ul>
-<br>
-<br>
-<strong>TFV12 P-Verdampfer:</strong>
-<li>Tankvolumen: 8 ml</li>
-<li>Top-Filling</li>
-<li>Airflow-Control</li>
-<li>Gewindetyp: 510</li>
-<li>>Höhe: 63 mm</li>
-<li>Durchmesser 28 mm</li>
-</ul>
-<br>
-<br>',
-    ),
     'SK100T10' => array(
         'icNumber' => 'SK100T10',
         'number' => 'SK100T10',
@@ -31656,27 +31342,6 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
         'dosage' => null,
         'base' => null,
         'description' => '',
-    ),
-    'SR100AS5' => array(
-        'icNumber' => 'SR100AS5',
-        'number' => 'SR100AS5',
-        'name' => 'Steam Crave - Aromamizer Supreme RDTA V2 - Glastank - 5 ml',
-        'commonName' => 'Aromamizer Supreme RDTA V2',
-        'type' => 'TANK',
-        'category' => 'ZUBEHÖR > Glastanks & Schutz > Steam Crave',
-        'supplier' => 'Steam Crave',
-        'brand' => 'Steam Crave',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Sie können diesen Glastank für den Steam Crave Supreme RDTA V2.1 Clearomizer verwenden. Pro bestellter Packung wird Ihnen ein Glastank ausgeliefert. Das Tankvolumen beträgt 5ml. Sie können den Glastank im Bedarfsfall eigenständig auswechseln. Der Glastank wurde aus Pyrexglas gefertigt, welches sich durch seine Stabilität und Hitzebeständigkeit auszeichnet.
-<br>
-<br>
-',
     ),
     'SR100AS8' => array(
         'icNumber' => 'SR100AS8',
@@ -40103,7 +39768,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
 <strong>Lieferumfang</strong>
 <ul>
 <li>1x Mino Akku</li>
-<li>2x Mino Pod mit je 1,8 Ohm Head</li>
+<li>1x Mino Pod mit 1,8 Ohm Head</li>
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
@@ -44146,103 +43811,6 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'base' => null,
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Chai Latte. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Chai Latte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
-    'IK100T8' => array(
-        'icNumber' => 'IK100T8',
-        'number' => 'IK100T8',
-        'name' => 'Innokin - Endura T18 - E-Zigarette (Set)',
-        'commonName' => 'Endura T18',
-        'type' => 'E_CIGARETTE',
-        'category' => 'E-ZIGARETTEN > Innokin',
-        'supplier' => 'Innokin',
-        'brand' => 'Innokin',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Das Endura T18 E-Zigarette Set ist ein Gerät aus dem Hause Innokin. Die E-Zigarette ist eine Kombination aus dem Endura T18 Akku mit 1000mAh Akkukapazität und dem Prism T18 Clearomizer. Dieser verfügt über ein Tankvolumen von 2,5ml, welches durch das vorhandene Top-Filling System befüllt wird. Die im Set enthaltenen zwei Prism T18 Verdampferköpfe sind zudem für das Dampfen im MTL-Bereich ausgelegt.
-<br>
-<br>
-<strong>Lieferumfang</strong>
-<ul>
-<li>1x Innokin Endura T18 Akku 1000mAh</li>
-<li>1x Innokin Prism T18 Clearomizer mit Head</li>
-<li>1x Innokin Prism Head 1,5 Ohm</li>
-<li>1x Innokin Endura T18 E-Zigarettenständer</li>
-<li>2x Ersatzmundstücke</li>
-<li>1x Ersatzteil-Set
-<li>USB-Ladekabel</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Endura T18 Akku</strong>
-<ul>
-<li>Akkukapazität: 1000mAh</li>
-<li>Ausgabemodi: konstante Leistungsabgabe</li>
-<li>Ausgangsleistung: max. 14 Watt</li>
-<li>Widerstandsbereich: 1,2 Ohm - 2,5 Ohm</li>
-<li>Höhe: 84mm</li>
-<li>Durchmesser: 18mm</li>
-</ul>
-<br>
-<br>
-<strong>Prism T18 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 2,5ml</li>
-<li>Top-Filling</li>
-<li>MTL</li>
-<li>Gewindetyp: 510</li>
-<li>Höhe: 64mm</li>
-<li>Durchmesser: 18mm</li>
-</ul>
-<br>
-<br>
-',
-    ),
-    'IK100P8C' => array(
-        'icNumber' => 'IK100P8C',
-        'number' => 'IK100P8C',
-        'name' => 'Innokin - Prism T18 - Clearomizer (Set)',
-        'commonName' => 'Prism T18',
-        'type' => 'CLEAROMIZER',
-        'category' => 'VERDAMPFER > Innokin',
-        'supplier' => 'Innokin',
-        'brand' => 'Innokin',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Der Clearomizer mit dem Namen Prism T18 kommt aus dem Hause Innokin und verfügt über ein Fassungsvermögen von 2,5ml. Der Tank wird von oben aus über das Top-Filling System gefüllt. Im Lieferumfang befinden sich dazu noch zwei Prism Verdampferköpfe mit jeweils 1,5 Ohm Widerstand. Diese sind für das moderate Dampfen, also MTL-Bereich ausgelegt. 
-<br>
-<br>
-<strong>Lieferumfang</strong>
-<ul>
-<li>1x Prism T18 Clearomizer</li>
-<li>2x Prism Verdampferkopf 1,5 Ohm</li>
-<li>1x Ersatzteile</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Prism T18 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 2,5ml</li>
-<li>Top-Filling</li>
-<li>MTL</li>
-<li>Gewindetyp: 510</li>
-<li>Höhe: 64mm</li>
-<li>Durchmesser: 18mm</li>
-</ul>
-<br>
-<br>
-',
-    ),
     'IK100T2' => array(
         'icNumber' => 'IK100T2',
         'number' => 'IK100T2',
@@ -44430,52 +43998,6 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
 <ul><li>Widerstand: 0,8 Ohm, 1,5 Ohm </li>
 <li>Für moderates Dampfen | MTL</li></ul><br>
 <br>',
-    ),
-    'IK100EZ' => array(
-        'icNumber' => 'IK100EZ',
-        'number' => 'IK100EZ',
-        'name' => 'Innokin - EZ.Watt - E-Zigarette (Set)',
-        'commonName' => 'EZ.Watt',
-        'type' => 'E_CIGARETTE',
-        'category' => 'E-ZIGARETTEN > Innokin',
-        'supplier' => 'Innokin',
-        'brand' => 'Innokin',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Das aus dem Hause stammende Innokin E-Zigaretten Set EZ.WATT verfügt über einen fest verbauten Akku mit einer Kapazität von 1500 mAh. Die Leistung kann in den folgenden 6 Stufen ausgegeben werden: 13 bis 14 Watt, 16 bis 18 Watt oder 30 bis 35 Watt. Das Set bekommen Sie zusammen mit dem Innokin Prism T20-S Verdampfer der für das MTL-Vapen ausgelegt ist. Der Prism T20-S hat ein Tankvolumen von 2 Millilitern und wird über ein Top-Filling-System von oben mit Liquid befüllt. Die im Set enthaltenen Verdampferköpfe haben einen Widerstand von 0,8 Ohm und 1,5 Ohm.
-<br>
-<br>
-<strong>Lieferumfang</strong>
-<ul>
-<li>1x Innokin EZ.Watt Akku</li>
-<li>1x Innokin Prism T20-S Verdampfer</li>
-<li>1x Prism T-20-S Coil 0,8 Ohm</li>
-<li>1x Prism T-20-S Coil 1,5 Ohm</li>
-<li>1x Micro USB-C-Kabel</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Wichtige Merkmale:</strong>
-<ul>
-<li>Akkukapazität: 1.500 mAH</li>
-<li>Ausgangsleistung: 13 - 35 Watt</li>
-<li>Ausgangsspannung: max. 7,5V</li>
-<li>Ausgangsstrom: max. 13,5A</lia>
-<li>Ladestrom: DC 5V/1A</li>
-<li>Gewindetyp: 510</li>
-<li>Tankvolumen: 2ml</li>
-<li>Durchmesser: 20mm</li>
-<li>Tankvolumen: 2ml</li>
-<li>Top Filling</li>
-<li>Airflow Control</li>
-<li>Maße: 122 mm x 32 mm x 21 mm</li>
-</ul>',
     ),
     'FM100TF' => array(
         'icNumber' => 'FM100TF',
@@ -45219,5 +44741,166 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'dosage' => null,
         'base' => null,
         'description' => '<p><br>Shake & Vape Liquid. Geschmack: Zitrone, Litschi. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitrone, Litschi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'PV100D2P' => array(
+        'icNumber' => 'PV100D2P',
+        'number' => 'PV100D2P',
+        'name' => 'VooPoo - Drag 2 - Akkuträger - 177 Watt Platinum',
+        'commonName' => 'Drag 2',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'BOXEN > VooPoo',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Drag 2 Platinum Akkuträger von der Marke VooPoo ist ein subohmfähiges Gerät, welches Ihnen ermöglicht zwischen den Dampfmodi VW, TC, VPC, TCR, Bypass und FIT wählen zu können. Der Drag 2 Platinum Akkuträger ist für einen maximalen Widerstandsbereich von 5,0 Ohm ausgelegt. Die maximale Ausgangsleistung des Akkuträgers beträgt zudem 177 Watt. Um diese Leistung abrufen zu können, müssen Sie zwei 18650er Akkuzellen in das Gerät einlegen. Bitte beachten Sie bitte, dass der Lieferumfang keine 18650er Akkuzellen beinhaltet. Diese müssen Sie separat erwerben. Mit dem integrierten OLED-Display ist es Ihnen jederzeit möglich Ihre Einstellung einzusehen und den Ladestand zu verfolgen. Der Drag 2 Platinum Akkuträger ist dank seines 510er Gewindes mit einer Vielzahl von Verdampfern kompatibel.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Drag 2 Platinum 177 Watt</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Drag 2 Platinum 177 Watt</strong>
+<ul>
+<li>Ausgangsleistung: 5-177 Watt</li>
+<li>Ausgabemodi: FIT, TC, VW, VPC, TC, TCR, Bypass</li>
+<li>Ausgangsspannung: 0 Volt bis 7,5 Volt</li>
+<li>Widerstandsbereich: 0,05 - 5 Ohm</li>
+<li>Temeperaturbereich: 100-315°C</li>
+<li>Material: Zinklegierung und Resin</li>
+<li>OLED-Display</li>
+<li>Material: Zinklegierung, Resin</li>
+<li>Gewindetyp: 510er</li>
+<li>Gewicht: 158g</li>
+<li>Maße: 26,5 mm x 51 mm x 88,3 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'PV100DMP' => array(
+        'icNumber' => 'PV100DMP',
+        'number' => 'PV100DMP',
+        'name' => 'VooPoo - Drag Mini - Akku - 4.400 mAh Platinum',
+        'commonName' => 'Drag Mini',
+        'type' => 'BOX_MOD',
+        'category' => 'BOXEN > VooPoo',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Den Drag Mini Platinum 4400mAh Akku von der Marke VooPoo laden Sie mit dem mitgelieferten USB-Kabel. Der Drag Mini besitzt eine Akkukapaziät von 4400mAh und eine maximale Ausgangsleistung von 117 Watt. Mit dem VooPoo Drag Mini Platinum ist es Ihnen möglich in verschiedenen Modi zu dampfen. Unter anderem können Sie im sogenannte FIT-Modus dampfen. Dampfen Sie mit FIT 1 soll der Akku am längsten halten. Im FIT 2 soll der Geschmack Ihre Liquids am besten zur Geltung kommen. Im FIT 3 soll das Vapen mit viel Dampf in den Vordergrund treten. Zudem unterstützt der Drag Mini einen Widerstandsbereich zwischen 0,05 Ohm und 5 Ohm. Das an der Seite des Akkus verbaute OLED-Display gibt Ihnen jederzeit Einblick über Ihre getätigten Einstellungen. Mit der Feuertaste und den zwei Einstellungstasten können Sie jederzeit die getätigten Einstellungen ändern. Dank des 510er Gewindes ist der VooPoo Drag Mini mit einer Vielzahl von Verdampfern kombinierbar.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Drag Mini Platinum 4400mAh</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Drag Mini Platinum 4400mAh</strong>
+<ul>
+<li>Akkukapazität: 4400mAh</li>
+<li>Ausgangsleistung: 5-117 Watt</li>
+<li>Ausgabemodi: FIT / TC</li>
+<li>Ausgangsspannung: 0 Volt bis 7,5 Volt</li>
+<li>Widerstandsbereich: 0,05 - 5 Ohm (Power)</li>
+<li>Temeperaturbereich: 100-315°C</li>
+<li>Material: Zinklegierung und Resin</li>
+<li>OLED-Display</li>
+<li>Gewindetyp: 510er</li>
+<li>Gewicht: 178g</li>
+<li>Maße: 25,5 mm x 48,5 mm x 81,5 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'TV100A10-VG' => array(
+        'icNumber' => 'TV100A10-VG',
+        'number' => 'TV100A10-VG',
+        'name' => 'TNYVPS - Fifty Vapes of Grape - Aroma - 30 ml',
+        'commonName' => 'Fifty Vapes of Grape',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Trauben#!#AROMEN > Früchte#!#AROMEN > Beeren#!#AROMEN > Frisches & Eiscreme#!#AROMEN > TNYVPS',
+        'supplier' => 'TNYVPS',
+        'brand' => 'TNYVPS',
+        'piecesPerPack' => 1,
+        'content' => '30',
+        'capacity' => '120',
+        'flavor' => 'Traube, Apfel, schwarze Johannisbeere, Koolada',
+        'flavorCategory' => 'Trauben, Früchte, Beeren, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Traube, Apfel, schwarze Johannisbeere, Koolada. Die 30 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Traube, Apfel, schwarze Johannisbeere, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'TV100A10-SB' => array(
+        'icNumber' => 'TV100A10-SB',
+        'number' => 'TV100A10-SB',
+        'name' => 'TNYVPS - Sweet Berries - Aroma - 30 ml',
+        'commonName' => 'Sweet Berries',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > unknown#!#AROMEN > TNYVPS',
+        'supplier' => 'TNYVPS',
+        'brand' => 'TNYVPS',
+        'piecesPerPack' => 1,
+        'content' => '30',
+        'capacity' => '120',
+        'flavor' => 'Brombeere, Heidelbeere, Erdbeere',
+        'flavorCategory' => 'Beeren, unknown',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Brombeere, Heidelbeere, Erdbeere. Die 30 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Brombeere, Heidelbeere, Erdbeere</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'TV100A10-HC' => array(
+        'icNumber' => 'TV100A10-HC',
+        'number' => 'TV100A10-HC',
+        'name' => 'TNYVPS - Hazelnut Cream - Aroma - 30 ml',
+        'commonName' => 'Hazelnut Cream',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Nüsse#!#AROMEN > Milch & Co.#!#AROMEN > TNYVPS',
+        'supplier' => 'TNYVPS',
+        'brand' => 'TNYVPS',
+        'piecesPerPack' => 1,
+        'content' => '30',
+        'capacity' => '120',
+        'flavor' => 'Haselnuss, Joghurt',
+        'flavorCategory' => 'Nüsse, Milch & Co.',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Haselnuss, Joghurt. Die 30 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Haselnuss, Joghurt</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'TV100A10-NG' => array(
+        'icNumber' => 'TV100A10-NG',
+        'number' => 'TV100A10-NG',
+        'name' => 'TNYVPS - Nice Girl Reloaded - Aroma - 30 ml',
+        'commonName' => 'Nice Girl Reloaded',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Cremiges#!#AROMEN > TNYVPS',
+        'supplier' => 'TNYVPS',
+        'brand' => 'TNYVPS',
+        'piecesPerPack' => 1,
+        'content' => '30',
+        'capacity' => '120',
+        'flavor' => 'Erdbeere, Cream',
+        'flavorCategory' => 'Beeren, Cremiges',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Cream. Die 30 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Cream</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
 );

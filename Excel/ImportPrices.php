@@ -50,6 +50,7 @@ class ImportPrices extends AbstractProductImport
             $variant = $variants[$record['icNumber']] ?? null;
             if (!$variant) continue;
             $variant->setRetailPriceDampfPlanet($record['Dampfplanet']);
+            $variant->setRetailPriceMaxVapor($record['MaxVapor']);
             $variant->setRetailPriceOthers($record['andere']);
             $variant->setPurchasePrice($record['EK Netto']);
             $variant->setRecommendedRetailPrice($record['UVP Brutto']);

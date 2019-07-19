@@ -225,6 +225,9 @@ return array(
         11 => 'Rhabarber',
         12 => 'Waldmeister',
     ),
+    'Sonstige' => array(
+        0 => 'Heidelbeere',
+    ),
     'Süßigkeiten' => array(
         0 => 'Buttercreme',
         1 => 'Grenadine',
