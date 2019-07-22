@@ -793,32 +793,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-//    protected function isSinglePack(Variant $variant) {
-//        $options = $variant->getOptions();
-//        /** @var Option $option */
-//        foreach ($options as $option) {
-//            if ($option->getName() === '1er Packung') return true;
-//        }
-//        return false;
-//    }
 
     public function dev2Action()
     {
         try {
-//            $products = $this->getManager()->getRepository(Product::class)->getAllIndexed();
-//            /** @var Product $product */
-//            foreach ($products as $product) {
-//                $variants = $product->getVariants();
-//                $dp = $product->getRetailPriceDampfplanet();
-//                $others = $product->getRetailPriceOthers();
-//                /** @var Variant $variant */
-//                foreach ($variants as $variant) {
-//                    if (! $this->isSinglePack($variant)) continue;
-//                    $variant->setRetailPriceOthers($others);
-//                    $variant->setRetailPriceDampfplanet($dp);
-//                }
-//            }
-//            $this->getManager()->flush();
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {

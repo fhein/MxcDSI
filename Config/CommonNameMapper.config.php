@@ -13,6 +13,9 @@ return [
             'Truckin Vaporz'                       => 2,
             'Peng Juice'                           => 2,
         ],
+        'Illusions' => [
+            'Beyond Series' => 2,
+        ],
         'Dr. Frost' => [
             'Polar Ice Vapes' => 2,
             'Candy Mints' => 2,

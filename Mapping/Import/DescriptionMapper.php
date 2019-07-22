@@ -15,7 +15,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     private $mappings;
 
     protected $descriptionAromaDefault =
-        '<p><br>Aroma zur Herstellung von E-Liquid. Geschmack: ##flavor##. Geben Sie das Aroma entsprechend der Dosierempfehlung '
+        '<p>Aroma zur Herstellung von E-Liquid. Geschmack: ##flavor##. Geben Sie das Aroma entsprechend der Dosierempfehlung '
         . 'des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige '
         . 'Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>'
         . '<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>'
@@ -41,7 +41,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         . '</table>';
 
     protected $descriptionAromaLongfill =
-        '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: ##flavor##. Die ##content## ml Aroma sind in eine ##capacity## ml Flasche abgefüllt.'
+        '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: ##flavor##. Die ##content## ml Aroma sind in eine ##capacity## ml Flasche abgefüllt.'
         . ' Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie '
         . ' durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich '
         . 'die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>'
@@ -69,7 +69,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
 
     protected $descriptionAroma = [
         'Elli\'s Aromen' =>
-            '<p><br>Lebensmittelaroma. Geschmack: ##flavor##. Zur Herstellung von E-Liquid fügen Sie das Aroma entsprechend der Dosierempfehlung '
+            '<p>Lebensmittelaroma. Geschmack: ##flavor##. Zur Herstellung von E-Liquid fügen Sie das Aroma entsprechend der Dosierempfehlung '
             . 'des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige '
             . 'Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können.</p>'
             . '<p>Detaillierte Angaben zu Dosierung und Reifezeit von Elli\'s Aromen finden Sie unter diesem Link: <a title="Ellifiziert!" href="http://www.ellifiziert.de/?page=labor" target="_blank">Ellifiziert!</a></p>'
@@ -97,7 +97,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     ];
 
     protected $descriptionShakeVapeDefault =
-        '<p><br>Shake & Vape Liquid. Geschmack: ##flavor##. Die ##capacity## ml Flasche enthält ##content## ml überaromatisiertes, nikotinfreies E-Liquid. '
+        '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Die ##capacity## ml Flasche enthält ##content## ml überaromatisiertes, nikotinfreies E-Liquid. '
         . 'Füllen Sie die Flasche einfach mit ##fillup## ml Nikotin-Shot oder ##fillup## ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
         . '<tbody>'
@@ -118,7 +118,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>';
 
     protected $descriptionShakeVapeTwoSizes =
-        '<p><br>Shake & Vape Liquid. Geschmack: ##flavor##. Wählen Sie zwischen einer ##capacity1## ml Flasche mit ##content1## ml und einer '
+        '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Wählen Sie zwischen einer ##capacity1## ml Flasche mit ##content1## ml und einer '
         . '##capacity2## ml Flasche mit ##content2## ml überaromatisiertem, nikotinfreien Liquid aus. '
         . 'Füllen Sie die Flasche einfach mit ##fillup1## ml bzw. ##fillup2## ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
@@ -141,7 +141,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
 
     protected $descriptionShakeVape = [
         'Chicken Shop' =>
-            '<p><br>Shake & Vape Liquid. Geschmack: ##flavor##. Wählen Sie zwischen 25 ml und 200 ml überaromatisiertem, nikotinfreien Liquid aus.</p>'
+            '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Wählen Sie zwischen 25 ml und 200 ml überaromatisiertem, nikotinfreien Liquid aus.</p>'
             . '<p>Die Variante mit 25 ml Liquid erhalten in einer 30 ml Flasche. '
             . 'Füllen Sie diese Flasche einfach mit 5 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
             .'<p>In der 200 ml Variante erhalten Sie neben der vollständig mit überaromatisiertem Liquid gefüllten 200 ml Flasche zwei 60 ml Leerflaschen zum '
@@ -166,7 +166,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
 
         'Pink Spot' =>
-            '<p><br>Shake & Vape Liquid. Geschmack: ##flavor##. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. '
+            '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. '
             . 'Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
             . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
             . '<tbody>'
@@ -190,7 +190,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             . '</table>'
             . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
         'Koncept XIX' =>
-            '<p><br>Shake & Vape Liquid. Geschmack: ##flavor##. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. '
+            '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. '
             . 'Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
             . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
             . '<tbody>'
@@ -216,7 +216,7 @@ class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     ];
 
     protected $descriptionLiquidDefault =
-        '<p><br>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: ##flavor##. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p>'
+        '<p>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: ##flavor##. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
             . '<tbody>'
                 . '<tr>'
