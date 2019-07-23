@@ -688,6 +688,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         header === 'Brand'
                         || header === 'Supplier'
                         || header === 'Flavor'
+                        || header === '+ Category'
                         || header === 'Capacity'
                         || header === 'Content'
                         || header === 'Dosage'

@@ -797,6 +797,15 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
+            $modelManager = $this->getManager();
+            $dql = 'SELECT c FROM Shopware\Models\Category\Category c WHERE c.parentId IS NOT null AND c.blog = 0 ';
+            $query = $modelManager->createQuery($dql);
+            $categories = $query->getResult();
+            /** @var \Shopware\Models\Category\Category $category */
+            foreach ($categories as $category) {
+                $category->setHideFilter(true);
+            }
+            $modelManager->flush();
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {

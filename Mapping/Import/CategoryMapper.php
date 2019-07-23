@@ -45,7 +45,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         $categories = [];
 
         $flavorCategories = $product->getFlavorCategory();
-        if ($flavorCategories !== null) {
+        if (! empty($flavorCategories)) {
             $flavorCategories = array_map('trim', explode(',', $flavorCategories));
             foreach ($flavorCategories as $flavorCategory) {
                 $categories[] = $category . ' > ' . $flavorCategory;
@@ -53,8 +53,8 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         }
 
         $addlCategories = $product->getAddlCategory();
-        if ($addlCategories !== null) {
-            $addlCategories = array_map('trim', explode(',', $flavorCategories));
+        if (! empty($addlCategories)) {
+            $addlCategories = array_map('trim', explode(',', $addlCategories));
             foreach ($addlCategories as $addlCategory) {
                 $categories[] = $addlCategory;
             }

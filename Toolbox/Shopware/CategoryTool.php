@@ -91,6 +91,7 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
     {
         $child = new Category();
         $this->modelManager->persist($child);
+        $child->setHideFilter(true);
         $child->setName($name);
         $child->setParent($parent);
         $child->setChanged();
