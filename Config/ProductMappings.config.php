@@ -14657,25 +14657,6 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'description' => null,
     ),
-    'SM100RX21M' => array(
-        'icNumber' => 'SM100RX21M',
-        'number' => 'SM100RX21M',
-        'name' => 'Wismec - Reuleaux RX2 21700 - Akkuträger - 230 Watt - by Steamax',
-        'commonName' => 'Reuleaux RX2 21700',
-        'type' => 'BOX_MOD_CELL',
-        'category' => 'BOXEN > Wismec',
-        'supplier' => 'Wismec',
-        'brand' => 'Steamax',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => null,
-    ),
     'UW100NC' => array(
         'icNumber' => 'UW100NC',
         'number' => 'UW100NC',
@@ -47018,14 +46999,14 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'name' => 'TNYVPS - Sweet Berries - Aroma - 30 ml',
         'commonName' => 'Sweet Berries',
         'type' => 'AROMA',
-        'category' => 'AROMEN > Beeren#!#AROMEN > unknown#!#AROMEN > TNYVPS',
+        'category' => 'AROMEN > Beeren#!#AROMEN > TNYVPS',
         'supplier' => 'TNYVPS',
         'brand' => 'TNYVPS',
         'piecesPerPack' => 1,
         'content' => '30',
         'capacity' => '120',
         'flavor' => 'Brombeere, Heidelbeere, Erdbeere',
-        'flavorCategory' => 'Beeren, unknown',
+        'flavorCategory' => 'Beeren',
         'addlCategory' => null,
         'dosage' => '',
         'base' => null,
@@ -47396,5 +47377,242 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'dosage' => '17',
         'base' => null,
         'description' => '<p><br>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Kaktusfeige, Melone. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaktusfeige, Melone</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'PV100X2' => array(
+        'icNumber' => 'PV100X2',
+        'number' => 'PV100X2',
+        'name' => 'VooPoo - X217 - Akkuträger - 217 Watt',
+        'commonName' => 'X217',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'BOXEN > VooPoo',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der VooPoo X217 Akkuträger erreicht im leistungsgeregelten Modus eine Ausgangsleistung von 5 bis 217 Watt. Dabei bezieht der Akkuträger seine Energie über zwei 18650er, 20700er oder 21700er Akkuzellen. Diese sind nicht Bestandteil des Lieferumfangs.  Zudem unterstützt der Akkuträger das Dampfen im VV-, TC- und TCR-Modus. Das in den Akkuträger eingelassene 1,3 Zoll TFT-Farbdisplay macht es Ihnen möglich Ihre Einstellungen oder den Ladestand jederzeit einsehen zu können. Auf dem TFT-Display können Sie sich auch jederzeit die Uhrzeit anzeigen lassen. Die Firmware kann über das mitgelieferte Mirco-USB-Kabel aktualisiert werden. Der X217 von VooPoo besitzt ein 510er Anschluss, somit ist der Akkuträger mit zahlreichen auf dem Markt erhältlichen Verdampfer kombinierbar.
+<br>
+<br>
+<ul>
+<li>1x X217 217 Watt Akkuträger </li>
+<li>2x Adapter für 18650er Akkuzellen</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650/20700/21700er Akkuezelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>X217 217 Watt Akkuträger</strong>
+<ul>
+<li>Ausgabemodi: VW | TC (Ni, Ti, SS316) | TCR | VV</li>
+<li>Ausgangsleistung: 5 bis 217 Watt </li>
+<li>Ausgangsspannung: 0 7,5 Volt </li>
+<li>Temperaturbereich: 100 °C – 315 °C  </li>
+<li>Widerstandsbereich: 0,05 – 3,0 Ohm im VW / VV | 0,05 - 1,5 Ohm im TC</li>
+<li>Chip: GENE.FAN</li>
+<li>Maße: 93 mm x 50,6 mm x 33 mm</li>
+<li>Gewindetyp: 510</li>
+<li>1,3” TFT-Display</li>
+<li>Uhrzeitanzeige</li>
+<li>Kompatible Akkuzellen: 18650/20700/21700</li>
+</ul>
+<br>',
+    ),
+    'VZ100VPC' => array(
+        'icNumber' => 'VZ100VPC',
+        'number' => 'VZ100VPC',
+        'name' => 'Vzone - Vlit Preco - Clearomizer',
+        'commonName' => 'Vlit Preco',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER > Vzone',
+        'supplier' => 'Vzone',
+        'brand' => 'Vzone',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Vzone Vlit Preco Verdampfer ist ein Einweg-Verdampfer mit einem fest verbauten 0,9 Ohm Verdampferkopf. Wenn der Verdampferkopf also nicht mehr seine gewohnte Leistung erbringt oder sich der Liquidgeschmack  verändert, sollten Sie den Verdampfer durch einen neuen ersetzen. Aufgrund des Widerstands Nahe der 1,0 Ohm Grenze ist der Vlit Preco Verdampfer für das Dampfen im moderaten Bereich ausgelegt (MTL). Der Verdampfer hat ein Tankvolumen von 2ml, welches Sie über das Top-Filling System mit Liquid befüllen. Außerdem besitzt der Vlit Preco ein Airflow-System, welches das Dampfen im moderaten Bereich unterstützt.
+<br>
+<br>
+<b>Lieferumfang:</li>
+<li>1x Vlit Preco Verdampfer</li>
+<li>1x 0,9 Ohm Verdampferkopf (fest verbaut)</li>
+<br>
+<br>
+<strong>Vlit Preco Verdampfer</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Durchmesser: 24mm</li>
+<li>Höhe: 40mm</li>
+<li>Gewicht: 15g</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+<li>Widerstand: 0,9 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Leistungsbereich: 10 - 25 Watt</li>
+<li>empfohlener Leistungsbereich: 15 - 25 Watt</li>
+<br>
+',
+    ),
+    'KA100A10-SLP' => array(
+        'icNumber' => 'KA100A10-SLP',
+        'number' => 'KA100A10-SLP',
+        'name' => 'Kaori - Sweet Lychee Pitahaya - Aroma - 15 ml',
+        'commonName' => 'Sweet Lychee Pitahaya',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Zitrusfrüchte#!#AROMEN > Kaori',
+        'supplier' => 'Kaori',
+        'brand' => 'Kaori',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'Litschi, Drachenfrucht, Limette',
+        'flavorCategory' => 'exotische Früchte, Zitrusfrüchte',
+        'addlCategory' => null,
+        'dosage' => '25',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Litschi, Drachenfrucht, Limette. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Litschi, Drachenfrucht, Limette</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'KA100A10-YCW' => array(
+        'icNumber' => 'KA100A10-YCW',
+        'number' => 'KA100A10-YCW',
+        'name' => 'Kaori - Yubari Coconut Water - Aroma - 15 ml',
+        'commonName' => 'Yubari Coconut Water',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Melonen#!#AROMEN > exotische Früchte#!#AROMEN > Kaori',
+        'supplier' => 'Kaori',
+        'brand' => 'Kaori',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'Yubari Melone, Kokosmilch',
+        'flavorCategory' => 'Melonen, exotische Früchte',
+        'addlCategory' => '',
+        'dosage' => '25',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Yubari Melone, Kokosmilch. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Yubari Melone, Kokosmilch</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'KA100A10-HMG' => array(
+        'icNumber' => 'KA100A10-HMG',
+        'number' => 'KA100A10-HMG',
+        'name' => 'Kaori - Honey Mallow Granola - Aroma - 15 ml',
+        'commonName' => 'Honey Mallow Granola',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Cerealien#!#AROMEN > Süßigkeiten#!#AROMEN > Kaori',
+        'supplier' => 'Kaori',
+        'brand' => 'Kaori',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'Müsli, Honig, Marshmallow, Karamell',
+        'flavorCategory' => 'Cerealien, Süßigkeiten',
+        'addlCategory' => null,
+        'dosage' => '25',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Müsli, Honig, Marshmallow, Karamell. Die 15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Müsli, Honig, Marshmallow, Karamell</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JB100L10-BR' => array(
+        'icNumber' => 'JB100L10-BR',
+        'number' => 'JB100L10-BR',
+        'name' => 'Juice Bomb - Double Up - Bad Boy Rocket Fuel - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Bad Boy Rocket Fuel',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Beeren#!#SHAKE & VAPE > Frisches & Eiscreme#!#SHAKE & VAPE > Gewürze#!#SHAKE & VAPE > Juice Bomb',
+        'supplier' => 'Juice Bomb',
+        'brand' => 'Juice Bomb',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '75',
+        'flavor' => 'Beeren, Eukalyptus, Anis, Menthol',
+        'flavorCategory' => 'Beeren, Frisches & Eiscreme, Gewürze',
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Beeren, Eukalyptus, Anis, Menthol. Die 75 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 25 ml Nikotin-Shot oder 25 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 75 ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Eukalyptus, Anis, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'JB100L10-BL' => array(
+        'icNumber' => 'JB100L10-BL',
+        'number' => 'JB100L10-BL',
+        'name' => 'Juice Bomb - Double Up - Blackcurrant Liq - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Blackcurrant Liq',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Beeren#!#SHAKE & VAPE > Juice Bomb',
+        'supplier' => 'Juice Bomb',
+        'brand' => 'Juice Bomb',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '75',
+        'flavor' => 'schwarze Johannisbeere',
+        'flavorCategory' => 'Beeren',
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Schwarze Johannisbeere. Die 75 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 25 ml Nikotin-Shot oder 25 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 75 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Johannisbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'JB100L10-AR' => array(
+        'icNumber' => 'JB100L10-AR',
+        'number' => 'JB100L10-AR',
+        'name' => 'Juice Bomb - Double Up - Apple Rumble - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Apple Rumble',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Früchte#!#SHAKE & VAPE > Gebäck#!#SHAKE & VAPE > Juice Bomb',
+        'supplier' => 'Juice Bomb',
+        'brand' => 'Juice Bomb',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '75',
+        'flavor' => 'Apfel, Streuselkuchen',
+        'flavorCategory' => 'Früchte, Gebäck',
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Apfel, Streuselkuchen. Die 75 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 25 ml Nikotin-Shot oder 25 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 75 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Streuselkuchen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'JB100L10-RC' => array(
+        'icNumber' => 'JB100L10-RC',
+        'number' => 'JB100L10-RC',
+        'name' => 'Juice Bomb - Double Up - Rolla Cola - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Rolla Cola',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Juice Bomb',
+        'supplier' => 'Juice Bomb',
+        'brand' => 'Juice Bomb',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '75',
+        'flavor' => 'Cola',
+        'flavorCategory' => 'Getränke',
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Cola. Die 75 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 25 ml Nikotin-Shot oder 25 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 75 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'JB100L10-NP' => array(
+        'icNumber' => 'JB100L10-NP',
+        'number' => 'JB100L10-NP',
+        'name' => 'Juice Bomb - Double Up - No Probllama - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'No Probllama',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > exotische Früchte#!#SHAKE & VAPE > Juice Bomb',
+        'supplier' => 'Juice Bomb',
+        'brand' => 'Juice Bomb',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '75',
+        'flavor' => 'Kokos',
+        'flavorCategory' => 'exotische Früchte',
+        'addlCategory' => '',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Kokos. Die 75 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 25 ml Nikotin-Shot oder 25 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 75 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kokos</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
 );

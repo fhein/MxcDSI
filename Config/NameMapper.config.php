@@ -214,6 +214,7 @@ return [
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
             '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
+            '~(Kaori) (- Aroma)(.*)(- \d+ ml)~'                          => '$1 - $3 $2 $4',
             '~(Captain Dolly) (- Aroma)(.*)(- \d+ ml)~'                  => '$1 - $3 $2 $4',
             '~(Roofy\'s) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
             '~(Vape Rebelz) (- Aroma)(.*)(- \d+ ml)~'                    => '$1 - $3 $2 $4',
@@ -402,6 +403,7 @@ return [
             '~(RX Gen3)~'                                            => 'Reuleaux RX Gen3',
             '~(RX GEN3)~'                                            => 'RX Gen3',
             '~(Lux) 200~'                                            => '$1',
+            '~(X217) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
             '~(Lux) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(ECO) (- \d+ Watt)~'                                   => '$1 - Akkuträger $2',
             '~(ECO Pro) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
@@ -784,6 +786,7 @@ return [
         'VooPoo'        => [
             '~(Drag 2)~',
             '~(Drag Mini)~',
+            '~(X217)~'
         ],
         'Vaporesso'     => [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
@@ -810,6 +813,7 @@ return [
         'Vzone'         => [
             '~(Scado)~',
             '~(eMASK)~',
+            '~(Vlit Preco)~',
         ],
         'Wismec'        => [
             '~(Tobhino BF RDA)~',

@@ -186,8 +186,9 @@ return array(
         2 => 'Melone',
         3 => 'Melonenmix',
         4 => 'Wassermelone',
-        5 => 'Zuckermelone',
-        6 => 'verschiedene Melonensorten',
+        5 => 'Yubari Melone',
+        6 => 'Zuckermelone',
+        7 => 'verschiedene Melonensorten',
     ),
     'Milch & Co.' => array(
         0 => 'Butter',

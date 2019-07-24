@@ -24,6 +24,9 @@ return [
         'Brateflavour' => [
             'X-TRM' => 2,
         ],
+        'Juice Bomb' => [
+            'Double Up' => 2,
+        ],
         'The Fog Clown' => [
             'Energy Series' => 2,
             'Ice Cream' => 2,
