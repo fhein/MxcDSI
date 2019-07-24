@@ -234,6 +234,9 @@ return array(
         ),
     ),
     'category_tree' => array(
+        'EMPFEHLUNG' => array(
+            'E-Zigaretten für den Einstieg' => 7,
+        ),
         'E-ZIGARETTEN' => array(
             'asMODus' => 2,
             'Aspire' => 15,
@@ -898,5 +901,7 @@ return array(
         'ZUBEHÖR > Aufbewahrung' => 16,
         'ZUBEHÖR > Accessoires' => 17,
         'ZUBEHÖR > Abdeckungen' => 18,
+        'EMPFEHLUNG' => 8,
+        'EMPFEHLUNG > E-Zigaretten für den Einstieg' => 1,
     ),
 );

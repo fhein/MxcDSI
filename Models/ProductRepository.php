@@ -151,6 +151,7 @@ class ProductRepository extends BaseEntityRepository
         'capacity',
         'flavor',
         'flavorCategory',
+        'addlCategory',
         'dosage',
         'base',
         'description',
