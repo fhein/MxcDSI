@@ -3,7 +3,6 @@
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
-use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
@@ -804,6 +803,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @var \Shopware\Models\Category\Category $category */
             foreach ($categories as $category) {
                 $category->setHideFilter(true);
+                $category->setHideSortings(true);
             }
             $modelManager->flush();
 
@@ -831,7 +831,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $variant->setRecommendedRetailPriceOld($price);
                 $price = str_replace(',', '.', $variant->getPurchasePriceOld());
                 $variant->setPurchasePriceOld($price);
-
             }
             $this->getManager()->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
@@ -842,9 +841,21 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev4Action()
     {
         try {
-            $stockInfo = $this->getServices()->get(ApiClient::class)->getAllStockInfo();
-            $this->getLog()->debug(var_export($stockInfo, true));
-            $this->view->assign([ 'success' => true, 'message' => 'Stock info successfully received.' ]);
+            $this->getManager()->getRepository(Product::class)->exportMappedPropertiesNew();
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $name = $product->getName();
+                $name = str_replace('Clearomizer (Set)', 'Verdampfer', $name);
+                $product->setName($name);
+                $article = $product->getArticle();
+                /** @var Article $article */
+                if ($article !== null) {
+                    $article->setName($name);
+                }
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Clearomizer (Set) successfully replaced.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

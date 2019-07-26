@@ -235,8 +235,13 @@ class ProductRepository extends BaseEntityRepository
     {
         $productConfigFile = $productConfigFile ?? $this->productConfigFile;
         $propertyMappings = $this->getMappedProperties();
-        if (!empty($propertyMappings)) {
+        $currentMappings = [];
+        if (file_exists($productConfigFile)) {
+            $currentMappings = include $productConfigFile;
+        }
+        if (! empty($propertyMappings)) {
             /** @noinspection PhpUndefinedFieldInspection */
+            $propertyMappings = array_replace_recursive($currentMappings, $propertyMappings);
             Factory::toFile($productConfigFile, $propertyMappings);
 
             $this->log->debug(sprintf("Exported %s product mappings to Config\\%s.",

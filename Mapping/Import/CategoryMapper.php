@@ -90,7 +90,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
     protected function updateCategoryPositions(array $categoryTree, array &$positions, string $path = null)
     {
-        $idx = 1;
+        $idx = 2;
         foreach ($categoryTree as $key => $value) {
             $pathKey = $path ? $path . ' > ' . $key : $key;
             $positions[$pathKey] = $idx++;

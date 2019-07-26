@@ -3,7 +3,7 @@ return array(
     'AS10000NAUT' => array(
         'icNumber' => 'AS10000NAUT',
         'number' => 'AS10000NAUT',
-        'name' => 'Aspire - Nautilus - Clearomizer (Set)',
+        'name' => 'Aspire - Nautilus - Verdampfer',
         'commonName' => 'Nautilus',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -17,17 +17,23 @@ return array(
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p>Der Aspire Nautilus galt viele Jahre unbestritten der beste Verdampfer für den Mouth-To-Lung-Stil (MTL). Beim MTL-Stil zieht man wie bei einer Zigarette den Dampf zunächst in den Mund, setzt dann die E-Zigarette ab, und inhaliert dann den Dampf aus dem Mund in die Lunge.</p>
+        'description' => '<p>Der Aspire Nautilus galt vielen über Jahre als der beste Verdampfer für den Mouth-To-Lung-Stil (MTL), bei dem man den Dampf zunächst in den Mund und dann vom Mund in die Lunge inhaliert. Der Aspire Nautilus besitzt einen Glastank, ist also ein Clearomizer.</p>
 <p>Charakteristisch für den Aspire Nautilus ist das eigenwillige und edle Vintage-Design. Dieser Verdampfer zieht die Blicke auf sich. Ob am Arbeitsplatz oder beim Theaterbesuch: Der Nautilus passt zu jedem Outfit und sieht in jedem Rahmen einfach schön und edel aus.</p>
 <p>Der Aspire Nautilus verwendet Aspire BVC-Verdampferköpfe (Bottom Vertical Coil). Diese verfügen über eine einzige Heizwendel, die senkrecht in den Kopf eingebaut ist. Umgeben ist die Heizwendel von einer porösen Keramik, die als Liquidspeicher dient. Anders als andere Speichermaterialen garantiert die Keramik einen sehr authentischen Geschmack gleich vom ersten Zug an.&nbsp;</p>
 <p>Für den Aspire Nautilus werden BVC-Verdampferköpfe mit Widerstandswerten von 1,6 und 1,8 Ohm angeboten. Beide Köpfe sind gut und unterscheiden sich im Erleben kaum. Der 1,8 Ohm Kopf entwickelt den Geschmack unserer Ansicht nach geringfügig besser als der 1,6 Ohm Kopf.&nbsp;</p>
+<p>Der Aspire Nautilus ist kompatibel mit anderen Aspire BVC Verdampferköpfen. Wegen der auch in weitester Einstellung recht restriktiven Luftzufuhr, die für das MTL-Dampfen optimiert ist, raten wir aber von der Verwendung der BVC Köpfe mit einem Widerstandswert unter 1 Ohm ab. Diese kamen später auf den Markt und sind für den Aspire Nautilus 2 und 2S gedacht.</p>
 <p>Der großzügige 5 ml Tank aus Pyrex-Glas gibt Ihnen die Sicherheit, dass Ihnen nicht so leicht das Liquid ausgeht. Die allermeisten Anwender kommen mit einer Füllung mindestens gut über den Tag.</p>
 <p>Zum Nachfüllen von Liquid schrauben Sie den Verdampfer vom Akkuträger und drehen ihn auf den Kopf. Nun schrauben Sie die Basis des Verdampfers ab und füllen Liquid nach. Auch wenn dies nicht die bequemste Methode der Befüllung ist, so hat sie doch den großen Vorteil, dass sie es Ihnen ermöglicht, einen defekten oder verbrauchten Verdampferkopf auszuwechseln, ohne dass der Tank des Nautilus dafür entleert werden müsste, wie es bei den meisten anderen Verdampfern nötig ist.</p>
 <p>Der über den unteren Ring verstellbare Luftstromregler hat vier feste Einstellungen. Wählen Sie die Einstellung so, dass Ihnen der Widerstand, den Sie beim Ziehen spüren, am angenehmsten ist.</p>
-<p>Aufgrund seiner ausgewogenen Konstruktion ist der Aspire Nautilus ein besonderer Verdampfer mit einer Geschmacks- und Dampfentwicklung, die bis heute nur selten übertroffen wurde. Der Nachfolger und jüngere Bruder des Aspire Nautilus hat das allerdings geschafft. Der Aspire Nautilus 2 schmeckt noch besser. Sein Tank fasst allerdings nur 2 ml, mit denen Sie nicht unbedingt über den Tag kommen. Deshalb kann der Aspire Nautilus 2 seinen älteren Bruder nicht ersetzen. Aber bereichern kann er ihn. Am schönsten ist es, man hat beide.</p>
+<p><strong>Fazit</strong></p>
+<p>Aufgrund seiner ausgewogenen Konstruktion ist der Aspire Nautilus ein besonderer Verdampfer mit einer Geschmacks- und Dampfentwicklung, die bis heute nur selten übertroffen oder auch nur erreicht wurde. Der Nachfolger und jüngere Bruder des Aspire Nautilus hat das allerdings geschafft. Der Aspire Nautilus 2 schmeckt noch besser. Sein Tank fasst allerdings nur 2 ml, mit denen Sie nicht unbedingt über den Tag kommen. Deshalb kann der Aspire Nautilus 2 seinen älteren Bruder nicht ersetzen. Aber bereichern kann er ihn. Am schönsten ist es, man hat beide.</p>
 <p><strong>Eigenschaften Nautilus Verdampfer</strong></p>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
+<tr>
+<td>Typ</td>
+<td>Clearomizer</td>
+</tr>
 <tr>
 <td>Tankvolumen</td>
 <td>5 ml</td>
@@ -64,13 +70,13 @@ return array(
 </table>
 <p><br><strong>Lieferumfang</strong></p>
 <ul>
-<li>1 x Nautilus Clearomizer</li>
-<li>1 x BVC Head 1,6 Ohm</li>
-<li>1 x BVC Head 1,8 Ohm</li>
-<li>1 x Mundstück</li>
-<li>1 x Ersatz-Glastank</li>
-<li>1 x Adapter auf EGO Akkus</li>
-<li>1 x Bedienungsanleitung</li>
+<li>1 Nautilus Clearomizer</li>
+<li>1 BVC Head 1,6 Ohm</li>
+<li>1 BVC Head 1,8 Ohm</li>
+<li>1 Mundstück</li>
+<li>1 Ersatz-Glastank</li>
+<li>1 Adapter auf EGO Akkus</li>
+<li>1 Bedienungsanleitung</li>
 </ul>',
     ),
     'AS10000NAUTTANK' => array(
@@ -294,7 +300,7 @@ return array(
     'AS10000NAUTMINISET' => array(
         'icNumber' => 'AS10000NAUTMINISET',
         'number' => 'AS10000NAUTMINISET',
-        'name' => 'Aspire - Nautilus Mini - Clearomizer (Set)',
+        'name' => 'Aspire - Nautilus Mini - Verdampfer',
         'commonName' => 'Nautilus Mini',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -308,22 +314,63 @@ return array(
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p>Der Nautlilus Mini BVC Clearomizer fasst 2 Milliliter Liquid und ist 7,5 cm lang. Die Airflow-Control befindet sich in der Verdampferbasis, worüber Sie die Luftzirkulation individuell regeln können. Im Lieferumfang befinden sich 2 Nautilus Mini BVC Heads mit je 1,8 Ohm. Die Heads sind zum moderaten Dampfen (Backendampfen) geeignet. <br> <br> <strong>Lieferumfang:</strong></p>
+        'description' => '<p>Der Aspire Nautilus Mini ist die kleinere und schlankere Version der Aspire Nautilus Verdampfer. Wie dieser besitzt der Nautilus Mini einen Glastank, ist also ein Clearomizer. Der Aspire Nautilus Mini galt vielen wie die größere Version über Jahre als der beste Verdampfer für den Mouth-To-Lung-Stil (MTL), bei dem Sie den Dampf zunächst in den Mund und dann aus dem Mund in die Lunge ziehen. Charakteristisch für den Aspire Nautilus Mini ist das eigenwillige und edle Vintage-Design. Dieser Verdampfer zieht die Blicke auf sich. Ob am Arbeitsplatz oder beim Theaterbesuch: Der Nautilus passt zu jedem Outfit und sieht in jedem Rahmen einfach schön und edel aus.</p>
+<p>Der Aspire Nautilus Mini verwendet Aspire BVC-Verdampferköpfe (Bottom Vertical Coil). Diese verfügen über eine einzige Heizwendel, die senkrecht in den Kopf eingebaut ist. Umgeben ist die Heizwendel von einer porösen Keramik, die als Liquidspeicher dient. Anders als andere Speichermaterialen garantiert die Keramik einen sehr authentischen Geschmack gleich vom ersten Zug an. Der Aspire Nautilus Mini wird mit zwei BVC Verdampferköpfen mit 1,8 Ohm Widerstand geliefert.</p>
+<p>Der Aspire Nautilus Mini ist kompatibel mit anderen Aspire BVC Verdampferköpfen. Wegen der auch in weitester Einstellung recht restriktiven Luftzufuhr, die für das MTL-Dampfen optimiert ist, raten wir aber von der Verwendung der BVC Köpfe mit einem Widerstandswert unter 1 Ohm ab, die später auf den Markt gekommen und für den Aspire Nautilus 2 und 2S gedacht sind.</p>
+<p>Das 2 ml Fassungsvermögen des Tanks aus Pyrex-Glas reicht einem sehr ambitionierten Dampfer vielleicht nicht über den ganzen Tag. Sie sollten vielleicht ein Fläschen Liquid zum Nachfüllen dabei haben.</p>
+<p>Zum Nachfüllen von Liquid schrauben Sie den Verdampfer vom Akkuträger und drehen ihn auf den Kopf. Nun schrauben Sie die Basis des Verdampfers ab und füllen Liquid nach. Auch wenn dies nicht die bequemste Methode der Befüllung ist, so hat sie doch den großen Vorteil, dass sie es Ihnen ermöglicht, einen defekten oder verbrauchten Verdampferkopf auszuwechseln, ohne dass der Tank des Nautilus dafür entleert werden müsste, wie es bei den meisten anderen Verdampfern nötig ist.</p>
+<p>Der über den unteren Ring verstellbare Luftstromregler hat vier feste Einstellungen. Wählen Sie die Einstellung so, dass Ihnen der Widerstand, den Sie beim Ziehen spüren, am angenehmsten ist.</p>
+<p><strong>Fazit</strong></p>
+<p>Aufgrund seiner ausgewogenen Konstruktion ist der Aspire Nautilus Mini ebenso besonders wie sein größerer Bruder. Die Geschmacks- und Dampfentwicklung wird bis heute nur selten erreicht oder übertroffen. Das Design mag polarisieren, aber wenn Sie auf den edlen Vintage-Look stehen, besitzen Sie mit dem Aspire Nautilus Mini ein Gerät, das höchsten Ansprüchen gerecht und Ihnen viel Freude bereiten wird.</p>
+<p><strong>Eigenschaften Nautilus Mini Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Typ</td>
+<td>Clearomizer</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>19 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>75 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas, Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>4 Stufen, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Basis entfernen zum Befüllen des Tanks</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<p><br><strong>Lieferumfang</strong></p>
 <ul>
-<li>1 x Nautilus Mini BVC Clearomizer</li>
-<li>2 x Nautilus Mini BVC Heads 1,8 Ohm</li>
-<li>1 x Mundstück</li>
-<li>1 x Cone für eGo Akkus</li>
-</ul>
-<p><br> <strong>Wichtige Merkmale:</strong></p>
-<ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Durchmesser: 1,9 cm</li>
-<li>Länge: 7,5 cm</li>
-<li>Airflow-Control in der Verdampferbasis</li>
-<li>510er Gewinde</li>
-</ul>
-<p><br><br></p>',
+<li>1 Nautilus Mini Clearomizer</li>
+<li>2 BVC Heads 1,8 Ohm</li>
+<li>1 Mundstück</li>
+<li>1 Adapter auf EGO Akkus</li>
+<li>Bedienungsanleitung</li>
+</ul>',
     ),
     'SC10000L10-HB' => array(
         'icNumber' => 'SC10000L10-HB',
@@ -960,7 +1007,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'AS10000CLEITOSET' => array(
         'icNumber' => 'AS10000CLEITOSET',
         'number' => 'AS10000CLEITOSET',
-        'name' => 'Aspire - Cleito - Clearomizer (Set)',
+        'name' => 'Aspire - Cleito - Verdampfer',
         'commonName' => 'Cleito',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -1042,7 +1089,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'SC10000GSAIR2SET' => array(
         'icNumber' => 'SC10000GSAIR2SET',
         'number' => 'SC10000GSAIR2SET',
-        'name' => 'eLeaf - GS Air 2 - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Air 2 - Verdampfer - by SC',
         'commonName' => 'GS Air 2',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -1178,7 +1225,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'IC10000AIO' => array(
         'icNumber' => 'IC10000AIO',
         'number' => 'IC10000AIO',
-        'name' => 'Joyetech - eGo AIO - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - eGo AIO - E-Zigarette - by InnoCigs',
         'commonName' => 'eGo AIO',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -1220,7 +1267,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'AS10000K2SET' => array(
         'icNumber' => 'AS10000K2SET',
         'number' => 'AS10000K2SET',
-        'name' => 'Aspire - K2 - E-Zigarette (Set)',
+        'name' => 'Aspire - K2 - E-Zigarette',
         'commonName' => 'K2',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -1239,7 +1286,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'AS10000K3SET' => array(
         'icNumber' => 'AS10000K3SET',
         'number' => 'AS10000K3SET',
-        'name' => 'Aspire - K3 - E-Zigarette (Set)',
+        'name' => 'Aspire - K3 - E-Zigarette',
         'commonName' => 'K3',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -1281,7 +1328,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'AS10000K4SET' => array(
         'icNumber' => 'AS10000K4SET',
         'number' => 'AS10000K4SET',
-        'name' => 'Aspire - K4 - E-Zigarette (Set)',
+        'name' => 'Aspire - K4 - E-Zigarette',
         'commonName' => 'K4',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -1428,7 +1475,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'AS10000K2CL' => array(
         'icNumber' => 'AS10000K2CL',
         'number' => 'AS10000K2CL',
-        'name' => 'Aspire - K2 - Clearomizer (Set)',
+        'name' => 'Aspire - K2 - Verdampfer',
         'commonName' => 'K2',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -1462,7 +1509,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'AS10000K3CL' => array(
         'icNumber' => 'AS10000K3CL',
         'number' => 'AS10000K3CL',
-        'name' => 'Aspire - K3 - Clearomizer (Set)',
+        'name' => 'Aspire - K3 - Verdampfer',
         'commonName' => 'K3',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -1673,7 +1720,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
     'AS10000NXSET' => array(
         'icNumber' => 'AS10000NXSET',
         'number' => 'AS10000NXSET',
-        'name' => 'Aspire - Nautilus X - Clearomizer (Set)',
+        'name' => 'Aspire - Nautilus X - Verdampfer',
         'commonName' => 'Nautilus X',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -3004,8 +3051,8 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SC10000PDM' => array(
         'icNumber' => 'SC10000PDM',
         'number' => 'SC10000PDM',
-        'name' => 'eLeaf - Melo 3 - Mini Clearomizer (Set) - by SC',
-        'commonName' => 'Melo 3',
+        'name' => 'eLeaf - Melo 3 Mini - Verdampfer - by SC',
+        'commonName' => 'Melo 3 Mini',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
         'supplier' => 'eLeaf',
@@ -3018,7 +3065,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SC10000PDH' => array(
         'icNumber' => 'SC10000PDH',
@@ -3470,25 +3517,6 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Eisbonbon, Erdbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Eisbonbon, Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
-    ),
-    'ES100L10-RU' => array(
-        'icNumber' => 'ES100L10-RU',
-        'number' => 'ES100L10-RU',
-        'name' => 'Erste Sahne - Rub - Liquid - 10 ml',
-        'commonName' => 'Rub',
-        'type' => 'LIQUID',
-        'category' => 'LIQUIDS > Beeren#!#LIQUIDS > Pflanzen#!#LIQUIDS > Erste Sahne',
-        'supplier' => 'Erste Sahne',
-        'brand' => 'Erste Sahne',
-        'piecesPerPack' => 1,
-        'content' => '10',
-        'capacity' => '10',
-        'flavor' => 'Erdbeere, Rhabarber',
-        'flavorCategory' => 'Beeren, Pflanzen',
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Erdbeere, Rhabarber. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Rhabarber</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
     'ES100L10-SH' => array(
         'icNumber' => 'ES100L10-SH',
@@ -4279,7 +4307,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'AS1000N2' => array(
         'icNumber' => 'AS1000N2',
         'number' => 'AS1000N2',
-        'name' => 'Aspire - Nautilus 2 - Clearomizer (Set)',
+        'name' => 'Aspire - Nautilus 2 - Verdampfer',
         'commonName' => 'Nautilus 2',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -4293,7 +4321,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p>Der Aspire Nautilus 2 ist die erste Weiterentwicklung des legendären Aspire Nautilus, der viele Jahre unbestritten als bester Verdampfer für&nbsp;den Mouth-To-Lung-Stil (MTL) galt. Bei diesem Stil&nbsp; zieht man wie bei einer Zigarette den Dampf zunächst in den Mund, setzt die E-Zigarette ab, und inhaliert dann den Dampf aus dem Mund in die Lunge.</p>
+        'description' => '<p>Der Aspire Nautilus 2 ist die erste Weiterentwicklung des legendären Aspire Nautilus, der vielen lange Jahre als bester Verdampfer für&nbsp;den Mouth-To-Lung-Stil (MTL) galt. Bei diesem Stil&nbsp; zieht man wie bei einer Zigarette den Dampf zunächst in den Mund, setzt die E-Zigarette ab, und inhaliert dann den Dampf aus dem Mund in die Lunge. Der Aspire Nautilus 2 besitzt einen Glastank, ist also ein Clearomizer.</p>
 <p>Um das Geschmackserlebnis zu verbessern,&nbsp;hat der Aspire Nautilus 2 einen deutlich kürzeren Kamin als sein Vorgänger. Auch kann der Aspire Nautilus 2 anders als der Nautilus von oben befüllt werden</p>
 <p>Diese Konstruktionsänderungen erforderten eine vollständige Überarbeitung des Designs. Das neue Design wirkt moderner und frischer, es bleibt aber beim gefälligen Vintage-Look. Die charakteristische Kuppelwölbung des Aspire Nautilus bleibt als Wiedererkennungsmerkmal erhalten. Allerdings verschwindet das Glas des Tanks nun unter einer Metallhaube mit zwei runden Öffnungen, durch die man den Füllstand des Verdampfers erkennen kann. Die Öffnungen erinnern an Bullaugen, der ganze Verdampfer ein wenig an einen Taucherhelm. Eine sehr gelungene und schöne Referenz auf den Namen: Nautilus. Die Metallhaube bietet einen guten Schutz für das Glas und ermöglicht die farbliche Gestaltung des Geräts.&nbsp;</p>
 <p>Der Aspire Nautilus 2 verwendet die gleichen Aspire BVC-Verdampferköpfe (Bottom Vertical Coil) wie sein Vorgänger. Diese verfügen über eine einzige Heizwendel, die senkrecht in den Kopf eingebaut ist. Umgeben ist die Heizwendel von einer porösen Keramik, die als Liquidspeicher dient. Anders als andere Speichermaterialen garantiert die Keramik einen sehr authentischen Geschmack gleich vom ersten Zug an.</p>
@@ -4308,6 +4336,10 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
 <p><strong>Eigenschaften Nautilus 2 Verdampfer</strong></p>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
+<tr>
+<td>Typ</td>
+<td>Clearomizer</td>
+</tr>
 <tr>
 <td>Tankvolumen</td>
 <td>2 ml</td>
@@ -4349,13 +4381,13 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
 <div class="pcharacteristics_delivery ">
 <div class="pdelivery">
 <ul>
-<li>1x Nautilus 2 Clearomizer</li>
-<li>1x BVC Head 0,7 Ohm</li>
-<li>1x BVC Head 1,8 Ohm</li>
-<li>1x Ersatz-Glastank</li>
-<li>1x Ersatz-Mundstück</li>
-<li>8x Dichtungsring</li>
-<li>1x Bedienungsanleitung</li>
+<li>1 Nautilus 2 Clearomizer</li>
+<li>1 BVC Head 0,7 Ohm</li>
+<li>1 BVC Head 1,8 Ohm</li>
+<li>1 Ersatz-Glastank</li>
+<li>1 Ersatz-Mundstück</li>
+<li>8 Dichtungsringe</li>
+<li>Bedienungsanleitung</li>
 </ul>
 </div>
 </div>
@@ -4497,25 +4529,6 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'base' => null,
         'description' => '<p>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: Himbeere. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
     ),
-    'IC100CM' => array(
-        'icNumber' => 'IC100CM',
-        'number' => 'IC100CM',
-        'name' => 'InnoCigs - Celluloid Mundstücke (5 Stück pro Packung)',
-        'commonName' => 'Celluloid Mundstücke',
-        'type' => 'DRIP_TIP',
-        'category' => 'ZUBEHÖR > Mundstücke & Schutz > InnoCigs',
-        'supplier' => 'InnoCigs',
-        'brand' => 'InnoCigs',
-        'piecesPerPack' => 5,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => null,
-    ),
     'IC100EM' => array(
         'icNumber' => 'IC100EM',
         'number' => 'IC100EM',
@@ -4557,7 +4570,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'IC100PRC' => array(
         'icNumber' => 'IC100PRC',
         'number' => 'IC100PRC',
-        'name' => 'Joyetech - Presence - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - Presence - Verdampfer - by InnoCigs',
         'commonName' => 'Presence',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -4571,7 +4584,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'IC100PRB' => array(
         'icNumber' => 'IC100PRB',
@@ -4748,7 +4761,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SC100SP' => array(
         'icNumber' => 'SC100SP',
         'number' => 'SC100SP',
-        'name' => 'eLeaf - iStick Pico - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Pico - E-Zigarette - by SC',
         'commonName' => 'iStick Pico',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -5095,7 +5108,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'UW100CR3' => array(
         'icNumber' => 'UW100CR3',
         'number' => 'UW100CR3',
-        'name' => 'Uwell - Crown 3 - Clearomizer (Set)',
+        'name' => 'Uwell - Crown 3 - Verdampfer',
         'commonName' => 'Crown 3',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Uwell',
@@ -7178,7 +7191,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'AS100PX' => array(
         'icNumber' => 'AS100PX',
         'number' => 'AS100PX',
-        'name' => 'Aspire - PockeX - E-Zigarette (Set)',
+        'name' => 'Aspire - PockeX - E-Zigarette',
         'commonName' => 'PockeX',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -7583,7 +7596,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SM100EM' => array(
         'icNumber' => 'SM100EM',
         'number' => 'SM100EM',
-        'name' => 'Wismec - Elabo Mini - Clearomizer (Set) - by Steamax',
+        'name' => 'Wismec - Elabo Mini - Verdampfer - by Steamax',
         'commonName' => 'Elabo Mini',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Wismec',
@@ -7597,12 +7610,12 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SC100IK2' => array(
         'icNumber' => 'SC100IK2',
         'number' => 'SC100IK2',
-        'name' => 'eLeaf - iKonn - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iKonn - E-Zigarette - by SC',
         'commonName' => 'iKonn',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -8197,7 +8210,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'IC100C2' => array(
         'icNumber' => 'IC100C2',
         'number' => 'IC100C2',
-        'name' => 'Joyetech - Cubis 2 - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - Cubis 2 - Verdampfer - by InnoCigs',
         'commonName' => 'Cubis 2',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -8268,7 +8281,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'AS100AT' => array(
         'icNumber' => 'AS100AT',
         'number' => 'AS100AT',
-        'name' => 'Aspire - Athos - Clearomizer (Set)',
+        'name' => 'Aspire - Athos - Verdampfer',
         'commonName' => 'Athos',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -8381,7 +8394,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SM100GN' => array(
         'icNumber' => 'SM100GN',
         'number' => 'SM100GN',
-        'name' => 'Wismec - Gnome - Clearomizer (Set) - by Steamax',
+        'name' => 'Wismec - Gnome - Verdampfer - by Steamax',
         'commonName' => 'Gnome',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Wismec',
@@ -8553,7 +8566,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SC100MD5' => array(
         'icNumber' => 'SC100MD5',
         'number' => 'SC100MD5',
-        'name' => 'eLeaf - Melo 4 - Clearomizer (Set) - 25 mm - by SC',
+        'name' => 'eLeaf - Melo 4 - Verdampfer - 25 mm - by SC',
         'commonName' => 'Melo 4',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -8567,12 +8580,12 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SC100MD2' => array(
         'icNumber' => 'SC100MD2',
         'number' => 'SC100MD2',
-        'name' => 'eLeaf - Melo 4 - Clearomizer (Set) - 22 mm - by SC',
+        'name' => 'eLeaf - Melo 4 - Verdampfer - 22 mm - by SC',
         'commonName' => 'Melo 4',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -8586,7 +8599,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SC100EC2' => array(
         'icNumber' => 'SC100EC2',
@@ -8688,7 +8701,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SM100V8XB' => array(
         'icNumber' => 'SM100V8XB',
         'number' => 'SM100V8XB',
-        'name' => 'SMOK - TFV8 X-Baby - Clearomizer (Set) - by Steamax',
+        'name' => 'SMOK - TFV8 X-Baby - Verdampfer - by Steamax',
         'commonName' => 'TFV8 X-Baby',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Smoktech',
@@ -8842,25 +8855,6 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
 </ul>
 <p>Die Chubby Gorilla V3 PET Flaschen sind in den Größen 10 ml, 20 ml, 30 ml, 60 ml, 75 ml, 100 ml, 120 ml und 200 ml erhältlich.</p>',
     ),
-    'HS100L10-BS' => array(
-        'icNumber' => 'HS100L10-BS',
-        'number' => 'HS100L10-BS',
-        'name' => 'Hustler Juice - Creamy Series - Boss - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Creamy Series',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Gebäck#!#SHAKE & VAPE > Zitrusfrüchte#!#SHAKE & VAPE > Hustler Juice',
-        'supplier' => 'Hustler Juice',
-        'brand' => 'Hustler Juice',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Kuchen, Zitrone',
-        'flavorCategory' => 'Gebäck, Zitrusfrüchte',
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p>Shake & Vape Liquid. Geschmack: Kuchen, Zitrone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kuchen, Zitrone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
     'SM100SWA' => array(
         'icNumber' => 'SM100SWA',
         'number' => 'SM100SWA',
@@ -8886,7 +8880,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'UW100VY' => array(
         'icNumber' => 'UW100VY',
         'number' => 'UW100VY',
-        'name' => 'Uwell - Valyrian - Clearomizer (Set)',
+        'name' => 'Uwell - Valyrian - Verdampfer',
         'commonName' => 'Valyrian',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Uwell',
@@ -9386,7 +9380,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'IC100ED' => array(
         'icNumber' => 'IC100ED',
         'number' => 'IC100ED',
-        'name' => 'Joyetech - Exceed D22 - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - Exceed D22 - Verdampfer - by InnoCigs',
         'commonName' => 'Exceed D22',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -9568,7 +9562,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SC100TR' => array(
         'icNumber' => 'SC100TR',
         'number' => 'SC100TR',
-        'name' => 'eLeaf - iStick Trim - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Trim - E-Zigarette - by SC',
         'commonName' => 'iStick Trim',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -9648,7 +9642,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SC100GT' => array(
         'icNumber' => 'SC100GT',
         'number' => 'SC100GT',
-        'name' => 'eLeaf - GS Turbo - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Turbo - Verdampfer - by SC',
         'commonName' => 'GS Turbo',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -10308,10 +10302,10 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'IC100EX' => array(
         'icNumber' => 'IC100EX',
         'number' => 'IC100EX',
-        'name' => 'Joyetech - Exceed D19 - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Exceed D19 - E-Zigarette - by InnoCigs',
         'commonName' => 'Exceed D19',
         'type' => 'E_CIGARETTE',
-        'category' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg#!#E-ZIGARETTEN > Joyetech',
+        'category' => 'E-ZIGARETTEN > Joyetech',
         'supplier' => 'Joyetech',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -10319,7 +10313,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg',
+        'addlCategory' => '',
         'dosage' => '',
         'base' => null,
         'description' => '<p>Mit dem Joyetech Exceed D19 Starterset, das wir unter der Marke InnoCigs vertreiben, erwerben Sie eine kompakte, elegante und dezente E-Zigarette. Außer einem Liquid, das Ihnen gut schmeckt, benötigen Sie nichts weiter. Sie können direkt loslegen.</p>
@@ -10463,7 +10457,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'IC100EXC' => array(
         'icNumber' => 'IC100EXC',
         'number' => 'IC100EXC',
-        'name' => 'Joyetech - Exceed D19 - Clearomizer - by InnoCigs',
+        'name' => 'Joyetech - Exceed D19 - Verdampfer - by InnoCigs',
         'commonName' => 'Exceed D19',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -11477,7 +11471,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'SC100IV' => array(
         'icNumber' => 'SC100IV',
         'number' => 'SC100IV',
-        'name' => 'eLeaf - Invoke - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - Invoke - E-Zigarette - by SC',
         'commonName' => 'Invoke',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -11618,7 +11612,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'AS100SR' => array(
         'icNumber' => 'AS100SR',
         'number' => 'AS100SR',
-        'name' => 'Aspire - SkyStar - Revvo - E-Zigarette (Set)',
+        'name' => 'Aspire - SkyStar - Revvo - E-Zigarette',
         'commonName' => 'SkyStar',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -11696,7 +11690,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SC100BL' => array(
         'icNumber' => 'SC100BL',
         'number' => 'SC100BL',
-        'name' => 'eLeaf - Basal - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - Basal - E-Zigarette - by SC',
         'commonName' => 'Basal',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -11742,7 +11736,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SC100BLC' => array(
         'icNumber' => 'SC100BLC',
         'number' => 'SC100BLC',
-        'name' => 'eLeaf - GS Basal - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Basal - Verdampfer - by SC',
         'commonName' => 'GS Basal',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -11756,7 +11750,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SC100BLG' => array(
         'icNumber' => 'SC100BLG',
@@ -11783,10 +11777,10 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'IC100EB' => array(
         'icNumber' => 'IC100EB',
         'number' => 'IC100EB',
-        'name' => 'Joyetech - Exceed D22 - E-Zigaretten-Set - by InnoCigs',
+        'name' => 'Joyetech - Exceed D22 - E-Zigarette - by InnoCigs',
         'commonName' => 'Exceed D22',
         'type' => 'E_CIGARETTE',
-        'category' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg#!#E-ZIGARETTEN > Joyetech',
+        'category' => 'E-ZIGARETTEN > Joyetech',
         'supplier' => 'Joyetech',
         'brand' => 'InnoCigs',
         'piecesPerPack' => 1,
@@ -11794,7 +11788,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg',
+        'addlCategory' => '',
         'dosage' => '',
         'base' => null,
         'description' => '<p>Mit der Joyetech Exceed D22, die wir unter der Marke InnoCigs vertreiben, erwerben Sie eine dezente E-Zigarette mit unaufgeregtem Design, die sehr gut auch für Anfänger geeignet ist. Außer einem Liquid, das Ihnen gut schmeckt, benötigen Sie nichts weiter. Sie können direkt loslegen.</p>
@@ -11991,25 +11985,6 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'description' => '<p>Shake & Vape Liquid. Geschmack: Cola. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
-    'VG10010-RS' => array(
-        'icNumber' => 'VG10010-RS',
-        'number' => 'VG10010-RS',
-        'name' => 'I VG - Sweets - Raspberry Stix - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Raspberry Stix',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Bonbons & Kaugummi#!#SHAKE & VAPE > Beeren#!#SHAKE & VAPE > Milch & Co.#!#SHAKE & VAPE > I VG',
-        'supplier' => 'I VG',
-        'brand' => 'I VG',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Bonbon, Himbeere, Sahne',
-        'flavorCategory' => 'Bonbons & Kaugummi, Beeren, Milch & Co.',
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p>Shake & Vape Liquid. Geschmack: Bonbon, Himbeere, Sahne. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Bonbon, Himbeere, Sahne</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
     'VG10010-SM' => array(
         'icNumber' => 'VG10010-SM',
         'number' => 'VG10010-SM',
@@ -12090,7 +12065,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'VP100CC' => array(
         'icNumber' => 'VP100CC',
         'number' => 'VP100CC',
-        'name' => 'Vapanion - Cascade - Clearomizer (Set)',
+        'name' => 'Vapanion - Cascade - Verdampfer',
         'commonName' => 'Cascade',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vapanion',
@@ -12153,7 +12128,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SC100PR' => array(
         'icNumber' => 'SC100PR',
         'number' => 'SC100PR',
-        'name' => 'eLeaf - iStick Pico Resin mit Melo 4 D22 - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Pico Resin mit Melo 4 D22 - E-Zigarette - by SC',
         'commonName' => 'iStick Pico Resin mit Melo 4 D22',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -12780,7 +12755,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SC100P21' => array(
         'icNumber' => 'SC100P21',
         'number' => 'SC100P21',
-        'name' => 'eLeaf - iStick Pico 21700 mit Ello - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Pico 21700 mit Ello - E-Zigarette - by SC',
         'commonName' => 'iStick Pico 21700 mit Ello',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -13128,7 +13103,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'JF100P16' => array(
         'icNumber' => 'JF100P16',
         'number' => 'JF100P16',
-        'name' => 'JustFog - P16A - E-Zigarette (Set)',
+        'name' => 'JustFog - P16A - E-Zigarette',
         'commonName' => 'P16A',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > JustFog',
@@ -13194,7 +13169,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'JF100P16C' => array(
         'icNumber' => 'JF100P16C',
         'number' => 'JF100P16C',
-        'name' => 'JustFog - P16A - Clearomizer (Set)',
+        'name' => 'JustFog - P16A - Verdampfer',
         'commonName' => 'P16A',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > JustFog',
@@ -13265,7 +13240,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'JF100Q16' => array(
         'icNumber' => 'JF100Q16',
         'number' => 'JF100Q16',
-        'name' => 'JustFog - Q16 C - E-Zigarette (Set)',
+        'name' => 'JustFog - Q16 C - E-Zigarette',
         'commonName' => 'Q16 C',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > JustFog',
@@ -13340,7 +13315,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'JF100Q16C' => array(
         'icNumber' => 'JF100Q16C',
         'number' => 'JF100Q16C',
-        'name' => 'JustFog - Q16 C - Clearomizer (Set)',
+        'name' => 'JustFog - Q16 C - Verdampfer',
         'commonName' => 'Q16 C',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > JustFog',
@@ -13396,7 +13371,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'JF100F1' => array(
         'icNumber' => 'JF100F1',
         'number' => 'JF100F1',
-        'name' => 'JustFog - Fog1 - E-Zigarette (Set)',
+        'name' => 'JustFog - Fog1 - E-Zigarette',
         'commonName' => 'Fog1',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > JustFog',
@@ -14622,7 +14597,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'UW100NS' => array(
         'icNumber' => 'UW100NS',
         'number' => 'UW100NS',
-        'name' => 'Uwell - Nunchaku - E-Zigarette (Set)',
+        'name' => 'Uwell - Nunchaku - E-Zigarette',
         'commonName' => 'Nunchaku',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Uwell',
@@ -14636,7 +14611,123 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Uwell Nunchaku RDA E-Zigaretten Set ist ein Selbstwickler Set. Der Nunchaku RDA Verdampfer verfügt über keinen Glastank, da er ein Tröpfelverdampfer ist. Die im Lieferumfang enthaltenen NiChrom Spulen weisen je einen Widerstand von 0,3 Ohm auf. Die Watte wird durch die Spule gezogen und anschließend kann mit den selbst gewickelten Coils gedampft werden. Sie können wahlweise im VW, TC oder im Bypass-Modus dampfen und jederzeit zwischen den Modi wechseln. Die maximale Ausgangsleistung liegt bei 80 Watt. Über eine nicht im Lieferumfang enthaltene 18650er Akkuzelle wird das Set mit Energie versorgt. <br> <br> <b>Das Uwell Nunchaku RDA E-Zigaretten Set wird ohne 18650er Akkuzelle ausgeliefert.</b> <br> <br> <br> <b>Lieferumfang:</b> <ul><li>1x Uwell Nunchaku Akkuträger</li> <li>1x Uwell Nunchaku RDA Clearomizer Set</li> <li>2x Uwell NiChrom Spule 0,3 Ohm</li> <li>1x Extra-Mutter</li> <li>1x Steckschlüssel</li> <li>1x Isolator</li> <li>1x Sqounk-Pin</li> <li>1x Organische japanische Watte</li> <li>1x Ersatz O-Ringe</li> <li>1x Micro-USB-Ladekabel</li> <li>1x Bedienungsanleitung</li></ul><br> <br> <b>Wichtige Merkmale Nunchaku Akkuträger:</b>\\n<ul><li>Ausgabemodi: VW / TC (Ni, SS) / Bypass</li> <li>Variable Wattage: 5 Watt bis 80 Watt</li> <li>Variable Temperature: 100°C bis 300°C</li> <li>Widerstandsbereich: 0,1 - 3,0 Ohm im VW-Modus | 0,1 - 1,0 Ohm im TC-Modus | 0,1 - 0,5 Ohm im Bypass-Modus</li> <li>Gewindetyp: 510</li> <li>OLED-Display</li> <li>Durchmesser: 27,4mm</li> <li>Höhe: 94,5mm</li></ul><br> <br> <b>Wichtige Merkmale Nunchaku RDA Clearomizer:</b>\\n<ul><li>Airflow-Control</li> <li>Gewindetyp: 510</li> <li>Höhe: 34,6 mm</li> <li>Durchmesser 24 mm</li></ul><br> <br>',
+        'description' => '<p>Die Uwell Nunchaku ist eine E-Zigarette mit 80 Watt Leistung für den Direct Lung Stil (DL), bei dem der Dampf direkt in die Lunge inhaliert wird. Die Linie des Akkuträgers im Tube-Design - ein etwas dickerer Stick -&nbsp;ist nicht ganz gerade, sondern leicht bauchig. Dadurch liegt die E-Zigarette sehr angenehm in der Hand und vermittelt das Gefühl, etwas wirklich Solides bei sich zu haben.</p>
+<p>Der Uwell Nunchaku Verdampfer ist vom Design her perfekt auf den Uwell Nunchaku Akkuträger abgestimmt. Auffällig sind besonders die mit Streben versehene Einfassung des Verdampferkopfes und die Riffelung des Einstellrings für die Luftzufuhr. Beide sind schräg angeordnet, was einen interessanten und wertigen Look ergibt. Besonders in der silbernen Variante wirkt der Uwell Nunchaku Verdampfer wie ein Schmuckstück, fast wie eine fein gearbeite Brosche.&nbsp;</p>
+<p><strong>Uwell Nunchaku Akkuträger</strong></p>
+<p>Der Uwell Nunchaku ist ein Akkuträger mit einer maximalen Leistung von 80 Watt. Für die Stromversorgung benötigen Sie eine hochstromfeste 18650er Akkuzelle, die nicht im Lieferumfang enthalten ist. Der Akku kann üder den eingebauten Micro-USB Anschluss im Gerät aufgeladen werden.</p>
+<p>Wenn Sie beabsichtigen, den Akkuträger mit hohen Wattzahlen zu betreiben, achten Sie bitte besonders darauf, dass die eingesetzte Akkuzelle sehr hohe Entladeströme von mindestens 25 A toleriert. Wir empfehlen Ihnen den Sony Konion VTC5A, der problemlos und sicher mitmacht, was auch immer Sie am Nunchaku einstellen.</p>
+<p>Der Uwell Nunchaku wird über drei Tasten gesteuert. Der Feuerknopf dient zum Ein- und Ausschalten durch fünfmaliges Klicken. Während Sie ziehen, halten Sie den Feuerknopf gedrückt. Die beiden anderen Tasten dienen zur Einstellung der Wattleistung und zur Navigation im Menu des Nunchaku. Die Anzeige aller Einstellungen erfolgt über ein OLED-Display.</p>
+<p>Der Nunchaku bietet drei Betriebsarten an. Im Watt-Modus (POWER) können Sie die Leistung frei einstellen. Im Bypass-Modus wird die im Akku verfügbare direkt auf den Verdampferkopf gegeben. Dabei sinkt die Leistung in dem Maße, wie sich der Akku entlädt. Der Bypass-Modus simuliert also das Verhalten eines ungeregelten Akkuträgers, die wir aus den Anfangstagen der E-Zigarette kennen. Diese verfügten in der Regel nicht über Schutzschaltungen. Im Bypass-Modus der Uwell Nunchaku sind dagegen alle modernen Schutzschaltungen aktiv. Im temperaturgeregelten Modus (TC) stellen Sie die Temperatur ein, auf die die Verdampferspule maximal erhitzt werden soll. Im TC-Modus unterstützt der Nunchaku Spulen aus Edelstahl und Nickel. Der einstellbare Temperaturbereich reicht von 100 bis 300 Grad Celsius.</p>
+<p>Der Uwell Nunchaku ist gegen Tiefentladung, Überladung, Kurzschluss und Überhitzung geschützt. Weiter schaltet das Gerät ab, wenn der Feuerknopf für länger als 10 Sekunden gedrückt wird.</p>
+<p>Verdampfer werden über einen 510er Standard-Schraubanschluss mit dem Uwell Nunchaku verbunden. Wegen des Standardanschlusses können die meisten Verdampfer mit dem Uwell Nunchaku verwendet werden.</p>
+<p><strong>Uwell Nunchaku Verdampfer</strong></p>
+<p>Der Tank des Uwell Nunchaku Verdampfers ist aus Quarzglas gefertigt. Er fasst 5 ml und wird von oben befüllt. Dazu wird der Deckel des Verdampfers abgeschraubt. Darunter liegt die Einfüllöffnung. Das Befüllen aus gängigen Liquidflaschen ist problemlos. Anschließend wird der Deckel wieder aufgeschraubt. Er verschließt den Uwell Nunchaku absolut dicht.</p>
+<p>Speziell für den Nunchaku hat Uwell eigene Verdampferköpfe entwickelt, die Claptonized A1 Heads und die UN2 Mesh Heads. Im Lieferumfang enthalten sind zwei Claptonized A1 Heads mit 0,25 Ohm und mit 0,4 Ohm. Die Spulen bestehen aus Kanthal, als Liquidbuffer dient japanische Baumwolle. Die Köpfe werden von unten in den Verdampfer gesteckt, nicht geschraubt - eine kleine Besonderheit dieser Konstruktion. Der 0,25 Ohm Kopf kann im Bereich von 40 bis 50 Watt betrieben werden, der 0,4 Ohm Kopf im Bereich von 45 bis 55 Watt.</p>
+<p>Der Uwell Nunchaku holt aus diesen für DL-Köpfe eher moderaten Wattzahlen eine ordentliche Menge Dampf und produziert einen sehr guten Geschmack. Auch bei längerem Betrieb bleibt der Dampf angenehm kühl.</p>
+<p>Das Mundstück (Drip Tip) des Uwell Nunchaku folgt dem 510er Standard und wird gesteckt. Die mitgelieferte Schutzkappe kann auf das Mundstück gesetzt werden, um das Eindringen von Staub und Schmutz während des Transports zu verhindern. Der Nunchaku wird über einen Standard 510er Schraubanschluss mit dem Akkuträger verbunden, er kann daher mit den meisten Akkuträgern verwendet werden.</p>
+<p>Die Regelung der Luftbeimischung (AFC, Airflow Control) erfolgt durch Drehen eines Einstellrings an der Basis.</p>
+<p><strong>Fazit</strong></p>
+<p>Die Uwell Nunchaku E-Zigarette im Tube-Design liegt angenehm und sehr solide in der Hand. Die sehr gelungene Optik wird von der leicht bauchigen Form des Nunchaku und den interessanten Verzierungen des Nunchaku Verdampfers bestimmt. Diese E-Zigarette ist ein echter Hingucker und liefert in dieser Kombination alle Konfigurationsmöglichkeiten, die Sie sich wünschen.</p>
+<p>Der Uwell Nunchaku Verdampfer schmeckt für einen DL-Verdampfer besonders gut und produziert ordentlich Dampf, mit Widerständen von 0,4 Ohm und 0,25 Ohm ist er aber kein extremer Wolkenjäger. Die Handhabung ist einfach. Der Verschlussmechanismus ist gelungen und hält den Verdampfer absolut dicht. Die steckbaren Köpfe sind ein interessantes Konstruktionsdetail.</p>
+<p>Wir empfehlen Ihnen die Uwell Nunchaku E-Zigarette, wenn Sie gern direkt in die Lunge inhalieren möchten und dabei eine sehr gute, aber nicht extreme, Dampfentwicklung bevorzugen.</p>
+<p><strong>Eigenschaften Uwell Nunchaku Akkuträger</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>hochstromfeste 18650er Akkuzelle (&gt; 25 A)<br>(<strong>nicht im Lieferumfang enthalten</strong>)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>POWER | TC (SS, Ni) | Bypass</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 – 80 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,7 - 7 Volt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 °C – 300 °C | 212° - 572° F</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>POWER: 0,1 – 3 Ohm<br>Bypass: 0,1 - 0,5 Ohm<br>TC: 0,1 - 1 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V/1A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>94,5 mm</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>27,4 mm</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Tube-Design</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br>Eigenschaften Uwell Nunchaku Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>25,2 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>49,6 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Quarzglas, Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Befüllung von oben, Schraubmechanismus des Deckels</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>DL, direkt in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br>Lieferumfang</strong></p>
+<ul>
+<li>1 Nunchaku Akkuträger</li>
+<li>1 Nunchaku Clearomizer</li>
+<li>1 Nunchaku A1 Head 0,25 Ohm</li>
+<li>1 Nunchaku A1 Head 0,4 Ohm</li>
+<li>1 Ersatz-Glastank</li>
+<li>1 Ersatzteil-Set</li>
+<li>1 Mundstück-Schutzkappe</li>
+<li>1 Micro-USB-Ladekabel</li>
+<li>1 Bedienungsanleitung</li>
+</ul>',
     ),
     'UW100NM' => array(
         'icNumber' => 'UW100NM',
@@ -14655,12 +14746,74 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '<p>Der Uwell Nunchaku ist ein Akkuträger mit einer maximalen Leistung von 80 Watt mit Tube-Design, also ein dickerer Stick. Seine Linie ist nicht ganz gerade, sondern leicht bauchig. Der Nunchaku liegt angenehm in der Hand und vermittelt das Gefühl, etwas wirklich Solides in der Hand zu halten. Besonders gut sieht dieser Akkuträger in Kombination mit dem Uwell Nunchaku Verdampfer aus, das Design beider Geräte ist perfekt aufeinander abgestimmt.</p>
+<p>Für die Stromversorgung des Uwell Nunchaku Akkuträgers benötigen Sie eine hochstromfeste 18650er Akkuzelle, die nicht im Lieferumfang enthalten ist. Wenn Sie beabsichtigen, den Akkuträger mit hohen Wattzahlen zu betreiben, achten Sie bitte besonders darauf, dass die eingesetzte Akkuzelle sehr hohe Entladeströme toleriert. Wir empfehlen Ihnen den Sony Konion VTC5A, der problemlos und sicher mitmacht, was auch immer Sie am Nunchaku einstellen.</p>
+<p>Der Uwell Nunchaku wird über drei Tasten gesteuert. Der Feuerknopf dient zum Ein- und Ausschalten durch fünfmaliges Klicken. Während Sie ziehen, halten Sie den Feuerknopf gedrückt. Die beiden anderen Tasten dienen zur Einstellung der Wattleistung und zur Navigation im Menu des Nunchaku. Die Anzeige aller Einstellungen erfolgt über ein OLED-Display.</p>
+<p>Der Nunchaku bietet drei Betriebsarten an. Im Watt-Modus (POWER) können Sie die Leistung frei einstellen. Im Bypass-Modus wird die im Akku verfügbare direkt auf den Verdampferkopf gegeben. Dabei sinkt die Leistung in dem Maße, wie sich der Akku entlädt. Der Bypass-Modus simuliert also das Verhalten eines ungeregelten Akkuträgers, die wir aus den Anfangstagen der E-Zigarette kennen. Diese verfügten in der Regel nicht über Schutzschaltungen. Im Bypass-Modus der Uwell Nunchaku sind dagegen alle modernen Schutzschaltungen aktiv. Im temperaturgeregelten Modus (TC) stellen Sie die Temperatur ein, auf die die Verdampferspule maximal erhitzt werden soll. Im TC-Modus unterstützt der Nunchaku Spulen aus Edelstahl und Nickel. Der einstellbare Temperaturbereich reicht von 100 bis 300 Grad Celsius.</p>
+<p>Der Uwell Nunchaku ist gegen Tiefentladung, Überladung, Kurzschluss und Überhitzung geschützt. Weiter schaltet das Gerät ab, wenn der Feuerknopf für länger als 10 Sekunden gedrückt wird.</p>
+<p>Verdampfer werden über einen 510er Standard-Schraubanschluss mit dem Uwell Nunchaku verbunden. Wegen des Standardanschlusses können die meisten Verdampfer mit dem Uwell Nunchaku verwendet werden.</p>
+<p><strong>Fazit</strong></p>
+<p>Der Uwell Nunchaku Akkuträger ist ein Akkuträger im Tube-Design und liegt angenehm und sehr solide in der Hand. Die Einstellmöglichkeiten im temperaturgeregelten Modus liegen auf dem Niveau ambitionierter Einsteiger. Der Nunchaku ist sowohl technisch als auch vom Design her auf den Uwell Nunchaku Verdampfer abgestimmt. Besonders in dieser Kombination ist das Gerät ein echter Hingucker und liefert alle Konfigurationsmöglichkeiten, die Sie sich wünschen.</p>
+<p><strong>Eigenschaften Uwell Nunchaku Akkuträger</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>hochstromfeste 18650er Akkuzelle (&gt; 25 A)<br>(<strong>nicht im Lieferumfang enthalten</strong>)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>POWER | TC (SS, Ni) | Bypass</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 – 80 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,7 - 7 Volt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 °C – 300 °C | 212° - 572° F</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>POWER: 0,1 – 3 Ohm<br>Bypass: 0,1 - 0,5 Ohm<br>TC: 0,1 - 1 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V/1A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>94,5 mm</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>27,4 mm</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Tube-Design, optimiert für den Uwell Nunchaku Verdampfer</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br>Lieferumfang</strong></p>
+<ul>
+<li>1 Uwell Nunchaku Akkuträger</li>
+<li>1 Micro-USB Ladekabel</li>
+<li>1 Bedienungsanleitung</li>
+</ul>',
     ),
     'UW100NC' => array(
         'icNumber' => 'UW100NC',
         'number' => 'UW100NC',
-        'name' => 'Uwell - Nunchaku - Clearomizer (Set)',
+        'name' => 'Uwell - Nunchaku - Verdampfer',
         'commonName' => 'Nunchaku',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Uwell',
@@ -14674,7 +14827,75 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '<p>Der Uwell Nunchaku ist ein Verdampfer für den Direct-Lung-Stil (DL), beim dem der Dampf direkt in die Lunge inhaliert wird. Er besitzt einen Tank aus Glas, ist also ein Clearomizer. Vom Design her ist der Nunchaku Verdampfer perfekt auf den Uwell Nunchaku Akkuträger abgestimmt und macht in dieser Kombination eine besonders gute Figur. Auffällig sind besonders die mit Streben versehene Einfassung des Verdampferkopfes und die Riffelung des Einstellrings für die Luftzufuhr. Beide sind schräg angeordnet, was einen interessanten und wertigen Look ergibt. Besonders in der silbernen Variante wirkt der Uwell Nunchaku wie ein Schmuckstück, fast wie eine fein gearbeite Brosche.</p>
+<p>Der Tank des Uwell Nunchaku ist aus Quarzglas gefertigt. Er fasst 5 ml und wird von oben befüllt. Dazu wird der Deckel des Verdampfers abgeschraubt. Darunter liegt die Einfüllöffnung. Das Befüllen aus gängigen Liquidflaschen ist problemlos. Anschließend wird der Deckel wieder aufgeschraubt. Er verschließt den Uwell Nunchaku absolut dicht.</p>
+<p>Speziell für den Nunchaku hat Uwell eigene Verdampferköpfe entwickelt, die Claptonized A1 Heads und die UN2 Mesh Heads. Im Lieferumfang enthalten sind zwei Claptonized A1 Heads mit 0,25 Ohm und mit 0,4 Ohm. Die Spulen bestehen aus Kanthal, als Liquidbuffer dient japanische Baumwolle. Die Köpfe werden von unten in den Verdampfer gesteckt, nicht geschraubt - eine kleine Besonderheit dieser Konstruktion. Der 0,25 Ohm Kopf kann im Bereich von 40 bis 50 Watt betrieben werden, der 0,4 Ohm Kopf im Bereich von 45 bis 55 Watt.</p>
+<p>Der Uwell Nunchaku holt aus diesen für DL-Köpfe eher moderaten Wattzahlen eine ordentliche Menge Dampf und produziert einen sehr guten Geschmack. Auch bei längerem Betrieb bleibt der Dampf angenehm kühl.</p>
+<p>Das Mundstück (Drip Tip) des Uwell Nunchaku folgt dem 510er Standard und wird gesteckt. Die mitgelieferte Schutzkappe kann auf das Mundstück gesetzt werden, um das Eindringen von Staub und Schmutz während des Transports zu verhindern. Der Nunchaku wird über einen Standard 510er Schraubanschluss mit dem Akkuträger verbunden, er kann daher mit den meisten Akkuträgern verwendet werden.</p>
+<p>Die Regelung der Luftbeimischung (AFC, Airflow Control) erfolgt durch Drehen eines Einstellrings an der Basis.</p>
+<p><strong>Fazit</strong></p>
+<p>Der Uwell Nunchaku ist ein sehr guter Verdampfer mit einem sehr ansprechenden, wertigen Design. Er schmeckt für einen DL-Verdampfer besonders gut und produziert ordentlich Dampf, mit Widerständen von 0,4 Ohm und 0,25 Ohm ist er aber kein extremer Wolkenjäger. Die Handhabung ist einfach. Der Verschlussmechanismus ist gelungen und hält den Verdampfer absolut dicht. Die steckbaren Köpfe sind ein interessantes Konstruktionsdetail.</p>
+<p><strong>Eigenschaften</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Typ</td>
+<td>Clearomizer</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>25,2 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>49,6 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Quarzglas, Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Befüllung von oben, Schraubmechanismus des Deckels</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>DL, direkt in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<p><br><strong>Lieferumfang</strong></p>
+<div class="row-fluid pconstruction mtm">
+<div class="col col-xs-12">
+<div class="pinfos enavm-div">
+<div class="pcharacteristics_delivery ">
+<div class="pdelivery">
+<ul>
+<li>1&nbsp; Nunchaku Verdampfer</li>
+<li>1&nbsp; Claptonized A1 Head, 0,25 Ohm</li>
+<li>1&nbsp;Claptonized A1 Head, 0,4 Ohm</li>
+<li>1 Ersatz-Glastank aus Quarzglas</li>
+<li>1 Schutzkappe für das Mundstück</li>
+<li>1 Set Ersatzdichtungen</li>
+<li>1 Bedienungsanleitung&nbsp;</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>',
     ),
     'UW100NH' => array(
         'icNumber' => 'UW100NH',
@@ -14711,25 +14932,6 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'category' => 'BOXEN > Uwell',
         'supplier' => 'Uwell',
         'brand' => 'Uwell',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => null,
-    ),
-    'SM100PBM' => array(
-        'icNumber' => 'SM100PBM',
-        'number' => 'SM100PBM',
-        'name' => 'SMOK - TFV12 Baby Prince - Glastank + Mundstück (Set) - by Steamax',
-        'commonName' => 'TFV12 Baby Prince',
-        'type' => 'DRIP_TIP',
-        'category' => 'ZUBEHÖR > Mundstücke & Schutz > Smoktech',
-        'supplier' => 'Smoktech',
-        'brand' => 'Steamax',
         'piecesPerPack' => 1,
         'content' => null,
         'capacity' => null,
@@ -14892,7 +15094,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'VO100VPC' => array(
         'icNumber' => 'VO100VPC',
         'number' => 'VO100VPC',
-        'name' => 'VapeOnly - vPipe III - Clearomizer (Set)',
+        'name' => 'VapeOnly - vPipe III - Verdampfer',
         'commonName' => 'vPipe III',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > VapeOnly',
@@ -14906,7 +15108,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'VO100VPH' => array(
         'icNumber' => 'VO100VPH',
@@ -15110,7 +15312,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'AS100PTC' => array(
         'icNumber' => 'AS100PTC',
         'number' => 'AS100PTC',
-        'name' => 'Aspire - Proteus - Clearomizer (Set)',
+        'name' => 'Aspire - Proteus - Verdampfer',
         'commonName' => 'Proteus',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -15215,25 +15417,6 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'description' => '<p>Shake & Vape Liquid. Geschmack: Apfel, Streuselkuchen. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Streuselkuchen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
-    'OB10010-CC' => array(
-        'icNumber' => 'OB10010-CC',
-        'number' => 'OB10010-CC',
-        'name' => 'Operation Baked - Cherry Cream Pie - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Cherry Cream Pie',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Früchte#!#SHAKE & VAPE > Gebäck#!#SHAKE & VAPE > Milch & Co.#!#SHAKE & VAPE > Operation Baked',
-        'supplier' => 'Operation Baked',
-        'brand' => 'Operation Baked',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Kirsche, Kuchen, Sahne',
-        'flavorCategory' => 'Früchte, Gebäck, Milch & Co.',
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p>Shake & Vape Liquid. Geschmack: Kirsche, Kuchen, Sahne. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Kuchen, Sahne</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
     'OB10010-SC' => array(
         'icNumber' => 'OB10010-SC',
         'number' => 'OB10010-SC',
@@ -15315,7 +15498,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SC100SM' => array(
         'icNumber' => 'SC100SM',
         'number' => 'SC100SM',
-        'name' => 'eLeaf - iStick Melo - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Melo - E-Zigarette - by SC',
         'commonName' => 'iStick Melo',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -16255,7 +16438,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'AS100FR' => array(
         'icNumber' => 'AS100FR',
         'number' => 'AS100FR',
-        'name' => 'Aspire - Feedlink - Revvo Boost - E-Zigarette (Set)',
+        'name' => 'Aspire - Feedlink - Revvo Boost - E-Zigarette',
         'commonName' => 'Feedlink',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -16340,7 +16523,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'AS100CP' => array(
         'icNumber' => 'AS100CP',
         'number' => 'AS100CP',
-        'name' => 'Aspire - Cleito Pro - Clearomizer (Set)',
+        'name' => 'Aspire - Cleito Pro - Verdampfer',
         'commonName' => 'Cleito Pro',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -16354,7 +16537,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'AS100FRM' => array(
         'icNumber' => 'AS100FRM',
@@ -16497,7 +16680,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'WFR100LNC' => array(
         'icNumber' => 'WFR100LNC',
         'number' => 'WFR100LNC',
-        'name' => 'Wismec - Luxotic NC - E-Zigarette (Set)',
+        'name' => 'Wismec - Luxotic NC - E-Zigarette',
         'commonName' => 'Luxotic NC',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -16544,7 +16727,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'WFR100GV2' => array(
         'icNumber' => 'WFR100GV2',
         'number' => 'WFR100GV2',
-        'name' => 'Wismec - Guillotine V2 - Clearomizer (Set)',
+        'name' => 'Wismec - Guillotine V2 - Verdampfer',
         'commonName' => 'Guillotine V2',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Wismec',
@@ -16673,7 +16856,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'WFR100LT' => array(
         'icNumber' => 'WFR100LT',
         'number' => 'WFR100LT',
-        'name' => 'Wismec - Luxotic BF Box - E-Zigarette (Set)',
+        'name' => 'Wismec - Luxotic BF Box - E-Zigarette',
         'commonName' => 'Luxotic BF Box',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -16728,7 +16911,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'WFR100TB' => array(
         'icNumber' => 'WFR100TB',
         'number' => 'WFR100TB',
-        'name' => 'Wismec - Tobhino BF RDA - Clearomizer (Set)',
+        'name' => 'Wismec - Tobhino BF RDA - Verdampfer',
         'commonName' => 'Tobhino BF RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Wismec',
@@ -16791,7 +16974,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'IC100AE' => array(
         'icNumber' => 'IC100AE',
         'number' => 'IC100AE',
-        'name' => 'Joyetech - eGo AIO - Anniversary Edition - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - eGo AIO - Anniversary Edition - E-Zigarette - by InnoCigs',
         'commonName' => 'eGo AIO',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -16829,7 +17012,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'IC100EPS' => array(
         'icNumber' => 'IC100EPS',
         'number' => 'IC100EPS',
-        'name' => 'Joyetech - Espion Solo - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Espion Solo - E-Zigarette - by InnoCigs',
         'commonName' => 'Espion Solo',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -16934,7 +17117,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'IC100PAC' => array(
         'icNumber' => 'IC100PAC',
         'number' => 'IC100PAC',
-        'name' => 'Joyetech - ProCore Air - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - ProCore Air - Verdampfer - by InnoCigs',
         'commonName' => 'ProCore Air',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -16975,7 +17158,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SC100PB' => array(
         'icNumber' => 'SC100PB',
         'number' => 'SC100PB',
-        'name' => 'eLeaf - iStick Pico Baby - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Pico Baby - E-Zigarette - by SC',
         'commonName' => 'iStick Pico Baby',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -17103,7 +17286,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SC100GB' => array(
         'icNumber' => 'SC100GB',
         'number' => 'SC100GB',
-        'name' => 'eLeaf - GS Baby - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Baby - Verdampfer - by SC',
         'commonName' => 'GS Baby',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -17144,7 +17327,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'SM100G3D' => array(
         'icNumber' => 'SM100G3D',
         'number' => 'SM100G3D',
-        'name' => 'Wismec - Reuleaux RX Gen3 Dual - E-Zigarette (Set) - by Steamax',
+        'name' => 'Wismec - Reuleaux RX Gen3 Dual - E-Zigarette - by Steamax',
         'commonName' => 'Reuleaux RX Gen3 Dual',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -17192,10 +17375,10 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'AS100BS2' => array(
         'icNumber' => 'AS100BS2',
         'number' => 'AS100BS2',
-        'name' => 'Aspire - Breeze 2 - E-Zigarette (Set)',
+        'name' => 'Aspire - Breeze 2 - E-Zigarette',
         'commonName' => 'Breeze 2',
         'type' => 'E_CIGARETTE',
-        'category' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg#!#E-ZIGARETTEN > Aspire',
+        'category' => 'E-ZIGARETTEN > Aspire',
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
@@ -17203,7 +17386,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg',
+        'addlCategory' => '',
         'dosage' => '',
         'base' => null,
         'description' => '<p>Die Aspire Breeze 2 ist eine E-Zigarette, die sich besonders gut für den Umstieg vom Rauchen auf das Dampfen eignet. Sie ist aus leichtem Aluminium gefertigt und hat ein kompaktes, schlichtes unaufdringliches Design.</p>
@@ -17378,7 +17561,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'SM100GK' => array(
         'icNumber' => 'SM100GK',
         'number' => 'SM100GK',
-        'name' => 'Wismec - Gnome King - Clearomizer (Set) - by Steamax',
+        'name' => 'Wismec - Gnome King - Verdampfer - by Steamax',
         'commonName' => 'Gnome King',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Wismec',
@@ -17411,7 +17594,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'IC100EE' => array(
         'icNumber' => 'IC100EE',
         'number' => 'IC100EE',
-        'name' => 'Joyetech - Exceed Edge - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Exceed Edge - E-Zigarette - by InnoCigs',
         'commonName' => 'Exceed Edge',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -17458,7 +17641,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'IC100EA' => array(
         'icNumber' => 'IC100EA',
         'number' => 'IC100EA',
-        'name' => 'Joyetech - Exceed Air - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - Exceed Air - Verdampfer - by InnoCigs',
         'commonName' => 'Exceed Air',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -17528,7 +17711,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'VP100CBS' => array(
         'icNumber' => 'VP100CBS',
         'number' => 'VP100CBS',
-        'name' => 'Vapanion - Cascade Baby SE - Clearomizer (Set)',
+        'name' => 'Vapanion - Cascade Baby SE - Verdampfer',
         'commonName' => 'Cascade Baby SE',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vapanion',
@@ -17652,7 +17835,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'IC100PP' => array(
         'icNumber' => 'IC100PP',
         'number' => 'IC100PP',
-        'name' => 'Joyetech - ProCore Air Plus - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - ProCore Air Plus - Verdampfer - by InnoCigs',
         'commonName' => 'ProCore Air Plus',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -17666,31 +17849,12 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
-    ),
-    'IC100EIM' => array(
-        'icNumber' => 'IC100EIM',
-        'number' => 'IC100EIM',
-        'name' => 'Joyetech - Espion Infinite - Akkuträger - 230 Watt - by InnoCigs',
-        'commonName' => 'Espion Infinite',
-        'type' => 'BOX_MOD_CELL',
-        'category' => 'BOXEN > Joyetech',
-        'supplier' => 'Joyetech',
-        'brand' => 'InnoCigs',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'IC100PO' => array(
         'icNumber' => 'IC100PO',
         'number' => 'IC100PO',
-        'name' => 'Joyetech - ProCore Conquer - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - ProCore Conquer - Verdampfer - by InnoCigs',
         'commonName' => 'ProCore Conquer',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -17704,12 +17868,12 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SC100J3' => array(
         'icNumber' => 'SC100J3',
         'number' => 'SC100J3',
-        'name' => 'eLeaf - iJust 3 - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iJust 3 - E-Zigarette - by SC',
         'commonName' => 'iJust 3',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -17757,7 +17921,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'SC100ED' => array(
         'icNumber' => 'SC100ED',
         'number' => 'SC100ED',
-        'name' => 'eLeaf - Ello Duro - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - Ello Duro - Verdampfer - by SC',
         'commonName' => 'Ello Duro',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -17771,7 +17935,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SC100EDG' => array(
         'icNumber' => 'SC100EDG',
@@ -17945,7 +18109,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'SC100E3' => array(
         'icNumber' => 'SC100E3',
         'number' => 'SC100E3',
-        'name' => 'SC - Easy 3 - E-Zigarette (Set)',
+        'name' => 'SC - Easy 3 - E-Zigarette',
         'commonName' => 'Easy 3',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > InnoCigs',
@@ -18358,7 +18522,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'JF100MF' => array(
         'icNumber' => 'JF100MF',
         'number' => 'JF100MF',
-        'name' => 'JustFog - Minifit - E-Zigarette (Set)',
+        'name' => 'JustFog - Minifit - E-Zigarette',
         'commonName' => 'Minifit',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > JustFog',
@@ -18476,7 +18640,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'SC100PS' => array(
         'icNumber' => 'SC100PS',
         'number' => 'SC100PS',
-        'name' => 'eLeaf - iStick Pico S - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Pico S - E-Zigarette - by SC',
         'commonName' => 'iStick Pico S',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -18577,7 +18741,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'SC100EVC' => array(
         'icNumber' => 'SC100EVC',
         'number' => 'SC100EVC',
-        'name' => 'eLeaf - Ello Vate - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - Ello Vate - Verdampfer - by SC',
         'commonName' => 'Ello Vate',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -18727,7 +18891,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'AS100SA' => array(
         'icNumber' => 'AS100SA',
         'number' => 'AS100SA',
-        'name' => 'Aspire - Spryte AIO - E-Zigarette (Set)',
+        'name' => 'Aspire - Spryte AIO - E-Zigarette',
         'commonName' => 'Spryte AIO',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -18797,7 +18961,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'IC100BP' => array(
         'icNumber' => 'IC100BP',
         'number' => 'IC100BP',
-        'name' => 'Joyetech - Batpack - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Batpack - E-Zigarette - by InnoCigs',
         'commonName' => 'Batpack',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -18893,7 +19057,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'GV100AM' => array(
         'icNumber' => 'GV100AM',
         'number' => 'GV100AM',
-        'name' => 'GeekVape - Aero Mesh - Clearomizer (Set)',
+        'name' => 'GeekVape - Aero Mesh - Verdampfer',
         'commonName' => 'Aero Mesh',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > GeekVape',
@@ -19012,7 +19176,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'AS100CR' => array(
         'icNumber' => 'AS100CR',
         'number' => 'AS100CR',
-        'name' => 'Aspire - Cygnet - Revvo - E-Zigarette (Set)',
+        'name' => 'Aspire - Cygnet - Revvo - E-Zigarette',
         'commonName' => 'Cygnet',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -19097,10 +19261,10 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'AS100NA' => array(
         'icNumber' => 'AS100NA',
         'number' => 'AS100NA',
-        'name' => 'Aspire - Nautilus AIO - E-Zigarette (Set)',
+        'name' => 'Aspire - Nautilus AIO - E-Zigarette',
         'commonName' => 'Nautilus AIO',
         'type' => 'E_CIGARETTE',
-        'category' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg#!#E-ZIGARETTEN > Aspire',
+        'category' => 'E-ZIGARETTEN > Aspire',
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
@@ -19108,7 +19272,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg',
+        'addlCategory' => '',
         'dosage' => '',
         'base' => null,
         'description' => '<p>Die Aspire Nautilus AIO E-Zigarette ist ein schickes Pod-System. Verdampfer und Akku bilden bei Pod-Systemen optisch eine Einheit. AIO steht für all-in-one. Gemeint ist, dass Sie außer einem E-Liquid alles bekommen, was Sie brauchen, um mit der E-Zigarette loszulegen.</p>
@@ -19267,7 +19431,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'AS100CA' => array(
         'icNumber' => 'AS100CA',
         'number' => 'AS100CA',
-        'name' => 'Aspire - Cobble AIO - E-Zigarette (Set)',
+        'name' => 'Aspire - Cobble AIO - E-Zigarette',
         'commonName' => 'Cobble AIO',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -19391,7 +19555,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'IC100T' => array(
         'icNumber' => 'IC100T',
         'number' => 'IC100T',
-        'name' => 'Joyetech - Teros - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Teros - E-Zigarette - by InnoCigs',
         'commonName' => 'Teros',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -19488,7 +19652,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'SC100LX' => array(
         'icNumber' => 'SC100LX',
         'number' => 'SC100LX',
-        'name' => 'eLeaf - Lexicon - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - Lexicon - E-Zigarette - by SC',
         'commonName' => 'Lexicon',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -19750,7 +19914,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'JF100C' => array(
         'icNumber' => 'JF100C',
         'number' => 'JF100C',
-        'name' => 'JustFog - C601 - E-Zigarette (Set)',
+        'name' => 'JustFog - C601 - E-Zigarette',
         'commonName' => 'C601',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > JustFog',
@@ -19809,7 +19973,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'AS100PS' => array(
         'icNumber' => 'AS100PS',
         'number' => 'AS100PS',
-        'name' => 'Aspire - Puxos - E-Zigarette (Set)',
+        'name' => 'Aspire - Puxos - E-Zigarette',
         'commonName' => 'Puxos',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -20067,54 +20231,11 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'base' => null,
         'description' => '<p>Aroma zur Herstellung von E-Liquid. Geschmack: Erdbeere, Käsekuchen. Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>30 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Erdbeere, Käsekuchen</td></tr><tr><td>Dosierung</td><td>10 - 15 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
-    'IC100PFM' => array(
-        'icNumber' => 'IC100PFM',
-        'number' => 'IC100PFM',
-        'name' => 'Joyetech - eVic Primo Fit - Akku - 2.800 mAh - by InnoCigs',
-        'commonName' => 'eVic Primo Fit',
-        'type' => 'BOX_MOD',
-        'category' => 'BOXEN > Joyetech',
-        'supplier' => 'Joyetech',
-        'brand' => 'InnoCigs',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Das eVic Primo Fit Akku aus dem Hause InnoCigs besitzt die Ausgabemodi VW, TC und TCR. Die Modi werden mit der Feuer- bzw. Einstelltaste ausgewählt. Zudem können Sie all Ihre Einstellungen über das 0,96 Zoll große OLED-Display einsehen. Der Akku besitzt fest verbaute Akkuzellen mit einer Kapazität von 2800mAh und erreicht eine maximale Ausgangsleistung von 80 Watt. Im VW-Modus liegt der Widerstandsbereich zwischen 0,05 Ohm und 3,5 Ohm. Im TC-Modus zwischen 0,05 Ohm und 1,5 Ohm. Mit im Lieferumfang enthalten ist ein USB-Kabel mit dem Sie ihr eVic Primo Fit aufladen können.
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>
-<li>1x eVic Primo Fit</li>
-<li>1x USB-Kabel</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>eVic Primo Fit</strong>
-<ul>
-<li>Akkukapazität: 2800 mAh</li>
-<li>Ausgangsleistung: 1 - 80 Watt</li>
-<li>Ausgabemodi: VW, TC (Ni, Ti, SS316), TCR (M1, M2, M3), RTC</li>
-<li>Temperaturbereich: 100°C – 315°C </li>
-<li>Widerstandsbereich: 0,05 – 1,5 Ohm (TC/TCR), 0,05 – 3,5 Ohm (VW/RTC)</li>
-<li>Ausgangsspannung: max. 25 V</li>
-<li>Gewindetyp: 510</li>
-<li>0,96 Zoll OLED-Display</li>
-<li>Maße: 66 mm x 40 mm x 22,5 mm</li>
-</ul>
-<br>
-<br>',
-    ),
     'IC100XP' => array(
         'icNumber' => 'IC100XP',
         'number' => 'IC100XP',
-        'name' => 'Joyetech - Exceed Air - Plus Clearomizer (Set) - by InnoCigs',
-        'commonName' => 'Exceed Air',
+        'name' => 'Joyetech - Exceed Air Plus - Verdampfer - by InnoCigs',
+        'commonName' => 'Exceed Air Plus',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
         'supplier' => 'Joyetech',
@@ -20194,7 +20315,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'AS100DY' => array(
         'icNumber' => 'AS100DY',
         'number' => 'AS100DY',
-        'name' => 'Aspire - Dynamo - E-Zigarette (Set)',
+        'name' => 'Aspire - Dynamo - E-Zigarette',
         'commonName' => 'Dynamo',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -20297,7 +20418,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'AS100NC' => array(
         'icNumber' => 'AS100NC',
         'number' => 'AS100NC',
-        'name' => 'Aspire - Nepho - Clearomizer (Set)',
+        'name' => 'Aspire - Nepho - Verdampfer',
         'commonName' => 'Nepho',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -20516,7 +20637,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'UW100HC' => array(
         'icNumber' => 'UW100HC',
         'number' => 'UW100HC',
-        'name' => 'Uwell - Hypercar - E-Zigarette (Set)',
+        'name' => 'Uwell - Hypercar - E-Zigarette',
         'commonName' => 'Hypercar',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Uwell',
@@ -20617,7 +20738,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'UW100WC' => array(
         'icNumber' => 'UW100WC',
         'number' => 'UW100WC',
-        'name' => 'Uwell - Whirl - Clearomizer (Set)',
+        'name' => 'Uwell - Whirl - Verdampfer',
         'commonName' => 'Whirl',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Uwell',
@@ -20745,7 +20866,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'IC100SK' => array(
         'icNumber' => 'IC100SK',
         'number' => 'IC100SK',
-        'name' => 'Joyetech - Espion Silk - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Espion Silk - E-Zigarette - by InnoCigs',
         'commonName' => 'Espion Silk',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -20843,7 +20964,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'IC100NC' => array(
         'icNumber' => 'IC100NC',
         'number' => 'IC100NC',
-        'name' => 'Joyetech - Notchcore - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - Notchcore - Verdampfer - by InnoCigs',
         'commonName' => 'Notchcore',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -20967,7 +21088,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'IC100RC' => array(
         'icNumber' => 'IC100RC',
         'number' => 'IC100RC',
-        'name' => 'Joyetech - Riftcore Duo - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - Riftcore Duo - Verdampfer - by InnoCigs',
         'commonName' => 'Riftcore Duo',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -20981,7 +21102,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'IC100RFC' => array(
         'icNumber' => 'IC100RFC',
@@ -21035,7 +21156,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
     'RV100Z' => array(
         'icNumber' => 'RV100Z',
         'number' => 'RV100Z',
-        'name' => 'Vaporesso - Zero - E-Zigarette (Set)',
+        'name' => 'Vaporesso - Zero - E-Zigarette',
         'commonName' => 'Zero',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -21262,7 +21383,7 @@ strong>Lieferumfang</strong>
     'IC100EIAS' => array(
         'icNumber' => 'IC100EIAS',
         'number' => 'IC100EIAS',
-        'name' => 'Joyetech - Espion Infinite AI - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Espion Infinite AI - E-Zigarette - by InnoCigs',
         'commonName' => 'Espion Infinite AI',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -21358,7 +21479,7 @@ strong>Lieferumfang</strong>
     'AS100COC' => array(
         'icNumber' => 'AS100COC',
         'number' => 'AS100COC',
-        'name' => 'Aspire - Cleito 120 Pro - Clearomizer (Set)',
+        'name' => 'Aspire - Cleito 120 Pro - Verdampfer',
         'commonName' => 'Cleito 120 Pro',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -21372,7 +21493,7 @@ strong>Lieferumfang</strong>
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'AS100COH' => array(
         'icNumber' => 'AS100COH',
@@ -21587,7 +21708,7 @@ strong>Lieferumfang</strong>
     'SC100JE' => array(
         'icNumber' => 'SC100JE',
         'number' => 'SC100JE',
-        'name' => 'eLeaf - iJust ECM - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iJust ECM - E-Zigarette - by SC',
         'commonName' => 'iJust ECM',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -21835,7 +21956,7 @@ strong>Lieferumfang</strong>
     'SM100M2' => array(
         'icNumber' => 'SM100M2',
         'number' => 'SM100M2',
-        'name' => 'Wismec - Motiv 2 - E-Zigarette (Set) - by Steamax',
+        'name' => 'Wismec - Motiv 2 - E-Zigarette - by Steamax',
         'commonName' => 'Motiv 2',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -21950,7 +22071,7 @@ strong>Lieferumfang</strong>
     'VS100CC' => array(
         'icNumber' => 'VS100CC',
         'number' => 'VS100CC',
-        'name' => 'Vaporesso - Cascade - Clearomizer (Set)',
+        'name' => 'Vaporesso - Cascade - Verdampfer',
         'commonName' => 'Cascade',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vaporesso',
@@ -22059,7 +22180,7 @@ strong>Lieferumfang</strong>
     'VS100OS' => array(
         'icNumber' => 'VS100OS',
         'number' => 'VS100OS',
-        'name' => 'Vaporesso - Orca Solo - E-Zigarette (Set)',
+        'name' => 'Vaporesso - Orca Solo - E-Zigarette',
         'commonName' => 'Orca Solo',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -22412,7 +22533,7 @@ strong>Lieferumfang</strong>
     'SK100V8XB' => array(
         'icNumber' => 'SK100V8XB',
         'number' => 'SK100V8XB',
-        'name' => 'SMOK - TFV8 X-Baby - Clearomizer (Set)',
+        'name' => 'SMOK - TFV8 X-Baby - Verdampfer',
         'commonName' => 'TFV8 X-Baby',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Smoktech',
@@ -22559,7 +22680,7 @@ strong>Lieferumfang</strong>
     'SK100PR' => array(
         'icNumber' => 'SK100PR',
         'number' => 'SK100PR',
-        'name' => 'SMOK - TFV12 Prince - Clearomizer (Set)',
+        'name' => 'SMOK - TFV12 Prince - Verdampfer',
         'commonName' => 'TFV12 Prince',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Smoktech',
@@ -22573,7 +22694,7 @@ strong>Lieferumfang</strong>
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SK100PRG' => array(
         'icNumber' => 'SK100PRG',
@@ -22816,7 +22937,7 @@ strong>Lieferumfang</strong>
     'SK100PB' => array(
         'icNumber' => 'SK100PB',
         'number' => 'SK100PB',
-        'name' => 'SMOK - TFV12 Baby Prince - Clearomizer (Set)',
+        'name' => 'SMOK - TFV12 Baby Prince - Verdampfer',
         'commonName' => 'TFV12 Baby Prince',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Smoktech',
@@ -22830,7 +22951,7 @@ strong>Lieferumfang</strong>
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'ZQ10018' => array(
         'icNumber' => 'ZQ10018',
@@ -23052,7 +23173,7 @@ strong>Lieferumfang</strong>
     'UW100CR4C' => array(
         'icNumber' => 'UW100CR4C',
         'number' => 'UW100CR4C',
-        'name' => 'Uwell - Crown 4 - Clearomizer (Set)',
+        'name' => 'Uwell - Crown 4 - Verdampfer',
         'commonName' => 'Crown 4',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Uwell',
@@ -23264,7 +23385,7 @@ strong>Lieferumfang</strong>
     'VS100TB' => array(
         'icNumber' => 'VS100TB',
         'number' => 'VS100TB',
-        'name' => 'Vaporesso - Tarot Baby - E-Zigarette (Set)',
+        'name' => 'Vaporesso - Tarot Baby - E-Zigarette',
         'commonName' => 'Tarot Baby',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -23438,7 +23559,7 @@ strong>Lieferumfang</strong>
     'GV100N' => array(
         'icNumber' => 'GV100N',
         'number' => 'GV100N',
-        'name' => 'GeekVape - Nova - E-Zigarette (Set)',
+        'name' => 'GeekVape - Nova - E-Zigarette',
         'commonName' => 'Nova',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > GeekVape',
@@ -23543,7 +23664,7 @@ strong>Lieferumfang</strong>
     'GV100C' => array(
         'icNumber' => 'GV100C',
         'number' => 'GV100C',
-        'name' => 'GeekVape - Cerberus - Clearomizer (Set)',
+        'name' => 'GeekVape - Cerberus - Verdampfer',
         'commonName' => 'Cerberus',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > GeekVape',
@@ -23670,7 +23791,7 @@ strong>Lieferumfang</strong>
     'AS100N2S' => array(
         'icNumber' => 'AS100N2S',
         'number' => 'AS100N2S',
-        'name' => 'Aspire - Nautilus 2S - Clearomizer (Set)',
+        'name' => 'Aspire - Nautilus 2S - Verdampfer',
         'commonName' => 'Nautilus 2S',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -23684,7 +23805,7 @@ strong>Lieferumfang</strong>
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p>Der Aspire Nautilus 2S ist das Nachfolgemodell des geschmacklich überragenden Aspire Nautilus 2, der seinerseits dem Aspire Nautilus folgte, der viele Jahre unbestritten als einer der besten Verdampfer für&nbsp;den Mouth-To-Lung-Stil (MTL) galt. Bei diesem Stil zieht man wie bei einer Zigarette den Dampf zunächst in den Mund, setzt die E-Zigarette ab, und inhaliert dann den Dampf aus dem Mund in die Lunge.</p>
+        'description' => '<p>Der Aspire Nautilus 2S ist das Nachfolgemodell des geschmacklich überragenden Aspire Nautilus 2, der seinerseits dem Aspire Nautilus folgte, der viele Jahre unbestritten als einer der besten Verdampfer für&nbsp;den Mouth-To-Lung-Stil (MTL) galt. Bei diesem Stil zieht man wie bei einer Zigarette den Dampf zunächst in den Mund, setzt die E-Zigarette ab, und inhaliert dann den Dampf aus dem Mund in die Lunge. Der Aspire Nautilus 2S besitzt einen Glastank, ist also ein Clearomizer.</p>
 <p>Wesentliche Änderungen und Verbesserungen des Nautilus 2S betreffen das Befüllungssystem und das Belüftungssystem, das - zusammen mit neuen 0,4 Ohm Verdampferkopf - nun auch das Dampfen im Direct Lung-Stil (DL) ermöglicht. Dabei wird der Dampf direkt - ohne Zwischenstopp im Mund - aus dem Verdampfer in die Lunge inhaliert.</p>
 <p>Die für das neue Befüllungssystems nötigen Konstruktionsänderungen erforderten eine&nbsp; Überarbeitung des Designs. Es bleibt aber beim gefälligen Vintage-Look. Die charakteristische Kuppelwölbung des Aspire Nautilus&nbsp; 2 bleibt als Wiedererkennungsmerkmal erhalten. Das Dach der Kuppel ist flacher gestaltet als beim Nautilus 2. Die Kuppel muss nur dann vollständig abgeschraubt werden, wenn der Verdampferkopf gewechselt werden soll. Wie beim Nautilus 2 ist das Glas des Tanks durch zwei breite Öffnungen in der Kuppel sichtbar, so dass man den Füllstand des Verdampfers erkennen kann.</p>
 <p>Die Befüllung des Nautilus 2S wurde wesentlich verbessert und vereinfacht. Um Liquid nachzufüllen, wird die Verschraubung des Deckels der Metallkuppel, der das Mundstück trägt, gelöst. Anschließend kann der Deckel zur Seite geschoben werden und eine Einfüllöffnung wird sichtbar. Diese ist ausreichend groß, um aus üblichen Liquidflachen den Tank bequem befüllen zu können. Anschließend den Deckel zurückschieben und wieder festschrauben. Im verschraubten Zustand ist es nicht möglich, den Deckel zu verschieben. Es ist also ausgeschlossen, dass sich der Tankdeckel versehentlich in der Hosentasche öffnet.</p>
@@ -23699,6 +23820,10 @@ strong>Lieferumfang</strong>
 <p><strong>Eigenschaften Nautilus 2S Verdampfer</strong></p>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
+<tr>
+<td>Typ</td>
+<td>Clearomizer</td>
+</tr>
 <tr>
 <td>Tankvolumen</td>
 <td>2,6 ml</td>
@@ -23740,13 +23865,13 @@ strong>Lieferumfang</strong>
 <div class="pcharacteristics_delivery ">
 <div class="pdelivery">
 <ul>
-<li>1 x Nautilus 2S Clearomizer</li>
-<li>1 x BVC Verdampferkopf 0,4 Ohm</li>
-<li>1 x BVC Verdampferkopf 1,8 Ohm</li>
-<li>1 x Ersatz-Glastank</li>
-<li>2 x Mundstück</li>
-<li>9 x Dichtungsring</li>
-<li>1 x Bedienungsanleitung&nbsp;</li>
+<li>1 Nautilus 2S Clearomizer</li>
+<li>1 BVC Verdampferkopf 0,4 Ohm</li>
+<li>1 BVC Verdampferkopf 1,8 Ohm</li>
+<li>1 Ersatz-Glastank</li>
+<li>2 Mundstücke</li>
+<li>9 Dichtungsringe</li>
+<li>1 Bedienungsanleitung&nbsp;</li>
 </ul>
 </div>
 </div>
@@ -24062,7 +24187,7 @@ strong>Lieferumfang</strong>
     'VS100RX' => array(
         'icNumber' => 'VS100RX',
         'number' => 'VS100RX',
-        'name' => 'Vaporesso - Revenger X - E-Zigarette (Set)',
+        'name' => 'Vaporesso - Revenger X - E-Zigarette',
         'commonName' => 'Revenger X',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -24082,7 +24207,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'UW100FC' => array(
         'icNumber' => 'UW100FC',
         'number' => 'UW100FC',
-        'name' => 'Uwell - Fancier RTA - Clearomizer (Set)',
+        'name' => 'Uwell - Fancier RTA - Verdampfer',
         'commonName' => 'Fancier RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > Uwell',
@@ -24122,7 +24247,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'UW100NR' => array(
         'icNumber' => 'UW100NR',
         'number' => 'UW100NR',
-        'name' => 'Uwell - Nunchaku RDA - E-Zigarette (Set)',
+        'name' => 'Uwell - Nunchaku RDA - E-Zigarette',
         'commonName' => 'Nunchaku RDA',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Uwell',
@@ -24175,7 +24300,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'WT100WA' => array(
         'icNumber' => 'WT100WA',
         'number' => 'WT100WA',
-        'name' => 'Wotofo - Warrior RDA - Clearomizer (Set)',
+        'name' => 'Wotofo - Warrior RDA - Verdampfer',
         'commonName' => 'Warrior RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Wotofo',
@@ -24378,7 +24503,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'VS100CBS' => array(
         'icNumber' => 'VS100CBS',
         'number' => 'VS100CBS',
-        'name' => 'Vaporesso - Cascade Baby SE - Clearomizer (Set)',
+        'name' => 'Vaporesso - Cascade Baby SE - Verdampfer',
         'commonName' => 'Cascade Baby SE',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vaporesso',
@@ -24450,25 +24575,6 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
 </ul>
 <br>
 <br>',
-    ),
-    'VS100CH' => array(
-        'icNumber' => 'VS100CH',
-        'number' => 'VS100CH',
-        'name' => 'Vaporesso - OC Head - 1,3 Ohm (5 Stück pro Packung)',
-        'commonName' => 'OC',
-        'type' => 'HEAD',
-        'category' => 'ZUBEHÖR > Verdampferköpfe > Vaporesso',
-        'supplier' => 'Vaporesso',
-        'brand' => 'Vaporesso',
-        'piecesPerPack' => 5,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => null,
     ),
     'SK100BQ' => array(
         'icNumber' => 'SK100BQ',
@@ -24604,7 +24710,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'AS100TGS' => array(
         'icNumber' => 'AS100TGS',
         'number' => 'AS100TGS',
-        'name' => 'Aspire - Tigon - E-Zigarette (Set)',
+        'name' => 'Aspire - Tigon - E-Zigarette',
         'commonName' => 'Tigon',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Aspire',
@@ -24660,7 +24766,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'AS100TGC' => array(
         'icNumber' => 'AS100TGC',
         'number' => 'AS100TGC',
-        'name' => 'Aspire - Tigon - Clearomizer (Set)',
+        'name' => 'Aspire - Tigon - Verdampfer',
         'commonName' => 'Tigon',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -24737,7 +24843,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'A100C4' => array(
         'icNumber' => 'A100C4',
         'number' => 'A100C4',
-        'name' => 'asMODus - C4 RDA - Clearomizer (Set)',
+        'name' => 'asMODus - C4 RDA - Verdampfer',
         'commonName' => 'C4 RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > asMODus',
@@ -24780,7 +24886,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'A100NF' => array(
         'icNumber' => 'A100NF',
         'number' => 'A100NF',
-        'name' => 'asMODus - Nefarius RDTA - Clearomizer (Set)',
+        'name' => 'asMODus - Nefarius RDTA - Verdampfer',
         'commonName' => 'Nefarius RDTA',
         'type' => 'CLEAROMIZER_RDTA',
         'category' => 'VERDAMPFER > Selbstwickler > asMODus',
@@ -24900,7 +25006,7 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
     'GV100CD' => array(
         'icNumber' => 'GV100CD',
         'number' => 'GV100CD',
-        'name' => 'GeekVape - Creed RTA - Clearomizer (Set)',
+        'name' => 'GeekVape - Creed RTA - Verdampfer',
         'commonName' => 'Creed RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -24947,7 +25053,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100ZD' => array(
         'icNumber' => 'GV100ZD',
         'number' => 'GV100ZD',
-        'name' => 'GeekVape - Zeus Dual RTA - Clearomizer (Set)',
+        'name' => 'GeekVape - Zeus Dual RTA - Verdampfer',
         'commonName' => 'Zeus Dual RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -24993,7 +25099,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100LP' => array(
         'icNumber' => 'GV100LP',
         'number' => 'GV100LP',
-        'name' => 'GeekVape - Loop RDA - Clearomizer (Set)',
+        'name' => 'GeekVape - Loop RDA - Verdampfer',
         'commonName' => 'Loop RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -25961,10 +26067,10 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'AS100Z2' => array(
         'icNumber' => 'AS100Z2',
         'number' => 'AS100Z2',
-        'name' => 'Aspire - Zelos 2.0 - E-Zigarette (Set)',
+        'name' => 'Aspire - Zelos 2.0 - E-Zigarette',
         'commonName' => 'Zelos 2.0',
         'type' => 'E_CIGARETTE',
-        'category' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg#!#E-ZIGARETTEN > Aspire',
+        'category' => 'E-ZIGARETTEN > Aspire',
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
@@ -25972,7 +26078,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg',
+        'addlCategory' => '',
         'dosage' => '',
         'base' => null,
         'description' => '<p>Die Aspire Zelos 2.0 E-Zigarette besteht aus dem Aspire Zelos Akku und dem Aspire Nautilus 2S Verdampfer. Speziell in dieser Kombination ergibt sich aus dem klaren, schlanken Design das sehr schöne und gefällige Gesamtbild. Die Aspire Zelos 2.0 ist gut verarbeitet und ein echter Handschmeichler.</p>
@@ -26135,7 +26241,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'WM100LM' => array(
         'icNumber' => 'WM100LM',
         'number' => 'WM100LM',
-        'name' => 'Wismec - Luxotic MF Box - E-Zigarette (Set)',
+        'name' => 'Wismec - Luxotic MF Box - E-Zigarette',
         'commonName' => 'Luxotic MF Box',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -26466,7 +26572,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'IC100EAM' => array(
         'icNumber' => 'IC100EAM',
         'number' => 'IC100EAM',
-        'name' => 'Joyetech - eGo AIO Mansion - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - eGo AIO Mansion - E-Zigarette - by InnoCigs',
         'commonName' => 'eGo AIO Mansion',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -26604,7 +26710,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'IC100PCR' => array(
         'icNumber' => 'IC100PCR',
         'number' => 'IC100PCR',
-        'name' => 'Joyetech - ProCore Remix - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - ProCore Remix - Verdampfer - by InnoCigs',
         'commonName' => 'ProCore Remix',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -26707,7 +26813,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'SC100IA' => array(
         'icNumber' => 'SC100IA',
         'number' => 'SC100IA',
-        'name' => 'eLeaf - iStick Amnis - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Amnis - E-Zigarette - by SC',
         'commonName' => 'iStick Amnis',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -26824,7 +26930,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'SC100GDC' => array(
         'icNumber' => 'SC100GDC',
         'number' => 'SC100GDC',
-        'name' => 'eLeaf - GS Drive - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Drive - Verdampfer - by SC',
         'commonName' => 'GS Drive',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -27209,7 +27315,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'VS100SK' => array(
         'icNumber' => 'VS100SK',
         'number' => 'VS100SK',
-        'name' => 'Vaporesso - SKRR - Clearomizer (Set)',
+        'name' => 'Vaporesso - SKRR - Verdampfer',
         'commonName' => 'SKRR',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vaporesso',
@@ -27441,7 +27547,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'VS100LN' => array(
         'icNumber' => 'VS100LN',
         'number' => 'VS100LN',
-        'name' => 'Vaporesso - Luxe - Nano E-Zigarette (Set)',
+        'name' => 'Vaporesso - Luxe - Nano E-Zigarette',
         'commonName' => 'Luxe',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -27540,7 +27646,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'VS100SM' => array(
         'icNumber' => 'VS100SM',
         'number' => 'VS100SM',
-        'name' => 'Vaporesso - SKRR-S Mini - Clearomizer (Set)',
+        'name' => 'Vaporesso - SKRR-S Mini - Verdampfer',
         'commonName' => 'SKRR-S Mini',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vaporesso',
@@ -27598,7 +27704,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'SC100NW' => array(
         'icNumber' => 'SC100NW',
         'number' => 'SC100NW',
-        'name' => 'eLeaf - iStick Nowos - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Nowos - E-Zigarette - by SC',
         'commonName' => 'iStick Nowos',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -27725,7 +27831,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'SK100SC' => array(
         'icNumber' => 'SK100SC',
         'number' => 'SK100SC',
-        'name' => 'SMOK - Species - E-Zigarette (Set)',
+        'name' => 'SMOK - Species - E-Zigarette',
         'commonName' => 'Species',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
@@ -27799,7 +27905,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'SK100V8C' => array(
         'icNumber' => 'SK100V8C',
         'number' => 'SK100V8C',
-        'name' => 'SMOK - TFV8 Baby - V2 Clearomizer (Set)',
+        'name' => 'SMOK - TFV8 Baby - V2 Verdampfer',
         'commonName' => 'TFV8 Baby',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Smoktech',
@@ -27995,7 +28101,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100AT' => array(
         'icNumber' => 'GV100AT',
         'number' => 'GV100AT',
-        'name' => 'GeekVape - Ammit 25 RTA - Clearomizer (Set)',
+        'name' => 'GeekVape - Ammit 25 RTA - Verdampfer',
         'commonName' => 'Ammit 25 RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -28077,7 +28183,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'Z100VI' => array(
         'icNumber' => 'Z100VI',
         'number' => 'Z100VI',
-        'name' => 'ZQ - Vi - E-Zigarette (Set)',
+        'name' => 'ZQ - Vi - E-Zigarette',
         'commonName' => 'Vi',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > ZQ',
@@ -28264,7 +28370,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100LV' => array(
         'icNumber' => 'GV100LV',
         'number' => 'GV100LV',
-        'name' => 'GeekVape - Loop V1.5 RDA - Clearomizer (Set)',
+        'name' => 'GeekVape - Loop V1.5 RDA - Verdampfer',
         'commonName' => 'Loop V1.5 RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -28336,7 +28442,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'DF100DS' => array(
         'icNumber' => 'DF100DS',
         'number' => 'DF100DS',
-        'name' => 'Digiflavor - Drop Solo RDA - Clearomizer (Set)',
+        'name' => 'Digiflavor - Drop Solo RDA - Verdampfer',
         'commonName' => 'Drop Solo RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Digiflavor',
@@ -28385,7 +28491,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'YH100MM' => array(
         'icNumber' => 'YH100MM',
         'number' => 'YH100MM',
-        'name' => 'Yihi - SX Mini Mi Class - E-Zigarette (Set)',
+        'name' => 'Yihi - SX Mini Mi Class - E-Zigarette',
         'commonName' => 'SX Mini Mi Class',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Yihi',
@@ -28450,7 +28556,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'IC100UT' => array(
         'icNumber' => 'IC100UT',
         'number' => 'IC100UT',
-        'name' => 'Joyetech - Ultex T80 - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Ultex T80 - E-Zigarette - by InnoCigs',
         'commonName' => 'Ultex T80',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -28555,7 +28661,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'IC100CC' => array(
         'icNumber' => 'IC100CC',
         'number' => 'IC100CC',
-        'name' => 'Joyetech - Cubis Max - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - Cubis Max - Verdampfer - by InnoCigs',
         'commonName' => 'Cubis Max',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -28880,7 +28986,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'SM100SS' => array(
         'icNumber' => 'SM100SS',
         'number' => 'SM100SS',
-        'name' => 'Wismec - Sinuous Solo - E-Zigarette (Set) - by Steamax',
+        'name' => 'Wismec - Sinuous Solo - E-Zigarette - by Steamax',
         'commonName' => 'Sinuous Solo',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -29367,7 +29473,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'VS100NS' => array(
         'icNumber' => 'VS100NS',
         'number' => 'VS100NS',
-        'name' => 'Vaporesso - NRG - SE Clearomizer (Set)',
+        'name' => 'Vaporesso - NRG - SE Verdampfer',
         'commonName' => 'NRG',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vaporesso',
@@ -29951,25 +30057,6 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'base' => null,
         'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Eistee, Beeren, Guave, Koolada. Die 20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Eistee, Beeren, Guave, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
-    'VH100A10-PW' => array(
-        'icNumber' => 'VH100A10-PW',
-        'number' => 'VH100A10-PW',
-        'name' => 'VapeHansa - Woodruffin’ Milk - ClouDrippin’ Psychedelic Edition - Aroma - 20 ml',
-        'commonName' => 'Woodruffin’ Milk',
-        'type' => 'AROMA',
-        'category' => 'AROMEN > Nüsse#!#AROMEN > Pflanzen#!#AROMEN > Milch & Co.#!#AROMEN > VapeHansa',
-        'supplier' => 'VapeHansa',
-        'brand' => 'VapeHansa',
-        'piecesPerPack' => 1,
-        'content' => '20',
-        'capacity' => '120',
-        'flavor' => 'Pistazie, Waldmeister, Milch',
-        'flavorCategory' => 'Nüsse, Pflanzen, Milch & Co.',
-        'addlCategory' => null,
-        'dosage' => '17',
-        'base' => null,
-        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Pistazie, Waldmeister, Milch. Die 20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pistazie, Waldmeister, Milch</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
-    ),
     'VH100A10-PT' => array(
         'icNumber' => 'VH100A10-PT',
         'number' => 'VH100A10-PT',
@@ -30030,7 +30117,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'IC100RS' => array(
         'icNumber' => 'IC100RS',
         'number' => 'IC100RS',
-        'name' => 'Joyetech - Riftcore Solo - Clearomizer (Set) - by InnoCigs',
+        'name' => 'Joyetech - Riftcore Solo - Verdampfer - by InnoCigs',
         'commonName' => 'Riftcore Solo',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Joyetech',
@@ -30072,7 +30159,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'DF100S2' => array(
         'icNumber' => 'DF100S2',
         'number' => 'DF100S2',
-        'name' => 'Digiflavor - Siren 2 RTA - Clearomizer (Set)',
+        'name' => 'Digiflavor - Siren 2 RTA - Verdampfer',
         'commonName' => 'Siren 2 RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > Digiflavor',
@@ -30171,7 +30258,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'GV100BR' => array(
         'icNumber' => 'GV100BR',
         'number' => 'GV100BR',
-        'name' => 'GeekVape - Blitzen RTA - Clearomizer (Set)',
+        'name' => 'GeekVape - Blitzen RTA - Verdampfer',
         'commonName' => 'Blitzen RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -30258,7 +30345,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'GV100AI' => array(
         'icNumber' => 'GV100AI',
         'number' => 'GV100AI',
-        'name' => 'GeekVape - Aegis Mini - E-Zigarette (Set)',
+        'name' => 'GeekVape - Aegis Mini - E-Zigarette',
         'commonName' => 'Aegis Mini',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > GeekVape',
@@ -30358,7 +30445,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'GV100ATR' => array(
         'icNumber' => 'GV100ATR',
         'number' => 'GV100ATR',
-        'name' => 'GeekVape - Ammit MTL RTA - Clearomizer (Set)',
+        'name' => 'GeekVape - Ammit MTL RTA - Verdampfer',
         'commonName' => 'Ammit MTL RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -30417,25 +30504,6 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'base' => null,
         'description' => '<p>Shake & Vape Liquid. Geschmack: Apfelsaft, Traube. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelsaft, Traube</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
-    'RD100L10-GI' => array(
-        'icNumber' => 'RD100L10-GI',
-        'number' => 'RD100L10-GI',
-        'name' => 'Red\'s Apple Juice - Grape Ice - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Grape Ice',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Trauben#!#SHAKE & VAPE > Frisches & Eiscreme#!#SHAKE & VAPE > red\'s Apple Juice',
-        'supplier' => 'red\'s Apple Juice',
-        'brand' => 'red\'s Apple Juice',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Apfelsaft, Traube, Koolada',
-        'flavorCategory' => 'Getränke, Trauben, Frisches & Eiscreme',
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p>Shake & Vape Liquid. Geschmack: Apfelsaft, Traube, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelsaft, Traube, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
     'RD100L10-AJ' => array(
         'icNumber' => 'RD100L10-AJ',
         'number' => 'RD100L10-AJ',
@@ -30455,44 +30523,6 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'base' => null,
         'description' => '<p>Shake & Vape Liquid. Geschmack: Apfelsaft. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelsaft</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
-    'RD100L10-IC' => array(
-        'icNumber' => 'RD100L10-IC',
-        'number' => 'RD100L10-IC',
-        'name' => 'Red\'s Apple Juice - Apple Juice Ice - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Apple Juice Ice',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Frisches & Eiscreme#!#SHAKE & VAPE > red\'s Apple Juice',
-        'supplier' => 'red\'s Apple Juice',
-        'brand' => 'red\'s Apple Juice',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Apfelsaft, Koolada',
-        'flavorCategory' => 'Getränke, Frisches & Eiscreme',
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p>Shake & Vape Liquid. Geschmack: Apfelsaft, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelsaft, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
-    'RD100L10-WM' => array(
-        'icNumber' => 'RD100L10-WM',
-        'number' => 'RD100L10-WM',
-        'name' => 'Red\'s Apple Juice - Watermelon - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Watermelon',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Melonen#!#SHAKE & VAPE > red\'s Apple Juice',
-        'supplier' => 'red\'s Apple Juice',
-        'brand' => 'red\'s Apple Juice',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Apfelsaft, Wassermelone',
-        'flavorCategory' => 'Getränke, Melonen',
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p>Shake & Vape Liquid. Geschmack: Apfelsaft, Wassermelone. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelsaft, Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
     'RD100L10-WI' => array(
         'icNumber' => 'RD100L10-WI',
         'number' => 'RD100L10-WI',
@@ -30511,25 +30541,6 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Shake & Vape Liquid. Geschmack: Apfelsaft, Wassermelone, Koolada. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelsaft, Wassermelone, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
-    ),
-    'RD100L10-BR' => array(
-        'icNumber' => 'RD100L10-BR',
-        'number' => 'RD100L10-BR',
-        'name' => 'Red\'s Apple Juice - Berries - Shake & Vape - 50 ml, 0 mg/ml',
-        'commonName' => 'Berries',
-        'type' => 'SHAKE_VAPE',
-        'category' => 'SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Beeren#!#SHAKE & VAPE > exotische Früchte#!#SHAKE & VAPE > red\'s Apple Juice',
-        'supplier' => 'red\'s Apple Juice',
-        'brand' => 'red\'s Apple Juice',
-        'piecesPerPack' => 1,
-        'content' => '50',
-        'capacity' => '60',
-        'flavor' => 'Apfelsaft, Blaubeere, Himbeere, Granatapfel',
-        'flavorCategory' => 'Getränke, Beeren, exotische Früchte',
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => '<p>Shake & Vape Liquid. Geschmack: Apfelsaft, Blaubeere, Himbeere, Granatapfel. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelsaft, Blaubeere, Himbeere, Granatapfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'RD100L10-BI' => array(
         'icNumber' => 'RD100L10-BI',
@@ -30612,8 +30623,8 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'SK100PC' => array(
         'icNumber' => 'SK100PC',
         'number' => 'SK100PC',
-        'name' => 'SMOK - TFV12 -P- Clearomizer (Set)',
-        'commonName' => 'TFV12 -P- Clearomizer (Set)',
+        'name' => 'SMOK - TFV12-P -Verdampfer',
+        'commonName' => 'TFV12-P -Verdampfer',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Smoktech',
         'supplier' => 'Smoktech',
@@ -31013,7 +31024,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'IC100ET' => array(
         'icNumber' => 'IC100ET',
         'number' => 'IC100ET',
-        'name' => 'Joyetech - Espion Tour - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Espion Tour - E-Zigarette - by InnoCigs',
         'commonName' => 'Espion Tour',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -31188,7 +31199,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'WM100LD' => array(
         'icNumber' => 'WM100LD',
         'number' => 'WM100LD',
-        'name' => 'Wismec - Luxotic DF Box - E-Zigarette (Set)',
+        'name' => 'Wismec - Luxotic DF Box - E-Zigarette',
         'commonName' => 'Luxotic DF Box',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -31330,7 +31341,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'DF100DR' => array(
         'icNumber' => 'DF100DR',
         'number' => 'DF100DR',
-        'name' => 'Digiflavor - Drop RDA - Clearomizer (Set)',
+        'name' => 'Digiflavor - Drop RDA - Verdampfer',
         'commonName' => 'Drop RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Digiflavor',
@@ -31408,7 +31419,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'IC100AM' => array(
         'icNumber' => 'IC100AM',
         'number' => 'IC100AM',
-        'name' => 'Joyetech - Atopack Magic - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Atopack Magic - E-Zigarette - by InnoCigs',
         'commonName' => 'Atopack Magic',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -31529,7 +31540,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'SK100MG' => array(
         'icNumber' => 'SK100MG',
         'number' => 'SK100MG',
-        'name' => 'SMOK - Mag Grip mit TFV8 Baby V2 - E-Zigarette (Set)',
+        'name' => 'SMOK - Mag Grip mit TFV8 Baby V2 - E-Zigarette',
         'commonName' => 'Mag Grip mit TFV8 Baby V2',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
@@ -31697,7 +31708,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'SK100RK' => array(
         'icNumber' => 'SK100RK',
         'number' => 'SK100RK',
-        'name' => 'SMOK - R-Kiss - E-Zigarette (Set)',
+        'name' => 'SMOK - R-Kiss - E-Zigarette',
         'commonName' => 'R-Kiss',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
@@ -31824,7 +31835,7 @@ Pro Packung sind fünf gleiche große Wattestücke enthalten. Diese müssen Sie 
     'GV100ADR' => array(
         'icNumber' => 'GV100ADR',
         'number' => 'GV100ADR',
-        'name' => 'GeekVape - Ammit Dual Coil RTA - Clearomizer (Set)',
+        'name' => 'GeekVape - Ammit Dual Coil RTA - Verdampfer',
         'commonName' => 'Ammit Dual Coil RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -31896,7 +31907,7 @@ Der Ammit Dual Coil RTA ist ein Verdampfer aus dem Hause GeekVape, der für das 
     'HE100HB' => array(
         'icNumber' => 'HE100HB',
         'number' => 'HE100HB',
-        'name' => 'HellVape - Hellbeast - Clearomizer (Set)',
+        'name' => 'HellVape - Hellbeast - Verdampfer',
         'commonName' => 'Hellbeast',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > HellVape',
@@ -31964,7 +31975,7 @@ Der Ammit Dual Coil RTA ist ein Verdampfer aus dem Hause GeekVape, der für das 
     'OS100CD' => array(
         'icNumber' => 'OS100CD',
         'number' => 'OS100CD',
-        'name' => 'OBS - Crius 2 RTA - Dual Clearomizer (Set)',
+        'name' => 'OBS - Crius 2 RTA - Dual Verdampfer',
         'commonName' => 'Crius 2 RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > OBS',
@@ -32004,7 +32015,7 @@ Der Ammit Dual Coil RTA ist ein Verdampfer aus dem Hause GeekVape, der für das 
     'HE100RB' => array(
         'icNumber' => 'HE100RB',
         'number' => 'HE100RB',
-        'name' => 'HellVape - Rebirth RDA - Clearomizer (Set)',
+        'name' => 'HellVape - Rebirth RDA - Verdampfer',
         'commonName' => 'Rebirth RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
@@ -32047,7 +32058,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'OS100EG' => array(
         'icNumber' => 'OS100EG',
         'number' => 'OS100EG',
-        'name' => 'OBS - Engine 2 RTA - Clearomizer (Set)',
+        'name' => 'OBS - Engine 2 RTA - Verdampfer',
         'commonName' => 'Engine 2 RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > OBS',
@@ -32133,7 +32144,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'ER100PT' => array(
         'icNumber' => 'ER100PT',
         'number' => 'ER100PT',
-        'name' => 'Ehpro - Panther RDA - Clearomizer (Set)',
+        'name' => 'Ehpro - Panther RDA - Verdampfer',
         'commonName' => 'Panther RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Ehpro',
@@ -32173,7 +32184,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'HE100DD' => array(
         'icNumber' => 'HE100DD',
         'number' => 'HE100DD',
-        'name' => 'HellVape - Drop Dead RDA - Clearomizer (Set)',
+        'name' => 'HellVape - Drop Dead RDA - Verdampfer',
         'commonName' => 'Drop Dead RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
@@ -32215,7 +32226,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'HE100DT' => array(
         'icNumber' => 'HE100DT',
         'number' => 'HE100DT',
-        'name' => 'HellVape - Dead Rabbit RTA - Clearomizer (Set)',
+        'name' => 'HellVape - Dead Rabbit RTA - Verdampfer',
         'commonName' => 'Dead Rabbit RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
@@ -32284,7 +32295,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'HE100DR' => array(
         'icNumber' => 'HE100DR',
         'number' => 'HE100DR',
-        'name' => 'HellVape - Dead Rabbit RDA - Clearomizer (Set)',
+        'name' => 'HellVape - Dead Rabbit RDA - Verdampfer',
         'commonName' => 'Dead Rabbit RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
@@ -32326,7 +32337,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'HE100DS' => array(
         'icNumber' => 'HE100DS',
         'number' => 'HE100DS',
-        'name' => 'HellVape - Dead Rabbit SQ RDA - Clearomizer (Set)',
+        'name' => 'HellVape - Dead Rabbit SQ RDA - Verdampfer',
         'commonName' => 'Dead Rabbit SQ RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
@@ -32457,7 +32468,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'SR100AP' => array(
         'icNumber' => 'SR100AP',
         'number' => 'SR100AP',
-        'name' => 'Steam Crave - Aromamizer Plus RDTA - RDTA Clearomizer (Set)',
+        'name' => 'Steam Crave - Aromamizer Plus RDTA - RDTA Verdampfer',
         'commonName' => 'Aromamizer Plus RDTA',
         'type' => 'CLEAROMIZER_RDTA',
         'category' => 'VERDAMPFER > Selbstwickler > Steam Crave',
@@ -32498,7 +32509,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'SR100AS' => array(
         'icNumber' => 'SR100AS',
         'number' => 'SR100AS',
-        'name' => 'Steam Crave - Aromamizer Supreme RDTA V2.1 - Clearomizer (Set)',
+        'name' => 'Steam Crave - Aromamizer Supreme RDTA V2.1 - Verdampfer',
         'commonName' => 'Aromamizer Supreme RDTA V2.1',
         'type' => 'CLEAROMIZER_RDTA',
         'category' => 'VERDAMPFER > Selbstwickler > Steam Crave',
@@ -32539,7 +32550,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'SR100AT' => array(
         'icNumber' => 'SR100AT',
         'number' => 'SR100AT',
-        'name' => 'Steam Crave - Aromamizer Titan RDTA - Clearomizer (Set)',
+        'name' => 'Steam Crave - Aromamizer Titan RDTA - Verdampfer',
         'commonName' => 'Aromamizer Titan RDTA',
         'type' => 'CLEAROMIZER_RDTA',
         'category' => 'VERDAMPFER > Selbstwickler > Steam Crave',
@@ -32584,7 +32595,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'SR100GL' => array(
         'icNumber' => 'SR100GL',
         'number' => 'SR100GL',
-        'name' => 'Steam Crave - Glaz RDSA - Clearomizer (Set)',
+        'name' => 'Steam Crave - Glaz RDSA - Verdampfer',
         'commonName' => 'Glaz RDSA',
         'type' => 'CLEAROMIZER_RDSA',
         'category' => 'VERDAMPFER > Selbstwickler > Steam Crave',
@@ -32668,7 +32679,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'SR100AL' => array(
         'icNumber' => 'SR100AL',
         'number' => 'SR100AL',
-        'name' => 'Steam Crave - Aromamizer Lite RTA - Clearomizer (Set)',
+        'name' => 'Steam Crave - Aromamizer Lite RTA - Verdampfer',
         'commonName' => 'Aromamizer Lite RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > Steam Crave',
@@ -32709,7 +32720,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'AK100TW' => array(
         'icNumber' => 'AK100TW',
         'number' => 'AK100TW',
-        'name' => 'Advken - Twirl RDA - Clearomizer (Set)',
+        'name' => 'Advken - Twirl RDA - Verdampfer',
         'commonName' => 'Twirl RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Advken',
@@ -33094,7 +33105,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'A100VD' => array(
         'icNumber' => 'A100VD',
         'number' => 'A100VD',
-        'name' => 'asMODus - X VapersMD Dawg RTA - Clearomizer (Set)',
+        'name' => 'asMODus - X VapersMD Dawg RTA - Verdampfer',
         'commonName' => 'X VapersMD Dawg RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > asMODus',
@@ -33136,7 +33147,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'A100BK' => array(
         'icNumber' => 'A100BK',
         'number' => 'A100BK',
-        'name' => 'asMODus - Bunker RDA - Clearomizer (Set)',
+        'name' => 'asMODus - Bunker RDA - Verdampfer',
         'commonName' => 'Bunker RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > asMODus',
@@ -33272,7 +33283,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'A100VV' => array(
         'icNumber' => 'A100VV',
         'number' => 'A100VV',
-        'name' => 'asMODus - X VapePorn Vice RDA - Clearomizer (Set)',
+        'name' => 'asMODus - X VapePorn Vice RDA - Verdampfer',
         'commonName' => 'X VapePorn Vice RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > asMODus',
@@ -33316,7 +33327,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'CA100MG' => array(
         'icNumber' => 'CA100MG',
         'number' => 'CA100MG',
-        'name' => 'CoilArt - Mage RTA V2 - Clearomizer (Set)',
+        'name' => 'CoilArt - Mage RTA V2 - Verdampfer',
         'commonName' => 'Mage RTA V2',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > CoilArt',
@@ -33641,7 +33652,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'SC100PX' => array(
         'icNumber' => 'SC100PX',
         'number' => 'SC100PX',
-        'name' => 'eLeaf - iStick Pico X - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iStick Pico X - E-Zigarette - by SC',
         'commonName' => 'iStick Pico X',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -33770,7 +33781,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'RA100D' => array(
         'icNumber' => 'RA100D',
         'number' => 'RA100D',
-        'name' => 'Revenant Vape - Delta - E-Zigarette (Set)',
+        'name' => 'Revenant Vape - Delta - E-Zigarette',
         'commonName' => 'Delta',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Revenant Vape',
@@ -33901,7 +33912,7 @@ Zudem können Sie den Clearomizer als Tröpfler oder auch als Squnk-Variante ben
     'VS100AP' => array(
         'icNumber' => 'VS100AP',
         'number' => 'VS100AP',
-        'name' => 'Vaporesso - Aurora Play - E-Zigarette (Set)',
+        'name' => 'Vaporesso - Aurora Play - E-Zigarette',
         'commonName' => 'Aurora Play',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -33978,7 +33989,7 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
     'SK100N' => array(
         'icNumber' => 'SK100N',
         'number' => 'SK100N',
-        'name' => 'SMOK - Nord - E-Zigarette (Set)',
+        'name' => 'SMOK - Nord - E-Zigarette',
         'commonName' => 'Nord',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
@@ -34168,7 +34179,7 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
     'UW100CB' => array(
         'icNumber' => 'UW100CB',
         'number' => 'UW100CB',
-        'name' => 'Uwell - Caliburn E-Zigarette (Set)',
+        'name' => 'Uwell - Caliburn E-Zigarette',
         'commonName' => 'Caliburn E-Zigarette (Set)',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Uwell',
@@ -34212,7 +34223,7 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
     'VS100SS' => array(
         'icNumber' => 'VS100SS',
         'number' => 'VS100SS',
-        'name' => 'Vaporesso - Sky Solo - E-Zigarette (Set)',
+        'name' => 'Vaporesso - Sky Solo - E-Zigarette',
         'commonName' => 'Sky Solo',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -34286,7 +34297,7 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
     'VS100SP' => array(
         'icNumber' => 'VS100SP',
         'number' => 'VS100SP',
-        'name' => 'Vaporesso - Sky Solo Plus - E-Zigarette (Set)',
+        'name' => 'Vaporesso - Sky Solo Plus - E-Zigarette',
         'commonName' => 'Sky Solo Plus',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -34370,7 +34381,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'HE100AR' => array(
         'icNumber' => 'HE100AR',
         'number' => 'HE100AR',
-        'name' => 'HellVape - Anglo RDA - Clearomizer (Set)',
+        'name' => 'HellVape - Anglo RDA - Verdampfer',
         'commonName' => 'Anglo RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
@@ -34498,7 +34509,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'GV100F' => array(
         'icNumber' => 'GV100F',
         'number' => 'GV100F',
-        'name' => 'GeekVape - Flint E-Zigarette (Set)',
+        'name' => 'GeekVape - Flint E-Zigarette',
         'commonName' => 'Flint E-Zigarette (Set)',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > GeekVape',
@@ -34588,7 +34599,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'HE100RT' => array(
         'icNumber' => 'HE100RT',
         'number' => 'HE100RT',
-        'name' => 'HellVape - Rebirth RTA - Clearomizer (Set)',
+        'name' => 'HellVape - Rebirth RTA - Verdampfer',
         'commonName' => 'Rebirth RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
@@ -34769,7 +34780,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'GV100ZX' => array(
         'icNumber' => 'GV100ZX',
         'number' => 'GV100ZX',
-        'name' => 'GeekVape - Zeus X RTA - Clearomizer (Set)',
+        'name' => 'GeekVape - Zeus X RTA - Verdampfer',
         'commonName' => 'Zeus X RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -34817,7 +34828,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SC100IJ' => array(
         'icNumber' => 'SC100IJ',
         'number' => 'SC100IJ',
-        'name' => 'eLeaf - iJust 21700 - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iJust 21700 - E-Zigarette - by SC',
         'commonName' => 'iJust 21700',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -34913,7 +34924,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'UW100B' => array(
         'icNumber' => 'UW100B',
         'number' => 'UW100B',
-        'name' => 'Uwell - Blocks - E-Zigarette (Set)',
+        'name' => 'Uwell - Blocks - E-Zigarette',
         'commonName' => 'Blocks',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Uwell',
@@ -35018,8 +35029,8 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'GV100BA' => array(
         'icNumber' => 'GV100BA',
         'number' => 'GV100BA',
-        'name' => 'GeekVape - Baron RDA Clearomizer (Set)',
-        'commonName' => 'Baron RDA Clearomizer (Set)',
+        'name' => 'GeekVape - Baron RDA - Verdampfer',
+        'commonName' => 'Baron RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
         'supplier' => 'GeekVape',
@@ -35063,7 +35074,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SM100V80' => array(
         'icNumber' => 'SM100V80',
         'number' => 'SM100V80',
-        'name' => 'Wismec - Sinuous V80 - mit Amor NSE - E-Zigarette (Set) - by Steamax',
+        'name' => 'Wismec - Sinuous V80 - mit Amor NSE - E-Zigarette - by Steamax',
         'commonName' => 'Sinuous V80',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -35172,7 +35183,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SM100AN' => array(
         'icNumber' => 'SM100AN',
         'number' => 'SM100AN',
-        'name' => 'Wismec - Amor NSE - Clearomizer (Set) - by Steamax',
+        'name' => 'Wismec - Amor NSE - Verdampfer - by Steamax',
         'commonName' => 'Amor NSE',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Wismec',
@@ -36688,7 +36699,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SM100TN' => array(
         'icNumber' => 'SM100TN',
         'number' => 'SM100TN',
-        'name' => 'Wismec - Reuleaux Tinker - E-Zigarette (Set) - by Steamax',
+        'name' => 'Wismec - Reuleaux Tinker - E-Zigarette - by Steamax',
         'commonName' => 'Reuleaux Tinker',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -36780,7 +36791,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SM100CL' => array(
         'icNumber' => 'SM100CL',
         'number' => 'SM100CL',
-        'name' => 'Wismec - Column - Clearomizer (Set) - by Steamax',
+        'name' => 'Wismec - Column - Verdampfer - by Steamax',
         'commonName' => 'Column',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Wismec',
@@ -36818,10 +36829,10 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SK100N19' => array(
         'icNumber' => 'SK100N19',
         'number' => 'SK100N19',
-        'name' => 'SMOK - Nord AIO 19 - E-Zigarette (Set)',
+        'name' => 'SMOK - Nord AIO 19 - E-Zigarette',
         'commonName' => 'Nord AIO 19',
         'type' => 'E_CIGARETTE',
-        'category' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg#!#E-ZIGARETTEN > Smoktech',
+        'category' => 'E-ZIGARETTEN > Smoktech',
         'supplier' => 'Smoktech',
         'brand' => 'Smok',
         'piecesPerPack' => 1,
@@ -36829,7 +36840,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg',
+        'addlCategory' => '',
         'dosage' => '',
         'base' => null,
         'description' => '<p>Die Nord AIO 19 E-Zigarette von SMOK ist ein schicker Stick und die kleine Schwester der SMOK Nord AIO 22. Clearomizer (also der Verdampfer) und Akku bilden eine gradlinige Einheit und der Stick liegt schön in der Hand. AIO steht für all-in-one. Gemeint ist, dass Sie außer einem E-Liquid alles bekommen, was Sie brauchen, um mit der E-Zigarette loszulegen.</p>
@@ -37054,7 +37065,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SK100V9' => array(
         'icNumber' => 'SK100V9',
         'number' => 'SK100V9',
-        'name' => 'SMOK - Stick - V9 E-Zigarette (Set)',
+        'name' => 'SMOK - Stick - V9 E-Zigarette',
         'commonName' => 'Stick',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
@@ -37114,10 +37125,10 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SK100N22' => array(
         'icNumber' => 'SK100N22',
         'number' => 'SK100N22',
-        'name' => 'SMOK - Nord AIO 22 - E-Zigarette (Set)',
+        'name' => 'SMOK - Nord AIO 22 - E-Zigarette',
         'commonName' => 'Nord AIO 22',
         'type' => 'E_CIGARETTE',
-        'category' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg#!#E-ZIGARETTEN > Smoktech',
+        'category' => 'E-ZIGARETTEN > Smoktech',
         'supplier' => 'Smoktech',
         'brand' => 'Smok',
         'piecesPerPack' => 1,
@@ -37125,7 +37136,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => 'EMPFEHLUNG > E-Zigaretten für den Einstieg',
+        'addlCategory' => '',
         'dosage' => '',
         'base' => null,
         'description' => '<p>Die Nord AIO 22 E-Zigarette von SMOK ist ein eleganter Stick aus Edelstahl. Clearomizer (also der Verdampfer) und Akku bilden eine gradlinige Einheit und der Stick liegt schön in der Hand. AIO steht für all-in-one. Gemeint ist, dass Sie außer einem E-Liquid alles bekommen, was Sie brauchen, um mit der E-Zigarette loszulegen.</p>
@@ -37314,7 +37325,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'AS100KP' => array(
         'icNumber' => 'AS100KP',
         'number' => 'AS100KP',
-        'name' => 'Aspire - K1 Plus - Clearomizer (Set)',
+        'name' => 'Aspire - K1 Plus - Verdampfer',
         'commonName' => 'K1 Plus',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Aspire',
@@ -37609,7 +37620,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'CA100L' => array(
         'icNumber' => 'CA100L',
         'number' => 'CA100L',
-        'name' => 'CoilArt - Lux - E-Zigarette (Set)',
+        'name' => 'CoilArt - Lux - E-Zigarette',
         'commonName' => 'Lux',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > CoilArt',
@@ -37623,10 +37634,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Lux 200 E-Zigaretten Set beinhaltet 1x Lux 200 Akkuträger, 1x Lux Mesh Verdampfer, 1x Lux M4 Quad Mesh Verdampferkopf, 1x Ersatz-Glastank und eine passende Bedienungsanleitung. Der Lux 200 kann bis zu 200 Watt Ausgangslesitung erreichen und unterstützt die Ausgabemodi: VW und TC (Ni/Ti/SS). Der Temperaturbereich liegt zwischen 95°C und 310°C und der Widerstandbereicht liegt zwischen 0,05 Ohm und 3,0 Ohm. Ihre Parameter stellen Sie über zwei Einstelltasten und eine Feuertaste ein. Über das OLED Display können Sie die getätigten Einstellungen jederzeit ablesen. Durch die EAGLE-Chip-Technologie kann Ihr Liquid in 0,005 Sekunden verdampft werden, sobald Sie die Feuertaste betätigen und gleichzeitig an dem Mundstück Ihr Liquid inhalieren. Der Lux Mesh Verdampfer fasst bis zu 5,5ml Liquid, das durch das Top-Filling System direkt in den Tank gegeben wird. An der Base befindet sich die Airflow-Control, die sie individuell regulieren können. Der Lux M4 Quad Mesh Verdampferkopf mit 0,15 Ohm ist für direkte Lungenzüge geeignet und kann zwischen 80 Watt und 150 Watt betrieben werden. Das Lux 200 E-Zigaretten Set wird über zwei 18650er Akkuzellen angetrieben, die im Lieferumfang <b>nicht</b> enthalten sind.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Das Lux 200 E-Zigaretten Set beinhaltet 1x Lux 200 Akkuträger, 1x Lux Mesh Verdampfer, 1x Lux M4 Quad Mesh Verdampferkopf, 1x Ersatz-Glastank und eine passende Bedienungsanleitung. Der Lux 200 kann bis zu 200 Watt Ausgangslesitung erreichen und unterstützt die Ausgabemodi: VW und TC (Ni/Ti/SS). Der Temperaturbereich liegt zwischen 95°C und 310°C und der Widerstandbereicht liegt zwischen 0,05 Ohm und 3,0 Ohm. Ihre Parameter stellen Sie über zwei Einstelltasten und eine Feuertaste ein. Über das OLED Display können Sie die getätigten Einstellungen jederzeit ablesen. Durch die EAGLE-Chip-Technologie kann Ihr Liquid in 0,005 Sekunden verdampft werden, sobald Sie die Feuertaste betätigen und gleichzeitig an dem Mundstück Ihr Liquid inhalieren. Der Lux Mesh Verdampfer fasst bis zu 5,5ml Liquid, das durch das Top-Filling System direkt in den Tank gegeben wird. An der Base befindet sich die Airflow-Control, die sie individuell regulieren können. Der Lux M4 Quad Mesh Verdampferkopf mit 0,15 Ohm ist für direkte Lungenzüge geeignet und kann zwischen 80 Watt und 150 Watt betrieben werden. Das Lux 200 E-Zigaretten Set wird über zwei 18650er Akkuzellen angetrieben, die im Lieferumfang <strong>nicht</strong> enthalten sind. <br> <br> <strong>Lieferumfang</strong></p>
 <ul>
 <li>1x Lux 200 Watt</li>
 <li>1x Lux Mesh Clearomizer</li>
@@ -37635,12 +37643,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>Lux 200 Watt</li>
+<p><br> <br> <strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong> <br> <br> <strong><strong>Lux 200 Watt</strong></strong></p>
 <ul>
 <li>Ausgabemodi: VW / TC (Ni/Ti/SS)</li>
 <li>Ausgangsleistung: 5 Watt bis 200 Watt</li>
@@ -37658,19 +37661,15 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 <li>Gewindetyp: 510</li>
 <li>Maße: 53mm x 25mm x 138mm</li>
 </ul>
-<br>
-<br>
-<strong>Lux Mesh Clearomizer</strong>
+<p><strong><strong><br> <br> <strong>Lux Mesh Clearomizer</strong></strong></strong></p>
 <ul>
 <li>Tankvolumen: 5,5ml</li>
-<li>Top-Filling-System</lI>
+<li>Top-Filling-System</li>
 <li>Bottom-Airflow-Control</li>
 <li>subohm-fähig</li>
 <li>Gewindetyp: 510</li>
 </ul>
-<br>
-<br>
-',
+<p><strong><br> <br> </strong></p>',
     ),
     'CA100LM' => array(
         'icNumber' => 'CA100LM',
@@ -37689,21 +37688,13 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Aus dem Hause CoilArt stammt der Lux 200 Watt Akkuträger, der seine Energie über zwei 18650er Akkuzellen erhält. Bitte achten Sie darauf, dass im Lieferumfang die 18650er Akkuzellen nicht enthalten sind. Der Akkuträger kann bis zu 200 Watt Ausgangsleistung erreichen und unterstützt folgende Ausgabemodi: VW & TC (Ni/Ti/SS). Im TC-Modus können Sie die Temperatur zwischen 95°C und 310°C einstellen. Dieses und auch weitere Parameter werden über zwei Einstelltasten und eine Feuertaste eingestellt. Über das OLED Display können Sie Ihre Einstellungen ablesen. Ein EAGLE-Chip ist im Akkuträger verbaut, der dafür sorgt, dass sich Ihr Liquid in 0,005 Sekunden in Dampf umwandelt, sobald Sie die Feuetraste betätigen und gleichzeitig an Ihrem Mundstück ziehen und den Dampf anschließend inhalieren. Ein USB-Kabel befindet sich im Lieferumfang, worüber Sie die Firmware bei bedarf updaten können.
-<br> 
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Aus dem Hause CoilArt stammt der Lux 200 Watt Akkuträger, der seine Energie über zwei 18650er Akkuzellen erhält. Bitte achten Sie darauf, dass im Lieferumfang die 18650er Akkuzellen nicht enthalten sind. Der Akkuträger kann bis zu 200 Watt Ausgangsleistung erreichen und unterstützt folgende Ausgabemodi: VW &amp; TC (Ni/Ti/SS). Im TC-Modus können Sie die Temperatur zwischen 95°C und 310°C einstellen. Dieses und auch weitere Parameter werden über zwei Einstelltasten und eine Feuertaste eingestellt. Über das OLED Display können Sie Ihre Einstellungen ablesen. Ein EAGLE-Chip ist im Akkuträger verbaut, der dafür sorgt, dass sich Ihr Liquid in 0,005 Sekunden in Dampf umwandelt, sobald Sie die Feuetraste betätigen und gleichzeitig an Ihrem Mundstück ziehen und den Dampf anschließend inhalieren. Ein USB-Kabel befindet sich im Lieferumfang, worüber Sie die Firmware bei bedarf updaten können. <br> <br> <strong>Lieferumfang</strong></p>
 <ul>
 <li>1x Lux 200 Watt</li>
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>Lux 200 Watt</li>
+<p><br> <br> <strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong> <br> <br> <strong><strong>Lux 200 Watt</strong></strong></p>
 <ul>
 <li>Ausgabemodi: VW / TC (Ni/Ti/SS)</li>
 <li>Ausgangsleistung: 5 Watt bis 200 Watt</li>
@@ -37721,13 +37712,12 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 <li>Gewindetyp: 510</li>
 <li>Maße: 53mm x 25mm x 138mm</li>
 </ul>
-<br>
-<br>',
+<p><strong><br> <br></strong></p>',
     ),
     'CA100LC' => array(
         'icNumber' => 'CA100LC',
         'number' => 'CA100LC',
-        'name' => 'CoilArt - Lux Mesh - Clearomizer (Set)',
+        'name' => 'CoilArt - Lux Mesh - Verdampfer',
         'commonName' => 'Lux Mesh',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > CoilArt',
@@ -37805,7 +37795,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SK100V9M' => array(
         'icNumber' => 'SK100V9M',
         'number' => 'SK100V9M',
-        'name' => 'SMOK - Stick - V9 Max E-Zigarette (Set)',
+        'name' => 'SMOK - Stick - V9 Max E-Zigarette',
         'commonName' => 'Stick',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
@@ -38553,7 +38543,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'UW100C4' => array(
         'icNumber' => 'UW100C4',
         'number' => 'UW100C4',
-        'name' => 'Uwell - Crown 4 - E-Zigarette (Set)',
+        'name' => 'Uwell - Crown 4 - E-Zigarette',
         'commonName' => 'Crown 4',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Uwell',
@@ -38614,7 +38604,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'OS100CB' => array(
         'icNumber' => 'OS100CB',
         'number' => 'OS100CB',
-        'name' => 'OBS - Cube - E-Zigarette (Set)',
+        'name' => 'OBS - Cube - E-Zigarette',
         'commonName' => 'Cube',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > OBS',
@@ -38954,7 +38944,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'VS100LS' => array(
         'icNumber' => 'VS100LS',
         'number' => 'VS100LS',
-        'name' => 'Vaporesso - Luxe S - E-Zigarette (Set)',
+        'name' => 'Vaporesso - Luxe S - E-Zigarette',
         'commonName' => 'Luxe S',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vaporesso',
@@ -39043,7 +39033,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'VS100SKS' => array(
         'icNumber' => 'VS100SKS',
         'number' => 'VS100SKS',
-        'name' => 'Vaporesso - SKRR - S Clearomizer (Set)',
+        'name' => 'Vaporesso - SKRR - S Verdampfer',
         'commonName' => 'SKRR',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vaporesso',
@@ -39261,7 +39251,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'CU100IM' => array(
         'icNumber' => 'CU100IM',
         'number' => 'CU100IM',
-        'name' => 'Cthulhu - Iris Mesh RDA - Clearomizer (Set)',
+        'name' => 'Cthulhu - Iris Mesh RDA - Verdampfer',
         'commonName' => 'Iris Mesh RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Cthulhu',
@@ -39305,7 +39295,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'CU100MR' => array(
         'icNumber' => 'CU100MR',
         'number' => 'CU100MR',
-        'name' => 'Cthulhu - 1928 MTL RDA - Clearomizer (Set)',
+        'name' => 'Cthulhu - 1928 MTL RDA - Verdampfer',
         'commonName' => '1928 MTL RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Cthulhu',
@@ -39347,8 +39337,8 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'CU100HMR' => array(
         'icNumber' => 'CU100HMR',
         'number' => 'CU100HMR',
-        'name' => 'Cthulhu - Hastur - MTL RTA - Mini Clearomizer (Set)',
-        'commonName' => 'Hastur',
+        'name' => 'Cthulhu - Hastur MTL RTA Mini - Verdampfer',
+        'commonName' => 'Hastur MTL RTA Mini',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > Cthulhu',
         'supplier' => 'Cthulhu',
@@ -39579,7 +39569,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'CU100ZT' => array(
         'icNumber' => 'CU100ZT',
         'number' => 'CU100ZT',
-        'name' => 'Cthulhu - Zathog RDA - Clearomizer (Set)',
+        'name' => 'Cthulhu - Zathog RDA - Verdampfer',
         'commonName' => 'Zathog RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Cthulhu',
@@ -39700,7 +39690,7 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
     'A100M3V' => array(
         'icNumber' => 'A100M3V',
         'number' => 'A100M3V',
-        'name' => 'asMODus - Minikin V3S mit Viento - E-Zigarette (Set)',
+        'name' => 'asMODus - Minikin V3S mit Viento - E-Zigarette',
         'commonName' => 'Minikin V3S mit Viento',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > asMODus',
@@ -39825,7 +39815,7 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
     'A100AV' => array(
         'icNumber' => 'A100AV',
         'number' => 'A100AV',
-        'name' => 'asMODus - Amighty mit Viento - E-Zigarette (Set)',
+        'name' => 'asMODus - Amighty mit Viento - E-Zigarette',
         'commonName' => 'Amighty mit Viento',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > asMODus',
@@ -39991,7 +39981,7 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
     'IC100EG' => array(
         'icNumber' => 'IC100EG',
         'number' => 'IC100EG',
-        'name' => 'Joyetech - Exceed Grip - E-Zigarette (Set) - by InnoCigs',
+        'name' => 'Joyetech - Exceed Grip - E-Zigarette - by InnoCigs',
         'commonName' => 'Exceed Grip',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Joyetech',
@@ -40131,7 +40121,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'SC100IL' => array(
         'icNumber' => 'SC100IL',
         'number' => 'SC100IL',
-        'name' => 'eLeaf - iKuu Lite - mit GS Air 3 - E-Zigarette (Set) - by SC',
+        'name' => 'eLeaf - iKuu Lite - mit GS Air 3 - E-Zigarette - by SC',
         'commonName' => 'iKuu Lite',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
@@ -40225,7 +40215,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'SC100GA3' => array(
         'icNumber' => 'SC100GA3',
         'number' => 'SC100GA3',
-        'name' => 'eLeaf - GS Air 3 - Clearomizer (Set) - by SC',
+        'name' => 'eLeaf - GS Air 3 - Verdampfer - by SC',
         'commonName' => 'GS Air 3',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > eLeaf',
@@ -40812,7 +40802,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'SM100V2' => array(
         'icNumber' => 'SM100V2',
         'number' => 'SM100V2',
-        'name' => 'Wismec - Sinuous V200 - mit Amor NSE - E-Zigarette (Set) - by Steamax',
+        'name' => 'Wismec - Sinuous V200 - mit Amor NSE - E-Zigarette - by Steamax',
         'commonName' => 'Sinuous V200',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
@@ -40924,7 +40914,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'AG100IT' => array(
         'icNumber' => 'AG100IT',
         'number' => 'AG100IT',
-        'name' => 'Augvape - Intake RTA - Clearomizer (Set)',
+        'name' => 'Augvape - Intake RTA - Verdampfer',
         'commonName' => 'Intake RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > Augvape',
@@ -40967,7 +40957,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'GV100TG' => array(
         'icNumber' => 'GV100TG',
         'number' => 'GV100TG',
-        'name' => 'GeekVape - Tengu RDA - Clearomizer (Set)',
+        'name' => 'GeekVape - Tengu RDA - Verdampfer',
         'commonName' => 'Tengu RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
@@ -41094,7 +41084,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'AG100TR' => array(
         'icNumber' => 'AG100TR',
         'number' => 'AG100TR',
-        'name' => 'Augvape - Templar RDA - Clearomizer (Set)',
+        'name' => 'Augvape - Templar RDA - Verdampfer',
         'commonName' => 'Templar RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Augvape',
@@ -41137,7 +41127,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'AK100MA' => array(
         'icNumber' => 'AK100MA',
         'number' => 'AK100MA',
-        'name' => 'Advken - Manta RTA - Clearomizer (Set)',
+        'name' => 'Advken - Manta RTA - Verdampfer',
         'commonName' => 'Manta RTA',
         'type' => 'CLEAROMIZER_RTA',
         'category' => 'VERDAMPFER > Selbstwickler > Advken',
@@ -41347,7 +41337,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'DD100CP' => array(
         'icNumber' => 'DD100CP',
         'number' => 'DD100CP',
-        'name' => 'Desire Design - Cut Premium - E-Zigarette (Set)',
+        'name' => 'Desire Design - Cut Premium - E-Zigarette',
         'commonName' => 'Cut Premium',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Desire Design',
@@ -41448,8 +41438,8 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'DD100BD' => array(
         'icNumber' => 'DD100BD',
         'number' => 'DD100BD',
-        'name' => 'Desire Design - Bulldog Clearomizer (Set)',
-        'commonName' => 'Bulldog Clearomizer (Set)',
+        'name' => 'Desire Design - Bulldog - Verdampfer',
+        'commonName' => 'Bulldog',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Desire Design',
         'supplier' => 'Desire Design',
@@ -41609,7 +41599,7 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'AK100WL' => array(
         'icNumber' => 'AK100WL',
         'number' => 'AK100WL',
-        'name' => 'Advken - Owl - Clearomizer (Set)',
+        'name' => 'Advken - Owl - Verdampfer',
         'commonName' => 'Owl',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Advken',
@@ -41688,7 +41678,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'CA100MI' => array(
         'icNumber' => 'CA100MI',
         'number' => 'CA100MI',
-        'name' => 'CoilArt - Mino - E-Zigarette (Set)',
+        'name' => 'CoilArt - Mino - E-Zigarette',
         'commonName' => 'Mino',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > CoilArt',
@@ -41765,7 +41755,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'SG100CS' => array(
         'icNumber' => 'SG100CS',
         'number' => 'SG100CS',
-        'name' => 'Sigelei - Chronus mit Shikra - E-Zigarette (Set)',
+        'name' => 'Sigelei - Chronus mit Shikra - E-Zigarette',
         'commonName' => 'Chronus mit Shikra',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Sigelei',
@@ -41828,7 +41818,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'SG100E2' => array(
         'icNumber' => 'SG100E2',
         'number' => 'SG100E2',
-        'name' => 'Sigelei - Sibra E2 - E-Zigarette (Set)',
+        'name' => 'Sigelei - Sibra E2 - E-Zigarette',
         'commonName' => 'Sibra E2',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Sigelei',
@@ -42039,7 +42029,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'VZ100SQ' => array(
         'icNumber' => 'VZ100SQ',
         'number' => 'VZ100SQ',
-        'name' => 'Vzone - Scado - E-Zigarette (Set)',
+        'name' => 'Vzone - Scado - E-Zigarette',
         'commonName' => 'Scado',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Vzone',
@@ -42499,7 +42489,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'IP100VTC' => array(
         'icNumber' => 'IP100VTC',
         'number' => 'IP100VTC',
-        'name' => 'iPV - V-IT - Clearomizer (Set)',
+        'name' => 'iPV - V-IT - Verdampfer',
         'commonName' => 'V-IT',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > iPV',
@@ -42874,7 +42864,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'UW100V2' => array(
         'icNumber' => 'UW100V2',
         'number' => 'UW100V2',
-        'name' => 'Uwell - Valyrian 2 - E-Zigarette (Set)',
+        'name' => 'Uwell - Valyrian 2 - E-Zigarette',
         'commonName' => 'Valyrian 2',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Uwell',
@@ -42981,7 +42971,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'UW100V2C' => array(
         'icNumber' => 'UW100V2C',
         'number' => 'UW100V2C',
-        'name' => 'Uwell - Valyrian 2 - Clearomizer (Set)',
+        'name' => 'Uwell - Valyrian 2 - Verdampfer',
         'commonName' => 'Valyrian 2',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Uwell',
@@ -43348,7 +43338,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'GV100ALA' => array(
         'icNumber' => 'GV100ALA',
         'number' => 'GV100ALA',
-        'name' => 'Geekvape - Aegis Legend - mit Alpha - E-Zigarette (Set)',
+        'name' => 'Geekvape - Aegis Legend - mit Alpha - E-Zigarette',
         'commonName' => 'Aegis Legend',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > GeekVape',
@@ -43449,7 +43439,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'NI100LP' => array(
         'icNumber' => 'NI100LP',
         'number' => 'NI100LP',
-        'name' => 'Nikola - Lapetus - Clearomizer (Set)',
+        'name' => 'Nikola - Lapetus - Verdampfer',
         'commonName' => 'Lapetus',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Nikola',
@@ -43627,7 +43617,7 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'GV100AP' => array(
         'icNumber' => 'GV100AP',
         'number' => 'GV100AP',
-        'name' => 'GeekVape - Alpha - Clearomizer (Set)',
+        'name' => 'GeekVape - Alpha - Verdampfer',
         'commonName' => 'Alpha',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > GeekVape',
@@ -43979,7 +43969,7 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
     'SK100VN9' => array(
         'icNumber' => 'SK100VN9',
         'number' => 'SK100VN9',
-        'name' => 'SMOK - Vape Pen Nord 19 - E-Zigarette (Set)',
+        'name' => 'SMOK - Vape Pen Nord 19 - E-Zigarette',
         'commonName' => 'Vape Pen Nord 19',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
@@ -44044,7 +44034,7 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
     'SK100VN2' => array(
         'icNumber' => 'SK100VN2',
         'number' => 'SK100VN2',
-        'name' => 'SMOK - Vape Pen Nord 22 - E-Zigarette (Set)',
+        'name' => 'SMOK - Vape Pen Nord 22 - E-Zigarette',
         'commonName' => 'Vape Pen Nord 22',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Smoktech',
@@ -44208,8 +44198,8 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'HE100PS' => array(
         'icNumber' => 'HE100PS',
         'number' => 'HE100PS',
-        'name' => 'HellVape - Passage RDA Clearomizer (Set)',
-        'commonName' => 'Passage RDA Clearomizer (Set)',
+        'name' => 'HellVape - Passage RDA Verdampfer',
+        'commonName' => 'Passage RDA Verdampfer',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
         'supplier' => 'HellVape',
@@ -44326,7 +44316,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'CU100MJ' => array(
         'icNumber' => 'CU100MJ',
         'number' => 'CU100MJ',
-        'name' => 'Cthulhu - Mjölnir RDA - Clearomizer (Set)',
+        'name' => 'Cthulhu - Mjölnir RDA - Verdampfer',
         'commonName' => 'Mjölnir RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > Cthulhu',
@@ -44617,7 +44607,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'OS100CM' => array(
         'icNumber' => 'OS100CM',
         'number' => 'OS100CM',
-        'name' => 'OBS - Cube MTL - E-Zigarette (Set)',
+        'name' => 'OBS - Cube MTL - E-Zigarette',
         'commonName' => 'Cube MTL',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > OBS',
@@ -44787,7 +44777,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'LV100RQ' => array(
         'icNumber' => 'LV100RQ',
         'number' => 'LV100RQ',
-        'name' => 'Lost Vape - Original Q - E-Zigarette (Set)',
+        'name' => 'Lost Vape - Original Q - E-Zigarette',
         'commonName' => 'Original Q',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Lost Vape',
@@ -45323,7 +45313,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'CU100CS' => array(
         'icNumber' => 'CU100CS',
         'number' => 'CU100CS',
-        'name' => 'Cthulhu - Hastur - Clearomizer Ständer',
+        'name' => 'Cthulhu - Hastur - Verdampferständer',
         'commonName' => 'Hastur',
         'type' => 'STORAGE',
         'category' => 'ZUBEHÖR > Aufbewahrung',
@@ -45686,7 +45676,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'OS100EM' => array(
         'icNumber' => 'OS100EM',
         'number' => 'OS100EM',
-        'name' => 'OBS - Engine MTL - Clearomizer (Set)',
+        'name' => 'OBS - Engine MTL - Verdampfer',
         'commonName' => 'Engine MTL',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > OBS',
@@ -45728,7 +45718,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'OS100C3' => array(
         'icNumber' => 'OS100C3',
         'number' => 'OS100C3',
-        'name' => 'OBS - Cheetah 3 RDA - Clearomizer (Set)',
+        'name' => 'OBS - Cheetah 3 RDA - Verdampfer',
         'commonName' => 'Cheetah 3 RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > OBS',
@@ -45920,66 +45910,10 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'base' => null,
         'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Chai Latte. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Chai Latte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
-    'IK100T2' => array(
-        'icNumber' => 'IK100T2',
-        'number' => 'IK100T2',
-        'name' => 'Innokin - Endura T22 - E-Zigarette (Set)',
-        'commonName' => 'Endura T22',
-        'type' => 'E_CIGARETTE',
-        'category' => 'E-ZIGARETTEN > Innokin',
-        'supplier' => 'Innokin',
-        'brand' => 'Innokin',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Die Endura T22 ist ein E-Zigaretten Set aus dem Hause Innokin. Das Gerät besitzt einen fest verbauten Akku mit 2000mAh und eine maximale Ausgangsleistung von 14 Watt. Der zum Set zugehörige Prism T22 Clearomizer verfügt über ein Tankvolumen von 4ml Liquid. Das Liquid wird über ein Top-Filling System in den Verdampfer eingefüllt. Im Lieferumfang enthalten sind noch zwei Prism T18/T22 Verdampferköpfe mit jeweils 1,5 Ohm Widerstand. Somit sind diese für das Dampfen im MTL-Bereich ausgelegt.
-<br>
-<br>
-<strong>Lieferumfang</strong>
-<ul>
-<li>1x Innokin Endura T22 Akku 2000mAh</li>
-<li>1x Innokin Prism T22 Clearomizer</li>
-<li>1x Innokin Prism T18/T22 Head 1,5 Ohm (vorinstalliert)</li>
-<li>1x Innokin Prism T18/T22 Head 1,5 Ohm</li>
-<li>2x Ersatzmundstücke</li>
-<li>1x Ersatzteil-Set</li>
-<li>USB-Ladekabel</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Endura T22 Akku</strong>
-<ul>
-<li>Akkukapazität: 2000mAh</li>
-<li>Ausgabemodi: konstante Leistungsabgabe</li>
-<li>Ausgangsleistung: max. 14 Watt</li>
-<li>Widerstandsbereich: 1,2 Ohm - 2,5 Ohm</li>
-<li>Maße: 85mm x 22mm x 32mm</li>
-</ul>
-<br>
-<br>
-<strong>Prism T22 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 4ml</li>
-<li>Top-Filling</li>
-<li>MTL</li>
-<li>Gewindetyp: 510</li>
-<li>Höhe: 64mm</li>
-<li>Durchmesser: 22mm</li>
-</ul>
-<br>
-<br>
-',
-    ),
     'IK100PT' => array(
         'icNumber' => 'IK100PT',
         'number' => 'IK100PT',
-        'name' => 'Innokin - Proton - E-Zigarette (Set)',
+        'name' => 'Innokin - Proton - E-Zigarette',
         'commonName' => 'Proton',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Innokin',
@@ -46041,52 +45975,6 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
 <br>
 ',
     ),
-    'IK100T2S' => array(
-        'icNumber' => 'IK100T2S',
-        'number' => 'IK100T2S',
-        'name' => 'Innokin - Endura T20S - E-Zigarette (Set)',
-        'commonName' => 'Endura T20S',
-        'type' => 'E_CIGARETTE',
-        'category' => 'E-ZIGARETTEN > Innokin',
-        'supplier' => 'Innokin',
-        'brand' => 'Innokin',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
-        'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
-        'base' => null,
-        'description' => 'Die Endura T20S ist eine All-in-One E-Zigarette von Innokin. Sie kann bis zu 2ml Liquid fassen und wird über ein Top-Filling-System direkt von oben befüllt. Der Akku mit einer Kapazität von 1.500mAh ist fest verbaut und  kann im Bedarfsfall über das beiliegende Micro USB-Ladekabel mit einem Notebook verbunden werden um den Akku mit Energie zu versorgen. Eine Akkulaufanzeige informiert Sie über den aktuellen Akkustand. Das Endura T20S Set unterstützt das Dampfen bei konstanter Leistungsabgabe (maximal 18 Watt). Im Lieferumfang enthalten sind zwei Prism S 0,8 Ohm Heads, die für das moderate Backendampfen, bei dem der Dampf erst im Mundraum gesammelt wird, geeignet. Tauschen Sie die zu den Verschleißteilen zählenden Verdampferköpfe regelmäßig, um ein gleichbleibendes Geschmackserlebnis zu gewährleisten.
-<br>
-<br>
-<strong>Lieferumfang</strong>
-<ul>
-<li>1x Innokin Endura T20S E-Zigaretten</li>
-<li>2x Prism S Head 0,8 Ohm</li>
-<li>1x Ersatz-Mundstück</li>
-<li>1x Micro USB-Kabel</li>
-<li>2x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Endura T20S All-in-One E-Zigarette</strong>
-<ul>
-<li>Kapazität: 1.500mAh</li>
-<li>Ausgabemodi: konstante Leistungsabgabe</li>
-<li>Ausgangsleistung: max. 18 Watt</li>
-<li>maximaler Ausgangsstrom: 6A</li>
-<li>maximale Ausgangsspannung: 3,85 V</li>
-<li>Akkulaufzeitanzeige</li>
-<li>Top-Filling-System</li>
-<li>Tankvolumen: 2ml</li>
-<li>Höhe: 132 mm</li>
-</ul>
-<br>
-<br>
-',
-    ),
     'IK100PSH' => array(
         'icNumber' => 'IK100PSH',
         'number' => 'IK100PSH',
@@ -46115,7 +46003,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'FM100TF' => array(
         'icNumber' => 'FM100TF',
         'number' => 'FM100TF',
-        'name' => 'FreeMax - Twister mit Fireluke 2 - E-Zigarette (Set)',
+        'name' => 'FreeMax - Twister mit Fireluke 2 - E-Zigarette',
         'commonName' => 'Twister mit Fireluke 2',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > FreeMax',
@@ -46296,7 +46184,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
     'FM100FM' => array(
         'icNumber' => 'FM100FM',
         'number' => 'FM100FM',
-        'name' => 'FreeMax - Fireluke Mesh - Clearomizer (Set)',
+        'name' => 'FreeMax - Fireluke Mesh - Verdampfer',
         'commonName' => 'Fireluke Mesh',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > FreeMax',
@@ -46396,7 +46284,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
     'FM100MP' => array(
         'icNumber' => 'FM100MP',
         'number' => 'FM100MP',
-        'name' => 'FreeMax - M Pro - Clearomizer (Set)',
+        'name' => 'FreeMax - M Pro - Verdampfer',
         'commonName' => 'M Pro',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > FreeMax',
@@ -46639,7 +46527,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
     'A100BL' => array(
         'icNumber' => 'A100BL',
         'number' => 'A100BL',
-        'name' => 'asMODus - .Blank RDA - Clearomizer (Set)',
+        'name' => 'asMODus - .Blank RDA - Verdampfer',
         'commonName' => '.Blank RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > asMODus',
@@ -46658,7 +46546,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
     'OS100CMS' => array(
         'icNumber' => 'OS100CMS',
         'number' => 'OS100CMS',
-        'name' => 'OBS - Cube Mini - E-Zigarette (Set)',
+        'name' => 'OBS - Cube Mini - E-Zigarette',
         'commonName' => 'Cube Mini',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > OBS',
@@ -47116,7 +47004,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
     'FM100WM' => array(
         'icNumber' => 'FM100WM',
         'number' => 'FM100WM',
-        'name' => 'FreeMax - Twister mit Fireluke 2 - Metal Edition - E-Zigarette (Set)',
+        'name' => 'FreeMax - Twister mit Fireluke 2 - Metal Edition - E-Zigarette',
         'commonName' => 'Twister mit Fireluke 2',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > FreeMax',
@@ -47426,7 +47314,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
     'VZ100VPC' => array(
         'icNumber' => 'VZ100VPC',
         'number' => 'VZ100VPC',
-        'name' => 'Vzone - Vlit Preco - Clearomizer',
+        'name' => 'Vzone - Vlit Preco - Verdampfer',
         'commonName' => 'Vlit Preco',
         'type' => 'CLEAROMIZER',
         'category' => 'VERDAMPFER > Vzone',
@@ -47440,28 +47328,68 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Vzone Vlit Preco Verdampfer ist ein Einweg-Verdampfer mit einem fest verbauten 0,9 Ohm Verdampferkopf. Wenn der Verdampferkopf also nicht mehr seine gewohnte Leistung erbringt oder sich der Liquidgeschmack  verändert, sollten Sie den Verdampfer durch einen neuen ersetzen. Aufgrund des Widerstands Nahe der 1,0 Ohm Grenze ist der Vlit Preco Verdampfer für das Dampfen im moderaten Bereich ausgelegt (MTL). Der Verdampfer hat ein Tankvolumen von 2ml, welches Sie über das Top-Filling System mit Liquid befüllen. Außerdem besitzt der Vlit Preco ein Airflow-System, welches das Dampfen im moderaten Bereich unterstützt.
-<br>
-<br>
-<b>Lieferumfang:</li>
-<li>1x Vlit Preco Verdampfer</li>
-<li>1x 0,9 Ohm Verdampferkopf (fest verbaut)</li>
-<br>
-<br>
-<strong>Vlit Preco Verdampfer</strong>
+        'description' => '<p>Der Vlit Preco von Vzone gehört zur Gruppe der seltenen Einweg-Verdampfer. Der Verdampferkopf ist im Verdampfer fest eingebaut. Ist der Kopf verbraucht, wechseln Sie den ganzen Verdampfer aus. Der Vlit Preco besitzt einen durchsichtigen Tank, ist also ein Clearomizer.&nbsp;Der Vlit Preco ist für das MTL-Dampfen ausgelegt. Dabei wird der Dampf zunächst in den Mund und von dort in die Lunge inhaliert.&nbsp;</p>
+<p>Der Tank des Vlit Preco fasst 2 ml. Sehr ambitionierte Dampfer kommen damit vielleicht nicht über den Tag. Wir empfehlen, ein Fläschchen Liquid zum Nachfüllen dabei zu haben.</p>
+<p>Der fest eingebaute Verdampferkopf hat einen Widerstand von 0,9 Ohm. Der empfohlene Leistungsbereich liegt zwischen 15 und 25 Watt. Der Vlit Preco hat einen 510er Gewindeanschluss und kann daher mit den meisten modernen Akkuträgern verwendet werden. Der Verdampfer wird von oben befüllt. Die Luftbeimischung können Sie stufenlos nach Ihren Wünschen einstellen (Airflow Control).</p>
+<p><strong>Fazit</strong></p>
+<p>Als Einweg-Verdampfer ist der Vzone Vlit Preco sicher eine Besonderheit im Markt. Mit dem Vlit Preco müssen Sie sich keine Gedanken über Reinigung und Pflege Ihres Verdampfers machen. Auch der Wechsel des Verdampferkopfes entfällt. Ob sich diese Arbeitserleichterung für Sie lohnt, hängt abgesehen vom Preis sehr davon ab, wie gut Ihnen die Geschmacks- und Dampfproduktion des Geräts gefällt. Probieren Sie es einfach aus.</p>
+<p><strong>Eigenschaften Vzone Vlit Preco Einweg-Verdampfer</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Typ</td>
+<td>Clearomizer</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>40 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>15 g</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Widerstand</td>
+<td>0,9 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td>10 - 25 Watt<br>empfohlen: 15 - 25 Watt</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Befüllung von oben</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+<tr>
+<td>Besonderheiten</td>
+<td>fest eingebauter Verdampferkopf<br>nicht wechselbar</td>
+</tr>
+</tbody>
+</table>
+<p><br> <strong><strong>Lieferumfang:</strong></strong></p>
 <ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Durchmesser: 24mm</li>
-<li>Höhe: 40mm</li>
-<li>Gewicht: 15g</li>
-<li>Top Filling-System</li>
-<li>Airflow Control</li>
-<li>Widerstand: 0,9 Ohm</li>
-<li>Gewindetyp: 510er</li>
-<li>Leistungsbereich: 10 - 25 Watt</li>
-<li>empfohlener Leistungsbereich: 15 - 25 Watt</li>
-<br>
-',
+<li>1 Vzone Vlit Preco Einweg-Verdampfer</li>
+</ul>',
     ),
     'KA100A10-SLP' => array(
         'icNumber' => 'KA100A10-SLP',
@@ -47614,5 +47542,328 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'dosage' => '',
         'base' => null,
         'description' => '<p>Shake & Vape Liquid. Geschmack: Kokos. Die 75 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 25 ml Nikotin-Shot oder 25 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 75 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kokos</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'OS100KBG' => array(
+        'icNumber' => 'OS100KBG',
+        'number' => 'OS100KBG',
+        'name' => 'OBS - KFB 2 AIO - Glastank',
+        'commonName' => 'KFB 2 AIO',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz > OBS',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Ersatzglas für die OBS KFB2 AIO hat ein Fassungsvolumen von 2ml. Es kann ohne Werkzeug selbstständig angebracht werden. Das Material des KFB2 Tankglases ist aus hitzebeständigem Pyrex Glas.',
+    ),
+    'OS100EG2' => array(
+        'icNumber' => 'OS100EG2',
+        'number' => 'OS100EG2',
+        'name' => 'OBS - Engine 2 RTA - Glastank',
+        'commonName' => 'Engine 2 RTA',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz > OBS',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Ersatz Glastank für den OBS Engine 2 RTA kann ohne Hilfsmittel oder Werkzeug eingebaut werden. Das Tankvolumen beträgt 5ml. Der Tank besteht aus hitzebeständigem Pyrex Glas.',
+    ),
+    'FK100A10-PZ' => array(
+        'icNumber' => 'FK100A10-PZ',
+        'number' => 'FK100A10-PZ',
+        'name' => 'Frankonia - PLZ 9xxxx - Aroma - 10 ml',
+        'commonName' => 'PLZ 9xxxx',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Süßigkeiten#!#AROMEN > Cremiges#!#AROMEN > Gebäck#!#AROMEN > exotische Früchte#!#AROMEN > Gewürze#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Karamell, Pudding, Waffel, Kokos, Vanille',
+        'flavorCategory' => 'Süßigkeiten, Cremiges, Gebäck, exotische Früchte, Gewürze',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Karamell, Pudding, Waffel, Kokos, Vanille. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Karamell, Pudding, Waffel, Kokos, Vanille</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-SW' => array(
+        'icNumber' => 'FK100A10-SW',
+        'number' => 'FK100A10-SW',
+        'name' => 'Frankonia - Saalewasser - Aroma - 10 ml',
+        'commonName' => 'Saalewasser',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Zitrusfrüchte#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Kaktusfeige, Zitrone',
+        'flavorCategory' => 'exotische Früchte, Zitrusfrüchte',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Kaktusfeige, Zitrone. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaktusfeige, Zitrone</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-OB' => array(
+        'icNumber' => 'FK100A10-OB',
+        'number' => 'FK100A10-OB',
+        'name' => 'Frankonia - Oberfranken Brühe - Aroma - 10 ml',
+        'commonName' => 'Oberfranken Brühe',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > Früchte#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Orange, Pfirsich, Mandarine',
+        'flavorCategory' => 'Zitrusfrüchte, Früchte',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Orange, Pfirsich, Mandarine. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Orange, Pfirsich, Mandarine</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-KF' => array(
+        'icNumber' => 'FK100A10-KF',
+        'number' => 'FK100A10-KF',
+        'name' => 'Frankonia - Kalter Frankensaft - Aroma - 10 ml',
+        'commonName' => 'Kalter Frankensaft',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Getränke#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Mojito',
+        'flavorCategory' => 'Getränke',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Mojito. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mojito</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-HE' => array(
+        'icNumber' => 'FK100A10-HE',
+        'number' => 'FK100A10-HE',
+        'name' => 'Frankonia - Hofer Edelplörre - Aroma - 10 ml',
+        'commonName' => 'Hofer Edelplörre',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gebäck#!#AROMEN > Cremiges#!#AROMEN > Zitrusfrüchte#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Keks, Pudding, Zitrone',
+        'flavorCategory' => 'Gebäck, Cremiges, Zitrusfrüchte',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Keks, Pudding, Zitrone. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Keks, Pudding, Zitrone</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-HS' => array(
+        'icNumber' => 'FK100A10-HS',
+        'number' => 'FK100A10-HS',
+        'name' => 'Frankonia - Hochfranken Schorle - Aroma - 10 ml',
+        'commonName' => 'Hochfranken Schorle',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Getränke#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Pfirsich, Limonade',
+        'flavorCategory' => 'Früchte, Getränke',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Pfirsich, Limonade. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich, Limonade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-GV' => array(
+        'icNumber' => 'FK100A10-GV',
+        'number' => 'FK100A10-GV',
+        'name' => 'Frankonia - G´sichtsverzerrer - Aroma - 10 ml',
+        'commonName' => 'G´sichtsverzerrer',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Getränke#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'bittere Limonade',
+        'flavorCategory' => 'Getränke',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Bittere Limonade. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Bittere Limonade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-ZF' => array(
+        'icNumber' => 'FK100A10-ZF',
+        'number' => 'FK100A10-ZF',
+        'name' => 'Frankonia - Zefix - is des guad - Aroma - 10 ml',
+        'commonName' => 'Zefix',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gebäck#!#AROMEN > Gewürze#!#AROMEN > Süßigkeiten#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Keks, Vanille, Marzipan',
+        'flavorCategory' => 'Gebäck, Gewürze, Süßigkeiten',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Keks, Vanille, Marzipan. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Keks, Vanille, Marzipan</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-EK' => array(
+        'icNumber' => 'FK100A10-EK',
+        'number' => 'FK100A10-EK',
+        'name' => 'Frankonia - Eierkulat - Aroma - 10 ml',
+        'commonName' => 'Eierkulat',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Getränke#!#AROMEN > Gebäck#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Eierlikör, Kuchen',
+        'flavorCategory' => 'Getränke, Gebäck',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Eierlikör, Kuchen. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Eierlikör, Kuchen</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-KK' => array(
+        'icNumber' => 'FK100A10-KK',
+        'number' => 'FK100A10-KK',
+        'name' => 'Frankonia - Kaffeekränzla - Aroma - 10 ml',
+        'commonName' => 'Kaffeekränzla',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Tee & Kaffee#!#AROMEN > Getränke#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Kaffee, Eierlikör',
+        'flavorCategory' => 'Tee & Kaffee, Getränke',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Kaffee, Eierlikör. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaffee, Eierlikör</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-SM' => array(
+        'icNumber' => 'FK100A10-SM',
+        'number' => 'FK100A10-SM',
+        'name' => 'Frankonia - Samba - Aroma - 10 ml',
+        'commonName' => 'Samba',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Getränke#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Bier, Cola',
+        'flavorCategory' => 'Getränke',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Bier, Cola. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Bier, Cola</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-CS' => array(
+        'icNumber' => 'FK100A10-CS',
+        'number' => 'FK100A10-CS',
+        'name' => 'Frankonia - Cool Samba - Aroma - 10 ml',
+        'commonName' => 'Cool Samba',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Getränke#!#AROMEN > Frisches & Eiscreme#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Bier, Cola, Koolada',
+        'flavorCategory' => 'Getränke, Frisches & Eiscreme',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Bier, Cola, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Bier, Cola, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-ES' => array(
+        'icNumber' => 'FK100A10-ES',
+        'number' => 'FK100A10-ES',
+        'name' => 'Frankonia - Eis-Saalewasser - Aroma - 10 ml',
+        'commonName' => 'Eis-Saalewasser',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Zitrusfrüchte#!#AROMEN > Frisches & Eiscreme#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Kaktusfeige, Zitrone, Koolada',
+        'flavorCategory' => 'exotische Früchte, Zitrusfrüchte, Frisches & Eiscreme',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Kaktusfeige, Zitrone, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaktusfeige, Zitrone, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-FR' => array(
+        'icNumber' => 'FK100A10-FR',
+        'number' => 'FK100A10-FR',
+        'name' => 'Frankonia - Frostberrn - Aroma - 10 ml',
+        'commonName' => 'Frostberrn',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Frisches & Eiscreme#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Birne, Koolada',
+        'flavorCategory' => 'Früchte, Frisches & Eiscreme',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Birne, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Birne, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'FK100A10-FB' => array(
+        'icNumber' => 'FK100A10-FB',
+        'number' => 'FK100A10-FB',
+        'name' => 'Frankonia - Frankenberg - Aroma - 10 ml',
+        'commonName' => 'Frankenberg',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Gewürze#!#AROMEN > Frisches & Eiscreme#!#AROMEN > Frankonia',
+        'supplier' => 'Frankonia',
+        'brand' => 'Frankonia',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '60',
+        'flavor' => 'Beeren, Anis, Koolada',
+        'flavorCategory' => 'Beeren, Gewürze, Frisches & Eiscreme',
+        'addlCategory' => '',
+        'dosage' => '17',
+        'base' => null,
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Anis, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
 );
