@@ -280,7 +280,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
         $probe = $article->getMetaTitle();
         if ($created || !$probe || $probe === '') {
-            $metaTitle = 'Vapee.de: ' . preg_replace('~\(\d+ Stück pro Packung\)~', '', $product->getName());
+            $metaTitle = preg_replace('~\(\d+ Stück pro Packung\)~', '', $product->getName());
             $article->setMetaTitle($metaTitle);
         }
 

@@ -69,6 +69,7 @@ return [
             '~(Air) - (Plus)~'                             => '$1 $2 -',
             '~(Melo 3) - (Mini)~'                          => '$1 $2 -',
             '~(TFV12) - P-~'                               => '$1-P -',
+            '~(Glaz RTA) - (V2)~'                          => '$1 $2 -',
         ],
     ],
 
@@ -542,7 +543,8 @@ return [
             '~(SkyStar)~',
             '~(Feedlink)~',
             '~((Revvo)( Mini)?)~',
-            '~((K1 Plus)|((K\d)( \& K3)?))~',
+            '~((K1 Plus)|(K1 Stealth)|((K\d)( \& K3)?))~',
+            '~(AVP)~',
         ],
         'asMODus'       => [
             '~((Minikin V3S mit Viento)|(Minikin(( V2 Kodama)|( V2)|( V3S)|( V3)|( Reborn))?))~',
@@ -711,6 +713,7 @@ return [
             '~(TFV8 ((Baby)|(X-Baby))?)~',
             '~(Baby V2)~',
             '~(Species)~',
+            '~(Mico)~',
 
         ],
         'Renova'        => [
@@ -772,6 +775,8 @@ return [
             '~(Aromamizer Titan RDTA)~',
             '~(Aromamizer Lite RTA)~',
             '~(Glaz RDSA)~',
+            '~(Mico)~',
+            '~(Glaz RTA)~',
         ],
         'Uwell'         => [
             '~(Crown (3|4))~',
@@ -825,6 +830,7 @@ return [
             '~(Scado)~',
             '~(eMASK)~',
             '~(Vlit Preco)~',
+            '~(Preco( Plus)?)~',
         ],
         'Wismec'        => [
             '~(Tobhino BF RDA)~',

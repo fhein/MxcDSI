@@ -24,6 +24,7 @@ use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
 
+
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
     protected $model = Product::class;
@@ -841,21 +842,17 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev4Action()
     {
         try {
-            $this->getManager()->getRepository(Product::class)->exportMappedPropertiesNew();
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            /** @var Product $product */
-            foreach ($products as $product) {
-                $name = $product->getName();
-                $name = str_replace('Clearomizer (Set)', 'Verdampfer', $name);
-                $product->setName($name);
-                $article = $product->getArticle();
-                /** @var Article $article */
-                if ($article !== null) {
-                    $article->setName($name);
+            $articles = $this->getManager()->getRepository(Article::class)->findAll();
+            /** @var Article $article */
+            foreach ($articles as $article) {
+                $title = $article->getMetaTitle();
+                if (strpos($title, 'Vapee.de: ') === 0) {
+                    $title = str_replace('Vapee.de: ', '', $title);
+                    $article->setMetaTitle($title);
                 }
             }
             $this->getManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Clearomizer (Set) successfully replaced.' ]);
+            $this->view->assign([ 'success' => true, 'message' => 'Metatitle corrected.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

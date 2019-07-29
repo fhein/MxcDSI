@@ -119,6 +119,7 @@ return [
         '~Drip Tip~'            => TypeMapper::TYPE_DRIP_TIP,
         '~Ersatztank~'          => TypeMapper::TYPE_TANK,
         '~Glastank~'            => TypeMapper::TYPE_TANK,
+        '~Glas-Kamin~'          => TypeMapper::TYPE_TANK,
         '~Ultem Tank~'          => TypeMapper::TYPE_TANK,
         '~Top-Kappe~'           => TypeMapper::TYPE_TANK,
         '~Hollowed Out Tank~'   => TypeMapper::TYPE_TANK_PROTECTION,

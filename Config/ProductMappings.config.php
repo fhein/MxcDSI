@@ -17,8 +17,8 @@ return array(
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p>Der Aspire Nautilus galt vielen über Jahre als der beste Verdampfer für den Mouth-To-Lung-Stil (MTL), bei dem man den Dampf zunächst in den Mund und dann vom Mund in die Lunge inhaliert. Der Aspire Nautilus besitzt einen Glastank, ist also ein Clearomizer.</p>
-<p>Charakteristisch für den Aspire Nautilus ist das eigenwillige und edle Vintage-Design. Dieser Verdampfer zieht die Blicke auf sich. Ob am Arbeitsplatz oder beim Theaterbesuch: Der Nautilus passt zu jedem Outfit und sieht in jedem Rahmen einfach schön und edel aus.</p>
+        'description' => '<p>Der Aspire Nautilus galt vielen über Jahre als der beste Verdampfer für den Mouth-To-Lung-Stil (MTL), bei Sie den Dampf zunächst in den Mund und dann vom Mund in die Lunge inhalieren. Der Aspire Nautilus besitzt einen Glastank, ist also ein Clearomizer.</p>
+<p>Charakteristisch für den Aspire Nautilus ist das eigenwillige und edle Vintage-Design. Dieser Verdampfer zieht die Blicke auf sich. Ob am Arbeitsplatz oder beim Theaterbesuch: Der Nautilus passt zu jedem Outfit und sieht in jedem Rahmen schön und edel aus.</p>
 <p>Der Aspire Nautilus verwendet Aspire BVC-Verdampferköpfe (Bottom Vertical Coil). Diese verfügen über eine einzige Heizwendel, die senkrecht in den Kopf eingebaut ist. Umgeben ist die Heizwendel von einer porösen Keramik, die als Liquidspeicher dient. Anders als andere Speichermaterialen garantiert die Keramik einen sehr authentischen Geschmack gleich vom ersten Zug an.&nbsp;</p>
 <p>Für den Aspire Nautilus werden BVC-Verdampferköpfe mit Widerstandswerten von 1,6 und 1,8 Ohm angeboten. Beide Köpfe sind gut und unterscheiden sich im Erleben kaum. Der 1,8 Ohm Kopf entwickelt den Geschmack unserer Ansicht nach geringfügig besser als der 1,6 Ohm Kopf.&nbsp;</p>
 <p>Der Aspire Nautilus ist kompatibel mit anderen Aspire BVC Verdampferköpfen. Wegen der auch in weitester Einstellung recht restriktiven Luftzufuhr, die für das MTL-Dampfen optimiert ist, raten wir aber von der Verwendung der BVC Köpfe mit einem Widerstandswert unter 1 Ohm ab. Diese kamen später auf den Markt und sind für den Aspire Nautilus 2 und 2S gedacht.</p>
@@ -17405,7 +17405,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
 <p>Der Breeze 2 Pod verfügt über eine stufenlose Luftstromregulierung (Air Flow Control). Zur Einstellung des Luftstroms entfernen Sie das Mundstück und drehen dann das Rändelrad am Kamin, bis der Luftstrom für Sie passt.</p>
 <p><strong>Fazit</strong></p>
 <p>Die Aspire Breeze 2 E-Zigarette ist ein ideales Gerät für den Umstieg von der Zigarette, weil Sie sehr einfach in der Handhabung ist und trotzdem in gewissem Umfang Raum für Experimente mit verschiedenen Dampfstilen lässt.</p>
-<p><strong>Eigenschaften</strong></p>
+<p><strong>Eigenschaften Breeze 2 E-Zigarette</strong></p>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -17414,7 +17414,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
 </tr>
 <tr>
 <td>Ausgabemodus</td>
-<td>konstante Spannung</td>
+<td>konstante Leistung</td>
 </tr>
 <tr>
 <td>Tankvolumen</td>
@@ -47869,6 +47869,547 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'addlCategory' => '',
         'dosage' => '17',
         'base' => null,
-        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Anis, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: Beeren, Anis, Koolada. Die 10 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>
+<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Produkt</td>
+<td>10 ml Aroma in einer 60 ml Flasche</td>
+</tr>
+<tr>
+<td>Geschmack</td>
+<td>Beeren, Anis, Koolada</td>
+</tr>
+<tr>
+<td>Dosierung</td>
+<td>Flasche bis oben mit Basis auffüllen</td>
+</tr>
+<tr>
+<td>Inhaltsstoffe</td>
+<td>Propylenglykol, Aromastoffe</td>
+</tr>
+</tbody>
+</table>',
+    ),
+    'AS100AV' => array(
+        'icNumber' => 'AS100AV',
+        'number' => 'AS100AV',
+        'name' => 'Aspire - AVP - E-Zigarette',
+        'commonName' => 'AVP',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > Aspire',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p>Die Aspire AVP ist eine handliche E-Zigarette und gehört zu den Pod-Systemen. Bei Pod-Systemen bilden das Pod und der Akku optisch eine Einheit. Die Aspire AVP ist für das MTL-Dampfen gedacht. MTL steht für Mouth-To-Lung. Sie ziehen - ähnlich wie bei einer Zigarette - den Dampf zunächst in den Mund und inhalieren ihn von dort in die Lunge.</p>
+<p>Der Akku der Aspire AVP ist fest in das Gerät eingebaut. Er hat eine Kapazität von 700 mAh. Der Ladestand wird über eine LED signalisiert. Sie laden den Akku mit dem mitgelieferten Micro-USB Kabel auf.</p>
+<p>Die Aspire AVP arbeitet mit konstanter Leistungsabgabe. Dabei wählen Sie aus, ob Sie lieber mit 8 Watt, 10 Watt oder 12 Watt dampfen möchten. Die E-Zigarette ist mit einer Zugautomatik ausgestattet. Sobald Sie an der E-Zigarette ziehen, wird Dampf erzeugt.</p>
+<p>Das Pod der Aspire AVP fasst 2 ml Luquid. Es wird von unten befüllt. Wenn Sie das Pod vom Akku abziehen, wird die im Boden des Pods befindliche Einfüllöffnung sichtbar. Füllen Sie Ihr Liquid nach und stecken Sie Pod und Akku wieder zusammen. Schon kann es weitergehen.</p>
+<p>Der Verdampferkopf ist fest in das Pod der Aspire AVP eingebaut. Er hat einen Widerstand von 1,2 Ohm. Wenn Sie bemerken, dass Geschmack sich verschlechtert, tauschen Sie das Pod gegen ein neues aus. Im Lieferumfang sind zwei Pods enthalten.</p>
+<p><strong>Fazit</strong></p>
+<p>Die Aspire AVP ist für weniger erfahrene Benutzer gut geeignet. Durch die Zugautomatik wird das Dampfen sehr leicht gemacht. Die Leistung der Aspire AVP ist in drei Stufen einstellbar. Das hebt sie von vielen anderen Pod-Systemen ab. Ein netter Gag ist das mitgelieferte Band, mit dem Sie sich die Aspire AVP um den Hals hängen können.</p>
+<p><strong>Eigenschaften Breeze 2 E-Zigarette</strong></p>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Akkukapazität</td>
+<td>700 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodus</td>
+<td>variable Leistung (8, 10 oder 12 Watt)</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DV 5V/1A</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Bottom Filling, Befüllung von unten</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>nicht einstellbar</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>14 mm x 39 mm x 82 mm</td>
+</tr>
+<tr>
+<td>Besonderheiten</td>
+<td>einstellbare Leistung <br>Zugautomatik<br>Umhängeband</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br>Lieferumfang</strong></p>
+<ul>
+<li>1 AVP Akku mit 700 mAh</li>
+<li>2 AVP Pods mit integriertem NiCr-Coil 1,2 Ohm</li>
+<li>1 Umhängeband</li>
+<li>1 Micro-USB Kabel</li>
+<li>Bedienungsanleitung</li>
+</ul>',
+    ),
+    'AS100KS' => array(
+        'icNumber' => 'AS100KS',
+        'number' => 'AS100KS',
+        'name' => 'Aspire - K1 Stealth - E-Zigarette',
+        'commonName' => 'K1 Stealth',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > Aspire',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Bei diesem E-Zigaretten Set von Aspire trifft der wiederaufladbare K1 Stealth Akku mit einer Kapazität von 1000mAh auf den K1 Plus Clearomizer mit einem maximalen Füllvolumen von 2,4 Millilitern. Der K1 Plus Clearomizer wird in dem Gehäuse vom Akku eingelassen, sodass nur noch das Mundstück herausschaut. Mit dem K1 Stealth E-Zigaretten Set dampfen Sie wahlweise in Leistungsstufen mit 8 Watt, 10 Watt oder 12 Watt. Im Set sind zwei BVC Heads mit Widerständen von 1,6 Ohm und 1,8 Ohm sowie ein Ladekabel enthalten. Die K1 Stealth E-Zigarette ist sowohl für unerfahrene als auch erfahrende Dampfer geeignet.
+<br>
+<br>
+<ul>
+<li>1x K1 Stealth Akku 1000 mAh</li>
+<li>1x K1 Plus Clearomizer</li>
+<li>1x BVC Head 1,6 Ohm</li>
+<li>1x BVC Head 1,8 Ohm </li>
+<li>1x Magnet-Adapter</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Ersatzteil-Set </li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong> K1 Stealth Akku </strong>
+<ul>
+<li>Akkukapazität: 1.000 mAh</li>
+<li>Ausgabemodis: VW (8W, 10, 12W)</li>
+<li>Ausgangsspannung: 3,3 – 4,2 Volt</li>
+<li>Gewindetyp: 510</li>
+<li>Maße: 21 x 39 x 82 mm</li>
+</ul>
+<br>
+<br>
+<strong>K1 PLUS CLEAROMIZER</strong></p>
+<ul>
+<li>Tankvolumen: 2,4 ml</li>
+<li>Durchmesser: 16 mm</li>
+<li>Höhe: 57 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+</ul>
+',
+    ),
+    'AS100AVP' => array(
+        'icNumber' => 'AS100AVP',
+        'number' => 'AS100AVP',
+        'name' => 'Aspire - AVP - Pod (2 Stück pro Packung)',
+        'commonName' => 'AVP',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges > AVP',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das AVP Pod-System verfügt über ein festverbauten Head mit 1,2 Ohm. Deshalb ist das Pod-System für das moderate Dampfen (MTL) geeignet. Über das Bottom-Filling-System können Sie das Pod mit Liquid von unten füllen; insgesamt nehmen 2ml Liquid Platz. Pro Packung ist ein AVP Pod-System enthalten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x AVP Pod (inkl. 1,2 Ohm Head)</li>
+<li>1x Produktinformation</li>
+</ul>
+<br>
+<br>
+<strong>Aspire AVP Pod</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Widerstand: 1,2 Ohm</li>
+<li>Material Head: NiChrome</li>
+<li>MTL-fähig</li>
+<li>Bottom-Filling-System</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SR100GT' => array(
+        'icNumber' => 'SR100GT',
+        'number' => 'SR100GT',
+        'name' => 'Steam Crave - Glaz RTA V2 - Verdampfer',
+        'commonName' => 'Glaz RTA V2',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'VERDAMPFER > Selbstwickler > Steam Crave',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Steam Crave RTA Verdampfer ist für den Einsatz von eigenen hergestellten Wicklungen gedacht. Sie können bis zu zwei Wicklungen in das Deck einsetzen. Der Glaz RTA besitzt einen Glastank mit einem Fassungsvermögen von 7ml. Sie können auch den im Lieferumfang enthaltenen Glastank mit 10ml verwenden. Der Austausch ist simpel und erfolgt ohne die Zuhilfenahme von Werkzeugen. Im Lieferumfang sind zwei 0,4 Ohn Wicklungen enthalten, die für das direkte Inhalieren in der Lunge ausgelegt ist.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Glaz RTA Clearomizer</li>
+<li>1x Bulb-Glastank 10ml</li>
+<li>1x Sechskantschlüssel</li>
+<li>2x 0,4 Ohm Coil</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Aromamizer Lite RTA</strong>
+<ul>
+<li>DL und MTL geeignet</li>
+<li>Tankvolumen: 7ml</li>
+<li>Airflow-Control</li>
+<li>Gewindetyp: 510</li>
+<li>Durchmesser: 31mm</li>
+</ul>
+<br>
+',
+    ),
+    'SR100GTG' => array(
+        'icNumber' => 'SR100GTG',
+        'number' => 'SR100GTG',
+        'name' => 'Steam Crave - Glaz RTA - Glastank (2 Stück pro Packung)',
+        'commonName' => 'Glaz RTA',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz > Steam Crave',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie können zwischen einem Tankvolumen von 7ml und 10ml wählen. Ihnen werden pro bestellter Packung je zwei Glastanks in der von Ihnen gewählten Größe ausgeliefert. Die Glastanks sind kompatibel mit dem Glaz RTA Clearomizer von Steam Crave. Der Austausch erfolgt ohne die Zuhilfenahme von Werkzeug und für die Reinigung sind warmes Wasser und ein trockenes Tuch vollkommen ausreichend.
+<br>
+<br>
+',
+    ),
+    'SK100MC' => array(
+        'icNumber' => 'SK100MC',
+        'number' => 'SK100MC',
+        'name' => 'SMOK - Mico - E-Zigarette',
+        'commonName' => 'Mico',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > Smoktech',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Mico E-Zigaretten Set kommt in einem All-In-One-Design. Sie setzt sich zusammen aus dem 700mAh starkem Akku und dem Mico Pod mit einem Tankvolumen von 1,7ml. Der Akku kann über das mitgelieferte USB-Kabel geladen werden. Im Lieferumfang sind zudem noch zwei Pods mit unterschiedlichen Verdampferköpfe enthalten. Zum einen mit einem 0,8 Ohm Mesh Verdampferkopf und zum anderen mit einem 1 Ohm Regular Verdampferköpf. Die Verdampferköpfe sind für das Dampfen im moderaten Bereich (MTL) ausgelegt. Außerdem sind die Verdampferköpfe fest verbaut. Das heißt, dass Sie bei Veränderung des Geschmacks Ihres Liquids das Pod-System durch eine neues austauschen müssen. 
+Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand des Akkus können Sie über eine LED unterhalb des Ein- und Ausschalters ablesen (grün = 70%-100%, orange = 30%-70%, rot = weniger als 30%). Zudem besitzt er einen 8-Sekunden Zug-Schutz. Das heißt, wenn Sie länger als 8 Sekungen an Ihrer E-Zigarette ziehen, gibt der Akku keine Energie an den Pod weiter und es wir kein Liquid mehr verdampft. Über das E-Liquid-Fenster am Akku können Sie Ihren Liquidstand jederzeit im Auge behalten.  Die Mico E-Zigarette bekommen Sie in 7 unterschiedlichen Farben.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Mico Akku</li>
+<li>1x Mico Pod mit 0,8 Ohm Mesh Head</li>
+<li>1x Mico Pod mit 1 Ohm Regular Head</li>
+<li>1x USB-Kabel</li>
+<li>1x Schlüsselanhänger</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Mico E-Zigarette</strong>
+<ul>
+<li>Kapazität: 700 mAh</li>
+<li>Ausgangsleistung: 10-26 Watt</li>
+<li>Ausgangsspannung: 3-4 Volt</li>
+<li>Akkustand-LED-Indikator</li> 
+<li>Zugautomatik</li>
+<li>8-Sekunden Zug-Schutz</li>
+<li>Kurzschlussschutz</li>
+<li>Niederspannungsschutz</li>
+<li>Tankvolumen: 1,7 ml</li>
+<li>Side-Filling</li>
+<li>Maße: 46,5 mm x 14,8 mm x 56,3 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SR100GTK' => array(
+        'icNumber' => 'SR100GTK',
+        'number' => 'SR100GTK',
+        'name' => 'Steam Crave - Glaz RTA - Glas-Kamin (2 Stück pro Packung)',
+        'commonName' => 'Glaz RTA',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz > Steam Crave',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Nutzen Sie den Kamin in dem passenden Glaz RTA Clearomizer von Steam Crave. Der Kamin wird auf das Deck des Glaz RTA Clearomizers gesetzt und über den Kamin gelangt der entstehende Dampf von den Wicklungen zum Mundstück und kann inhaliert werden.
+<br>
+<br>
+',
+    ),
+    'SK100MCM' => array(
+        'icNumber' => 'SK100MCM',
+        'number' => 'SK100MCM',
+        'name' => 'SMOK - Mico - Pod - 0,8 Ohm Mesh Head (3 Stück pro Packung)',
+        'commonName' => 'Mico',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges > Mico',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Smok Mico Pod kommt mit einem fest verbauten 0,8 Ohm Mesh Verdampferkopf. Der Pod besitzt ein Tankvolumen von 1,7ml Liquid, welches über ein Side-Filling System in den Pod gegeben wird. Aufgrund des fest verbauten Verdampferkopfes müssen Sie bei Veränderung des Liquidgeschmacks den kompletten Pod durch einen neuen austauschen. Das bewerkstelligen Sie, indem Sie den gebrauchten Pod aus dem Akku und durch den neuen Pod ersetzen. Pro Packung erhalten Sie insgesamt drei Pods.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x Mico Pods mit 0,8 Ohm Mesh Head</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Mico Pod</strong>
+<ul>
+<li>Tankvolumen: 1,7ml</li>
+<li>Widerstand: 0,8 Ohm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SR100GTM' => array(
+        'icNumber' => 'SR100GTM',
+        'number' => 'SR100GTM',
+        'name' => 'Steam Crave - Glaz RTA - Mundstück',
+        'commonName' => 'Glaz RTA',
+        'type' => 'DRIP_TIP',
+        'category' => 'ZUBEHÖR > Mundstücke & Schutz > Steam Crave',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Es handelt sich um ein passendes Mundstück für den Steam Crave Glaz RTA Clearomizer. Der Austausch ist relativ simpel, Sie ziehen das alte Mundstück, auch Drip Tip genannt, von dem Glaz RTA Clearomizer und setzen ein neues darauf. Pro bestellter Packung erhalten Sie ein Mundstück. Bitte beachten Sie, dass Mundstücke Hygieneartikel sind und Sie sie daher regelmäßig austauschen sollten.
+<br>
+<br>
+',
+    ),
+    'SK100MCR' => array(
+        'icNumber' => 'SK100MCR',
+        'number' => 'SK100MCR',
+        'name' => 'SMOK - Mico - Pod - 1,0 Ohm Regular Head (3 Stück pro Packung)',
+        'commonName' => 'Mico',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges > Mico',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Smok Mico Pod-System nimmt maximal 1,7ml Liquid auf. Es ist das passende Zubehörartikel für Ihre Smok Mico E-Zigarette. Über das Side-Filling System füllen Sie Ihr Liquid in den Pod. Zudem hat das Pod-System einen fest verbauten Verdampferkopf mit 1,0 Ohm. Somit ist das Dampfen im MTL-Bereich (Mouth-To-Lung) gewährleistet. 3 Mico Pods befinden sich in jeder bestellten Packung.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x Mico Pods mit 1,0 Ohm Regular Head</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Mico Pod</strong>
+<ul>
+<li>Tankvolumen: 1,7ml</li>
+<li>Widerstand: 1,0 Ohm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100MCC' => array(
+        'icNumber' => 'SK100MCC',
+        'number' => 'SK100MCC',
+        'name' => 'SMOK - Mico - Pod - 1,4 Ohm Ceramic Head (3 Stück pro Packung)',
+        'commonName' => 'Mico',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges > Mico',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Smok Mico Pod kommt mit einem fest verbauten 1,4 Ohm Ceramic Verdampferkopf und ist die passende Verdampfereinheit für Ihre Mico E-Zigarette vom gleichnamigen Hersteller. Das Füllvolumen des wiederbefüllbaren Pod beträgt 1,7ml. Dieses befüllen Sie über das Side-Filling System, indem Sie den Pod vom Akku ziehen und den Gummi-Stöpsel an der Seite herausziehen. Dank des fest verbauten 1,4 Ohm Ceramic Head ist der Pod für das Dampfen im MTL-Bereich konzipiert. Beachten Sie bitte, dass sobald sich eine Veränderung des Liquidgeschmacks einstellst, Sie den Pod durch einen neuen austauschen müssen. Pro Packung erhalten Sie 3 Smok Mico Pods. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x Mico Pods mit 1,4 Ohm Ceramic Head</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Mico Pod</strong>
+<ul>
+<li>Tankvolumen: 1,7ml</li>
+<li>Widerstand: 1,4 Ohm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'VZ100PP' => array(
+        'icNumber' => 'VZ100PP',
+        'number' => 'VZ100PP',
+        'name' => 'Vzone - Preco Plus - E-Zigarette',
+        'commonName' => 'Preco Plus',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN > Vzone',
+        'supplier' => 'Vzone',
+        'brand' => 'Vzone',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Vzone stammt das E-Zigaretten Set Preco Plus. Dieses setzt sich aus dem Preco Plus Akkuträger mit einer maximalen Ausgangsleistung von 80 Watt und dem Preco Clearomizer zusammen. Der Preco Clearomizer wird über ein Top Filling-System von oben mit frischem Liquid befüllt. Das Tankvolumen beträgt insgesamt 3 Millilitern. In dem Clearomizer ist ein Head mit einem Widerstandt von 0,15 Ohm integriert. Dieser kann nach Beendigung des Lebenszyklus nicht gewechselt werden. Entsprechend können Sie den Clearomizer entfernen und gegen einen Neuen austauschen. Für den Betrieb des Preco Plus E-Zigaretten Sets von Vzone, müssen Sie vorher eine 18650er Akkuzelle einsetzen. Berücksichtigen Sie bitte, dass diese <b>nicht</b> Teil des Lieferumfangs ist.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x Preco Plus Akkuträger</li>
+<li>1x Preco Plus Clearomizer</li>
+<li>1x Mundstück</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Preco Plus Akkuträger</strong>
+<ul>
+<li>Ausgangsleistung: max. 80 Watt</li>
+<li>LED-Indikator: 3,0 – 3,7 V = rot / 3,7 - 4,2 V = blau</li>
+<li>Ladestrom: 5V / 0,5A</li>
+<li>Widerstandsbereich: ab 0,1 Ohm</li>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 128,5 mm</li>
+</ul>
+<br>
+<strong>Preco Plus Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 40 mm</li>
+<li>Top Filling-System</li>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Leistungsbereich: 40 - 70 Watt</li>
+<li>empfohlener Leistungsbereich: 50 - 60 Watt</li>
+</ul>
+',
+    ),
+    'VZ100PPC' => array(
+        'icNumber' => 'VZ100PPC',
+        'number' => 'VZ100PPC',
+        'name' => 'Vzone - Preco - Verdampfer',
+        'commonName' => 'Preco',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER > Vzone',
+        'supplier' => 'Vzone',
+        'brand' => 'Vzone',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Vzone Preco bekommen Sie einen Einweg-Verdampfer. Dieser ist mit einem festverbauten Head mit einem Widerstand von 0,15 Ohm ausgestattet. Diesen können Sie nicht wechseln, sodass Sie den ganzen Clearomizer nach dem Lebenszyklus austauschen müssen. Durch den geringen Widerstand von unter 1,0 Ohm, ist der Head für das Vapen mit direkten Lungenzügen ausgelegt.
+<br>
+<br>
+<b>Lieferumfang:</li>
+<li>1x Preco Plus Clearomizer</li>
+<li>1x Mesh Head 0,15 Ohm (integriert)</li>
+<br>
+<br>
+<b>Preco Plus Clearomizer</b>
+<li>Tankvolumen: 3 ml</li>
+<li>Durchmesser: 24mm</li>
+<li>Höhe: 40mm</li>
+<li>Top Filling-System</li>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Leistungsbereich: 40 - 70 Watt</li>
+<li>empfohlener Leistungsbereich: 50 - 60 Watt</li>
+<br>
+',
     ),
 );
