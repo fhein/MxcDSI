@@ -17,5 +17,14 @@
                 class="MxcDropshipInnocigs\Commands\ImportCommand">
             <tag name="console.command" command="mxcdsi:import"/>
         </service>
+        <service id="Shopware_CronJob_MxcDsiUpdateStock"
+                 class="MxcDropshipInnocigs\Import\UpdateStockCronJob">
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        <service
+                id="mxc_dropship_innocigs.commands.update_stock_command"
+                class="MxcDropshipInnocigs\Commands\UpdateStockCommand">
+            <tag name="console.command" command="mxcdsi:updatestock"/>
+        </service>
     </services>
 </container>

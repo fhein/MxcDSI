@@ -4,6 +4,7 @@ use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
+use MxcDropshipInnocigs\Import\UpdateStockCronJob;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
@@ -19,10 +20,11 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\DatabaseTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
+use Shopware\Models\Article\Detail;
+use Shopware\Models\Category\Category;
 
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
@@ -41,9 +43,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $client = $this->getServices()->get(ImportClient::class);
-            $client->setLoadExtendedList(true);
             $mapper = $this->getServices()->get(ImportMapper::class);
-            $mapper->import($client->import());
+            $mapper->import($client->import(true));
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -54,9 +55,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $client = $this->getServices()->get(ImportClient::class);
-            $client->setLoadExtendedList(true);
             $mapper = $this->getServices()->get(ImportMapper::class);
-            $mapper->import($client->importSequential());
+            $mapper->import($client->importSequential(true));
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -67,9 +67,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $client = $this->getServices()->get(ImportClient::class);
-            $client->setLoadExtendedList(false);
             $mapper = $this->getServices()->get(ImportPriceMapper::class);
-            $mapper->import($client->import());
+            $mapper->import($client->import(false));
             $this->view->assign(['success' => true, 'message' => 'Prices were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -785,8 +784,20 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev1Action()
     {
         try {
-            $repair = $this->getServices()->get(DatabaseTool::class);
-            $repair->removeOrphanedDetails();
+            $details = $this->getManager()->getRepository(Detail::class)->findAll();
+            /** @var Detail $detail */
+            foreach ($details as $detail) {
+                $attribute = $detail->getAttribute();
+                $attribute->setDcIcOrdernumber($detail->getNumber());
+                $attribute->setDcIcActive(true);
+                $attribute->setDcIcInstock(null);
+                $attribute->setDcIcPurchasingPrice(null);
+                $attribute->setDcIcArticlename(null);
+                $attribute->setDcIcRetailPrice(null);
+
+            }
+            $this->getManager()->flush();
+
             $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -801,7 +812,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $dql = 'SELECT c FROM Shopware\Models\Category\Category c WHERE c.parentId IS NOT null AND c.blog = 0 ';
             $query = $modelManager->createQuery($dql);
             $categories = $query->getResult();
-            /** @var \Shopware\Models\Category\Category $category */
+            /** @var Category $category */
             foreach ($categories as $category) {
                 $category->setHideFilter(true);
                 $category->setHideSortings(true);
@@ -842,17 +853,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev4Action()
     {
         try {
-            $articles = $this->getManager()->getRepository(Article::class)->findAll();
-            /** @var Article $article */
-            foreach ($articles as $article) {
-                $title = $article->getMetaTitle();
-                if (strpos($title, 'Vapee.de: ') === 0) {
-                    $title = str_replace('Vapee.de: ', '', $title);
-                    $article->setMetaTitle($title);
-                }
-            }
-            $this->getManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Metatitle corrected.' ]);
+            $cronjob = new UpdateStockCronJob();
+            $cronjob->onUpdateStockCronJob(null);
+            $this->view->assign([ 'success' => true, 'message' => 'Cronjob done.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

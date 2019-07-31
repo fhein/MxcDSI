@@ -3,13 +3,12 @@
 namespace MxcDropshipInnocigs\Commands;
 
 use Mxc\Shopware\Plugin\Service\ServicesTrait;
-use MxcDropshipInnocigs\Import\ImportClient;
 use Shopware\Commands\ShopwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 
-class ImportCommand extends ShopwareCommand
+class UpdateStockCommand extends ShopwareCommand
 {
     protected $log;
 
@@ -20,15 +19,15 @@ class ImportCommand extends ShopwareCommand
     protected function configure()
     {
         $this
-            ->setName('mxcdsi:import')
-            ->setDescription('Import products from InnoCigs')
+            ->setName('mxcdsi:updatestock')
+            ->setDescription('Update stock information from InnoCigs')
             /*  ->addArgument(
                   'filepath',
                   InputArgument::REQUIRED,
                   'Path to file to read data from.'
               )*/
             ->setHelp(<<<EOF
-The <info>%command.name%</info> imports products from Innocigs.
+The <info>%command.name%</info> updates stock information from Innocigs.
 EOF
             )
         ;
@@ -39,11 +38,10 @@ EOF
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('<info>Importing products from InnoCigs ...</info>');
+        $output->writeln('<info>Updating stock information from InnoCigs ...</info>');
         $this->getServices();
 
         try {
-            $this->services->get(ImportClient::class)->import(true);
         } catch (Throwable $e) {
             $output->writeln('<merror>' . $e->getMessage() . '</merror>');
         }

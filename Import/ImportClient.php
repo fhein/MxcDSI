@@ -52,8 +52,6 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
     /** @var array */
     protected $missingItems = [];
 
-    protected $loadExtendedList = false;
-
     /** @var array */
     protected $fields;
 
@@ -80,10 +78,6 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         $this->reporter = new ArrayReport();
         $model = new Model();
         $this->fields = $model->getPrivatePropertyNames();
-    }
-
-    public function setLoadExtendedList(bool $loadExtendedList) {
-        $this->loadExtendedList = $loadExtendedList;
     }
 
     protected function setupImport()
@@ -137,15 +131,13 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         return $this->importFromXmlSequential($xmlFile, $recreateSchema);
     }
 
-    public function import() {
-        $this->apiClient->setLoadExtendedList($this->loadExtendedList);
-        $this->import = $this->apiClient->getItemList();
+    public function import(bool $extended) {
+        $this->import = $extended ? $this->apiClient->getItemListEx(false) : $this->apiClient->getItemList(false);
         return $this->doImport();
     }
 
-    public function importSequential() {
-        $this->apiClientSeq->setLoadExtendedList($this->loadExtendedList);
-        $this->import = $this->apiClientSeq->getItemList();
+    public function importSequential(bool $extended) {
+        $this->import = $extended ? $this->apiClientSeq->getItemListEx() : $this->apiClientSeq->getItemList();
         return $this->doImport();
     }
 

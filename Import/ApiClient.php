@@ -19,8 +19,6 @@ class ApiClient
      */
     protected $apiEntry;
 
-    protected $loadExtendedList;
-
     /**
      * @var string $authUrl
      */
@@ -39,7 +37,6 @@ class ApiClient
         $this->log = $log;
         $this->apiEntry = 'https://www.innocigs.com/xmlapi/api.php';
         $this->authUrl = $this->apiEntry . '?cid=' . $credentials->getUser() . '&auth=' . $credentials->getPassword();
-        $this->loadExtendedList = false;
     }
 
     /**
@@ -52,7 +49,7 @@ class ApiClient
         return $this->modelsToArray($this->send($cmd)->getBody());
     }
 
-    public function modelsToArray(string $xml): ?array
+    public function modelsToArray(string $xml, bool $flat = false): ?array
     {
         //$xml = preg_replace('~\& ~', '&amp; ', $xml);
         $this->checkXmlResult($xml);
@@ -107,7 +104,11 @@ class ApiClient
                 $item['unit'] = $this->getNodeValue($vpe, 'UNIT');
             }
 
-            $import[$item['master']][$item['model']] = $item;
+            if ($flat) {
+                $import[$item['model']] = $item;
+            } else {
+                $import[$item['master']][$item['model']] = $item;
+            }
         }
         return $import;
     }
@@ -237,16 +238,19 @@ class ApiClient
         return $this->client;
     }
 
+    public function getItemListEx(bool $flat) {
+        $cmd = $this->authUrl . '&command=products&type=extended';
+        return $this->modelsToArray($this->send($cmd)->getBody(), $flat);
+    }
+
     /**
+     * @param bool $flat
      * @return array
      */
-    public function getItemList()
+    public function getItemList(bool $flat)
     {
         $cmd = $this->authUrl . '&command=products';
-        if ($this->loadExtendedList === true) {
-            $cmd .= '&type=extended';
-        }
-        return $this->modelsToArray($this->send($cmd)->getBody());
+        return $this->modelsToArray($this->send($cmd)->getBody(), $flat);
     }
 
     /**
@@ -285,10 +289,5 @@ class ApiClient
     {
         $fn = Shopware()->DocPath() . '/var/log/mxc_dropship_innocigs/raw_data_' . date('Y-m-d-H-i-s') . '.xml';
         file_put_contents($fn, $xml);
-    }
-
-    public function setLoadExtendedList(bool $extended)
-    {
-        $this->loadExtendedList = $extended;
     }
 }

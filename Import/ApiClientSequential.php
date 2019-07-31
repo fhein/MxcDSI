@@ -21,8 +21,6 @@ class ApiClientSequential
      */
     protected $apiEntry;
 
-    protected $loadExtendedList;
-
     /**
      * @var string $authUrl
      */
@@ -46,7 +44,6 @@ class ApiClientSequential
         $this->log = $log;
         $this->apiEntry = 'https://www.innocigs.com/xmlapi/api.php';
         $this->authUrl = $this->apiEntry . '?cid=' . $credentials->getUser() . '&auth=' . $credentials->getPassword();
-        $this->loadExtendedList = false;
     }
 
     /**
@@ -247,9 +244,17 @@ class ApiClientSequential
     public function getItemList()
     {
         $cmd = $this->authUrl . '&command=products';
-        if ($this->loadExtendedList === true) {
-            $cmd .= '&type=extended';
-        }
+        $this->import = [];
+        $this->readXML($cmd);
+        return $this->import;
+    }
+
+    /**
+     * @return array
+     */
+    public function getItemListEx()
+    {
+        $cmd = $this->authUrl . '&command=products&type=extended';
         $this->import = [];
         $this->readXML($cmd);
         return $this->import;
@@ -297,10 +302,5 @@ class ApiClientSequential
     {
         $fn = Shopware()->DocPath() . '/var/log/mxc_dropship_innocigs/raw_data_' . date('Y-m-d-H-i-s') . '.xml';
         file_put_contents($fn, $xml);
-    }
-
-    public function setLoadExtendedList(bool $extended)
-    {
-        $this->loadExtendedList = $extended;
     }
 }

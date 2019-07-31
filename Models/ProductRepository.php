@@ -237,6 +237,7 @@ class ProductRepository extends BaseEntityRepository
         $propertyMappings = $this->getMappedProperties();
         $currentMappings = [];
         if (file_exists($productConfigFile)) {
+            /** @noinspection PhpIncludeInspection */
             $currentMappings = include $productConfigFile;
         }
         if (! empty($propertyMappings)) {

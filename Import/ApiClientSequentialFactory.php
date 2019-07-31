@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Import;
 
 
 use Interop\Container\ContainerInterface;
-use Zend\Log\Logger;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ApiClientSequentialFactory implements FactoryInterface
@@ -20,7 +19,7 @@ class ApiClientSequentialFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $credentials = $container->get(Credentials::class);
-        $logger = $container->get(Logger::class);
+        $logger = $container->get('logger');
         return new ApiClientSequential($credentials, $logger);
     }
 }

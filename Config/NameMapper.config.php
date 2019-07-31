@@ -70,6 +70,10 @@ return [
             '~(Melo 3) - (Mini)~'                          => '$1 $2 -',
             '~(TFV12) - P-~'                               => '$1-P -',
             '~(Glaz RTA) - (V2)~'                          => '$1 $2 -',
+            '~(Legend) - (mit Alpha)~'                     => '$1 $2',
+            '~((V200)|(V80)) - (mit Amor NSE)~'            => '$1 $4',
+            '~(Lite) - (mit GS Air 3)~'                    => '$1 $2',
+
         ],
     ],
 
@@ -501,7 +505,8 @@ return [
             '~(GTM?\d)( Coil)? (Head)~'                              => '$1 - $3',
             '~[Cc][Cc][eE][lL][lL]~'                                 => 'cCell',
             '~(cCell) Coil (Head)~'                                  => '$1 - $2',
-            '~(Geekvape) ([^\-])~'                                   => '$1 - $2',
+            '~Geekvape~'                                             => 'GeekVape',
+            '~(GeekVape) ([^\-])~'                                   => '$1 - $2',
             '~2 in 1 Set~'                                           => '(2 Stück pro Packung)',
             '~2 in 1 (Clapton Head) Set~'                            => '$1 (2 Stück pro Packung)',
             '~(18650)(VTC)~'                                         => '$1 $2',
@@ -609,6 +614,7 @@ return [
             '~(Creed RTA)~',
             '~(Zeus X RTA)~',
             '~(Zeus Dual RTA)~',
+            '~(Zeus RTA)~',
             '~(Ammit Dual Coil RTA)~',
             '~(Aegis(( Legend)|( Mini))?)~',
             '~(Aero Mesh)~',

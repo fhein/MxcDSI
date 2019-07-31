@@ -19,7 +19,7 @@ class ImportCronJob implements SubscriberInterface
     public function onImportCronJob(/** @noinspection PhpUnusedParameterInspection */ $job)
     {
         $this->getServices();
-        $this->services->get(ImportClient::class)->import();
+        $this->services->get(ImportClient::class)->import(true);
 
         return true;
     }

@@ -26351,7 +26351,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100HS' => array(
         'icNumber' => 'GV100HS',
         'number' => 'GV100HS',
-        'name' => 'Geekvape - Coil Set (20 Stück, 6 Varianten)',
+        'name' => 'GeekVape - Coil Set (20 Stück, 6 Varianten)',
         'commonName' => 'Coil Set (20 Stück, 6 Varianten)',
         'type' => 'COIL',
         'category' => 'ZUBEHÖR > Selbstwickler > Coils',
@@ -26381,7 +26381,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100N9' => array(
         'icNumber' => 'GV100N9',
         'number' => 'GV100N9',
-        'name' => 'Geekvape - N90 Fused Clapton Coil (2 Stück pro Packung)',
+        'name' => 'GeekVape - N90 Fused Clapton Coil (2 Stück pro Packung)',
         'commonName' => 'N90 Fused Clapton Coil',
         'type' => 'COIL',
         'category' => 'ZUBEHÖR > Selbstwickler > Coils',
@@ -26406,7 +26406,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100N8' => array(
         'icNumber' => 'GV100N8',
         'number' => 'GV100N8',
-        'name' => 'Geekvape - N80 Clapton MTL Wickeldraht',
+        'name' => 'GeekVape - N80 Clapton MTL Wickeldraht',
         'commonName' => 'N80 Clapton MTL Wickeldraht',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26432,7 +26432,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100KW' => array(
         'icNumber' => 'GV100KW',
         'number' => 'GV100KW',
-        'name' => 'Geekvape - KA1 Clapton MTL Wickeldraht',
+        'name' => 'GeekVape - KA1 Clapton MTL Wickeldraht',
         'commonName' => 'KA1 Clapton MTL Wickeldraht',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26496,7 +26496,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100SS' => array(
         'icNumber' => 'GV100SS',
         'number' => 'GV100SS',
-        'name' => 'Geekvape - SS316L Clapton MTL Wickeldraht',
+        'name' => 'GeekVape - SS316L Clapton MTL Wickeldraht',
         'commonName' => 'SS316L Clapton MTL Wickeldraht',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26522,7 +26522,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100WS' => array(
         'icNumber' => 'GV100WS',
         'number' => 'GV100WS',
-        'name' => 'Geekvape - Werkzeug-Set',
+        'name' => 'GeekVape - Werkzeug-Set',
         'commonName' => 'Werkzeug-Set',
         'type' => 'TOOL',
         'category' => 'ZUBEHÖR > Selbstwickler > Werkzeug',
@@ -26553,7 +26553,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100CK' => array(
         'icNumber' => 'GV100CK',
         'number' => 'GV100CK',
-        'name' => 'Geekvape - Flat Clapton Wickeldraht Kanthal A1',
+        'name' => 'GeekVape - Flat Clapton Wickeldraht Kanthal A1',
         'commonName' => 'Flat Clapton Wickeldraht Kanthal A1',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26647,7 +26647,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100JG' => array(
         'icNumber' => 'GV100JG',
         'number' => 'GV100JG',
-        'name' => 'Geekvape - Juggernaut Kanthal A1 Wickeldraht',
+        'name' => 'GeekVape - Juggernaut Kanthal A1 Wickeldraht',
         'commonName' => 'Juggernaut Kanthal A1 Wickeldraht',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26668,7 +26668,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100SJ' => array(
         'icNumber' => 'GV100SJ',
         'number' => 'GV100SJ',
-        'name' => 'Geekvape - SS Juggernaut Wickeldraht SS316L',
+        'name' => 'GeekVape - SS Juggernaut Wickeldraht SS316L',
         'commonName' => 'SS Juggernaut Wickeldraht SS316L',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26689,7 +26689,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100FK' => array(
         'icNumber' => 'GV100FK',
         'number' => 'GV100FK',
-        'name' => 'Geekvape - Fused Clapton Kanthal A1 Wickeldraht',
+        'name' => 'GeekVape - Fused Clapton Kanthal A1 Wickeldraht',
         'commonName' => 'Fused Clapton Kanthal A1 Wickeldraht',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26759,7 +26759,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100KA' => array(
         'icNumber' => 'GV100KA',
         'number' => 'GV100KA',
-        'name' => 'Geekvape - Kanthal A1 Wickeldraht',
+        'name' => 'GeekVape - Kanthal A1 Wickeldraht',
         'commonName' => 'Kanthal A1 Wickeldraht',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26785,7 +26785,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100SG' => array(
         'icNumber' => 'GV100SG',
         'number' => 'GV100SG',
-        'name' => 'Geekvape - Wickeldraht SS316L - 9 m',
+        'name' => 'GeekVape - Wickeldraht SS316L - 9 m',
         'commonName' => 'Wickeldraht SS316L',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -26867,7 +26867,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100SF' => array(
         'icNumber' => 'GV100SF',
         'number' => 'GV100SF',
-        'name' => 'Geekvape - SS Fused Clapton Wickeldraht SS316L 26GA*2+30GA',
+        'name' => 'GeekVape - SS Fused Clapton Wickeldraht SS316L 26GA*2+30GA',
         'commonName' => 'SS Fused Clapton Wickeldraht SS316L 26GA*2+30GA',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -27033,7 +27033,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100FS' => array(
         'icNumber' => 'GV100FS',
         'number' => 'GV100FS',
-        'name' => 'Geekvape - N80 Framed Staple Twisted Wickeldraht',
+        'name' => 'GeekVape - N80 Framed Staple Twisted Wickeldraht',
         'commonName' => 'N80 Framed Staple Twisted Wickeldraht',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -27058,7 +27058,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100NC' => array(
         'icNumber' => 'GV100NC',
         'number' => 'GV100NC',
-        'name' => 'Geekvape - N80 Clapton Wickeldraht, 3 m 24GA+36GA',
+        'name' => 'GeekVape - N80 Clapton Wickeldraht, 3 m 24GA+36GA',
         'commonName' => 'N80 Clapton Wickeldraht, 3 m 24GA+36GA',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -27083,7 +27083,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100NF' => array(
         'icNumber' => 'GV100NF',
         'number' => 'GV100NF',
-        'name' => 'Geekvape - N80 Fused Clapton Wickeldraht - 3 m',
+        'name' => 'GeekVape - N80 Fused Clapton Wickeldraht - 3 m',
         'commonName' => 'N80 Fused Clapton Wickeldraht',
         'type' => 'WIRE',
         'category' => 'ZUBEHÖR > Selbstwickler > Wickeldraht',
@@ -27166,7 +27166,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100FU' => array(
         'icNumber' => 'GV100FU',
         'number' => 'GV100FU',
-        'name' => 'Geekvape - N80 Fused Clapton Coil (2 Stück pro Packung)',
+        'name' => 'GeekVape - N80 Fused Clapton Coil (2 Stück pro Packung)',
         'commonName' => 'N80 Fused Clapton Coil',
         'type' => 'COIL',
         'category' => 'ZUBEHÖR > Selbstwickler > Coils',
@@ -27194,7 +27194,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100FR' => array(
         'icNumber' => 'GV100FR',
         'number' => 'GV100FR',
-        'name' => 'Geekvape - N80 Framed Clapton Coil (2 Stück pro Packung)',
+        'name' => 'GeekVape - N80 Framed Clapton Coil (2 Stück pro Packung)',
         'commonName' => 'N80 Framed Clapton Coil',
         'type' => 'COIL',
         'category' => 'ZUBEHÖR > Selbstwickler > Coils',
@@ -34512,7 +34512,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'icNumber' => 'GV100F',
         'number' => 'GV100F',
         'name' => 'GeekVape - Flint E-Zigarette',
-        'commonName' => 'Flint E-Zigarette (Set)',
+        'commonName' => 'Flint E-Zigarette',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > GeekVape',
         'supplier' => 'GeekVape',
@@ -35076,8 +35076,8 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SM100V80' => array(
         'icNumber' => 'SM100V80',
         'number' => 'SM100V80',
-        'name' => 'Wismec - Sinuous V80 - mit Amor NSE - E-Zigarette - by Steamax',
-        'commonName' => 'Sinuous V80',
+        'name' => 'Wismec - Sinuous V80 mit Amor NSE - E-Zigarette - by Steamax',
+        'commonName' => 'Sinuous V80 mit Amor NSE',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
         'supplier' => 'Wismec',
@@ -39022,7 +39022,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 <br>
 <br>
 <b>Wichtige Merkmale:</b><br>
-<ul><li>Kapazität: 1300mAh</li>
+<ul><li>Kapazität: 1100mAh</li>
 <br>
 <br>
 <b>Geeignet Für:</b>
@@ -40126,8 +40126,8 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'SC100IL' => array(
         'icNumber' => 'SC100IL',
         'number' => 'SC100IL',
-        'name' => 'eLeaf - iKuu Lite - mit GS Air 3 - E-Zigarette - by SC',
-        'commonName' => 'iKuu Lite',
+        'name' => 'eLeaf - iKuu Lite mit GS Air 3 - E-Zigarette - by SC',
+        'commonName' => 'iKuu Lite mit GS Air 3',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > eLeaf',
         'supplier' => 'eLeaf',
@@ -40807,8 +40807,8 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
     'SM100V2' => array(
         'icNumber' => 'SM100V2',
         'number' => 'SM100V2',
-        'name' => 'Wismec - Sinuous V200 - mit Amor NSE - E-Zigarette - by Steamax',
-        'commonName' => 'Sinuous V200',
+        'name' => 'Wismec - Sinuous V200 mit Amor NSE - E-Zigarette - by Steamax',
+        'commonName' => 'Sinuous V200 mit Amor NSE',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Wismec',
         'supplier' => 'Wismec',
@@ -43343,8 +43343,8 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
     'GV100ALA' => array(
         'icNumber' => 'GV100ALA',
         'number' => 'GV100ALA',
-        'name' => 'Geekvape - Aegis Legend - mit Alpha - E-Zigarette',
-        'commonName' => 'Aegis Legend',
+        'name' => 'GeekVape - Aegis Legend mit Alpha - E-Zigarette',
+        'commonName' => 'Aegis Legend mit Alpha',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > GeekVape',
         'supplier' => 'GeekVape',
@@ -47912,7 +47912,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'description' => '<p>Die Aspire AVP ist eine handliche E-Zigarette und gehört zu den Pod-Systemen. Bei Pod-Systemen bilden das Pod und der Akku optisch eine Einheit. Die Aspire AVP ist für das MTL-Dampfen gedacht. MTL steht für Mouth-To-Lung. Sie ziehen - ähnlich wie bei einer Zigarette - den Dampf zunächst in den Mund und inhalieren ihn von dort in die Lunge.</p>
 <p>Der Akku der Aspire AVP ist fest in das Gerät eingebaut. Er hat eine Kapazität von 700 mAh. Der Ladestand wird über eine LED signalisiert. Sie laden den Akku mit dem mitgelieferten Micro-USB Kabel auf.</p>
 <p>Die Aspire AVP arbeitet mit konstanter Leistungsabgabe. Dabei wählen Sie aus, ob Sie lieber mit 8 Watt, 10 Watt oder 12 Watt dampfen möchten. Die E-Zigarette ist mit einer Zugautomatik ausgestattet. Sobald Sie an der E-Zigarette ziehen, wird Dampf erzeugt.</p>
-<p>Das Pod der Aspire AVP fasst 2 ml Luquid. Es wird von unten befüllt. Wenn Sie das Pod vom Akku abziehen, wird die im Boden des Pods befindliche Einfüllöffnung sichtbar. Füllen Sie Ihr Liquid nach und stecken Sie Pod und Akku wieder zusammen. Schon kann es weitergehen.</p>
+<p>Das Pod der Aspire AVP fasst 2 ml Liquid. Es wird von unten befüllt. Wenn Sie das Pod vom Akku abziehen, wird die im Boden des Pods befindliche Einfüllöffnung sichtbar. Füllen Sie Ihr Liquid nach und stecken Sie Pod und Akku wieder zusammen. Schon kann es weitergehen.</p>
 <p>Der Verdampferkopf ist fest in das Pod der Aspire AVP eingebaut. Er hat einen Widerstand von 1,2 Ohm. Wenn Sie bemerken, dass Geschmack sich verschlechtert, tauschen Sie das Pod gegen ein neues aus. Im Lieferumfang sind zwei Pods enthalten.</p>
 <p><strong>Fazit</strong></p>
 <p>Die Aspire AVP ist für weniger erfahrene Benutzer gut geeignet. Durch die Zugautomatik wird das Dampfen sehr leicht gemacht. Die Leistung der Aspire AVP ist in drei Stufen einstellbar. Das hebt sie von vielen anderen Pod-Systemen ab. Ein netter Gag ist das mitgelieferte Band, mit dem Sie sich die Aspire AVP um den Hals hängen können.</p>
@@ -48411,5 +48411,184 @@ Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand d
 <li>empfohlener Leistungsbereich: 50 - 60 Watt</li>
 <br>
 ',
+    ),
+    'SK100NM08' => array(
+        'icNumber' => 'SK100NM08',
+        'number' => 'SK100NM08',
+        'name' => 'SMOK - Nord - Mesh Head - 0,8 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Nord',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > Smoktech',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'addlCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Nord Mesh Verdampferköpfe von Smok haben einen Widerstand von 0,8 Ohm und sind für das moderate Dampfen ausgelegt. Bei bis zu 16 Watt können diese genutzt werden. Zudem sind die Nord Mesh Verdampferköpfe kompatibel mit der Nord E-Zigarette, Nord AIO 19 und Nord AIO 22 E-Zigaretten von Smok. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<li>5x Nord Mesh Heads</li>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 0,8 Ohm</li>
+<li>max. Betriebsleistung: 16 Watt</li>
+<li>MTL-Head</li>
+<br>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>Smok Nord AIO 19</li>
+<li>Smok Nord AIO 22 </li>
+<li>Smok Nord AiO</li>
+</ul>',
+    ),
+    'RD100L10-GI' => array(
+        'icNumber' => 'RD100L10-GI',
+        'number' => 'RD100L10-GI',
+        'name' => 'Red\'s Apple Juice - Grape Ice - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Grape Ice',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Getränke#!#SHAKE & VAPE > Trauben#!#SHAKE & VAPE > Frisches & Eiscreme#!#SHAKE & VAPE > red\'s Apple Juice',
+        'supplier' => 'red\'s Apple Juice',
+        'brand' => 'red\'s Apple Juice',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '60',
+        'flavor' => 'Apfelsaft, Traube, Menthol',
+        'flavorCategory' => 'Getränke, Trauben, Frisches & Eiscreme',
+        'addlCategory' => '',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Apfelsaft, Traube, Menthol. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelsaft, Traube, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'GV100ZR' => array(
+        'icNumber' => 'GV100ZR',
+        'number' => 'GV100ZR',
+        'name' => 'GeekVape - Zeus RTA - Verdampfer',
+        'commonName' => 'Zeus RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'VERDAMPFER > Selbstwickler > GeekVape',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'addlCategory' => '',
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der Zeus RTA Clearomizer aus dem Hause Geekvape ist ein Clearomizer, welcher für das Selbstwickeln konzipiert ist. Der Zeus RTA verfügt über ein Deck, welches Single-Coil fähig ist. Er kann also nur mit einem Coil betrieben werden. Zum Dampfen werden hier nicht wie gewohnt Heads benutzt, sondern Wickelwatte, welche durch die Coils gezogen werden muss. Der Zeus RTA verfügt über ein Tankvolumen von 4 Millilitern.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Zeus RTA Clearomizer</li>
+<li>2x Coils, je 0,32 Ohm</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Sechskantschlüssel</li>
+<li>1x 510er Mundstück</li>
+<li>1x 810er Mundstück</li>
+<li>1x 510er Mundstück-Adapter</li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Zeus RTA Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4 ml</li>
+<li>Höhe (inkl. Mundstück): 45,5 mm</li>
+<li>Durchmesser: 25 mm</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Top-Airflow Control</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'ET100L10-EA' => array(
+        'icNumber' => 'ET100L10-EA',
+        'number' => 'ET100L10-EA',
+        'name' => 'Elements - Earth - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Earth',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Tee & Kaffee#!#SHAKE & VAPE > Nüsse#!#SHAKE & VAPE > Elements',
+        'supplier' => 'Elements',
+        'brand' => 'Elements',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '60',
+        'flavor' => 'Kaffee, Pistazie',
+        'flavorCategory' => 'Tee & Kaffee, Nüsse',
+        'addlCategory' => '',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Kaffee, Pistazie. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaffee, Pistazie</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'ET100L10-FR' => array(
+        'icNumber' => 'ET100L10-FR',
+        'number' => 'ET100L10-FR',
+        'name' => 'Elements - Fire - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Fire',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Süßigkeiten#!#SHAKE & VAPE > Gewürze#!#SHAKE & VAPE > Elements',
+        'supplier' => 'Elements',
+        'brand' => 'Elements',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '60',
+        'flavor' => 'Kakaobohne, Chili',
+        'flavorCategory' => 'Süßigkeiten, Gewürze',
+        'addlCategory' => '',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Kakaobohne, Chili. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kakaobohne, Chili</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'ET100L10-AR' => array(
+        'icNumber' => 'ET100L10-AR',
+        'number' => 'ET100L10-AR',
+        'name' => 'Elements - Air - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Air',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Gewürze#!#SHAKE & VAPE > Cremiges#!#SHAKE & VAPE > Beeren#!#SHAKE & VAPE > Früchte#!#SHAKE & VAPE > Elements',
+        'supplier' => 'Elements',
+        'brand' => 'Elements',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '60',
+        'flavor' => 'Vanille, Pudding, Heidelbeere, Banane',
+        'flavorCategory' => 'Gewürze, Cremiges, Beeren, Früchte',
+        'addlCategory' => '',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Vanille, Pudding, Heidelbeere, Banane. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille, Pudding, Heidelbeere, Banane</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'ET100L10-WT' => array(
+        'icNumber' => 'ET100L10-WT',
+        'number' => 'ET100L10-WT',
+        'name' => 'Elements - Water - Shake & Vape - 50 ml, 0 mg/ml',
+        'commonName' => 'Water',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Melonen#!#SHAKE & VAPE > exotische Früchte#!#SHAKE & VAPE > Elements',
+        'supplier' => 'Elements',
+        'brand' => 'Elements',
+        'piecesPerPack' => 1,
+        'content' => '50',
+        'capacity' => '60',
+        'flavor' => 'Melone, Kiwi, Kaktusfeige',
+        'flavorCategory' => 'Melonen, exotische Früchte',
+        'addlCategory' => '',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p>Shake & Vape Liquid. Geschmack: Melone, Kiwi, Kaktusfeige. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Melone, Kiwi, Kaktusfeige</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
 );
