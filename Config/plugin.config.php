@@ -30,10 +30,10 @@ use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
 use MxcDropshipInnocigs\Mapping\EntityValidator;
 use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
+use MxcDropshipInnocigs\Mapping\Import\CapacityMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
 use MxcDropshipInnocigs\Mapping\Import\CommonNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ContentMapper;
 use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
 use MxcDropshipInnocigs\Mapping\Import\DosageMapper;
 use MxcDropshipInnocigs\Mapping\Import\FlavorMapper;
@@ -88,48 +88,44 @@ return [
         ],
         'attributes' => [
             's_articles_attributes' => [
-                'mxc_dsi_supplier'       => [
-                    'type' => 'string',
-                    //                    'settings' => [
-                    //                        'label'            => '',
-                    //                        'supportText'      => '',
-                    //                        'helpText'         => '',
-                    //                        'translatable'     => false,
-                    //                        'displayInBackend' => false,
-                    //                        'position'         => 10000,
-                    //                        'custom'           => false
-                    //                    ]
-                ],
-                'mxc_dsi_brand'          => [
-                    'type' => 'string',
-                ],
-                'mxc_dsi_flavor'         => [
-                    'type' => 'string',
-                ],
-                'mxc_dsi_master'         => [
-                    'type' => 'string',
-                ],
-                'mxc_dsi_type'           => [
-                    'type' => 'string',
-                ],
-                'dc_ic_ordernumber'      => [
-                    'type' => 'string',
-                ],
-                'dc_ic_articlename'      => [
-                    'type' => 'string',
-                ],
-                'dc_ic_purchasing_price' => [
-                    'type' => 'string',
-                ],
-                'dc_ic_retail_price'     => [
-                    'type' => 'string',
-                ],
-                'dc_ic_instock'          => [
-                    'type' => 'integer',
-                ],
-                'dc_ic_active'           => [
-                    'type' => 'boolean',
-                ],
+                'mxc_dsi_type'         => ['type' => 'string'],
+                'mxc_dsi_subtype'      => ['type' => 'string'],
+                'mxc_dsi_common_name'  => ['type' => 'string'],
+                'mxc_dsi_manufacturer' => ['type' => 'string'],
+                'mxc_dsi_supplier'     => ['type' => 'string'],
+                'mxc_dsi_brand'        => ['type' => 'string'],
+
+                'mxc_dsi_flavor'         => ['type' => 'string'],
+                'mxc_dsi_flavor_group'   => ['type' => 'string'],
+                'mxc_dsi_base'           => ['type' => 'string'],
+                'mxc_dsi_nicotine'       => ['type' => 'string'],
+                'mxc_dsi_bottle_size'    => ['type' => 'string'],
+                'mxc_dsi_bottle_content' => ['type' => 'string'],
+
+                'mxc_dsi_mod_cell_type'        => ['type' => 'string'],
+                'mxc_dsi_mod_power'            => ['type' => 'string'],
+                'mxc_dsi_mod_capacity'         => ['type' => 'string'],
+                'mxc_dsi_mod_materials'        => ['type' => 'string'],
+                'mxc_dsi_mod_charging_current' => ['type' => 'string'],
+                'mxc_dsi_mod_processor'        => ['type' => 'string'],
+                'mxc_dsi_mod_output_modes'     => ['type' => 'string'],
+                'mxc_dsi_mod_output_voltage'   => ['type' => 'string'],
+                'mxc_dsi_mod_temperatur_range' => ['type' => 'string'],
+                'mxc_dsi_mod_resistance_range' => ['type' => 'string'],
+                'mxc_dsi_mod_thread_type'      => ['type' => 'string'],
+                'mxc_dsi_mod_special_features' => ['type' => 'string'],
+                'mxc_dsi_mod_size'             => ['type' => 'string'],
+
+                'mxc_dsi_clr_tank_volume'  => ['type' => 'string'],
+                'mxc_dsi_clr_diameter'     => ['type' => 'string'],
+                'mxc_dsi_clr_thread_type'  => ['type' => 'string'],
+                'mxc_dsi_clr_driptip_type' => ['type' => 'string'],
+                'mxc_dsi_clr_materials'    => ['type' => 'string'],
+                'mxc_dsi_clr_airflow'      => ['type' => 'string'],
+                'mxc_dsi_clr_filling'      => ['type' => 'string'],
+                'mxc_dsi_clr_inhalation'   => ['type' => 'string'],
+
+                'mxc_dsi_master' => ['type' => 'string'],
             ],
         ],
     ],
@@ -156,13 +152,13 @@ return [
 
             CategoryTool::class => AugmentedObjectFactory::class,
 
-            CommonNameMapper::class       => MappingConfigFactory::class,
-            DosageMapper::class           => MappingConfigFactory::class,
-            ContentMapper::class          => MappingConfigFactory::class,
-            FlavorMapper::class           => MappingConfigFactory::class,
-            NameMapper::class             => MappingConfigFactory::class,
-            CategoryMapper::class         => MappingConfigFactory::class,
-            DescriptionMapper::class      => MappingConfigFactory::class,
+            CommonNameMapper::class  => MappingConfigFactory::class,
+            DosageMapper::class      => MappingConfigFactory::class,
+            CapacityMapper::class    => MappingConfigFactory::class,
+            FlavorMapper::class      => MappingConfigFactory::class,
+            NameMapper::class        => MappingConfigFactory::class,
+            CategoryMapper::class    => MappingConfigFactory::class,
+            DescriptionMapper::class => MappingConfigFactory::class,
 
             ImportDosage::class      => AugmentedObjectFactory::class,
             ImportFlavor::class      => AugmentedObjectFactory::class,

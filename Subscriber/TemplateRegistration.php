@@ -1,8 +1,12 @@
-<?php
+<?php /** @noinspection PhpUnusedParameterInspection */
+/** @noinspection PhpUndefinedMethodInspection */
+
+/** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Subscriber;
 
 use Enlight\Event\SubscriberInterface;
+use Enlight_Event_EventArgs;
 use Enlight_Template_Manager;
 
 class TemplateRegistration implements SubscriberInterface
@@ -26,17 +30,18 @@ class TemplateRegistration implements SubscriberInterface
         $this->pluginDirectory = $pluginDirectory;
         $this->templateManager = $templateManager;
     }
+
     /**
      * {@inheritdoc}
      */
     public static function getSubscribedEvents()
     {
         return [
-            'Enlight_Controller_Action_PreDispatch' => 'onPreDispatch'
+            'Enlight_Controller_Action_PreDispatch' => 'onPreDispatch',
         ];
     }
 
-    public function onPreDispatch()
+    public function onPreDispatch(Enlight_Event_EventArgs $args)
     {
         $this->templateManager->addTemplateDir($this->pluginDirectory . '/Resources/views');
     }

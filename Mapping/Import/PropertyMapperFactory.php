@@ -36,7 +36,7 @@ class PropertyMapperFactory implements FactoryInterface
             // requires name, sets type
             'type'          => $container->get(TypeMapper::class),
             // requires name, type, sets content and capacity for liquid products
-            'content'       => $container->get(ContentMapper::class),
+            'content'       => $container->get(CapacityMapper::class),
             // requires type, sets dosage
             'dosage'        => $container->get(DosageMapper::class),
             // requires manual config, sets flavor and flavorCategory

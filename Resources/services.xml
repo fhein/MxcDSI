@@ -8,6 +8,9 @@
             <argument type="service" id="template"/>
             <tag name="shopware.event_subscriber"/>
         </service>
+        <service id="mxc_dropship_innocigs.subscriber.mainDetail" class="MxcDropshipInnocigs\Subscriber\MainDetailSelector">
+            <tag name="shopware.event_subscriber"/>
+        </service>
         <service id="Shopware_CronJob_MxcDsiImport"
                  class="MxcDropshipInnocigs\Import\ImportCronJob">
             <tag name="shopware.event_subscriber"/>
@@ -25,6 +28,12 @@
                 id="mxc_dropship_innocigs.commands.update_stock_command"
                 class="MxcDropshipInnocigs\Commands\UpdateStockCommand">
             <tag name="console.command" command="mxcdsi:updatestock"/>
+        </service>
+        <service id="mxc_dropship_innocigs.list_product_service"
+                 class="MxcDropshipInnocigs\Shopware\Bundle\StoreFrontBundle\ListProductServiceDecorator"
+                 decorates="shopware_storefront.list_product_service"
+                 public="false">
+            <argument type="service" id="mxc_dropship_innocigs.list_product_service.inner"/>
         </service>
     </services>
 </container>

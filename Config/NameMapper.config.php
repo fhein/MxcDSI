@@ -31,6 +31,7 @@ return [
         ],
     ],
 
+
     'name_cleanup' => [
         'preg_replace' => [
             '~\s+~'                                        => ' ',
@@ -73,7 +74,8 @@ return [
             '~(Legend) - (mit Alpha)~'                     => '$1 $2',
             '~((V200)|(V80)) - (mit Amor NSE)~'            => '$1 $4',
             '~(Lite) - (mit GS Air 3)~'                    => '$1 $2',
-
+            '~(Probierbox - Liquid) - 10 ml~'              => '$1',
+            '~(Nikotinsalz-Liquid) (\d+ mg/ml)~'           => '$1 - $2',
         ],
     ],
 
@@ -408,6 +410,7 @@ return [
             '~(Aegis Mini) (- \d\.\d+ mAh)~'                         => '$1 - Akku $2',
             '~(Drag Mini) (- \d\.\d+ mAh)~'                          => '$1 - Akku $2',
             '~(Mag Baby) (- \d+ Watt)~'                              => '$1 - Akku $2',
+//            '~(Compact 14) (Akku)~'                                  => '$1 - $2',
             '~(Pumper.*) (- \d+ Watt)~'                              => '$1 - Squonker Box $2',
             '~(Blocks.*) (\d+ Watt)~'                                => '$1 - Squonker Box - $2',
             '~(Pumper)-~'                                            => '$1 ',
@@ -447,7 +450,7 @@ return [
             '~(Lexicon) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Lucid) (- \d+ Watt)~'                                 => '$1 - Akkuträger $2',
             '~(iStick .*) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
-            '~(Aegis Legend) (- \d+ Watt)~'                          => '$1 - Akkuträger $2',
+            '~(Aegis Legend.*) (- \d+ Watt)~'                        => '$1 - Akkuträger $2',
             '~(Edge.*) (- \d+ Watt)~'                                => '$1 - Akkuträger $2',
             '~(Nova) (- \d+ Watt)~'                                  => '$1 - Akkuträger $2',
             '~(Espion.*) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
@@ -686,11 +689,14 @@ return [
             '~(Fog1)~',
             '~(J-Easy3)~',
             '~(Minifit)~',
+            '~(Compact 14)~',
             '~(P16A)~',
+            '~(Q14)~',
             '~(Q16 C)~',
         ],
         'Lost Vape' => [
             '~(Original Q)~',
+            '~(Lyra)~',
         ],
         'OBS'           => [
             '~(Crius 2 RTA)~',
@@ -734,6 +740,9 @@ return [
             '~(Sobra)~',
             '~(Moonshot 120)~',
             '~(Wolf Mini)~',
+        ],
+        'Smoant' => [
+            '~(Battlestar Squonker( RDA)?)~',
         ],
         'Steamax'       => [
             // Smok
@@ -793,6 +802,7 @@ return [
             '~(Valyrian( 2)?)~',
             '~(Blocks)~',
             '~(Whirl(( 20)|( 22))?)~',
+            '~(Caliburn)~',
 
         ],
         'Vapanion'      => [
@@ -837,6 +847,7 @@ return [
             '~(eMASK)~',
             '~(Vlit Preco)~',
             '~(Preco( Plus)?)~',
+            '~(Vlit Vowl 40)~',
         ],
         'Wismec'        => [
             '~(Tobhino BF RDA)~',
@@ -871,6 +882,7 @@ return [
         'Yihi'          => [
             '~(SX Mini Mi Class)~',
             '~(SX Mini SL Class)~',
+            '~(SX Mini X Class)~',
         ],
         'ZQ'            => [
             '~(Vi)~',

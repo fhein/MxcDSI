@@ -1,6 +1,6 @@
 {
   "require": {
-    "shopware/shopware": "^5.5",
+    "shopware/shopware": "5.5.10",
     "zendframework/zend-http" : "~2.8",
     "mxc-commons/mxc-shopware-plugin" : "^0.1",
     "phpoffice/phpspreadsheet": "~1.6",

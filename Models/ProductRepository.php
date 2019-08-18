@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Models;
 
@@ -119,7 +119,7 @@ class ProductRepository extends BaseEntityRepository
         'getExcelExportFlavoredProducts' =>
             'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.flavor, p.content, p.capacity '
             . 'FROM MxcDropshipInnocigs\Models\Product p '
-            . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\')',
+            . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\', \'EASY3_CAP\')',
 
     ];
 

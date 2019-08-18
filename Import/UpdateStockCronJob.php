@@ -4,14 +4,12 @@ namespace MxcDropshipInnocigs\Import;
 
 use Enlight\Event\SubscriberInterface;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use Mxc\Shopware\Plugin\Service\ServicesTrait;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Plugin\Plugin;
 
 class UpdateStockCronJob implements SubscriberInterface
 {
-    use ServicesTrait;
-
     protected $valid = null;
 
     protected $log = null;
@@ -27,9 +25,9 @@ class UpdateStockCronJob implements SubscriberInterface
 
     public function onUpdateStockCronJob(/** @noinspection PhpUnusedParameterInspection */ $job)
     {
-        $this->getServices();
+        $services = MxcDropshipInnocigs::getServices();
         /** @var LoggerInterface $log */
-        $this->log = $this->services->get('logger');
+        $this->log = $services->get('logger');
         $this->modelManager = Shopware()->Models();
         $result = true;
 
@@ -49,7 +47,7 @@ class UpdateStockCronJob implements SubscriberInterface
 
     protected function updateStockInfo()
     {
-        $apiClient = $this->services->get(ApiClient::class);
+        $apiClient = MxcDropshipInnocigs::getServices()->get(ApiClient::class);
         $details = $this->modelManager->getRepository(Detail::class)->findAll();
         $info = $apiClient->getItemList(true);
         $stockInfo = $apiClient->getAllStockInfo();

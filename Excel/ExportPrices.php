@@ -158,9 +158,14 @@ class ExportPrices extends AbstractProductExport
     protected function isSinglePack(Variant $variant)
     {
         $model = $this->getModels()[$variant->getIcNumber()];
-        if (strpos($model->getOptions(), '1er Packung') !== false) {
-            return true;
-        }
+        $options = $model->getOptions();
+
+        $pattern = 'PACKUNG' . MXC_DELIMITER_L1;
+        if (strpos($options, $pattern) === false) return true;
+
+        $pattern .= '1er Packung';
+        if (strpos($model->getOptions(), $pattern) !== false) return true;
+
         return false;
     }
 

@@ -104,6 +104,11 @@ class Variant extends ModelEntity
     private $content;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $capacity;
+
+    /**
      * @var string $retailPrices
      *
      * @ORM\Column(name="retail_prices", type="string", nullable=true)
@@ -622,5 +627,21 @@ class Variant extends ModelEntity
     public function setRetailPriceMaxVapor($retailPriceMaxVapor)
     {
         $this->retailPriceMaxVapor = $retailPriceMaxVapor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCapacity()
+    {
+        return $this->capacity;
+    }
+
+    /**
+     * @param mixed $capacity
+     */
+    public function setCapacity($capacity)
+    {
+        $this->capacity = $capacity;
     }
 }

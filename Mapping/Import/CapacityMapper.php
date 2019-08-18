@@ -8,7 +8,7 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 
-class ContentMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
+class CapacityMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
 {
     use ModelManagerAwareTrait;
 
@@ -27,21 +27,27 @@ class ContentMapper extends BaseImportMapper implements ProductMapperInterface, 
     public function map(Model $model, Product $product, bool $remap = false)
     {
         $type = $product->getType();
-        if (! in_array($type, ['AROMA', 'SHAKE_VAPE', 'LIQUID'])) return;
+        if (! in_array($type, ['AROMA', 'SHAKE_VAPE', 'LIQUID', 'LIQUID_BOX', 'BASE', 'EASY3_CAP'])) return;
 
-        $icNumber = $product->getIcNumber();
-        $content = @$this->config[$icNumber]['content'];
-        $capacity = @$this->config[$icNumber]['capacity'];
+        $capacity = NULL;
+        if (in_array($type, ['LIQUID', 'LIQUID_BOX', 'BASE'])) {
+            $variants = $product->getVariants();
+            foreach ($variants as $variant) {
+                $capacity = $variant->getContent();
+                $variant->setCapacity($capacity);
+            }
+        } else {
+            $icNumber = $product->getIcNumber();
+            $capacity = @$this->config[$icNumber]['capacity'];
+            $capacity = $capacity ?? $this->remapCapacity($product);
 
-        if ($content === null) {
-            $content = $this->remapContent($product);
+            $variants = $product->getVariants();
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                $variant->setCapacity($capacity);
+            }
         }
 
-        if ($capacity === null) {
-            $capacity = $type === 'LIQUID' ? $content : $this->remapCapacity($product);
-        }
-
-        $product->setContent($content);
         $product->setCapacity($capacity);
     }
 

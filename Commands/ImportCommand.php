@@ -2,8 +2,8 @@
 
 namespace MxcDropshipInnocigs\Commands;
 
-use Mxc\Shopware\Plugin\Service\ServicesTrait;
 use MxcDropshipInnocigs\Import\ImportClient;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use Shopware\Commands\ShopwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,8 +12,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 class ImportCommand extends ShopwareCommand
 {
     protected $log;
-
-    use ServicesTrait;
     /*
      * {@inheritdoc}
      */
@@ -40,10 +38,9 @@ EOF
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('<info>Importing products from InnoCigs ...</info>');
-        $this->getServices();
 
         try {
-            $this->services->get(ImportClient::class)->import(true);
+            MxcDropshipInnocigs::getServices()->get(ImportClient::class)->import(true);
         } catch (Throwable $e) {
             $output->writeln('<merror>' . $e->getMessage() . '</merror>');
         }

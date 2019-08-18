@@ -1,4 +1,5 @@
-<?php /** @noinspection PhpUndefinedMethodInspection */
+<?php /** @noinspection PhpUnusedParameterInspection */
+/** @noinspection PhpUndefinedMethodInspection */
 
 /** @noinspection PhpUnhandledExceptionInspection */
 

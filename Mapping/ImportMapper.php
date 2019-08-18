@@ -220,6 +220,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $recommendedRetailPrice = str_replace(',', '.', $model->getRecommendedRetailPrice());
             $variant->setRecommendedRetailPrice($recommendedRetailPrice);
             $variant->setImages($model->getImages());
+            $unit = $model->getUnit();
+            if (! empty($unit)) $variant->setUnit($unit);
+            $content = $model->getContent();
+            if (! empty($content)) $variant->setContent($content);
 
             $variant->setActive(false);
             $variant->setAccepted(true);
@@ -289,6 +293,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $newOptions = explode(MXC_DELIMITER_L2, $newValue);
         $rOptions = array_diff($oldOptions, $newOptions);
         foreach ($rOptions as $option) {
+            if ($option === null) continue;
             $param = explode(MXC_DELIMITER_L1, $option);
             $variant->removeOption($this->options[$param[0]][$param[1]]);
         }

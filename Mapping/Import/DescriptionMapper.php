@@ -7,7 +7,8 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 
-class DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
+class
+DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
 {
     use LoggerAwareTrait;
 

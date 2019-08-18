@@ -65,6 +65,9 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             switch ($appendSubcategory) {
                 case 'supplier':
                     $appendSubcategory = $product->getSupplier();
+                    if ($appendSubcategory === 'InnoCigs') {
+                        $appendSubcategory = $product->getBrand();
+                    }
                     break;
                 case 'brand':
                     $appendSubcategory = $product->getBrand();

@@ -160,8 +160,8 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
         $repository = $this->modelManager->getRepository(Product::class);
         $products = $repository->getProductsByIds($productIds);
         foreach ($products as $product) {
-            $this->setRelatedArticles($product);
-            $this->setSimilarArticles($product);
+            $this->setRelatedArticles($product, false);
+            $this->setSimilarArticles($product, false);
         }
     }
 }

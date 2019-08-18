@@ -9,6 +9,7 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Repository;
+use Throwable;
 
 class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
 {
@@ -48,5 +49,82 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
 
     protected function getArticleRepository() {
         return $this->articleRepository ?? $this->articleRepository = $this->modelManager->getRepository(Article::class);
+    }
+
+    public static function getArticleMainDetailArray($articleId)
+    {
+        return Shopware()->Db()->fetchRow('
+            SELECT * FROM 
+              s_articles_details 
+            LEFT JOIN 
+              s_articles_attributes ON s_articles_attributes.articledetailsID = s_articles_details.id 
+            WHERE 
+              s_articles_details.articleID = ?
+              AND s_articles_details.active = 1
+              AND s_articles_details.kind = 1
+            ', array($articleId)
+        );
+    }
+
+    /**
+     * @param $articleId
+     * @return mixed
+     */
+    public static function getArticleSubDetailsArray($articleId) {
+
+        return Shopware()->Db()->fetchAll('
+            SELECT * FROM 
+              s_articles_details 
+            LEFT JOIN 
+              s_articles_attributes ON s_articles_attributes.articledetailsID = s_articles_details.id 
+            WHERE 
+              s_articles_details.articleID = ?
+              AND s_articles_details.active = 1
+              AND s_articles_details.kind = 2
+            ', array($articleId)
+        );
+    }
+
+    public static function getArticleActiveDetailsArray($articleId)
+    {
+        return Shopware()->Db()->fetchAll('
+            SELECT * FROM 
+              s_articles_details 
+            LEFT JOIN 
+              s_articles_attributes ON s_articles_attributes.articledetailsID = s_articles_details.id 
+            WHERE 
+              s_articles_details.articleID = ?
+              AND s_articles_details.active = 1
+            ', array($articleId)
+        );
+    }
+
+    public static function setArticleMainDetail(int $articleId, int $detailId) {
+        try {
+            // set all details to 2
+            Shopware()->Db()->query("
+                        UPDATE `s_articles_details` SET `kind` = 2
+                        WHERE `articleID` = :articleId
+                    ", ['articleId' => $articleId]);
+
+            // set the first detail with stock to 1
+            Shopware()->Db()->query("
+                        UPDATE `s_articles_details` SET `kind` = 1
+                        WHERE `articleID` = :articleId
+                        AND `id` = :detailId
+                    ", [
+                'articleId' => $articleId,
+                'detailId'  => $detailId
+            ]);
+
+            // update the article's main detail id
+            Shopware()->Db()->query("
+                        UPDATE `s_articles` SET `main_detail_id` = :detailId
+                        WHERE `id` = :articleId
+                    ", [
+                'articleId' => $articleId,
+                'detailId'  => $detailId
+            ]);
+        } catch (Throwable $e) {}
     }
 }

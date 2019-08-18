@@ -5,6 +5,7 @@ use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 
 class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationController
 {
@@ -13,7 +14,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
     public function indexAction()
     {
-        $log = $this->getLog();
+        $log = MxcDropshipInnocigs::getServices()->get('logger');
         $log->enter();
         try {
             parent::indexAction();
@@ -26,7 +27,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
     public function updateAction()
     {
-        $log = $this->getLog();
+        $log = MxcDropshipInnocigs::getServices()->get('logger');
         $log->enter();
         try {
             parent::updateAction();
@@ -87,7 +88,8 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
     public function save($data)
     {
-        $log = $this->getLog();
+        $services = MxcDropshipInnocigs::getServices();
+        $log = $services->get('logger');
         $log->enter();
 
         list($group, $oldOptionValues) = $this->getOldOptionValues($data);
@@ -115,11 +117,18 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
         $this->getManager()->clear();
 
         $productUpdates = $this->getLinkedProductsHavingChangedOptions($group->getId(), $groupChanged, $oldOptionValues);
-        $this->getServices()->get(ProductMapper::class)->controllerUpdateArticles($productUpdates, false);
+        $services->get(ProductMapper::class)->controllerUpdateArticles($productUpdates, false);
         $this->getManager()->flush();
 
         $detail = $this->getDetail($group->getId());
         $log->leave();
         return ['success' => true, 'data' => $detail['data']];
     }
+
+    protected function handleException(Throwable $e, bool $rethrow = false) {
+        $log = MxcDropshipInnocigs::getServices()->get('logger');
+        $log->except($e, true, $rethrow);
+        $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+    }
+
 }

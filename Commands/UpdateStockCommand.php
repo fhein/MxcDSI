@@ -2,7 +2,6 @@
 
 namespace MxcDropshipInnocigs\Commands;
 
-use Mxc\Shopware\Plugin\Service\ServicesTrait;
 use Shopware\Commands\ShopwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,7 +11,6 @@ class UpdateStockCommand extends ShopwareCommand
 {
     protected $log;
 
-    use ServicesTrait;
     /*
      * {@inheritdoc}
      */
@@ -39,7 +37,6 @@ EOF
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('<info>Updating stock information from InnoCigs ...</info>');
-        $this->getServices();
 
         try {
         } catch (Throwable $e) {

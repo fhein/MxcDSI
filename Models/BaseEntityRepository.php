@@ -7,13 +7,11 @@ use Doctrine\DBAL\Driver\Statement;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Query;
-use Mxc\Shopware\Plugin\Service\ServicesTrait;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use Zend\Log\LoggerInterface;
 
 class BaseEntityRepository extends EntityRepository
 {
-    use ServicesTrait;
-
     /** @var LoggerInterface */
     protected $log;
 
@@ -32,8 +30,7 @@ class BaseEntityRepository extends EntityRepository
     public function __construct($em, ClassMetadata $class)
     {
         parent::__construct($em, $class);
-        $services = $this->getServices();
-        $this->log = $services->get('logger');
+        $this->log = MxcDropshipInnocigs::getServices()->get('logger');
     }
 
     public function __call($method, $arguments)

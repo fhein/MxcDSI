@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
@@ -122,47 +122,25 @@ class PriceMapper
      */
     public static function setReferencePrice(Product $product)
     {
-        // These products may need a reference price, unit is ml
-        if (preg_match('~(Liquid)|(Aromen)|(Basen)|(Shake \& Vape)~', $product->getCategory()) !== 1) {
-            return;
-        }
-        // Do not add reference price on multi item packs
-        $name = $product->getName();
-        if (preg_match('~\(\d+ Stück pro Packung\)~', $name) === 1) {
-            return;
-        }
 
-        $matches = [];
-        preg_match('~(\d+(\.\d+)?) ml~', $name, $matches);
-        // If there's there are no ml in the product name we exit
-        if (empty($matches)) {
-            return;
-        }
+        $type = $product->getType();
+        if (! in_array($type, ['LIQUID', 'LIQUID_BOX', 'AROMA', 'SHAKE_VAPE', 'BASE', 'EASY3_CAP'])) return;
 
-        // remove thousands punctuation
-        $baseVolume = $matches[1];
-        $baseVolume = str_replace('.', '', $baseVolume);
+        $reference = $type === 'BASE' ? 1000 : 100;
 
         $variants = $product->getVariants();
         /** @var Variant $variant */
         foreach ($variants as $variant) {
             $detail = $variant->getDetail();
-            if (!$detail) {
-                continue;
-            }
-            $pieces = $variant->getPiecesPerOrder();
-            // calculate the reference volume
-            $volume = $baseVolume * $pieces;
-            $reference = $volume < 100 ? 100 : ($volume < 1000 ? 1000 : 0);
-            // Exit if we have no reference volume
-            if ($reference === 0) {
-                continue;
-            }
+            if ($detail === null) continue;
+
+            $content = $variant->getContent() * $variant->getPiecesPerOrder();
 
             // set reference volume and unit
-            $detail->setPurchaseUnit($volume);
+            $detail->setPurchaseUnit($content);
             $detail->setReferenceUnit($reference);
             $detail->setUnit(UnitTool::getUnit('ml'));
+
         }
     }
 

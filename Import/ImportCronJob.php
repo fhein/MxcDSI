@@ -3,12 +3,10 @@
 namespace MxcDropshipInnocigs\Import;
 
 use Enlight\Event\SubscriberInterface;
-use Mxc\Shopware\Plugin\Service\ServicesTrait;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 
 class ImportCronJob implements SubscriberInterface
 {
-    use ServicesTrait;
-
     public static function getSubscribedEvents()
     {
         return [
@@ -18,8 +16,7 @@ class ImportCronJob implements SubscriberInterface
 
     public function onImportCronJob(/** @noinspection PhpUnusedParameterInspection */ $job)
     {
-        $this->getServices();
-        $this->services->get(ImportClient::class)->import(true);
+        MxcDropshipInnocigs::getServices()->get(ImportClient::class)->import(true);
 
         return true;
     }
