@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
 namespace MxcDropshipInnocigs\Mapping\Shopware;
@@ -10,6 +10,7 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Plugin\Plugin;
 
 class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareInterface
@@ -39,21 +40,16 @@ class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareIn
         if (! $this->validate()) return;
 
         $attribute = $detail->getAttribute();
+
         // @todo: $attribute null happens but it should not
         if (! $attribute) return;
 
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcActive($active);
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcOrderNumber($variant->getIcNumber());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcArticleName($variant->getProduct()->getName());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcPurchasingPrice($variant->getPurchasePrice());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcRetailPrice($variant->getRecommendedRetailPrice());
-        /** @noinspection PhpUndefinedMethodInspection */
-        $attribute->setDcIcInstock($this->getStockInfo()[$variant->getIcNumber()] ?? 0);
+        ArticleTool::setDetailAttribute($detail, 'dc_ic_ordernumber', $variant->getIcNumber());
+        ArticleTool::setDetailAttribute($detail, 'dc_ic_articlename', $variant->getProduct()->getName());
+        ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', $variant->getPurchasePrice());
+        ArticleTool::setDetailAttribute($detail, 'dc_ic_retail_price', $variant->getRecommendedRetailPrice());
+        ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', $this->getStockInfo()[$variant->getIcNumber()] ?? 0);
+        ArticleTool::setDetailAttribute($detail, 'dc_ic_active', $active);
     }
 
     /**
@@ -65,15 +61,10 @@ class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareIn
     public function validate(): bool
     {
         if (! is_bool($this->valid)) {
-            $className = 'Shopware\Models\Attribute\Article';
-            if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])
-                || !(method_exists($className, 'setDcIcOrderNumber')
-                    && method_exists($className, 'setDcIcArticleName')
-                    && method_exists($className, 'setDcIcPurchasingPrice')
-                    && method_exists($className, 'setDcIcRetailPrice')
-                    && method_exists($className, 'setDcIcActive')
-                    && method_exists($className, 'setDcIcInstock'))
-            ) {
+            $repository = $this->modelManager->getRepository(Plugin::class);
+            $companion = $repository->findOneBy(['name' => 'wundeDcInnoCigs']);
+            if (null === $companion)
+            {
                 $this->log->warn('Can not prepare articles for dropship orders. Dropshipper\'s Companion is not installed.');
                 $this->valid = false;
             } else {

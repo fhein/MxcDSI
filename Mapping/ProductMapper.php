@@ -289,6 +289,11 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
         $article->setTax(TaxTool::getTax($product->getTax()));
 
+        $seoName = $product->getSeoName();
+        if (! empty($seoName)) {
+            ArticleTool::setArticleAttribute($article, 'attr4', $seoName);
+        }
+
         $supplier = $product->getSupplier();
         if ($supplier === 'InnoCigs') $supplier = $product->getBrand();
 

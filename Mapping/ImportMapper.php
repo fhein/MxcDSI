@@ -225,7 +225,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $content = $model->getContent();
             if (! empty($content)) $variant->setContent($content);
 
-            $variant->setActive(false);
+            $active = $product->isActive() && $this->isSinglePack($model);
+
+            $variant->setActive($active);
             $variant->setAccepted(true);
             $variant->setRetailPrices('EK' . MXC_DELIMITER_L1 . $recommendedRetailPrice);
             $variant->setOptions($this->mapOptions($model->getOptions()));
@@ -233,6 +235,20 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         }
         $this->modelManager->flush();
     }
+
+    protected function isSinglePack(Model $model)
+    {
+        $options = $model->getOptions();
+
+        $pattern = 'PACKUNG' . MXC_DELIMITER_L1;
+        if (strpos($options, $pattern) === false) return true;
+
+        $pattern .= '1er Packung';
+        if (strpos($model->getOptions(), $pattern) !== false) return true;
+
+        return false;
+    }
+
 
     /**
      * The Shopware details associated to obsolete variants must get removed before

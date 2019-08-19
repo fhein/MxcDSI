@@ -33,6 +33,8 @@ class PropertyMapperFactory implements FactoryInterface
             'piecesPerPack' => $container->get(ImportPiecesPerPackMapper::class),
             // requires name, sets commonName
             'commonName'    => $container->get(CommonNameMapper::class),
+            // requires name, sets commonName
+            'seoName'       => $container->get(SeoNameMapper::class),
             // requires name, sets type
             'type'          => $container->get(TypeMapper::class),
             // requires name, type, sets content and capacity for liquid products

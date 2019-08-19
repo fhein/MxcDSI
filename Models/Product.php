@@ -60,6 +60,13 @@ class Product extends ModelEntity  {
     /**
      * PropertyMapper mapped
      *
+     * @ORM\Column(name="seo_name", type="string", nullable=true)
+     */
+    private $seoName;
+
+    /**
+     * PropertyMapper mapped
+     *
      * @var string $commonName
      *
      * @ORM\Column(name="common_name", type="string", nullable=true)
@@ -734,5 +741,21 @@ class Product extends ModelEntity  {
     public function setAddlCategory($addlCategory)
     {
         $this->addlCategory = $addlCategory;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeoName()
+    {
+        return $this->seoName;
+    }
+
+    /**
+     * @param mixed $seoName
+     */
+    public function setSeoName($seoName)
+    {
+        $this->seoName = $seoName;
     }
 }

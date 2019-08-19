@@ -2,6 +2,7 @@
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
+use Doctrine\DBAL\Statement;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
@@ -70,6 +71,22 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
      * @param $articleId
      * @return mixed
      */
+    public static function getArticleDetailsArray($articleId) {
+        return Shopware()->Db()->fetchAll('
+            SELECT * FROM 
+              s_articles_details 
+            LEFT JOIN 
+              s_articles_attributes ON s_articles_attributes.articledetailsID = s_articles_details.id 
+            WHERE 
+              s_articles_details.articleID = ?
+            ', array($articleId)
+        );
+    }
+
+    /**
+     * @param $articleId
+     * @return mixed
+     */
     public static function getArticleSubDetailsArray($articleId) {
 
         return Shopware()->Db()->fetchAll('
@@ -126,5 +143,50 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
                 'detailId'  => $detailId
             ]);
         } catch (Throwable $e) {}
+    }
+
+    /**
+     * Write an attribute value to all details of supplied article
+     *
+     * @param Article $article
+     * @param string $attribute
+     * @param $value
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public static function setArticleAttribute(Article $article, string $attribute, $value)
+    {
+        $connection = Shopware()->Container()->get('dbal_connection');
+        $sql = sprintf("UPDATE s_articles_attributes attr 
+                INNER JOIN s_articles_details d ON d.id = attr.articledetailsID
+                SET attr.%s = :value 
+                WHERE d.articleID = :articleId", $attribute);
+        /** @var Statement $statement */
+        $statement = $connection->prepare($sql);
+        $statement->execute([
+            'articleId' => $article->getId(),
+            'value' => $value
+        ]);
+    }
+
+    /**
+     * Write an attribute value to supplied detail
+     *
+     * @param Article $article
+     * @param string $attribute
+     * @param $value
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public static function setDetailAttribute(Detail $detail, string $attribute, $value)
+    {
+        $connection = Shopware()->Container()->get('dbal_connection');
+        $sql = sprintf("UPDATE s_articles_attributes attr 
+                SET attr.%s = :value 
+                WHERE attr.articledetailsID = :detailId", $attribute);
+        /** @var Statement $statement */
+        $statement = $connection->prepare($sql);
+        $statement->execute([
+            'detailId' => $detail->getId(),
+            'value' => $value
+        ]);
     }
 }

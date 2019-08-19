@@ -841,7 +841,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
-
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1034,8 +1033,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     }
 
     protected function handleException(Throwable $e, bool $rethrow = false) {
-        $log = MxcDropshipInnocigs::getServices()->get('logger');
-        $log->except($e, true, $rethrow);
+        $log = MxcDropshipInnocigs::getServices()->get('logger')->except($e, true, $rethrow);
         $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
     }
 }

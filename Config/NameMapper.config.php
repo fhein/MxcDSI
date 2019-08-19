@@ -76,6 +76,7 @@ return [
             '~(Lite) - (mit GS Air 3)~'                    => '$1 $2',
             '~(Probierbox - Liquid) - 10 ml~'              => '$1',
             '~(Nikotinsalz-Liquid) (\d+ mg/ml)~'           => '$1 - $2',
+            '~(VG/PG: 80/20), (\d+ ml), (\d+ mg/ml)~'      => '$1 - $2 - $3',
         ],
     ],
 
@@ -529,6 +530,7 @@ return [
         ],
         'Aspire'        => [
             // Aspire
+            '~(Reax Mini)~',
             '~(Nepho)~',
             '~(Athos)~',
             '~(Dynamo)~',
