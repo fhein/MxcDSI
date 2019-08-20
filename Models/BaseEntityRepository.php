@@ -7,10 +7,11 @@ use Doctrine\DBAL\Driver\Statement;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Query;
+use Enlight_Hook;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use Zend\Log\LoggerInterface;
 
-class BaseEntityRepository extends EntityRepository
+class BaseEntityRepository extends EntityRepository implements Enlight_Hook
 {
     /** @var LoggerInterface */
     protected $log;
@@ -45,12 +46,6 @@ class BaseEntityRepository extends EntityRepository
             default:
                 return parent::__call($method, $arguments);
         }
-    }
-
-    public function count(): int
-    {
-        $dql = sprintf('SELECT count(c.id) FROM %s c', $this->getClassName());
-        return $this->getEntityManager()->createQuery($dql)->getSingleScalarResult();
     }
 
     protected function getQuery(string $name) : ?Query

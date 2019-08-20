@@ -15,7 +15,6 @@ use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Detail;
-use Shopware\Models\Attribute\Article as Attribute;
 
 class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
@@ -94,7 +93,6 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             if ($isMainDetail) {
                 $detail->setKind(1);
                 $article->setMainDetail($detail);
-                $article->setAttribute($detail->getAttribute());
                 $isMainDetail = false;
             }
         }
@@ -147,8 +145,8 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         // The class \Shopware\Models\Attribute\Product ist part of the Shopware attribute system.
         // It gets (re)generated automatically by Shopware core, when attributes are added/removed
         // via the attribute crud service. It is located in \var\cache\production\doctrine\attributes.
-        $attribute = new Attribute();
-        $detail->setAttribute($attribute);
+//        $attribute = new Attribute();
+//        $detail->setAttribute($attribute);
 
         $this->setShopwareDetailProperties($variant);
 

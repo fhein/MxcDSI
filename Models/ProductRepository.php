@@ -82,7 +82,7 @@ class ProductRepository extends BaseEntityRepository
             'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.article = a.id '
             . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
-            . 'JOIN MxcDropshipInnocigs\Models\Product p WHERE v.product = p.id '
+            . 'JOIN MxcDropshipInnocigs\Models\Product p WITH v.product = p.id '
             . 'WHERE p.number = :number',
 
         'removeOrphaned' =>

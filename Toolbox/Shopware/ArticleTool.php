@@ -2,6 +2,7 @@
 
 namespace MxcDropshipInnocigs\Toolbox\Shopware;
 
+use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Statement;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
@@ -151,7 +152,7 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
      * @param Article $article
      * @param string $attribute
      * @param $value
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     public static function setArticleAttribute(Article $article, string $attribute, $value)
     {
@@ -174,7 +175,7 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
      * @param Article $article
      * @param string $attribute
      * @param $value
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     public static function setDetailAttribute(Detail $detail, string $attribute, $value)
     {

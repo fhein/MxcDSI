@@ -20,12 +20,12 @@ use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
-
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -805,7 +805,29 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         } catch (Throwable $e) {
             $this->handleException($e);
         }
+   }
+
+    public function checkInactiveVariantsAction()
+    {
+        try {
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            foreach ($products as $product) {
+                $variants = $product->getVariants();
+                /** @var Variant $variant */
+                foreach ($variants as $variant) {
+                    if ($variant->isValid() && $variant->getDetail() === null) {
+                        $log->debug('Product with inactive variant: '. $product->getName());
+                    }
+                }
+            }
+            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
     }
+
 
 
     public function dev1Action()
@@ -841,6 +863,20 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $article = $product->getArticle();
+                if ($article === null) continue;
+                ArticleTool::setArticleAttribute($article, 'mxc_meta_type'         , $product->getType());
+                ArticleTool::setArticleAttribute($article, 'mxc_meta_common_name'  , $product->getCommonName());
+                ArticleTool::setArticleAttribute($article, 'mxc_meta_manufacturer' , $product->getManufacturer());
+                ArticleTool::setArticleAttribute($article, 'mxc_meta_supplier'     , $product->getSupplier());
+                ArticleTool::setArticleAttribute($article, 'mxc_meta_brand'        , $product->getBrand());
+
+                ArticleTool::setArticleAttribute($article, 'mxc_meta_flavor'         , $product->getFlavor());
+                ArticleTool::setArticleAttribute($article, 'mxc_meta_flavor_group'   , $product->getFlavorCategory());
+            }
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1033,7 +1069,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     }
 
     protected function handleException(Throwable $e, bool $rethrow = false) {
-        $log = MxcDropshipInnocigs::getServices()->get('logger')->except($e, true, $rethrow);
+        MxcDropshipInnocigs::getServices()->get('logger')->except($e, true, $rethrow);
         $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
     }
 }
