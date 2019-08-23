@@ -43,8 +43,8 @@ use MxcDropshipInnocigs\Mapping\Import\MappingConfigFactory;
 use MxcDropshipInnocigs\Mapping\Import\NameMapper;
 use MxcDropshipInnocigs\Mapping\Import\ProductMappings;
 use MxcDropshipInnocigs\Mapping\Import\ProductNumberMapper;
+use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
-use MxcDropshipInnocigs\Mapping\Import\SeoNameMapper;
 use MxcDropshipInnocigs\Mapping\Import\TypeMapper;
 use MxcDropshipInnocigs\Mapping\Import\VariantNumberMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
@@ -102,30 +102,30 @@ return [
                 'mxc_meta_bottle_size'    => ['type' => 'string'],
                 'mxc_meta_bottle_content' => ['type' => 'string'],
 
-//                'mxc_dsi_mod_cell_type'        => ['type' => 'string'],
-//                'mxc_dsi_mod_power'            => ['type' => 'string'],
-//                'mxc_dsi_mod_capacity'         => ['type' => 'string'],
-//                'mxc_dsi_mod_materials'        => ['type' => 'string'],
-//                'mxc_dsi_mod_charging_current' => ['type' => 'string'],
-//                'mxc_dsi_mod_processor'        => ['type' => 'string'],
-//                'mxc_dsi_mod_output_modes'     => ['type' => 'string'],
-//                'mxc_dsi_mod_output_voltage'   => ['type' => 'string'],
-//                'mxc_dsi_mod_temperatur_range' => ['type' => 'string'],
-//                'mxc_dsi_mod_resistance_range' => ['type' => 'string'],
-//                'mxc_dsi_mod_thread_type'      => ['type' => 'string'],
-//                'mxc_dsi_mod_special_features' => ['type' => 'string'],
-//                'mxc_dsi_mod_size'             => ['type' => 'string'],
+                //                'mxc_dsi_mod_cell_type'        => ['type' => 'string'],
+                //                'mxc_dsi_mod_power'            => ['type' => 'string'],
+                //                'mxc_dsi_mod_capacity'         => ['type' => 'string'],
+                //                'mxc_dsi_mod_materials'        => ['type' => 'string'],
+                //                'mxc_dsi_mod_charging_current' => ['type' => 'string'],
+                //                'mxc_dsi_mod_processor'        => ['type' => 'string'],
+                //                'mxc_dsi_mod_output_modes'     => ['type' => 'string'],
+                //                'mxc_dsi_mod_output_voltage'   => ['type' => 'string'],
+                //                'mxc_dsi_mod_temperatur_range' => ['type' => 'string'],
+                //                'mxc_dsi_mod_resistance_range' => ['type' => 'string'],
+                //                'mxc_dsi_mod_thread_type'      => ['type' => 'string'],
+                //                'mxc_dsi_mod_special_features' => ['type' => 'string'],
+                //                'mxc_dsi_mod_size'             => ['type' => 'string'],
 
-//                'mxc_dsi_clr_tank_volume'  => ['type' => 'string'],
-//                'mxc_dsi_clr_diameter'     => ['type' => 'string'],
-//                'mxc_dsi_clr_thread_type'  => ['type' => 'string'],
-//                'mxc_dsi_clr_driptip_type' => ['type' => 'string'],
-//                'mxc_dsi_clr_materials'    => ['type' => 'string'],
-//                'mxc_dsi_clr_airflow'      => ['type' => 'string'],
-//                'mxc_dsi_clr_filling'      => ['type' => 'string'],
-//                'mxc_dsi_clr_inhalation'   => ['type' => 'string'],
-//
-//                'mxc_dsi_master' => ['type' => 'string'],
+                //                'mxc_dsi_clr_tank_volume'  => ['type' => 'string'],
+                //                'mxc_dsi_clr_diameter'     => ['type' => 'string'],
+                //                'mxc_dsi_clr_thread_type'  => ['type' => 'string'],
+                //                'mxc_dsi_clr_driptip_type' => ['type' => 'string'],
+                //                'mxc_dsi_clr_materials'    => ['type' => 'string'],
+                //                'mxc_dsi_clr_airflow'      => ['type' => 'string'],
+                //                'mxc_dsi_clr_filling'      => ['type' => 'string'],
+                //                'mxc_dsi_clr_inhalation'   => ['type' => 'string'],
+                //
+                //                'mxc_dsi_master' => ['type' => 'string'],
             ],
         ],
     ],
@@ -153,7 +153,7 @@ return [
             CategoryTool::class => AugmentedObjectFactory::class,
 
             CommonNameMapper::class  => MappingConfigFactory::class,
-            SeoNameMapper::class     => MappingConfigFactory::class,
+            ProductSeoMapper::class  => AugmentedObjectFactory::class,
             DosageMapper::class      => MappingConfigFactory::class,
             CapacityMapper::class    => MappingConfigFactory::class,
             FlavorMapper::class      => MappingConfigFactory::class,
@@ -214,6 +214,7 @@ return [
         PropertyMapper::class           => 'PropertyMapper.config.php',
         TypeMapper::class               => 'TypeMapper.config.php',
         VariantNumberMapper::class      => 'VariantNumberMapper.config.php',
+        ProductSeoMapper::class         => 'ProductSeoMapper.config.php',
 
         ProductMapper::class => [
             'root_category' => 'Deutsch',
@@ -228,11 +229,11 @@ return [
             'Mapping'      => ImportMapping::class,
         ],
         'export' => [
-            'Preise'          => ExportPrices::class,
-            'Dosierung'       => ExportDosage::class,
-            'Geschmack'       => ExportFlavor::class,
-            'Beschreibung'    => ExportDescription::class,
-            'Mapping'         => ExportMapping::class,
+            'Preise'       => ExportPrices::class,
+            'Dosierung'    => ExportDosage::class,
+            'Geschmack'    => ExportFlavor::class,
+            'Beschreibung' => ExportDescription::class,
+            'Mapping'      => ExportMapping::class,
         ],
     ],
 ];

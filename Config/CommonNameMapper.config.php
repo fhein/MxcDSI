@@ -4,6 +4,9 @@ return [
         'Twelve Monkeys' => [
             'Origins' => 2,
         ],
+        'Vaporist'       => [
+            'Midnight Munchies' => 2,
+        ],
         'Twisted'        => [
             'Cryostasis'                           => 2,
             'Highway Vapor'                        => 2,
@@ -13,53 +16,57 @@ return [
             'Truckin Vaporz'                       => 2,
             'Peng Juice'                           => 2,
         ],
-        'Illusions' => [
+        'Illusions'      => [
             'Beyond Series' => 2,
         ],
-        'Dr. Frost' => [
-            'Polar Ice Vapes' => 2,
-            'Candy Mints' => 2,
-            'Frosty Shakes' => 2,
+        'Dr. Vapes'      => [
+            'Panther Series' => 2,
         ],
-        'Brateflavour' => [
+        'Dr. Frost'      => [
+            'Polar Ice Vapes' => 2,
+            'Candy Mints'     => 2,
+            'Frosty Shakes'   => 2,
+        ],
+        'Brateflavour'   => [
             'X-TRM' => 2,
         ],
-        'Juice Bomb' => [
+        'Juice Bomb'     => [
             'Double Up' => 2,
         ],
-        'The Fog Clown' => [
+        'The Fog Clown'  => [
             'Energy Series' => 2,
-            'Ice Cream' => 2,
+            'Ice Cream'     => 2,
         ],
-        'Yankee Juice' => [
+        'Yankee Juice'   => [
             'Sweets' => 2,
         ],
-        '5 Stars Peine' => [
-            'Flavor Monster'    => 2,
-            'One'               => 2,
-            'Tea Edition'       => 2,
-            'Cocktail Edition'  => 2,
-            'Poison I'          => 2,
-            'Poison II'         => 2,
-            'Poison III'        => 2,
+        '5 Stars Peine'  => [
+            'Flavor Monster'   => 2,
+            'One'              => 2,
+            'Tea Edition'      => 2,
+            'Cocktail Edition' => 2,
+            'Poison I'         => 2,
+            'Poison II'        => 2,
+            'Poison III'       => 2,
 
         ],
         'Vampire Vape'   => [
-            'Koncept XIX' => 2,
-            'Shortz'      => 2,
-            'VLADS VG'    => 2,
+            'Koncept XIX'     => 2,
+            'Shortz'          => 2,
+            'VLADS VG'        => 2,
+            'The Naughty One' => 2,
         ],
         'I VG'           => [
             'Custards' => 2,
             'Deserts'  => 2,
-            'Menthol' => 2,
-            'Sweets' => 2,
-            'Pops' => 2,
+            'Menthol'  => 2,
+            'Sweets'   => 2,
+            'Pops'     => 2,
         ],
     ],
 
     // @todo: Direct common name mapping for some products, overrides mapping algorithm
-    'common_names' => [
+    'common_names'      => [
         '~ARC Head~' => 'Revvo',
-    ]
+    ],
 ];

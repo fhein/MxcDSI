@@ -5521,8 +5521,8 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
     'VV100A10-BK' => array(
         'icNumber' => 'VV100A10-BK',
         'number' => 'VV100A10-BK',
-        'name' => 'Vampire Vape - Aroma Blood Sukka',
-        'commonName' => 'Aroma Blood Sukka',
+        'name' => 'Vampire Vape - Blood Sukka - Aroma - 30 ml',
+        'commonName' => 'Blood Sukka',
         'type' => 'AROMA',
         'category' => 'AROMEN > Gewürze#!#AROMEN > Frisches & Eiscreme#!#AROMEN > Früchte#!#AROMEN > Vampire Vape',
         'supplier' => 'Vampire Vape',
@@ -7629,36 +7629,96 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das E-Zigaretten Set von SC setzt sich aus dem iKonn 220 Akkuträger und Ello Verdampfer zusammen. Der iKonn Akkuträger wird über zwei 18650er Akkuzellen betrieben und erreicht daher eine Leistung von bis zu 220 Watt. Ihren iKonn 220 können Sie über das mitgelieferte USB-Kabel laden. Der Ello Verdampfer fasst bis zu 4 Milliliter Liquid und verfügt über das Top Filling System. Somit können Sie Ihren Ello direkt von oben mit Liquid befüllen. Im Set sind außerdem 2 verschiedene Subohm-Heads aus der SC HW-Serie vorhanden. Daher eignet sich die iKonn 220 E-Zigarette für die Lungeninhalation.
-<br>
-<br>
-<b>Das SC iKonn 220 E-Zigaretten Set wird ohne 18650er Akkus ausgeliefert.</b>
-<br>
-<br>
-<b>Lieferumfang:</b>
-<ul><li>1x iKonn 220 Watt Akkuträger</li>
-<li>1x ELLO Clearomizer 4 ml</li>
-<li>1x HW3 0,2 Ohm Head</li>
-<li>1x HW4 0,3 Ohm Head</li>
-<li>1x USB-Kabel</li>
-<li>1x Ersatzteil-Set</li>
-<li>2x Bedienungsanleitung</li></ul><br>
-<br>
-<b>Wichtige Merkmale iKonn 220:</b>\\n<ul><li>Ausgabemodi: VW / TC (Ni, Ti, SS) / TCR (M1, M2, M3)</li>
-<li>Ausgangsleistung: 1­ bis 220 Watt</li>
-<li>Widerstandsbereich: 0,05­ bis 1,5 Ohm im TC­/TCR-Modus |
-0,1 bis 3,5 Ohm im VW-Modus</li>
-<li>Temperaturbereich: 100°C bis 315°C / 200°F bis 600°F</li>
-<li>Maße: 85, mm x 44 mm x 28 mm</li>
-<li>Gewindetyp: 510</li></ul><br>
-<br>
-<b>Wichtige Merkmale Ello Clearomizer:</b>\\n<ul><li>Tankvolumen: 4 ml</li>
-<li>Airflow</li>
-<li>Top Filling</li>
-<li>Höhe: 54 mm</li>
-<li>Durchmesser: 25 mm</li>
-<li>Gewindetyp: 510</li></ul><br>
-<br>',
+        'description' => '<p>Das Eleaf iKonn 220 E-Zigaretten Set besteht aus dem iKonn 220 Akkuträger mit einer maximalen Ausgangsleistung von 220 Watt und dem Eleaf ELLO Cleraomizer mit einem Füllvolumen von 4 ml, der für das Sub-Ohm-Dampfen, bzw. das DL-Dampfen (Direct Lung) optimiert ist.&nbsp;&nbsp;&nbsp;</p>
+<p>Der iKonn 220 Akkuträger ist für das Sub-Ohm-Dampfen konzpiert und hat ein schlichtes Box-Design. Er wird über die Feuertaste sowie die beiden "Auf/Ab-Tasten" gesteuert. Ein OLED-Display im Gehäuse zeigt den gewählten Betriebsmodus sowie die Ausgangsleistung und den Ladestatus an. Die Ausgangsleistung von 220 Watt wird über zwei 18650er Akkuzellen erreicht, die nicht im Lieferumfang enthalten sind.</p>
+<p>Der ELLO Clearomizer hat ein Füllvolumen von 4 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer bequem von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten sind ein Verdampferkopf (Head) mit 0,2 Ohm und ein weiterer mit 0,3 Ohm.</p>
+<p>Das E-Zigaretten Set wird durch zwei 18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind.</p>
+<h2>Eigenschaften Eleaf iKonn 220 Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>2 x 18650er Akkuzelle<br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW, VT (Ni, Ti, SS), TCR (M1, M2, M3)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 220 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100°C - 315°C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 1,5 Ohm im VT/TCR_Modus, <br> 0,1 - 3,5 Ohm im VW-Modus</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>85 mm x 44 mm x 28 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften ELLO Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>4 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>25 mm</td>
+</tr>
+<tr>
+<td>Höhe (inkl. Mundstück)</td>
+<td>54 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x Eleaf iKonn 220 Akkuträger</li>
+<li>1x Eleaf ELLO Clearomizer 4 ml</li>
+<li>1x HW3 Head 0,2 Ohm</li>
+<li>1x HW4 Head 0,3 Ohm</li>
+<li>1x Ersatzteile</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>2x Bedienungsanleitung</li>
+</ul>',
     ),
     'SC100IK2B' => array(
         'icNumber' => 'SC100IK2B',
@@ -16448,20 +16508,12 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der SX Mini SL Classm Akkuträger von der Marke Yihi wird über eine 18650er Akkuzelle betrieben und erreicht so eine maximale Ausgangsleistung von 100 Watt. Zudem unterstützt er die Ausgabemodi: Power-Modus / variabler Joule-Modus / Anfänger-Modus. Der Temperaturbereich liegt zwischen 100°C und 300°C und der Widerstandsbereich liegt im VJ- und Power-Modus zwischen 0,05 und 3 Ohm. Über das TFT-Farbdisplay können Sie Ihre getätigten Einstellungen ablesen und unter anderem über die Joystick-Steuerung und die Einstelltasten diese auch ändern.
-<br>
-<br>
-<b>Der Yihi SX Mini SL Class 100 Watt wird ohne 18650er Akkus ausgeliefert.</b>
-<br>
-<br>
-<b>Lieferumfang:</b>
+        'description' => '<p>Der SX Mini SL Classm Akkuträger von der Marke Yihi wird über eine 18650er Akkuzelle betrieben und erreicht so eine maximale Ausgangsleistung von 100 Watt. Zudem unterstützt er die Ausgabemodi: Power-Modus / variabler Joule-Modus / Anfänger-Modus. Der Temperaturbereich liegt zwischen 100°C und 300°C und der Widerstandsbereich liegt im VJ- und Power-Modus zwischen 0,05 und 3 Ohm. Über das TFT-Farbdisplay können Sie Ihre getätigten Einstellungen ablesen und unter anderem über die Joystick-Steuerung und die Einstelltasten diese auch ändern. <br> <br> <strong>Der Yihi SX Mini SL Class 100 Watt wird ohne 18650er Akkus ausgeliefert.</strong> <br> <br> <strong>Lieferumfang:</strong></p>
 <ul>
 <li>1x Yihi SX Mini SL Class</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
+<p><br> <br> <strong>Wichtige Merkmale:</strong></p>
 <ul>
 <li>Ausgabemodi: Power-Modus / variabler Joule-Modus (Ni, Ti, SS316) / Anfänger-Modus</li>
 <li>Ausgangsleistung: max. 100 Watt</li>
@@ -16473,9 +16525,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
 <li>Joystick-Steuerung</li>
 <li>Maße: 89 mm x 41,5 mm x 31,5 mm</li>
 </ul>
-<br>
-<br>
-',
+<p><br> </p>',
     ),
     'AS1000N2TD' => array(
         'icNumber' => 'AS1000N2TD',
@@ -16677,7 +16727,7 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
     'AS100FRS' => array(
         'icNumber' => 'AS100FRS',
         'number' => 'AS100FRS',
-        'name' => 'Aspire - Feedlink - Squonker Flasche, 7 ml',
+        'name' => 'Aspire - Feedlink - Squonker Flasche - 7 ml',
         'commonName' => 'Feedlink',
         'type' => 'SQUONKER_BOTTLE',
         'category' => 'ZUBEHÖR > Squonker-Flaschen',
@@ -17452,21 +17502,21 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
         'base' => null,
         'description' => '<p>Die Aspire Breeze 2 ist eine E-Zigarette, die sich besonders gut für den Umstieg vom Rauchen auf das Dampfen eignet. Sie ist aus leichtem Aluminium gefertigt und hat ein kompaktes, schlichtes unaufdringliches Design.</p>
 <p>Die Aspire Breeze 2 ist so einfach zu bedienen wie andere Pod-Systeme auch, bietet Ihnen aber anders als meisten Pod-Systeme darüber hinaus die Möglichkeit, verschiedene Verdampferköpfe einzusetzen und die Luftzufuhr individuell einzustellen. Deshalb ist die Aspire Breeze 2 E-Zigarette besonders gut geeignet, die eigenen Vorlieben zu erforschen und einen eigenen Dampfstil zu entwickeln.</p>
-<p><strong>Breeze 2 Akku</strong></p>
+<h2>Breeze 2 Akku</h2>
 <p>Die Breeze 2 ist sehr einfach und komfortabel zu bedienen. Das einzige Bedienelement ist der Feuerknopf, der gut erreichbar in der Mitte des Systems platziert ist. Durch 5-maliges Drücken des Feuerknopfs wird das Gerät ein- und ausgeschaltet. Während Sie an der E-Zigarette ziehen, halten Sie den Feuerknopf gedrückt, um Dampf zu erzeugen.</p>
 <p>Im Vergleich zur Vorgängerin Aspire Breeze wurde die Ladekapazität des integrierten Akkus deutlich verbessert. Der Akku der Breeze 2 hat nun eine Kapazität von 1.000 mAh. Die Leistung des Akkus ist nicht einstellbar. Er gibt eine konstante Spannung an den Verdampfer ab. Trotz der verbesserten Kapazität des Akkus ist die Breeze 2 nur unwesentlich größer als Ihre Vorgängerin.</p>
 <p>Aufgeladen wird der Akku über das mitgelieferte Micro-USB-Kabel. Der USB-Anschluss befindet sich auf der Seite, so dass das Gerät <br>auch aufrecht stehend geladen werden kann. Sie können die Breeze 2 E-Zigarette während des Aufladens weiter benutzen.</p>
-<p>Der Aspire Breeze 2 Akku ist mit Sicherheitsfunktionen ausgestattet, die das System vor Kurschluss, Niedrigspannung und Überladung zu schützen. Weiter verfügt die Breeze 2 über eine automatische Abschaltung, wenn der Feuerknopf versehentlich länger als 10 s gedrückt wird. Damit entspricht die Breeze 2 den Sicherheitsstandards moderner E-Zigaretten.</p>
-<p><strong>Breeze 2 Pod</strong></p>
+<p>Der Aspire Breeze 2 Akku ist mit Sicherheitsfunktionen ausgestattet, die das System vor Kurzschluss, Niedrigspannung und Überladung schützen. Weiter verfügt die Breeze 2 über eine automatische Abschaltung, wenn der Feuerknopf versehentlich länger als 10 s gedrückt wird. Damit entspricht die Breeze 2 den Sicherheitsstandards moderner E-Zigaretten.</p>
+<h2>Breeze 2 Pod</h2>
 <p>Die Geschmacksentwicklung des Breeze 2 Pods ist sehr in Ordnung. Auch die Dampfentwicklung ist ordentlich, wenn auch natürlich vom Volumen her nicht vergleichbar mit Geräten, die auf starke Dampfentwicklung hin ausgelegt sind.</p>
 <p>Der Tank des Breeze 2 Pods fasst 3 ml E-Liquid, was für ein Pod-System großzügig ist und mehr, als einige vergleichbare Geräte bieten. Mit einer Tankfüllung sollten Sie also gut über den Tag kommen. Und wenn Sie viel dampfen, so doch zumindest über den Arbeitstag.</p>
-<p>Zum Befüllen des Tanks lösen Sie das Pod aus der passgenauen Halterung. Drücken Sie dazu einfach auf den Seiten des Pods die gefederten Knöpfe mit Daumen und Zeigefinger, um die Arretierung zu lösen. Nun können sie das Pod aus dem Gerät herausziehen. Die Einfüllöffnung befindet sich am Boden des Pods. Sie ist mit einem Gummistopfe verschlossen um Auslaufen zu verhindern. Die Öffnung ist groß genug, um das Pod mit üblichen Liquidflaschen bequem befüllen zu können.</p>
+<p>Zum Befüllen des Tanks lösen Sie das Pod aus der passgenauen Halterung. Drücken Sie dazu einfach auf den Seiten des Pods die gefederten Knöpfe mit Daumen und Zeigefinger, um die Arretierung zu lösen. Nun können sie das Pod aus dem Gerät herausziehen. Die Einfüllöffnung befindet sich am Boden des Pods. Sie ist mit einem Gummistopfen verschlossen um Auslaufen zu verhindern. Die Öffnung ist groß genug, um das Pod mit üblichen Liquidflaschen bequem befüllen zu können.</p>
 <p>Wie bei der Aspire Breeze kommen bei der Aspire Breeze 2 die bewährten U-Tech Verdampferköpfe zum Einsatz. Diese gibt es in Ausführungen mit 0,6 Ohm und 1,0 Ohm, die beide im Lieferumfang enthalten sind. Der Kopf mit 0,6 Ohm ist eher für den DL-Stil (Direct Lung) geeignet, bei dem der Dampf direkt in die Lunge inhaliert wird. Der 1,0 Ohm Kopf ist für den MTL-Stil (Mouth To Lung) gedacht, bei dem der Dampf zunächst in den Mund gezogen, und anschließend in die Lunge inhaliert wird.</p>
 <p>Anders als bei den meisten Pod-Systemen ist der Verdampferkopf nicht fest in das Pod verbaut, sondern kann separat gewechselt werden. Sie brauchen also kein neues Pod, wenn der Verdampferkopf verbraucht ist.</p>
 <p>Der Breeze 2 Pod verfügt über eine stufenlose Luftstromregulierung (Air Flow Control). Zur Einstellung des Luftstroms entfernen Sie das Mundstück und drehen dann das Rändelrad am Kamin, bis der Luftstrom für Sie passt.</p>
 <p><strong>Fazit</strong></p>
 <p>Die Aspire Breeze 2 E-Zigarette ist ein ideales Gerät für den Umstieg von der Zigarette, weil Sie sehr einfach in der Handhabung ist und trotzdem in gewissem Umfang Raum für Experimente mit verschiedenen Dampfstilen lässt.</p>
-<p><strong>Eigenschaften Breeze 2 E-Zigarette</strong></p>
+<h2>Eigenschaften Breeze 2 E-Zigarette</h2>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -17497,15 +17547,10 @@ Der SC Invoke Akkuträger weist kompakte Maße von 45mm x 27mm x 77mm auf und li
 <td>Maße</td>
 <td>19 mm x 35 mm x 96 mm</td>
 </tr>
-<tr>
-<td>&nbsp;</td>
-<td>
-<p>&nbsp;</p>
-</td>
-</tr>
 </tbody>
 </table>
-<p><strong>Lieferumfang</strong></p>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
 <li>1 x Aspire Breeze 2 Akku 1.000 mAh</li>
 <li>1 x Aspire Breeze 2 Cartridge 3ml</li>
@@ -18047,7 +18092,50 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>Der Eleaf ELLO Duro Clearomizer hat ein Füllvolumen von 5,5 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer bequem von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Durch die Entriegelung der Kindersicherung und einer Rotation der Top-Kappe um 180 Grad steht Ihnen eine ausreichend große Öffnung zum Befüllen des Tankes zur Verfügung. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten sind ein Verdampferkopf (Head) mit 0,2 Ohm und einer mit 0,15 Ohm. Beide Heads sind für das DL-Dampfen, also das direkte Inhalieren in die Lunge, optimiert.&nbsp;</p>
+<h2>Eigenschaften ELLO Duro Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>6,5 ml</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser 28 mm, Höhe 54 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x Eleaf Ello Duro Clearomizer</li>
+<li>1x HW-N Head 0,2 Ohm</li>
+<li>1 x HW-M Head 0,15 Ohm</li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<p>&nbsp;</p>',
     ),
     'SC100EDG' => array(
         'icNumber' => 'SC100EDG',
@@ -18290,7 +18378,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
     'SC100E3P-SS' => array(
         'icNumber' => 'SC100E3P-SS',
         'number' => 'SC100E3P-SS',
-        'name' => 'SC - Easy 3 - Star Spangled, 9 mg/ml - Caps (2 Stück pro Packung)',
+        'name' => 'SC - Easy 3 - Star Spangled - Caps (2 Stück pro Packung)',
         'commonName' => 'Easy 3',
         'type' => 'EASY3_CAP',
         'category' => 'LIQUIDS > Easy 3 Caps',
@@ -20501,7 +20589,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'dosage' => null,
         'base' => null,
         'description' => '<p>Das Aspire Dynamo E-Zigaretten Set besteht aus dem Aspire Dynamo Akkuträger mit einer maximalen Ausgangsleistung von 220 Watt und dem Aspire Nepho Cleraomizer mit einem Füllvolumen von 4 ml.</p>
-<p>Der Aspire Dynamo Akkuträger wird über die Feuertaste sowie 2 weiterer Tasten (+ und -) bedient. Das runde, schick integrierte 2,0 Zoll TFT-Farbdisplay zeigt alle Einstellungen und den gewählten Betriebsmodus an. Sie können hier zwischen 6 Betriebsmodi wählen: den Modi VW (variable Wattage), VV (variable Voltage), Bypass, den temperaturgeregelten Modi TC und TCR sowie einem selbst festzulegenden CPS-Modus wählen. In den Einstellungen können Sie zusätzlich zwischen 11 verschiedenen Uhren-Anzeigen wählen. Die maximale Ausgangsleistung von 220 Watt wird durch zwei baugleiche 21700er oder 18650er Akkus erreicht. Die 18650er Akkus benötigen einen Silikon-Adapter, der mitgeliefert wird. Die Akkuzellen selbst sind nicht im Lieferumfang enthalten.</p>
+<p>Der Aspire Dynamo Akkuträger wird über die Feuertaste sowie 2 weiterer Tasten (+ und -) bedient. Das runde, schick integrierte 2,0 Zoll TFT-Farbdisplay zeigt alle Einstellungen und den gewählten Betriebsmodus an. Sie können hier zwischen 6 Betriebsmodi wählen: den Modi VW (variable Wattage), VV (variable Voltage), Bypass, den temperaturgeregelten Modi TC und TCR sowie einem selbst festzulegenden CPS-Modus. In den Einstellungen können Sie zusätzlich zwischen 11 verschiedenen Uhren-Anzeigen wählen. Die maximale Ausgangsleistung von 220 Watt wird durch zwei baugleiche 21700er oder 18650er Akkus erreicht. Die 18650er Akkus benötigen einen Silikon-Adapter, der mitgeliefert wird. Die Akkuzellen selbst sind nicht im Lieferumfang enthalten.</p>
 <p>Der Aspire Nepho Clearomizer hat eine Füllvolumen von 4 ml Liquid. Die Befüllung mit Liquid erfolgt komfortabel über ein Top-Filling-System, wodurch Sie den Aspire Nepho Clearomizer befüllen können, ohne ihn vom Akkuträger abschrauben zu müssen. Den Zugwiderstand regeln Sie stufenlos über den Airflow Control mittels eines Ringes am Clearomizer. Der Nepho Clearomizer ist für das DL-Dampfen (direktes Inhalieren des Dampfes in die Lunge) konzipiert. Im Lieferumfang sind 2 Verdampferköpfe enthalten, der Nepho Head 0,5 Ohm sowie der Nepho Mesh Head mit 0,15 Ohm. Letzterer hat eine Mesh-Struktur (also eine netzartige Struktur), was die Oberfläche vergrößert und dadurch eine vergleichsweise hohe Dampfentwicklung erzeugt.</p>
 <p>Das E-Zigaretten Set wird durch zwei baugleiche 21700er oder 18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten ist.</p>
 <h2>Eigenschaften Aspire Dynamo Akkuträger</h2>
@@ -24085,7 +24173,7 @@ strong>Lieferumfang</strong>
 <p>Der über den unteren Ring verstellbare Luftstromregler ist anders als beim Vorgänger stufenlos verstellbar. Dabei ist sowohl die großvolumige Öffnung der Luftzufuhr als auch die Regulierung über ein Raster von Belüftungsöffnungen vorgesehen. Möchten Sie Sie im DL-Stil mit dem 0,4 Ohm Verdampferkopf dampfen, so wählen Sie die großvolumige Öffnung nach Geschmack. Für den MTL-Stil wählen Sie die Einstellung über das Lochraster so, dass Ihnen der Widerstand, den Sie beim Ziehen spüren, am angenehmsten ist. Mit fast geschlossenem Luftstromregler können Sie einen Zugwiderstand einstellen, der recht genau dem einer Zigarette entspricht.</p>
 <p>Der Aspire Nautilus 2S ist wie seine Vorgänger ein besonderer Verdampfer. Geschmacklich liegt er auf sehr hohem Niveau. Die Dampfentwicklung ist für einen MTL-Verdampfer hervorragend. Die Handhabung wurde wesentlich vereinfacht. Liquid nachzufüllen ist nun einfach und bequem möglich. Ein versehentliches Auslaufen beim Transport ist nicht möglich.</p>
 <p>Auch für Einsteiger ist der Aspire Nautilus 2S eine unbedingte Empfehlung. Sie haben mit dem Nautilus 2S einen Verdampfer in der Hand, der gut aussieht und sehr einfach zu handhaben ist, der von der Geschmacks- und Dampfentwicklung her aber auf höchstem Niveau angesiedelt ist.&nbsp;</p>
-<p><strong>Eigenschaften Nautilus 2S Verdampfer</strong></p>
+<h2>Eigenschaften Aspire Nautilus 2S Verdampfer</h2>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -24126,7 +24214,7 @@ strong>Lieferumfang</strong>
 </tr>
 </tbody>
 </table>
-<p><br><strong>Lieferumfang</strong></p>
+<h2>Lieferumfang</h2>
 <div class="row-fluid pconstruction mtm">
 <div class="col col-xs-12">
 <div class="pinfos enavm-div">
@@ -25048,34 +25136,56 @@ Der NRG Clearomizer kann mit seinem Glastank bis zu 5ml Liquid fassen. Über ein
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Tigon Verdampfer aus dem Hause Aspire weist ein Tankvolumen von 3,5ml auf. Sie befüllen ihn über ein Top-Filling-System direkt von oben. Im Lieferumfang enthalten sind zwei Verdampferköpfe. Sie erhalten je einen Tigon 0,4 Ohm Head und einen Tigon 1,2 Ohm Head. Sie können je nach verwendetem Verdampferkopf wahlweise im moderaten oder im Subohm-Bereich dampfen.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der Aspire Tigon Clearomizer hat ein Füllvolumen von 3,5 ml Liquid. Sie befüllen ihn über ein Top-Filling-System sehr komfortabel von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Zuerst heben Sie das Drip Tip (Mundstück) an, danach schieben Sie es an der markierten Stelle zur Seite. Den Verdampferkopf (Coil) des Tigon können Sie bei befülltem Tank austauschen indem Sie den unteren Boden des Clearomizers abdrehen. Die Liquidöffnungen schließen sich automatisch bei Entfernen des Coils. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control.&nbsp;Der vorinstallierte Verdampferkopf (Head) mit 0,4 Ohm ist für das DL-Dampfen (Direct Lung) konzipiert. Den ebenfalls im Lieferumfang enthaltenen Head mit 1,2 Ohm verwenden Sie zum MTL-Dampfen (Mouth to Lung).</p>
+<h2>Eigenschaften Aspire Tigon Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3,5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24,5 mm</td>
+</tr>
+<tr>
+<td>Höhe inkl. Mundstück</td>
+<td>52 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis - stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>DL (Direct Lung) und MTL (Mouth to Lung)</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Tigon Clearomizer</li>
-<li>1x Tigon 0,4 Ohm Head</li>
-<li>1x Tigon 1,2 Ohm Head</li>
-<li>1x Tigon Glastank</li>
-<li>1x Extra-Mundstück</li>
-<li>1x Ersatzteil-Set </li>
+<li>1x Tigon Clearomizer 3,5 ml</li>
+<li>1x Tigon Head 0,4 Ohm (vorinstalliert)</li>
+<li>1x Tigon Head 1,2 Ohm</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Ersatz-Mundstück</li>
+<li>1x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>Tigon Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 3,5 ml</li>
-<li>Höhe (inkl. Mundstück): 52 mm</li>
-<li>Durchmesser: 24,5 mm</li>
-<li>Gewindetyp: 510</li>
-<li>subohm-fähig</li>
-<li>Top Filling</li>
-<li>Airflow-Control</li>
-</ul>
-<br>
-<br>
-',
+<p>&nbsp;</p>
+<p>&nbsp;</p>',
     ),
     'AS100TGH' => array(
         'icNumber' => 'AS100TGH',
@@ -34267,10 +34377,50 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Nord E-Zigaretten Set hat ein All-In-One-Design. Es besteht aus einem Akku und einem Pod-System, die Sie voneinander trennen können, um zum Beispiel Ihren Tank mit Liquid zu füllen oder den Head gegen einen neuen auszutauschen. Der Akku hat eine Kapazität von 1100mAh und kann über das mitgelieferte USB-Kabel geladen werden. Den Ladestand können Sie über die in der Feuertaste eingebaute LED ablesen (grün = 70%-100%, orange = 30%-70%, rot = weniger als 30%). Zudem verfügt er über einen 8-Sekunden Zug-Schutz. Das heißt, wenn Sie länger als 8 Sekungen an Ihrer E-Zigarette ziehen, so schaltet sich Ihre E-Zigarette automatisch aus. Diese können Sie nach wenigen Sekunden wieder einschalten. Das Pod-System fasst bis zu 3ml Liquid, das Sie via Side-Filling seitlich in den Tank geben. Über das E-Liquid-Fenster am Mundstück/Pod-System können Sie Ihren Liquidstand im Auge behalten. Im Lieferumfang sind 2 Verdampferköpfe von der Nord-Serie enthalten. 1x Nord Regular Verdampferkopf mit 1,4 Ohm und 1x Nord Mesh Verdampferkopf mit 0,6 Ohm. Die E-Zigarette ist daher für das moderate- und Subohm-Dampfen geeignet. Die Nord E-Zigarette bekommen Sie in insgesamt 13 Farben.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die SMOK Nord E-Zigarette ist ein schickes Pod-System, welches sich gut für den Umstieg vom Rauchen auf das Dampfen eignet. Dabei ist die SMOK Nord E-Zigarette ist so einfach zu bedienen wie andere Pod-Systeme, bietet jedoch eine Reihe von Vorzügen.</p>
+<p>Der Akku hat eine Kapazität von 1.100 mAh. Bedient wird die E-Zigarette lediglich über die Feuertaste, die dank einer integrierten LED über den Ladestand informiert (grün = 70%-100%, orange = 30%-70%, rot = weniger als 30%). Die Kapaziät des Akkus ist ordentlich und lässt einen gut über den Tag oder zumindest den Arbeitstag kommen. Mithilfe des mitgelieferten Micro-USB-Kabel wird das Gerät aufgeladen. Ein Ladegerät ist wie üblich nicht im Lieferumfang enthalten. Die SMOK Nord E-Zigarette verfügt über die relevanten Sicherheitsfunktionen, die das System vor Kurzschluss und Tiefenentladung schützen.</p>
+<p>Die Pods der SMOK Nord fassen immerhin 3 ml Liquid. Das ist ordentlich für ein Pod-System. Nachfüllen können Sie das Liquid über ein Side-Filling-System, nachdem Sie die Verdampfereinheit nach oben vom Akku abgezogen haben. Der Verdampferkopf ist nicht fest verbaut, sondern auswechselbar. Im Lieferumfang enhalten sind 2 Verdampferköpfe, der SMOK Nord Regular mit 1,4 Ohm für das moderate MTL-Dampfen, bei dem Sie den Dampf erst in den Mund ziehen und danach in die Lunge inhalieren, und den SMOK Nord Mesh mit 0,6 Ohm, der aufgrund seiner Mesh-Struktur (also Netz-Struktur) für eine größere Dampfentwicklung sorgt und für das DL-Dampfen, also der direkten Inhalation in die Lunge, geeignet ist. Beide Verdampferköpfe werden auch in den SMOK Nord AIO 19 und 22 E-Zigaretten verwendet.</p>
+<h2><strong>Fazit</strong></h2>
+<p>Die SMOK Nord E-Zigarette ist ein tolles Gerät nicht nur für den Umstieg von der Zigarette. Der nachfüllbare Tank des Pods sowie die Möglichkeit, den Verdampferkopf auszuwechseln, ohne den Pod zu tauschen, sparen Geld und schonen die Umwelt.</p>
+<h2><strong>Eigenschaften SMOK Nord E-Zigarette</strong></h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Akkukapazität</td>
+<td>1.100 mAh</td>
+</tr>
+<tr>
+<td>Ausgabsleistung</td>
+<td>10 - 15 W</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>3,3 - 4,2 V</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>3 ml</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Side-Filling-System</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>ohne</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>MTL, vom Mund in die Lunge<br>DL, direkte Inhalation in die Lunge</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>18,8 mm x 30 mm x 94 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
 <li>1x Nord Akku</li>
 <li>1x Nord Pod-System</li>
@@ -34278,25 +34428,7 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
 <li>1x Nord Mesh 0,6 Ohm Head</li>
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Nord E-Zigarette</strong>
-<ul>
-<li>Kapazität: 1100 mAh</li>
-<li>Ausgangsleistung: 10-15 Watt</li>
-<li>Ausgangsspannung: 3,3-4,2 Volt</li>
-<li>Akkustand-LED-Indikator</li> 
-<li>8-Sekunden Zug-Schutz</li>
-<li>Kurzschlussschutz</li>
-<li>Niederspannungsschutz</li>
-<li>Lithium-Batterie-Schutz</li>
-<li>Tankvolumen: 3 ml</li>
-<li>Side-Filling</li>
-<li>Maße: 30 mm x 18,8 mm x 94 mm</li>
-</ul>
-<br>
-<br>',
+</ul>',
     ),
     'SK100NP' => array(
         'icNumber' => 'SK100NP',
@@ -34315,25 +34447,32 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der passende Zubehörartikel für Ihre Nord E-Zigarette ist das Nord Pod-System von der Marke Smok. Das System fasst bis zu 3ml Liquid, das sie seitlichen in den Tank geben. Dafür muss lediglich eine Silikonabdeckung zur Seite geschoben werden und das Einfüllloch wird dadurch freigelegt. Im Lieferumfang sind 2 unterschiedliche Heads der Nord-Reihe enthalten. 1x Nord Regular Head mit 1,4 Ohm, womit das moderate Dampfen gewährleistet ist. Und 1x der Nord Mesh Head mit 0,6 Ohm, der für das Subohm-Dampfen ausgelegt ist.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der passende Zubehörartikel für Ihre SMOK Nord E-Zigarette. Das Pod fasst bis zu 3 ml Liquid, das sie seitlichen in den Tank einfüllen. Im Lieferumfang sind 2 Verdampferköpfe (Heads) enthalten, der Nord Regular Head mit 1,4 Ohm für das MTL-Dampfen (Mouth to Lung) und der Nord Mesh Head mit 0,6 Ohm für das DL-Dampfen (Direct Lung).</p>
+<h2><strong>Eigenschaften SMOK Nord Pod</strong></h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3 ml</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Side-Filling-System</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>MTL, vom Mund in die Lunge<br>DL, direkte Inhalation in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
 <li>1x Nord Pod-System</li>
 <li>1x Nord Regular 1,4 Ohm Head</li>
 <li>1x Nord Mesh 0,6 Ohm Head</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Nord Pod-System</strong>
-<ul>
-<li>Tankvolumen: 3 ml</li>
-<li>Side-Filling</li>
-</ul>
-<br>
-<br>',
+<li>1x Bedienungsanleitung&nbsp;</li>
+</ul>',
     ),
     'SK100NR' => array(
         'icNumber' => 'SK100NR',
@@ -34768,8 +34907,8 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'GV100F' => array(
         'icNumber' => 'GV100F',
         'number' => 'GV100F',
-        'name' => 'GeekVape - Flint E-Zigarette',
-        'commonName' => 'Flint E-Zigarette',
+        'name' => 'GeekVape - Flint - E-Zigarette',
+        'commonName' => 'Flint',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > GeekVape',
         'supplier' => 'GeekVape',
@@ -35103,7 +35242,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'base' => null,
         'description' => '<p>Das Eleaf iJust 21700 E-Zigaretten Set besteht aus dem iJust 21700 Akkuträger mit einer maximalen Ausgangsleistung von 80 Watt und dem Eleaf ELLO Duro Cleraomizer in der Version mit 5,5 ml Füllvolumen. Die schlichte Stab-Form des Akkuträgers und der hübsch geschwungene Clearomizer fügen sich hierbei zu einer formschönen Einheit zusammen.</p>
 <p>Der iJust 21700 Akkuträger wird lediglich über die Feuertaste gesteuert. Diese umgibt eine LED, die Sie über 4 Farben zuverlässig über den Ladestand Ihrer E-Zigarette informiert. Die Ausgangsleistung von 80 Watt wird über eine 21700 oder mittels des im Lieferumfang enthaltenen Adapters eine 18650 Akkuzelle erreicht.</p>
-<p>Der ELLO Duro Clearomizer hat in der mitgeliferten Version ein Füllvolumen von 5,5 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer bequem von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Durch die Entriegelung der Kindersicherung und einer Rotation der Top-Kappe um 180 Grad steht Ihnen eine ausreichend große Öffnung zum Befüllen des Tankes zur Verfügung. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten sind 2 Verdampferköpfe (Heads) mit 0,2 Ohm.</p>
+<p>Der ELLO Duro Clearomizer hat in der mitgelieferten Version ein Füllvolumen von 5,5 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer bequem von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Durch die Entriegelung der Kindersicherung und einer Rotation der Top-Kappe um 180 Grad steht Ihnen eine ausreichend große Öffnung zum Befüllen des Tankes zur Verfügung. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten sind 2 Verdampferköpfe (Heads) mit 0,2 Ohm.</p>
 <p>Das E-Zigaretten Set wird durch eine 21700er oder eine 18650er Akkuzelle betrieben, die nicht im Lieferumfang enthalten ist.</p>
 <h2>Eigenschaften iJust 21700 Akkuträger</h2>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
@@ -35139,7 +35278,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 </tbody>
 </table>
 <p>&nbsp;</p>
-<h2>Eigenschaften ELLO Duro Clearomizer</h2>
+<h2>Eigenschaften ELLO Duro 5,5 ml Clearomizer</h2>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -35175,9 +35314,9 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 <p>&nbsp;</p>
 <h2>Lieferumfang</h2>
 <ul>
-<li>1x SC iJust 21700 80 Watt</li>
-<li>1x SC Ello Duro Clearomizer</li>
-<li>2x SC HW-N2 Head 0,2 Ohm</li>
+<li>1x Eleaf iJust 21700 80 Watt</li>
+<li>1x Eleaf Ello Duro Clearomizer 5,5 ml</li>
+<li>2x Eleaf HW-N2 Head 0,2 Ohm</li>
 <li>1x Ersatzteile</li>
 <li>1x QC-USB-Ladekabel</li>
 <li>2x Bedienungsanleitung</li>
@@ -35200,29 +35339,47 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der iJust 21700 Akkuträger aus dem Hause SC wird wahlweise über eine 21700er oder 18650er Akkuzelle mit Energie versorgt. Bitte beachten Sie, dass sich keine Akkuzellen im Lieferumfang befinden. Der Akkuträger unterstützt eine maximale Ausgangsleistung von 80 Watt bei konstanter Leistungsabgabe. Der Akkuträger ist aufgrund seines Gewindes unter anderem mit dem Ello Duro Verdampfer von SC kombinierbar.
-<br>
-<br> 
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der iJust 21700 Akkuträger wird lediglich über die Feuertaste gesteuert. Diese umgibt eine LED, die Sie über 4 Farben zuverlässig über den Ladestand Ihrer E-Zigarette informiert. Die Ausgangsleistung von 80 Watt wird über eine 21700er Akkuzelle oder mittels des im Lieferumfangs enthaltenen Adapters mit einer 18650er Akkuzelle erreicht.</p>
+<h2>Eigenschaften iJust 21700 Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>21700er oder 18650er Akkuzelle über Adapter<br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 80 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>3,3 - 4,2 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,1 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V/1A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser: 25 mm, Höhe: 97 mm</td>
+</tr>
+</tbody>
+</table>
+<h2><br>Lieferumfang</h2>
 <ul>
-<li>1x SC iJust 21700 80 Watt</li>
+<li>1x Eleaf iJust 21700 80 Watt</li>
 <li>1x QC-USB-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<strong>21700er/18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>iJust 21700 80 Watt</strong>
-<ul>
-<li>Ausgangsleistung: max. 80 Watt</li>
-<li>Ausgabemodi: konstante Leistungsabgabe</li>
-<li>Widerstandsbereich: 0,1 Ohm - 3,0 Ohm</li>
-<li>Höhe: 97mm</li>
-<li>Durchmesser: 25mm</li>
-</ul>
-<br>
-<br>
-',
+<p><strong>21700er/18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong> <br><strong><br></strong></p>',
     ),
     'UW100B' => array(
         'icNumber' => 'UW100B',
@@ -40462,43 +40619,82 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das E-Zigaretten Set der Marke SC, welches sich aus dem iKuu Light 2200mAh Akku und dem GS Air 3 Verdampfer zusammensetzt, ist für das Dampfen im moderaten Bereich ausgelegt. Der SC GS Air 3 Verdampfer hat ein Füllvolumen von 2 ml, welches Sie über ein Top-Filling Prinzip auffüllen können. Hierzu ziehen Sie lediglich die Top-Kappe nach oben und dann zur Seite um an die Öffnung zu gelangen. Anschließend können Sie den Tank mit frischem E-Liquid befüllen. Im Lieferumfang sind zwei Verdampferköpfe enthalten, welche sich für das Dampfen von Mund zu Lunge eignen. Ein Verdampferkopf mit 1,6 Ohm mit einem Leistungsbereich von 8 bis 13 Watt und einer mit 0,75 Ohm mit einem Leistungsbereich von 8 bis 25 Watt. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen gehören und diese regelmäßig ausgetauscht werden müssen. Über eine Akkustands-Anzeige können Sie den Ladestand des Akkus erfahren. Dieser wird in Form von Punkten angezeigt. Der SC iKuu Light Akku erkennt automatisch den Widerstand des aufgeschraubten Verdampfers und stellt selbstständig die benötigte Leistung ein. Trotz der kleingehaltenen Maße des iKuu Light Akkus sind alle sicherheitsrelevanten Optionen verbaut. So kommen ein Kurzschluss-, Tiefenentlade-, Überladeschutz, sowie eine zehn Sekunden Zugabschaltung zum Einsatz. Der Akku wird über das mitgelieferte USB Kabel geladen. 
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>         
-<li>1x iKuu Light 2200mAh Akku</li>
-<li>1x GS Air 3 Clearomizer </li>
+        'description' => '<p>Das Eleaf iKuu Lite mit GS 3 Air E-Zigaretten Set ist im Schwerpunkt für das moderate Dampfen, also das MTL (Mouth to Lung) Dampfen, konzipiert. Das fest verbaute Akku hat eine Kapazität von 2.200 mAh und der zum Set gehörende GS 2 Air Clearomizer hat einen Tank für 2 ml Liquid.&nbsp;&nbsp;&nbsp;</p>
+<p>Der Eleaf iKuu Akku wird lediglich über die großzügig gestaltete Feuertaste gesteuert, die sich an der Seitenwand des Akkus befindet. Ein in die Feuertaste integrierter LED-Indikator informiert Sie über den Ladestand und weitere Betriebsparameter Ihrer E-Zigarette. Der fest eingebaute Akku mit 2.200 mAh leistet eine maximale Ausgangsspannung von 4,2 Volt und wird über das mitgelieferte QC-USB-Kabel rasch wieder aufgeladen. Der iKuu Lite Akku passt seine Ausgangsleistung dem verwendeteten Verdampferkopf automatisch an. <br> Der iKuu Light Akku ist mit allen sicherheitsrelevanten Optionen ausgestattet, wie Kurzschluss-, Tiefenentlade-und Überladeschutz, sowie eine zehn Sekunden Zugabschaltung.&nbsp;</p>
+<p>Der GS 3 Air Clearomizer hat ein Füllvolumen von 2 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer bequem von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten sind ein GS Air Head 1,6 Ohm, der vorinstalliert ist und für das MTL-Dampfen konzipiert ist, und ein GS Air Head 0,75 Ohm, der sowohl das MTL- als auch das DL-Dampfen unterstützt.</p>
+<h2>Eigenschaften iKuu Lite Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 2.200 mAh</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 22 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,6&nbsp; - 4,2 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,2 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>62 mm x 40 mm x 25 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften GS Air 3 Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2&nbsp; ml</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser: 18 mm, Höhe: 44 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis - stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL (Mouth to Lung) - indirekte Inhalation, <br> DL (Direct Lung) geeignet</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x Eleaf iKuu Lite 2200mAh Akku</li>
+<li>1x GS Air 3 Clearomizer</li>
 <li>1x 1,6 Ohm Head</li>
 <li>1x 0,75 Ohm Head</li>
 <li>1x USB Ladekabel</li>
 <li>2x Bedienungsanleitung</li>
 <li>1x Ersatzteil Set</li>
-</ul>
-<br>
-<br>
-<strong>iKuu Light 2200mAh Akku</strong><ul>
-<li>Akku:2200mAh
-<li>Ausgabemodi: VW</li>
-<li>Ausgangsleistung: max. 22 Watt</li>
-<li>Widerstandsbereich: 0,2 – 3 Ohm</li>
-<li>Maße: 42mm x 27mm x 62,5mm</li>
-<li>Gewindetyp: 510</li>
-</ul>
-<br>
-<br>
-<strong>GS Air 3 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Glas und Edelstahl</li>
-<li>MTL-fähig</li>
-<li>Kindersicherung</li>
-<li>Top Filling</li>
-<li>Airflow Control</li>
-<li>510er Mundstück</li>
-<li>Höhe: 46mm</li>
-<li>Durchmesser: 22mm</li>
 </ul>',
     ),
     'SC100ILA' => array(
@@ -40518,26 +40714,46 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der SC iKuu Lite Akku besitzt eine Akkukapazität von 2200mAh und eine maximale Ausgangsspannung von 22 Watt. Er erkennt den Widerstand des Verdampfers automatisch und regelt aufgrund dessen selbständig die Leistung. Zudem unterstützt er Verdampferköpfe in einem Widerstandsbereich von 0,2 Ohm bis 3 Ohm. Der Akku hat keinerlei Einstelltasten und wird nur über die Feuertaste bedient. Trotzdem sind alle sicherheitsrelevanten Funktionen verbaut. Es sind Tiefenentlade-, Überlade-, Kurzschluss-, und ein Überspannungsschutz vorhanden. Anhand der Ladestandsanzeige, welche in Form von Punkten auf dem Display angezeigt wird, erfahren Sie den Ladestand des Akkus. Geladen wird der iKuu Lite Akku mit dem im Lieferumfang enthaltenen Micro-USB Kabel.
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>         
-<li>1x iKuu Light 2200mAh Akku</li>
+        'description' => '<p>Der Eleaf iKuu Lite Akku hat eine Kapazität von 2200mAh und eine maximale Ausgangsspannung von 22 Watt.</p>
+<p>Der iKuu Lite Akku wird lediglich über die großzügig gestaltete Feuertaste gesteuert, die sich an der Seitenwand des Akkus befindet. Ein in die Feuertaste integrierter LED-Indikator informiert Sie über den Ladestand und weitere Betriebsparameter Ihrer E-Zigarette. Der fest eingebaute Akku mit 2.200 mAh leistet eine maximale Ausgangsspannung von 4,2 Volt und wird über das mitgelieferte QC-USB-Kabel rasch wieder aufgeladen. Der iKuu Lite Akku passt seine Ausgangsleistung dem verwendeteten Verdampferkopf automatisch an.&nbsp;Er unterstützt Verdampferköpfe in einem Widerstandsbereich von 0,2 Ohm bis 3 Ohm.&nbsp;Über das 510er Gewinde ist der iKuu Lite mit nahezu allen handelsüblichen Clearomizern kombinierbar.</p>
+<p>Der iKuu Light Akku ist mit allen sicherheitsrelevanten Optionen ausgestattet, wie Kurzschluss-, Tiefenentlade-und Überladeschutz, sowie eine zehn Sekunden Zugabschaltung.&nbsp;&nbsp;</p>
+<h2>Eigenschaften iKuu Lite Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 2.200 mAh</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 22 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,6&nbsp; - 4,2 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,2 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>62 mm x 40 mm x 25 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x Eleaf iKuu Lite 2200mAh Akku</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>iKuu Light 2200mAh Akku</strong>
-<ul>
-<li>Akku:2200mAh
-<li>Ausgabemodi: VW</li>
-<li>Ausgangsleistung: max. 22 Watt</li>
-<li>Widerstandsbereich: 0,2 – 3 Ohm</li>
-<li>Maße: 42mm x 27mm x 62,5mm</li>
-<li>Gewindetyp: 510</li>
-</ul>
-<br>',
+<p>&nbsp;</p>
+<p>&nbsp;</p>',
     ),
     'SC100GA3' => array(
         'icNumber' => 'SC100GA3',
@@ -40556,31 +40772,47 @@ Es handelt sich um einen passenden Ersatzartikel für das Exceed Grip E-Zigarett
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das GS Air 3 Verdampfer Set stammt aus dem Hause SC. Er kommt mit einem transparenten Tank mit dem Sie die Füllmenge Ihres Liquids stets im Auge behalten können. Dazu wurde noch eine Airflow-Control verbaut. Mit dieser ist es Ihnen möglich den Luftwiderstand beim Dampfen individuell nach Ihren Bedürfnissen anzupassen. Das Set enthält zudem noch 1 Head mit einem Widerstand von 1,6 Ohm. So ist es Ihnen möglich im moderaten Bereich, auch MTL genannt, zu dampfen. Der GS Air 3 Verdampfer ist der passende Verdampfer für Ihr SC iKuu Lite Akku mit einer Akkukapazität von 2200mAh.
-<br>
-<br>
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>         
-<li>1x GS Air 3 Clearomizer</li>
-<li>1x GS Air Head 1,6 Ohm</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>GS Air 3 Clearomizer</strong>
+        'description' => '<p>Der Eleaf GS 3 Air Clearomizer hat ein Füllvolumen von 2 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer bequem von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten ist ein GS Air Head 1,6 Ohm, der für das MTL-Dampfen konzipiert ist.</p>
+<p>Dank des genormten 510er Gewindes kann der GS Air 3 Clearomizer mit nahezu allen handelsüblichen Akkus und Akkuträgern kombiniert werden. Besonders gut pass er zum Eleaf iKuu Lite Akku mit einer Akkukapazität von 2200mAh.&nbsp;</p>
+<h2>Eigenschaften GS Air 3 Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2&nbsp; ml</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser: 18 mm, Höhe: 44 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis - stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL (Mouth to Lung) - indirekte Inhalation, <br> DL (Direct Lung) geeignet</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Glas und Edelstahl</li>
-<li>MTL-fähig</li>
-<li>Kindersicherung</li>
-<li>Top Filling</li>
-<li>Airflow Control</li>
-<li>510er Mundstück</li>
-<li>Höhe: 46mm</li>
-<li>Durchmesser: 22mm</li>
+<li>1x GS Air 3 Clearomizer</li>
+<li>1x 1,6 Ohm Head</li>
+<li>1x Bedienungsanleitung</li>
 </ul>',
     ),
     'SC100GH3' => array(
@@ -44525,8 +44757,8 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
     'HE100PS' => array(
         'icNumber' => 'HE100PS',
         'number' => 'HE100PS',
-        'name' => 'HellVape - Passage RDA Verdampfer',
-        'commonName' => 'Passage RDA Verdampfer',
+        'name' => 'HellVape - Passage RDA - Verdampfer',
+        'commonName' => 'Passage RDA',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'VERDAMPFER > Selbstwickler > HellVape',
         'supplier' => 'HellVape',
@@ -48235,7 +48467,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
 <p>Der Akku der Aspire AVP ist fest in das Gerät eingebaut. Er hat eine Kapazität von 700 mAh. Der Ladestand wird über eine LED signalisiert. Sie laden den Akku mit dem mitgelieferten Micro-USB Kabel auf.</p>
 <p>Die Aspire AVP arbeitet mit konstanter Leistungsabgabe. Dabei wählen Sie aus, ob Sie lieber mit 8 Watt, 10 Watt oder 12 Watt dampfen möchten. Die E-Zigarette ist mit einer Zugautomatik ausgestattet. Sobald Sie an der E-Zigarette ziehen, wird Dampf erzeugt.</p>
 <p>Das Pod der Aspire AVP fasst 2 ml Liquid. Es wird von unten befüllt. Wenn Sie das Pod vom Akku abziehen, wird die im Boden des Pods befindliche Einfüllöffnung sichtbar. Füllen Sie Ihr Liquid nach und stecken Sie Pod und Akku wieder zusammen. Schon kann es weitergehen.</p>
-<p>Der Verdampferkopf ist fest in das Pod der Aspire AVP eingebaut. Er hat einen Widerstand von 1,2 Ohm. Wenn Sie bemerken, dass Geschmack sich verschlechtert, tauschen Sie das Pod gegen ein neues aus. Im Lieferumfang sind zwei Pods enthalten.</p>
+<p>Der Verdampferkopf ist fest in das Pod der Aspire AVP eingebaut. Er hat einen Widerstand von 1,2 Ohm. Wenn Sie bemerken, dass der Geschmack sich verschlechtert, tauschen Sie das Pod gegen ein neues aus. Im Lieferumfang sind zwei Pods enthalten.</p>
 <p><strong>Fazit</strong></p>
 <p>Die Aspire AVP ist für weniger erfahrene Benutzer gut geeignet. Durch die Zugautomatik wird das Dampfen sehr leicht gemacht. Die Leistung der Aspire AVP ist in drei Stufen einstellbar. Das hebt sie von vielen anderen Pod-Systemen ab. Ein netter Gag ist das mitgelieferte Band, mit dem Sie sich die Aspire AVP um den Hals hängen können.</p>
 <p><strong>Eigenschaften Breeze 2 E-Zigarette</strong></p>
@@ -49503,8 +49735,8 @@ Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand d
     'SG100SF' => array(
         'icNumber' => 'SG100SF',
         'number' => 'SG100SF',
-        'name' => 'Sigelei - Sibra F E-Zigarette',
-        'commonName' => 'Sibra F E-Zigarette',
+        'name' => 'Sigelei - Sibra F - E-Zigarette',
+        'commonName' => 'Sibra F',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN > Sigelei',
         'supplier' => 'Sigelei',
@@ -49762,19 +49994,19 @@ Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand d
     'A100VN' => array(
         'icNumber' => 'A100VN',
         'number' => 'A100VN',
-        'name' => 'asMODus Viento Verdampfer',
-        'commonName' => 'asMODus Viento Verdampfer',
+        'name' => 'asMODus - Viento - Verdampfer',
+        'commonName' => 'Viento',
         'type' => 'CLEAROMIZER',
-        'category' => 'VERDAMPFER > AsMODus',
-        'supplier' => 'AsMODus',
-        'brand' => 'AsMODus',
+        'category' => 'VERDAMPFER > asMODus',
+        'supplier' => 'asMODus',
+        'brand' => 'asMODus',
         'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
+        'addlCategory' => '',
+        'dosage' => '',
         'base' => null,
         'description' => 'Mit dem AsMODus Viento Verdampfer können Sie im Subohm-Bereich dampfen, da dieser Subohm-Verdampferköpfe (unter 1 Ohm Widerstand) unterstützt. Im Lieferumfang sind zwei AsMODus Mesh Verdampferköpfe mit je 0,18 Ohm enthalten. Tauschen Sie den Verdampferkopf aus, sobald Sie eine negative Geschmacksentwiklung Ihres Liquids feststellen. Der Viento Verdampfer fasst bis zu 3,5ml Liquid, das Sie direkt von oben via Top-Filling-System in den Tank geben. Geeignete Akkuträger dafür sind zum Beispiel der AsMODus Amighty oder der Minikin V3S.
 <br>
@@ -49803,19 +50035,19 @@ Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand d
     'A100MHD' => array(
         'icNumber' => 'A100MHD',
         'number' => 'A100MHD',
-        'name' => 'asMODus Mesh Head (5 Stück pro Packung)',
-        'commonName' => 'asMODus Mesh',
+        'name' => 'asMODus - Mesh Head (5 Stück pro Packung)',
+        'commonName' => 'Mesh',
         'type' => 'HEAD',
-        'category' => 'ZUBEHÖR > Verdampferköpfe > AsMODus',
-        'supplier' => 'AsMODus',
-        'brand' => 'AsMODus',
+        'category' => 'ZUBEHÖR > Verdampferköpfe > asMODus',
+        'supplier' => 'asMODus',
+        'brand' => 'asMODus',
         'piecesPerPack' => 5,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
         'flavorCategory' => null,
-        'addlCategory' => null,
-        'dosage' => null,
+        'addlCategory' => '',
+        'dosage' => '',
         'base' => null,
         'description' => 'Die AsMODus Mesh Verdampferköpfe sind für direkte Lungenzüge (DL) geeignet. Sie haben die Wahl zwischen 0,2 Ohm oder 0,4 Ohm. Laut Hersteller liegt der optimale Leistungsbereich zwischen 40 Watt und 60 Watt. Pro Packung und Variante sind fünf Verdmapferköpfe enthalten. Sobald die Dampfentwicklung zurückgeht oder Sie eine negative Geschmacksentwicklung feststellen, so tauschen Sie den alten Verdampferkopf gegen einen Neuen.
 <br>
@@ -50158,51 +50390,89 @@ Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Z
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Aspire E-Zigaretten Set Reax Mini besteht aus dem Reax Mini Akku mit 1600 mAh und dem Tigon Verdampfer mit 3,5ml Tankvolumen. Beim Reax Mini Akku fällt das Austauschen der Akkuzellen weg, da die Akkuzellen fest verbaut sind. Eine LED informiert Sie über den Akkuladestand; da sie sich farblich verändert. Die Ausgabemodi VW oder Bypass können Sie auswählen und die Einstellung unterhalb vom Akku ablesen; der Bildschirm befindet sich nämlich dort. Über den 510er Gewinde verbinden Sie den Tigon Verdampfer mit dem Reax Mini Akku. Ihren Tigon Verdampfer befüllen Sie mit Liquid direkt von oben via Top Filling System. Die Airflow-Control befindet sich in der Base, worüber Sie den Luftwiderstand individuell einstellen. Im Lieferumfang befinden sich 2 Tigon Verdampferköpfe. Der Verdampferkof mit 0,4 Ohm ist für das Subohm-Dampfen und der mit 1,2 ohm für das moderate Dampfen ausgelegt. Bitte verwenden Sie den Verdampferkopf mit 1,2 Ohm im VW-Modus und den mit 0,4 Ohm im Bypass-Modus.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Das Aspire Reax mini E-Zigaretten Set besteht aus dem Reax mini Akku mit 1.600 mAh Akkukapazität und dem Aspire Tigon Clearomizer mit einem Füllvolumen von 3,5 ml. Der vorinstallierte Verdampferkopf mit 0,4 Ohm ist für das DL-Dampfen (Direct Lung) konzipiert, mit dem ebenfalls im Lieferumfang enthaltenen Verdampferkopf mit 1,2 Ohm verwenden Sie dieses E-Zigaretten Set zum MTL-Dampfen (Mouth to Lung). Das Aspire Reax mini E-Zigaretten Set besticht durch seine Kompaktheit. Durch das abgerundete Design liegt es angenehm ergonomisch in der Hand.</p>
+<p>Der Aspire Reax mini hat einen fest eingebauten Akku mit einer Akkukapazität von 1.600 mAh. Wird ein Verdampferkopf mit 1,0 Ohm und höher verwendet, kann durch Drücken des Mode-Knopfes an der Vorderseite des Gehäuses zwischen 8, 10, 12, 14 und 16 Watt gewählt werden. Wird der Tigon 0,4 Ohm Verdampferkopf genutzt, stellt sich das Akku automatisch auf den Bypass-Modus, d.h. es gibt eine Leistung abhängig vom Akkustand ab. In welchem Modus Sie sich befinden bzw. wieviel Watt Sie gewählt haben, wird Ihnen im Bottom-Watt-Display auf der Unterseite des Reax mini angezeigt. Der Ladestatus des Akkus wird Ihnen über ein kleines Indikator-Licht an der Vorderseite des Reax mini angezeigt: grün (geladen - über 3,8 Volt), blau (3,5-3,8 Volt) und rot (fast leer - unter 3,5 Volt).&nbsp;</p>
+<p>Der Aspire Tigon Clearomizer hat ein Füllvolumen von 3,5 ml Liquid. Sie befüllen ihn über ein Top-Filling-System sehr komfortabel von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Zuerst heben Sie das Drip Tip (Mundstück) an, danach schieben Sie es an der markierten Stelle zur Seite. Den Verdampferkopf (Coil) des Tigon können Sie bei befülltem Tank austauschen indem Sie den unteren Boden des Clearomizers abdrehen. Die Liquidöffnungen schließen sich automatisch bei Entfernen des Coils. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten sind 2 Verdampferköpfe mit 0,4 Ohm (vorinstalliert) und 1,2 Ohm.</p>
+<h2>Eigenschaften Aspire Reax mini Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 1.600 mAh</td>
+</tr>
+<tr>
+<td>Ausgangsleistungen über 1,0 Ohm</td>
+<td>8, 10, 12, 14 und 16 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsmodi unter 1,0 Ohm</td>
+<td>Bypass</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Bottom-Watt-Display, LED-Indikator für den Ladestatus</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>31,5 mm x 29,6 mm x 70 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften Aspire Tigon Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3,5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24,5 mm</td>
+</tr>
+<tr>
+<td>Höhe inkl. Mundstück</td>
+<td>52 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis - stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>DL (Direct Lung) und MTL (Mouth to Lung)</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Reax Mini 1600mAh</li>
-<li>1x Tigon Clearomizer</li>
-<li>1x Tigon Head 0,4 Ohm</li>
+<li>1x Reax Mini Akku 1600mAh</li>
+<li>1x Tigon Clearomizer 3,5 ml</li>
+<li>1x Tigon Head 0,4 Ohm (vorinstalliert)</li>
 <li>1x Tigon Head 1,2 Ohm</li>
 <li>1x Ersatz-Glastank</li>
-<li>1x Mundstück</li>
+<li>1x Ersatz-Mundstück</li>
 <li>1x Ersatzteil-Set</li>
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Reax Mini 1600mAh</strong>
-<ul>
-<li>Akkukapazität: 1600 mAh</li>
-<li>Ausgangsleistungen über 1,0 Ohm: 8W, 10W, 12W, 14W & 16W</li>
-<li>Ausgabemodi unter 1,0 Ohm: Bypass</li>
-<li>10 Sekunden Zugautomatik</li>
-<li>Kurzschlussschutz</li>
-<li>Überladungsschutz</li>
-<li>Niederspannungsschutz</li>
-<li>Bottom-Watt-Display</li>
-<li>LED-Indikator</li>
-<li>Gewindetyp: 510er</li>
-<li>Maße: 31,5 mm x 29,6 mm x 70 mm</li>
-</ul>
-<br>
-<br>
-<strong>Tigon Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 3,5 ml</li>
-<li>Höhe (inkl. Mundstück): 52 mm</li>
-<li>Durchmesser: 24,5 mm</li>
-<li>Gewindetyp: 510</li>
-<li>subohm-fähig</li>
-<li>Top Filling</li>
-<li>Airflow Control</li>
-</ul>
-<br>
-<br>',
+</ul>',
     ),
     'AS100RXM' => array(
         'icNumber' => 'AS100RXM',
@@ -50221,31 +50491,43 @@ Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Z
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Mit dem Reax Mini Akkuträger von Aspire ist das moderate und Subohm-Dampfen möglich, sofern Sie den passenden Verdampfer (wie beispielsweise den Tigon) bzw. die passenden Verdampferköpfe verwenden. Sie haben die Wahl zwischen den Modi VW und Bypass. Je nach dem, welchen Modus Sie ausgewählt haben, können Sie diesen vom Bildschirm ablesen. Dieser ist zeigt nämlich nur die Modi an und ist unterhalb von Reax Mini platziert. Der Reax Mini hat eine Kapazität von 1600mAh und kann bei Bedarf über das mitgelieferte USB-Kabel geladen werden. 
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der Aspire Reax mini hat einen fest eingebauten Akku mit einer Akkukapazität von 1.600 mAh. Wird ein Verdampferkopf mit 1,0 Ohm und höher verwendet, kann durch Drücken des Mode-Knopfes an der Vorderseite des Gehäuses zwischen 8, 10, 12, 14 und 16 Watt gewählt werden. Wird der Tigon 0,4 Ohm Verdampferkopf genutzt, stellt sich das Akku automatisch auf den Bypass-Modus, d.h. es gibt eine Leistung abhängig vom Akkustand ab. In welchem Modus Sie sich befinden bzw. wieviel Watt Sie gewählt haben, wird Ihnen im Bottom-Watt-Display auf der Unterseite des Reax mini angezeigt. Der Ladestatus des Akkus wird Ihnen über ein kleines Indikator-Licht an der Vorderseite des Reax mini angezeigt: grün (geladen - über 3,8 Volt), blau (3,5-3,8 Volt) und rot (fast leer - unter 3,5 Volt).&nbsp;</p>
+<h2>Eigenschaften Aspire Reax mini Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 1.600 mAh</td>
+</tr>
+<tr>
+<td>Ausgangsleistungen über 1,0 Ohm</td>
+<td>8, 10, 12, 14 und 16 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsmodi unter 1,0 Ohm</td>
+<td>Bypass</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Bottom-Watt-Display, LED-Indikator für den Ladestatus</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>31,5 mm x 29,6 mm x 70 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Reax Mini 1600mAh</li>
+<li>1x Reax Mini Akku 1600mAh</li>
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>Reax Mini 1600mAh</strong>
-<ul>
-<li>Akkukapazität: 1600 mAh</li>
-<li>Ausgangsleistungen über 1,0 Ohm: 8W, 10W, 12W, 14W & 16W</li>
-<li>Asugabemodi unter 1,0 Ohm: Bypass</li>
-<li>10 Sekunden Zugautomatik</li>
-<li>Kurzschlussschutz</li>
-<li>Überladungsschutz</li>
-<li>Niederspannungsschutz</li>
-<li>Bottom-Watt-Display</li>
-<li>LED-Indikator</li>
-<li>Gewindetyp: 510er</li>
-<li>Maße: 31,5 mm x 29,6 mm x 70 mm</li>
-</ul>
-<br>
-<br>',
+<p>&nbsp;</p>',
     ),
     'S100F60' => array(
         'icNumber' => 'S100F60',

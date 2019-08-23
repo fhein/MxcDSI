@@ -1,69 +1,25 @@
 <?php
 return array(
-    'type_seo_map' => [
-        'E_CIGARETTE' => [
-            'seo' => [
-                'title' =>       'E-Zigaretten günstig online kaufen',
-                'description' => 'E-Zigaretten ##topic## günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                'keys' => null,
-            ]
-        ],
-        'LIQUID' => [
-            'seo' => [
-                'title' =>       'Liquids für die E-Zigarette günstig online kaufen',
-                'description' => 'Liquids für die E-Zigarette günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                'keys' => null,
-            ]
-        ],
-        'SHAKE_VAPE' => [
-            'seo' => [
-                'base' => [
-                    'title' =>       'Shake & Vape Liquids für die E-Zigarette günstig online kaufen',
-                    'description' => 'Shake & Vape Liquids - Shortfills - günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
-                ],
-            ]
-        ],
-        'AROMEN' => [
-            'seo' => [
-                'title' => 'Aromen für die E-Zigarette günstig online kaufen',
-                'description' => 'Aromen und Longfills günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                'keys' => null,
-            ]
-        ],
-        'BOXEN' => [
-            'seo' => [
-                'title' => 'Akkuträger - Box Mods - für die E-Zigarette günstig online kaufen',
-                'description' => 'Akkuträger und Box Mods günstig kaufen ✓ Geräte für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                'keys' => null,
-            ]
-        ],
-        'ZUBEHÖR' => [
-            'seo' => [
-                'title' => 'Zubehör für die E-Zigarette günstig online kaufen',
-                'description' => 'Zubehörartikel für die E-Zigarette günstig kaufen ✓ Köpfe, Akkus, Ladegeräte, Taschen und mehr ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                'keys' => null,
-            ]
-        ],
-    ],
     'type_category_map' => array(
         0 => array(
             'types' => array(
                 0 => 'E_CIGARETTE',
                 1 => 'E_PIPE',
             ),
-            'base_category' => 'E-ZIGARETTEN',
+            'path' => [
+                'E-ZIGARETTEN',
+            ],
             'append_subcategory' => 'supplier',
             'seo' => [
                 'base' => [
                     'title' =>       'E-Zigaretten günstig online kaufen',
                     'description' => 'E-Zigaretten ##topic## günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'E-Zigarette,günstig,kaufen',
                 ],
                 'supplier' => [
-                    'title' =>       '##supplier## - E-Zigaretten günstig online kaufen',
+                    'title' =>       '##supplier## E-Zigaretten günstig online kaufen',
                     'description' => 'E-Zigaretten von ##supplier## günstig kaufen ✓ Für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'E-Zigarette,günstig,kaufen,##supplier##',
                 ]
             ]
         ),
@@ -73,18 +29,20 @@ return array(
                 1 => 'BOX_MOD_CELL',
                 2 => 'SQUONKER_BOX',
             ),
-            'base_category' => 'BOXEN',
+            'path' => [
+                'AKKUTRÄGER',
+            ],
             'append_subcategory' => 'supplier',
             'seo' => [
                 'base' => [
-                    'title' => 'Akkuträger und Box Mods für die E-Zigarette günstig online kaufen',
+                    'title' => 'Akkuträger und Box Mods für E-Zigaretten günstig online kaufen',
                     'description' => 'Akkuträger und Box Mods günstig kaufen ✓ Für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Akkuträger,Box,Box Mod,E-Zigarette,günstig,kaufen',
                 ],
                 'supplier' => [
-                    'title' => '##supplier## - Akkuträger und Box Mods günstig online kaufen',
-                    'description' => 'Akkuträger von ##supplier günstig kaufen ✓ Für Einsteiger und Profis ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' => '##supplier## Akkuträger und Box Mods günstig online kaufen',
+                    'description' => 'Akkuträger von ##supplier## günstig kaufen ✓ Für Einsteiger und Profis ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Akkuträger,Box,Box Mod,E-Zigarette,günstig,kaufen,##supplier##',
                 ],
             ]
         ),
@@ -92,18 +50,20 @@ return array(
             'types' => array(
                 0 => 'CLEAROMIZER',
             ),
-            'base_category' => 'VERDAMPFER',
+            'path' => [
+                'VERDAMPFER',
+            ],
             'append_subcategory' => 'supplier',
             'seo' => [
                 'base' => [
-                    'title' => 'Verdampfer und Clearomizer für die E-Zigarette günstig online kaufen',
-                    'description' => 'Verdampfer für die E-Zigarette günstig kaufen ✓ Für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' => 'Verdampfer und Clearomizer für E-Zigaretten günstig online kaufen',
+                    'description' => 'Verdampfer für E-Zigaretten günstig kaufen ✓ Für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Verdampfer,Clearomizer,Atomizer,Vaporizer,E-Zigarette,günstig,kaufen',
                 ],
                 'supplier' => [
-                    'title' => '##supplier - Verdampfer für die E-Zigarette günstig kaufen',
-                    'description' => 'Verdampfer von ##supplier günstig kaufen ✓ Für Einsteiger und Profis ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' => '##supplier## Verdampfer für E-Zigaretten günstig kaufen',
+                    'description' => 'Verdampfer von ##supplier## günstig kaufen ✓ Für Einsteiger und Profis ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Verdampfer,Clearomizer,Atomizer,Vaporizer,E-Zigarette,günstig,kaufen,##supplier##',
                 ]
             ]
         ),
@@ -114,18 +74,21 @@ return array(
                 2 => 'CLEAROMIZER_RDTA',
                 3 => 'CLEAROMIZER_RDSA',
             ),
-            'base_category' => 'VERDAMPFER > Selbstwickler',
+            'path' => [
+                'VERDAMPFER',
+                'Selbstwickler',
+            ],
             'append_subcategory' => 'supplier',
             'seo' => [
                 'base' => [
                     'title' => 'Selbstwickel-Verdampfer für die E-Zigaratte günstig online kaufen',
                     'description' => 'Selbstwickel-Verdampfer günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Selbstwickler,Verdampfer,Selbstwickel-Verdampfer,Clearomizer,Atomizer,Vaporizer,E-Zigarette,günstig,kaufen',
                 ],
                 'supplier' => [
-                    'title' => '##supplier## - Selbstwickel-Verdampfer günstig kaufen',
+                    'title' => '##supplier## Selbstwickel-Verdampfer günstig kaufen',
                     'description' => 'Selbstwickel-Verdampfer von ##supplier## günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Selbstwickler,Verdampfer,Selbstwickel-Verdampfer,Clearomizer,Atomizer,Vaporizer,E-Zigarette,günstig,kaufen,##supplier##',
                 ]
             ]
         ),
@@ -134,17 +97,20 @@ return array(
                 0 => 'LIQUID',
                 1 => 'LIQUID_BOX',
             ),
-            'base_category' => 'LIQUIDS',
+            'path' => [
+                'LIQUID',
+            ],
             'append_subcategory' => 'brand',
             'seo' => [
                 'base' => [
-                    'title' =>       'Liquids für die E-Zigarette günstig online kaufen',
-                    'description' => 'Liquids für die E-Zigarette günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Liquids für E-Zigaretten günstig online kaufen',
+                    'description' => 'Liquids für E-Zigaretten günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
                 ],
                 'brand' => [
-                    'title' => '##supplier## - Liquids für die E-Zigarette günstig kaufen',
-                    'description' => 'Liquids von ##supplier## günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!\''
+                    'title' => '##supplier## Liquids für E-Zigaretten günstig kaufen',
+                    'description' => 'Liquids von ##supplier## günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette,##supplier##',
                 ]
             ]
         ),
@@ -152,12 +118,15 @@ return array(
             'types' => array(
                 0 => 'EASY3_CAP',
             ),
-            'base_category' => 'LIQUIDS > Easy 3 Caps',
+            'path' => [
+                'LIQUID',
+                'Easy 3 Caps'
+            ],
             'seo' => [
                 'base' => [
                     'title' =>       'Caps für die SC Easy 3 E-Zigarette günstig online kaufen',
                     'description' => 'Caps für die SC Easy 3 E-Zigarette günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Cap,Caps,Cap-System,SC,SC Easy 3,E-Zigarette,günstig,kaufen',
                 ]
             ]
 
@@ -166,18 +135,20 @@ return array(
             'types' => array(
                 0 => 'AROMA',
             ),
-            'base_category' => 'AROMEN',
+            'path' => [
+                'AROMEN',
+            ],
             'append_subcategory' => 'brand',
             'seo' => [
                 'base' => [
-                    'title' => 'Aromen für die E-Zigarette günstig online kaufen',
+                    'title' => 'Aromen für E-Zigaretten günstig online kaufen',
                     'description' => 'Aromen und Longfills günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Aroma,Longfill,E-Zigarette,günstig,kaufen',
                 ],
                 'brand' => [
-                    'title' => '##supplier## - Aromen für die E-Zigarette günstig kaufen',
+                    'title' => '##supplier## Aromen für E-Zigaretten günstig kaufen',
                     'description' => 'Aromen von ##supplier## günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Aroma,Longfill,E-Zigarette,günstig,kaufen,##supplier##',
                 ]
             ]
         ),
@@ -185,18 +156,20 @@ return array(
             'types' => array(
                 0 => 'SHAKE_VAPE',
             ),
-            'base_category' => 'SHAKE & VAPE',
+            'path' => [
+                'SHAKE & VAPE',
+            ],
             'append_subcategory' => 'brand',
             'seo' => [
                 'base' => [
-                    'title' =>       'Shake & Vape Liquids für die E-Zigarette günstig online kaufen',
+                    'title' =>       'Shake & Vape Liquids für E-Zigaretten günstig online kaufen',
                     'description' => 'Shake & Vape Liquids - Shortfills - günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Shake & Vape,Longfill,E-Liquid,Liquid,E-Zigarette,günstig,kaufen',
                 ],
                 'brand' => [
-                    'title' =>       '##supplier## - Shake & Vape Liquids günstig kaufen',
+                    'title' =>       '##supplier## Shake & Vape Liquids günstig kaufen',
                     'description' => 'Shake & Vape Liquids von ##supplier## günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Shake & Vape,Longfill,E-Liquid,Liquid,E-Zigarette,günstig,kaufen,##supplier##',
                 ],
             ]
         ),
@@ -205,17 +178,20 @@ return array(
                 0 => 'HEAD',
             ),
             'base_category' => 'ZUBEHÖR > Verdampferköpfe',
-            'append_subcategory' => 'supplier',
+            'path' => [
+                'ZUBEHÖR',
+                'Verdampferköpfe',
+            ],
             'seo' => [
                 'base' => [
-                    'title' =>       'Verdampferköpfe für die E-Zigarette günstig online kaufen',
-                    'description' => 'Verdampferköpfe für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Verdampferköpfe für E-Zigaretten günstig online kaufen',
+                    'description' => 'Verdampferköpfe für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Verdampfer, Verdampferkopf,Coil,E-Zigarette,günstig,kaufen',
                 ],
                 'supplier' => [
-                    'title' =>       '##supplier## - Verdampferköpfe für die E-Zigarette günstig kaufen',
+                    'title' =>       '##supplier## Verdampferköpfe für E-Zigaretten günstig kaufen',
                     'description' => 'Verdampferköpfe von ##supplier## günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Verdampfer, Verdampferkopf,Coil,E-Zigarette,günstig,kaufen,##supplier##',
                 ],
             ]
         ),
@@ -228,14 +204,14 @@ return array(
             'append_subcategory' => 'supplier',
             'seo' => [
                 'base' => [
-                    'title' =>       'Glastanks für die E-Zigarette günstig online kaufen',
-                    'description' => 'Glastanks für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Glastanks für E-Zigaretten günstig online kaufen',
+                    'description' => 'Glastanks für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Glastank,E-Zigarette,günstig,kaufen',
                 ],
                 'supplier' => [
-                    'title' =>       '##supplier## - Glastanks für die E-Zigarette günstig kaufen',
+                    'title' =>       '##supplier## Glastanks für E-Zigaretten günstig kaufen',
                     'description' => 'Glastanks für E-Zigaretten von ##supplier## günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Glastank,E-Zigarette,günstig,kaufen,##supplier##',
                 ],
             ]
         ),
@@ -248,14 +224,14 @@ return array(
             'append_subcategory' => 'supplier',
             'seo' => [
                 'base' => [
-                    'title' =>       'Mundstücke für die E-Zigarette günstig online kaufen',
-                    'description' => 'Mundstücke für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Mundstücke für E-Zigaretten günstig online kaufen',
+                    'description' => 'Mundstücke für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Mundstück,E-Zigarette,günstig,kaufen',
                 ],
                 'supplier' => [
-                    'title' =>       '##supplier## - Mundstücke für die E-Zigarette günstig kaufen',
-                    'description' => 'Glastanks für E-Zigaretten von ##supplier## günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       '##supplier## Mundstücke für E-Zigaretten günstig kaufen',
+                    'description' => 'Mundstücke für E-Zigaretten von ##supplier## günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Mundstück,E-Zigarette,günstig,kaufen,##supplier##',
                 ],
             ]
         ),
@@ -267,14 +243,14 @@ return array(
             'append_subcategory' => 'supplier',
             'seo' => [
                 'base' => [
-                    'title' =>       'Ersatz-Dichtungen für die E-Zigarette günstig online kaufen',
-                    'description' => 'Ersatz-Dichtungen für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Ersatz-Dichtungen für E-Zigaretten günstig online kaufen',
+                    'description' => 'Ersatz-Dichtungen für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Dichtung,Ersatzdichtung,Ersatz-Dichtung,E-Zigarette,günstig,kaufen',
                 ],
                 'supplier' => [
-                    'title' =>       '##supplier## - Ersatzdichtungen für die E-Zigarette günstig kaufen',
+                    'title' =>       '##supplier## Ersatzdichtungen für E-Zigaretten günstig kaufen',
                     'description' => 'Glastanks für E-Zigaretten von ##supplier## günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Dichtung,Ersatzdichtung,Ersatz-Dichtung,E-Zigarette,günstig,kaufen,##supplier##',
                 ],
             ],
         ),
@@ -287,14 +263,14 @@ return array(
             'append_subcategory' => 'common_name',
             'seo' => [
                 'base' => [
-                    'title' =>       'Pods für die E-Zigarette günstig online kaufen',
-                    'description' => 'Pods für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Pods für E-Zigaretten günstig online kaufen',
+                    'description' => 'Pods für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Pod,Cartridge,E-Zigarette,günstig,kaufen',
                 ],
                 'common_name' => [
-                    'title' =>       '##supplier## - Pods für die ##common_name## E-Zigarette günstig kaufen',
-                    'description' => 'Pods für die ##common_name## E-Zigarette von ##supplier## günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       '##supplier## Pods für die ##common_name## E-Zigarette günstig kaufen',
+                    'description' => 'Pods für die ##supplier## ##common_name## E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Pod,Cartridge,E-Zigarette,günstig,kaufen,##supplier##',
                 ],
             ],
         ),
@@ -305,11 +281,10 @@ return array(
             ),
             'base_category' => 'ZUBEHÖR > Akkuzellen & -boxen',
             'seo' => [
-
                 'base' => [
-                    'title' =>       'Akkus für die E-Zigarette günstig online kaufen',
-                    'description' => 'Akkus für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Akkus für E-Zigaretten günstig online kaufen',
+                    'description' => 'Akkus für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Akku,Akkuzelle,Batterie,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -323,7 +298,7 @@ return array(
                 'base' => [
                     'title' =>       'Basis und Nikotin-Shots für die E-Liquid günstig online kaufen',
                     'description' => 'Basis und Nikotin-Shots für E-Liquid günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Base,Basis,Nikotinshot,Nikotin-Shot,Liquid,E-Liquid,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -335,9 +310,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Ladegeräte & -kabel',
             'seo' => [
                 'base' => [
-                    'title' =>       'Ladegeräte und -kabel für die E-Zigarette günstig online kaufen',
-                    'description' => 'Ladegeräte und -kabel für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Ladegeräte und -kabel für E-Zigaretten günstig online kaufen',
+                    'description' => 'Ladegeräte und -kabel für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Ladegerät,Ladekabel,Kabel,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -348,9 +323,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Squonker-Flaschen',
             'seo' => [
                 'base' => [
-                    'title' =>       'Squonker-Flaschen für die E-Zigarette günstig online kaufen',
-                    'description' => 'Squonker-Flaschen für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Squonker-Flaschen für E-Zigaretten günstig online kaufen',
+                    'description' => 'Squonker-Flaschen für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Squonker-Bottle,Squonkerflasche,Squonker-Flasche,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -361,9 +336,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Taschen & Etuis',
             'seo' => [
                 'base' => [
-                    'title' =>       'Taschen & Etuis für die E-Zigarette günstig online kaufen',
-                    'description' => 'Taschen & Etuis für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Taschen & Etuis für E-Zigaretten günstig online kaufen',
+                    'description' => 'Taschen & Etuis für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Tasche,Etui,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -375,9 +350,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Selbstwickler > Werkzeug',
             'seo' => [
                 'base' => [
-                    'title' =>       'Werkzeug für die E-Zigarette günstig online kaufen',
-                    'description' => 'Werkzeug für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Werkzeug für E-Zigaretten günstig online kaufen',
+                    'description' => 'Werkzeug für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Werkzeug,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -389,8 +364,8 @@ return array(
             'seo' => [
                 'base' => [
                     'title' =>       'E-Zigarette | Watte und -pads für Selbstwickler günstig online kaufen',
-                    'description' => 'Watte für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'description' => 'Watte für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Watte,Selbstwickler,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -402,8 +377,8 @@ return array(
             'seo' => [
                 'base' => [
                     'title' =>       'E-Zigarette | Wickeldraht für Selbstwickler günstig online kaufen',
-                    'description' => 'Wickeldraht für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'description' => 'Wickeldraht für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Wickeldraht,Draht,Selbstwickler,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -416,8 +391,8 @@ return array(
             'seo' => [
                 'base' => [
                     'title' =>       'E-Zigarette | Base & Deck für Selbstwickler günstig online kaufen',
-                    'description' => 'Bases & Decks für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'description' => 'Bases & Decks für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Base,Deck,Selbstwickler,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -429,9 +404,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Selbstwickler > Coils',
             'seo' => [
                 'base' => [
-                    'title' =>       'Coils und Wicklungen für die E-Zigarette günstig online kaufen',
-                    'description' => 'Coils und Wicklungen für die E-Zigarette günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Coils und Wicklungen für E-Zigaretten günstig online kaufen',
+                    'description' => 'Coils und Wicklungen für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Coil,Wicklung,Spule,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -444,8 +419,8 @@ return array(
             'seo' => [
                 'base' => [
                     'title' =>       'Steam Crave | Erweitungs- und Umbaukits für den Aromamizer günstig kaufen',
-                    'description' => 'Erweitungs- und Umbaukit den Steam Crave Aromizer günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'description' => 'Erweitungs- und Umbaukit den Steam Crave Aromamizer günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Steam Crave,Aromamizer,Erweiterung,Umbau,Erweiterungskit,Umbaukit,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -458,7 +433,7 @@ return array(
                 'base' => [
                     'title' =>       'Leerflaschen für E-Liquid günstig online kaufen',
                     'description' => 'Leerflaschen für E-Liquid günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'Leerflasche,Flasche,Liquid,E-Liquid,günstig,kaufen',
                 ],
             ],
         ),
@@ -469,9 +444,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Reinigung',
             'seo' => [
                 'base' => [
-                    'title' =>       'Renigungszubehör für die E-Zigarette günstig kaufen',
-                    'description' => 'Reinigungszubehör für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Renigungszubehör für E-Zigaretten günstig kaufen',
+                    'description' => 'Reinigungszubehör für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Reinigung,Zubehör,Reinigungszubehör,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -482,9 +457,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Accessoires',
             'seo' => [
                 'base' => [
-                    'title' =>       'Accessoires für die E-Zigarette günstig onliine kaufen',
-                    'description' => 'Accessoires für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Accessoires für E-Zigaretten günstig onliine kaufen',
+                    'description' => 'Accessoires für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Accessoire,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -495,9 +470,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Abdeckungen',
             'seo' => [
                 'base' => [
-                    'title' =>       'Abdeckungen für die E-Zigarette günstig online kaufen',
-                    'description' => 'Abdeckungen für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Abdeckungen für E-Zigaretten günstig online kaufen',
+                    'description' => 'Abdeckungen für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Abdeckung,Cover,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -511,7 +486,7 @@ return array(
                 'base' => [
                     'title' =>       'E-Hookah und Vaporizer günstig online kaufen',
                     'description' => 'E-Hookah und Vaporizer günstig online kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'keywords' => 'E-Shisha,E-Hookah,Vaporizer,günstig,kaufen',
                 ],
             ],
         ),
@@ -523,9 +498,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Batteriekappen & -hülsen',
             'seo' => [
                 'base' => [
-                    'title' =>       'Batteriekappen für die E-Zigarette günstig online kaufen',
-                    'description' => 'Batteriekappen für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Batteriekappen für E-Zigaretten günstig online kaufen',
+                    'description' => 'Batteriekappen für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Batteriekappe,Kappe,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -537,9 +512,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Magnet & Magnetadapter',
             'seo' => [
                 'base' => [
-                    'title' =>       'Magnete und -adapter für die E-Zigarette günstig online kaufen',
-                    'description' => 'Magnete und -adapter für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Magnete und -adapter für E-Zigaretten günstig online kaufen',
+                    'description' => 'Magnete und -adapter für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Magnet,Magnetadapter,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),
@@ -550,9 +525,9 @@ return array(
             'base_category' => 'ZUBEHÖR > Aufbewahrung',
             'seo' => [
                 'base' => [
-                    'title' =>       'Vitrinen für die E-Zigarette günstig online kaufen',
-                    'description' => 'Vitrinen für die E-Zigarette günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-                    'keys' => null,
+                    'title' =>       'Vitrinen für E-Zigaretten günstig online kaufen',
+                    'description' => 'Vitrinen für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Aufbewahrung,Vitrine,E-Zigarette,günstig,kaufen',
                 ],
             ],
         ),

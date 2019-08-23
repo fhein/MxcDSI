@@ -60,9 +60,23 @@ class Product extends ModelEntity  {
     /**
      * PropertyMapper mapped
      *
-     * @ORM\Column(name="seo_name", type="string", nullable=true)
+     * @ORM\Column(name="seo_url", type="string", nullable=true)
      */
-    private $seoName;
+    private $seoUrl;
+
+    /**
+     * PropertyMapper mapped
+     *
+     * @ORM\Column(name="seo_title", type="string", nullable=true)
+     */
+    private $seoTitle;
+
+    /**
+     * PropertyMapper mapped
+     *
+     * @ORM\Column(name="seo_description", type="string", nullable=true)
+     */
+    private $seoDescription;
 
     /**
      * PropertyMapper mapped
@@ -746,16 +760,48 @@ class Product extends ModelEntity  {
     /**
      * @return mixed
      */
-    public function getSeoName()
+    public function getSeoTitle()
     {
-        return $this->seoName;
+        return $this->seoTitle;
     }
 
     /**
-     * @param mixed $seoName
+     * @param mixed $seoTitle
      */
-    public function setSeoName($seoName)
+    public function setSeoTitle($seoTitle)
     {
-        $this->seoName = $seoName;
+        $this->seoTitle = $seoTitle;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeoUrl()
+    {
+        return $this->seoUrl;
+    }
+
+    /**
+     * @param mixed $seoUrl
+     */
+    public function setSeoUrl($seoUrl)
+    {
+        $this->seoUrl = $seoUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeoDescription()
+    {
+        return $this->seoDescription;
+    }
+
+    /**
+     * @param mixed $seoDescription
+     */
+    public function setSeoDescription($seoDescription)
+    {
+        $this->seoDescription = $seoDescription;
     }
 }

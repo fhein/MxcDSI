@@ -172,7 +172,7 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
     /**
      * Write an attribute value to supplied detail
      *
-     * @param Article $article
+     * @param Detail $detail
      * @param string $attribute
      * @param $value
      * @throws DBALException

@@ -7,7 +7,9 @@ use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
+use MxcDropshipInnocigs\Mapping\Import\CategoryConfigurationBuilder;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
+use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
@@ -863,20 +865,22 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            /** @var Product $product */
-            foreach ($products as $product) {
-                $article = $product->getArticle();
-                if ($article === null) continue;
-                ArticleTool::setArticleAttribute($article, 'mxc_meta_type'         , $product->getType());
-                ArticleTool::setArticleAttribute($article, 'mxc_meta_common_name'  , $product->getCommonName());
-                ArticleTool::setArticleAttribute($article, 'mxc_meta_manufacturer' , $product->getManufacturer());
-                ArticleTool::setArticleAttribute($article, 'mxc_meta_supplier'     , $product->getSupplier());
-                ArticleTool::setArticleAttribute($article, 'mxc_meta_brand'        , $product->getBrand());
+            $services = MxcDropshipInnocigs::getServices();
+            $builder = $services->get(CategoryConfigurationBuilder::class);
+            $builder->buildCategoryConfiguration();
 
-                ArticleTool::setArticleAttribute($article, 'mxc_meta_flavor'         , $product->getFlavor());
-                ArticleTool::setArticleAttribute($article, 'mxc_meta_flavor_group'   , $product->getFlavorCategory());
-            }
+
+
+// build seoCategories
+//            $services = MxcDropshipInnocigs::getServices();
+//            $seoCategoryMapper = $services->get(\MxcDropshipInnocigs\Mapping\Import\SeoCategoryMapper::class);
+//            $products = $this->getManager()->getRepository(Product::class)->findAll();
+//            $model = new Model();
+//            foreach ($products as $product) {
+//                $seoCategoryMapper->map($model, $product, true);
+//            }
+//            $seoCategoryMapper->report();
+
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -886,22 +890,22 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            // Replace all commata with dots in price fields to ensure correct casting to float
-
-            /** @noinspection PhpUndefinedMethodInspection */
-            $variants = $this->getManager()->getRepository(Variant::class)->getAllIndexed();
-            /** @var Variant $variant */
-            foreach ($variants as $variant) {
-                $price = str_replace(',', '.', $variant->getRecommendedRetailPrice());
-                $variant->setRecommendedRetailPrice($price);
-                $price = str_replace(',', '.', $variant->getPurchasePrice());
-                $variant->setPurchasePrice($price);
-
-                $price = str_replace(',', '.', $variant->getRecommendedRetailPriceOld());
-                $variant->setRecommendedRetailPriceOld($price);
-                $price = str_replace(',', '.', $variant->getPurchasePriceOld());
-                $variant->setPurchasePriceOld($price);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var ProductSeoMapper $mapper */
+            $mapper = MxcDropshipInnocigs::getServices()->get(ProductSeoMapper::class);
+            /** @var Product $product */
+            $model = new Model();
+            foreach ($products as $product) {
+                $mapper->map($model, $product, true);
+                $article = $product->getArticle();
+                /** @var Article $article */
+                if ($article === null) continue;
+                $article->setDescription($product->getSeoDescription());
+                $article->setMetaTitle($product->getSeoTitle());
+                ArticleTool::setArticleAttribute($article, 'attr4', $product->getSeoUrl());
             }
+            $mapper->report();
+
             $this->getManager()->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
