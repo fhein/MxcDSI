@@ -7,7 +7,6 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Exception\RuntimeException;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
 
@@ -40,18 +39,24 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
         return $count;
     }
 
-    public function findCategoryPath(string $path)
+    public function findCategoryPath(string $path, Category $root = null, bool $create = true)
     {
         $repository = $this->modelManager->getRepository(Category::class);
         /** @var Category $parent */
-        $parent = $repository->findOneBy(['parentId' => null]);
+        $parent = $root ?? $repository->findOneBy(['parentId' => null]);
         $nodes = array_map('trim', explode('>', $path));
         foreach ($nodes as $name) {
             $child = $repository->findOneBy(['name' => $name, 'parentId' => $parent->getId()]);
-            if (! $child) {
-                throw new RuntimeException('Root category \'' . $path . '\' not found.');
+            if (! empty($child)) {
+                $parent = $child;
+                continue;
             }
-            $parent = $child ?? $this->createCategory($parent, $name);
+            if ($create === true) {
+                $parent = $this->createCategory($parent, $name);
+            } else {
+                $parent = null;
+                break;
+            }
         }
         return $parent;
     }
@@ -65,16 +70,24 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
      *
      * @param array $path
      * @param Category|null $root
+     * @param bool $create
      * @return Category
      */
-    public function getCategoryPath(array $path, Category $root = null)
+    public function getCategoryPath(array $path, Category $root = null, bool $create = true)
     {
         $repository = $this->modelManager->getRepository(Category::class);
         /** @var Category $parent */
         $parent = $root ?? $repository->findOneBy(['parentId' => null]);
         foreach ($path as $name => $position) {
             $child = $repository->findOneBy(['name' => $name, 'parentId' => $parent->getId()]);
-            $parent = $child ?? $this->createCategory($parent, $name);
+            if ($child === null) {
+                if ($create === true) {
+                    $parent = $this->createCategory($parent, $name);
+                } else {
+                    $parent = null;
+                    break;
+                }
+            }
             $parent->setPosition($position);
         }
         return $parent;
@@ -107,31 +120,4 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
         return $child;
     }
 
-    public function createCategoryCache() {
-        $root = $this->findCategoryPath('Deutsch');
-        $list = [];
-        $this->getChildrenTree($root->getId(), $list);
-        $this->categoryCache = $list;
-    }
-
-    protected function getChildrenTree(int $id, array &$list, string $parentPath = null)
-    {
-        $children = $this->getChildrenQuery()->setParameter('id', $id)->getResult();
-        /** @var Category $child */
-        foreach ($children as $child) {
-            $name = $child->getName();
-            $path = $parentPath ? $parentPath . ' > ' . $name : $name;
-            $list[$path] = $child;
-            $this->getChildrenTree($child->getId(), $list, $path);
-        }
-    }
-
-    protected function getChildrenQuery() {
-        if (! $this->childrenQuery) {
-            $class = Category::class;
-            $dql = "SELECT c FROM {$class} c INDEX BY c.id WHERE c.blog = 0 AND c.parentId = :id";
-            $this->childrenQuery = $this->modelManager->createQuery($dql);
-        }
-        return $this->childrenQuery;
-    }
 }

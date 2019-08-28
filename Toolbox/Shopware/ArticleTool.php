@@ -190,4 +190,15 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
             'value' => $value
         ]);
     }
+
+    public static function getDetailAttributes(Detail $detail) {
+
+        return Shopware()->Db()->fetchRow('
+            SELECT * FROM 
+              s_articles_attributes attr 
+            WHERE 
+                attr.articledetailsID = ?
+            ', array($detail->getId())
+        );
+    }
 }

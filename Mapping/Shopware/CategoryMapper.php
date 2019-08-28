@@ -6,16 +6,19 @@ use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
 use Zend\Config\Factory;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
-class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
+class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface, ModelManagerAwareInterface
 {
     use LoggerAwareTrait;
     use ClassConfigAwareTrait;
+    use ModelManagerAwareTrait;
 
     /** @var CategoryTool $categoryTool */
     protected $categoryTool;
@@ -52,23 +55,19 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface
         }
     }
 
-    public function createCategories(array $products)
-    {
-        $map = [];
-        foreach ($products as $product) {
-            if (! $product->isValid()) continue;
-            $categories = explode(MXC_DELIMITER_L1, $product->getCategory());
-            foreach ($categories as $category) {
-                $map[$category] = true;
-            }
-        }
-    }
-
-    public function createCategoryTree() {
-        $pathes = array_keys($this->categoryTree['category_positions']);
-        $root = $this->categoryTool->findCategoryPath('Deutsch');
-        foreach ($pathes as $path) {
-            $this->categoryTool->getCategoryPath($this->getCategoryPositions($path), $root);
+    public function setCategorySeoInformation() {
+        $root = $this->classConfig['root_category'] ?? 'Deutsch';
+        $pathes = $this->categoryTree['category_positions'];
+        $seo = $this->categoryTree['category_seo_items'];
+        $rootCategory = $this->categoryTool->findCategoryPath($root, null, false);
+        foreach ($pathes as $path => $position) {
+            $swCategory = $this->categoryTool->findCategoryPath($path, $rootCategory, false);
+            if ($swCategory === null) continue;
+            if (empty($seo[$path])) continue;
+            $swCategory->setMetaTitle($seo[$path]['seo_title']);
+            $swCategory->setMetaDescription($seo[$path]['seo_description']);
+            $swCategory->setMetaKeywords($seo[$path]['seo_keywords']);
+            $swCategory->setCmsHeadline($seo[$path]['seo_h1']);
         }
     }
 

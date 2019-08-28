@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MxcDropshipInnocigs\Mapping\Import;
-
 
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
@@ -10,6 +8,7 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\Report\ArrayReport;
 
 class SeoCategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -19,15 +18,13 @@ class SeoCategoryMapper extends BaseImportMapper implements ProductMapperInterfa
     /** @var array */
     protected $report = [];
 
+    protected $typeMap;
+
+    protected $seoItems = [];
+
     protected $categoryMap;
-    protected $classConfigFile = __DIR__ . '/../../Config/CategoryMapper.config.php';
 
     protected $config;
-
-    public function __construct(array $config)
-    {
-        $this->config = $config;
-    }
 
     public function map(Model $model, Product $product, bool $remap = false)
     {
@@ -40,48 +37,34 @@ class SeoCategoryMapper extends BaseImportMapper implements ProductMapperInterfa
     public function remap(Product $product)
     {
         $type = $product->getType();
-        $categoryMap = $this->getCategoryMap();
+        $typeMap = $this->getTypeMap();
+        $map = $this->classConfig['type_category_map'];
 
-        $category = $categoryMap[$type]['base_category'] ?? null;
-        $seoIndex = $categoryMap[$type]['append_subcategory'] ?? 'base';
-        $seoSettings = $categoryMap[$type]['seo'][$seoIndex];
-        $categories = [];
+        $category = $map[$typeMap[$type]]['path'] ?? null;
+        $seoIndex = $map[$typeMap[$type]]['append'] ?? 'base';
+        $seoSettings = $map[$typeMap[$type]]['seo'][$seoIndex];
 
-        $flavorCategories = $product->getFlavorCategory();
-        if (! empty($flavorCategories)) {
-            $flavorCategories = array_map('trim', explode(',', $flavorCategories));
-            foreach ($flavorCategories as $flavorCategory) {
-                // @todo:
-            }
-        }
 
-        $addlCategories = $product->getAddlCategory();
-        if (! empty($addlCategories)) {
-            $addlCategories = array_map('trim', explode(',', $addlCategories));
-            foreach ($addlCategories as $addlCategory) {
-                // @todo
-            }
-        }
-
-        $appendSubcategory = $categoryMap[$type]['append_subcategory'] ?? null;
-        if (is_string($appendSubcategory)) {
-            switch ($appendSubcategory) {
+        $subCategory = $map[$typeMap[$type]]['append'] ?? null;
+        if (is_string($subCategory)) {
+            switch ($subCategory) {
                 case 'supplier':
-                    $appendSubcategory = $product->getSupplier();
-                    if ($appendSubcategory === 'InnoCigs') {
-                        $appendSubcategory = $product->getBrand();
+                    $subCategory = $product->getSupplier();
+                    if ($subCategory === 'InnoCigs') {
+                        $subCategory = $product->getBrand();
                     }
                     break;
                 case 'brand':
-                    $appendSubcategory = $product->getBrand();
+                    $subCategory = $product->getBrand();
                     break;
                 case 'common_name':
-                    $appendSubcategory = $product->getCommonName();
+                    $subCategory = $product->getCommonName();
                     break;
                 default:
-                    $appendSubcategory = null;
+                    $subCategory = null;
             }
         }
+
         $title = null;
         $description = null;
         if ($seoSettings !== null) {
@@ -104,34 +87,27 @@ class SeoCategoryMapper extends BaseImportMapper implements ProductMapperInterfa
                 $keywords = str_replace(['##supplier##', '##brand##', '##common_name##'], [$supplier, $brand, $commonName], $keywords);
             }
         }
-        $category = $appendSubcategory ? $category . ' > ' . $appendSubcategory : $category;
+        $category = $subCategory ? $category . ' > ' . $subCategory : $category;
         $this->report[$category] = [
             'seo_title' => $title ?? 'NULL',
             'seo_description' => $description ?? 'NULL',
             'seo_keywords' => $keywords ?? 'NULL',
-            'seo_t_length' => $title ? strlen($title) : 0,
-            'seo_d_length' => $description ? strlen($description) : 0,
         ];
     }
 
-    protected function getCategoryMap()
-    {
-        if ($this->categoryMap) return $this->categoryMap;
-        $map = [];
-        $typeMap = $this->classConfig['type_category_map'] ?? [];
-        foreach ($typeMap as $item) {
-            foreach ($item['types'] as $type) {
-                $map[$type]['base_category'] = $item['base_category'];
-                $map[$type]['append_subcategory'] = $item['append_subcategory'];
-                $map[$type]['seo'] = $item['seo'];
+    protected function getTypeMap() {
+        $typeMap = [];
+        foreach ($this->classConfig['type_category_map'] as $idx => $record) {
+            foreach ($record['types'] as $type) {
+                $typeMap[$type] = $idx;
             }
         }
-        $this->categoryMap = $map;
-        return $map;
+        return $typeMap;
     }
 
     public function report()
     {
-        $this->log->debug(var_export($this->report, true));
+        $report = new ArrayReport();
+        $report([ 'seoCategories' => $this->report]);
     }
 }

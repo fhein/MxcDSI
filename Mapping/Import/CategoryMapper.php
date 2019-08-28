@@ -2,23 +2,28 @@
 
 namespace MxcDropshipInnocigs\Mapping\Import;
 
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use Psr\Log\LoggerAwareTrait;
 use Zend\Config\Factory;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
-class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
+class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
     use ModelManagerAwareTrait;
+    use LoggerAwareTrait;
 
     /** @var array */
     protected $report = [];
 
-    protected $categoryMap;
+    protected $typeMap;
     protected $classConfigFile = __DIR__ . '/../../Config/CategoryMapper.config.php';
+
+    protected $categorySeoItems;
 
     protected $config;
 
@@ -31,7 +36,8 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
     {
         $category = @$this->config[$product->getIcNumber()]['category'];
         if ($remap || $category === null) {
-            $category = $this->remap($product);
+            $this->remap($product);
+            return;
         }
         $product->setCategory($category);
     }
@@ -39,48 +45,28 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
     public function remap(Product $product)
     {
         $type = $product->getType();
-        $categoryMap = $this->getCategoryMap();
+        if (empty($type)) return null;
+        $map =  $this->classConfig['type_category_map'];
+        $typeMap = $this->getTypeMap();
+        $category = $map[$typeMap[$type]]['path'];
+        $this->log->debug($product->getName());
+        $this->log->debug($type);
+        $this->log->debug($category);
+        $this->classConfig['type_category_map'][$typeMap[$type]];
 
-        $category = $categoryMap[$type]['base_category'] ?? null;
-        $categories = [];
+        $flavorCategories = $this->getFlavorCategories($product, $category);
+        $additionalCategories = $this->getAdditionalCategories($product);
 
-        $flavorCategories = $product->getFlavorCategory();
+        $subCategory = $this->getSubCategory($product);
+
+        $categories = $flavorCategories + $additionalCategories;
+        $path = $subCategory ? $category . ' > ' . $subCategory : $category;
+        $categories[] = $path;
+
+        $this->getCategorySeoItems($product, $path);
         if (! empty($flavorCategories)) {
-            $flavorCategories = array_map('trim', explode(',', $flavorCategories));
-            foreach ($flavorCategories as $flavorCategory) {
-                $categories[] = $category . ' > ' . $flavorCategory;
-            }
+            $this->getFlavorCategorySeoItems($flavorCategories);
         }
-
-        $addlCategories = $product->getAddlCategory();
-        if (! empty($addlCategories)) {
-            $addlCategories = array_map('trim', explode(',', $addlCategories));
-            foreach ($addlCategories as $addlCategory) {
-                $categories[] = $addlCategory;
-            }
-        }
-
-        $appendSubcategory = $categoryMap[$type]['append_subcategory'] ?? null;
-        if (is_string($appendSubcategory)) {
-            switch ($appendSubcategory) {
-                case 'supplier':
-                    $appendSubcategory = $product->getSupplier();
-                    if ($appendSubcategory === 'InnoCigs') {
-                        $appendSubcategory = $product->getBrand();
-                    }
-                    break;
-                case 'brand':
-                    $appendSubcategory = $product->getBrand();
-                    break;
-                case 'common_name':
-                    $appendSubcategory = $product->getCommonName();
-                    break;
-                default:
-                    $appendSubcategory = null;
-            }
-        }
-
-        $categories[] = $appendSubcategory ? $category . ' > ' . $appendSubcategory : $category;
 
         $category = null;
         if (! empty($categories)) {
@@ -88,7 +74,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             $product->setCategory($category);
             $this->report[$category][] = $product->getName();
         }
-        return $category;
+        $product->setCategory($category);
     }
 
     protected function updateCategoryPositions(array $categoryTree, array &$positions, string $path = null)
@@ -170,20 +156,17 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         Factory::toFile($this->classConfigFile, $this->classConfig);
     }
 
-    protected function getCategoryMap()
-    {
-        if ($this->categoryMap) return $this->categoryMap;
-        $map = [];
-        $typeMap = $this->classConfig['type_category_map'] ?? [];
-        foreach ($typeMap as $item) {
-            foreach ($item['types'] as $type) {
-                $map[$type]['base_category'] = $item['base_category'];
-                $map[$type]['append_subcategory'] = $item['append_subcategory'];
+    protected function getTypeMap() {
+        if (! empty($this->typeMap)) return $this->typeMap;
+        $typeMap = [];
+        foreach ($this->classConfig['type_category_map'] as $idx => $record) {
+            foreach ($record['types'] as $type) {
+                $typeMap[$type] = $idx;
             }
         }
-        $this->categoryMap = $map;
-        return $map;
+        return $this->typeMap = $typeMap;
     }
+
 
     public function report()
     {
@@ -193,8 +176,158 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         }
 
         (new ArrayReport())([
-            'pmCategoryUsage' => $this->report,
-            'pmCategory'      => array_keys($this->report),
+            'pmCategoryUsage' => $this->report ?? [],
+            'pmCategory'      => array_keys($this->report) ?? [],
+            'pmSeoCategories' => $this->categorySeoItems ?? [],
         ]);
+
+        $seoConfig = $this->classConfig['category_seo_items'] ?? [];
+        $this->classConfig['category_seo_items'] = array_replace_recursive($seoConfig, $this->categorySeoItems);
+        Factory::toFile($this->classConfigFile, $this->classConfig);
+
    }
+
+    /**
+     * @param Product $product
+     * @param $category
+     * @return array
+     */
+    protected function getFlavorCategories(Product $product, $category): array
+    {
+        $categories = [];
+        $flavorCategories = $product->getFlavorCategory();
+        if (empty($flavorCategories)) return $categories;
+
+        $flavorCategories = array_map('trim', explode(',', $flavorCategories));
+        foreach ($flavorCategories as $flavorCategory) {
+            $categories[] = $category . ' > ' . $flavorCategory;
+        }
+        return $categories;
+    }
+
+    /**
+     * @param Product $product
+     * @return array
+     */
+    protected function getAdditionalCategories(Product $product): array
+    {
+        $categories = [];
+        $addlCategories = $product->getAddlCategory();
+        if (empty($addlCategories)) return $categories;
+
+        $addlCategories = array_map('trim', explode(',', $addlCategories));
+        foreach ($addlCategories as $addlCategory) {
+            $categories[] = $addlCategory;
+        }
+        return $categories;
+    }
+
+    /**
+     * @param Product $product
+     * @return mixed|string|null
+     */
+    protected function getSubCategory(Product $product)
+    {
+        $type = $product->getType();
+        $subCategory = $this->classConfig['type_category_map'][$this->typeMap[$type]]['append'] ?? null;
+        if (empty($subCategory)) return null;
+
+        switch ($subCategory) {
+            case 'supplier':
+                $subCategory = $product->getSupplier();
+                if ($subCategory === 'InnoCigs') {
+                    $subCategory = $product->getBrand();
+                }
+                break;
+            case 'brand':
+                $subCategory = $product->getBrand();
+                break;
+            case 'common_name':
+                $subCategory = $product->getCommonName();
+                break;
+            default:
+                $subCategory = null;
+        }
+        return $subCategory;
+    }
+
+    protected function getFlavorCategorySeoItems(array $pathes)
+    {
+        foreach ($pathes as $path) {
+            if (! empty($this->categorySeoItems[$path])) continue;
+
+            $pathItems = array_map('trim', explode('>', $path));
+            $profile = $this->classConfig['flavor_category_map'][$pathItems[0]];
+            $flavor = $pathItems[1];
+            $h1 = strtoupper(str_replace('##flavor##', $flavor, $profile['h1']));
+            $title = str_replace('##flavor##', $flavor, $profile['title']);
+            $description = str_replace('##flavor##', $flavor, $profile['description']);
+            $keywords = str_replace('##flavor##', $flavor, $profile['keywords']);
+
+            $this->categorySeoItems[$path] = [
+                'seo_h1' => $h1,
+                'seo_title' => $title,
+                'seo_description' => $description,
+                'seo_keywords' => $keywords,
+            ];
+        }
+    }
+
+    protected function getCategorySeoItems(Product $product, string $path)
+    {
+        $map = $this->classConfig['type_category_map'];
+        $pathLen = strlen($path);
+        $pathItems = array_map('trim', explode('>', $path));
+
+        $type = $product->getType();
+        $supplier = $product->getSupplier();
+        if ($supplier === 'InnoCigs') {
+            $supplier = $product->getBrand();
+        }
+        $brand = $product->getBrand();
+        $commonName = $product->getCommonName();
+
+        $p = null;
+        foreach ($pathItems as $item) {
+            $p = $p === null ? $item : $p . ' > ' . $item;
+            if (strlen($p) === $pathLen) {
+                $seoIndex = $map[$this->typeMap[$type]]['append'] ?? $item;
+            } else {
+                $seoIndex = $item;
+            }
+            $seoSettings = $map[$this->typeMap[$type]]['seo'][$seoIndex];
+
+            if (empty($seoSettings)) return;
+            if (! empty($this->categorySeoItems[$p])) continue;
+
+            $title = $seoSettings['title'] ?? null;
+            if ($title !== null) {
+                $title = str_replace(['##supplier##', '##brand##', '##common_name##'], [$supplier, $brand, $commonName],
+                    $title);
+            }
+            $description = $seoSettings['description'] ?? null;
+            if ($description !== null) {
+                $description = str_replace(['##supplier##', '##brand##', '##common_name##'],
+                    [$supplier, $brand, $commonName], $description);
+            }
+
+            $keywords = $seoSettings['keywords'] ?? null;
+            if ($keywords !== null) {
+                $keywords = str_replace(['##supplier##', '##brand##', '##common_name##'],
+                    [$supplier, $brand, $commonName], $keywords);
+            }
+
+            $h1 = $seoSettings['h1'];
+            if ($h1 !== null) {
+                $h1 = strtoupper(str_replace(['##supplier##', '##brand##', '##common_name##'],
+                    [$supplier, $brand, $commonName], $h1));
+            }
+            $this->categorySeoItems[$p] = [
+                'seo_title'       => $title,
+                'seo_description' => $description,
+                'seo_keywords'    => $keywords,
+                'seo_h1'          => $h1,
+            ];
+        }
+    }
 }

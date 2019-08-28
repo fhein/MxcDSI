@@ -41,9 +41,9 @@ class ExportPrices extends AbstractProductExport
         $this->registerColumn('Marge UVP');
         $this->registerColumn('Dampfplanet');
         $this->registerColumn('MaxVapor');
-        $this->registerColumn('andere');
         $customerGroupKeys = $this->getCustomerGroupKeys();
         foreach ($customerGroupKeys as $key) {
+            if ($key === 'H') continue;
             $this->registerColumn('VK Brutto ' . $key);
             $this->registerColumn('Marge ' . $key);
         }

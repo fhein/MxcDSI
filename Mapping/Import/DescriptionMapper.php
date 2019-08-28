@@ -16,7 +16,8 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     private $mappings;
 
     protected $descriptionAromaDefault =
-        '<p>Aroma zur Herstellung von E-Liquid. Geschmack: ##flavor##. Geben Sie das Aroma entsprechend der Dosierempfehlung '
+        '<p><strong>Aroma von ##supplier##</strong> zur Herstellung von E-Liquid. <strong>Geschmack: ##flavor##</strong>.</p>'
+        . '<p>Geben Sie das Aroma entsprechend der Dosierempfehlung '
         . 'des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige '
         . 'Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>'
         . '<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>'
@@ -42,9 +43,10 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         . '</table>';
 
     protected $descriptionAromaLongfill =
-        '<p>Longfill-Aroma zur Herstellung von E-Liquid. Geschmack: ##flavor##. Die ##content## ml Aroma sind in eine ##capacity## ml Flasche abgefüllt.'
+        '<p><strong>Longfill-Aroma von ##supplier##</strong> zur Herstellung von E-Liquid. <strong>Geschmack: ##flavor##</strong>.</p>'
+        .'<p>##content## ml Aroma sind in eine ##capacity## ml Flasche abgefüllt.'
         . ' Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie '
-        . ' durch, damit sich die Flüssigkeiten gut vermischen. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich '
+        . ' durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich '
         . 'die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>'
         . '<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
@@ -70,7 +72,8 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
 
     protected $descriptionAroma = [
         'Elli\'s Aromen' =>
-            '<p>Lebensmittelaroma. Geschmack: ##flavor##. Zur Herstellung von E-Liquid fügen Sie das Aroma entsprechend der Dosierempfehlung '
+            '<p><strong>Lebensmittelaroma von ##supplier##. Geschmack: ##flavor##.</strong></p>'
+            . '<p>Zur Herstellung von E-Liquid fügen Sie das Aroma entsprechend der Dosierempfehlung '
             . 'des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige '
             . 'Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können.</p>'
             . '<p>Detaillierte Angaben zu Dosierung und Reifezeit von Elli\'s Aromen finden Sie unter diesem Link: <a title="Ellifiziert!" href="http://www.ellifiziert.de/?page=labor" target="_blank">Ellifiziert!</a></p>'
@@ -98,8 +101,9 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     ];
 
     protected $descriptionShakeVapeDefault =
-        '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Die ##capacity## ml Flasche enthält ##content## ml überaromatisiertes, nikotinfreies E-Liquid. '
-        . 'Füllen Sie die Flasche einfach mit ##fillup## ml Nikotin-Shot oder ##fillup## ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
+        '<p><strong>Shake & Vape E-Liquid von ##supplier##. Geschmack: ##flavor##.</strong></p>'
+        . '<p>Die ##capacity## ml Flasche enthält ##content## ml überaromatisiertes, nikotinfreies E-Liquid. '
+        . 'Füllen Sie die Flasche einfach mit ##fillup## ml Nikotin-Shot oder ##fillup## ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
         . '<tbody>'
         . '<tr>'
@@ -119,9 +123,10 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>';
 
     protected $descriptionShakeVapeTwoSizes =
-        '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Wählen Sie zwischen einer ##capacity1## ml Flasche mit ##content1## ml und einer '
-        . '##capacity2## ml Flasche mit ##content2## ml überaromatisiertem, nikotinfreien Liquid aus. '
-        . 'Füllen Sie die Flasche einfach mit ##fillup1## ml bzw. ##fillup2## ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
+        '<p><strong>Shake & Vape E-Liquid von ##supplier##. Geschmack: ##flavor##.</strong></p>'
+        . '<p>Wählen Sie zwischen einer ##capacity1## ml Flasche mit ##content1## ml und einer '
+        . '##capacity2## ml Flasche mit ##content2## ml überaromatisiertem, nikotinfreien E-Liquid aus. '
+        . 'Füllen Sie die Flasche einfach mit ##fillup1## ml bzw. ##fillup2## ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
         . '<tbody>'
         . '<tr>'
@@ -142,12 +147,13 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
 
     protected $descriptionShakeVape = [
         'Chicken Shop' =>
-            '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Wählen Sie zwischen 25 ml und 200 ml überaromatisiertem, nikotinfreien Liquid aus.</p>'
-            . '<p>Die Variante mit 25 ml Liquid erhalten in einer 30 ml Flasche. '
-            . 'Füllen Sie diese Flasche einfach mit 5 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
-            .'<p>In der 200 ml Variante erhalten Sie neben der vollständig mit überaromatisiertem Liquid gefüllten 200 ml Flasche zwei 60 ml Leerflaschen zum '
-            . 'Mischen Ihres Liquids. Füllen Sie dazu eine 60 ml Flasche mit 50 ml Liquid und 10 ml Nikotin-Shot oder Basis. '
-            . 'Gut schütteln und Ihr Liquid ist fertig.</p>'
+            '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: ##flavor##.</strong></p>'
+            . '<p>Wählen Sie zwischen 25 ml und 200 ml überaromatisiertem, nikotinfreien E-Liquid aus.</p>'
+            . '<p>Die Variante mit 25 ml E-Liquid erhalten in einer 30 ml Flasche. '
+            . 'Füllen Sie diese Flasche einfach mit 5 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p>'
+            . '<p>In der 200 ml Variante erhalten Sie neben der vollständig mit überaromatisiertem E-Liquid gefüllten 200 ml Flasche zwei 60 ml Leerflaschen zum '
+            . 'Mischen Ihres E-Liquids. Füllen Sie dazu eine 60 ml Flasche mit 50 ml E-Liquid und 10 ml Nikotin-Shot oder Basis. '
+            . 'Gut schütteln und Ihr E-Liquid ist fertig.</p>'
             . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
             . '<tbody>'
             . '<tr>'
@@ -167,8 +173,9 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
 
         'Pink Spot' =>
-            '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. '
-            . 'Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
+            '<p><strong>Shake & Vape E-Liquid von Pink Spot. Geschmack: ##flavor##.</strong></p>'
+            . '<p>Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. '
+            . 'Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p>'
             . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
             . '<tbody>'
             . '<tr>'
@@ -191,8 +198,9 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             . '</table>'
             . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
         'Koncept XIX' =>
-            '<p>Shake & Vape Liquid. Geschmack: ##flavor##. Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. '
-            . 'Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr Liquid ist fertig zum Gebrauch.</p>'
+            '<p><strong>Shake & Vape E-Liquid von Vampire Vape. Geschmack: ##flavor##.</strong></p>'
+            . '<p>Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. '
+            . 'Füllen Sie die Flasche einfach mit einem 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p>'
             . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
             . '<tbody>'
             . '<tr>'
@@ -217,7 +225,7 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     ];
 
     protected $descriptionLiquidDefault =
-        '<p>Gebrauchsfertiges Liquid für die E-Zigarette. Geschmack: ##flavor##. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p>'
+        '<p><strong>Gebrauchsfertiges E-Liquid von ##supplier## für die E-Zigarette. Geschmack: ##flavor##.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
             . '<tbody>'
                 . '<tr>'
@@ -245,29 +253,34 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     {
         $content = strval($product->getContent());
         $capacity = strval($product->getCapacity());
-        $supplier = $product->getSupplier();
+        $supplier = $product->getBrand();
         $flavor = ucfirst($product->getFlavor());
         $description = null;
 
         $description = $this->descriptionAroma[$supplier] ?? null;
         if ($description !== null) {
-            $description = str_replace('##flavor##', $flavor, $description);
-            $description = str_replace('##dosage##', $product->getDosage(), $description);
-            $description = str_replace('##content##', $product->getContent(), $description);
-            $description = str_replace('##capacity##', $product->getCapacity(), $description);
+            $description = str_replace(
+                ['##flavor##', '##dosage##', '##content##', '##capacity##', '##supplier##'],
+                [$flavor, $product->getDosage(), $product->getContent(), $product->getCapacity(), $supplier],
+                $description
+            );
             return $description;
         }
 
         if ($content === $capacity) {
             $description = $this->descriptionAromaDefault;
-            $description = str_replace('##flavor##', $flavor, $description);
-            $description = str_replace('##dosage##', $product->getDosage(), $description);
-            $description = str_replace('##content##', $product->getContent(), $description);
+            $description = str_replace(
+                ['##flavor##', '##dosage##', '##content##', '##supplier##'],
+                [$flavor, $product->getDosage(), $product->getContent(), $supplier],
+                $description
+            );
         } else {
             $description = $this->descriptionAromaLongfill;
-            $description = str_replace('##flavor##', $flavor, $description);
-            $description = str_replace('##content##', $product->getContent(), $description);
-            $description = str_replace('##capacity##', $product->getCapacity(), $description);
+            $description = str_replace(
+                ['##flavor##', '##content##', '##capacity##', '##supplier##'],
+                [$flavor, $product->getContent(), $product->getCapacity(), $supplier],
+                $description
+            );
         }
 
         return $description;
@@ -294,9 +307,11 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         if (count($content) === 1 && count($capacity) === 1) {
             $description = $this->descriptionShakeVapeDefault;
             $fillup = $capacity[0] - $content[0];
-            $description = str_replace('##fillup##', $fillup, $description);
-            $description = str_replace('##content##', $content[0], $description);
-            $description = str_replace('##capacity##', $capacity[0], $description);
+            $description = str_replace(
+                ['##fillup##', '##content##', '##capacity##'],
+                [$fillup, $content[0], $capacity[0]],
+                $description
+            );
 
             return $description;
         }
@@ -305,12 +320,11 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             $description = $this->descriptionShakeVapeTwoSizes;
             $fillup1 = $capacity[0] - $content[0];
             $fillup2 = $capacity[1] - $content[1];
-            $description = str_replace('##fillup1##', $fillup1, $description);
-            $description = str_replace('##fillup2##', $fillup2, $description);
-            $description = str_replace('##content1##', $content[0], $description);
-            $description = str_replace('##capacity1##', $capacity[0], $description);
-            $description = str_replace('##content2##', $content[1], $description);
-            $description = str_replace('##capacity2##', $capacity[1], $description);
+            $description = str_replace(
+                ['##fillup1##', '##fillup2##', '##content1##', '##capacity1##', '##content2##', '##capacity2##'],
+                [$fillup1, $fillup2, $content[0], $capacity[0], $content[1], $capacity[1]],
+                $description
+            );
 
             return $description;
         }
@@ -322,7 +336,8 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     {
         $description = @$this->mappings[$product->getIcNumber()]['description'];
         if ($remap || ! $description) {
-            $description = $this->remap($product);
+            $this->remap($product);
+            return;
         }
         $product->setDescription($description);
     }
@@ -331,15 +346,16 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
     {
         $type = $product->getType();
         $flavor = ucfirst($product->getFlavor());
+        $supplier = $product->getBrand();
 
         switch ($type) {
             case 'LIQUID':
                 $description = $this->descriptionLiquidDefault;
-                $description = str_replace('##flavor##', $flavor, $description);
+                $description = str_replace(['##flavor##', '##supplier##'], [$flavor, $supplier], $description);
                 break;
             case 'SHAKE_VAPE':
                 $description = $this->getShakeVapeDescription($product);
-                $description = str_replace('##flavor##', $flavor, $description);
+                $description = str_replace(['##flavor##', '##supplier##'], [$flavor, $supplier], $description);
                 break;
             case 'AROMA':
                 $description = $this->getAromaDescription($product);
@@ -347,8 +363,7 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
             default:
                 $description = $this->mappings[$product->getIcNumber()]['description'] ?? $product->getIcDescription();
         }
-
-        return $description;
+        $product->setDescription($description);
     }
 
     public function report()

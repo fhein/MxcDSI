@@ -43,6 +43,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             'mxcPullShopwareDescriptions',
             'mxcPullShopwareDescriptionsSelected',
             'mxcRemapPropertiesSelected',
+            'mxcRemapDescriptionsAll',
+            'mxcRemapDescriptionsSelected',
+            'mxcUpdateStockInfo',
             'mxcUpdateImages',
             'mxcUpdateImagesSelected',
             'mxcUpdateCategories',
@@ -209,6 +212,21 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
+                    text: 'Remap all properties',
+                    iconCls: 'sprite-maps',
+                    handler: function() {
+                        me.fireEvent('mxcRemapPropertiesSelected', me);
+                    }
+                },
+                {
+                    text: 'Remap descriptions',
+                    iconCls: 'sprite-maps',
+                    handler: function() {
+                        me.fireEvent('mxcRemapDescriptionsSelected', me);
+                    }
+                },
+                '-',
+                {
                     text : 'Activate selected',
                     iconCls: 'sprite-tick',
                     handler: function() {
@@ -251,13 +269,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     }
                 },
                 '-',
-                {
-                    text: 'Remap properties',
-                    iconCls: 'sprite-maps',
-                    handler: function() {
-                        me.fireEvent('mxcRemapPropertiesSelected', me);
-                    }
-                },
                 {
                     text : 'Pull Shopware descriptions',
                     iconCls: 'sprite-blue-document-horizontal-text',
@@ -323,6 +334,21 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
+                    text: 'Remap properties',
+                    iconCls: 'sprite-maps',
+                    handler: function() {
+                        me.fireEvent('mxcRemapProperties', me);
+                    }
+                },
+                {
+                    text: 'Remap descriptions',
+                    iconCls: 'sprite-maps',
+                    handler: function() {
+                        me.fireEvent('mxcRemapDescriptionsAll', me);
+                    }
+                },
+                '-',
+                {
                     text: 'Refresh link state',
                     iconCls: 'sprite-arrow-circle',
                     handler: function() {
@@ -330,13 +356,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     }
                 },
                 '-',
-                {
-                    text: 'Remap properties',
-                    iconCls: 'sprite-maps',
-                    handler: function() {
-                        me.fireEvent('mxcRemapProperties', me);
-                    }
-                },
                 {
                     text : 'Pull Shopware descriptions',
                     iconCls: 'sprite-blue-document-horizontal-text',
@@ -496,6 +515,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-download-cloud',
                     handler: function() {
                         me.fireEvent('mxcImportItemsSequential', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Update InnoCigs stock info',
+                    iconCls: 'sprite-money--arrow',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateStockInfo', me);
                     }
                 },
                 {

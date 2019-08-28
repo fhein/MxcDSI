@@ -14,11 +14,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcImportItems:                      me.onImportItems,
                 mxcImportItemsSequential:            me.onImportItemsSequential,
                 mxcUpdatePrices:                     me.onUpdatePrices,
+                mxcUpdateStockInfo:                  me.onUpdateStockInfo,
                 mxcRefreshAssociated:                me.onRefreshAssociatedItems,
                 mxcBuildCategoryTree:                me.onBuildCategoryTree,
                 mxcRemapProperties:                  me.onRemapProperties,
                 mxcPullShopwareDescriptions:         me.onPullShopwareDescriptions,
                 mxcPullShopwareDescriptionsSelected: me.onPullShopwareDescriptionsSelected,
+                mxcRemapDescriptionsSelected:        me.onRemapDescriptionsSelected,
+                mxcRemapDescriptionsAll:             me.onRemapDescriptionsAll,
                 mxcCreateAll:                        me.onCreateAll,
                 mxcDeleteAll:                        me.onDeleteAll,
                 mxcRelinkSelected:                   me.onRelinkSelected,
@@ -213,6 +216,16 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
+    onUpdateStockInfo: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=updateStockInfo}';
+        let params = {};
+        let growlTitle = 'Update';
+        let maskText = 'Updating stock info from InnoCigs ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+
     onCreateAll: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=createAll}';
@@ -252,6 +265,29 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
+
+    onRemapDescriptionsAll: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=remapDescriptions}';
+        let params = {};
+        let growlTitle = 'Remap properties';
+        let maskText = 'Reapplying product property mapping ...';
+        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onRemapDescriptionsSelected: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=remapDescriptions}';
+        let growlTitle = 'Remap properties';
+        let maskText = 'Reapplying product property mapping ...';
+
+        let params = {
+            ids: me.getSelectedIds(grid.getSelectionModel())
+        };
+
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
 
     onPullShopwareDescriptions: function (grid) {
         let me = this;

@@ -1,10 +1,13 @@
-<?php /** @noinspection PhpUndefinedMethodInspection */
+<?php /** @noinspection PhpUnhandledExceptionInspection */
+
+/** @noinspection PhpUndefinedMethodInspection */
 
 namespace MxcDropshipInnocigs\Import;
 
 use Enlight\Event\SubscriberInterface;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Plugin\Plugin;
 
@@ -31,17 +34,22 @@ class UpdateStockCronJob implements SubscriberInterface
         $this->modelManager = Shopware()->Models();
         $result = true;
 
-        if (! $this->validateCompanion()) return $result;
+        if (! $this->validateCompanion()) {
+            $this->log->warn('Update stock cronjob: Companion is not installed. Nothing done');
+            return false;
+        }
 
-        $this->log->debug('Update stock cronjob. Start: ' . date('d-m-Y H:i:s'));
+        $start = date('d-m-Y H:i:s');
 
         try {
             $this->updateStockInfo();
         } catch (Throwable $e) {
             $result = false;
         }
+        $end = date('d-m-Y H:i:s');
+        $resultMsg = $result === true ? '. Succcess.' : '. Failure.';
+        $this->log->debug('Update stock cronjob ran from ' . $start . ' to ' . $end . $resultMsg);
 
-        $this->log->debug('Update stock cronjob. End: ' . date('d-m-Y H:i:s'));
         return $result;
     }
 
@@ -53,24 +61,22 @@ class UpdateStockCronJob implements SubscriberInterface
         $stockInfo = $apiClient->getAllStockInfo();
         /** @var Detail $detail */
         foreach ($details as $detail) {
-            $attribute = $detail->getAttribute();
-            if ($attribute === null) continue; // @todo: Error handling
-            $active = $attribute->getDcIcActive();
-            $icNumber = $attribute->getDcIcOrdernumber();
+            $attr = ArticleTool::getDetailAttributes($detail);
+            $active = $attr['dc_ic_active'];
+            $icNumber = $attr['dc_ic_ordernumber'];
             if ($active === 0 || $active === null || $icNumber === "" || $icNumber === null) continue;
             if ($info[$icNumber] !== null) {
                 // record from InnoCigs available
-                $attribute->setDcIcInstock(intval($stockInfo[$icNumber]));
                 $purchasePrice = $info[$icNumber]['purchasePrice'];
-                $attribute->setDcIcPurchasingPrice($purchasePrice);
-                $attribute->setDcIcArticlename($info[$icNumber]['name']);
+                ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', $purchasePrice);
+                ArticleTool::setDetailAttribute($detail, 'dc_ic_retail_price', $info[$icNumber]['recommendedRetailPrice']);
+                ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', intval($stockInfo[$icNumber] ?? 0));
                 $purchasePrice = floatval(str_replace(',', '.', $purchasePrice));
                 $detail->setPurchasePrice($purchasePrice);
-                $attribute->setDcIcRetailPrice($info[$icNumber]['recommendedRetailPrice']);
             } else {
                 // no record from InnoCigs available
-                $attribute->setDcIcInstock(0);
-                $attribute->setDcIcPurchasingPrice(0);
+                ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', 0);
+                ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', 0);
             }
         }
         $this->modelManager->flush();
@@ -78,16 +84,7 @@ class UpdateStockCronJob implements SubscriberInterface
 
     protected function validateCompanion() {
         if (! is_bool($this->valid)) {
-            $className = 'Shopware\Models\Attribute\Article';
-            if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])
-                || !(method_exists($className, 'setDcIcOrderNumber')
-                    && method_exists($className, 'setDcIcArticleName')
-                    && method_exists($className, 'setDcIcPurchasingPrice')
-                    && method_exists($className, 'setDcIcRetailPrice')
-                    && method_exists($className, 'setDcIcActive')
-                    && method_exists($className, 'setDcIcInstock'))
-            ) {
-                $this->log->warn('Can not prepare articles for dropship orders. Dropshipper\'s Companion is not installed.');
+            if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
                 $this->valid = false;
             } else {
                 $this->valid = true;

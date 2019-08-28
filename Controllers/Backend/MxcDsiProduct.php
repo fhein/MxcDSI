@@ -4,11 +4,13 @@ use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
+use MxcDropshipInnocigs\Import\UpdateStockCronJob;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
-use MxcDropshipInnocigs\Mapping\Import\CategoryConfigurationBuilder;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
+use MxcDropshipInnocigs\Mapping\Import\CategoryTreeBuilder;
+use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
 use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
@@ -632,6 +634,54 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function updateStockInfoAction()
+    {
+        try {
+            $updateCronJob = new UpdateStockCronJob();
+            $updateCronJob->onUpdateStockCronJob(null);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Successfully updated stock info from InnoCigs.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+
+    }
+
+    protected function getRequestProducts(Enlight_Controller_Request_RequestHttp $request) {
+        $params = $request->getParams();
+        $repository = $this->getManager()->getRepository(Product::class);
+        if (empty($params['ids'])) {
+            /** @noinspection PhpUndefinedMethodInspection */
+            return $repository->getAllIndexed();
+        }
+        $ids = json_decode($params['ids'], true);
+        return $repository->getProductsByIds($ids);
+    }
+
+    public function remapDescriptionsAction() {
+        try {
+            $services = MxcDropshipInnocigs::getServices();
+            $mapper = $services->get(DescriptionMapper::class);
+
+            $products = $this->getRequestProducts($this->request);
+
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $mapper->remap($product);
+                $article = $product->getArticle();
+                /** @var Article $article */
+                if ($article !== null) {
+                    $description = $product->getDescription();
+                    $article->setDescriptionLong($description);
+                }
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Descriptions successfully remapped.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function pullShopwareDescriptionsAction()
     {
         try {
@@ -861,25 +911,24 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-
     public function dev2Action()
     {
         try {
+
+// update seo category settings
+
             $services = MxcDropshipInnocigs::getServices();
-            $builder = $services->get(CategoryConfigurationBuilder::class);
-            $builder->buildCategoryConfiguration();
+            $seoCategoryMapper = $services->get(CategoryMapper::class);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            $model = new Model();
+            foreach ($products as $product) {
+                $seoCategoryMapper->map($model, $product, true);
+            }
+            $seoCategoryMapper->report();
+            $categoryMapper = $services->get(ShopwareCategoryMapper::class);
+            $categoryMapper->setCategorySeoInformation();
+            $this->getManager()->flush();
 
-
-
-// build seoCategories
-//            $services = MxcDropshipInnocigs::getServices();
-//            $seoCategoryMapper = $services->get(\MxcDropshipInnocigs\Mapping\Import\SeoCategoryMapper::class);
-//            $products = $this->getManager()->getRepository(Product::class)->findAll();
-//            $model = new Model();
-//            foreach ($products as $product) {
-//                $seoCategoryMapper->map($model, $product, true);
-//            }
-//            $seoCategoryMapper->report();
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
