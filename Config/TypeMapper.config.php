@@ -103,6 +103,7 @@ return [
         '~Steam Bag~'           => TypeMapper::TYPE_BAG,
         '~E-Zigarette~'         => TypeMapper::TYPE_E_CIGARETTE,
         '~Deck~'                => TypeMapper::TYPE_DECK,
+        '~Airflow Resistor~'    => TypeMapper::TYPE_DECK, // @todo: No deck
         '~Mesh Wire~'           => TypeMapper::TYPE_WIRE,
         '~Wickeldraht~'         => TypeMapper::TYPE_WIRE,
         '~Competition Wire~'    => TypeMapper::TYPE_WIRE,

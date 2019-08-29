@@ -29,6 +29,7 @@ return [
             '~artikblau~'                           => 'arktikblau',
             '~(K2 & K3.*) \(\d+ (St. pro Pack\))~'  => '$1 (5 $2',
             '~Freemax~'                             => 'FreeMax',
+            '~(Skynet) (Pro )?Sub-Ohm ~'            => '$1 $2',
             // separator different from '-'
             '~–~'                                   => '-',
         ],
@@ -234,6 +235,8 @@ return [
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
             '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
+            '~(Archangel) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
+            '~(5Elements) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
             '~(Frankonia) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
             '~(Demons) (- Aroma)(.*)(- \d+ ml)~'                         => '$1 - $3 $2 $4',
             '~(Kaori) (- Aroma)(.*)(- \d+ ml)~'                          => '$1 - $3 $2 $4',
@@ -428,7 +431,10 @@ return [
             '~(RX Gen3)~'                                         => 'Reuleaux RX Gen3',
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
+            '~(VX200) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(Druga Foxy) (- \d+ Watt)~'                         => '$1 - Akkuträger $2',
             '~(X217) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
+            '~(Topside Dual) (- \d+ Watt)~'                       => '$1 - Akkuträger $2',
             '~(Lux) (- \d+ Watt)~'                                => '$1 - Akkuträger $2',
             '~(ECO) (- \d+ Watt)~'                                => '$1 - Akkuträger $2',
             '~(ECO Pro) (- \d+ Watt)~'                            => '$1 - Akkuträger $2',
@@ -581,6 +587,8 @@ return [
         'Augvape'       => [
             '~(Intake RTA)~',
             '~(Templar RDA)~',
+            '~(Occula RDA)~',
+            '~(Skynet( Pro)?)~',
         ],
         'CoilArt'       => [
             '~(Mage RTA V2)~',
@@ -648,6 +656,9 @@ return [
             '~(Rebirth RDA)~',
             '~(Passage RDA)~',
             '~(Rebirth RTA)~',
+        ],
+        'Horizontech' => [
+          '~(Falcon)~'
         ],
         'iPV'           => [
             '~(V-IT)~',
@@ -851,6 +862,7 @@ return [
             '~(Puma)~',
             '~(Subverter 1)~',
             '~(ECO( Pro)?)~',
+            '~(Lion RDA)~',
         ],
         'Vsticking'     => [
             '~(VK530)~',

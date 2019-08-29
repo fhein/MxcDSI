@@ -690,31 +690,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $descriptions = $services->get(DescriptionPullback::class);
             $repository = $this->getManager()->getRepository(Product::class);
 
-            /** @noinspection PhpUndefinedMethodInspection */
-            $products = $repository->getAllIndexed();
+            $products = $this->getRequestProducts($this->request);
             $descriptions->pullDescriptions($products);
             $repository->exportMappedProperties();
-
-            $this->view->assign([ 'success' => true, 'message' => 'Successfully pulled Shopware descriptions.']);
-        } catch (Throwable $e) {
-            $this->handleException($e);
-        }
-    }
-
-    public function pullShopwareDescriptionsSelectedAction()
-    {
-        try {
-            /** @var ImportMapper $client */
-            $services = MxcDropshipInnocigs::getServices();
-            $descriptions = $services->get(DescriptionPullback::class);
-            $repository = $this->getModelManager()->getRepository(Product::class);
-
-            $params = $this->request->getParams();
-            $ids = json_decode($params['ids'], true);
-
-            /** @noinspection PhpUndefinedMethodInspection */
-            $products = $repository->getProductsByIds($ids);
-            $descriptions->pullDescriptions($products);
 
             $this->view->assign([ 'success' => true, 'message' => 'Successfully pulled Shopware descriptions.']);
         } catch (Throwable $e) {
@@ -926,7 +904,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
             $seoCategoryMapper->report();
             $categoryMapper = $services->get(ShopwareCategoryMapper::class);
-            $categoryMapper->setCategorySeoInformation();
+            $categoryMapper->rebuildCategorySeoInformation();
             $this->getManager()->flush();
 
 
@@ -1124,5 +1102,33 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     protected function handleException(Throwable $e, bool $rethrow = false) {
         MxcDropshipInnocigs::getServices()->get('logger')->except($e, true, $rethrow);
         $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+    }
+
+    public function checkVariantsWithoutOptionsAction()
+    {
+        try {
+            $variants = $this->getManager()->getRepository(Variant::class)->findAll();
+            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $issues = [];
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                if ($variant->getOptions() === null) {
+                    $issues[] = $variant->getIcNumber();
+                }
+            }
+            $c = count($issues);
+            if (count($issues) > 0 ) {
+                $msg = 'Found ' . $c . ' variants without options. See log for details.';
+                $log->debug('Variants without options:');
+                $log->debug(var_export($issues, true));
+
+            } else {
+                $msg = 'No variants without options were found.';
+            }
+            $this->view->assign([ 'success' => true, 'message' => $msg]);
+            // Do something with the ids
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
     }
 }

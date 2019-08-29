@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpUndefinedMethodInspection */
+<?php
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
@@ -256,6 +256,8 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
      */
     protected function removeDetails()
     {
+        /** @noinspection PhpUndefinedMethodInspection */
+        /** @noinspection PhpUndefinedMethodInspection */
         $deletions = $this->getVariantRepository()->getVariantsWithoutModel();
         if ( empty($deletions)) return;
 
@@ -277,6 +279,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     protected function removeVariants()
     {
         $variantRepository = $this->getVariantRepository();
+        /** @noinspection PhpUndefinedMethodInspection */
         $deletions = $variantRepository->getVariantsWithoutModel();
         if (empty($deletions)) return;
 
@@ -410,9 +413,12 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             . 'set a.new = false, a.recommendedRetailPriceOld = a.recommendedRetailPrice, '
             . 'a.purchasePriceOld = a.purchasePrice')->execute();
         if ($this->useCache) {
+            /** @noinspection PhpUndefinedMethodInspection */
             $this->products = $this->getProductRepository()->getAllIndexed();
+            /** @noinspection PhpUndefinedMethodInspection */
             $this->groups = $this->getGroupRepository()->getAllIndexed();
             $this->options = $this->getOptionRepository()->getAllIndexed();
+            /** @noinspection PhpUndefinedMethodInspection */
             $this->variants = $this->getVariantRepository()->getAllIndexed();
         }
     }
@@ -427,8 +433,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->deleteVariantsWithoutModel();
         $this->propertyMapper->mapProperties($this->updates, true);
         $this->removeOrphanedItems();
-
-        $this->categoryMapper->buildCategoryTree();
 
         /** @noinspection PhpUndefinedMethodInspection */
         $this->getProductRepository()->refreshProductStates();

@@ -43,7 +43,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcExportConfig:                     me.onExportConfig,
                 mxcExcelExport:                      me.onExcelExport,
                 mxcExcelImport:                      me.onExcelImport,
-
+                mxcCheckVariantsWithoutOptions:      me.onCheckVariantsWithoutOptions,
                 mxcExcelImportDescriptions:          me.onExcelImportDescriptions,
                 mxcExcelImportDosages:               me.onExcelImportDosages,
                 mxcExcelImportFlavors:               me.onExcelImportFlavors,
@@ -301,7 +301,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
     onPullShopwareDescriptionsSelected: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=pullShopwareDescriptionsSelected}';
+        let url = '{url controller=MxcDsiProduct action=pullShopwareDescriptions}';
         let growlTitle = 'Pull Shopware descriptions';
         let maskText = 'Pulling Shopware descriptions ...';
 
@@ -395,6 +395,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Check regular expresions';
         let maskText = 'Checking regular expresions ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, false);
+    },
+
+    onCheckVariantsWithoutOptions: function(grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=checkVariantsWithoutOptions}';
+        let params = {};
+        let growlTitle = 'Check variants without options';
+        let maskText = 'Looking for variants without options ...';
         me.doRequest(grid, url, params, growlTitle, maskText, false);
     },
 

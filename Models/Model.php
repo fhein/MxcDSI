@@ -113,6 +113,7 @@ class Model extends ModelEntity
 
     public function fromImport(array $data) {
         foreach ($data as $key => $value) {
+            if ($value === null) continue;
             $setter = 'set' . ucfirst($key);
             if (method_exists($this, $setter)) {
                 $this->$setter($value);

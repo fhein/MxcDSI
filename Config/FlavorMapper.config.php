@@ -21,6 +21,8 @@ return array(
         17 => 'schwarze Himbeere',
         18 => 'schwarze Johannisbeere',
         19 => 'süße Beeren',
+        20 => 'Beerenmix',
+        21 => 'Stachelbeergelee',
     ),
     'Bonbons & Kaugummi' => array(
         0 => 'Bonbon',
@@ -129,6 +131,9 @@ return array(
         23 => 'Zimtschnecke',
         24 => 'Zironenkuchen',
         25 => 'Zitronentorte',
+        26 => 'Belgische Waffel',
+        27 => 'Brandteig',
+        28 => 'Butttercreme-Torte',
     ),
     'Getränke' => array(
         0 => 'Apfelsaft',
@@ -184,6 +189,7 @@ return array(
         16 => 'Zucker',
         17 => 'brauner Zucker',
         18 => 'schwarzer Trüffel',
+        19 => 'Bourbon-Vanille',
     ),
     'Melonen' => array(
         0 => 'Cantaloupe-Melone',
@@ -256,6 +262,7 @@ return array(
         17 => 'gebrannte Mandeln',
         18 => 'saures Weingummi',
         19 => 'weiße Schokolade',
+        20 => 'Rohrzucker',
     ),
     'Tabak' => array(
         0 => 'Burley Tabak',
@@ -279,6 +286,7 @@ return array(
         10 => 'Tee',
         11 => 'grüner Tee',
         12 => 'schwarzer Tee',
+        13 => 'Kaffee-Likör',
     ),
     'Trauben' => array(
         0 => 'Traube',

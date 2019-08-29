@@ -175,8 +175,9 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         }
     }
 
-    protected function flattenOptions(array $attributes)
+    protected function flattenOptions(array $attributes = null)
     {
+        if ($attributes === null) return null;
         $options = [];
         foreach ($attributes as $group => $option) {
             $option = trim($option);

@@ -67,6 +67,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             'mxcCheckRegularExpressions',
             'mxcCheckNameMappingConsistency',
             'mxcCheckVariantMappingConsistency',
+            'mxcCheckVariantsWithoutOptions',
             'mxcExportConfig',
             'mxcExcelExport',
             'mxcExcelImport',
@@ -429,6 +430,12 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text : 'Check variant mapping consistency',
                     handler: function() {
                         me.fireEvent('mxcCheckVariantMappingConsistency', me);
+                    }
+                },
+                {
+                    text : 'Look for variants without options',
+                    handler: function() {
+                        me.fireEvent('mxcCheckVariantsWithoutOptions', me);
                     }
                 },
             ]

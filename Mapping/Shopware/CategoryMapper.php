@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
@@ -11,6 +11,7 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
+use Shopware\Models\Category\Category;
 use Zend\Config\Factory;
 use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
@@ -25,6 +26,8 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
 
     protected $categoryTreeFile = __DIR__ . '/../../Config/CategoryMapper.config.php';
     protected $categoryTree;
+
+    private $categoryPathes;
 
     public function __construct(CategoryTool $categoryTool)
     {
@@ -45,40 +48,48 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
         if (!$article) return;
 
         $root = $this->classConfig['root_category'] ?? 'Deutsch';
-        $rootCategory = $this->categoryTool->findCategoryPath($root);
+        $root = $this->categoryTool->findCategoryPath($root);
         $categories = explode(MXC_DELIMITER_L1, $product->getCategory());
+
         foreach ($categories as $category) {
-            $categoryPositions = $this->getCategoryPositions($category);
-            $swCategory = $this->categoryTool->getCategoryPath($categoryPositions, $rootCategory);
-            $article->addCategory($swCategory);
-            $swCategory->setChanged();
+            $path = array_map('trim', explode('>', $category));
+            $idx = '';
+            $parent = $root;
+            foreach ($path as $name) {
+                $idx = $idx === '' ? $name : $idx . ' > ' . $name;
+                $parent = $this->categoryTool->getChildCategory($parent, $name, true);
+                if ($parent === null) break;
+                $this->setCategoryProperties($idx, $parent);
+                $parent->setChanged();
+            }
+            if ($parent !== null) $article->addCategory($parent);
+            $this->modelManager->flush();
         }
     }
 
-    public function setCategorySeoInformation() {
+    protected function setCategoryProperties(string $path, Category $swCategory)
+    {
+        if (! empty($this->categoryPathes[$path])) return;
+        $seo = $this->categoryTree['category_seo_items'][$path] ?? [];
+        $swCategory->setHideFilter(true);
+
+        if (! empty($seo)) {
+            $swCategory->setMetaTitle($seo['seo_title']);
+            $swCategory->setMetaDescription($seo['seo_description']);
+            $swCategory->setMetaKeywords($seo['seo_keywords']);
+            $swCategory->setCmsHeadline($seo['seo_h1']);
+        }
+        $this->categoryPathes[$path] = true;
+    }
+
+    public function rebuildCategorySeoInformation() {
         $root = $this->classConfig['root_category'] ?? 'Deutsch';
-        $pathes = $this->categoryTree['category_positions'];
-        $seo = $this->categoryTree['category_seo_items'];
-        $rootCategory = $this->categoryTool->findCategoryPath($root, null, false);
-        foreach ($pathes as $path => $position) {
-            $swCategory = $this->categoryTool->findCategoryPath($path, $rootCategory, false);
+        $rootCategory = $this->categoryTool->findCategoryPath($root, null);
+        $pathes = array_keys($this->categoryTree['category_seo_items']);
+        foreach ($pathes as $path) {
+            $swCategory = $this->categoryTool->findCategoryPath($path, $rootCategory);
             if ($swCategory === null) continue;
-            if (empty($seo[$path])) continue;
-            $swCategory->setMetaTitle($seo[$path]['seo_title']);
-            $swCategory->setMetaDescription($seo[$path]['seo_description']);
-            $swCategory->setMetaKeywords($seo[$path]['seo_keywords']);
-            $swCategory->setCmsHeadline($seo[$path]['seo_h1']);
+            $this->setCategoryProperties($path, $swCategory);
         }
-    }
-
-    protected function getCategoryPositions(string $category) {
-        $nodes = array_map('trim', explode('>', $category));
-        $idx = null;
-        $path = [];
-        foreach ($nodes as $node) {
-            $idx = $idx ? $idx . ' > ' . $node : $node;
-            $path[$node] = $this->categoryTree['category_positions'][$idx] ?? 1;
-        }
-        return $path;
     }
 }
