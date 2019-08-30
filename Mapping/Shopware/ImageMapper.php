@@ -11,9 +11,9 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 use Shopware\Models\Article\Article;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
 class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
@@ -58,7 +58,7 @@ class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         if ($detail === null) return;
 
         $i = count($this->mainImages) + 1;
-        $icImageUrls = explode(MXC_DELIMITER_L1, $variant->getImages());
+        $icImageUrls = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $variant->getImages());
         foreach ($icImageUrls as $icImageUrl) {
             if (empty($icImageUrl)) continue;
             $image = $this->mainImages[$icImageUrl];

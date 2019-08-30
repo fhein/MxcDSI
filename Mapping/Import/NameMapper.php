@@ -4,11 +4,10 @@ namespace MxcDropshipInnocigs\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Report\ArrayMap;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Report\Mapper\SuccessiveReplacer;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class NameMapper extends BaseImportMapper implements ProductMapperInterface
 {
@@ -113,10 +112,10 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
      */
     protected function removeOptionsFromModelName(string $name, Model $model)
     {
-        $options = explode(MXC_DELIMITER_L2, $model->getOptions());
+        $options = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $model->getOptions());
 
         foreach ($options as $option) {
-            $option = explode(MXC_DELIMITER_L1, $option)[1];
+            $option = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $option)[1];
             $number = $model->getModel();
 
             if (strpos($name, $option) !== false) {

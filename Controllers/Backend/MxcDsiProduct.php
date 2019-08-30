@@ -25,7 +25,6 @@ use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
@@ -202,7 +201,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $services = MxcDropshipInnocigs::getServices();
-            $count = $services->get(CategoryTool::class)->removeEmptyCategories();
+            $mapper = $services->get(ShopwareCategoryMapper::class);
+            $count = $mapper->removeEmptyProductCategories();
             switch ($count) {
                 case 0: $message = 'No empty categories found.'; break;
                 case 1: $message = 'One empty category was successfully removed.'; break;
@@ -858,7 +858,28 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function updateCategorySeoInformationAction() {
+        try {
+            // create category seo information for InnoCigs products
+            $services = MxcDropshipInnocigs::getServices();
+            $seoCategoryMapper = $services->get(CategoryMapper::class);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            $model = new Model();
+            foreach ($products as $product) {
+                $seoCategoryMapper->map($model, $product, true);
+            }
 
+            // update Shopware articles
+            $seoCategoryMapper->report();
+            $categoryMapper = $services->get(ShopwareCategoryMapper::class);
+            $categoryMapper->rebuildCategorySeoInformation();
+            $this->getManager()->flush();
+
+            $this->view->assign([ 'success' => true, 'message' => 'Category SEO information successfully updated.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
 
     public function dev1Action()
     {

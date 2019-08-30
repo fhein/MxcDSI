@@ -25,9 +25,8 @@ use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Models\VariantRepository;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, ClassConfigAwareInterface
 {
@@ -140,12 +139,13 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         return $group;
     }
 
-    public function mapOptions(string $optionString): ArrayCollection
+    public function mapOptions(?string $optionString): ArrayCollection
     {
-        $optionArray = explode(MXC_DELIMITER_L2, $optionString);
+        if ($optionString === null) return new ArrayCollection();
+        $optionArray = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $optionString);
         $options = [];
         foreach ($optionArray as $option) {
-            $param = explode(MXC_DELIMITER_L1, $option);
+            $param = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $option);
             $optionName = $this->propertyMapper->mapOptionName($param[1]);
             $groupName = $this->propertyMapper->mapGroupName($param[0]);
             $option = @$this->options[$groupName][$optionName];
@@ -229,8 +229,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
             $variant->setActive($active);
             $variant->setAccepted(true);
-            $variant->setRetailPrices('EK' . MXC_DELIMITER_L1 . $recommendedRetailPrice);
-            $variant->setOptions($this->mapOptions($model->getOptions()));
+            $variant->setRetailPrices('EK' . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $recommendedRetailPrice);
+            $options = $this->mapOptions($model->getOptions());
+            $variant->setOptions($options);
             $this->propertyMapper->mapModelToVariant($model, $variant);
         }
         $this->modelManager->flush();
@@ -240,7 +241,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     {
         $options = $model->getOptions();
 
-        $pattern = 'PACKUNG' . MXC_DELIMITER_L1;
+        $pattern = 'PACKUNG' . MxcDropshipInnocigs::MXC_DELIMITER_L1;
         if (strpos($options, $pattern) === false) return true;
 
         $pattern .= '1er Packung';
@@ -308,18 +309,17 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
     {
-        $oldOptions = explode(MXC_DELIMITER_L2, $oldValue);
-        $newOptions = explode(MXC_DELIMITER_L2, $newValue);
+        $oldOptions = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $oldValue);
+        $newOptions = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $newValue);
         $rOptions = array_diff($oldOptions, $newOptions);
         foreach ($rOptions as $option) {
             if ($option === null) continue;
-            $param = explode(MXC_DELIMITER_L1, $option);
+            $param = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $option);
             $variant->removeOption($this->options[$param[0]][$param[1]]);
         }
         $addedOptions = array_diff($newOptions, $oldOptions);
-        $addedOptions = implode(MXC_DELIMITER_L2, $addedOptions);
-        $addedOptions = $this->mapOptions($addedOptions);
-        $variant->addOptions($addedOptions);
+        $addedOptions = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $addedOptions);
+        $variant->addOptions($this->mapOptions($addedOptions));
     }
 
     protected function changeVariant(Variant $variant, Model $model, array $fields)

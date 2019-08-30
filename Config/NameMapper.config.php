@@ -196,6 +196,7 @@ return [
             '~(Roofy)`s~'                                                => 'Roofy\'s',
             '~(Manta) (Glastank)~'                                       => '$1 RTA $2',
             '~(Manta) Bubble (Glastank)~'                                => '$1 RTA $2',
+            '~(Coilology.*(4|7) in 1) (Set)~'                            => '$1 Coil-$3',
             '~Aster$~'                                                   => 'Aster 75 Watt',
             '~(Nautilus X Mundstück)e~'                                  => '$1',
             '~80er (Mesh Wire) (1,5 m)~'                                 => '$1 - $2',
@@ -670,6 +671,7 @@ return [
         'SC'            => [
             '~(iJust ((21700)|(ECM)|(3))?)~',
             '~(Ello( ((Vate)|(Duro))?))~',
+            '~(iCare Flask)~',
             '~(iKuu Lite)~',
             '~(Elven)~',
             '~(Basal)~',
@@ -866,6 +868,7 @@ return [
         ],
         'Vsticking'     => [
             '~(VK530)~',
+            '~(VIY)~',
         ],
         'Vzone'         => [
             '~(Scado)~',

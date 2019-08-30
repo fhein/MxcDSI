@@ -4,13 +4,12 @@ namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\UnitTool;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
 use Shopware\Models\Customer\Group;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class PriceMapper
 {
@@ -97,9 +96,9 @@ class PriceMapper
 
         $tax = $detail->getArticle()->getTax()->getTax();
 
-        $retailPrices = explode(MXC_DELIMITER_L2, $variant->getRetailPrices());
+        $retailPrices = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $variant->getRetailPrices());
         foreach ($retailPrices as $retailPrice) {
-            list($customerGroupKey, $retailPrice) = explode(MXC_DELIMITER_L1, $retailPrice);
+            list($customerGroupKey, $retailPrice) = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $retailPrice);
             $price = $this->getPrice($detail, $customerGroupKey);
 
             if (!$price) {

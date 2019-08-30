@@ -42,7 +42,7 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
                 $supplier = @$this->classConfig['manufacturers'][$manufacturer]['supplier'] ?? $manufacturer;
             }
         }
-        if (strtolower($supplier) === 'asmodus') $supplier = 'asMODus';
+        if (mb_strtolower($supplier) === 'asmodus') $supplier = 'asMODus';
         $product->setSupplier($supplier);
         $this->report['supplier'][$supplier] = true;
     }
@@ -54,7 +54,7 @@ class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInte
             $manufacturer = $model->getManufacturer();
             $brand = $this->classConfig['manufacturers'][$manufacturer]['brand'] ?? $manufacturer;
         }
-        if (strtolower($brand) === 'asmodus') $brand = 'asMODus';
+        if (mb_strtolower($brand) === 'asmodus') $brand = 'asMODus';
         $product->setBrand($brand);
         $this->report['brand'][$brand] = true;
     }

@@ -7,10 +7,10 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use Psr\Log\LoggerAwareTrait;
 use Zend\Config\Factory;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
 
 class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -69,7 +69,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             // remove empty entries
             $categories = array_filter(array_map('trim', $categories));
             if (! empty($categories)) {
-                $category = implode(MXC_DELIMITER_L1, $categories);
+                $category = implode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $categories);
                 $this->report[$category][] = $product->getName();
             }
         }
@@ -179,7 +179,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             $pathItems = array_map('trim', explode('>', $path));
             $profile = $this->classConfig['flavor_category_map'][$pathItems[0]];
             $flavor = $pathItems[1];
-            $h1 = strtoupper(str_replace('##flavor##', $flavor, $profile['h1']));
+            $h1 = mb_strtoupper(str_replace('##flavor##', $flavor, $profile['h1']));
             $title = str_replace('##flavor##', $flavor, $profile['title']);
             $description = str_replace('##flavor##', $flavor, $profile['description']);
             $keywords = str_replace('##flavor##', $flavor, $profile['keywords']);
@@ -203,6 +203,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
         $type = $product->getType();
         $supplier = $product->getSupplier();
+
         if ($supplier === 'InnoCigs') {
             $supplier = $product->getBrand();
         }
@@ -224,8 +225,9 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
             $title = $seoSettings['title'] ?? null;
             if ($title !== null) {
-                $title = str_replace(['##supplier##', '##brand##', '##common_name##'], [$supplier, $brand, $commonName],
-                    $title);
+                $title = str_replace(['##supplier##', '##brand##', '##common_name##'], [$supplier, $brand, $commonName], $title);
+                //--- workaround for Elli's Aromen
+                $title = str_replace ('Aromen Aromen', 'Aromen', $title);
             }
             $description = $seoSettings['description'] ?? null;
             if ($description !== null) {
@@ -241,7 +243,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
             $h1 = $seoSettings['h1'];
             if ($h1 !== null) {
-                $h1 = strtoupper(str_replace(['##supplier##', '##brand##', '##common_name##'],
+                $h1 = mb_strtoupper(str_replace(['##supplier##', '##brand##', '##common_name##'],
                     [$supplier, $brand, $commonName], $h1));
             }
             $this->categorySeoItems[$idx] = [

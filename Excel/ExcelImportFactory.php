@@ -9,6 +9,8 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 class ExcelImportFactory implements FactoryInterface
 {
     use ObjectAugmentationTrait;
+
+    /** @noinspection PhpUnused */
     /**
      * Create an object
      *

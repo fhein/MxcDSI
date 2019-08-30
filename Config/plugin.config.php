@@ -215,10 +215,7 @@ return [
         TypeMapper::class               => 'TypeMapper.config.php',
         VariantNumberMapper::class      => 'VariantNumberMapper.config.php',
         ProductSeoMapper::class         => 'ProductSeoMapper.config.php',
-
-        ProductMapper::class => [
-            'root_category' => 'Deutsch',
-        ],
+        ArticleCategoryMapper::class    => 'CategoryMapper.config.php',
     ],
     'excel'        => [
         'import' => [

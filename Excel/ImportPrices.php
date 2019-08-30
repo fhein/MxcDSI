@@ -5,8 +5,7 @@ namespace MxcDropshipInnocigs\Excel;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 
 class ImportPrices extends AbstractProductImport
 {
@@ -71,11 +70,11 @@ class ImportPrices extends AbstractProductImport
             $price = $price === '' ? null : $price;
             $price = $price ?? $customerPrice;
             if ($price) {
-                $prices[] = $customerGroup . MXC_DELIMITER_L1 . $price;
+                $prices[] = $customerGroup . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $price;
             }
         }
 
-        $prices = implode(MXC_DELIMITER_L2, $prices);
+        $prices = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $prices);
         $variant->setRetailPrices($prices);
         $this->priceMapper->setRetailPrices($variant);
     }

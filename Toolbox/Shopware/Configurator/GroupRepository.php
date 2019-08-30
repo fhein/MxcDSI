@@ -25,17 +25,17 @@ class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterfac
         $groups = $this->modelManager->createQuery($dql)->getResult();
         /** @var Group $group */
         foreach ($groups as $group) {
-            $groupName = strtolower($group->getName());
+            $groupName = mb_strtolower($group->getName());
             $this->data[$groupName]['group'] = $group;
             $options = $group->getOptions();
             foreach($options as $option) {
-                $this->data[$groupName]['options'][strtolower($option->getName())] = $option;
+                $this->data[$groupName]['options'][mb_strtolower($option->getName())] = $option;
             }
         }
     }
 
     public function createGroup(string $groupName) : Group {
-        $group = $this->data[strtolower($groupName)]['group'];
+        $group = $this->data[mb_strtolower($groupName)]['group'];
 
         if ($group instanceof Group) {
             $this->log->notice(sprintf('%s: Using existing Shopware configurator group %s.',
@@ -54,17 +54,17 @@ class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterfac
 
         $group->setName($groupName);
         $group->setPosition(count($this->data));
-        $this->data[strtolower($groupName)]['group'] = $group;
+        $this->data[mb_strtolower($groupName)]['group'] = $group;
         return $group;
     }
 
     public function createOption(string $groupName, string $optionName) : ?Option {
         // we do not create an option if we do not know the group
         /** @var Group $group */
-        $group = $this->data[strtolower($groupName)]['group'];
+        $group = $this->data[mb_strtolower($groupName)]['group'];
         if (null === $group) return null;
 
-        $option = $this->data[strtolower($groupName)]['options'][strtolower($optionName)];
+        $option = $this->data[mb_strtolower($groupName)]['options'][mb_strtolower($optionName)];
         if ($option instanceof Option) {
             $this->log->notice(sprintf('%s: Using existing Shopware configurator option %s of group %s.',
                 __FUNCTION__,
@@ -93,7 +93,7 @@ class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterfac
         $group->setOptions($options);
 
         $option->setPosition(count($this->data[$groupName]['options']));
-        $this->data[strtolower($groupName)]['options'][strtolower($optionName)] = $option;
+        $this->data[mb_strtolower($groupName)]['options'][mb_strtolower($optionName)] = $option;
         return $option;
     }
 

@@ -19,11 +19,11 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
     protected $categoryCache;
     protected $repository;
 
-    public function removeEmptyCategories()
+    public function removeEmptyCategories(array $ids)
     {
-        $dql = 'SELECT c FROM Shopware\Models\Category\Category c WHERE c.parentId IS NOT null AND c.blog = 0 '
-            . 'AND c.articles IS EMPTY AND c.children IS EMPTY AND c.name <> \'Deutsch\'';
-        $query = $this->modelManager->createQuery($dql);
+        $dql = 'SELECT c FROM Shopware\Models\Category\Category c WHERE c.id IN (:ids) AND c.blog = 0 '
+            . 'AND c.articles IS EMPTY AND c.children IS EMPTY';
+        $query = $this->modelManager->createQuery($dql)->setParameter('ids', $ids);
         $count = 0;
         while (true) {
             $emptyCategories = $query->getResult();
@@ -38,6 +38,23 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
             $this->modelManager->clear();
         }
         return $count;
+    }
+
+    public function removeEmptyProductCategories(Category $swCategory)
+    {
+        $ids = array_column($this->getRepository()->getFullChildrenList($swCategory->getId()), 'id');
+        return $this->removeEmptyCategories($ids);
+    }
+
+    public function getChildPathes(Category $swCategory)
+    {
+        $children = $this->getRepository()->getFullChildrenList($swCategory->getId());
+        $pathes = [];
+        foreach ($children as $child)
+        {
+            $pathes[$child['id']] = $this->getRepository()->getPathById($child['id'], 'name', ' > ');
+        }
+        return array_map(function ($path) { return str_replace('Deutsch > ', '', $path);}, $pathes);
     }
 
     public function findCategoryPath(string $path, Category $root = null)

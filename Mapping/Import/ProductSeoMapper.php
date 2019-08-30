@@ -154,7 +154,8 @@ class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterfac
 
         $url = str_replace('/', '-', $title);
         $url = str_replace('Dr.', 'Dr', $url);
-        $url = strtolower($this->slug->slugify($url));
+        $url = preg_replace('~([^ ])\'([^ ])~', '$1$2', $url);
+        $url = mb_strtolower($this->slug->slugify($url));
 
         $this->report[$name]['url'] = $url;
         $product->setSeoUrl($url);

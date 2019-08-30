@@ -7,11 +7,10 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
 use Shopware\Models\Customer\Group;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L1;
-use const MxcDropshipInnocigs\MXC_DELIMITER_L2;
 
 class ExportPrices extends AbstractProductExport
 {
@@ -147,9 +146,9 @@ class ExportPrices extends AbstractProductExport
     {
         $variantPrices = [];
         /** @var Variant $variant */
-        $sPrices = explode(MXC_DELIMITER_L2, $variant->getRetailPrices());
+        $sPrices = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $variant->getRetailPrices());
         foreach ($sPrices as $sPrice) {
-            list($key, $price) = explode(MXC_DELIMITER_L1, $sPrice);
+            list($key, $price) = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $sPrice);
             $variantPrices[$key] = floatVal(str_replace(',', '.', $price));
         }
         return $variantPrices;
@@ -160,7 +159,7 @@ class ExportPrices extends AbstractProductExport
         $model = $this->getModels()[$variant->getIcNumber()];
         $options = $model->getOptions();
 
-        $pattern = 'PACKUNG' . MXC_DELIMITER_L1;
+        $pattern = 'PACKUNG' . MxcDropshipInnocigs::MXC_DELIMITER_L1;
         if (strpos($options, $pattern) === false) return true;
 
         $pattern .= '1er Packung';

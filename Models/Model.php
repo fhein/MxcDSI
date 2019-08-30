@@ -101,7 +101,7 @@ class Model extends ModelEntity
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $options;
 
@@ -284,7 +284,7 @@ class Model extends ModelEntity
     /**
      * @return string
      */
-    public function getOptions(): string
+    public function getOptions()
     {
         return $this->options;
     }

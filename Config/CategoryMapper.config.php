@@ -1,5 +1,14 @@
 <?php
 return array(
+    'product_categories' => [
+        'E-ZIGARETTTEN',
+        'E-LIQUIDS',
+        'SHAKE & VAPE',
+        'AROMEN',
+        'BOXEN',
+        'VERDAMPFER',
+        'ZUBEHÖR'
+    ],
     'flavor_category_map' => array(
         'E-LIQUIDS' => array(
             'title' => 'E-Liquids - Geschmack: ##flavor## - online kaufen!',
@@ -20,6 +29,11 @@ return array(
             'h1' => 'AROMEN - ##flavor##',
         ),
     ),
+    'flavor_category_cms_description_map' => [
+       'E-LIQUIDS' => '<p>In der Kategorie <b>##flavorcategory##</b> zeigen wir alle unsere <b>E-Liquids</b>, die eine oder mehrere dieser Geschmacksnoten aufweisen:</p>',
+       'AROMEN' => '<p>Sehen Sie sich in dieser Kategorie <b>##flavorcategory##</b> alle unsere <b>Aromen</b> an, die einen der folgenden Geschmacke in der Beschreibung haben:</p>',
+       'SHAKE & VAPE' => '<p>In der Kategorie <b>##flavorcategory##</b> zeigen wir alle unsere <b>Shake & Vape E-Liquids</b>, die eine oder mehrere dieser Geschmacksnoten aufweisen:</p>',
+    ] ,
     'type_category_map' => array(
         0 => array(
             'types' => array(
@@ -488,7 +502,7 @@ return array(
                     'h1' => 'ZUBEHÖR FÜR SELBSTWICKLER',
                 ),
                 'Watte' => array(
-                    'title' => 'E-Zigarette | Watte und -pads für Selbstwickler günstig online kaufen!',
+                    'title' => 'E-Zigarette | Watte für Selbstwickler günstig online kaufen!',
                     'description' => 'Watte für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
                     'keywords' => 'Watte,Selbstwickler,E-Zigarette,günstig,kaufen',
                     'h1' => 'WATTE FÜR SELBSTWICKLER',
