@@ -111,7 +111,8 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $image->setPosition($position);
 
         // Important to avoid 'A new entity was detected which is not configured to cascade persist'
-        $this->modelManager->flush($image);
+        //$this->modelManager->flush($image);
+
         return $image;
 
     }
