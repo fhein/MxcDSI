@@ -45,8 +45,8 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         AssociatedProductsMapper $associatedProductsMapper,
         RegularExpressions $regularExpressions,
         array $productMappers,
-        array $variantMappers
-    ) {
+            array $variantMappers
+        ) {
         $this->productMappers = $productMappers;
         $this->associatedProductsMapper = $associatedProductsMapper;
         $this->mappings = $mappings;

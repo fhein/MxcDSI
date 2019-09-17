@@ -257,11 +257,6 @@ class Product extends ModelEntity  {
     private $flavorCategory;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    private $addlCategory;
-
-    /**
      * Product constructor.
      */
     public function __construct() {
@@ -739,22 +734,6 @@ class Product extends ModelEntity  {
     public function setContent($content): void
     {
         $this->content = $content;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAddlCategory()
-    {
-        return $this->addlCategory;
-    }
-
-    /**
-     * @param mixed $addlCategory
-     */
-    public function setAddlCategory($addlCategory)
-    {
-        $this->addlCategory = $addlCategory;
     }
 
     /**

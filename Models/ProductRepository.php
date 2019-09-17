@@ -2,6 +2,7 @@
 
 namespace MxcDropshipInnocigs\Models;
 
+use Shopware\Models\Article\Article;
 use Zend\Config\Factory;
 
 class ProductRepository extends BaseEntityRepository
@@ -27,9 +28,23 @@ class ProductRepository extends BaseEntityRepository
 
         'getArticlesWithoutProduct' =>
             'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
-            . 'JOIN Shopware\Models\Article\Detail d WITH d.article = a.id '
+            . 'JOIN a.details d '
             . 'LEFT JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
             . 'WHERE v.id IS NULL',
+
+        'getProduct' =>
+            'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p '
+            . 'JOIN p.variants v '
+            . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
+            //. 'JOIN Shopware\Models\Article\Article a WITH d.article = a.id AND a.id = :id'
+            . 'WHERE d.article = :id',
+
+        'getArticle' =>
+            'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
+            . 'JOIN a.details d '
+            . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
+            . 'JOIN MxcDropshipInnocigs\Models\Product p WITH v.product = p.id '
+            . 'WHERE p.number = :number',
 
         'getLinkedProductsFromProductIds'   =>
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
@@ -77,13 +92,6 @@ class ProductRepository extends BaseEntityRepository
         'getProductsWithDosageMissing' =>
             'SELECT p.name FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
             . 'WHERE (p.dosage IS NULL OR p.dosage = \'\') AND p.type = \'AROMA\'',
-
-        'getArticle' =>
-            'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
-            . 'JOIN Shopware\Models\Article\Detail d WITH d.article = a.id '
-            . 'JOIN MxcDropshipInnocigs\Models\Variant v WITH v.number = d.number '
-            . 'JOIN MxcDropshipInnocigs\Models\Product p WITH v.product = p.id '
-            . 'WHERE p.number = :number',
 
         'removeOrphaned' =>
             'SELECT p FROM MxcDropshipInnocigs\Models\Product p WHERE p.variants IS EMPTY',
@@ -151,7 +159,6 @@ class ProductRepository extends BaseEntityRepository
         'capacity',
         'flavor',
         'flavorCategory',
-        'addlCategory',
         'dosage',
         'base',
         'description',
@@ -217,6 +224,13 @@ class ProductRepository extends BaseEntityRepository
     {
         $result = $this->getQuery(__FUNCTION__)
             ->setParameter('number', $product->getNumber())->getResult();
+        return $result[0] ?? null;
+    }
+
+    public function getProduct(Article $article)
+    {
+        $result = $this->getQuery(__FUNCTION__)
+            ->setParameter('id', $article->getId())->getResult();
         return $result[0] ?? null;
     }
 

@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php /** @noinspection PhpUndefinedMethodInspection */
+
+/** @noinspection PhpUnhandledExceptionInspection */
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Excel\ExcelExport;
@@ -11,7 +13,6 @@ use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryTreeBuilder;
 use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
-use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
@@ -19,6 +20,7 @@ use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
@@ -29,6 +31,7 @@ use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
+use Zend\Config\Factory;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -93,36 +96,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function createRelatedSelectedAction()
-    {
-        try {
-            $params = $this->request->getParams();
-            $ids = json_decode($params['ids'], true);
-            $products = $this->getRepository()->getProductsByIds($ids);
-            $services = MxcDropshipInnocigs::getServices();
-            $productMapper = $services->get(ProductMapper::class);
-            $productMapper->createRelatedArticles($products);
-            $this->view->assign([ 'success' => true, 'message' => 'Related articles were successfully created.']);
-        } catch (Throwable $e) {
-            $this->handleException($e);
-        }
-    }
-
-    public function createSimilarSelectedAction()
-    {
-        try {
-            $params = $this->request->getParams();
-            $ids = json_decode($params['ids'], true);
-            $products = $this->getRepository()->getProductsByIds($ids);
-            $services = MxcDropshipInnocigs::getServices();
-            $productMapper = $services->get(ProductMapper::class);
-            $productMapper->createSimilarArticles($products);
-            $this->view->assign([ 'success' => true, 'message' => 'Similar articles were successfully created.']);
-        } catch (Throwable $e) {
-            $this->handleException($e);
-        }
-    }
-
     public function updateAssociatedProductsAction()
     {
         try {
@@ -147,7 +120,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $services = MxcDropshipInnocigs::getServices();
             $imageMapper = $services->get(ImageMapper::class);
             /** @noinspection PhpUndefinedMethodInspection */
-            $products = $this->getRepository()->getLinkedProducts();
+            $products = $this->getSelectedProducts($this->request);
             foreach ($products as $product) {
                 $imageMapper->setArticleImages($product);
             }
@@ -158,40 +131,33 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function updateImagesSelectedAction()
+    public function remapCategoriesAction()
     {
         try {
-            $params = $this->request->getParams();
-            $ids = json_decode($params['ids'], true);
-            /** @noinspection PhpUndefinedMethodInspection */
-            $products = $this->getRepository()->getLinkedProductsFromProductIds($ids);
             $services = MxcDropshipInnocigs::getServices();
-            $imageMapper = $services->get(ImageMapper::class);
+            $categoryMapper = $services->get(CategoryMapper::class);
+            $products = $this->getSelectedProducts($this->request);
+            /** @var Product $product */
             foreach ($products as $product) {
-                $imageMapper->setArticleImages($product);
+                $categoryMapper->remap($product);
+                /** @var Article $article */
+                $article = $product->getArticle();
+                if ($article === null) continue;
+                $article->getCategories()->clear();
             }
+            $categoryMapper->report();
             $this->getManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Images were successfully updated.']);
-        } catch (Throwable $e) {
-            $this->handleException($e);
-        }
-    }
 
-    public function updateCategoriesAction()
-    {
-        try {
-            $modelManager = $this->getManager();
-            /** @noinspection PhpUndefinedMethodInspection */
-            $products = $this->getRepository()->getLinkedProducts();
-
-            $services = MxcDropshipInnocigs::getServices();
             $categoryMapper = $services->get(ShopwareCategoryMapper::class);
-            foreach ($products as $product) {
-                $categoryMapper->map($product);
-            }
-            $modelManager->flush();
+            $categoryMapper->removeEmptyProductCategories();
+            $this->getManager()->flush();
 
-            $this->view->assign([ 'success' => true, 'message' => 'Categories were successfully updated.']);
+            foreach ($products as $product) {
+                $categoryMapper->map($product, true);
+                $this->getManager()->flush();
+            }
+
+            $this->view->assign([ 'success' => true, 'message' => 'Categories were successfully remapped.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -216,39 +182,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function buildCategoryTreeAction() {
         try {
-            $services = MxcDropshipInnocigs::getServices();
-            $categoryMapper = $services->get(CategoryMapper::class);
-            $products = $this->getRepository()->findAll();
-            $model = new Model();
-            foreach ($products as $product) {
-                $categoryMapper->map($model, $product, true);
-            }
-            $this->getManager()->flush();
-            $categoryMapper->buildCategoryTree();
-            $this->view->assign([ 'success' => true, 'message' => 'Category tree configuration successfully rebuilt.']);
+            $this->view->assign([ 'success' => false, 'message' => 'Function was removed.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
 
-    }
-
-    public function updateCategoriesSelectedAction()
-    {
-        try {
-            $params = $this->request->getParams();
-            $ids = json_decode($params['ids'], true);
-            /** @noinspection PhpUndefinedMethodInspection */
-            $products = $this->getRepository()->getLinkedProductsFromProductIds($ids);
-            $services = MxcDropshipInnocigs::getServices();
-            $categoryMapper = $services->get(ShopwareCategoryMapper::class);
-            foreach ($products as $product) {
-                $categoryMapper->map($product);
-            }
-            $this->getManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Categories were successfully updated.']);
-        } catch (Throwable $e) {
-            $this->handleException($e);
-        }
     }
 
     public function exportConfigAction()
@@ -397,7 +335,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return [$value, $products];
     }
 
-    public function relinkSelectedProductsAction() {
+    public function relinkProductsAction() {
         try {
             $params = $this->request->getParams();
             $ids = json_decode($params['ids'], true);
@@ -556,7 +494,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $services = MxcDropshipInnocigs::getServices();
             $productMapper = $services->get(ProductMapper::class);
             $products = $this->getRepository()->findAll();
-            $productMapper->controllerUpdateArticles($products, true);
+            foreach ($products as $product) {
+                $productMapper->createArticle($product);
+            }
             $message = 'Products were successfully created.';
             $this->view->assign(['success' => true, 'message' => $message]);
             /** @noinspection PhpUndefinedMethodInspection */
@@ -647,7 +587,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     }
 
-    protected function getRequestProducts(Enlight_Controller_Request_RequestHttp $request) {
+    protected function getSelectedProducts(Enlight_Controller_Request_RequestHttp $request) {
         $params = $request->getParams();
         $repository = $this->getManager()->getRepository(Product::class);
         if (empty($params['ids'])) {
@@ -663,7 +603,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $services = MxcDropshipInnocigs::getServices();
             $mapper = $services->get(DescriptionMapper::class);
 
-            $products = $this->getRequestProducts($this->request);
+            $products = $this->getSelectedProducts($this->request);
 
             /** @var Product $product */
             foreach ($products as $product) {
@@ -690,7 +630,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $descriptions = $services->get(DescriptionPullback::class);
             $repository = $this->getManager()->getRepository(Product::class);
 
-            $products = $this->getRequestProducts($this->request);
+            $products = $this->getSelectedProducts($this->request);
             $descriptions->pullDescriptions($products);
             $repository->exportMappedProperties();
 
@@ -858,7 +798,110 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function updateCategorySeoInformationAction() {
+    public function remapProductSeoInformationAction() {
+        try {
+            $products = $this->getManager()->getRepository(Product::class)->findall();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                /** @var Article $article */
+                $article = $product->getArticle();
+                if ($article === null) continue;
+                $article->setDescription($product->getSeoDescription());
+                $article->setMetaTitle($product->getSeoTitle());
+                $seoUrl = $product->getSeoUrl();
+                if (! empty($seoUrl)) {
+                    ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
+                }
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Product SEO information was successfully refreshed.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function pullAssociatedProductsAction()
+    {
+        try {
+            $articles = $this->getManager()->getRepository(Article::class)->findAll();
+            $repo = $this->getManager()->getRepository(Product::class);
+            /** @var Article $article */
+            $relations = [];
+            foreach ($articles as $article) {
+                /** @var Product $product */
+                $product = $repo->getProduct($article);
+                if ($product === null) continue;
+                $number = $product->getIcNumber();
+                $related = $article->getRelated();
+                foreach ($related as $relatedArticle) {
+                    $product = $repo->getProduct($relatedArticle);
+                    $relations['related'][$number][] = $product->getIcNumber();
+                }
+                $similar = $article->getSimilar();
+                foreach ($similar as $similarArticle) {
+                    $product = $repo->getProduct($similarArticle);
+                    $relations['similar'][$number][] = $product->getIcNumber();
+                }
+            }
+            $fileNameShort = 'Config/CrossSelling.config.php';
+            $fileName = __DIR__ . '/../../' . $fileNameShort;
+            Factory::toFile($fileName, $relations);
+            $this->view->assign([ 'success' => true, 'message' => 'Cross selling products saved to ' . $fileNameShort . '.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function pushAssociatedProductsAction()
+    {
+        try {
+            $repository = $this->getManager()->getRepository(Product::class);
+            $fileNameShort = 'Config/CrossSelling.config.php';
+            /** @noinspection PhpIncludeInspection */
+            $relations = include __DIR__ . '/../../' . $fileNameShort;
+            $similar = $relations['similar'];
+            foreach ($similar as $number => $similarList) {
+                $product = $repository->findOneBy(['icNumber' => $number]);
+                if (! $product) continue;
+                /** @var Article $article */
+                $article = $product->getArticle();
+                if (! $article) continue;
+                $similarArticles = $article->getSimilar();
+                $similarArticles->clear();
+                foreach ($similarList as $similarArticleNumber) {
+                    $product = $repository->findOneBy(['icNumber' => $similarArticleNumber]);
+                    if (! $product) continue;
+                    $article = $product->getArticle();
+                    if (! $article) continue;
+                    $similarArticles->add($article);
+                }
+            }
+
+            $related = $relations['related'];
+            foreach ($related as $number => $relatedList) {
+                $product = $repository->findOneBy(['icNumber' => $number]);
+                if (! $product) continue;
+                /** @var Article $article */
+                $article = $product->getArticle();
+                if (! $article) continue;
+                $relatedArticles = $article->getRelated();
+                $relatedArticles->clear();
+                foreach ($relatedList as $relatedArticleNumber) {
+                    $product = $repository->findOneBy(['icNumber' => $relatedArticleNumber]);
+                    if (! $product) continue;
+                    $article = $product->getArticle();
+                    if (! $article) continue;
+                    $relatedArticles->add($article);
+                }
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Cross selling products restored from ' . $fileNameShort . '.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function remapCategorySeoInformationAction() {
         try {
             // create category seo information for InnoCigs products
             $services = MxcDropshipInnocigs::getServices();
@@ -875,7 +918,24 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $categoryMapper->rebuildCategorySeoInformation();
             $this->getManager()->flush();
 
-            $this->view->assign([ 'success' => true, 'message' => 'Category SEO information successfully updated.' ]);
+            $this->view->assign([ 'success' => true, 'message' => 'Category SEO information successfully refreshed.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function setReferencePricesAction()
+    {
+        try {
+            $services = MxcDropshipInnocigs::getServices();
+            $priceMapper = $services->get(PriceMapper::class);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            foreach ($products as $product) {
+                $priceMapper->setReferencePrice($product);
+            }
+            $this->getManager()->flush();
+
+            $this->view->assign([ 'success' => true, 'message' => 'Successfully set reference prices.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -913,21 +973,19 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
-
-// update seo category settings
-
-            $services = MxcDropshipInnocigs::getServices();
-            $seoCategoryMapper = $services->get(CategoryMapper::class);
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            $model = new Model();
-            foreach ($products as $product) {
-                $seoCategoryMapper->map($model, $product, true);
+            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $articles = $this->getManager()->getRepository(Article::class)->findAll();
+            $repository = $this->getManager()->getRepository(Product::class);
+            foreach ($articles as $article) {
+                $product = $repository->getProduct($article);
+                if ($product === null) {
+                    $log->debug('Article without product (1): ' . $article->getName());
+                }
             }
-            $seoCategoryMapper->report();
-            $categoryMapper = $services->get(ShopwareCategoryMapper::class);
-            $categoryMapper->rebuildCategorySeoInformation();
-            $this->getManager()->flush();
-
+            $articles = $repository->getArticlesWithoutProduct();
+            foreach ($articles as $article) {
+                $log->debug('Article without product (2): ' . $article->getName());
+            }
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
@@ -938,23 +996,24 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            /** @var ProductSeoMapper $mapper */
-            $mapper = MxcDropshipInnocigs::getServices()->get(ProductSeoMapper::class);
+            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            /** @var Article $article */
+            $article = $this->getManager()->getRepository(Article::class)->findOneBy(['name' => 'Advken - Manta RTA - Verdampfer']);
+            $repository = $this->getManager()->getRepository(Product::class);
             /** @var Product $product */
-            $model = new Model();
-            foreach ($products as $product) {
-                $mapper->map($model, $product, true);
-                $article = $product->getArticle();
-                /** @var Article $article */
-                if ($article === null) continue;
-                $article->setDescription($product->getSeoDescription());
-                $article->setMetaTitle($product->getSeoTitle());
-                ArticleTool::setArticleAttribute($article, 'attr4', $product->getSeoUrl());
-            }
-            $mapper->report();
+            $product = $repository->getProduct($article);
+            if ($product === null)
+                $log->debug('Could not find product for: ' . $article->getName());
+            else
+                $log->debug('Product name: '. $product->getName());
 
-            $this->getManager()->flush();
+            $product = $repository->findOneBy(['name' => 'Advken - Manta RTA - Verdampfer']);
+            $article = $product->getArticle();
+            if ($article === 'null')
+                $log->debug('Could not find article for: ' . $product->getName());
+            else
+                $log->debug('Article name: ' . $article->getName());
+
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

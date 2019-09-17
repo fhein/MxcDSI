@@ -30,6 +30,8 @@ return [
             '~(K2 & K3.*) \(\d+ (St. pro Pack\))~'  => '$1 (5 $2',
             '~Freemax~'                             => 'FreeMax',
             '~(Skynet) (Pro )?Sub-Ohm ~'            => '$1 $2',
+            '~(Aegis X) (\d+ Watt) (mit Cerberus)~' => '$1 $3',
+            '~(Lunar)~'                             => '$1 45 Watt',
             // separator different from '-'
             '~–~'                                   => '-',
         ],
@@ -48,6 +50,7 @@ return [
             '~^ ~'                                         => '',
             '~(RDTA)+~'                                    => '$1',
             '~-V12~'                                       => '- V12',
+            '~(Virginas) (Best)~'                          => 'Virginia\'s $2',
             '~-(Ersatz)~'                                  => '- $1',
             '~-(E-Zigarette)~'                             => '- $1',
             '~-(Netzstecker)~'                             => '- $1',
@@ -85,6 +88,11 @@ return [
             '~(Star Spangled), 9 mg/ml~'                   => '$1',
             '~(Ultem Tank), (5 ml)~'                       => '$1 - $2',
             '~(Akkuträger) - Akkuträger~'                  => '$1',
+            '~(Aegis X) - (mit Cerberus)~'                 => '$1 $2',
+            '~(Solo) - (mit Tengu)~'                       => '$1 $2 -',
+            '~(Solo) - (mit Cerberus)~'                    => '$1 $2',
+            '~(Morph) - (Akkuträger)~'                     => '$1 219 - $2',
+            '~(-)+~'                                       => '$1',
         ],
     ],
 
@@ -198,6 +206,7 @@ return [
             '~(Manta) Bubble (Glastank)~'                                => '$1 RTA $2',
             '~(Coilology.*(4|7) in 1) (Set)~'                            => '$1 Coil-$3',
             '~Aster$~'                                                   => 'Aster 75 Watt',
+            '~(Dark Mesh Bubble) Ersatzglas~'                            => '$1 Glastank',
             '~(Nautilus X Mundstück)e~'                                  => '$1',
             '~80er (Mesh Wire) (1,5 m)~'                                 => '$1 - $2',
             '~100er (Mesh Wire) (1,5 m)~'                                => '$1 - $2',
@@ -227,13 +236,14 @@ return [
             '~(KFB 2 AIO) Ersatzglas~'                                   => '$1 Glastank',
             '~([^,\-]) (\d(,\d+)?) ?ml~'                                 => '$1, $2 ml',
             '~(\d+)ML(.*Leerflasche)~'                                   => '$2, $1 ml',
-            '~([^,\-]) (\d+) ml$~'                                       => '$1 - $2 ml',
+            '~([^,\-]) ((\d+)(,\d+)? ml)$~'                              => '$1 - $2',
             '~([^,\-]) (\d+) mg\/ml$~'                                   => '$1 - $2 mg/ml',
             '~(0 mg/ml) - (\d+ ml)~'                                     => '$2, $1',
             '~(\d+ ml) - (\d+ mg/ml)~'                                   => '$1, $2',
             '~(\d+ mg/ml),? (\d+ ml)~'                                   => '$2, $1',
             '~([^,\-]) (\d+ ml, \d+ mg/ml)~'                             => '$1 - $2',
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
+            '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
             '~(Archangel) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
@@ -432,7 +442,10 @@ return [
             '~(RX Gen3)~'                                         => 'Reuleaux RX Gen3',
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
+            '~(Lunar) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(VX200) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(Morph) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(Aegis Solo) (- \d+ Watt)~'                         => '$1 - Akkuträger $2',
             '~(Druga Foxy) (- \d+ Watt)~'                         => '$1 - Akkuträger $2',
             '~(X217) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Topside Dual) (- \d+ Watt)~'                       => '$1 - Akkuträger $2',
@@ -466,6 +479,7 @@ return [
             '~(Lexicon) (- \d+ Watt)~'                            => '$1 - Akkuträger $2',
             '~(Lucid) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(iStick .*) (- \d+ Watt)~'                          => '$1 - Akkuträger $2',
+            '~(Aegis X) (- \d+ Watt)~'                            => '$1 - Akkuträger $2',
             '~(Aegis Legend.*) (- \d+ Watt)~'                     => '$1 - Akkuträger $2',
             '~(Edge.*) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(Nova) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
@@ -541,6 +555,8 @@ return [
         'Advken'        => [
             '~(Twirl RDA)~',
             '~(Manta RTA)~',
+            '~(Dark Mesh)~',
+            '~(CP TF RTA)~',
             '~(Owl)~',
         ],
         'Aspire'        => [
@@ -560,7 +576,7 @@ return [
             '~(Puxos)~',
             '~(Tigon)~',
             '~((Triton)( 2)?)~',
-            '~((Breeze)( 2)?)~',
+            '~((Breeze)(( 2)|( NXT))?)~',
             '~((Zelos)( 2.0)?)~',
             '~(Revvo(( Mini)|( Boost))?)~',
             '~(Nautilus(( 2S?)|( X)|( Mini)|( AIO))?)~',
@@ -609,6 +625,7 @@ return [
             '~(Cut Premium)~',
             '~(Rage)~',
             '~(Bulldog)~',
+            '~(Lunar)~',
         ],
         'Digiflavor'    => [
             '~(Siren 2 RTA)~',
@@ -638,7 +655,7 @@ return [
             '~(Zeus Dual RTA)~',
             '~(Zeus RTA)~',
             '~(Ammit Dual Coil RTA)~',
-            '~(Aegis(( Legend)|( Mini))?)~',
+            '~(Aegis(( Legend)|( Mini)|( X)|( Solo))?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
             '~(Creed RTA)~',
@@ -667,6 +684,9 @@ return [
         'Nikola'        => [
             '~(Medea)~',
             '~(Lapetus)~',
+        ],
+        'Oumier' => [
+            '~(Wasp Nano RTA)~'
         ],
         'SC'            => [
             '~(iJust ((21700)|(ECM)|(3))?)~',
@@ -717,7 +737,7 @@ return [
             '~(Compact 14)~',
             '~(P16A)~',
             '~(Q14)~',
-            '~(Q16 C)~',
+            '~(Q16(( C)|( Pro)))~',
         ],
         'Lost Vape'     => [
             '~(Original Q)~',
@@ -736,10 +756,13 @@ return [
             '~(Globe)~',
             '~((Vape Pen Nord(( 19)|( 22))?)|(Nord(( AIO 19)|( AIO 22))?))~',
             '~(H-Priv 2)~',
+            '~(Morph 219)~',
             '~(Mag Baby)~',
             '~(Micro One)~',
             '~(Osub King)~',
+            '~(TF)~',
             '~(Priv M17)~',
+            '~(TF )~',
             '~(QBox)~',
             '~(R-Kiss)~',
             '~(R40)~',
@@ -751,7 +774,11 @@ return [
             '~(Baby V2)~',
             '~(Species)~',
             '~(Mico)~',
+            '~(Priv N19)~'
 
+        ],
+        'ThunderHead Creations' => [
+            '~(Tauren(( RDTA)|( RDA)|( RTA)|( Solo RDA)))~'
         ],
         'Renova'        => [
             '~(Zero)~',
@@ -769,6 +796,11 @@ return [
         ],
         'Smoant'        => [
             '~(Battlestar Squonker( RDA)?)~',
+        ],
+        'Snowwolf' => [
+            '~(Mfeng Baby)~',
+            '~(Wolf Tank Mini)~',
+            '~(Mini)~',
         ],
         'Steamax'       => [
             // Smok
@@ -802,10 +834,12 @@ return [
             '~(Luxotic BF Box)~',
             '~(Luxotic MF Box)~',
             '~(Luxotic DF Box)~',
+            '~(Luxotic Surface)~',
             '~(Luxotic NC)~',
+            '~(Kestrel RDTA)~',
             '~(Motiv 2)~',
             '~(Reuleaux RX Gen3 Dual)~',
-            '~(Reuleaux Tinker)~',
+            '~(Reuleaux Tinker( 2)?)~',
             '~(Sinuous(( V200)|( P80)|( V80)|( Ravage)|( SW)|( Solo))?)~',
             '~(Reux)~',
 
@@ -829,6 +863,7 @@ return [
             '~(Blocks)~',
             '~(Whirl(( 20)|( 22))?)~',
             '~(Caliburn)~',
+            '~(Amulet)~'
 
         ],
         'Vapanion'      => [
@@ -890,10 +925,13 @@ return [
             '~(Luxotic MF Box)~',
             '~(Luxotic DF Box)~',
             '~(Luxotic NC)~',
+            '~(Luxotic Surface)~',
             '~(Motiv 2)~',
             '~(Reuleaux RX Gen3 Dual)~',
             '~(Sinuous(( P80)|( V80)|( Ravage)|( SW))?)~',
             '~(Reux)~',
+            '~(Kestrel RDTA)~',
+            '~(Reuleaux Tinker( 2)?)~',
         ],
         'Wotofo'        => [
             '~(Warrior RDA)~',

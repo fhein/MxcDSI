@@ -13,42 +13,53 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcSaveProduct:                      me.onSaveProduct,
                 mxcImportItems:                      me.onImportItems,
                 mxcImportItemsSequential:            me.onImportItemsSequential,
-                mxcUpdatePrices:                     me.onUpdatePrices,
-                mxcUpdateStockInfo:                  me.onUpdateStockInfo,
-                mxcRefreshAssociated:                me.onRefreshAssociatedItems,
-                mxcBuildCategoryTree:                me.onBuildCategoryTree,
+
+                // Remapping
+
+                mxcRemapCategories:                  me.onRemapCategories,
                 mxcRemapProperties:                  me.onRemapProperties,
+                mxcRemapDescriptions:                me.onRemapDescriptions,
+                mxcUpdateCategorySeo:                me.onUpdateCategorySeo,
+                mxcUpdateArticleSeo:                 me.onUpdateArticleSeo,
+                mxcPushAssociatedProducts:           me.onPushAssociatedProducts,
+                mxcPullAssociatedProducts:           me.onPullAssociatedProducts,
+                mxcSetReferencePrices:               me.onSetReferencePrices,
+
                 mxcPullShopwareDescriptions:         me.onPullShopwareDescriptions,
-                mxcPullShopwareDescriptionsSelected: me.onPullShopwareDescriptionsSelected,
-                mxcRemapDescriptionsSelected:        me.onRemapDescriptionsSelected,
-                mxcRemapDescriptionsAll:             me.onRemapDescriptionsAll,
-                mxcCreateAll:                        me.onCreateAll,
-                mxcDeleteAll:                        me.onDeleteAll,
-                mxcRelinkSelected:                   me.onRelinkSelected,
-                mxcRemapPropertiesSelected:          me.onRemapPropertiesSelected,
-                mxcCreateSimilarSelected:            me.onCreateSimilarSelected,
-                mxcCreateRelatedSelected:            me.onCreateRelatedSelected,
+                mxcUpdateImages:                     me.onUpdateImages,
+                mxcRelink:                           me.onRelink,
+
                 mxcSetActiveSelected:                me.onSetActiveSelected,
                 mxcSetAcceptedSelected:              me.onSetAcceptedSelected,
-                mxcUpdateImages:                     me.onUpdateImages,
-                mxcUpdateImagesSelected:             me.onUpdateImagesSelected,
-                mxcUpdateCategories:                 me.onUpdateCategories,
-                mxcUpdateCategoriesSelected:         me.onUpdateCategoriesSelected,
-                mxcRemoveEmptyCategories:            me.onRemoveEmptyCategories,
                 mxcSetLinkedSelected:                me.onSetLinkedSelected,
+
+
+                mxcUpdatePrices:                     me.onUpdatePrices,
+                mxcUpdateStockInfo:                  me.onUpdateStockInfo,
+                mxcCreateAll:                        me.onCreateAll,
+                mxcDeleteAll:                        me.onDeleteAll,
+                mxcRemoveEmptyCategories:            me.onRemoveEmptyCategories,
                 mxcRefreshItems:                     me.onRefreshItems,
+                mxcExportConfig:                     me.onExportConfig,
+
+                // Consistency checks
+
+                mxcCheckVariantsWithoutOptions:      me.onCheckVariantsWithoutOptions,
+                mxcCheckVariantMappingConsistency:   me.onCheckVariantMappingConsistency,
                 mxcCheckNameMappingConsistency:      me.onCheckNameMappingConsistency,
                 mxcCheckRegularExpressions:          me.onCheckRegularExpressions,
-                mxcCheckVariantMappingConsistency:   me.onCheckVariantMappingConsistency,
-                mxcExportConfig:                     me.onExportConfig,
+
+                // Excel import/export
+
                 mxcExcelExport:                      me.onExcelExport,
                 mxcExcelImport:                      me.onExcelImport,
-                mxcCheckVariantsWithoutOptions:      me.onCheckVariantsWithoutOptions,
                 mxcExcelImportDescriptions:          me.onExcelImportDescriptions,
                 mxcExcelImportDosages:               me.onExcelImportDosages,
                 mxcExcelImportFlavors:               me.onExcelImportFlavors,
                 mxcExcelImportPrices:                me.onExcelImportPrices,
                 mxcExcelImportMappings:              me.onExcelImportMappings,
+
+                // InnoCigs import tests
 
                 mxcTestImport1:                      me.onTestImport1,
                 mxcTestImport2:                      me.onTestImport2,
@@ -171,22 +182,30 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onRefreshAssociatedItems: function (grid) {
+    onUpdateCategorySeo: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=updateAssociatedProducts}';
+        let url = '{url controller=MxcDsiProduct action=remapCategorySeoInformation}';
         let params = {};
-        let growlTitle = 'Update associated products';
-        let maskText = 'Updating associated products ...';
+        let growlTitle = 'Update category SEO information';
+        let maskText = 'Updating category SEO information ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onBuildCategoryTree: function (grid) {
+    onUpdateArticleSeo: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=buildCategoryTree}';
+        let url = '{url controller=MxcDsiProduct action=remapProductSeoInformation}';
+        let growlTitle = 'Update product SEO information';
+        let maskText = 'Updating product SEO information ...';
         let params = {};
-        let growlTitle = 'Build category tree';
-        let maskText = 'Building category tree ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        let selModel = grid.getSelectionModel();
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
     },
 
     onImportItems: function (grid) {
@@ -246,90 +265,115 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
     onRemapProperties: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=remap}';
-        let params = {};
-        let growlTitle = 'Remap properties';
-        let maskText = 'Reapplying product property mapping ...';
-        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
-    },
-
-    onRemapPropertiesSelected: function (grid) {
-        let me = this;
         let url = '{url controller=MxcDsiProduct action=remapSelected}';
         let growlTitle = 'Remap properties';
         let maskText = 'Reapplying product property mapping ...';
 
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
-
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
-    },
-
-    onRemapDescriptionsAll: function (grid) {
-        let me = this;
-        let url = '{url controller=MxcDsiProduct action=remapDescriptions}';
+        let selModel = grid.getSelectionModel();
         let params = {};
-        let growlTitle = 'Remap properties';
-        let maskText = 'Reapplying product property mapping ...';
-        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
     },
 
-    onRemapDescriptionsSelected: function (grid) {
+    onPullAssociatedProducts: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=pullAssociatedProducts}';
+        let growlTitle = 'Pull associated products';
+        let maskText = 'Pulling associated products ...';
+
+        let selModel = grid.getSelectionModel();
+        let params = {};
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
+    },
+
+    onPushAssociatedProducts: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=pushAssociatedProducts}';
+        let growlTitle = 'Push associated products';
+        let maskText = 'Pushing associated products ...';
+
+        let selModel = grid.getSelectionModel();
+        let params = {};
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
+    },
+
+    onRemapDescriptions: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=remapDescriptions}';
         let growlTitle = 'Remap properties';
         let maskText = 'Reapplying product property mapping ...';
 
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
-
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        let selModel = grid.getSelectionModel();
+        let params = {};
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
     },
 
+    onSetReferencePrices: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=setReferencePrices}';
+        let growlTitle = 'Set reference prices';
+        let maskText = 'Setting reference prices ...';
+
+        let params = {};
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
 
     onPullShopwareDescriptions: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=pullShopwareDescriptions}';
+        let growlTitle = 'Pull Shopware descriptions';
+        let maskText = 'Pulling Shopware descriptions ...';
+
+        let selModel = grid.getSelectionModel();
         let params = {};
-        let growlTitle = 'Pull Shopware descriptions';
-        let maskText = 'Pulling Shopware descriptions ...';
-
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
-    },
-
-    onPullShopwareDescriptionsSelected: function (grid) {
-        let me = this;
-        let url = '{url controller=MxcDsiProduct action=pullShopwareDescriptions}';
-        let growlTitle = 'Pull Shopware descriptions';
-        let maskText = 'Pulling Shopware descriptions ...';
-
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
-
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+        }
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
     onUpdateImages: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=updateImages}';
+        let growlTitle = 'Update images';
+        let maskText = 'Updating images ...';
+        let selModel = grid.getSelectionModel();
+
         let params = {};
-        let growlTitle = 'Update images';
-        let maskText = 'Updating images ...';
-        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
-    },
-
-    onUpdateImagesSelected: function (grid) {
-        let me = this;
-        let url = '{url controller=MxcDsiProduct action=updateImagesSelected}';
-        let growlTitle = 'Update images';
-        let maskText = 'Updating images ...';
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
-
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+        }
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
@@ -342,51 +386,21 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onUpdateCategories: function (grid) {
+    onRemapCategories: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=updateCategories}';
+        let url = '{url controller=MxcDsiProduct action=remapCategories}';
+        let growlTitle = 'Update categories';
+        let maskText = 'Updating categories ...';
+        let selModel = grid.getSelectionModel();
         let params = {};
-        let growlTitle = 'Update categories';
-        let maskText = 'Updating categories ...';
-        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
-    },
-
-    onUpdateCategoriesSelected: function (grid) {
-        let me = this;
-        let url = '{url controller=MxcDsiProduct action=updateCategoriesSelected}';
-        let growlTitle = 'Update categories';
-        let maskText = 'Updating categories ...';
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
-
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
-    },
-
-    onCreateRelatedSelected: function (grid) {
-        let me = this;
-        let url = '{url controller=MxcDsiProduct action=createRelatedSelected}';
-        let growlTitle = 'Create related articles';
-        let maskText = 'Creating related articles ...';
-
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
-
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
-    },
-
-    onCreateSimilarSelected: function (grid) {
-        let me = this;
-        let url = '{url controller=MxcDsiProduct action=createSimilarSelected}';
-        let growlTitle = 'Create similar articles';
-        let maskText = 'Creating similar articles ...';
-
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
-
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
     },
 
     onCheckRegularExpressions: function(grid) {
@@ -512,16 +526,21 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.setStateSelected(grid, field, value, growlTitle, maskText, url);
     },
 
-    onRelinkSelected: function (grid) {
+    onRelink: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=relinkSelectedProducts}';
+        let url = '{url controller=MxcDsiProduct action=relinkProducts}';
         let growlTitle = 'Recreate Shopware articles';
         let maskText = 'Recreating Shopware articles ...';
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
-
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        let selModel = grid.getSelectionModel();
+        let params = {};
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
     },
 
     setStateSelected: function (grid, field, value, growlTitle, maskText, url) {

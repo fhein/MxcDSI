@@ -45,7 +45,7 @@ class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareIn
         if (! $attribute) return;
 
         ArticleTool::setDetailAttribute($detail, 'dc_ic_ordernumber', $variant->getIcNumber());
-        ArticleTool::setDetailAttribute($detail, 'dc_ic_articlename', $variant->getProduct()->getName());
+        ArticleTool::setDetailAttribute($detail, 'dc_ic_articlename', $variant->getName());
         ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', $variant->getPurchasePrice());
         ArticleTool::setDetailAttribute($detail, 'dc_ic_retail_price', $variant->getRecommendedRetailPrice());
         ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', $this->getStockInfo()[$variant->getIcNumber()] ?? 0);

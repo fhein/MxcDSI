@@ -47,10 +47,20 @@ class UpdateStockCronJob implements SubscriberInterface
             $result = false;
         }
         $end = date('d-m-Y H:i:s');
-        $resultMsg = $result === true ? '. Succcess.' : '. Failure.';
+        $resultMsg = $result === true ? '. Success.' : '. Failure.';
         $this->log->debug('Update stock cronjob ran from ' . $start . ' to ' . $end . $resultMsg);
 
         return $result;
+    }
+
+    protected function syncNewDropshipAttributes(Detail $detail, array $attr)
+    {
+        ArticleTool::setDetailAttribute($detail, 'mxc_dsi_product_number', $attr['dc_ic_ordernumber']);
+        ArticleTool::setDetailAttribute($detail, 'mxc_dsi_active', $attr['dc_ic_active']);
+        ArticleTool::setDetailAttribute($detail, 'mxc_dsi_product_name', $attr['dc_ic_articlename']);
+        ArticleTool::setDetailAttribute($detail, 'mxc_dsi_instock', $attr['dc_ic_instock']);
+        ArticleTool::setDetailAttribute($detail, 'mxc_dsi_purchase_price', $attr['dc_ic_purchasing_price']);
+        ArticleTool::setDetailAttribute($detail, 'mxc_dsi_retail_price', $attr['dc_ic_retail_price']);
     }
 
     protected function updateStockInfo()
@@ -62,19 +72,33 @@ class UpdateStockCronJob implements SubscriberInterface
         /** @var Detail $detail */
         foreach ($details as $detail) {
             $attr = ArticleTool::getDetailAttributes($detail);
-            $active = $attr['dc_ic_active'];
+            $this->syncNewDropshipAttributes($detail, $attr);
             $icNumber = $attr['dc_ic_ordernumber'];
-            if ($active === 0 || $active === null || $icNumber === "" || $icNumber === null) continue;
+            if (empty($icNumber)) continue;
+
             if ($info[$icNumber] !== null) {
                 // record from InnoCigs available
                 $purchasePrice = $info[$icNumber]['purchasePrice'];
+                // legacy Dropshipper's Companion
                 ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', $purchasePrice);
                 ArticleTool::setDetailAttribute($detail, 'dc_ic_retail_price', $info[$icNumber]['recommendedRetailPrice']);
                 ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', intval($stockInfo[$icNumber] ?? 0));
+
+                // new version to come
+                ArticleTool::setDetailAttribute($detail, 'mxc_dsi_purchase_price', $purchasePrice);
+                ArticleTool::setDetailAttribute($detail, 'mxc_dsi_retail_price', $info[$icNumber]['recommendedRetailPrice']);
+                ArticleTool::setDetailAttribute($detail, 'mxc_dsi_instock', intval($stockInfo[$icNumber] ?? 0));
+
                 $purchasePrice = floatval(str_replace(',', '.', $purchasePrice));
                 $detail->setPurchasePrice($purchasePrice);
             } else {
                 // no record from InnoCigs available
+
+                // new version to come
+                ArticleTool::setDetailAttribute($detail, 'mxc_dsi_purchase_price', 0);
+                ArticleTool::setDetailAttribute($detail, 'mxc_dsi_instock', 0);
+
+                // legacy Dropshipper's Companion
                 ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', 0);
                 ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', 0);
             }

@@ -208,9 +208,10 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
             $supplier = 'SMOK';
         }
 
-        if (!$isInnocigsSupplier) {
+        if (! $isInnocigsSupplier) {
             $name = str_replace($brand, $supplier, $name) . $append;
         }
+
         return $name;
     }
 

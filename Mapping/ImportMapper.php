@@ -5,9 +5,6 @@
 namespace MxcDropshipInnocigs\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Database\BulkOperation;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
@@ -28,11 +25,10 @@ use MxcDropshipInnocigs\Models\VariantRepository;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 
-class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, ClassConfigAwareInterface
+class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
-    use ClassConfigAwareTrait;
 
     protected $useCache = false;
 
@@ -66,9 +62,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
     /** @var ArticleTool */
     protected $articleTool;
 
-    /** @var BulkOperation $bulkOperation */
-    protected $bulkOperation;
-
     /** @var array $config */
     protected $config;
 
@@ -95,22 +88,19 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
      * @param CategoryMapper $categoryMapper
      * @param ProductMapper $productMapper
      * @param DetailMapper $detailMapper
-     * @param BulkOperation $bulkOperation
      */
     public function __construct(
         ArticleTool $articleTool,
         PropertyMapper $propertyMapper,
         CategoryMapper $categoryMapper,
         ProductMapper $productMapper,
-        DetailMapper $detailMapper,
-        BulkOperation $bulkOperation
+        DetailMapper $detailMapper
     ) {
         $this->articleTool = $articleTool;
         $this->detailMapper = $detailMapper;
         $this->categoryMapper = $categoryMapper;
         $this->propertyMapper = $propertyMapper;
         $this->productMapper = $productMapper;
-        $this->bulkOperation = $bulkOperation;
     }
 
     /**
@@ -215,6 +205,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             $product->addVariant($variant);
             // set properties which do not require mapping
             $variant->setIcNumber($model->getModel());
+            $variant->setName($model->getName());
             $variant->setEan($model->getEan());
             $variant->setPurchasePrice(str_replace(',', '.', $model->getPurchasePrice()));
             $recommendedRetailPrice = str_replace(',', '.', $model->getRecommendedRetailPrice());
@@ -329,7 +320,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
             switch ($name) {
                 // case 'category': Category is not currently used for mapping
                 case 'manufacturer':
-                case 'name':
+                case 'productName':
                     $remap = true;
                     break;
                 case 'description':
@@ -405,7 +396,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->modelManager->flush();
     }
 
-
     protected function initCache()
     {
         $this->modelManager->createQuery('UPDATE ' . Product::class . ' a set a.new = false')->execute();
@@ -438,12 +428,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface, 
         $this->getProductRepository()->refreshProductStates();
 
         $this->productMapper->updateArticles($this->updates);
-
-        if (@$this->config['applyFilters']) {
-            foreach ($this->config['filters']['update'] as $filter) {
-                $this->bulkOperation->update($filter);
-            }
-        }
 
         return true;
     }

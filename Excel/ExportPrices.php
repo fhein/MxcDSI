@@ -40,9 +40,9 @@ class ExportPrices extends AbstractProductExport
         $this->registerColumn('Marge UVP');
         $this->registerColumn('Dampfplanet');
         $this->registerColumn('MaxVapor');
+        $this->registerColumn('andere');
         $customerGroupKeys = $this->getCustomerGroupKeys();
         foreach ($customerGroupKeys as $key) {
-            if ($key === 'H') continue;
             $this->registerColumn('VK Brutto ' . $key);
             $this->registerColumn('Marge ' . $key);
         }
@@ -273,7 +273,9 @@ class ExportPrices extends AbstractProductExport
         $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
         /** @var Group $customerGroup */
         foreach ($customerGroups as $customerGroup) {
-            $this->customerGroupKeys[] = $customerGroup->getKey();
+            $key = $customerGroup->getKey();
+            if ($key === 'H') continue;
+            $this->customerGroupKeys[] = $key;
         }
         return $this->customerGroupKeys;
     }

@@ -2,17 +2,21 @@
 
 namespace MxcDropshipInnocigs\Mapping\Shopware;
 
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
 use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
 use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipInnocigs\Models\Category as CategoryConfiguration;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
+
 
 class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface, ModelManagerAwareInterface
 {
@@ -23,6 +27,7 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
     /** @var CategoryTool $categoryTool */
     protected $categoryTool;
     private $categoryPathes;
+    private $categoryConfiguration;
 
     public function __construct(CategoryTool $categoryTool)
     {
@@ -35,8 +40,8 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
      *
      * @param Product $product
      * @param bool $replace
-     * @throws \Doctrine\ORM\ORMException
-     * @throws \Doctrine\ORM\OptimisticLockException
+     * @throws ORMException
+     * @throws OptimisticLockException
      */
     public function map(Product $product, bool $replace = true)
     {
@@ -68,13 +73,17 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
 
     protected function setCategoryProperties(string $path, Category $swCategory)
     {
-        $seo = $this->classConfig['category_seo_items'][$path] ?? [];
-        if (! empty($this->categoryPathes[$path]) || empty($seo)) return;
+        // do this once only
+        if (! empty($this->categoryPathes[$path])) return;
 
-        $swCategory->setMetaTitle($seo['seo_title']);
-        $swCategory->setMetaDescription($seo['seo_description']);
-        $swCategory->setMetaKeywords($seo['seo_keywords']);
-        $swCategory->setCmsHeadline($seo['seo_h1']);
+        /** @var CategoryConfiguration $seo */
+        $seo = $this->getCategoryConfiguration()[$path];
+        if (! empty($seo)) {
+            $swCategory->setMetaTitle($seo->getTitle());
+            $swCategory->setMetaDescription($seo->getDescription());
+            $swCategory->setMetaKeywords($seo->getKeywords());
+            $swCategory->setCmsHeadline($seo->getH1());
+        }
         $this->categoryPathes[$path] = true;
     }
 
@@ -106,6 +115,14 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
     {
         $root = $this->classConfig['root_category'] ?? 'Deutsch';
         return $this->categoryTool->findCategoryPath($root, null);
+    }
+
+    protected function getCategoryConfiguration()
+    {
+        if ($this->categoryConfiguration !== null) return $this->categoryConfiguration;
+        /** @noinspection PhpUndefinedMethodInspection */
+        $config = $this->modelManager->getRepository(CategoryConfiguration::class)->getAllIndexed();
+        return $this->categoryConfiguration = $config;
     }
 
 }

@@ -93,6 +93,8 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->modelManager->persist($child);
         $child->setName($name);
         $child->setParent($parent);
+        $child->setHideFilter(true);
+        $child->setHideSortings(true);
         $child->setChanged();
         if ($parent->getArticles()->count() > 0) {
             /** @var Article $article */

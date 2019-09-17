@@ -2,9 +2,8 @@
 
 namespace MxcDropshipInnocigs\Report;
 
+use Mxc\Shopware\Plugin\Utility\StringUtility;
 use Zend\Config\Factory;
-use Zend\Filter\StringToLower;
-use Zend\Filter\Word\CamelCaseToUnderscore;
 
 class ArrayReport
 {
@@ -61,9 +60,7 @@ class ArrayReport
         Factory::toFile($actFile, $topic);
     }
 
-    protected function getFileName(string $pluginClass) {
-        $toUnderScore = new CamelCaseToUnderscore();
-        $toLowerCase = new StringToLower();
-        return $toLowerCase($toUnderScore($pluginClass));
+    protected function getFileName(string $value) {
+        return StringUtility::toLowerCase(StringUtility::camelCaseToUnderscore($value));
     }
 }

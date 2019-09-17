@@ -35,7 +35,7 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
     public function map(Model $model, Product $product, bool $remap = false)
     {
         $flavor = @$this->mappings[$product->getIcNumber()]['flavor'];
-        if (! $flavor || $product->getType() === 'EASY3_CAP') return;
+        if (! $flavor) return;
 
         list($flavor, $flavorCategory) = $this->remap($flavor);
 

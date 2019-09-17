@@ -53,7 +53,6 @@ class ApiClient
     {
         //$xml = preg_replace('~\& ~', '&amp; ', $xml);
         $this->checkXmlResult($xml);
-//        $this->dumpXML($xml);
         $this->logXML($xml);
         $dom = new DOMDocument();
         $result = $dom->loadXML($xml);
@@ -126,7 +125,6 @@ class ApiClient
      */
     public function xmlToArray(string $xml): array
     {
-        $this->logXML($xml);
         libxml_use_internal_errors(true);
         $xml = simplexml_load_string($xml, 'SimpleXmlElement', LIBXML_NOERROR | LIBXML_NOWARNING);
 
@@ -283,11 +281,5 @@ class ApiClient
             $stockInfo[$record['PRODUCTS_MODEL']] = $record['QUANTITY'];
         };
         return $stockInfo;
-    }
-
-    protected function dumpXML($xml)
-    {
-        $fn = Shopware()->DocPath() . '/var/log/mxc_dropship_innocigs/raw_data_' . date('Y-m-d-H-i-s') . '.xml';
-        file_put_contents($fn, $xml);
     }
 }

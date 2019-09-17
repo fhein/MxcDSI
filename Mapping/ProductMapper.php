@@ -154,31 +154,6 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $this->modelManager->flush();
     }
 
-    public function createRelatedArticles(array $products, bool $recursive = false)
-    {
-        $associatedProducts = $this->associatedArticlesMapper->getRelatedProducts($products, $recursive);
-
-        $this->createdArticles = [];
-        foreach ($associatedProducts as $product) {
-            $this->createArticle($product);
-        }
-        $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
-        $this->associatedArticlesMapper->setAssociatedArticles($this->createdArticles);
-        $this->modelManager->flush();
-    }
-
-    public function createSimilarArticles(array $products, bool $recursive = false)
-    {
-        $associatedProducts = $this->associatedArticlesMapper->getSimilarProducts($products, $recursive);
-        $this->createdArticles = [];
-        foreach ($associatedProducts as $product) {
-            $this->createArticle($product);
-        }
-        $this->associatedArticlesMapper->updateArticleLinks($this->createdArticles);
-        $this->associatedArticlesMapper->setAssociatedArticles($this->createdArticles);
-        $this->modelManager->flush();
-    }
-
     public function deleteArticles(array $products)
     {
         foreach ($products as $product) {
@@ -268,20 +243,12 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $article = $product->getArticle();
         if (! $article) return;
 
-        $probe = $article->getDescription();
-        if ($created || !$probe || $probe === '') {
-            $article->setDescription('');
-        }
+        $article->setDescription($product->getSeoDescription());
+        $article->setMetaTitle($product->getSeoTitle());
 
         $probe = $article->getKeywords();
         if ($created || !$probe || $probe === '') {
             $article->setKeywords('');
-        }
-
-        $probe = $article->getMetaTitle();
-        if ($created || !$probe || $probe === '') {
-            $metaTitle = preg_replace('~\(\d+ Stück pro Packung\)~', '', $product->getName());
-            $article->setMetaTitle($metaTitle);
         }
 
         $article->setName($product->getName());

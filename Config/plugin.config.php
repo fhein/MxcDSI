@@ -52,12 +52,13 @@ use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ArticleCategoryMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DropshippersCompanion;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcDropshipInnocigs\Models\Category;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -74,6 +75,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
+use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
 
 return [
     'plugin'   => [
@@ -81,6 +83,7 @@ return [
     ],
     'doctrine' => [
         'models'     => [
+            Category::class,
             Group::class,
             Model::class,
             Option::class,
@@ -89,18 +92,25 @@ return [
         ],
         'attributes' => [
             's_articles_attributes' => [
-                'mxc_meta_type'         => ['type' => 'string'],
-                'mxc_meta_common_name'  => ['type' => 'string'],
-                'mxc_meta_manufacturer' => ['type' => 'string'],
-                'mxc_meta_supplier'     => ['type' => 'string'],
-                'mxc_meta_brand'        => ['type' => 'string'],
+                'mxc_dsi_active'         => ['type' => TypeMapping::TYPE_BOOLEAN],
+                'mxc_dsi_product_number' => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_product_name'   => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_retail_price'   => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_purchase_price' => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_instock'        => ['type' => TypeMapping::TYPE_INTEGER],
 
-                'mxc_meta_flavor'         => ['type' => 'string'],
-                'mxc_meta_flavor_group'   => ['type' => 'string'],
-                'mxc_meta_base'           => ['type' => 'string'],
-                'mxc_meta_nicotine'       => ['type' => 'string'],
-                'mxc_meta_bottle_size'    => ['type' => 'string'],
-                'mxc_meta_bottle_content' => ['type' => 'string'],
+                'mxc_meta_type'         => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_common_name'  => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_manufacturer' => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_supplier'     => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_brand'        => ['type' => TypeMapping::TYPE_STRING],
+
+                'mxc_meta_flavor'         => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_flavor_group'   => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_base'           => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_nicotine'       => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_bottle_size'    => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_meta_bottle_content' => ['type' => TypeMapping::TYPE_STRING],
 
                 //                'mxc_dsi_mod_cell_type'        => ['type' => 'string'],
                 //                'mxc_dsi_mod_power'            => ['type' => 'string'],
@@ -177,7 +187,7 @@ return [
             ApiClient::class,
             ApiClientSequential::class,
             ArrayReport::class,
-            ArticleCategoryMapper::class,
+            ShopwareCategoryMapper::class,
             ConfiguratorSetRepository::class,
             Credentials::class,
             DetailMapper::class,
@@ -206,7 +216,6 @@ return [
         CommonNameMapper::class         => 'CommonNameMapper.config.php',
         FlavorMapper::class             => 'FlavorMapper.config.php',
         ImportClient::class             => 'ImportClient.config.php',
-        ImportMapper::class             => 'ImportMapper.config.php',
         ManufacturerMapper::class       => 'ManufacturerMapper.config.php',
         NameMapper::class               => 'NameMapper.config.php',
         ProductMappings::class          => 'ProductMappings.config.php',
@@ -215,7 +224,7 @@ return [
         TypeMapper::class               => 'TypeMapper.config.php',
         VariantNumberMapper::class      => 'VariantNumberMapper.config.php',
         ProductSeoMapper::class         => 'ProductSeoMapper.config.php',
-        ArticleCategoryMapper::class    => 'CategoryMapper.config.php',
+        ShopwareCategoryMapper::class   => 'CategoryMapper.config.php',
     ],
     'excel'        => [
         'import' => [
