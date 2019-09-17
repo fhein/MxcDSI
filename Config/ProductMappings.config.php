@@ -232,7 +232,7 @@ return array(
         'brand' => 'SC',
         'piecesPerPack' => 1,
         'content' => '10',
-        'capacity' => '100',
+        'capacity' => '10',
         'flavor' => 'Tabak',
         'flavorCategory' => 'Tabak',
         'addlCategory' => '',
@@ -578,23 +578,59 @@ Die Funktionalität des Gerätes wird durch den Aspire Nautilus Mini "Hollowed O
         'addlCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => '<p>Set mit zehn Flaschen gebrauchsfertigen Liquids in verschiedenen  Tabak Geschmacksrichtungen zum Ausprobieren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen! Im Set sind folgende Liquids enthalten:</p>
+        'description' => '<p>Set mit zehn Flaschen gebrauchsfertigen Liquids in verschiedenen Tabak Geschmacksrichtungen zum Ausprobieren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen! Im Set sind folgende Liquids enthalten:</p>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
-<tr><td>SC -America\'s Finest</td></tr>
-<tr><td>SC -Strong Taste</td></tr>
-<tr><td>SC -Pipe\'s Best</td></tr>
-<tr><td>SC -Delicate Mild</td></tr>
-<tr><td>SC -Virginia\'s Best</td></tr>
-<tr><td>SC -RY4</td></tr>
-<tr><td>SC - Desert Safari</td></tr>
-<tr><td>SC - Taste of America</td></tr>
-<tr><td>SC - Wild West</td></tr>
-<tr><td>SC - Pure</td></tr>
+<tr>
+<td>SC -America\'s Finest</td>
+</tr>
+<tr>
+<td>SC -Strong Taste</td>
+</tr>
+<tr>
+<td>SC -Pipe\'s Best</td>
+</tr>
+<tr>
+<td>SC -Delicate Mild</td>
+</tr>
+<tr>
+<td>SC -Virginia\'s Best</td>
+</tr>
+<tr>
+<td>SC -RY4</td>
+</tr>
+<tr>
+<td>SC - Desert Safari</td>
+</tr>
+<tr>
+<td>SC - Taste of America</td>
+</tr>
+<tr>
+<td>SC - Wild West</td>
+</tr>
+<tr>
+<td>SC - Pure</td>
+</tr>
 </tbody>
 </table>
-<p><br></p>
-<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche </td></tr><tr><td>Geschmack </td><td>verschiedene Tabake</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+<p>&nbsp;</p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Produkt</td>
+<td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche</td>
+</tr>
+<tr>
+<td>Geschmack</td>
+<td>verschiedene Tabake</td>
+</tr>
+<tr>
+<td>Inhaltsstoffe<sup>1</sup></td>
+<td>PG, VG, Aromen, Nikotin nach Wahl</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin.</p>',
     ),
     'IC10000EGOEGOCASE' => array(
         'icNumber' => 'IC10000EGOEGOCASE',
@@ -692,20 +728,56 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'description' => '<p>Set mit zehn Flaschen gebrauchsfertigen Liquids in verschiedenen fruchtigen Geschmacksrichtungen zum Ausprobieren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen! Im Set sind folgende Liquids enthalten:</p>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
-<tr><td>SC -Maracuja</td></tr>
-<tr><td>SC -Blue</td></tr>
-<tr><td>SC -Pfirsich</td></tr>
-<tr><td>SC -Blaubeer Käsekuchen</td></tr>
-<tr><td>SC -Sauerkirsche</td></tr>
-<tr><td>SC -Melonenmix</td></tr>
-<tr><td>SC - Erdbeere</td></tr>
-<tr><td>SC - Himbeere</td></tr>
-<tr><td>SC - Apfelmix</td></tr>
-<tr><td>SC - Exotische Früchte</td></tr>
+<tr>
+<td>SC -Maracuja</td>
+</tr>
+<tr>
+<td>SC -Blue</td>
+</tr>
+<tr>
+<td>SC -Pfirsich</td>
+</tr>
+<tr>
+<td>SC -Blaubeer Käsekuchen</td>
+</tr>
+<tr>
+<td>SC -Sauerkirsche</td>
+</tr>
+<tr>
+<td>SC -Melonenmix</td>
+</tr>
+<tr>
+<td>SC - Erdbeere</td>
+</tr>
+<tr>
+<td>SC - Himbeere</td>
+</tr>
+<tr>
+<td>SC - Apfelmix</td>
+</tr>
+<tr>
+<td>SC - Exotische Früchte</td>
+</tr>
 </tbody>
 </table>
-<p><br></p>
-<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche </td></tr><tr><td>Geschmack </td><td>verschiedene Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+<p>&nbsp;</p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Produkt</td>
+<td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche</td>
+</tr>
+<tr>
+<td>Geschmack</td>
+<td>verschiedene Früchte</td>
+</tr>
+<tr>
+<td>Inhaltsstoffe<sup>1</sup></td>
+<td>PG, VG, Aromen, Nikotin nach Wahl</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin.</p>',
     ),
     'SC10000L10-KS' => array(
         'icNumber' => 'SC10000L10-KS',
@@ -898,10 +970,10 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'base' => null,
         'description' => '<p class="h4"><br>Der Murata (vormals Sony)&nbsp;US18650VTC5A ist ein Akku in der Bauform 18650. Er ist der derzeit sicherste Akku für die Verwendung in E-Zigaretten. Als Nachfolger des Sony US18650VTC5 weist&nbsp; der VTC5A einige Verbesserungen auf.</p>
 <h2 class="h4">Hohe Belastbarkeit</h2>
-<p class="h4">Die Hitzeentwicklung des VTC5A fällt deutlich geringer als beimVorgänger aus und der konstante Entladestrom wurde auf 35A erhöht. Die für einen Akku mit dieser Chemie hohe Kapazität von 2600 mAh garantiert, dass ihm nicht zu rasch die Puste ausgeht.</p>
+<p class="h4">Die Hitzeentwicklung des VTC5A fällt deutlich geringer als beimVorgänger aus und der konstante Entladestrom wurde auf 35A erhöht. Die für einen Akku mit dieser Chemie hohe Kapazität von 2.600 mAh garantiert, dass ihm nicht zu rasch die Puste ausgeht.</p>
 <p class="h4">Der Murata/Sony US18650VTC5A ist für jeden elektronisch geregelten Akkuträger das richtige Kraftwerk, egal, ob Sie mit hohem Strombedarf dampfen für viel Dampf oder eher mit moderatem Strombedarf für viel Geschmack. Ohne eigene Schutzelektronik ist der Murata/Sony US18650VTC5A für jeden elektronisch geregelten Akkuträger die beste Wahl. Verfügt nämlich ein Akku über eine eigene Schutzschaltung, kann es passieren, dass durch Wechselwirkungen mit der Schutzschaltung des Akkuträgers die Funktion des Gerätes beeinträchtigt wird.</p>
 <h2 class="h4">Optimale Sicherheit</h2>
-<p class="h4">Wenn Sie sicher sein wollen, dass Ihr Akku den Anforderungen einer E-Zigarette gewachsen ist, ohne bereits zu wissen,&nbsp; ob und wie sich diese Anforderungen im Laufe der Zeit vielleicht ändern, sind Sie mit dem Murata/Sony US18650VTC5A auf der sicheren Seite. Mit seiner maximalen Stromabgabe von 35 A konstant kann er in jeder Kombination von elektronisch geregeltem Akkuträger und Verdampfer eingesetzt werden, wobei Sie größtmögliche Betriebssicherheit genießen. Der&nbsp;Murata/Sony US18650VTC5A kommt nicht ins Schwitzen, auch wenn Sie vielleicht versehentlich was Falsches einstellen.</p>
+<p class="h4">Wenn Sie sicher sein wollen, dass Ihr Akku den Anforderungen einer E-Zigarette gewachsen ist, ohne bereits zu wissen, ob und wie sich diese Anforderungen im Laufe der Zeit vielleicht ändern, sind Sie mit dem Murata/Sony US18650VTC5A auf der sicheren Seite. Mit seiner maximalen Stromabgabe von 35 A konstant kann er in jeder Kombination von elektronisch geregeltem Akkuträger und Verdampfer eingesetzt werden, wobei Sie größtmögliche Betriebssicherheit genießen. Der&nbsp;Murata/Sony US18650VTC5A kommt nicht ins Schwitzen, auch wenn Sie vielleicht versehentlich was Falsches einstellen.</p>
 <p class="h4">Ihre Vorlieben für Geräte und Verdampfer mögen sich ändern. Dieser Akku ist immer richtig!</p>
 <p class="h4">Technische Daten:</p>
 <table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">
@@ -979,7 +1051,7 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
 <h2>Sicherheitshinweise</h2>
 <p>Lithium Zellen dürfen nur mit Schutzelektronik (elektronisch geregelter Akkusträger) betrieben werden!<br>Zur Vermeidung von Kurzschlüssen transportieren Sie Lithium Zellen nie lose, sondern immer so verpackt, dass die Pole isoliert sind.<br>Falsche Handhabung oder Kurzschluss können zur Brandentwicklung oder Explosion führen.</p>
 <h2><strong>Weitere Eigenschaften</strong></h2>
-<p>Lithium-Ionen Akkus sind thermisch stabil. Sie unterliegen keinem Memory-Effekt und verfügen übe eine hohe Energiedichte,</p>',
+<p>Lithium-Ionen Akkus sind thermisch stabil. Sie unterliegen keinem Memory-Effekt und verfügen über eine hohe Energiedichte,</p>',
     ),
     'SAMSINR25R' => array(
         'icNumber' => 'SAMSINR25R',
@@ -2437,20 +2509,56 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'description' => '<p>Set mit zehn Flaschen gebrauchsfertigen Liquids in verschiedenen Geschmacksrichtungen zum Ausprobieren. Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen! Im Set sind folgende Liquids enthalten:</p>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
-<tr><td>SC -Erdbeer Käsekuchen</td></tr>
-<tr><td>SC -T-Ride</td></tr>
-<tr><td>SC -Vanille</td></tr>
-<tr><td>SC -E-Taste</td></tr>
-<tr><td>SC -Mojito</td></tr>
-<tr><td>SC -Ice</td></tr>
-<tr><td>SC - Erdbeermilch</td></tr>
-<tr><td>SC - Honey Crunch</td></tr>
-<tr><td>SC - Kokos Schokolade</td></tr>
-<tr><td>SC - Cookie</td></tr>
+<tr>
+<td>SC -Erdbeer Käsekuchen</td>
+</tr>
+<tr>
+<td>SC -T-Ride</td>
+</tr>
+<tr>
+<td>SC -Vanille</td>
+</tr>
+<tr>
+<td>SC -E-Taste</td>
+</tr>
+<tr>
+<td>SC -Mojito</td>
+</tr>
+<tr>
+<td>SC -Ice</td>
+</tr>
+<tr>
+<td>SC - Erdbeermilch</td>
+</tr>
+<tr>
+<td>SC - Honey Crunch</td>
+</tr>
+<tr>
+<td>SC - Kokos Schokolade</td>
+</tr>
+<tr>
+<td>SC - Cookie</td>
+</tr>
 </tbody>
 </table>
-<p><br></p>
-<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche </td></tr><tr><td>Geschmack </td><td>verschiedene Geschmacksrichungen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromen, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+<p>&nbsp;</p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Produkt</td>
+<td>Gebrauchsfertiges E-Liquid, 10 x 10ml Flasche</td>
+</tr>
+<tr>
+<td>Geschmack</td>
+<td>verschiedene Geschmacksrichungen</td>
+</tr>
+<tr>
+<td>Inhaltsstoffe<sup>1</sup></td>
+<td>PG, VG, Aromen, Nikotin nach Wahl</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin.</p>',
     ),
     'IC10000L10-RV' => array(
         'icNumber' => 'IC10000L10-RV',
@@ -42748,9 +42856,9 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'dosage' => null,
         'base' => null,
         'description' => '<p>Der asMODus Minikin V3 ist ein sehr formschöner und leistungsstarker Akkuträger, der durch sein ergonomisch abgerundetes Design besonders angenehm in der Hand liegt. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet.</p>
-<p>Der Minikin V3 wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den USB-C Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3 für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
+<p>Der Minikin V3 wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den USB-C Anschluss des Gerätes aufgeladen werden. Darüber hinaus ist der Minikin V3 für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
 <p>Das Herz des Minikin V3 ist der sehr effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Minikin V3 über den USB Anschluss mit einem Laptop oder PC. Der USB Anschluss des Minikin V3S unterstützt USB 3.0.</p>
-<p>Der Minikin V3 verfügt über die Dampf Modi VW (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CCW-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
+<p>Der Minikin V3 verfügt über die Dampf Modi VW (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüber hinaus kann eine persönliche Watt-Kurve festgelegt werden (CCW-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
 <p>Im Watt-Modus liegt die Ausgangsleistung des Minikin V3 zwischen 5 und 200 Watt.&nbsp;Im Temperatur-Modus liegt die Leistung zwischen 5&nbsp; und 120 Watt bei einem einstellbaren Temperaturbereich von 100° bis 300° Celsius.&nbsp;</p>
 <p>Auf dem farbigen HD Touch Display werden Ihnen die eingestellte Wattzahl oder Temperatur, die Anzahl der getätigten Züge, der Ladestand des Akkus sowie der Widerstand des Verdampferkopfs angezeigt. Über das Touch Display nehmen Sie auch Ihre individuellen Einstellungen vor.</p>
 <p>Der Minikin V3 verfügt über einen eingebauten Beschleunigungssensor. Durch dreimaliges Schütteln des Geräts lässt sich das Farbschema des Displays ändern. Diese Funktion ist im Menu abschaltbar. Die Farbe des Displays kann dann über das Menu manuell angepasst werden.</p>
@@ -42826,9 +42934,9 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'description' => '<p>Dieses E-Zigaretten-Set besteht aus dem formschönen und leistungsstarken Akkuträger asMODus Minikin V3S und dem asMODus Viento Verdampfer. Der Viento ist auf das Dampfen im sog. Direct-Lung Stil ausgelegt, bei dem der Dampf direkt in die Lunge inhaliert wird.</p>
 <p><strong>asMODus Minikin V3S</strong></p>
 <p>Der Minikin V3S liegt durch sein ergonomisch abgerundetes Design besonders angenehm in der Hand. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet, der im Unterschied zur Minikin V3 Variante zusätzlich über einen Fingerabdrucksensor verfügt.</p>
-<p>Der Minikin V3S wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den USB-C Anschluss des Gerätes aufgeladen werden. Darüberhinaus ist der Minikin V3S für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
+<p>Der Minikin V3S wird mit zwei wechselbaren18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind. Die Akkuzellen können über ein externes Akku-Ladegerät oder über den USB-C Anschluss des Gerätes aufgeladen werden. Darüber hinaus ist der Minikin V3S für das kabellose Laden über die separat erhältliche Ladestation vorbereitet.</p>
 <p>Das Herz des Minikin V3S ist der sehr effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Minikin V3S über den USB Anschluss mit einem Laptop oder PC. Der USB Anschluss des Minikin V3S unterstützt USB 3.0.</p>
-<p>Der Minikin V3S verfügt über die Dampf Modi VW (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CCW-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
+<p>Der Minikin V3S verfügt über die Dampf Modi VW (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüber hinaus kann eine persönliche Watt-Kurve festgelegt werden (CCW-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
 <p>Im Watt-Modus liegt die Ausgangsleistung des Minikin V3S zwischen 5 und 200 Watt.&nbsp;Im Temperatur-Modus liegt die Leistung zwischen 5&nbsp; und 120 Watt bei einem einstellbaren Temperaturbereich von 100° bis 300° Celsius.&nbsp;</p>
 <p>Auf dem farbigen HD Touch Display werden Ihnen die eingestellte Wattzahl oder Temperatur, die Anzahl der getätigten Züge, der Ladestand des Akkus sowie der Widerstand des Verdampferkopfs angezeigt. Über das Touch Display nehmen Sie auch Ihre individuellen Einstellungen vor.</p>
 <p>Der Minikin V3S verfügt über einen eingebauten Beschleunigungssensor. Durch dreimaliges Schütteln des Geräts lässt sich das Farbschema des Displays ändern. Diese Funktion ist im Menu abschaltbar. Die Farbe des Displays kann dann über das Menu manuell angepasst werden.</p>
@@ -42953,7 +43061,7 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
 <p>Der Amighty liegt durch sein ergonomisches Design besonders angenehm in der Hand. Das Gerät ist mit einem gut und angenehm zu tastenden Feuerknopf ausgestattet.</p>
 <p>Der Amighty wird wahlweise mit einer 20700er oder 21700er Akkuzelle betrieben. Über einen Adapter kann auch ein 18650er Akku verwendet werden. Die Akkuzelle kann über ein externes Akku-Ladegerät oder über den Micro-USB Anschluss des Gerätes aufgeladen werden.</p>
 <p>Das Herz des Amighty ist der effiziente GX-200UTC Chip. Das Betriebssystem des Geräts ist update-fähig. Für ein Software-Update verbinden Sie den Amighty über den USB Anschluss mit einem Laptop oder PC.&nbsp;</p>
-<p>Der Amighty verfügt über die Dampf Modi POWER (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüberhinaus kann eine persönliche Watt-Kurve festgelegt werden (CURVE-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
+<p>Der Amighty verfügt über die Dampf Modi POWER (Watt-Modus), TC (Temperatur-Modus) und TCR (individueller Temperator-Modus). Darüber hinaus kann eine persönliche Watt-Kurve festgelegt werden (CURVE-Modus). Für individuelle Watt-Kurven stehen Ihnen fünf Speicherplätze zur Verfügung. Der Temperatur-Modus unterstützt Wicklungen aus Titan, Nickel und Edelstahl. Im TCR-Modus haben Sie die Möglichkeit, Temperaturkoeffizienten für weitere Drahtsorten individuell festzulegen. Es stehen Ihnen dabei Speicherplätze für fünf Drahtsorten zur Verfügung.</p>
 <p>Im Watt-Modus liegt die Ausgangsleistung des Amighty zwischen 5 und 100 Watt.&nbsp;Im Temperatur-Modus liegt die Leistung zwischen 5&nbsp; und 60 Watt bei einem einstellbaren Temperaturbereich von 100° bis 300° Celsius.&nbsp;</p>
 <p>Auf dem farbigen HD Touch Display werden Ihnen die eingestellte Wattzahl oder Temperatur, die Anzahl der getätigten Züge, der Ladestand des Akkus sowie der Widerstand des Verdampferkopfs angezeigt. Über das Touch Display nehmen Sie auch Ihre individuellen Einstellungen vor. Das Farbschema des Displays lässt sich durch einen Wisch nach unten ändern.</p>
 <p>Der Amighty verfügt über die von asMODus bekannten ausgereiften Schutzschaltungen. Sie schützen die Akkuzellen vor Tiefenentladung, Überladung, Verpolung, Kurzschluss und Überhitzung. Bei einem Kurzschluss oder niedrigem Akkustand wird dies auf dem Display angezeigt und über eine kurze Vibration signalisiert. Die Vibrationsfunktion kann über das Menu abgeschaltet werden.</p>
@@ -47881,13 +47989,13 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'brand' => 'Erste Sahne',
         'piecesPerPack' => 1,
         'content' => '100',
-        'capacity' => '100',
+        'capacity' => '120',
         'flavor' => 'Apfel, Anis',
         'flavorCategory' => 'Früchte, Gewürze',
         'addlCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Erste Sahne. Geschmack: Apfel, Anis.</strong></p><p>Die 100 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 0 ml Nikotin-Shot oder 0 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 100 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Anis</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Erste Sahne. Geschmack: Apfel, Anis.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Anis</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'OS100CM' => array(
         'icNumber' => 'OS100CM',
@@ -56872,20 +56980,42 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
     'CK100A10-AR' => array(
         'icNumber' => 'CK100A10-AR',
         'number' => 'CK100A10-AR',
-        'name' => '510CloudPark - Apple-Ranger - Aroma - 20 ml',
+        'name' => '510CloudPark - Apple-Ranger - Aroma - 15 ml',
         'commonName' => 'Apple-Ranger',
         'type' => 'AROMA',
         'category' => 'AROMEN > Früchte#!#AROMEN > Frisches & Eiscreme',
         'supplier' => '510CloudPark',
         'brand' => '510CloudPark',
         'piecesPerPack' => 1,
-        'content' => '20',
+        'content' => '15',
         'capacity' => '120',
         'flavor' => 'Apfel, Koolada',
         'flavorCategory' => 'Früchte, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von 510CloudPark</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfel, Koolada</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von 510CloudPark</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfel, Koolada</strong>.</p>
+<p>15 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>
+<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>
+<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Produkt</td>
+<td>15 ml Aroma in einer 120 ml Flasche</td>
+</tr>
+<tr>
+<td>Geschmack</td>
+<td>Apfel, Koolada</td>
+</tr>
+<tr>
+<td>Dosierung</td>
+<td>Flasche bis oben mit Basis auffüllen</td>
+</tr>
+<tr>
+<td>Inhaltsstoffe</td>
+<td>Propylenglykol, Aromastoffe</td>
+</tr>
+</tbody>
+</table>',
     ),
     'SK100PN' => array(
         'icNumber' => 'SK100PN',
