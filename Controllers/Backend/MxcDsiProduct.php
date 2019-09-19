@@ -71,6 +71,23 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function updateSelectedFromModelAction()
+    {
+        try {
+            $params = $this->request->getParams();
+            $ids = json_decode($params['ids'], true);
+
+            $services = MxcDropshipInnocigs::getServices();
+            $mapper = $services->get(ImportMapper::class);
+
+            //$products = $this->getRepository()->getProductsByIds($ids);
+            $mapper->updateFromModel(false, $ids);
+            $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function updatePricesAction()
     {
         try {

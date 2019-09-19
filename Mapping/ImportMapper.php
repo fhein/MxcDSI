@@ -306,7 +306,15 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         foreach ($rOptions as $option) {
             if ($option === null) continue;
             $param = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $option);
-            $variant->removeOption($this->options[$param[0]][$param[1]]);
+            $optionName = $this->propertyMapper->mapOptionName($param[1]);
+            $groupName = $this->propertyMapper->mapGroupName($param[0]);
+
+            $variantOptions = $variant->getOptions();
+            foreach ($variantOptions as $variantOption){
+                $name = $variantOption->getName();
+                $group = $variantOption->getICGroup()->getName();
+                if($group == $groupName && $name == $optionName) $variant->removeOption($variantOption);
+            }
         }
         $addedOptions = array_diff($newOptions, $oldOptions);
         $addedOptions = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $addedOptions);
@@ -430,6 +438,84 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $this->productMapper->updateArticles($this->updates);
 
         return true;
+    }
+
+    public function updateFromModel(bool $updateAll, Array $ids = null)
+    {
+        $this->initCache(); //sets "new" fields
+
+        $model = new Model();
+        $modelfields = $model->getPrivatePropertyNames();
+
+        //get products to change
+        if ($updateAll){
+
+        }else{
+            $products = $this->getProductRepository()->getProductsByIds($ids);
+        }
+
+        $changes = [];
+
+
+        $modelClass = new \ReflectionClass('MxcDropshipInnocigs\Models\Model');
+
+        foreach ($products as $product) {
+
+            //get all variants
+            $variants = $product->getVariants();
+
+            foreach ($variants as $variant) {
+                //get models
+                $model = $this->getModelRepository()->findOneBy(['model' => $variant->getNumber()]);
+
+                $number = $model->getModel();
+                $fields = [];
+                foreach ($modelfields as $field) {
+
+                        $property = $modelClass->getProperty($field);
+                        $property->setAccessible(true);
+
+                    if($field == 'options') {
+                        //$param = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $property->getValue($model));
+
+                        $oldOptions = $variant->getOptions();
+                        $oldOptionString = [];
+                        foreach($oldOptions as $oldOption){
+                            $oldGroupName = $this->propertyMapper->unMapGroupName($oldOption->getICGroup()->getName());
+                            //$oldOptionString .= MxcDropshipInnocigs::MXC_DELIMITER_L1;
+                            $oldOptionName = $this->propertyMapper->unMapOptionName($oldOption->getName());
+                            array_push($oldOptionString,$oldGroupName . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $oldOptionName);
+                        }
+                        $oldOptions = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $oldOptionString);
+
+
+                        $fields[$field] = [
+                            'oldValue' => $oldOptions,
+                            'newValue' => $property->getValue($model)
+                        ];
+                    }else {
+
+                        $fields[$field] = [
+                            'oldValue' => '*unknown*',
+                            'newValue' => $property->getValue($model)
+                        ];
+                    }
+                }
+                if (!empty($fields)) {
+                    $changes[$number] = [
+                        'model'  => $model,
+                        'fields' => $fields,
+                    ];
+                }
+            }
+    }
+
+        $this->changeExistingVariants($changes);
+        $this->propertyMapper->mapProperties($this->updates, true);
+
+        //$this->modelManager->flush();
+
+
     }
 
     /**

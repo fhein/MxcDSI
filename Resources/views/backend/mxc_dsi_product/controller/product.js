@@ -13,6 +13,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcSaveProduct:                      me.onSaveProduct,
                 mxcImportItems:                      me.onImportItems,
                 mxcImportItemsSequential:            me.onImportItemsSequential,
+                mxcUpdateSelectedFromModel:          me.onUpdateSelectedFromModel,
 
                 // Remapping
 
@@ -223,6 +224,18 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Update';
         let maskText = 'Updating products from InnoCigs ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onUpdateSelectedFromModel: function (grid) {
+        let me = this;
+        let maskText = 'Updating products from model.';
+        let growlTitle = 'Update';
+        let url = '{url controller=MxcDsiProduct action=updateSelectedFromModel}';
+        let params = {
+            ids: me.getSelectedIds(grid.getSelectionModel())
+        };
+
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

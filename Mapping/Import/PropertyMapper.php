@@ -147,10 +147,22 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         return $this->classConfig['group_names'][$name] ?? $name;
     }
 
+    public function unMapGroupName($name)
+    {
+        $key = array_search($name, $this->classConfig['group_names']) ?? $name;
+        return $key ? $key : $name;
+    }
+
     public function mapOptionName($name)
     {
         $mapping = $this->classConfig['option_names'][$name] ?? $name;
         return str_replace('weiss', 'weiß', $mapping);
+    }
+
+    public function unMapOptionName($name)
+    {
+        $key = array_search($name, $this->classConfig['option_names'])  ?? $name;
+        return $key ? $key : $name;
     }
 
     protected function getModels()
