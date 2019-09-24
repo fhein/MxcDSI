@@ -129,6 +129,10 @@ class ProductRepository extends BaseEntityRepository
             . 'FROM MxcDropshipInnocigs\Models\Product p '
             . 'WHERE p.type IN (\'AROMA\', \'SHAKE_VAPE\', \'LIQUID\', \'EASY3_CAP\')',
 
+        'getExcelExportNewProducts' =>
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name '
+            . 'FROM MxcDropshipInnocigs\Models\Product p '
+            . 'WHERE p.new = 1',
     ];
 
     protected $sql = [

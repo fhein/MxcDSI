@@ -276,7 +276,7 @@ return array(
             'title' => 'E-Zigaretten günstig online kaufen!',
             'description' => 'E-Zigaretten günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'E-Zigarette,günstig,kaufen',
-            'h1' => 'ZUBEHÖR FÜR DIE E-ZIGARETTE',
+            'h1' => 'E-ZIGARETTEN',
         ),
         'E-ZIGARETTEN > E-Hookah & Vaporizer' => array(
             'title' => 'E-Hookah und Vaporizer günstig online kaufen!',

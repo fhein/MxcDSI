@@ -11,6 +11,7 @@ use MxcDropshipInnocigs\Excel\ExportDescription;
 use MxcDropshipInnocigs\Excel\ExportDosage;
 use MxcDropshipInnocigs\Excel\ExportFlavor;
 use MxcDropshipInnocigs\Excel\ExportMapping;
+use MxcDropshipInnocigs\Excel\ExportNewProducts;
 use MxcDropshipInnocigs\Excel\ExportPrices;
 use MxcDropshipInnocigs\Excel\ExportSheetFactory;
 use MxcDropshipInnocigs\Excel\ImportDescription;
@@ -179,6 +180,7 @@ return [
             ExportDosage::class      => AugmentedObjectFactory::class,
             ExportFlavor::class      => AugmentedObjectFactory::class,
             ExportDescription::class => AugmentedObjectFactory::class,
+            ExportNewProducts::class => AugmentedObjectFactory::class,
             ExportMapping::class     => AugmentedObjectFactory::class,
 
             ExcelProductImport::class => ExcelImportFactory::class,
@@ -235,11 +237,12 @@ return [
             'Mapping'      => ImportMapping::class,
         ],
         'export' => [
-            'Preise'       => ExportPrices::class,
-            'Dosierung'    => ExportDosage::class,
-            'Geschmack'    => ExportFlavor::class,
-            'Beschreibung' => ExportDescription::class,
-            'Mapping'      => ExportMapping::class,
+            'Neue Produkte' => ExportNewProducts::class,
+            'Preise'        => ExportPrices::class,
+            'Dosierung'     => ExportDosage::class,
+            'Geschmack'     => ExportFlavor::class,
+            'Beschreibung'  => ExportDescription::class,
+            'Mapping'       => ExportMapping::class,
         ],
     ],
 ];

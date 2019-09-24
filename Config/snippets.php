@@ -24,5 +24,28 @@
 //    $this->handleException($e);
 //}
 
+// log products with main detail out of stock
+//$manager = $this->getManager();
+//$articles = $manager->getRepository(Article::class)->findAll();
+///** @var Article $article */
+//$services = MxcDropshipInnocigs::getServices();
+//$log = $services->get('logger');
+//foreach ($articles as $article) {
+//    /** @noinspection PhpUndefinedMethodInspection */
+//    if ($article->getMainDetail()->getAttribute()->getDcIcInstock() > 0) continue;
+//    $details = $article->getDetails();
+//    /** @var Detail $detail */
+//    foreach ($details as $detail) {
+//        if ($detail->getKind() === 1 || empty($detail->getActive())) continue;
+//        /** @noinspection PhpUndefinedMethodInspection */
+//        if ($detail->getAttribute()->getDcIcInstock() > 0) {
+//            $log->debug('Product with main detail out of stock: ' . $article->getName());
+//            break;
+//        }
+//    }
+//}
+//
+//$this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
+
 
 
