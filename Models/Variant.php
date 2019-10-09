@@ -203,8 +203,15 @@ class Variant extends ModelEntity
     public function addOptions(ArrayCollection $options)
     {
         foreach ($options as $option) {
-            $this->addOption($option);
+            if (!$this->hasOption($option)) {
+                $this->addOption($option);
+            }
         }
+    }
+
+    public function hasOption(Option $option)
+    {
+        return ($this->options->contains($option));
     }
 
     public function removeOption(Option $option)

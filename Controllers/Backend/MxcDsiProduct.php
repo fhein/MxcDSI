@@ -27,6 +27,7 @@ use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
@@ -74,15 +75,28 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updateSelectedFromModelAction()
     {
         try {
-            $params = $this->request->getParams();
-            $ids = json_decode($params['ids'], true);
+            $products = $this->getSelectedProducts($this->request);
 
             $services = MxcDropshipInnocigs::getServices();
             $mapper = $services->get(ImportMapper::class);
 
-            //$products = $this->getRepository()->getProductsByIds($ids);
-            $mapper->updateFromModel(false, $ids);
+            $mapper->updateFromModel($products);
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function downloadImagesAction()
+    {
+        try {
+            $products = $this->getSelectedProducts($this->request);
+
+            $services = MxcDropshipInnocigs::getServices();
+            $mapper = $services->get(ImportMapper::class);
+            $mapper->downloadImages($products);
+
+            $this->view->assign(['success' => true, 'message' => 'Items were successfully downloaded.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

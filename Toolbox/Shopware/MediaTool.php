@@ -37,13 +37,16 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->mediaService = $container->get('shopware_media.media_service');
     }
 
-    protected function getMedia(string $swUrl, string $url){
+    public function getMedia(string $swUrl, string $url, bool $loadThumbnails){
 
         $media = $this->getMediaRepository()->findOneBy(['path' => $swUrl]);
-        if (null === $media) {
+        if (null === $media && $swUrl != '') {
             $media = $this->createMedia($swUrl, $url);
+            $media->loadThumbnails();
+            $this->modelManager->flush($media);
+        }elseif ($loadThumbnails) { // influences performance. Only load when necessary
+            $media->loadThumbnails();
         }
-        $media->loadThumbnails();
 
         return $media;
     }
@@ -77,7 +80,7 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
     }
 
     /**
-     * Downloads image from given url if the image is not present already
+     * Creates a shopware image from media
      *
      * @param string $url
      * @param int $position
@@ -85,36 +88,58 @@ class MediaTool implements LoggerAwareInterface, ModelManagerAwareInterface
      */
     public function getImage(string $url, int $position):Image
     {
+        $swUrl = $this->downloadImage($url);
+        $image = null;
+
+        if ($swUrl != '') {
+            $urlInfo = pathinfo($url);
+            $media = $this->getMedia($swUrl, $url, true);
+
+            $image = new Image();
+            $this->modelManager->persist($image);
+
+            $image->setMedia($media);
+            $image->setExtension($urlInfo['extension']);
+            $image->setMain(($position > 1) ? 2 : 1);
+            $image->setPath($media->getName());
+            $image->setPosition($position);
+
+            // Important to avoid 'A new entity was detected which is not configured to cascade persist'
+            $this->modelManager->flush($image);
+        }
+        return $image;
+    }
+
+    /**
+     * Downloads image from given url if the image is not present already. Returns path of downloaded file
+     * Returns shopware url if filename is valid, else ''
+     *
+     * @param string $url
+     * @return $swUrl
+     */
+    public function downloadImage(string $url){
+
+        //$test = $this->mediaService->getUrl('media/image/Geek-Vape-Aegis-Legend-200-Watt-Jade_1.png');
         $urlInfo = pathinfo($url);
         $swUrl = 'media/image/' . $urlInfo['basename'];
 
-        if (! $this->mediaService->has($swUrl)) {
+        if (!$this->mediaService->has($swUrl)) {
             $this->log->debug('Downloading image from ' . $url);
             $fileContent = file_get_contents($url);
 
-            // save to filesystem
+            if ($fileContent == false) {
+                $this->log->debug('No image found at given url ' . $swUrl);
+                return '';
+            }
+
             $this->log->debug('Saving image to ' . $swUrl);
             $this->mediaService->write($swUrl, $fileContent);
         } else {
             $this->log->debug('Media service already has image ' . $swUrl);
         }
-
-        $media = $this->getMedia($swUrl, $url);
-
-        $image = new Image();
-        $this->modelManager->persist($image);
-
-        $image->setMedia($media);
-        $image->setExtension($urlInfo['extension']);
-        $image->setMain(($position > 1) ? 2 : 1);
-        $image->setPath($media->getName());
-        $image->setPosition($position);
-
-        // Important to avoid 'A new entity was detected which is not configured to cascade persist'
-        $this->modelManager->flush($image);
-        return $image;
-
+        return $swUrl;
     }
+
 
     public function createDetailImage(string $url, Detail $detail) {
         $urlInfo = pathinfo($url);

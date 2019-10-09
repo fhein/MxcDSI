@@ -7,6 +7,8 @@ namespace MxcDropshipInnocigs\Mapping;
 use Doctrine\Common\Collections\ArrayCollection;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
@@ -24,10 +26,12 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Models\VariantRepository;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 
-class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
+class ImportMapper implements ModelManagerAwareInterface, ClassConfigAwareInterface, LoggerAwareInterface
 {
     use LoggerAwareTrait;
+    use ClassConfigAwareTrait;
     use ModelManagerAwareTrait;
 
     protected $useCache = false;
@@ -55,6 +59,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     /** @var ProductMapper $productMapper */
     protected $productMapper;
+
+    /** @var MediaTool $mediaTool */
+    protected $mediaTool;
 
     /** @var CategoryMapper */
     protected $categoryMapper;
@@ -94,13 +101,15 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         PropertyMapper $propertyMapper,
         CategoryMapper $categoryMapper,
         ProductMapper $productMapper,
-        DetailMapper $detailMapper
+        DetailMapper $detailMapper,
+    MediaTool $mediaTool
     ) {
         $this->articleTool = $articleTool;
         $this->detailMapper = $detailMapper;
         $this->categoryMapper = $categoryMapper;
         $this->propertyMapper = $propertyMapper;
         $this->productMapper = $productMapper;
+        $this->mediaTool = $mediaTool;
     }
 
     /**
@@ -132,6 +141,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     public function mapOptions(?string $optionString): ArrayCollection
     {
         if ($optionString === null) return new ArrayCollection();
+        if ($optionString == '') return new ArrayCollection();
         $optionArray = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $optionString);
         $options = [];
         foreach ($optionArray as $option) {
@@ -323,13 +333,16 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     protected function changeVariant(Variant $variant, Model $model, array $fields)
     {
-        $remap = false;
+        $remap = false; //triggers product- and variant mapping and  update of corresponding shopware article
         foreach ($fields as $name => $values) {
             switch ($name) {
                 // case 'category': Category is not currently used for mapping
                 case 'manufacturer':
                 case 'productName':
                     $remap = true;
+                    break;
+                case 'name':
+                    $variant->setName($model->getName());
                     break;
                 case 'description':
                     $product = $variant->getProduct();
@@ -340,28 +353,43 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
                     if ($product->getDescription() === $oldIcDescription) {
                         $product->setDescription($newIcDescription);
                     }
+                    $remap = true;
                     break;
                 case 'ean':
                     $ean = $model->getEan();
                     $variant->setEan($ean);
                     $detail = $variant->getDetail();
                     if ($detail !== null) $detail->setEan($ean);
+                    $remap = true;
                     break;
                 case 'recommendedRetailPrice':
                     $recommendedRetailPrice = str_replace(',', '.', $model->getRecommendedRetailPrice());
                     $variant->setRecommendedRetailPrice($recommendedRetailPrice);
+                    $remap = true;
                     break;
                 case 'purchasePrice':
                     $purchasePrice = str_replace(',', '.', $model->getPurchasePrice());
                     $variant->setPurchasePrice($purchasePrice);
                     $detail = $variant->getDetail();
                     if ($detail !== null) $detail->setPurchasePrice(floatval($purchasePrice));
+                    $remap = true;
                     break;
                 case 'images':
                     $variant->setImages($model->getImages());
+                    $remap = true;
+                    break;
+                case 'manual':
+                    $product = $variant->getProduct();
+                    $product->setManual($model->getManual());
+                    $remap = true;
+                    break;
+                case 'content':
+                    $variant->setContent($model->getContent());
+                    $remap = true;
                     break;
                 case 'options':
                     $this->changeOptions($variant, $values['oldValue'], $values['newValue']);
+                    $remap = true;
                     break;
                 default:
                     $this->log->debug(
@@ -440,64 +468,79 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         return true;
     }
 
-    public function updateFromModel(bool $updateAll, Array $ids = null)
+    public function updateFromModel($products)
     {
-        $this->initCache(); //sets "new" fields
-
-        $model = new Model();
-        $modelfields = $model->getPrivatePropertyNames();
-
-        //get products to change
-        if ($updateAll){
-
-        }else{
-            $products = $this->getProductRepository()->getProductsByIds($ids);
-        }
-
         $changes = [];
 
+        $model = new Model();
+        $modelFields = $model->getPrivatePropertyNames();
 
-        $modelClass = new \ReflectionClass('MxcDropshipInnocigs\Models\Model');
+        //push all product changes to $changes array
+        foreach ($products as $curProduct) {
+            $variants = $curProduct->getVariants();
 
-        foreach ($products as $product) {
-
-            //get all variants
-            $variants = $product->getVariants();
-
-            foreach ($variants as $variant) {
-                //get models
-                $model = $this->getModelRepository()->findOneBy(['model' => $variant->getNumber()]);
+            foreach ($variants as $curVariant) {
+                $model = $this->getModelRepository()->findOneBy(['model' => $curVariant->getNumber()]);
 
                 $number = $model->getModel();
                 $fields = [];
-                foreach ($modelfields as $field) {
 
-                        $property = $modelClass->getProperty($field);
-                        $property->setAccessible(true);
+                foreach ($modelFields as $field) {
+                    $oldValue = '';
+                    $newValue = '';
 
-                    if($field == 'options') {
-                        //$param = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $property->getValue($model));
+                    switch ($field) {
+                        case 'options':
+                            //map new values to make options comparable
+                            $newValue = $model->{'get'. $field}();
 
-                        $oldOptions = $variant->getOptions();
-                        $oldOptionString = [];
-                        foreach($oldOptions as $oldOption){
-                            $oldGroupName = $this->propertyMapper->unMapGroupName($oldOption->getICGroup()->getName());
-                            //$oldOptionString .= MxcDropshipInnocigs::MXC_DELIMITER_L1;
-                            $oldOptionName = $this->propertyMapper->unMapOptionName($oldOption->getName());
-                            array_push($oldOptionString,$oldGroupName . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $oldOptionName);
-                        }
-                        $oldOptions = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $oldOptionString);
+                            $newValues = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $newValue);
+                            $newOptionString = [];
+                            foreach($newValues as $newValue){
+                                $curOption = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $newValue);
+                                $newGroupName = $this->propertyMapper->mapGroupName($curOption[0]);
+                                $newOptionName = $this->propertyMapper->mapOptionName($curOption[1]);
+                                array_push($newOptionString, $newGroupName . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $newOptionName);
+                            }
+                            asort($newOptionString);
+                            $newValue = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $newOptionString);
 
+                            //get old values
+                            $oldOptions = $curVariant->getOptions();
+                            $oldOptionString = [];
+                            foreach($oldOptions as $oldOption) {
+                                $oldGroupName = $oldOption->getICGroup()->getName();
+                                $oldOptionName = $oldOption->getName();
+                                array_push($oldOptionString,$oldGroupName . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $oldOptionName);
+                            }
+                            asort($oldOptionString);
+                            $oldValue = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $oldOptionString);
 
+                            break;
+                        case 'category': //category field is currently not used to map product categories
+                        case 'manufacturer': // manufacturer is currently read from Product config file
+                            break;
+                        default:
+                            $mapedClassConfig = $this->classConfig['modelMapping'][$field];
+
+                            if ($mapedClassConfig != null) {
+                                $oldValue = ${'cur' . $mapedClassConfig[0]}->{'get'.$mapedClassConfig[1]}();
+                            }
+                            $newValue = $model->{'get'. $field}();
+
+                            // bring values into the same format
+                            if ($field== 'recommendedRetailPrice' || $field == 'purchasePrice'){
+                                $oldValue = str_replace('.', ',', $oldValue);
+                            }
+                            if ($field == 'productName') { //necessary to remove option texts from product name
+                                $namePos = strpos($oldValue, $newValue);
+                                if($namePos == 0 ) $newValue = $oldValue;
+                            }
+                    }
+                    if ($oldValue != $newValue) {
                         $fields[$field] = [
-                            'oldValue' => $oldOptions,
-                            'newValue' => $property->getValue($model)
-                        ];
-                    }else {
-
-                        $fields[$field] = [
-                            'oldValue' => '*unknown*',
-                            'newValue' => $property->getValue($model)
+                            'oldValue' => $oldValue,
+                            'newValue' => $newValue
                         ];
                     }
                 }
@@ -508,16 +551,30 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
                     ];
                 }
             }
+        }
+        $this->import($changes);
     }
 
-        $this->changeExistingVariants($changes);
-        $this->propertyMapper->mapProperties($this->updates, true);
+    public function downloadImages($products){
+        $this->log->debug('Start Downloading all images');
+        foreach ($products as $product) {
+            $variants = $product->getVariants();
 
-        //$this->modelManager->flush();
+            foreach ($variants as $curVariant) {
+                $model = $this->getModelRepository()->findOneBy(['model' => $curVariant->getNumber()]);
+                $icImageUrls = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $model->getImages());
 
-
+                foreach ($icImageUrls as $icImageUrl) {
+                    if ($icImageUrl!='') {
+                        $swUrl = $this->mediaTool->downloadImage($icImageUrl);
+                        $this->mediaTool->getMedia($swUrl, $icImageUrl, false);
+                    }
+                }
+            }
+        }
+        $this->modelManager->flush();
+        $this->log->debug('Download finished');
     }
-
     /**
      * @return ProductRepository
      */

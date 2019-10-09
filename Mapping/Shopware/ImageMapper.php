@@ -61,6 +61,10 @@ class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $icImageUrls = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $variant->getImages());
         foreach ($icImageUrls as $icImageUrl) {
             if (empty($icImageUrl)) continue;
+
+            $urlInfo = pathinfo($icImageUrl);
+            if ($urlInfo['extension'] == '') continue;
+
             $image = $this->mainImages[$icImageUrl];
 
             if (null === $image) {

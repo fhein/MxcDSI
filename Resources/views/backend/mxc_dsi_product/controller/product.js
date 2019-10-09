@@ -14,6 +14,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcImportItems:                      me.onImportItems,
                 mxcImportItemsSequential:            me.onImportItemsSequential,
                 mxcUpdateSelectedFromModel:          me.onUpdateSelectedFromModel,
+                mxcDownloadImages:                   me.onDownloadImages,
 
                 // Remapping
 
@@ -232,11 +233,27 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let maskText = 'Updating products from model.';
         let growlTitle = 'Update';
         let url = '{url controller=MxcDsiProduct action=updateSelectedFromModel}';
-        let params = {
-            ids: me.getSelectedIds(grid.getSelectionModel())
-        };
 
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
+        let selModel = grid.getSelectionModel();
+        let params = {};
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
+    },
+
+    onDownloadImages: function (grid) {
+        let me = this;
+        let maskText = 'Downloading images...';
+        let growlTitle = 'Download';
+        let url = '{url controller=MxcDsiProduct action=downloadImages}';
+
+        let params = {};
+        me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
     },
 
     onUpdatePrices: function (grid) {

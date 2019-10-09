@@ -8,6 +8,7 @@ use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 class ImportMapperFactory implements FactoryInterface
@@ -28,12 +29,15 @@ class ImportMapperFactory implements FactoryInterface
         $categoryMapper = $container->get(CategoryMapper::class);
         $productMapper = $container->get(ProductMapper::class);
         $detailMapper = $container->get(DetailMapper::class);
+        $mediaTool = $container->get(MediaTool::class);
+
         return $this->augment($container, new ImportMapper(
             $articleTool,
             $propertyMapper,
             $categoryMapper,
             $productMapper,
-            $detailMapper
+            $detailMapper,
+            $mediaTool
         ));
     }
 }

@@ -60,6 +60,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcImportItems',
           'mxcImportItemsSequential',
           'mxcUpdateSelectedFromModel',
+          'mxcDownloadImages',
           'mxcUpdatePrices',
           'mxcRefreshItems',
           'mxcCheckRegularExpressions',
@@ -515,10 +516,17 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
-                    text: 'Update Selected From Model',
+                    text: 'Update From Model',
                     iconCls: 'sprite-download-cloud',
                     handler: function() {
                         me.fireEvent('mxcUpdateSelectedFromModel', me);
+                    }
+                },
+                {
+                    text: 'Download all Images',
+                    iconCls: 'sprite-download-cloud',
+                    handler: function() {
+                        me.fireEvent('mxcDownloadImages', me);
                     }
                 },
                 '-',

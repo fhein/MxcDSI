@@ -216,6 +216,7 @@ return [
         CommonNameMapper::class         => 'CommonNameMapper.config.php',
         FlavorMapper::class             => 'FlavorMapper.config.php',
         ImportClient::class             => 'ImportClient.config.php',
+        ImportMapper::class             => 'ImportMapper.config.php',
         ManufacturerMapper::class       => 'ManufacturerMapper.config.php',
         NameMapper::class               => 'NameMapper.config.php',
         ProductMappings::class          => 'ProductMappings.config.php',

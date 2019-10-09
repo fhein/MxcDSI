@@ -29,6 +29,22 @@ return [
 //            ],
         ],
     ],
+    'modelMapping' => [
+        'category' => ['Product','category'],
+        'master' => ['Product','icNumber'],
+        'model' => ['Variant','icNumber'],
+        'ean' => ['Variant','ean'],
+        'name' => ['Variant','name'],
+        'productName' => ['Variant','name'],
+        'unit' => ['Variant','unit'],
+        'content' => ['Variant','content'],
+        'description' => ['Product','icDescription'],
+        'purchasePrice' => ['Variant','purchasePrice'],
+        'recommendedRetailPrice' => ['Variant','recommendedRetailPrice'],
+        'images' => ['Variant','images'],
+        'manufacturer' => ['Product','manufacturer'],
+        'manual' => ['Product','manual']
+    ]
 
     // this is an attempt to define rules to set the accepted state on creation
 //    'accept_filter' => [
