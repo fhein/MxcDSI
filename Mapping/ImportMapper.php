@@ -306,7 +306,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         foreach ($rOptions as $option) {
             if ($option === null) continue;
             $param = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $option);
-            $variant->removeOption($this->options[$param[0]][$param[1]]);
+            $o = $this->options[$param[0]][$param[1]];
+            if ($o !== null) {
+                $variant->removeOption($o);
+            }
         }
         $addedOptions = array_diff($newOptions, $oldOptions);
         $addedOptions = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $addedOptions);

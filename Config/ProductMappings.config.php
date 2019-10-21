@@ -678,16 +678,17 @@ Die Funktionalität des Gerätes wird durch den Aspire Nautilus Mini "Hollowed O
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Carry Case XL von InnoCigs ist ein Etui, dass Ihnen genügend Platz bietet, um Ihre E-Zigarette mit Zubehör sicher zu verstauen. Das Case wird von Joyetech produziert und ist durch seine Größe für eine Vielzahl von E-Zigaretten Modellen geeignet. Entscheidend sind hier die Maße. Mit einer Länge von 19 Zentimetern und einer Tiefe von 8,5 Zentimetern ist das Etui 3,5 Zentimeter hoch. Damit ist es äußerlich praktisch kompakt, während der Innenraum Platz für größere E-Zigaretten mit 1000 mAh Akku bietet. <br>
-<br>
-<br>
-Im Inneren des Etuis ist durch die verschiedenen Fächer und Ösen für den sicheren Halt Ihrer Utensilien gesorgt. So können Sie Ihre E-Zigarette, Ladekabel und Liquid wunderbar geordnet verstauen. Die harte Hülle des Cases schützt außerdem zuverlässig vor Erschütterungen und Stößen. Sie wird durch einen hochwertigen Reißverschluss sicher geschlossen.<br>
-<br>
-<br>
-Das Carry XL Case bietet Ihnen eine komfortable und sichere Aufbewahrungsmöglichkeit für Ihre E-Zigaretten Utensilien zu Hause und unterwegs. Im schlichten Anthrazit ist das Etui ein eleganter Begleiter. <br>
-<br>
-<br>
-InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte ausgenommen Verdampferköpfe / Atomizer Heads.',
+        'description' => '<p><span> Das Carry Case XL Etui von InnoCigs bietet genügend Platz, um Ihre E-Zigarette mit Zubehör sicher zu verstauen. Es&nbsp;</span>ist äußerlich praktisch kompakt, während der Innenraum auch Platz für größere E-Zigaretten bietet.<span>&nbsp;</span></p>
+<p><span> Im Inneren des Etuis sorgen verschiedene Fächer und Ösen für einen sicheren Halt Ihrer Utensilien. So können Sie Ihre E-Zigarette, Ladekabel und Liquid wunderbar geordnet verstauen. Die harte Hülle des Cases schützt außerdem zuverlässig vor Erschütterungen und Stößen. Sie wird durch einen hochwertigen Reißverschluss sicher geschlossen.</span></p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Maße:</td>
+<td class="auto-style1">19 cm x 8,5 cm x 3,5 cm</td>
+</tr>
+</tbody>
+</table>',
     ),
     'SC10000L10-PF' => array(
         'icNumber' => 'SC10000L10-PF',
@@ -3087,7 +3088,16 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '<p>Die Tasche mit Schulterriemen ist unterteilt in zwei Ebenen, die separat voneinander geöffnet werden können. Damit bietet diese Tasche nicht nur viel Platz für Ihre E-Zigaretten sondern auch viel Stauraum für Ihr sämtliches Zubehör wie Verdampfer, Akkuträger, Akku-Zellen oder auch Ladezubehör. Sie ist dank des Tragegriffs und dem abnehmbaren Schulterriemen gut zu transportieren.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Maße:</td>
+<td class="auto-style1">21,5 cm x 16 cm x 7 cm</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IC10000TAG' => array(
         'icNumber' => 'IC10000TAG',
@@ -3106,7 +3116,16 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '<p>Diese Tasche mit Tragegriff bietet viel Stauraum für Ihre Liquids, Ersatzakkus, Verdampfer und natürlich Ihren E-Zigaretten. Sie ist die perfekte Transport- und Aufbewahrungstasche. Die zwei Hauptfächer der Tasche können separat voneinander geöffnet werden.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Maße:</td>
+<td class="auto-style1">20 cm x 17 cm x 6 cm</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IC10000TAM' => array(
         'icNumber' => 'IC10000TAM',
@@ -3125,7 +3144,17 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '<p>Die Multifunktionstasche von InnoCigs ist klein und kompakt zum Transport einer E-Zigarette, sowie weiterer Dampfer-Utensilien. Diese können entweder in 2 Hauptfächern verstaut werden oder in einem zusätzlichen dafür vorgesehenen Reißverschlussfach.</p>
+<p>Die Tasche kann über 2 Gürtelschlaufen an Ihrer Hose befestigt werden, aber auch über den mitgelieferten Karabinerhaken.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Maße:</td>
+<td class="auto-style1">11,3 cm x 8,8 cm</td>
+</tr>
+</tbody>
+</table>',
     ),
     'SC10000L10-MS' => array(
         'icNumber' => 'SC10000L10-MS',
@@ -5297,7 +5326,17 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => 'Sie haben die Möglichkeit die Aspire K2 & K3 Mundstücke entweder aus Edelstahl oder aus Kunststoff zu erwerben. Die Aspire K2 & K3 Edelstahlmundstücke bekommen Sie in einer 5er Packung und die Kunststoffmundstücke in einer 10er Packung. Beide Mundstücke eignen sich für das Aspire K2 und K3 Set.
+<br>
+<br>
+<b>Lieferumfang Edelstahlmundstücke:</b>
+<li>Je Packung 5x Edelstahlmundstücke </li>
+<br>
+<br>
+<b>Lieferumfang Kunststoffmundstücke:</b>
+<li>Je Packung 10x Kunststoffmundstücke </li>
+<br>
+<br>',
     ),
     'SM100P228NS' => array(
         'icNumber' => 'SM100P228NS',
@@ -6875,7 +6914,9 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => 'Die InnoCigs Vape Bands haben einen Durchmesser von 21 oder 24 Millimetern. Mit den InnoCigs Vape Bands bieten Sie Ihrem Clearomizer bzw. Glastank einen Schutz vor eventuellen Sturz- oder Kratzschäden. Zudem können Sie mit den Vape Bands die Optik Ihres Clearomizers ganz individuell anpassen.
+<br>
+<br>',
     ),
     'SC100A10-KF' => array(
         'icNumber' => 'SC100A10-KF',
@@ -7779,7 +7820,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 30 ml Fassungsvermögen aus lebensmittelechtem LDPE (Low Density Polyethylen) ist. Das Material ist weich, so dass die Flasche gequetscht werden kann. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -7807,7 +7848,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 30 ml Fassungsvermögen aus lebensmittelechtem LDPE (Low Density Polyethylen) ist. Das Material ist weich, so dass die Flasche gequetscht werden kann. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -9527,7 +9568,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 60 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -9557,7 +9598,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 100 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -9587,7 +9628,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 120 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -9617,7 +9658,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 200 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -11921,7 +11962,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 30 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p>Eigenschaften</p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -11951,7 +11992,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 75 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p>Eigenschaften</p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -14415,7 +14456,20 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '<p>Mit der Eleaf iStick Pico 21700 Batterie-Hülse können Sie 18650er Akkuzellen im iStick Pico 21700 Akkuträger und E-Zigaretten Set verwenden.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Schwarz</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5 x SC iStick Pico 21700 Batterie-Hülsen</td>
+</tr>
+</tbody>
+</table>',
     ),
     'SC100BK' => array(
         'icNumber' => 'SC100BK',
@@ -14434,10 +14488,20 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '5 SC iStick Pico 21700 Batterie-Kappen sind in 1 Packung enthalten. Sie sind silber und sind für die iStick Pico 21700 E-Zigarette oder den Akkuträger geeignet. Falls eine Abdeckung verloren geht, können Sie diese durch eine Neue ersetzen. Durch eine Schraubbewegung vom Gewinde können Sie die Abdeckung lösen.
-<br>
-<br>
-',
+        'description' => '<p>Passgenaue Batterie-Kappe mit Schraubgewinde für den iStick Pico 21700 im 5er-Pack.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Silber</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5 x SC itick Pico 21700 Batterie-Kappen</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IL100L10-NV' => array(
         'icNumber' => 'IL100L10-NV',
@@ -15796,7 +15860,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 10 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -15921,7 +15985,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 30 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -15950,7 +16014,11 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => 'Die Chubby Gorilla Vitrine setzt Ihre Shake and Vapes, Liquids oder auch E-Zigaretten Sets gekonnt in Szene. Die Vitrine bietet Platz auf fünf Ebenen. Da die Vitrine auf Rollen steht, kann Sie problemlos bewegt werden. Aufgrund einer Stromzufuhr kann die Vitrine auch beleuchtet werden. Das Display verfügt über einen US-Netzstecker. 
+Die Chubby Gorilla Vitrine weist einen Durchmesser von 50cm und eine Höhe von 190cm auf. Geliefert wird die Vitrine in einer Holzkiste mit den Maßen von 60 x 60 x 220cm.
+<br>
+<br>
+',
     ),
     'UW100NS' => array(
         'icNumber' => 'UW100NS',
@@ -16543,13 +16611,8 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Lederschale namens vPipe III von der Marke VapeOnly ist für das vPipe III Set geeignet. Die Schale sorgt für einen sicheren Transport und schützt vor Kratzern.
-<br>
-<br>
-<b>Lieferumfang:</b><ul>
-<li>1x vPipe III Lederschale</li>
-</ul><br><br>
-',
+        'description' => '<p>Die braune Ledertasche von VapeOnly ist für das vPipe III E-Pfeife Set konzipiert. Die Form ist perfekt für das Pfeifendesign dieser E-Zigarette gemacht, das braune Leder und die abnehmbare Trageschlaufe unterstreichen das Besondere der E-Pfeife.&nbsp;</p>
+<p>&nbsp;</p>',
     ),
     'VV100L10-BL' => array(
         'icNumber' => 'VV100L10-BL',
@@ -16830,9 +16893,20 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Mit der GeekVape Agens 20700/21700 Batterie-Kappe können Sie Ihren Aegis 100 Watt Akkuträger mit einer 20700er oder 21700er Akku-Zelle betreiben. Bei der Batterie-Kappe handelt es sich um ein Ersatz- bzw. Zubehörartikel für den GeekVape Aegis.<br>
-<br>
-',
+        'description' => '<p>Mit der GeekVape Aegis 20700/21700 Batterie-Kappe können Sie 20700er oder 21700er Akku-Zellen in Ihrem 100 Watt GeekVape Aegis Akkuträger benutzen.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Silber</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">1 x Batterie-Kappe pro Pack</td>
+</tr>
+</tbody>
+</table>',
     ),
     'SC100SMA' => array(
         'icNumber' => 'SC100SMA',
@@ -18181,9 +18255,26 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Aspire Feedlink Squonker Flasche mit 7ml Tankvolumen ist für den Feedlink Akkuträger der Marke Aspire geeignet. Die Flasche ermöglicht Ihnen, während des Dampfens Liquid in den Clearomizer zu pumpen. Die Flasche platzieren Sie in den Akkuträger, neben dem Akkuzellen-Schacht. Die Flasche können Sie entweder mit oder ohne Metallschraube erwerben. Beide Varianten wurden aus Silikon hergestellt. Pro Packung und Variante erhalten Sie eine Aspire Feedlink Squonker Flasche.
-<br>
-<br>',
+        'description' => '<p>Die Aspire Feedlink Squonker Flasche mit 7 ml Tankvolumen ist für die Verwendung im Aspire Feedlink Akkuträger vorgesehen. Die Flasche ermöglicht Ihnen, während des Dampfens Liquid in den Clearomizer zu pumpen. Die Squonker Flasche wird in den Akkuträger, neben dem Akkuzellen-Schacht platziert.</p>
+<p>Sie können die Flasche sowohl mit als auch ohne Metallschraube bestellen. Beide Varianten werden aus Silikon hergestellt.</p>
+<p>Pro Packung und Variante erhalten Sie eine Aspire Feedlink Squonker Flasche.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Tankvolumen:</td>
+<td class="auto-style1">7 ml</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Marke:</td>
+<td class="auto-style1">Aspire</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Material:</td>
+<td class="auto-style1">Silikon</td>
+</tr>
+</tbody>
+</table>',
     ),
     'AS100CPG' => array(
         'icNumber' => 'AS100CPG',
@@ -38732,7 +38823,25 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '<p>Die Wismec Luxotic DF Box Liquidflasche hat ein Fassungsvolumen von 7 ml und ist exklusiv für die Nutzung mit dem Wismec Luxotic DF Box Akkuträger konzipiert. <span> Nach dem Befüllen mit Liquid kann diese in den Luxotic DF Box Akkuträger bzw. dem Set von Wismec eingesetzt werden.</span></p>
+<p>Silikonflaschen gehören zu den Verschleißteilen einer E-Zigarette und sollten deshalb regelmäßig gewechselt werden.&nbsp;</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Füllvolumen</td>
+<td class="auto-style2">7 ml</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Material</td>
+<td class="auto-style1">Silikon</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang</td>
+<td class="auto-style1">5 x Luxotic DF Box Liquidflaschen</td>
+</tr>
+</tbody>
+</table>',
     ),
     'MB100AL' => array(
         'icNumber' => 'MB100AL',
@@ -40733,6 +40842,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 <h2>passend zu</h2>
 <ul>
 <li>Eleaf Ello Duro Clearomizer</li>
+<li>Eleaf Ello Pop Clearomizer</li>
 <li>Eleaf iJust 21700 E-Zigaretten Set</li>
 <li>Eleaf Lexicon E-Zigaretten Set</li>
 <li>Eleaf iStick Nowos E-Zigaretten Set</li>
@@ -40755,16 +40865,21 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der von Erste Sahne entwickelte Fensterreiniger Fenster Sahne ist der passende Reiniger für Fenster oder Glasscheiben. Durch das in  Liquids enthaltene pflanzliche Glycerin legt sich durch das Dampfen ein feiner Film auf Fenstern ab. Das Spray beseitigt diesen Film und wirkt zudem noch präventiv gegen einen erneuten Film. 
-<br>
-<br>
-<strong>Zusammensetzung:</strong>
-<br>
-<br>
-<li>unter 5% anionische Tenside, 5% und darüber, jedoch weniger als 15% aliphatische Kohlenwasserstoffe</li>
-<li>Duftstoffe: d-Limonene, Citral</li>
-<br>
-<br>',
+        'description' => '<p>Durch das Dampfen in geschlossenen Räumen lagert sich nach einer gewissen Zeit - vor allem an kalten Tagen - ein Film ab, der sich aus den Rückständen vom pflanzlichen Glycerin, einem Inhaltsstoff des Liquids, bildet. Das speziell entwickelte Fensterreinigungsspray "Fenster Sahne" vom renommierten Liquid-Hersteller Erste Sahne beseitigt diesen Film und wirkt zudem noch präventiv gegen die Neuentstehung eines Films.</p>
+<p>Spray zur unkomplizierten und schnellen Reinigung von Glasscheiben - ganz ohne Wasser! Perfekt auch für die Innenscheiben Ihres KFZ!</p>
+<h2>Zusammensetzung</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">
+<div>unter 5% anionische Tenside, 5% und darüber, jedoch weniger als 15% aliphatische Kohlenwasserstoffe&nbsp; &nbsp;</div>
+</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Duftstoffe: d-Limonene, Citral</td>
+</tr>
+</tbody>
+</table>',
     ),
     'ES100EC' => array(
         'icNumber' => 'ES100EC',
@@ -40783,9 +40898,22 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Aus dem Hause Erste Sahne kommt der E-Zigaretten-Reiniger eCig Cleaner. Dieser ist ausgelegt für die Säuberung Ihrer E-Zigarette. Aufgrund des täglichen Gebrauchs Ihrer E-Zigarette entstehen von Zeit zur Zeit immer mal wieder Verunreinigungen die sich an allen Teilen der E-Zigarette ablegen. Mit dem eCig Cleaner ist es Ihnen unter anderem möglich Ablagerungen am Mundstück, an Kontaktstellen oder Polen und am Akkuträger und Verdampfer zu entfernen. Erhältlich ist der eCig Cleaner in einer 75ml Spraydose mit einem langen Auslassschlauch.
-<br>
-<br>',
+        'description' => '<p>Der eCig Cleaner aus dem Hause Erste Sahne ist ein Reinigungsspray für sämtliche Bestandteile Ihrer E-Zigarette.</p>
+<p>Bei regelmäßigem Gebrauch Ihrer E-Zigarette kommt es mit der Zeit zur Verunreinigungen am gesamten Gerät. Sei es am Mündstück, den Kontaktstellen oder am Akkuträger. Mit dem eCig Cleaner E-Zigaretten Reinigungsspray von Erste Sahne können Sie Ablagerungen ganz schnell, einfach und besonders hygienisch entfernen.</p>
+<p>Sie erhalten den eCig Cleaner in einer 75 ml Spraydose mit einem langen Auslassschlauch.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Inhalt:</td>
+<td class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 75 ml</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">1 x Erste Sahne eCig Cleaner E-Zigaretten Reinigungsspray</td>
+</tr>
+</tbody>
+</table>',
     ),
     'DR100L10-WM' => array(
         'icNumber' => 'DR100L10-WM',
@@ -42660,7 +42788,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 20 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -42690,7 +42818,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 75 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p><strong>Eigenschaften</strong></p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -42720,7 +42848,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'dosage' => null,
         'base' => null,
         'description' => '<p>Leerflasche mit 60 ml Fassungsvermögen aus lebensmittelechtem PET (Polyethylenterephthalat), einem Material, das formstabil und bruchsicher ist. Mit Einfüllspitze zum leichten Befüllen der E-Zigarette.</p>
-<p>Eigenschaften</p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Kindersicherung am Verschluss</li>
 <li>Siegelverschluss</li>
@@ -43205,7 +43333,7 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
 <p>Das Tankvolumen des Viento beträgt 3,5 ml in der Standard-Variante. Es lässt sich durch Einsatz des separat erhältlichen Bubble-Glastanks auf 5 ml erweitern. Der Glastank besteht aus Pyrex-Glas. Die Oberfläche dieses Materials ist besonders glatt und verhält sich deshalb auch bei einem Wechsel des E-Liquids weitestgehend geschmacksneutral.</p>
 <p>Die mitgelieferten beiden Verdampferköpfe mit jeweils 0,18 Ohm können in einem Leistungsbereich von 40 Watt bis 60 Watt betrieben werden. Anders als bei klassischen Verdampferköpfen verdampft das Liquid bei diesen Mesh Heads nicht an einem einfachen Draht, sondern an einer Netzstruktur (Mesh). Die im Vergleich zum einfachen Draht deutlich größere Oberfläche ermöglicht ein gleichmäßigeres Verdampfen des E-Liquids auch bei hohem Volumen. Neben den Original-Verdampferköpfen können Sie im asMODus Viento auch Verdampferköpfe für die Smok Baby Beast Serie verwenden, da diese kompatibel sind.</p>
 <p>Der Viento Verdampfer ist mit einem 510er Gewindeanschluss ausgestattet. Der Durchmesser des Viento beträgt an der Basis 26,9 mm.&nbsp;Das 810er Mundstück des Viento sorgt für einen angenehm großzügigen Dampfstrom.</p>
-<p><strong>Eigenschaften asMODus Minikin V3S Akkuträger</strong></p>
+<h2><strong>Eigenschaften asMODus Minikin V3S Akkuträger</strong></h2>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -43247,7 +43375,7 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
 </tbody>
 </table>
 <p>&nbsp;</p>
-<p><strong>Eigenschaften asMODus Viento Verdampfer</strong></p>
+<h2><strong>Eigenschaften asMODus Viento Verdampfer</strong></h2>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -43285,7 +43413,7 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
 </tbody>
 </table>
 <p>&nbsp;</p>
-<p><strong>Lieferumfang</strong></p>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
 <li>1 x Minikin V3S</li>
 <li>1 x Viento Clearomizer</li>
@@ -44954,33 +45082,64 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Drag 2 Akkuträger von der Marke VooPoo ist ein subohmfähiges Gerät, welches Ihnen ermöglicht zwischen den Dampfmodi VW, TC, VPC, TCR, Bypass und FIT wählen zu können. Der Drag 2 Akkuträger ist für einen maximalen Widerstandsbereich von 5,0 Ohm ausgelegt. Die maximale Ausgangsleistung des Akkuträgers beträgt zudem177 Watt. Um diese Leistung abrufen zu können, müssen Sie zwei 18650er Akkuzellen in das Gerät einlegen. Bitte beachten Sie bitte, dass der Lieferumfang keine 18650er Akkuzellen beinhaltet. Diese müssen Sie separat erwerben. Mit dem integrierten OLED-Display ist es Ihnen jederzeit möglich Ihre Einstellung einzusehen und den Ladestand zu verfolgen. Der Drag 2 Akkuträger ist dank seines 510er Gewindes mit einer Vielzahl von Verdampfern kompatibel.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der VooPoo Drag 2 Akkuträger ist ein subohmfähiges Gerät, welches in den Modi VW, TC, VPC, TCR, Bypass und FIT betrieben werden kann. Er ist der Nachfolger des beliebten Drag Akkuträgers und erreicht 177 Watt Ausgangsleistung statt 157 Watt wie sein Vorgänger. Gesteuert wird der Drag 2 Akkuträger klassisch über die Feuertaste sowie 2 Einstelltasten. Ein OLED-Display zeigt alle wichtigen Einstellungen sowie den Akkustand an. Der VooPoo Drag 2 Akkuträger wird mit zwei baugleichen hocchstromfesten 18650er Akkuzellen betrieben. Durch das 510er Gewinde kann der Akkuträger mit vielen handelsüblichen Verdampfern (Clearomizern) kombiniert werden.&nbsp;&nbsp;</p>
+<p>Der Akkuträger wird durch zwei baugleiche <span data-mce-mark="1"> 18650er Akkuzellen b</span>etrieben, die nicht im Lieferumfang enthalten sind.</p>
+<h2>Eigenschaften VooPoo Drag 2 Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>2 x 18650er Akkuzelle<br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td><span> FIT, VW, VPC, TC (Ni, Ti, SS), TCR, Bypass</span></td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>max. 7,5 Volt</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 177 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100°C - 315°C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 5 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Zinklegierung und Resin</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>88,3 mm x 51 mm x 26,5 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>158 gr.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Drag 2 177 Watt</li>
-<li>1x USB-Kabel</li>
+<li>1x VooPoo Drag 2 Akkuträger</li>
+<li>1x Micro-USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Drag 2 177 Watt</strong>
-<ul>
-<li>Ausgangsleistung: 5-177 Watt</li>
-<li>Ausgabemodi: FIT, TC, VW, VPC, TC, TCR, Bypass</li>
-<li>Ausgangsspannung: 0 Volt bis 7,5 Volt</li>
-<li>Widerstandsbereich: 0,05 - 5 Ohm</li>
-<li>Temeperaturbereich: 100-315°C</li>
-<li>Material: Zinklegierung und Resin</li>
-<li>OLED-Display</li>
-<li>Material: Zinklegierung, Resin</li>
-<li>Gewindetyp: 510er</li>
-<li>Gewicht: 158g</li>
-<li>Maße: 26,5 mm x 51 mm x 88,3 mm</li>
-</ul>
-<br>
-<br>',
+</ul>',
     ),
     'DD100CP' => array(
         'icNumber' => 'DD100CP',
@@ -45217,32 +45376,60 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Den Drag Mini 4400mAh Akku von der Marke VooPoo laden Sie mit dem mitgelieferten USB-Kabel. Der Drag Mini besitzt eine Akkukapaziät von 4400mAh und eine maximal Ausgangsleistung von 117 Watt. Mit dem VooPoo Drag Mini ist es Ihnen möglich in verschiedenen Modi zu dampfen. Unter anderem können Sie im sogenannte FIT-Modus dampfen. Dampfen Sie mit FIT 1 soll der Akku am längsten halten. Im FIT 2 soll der Geschmack Ihre Liquids am besten zur Geltung kommen. Im FIT 3 soll das Vapen mit viel Dampf in den Vordergrund treten. Zudem unterstützt der Drag Mini einen Widerstandsbereich zwischen 0,05 Ohm und 5 Ohm. Das an der Seite des Akkus verbaute OLED-Display gibt Ihnen jederzeit Einblick über Ihre getätigten Einstellungen. Mit der Feuertaste und den zwei Einstellungstasten können Sie jederzeit die getätigten Einstellungen ändern. Dank des 510er Gewindes ist der VooPoo Drag Mini mit einer Vielzahl von Verdampfern kombinierbar.
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der VooPoo Drag Mini Akku wird mit einer fest verbauten 4.400 mAh Akkuzelle mit einer maximalen Ausgangsleistung von 117 Watt versorgt. Er wird über die Feuertaste sowie 2 Einstelltasten gesteuert, seitlich am <span> Akku befindet sich ein OLED-Display.</span> Sie können zwischen 6 Arbeitsmodi wähen. <span> Unter anderem können Sie im FIT-Modus dampfen. Dampfen Sie mit FIT 1 soll der Akku am längsten halten, im FIT 2 soll der Geschmack Ihre Liquids am besten zur Geltung kommen und im FIT 3 soll das Vapen mit viel Dampf in den Vordergrund treten. Der Drag Mini unterstützt einen Widerstandsbereich zwischen 0,05 Ohm und 5 Ohm. Dank des 510er Gewindes ist der VooPoo Drag Mini mit einer Vielzahl von Verdampfern (Clearomizern) kombinierbar.</span></p>
+<h2>Eigenschaften VooPoo Drag Mini Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Akkukapazität</td>
+<td>4.400 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td><span>FIT, VW, VPC, TC (Ni, Ti, SS), TCR, Bypass</span></td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>max. 7,5 Volt</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 117 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100°C - 315°C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 5 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Zinklegierung und Resin</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>81,5 mm x 48,5 mm x 25,5 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Drag Mini 4400mAh</li>
-<li>1x USB-Kabel</li>
+<li>1x Voopoo Drag Mini Akku</li>
+<li>1x Micro-USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>Drag Mini 4400mAh</strong>
-<ul>
-<li>Akkukapazität: 4400mAh</li>
-<li>Ausgangsleistung: 5-117 Watt</li>
-<li>Ausgabemodi: FIT / TC</li>
-<li>Ausgangsspannung: 0 Volt bis 7,5 Volt</li>
-<li>Widerstandsbereich: 0,05 - 5 Ohm (Power)</li>
-<li>Temeperaturbereich: 100-315°C</li>
-<li>Material: Zinklegierung und Resin</li>
-<li>OLED-Display</li>
-<li>Gewindetyp: 510er</li>
-<li>Gewicht: 178g</li>
-<li>Maße: 25,5 mm x 48,5 mm x 81,5 mm</li>
-</ul>
-<br>
-<br>
-',
+<p>&nbsp;</p>',
     ),
     'AK100WL' => array(
         'icNumber' => 'AK100WL',
@@ -45261,32 +45448,55 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Den von Advken produzierten Owl Clearomizer erhalten Sie mit diesem Set. Der Owl ist ein Subohm-fähiger Verdampfer mit einem Fassungsvolumen von 4 Millilitern. Im Lieferumfang ist noch ein Ersatztank enthalten mit einem Fassungsvolumen von 3ml. Ihre Liquid können Sie über ein Top-Filling-System einfach von oben den den Tank einfüllen. Zudem ist der Advken Owl Verdampfer mit einer Top-Airlfow ausgestattet, welche sich stufenlos einstellen lässt. 
-Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16 Ohm und 0,2 Ohm. Bei haben ein geringen Widerstand und sind somit für das Dampfen mit direkten Lungenzügen ausgelegt.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der Advken OWL Clearomizer hat mit dem vorinstallierten bauchigen Tankglas ein Füllvolumen für 4 ml Liquid. Sie können jedoch auch das im Lieferumfang enthaltene schlankere Tankglas verwenden, wodurch Sie ein Füllvolumen von 3 ml erhalten. Das Liquid füllen Sie über das integrierte Top-Filling-System von oben ein. Zwischen Mundstück und Glastank befindet sich ein Ring, mit dem Sie stufenlos den Zugwiderstand über den Airflow Control regeln. Im Lieferumfang enthalten sind 2 Verdampferköpfe (Heads), einer mit einem Widerstand von 0,2 Ohm, der vorinstalliert ist und ein weiterer mit einem Widerstand von 0,16 Ohm. Beide sind für das subohme Dampfen, also die direkte Lungeninhalation konzipiert und haben eine Netz-Struktur, wodurch das Liquid besser am Verdampferkopf verdampft und es zu einer noch intensiveren Dampfentwicklung kommt.&nbsp;</p>
+<h2>Eigenschaften Advken OWL Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>max. 4 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>25 mm (an der Base)</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>40 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>DL - Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Owl Clearomizer inkl. 0,2 Ohm Mesh Head</li>
-<li>1x Mesh Head 0,16 Ohm</li>
-<li>1x8 10er PEI Drip Tip</li>
-<li>1x Ersatz-Glastank 3ml</li>
-<li>1x Ersatzteile</li>
+<li>1x Advken OWL Clearomizer</li>
+<li>1x Mesh-Head 0,2 Ohm (vorinstalliert)</li>
+<li>1x Mesh-Head 0,16 Ohm</li>
+<li>1x Ersatz-Glastank (3 ml)</li>
 <li>1x Reinigungstuch</li>
-</ul>
-<br>
-<br>
-<strong>Wichtige Merkmale</strong>
-<ul>
-<li>Top Airflow-Control</li>
-<li>Tankvolumen: 4ml</li>
-<li>Top Side Filling</li>
-<li>Material: Edelstahl und Pyrex</li>
-<li>Gewindetyp: 510</li>
-<li>Durchmesser: 25mm</li>
-<li>Höhe: 45mm</li>
-</ul>
-<br>',
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>',
     ),
     'AK100MH' => array(
         'icNumber' => 'AK100MH',
@@ -45305,23 +45515,65 @@ Mit dem Owl erhalten Sie insgesamt zwei Mesh Heads mit einem Widerstand von 0,16
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Sie erhalten die Advken Mesh Verdampferköpfe einer 5er Packung. Bei den Mesh Heads können Sie zwischen zwei Varianten wählen. In Ihnen stehen die Heads mit einem Widerstand von 0,16 Ohm der 0,2 Ohm zur Verfügung. Beide sind für das Dampfen im Subohm-Bereich geeignet und bestehen aus dem Material Staniless Steel und A1. Der Leistungsbereich der 0,16 Ohm Mesh Heads liegt zwischen 60 bis 80 Watt. Die Mesh Heads mit einem Widerstand von 0,2 Ohm haben eine Bereich von 50 bis 70 Watt.
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
+        'description' => '<p>Die Advken Mesh Heads (Verdampferköpfe) sind mit einem Widerstand von 0,16 Ohm und 0,2 Ohm bestellbar. Der Mesh Head mit 0,16 Ohm ist in einem Leistungsbereich zwischen 60 und 80 Watt zu verwenden, der mit 0,2 Ohm in einem Leistungsbereich zwischen 50 und 70 Watt.</p>
+<p>Verdampferköpfe sind Verbrauchsartikel und sollten daher in regelmäßigen Zeitabständen ausgetauscht werden, spätestens, wenn sich der Geschmack Ihres Liquids oder die Dampfentwicklung verändern.&nbsp;</p>
+<h2>Eigenschaften Advken Mesh Heads 0,16 Ohm</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">0,16 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">60 - 80 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Wicklung</td>
+<td class="auto-style1">Mesh</td>
+</tr>
+<tr>
+<td class="auto-style1">Material</td>
+<td class="auto-style1">Stainless Steel und A1</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>Eigenschaften Advken Mesh Heads 0,2 Ohm</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">0,2 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">50 - 70 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Wicklung</td>
+<td class="auto-style1">Mesh</td>
+</tr>
+<tr>
+<td class="auto-style1">Material</td>
+<td class="auto-style1">Stainless Steel und A1</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<li>Widerstand: 0,16 Ohm | 0,2 Ohm</li>
-<li>Wicklung: Mesh</li>
-<li>Material: Stainless Steel und A1</li>
-<li>Leistungsbereich 0,16 Ohm: 60 - 80 Watt</li>
-<li>Leistungsbereich 0,2 Ohm: 50 - 70 Watt</li>
-</l>
-<br>
-<b>Geeignet für:</b>
-<li>Advken Owl Clearomizer </li>
+<li>Advken OWL E-Zigaretten Set</li>
+<li>Advken OWL Clearomizer</li>
 <li>Smok TFV8 Baby Clearomizer</li>
-<li>Vaparesso NRG Clearomizer</li>
-<br>',
+<li>Vaporesso NRG Clearomizer</li>
+</ul>',
     ),
     'CA100MI' => array(
         'icNumber' => 'CA100MI',
@@ -47961,7 +48213,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'base' => null,
         'description' => '<p>Die Vaporist Stream Bag ist ideal und praktisch für Selbstwickler aber auch geeignet für den sortierten Normalverbraucher.</p>
 <p>Sie bietet ausreichenden Platz für zwei E-Zigaretten Sets, Liquids, Wickelzubehör und Akkus. Zur Verfügung stehen Ihnen zwei Fächer sowie zusätzliche Fächer für Akkus, damit auch diese sicher transportiert werden können.</p>
-<p>Praktisch ist auch die Verschluss-Lasche an der Oberseite der Tasche. Sie kann bei Bedarf wie eine kleine Wickelmatte aufgerollt werden, damit Sie auch unterwegs Ihre Verdampfer wickeln können.</p>',
+<p>Ein nettes Detail ist die Verschluss-Lasche an der Oberseite der Tasche. Sie kann bei Bedarf wie eine kleine Wickelmatte aufgerollt werden, damit Sie auch unterwegs Ihre Verdampfer wickeln können.</p>',
     ),
     'CU100MJ' => array(
         'icNumber' => 'CU100MJ',
@@ -48977,8 +49229,18 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Hastur Clearomizer Ständer von Cthulhu bietet Ihnen Platz für bis zu 18 Verdampfer mit einem Durchmesser von maximal 30mm. Sie können den Clearomizer Ständer sowohl als Wickelständer nutzen, als auch als Aufbewahrungsmöglichkeit in einem Schrank oder einer Vitrine. Der Cthulhu Hastur Clearomizer Ständer wird mit 18 Bohrungen ausgeliefert, welche den Durchmesser eines 510er Anschlusses aufweisen. In den Cthulhu Hastur Clearomizer Ständer passen auch Verdampfer, die nicht aus dem Hause Cthulhu stammen. Um die Maximale Anzahl der Clearomizer zu nutzen, muss jeder Clearomizer einen Durchmesser von 22mm aufweisen. Der Clearomizer Ständer ist aus belastbarem PMMA Kunststoff gefertigt und hat ein Gewicht von 155g. Die Maße sind: 180mm x 100mm x 8mm. 
-',
+        'description' => '<p>Haben Sie mehrere Verdampfer, die Sie je nach Stimmung und Geschmack im Wechsel verwenden, und fehlte Ihnen bislang eine Aufbewahrung? Dann ist der Cthulhu Hastur Verdampferständer genau das richtige für Sie!</p>
+<p>Er bietet Platz für 18 Verdampfer (Clearomizer-Sets) aller Hersteller mit 510er Anschluss und einem Durchmesser von maximal 22 mm. Dabei stehen die Verdampfer aufrecht und somit auslaufgeschützt in dem Ständer. Sie können den Verdampferständer auch als Wickelständer zum Befestigen neuer Wicklungen nutzen. Natürlich passen auch Verdampfer mit größerem Durchmesser in den Ständer, dann allerdings weniger als 18 Stück.</p>
+<p>Der Cthulhu Hastur Verdampferständer ist aus belastbarem PMMA Kunststoff gefertigt und hat ein Gewicht von 155 g.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Maße</td>
+<td class="auto-style1">180 mm x 100 mm x 8 mm</td>
+</tr>
+</tbody>
+</table>',
     ),
     'CU100DS' => array(
         'icNumber' => 'CU100DS',
@@ -50438,33 +50700,64 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Drag 2 Platinum Akkuträger von der Marke VooPoo ist ein subohmfähiges Gerät, welches Ihnen ermöglicht zwischen den Dampfmodi VW, TC, VPC, TCR, Bypass und FIT wählen zu können. Der Drag 2 Platinum Akkuträger ist für einen maximalen Widerstandsbereich von 5,0 Ohm ausgelegt. Die maximale Ausgangsleistung des Akkuträgers beträgt zudem 177 Watt. Um diese Leistung abrufen zu können, müssen Sie zwei 18650er Akkuzellen in das Gerät einlegen. Bitte beachten Sie bitte, dass der Lieferumfang keine 18650er Akkuzellen beinhaltet. Diese müssen Sie separat erwerben. Mit dem integrierten OLED-Display ist es Ihnen jederzeit möglich Ihre Einstellung einzusehen und den Ladestand zu verfolgen. Der Drag 2 Platinum Akkuträger ist dank seines 510er Gewindes mit einer Vielzahl von Verdampfern kompatibel.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der VooPoo Drag 2 Platinum Akkuträger&nbsp;ist ein subohmfähiges Gerät, welches in den Modi VW, TC, VPC, TCR, Bypass und FIT betrieben werden kann. Er erreicht 177 Watt Ausgangsleistung. Gesteuert wird der Drag 2 Platinum&nbsp;Akkuträger klassisch&nbsp;über die Feuertaste sowie 2 Einstelltasten. Ein OLED-Display zeigt alle wichtigen Einstellungen sowie den Akkustand an. Der VooPoo Drag 2 Platinum&nbsp;Akkuträger wird mit zwei baugleichen hocchstromfesten 18650er Akkuzellen betrieben. Durch das 510er Gewinde kann der Akkuträger mit vielen handelsüblichen Verdampfern (Clearomizern) kombiniert werden.&nbsp;&nbsp;</p>
+<p>Der Akkuträger wird durch zwei baugleiche<span data-mce-mark="1">&nbsp;</span><span data-mce-mark="1">18650er Akkuzellen b</span>etrieben, die nicht im Lieferumfang enthalten sind.</p>
+<h2>Eigenschaften VooPoo Drag 2 Platinum&nbsp;Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>2 x 18650er Akkuzelle<br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td><span>FIT, VW, VPC, TC (Ni, Ti, SS), TCR, Bypass</span></td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>max. 7,5 Volt</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 177 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100°C - 315°C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 5 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Zinklegierung und Resin</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>88,3 mm x 51 mm x 26,5 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>158 gr.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Drag 2 Platinum 177 Watt</li>
-<li>1x USB-Kabel</li>
+<li>1x VooPoo Drag 2 Platinum&nbsp;Akkuträger</li>
+<li>1x Micro-USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Drag 2 Platinum 177 Watt</strong>
-<ul>
-<li>Ausgangsleistung: 5-177 Watt</li>
-<li>Ausgabemodi: FIT, TC, VW, VPC, TC, TCR, Bypass</li>
-<li>Ausgangsspannung: 0 Volt bis 7,5 Volt</li>
-<li>Widerstandsbereich: 0,05 - 5 Ohm</li>
-<li>Temeperaturbereich: 100-315°C</li>
-<li>Material: Zinklegierung und Resin</li>
-<li>OLED-Display</li>
-<li>Material: Zinklegierung, Resin</li>
-<li>Gewindetyp: 510er</li>
-<li>Gewicht: 158g</li>
-<li>Maße: 26,5 mm x 51 mm x 88,3 mm</li>
-</ul>
-<br>
-<br>',
+</ul>',
     ),
     'PV100DMP' => array(
         'icNumber' => 'PV100DMP',
@@ -50483,34 +50776,59 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Den Drag Mini Platinum 4400mAh Akku von der Marke VooPoo laden Sie mit dem mitgelieferten USB-Kabel. Der Drag Mini besitzt eine Akkukapaziät von 4400mAh und eine maximale Ausgangsleistung von 117 Watt. Mit dem VooPoo Drag Mini Platinum ist es Ihnen möglich in verschiedenen Modi zu dampfen. Unter anderem können Sie im sogenannte FIT-Modus dampfen. Dampfen Sie mit FIT 1 soll der Akku am längsten halten. Im FIT 2 soll der Geschmack Ihre Liquids am besten zur Geltung kommen. Im FIT 3 soll das Vapen mit viel Dampf in den Vordergrund treten. Zudem unterstützt der Drag Mini einen Widerstandsbereich zwischen 0,05 Ohm und 5 Ohm. Das an der Seite des Akkus verbaute OLED-Display gibt Ihnen jederzeit Einblick über Ihre getätigten Einstellungen. Mit der Feuertaste und den zwei Einstellungstasten können Sie jederzeit die getätigten Einstellungen ändern. Dank des 510er Gewindes ist der VooPoo Drag Mini mit einer Vielzahl von Verdampfern kombinierbar.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der VooPoo Drag Mini Platinum Akku wird mit einer fest verbauten 4.400 mAh Akkuzelle mit einer maximalen Ausgangsleistung von 117 Watt versorgt. Er wird über die Feuertaste sowie 2 Einstelltasten gesteuert, seitlich am <span> Akku befindet sich ein OLED-Display.</span> Sie können zwischen 6 Arbeitsmodi wähen. <span> Unter anderem können Sie im FIT-Modus dampfen. Dampfen Sie mit FIT 1 soll der Akku am längsten halten, im FIT 2 soll der Geschmack Ihre Liquids am besten zur Geltung kommen und im FIT 3 soll das Vapen mit viel Dampf in den Vordergrund treten. Der Drag Mini Platinum&nbsp;unterstützt einen Widerstandsbereich zwischen 0,05 Ohm und 5 Ohm. Dank des 510er Gewindes ist der VooPoo Drag Mini Platinum&nbsp;mit einer Vielzahl von Verdampfern (Clearomizern) kombinierbar.</span></p>
+<h2>Eigenschaften VooPoo Drag Mini Platinum&nbsp;Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Akkukapazität</td>
+<td>4.400 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td><span>FIT, VW, VPC, TC (Ni, Ti, SS), TCR, Bypass</span></td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>max. 7,5 Volt</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 117 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100°C - 315°C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 5 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Zinklegierung und Resin</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>81,5 mm x 48,5 mm x 25,5 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Drag Mini Platinum 4400mAh</li>
-<li>1x USB-Kabel</li>
+<li>1x Voopoo Drag Mini Platinum&nbsp;Akku</li>
+<li>1x Micro-USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Drag Mini Platinum 4400mAh</strong>
-<ul>
-<li>Akkukapazität: 4400mAh</li>
-<li>Ausgangsleistung: 5-117 Watt</li>
-<li>Ausgabemodi: FIT / TC</li>
-<li>Ausgangsspannung: 0 Volt bis 7,5 Volt</li>
-<li>Widerstandsbereich: 0,05 - 5 Ohm (Power)</li>
-<li>Temeperaturbereich: 100-315°C</li>
-<li>Material: Zinklegierung und Resin</li>
-<li>OLED-Display</li>
-<li>Gewindetyp: 510er</li>
-<li>Gewicht: 178g</li>
-<li>Maße: 25,5 mm x 48,5 mm x 81,5 mm</li>
-</ul>
-<br>
-<br>
-',
+</ul>',
     ),
     'TV100A10-VG' => array(
         'icNumber' => 'TV100A10-VG',
@@ -50933,33 +51251,58 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der VooPoo X217 Akkuträger erreicht im leistungsgeregelten Modus eine Ausgangsleistung von 5 bis 217 Watt. Dabei bezieht der Akkuträger seine Energie über zwei 18650er, 20700er oder 21700er Akkuzellen. Diese sind nicht Bestandteil des Lieferumfangs.  Zudem unterstützt der Akkuträger das Dampfen im VV-, TC- und TCR-Modus. Das in den Akkuträger eingelassene 1,3 Zoll TFT-Farbdisplay macht es Ihnen möglich Ihre Einstellungen oder den Ladestand jederzeit einsehen zu können. Auf dem TFT-Display können Sie sich auch jederzeit die Uhrzeit anzeigen lassen. Die Firmware kann über das mitgelieferte Mirco-USB-Kabel aktualisiert werden. Der X217 von VooPoo besitzt ein 510er Anschluss, somit ist der Akkuträger mit zahlreichen auf dem Markt erhältlichen Verdampfer kombinierbar.
-<br>
-<br>
+        'description' => '<p>Der VooPoo X217 Akkuträger <span> erreicht im leistungsgeregelten Modus eine Ausgangsleistung von 5 bis 217 Watt. Er </span>wird über die Feuertaste sowie 2 Einstelltasten gesteuert. Der X217 unterstützt das leistungs- und spannungsgeregelte sowie das temperaturgesteuerte Dampfen. Die gewählten Einstellungen, der aktuelle Akkustand sowie die Uhrzeit werden Ihnen auf einem 1,3" TFT HD-Display angezeigt. Der VooPoo X217 Akkuträger wird mit zwei baugleichen hochstromfesten 20700er oder 21700er Akkuzellen betrieben. Über den mitgelieferten Adapter können Sie auch 18650er Akkuzellen verwenden. Durch das 510er Gewinde kann der Akkuträger mit vielen handelsüblichen Verdampfern (Clearomizern) kombiniert werden.&nbsp;&nbsp;</p>
+<p>Der Akkuträger wird durch zwei baugleiche <span> 18650er, 20700er oder 21700er Akkuzellen b</span>etrieben, die nicht im Lieferumfang enthalten sind.</p>
+<h2>Eigenschaften VooPoo X217 Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>2 x 20700er oder 2 x 21700er oder 2 x 18650er Akkuzelle<br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td><span> VW | VV | CURVE | TC (Ni200, Ti, SS316, NiChr) | TCR </span></td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>max. 7,5 Volt</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 217 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100°C - 315°C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 3 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>1,3" TFT HD-Display, Software-updatefähig</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>93 mm x 50,6 mm x 33 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x X217 217 Watt Akkuträger </li>
-<li>2x Adapter für 18650er Akkuzellen</li>
+<li>1x VooPoo X217 Akkuträger</li>
+<li>2x 18650er Adapter</li>
 <li>1x Micro-USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<strong>18650/20700/21700er Akkuezelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>X217 217 Watt Akkuträger</strong>
-<ul>
-<li>Ausgabemodi: VW | TC (Ni, Ti, SS316) | TCR | VV</li>
-<li>Ausgangsleistung: 5 bis 217 Watt </li>
-<li>Ausgangsspannung: 0 7,5 Volt </li>
-<li>Temperaturbereich: 100 °C – 315 °C  </li>
-<li>Widerstandsbereich: 0,05 – 3,0 Ohm im VW / VV | 0,05 - 1,5 Ohm im TC</li>
-<li>Chip: GENE.FAN</li>
-<li>Maße: 93 mm x 50,6 mm x 33 mm</li>
-<li>Gewindetyp: 510</li>
-<li>1,3” TFT-Display</li>
-<li>Uhrzeitanzeige</li>
-<li>Kompatible Akkuzellen: 18650/20700/21700</li>
-</ul>
-<br>',
+<p>&nbsp;</p>',
     ),
     'VZ100VPC' => array(
         'icNumber' => 'VZ100VPC',
@@ -52461,7 +52804,7 @@ Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand d
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Mit dem Smoant Battlestar Squonker E-Zigaretten Set haben Sie die Möglichkeit in unterschiedlichen Dampfmodi zu dampfen. Die maximale Ausgangsleistung liegt bei 200 Watt. Bitte beachten Sie, dass zwei 18650er Akkuzellen eingesetzt  werden müssen, welche nicht Teil des Lieferumfangs sind. Der Battlestar Squonker RDA Verdampfer besitzt kein Glastank, sondern wird über ein Squonk-System mit Liquid versorgt. Die Liquidflasche mit einem Fassungsvermögen von 7ml wird auf der Rückseite des Akkuträgers befestigt. Sie setzen keine vorgefertigten Verdampferköpfe in den Verdampfer ein, sondern Ihre eigenen hergestellten Wicklungen.
+        'description' => '<p>Mit dem Smoant Battlestar Squonker E-Zigaretten Set haben Sie die Möglichkeit in unterschiedlichen Dampfmodi zu dampfen. Die maximale Ausgangsleistung liegt bei 200 Watt. Bitte beachten Sie, dass zwei 18650er Akkuzellen eingesetzt werden müssen, welche nicht Teil des Lieferumfangs sind. Der Battlestar Squonker RDA Verdampfer besitzt kein Glastank, sondern wird über ein Squonk-System mit Liquid versorgt. Die Liquidflasche mit einem Fassungsvermögen von 7ml wird auf der Rückseite des Akkuträgers befestigt. Sie setzen keine vorgefertigten Verdampferköpfe in den Verdampfer ein, sondern Ihre eigenen hergestellten Wicklungen.</p>
 <ul>
 <li>1x Battlestar Squonker 200 Watt</li>
 <li>1x Battlestar Squonker RDA Clearomizer</li>
@@ -52471,28 +52814,24 @@ Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand d
 <li>2x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>Battlestar Squonker 200 Watt Akkuträger</strong>
+<p><strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong> <br> <br> <strong>Battlestar Squonker 200 Watt Akkuträger</strong></p>
 <ul>
 <li>Ausgangsleistung: 1 - 200 Watt</li>
-<li>Spannungsbereich: 6,0  - 8,4 Volt</li>
-<li>Ausgabemodi: VW / VV / DVW (Wattkurve)
+<li>Spannungsbereich: 6,0 - 8,4 Volt</li>
+<li>Ausgabemodi: VW / VV / DVW (Wattkurve)</li>
 <li>Abmessung: 87,5mm x 44,5mm x 40,5mm</li>
 <li>0,96” OLED Display</li>
 <li>Widerstandsbereich: 0,05 Ohm - 3,0 Ohm</li>
 <li>Gewindetyp: 510</li>
 </ul>
-<strong>Battlestar Squonker RDA Clearomizer</strong>
+<p><strong>Battlestar Squonker RDA Clearomizer</strong></p>
 <ul>
 <li>Durchmesser: 24mm</li>
 <li>Höhe: 22mm</li>
 <li>Side Angled Airflow Control</li>
 <li>subohm-fähig</li>
 <li>Gewindetyp: 510</li>
-</ul>
-',
+</ul>',
     ),
     'SN100BSC' => array(
         'icNumber' => 'SN100BSC',
@@ -52530,8 +52869,21 @@ Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand d
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Füllvolumen von der Smoant Battlestart Squonker Liquidflasche beträgt 10 Milliliter. Nach dem Befüllen mit Liquid kann diese in den Battlestart Squonker Akkuträger bzw. dem Set von Smoant eingesetzt werden.
-',
+        'description' => '<p>Die Smoant Battlestar Squonker Liquidflasche ist exklusiv für die Verwendung im gleichnamigen E-Zigaretten Set von Smoant konzipiert.</p>
+<p>Die Liquidflasche hat ein Volumen für bis zu 7 ml Liquid. Sie setzen die Liquidflasche in das Battlestar Squonker E-Zigaretten ein und versorgen per Druck den Verdampfer mit Liquid.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Tankvolumen:</td>
+<td class="auto-style1">7 ml</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Marke:</td>
+<td class="auto-style1">Smoant</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IC100UC' => array(
         'icNumber' => 'IC100UC',
@@ -54128,18 +54480,18 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'name' => 'Dr. Vapes - Panther Series - Gold Panther Ice - Shake & Vape - 50 ml, 0 mg/ml',
         'commonName' => 'Gold Panther Ice',
         'type' => 'SHAKE_VAPE',
-        'category' => null,
+        'category' => 'SHAKE & VAPE > exotische Früchte#!#SHAKE & VAPE > Süßigkeiten#!#SHAKE & VAPE > Frisches & Eiscreme',
         'supplier' => 'Dr. Vapes',
         'brand' => 'Dr. Vapes',
         'piecesPerPack' => 1,
         'content' => '50',
         'capacity' => '60',
         'flavor' => 'Litschi, Candy, Koolada',
-        'flavorCategory' => null,
+        'flavorCategory' => 'exotische Früchte, Süßigkeiten, Frisches & Eiscreme',
         'addlCategory' => '',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Vapes. Geschmack: .</strong></p><p>Die 60 ml Flasche enthält  ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 60 ml Nikotin-Shot oder 60 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Vapes. Geschmack: Litschi, Candy, Koolada.</strong></p><p>Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Litschi, Candy, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'AG100SP' => array(
         'icNumber' => 'AG100SP',
@@ -55324,6 +55676,7 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
 <li>Eleaf Ello Duro Clearomizer</li>
 <li>Eleaf Ello Clearomizer</li>
 <li>Eleaf Ello Vate Clearomizer</li>
+<li>Eleaf Ello Pop Clearomizer</li>
 </ul>',
     ),
     'EA100A10-SE' => array(
@@ -55332,18 +55685,18 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'name' => 'Elli\'s Aromen - Schlumpf Eis - Aroma - 10 ml',
         'commonName' => 'Schlumpf Eis',
         'type' => 'AROMA',
-        'category' => null,
+        'category' => 'AROMEN > Gewürze#!#AROMEN > Frisches & Eiscreme',
         'supplier' => 'Elli\'s Aromen',
         'brand' => 'Elli\'s Aromen',
         'piecesPerPack' => 1,
         'content' => '10',
         'capacity' => '10',
         'flavor' => 'Vanille, Eis',
-        'flavorCategory' => null,
+        'flavorCategory' => 'Gewürze, Frisches & Eiscreme',
         'addlCategory' => '',
         'dosage' => '4 - 6',
         'base' => null,
-        'description' => '<p><strong>Lebensmittelaroma von Elli\'s Aromen. Geschmack: .</strong></p><p>Zur Herstellung von E-Liquid fügen Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können.</p><p>Detaillierte Angaben zu Dosierung und Reifezeit von Elli\'s Aromen finden Sie unter diesem Link: <a title="Ellifiziert!" href="http://www.ellifiziert.de/?page=labor" target="_blank">Ellifiziert!</a></p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Lebensmittelaroma</td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Lebensmittelaroma von Elli\'s Aromen. Geschmack: Vanille, Eis.</strong></p><p>Zur Herstellung von E-Liquid fügen Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können.</p><p>Detaillierte Angaben zu Dosierung und Reifezeit von Elli\'s Aromen finden Sie unter diesem Link: <a title="Ellifiziert!" href="http://www.ellifiziert.de/?page=labor" target="_blank">Ellifiziert!</a></p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Lebensmittelaroma</td></tr><tr><td>Geschmack </td><td>Vanille, Eis</td></tr><tr><td>Dosierung</td><td>4 - 6 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'GV100AX' => array(
         'icNumber' => 'GV100AX',
@@ -55370,7 +55723,7 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'name' => 'GeekVape - Aegis X - Akkuträger - 200 Watt',
         'commonName' => 'Aegis X',
         'type' => 'BOX_MOD_CELL',
-        'category' => 'BOXEN',
+        'category' => 'AKKUTRÄGER',
         'supplier' => 'GeekVape',
         'brand' => 'GeekVape',
         'piecesPerPack' => 1,
@@ -55389,7 +55742,7 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'name' => 'Oumier - Wasp Nano RTA - Verdampfer',
         'commonName' => 'Wasp Nano RTA',
         'type' => 'CLEAROMIZER_RTA',
-        'category' => 'VERDAMPFER > Selbstwickler > Oumier',
+        'category' => 'SELBSTWICKLER > Verdampfer',
         'supplier' => 'Oumier',
         'brand' => 'Oumier',
         'piecesPerPack' => 1,
@@ -57019,32 +57372,52 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die E-Zigarette Aspire Breeze NXT mit  einer Kapazität von 1000 mAh können Sie wahlweise mit einer Zugautomatik oder mit der Feuertaste in Betrieb nehmen. Den Akkustand erkennen Sie anhand der LED-Farbe an der Feuertaste. Die E-Zigarette wird über den den Bypass-Modus in Betrieb genommen. Sie laden die Breeze NXT über das im Lieferumfang enthaltene Micro-USB-Kabel. Aufgrund der Maße von 96 x 35 x 20,5 mm hat die Breeze NXT ein Hosentaschenformat. Die Breeze NXT verfügt über ein Pod-System, welches ein Tankvolumen von 5,4ml aufweist. Der im Pod-System enthaltene Head, weist einen Widerstand von 0,8 Ohm auf und ist für direkte Lungenzüge (Subohm-Bereich) ausgelegt. Sollte es zu einer Geschmacksveränderung kommen, tauschen Sie den zu den Verschleißteilen zählenden Verdampferkopf gegen einen neuen. Im Lieferumfang sind insgesamt zwei der 0,8 Ohm Heads enthalten. Über die Steckfunktion können Sie den Verdampferkopf wechseln, auch wenn noch Liquid im Tank enthalten ist.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die Aspire Breeze NXT E-Zigarette ist ein sogenanntes POD-System und bietet als "All-in-one"-Gerät alles, was man zum Dampfen benötigt - außer dem Liquid. Der Akku hat eine Kapazität von 1000 mAh und die passgenauen Liquid-Cartridges (Pods) haben einen Tank für 5,4 ml Liquid, was für ein POD-System ordentlich ist. Die Verdampferköpfe (Heads) sind austauschbar und das sogar bei befülltem Tank!</p>
+<p>Die Aspire Breeze NXT hat einen fest verbauten Akku mit einer Leistung von 1000 mAh und arbeitet im Bypass-Modus. Dabei wird die Spannung in Abhängigkeit des Akkuladestandes an den Verdampferkopf gegeben. Sie hat eine Zugautomatik und kann wahlweise darüber aktiviert werden oder über die Feuertaste. Über einen in der Feuertaste integrierten LED-Indikator wird Ihnen der Ladestand des Akkus angezeigt, den Sie mithilfe des mitgelieferten Micro-USB-Kabel wieder aufladen. Über ein seitlich am Gerät befindliches Rädchen können Sie den Airflow Control bequem und stufenlos mit einem Finger einstellen.</p>
+<p>Das Liquid-Cartridge (Pod) das bei der Aspire Breeze NXT die Verdampfereinheit bildet, hat ein Tankvolumen von 5,4 ml. Nachgefüllt wird das Cartridge über ein Side-Filling-System. Die Verdampferköpfe sind auswechselbar, wodurch weniger Abfall und Kosten entstehen als bei vielen anderen Systemen dieser Art. Dank des Stecksystems können die Verdampferköpfe auch bei befülltem Tank ausgewechselt werden.</p>
+<p>Mit der E-Zigarette erhalten Sie 2 Aspire Breeze NXT Heads (Verdampferköpfe) mit 0,8 Ohm Widerstand. Damit ist diese E-Zigarette für das subohme Dampfen konzipiert, also für das direkte Inhalieren des Dampfes in die Lunge (DL).</p>
+<p>Verdampferköpfe sind Verbrauchsartikel. Sobald sich der Geschmack Ihres Liquids verändert oder die Dampfentwicklung geringer wird, sollten Sie einen neuen einsetzen.</p>
+<h2><strong>Eigenschaften Aspire Breeze NXT E-Zigarette</strong></h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Akkukapazität</td>
+<td>1000 mAh</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>3,5 - 3,8 V</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>5,4 ml</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Side-Filling-System</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>DL, Direct Lung</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>96 mm x 35 mm x 20,5 mm</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
 <li>1x Aspire Breeze NXT E-Zigarette</li>
-<li>2x Aspire Breeze NXT Head 0,8 Ohm</li>
+<li>2x Axpire Breeze NXT Head 0,8 Ohm</li>
 <li>1x Mundstück-Schutzkappe</li>
-<li>1x Micro-USB-Ladekabel</li>
+<li>1x Micro-USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Breeze NXT</strong>
-<ul>
-<li>Akkukapazität: 1.000 mAh</li>
-<li>Ausgangsspannung: 3,5 - 3,8 Volt</li>
-<li>Tankvolumen: 5,4 ml</li>
-<li>Side Filling</li>
-<li>LED-Indikation</li>
-<li>Airflow Control</li>
-<li>Maße: 96 x 35 x 20,5 mm</li>
-</ul>
-<br>
-<br>
-',
+</ul>',
     ),
     'AS100BNP' => array(
         'icNumber' => 'AS100BNP',
@@ -57062,25 +57435,34 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Breeze NXT Pod ist für die E-Zigarette der Marke Aspire Breeze NXT geeignet. Das Tankvolumen liegt bei 5,4 Millilitern. Sie können den Pod über eine seitliche Öffnung befüllen. Das Breeze NXT Pod-System hat einen Widerstand von 0,8 Ohm und ist für die Inhalation direkt in die Lunge (DL) geeignet. Sie erhalten pro bestellter Packung je einen Pod.
-<br>
-<br>
+        'description' => '<p>Das Breeze NXT Pod (Liquid-Cartridge) ist das passgenaue Pod für das Aspire Breeze NXT E-Zigaretten-Set. Das Pod hat einen Tank für 5,4 ml Liquid und die Verdampferköpfe (Heads) können bei befüllten Tank ausgetauscht werden. Liquid füllen sie bequem über ein Side-Filling-System ein. Das Pod wird mit einem Aspire Breeze NXT Mesh Head mit 0,8 Ohm Widerstand ausgeliefert.</p>
+<p>Denken Sie daran, dass Verdampferköpfe Verbrauchsartikel sind und Sie diese regelmäßig austauschen sollten, spätestens sobald der Geschmack Ihres Liquids sich verändert oder die Dampfentwicklung nachlässt.</p>
+<h2>Eigenschaften Aspire Breeze NXT Pod</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Tankvolumen</td>
+<td class="auto-style1">5,4 ml</td>
+</tr>
+<tr>
+<td class="auto-style1">Befüllung</td>
+<td class="auto-style1">Side-Filling-System</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
-<strong>Lieferumfang</strong>
-<li>1x Aspire Breeze NXT Pod | Head 0,8 Ohm</li>
-<li>1x Produktinformation</li>
+<li>1x Aspire Breeze NXT Pod</li>
+<li>1x Axpire Breeze NXT Mesh Head 0,8 Ohm</li>
 </ul>
-<br>
-<br>
-<strong>Aspire Breeze NXT Pod</strong>
+<h2>passend zu</h2>
 <ul>
-<li>Tankvolumen: 5,4 ml</li>
-<li>Side Filling-System</li>
-<li>Widerstandsbereich: 0,08 Ohm</li>
-<li>passgebauer Pod für die Aspire Breeze NXT</li>
-</ul>
-<br>
-<br>',
+<li>Aspire Breeze NXT E-Zigaretten-Set</li>
+</ul>',
     ),
     'AS100BNM' => array(
         'icNumber' => 'AS100BNM',
@@ -57098,25 +57480,34 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Für die E-Zigarette Aspire Breeze NXT ist der Verdampferkopf Aspire Breeze NXT Mesh Heads geeignet. Er weist einen Widerstand von 0,8 Ohm auf und ist für die direkte Inhalation in die Lunge (DL) geeignet. Der Head besteht aus dem Material Kanthal AF und ist für eine maximale Ausgangsleistung von 20 Watt ausgelegt. Es gilt zu beachten, dass es sich bei Verdampferköpfen um ein Verschleißartikel handelt, deren periodischer Wechsel empfehlenswert ist. Ihnen werden pro bestellter Packung je drei der Aspire Breeze NXT Mesh Verdampferköpfe ausgeliefert.
-<br>
-<br>
+        'description' => '<p>Die Aspire Breeze NXT Heads (Verdampferköfe) haben einen Widerstand von 0,8 Ohm und sind exklusiv für die gleichnamige E-Zigarette konzipiert. Sie haben eine Mesh-Struktur (Netz), wodurch die Oberfläche des Heads vergrößert ist, was zu einer besseren Geschmacks- und Dampfbildung führt. Die Aspire Breeze NXT Heads sind für die direkte Lungeninhalation (DL) konzipiert. Sie erhalten 3 Heads pro bestellter Packung.</p>
+<p>Verdampferköpfe sind Verbrauchsartikel - sobald der Geschmack Ihres Liquids sich verändert oder die Dampfentwicklung nachlässt, sollten Sie diese austauschen.</p>
+<h2>Eigenschaften Aspire Breeze NXT Heads</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">0,8 Ohm</td>
+</tr>
+<tr>
+<td>Material</td>
+<td class="auto-style1">Kantha AFI</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">15 - 20 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<strong>Lieferumfang</strong>
-<li>3x Aspire Breeze NXT Mesh Head 0,8 Ohm</li>
-<li>1x Produktinformation</li>
+<li>Aspire Breeze NXT E-Zigaretten-Set</li>
 </ul>
-<br>
-<br>
-<strong>Aspire Breeze NXT Mesh Head</strong>
-<ul>
-<li>Widerstand: 0,08 Ohm</li>
-<li>Material: Kanthal AF</li>
-<li>passgenauer Head für Pod Aspire Breeze NXT</li>
-</ul>
-<br>
-<br>
-',
+<p>&nbsp;</p>',
     ),
     'SW100MI' => array(
         'icNumber' => 'SW100MI',
@@ -57445,7 +57836,62 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => '',
+        'description' => '<h2>Easy 3 Aufsteller - 10x SC Easy 3 E-Zigaretten & 64x InnoCigs Pod-Systeme</h2>
+Sichern Sie sich das SC Easy 3 Verkaufsdisplay inklusive kompletter Bestückung für Ihr Verkaufsgeschäft. Das Display verfügt über ein ansprechendes und einladendes Design und lässt sich durch die Maßen 275 x 325 x 330 mm gut positionieren und somit präsentieren.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x SC Easy 3 E-Zigaretten Set 9 mg/ml 5er Packung</li>
+<li>5x SC Easy 3 E-Zigaretten Set 18 mg/ml 5er Packung</li>
+<li>3x SC Easy 3 Caps Star Spangled Tabak 9 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Star Spangled Tabak 18 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps The Rebels Tabak Vanille 9 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps The Rebels Tabak Vanille 18 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Devils Darling Tabak 9 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Devils Darling Tabak 18 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps White Glacier Fresh 9 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps White Glacier Fresh 18 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Milli Vanille 9 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Milli Vanille 18 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Red Violet Amarenakirsche 9 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Red Violet Amarenakirsche 18 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Red Cyclone Rote Früchte 9 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Red Cyclone Rote Früchte 18 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Blue Spot Blaubeeren 9 mg/ml (2 Stück pro Packung)</li>
+<li>3x SC Easy 3 Caps Blue Spot Blaubeeren 18 mg/ml (2 Stück pro Packung)</li>
+<li>4x SC Easy 3 Caps First Man Apfel 9 mg/ml (2 Stück pro Packung)</li>
+<li>4x SC Easy 3 Caps First Man Apfel 18 mg/ml (2 Stück pro Packung)</li>
+<li>4x SC Easy 3 Caps Pretty Sweetheart Sahne-Erdbeere 9 mg/ml (2 Stück pro Packung)</li>
+<li>4x SC Easy 3 Caps Pretty Sweetheart Sahne-Erdbeere 18 mg/ml (2 Stück pro Packung)</li>
+<li>1x Montageanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wichige Merkmale SC Easy 3</strong>
+<ul>
+<li>Akkukapazität: 350 mAh</li>
+<li>Ausgangsleistung: 6,5 Watt</li>
+<li>Ausgangsspannung: 2,2 - 3,2 Volt</li>
+<li>Ladestrom: 1 A</li>
+<li> Spule Widerstand: 1,1 Ohm</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Zugautomatik</li>
+<li>Maße: 108,6 x 20,45 x 12 mm</li> 
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale Verkaufsdisplay</strong>
+<li>Maße: 275 x 325 x 330 mm</li>
+<br>
+<br>
+<strong>Inhaltsstoffe des Liquids:</strong>
+<ul>
+<li>Glycerin (60% VG), Propylenglycol (30% PG), Wasser (10%), Nikotin, Aroma</li>
+<li>Nikotingehalt: je nach Variante 9 mg/ml oder 18 mg/ml</li>
+</ul>
+<br>
+<br>',
     ),
     'SC100VD3L' => array(
         'icNumber' => 'SC100VD3L',
@@ -57463,7 +57909,20 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => '',
+        'description' => 'Pro bestellter Packung erhalten Sie ein SC Easy 3 Verkaufsdisplay. Wie der Name bereits verrät, ist das Verkaufsdisplay für die SC Easy 3 E-Zigaretten und die dazugehörenden Pod-Systeme geeignet. Das Verkaufsdisplay bietet Platz für 10x SC Easy 3 E-Zigaretten und 64x Pod-Systeme. Ob direkt neben der Kasse oder auch in der Vitrine; das Verkaufsdisplay können Sie überall platzieren.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Easy 3 Verkaufsdisplay</li>
+<li>1x Montageanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale Verkaufsdisplay</strong>
+<li>Maße: 275 x 325 x 330 mm</li>
+<br>
+<br>',
     ),
     'AK100WLS' => array(
         'icNumber' => 'AK100WLS',
@@ -57481,46 +57940,87 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Owl E-Zigaretten Set besteht aus zwei wichtigen Komponenten: dem Owl Akkuträger und Owl Verdampfer. Der Owl Akkuträger benötigt eine 18650er, 20700er oder 21700er Akkuzelle um in Betrieb gesetzt werden zu können. Der Owl Verdampfer kann bis zu 4ml Liquid fassen. Sie haben aber auch die Wahl den Ersatzglastank mit 3ml Volumen zu verwenden. Das Liquid wird von oben in den Tank gegeben. Da der Glastank bzw. beide Glastanks durchsichtig sind, können Sie Ihren Liquidstand im Auge behalten. Im Lieferumfang befinden sich insgesamt 2 Subohm-Mesh-Heads, die für direkte Lungenzüge ausgelegt sind. Bitte tauschen Sie die Heads in regelmäßigen Zeitabständen aus, damit Ihr Liquidgeschmack unverfälscht bleibt.
-<br>
-<br>
-<p><strong>Lieferumfang:</strong></p>
+        'description' => '<p>Das Advken OWL E-Zigaretten Set besteht aus dem OWL Akkuträger, der mit einer 18650er, 20700er oder 21700er Akkuzelle betrieben werden kann, und dem OWL Cleraomizer mit einem Füllvolumen von bis zu 4 ml. Akkuträger und Clearomizer haben eine hochwertige Oberfläche aus allminiumlegiertem Edelstahl und fügen sich zu einer hübschen Stab-Form zusammen.</p>
+<p>Der Advken OWL Akkuträger wird lediglich über die Feuertaste gesteuert. Die Leistungsabgabe erfolgt konstant, wobei die Ausgangsleistung zwischen 3,2V und 4,2V variiert - abhängig vom Ladestatus des Akkus. Ein LED-Indikator informiert über den aktuellen Ladestand des Akkus.</p>
+<p>Der Advken OWL Clearomizer hat mit dem vorinstallierten bauchigen Tankglas ein Füllvolumen für 4 ml Liquid. Sie können jedoch auch das im Lieferumfang enthaltene schlankere Tankglas verwenden, wodurch Sie ein Füllvolumen von 3 ml erhalten. Das Liquid füllen Sie über das integrierte Top-Filling-System von oben ein. Zwischen Mundstück und Glastank befindet sich ein Ring, mit dem Sie stufenlos den Zugwiderstand über den Airflow Control regeln. Im Lieferumfang enthalten sind 2 Verdampferköpfe (Heads), einer mit einem Widerstand von 0,2 Ohm, der vorinstalliert ist und ein weiterer mit einem Widerstand von 0,16 Ohm. Beide sind für das subohme Dampfen, also die direkte Lungeninhalation konzipiert und haben eine Netz-Struktur, wodurch das Liquid besser am Verdampferkopf verdampft und es zu einer noch intensiveren Dampfentwicklung kommt.&nbsp;</p>
+<p>Das E-Zigaretten Set wird durch eine 18650er oder eine 20700er oder eine 21700er Akkuzelle betrieben, die nicht im Lieferumfang enthalten ist.</p>
+<h2>Eigenschaften Advken OWL Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>18650er oder 20700er oder 21700er Akkuzelle <br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>3,2 - 4,2 Volt</td>
+</tr>
+<tr>
+<td>mind. Widerstand</td>
+<td>0,1 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser: 27 mm, Höhe: 93 mm</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>LED-Indikator</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften Advken OWL Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>max. 4 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>25 mm (an der Base)</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>40 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex-Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>DL - Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Owl Akkuträger</li>
-<li>1x Owl Clearomizer</li>
-<li>1x Mesh Head 0,2 Ohm (vorinstalliert) | DL</li>
-<li>1x Mesh Head 0,16 Ohm | DL</li>
+<li>1x Advken OWL Akkuträger</li>
+<li>1x Advken OWL Clearomizer</li>
+<li>1x Mesh-Head 0,2 Ohm (vorinstalliert)</li>
+<li>1x Mesh-Head 0,16 Ohm</li>
 <li>1x Ersatz-Glastank (3 ml)</li>
-<li>1x Ersatzteil-Set</li>
+<li>1x Ersatzteile</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>18650er/20700er/21700er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<p><strong>OWL Akkuträger</strong></p>
-<ul>
-<li>konstante Spannungsabgabe (nicht regulierbar)</li>
-<li>Ausgangsspannung: 3,2V - 4,2V</li>
-<li>mind. Widerstand: 0,1 Ohm</li>
-<li>Durchmesser: 27 mm</li>
-<li>Höhe: 93 mm</li>
-<li>Gewindetyp: 510</li>
-<li>LED-Indikator</li>
-</ul>
-<br>
-<br>
-<p><strong>OWL CLEAROMIZER</strong></p>
-<ul>
-<li>Tankvolumen: 4 ml</li>
-<li>Durchmesser: 25 mm</li>
-<li>Höhe: 45 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Pyrex-Glas und Edelstahl</li>
-<li>subohm-fähig</li>
-<li>Top Filling-System</li>
-<li>Top Airflow Control</li>
 </ul>',
     ),
     'PV100AM' => array(
@@ -57539,46 +58039,103 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Alpha Zip Mini Akku und der Maat Verdampfer bilden das E-Zigaretten Set von der Marke VooPoo. Sie dampfen in den Modi VW/TC/Fit und können diese über die Feuertaste und zwei Einstelltasten auswählen. Der Akku hat fest verbaute Akkuzellen, sodass das Austauschen der Akkuzellen hier entfällt. Der Akku erreicht eine maximale Ausgangsleistung von 120 Watt und hat eine Kapazität von 4400mAh. Der Maat Verdampfer kann maximal 4ml Liquid über das Top Filling System aufnehmen. Die individuell einstellbare Airflow Control befindet sich in der Base. Im Lieferumfang sind zwei Subohm-Heads enthalten, womit Sie direkte Lungenzüge tätigen können.
-<br>
-<br>
-<strong>Lieferumfang:</strong>
+        'description' => '<p>Das <span> VooPoo Alpha Zip</span> mini <span> E-Zigaretten Set </span> wird mit dem fest verbauten 4.400 mAh Akku mit einer maximalen Ausgangsleistung von 120 Watt versorgt. Dazu gehört der Voopoo Maat Clearomizer mit einem Tankvolumen von 4 ml, der für das Sub-Ohm-Dampfen, bzw. das DL-Dampfen (Direct Lung) optimiert ist.</p>
+<p>Der Alpha Zip mini Akku wird mit einer fest verbauten Akkuzelle mit 4.400 mAh mit einer maximalen Ausgangsleistung von 120 Watt versorgt. Er wird über die Feuertaste sowie 2 Einstelltasten gesteuert. Sie können zwischen Variable Watt (VW) und Variable Temperature Modi (TC) wählen. Der Leistungsbereich liegt zwischen 5 und 120 Watt, der einstellbare Temperaturbereich in einer Spanne zwischen 100° und 315°C. Die gewählten Einstellungen sowie der aktuelle Akkustand werden Ihnen auf einem OLED-Display angezeigt.</p>
+<p>Der Voopoo Maat Clearomizer hat ein Tankvolumen für 4 ml Liquid und wird via Top Filling-System bequem von oben befüllt. Im unteren Teil des Clearomizers befindet sich der Airflow Control zur Regelung des Zugwiderstandes. Im Lieferumfang enthalten sind zwei Mesh-Heads (Verdampferköpfe), bei denen das Liquid nicht an einer Spule verdampft, sondern an einer speziell entwickelten Netzstruktur, was zu einer intensiveren Geschmacks- und Dampfentwicklung führt. Der MT-M2 Dual Mesh Head mit einem Widerstand von 0,2 Ohm, der zwischen 55 und 80 Watt betrieben werden soll und der MT-M1 Single Mesh Head mit einem Widerstand von 0,13 Ohm, der zwischen 60 und 85 Watt betrieben wird. Beide Heads sind für das DL-Dampfen, also für die direkte Lungeninhalation konzipiert. Bitte denken Sie daran, die zu den Verschleißteilen zählenden Verdampferköpfe regelmäßig auszutauschen.</p>
+<h2>Eigenschaften Voopoo Alpha Zip mini Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Akkukapazität</td>
+<td>4.400 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW, TC, FIT</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>max. 7,5 Volt</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 180 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100°C - 315°C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,5 - 5 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>80 mm x 48,5 mm x 24 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften Voopoo Maat Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>4 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24,5 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>55,75 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>an der Verdampferbasis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Plug and Pull Coils (Heads)</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Alpha Zip Mini Akku</li>
-<li>1x Maat Clearomizer</li>
-<li>1x MT-M2 Dual Mesh Head 0,2 Ohm | DL</li>
-<li>1x MT-M1 Single Mesh Head 0,13 Ohm | DL</li>
-<li>1x Ersatz-Glastank</li>
+<li>1x Voopoo Alpha Zip mini Akku</li>
+<li>1x Voopoo Maat Clearomizer</li>
+<li>1x MT-M2 Dual Mesh Head 0,2 Ohm</li>
+<li>1x MT-M1 Single Mesh Head 0,13 Ohm</li>
+<li>1x Ersatz-Glastank (2 ml)</li>
 <li>1x Ersatzteil-Set</li>
+<li>1x Micro-USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<p><strong>Alpha Zip Mini Akku</strong></p>
-<ul>
-<li>Ausgangsmodi: VW/TC/Fit</li>
-<li>Ausgangsleistung: 5 - 120 Watt</li>
-<li>Akkukapazität: 4400mAh</li>
-<li>Ausgangsspannung: max. 7,5V</li>
-<li>Widerstandbereich: 0,5 - 5,0 Ohm</li>
-<li>Temperaturbereich: 100°C - 315°C</li>
-<li>Maße: 48,5 mm x 24 mm x 135,75mm</li>
-<li>diverse Schutzfunktionen</li>
-<li>Gewindetyp: 510</li>
-<li>OLED-Display</li>
-</ul>
-<br>
-<br>
-<p><strong>Maat Clearomizer</strong></p>
-<ul>
-<li>Tankvolumen: 4 ml</li>
-<li>Durchmesser: 24,5 mm</li>
-<li>Höhe: 55,75 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Pyrex-Glas und Edelstahl</li>
-<li>subohm-fähig</li>
-<li>Top Filling-System</li>
-<li>Airflow Control</li>
 </ul>',
     ),
     'SC100IT' => array(
@@ -57597,33 +58154,64 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Das SC E-Zigaretten Set iTap besitzt ein sogenanntes Cartridge-System. Die Kartusche ist äquivalent des bekannten Verdampfers, welcher sonst die Verdampfereinheit einer E-Zigarette bildet. Die Cartridge verfügt über ein Tankvolumen von 2 ml Liquid. Um dieses zu befüllen, müssen Sie die Cartridge vom Akku entfernen und das Liquid via des Bottom-Filling-Systems in die iTap Cartridge füllen. Der fest verbaute Akku der iTap E-Zigarette besitzt eine Kapazität von 800mAh. Im Lieferumfang sind zudem noch zwei Verdampferköpfe enthalten. Zum einen der SC GS Air S Verdampferkopf mit einem Widerstand von 1,6 Ohm und zum anderen der GS Air Verdampferkopf mit einem Widerstand von 0,75 Ohm. Ersterer ist aufgrund seines hohen Widerstands für das Dampfen im moderaten Bereich geeignet. Letzterer für das Dampfen im Subohm-Bereich.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die Eleaf iTap E-Zigarette ist ein sogenanntes POD- oder Cartridge-System. Der Akku hat eine Kapazität von 800 mAh und die passgenauen Liquid-Cartridges (Pods) haben einen Tank für 2 ml Liquid. Die Verdampferköpfe (Heads) sind austauschbar.</p>
+<p>Die Eleaf iTap hat einen fest verbauten Akku mit einer Leistung von 800 mAh und arbeitet mit einer konstanten Spannung, die an den Verdampferkopf (Head) abgegeben wird. Einziges Bedienelement ist die Feuertaste, über die Sie das Gerät ein- und ausschalten und die Sie drücken müssen, wenn Sie einen Zug nehmen. Eine LED informiert in drei Farben über den Akkuladestand der E-Zigarette: grünes Licht bedeutet 100-60 % Akkuladung, blaues Licht 59 - 20 % und rotes Licht signalisiert, dass nur noch max. 19 % Akkuladung vorhanden ist. Aufladen können Sie die E-Zigarette über das mitgelieferte USB-Kabel. Ein Ladegerät ist wie üblich nicht im Lieferumfang enthalten.</p>
+<p>Das Liquid-Cartridge (Pod) das bei der iTap E-Zigarette die Verdampfereinheit bildet, hat ein Tankvolumen von 2 ml. Nachgefüllt wird das Cartridge über ein Bottom-Fill-System. Mit der E-Zigarette erhalten Sie 2 Heads (Verdampferköpfe), einen GS-Air Head mit 0,75 Ohm Widerstand, mit dem Sie im DL-Stil dampfen können, also direkte Lungeninhalation, und einen GS-Air2 Head mit einem Widerstand von 1,6 Ohm, der für das MTL-Dampfen (Mouth to Lung) konzipiert ist, bei dem der Dampf zuerst in den Mund gezogen und dann erst in die Lunge inhalieren wird.</p>
+<p>Verdampferköpfe sind Verbrauchsartikel. Sobald sich der Geschmack Ihres Liquids verändert oder die Dampfentwicklung geringer wird, sollten Sie einen neuen einsetzen.</p>
+<h2><strong>Eigenschaften Eleaf iTap E-Zigarette</strong></h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Akkukapazität</td>
+<td>800 mAh</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Ausgangsmodi</td>
+<td>konstant</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>max. 30 Watt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,4 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Bottom-Fill-System</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>am Boden des Pods, stufenlos</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>DL, Direct Lung<br>MTL, Mouth to Lung</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>102,3 mm x 20 mm x 16 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>42,7 Gramm</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
-<li>1x iTap Akku</li>
-<li>1x iTap Cartridge</li>
-<li>1x GS Air S 1,6 Ohm Head</li>
-<li>1x GS Air 0,75 Ohm Head</li>
+<li>1x Eleaf iTap E-Zigarette</li>
+<li>1x Eleaf iTap Cartridge</li>
+<li>1x GS-Air Head 0,75 Ohm</li>
+<li>1x GS-Air S Head 1,6 Ohm</li>
 <li>1x QC USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>iTap</strong>
-<ul>
-<li>Akkukapazität: 800mAh</li>
-<li>Ausgabemodi: konstant</li>
-<li>Ausgangsleistung: max. 30 Watt</li>
-<li>Widerstandsbereich: 0,4 - 3,0 Ohm Ohm</li>
-<li>Tankvolumen: 2 ml</li>
-<li>Bottom-Filling-System</li>
-<li>Maße: 102,3 mm x 20 mm x 16 mm</li>
-<li>Gewicht: 42,7 Gramm</li>
-</ul>
-<br>
-<br>',
+</ul>',
     ),
     'SC100ITC' => array(
         'icNumber' => 'SC100ITC',
@@ -57641,23 +58229,37 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Die iTap Kartusche, auch Cartridge genannt, kommt aus dem Hause SC und ist die passende Verdampfereinheit für Ihren SC iTap Akku mit 800mAh. Die Cartridge verfügt über ein Tankvolumen von 2ml Liquid, welches per Bottom-Filling System in die Kartusche eingefüllt wird. Dieses befindet sich an der Seite der Kartusche. Um dieses freilegen zu können, müssen Sie den Stöpsel herausziehen. Pro Packung sind fünf Kartuschen enthalten. Jede Cartridge besitzt einen vorinstallierten GS Air S Verdampferkopf mit 1,6 Ohm. Sie können aber auch den GS Air Verdampferkopf mit 0,75 Ohm für die Cartridge verwenden. Bedenken Sie aber bitte, dass Verdampferköpfe Verschleißartikel sind und je nach Gebrauch ausgetauscht werden müssen.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Das Eleaf iTap Cartridge ist speziell für die Verwendung mit der Eleaf iTap E-Zigarette vorgesehen. Es ist wiederbefüllbar und fasst bis zu 2 ml Liquid, das über ein Bottom-Filling System in den Tank gegeben wird. Die Heads (Verdampferköpfe) sind nicht fest im Cartridge verbaut sondern auswechselbar. Geliefert wird Ihnen das iTap Cartridge mit einem vorinstallierten GS Air S Head mit 1,6 Ohm Widerstand.</p>
+<h2><strong>Eigenschaften Eleaf iTap</strong> Cartridge</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Bottom-Filling-System</td>
+</tr>
+<tr>
+<td>Widerstand des vorinstallierten Coils</td>
+<td>1,6 Ohm</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>MTL - Mouth to Lung</td>
+</tr>
+<tr>
+<td>Besondere Eigenschaft</td>
+<td>passgenaues Cartridge für iTap E-Zigarette</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
-<li>1x iTap Cartridge mit 1,6 Ohm</li>
+<li>1x Eleaf iTap Cartridge mit vorinstalliertem GS Air S Head&nbsp;</li>
 </ul>
-<br>
-<br>
-<strong>iTap Cartridge</strong>
-<ul>
-<li>Tankvolumen: 2ml</li>
-<li>Widerstand: 1,6 Ohm</li>
-<li>MTL</li>
-</ul>
-<br>
-<br>',
+<p>&nbsp;</p>',
     ),
     'SC100GSH' => array(
         'icNumber' => 'SC100GSH',
@@ -57675,19 +58277,30 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Pro bestellter Packung erhalten Sie fünf GS Air S Heads der Marke SC. Diese weisen einen Widerstand von 1,6 Ohm auf und sind somit für das Dampfen im moderaten Bereich oder auch Backendampfen ausgelegt. Bitte beachten Sie den Leistungsbereich, in welchem die Verdampferköpfe verwendet werden können. Bei den SC GS Air S Verdampferköpfen bewegt sich dieser zwischen 5 und 10 Watt. Um für ein gleichbleibenden Geschmack des Liquids zu sorgen, sollten Sie die Verdampferköpfe in regelmäßigen Zeitabständen austauschen.
-<br>
-<br>
-<strong>Wichtige Merkmale:</strong>
+        'description' => '<p>Die GS Air S Heads (Verdampferköpfe) haben einen Widerstand 1,6 Ohm auf und können in einem Leistungsbereich zwischen 5 und 10 Watt verwendet werden.</p>
+<p>Verdampferköpfe sind Verbrauchsartikel und sollten daher in regelmäßigen Zeitabständen ausgetauscht werden, spätestens, wenn sich der Geschmack Ihres Liquids oder die Dampfentwicklung verändern.&nbsp;</p>
+<h2>Eigenschaften GS Air S Heads</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">1,6 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">5 - 10 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<li>Widerstand: 1,6 Ohm</li>
-<li>Leistungsbereich: 5 - 10 Watt</li>
-</ul>
-<li>SC iTap E-Zigaretten Set</li>
-<li>SC iTap Cartridge</li>
-</ul>
-<br>
-<br>',
+<li>Eleaf iTap E-Zigaretten Set</li>
+<li>Eleaf iTap Cartridge</li>
+</ul>',
     ),
     'SC100SX' => array(
         'icNumber' => 'SC100SX',
@@ -57705,39 +58318,103 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Das iStick Mix mit ELLO POP E-Zigaretten Set kommt aus dem Hause Eleaf. Zum Inhalt des Sets gehören die namensgebenden Akkuträger und Clearomizer. Der iStick Mix Akkuträger kann eine maximale Ausgangsleistung von 160 Watt erreichen. Arbeiten tut der Akkuträger nach dem Einsetzen von zwei 18650er Akkuzellen. Bitte beachten Sie, dass sich diese nicht im Lieferumfang des Akkuträgers befinden und separat erworben werden müssen. Mit dem iStick Mix haben Sie die Möglichkeit beim Dampfen Wicklungen mit einem Widerstand von 0,05 Ohm bis 3,0 Ohm zu verwenden. Somit ist das Dampfen mit direkten Lungenzügen möglich. Zwei Subohm Wicklungen erhalten Sie bereits bei der Lieferung dazu. Zum einen den HW-M2 Head und zum anderen den HW-N2 Head. Beide Verdampferköpfe wurden mit einem Widerstand von 0,2 Ohm ausgestattet. Der Glastank des ELLO POP wurde mit einem Tankvolumen von 6,5ml versehen, in welchen Sie Ihr gewünschtes Liquid über ein Top-Filling System einfüllen.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Das Eleaf iStick Mix E-Zigaretten Set besteht aus dem iStick Mix Akkuträger mit einer maximalen Ausgangsleistung von 160 Watt und dem Eleaf ELLO POP Clearomizer mit 6,5 ml Füllvolumen und hat eine hübsche Farbgebung.</p>
+<p>Der iStick Mix Akkuträger wird klassich über die Feuertaste und zwei Einstelltasten gesteuert. Alle Einstellungen und weiteren Parameter werden auf dem in der Gehäuseseite integrierten OLED-Display angezeigt. Die Ausgangsleistung von 160 Watt erreicht der Akkuträger über 2 wechselbare, hochstrome 18650er Akkus. Es stehen 3 Betriebsmodi zur Verfügung: der VW-Modus (Variable Wattage), bei dem Sie die Leistung auf einen festen Wert zwischen 1 und 160 Watt einstellen können und die beiden temperaturgesteuerten Modi TC und TCR, bei denen Sie zwischen 100 und 315 °C bestimmen, bis zu welcher Temperatur der Coil (Verdampferkopf) erhitzt werden soll. Unterstützt werden Coils mit Drähten aus Nickel, Titan und Edelstahl. Im TCR Modus haben Sie die Möglichkeit auch Coils mit andern Drähten zu verwenden, indem Sie den Temperaturkoeffizienten des Widerstandes des gewählten Drahtes definieren und auf einem der 3 Speicherplätze hinterlegen. Der Akkuträger kann über das mitgelieferte USB-Kabel mit einem PC oder Laptop verbunden werden, um aktuelle Software-Updates nach QC 3.0/PD Protokoll zu laden. Der Typ C USB-Port des iStick Mix sorgt für einen beschleunigten Ladevorgang.</p>
+<p>Der ELLO POP Clearomizer hat ein Tankvolumen für 6,5 ml Liquid, das Sie durch das integrierte Top-Filling-System bequem von oben in den Clearomizer einfüllen können, ohne ihn vom Akkuträger abschrauben zu müssen. Den Zugwiderstand regeln Sie mit dem Airflow Control stufenlos über einen Ring an der Verdampferbasis. Der Glastank des ELLO PO Clearomizers wird durch farblich abgestimmte Silikonringe geschützt. Im Lieferumfang enthalten sind 2 Verdampferköpfe (Heads) für das DL-Dampfen: der HW-M2 Head mit 0,2 Ohm ist vorinstalliert, der HW-N2 Head mit ebenfalls 0,2 Ohm ist beigepackt.</p>
+<p>Das E-Zigaretten Set wird durch zwei baugleiche 18650er Akkuzelle betrieben, die nicht im Lieferumfang enthalten ist.</p>
+<h2>Eigenschaften iStick Mix Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>2 x 18650er Akkuzelle <br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgangsmodi</td>
+<td>VW, TC (Ni, Ti, SS), TCR (M1, M2, M3)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 160 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 - 315 °C</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,5 - 8 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V /2,5A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>83 mm x 52 mm x 27 mm</td>
+</tr>
+<tr>
+<td>besondere Eigenschaften</td>
+<td>OLED-Display, Software-updatefähig</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften ELLO POP Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>6,5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>28 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>56,5 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x iStick Mix 160 Watt Akkuträger</li>
-<li>1x ELLO POP Clearomizer</li>
-<li>1x HW-N2 0,2 Ohm Head</li>
-<li>1x HW-M2 0,2 Ohm Head</li>
-<li>1x QC3.0 USB-Kabel</li>
-<li>Ersatzteil-Set</li>
+<li>1x Eleaf iStick Mix Akkuträger</li>
+<li>1x Eleaf ELLO POP Clearomizer</li>
+<li>1x HW-M2 Head 0,2 Ohm (vorinstalliert)</li>
+<li>1x HW-N2 Head 0,2 Ohm</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x QC 3.0-USB-Ladekabel</li>
 <li>2x Bedienungsanleitung</li>
-</ul>
-<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>iStick Mix 160 Watt Akkuträger</strong>
-<ul>
-<li>Abmessung:83 mm x 52 mm x 27 mm (ohne Clearomizer)</li>
-<li>OLED Display</li>
-<li>Widerstandsbereich: 0,05 Ohm - 3,0 Ohm</li>
-<li>Ausgangsleistung: bis 160W</li>
-</ul>
-<br>
-<br>
-<strong>ELLO POP Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 6,5 ml</li>
-<li>Durchmesser: 28 mm</li>
-<li>Höhe: 56,5 mm</li>
-<li>Bottom Airflow Control</li>
-<li>Top Filling System</li>
-<li>subohm-fähig</li>
 </ul>',
     ),
     'SC100SXM' => array(
@@ -57756,30 +58433,60 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Der iStick Mix Akkuträger von der Marke SC wurde mit einer maximalen Ausgangsleistung von 160 Watt ausgestattet. Des Weiteren ist das Dampfen mit direkten Lungenzügen möglich, da der Akkuträger Wicklungen mit einem Widerstand von 0,05 bis 3,0 Ohm verarbeiten kann. Die benötigte Energie bezieht der iStick Mix über zwei 18650er Akkuzellen. Beachten Sie bitte, dass diese Akkuzellen nicht im Lieferumfang des Akkuträgers enthalten sind. Die 18650er Akkuzellen müssen separat erworben werden. Für das Laden der Akkuzellen wird ein separates Ladegerät empfohlen. Durch mehrere verbaute Sicherheitsfunktionen ist das sichere Dampfen sichergestellt. So gibt es unter anderem einen Schutz vor Kurzschlüssen und Überladung.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der Eleaf iStick Mix Akkuträger mit einer maximalen Ausgangsleistung von 160 Watt wird klassich über die Feuertaste und zwei Einstelltasten gesteuert. Alle Einstellungen und weiteren Parameter werden auf dem in der Gehäuseseite integrierten OLED-Display angezeigt. Die Ausgangsleistung von 160 Watt erreicht der Akkuträger über 2 wechselbare, hochstrome 18650er Akkus. Es stehen 3 Betriebsmodi zur Verfügung: der VW-Modus (Variable Wattage), bei dem Sie die Leistung auf einen festen Wert zwischen 1 und 160 Watt einstellen können und die beiden temperaturgesteuerten Modi TC und TCR, bei denen Sie zwischen 100 und 315 °C bestimmen, bis zu welcher Temperatur der Coil (Verdampferkopf) erhitzt werden soll. Unterstützt werden Coils mit Drähten aus Nickel, Titan und Edelstahl. Im TCR Modus haben Sie die Möglichkeit auch Coils mit andern Drähten zu verwenden, indem Sie den Temperaturkoeffizienten des Widerstandes des gewählten Drahtes definieren und auf einem der 3 Speicherplätze hinterlegen. Der Akkuträger kann über das mitgelieferte USB-Kabel mit einem PC oder Laptop verbunden werden um aktuelle Software-Updates nach QC 3.0/PD Protokoll zu laden. Der Typ C USB-Port des iStick Mix sorgt für einen beschleunigten Ladevorgang.</p>
+<p>Der Akkuträger ist mit den gängi<span>gen Sicherheitsfunktionen ausgestattet. So gibt es unter anderem einen Schutz vor Kurzschlüssen und Überladung.<span>&nbsp;</span></span></p>
+<p>Der Akkuträger wird durch zwei baugleiche 18650er Akkuzelle betrieben, die nicht im Lieferumfang enthalten ist.</p>
+<h2>Eigenschaften iStick Mix Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>2 x 18650er Akkuzelle <br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgangsmodi</td>
+<td>VW, TC (Ni, Ti, SS), TCR (M1, M2, M3)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 160 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 - 315 °C</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,5 - 8 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V /2,5A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>83 mm x 52 mm x 27 mm</td>
+</tr>
+<tr>
+<td>besondere Eigenschaften</td>
+<td>OLED-Display, Software-updatefähig</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x iStick Mix 160 Watt Akkuträger</li>
-<li>1x QC3.0 USB-Kabel</li>
+<li>1x Eleaf iStick Mix Akkuträger</li>
+<li>1x QC 3.0-USB-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>Wichtige Merkmale:</strong>
-<ul>
-<li>Ausgabemodi: VW | TC (Ni, Ti, SS) | TCR (M1, M2, M3)</li>
-<li>Ausgangsspannung: 0,5 – 8 Volt</li>
-<li>Ausgangsleistung: 1 – 160 Watt</li>
-<li>Temperaturbereich: 100 °C – 315 °C | 200°F bis 600°F</li>
-<li>Widerstandsbereich: 0,05 – 3,0 Ohm</li>
-<li>Ladestrom: DC 5V/2,5A</li>
-<li>Maße: 83 mm x 52 mm x 27 mm</li>
-<li>Gewindetyp: 510</li>
-<li>OLED-Display</li>
-<li>update-fähig</li>
 </ul>',
     ),
     'SC100EP' => array(
@@ -57798,27 +58505,52 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Aus dem Hause SC kommt der Ello Pop Verdampfer, welcher einen Glastank mit einem Tankvolumen von 6,5ml besitzt. Über ein Top-Filling System befüllen Sie den Glastank mit dem von Ihnen gewählten Liquid. Außerdem ist mit diesem Verdampfer das Dampfen mit direkten Lungenzügen möglich. Mit den beiden mitgelieferten 0,2 Ohm Verdampferköpfen (HW-M2 und HW-N2) dampfen Sie problemlos im Subohm-Bereich. Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen gehören und regelmäßig ausgetauscht werden müssen, um ein gleichbleibendes Dampferlebnis zu gewährleisten. Wenn Sie den Luftwiderstand beim Dampfen regulieren möchten, können Sie dies stufenlos über die in der Base verbauten Airflow-Control machen.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der Eleaf ELLO POP Clearomizer hat ein Tankvolumen für 6,5 ml Liquid, das Sie durch das integrierte Top-Filling-System bequem von oben in den Clearomizer einfüllen können, ohne ihn vom Akkuträger abschrauben zu müssen. Den Zugwiderstand regeln Sie mit dem Airflow Control stufenlos über einen Ring an der Verdampferbasis. Der Glastank des ELLO PO Clearomizers wird durch farblich abgestimmte Silikonringe geschützt. Im Lieferumfang enthalten sind 2 Verdampferköpfe (Heads) für das DL-Dampfen: der HW-M2 Head mit 0,2 Ohm ist vorinstalliert, der HW-N2 Head mit ebenfalls 0,2 Ohm ist beigepackt.</p>
+<h2>Eigenschaften ELLO POP Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>6,5 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>28 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>56,5 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x ELLO POP Clearomizer</li>
-<li>1x HW-N2 0,2 Ohm Head</li>
-<li>1x HW-M2 0,2 Ohm Head</li>
-<li>Square Parts</li>
+<li>1x Eleaf ELLO POP Clearomizer</li>
+<li>1x HW-M2 Head 0,2 Ohm (vorinstalliert)</li>
+<li>1x HW-N2 Head 0,2 Ohm</li>
+<li>1x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>ELLO POP Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 6,5 ml</li>
-<li>Durchmesser: 28 mm</li>
-<li>Höhe: 56,5 mm</li>
-<li>Bottom Airflow Control</li>
-<li>Top Filling System</li>
-<li>subohm- fähig</li>
 </ul>',
     ),
     'SC100EPG' => array(
@@ -57837,20 +58569,25 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Das Tankvolumen von dem Ello Pop Glastank beträgt insgesamt 6,5 Milliliter. Den Glastank können Sie bei Bedarf eigenständig wechseln, ohne das Sie weiteres Werkzeug benötigen. Es handelt sich dabei um ein Zubehörartikel für den gleichnamigen Ello Pop Clearomizer von SC.
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
+        'description' => '<p>Ersatz-Glastank für den Eleaf ELLO POP Clearomizer mit einem Tankvolumen von 6,5 ml aus stabilem Pyrex.</p>
+<h2>Eigenschaften ELLO POP Glastank</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>6,5 ml</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>passend für:</h2>
 <ul>
-<li>Tankvolumen: 6,5ml</li>
-<li>Material: Pyrex</li>
-</ul>
-<br>
-<br>
-<b>Passend für</b>
-<ul>
-<li>SC Ello Pop Clearomiezr Set</li>
-<li>SC iStick Mix E-Zigaretten Set</li>
+<li>Eleaf ELLO POP Clearomizer</li>
+<li>Eleaf iStick Mix E-Zigaretten-Set</li>
 </ul>',
     ),
     'OF100GR' => array(
@@ -57942,41 +58679,95 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Sigelei Etiny Plus E-Zigarette besitzt einen fest verbauten Akku mit einer Kapazität von 800mAh. Sie dampfen in 3 Spannungsmodi (High, Medium, Low). Der Etiny 2 Verdampfer wird über ein Top-Filling-System von oben mit Liquid befüllt und kann so bis zu 2ml Liquid aufnehmen. Eine Airflow-Control an der Base des Etiny 2 Verdampfers lässt Sie den Luftwiderstand während des Dampfens anpassen. Im Lieferumfang enthalten sind zwei Verdampferköpfe. Zum einen der Sigelei  MC Verdampferkopf mit 1,3 Ohm Widerstand und zum anderen der Sigelei S2 mit 1,3 Ohm Widerstand. Das Sigelei Etiny Plus E-Zigaretten Set ist auf das Dampfen im moderaten Bereich ausgelegt. 
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Zum Sigelei Etiny Plus E-Zigaretten Set gehört der gleichnamige Akku mit einer Kapazität von 800 mAh und der Etiny II Clearomizer mit 2 ml Tankvolumen. Das Etiny E-Zigaretten Set ist für das moderate Dampfen konzipiert, welches auch als MTL- (Mouth to Lung-) Dampfen oder Backendampfen bezeichnet wird. Hierbei wird wie beim Rauchen einer Zigarette der Dampf zunächst in den Mund eingeatmet, und erst anschließend in die Lunge inhaliert.</p>
+<p>Beim Etiny Plus Akku kann die Spannung die an den Verdampferkopf abgegeben wird in 3 Stufen eingestellt werden. Über zwei Einstelltaste wählen Sie zwischen Low, Medium und High. Neben den Einstelltasten verfügt der Etiny Plus Akku noch über eine Feuertaste. Über das mitgelieferte Micro-USB-Kabel können Sie den Akku an einen geeigneten Adapter oder Ihren PC/Laptop anschließen, um ihn aufzuladen.</p>
+<p>Der Etiny II Clearomizer hat eine Füllvolumen für 2 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer bequem von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Über einen Einstellring an der Verdampferkopfbasis regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten sind 2 Verdampferköpfe (Heads) mit einem Widerstand von 1,3 Ohm. Über ein Plug and Pull Design lassen sich die Verdampferköpfe schnell und unkompliziert auswechseln.&nbsp;</p>
+<h2>Eigenschaften Sigelei Etiny Plus Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 800 mAh Kapazität</td>
+</tr>
+<tr>
+<td>Asugabemodus</td>
+<td>adjustable Voltage</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>3,3 - 4,2 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>1,2 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V/1A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>68 mm x 24 mm x 23 mm</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>LED-Indikator</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften Sigelei Etiny II Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>17,5 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>45,3 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Verdampferkopfbasis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Etiny Plus Akku 800 mAh</li>
-<li>1x Etiny 2 Clearomizer</li>
-<li>1x S2 Head 1,3 Ohm</li>
+<li>1x Sigelei Etiny Plus Akku</li>
+<li>1x Sigelei Etiny II Clearomizer</li>
 <li>1x MC Head 1,3 Ohm (vorinstalliert)</li>
-<li>1x Ersatzteilset</li>
-<li>1x USB-Kabel</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Etiny Plus Akku 800 mAh</strong>
-<ul>
-<li>Akkukapazität: 800 mAh</li>
-<li>Spannungsbereich: 3,3V - 4,2V</li>
-<li>Widerstandsbereich: 1,2 - 3,0 Ohm</li>
-<li>Maße: 68 mm x 24 mm x 23 mm</li>
-</ul>
-<br>
-<br>
-<strong>Etiny 2 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Höhe (inkl. Mundstück): 45,3 mm</li>
-<li>Durchmesser: 17,5 mm</li>
-<li>MTL</li>
-<li>Top-Filling-System</li>
-<li>Bottom-Airflow Control</li>
-</ul>
-<br>
-<br>',
+<li>1x S2 Head 1,3 Ohm</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Ersatzteile</li>
+<li>2x Bedienungsanleitung</li>
+</ul>',
     ),
     'PV100AZ' => array(
         'icNumber' => 'PV100AZ',
@@ -57994,47 +58785,105 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das VooPoo E-Zigaretten Set Alpha erreicht eine maximale Ausgangsleistung von 180 Watt. Sie können unter anderem in den Modi VW, TC und VV dampfen und jederzeit wechseln. Bitte beachten Sie, dass Sie zwei 18650er Akkuzellen benötigen, damit Sie das E-Zigaretten Set in Betrieb nehmen können. Es befinden sich keine Akkuzellen im Lieferumfang. Der im Set enthaltene Maat Verdampfer wird über ein Top-Filling-System direkt von oben mit Liquid befüllt und kann so bis zu 4ml aufnehmen. Die beiden mitgelieferten Verdampferköpfe MT-M2 Dual Mesh 0,2 Ohm und MT-M1 Single Mesh 0,13 Ohm sind für das direkte Inhalieren in die Lunge ausgelegt. Bitte tauschen Sie die zu den Verschleißteilen zählenden Verdampferköpfe regelmäßig um ein gleichbleibendes Dampferlebnis zu gewährleisten.
-<br>
-<br>
-<strong>Lieferumfang:</strong>
+        'description' => '<p>Mit dem <span> VooPoo E-Zigaretten Set Alpha Zip</span> erhalten Sie den Alpha Zip Akkuträger mit einer max. Ausgangsleistung von 180 Watt und den Voopoo Maat Clearomizer mit einem Tankvolumen von 4 ml, der für das Sub-Ohm-Dampfen, bzw. das DL-Dampfen (Direct Lung) optimiert ist.</p>
+<p>Der Alpha Zip Akkuträger wird über die Feuertaste sowie 2 Einstelltasten gesteuert. Sie können zwischen dem Variable Watt (VW) Modus und vier Variable Temperature Modi (TC) wählen. Dazu gibt es noch einen CUSTOM-Modus, bei dem Sie auf 5 Speicherplätzen Ihr Gerät nach vorab erstellten Leistungs- und Temperaturkurven betreiben können. Der Leistungsbereich liegt zwischen 5 und 180 Watt, der einstellbare Temperaturbereich in einer Spanne zwischen 100° und 315°C. Die gewählten Einstellungen sowie der aktuelle Akkustand werden Ihnen auf einem OLED-Display angezeigt. Der Voopoo Alpha Zip Akkuträger wird mit zwei 18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind.&nbsp;</p>
+<p>Der Voopoo Maat Clearomizer hat ein Tankvolumen für 4 ml Liquid und wird via Top Filling-System bequem von oben befüllt. Im unteren Teil des Clearomizers befindet sich der Airflow Control zur Regelung des Zugwiderstandes. Im Lieferumfang enthalten sind zwei Mesh-Heads (Verdampferköpfe), bei denen das Liquid nicht an einer Spule verdampft, sondern an einer speziell entwickelten Netzstruktur, was zu einer intensiveren Geschmacks- und Dampfentwicklung führt. Vorinstalliert ist der MT-M2 Dual Mesh Head mit einem Widerstand von 0,2 Ohm, der zwischen 55 und 80 Watt betrieben werden soll. Beigepackt ist der MT-M1 Single Mesh Head mit einem Widerstand von 0,13 Ohm, der zwischen 60 und 85 Watt betrieben wird. Beide Heads sind für das DL-Dampfen, also für die direkte Lungeninhalation konzipiert. Bitte denken Sie daran, die zu den Verschleißteilen zählenden Verdampferköpfe regelmäßig auszutauschen.</p>
+<p>Das E-Zigaretten Set wird durch zwei hochstromfeste 18650er Akkuzellen betrieben, die nicht im Lieferumfang enthalten sind.</p>
+<h2>Eigenschaften Voopoo Alpha Zip Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>2 x 18650er Akkuzelle<br> (Akkuzellen sind nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW, TC (Ni, Ti, SS), FIT, CUSTOM (VPC/VTC)</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>max. 7,5 Volt</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 180 Watt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100°C - 315°C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,5 - 5 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>85 mm x 51,3 mm x 25,5 mm</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften Voopoo Maat Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>4 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24,5 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>55,75 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>an der Verdampferbasis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>DL - Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Plug and Pull Coils (Heads)</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Alpha Zip 180 Watt</li>
-<li>1x Maat Clearomizer</li>
-<li>1x MT-M2 Dual Mesh Head 0,2 Ohm | DL</li>
-<li>1x MT-M1 Single Mesh Head 0,13 Ohm | DL</li>
-<li>1x Ersatz-Glastank</li>
+<li>1x Voopoo Alpha Zip Akkuträger</li>
+<li>1x Voopoo Maat Clearomizer</li>
+<li>1x MT-M2 Dual Mesh Head 0,2 Ohm (vorinstalliert)</li>
+<li>1x MT-M1 Single Mesh Head 0,13 Ohm</li>
+<li>1x Ersatz-Glastank (2 ml)</li>
 <li>1x Ersatzteil-Set</li>
+<li>1x Micro-USB-Kabel</li>
 <li>2x Bedienungsanleitung</li>
-</ul>
-<strong<18650er Akkuzelle(n) nicht im Lieferumfang enthalten</strong>
-<br>
-<strong>Alpha Zip 180 Watt</strong>
-<ul>
-<li>Ausgangsmodi: VW/TC/VV</li>
-<li>Ausgangsleistung: 5 - 180 Watt</li>
-<li>Ausgangsspannung: max. 7,5V</li>
-<li>Widerstandbereich: 0,5 - 5,0 Ohm</li>
-<li>Temperaturbereich: 100°C - 315°C</li>
-<li>Maße: 85 mm x 51,3 mm x 25,5mm</li>
-<li>diverse Schutzfunktionen</li>
-<li>Gewindetyp: 510</li>
-<li>OLED-Display</li>
-</ul>
-<br>
-<br>
-<strong>Maat Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 4 ml</li>
-<li>Durchmesser: 24,5 mm</li>
-<li>Höhe: 55,75 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Pyrex-Glas und Edelstahl</li>
-<li>subohm-fähig</li>
-<li>Top Filling-System</li>
-<li>Airflow Control</li>
-</ul>
-',
+</ul>',
     ),
     'PV100MC' => array(
         'icNumber' => 'PV100MC',
@@ -58052,32 +58901,59 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der VooPoo Maat Verdampfer ist für das Dampfen mit direkten Lungenzügen (Subohm) ausgelegt. Hierzu sind im Lieferumfang je ein MT-M2 Dual Mesh Verdampferkopf (0,2 Ohm) und ein MT-M1 Single Mesh Verdampferkopf, mit einem Widerstand von 0,13 Ohm, im Lieferumfang enthalten. Es gilt zu beachten, dass Verdampferköpfe Verschleißartikel sind und Sie sie daher regelmäßig auswechseln sollten um ein gleichbleibendes Dampferlebnis zu gewährleisten. Der Tank mit einem Füllvolumen von 4ml wird direkt von oben mit Liquid versorgt.
-<br>
-<br>
-<strong>Lieferumfang:</strong>
+        'description' => '<p>Der Voopoo Maat Clearomizer hat ein Tankvolumen für 4 ml Liquid und wird via Top Filling-System bequem von oben befüllt. Im unteren Teil des Clearomizers befindet sich der Airflow Control zur Regelung des Zugwiderstandes. Im Lieferumfang enthalten sind zwei Mesh-Heads (Verdampferköpfe), bei denen das Liquid nicht an einer Spule verdampft, sondern an einer speziell entwickelten Netzstruktur, was zu einer intensiveren Geschmacks- und Dampfentwicklung führt. Der MT-M2 Dual Mesh Head mit einem Widerstand von 0,2 Ohm, der zwischen 55 und 80 Watt betrieben werden soll und der MT-M1 Single Mesh Head mit einem Widerstand von 0,13 Ohm, der zwischen 60 und 85 Watt betrieben wird. Beide Heads sind für das DL-Dampfen, also für die direkte Lungeninhalation konzipiert. Bitte denken Sie daran, die zu den Verschleißteilen zählenden Verdampferköpfe regelmäßig auszutauschen.</p>
+<p>&nbsp;</p>
+<h2>Eigenschaften Voopoo Maat Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>4 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24,5 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>55,75 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>an der Verdampferbasis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Plug and Pull Coils (Heads)</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Maat Clearomizer</li>
-<li>1x MT-M2 Dual Mesh Head 0,2 Ohm | DL</li>
-<li>1x MT-M1 Single Mesh Head 0,13 Ohm | DL</li>
-<li>1x Ersatz-Glastank</li>
+<li>1x Voopoo Maat Clearomizer</li>
+<li>1x MT-M2 Dual Mesh Head 0,2 Ohm&nbsp;</li>
+<li>1x MT-M1 Single Mesh Head 0,13 Ohm</li>
+<li>1x Ersatz-Glastank (2 ml)</li>
 <li>1x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Wichtige Merkmale</strong>
-<ul>
-<li>Tankvolumen: 4 ml</li>
-<li>Durchmesser: 24,5 mm</li>
-<li>Höhe: 55,75 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Pyrex-Glas und Edelstahl</li>
-<li>subohm-fähig</li>
-<li>Top Filling-System</li>
-<li>Airflow Control</li>
-</ul>
-',
+</ul>',
     ),
     'PV100M1' => array(
         'icNumber' => 'PV100M1',
@@ -58095,22 +58971,33 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Sie erhalten pro bestellter Packung drei der MT-M1 Verdampferköpfe von VooPoo. Bitte beachten Sie, dass es empfehlenswert ist, die zu den Verschleißartikeln zählenden Verdampferköpfe regelmäßig auszuwechseln. Sie können die MT-M1 Verdampferköpfe in einem vorgesehenen Leistungsbereich von 60 bis maximal 85 Watt betreiben. Der Widerstand pro Verdampferkopf liegt bei 0,13 Ohm, sodass direkte Lungenzüge während des Dampfens möglich sind.
-<br>
-<br>
-<strong>Wichtige Merkmale</strong>
+        'description' => '<p>Die Voopoo PnP <span> MT-M1 </span>Heads (Verdampferköpfe) haben einen Widerstand von 0,13 Ohm und können in einem Leistungsbereich zwischen 60 und 85 Watt verwendet werden.</p>
+<p>Verdampferköpfe sind Verbrauchsartikel und sollten daher in regelmäßigen Zeitabständen ausgetauscht werden, spätestens, wenn sich der Geschmack Ihres Liquids oder die Dampfentwicklung verändern.&nbsp;</p>
+<h2>Eigenschaften MT-M1 Heads</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">0,13 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">60 - 85 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Wicklung</td>
+<td class="auto-style1">Single Mesh</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<li>Leistungsbereich: 60 bis 85 Watt</li>
-<li>Geeignet für direkte Lungenzüge (DL)</li>
-<li>Single Mesh</li>
-</ul>
-<br>
-<br>
-<strong>geeignet für:</strong>
-<li>VooPoo Maat Clearomizer Set</li>
-<br>
-<br>
-',
+<li>Voopoo Maat Clearomizer</li>
+</ul>',
     ),
     'PV100M2' => array(
         'icNumber' => 'PV100M2',
@@ -58128,22 +59015,33 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Ihnen werden pro besteller Packung drei der MT-M2 0,2 Ohm Verdampferköpfe von VooPoo ausgeliefert. Bitte beachten Sie, dass Verdampferköpfe Verschleißartikel sind und Sie sie daher regelmäßig austauschen sollten. Aufgrund des Widerstandes von 0,2 Ohm können Sie den entstehenden Dampf direkte in die Lunge inhalieren. Der Leistungsbereich der Verdampferköpfe liegt zwischen 55 und 80 Watt.
-<br>
-<br>
-<strong>Wichtige Merkmale</strong>
+        'description' => '<p>Die Voopoo PnP <span> MT-M2 </span>Heads (Verdampferköpfe) haben einen Widerstand von 0,2 Ohm und können in einem Leistungsbereich zwischen 55 und 80 Watt verwendet werden.</p>
+<p>Verdampferköpfe sind Verbrauchsartikel und sollten daher in regelmäßigen Zeitabständen ausgetauscht werden, spätestens, wenn sich der Geschmack Ihres Liquids oder die Dampfentwicklung verändern.&nbsp;</p>
+<h2>Eigenschaften MT-M2 Heads</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">0,2 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">55 - 80 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Wicklung</td>
+<td class="auto-style1">Dual Mesh</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<li>Leistungsbereich: 55 bis 80 Watt</li>
-<li>Geeignet für direkte Lungenzüge (DL)</li>
-<li>Dual  Mesh</li>
-</ul>
-<br>
-<br>
-<strong>geeignet für:</strong>
-<li>VooPoo Maat Clearomizer Set</li>
-<br>
-<br>
-',
+<li>Voopoo Maat Clearomizer</li>
+</ul>',
     ),
     'PV100M3' => array(
         'icNumber' => 'PV100M3',
@@ -58161,22 +59059,33 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Pro bestellter Packung erhalten Sie drei der Pnp MT-M3 0,17 Ohm Verdampferköpfe von VooPoo. Sie können die Verdampferköpfe in einem Leistungsbereich von 65 bis 85 Watt betreiben. Tauschen Sie die zu den Verschleißteilen zählenden Verdampferköpfe regelmäßig. Da der Widerstand unter 1,0 Ohm liegt, lässt sich der entstehende Dampf direkt in die Lunge inhalieren.
-<br>
-<br>
-<strong>Wichtige Merkmale</strong>
+        'description' => '<p>Die Voopoo PnP <span> MT-M3 </span>Heads (Verdampferköpfe) haben einen Widerstand von 0,17 Ohm und können in einem Leistungsbereich zwischen 65 und 85 Watt verwendet werden.</p>
+<p>Verdampferköpfe sind Verbrauchsartikel und sollten daher in regelmäßigen Zeitabständen ausgetauscht werden, spätestens, wenn sich der Geschmack Ihres Liquids oder die Dampfentwicklung verändern.&nbsp;</p>
+<h2>Eigenschaften MT-M3 Heads</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">0,2 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">65 - 85 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Wicklung</td>
+<td class="auto-style1">Triple Coil</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<li>Leistungsbereich: 65 bis 85 Watt</li>
-<li>Geeignet für direkte Lungenzüge (DL)</li>
-<li>Triple Coil</li>
-</ul>
-<br>
-<br>
-<strong>geeignet für:</strong>
-<li>VooPoo Maat Clearomizer Set</li>
-<br>
-<br>
-',
+<li>Voopoo Maat Clearomizer</li>
+</ul>',
     ),
     'PV100MCG' => array(
         'icNumber' => 'PV100MCG',
@@ -58194,15 +59103,26 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Hergestellt wurde der Tank aus Pyrexglas. Pyrex zeichnet sich durch seine Hitzebeständigkeit und Stabilität aus. Sie haben die Wahl zwischen einem Tankvolumen von 2ml oder 4ml. Der Austausch des Glastanks erfolgt ohne zusätzliches Werkzeug.
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
-<li>Tankvolumen: 2ml oder 4ml</li>
-<li>Geeignet für den Maat Clearomizer</li>
-<br>
-<br>
-',
+        'description' => '<p>Ersatz-Glastank für den Voopoo Maat Clearomizer mit einem Tankvolumen von wahlweise 2 ml oder 4 ml aus stabilem Pyrexglas.</p>
+<h2>Eigenschaften Voopoo Maat Glastank</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml oder 4 ml</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrexglas</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>passend für:</h2>
+<ul>
+<li>Voopoo Maat Clearomizer</li>
+</ul>
+<p>&nbsp;</p>',
     ),
     'SC100SR' => array(
         'icNumber' => 'SC100SR',
@@ -58220,39 +59140,93 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Das SC iStick Rim E-Zigaretten Set setzt sich aus dem iStick Rim Akku und dem Clearomizer Melo 5 zusammen. Sie können den Melo 5 Clearomizer direkt von oben mit Liquid befüllen und der Glastank bietet so bis zu 4ml Liquid Platz. Der mitgelieferte EC-S Verdampferkopf mit 0,6 Ohm und der EC-M Verdampferkopf mit 0,15 Ohm sind aufgrund ihres Widerstandes dafür geeignet, den entstehenden Dampf direkt in die Lunge zu inhalieren. Bitte beachten Sie, dass es sich bei Verdampferköpfen um Verschleißartikel handelt, deren periodischer Austausch für ein gleichbleibendes Dampferlebnis empfehlenswert ist. Der fest verbaute iStick Rim Akku, der über eine Kapazität von 3.000mAh verfügt, erreicht eine maximale Ausgangsleistung von 80 Watt.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Das Eleaf iStick Rim E-Zigaretten Set besteht aus dem iStick Rim Akku mit einer Kapazität von 3.000 mAh und dem MELO 5 Clearomizer mit 4 ml Füllvolumen.</p>
+<p>Der iStick Rim hat einen fest verbauten Akku mit einer maximalen Kapazität von 3.000 mAh und bietet eine maximale Ausgangsleistung von 80 Watt. Gesteuert wird der iStick Rim klassich über die Feuertaste und zwei Einstelltasten. Alle Einstellungen und weiteren Parameter werden auf dem integrierten OLED-Display angezeigt. Der iStick Rim arbeitet im VW-Modus (Variable Wattage), bei dem Sie die Ausgangsleistung zwischen 1 und 80 Watt bestimmen. Der Typ C USB-Port des iStick Rim sorgt für einen beschleunigten Ladevorgang mit dem im Lieferumgang enthaltenen QC 3.0-USB-Kabel. Zahlreiche Schutzfunktionen wie die Zugzeitbegrenzung, Überspannungsschutz und der Schutz von Tiefenentladung sorgen für einen sicheren Betrieb.</p>
+<p>Der MELO 5 Clearomizer hat ein Tankvolumen von 4 ml. Wie bei den meisten Clearomizern von Eleaf wird auch bei diesem das Liquid bequem über Top-Filling von oben eingefüllt. Mit einem Ring am unteren Rand des Clearomizers stellen Sie stufenlos den Zugwiderstand mit dem Airflow-Control ein. Die Verdampferköpfe (Heads) können Sie dank des Bottom-Lock-Systems schnell wechseln auch bei gefülltem Tank! Im Lieferumfang enthalten sind zwei Verdampferköpfe (Heads). Der EC-M Head mit einem Widerstand von 0,15 Ohm, der für das das subohme Dampfen konzipiert ist, also für die direkte Lungeninhalation (DL). Und ein EC-S Head mit 0,6 Ohm, der auch für das MTL Dampfen (Mouth to Lung) geeignet ist. Der Glastank des Clearomizers wird durch Silikonringe geschützt.</p>
+<h2>Eigenschaften iStick Rim Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 3.000 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW (Variable Wattage)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 80 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,5 - 4 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>80 mm x 36 mm x 30,3 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Eigenschaften MELO 5 Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>4&nbsp; ml</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser: 28 mm, Höhe: 57,3 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis - stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>Bottom-Lock-System zum Austausch der Heads bei befülltem Tank</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>DL - Direct Lung, Direkte Lungeninhalation<br> MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x iStick Rim 3000mAh</li>
-<li>1x Melo 5 Clearomizer</li>
-<li>1x EC-S 0,6 Ohm Head</li>
-<li>1x EC-M 0,15 Ohm Head</li>
-<li>1x QC3.0 USB-Kabel</li>
+<li>1x Eleaf iStick Rim Akku</li>
+<li>1x Eleaf MELO 5 Clearomizer</li>
+<li>1x EC-M Head 0,15 Ohm (DL)</li>
+<li>1x EC-S Head&nbsp; 0,6 Ohm (MTL / DL)</li>
+<li>1x QC 3.0-USB-Ladekabel</li>
 <li>1x Ersatzteil-Set</li>
 <li>2x Bedienungsanleitung</li>
-</ul>
-<br>
-<strong>iStick Rim 3000mAh</strong>
-<ul>
-<li>Ausgangsleistung: max. 80 Watt</li>
-<li>Abmessung: 80 mm x 36,0 mm x 30,3 mm</li>
-<li>Widerstandsbereich: 0,05 Ohm - 3,0 Ohm</li>
-<li>Gewicht: 122,5 Gramm</li>
-</ul>
-<br>
-<br>
-<strong>Melo 5 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 4 ml</li>
-<li>Durchmesser: 28 mm</li>
-<li>Höhe: 57,3 mm</li>
-<li>Bottom Airflow Control</li>
-<li>Top Filling System</li>
-<li>subohm-fähig</li>
-</ul>
-',
+</ul>',
     ),
     'SC100SRM' => array(
         'icNumber' => 'SC100SRM',
@@ -58270,25 +59244,50 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Der Akku iStick Rim von der Marke SC unterstützt das Dampfen im variablen Wattmodus bei einer maximalen Leistung von 80 Watt. Konfiguriert wird der Akku über eine Feuertaste, sowie über zwei Einstelltasten. Bitte beachten Sie, dass der Akku fest verbaut ist, sodass Sie ihn im Bedarfsfall über das mitgelieferte QC3.0 USB-Kabel mit Energie versorgen können. Die Kapazität des Akkus beläuft sich auf 3.000mAh.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der Eleaf iStick Rim hat einen fest verbauten Akku mit einer maximalen Kapazität von 3.000 mAh und bietet eine maximale Ausgangsleistung von 80 Watt. Gesteuert wird der iStick Rim klassich über die Feuertaste und zwei Einstelltasten. Alle Einstellungen und weiteren Parameter werden auf dem integrierten OLED-Display angezeigt. Der iStick Rim arbeitet im VW-Modus (Variable Wattage) bei der Sie die Ausgangsleistung zwischen 1 und 80 Watt bestimmen. Der Typ C USB-Port des iStick Rim sorgt für einen beschleunigten Ladevorgang mit dem im Lieferumgang enthaltenen QC 3.0-USB-Kabel. Zahlreiche Schutzfunktionen wie die Zugzeitbegrenzung, Überspannungsschutz und der Schutz von Tiefenentladung sorgen für einen sicheren Betrieb.</p>
+<h2>Eigenschaften iStick Rim Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 3.000 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW (Variable Wattage)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 80 Watt</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,5 - 4 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,05 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>OLED-Display</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>80 mm x 36 mm x 30,3 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x iStick Rim 3000mAh</li>
-<li>1x QC3.0 USB-Kabel</li>
+<li>1x Eleaf iStick Rim Akku</li>
+<li>1x QC 3.0-USB-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<strong>iStick Rim 3000mAh</strong>
-<ul>
-<li>Ausgangsleistung: max. 80 Watt</li>
-<li>Abmessung: 80 mm x 36,0 mm x 30,3 mm</li>
-<li>Widerstandsbereich: 0,05 Ohm - 3,0 Ohm</li>
-<li>Gewicht: 122,5 Gramm</li>
-</ul>
-<br>
-',
+</ul>',
     ),
     'SC100M5' => array(
         'icNumber' => 'SC100M5',
@@ -58306,29 +59305,52 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Der Melo 5 Verdampfer der Marke SC ist ein Verdampfer, der für das Dampfen im Subohm-Bereich ausgelegt ist. Hierzu erhalten Sie je einen EC-S 0,6 Ohm Verdampferkopf und einen EC-M Verdampferkopf, der einen Widerstand von 0,15 Ohm aufweist. Aufgrund der Widerstände können Sie den entstehenden Dampf direkt in die Lunge inhalieren. Bitte beachten Sie, dass Verdampferköpfe Verschleißteile sind und Sie sie für ein gleichbleibendes Dampferlebnis regelmäßig austauschen sollten. Der Glastank des Melo 5 Verdampfers von SC kann bis zu 4ml aufnehmen und wird via Top-Filling-System direkt von oben befüllt.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der Eleaf MELO 5 Clearomizer hat ein Tankvolumen von 4 ml. Wie bei den meisten Clearomizern von Eleaf wird auch bei diesem das Liquid bequem über Top-Filling von oben eingefüllt. Der Clearomizer muss beim Befüllen also nicht vom Akku entfernt werden. Mit einem Ring am unteren Rand des Clearomizers stellen Sie stufenlos den Zugwiderstand mit dem Airflow-Control ein. Die Verdampferköpfe (Heads) können Sie dank des Bottom-Lock-Systems auch bei gefülltem Tank schnell wechseln. Im Lieferumfang enthalten sind zwei Verdampferköpfe (Heads). Der EC-M Head mit einem Widerstand von 0,15 Ohm, der für das das subohme Dampfen konzipiert ist, also für die direkte Lungeninhalation (DL). Und ein EC-S Head mit 0,6 Ohm, der auch für das MTL Dampfen (Mouth to Lung) geeignet ist. Der Glastank des Clearomizers wird durch Silikonringe geschützt.</p>
+<h2>Eigenschaften MELO 5 Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>4&nbsp; ml</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser: 28 mm, Höhe: 57,3 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis - stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>Bottom-Lock-System zum Austausch der Heads bei befülltem Tank</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>DL - Direct Lung, Direkte Lungeninhalation<br> MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Melo 5 Clearomizer</li>
-<li>1x EC-S 0,6 Ohm Head</li>
-<li>1x EC-M 0,15 Ohm Head</li>
+<li>1x Eleaf MELO 5 Clearomizer</li>
+<li>1x EC-M Head 0,15 Ohm (DL)</li>
+<li>1x EC-S Head&nbsp; 0,6 Ohm (MTL / DL)</li>
 <li>1x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Melo 5 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 4 ml</li>
-<li>Durchmesser: 28 mm</li>
-<li>Höhe: 57,3 mm</li>
-<li>Bottom Airflow Control</li>
-<li>Top Filling System</li>
-<li>subohm-fähig</li>
-</ul>
-',
+</ul>',
     ),
     'SC100M5G' => array(
         'icNumber' => 'SC100M5G',
@@ -58346,16 +59368,29 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Es handelt sich um einen passenden Zubehörartikel des Melo 5 Verdampfers der Marke SC. Sie erhalten einen Glastank pro bestellter Packung. Der Tank wurde aus dem hitzebeständigen und stabilen Material Pyrex gefertigt. Das Fassungsvermögen liegt bei 4ml im verbauten Zustand. Sie können den Glastank mit einem trockenen Tuch und warmen Wasser reinigen.
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
-<li>Tankvolumen: 4ml</li>
-<lI>Material: Pyrexglas</li>
-<li>Geeignet für den Melo 5 Clearomizer</li>
-<br>
-<br>
-',
+        'description' => '<p>Der Melo 5 Glastank fasst bis zu 4 ml Liquid, hat einen Durchmesser von 28 mm und wird aus stabilem Pyrex gefertigt.</p>
+<h2>Eigenschaften Melo 5 Glastank</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Tankvolumen</td>
+<td class="auto-style1">4 ml</td>
+</tr>
+<tr>
+<td class="auto-style1">Durchmesser</td>
+<td class="auto-style1">28 mm</td>
+</tr>
+<tr>
+<td class="auto-style1">Material:</td>
+<td class="auto-style1">Pyrex</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
+<ul>
+<li>Eleaf Melo 5 Clearomizer</li>
+</ul>
+<p>&nbsp;</p>',
     ),
     'SC100ECS' => array(
         'icNumber' => 'SC100ECS',
@@ -58406,43 +59441,84 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Vaporesso Target mini 2 verfügt über einen 2000mah Akku, welchen Sie mit bis zu 2A im Quick Charge Modus laden können. Eine vollständige Akkuladung kann so innerhalb von 60 minuten möglich sein. Der Target mini 2 Akku hat eine Ausgangsleistung von bis zu 50 Watt und erkennt Widerstände zwischen 0,03 und 5 Ohm. Über das verbaute 0,33 Zoll OLED Display haben Sie alle relevanten Einstellungen stets im Blick. Der im Set enthaltene VM 22 Clearomizer fasst bis zu 2ml Liquid, welche Sie über ein Top-Filling System in den Tank füllen können. Desweiteren enthält das Set zwei Heads, welche für das moderate Dampfen im Mund zu Lunge bereich ausgelegt sind. Zum einen ist der 1,0 Ohm EUC CCell Verdampfer dabei, welcher statt reiner Baumwolle ein Gemisch aus Tee Fasern und Baumwolle als Trägermaterial für das Liquid nutzt. Als zweites enthalten ist der EUC Meshed Verdampfer mit 0,6 Ohm Widerstand, der statt Baumwolle ein Keramik Innenleben besitzt und auf eine Mesh Wicklung setzt, die durch ihre größere Oberfläche mehr Geschmack und Dampf erzeugen soll. Sollten Sie Veränderungen im Geschmack feststellen, müssen Sie den Verdampferkopf gegen einen neuen tauschen, da diese zu den Verschleißteilen gehören. 
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>         
-<li>1x Target Mini 2 2000mAh Akku</li>
-<li>1x VM 22 Clearomizer</li>
-<li>1x EUC CCell 1,0 Ohm Head</li>
-<li>1x EUC Meshed 0,6 Ohm Head</li>
+        'description' => '<p>Das Vaporesso Target Mini 2 E-Zigaretten Set besteht aus dem gleichnamigen Akku mit einer Kapazität von 2.000 mAh und dem&nbsp; Vaporesso VM 22 Clearomizer mit 2 ml Tankvolumen.</p>
+<p>Der Taget Mini 2 Akku hat eine Kapazität von 2.000 mAh und kann mit bis zu 2 A im Quick-Charge-Modus geladen werden. So kann ein völlig leerer Akku in 60 Minuten wieder voll aufgeladen werden. Der Target mini 2 Akku hat eine Ausgangsleistung von bis zu 50 Watt und erkennt Widerstände zwischen 0,03 und 5 Ohm. Über das 0,66 Zoll OLED Display werden Ihnen der Akkustand, die eingestellte Leistung sowie der Widerstand des Heads (Verdampferkopfes) angezeigt.</p>
+<p>Der VM 22 Clearomizer hat eine Füllvolumen für 2 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer von oben - Sie müssen lediglich die Top-Kappe abschrauben. Im Lieferumfang enthalten sind 2 Verdampferköpfe (Heads), die für das moderate Dampfen (MTL - Mouth to Lung) geeignet sind. Der EUC CCell Head hat einen Widerstand von 1,0 Ohm und im Inneren eine Mischung aus Tee-Fasern und Baumwolle. Der EUC Meshed Head hat im Inneren Keramik statt Watte verbaut und verfügt über einen Mesh-Draht, wodurch ein verbesserter Geschmack erzeugt werden soll. Er hat einen Widerstand von 0,6 Ohm.</p>
+<h2>Eigenschaften Vaporesso Target Mini 2 Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 2.000 mAh Kapazität</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 50 Watt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,03 - 5 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>max. 2 A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>107,1 mm (inkl. VM 22 Clearomizer) x 25,7 mm x 37,2 mm</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>0,66 Zoll OLED Display</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften Vaporesso VM 22 Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>22 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Verdampferkopfbasis stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x Vaporesso Target Mini 2 Akku</li>
+<li>1x Vaporesso VM 22 Clearomizer</li>
+<li>1x EUC CCell 1,0 Ohm</li>
+<li>1x EUC Meshed 0,6 Ohm</li>
 <li>1x Ersatzglas</li>
 <li>1x USB-Ladekabel</li>
-<li>1x Ersatzteil Set</li>
+<li>1x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<b>Target Mini 2 2000mAh</b>
-<ul>
-<li>Akkukapazität: 2000mAh</li>
-<li>Ausgangsleistung: 5 bis 50 Watt</li>
-<li>Widerstandsbereich: 0,03 bis 5 Ohm</li>
-<li>Gewindetyp: 510er</li>
-<li>0,66" OLED-Display</li>
-<li>Maße: 107,1 mm x 25,7 mm x 37,2 mm</li>
-</ul>
-<br>
-<br>
-<b>VM 22 Clearomizer</b>
-<ul>
-<li>Tankvolumen: 2ml</li>
-<li>Top-Filling</li>
-<li>Airflow-Control</li>
-<li>Gewindetyp: 510er</li>
-<li>Durchmesser: 22 mm</li>
-</ul>
-<br>
-<br>',
+</ul>',
     ),
     'VS100TMM' => array(
         'icNumber' => 'VS100TMM',
@@ -58460,28 +59536,49 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Vaporesso Target Mini 2 2000mAh hat, wie der Name schon verrät, einen fest verbauten 2000mAh Akku. Sie können diesen mittels eines geeigneten USB Netzsteckers laden, welcher maximal 2A besitzen sollte. Sind die 2A Ladestrom gegeben, lädt der Akku laut Hersteller innerhalb von 60 Minuten vollständig. Das verbaute 0,66 Zoll große OLED Display zeigt Ihnen alle relevanten Informationen und eingestellten Parameter an. Sie können in diversen Modi dampfen, es stehen zur Auswahl unter anderem TC, VV und ein VW Modus. Beim Target Mini 2 2000mAh von Vaporesso wurde der Omni Board 4.2 Chipsatz verbaut, welcher beim Betätigen der Feuertaste eine Reaktionszeit von 0,001 Sekunden haben soll. Der Akku erkennt Verdampferköpfe bzw. Widerstände zwischen 0,03 und 5 Ohm, welche mit einer Leistung von maximal 50 Watt betrieben werden können. Die Maße des Vaporesso Target Mini 2 Akkus betragen: 67,1 mm x 25,7 mm x 37,2 mm.
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>         
-<li>1x Target Mini 2 2000mAh Akku</li>
+        'description' => '<p>Der Vaporesso Taget Mini 2 Akku hat eine Kapazität von 2.000 mAh und kann mit bis zu 2A im Quick-Charge-Modus geladen werden. So kann ein völlig leerer Akku in 60 Minuten wieder voll aufgeladen werden. Der Target mini 2 Akku hat eine Ausgangsleistung von bis zu 50 Watt und erkennt Widerstände zwischen 0,03 und 5 Ohm. Über das verbaute 0,66 Zoll OLED Display werden Ihnen der Akkustand, die eingestellte Leistung sowie der Widerstand des Heads (Verdampferkopfes) angezeigt.&nbsp;Sie können in diversen Modi dampfen. Zur Auswahl stehen diverse TC-Modi sowie ein VV- und ein VW-Modus. Beim Target Mini 2 wurde der Omni Board 4.2 Chipsatz verbaut, welcher beim Betätigen der Feuertaste eine Reaktionszeit von 0,001 Sekunden haben soll.</p>
+<p>&nbsp;</p>
+<h2>Eigenschaften Vaporesso Target Mini 2 Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 2.000 mAh Kapazität</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>5 - 50 Watt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,03 - 5 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>max. 2 A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>67,1 mm x 25,7 mm x 37,2 mm</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>0,66 Zoll OLED Display</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x Vaporesso Target Mini 2 Akku</li>
 <li>1x USB-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<b>Target Mini 2 2000mAh</b>
-<ul>
-<li>Akkukapazität: 2000mAh</li>
-<li>Ausgangsleistung: 5 bis 50 Watt</li>
-<li>Widerstandsbereich: 0,03 bis 5 Ohm</li>
-<li>Gewindetyp: 510er</li>
-<li>0,66" OLED-Display</li>
-<li>Maße: 67,1 mm x 25,7 mm x 37,2 mm</li>
-</ul>
-<br>
-<br>',
+<p>&nbsp;</p>',
     ),
     'VS100VM' => array(
         'icNumber' => 'VS100VM',
@@ -58537,42 +59634,86 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Bei der Vaporesso VM Stick 18 E-Zigarette handelt es sich um eine E-Zigarette, die sowohl Einsteiger, als auch erfahrene Dampfer nutzen können. Sie wurde im Pen-Style Design angefertigt. Sie zeichnet sich durch einen fest verbauten Akku mit einer Kapazität von 1.200mAh aus und Sie dampfen bei einer konstanten Leistungsabgabe. Das Tankvolumen des VM 18 Verdampfers liegt bei 2ml. Sie erhalten zwei Verdampferköpfe der EUC Serie. Zum einen erhalten Sie den EUC Mesh Verdampferkopf mit 0,6 Ohm und zum anderen den EUC CCell Verdampferkopf mit 1 Ohm. Letzterer ist im Verdampfer schon vorabinstalliert. 
-<br>
-<br>
-<strong>Lieferumfang:</strong>
+        'description' => '<p>Die Vaporesso VM Stick 18 E-Zigarette ist ein schicker Stick bei dem Clearomizer (Verdampfer) und Akku eine gradlinige Einheit bilden. Der fest verbaute Akku hat eine Kapazität von 1.200 mAh, der VM 18 Clearomizer fasst 2 ml Liquid. Die E-Zigarette ist sehr einfach in der Bedienung und somit auch für Einsteiger sehr gut geeignet.</p>
+<p>Die Vaporesso VM Stick 18 E-Zigarette wird lediglich über die Feuertaste bedient, weitere Einstellungen sind nicht notwendig. Ein integrierter LED-Indikator informiert über den Ladestatus des eingebauten Akkus. Dank einer Quick-Charge Funktion kann der Akku innerhalb einer Stunde wieder vollständig aufgeladen werden (gemäß Herstellerangaben). Das notwendige Micro-USB-Kabel ist im Lieferumfang enthalten. Die Ausgangsleistung passt der Akku automatisch dem im Clearomizer aktuell eingesetzten Verdampferkopf an.</p>
+<p>Der VM 18 Clearomizer wird mit 2 unterschiedlichen Verdampferköpfen (Heads) ausgeliefert. Der voristallierte EUC CCell Head mit einem Widerstandswert von 1,0 Ohm ist für das MTL-Dampen konzipiert. MTL (Mouth-To-Lung) bezeichnet die Zugtechnik, bei der - ähnlich wie bei einer Zigarette - der Dampf zunächst in den Mund gezogen und dann aus dem Mund in die Lunge inhaliert wird. Der zweite Verdampferkopf ist ein EUC Meshed Head mit einem Widerstandswert von 0,6 Ohm für das DL Dampfen. DL (Direct Lung) bezeichnet die Zugtechnik, bei der der Dampf direkt in die Lunge gezogen wird. Sie haben mit dieser E-Zigarette also die Möglichkeit, beide Techniken auszuprobieren und herauszufinden, welche Ihnen lieber ist.&nbsp;Der VM 18 Clearomizer hat einen Tank für 2 ml Liquid, welches Sie bequem über ein Top-Filling-System einfüllen können. Den Zugwiderstand der E-Zigarette regeln Sie über den Airflow-Control. Mittels eines Rings an der Verdampferbasis stellen Sie ihn stufenlos ein. Die Heads können Sie dank des Plug-and-Pull-Designs sehr einfach wechseln, ohne Schrauben zu müssen.</p>
+<p>&nbsp;</p>
+<h2>Eigenschaften Vaporesso VM Stick 18 Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 1.200 mAh Kapazität</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC/5V 1A</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>18 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>75 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+</tbody>
+</table>
+<h2>Eigenschaften Vaporesso VM 18 Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>18 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>49 mm</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top-Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos an der Verdampferbasis</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>Plug and Pull Coils</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL - Mouth to Lung<br> DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>&nbsp;</h2>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x VM Stick 18 Akku</li>
-<li>1x VM 18 Clearomizer</li>
-<li>1x EUC Mesh Head 0,6 Ohm | DL</li>
-<li>1x EUC CCell Head 1 Ohm | MTL</li>
+<li>1x Vaporesso VM Stick 18 Akku</li>
+<li>1x Vaporesso VM 18 Clearomizer</li>
+<li>1x EUC CCell 1,0 Ohm (MTL) - vorinstalliert</li>
+<li>1x EUC Meshed 0,6 Ohm (DL)</li>
+<li>1x Micro-USB-Kabel</li>
 <li>1x Ersatzteil-Set</li>
-<li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>VM Stick 18 Akku</strong>
-<ul>
-<li>Kapazität: 1.200 mAh</li>
-<li>Ausgangsleistung: max. 22 W</li>
-<li>Ladestrom: 1A</li>
-<li>Omni Board Chip-Set</li>
-<li>Durchmesser: 18 mm</li>
-<li>Höhe: 75 mm</li>
-<li>Gewindetyp: 510</li>
-</ul>
-<br>
-<strong>VM 18 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Durchmesser: 18 mm</li>
-<li>Höhe: 49 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Glas und Edelstahl</li>
-<li>Subohm und MT</li>
-<li>Top Filling-System</li>
-<li>Airflow Control</li>
 </ul>',
     ),
     'VS100VSC' => array(
@@ -58591,29 +59732,56 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der VM 18 Verdampfer ist ein weiterer Verdampfer aus dem Hause Vaporesso. Er kann bis zu 2 Milliliter Liquid aufnehmen, das direkt von oben über das Top-Filling System in den Tank eingefüllt wird. Im Lieferumfang sind zwei unterschiedliche Verdampferköpfe aus der EUC-Reihe vorhanden. Zum einen der EUC Mesh Verdampferkopf mit 0,6 (DL) Ohm und zum anderen der EUC CCell Verdampferkopf mit 1 Ohm (MTL). Sie können sich also entscheiden, ob Sie im Subohm-Bereich oder im moderaten Bereich dampfen wollen. 
-<br>
-<br>
-<strong>Lieferumfang:</strong>
+        'description' => '<p>Der VM 18 Clearomizer wird mit 2 unterschiedlichen Verdampferköpfen (Heads) ausgeliefert. Der EUC CCell Head mit einem Widerstandswert von 1,0 Ohm ist für das MTL-Dampen konzipiert. MTL (Mouth-To-Lung) bezeichnet die Zugtechnik, bei der - ähnlich wie bei einer Zigarette - der Dampf zunächst in den Mund gezogen und dann aus dem Mund in die Lunge inhaliert wird. Der zweite Verdampferkopf ist ein EUC Meshed Head mit einem Widerstandswert von 0,6 Ohm für das DL Dampfen. DL (Direct Lung) bezeichnet die Zugtechnik, bei der der Dampf direkt in die Lunge gezogen wird. Sie haben mit dieser E-Zigarette also die Möglichkeit, beide Techniken auszuprobieren und herauszufinden, welche Ihnen lieber ist.&nbsp;Der VM 18 Clearomizer hat einen Tank für 2 ml Liquid, welches Sie bequem über ein Top-Filling-System einfüllen können. Den Zugwiderstand der E-Zigarette regeln Sie über den Airflow-Control. Mittels eines Rings an der Verdampferbasis stellen Sie ihn stufenlos ein. Die Heads können Sie dank des Plug-and-Pull-Designs sehr einfach wechseln, ohne Schrauben zu müssen.</p>
+<h2>Eigenschaften Vaporesso VM 18 Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>18 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>49 mm</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top-Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos an der Verdampferbasis</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>Plug and Pull Coils</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL - Mouth to Lung<br> DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>&nbsp;Lieferumfang</h2>
 <ul>
-<li>1x VM 18 Clearomizer</li>
-<li>1x EUC Mesh Head 0,6 Ohm | DL</li>
-<li>1x EUC CCell Head 1 Ohm | MTL</li>
+<li>1x Vaporesso VM 18 Clearomizer</li>
+<li>1x EUC CCell 1,0 Ohm (MTL)&nbsp;</li>
+<li>1x EUC Meshed 0,6 Ohm (DL)</li>
 <li>1x Ersatz-Glastank</li>
-<li>3x Dichtungsringe</li>
+<li>1x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<strong>VM 18 Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Durchmesser: 18 mm</li>
-<li>Höhe: 49 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Glas und Edelstahl</li>
-<li>Subohm und MT</li>
-<li>Top Filling-System</li>
-<li>Airflow Control</li>
 </ul>',
     ),
     'VS100VSG' => array(
@@ -58632,14 +59800,12 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Vaporeeso VM 18 Glastank ist für den gleichnamigen Verdampfer geeignet. Wenn er im Verdampfer verbaut ist, kann er maximal 2ml Liquid fassen. Da der VM 18 Glastank durchsichtig ist, können Sie den Liquidstand immer im Auge behalten. Pro Packung ist ein Glastank enthalten.
-<br>
-<br>
-<b>Geeignet für:</b>
+        'description' => '<p>Ersatz-Glastank für den <span> <span>&nbsp;</span>Vaporeeso VM 18</span> Clearomizer mit einem Tankvolumen von 2 ml.</p>
+<h2>passend für:</h2>
+<ul>
 <li>Vaporesso VM 18 Clearomizer Set</li>
 <li>Vaporesso VM Stick 18 E-Zigaretten Set</li>
-<br>
-<br>',
+</ul>',
     ),
     'VS100VMS' => array(
         'icNumber' => 'VS100VMS',
@@ -58657,30 +59823,59 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das VM Solo 22 E-Zigaretten Set von Vaporesso ist eine E-Zigarette, welche sich in der Kategorie der All-in-One Geräte wiederfindet. Die VM Solo 22 wird lediglich über einen Knopf gesteuert und ist somit ein Modell für Einsteiger. Des Weiteren unterstützt die VM Solo 22 das Dampfen von Mund zu Lunge (MTL). Der Akku ist fest verbaut und besitzt eine Akkukapazität von 2000mAh. Über eine Schnellladefunktion kann die E-Zigarette innerhalb von 90 Minuten wieder voll aufgeladen werden. In der E-Zigarette finden bis zu 2ml Ihres Liquids Platz. Diese werden dann durch einen EUC Meshed Verdampferkopf mit 0,6 Ohm oder einem EUC CCell Verdampferkopf mit 1,0 Ohm verdampft. Beide Verdampferköpfe sind Teil des Lieferumfangs. 
-<br>
-<br>
-<b>Lieferumfang</b>
+        'description' => '<p>Das Vaporesso VM Solo 22 E-Zigaretten Set ist eine All-In-One-E-Zigarette mit einer Akku-Kapazität von 2.000 mAh und 2 ml Tankvolumen. Akku und Verdampfereinheit sind fest miteinander verbunden, so bildet das Gerät technisch wie optisch eine Einheit. Die Bedienung erfolgt lediglich über die Feuertaste, es sind keine weiteren Einstellungen erforderlich. Das integrierte Top-Filling-System macht das Einfüllen des Liquids einfach und bequem. Damit ist die Vaporesso VM Solo 22 auch für Einsteiger gut geeignet.&nbsp;</p>
+<p>Der Akku der Vaporesso VM Solo 22 hat eine Kapazität von 2.000 mAh. Ein integrierter LED-Indikator informiert über den Akku-Ladestand. Dank einer Quick-Charge-Funktion kann die E-Zigarette mithilfe des mitgelieferten Micro-USB-Kabels schnell geladen werden - laut Herstellerangabe soll eine vollständige Aufladung innerhalb von 90 Minuten erfolgen.</p>
+<p>Im Lieferumfang der VM Solo 22 sind 2 Verdampferköpfe (Heads) enthalten. Der EUC CCell Head hat einen Widerstand von 1,0 Ohm und im Inneren eine Mischung aus Tee-Fasern und Bauwolle. Er ist für das MTL-Dampfen (Mouth to Lung) konzipiert. Der EUC Meshed Head hat im Inneren Keramik statt Watte verbaut und verfügt über einen Mesh-Draht, wodurch ein verbesserter Geschmack erzeugt werden soll. Er hat einen Widerstand von 0,6 Ohm und unterstützt das DL-Dampfen (Direct Lung).</p>
+<h2>Eigenschaften Vaporesso VM Solo 22 E-Zigaretten Set</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 2.000 mAh Kapazität</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC/5V 1A</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>22 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>114 mm</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top-Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>Plug and Pull Coils</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL - Mouth to Lung<br> DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x VM Solo 22 E-Zigaretten Set</li>
-<li>1x EUC Meshed Coil 0,6 Ohm</li>
-<li>1x EUC CCell Coil 1,0 Ohm</li>
-<li>3x Dichtungsringe</li>
-<li>1x USB-Kabel</li>
+<li>1x Vaporesso VM Solo 22 E-Zigarette</li>
+<li>1x EUC CCell 1,0 Ohm (MTL)</li>
+<li>1x EUC Meshed 0,6 Ohm (DL)</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
-<li>1x Garantiekarte</li>
-</ul>
-<br>
-<br>
-<b>Wichtige Merkmale/b>
-<ul>
-<li>Durchmesser: 22 mm</li>
-<li>Höhe: 114 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Tankvolumen: 2 ml</li>
-<li>Top-Filling System</li>
-<li>Bottom Airflow Control</li>
-<li>Quick-Charge in 90 Minuten</li>
 </ul>',
     ),
     'VS100VM2' => array(
@@ -58699,21 +59894,26 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Wenn Sie einen Glastank für Ihre VM Solo 22 E-Zigarette benötigen, ist dieser Glastank der passende Zubehör- und/oder Ersatzartikel. Der Glastank besteht aus hitzebeständigem Pyrex und besitzt ein Tankvolumen für bis zu 2ml Ihres gewünschten Liquids.
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
-<ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Material: Pyrex</li>
-</ul>
-<br>
-<br>
-<strong>Passend für:</strong>
+        'description' => '<p>Ersatz-Glastank für alle Vaporesso VM 22 Clearomizer. Er hat ein Tankvolumen von 2 ml und ist aus stabilem Pyrex.</p>
+<h2>Eigenschaften VM 22 Glastank</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>passend für:</h2>
 <ul>
 <li>Vaporesso VM Solo 22 E-Zigarette</li>
-<li>Vaporesso Target Mini 2 E-Zigarette</li>
 <li>Vaporesso VM 22 Clearomizer</li>
+<li>Vaporesso Target Mini 2 E-Zigarette</li>
 </ul>',
     ),
     'VS100VMB' => array(
@@ -58788,24 +59988,32 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Pro bestellter Packung werden Ihnen fünf der EUC CCell Verdampferköpfe von der Marke Vaporesso ausgeliefert. Jeder der Verdampferköpfe weist einen Widerstand von 1,0 Ohm auf und ist für das moderate Backendampfen ausgelegt. Sie können die Verdampferköpfe in einem Leistungsbereich von 10 bis maximal 13 Watt verwenden. Bitte beachten Sie, dass es sich bei Verdampferköpfen um Verschleißartikel handelt, deren regelmäßiger Wechsel für ein gleichbleibendes Dampferlebnis empfehlenswert ist.
-<br>
-<br>
-<strong>Wichtige Merkmale</strong>
+        'description' => '<p><span> Die Vaporesso EUC CCell Heads (Verdampferköpfe) haben einen Widerstand von 1,0 Ohm und sind für das moderate Backendampfen (MTL - Mouth to Lung Dampfen) ausgelegt. Sie sollten in einem Leistungsbereich von 10 bis maximal 13 Watt verwendet werden.</span></p>
+<p>Verdampferköpfe sind Verbrauchsartikel und sollten daher in regelmäßigen Zeitabständen ausgetauscht werden, spätestens, wenn sich der Geschmack Ihres Liquids oder die Dampfentwicklung verändern.&nbsp;</p>
+<h2>Eigenschaften EUC CCell Head</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">1,0 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">10 - 13 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<li>Widerstand: 1,0 Ohm</li>
-<li>Leistungsbereich: 10 bis 13 Watt</li>
-<li>MTL geeignet</li>
-</ul>
-<br>
-<strong>Geeignet für:</strong>
-<ul>
-<li>VM Clearomizer Reihe</li>
-<li>Veco Clearomizer</li>
+<li>Vaporesso VM Solo 22 E-Zigaretten Set</li>
+<li>Vaporesso VM Clearomizer Reihe</li>
+<li>Veco Clearomizer Reihe</li>
 <li>Drizzle Clearomizer</li>
-<li></li>
-</ul>
-',
+</ul>',
     ),
     'VS100EM' => array(
         'icNumber' => 'VS100EM',
@@ -58823,24 +60031,32 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die EUC Mesh Heads aus dem Hause Vaporesso weisen einen Widerstand von je 0,6 Ohm auf. Die Heads, auch Verdampferköpfe genannt, sind aufgrund des Widerstandes für das direkte inhalieren in die Lunge geeignet (Subohm-Dampfen). Bitte beachten Sie, dass Heads zu den Verschleißartikel zählen und ein regelmäßiger Austausch daher empfehlenswert ist, um ein gleichbleibendes Dampferlebnis zu gewährleisten. Der Leistungsbereich der EUC Mesh Heads liegt zwischen 16 und 22 Watt.
-<br>
-<br>
-<strong>Wichtige Merkmale</strong>
+        'description' => '<p><span> Die Vaporesso EUC Mesh Heads (Verdampferköpfe) haben einen Widerstand von 0,6 Ohm und sind für das DL-Dampfen (Direct Lung), auch subohmes Dampfen genannt, konzipiert. Der Leistungsbereich der EUC Mesh Heads liegt zwischen 16 und 22 Watt.<span>&nbsp;</span></span></p>
+<p>Verdampferköpfe sind Verbrauchsartikel und sollten daher in regelmäßigen Zeitabständen ausgetauscht werden, spätestens, wenn sich der Geschmack Ihres Liquids oder die Dampfentwicklung verändern.&nbsp;</p>
+<h2>Eigenschaften EUC Mesh Head</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">0,6 Ohm</td>
+</tr>
+<tr>
+<td>Leistungsbereich</td>
+<td class="auto-style1">16 - 22 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<li>Widerstand: 0,6 Ohm</li>
-<li>Leistungsbereich: 16 bis 22 Watt</li>
-<li>DL geeignet</li>
-</ul>
-<br>
-<strong>Geeignet für:</strong>
-<ul>
-<li>VM Clearomizer Reihe</li>
-<li>Veco Clearomizer</li>
+<li>Vaporesso VM Solo 22 E-Zigaretten Set</li>
+<li>Vaporesso VM Clearomizer Reihe</li>
+<li>Veco Clearomizer Reihe</li>
 <li>Drizzle Clearomizer</li>
-<li></li>
-</ul>
-',
+</ul>',
     ),
     'PV100ZP' => array(
         'icNumber' => 'PV100ZP',
@@ -58858,34 +60074,52 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die VooPoo E-Zigarette Zip besteht aus dem fest verbauten Akku und einem Pod-System. Die Akkukapazität liegt bei 250mAh und kann unter anderem mit dem mitgelieferten USB-Kabel aufgeladen werden. Das Pod-System zeichnet sich durch einen festverbauten Head mit einem Widerstand von 1,8 Ohm und ein Tankvolumen von 1ml aus. Im Bedarfsfall tauschen Sie das komplette Pod-System gegen ein neues.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die <span> VooPoo Zip E-Zigarette </span>ist ein Pod-System mit fest eingebautem Akku mit einer Kapazität von 250 mAh und einem wiederbefüllbaren Cartridge für 1 ml Liquid. Der fest im Cartridge eingebaute Verdampferkopf hat einen Widerstand von 1,8 Ohm und ist damit für das MTL- (Mouth to Lung-) Dampfen konzipiert. Die E-Zigarette hat ein Alumínium-Gehäuse und ist mit nur 7 mm superdünn und nur 14 Gramm leicht.</p>
+<p>Die Zip E-Zigarette hat keine Feuertaste sondern wird über eine Zugautomatik aktiviert, sobald Sie an ihr ziehen. Dabei dampfen Sie mit einer Ausgangsleistung zwischen 7 und 12 Watt. Eine im Gehäuse integrierte LED informiert Sie über den Ladezustand der E-Zigarette. Mit dem mitgelieferten USB-Kabel können sie die E-Zigarette wieder aufladen. Ein Ladegerät gehört nicht zum Lieferumfang.</p>
+<p>Das Liquid-Cartridge, auch Pod genannt, das bei der Zip E-Zigarette die Verdampfereinheit bildet, hat eine fest eingebaute Spule mit einem Widerstand von 1,8 Ohm. Den Tank können Sie, nachdem Sie das Mundstück vom Pod abgezogen haben, mit bis zu 1 ml Liquid nachfüllen. Sobald sich der Geschmack Ihres Liquids verändert, sollten Sie den Pod austauschen.&nbsp;</p>
+<h2><strong>Eigenschaften Voopoo Zip E-Zigarette</strong></h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Akkukapazität</td>
+<td>250 mAh</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>7 - 12 W</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>3,5 - 4,2 V</td>
+</tr>
+<tr>
+<td>Widerstand</td>
+<td>1,8 Ohm</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>1 ml</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>ohne</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>MTL, Mouth to Lung</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>102,9 mm x 15 mm x 7,1 mm</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
-<li>1x Zip E-Zigaretten Set</li>
+<li>1x Voopoo Zip E-Zigarette Set</li>
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Zip E-Zigarette</strong>
-<ul>
-<li>Akkukapazität: 250 mAh</li>
-<li>Ausgangsleistung: 7 - 12 Watt</li>
-<li>Ausgangsspannung: 3,5 - 4,2V</li>
-<li>Maße: 7,1mm x 15mm x 88,4mm</li>
-</ul>
-<br>
-<br>
-<strong>Pod S1</strong>
-<ul>
-<li>Tankvolumen: 1 Milliliter</li>
-<li>Widerstand: 1,8 Ohm</li>
-</ul>
-<br>
-<br>
-',
+</ul>',
     ),
     'PV100PS' => array(
         'icNumber' => 'PV100PS',
@@ -58903,21 +60137,32 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Ihnen werden pro bestellter Packung je 4 der Pod-Systeme für das Zip E-Zigaretten Set von VooPoo geliefert. Bitte beachten Sie, dass ein Pod-System zu den Verschleißteilen zählt und regelmäßig ausgewechselt werden muss um ein gleichbleibendes Dampferlebnis zu gewährleisten.  Jedes Pod-System unterstützt aufgrund des Widerstandes von 1,8 Ohm das moderate Backendampfen. In einem Pod findet 1ml Liquid Platz.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die VooPoo S1 Pods sind die passgenauen Pods, oder auch Cartridges für die Voopoo Zip E-Zigarette. Sie haben einen fest eingebauten Verdampferkopf&nbsp; mit einem Widerstand von 1,8 Ohm für das MTL- (Mouth to Lung-) Dampfen. Den Tank können Sie, nachdem Sie das Mundstück vom Pod abgezogen haben, mit bis zu 1 ml Liquid füllen. Sobald sich der Geschmack Ihres Liquids verändert, sollten Sie den Pod austauschen. Sie erhalten 4 Pods pro bestellter Packung.&nbsp;</p>
+<h2><strong>Eigenschaften Voopoo </strong>S1 Pod</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Widerstand</td>
+<td>1,8 Ohm</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>1 ml</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>MTL, Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
-<li>4x Pod S1 1,8 Ohm</li>
+<li>4x Voopoo S1 Pod</li>
 </ul>
-<br>
-<br>
-<strong>Wichtige Merkmale</strong>
+<h2>geeignet für</h2>
 <ul>
-<li>Tankvolumen: 1 Milliliter</li>
-<li>Widerstand: 1,8 Ohm</li>
-</ul>
-',
+<li>Voopoo Zip E-Zigarette</li>
+</ul>',
     ),
     'SG100MC' => array(
         'icNumber' => 'SG100MC',
@@ -59178,5 +60423,3143 @@ Der Gear RTA Verdampfer der Marke OFRF spricht Dampfer an, die Ihre eigenen Wick
         'dosage' => '',
         'base' => null,
         'description' => '<p><strong>Gebrauchsfertiges E-Liquid von Tobacco Time für die E-Zigarette. Geschmack: Burley Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Burley Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'SN100TZ' => array(
+        'icNumber' => 'SN100TZ',
+        'number' => 'SN100TZ',
+        'name' => 'Smoant - Taggerz - E-Zigarette',
+        'commonName' => 'Taggerz',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Smoant',
+        'brand' => 'Smoant',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Smoant Taggerz E-Zigaretten Set beinhaltet den gleichnamigen Akkuträger sowie Clearomizer. Der Akkuträger wird mit zwei 18650er Akkuzellen betrieben die sich nicht im Lieferumfang befinden und separat bestellt werden müssen, sofern nicht vorhanden. Der Clearomizer hat ein Tankvolumen von 2 ml und wird an der Oberseite befüllt. Hierzu ziehen Sie lediglich die kleine Gummilasche ab um an die Befüllöffnung zu gelangen. Der Widerstand des Clearomizers beträgt 0,2 Ohm und wird bei einer Leistung zwischen 10 und 50 Watt betrieben. Empfohlen sind hier allerdings 40 bis 45 Watt. Der Smoant Taggerz Verdampfer ist ein wiederbefüllbarer Einweg-Verdampfer. Sollten Sie Veränderungen im Geschmack oder der Dampfmenge feststellen, müssen Sie den Clearomizer wechseln. Über das 0,96 Zoll Display haben Sie alle relevanten Einstellungen jederzeit im Blick. Die Ausgabe Modi sind folgende: VW, TC, TCR und ein DVW Modus, in dem Sie eine selbst festgelegte Wattkurve einstellen können, in der Ihr Akkuträger feuert. Trotz der kleinen Abmaße des Akkuträgers, sind alle Sicherheitsfunktionen verbaut. Es kommen zum Einsatz: Kurzschluss-, Überlade-, Überhitzungs-, sowie ein Verpolschutz. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Taggerz 200 Watt</li>
+<li>1x Taggerz Clearomizer</li>
+<li>1x Silikon Glasschutz</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Taggerz 200 Watt</strong>
+<ul>
+<li>Anzahl der Akkus 2</li>
+<li>Ausgangsleistung: 1 bis 200Watt</li>
+<li>Ausgangsspannung: 6 bis 8,4 Volt</li>
+<li>Widerstandsbereich: 0,05-2 Ohm</li>
+<li>0,96 Zoll Display</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 90 mm x 51 mm x 31,5 mm</li>
+<li>Gewicht ohne Akkus: 90 Gramm</li>
+</ul>
+<br>
+<br>
+<strong>Taggerz Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+<li>510er Gewindeanschluss</li>
+<li>Maße: 22 mm x 36 mm</li>
+</ul>
+<br>
+<br>
+<strong>Akkuzellen sind nicht im Lieferumfang enthalten</strong>
+',
+    ),
+    'SN100TZM' => array(
+        'icNumber' => 'SN100TZM',
+        'number' => 'SN100TZM',
+        'name' => 'Smoant - Taggerz - Akkuträger - 200 Watt',
+        'commonName' => 'Taggerz',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Smoant',
+        'brand' => 'Smoant',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Smoant Taggerz 200 Watt kann mit seinen zwei nicht im Lieferumfang enthaltenen 18650er Akkuzellen eine Ausgabeleistung von bis zu 200 Watt erreichen. Über das 0,96 Zoll Display haben Sie alle relevanten Einstellungen im Blick. Der Taggerz 200 Watt hat trotz seines geringen Gewichts von 90 Gramm ohne Akkuzellen alle sicherheitsrelevanten Funktionen verbaut. So kommen zum Einsatz: Tiefenentlade-, Überlade-, Überhitzungs-, Kurzschluss-, sowie ein Verpolungsschutz. Selbstverständlich kann der Taggerz 200 Watt mit sämtlichen Ausgabemodi dienen, hier sind ein TC, VW, TCR und ein DVW Modus dabei. Im DVW Modus haben Sie die Möglichkeit eine eigene Wattkurve einzustellen, die nach Ihren Vorgaben die Leistung ausgibt. Das Laden mit dem mitgelieferten USB Kabel ist möglich, da ein Balancer verbaut ist, der das gleichmäßige Laden der Akkuzellen unterstützt. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Taggerz 200 Watt</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Drag 2 Platinum 177 Watt</strong>
+<ul>
+<li>Ausgangsleistung: 1-200 Watt</li>
+<li>Ausgabemodi:, TC, VW, DVW, TCR</li>
+<li>Ausgangsspannung: 6 Volt bis 8,4 Volt</li>
+<li>Widerstandsbereich: 0,05 - 2 Ohm</li>
+<li>Temeperaturbereich: 100-315°C</li>
+<li>Material: Kunststoff</li>
+<li>0,96 Zoll Display</li>
+<li>Gewindetyp: 510er</li>
+<li>Gewicht: 90g</li>
+<li>Maße: 51 mm x 90 mm x 31,5 mm</li>
+</ul>
+<br>
+<br>
+
+
+',
+    ),
+    'SN100TZT' => array(
+        'icNumber' => 'SN100TZT',
+        'number' => 'SN100TZT',
+        'name' => 'Smoant - Taggerz - Verdampfer (3 Stück pro Packung)',
+        'commonName' => 'Taggerz',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Smoant',
+        'brand' => 'Smoant',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Taggerz Verdampfer von Smoant hat einen Durchmesser von 22mm und ein Tankvolumen von 2ml. Befüllt wird der Taggerz Verdampfer von oben über eine Befüllöffnung, welche mit einem Verschlussstopfen geschlossen ist. Der Widerstand des verbauten Verdampferkopfes beträgt 0,2 Ohm und richtet sich an Dampfer welche es bevorzugen, mit direkten Lungenzügen zu Dampfen. Der Taggerz Verdampfer ist wie ein Pod System ein mehrfach befüllbarer Einweg Verdampfer. Sollten Sie beeinträchtigungen im Geschmack oder der Dampfleistung feststellen, müssen Sie den Verdampfer wechseln. Die Empfohlene Leistungseinstellung beim Dampfen liegt zwischen 40 und 45 Watt. Möglich ist aber eine Leistung zwischen 10 und 50 Watt. Pro bestelltem Paket erhalten Sie drei Taggerz Verdampfer mit 0,2 Ohm.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>3x Taggerz Clearomizer 0,2 Ohm</li>
+</ul>
+<br>
+<br>
+<strong>Taggerz Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+<li>Maße: 22 mm x 36 mm</li>
+</ul>
+<br>
+<br>
+
+',
+    ),
+    'OS100CX' => array(
+        'icNumber' => 'OS100CX',
+        'number' => 'OS100CX',
+        'name' => 'OBS - Cube X - E-Zigarette',
+        'commonName' => 'Cube X',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<h2>OBS Cube X E-Zigaretten Set</h2>
+Das OBS Cube X E-Zigaretten Set setzt sich aus dem Cube X Akkuträger und dem Cube Clearomizer zusammen. Der Akkuträger erreicht eine maximale Ausgangsleistung von 80 Watt. Dafür ist allerdings eine 18650er Akkuzelle nötig, die vor den Betrieb eingesetzt werden muss. Beachten Sie, eine Akkuzelle ist kein Bestandteil des Lieferumfangs. Der Akkuträger hat ein 0,96 Zoll großes LED Display von dem Sie alle relevanten Informationen ablesen können. Das Tankvolumen von mitgelieferten Cube Clearomizer beträgt 4 Milliliter. Liquid wird über ein Top-Filling System von oben in den Tank eingefüllt. Über die Airflow-Control können Sie die Luftzufuhr ganz individuell einstellen. Mit dem Set erhalten Sie zudem ein M1 Mesh Head mit einem Widerstand von 0,2 Ohm und einem M3 Triple Mesh Head mit 0,15 Ohm. 
+<br>
+<br>
+<ul>
+<b>Lieferumfang:</b>         
+<li>1x OBS Cube X E-Zigaretten Set</li>
+<li>1x M1 Mesh 0,2 Ohm Head (50 - 80 Watt)</li>
+<li>1x M3 Triple Mesh 0,15 Ohm Head (50 - 70 Watt)</li>
+<li>1x Ersatztank</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br><b>Cube X 80 Watt Akkuträger</b>
+<ul>
+<li>Ausgangsleistung: max. 80 Watt</li>
+<li>Ausgabemodi:. VW</li>
+<li>Ausgangsspannung: 3,2 bis 4,2 Volt</li>
+<li>Widerstandsbereich: 0,1 bis 3 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>LED Display: 0,96 Zoll</li>
+<li>Gewicht: 23</li>
+<li>Maße: 88,5 mm x 30,5 mm x 30,5 mm</li>
+</ul>
+<br>
+<br>
+<b>Cube Clearomizer</b>
+<ul>
+<li>Tankvolumen: 4 ml</li>
+<li>Höhe: 45,6 mm</li>
+<li>Durchmesser: 24 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Edelstahl und Glas</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+</ul',
+    ),
+    'OS100CXM' => array(
+        'icNumber' => 'OS100CXM',
+        'number' => 'OS100CXM',
+        'name' => 'OBS - Cube X - Akkuträger - 80 Watt',
+        'commonName' => 'Cube X',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Cube X Akkuträger von der Marke OBS dampfen Sie im variablen Wattmodus und erreichen eine maximale Ausgangsleistung von 80 Watt. Dazu müssen Sie vor der Inbetriebnahme eine 18650er Akkuzelle einsetzen. Diese ist nicht Bestandteil des Lieferumfangs und muss bei Bedarf extra erworben werden. Der 510er Anschluss ist mittig auf dem Akkuträger platziert. Dadurch hat der Akkuträger eine schlanke und ergonomische Bauform. Den Akkuträger können Sie mit Verdampfern von verschiedenen Herstellern kombinieren. 
+<ul> 
+<b>Lieferumfang:</b>        
+<li>1x OBS Cube X 80 Watt</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<b>Cube X 80 Watt Akkuträger</b>
+<ul>
+<li>Ausgangsleistung: max. 80 Watt</li>
+<li>Ausgabemodi:. VW</li>
+<li>Ausgangsspannung: 3,2 bis 4,2 Volt</li>
+<li>Widerstandsbereich: 0,1 bis 3 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>LED Display: 0,96 Zoll</li>
+<li>Gewicht: 23g</li>
+<li>Maße: 88,5 mm x 30,5 mm x 30,5 mm</li>
+</ul>',
+    ),
+    'OS100M3' => array(
+        'icNumber' => 'OS100M3',
+        'number' => 'OS100M3',
+        'name' => 'OBS - M3 Triple Mesh Head - 0,15 Ohm (5 Stück pro Packung)',
+        'commonName' => 'M3 Triple Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit einer Packung erhalten Sie fünf OBS M3 Triple Mesh Verdampferköpfe. Die Verdampferköpfe haben einen Widerstand von 0,15 Ohm und sind für das Vapen im Subohm-Bereich ausgelegt. Der empfohlen Leistungsbereich der Heads beträgt 55 bis 65 Watt. 
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: drei</li>
+<li>Leistungsbereich: 50 bis 70 Watt</li>
+<li>Empfohlener Leistungsbereich: 55 bis 65 Watt</li>
+<li>DL geeignet</li>
+</ul>
+<br>
+<strong>Geeignet für:</strong>
+<ul>
+<li>OBS Cube Clearomizer</li>
+<li>OBS Cube X E-Zigaretten Set</li>
+</ul>',
+    ),
+    'SC100TA' => array(
+        'icNumber' => 'SC100TA',
+        'number' => 'SC100TA',
+        'name' => 'eLeaf - Tance - E-Zigarette - by SC',
+        'commonName' => 'Tance',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das SC Tance E-Zigaretten Set ist eine E-Zigarette, welche sich sehr gut für Einsteiger eignet. Das Set besteht aus einem Akku und einer Cartridge. Der Akku ist fest verbaut und zeichnet sich durch seine Kapazität von 580mAh aus. Durch die verbaute Zugautomatik des Gerätes, kommt der Tance ohne einen Knopf aus. Mit dem Tance können Sie mit einer maximalen Ausgangsleistung von 10 Watt Ihr Liquid dampfen. Außerdem kann diese E-Zigarette in einem Widerstandsbereich von 0,3 Ohm bis zu 3,0 Ohm arbeiten. In der Cartridge ist ein 1,2 Ohm starker Verdampferkopf verbaut, welcher das Dampfen von Mund zu Lunge (MTL) ermöglicht. Das Tankvolumen des Tance beträgt 2 ml. Über zwei an der Seite des Akkus angebrachte Öffnungen haben Sie die Möglichkeit den Luftwiderstand während des Dampfens zu ändern. Um einen gleichbleibenden Geschmack des Liquids beibehalten zu können, müssen Sie den zu den Verschleißartikeln zählenden Head regelmäßig austauschen.
+<ul>
+<li>1x Tance Akku</li>
+<li>1x Tance Cartridge 1,2 Ohm</li>
+<li>1x USB-C Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+strong>Tance E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 580mAh</li>
+<li>Ausgabemodi: konstant</li>
+<li>Ausgangsleistung: max. 10 Watt</li>
+<li>Widerstandsbereich: 0,3 - 3,0 Ohm Ohm</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Bottom-Filling-System</li>
+<li>Maße: 95,5 mm x 24 mm x 14 mm</li>
+<li>Gewicht: 55 Gramm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'OS100KB' => array(
+        'icNumber' => 'OS100KB',
+        'number' => 'OS100KB',
+        'name' => 'OBS - KFB 2 AIO - E-Zigarette',
+        'commonName' => 'KFB 2 AIO',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die aus dem Hause OBS stammende KFB2 AIO ist ein sogenanntes All in One Gerät. Bei diesen Geräten sitzt der Verdampfer fest auf dem Akku und kann nicht gewechselt werden. Im Lieferumfang enthalten sind zwei unterschiedliche Verdampferköpfe, welche sich sowohl für das Dampfen im moderaten, als auch im Sub-Ohm Bereich eignen. Der N1 Verdampfer ist für das Dampfen im moderaten Bereich gedacht, da dieser einen Widerstand von 1,2 Ohm besitzt. Der S1 Verdampfer richtet sich eher an Sub-Ohm Dampfer die mit Zügen direkt in die Lunge Dampfen, da der Widerstand hier bei 0,6 ohm liegt. Das Tankvolumen der OBS KFB2 AIO beträgt 2ml und kann über ein Top-Filling System von oben befüllt werden. Trotz der kompakten Bauweise sind alle sicherheitsrelevanten Funktionen in der KFB2 AIO verbaut. Hier finden sich: Tiefenentlade-, Überlade-, Kurzschluss- sowie Überhitzungsschutz. Selbstverständlich hat die KFB2 AIO auch eine 10 Sekunden Zugzeit Begrenzung.Der Akku hat eine Kapazität von 1500mAh und wird mittels des mitgelieferten USB Kabel geladen. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x KFB2 AIOh</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>KFB2 AIO</strong>
+<ul>
+<li>Akkukapazität: 1500mAh</li>
+<li>Ausgangsleistung: 3,5 Volt</li>
+<li>Gewicht: 90g</li>
+<li>Maße: 112 mm x 20 mm</li>
+</ul>
+<br>
+<br>
+
+',
+    ),
+    'SC100TAC' => array(
+        'icNumber' => 'SC100TAC',
+        'number' => 'SC100TAC',
+        'name' => 'eLeaf - Tance - Cartridge mit 1.2 Ohm Head (5 Stück pro Packung) - by SC',
+        'commonName' => 'Tance',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Tance Kartusche, auch Cartridge genannt, kommt aus dem Hause SC und ist die passende Verdampfereinheit für Ihr SC Tance E-Zigaretten Set. Die Cartridge verfügt über ein Tankvolumen von 2ml Liquid, welches per Bottom-Filling System in die Kartusche eingefüllt wird. Dieses befindet sich an der Unterseite der Kartusche. Pro Packung sind fünf Kartuschen enthalten. Jede Cartridge besitzt einen vorinstallierten Verdampferkopf mit 1,2 Ohm. Bedenken Sie aber bitte, dass Verdampferköpfe Verschleißartikel sind und je nach Gebrauch ausgetauscht werden müssen.
+<ul>
+<li>5x Tance Cartridge, 1,2 Ohm</li>
+</ul>
+<br>
+<br>
+<strong>Tance Cartridge</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Widerstand: 1,2 Ohm</li>
+<li>MTL</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SC100TAM' => array(
+        'icNumber' => 'SC100TAM',
+        'number' => 'SC100TAM',
+        'name' => 'eLeaf - Tance Max - E-Zigarette - by SC',
+        'commonName' => 'Tance Max',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die SC Tance Max hat einen 1100mAh starken Akku, welchen Sie über ein USB-C Kabel laden können. Der Pod des Tance Max hat ein 4ml Tankvolumen und wird über die Unterseite des Pod´s mit frischem Liquid befüllt. Hierzu schieben Sie lediglich die kleine Kappe zur Seite um an die Befüllöffnung zu gelangen. Die mitgelieferten Verdampferköpfe sind aus der GS Air Reihe haben folgende Merkmale: GS Air M mit 0,6 Ohm Widerstand und GS Air S mit 1,6 Ohm Widerstand. Die Verdampferköpfe können an der Unterseite des Pod´s gewechselt werden. Hier befindet sich auch die Airflow-Control die Sie sowohl für das moderate-, als auch Subohm Dampfen einstellen können.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Tance Maxr</li>
+<li>1x GS Air M 0,6 Ohm Head</li>
+<li>1x GS Air S 1,6 Ohm Head
+<li>1x Tance Max Pod</li>
+<li>1x USB-C Kabel</li>
+<li>Bedienungsanleitung>/li>
+</ul>
+<strong>SC Tance Max E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 1100mAh</li>
+<li>Ausgabemodi: konstant</li>
+<li>Ausgangsleistung: max. 15 Watt</li>
+<li>Widerstandsbereich: 0,3 - 3,0 Ohm Ohm</li>
+<li>Tankvolumen: 4 ml</li>
+<li>Bottom-Filling-System</li>
+<li>Maße: 31,2 mm x 20,5 mm x 101 mm</li>
+<li>Gewicht: 87,5 Gramm</li>
+</ul>
+<br>
+<br>
+
+
+
+
+',
+    ),
+    'SC100TMC' => array(
+        'icNumber' => 'SC100TMC',
+        'number' => 'SC100TMC',
+        'name' => 'eLeaf - Tance Max - Cartridge (5 Stück pro Packung) - by SC',
+        'commonName' => 'Tance Max',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die SC Tance Pods ohne Verdampferköpfe dienen Ihnen als Reserve Pod´s. Im Lieferumfang befinden sich nur die leeren Pods ohne Verdampferköpfe. Diese müssen Sie separat bestellen. Pro Paket erhalten Sie 5 Pods in einem Karton.',
+    ),
+    'SC100TMH' => array(
+        'icNumber' => 'SC100TMH',
+        'number' => 'SC100TMH',
+        'name' => 'eLeaf - Tance Max - Cartridge mit Head - 0,6 Ohm - by SC',
+        'commonName' => 'Tance Max',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der SC Tance Max Pod inklusive GS Air M 0,6 Ohm Verdampferkopf. Das Tankvolumen beträgt 4ml, welches über eine Befüllöffnung an der Unterseite des Pods mit frischem Liquid befüllt werden kann. Verdampferköpfe gehören zu den Verschleißteilen, welche regelmäßig bei Geschmacks Änderungen oder abfallender Dampfentwicklung gewechselt werden müssen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Tance Max Pods 0,6 Ohm</li>
+</ul> 
+<br>
+<br>
+<strong>passend für</strong>
+<br>
+<li>SC Tance Max E-Zigaretten Set</li> 
+
+
+
+
+',
+    ),
+    'SC100GSM' => array(
+        'icNumber' => 'SC100GSM',
+        'number' => 'SC100GSM',
+        'name' => 'eLeaf - GS Air - M Head - 0,6 Ohm (5 Stück pro Packung) - by SC',
+        'commonName' => 'GS Air',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'SC GS Air M Heads mit einer Mesh Wicklung im Inneren der Verdampferköpfe. Der Widerstand der Verdampferköpfen beträgt 0,6 Ohm. Die Leistung mit der Sie den Verdampfer betreiben können, liegt zwischen 8 und 20 Watt. Sie erhalten in einem Paket 5 Verdampferköpfe mit 0,6 Ohm. Da Verdampferköpfe zu den Verschleißteilen gehören, sollten diese regelmäßig bei abfallender Geschmacks-, oder Dampfentwicklung gewechselt werden. 
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklungen: eine</li>
+<li>Leistungsbereich: 8 bis 20 Watt</li>
+<li>DL geeignet</li>
+</ul>
+<br>
+<strong>Geeignet für:</strong>
+<ul>
+<li>alle GS Air Clearomizer</li>
+<li>SC Tance Max E-Zigaretten Set</li>
+</ul>
+
+
+
+
+',
+    ),
+    'PV100DN' => array(
+        'icNumber' => 'PV100DN',
+        'number' => 'PV100DN',
+        'name' => 'VooPoo - Drag Nano - E-Zigarette',
+        'commonName' => 'Drag Nano',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das E-Zigaretten Set Drag Nano der Marke VooPoo ist eine E-Zigarette mit Pod-System. Das Pod-System weist ein Tankvolumen von 1ml und der fest verbaute Verdampferkopf zeichnet ein Widerstand von 1,8 Ohm auf, sodass das moderate Backendampfen verwendet werden kann. Bitte beachten Sie, dass Verdampferköpfe Verschleißartikel sind und bei einer Veränderung des Geschmacks oder der Dampfentwicklung komplett getauscht werden sollte. Da der Verdampferkopf im Pod-System fest verbaut ist, muss im Bedarfsfall das komplette Pod-System getauscht werden. Mit dem VooPoo Drag Nano E-Zigaretten Set dampfen Sie mit einer maximalen Ausgangsspannung von 3,2 bis 4,2 Volt. Der fest verbaute Akku weist eine Kapazität von 750mAh auf und kann über das mitgelieferte USB-Kabel mit neuer Energie versorgt werden.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Drag Nano E-Zigaretten Set</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+<li>1x Halskette</li>
+</ul>
+<br>
+<br>
+<strong>Drag Nano E-Zigarette</strong>
+<ul>
+<li>Akkukapazität: 750 mAh</li>
+<li>Ausgangsspannung: 3,2 - 4,2V</li>
+<li>Ladespannung: 5V/0,5A</li>
+<li>Maße: 54,5mm x 35mm x 11mm</li>
+<li>Gewicht: 55 Gramm</li>
+</ul>
+<br>
+<br>
+<strong>Pod S1</strong>
+<ul>
+<li>Tankvolumen: 1 Milliliter</li>
+<li>Widerstand: 1,8 Ohm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'FM100GS' => array(
+        'icNumber' => 'FM100GS',
+        'number' => 'FM100GS',
+        'name' => 'FreeMax - Gemm - E-Zigarette',
+        'commonName' => 'Gemm',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das FreeMax Gemm E-Zigaretten Set hat einen fest verbauten Akku mit 2900mah Leistung. Über eine LED im Feuertaster können Sie den Ladestand des Akkus erfahren. Des Weiteren ist es möglich über die Feuertaste die Ausgabespannung zu verstellen. Hierzu drücken Sie dreimal auf die Taste um die Stärken 40, 60 oder 80 Watt abzurufen. Die im Set enthaltenen Tanks sind mehrfach befüllbare einweg Tanks. Sollte der im Tank fest verbaute Verdampferkopf an Leistung verlieren oder den Geschmack negativ verändern, müssen Sie den gesamten Tank gegen einen neuen wechseln. Im Set enthalten sind der Gemm G2 Tank welcher einen Widerstand von 0,2 Ohm besitzt und zwischen 40 und 80 Watt gedampft wird. Desweiteren enthalten ist der Gemm G1 Tank mit einen Widerstand von 0,15 Ohm, der ebenfalls mit einer Leistung zwischen 40 und 80 Watt betrieben wird. Beide Tanks haben ein Füllvolumen von 5ml, welche über die Oberseite des Tanks mit frischem Liquid befüllt werden können. Da beide Tanks einen Widerstand deutlich unterhalb von 1,0 Ohm haben, eignen sie sich für das Dampfen mit tiefen Zügen direkt in die Lunge (DL). 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Gemm 2900mah Akku</li>
+<li>1x Gemm G1 Clearomizer 0,15 Ohm </li>
+<li>1x Gemm G2 Clearomizer 0,2 Ohm</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Gemm E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 2900mAh</li>
+<li>Ausgangsleistung: max. 80 Watt</li>
+<li>Ausgangsspannung: 0 bis 4,2 Volt</li>
+<li>Widerstandsbereich: 0,1 bis 3 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 131,65 mm x 25 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'FM100G3' => array(
+        'icNumber' => 'FM100G3',
+        'number' => 'FM100G3',
+        'name' => 'FreeMax - Gemm - G3 Mesh - 0,15 Ohm Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'Gemm',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestelltem Paket zwei FreeMax Gemm G3 Tanks. Die fest verbauten Heads des wiederbefüllbaren Einweg-Tanks haben einen Widerstand von 0,15 Ohm. FreeMax empfiehlt hier eine Leistung von 80 Watt, wobei der Verdampferkopf auch zwischen 50 und 90 Watt nutzbar ist. Befüllt wird der Gemm G3 Tank über eine Öffnung an der Oberseite des Verdampfers. Das Tankvolumen beträgt 5ml. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x Gemm G3 Mesh 0,15 Ohm Clearomizer</li>
+</ul>
+<br>
+<br>
+<strong>Gemm G3 Mesh 0,15 Ohm Clearomizer Set</strong>
+<ul>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Leistung: 50 - 90 Watt</li>
+<li>Tankvolumen: 5 ml</li>
+<li>Anzahl der Wicklungen: drei</li>
+<li>Top Filling</li>
+<li>Variable Airflow</li>
+<li>Maße: 51,35 mm x 25 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'FM100G2' => array(
+        'icNumber' => 'FM100G2',
+        'number' => 'FM100G2',
+        'name' => 'FreeMax - Gemm - G2 Mesh - 0,2 Ohm Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'Gemm',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestelltem Paket zwei FreeMax Gemm G2 Tanks. Die fest verbauten Heads des wiederbefüllbaren einweg Tanks haben einen Widerstand von 0,2 Ohm. FreeMax empfiehlt hier eine Leistung von 70 Watt, wobei der Verdampferkopf auch zwischen 40 und 80 Watt nutzbar ist. Befüllt wird der Gemm G2 Tank über eine Öffnung an der Oberseite des Verdampfers. Das Tankvolumen beträgt 5ml. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x Gemm G2 Mesh 0,2 Ohm Clearomizer</li>
+</ul>
+<br>
+<br>
+<strong>Gemm G2 Mesh 0,15 Ohm Clearomizer Set</strong>
+<ul>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Leistung: 40 - 80 Watt</li>
+<li>Tankvolumen: 5 ml</li>
+<li>Anzahl der Wicklungen: zwei</li>
+<li>Top Filling</li>
+<li>Variable Airflow</li>
+<li>Maße: 51,35 mm x 25 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'FM100G1' => array(
+        'icNumber' => 'FM100G1',
+        'number' => 'FM100G1',
+        'name' => 'FreeMax - Gemm - G1 Mesh - 0,15 Ohm Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'Gemm',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestelltem Paket zwei FreeMax Gemm G1 Tanks. Die fest verbauten Heads des wiederbefüllbaren einweg Tanks haben einen Widerstand von 0,15 Ohm. FreeMax empfiehlt hier eine Leistung von 70 Watt, wobei der Verdampferkopf auch zwischen 40 und 80 Watt nutzbar ist. Befüllt wird der Gemm G1 Tank über eine Öffnung an der Oberseite des Verdampfers. Das Tankvolumen beträgt 5ml. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x Gemm G1 Mesh 0,15 Ohm Clearomizer</li>
+</ul>
+<br>
+<br>
+<strong>Gemm G1 Mesh 0,15 Ohm Clearomizer Set</strong>
+<ul>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Leistung: 40 - 80 Watt</li>
+<li>Tankvolumen: 5 ml</li>
+<li>Anzahl der Wicklungen: eine</li>
+<li>Top Filling</li>
+<li>Variable Airflow</li>
+<li>Maße: 51,35 mm x 25 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'FM100G2M' => array(
+        'icNumber' => 'FM100G2M',
+        'number' => 'FM100G2M',
+        'name' => 'FreeMax - Gemm - G2 Mesh - 0,5 Ohm Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'Gemm',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestelltem Paket zwei FreeMax Gemm G2 Tanks. Die fest verbauten Heads des wiederbefüllbaren Einweg-Tanks haben einen Widerstand von 0,5 Ohm. FreeMax empfiehlt hier eine Leistung von 25 Watt, wobei der Verdampferkopf auch zwischen 20 und 30 Watt nutzbar ist. Befüllt wird der Gemm G2 Tank über eine Öffnung an der Oberseite des Verdampfers. Das Tankvolumen beträgt 5ml. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x Gemm G2 Mesh 0,5 Ohm Clearomizer</li>
+</ul>
+<br>
+<br>
+<strong>Gemm G2 Mesh 0,5 Ohm Clearomizer Set</strong>
+<ul>
+<li>Widerstand: 0,5 Ohm</li>
+<li>Leistung: 20 - 30 Watt</li>
+<li>Tankvolumen: 5 ml</li>
+<li>Anzahl der Wicklungen: zwei</li>
+<li>Top Filling</li>
+<li>Variable Airflow</li>
+<li>Maße: 51,35 mm x 25 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'FM100G4' => array(
+        'icNumber' => 'FM100G4',
+        'number' => 'FM100G4',
+        'name' => 'FreeMax - Gemm - G4 Mesh - 0,15 Ohm Verdampfer Ser (2 Stück pro Packung)',
+        'commonName' => 'Gemm',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestelltem Paket zwei FreeMax Gemm G4 Tanks. Die fest verbauten Heads des wiederbefüllbaren Einweg-Tanks haben einen Widerstand von 0,15 Ohm. FreeMax empfiehlt hier eine Leistung von 70 Watt, wobei der Verdampferkopf auch zwischen 40 und 80 Watt nutzbar ist. Befüllt wird der Gemm G4 Tank über eine Öffnung an der Oberseite des Verdampfers. Das Tankvolumen beträgt 5ml. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x Gemm G4 Mesh 0,15 Ohm Clearomizer</li>
+</ul>
+<br>
+<br>
+<strong>Gemm G4 Mesh 0,15 Ohm Clearomizer Set</strong>
+<ul>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Leistung: 40 - 80 Watt</li>
+<li>Tankvolumen: 5 ml</li>
+<li>Anzahl der Wicklungen: vier</li>
+<li>Top Filling</li>
+<li>Variable Airflow</li>
+<li>Maße: 51,35 mm x 25 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'FE100MM' => array(
+        'icNumber' => 'FE100MM',
+        'number' => 'FE100MM',
+        'name' => 'Famovape - Magma - Akkuträger - 200 Watt',
+        'commonName' => 'Magma',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Famovape',
+        'brand' => 'Famovape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Magma 200 Watt ist ein weiteres Produkt der Firma Famovape. Der Mod besteht aus einer Zinklegierung und hat durch den neuen V-Tek-Chipsatz eine Größe von 87 mm x 48,5 mm x 25 mm und hat eine Leistungsstärke von 5 -  200 Watt. Die Leistung können Sie über die Feuertaste mit einer Reaktionsgeschwindigkeit von 0,0016 starten. Der Mod wird mit zwei Akkuzellen betrieben. Die 18650er Akkus werden nicht mitgeliefert. Die Akkus laden Sie über ein externes Ladegerät oder den Micro-USB-Anschluss mit bis zu 2A auf. Es wurde ein 0,96 Zoll TFT-Farbdisplay verbaut, worauf Ihnen diverse Informationen angezeigt werden, wie z. B. der Ladezustand, der Widerstand und die Temperatur. Über das Menü können Sie Ausgabemodi wie Watt  sowie Temperatur-Modi (Ni, Ti, SS) wählen und Einstellungen vornehmen. Der Mod arbeitet mit einer Ausgangsspannung von 1,0 - 7,5 Volt und in einem Temperaturbereich zwischen 100 - 300 °C. Der Famovape Magma 200 Watt erkennt Widerstände zwischen 0,08 und 3,0 Ohm. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Famovape Magma 200 Watt</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er Akkuzellen nicht im Lieferumfang enthalten</strong>
+<br>
+<br>
+<strong>1x Famovape Magma 200 Watt</strong>
+<ul>
+<li>Ausgangsleistung: 5 bis 200 Watt</li>
+<li>Ausgabemodi: TC / VW</li>
+<li>Ausgangsspannung: 1,0 - 7,5 Volt</li>
+<li>Stromstärke: 40 A</li>
+<li>0,96 Zoll Farbdisplay</li>
+<li>Widerstandsbereich: 0,08 - 3,0 Ohm</li>
+<li>Temperaturbereich: 100 bis 300 °C | 212 bis 570 °F</li>
+<li>Akkus: 2 x 18650</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 87 x 48,5 x 25 mm</li>
+<li>Material: Zinklegierung</li>
+<li>V-Tek Chipsatz</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'OU100RD' => array(
+        'icNumber' => 'OU100RD',
+        'number' => 'OU100RD',
+        'name' => 'Oumier - Rudder - Akkuträger - 200 Watt',
+        'commonName' => 'Rudder',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Oumier',
+        'brand' => 'Oumier',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Rudder von Oumier können Sie in einem Leistungsbereich von bis zu 200 Watt dampfen. Wenn Sie das Vapen im Temperatur-Modus bevorzugen, können Sie Heads mit einer Nickel-, Titan- oder Edelstahl-Wicklung in einem Bereich von 100°C - 300°C nutzen. Der Rudder 200 Watt Akkuträger hat keinen integrierten Akku, sondern wird über eine wechselbare 18650er Akku-Zellen betrieben, die <b>nicht</b> im Lieferumfang enthalten sind. Die von Ihnen vorgenommenen Einstellungen können Sie dem OLED-Display entnehmen. Der Akkuträger ist mit einem standardisierten 510er Gewinde ausgestattet und ist somit mit verschiedenen auf dem Markt erhältlichen Verdampfern kombinierbar. 
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Rudder 200 Watt Akkuträger</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Rudder 200 Watt AKKUTRÄGER</strong>
+<ul>
+<li>Ausgabemodi: Bypass | TC (Ni, Ti, SS) |</li>
+<li>Ausgangsleistung: 5 bis 200 Watt</li>
+<li>Temperaturbereich: 100°C bis 300 °C </li>
+<li>Widerstandsbereich: 0,05 bis 3,0 Ohm</li>
+<li>Maße: 44 mm x 31 mm x 88 mm</li>
+<li>Gewindetyp: 510</li>
+<li>OLED-Display</li>
+<li>update-fähig</li>
+</ul>',
+    ),
+    'OU100BO' => array(
+        'icNumber' => 'OU100BO',
+        'number' => 'OU100BO',
+        'name' => 'Oumier - Bombus RTA - Verdampfer',
+        'commonName' => 'Bombus RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Oumier',
+        'brand' => 'Oumier',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Oumier kommt der Bombus RTA. Dabei steht das RTA für Rebuildable Tank Atomizer und die Wicklung des Verdampfers muss selber gewickelt werden. Es kann nur eine Wicklung verbaut werden, da der Bombus ein Single-Coil-Clearomizer ist. Sie haben die Möglichkeit bis zu 2ml Ihres gewünschten Liquids über ein Top-Filling-System in den verbauten Glastank einzufüllen. Durch einen 510er Anschluss können Sie den Bombus mit den meisten gängigen Akkus/Akkuträgern kombinieren. 
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Bombus RTA Clearomizer Set</li>
+<li>1x Ersatzteile</li>
+<li>1x Organic Cotton</li>
+<li>1x Ersatzglas</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale/b>
+<ul>
+<li>Durchmesser: 24,5 mm</li>
+<li>Höhe: 34,5 mm (ohne Mündstück)</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Bottom-Airflow-Control</li>
+<li>Top-Filling System</li>
+<li>Gewindetyp: 510</li>
+</ul>',
+    ),
+    'OU100VLS' => array(
+        'icNumber' => 'OU100VLS',
+        'number' => 'OU100VLS',
+        'name' => 'Oumier - VLS RDA - Verdampfer',
+        'commonName' => 'VLS RDA',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Oumier',
+        'brand' => 'Oumier',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der VLS RDA von der Marke Oumier gehört zu der Kategorie Tröpfelverdampfer bzw. Rebuildable Dripping Atomizer. Das zu verdampfenden Liquid wird dabei über ein Top-Filling-System auf die Watte geträufelt. Dabei finden bis zu 1,5ml Platz. Die Coils bzw. Wicklungen müssen bei diesem Verdampfer selber gewickelt werden. Somit ist das Gerät eher für erfahrene Dampfer. Genutzt werden kann der Clearomizer im Single und im Dual-Coil-Betrieb. Diese verbauten Wicklungen können Sie dann sowohl vertikal als auch horizontal im Deck anbringen. Laut Hersteller bringt das Anbauen der Wicklungen in der vertikalen Position einen noch intensiveren Geschmack. Inhalieren tun Sie das verdampfte Liquid über das verbaute 810er Mundstück. Der Clearomizer kann durch seinen 510er Anschluss mit vielen gängigen Akkus verwendet werden. Durch einen Bottom-Feeder-Pin ist auch der Einsatz mit einem Squonker-Mod möglich.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x VLS RDA Clearomizer Set</li>
+<li>1x Bottom-Feeder Pin</li>
+<li>1x Ersatzteile</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale/b>
+<ul>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 38 mm (ohne Mündstück)</li>
+<li>Tankvolumen: 1,5 ml</li>
+<li>Side-Airflow-Control</li>
+<li>Top-Filling System</li>
+<li>Gewindetyp: 510</li>
+</ul>',
+    ),
+    'OU100WN' => array(
+        'icNumber' => 'OU100WN',
+        'number' => 'OU100WN',
+        'name' => 'Oumier - Wasp Nano RDTA - Verdampfer',
+        'commonName' => 'Wasp Nano RDTA',
+        'type' => 'CLEAROMIZER_RDTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Oumier',
+        'brand' => 'Oumier',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Wasp Nano RDTA Verdampfer von der Marke Oumier können Sie Ihre eigenen gefertigten Wicklungen einsetzen und mit diesen dampfen. Das Deck des Wasp Nano RDTA Verdampfers bietet einer Ihrer Wicklung Platz. Sie ziehen Watte durch die Wicklung, beträufeln diese mit Liquid und können dampfen. Da es sich um einen RDTA (Rebuildable Dripping Tank Atomizer) handelt, besitzt der Wasp Nano einen Glastank, der bis zu 2ml Liquid aufnehmen kann. Es ist empfehlenswert die Watte und Wicklungen, beides zählt zu den Verschleißteilen, regelmäßig auszuwechseln um ein gleichbleibendes Dampferlebnis zu gewährleisten. Je nachdem was für einen Draht Sie für Ihre Wicklungen verwenden, dampfen Sie im moderaten oder im Subohm-Bereich. Über die Airflow-Control, können Sie den Luftwiderstand Ihren persönlichen Dampfgewohnheiten entsprechend anpassen.
+<br>
+<br>
+<ul>
+<li>1x Wasp Nano RDTA Clearomizer </li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Wasp Nano RDTA</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Durchmesser: 22 mm</li>
+<li>Höhe: 31,1 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Airflow-Control</li>
+<li>Rebuildable Dripping Tank Atomizer</li>
+<li>im Single-Coil Betrieb nutzbar</li>
+</ul>
+',
+    ),
+    'HT100FK' => array(
+        'icNumber' => 'HT100FK',
+        'number' => 'HT100FK',
+        'name' => 'Horizontech - Falcon King - Verdampfer',
+        'commonName' => 'Falcon King',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Horizontech',
+        'brand' => 'Horizontech',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Falcon King Verdampfer aus dem Hause Horizontech ist für das Dampfen im Subohm-Bereich ausgelegt. Im Lieferumfang sind zwei Verdampferköpfe enthalten. Der M-Dual 0,38 Ohm Mesh Verdampferkopf ist vorinstalliert und der M1+ 0,16 Ohm Mesh Verdampferkopf liegt dem Lieferumfang bei. Verdampferköpfe sind Verschleißartikel und sollten daher regelmäßig ausgetauscht werden. Der Glastank mit einem Fassungsvermögen von 6ml wird über ein Top-Filling-System von oben befüllt. Öffnen bzw. schließen Sie die Airflow-Control, die in der Base des Verdampfers sitzt, um den Luftwiderstand Ihren Bedürfnissen anzupassen. Wenn Sie im Subohm-Bereich dampfen, ist eine weit offen stehende Airflow-Control empfehlenswert.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Falcon King Clearomizer</li>
+<li>1x M1+ 0,16 Ohm Mesh Head</li>
+<li>1x M-Dual 0,38 Ohm Mesh Head</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Ersatzteil-Set </li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Falcon King Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 6 ml</li>
+<li>Höhe (inkl. Mundstück): 59,5 mm</li>
+<li>Durchmesser: 26,2 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'OU100WA' => array(
+        'icNumber' => 'OU100WA',
+        'number' => 'OU100WA',
+        'name' => 'Oumier - Wasp Nano RDA - Verdampfer',
+        'commonName' => 'Wasp Nano RDA',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Oumier',
+        'brand' => 'Oumier',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Wasp Nano RDA von Oumier ist ein Selbstwickel-Verdampfer und kann als Tröpfler sowie als Bottom-Feeder genutzt werden. Über den 510er Anschluss bzw. BF-Pin kann dieser mit vielen auf den Markt erhältlichen Akkuträgern genutzt werden. Auf dem Wickeldeck können Sie eine Single-Coil Wicklung installieren. Dieses bietet ausreichend Platz und ist somit auch für Einsteiger geeignet. Die Abkürzung RDA steht für Rebuildable Dripping Atomizer, somit verfügt der Wasp Nano über keinen klassischen Tank. Das Liquid wird beim Vapen direkt von oben auf die Wicklung bzw. die Watte geträufelt. Wenn Sie den Wasp Nano RDA als Bottom Feeder verwenden, wird das Liquid aus den Akkuträger über den BF-Pin zur Wicklung transportiert. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Wasp Nano RDA </li>
+<li>1x Ersatzteile-Set </li>
+<li>1x BF-Pin</li>
+<li>1x Watte</li>
+<li>1x Schraubendreher</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong> Wasp Nano RDA </strong>
+<ul>
+<li>DL und MTL geeignet</li>
+<li>Single-Coil Deck</li>
+<li>Tröpfler</li>
+<li>Side Airflow-Control</li>
+<li>Gewindetyp: 510</li>
+<li>Durchmesser: 22mm</li>
+<li>Höhe: 22,5mm</li>
+<li>subom-fähig</li>
+<li>als RDA und Bottom Feeder nutzbar</li>
+</ul>
+<br>',
+    ),
+    'HT100M1M' => array(
+        'icNumber' => 'HT100M1M',
+        'number' => 'HT100M1M',
+        'name' => 'Horizontech - M1+ - 0,16 Ohm Mesh Head (3 Stück pro Packung)',
+        'commonName' => 'M1+',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Horizontech',
+        'brand' => 'Horizontech',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Horizontech M1+ Mesh Verdampferköpfe sind für die Nutzung in einem Leistungsbereich von 75 Watt ausgelegt. Jeder M1+ Mesh Verdampferkopf hat einen Widerstand von 0,16 Ohm und ist für das Vapen mit direkten Lungenzügen geeignet. Die Horizontech M1+ Mesh Verdampferköpfe können Sie mit dem Falcon King und Falcon Verdampfer von gleichnamigen Hersteller benutzen.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,16 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Leistungsbereich: 75/li>
+<li>geeignet für DL</li>
+</ul>
+<br>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>Falcon King</li>
+<li>Falcon</li>
+</ul>
+',
+    ),
+    'HT100MD' => array(
+        'icNumber' => 'HT100MD',
+        'number' => 'HT100MD',
+        'name' => 'Horizontech - M-Dual - 0,38 Ohm Mesh Head (3 Stück pro Packung)',
+        'commonName' => 'M-Dual',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Horizontech',
+        'brand' => 'Horizontech',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Horizontech M-Dual Mesh Verdampferköpfe mit 0,38 Ohm sind für direkte Lungenzüge geeignet. Sie sind für den Leistungsbereich von 80 Watt ausgelegt. Pro Packung befinden sich insgesamt 3 Verdampferköpfe. Wechseln Sie den Verdampferkopf aus, sobald Sie eine Geschmacksveränderung wahrnehmen. Sie können die M-Dual Mesh Verdampferköpfe für Ihren Falcon King oder Falcon Verdampfer von gleichnamigen Hersteller verwenden.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,38 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Leistungsbereich: 80 Watt</li>
+<li>geeignet für DL</li>
+</ul>
+<br>
+',
+    ),
+    'OU100BK' => array(
+        'icNumber' => 'OU100BK',
+        'number' => 'OU100BK',
+        'name' => 'Oumier - Bulk RTA - Verdampfer',
+        'commonName' => 'Bulk RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Oumier',
+        'brand' => 'Oumier',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Bulk RTA Clearomizer aus dem Hause Oumier ist ein Clearomizer, welcher für das Selbstwickeln ausgelegt ist. Bulk RTA verfügt über ein Deck, welches Dual-Coil fähig ist. Es kann also ein oder zwei Coils betreiben. Zum Dampfen werden hier nicht wie gewohnt Verdampferköpfe benutzt, sondern Wickelwatte, welche durch die Coils gezogen werden muss. Der Oumier RTA hat ein Fassungsvermögen von 6,5ml und kann über das Top-Filling System befüllt werden. Zudem verfügt der Oumier RTA eine stufenlos regulierbare Airflow. Mit dieser können Sie den Widerstand je nach Belieben einstellen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Bulk RTA Clearomizer</li>
+<li>2x Tricore Fused Clapton Coil, je 0,32 Ohm</li>
+<li>2x Shoelace Watte</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Ersatzmundstück
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Bulk RTA Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 6,5 ml</li>
+<li>Höhe (inkl. Mundstück): 47,4 mm</li>
+<li>Durchmesser: 28 mm</li>
+<li>DL und MTL</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+</ul>
+<br>
+<br>',
+    ),
+    'OU100AD' => array(
+        'icNumber' => 'OU100AD',
+        'number' => 'OU100AD',
+        'name' => 'Oumier - Armadillo RDA - Verdampfer',
+        'commonName' => 'Armadillo RDA',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Oumier',
+        'brand' => 'Oumier',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Armadillo RDA Verdampfer aus dem Hause Oumier ist ein Selbstwickel-Verdampfer. Sie können aufgrund des Decks des Armadillo’s bis zu zwei Ihrer Wicklungen einsetzen. RDA ist die Abkürzung für Rebuildable Dripping Atomizer, also einem Selbstwickler bei dem das Liquid direkt von oben auf die mit Watte durchgezogenen Wicklungen geträufelt wird. Aufgrund dessen besitzt der Armadillo RDA keinen Glastank. Sie können bei einem Selbstwickler Ihre Wicklungen selber herstellen aber auch vorgefertigte Wicklungen benutzen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Armadillo RDA Clearomizer</li>
+<li>1x Watte</li>
+<li>1x Ersatzteile-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Armadillo RDA</strong>
+<ul>
+<li>DL und MTL geeignet</li>
+<li>Single- und Dual-Coil möglich</li>
+<li>Tröpfler</li>
+<li>Airflow-Control</li>
+<li>Gewindetyp: 510</li>
+<li>Durchmesser: 24mm</li>
+<li>Höhe: 29,5mm</li>
+</ul>
+<br>',
+    ),
+    'DD100SB' => array(
+        'icNumber' => 'DD100SB',
+        'number' => 'DD100SB',
+        'name' => 'Desire Design - Squonky Bottom-Feed Subohm Mesh Verdampfer',
+        'commonName' => 'Squonky Bottom-Feed Subohm Mesh Verdampfer',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Desire Design',
+        'brand' => 'Desire Design',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Squonky Bottom-Feed Subohm Mesh Verdampfer Set beinhaltet den Squonky Bottom-Feed Subohm Mesh Verdampfer und die SCC Mesh Verdampferköpfe mit 0,17 Ohm der Marke Desire Design. Der Verdampfer kann bis zu 2ml Liquid fassen, das entweder via Top-Filling System oder Bottom Feeding System in den Tank gegeben werden kann. Bitte verwenden Sie Akkus oder Akkuträger, die aber eine Squonk-Funktion verfügen. Der Verdampferkopf mit 0,17 Ohm kann zwischen 400 Watt und 70 Watt betrieben werden. Bitte tauschen Sie die Heads in regelmäßigen Zeitabständen aus. Das Austauschen erfolgt ganz ohne Hilfmittel oder Werkzeug.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Squonky Bottom-Feed Subohm Mesh Clearomizer</li>
+<li>2x SCC Mesh Head 0,17 Ohm</li>
+<li>1x Ersatzteilset</li>
+<li>1x Bedienungsanleitung</li></ul>
+<br>
+<br>
+<strong>Squonky Bottom-Feed Subohm Mesh</strong>
+<li>Tankvolumen: 2 ml</li>
+<li>Bottom-Airflow-Control</li>
+<li>Top-Filling oder Bottom Feeding</li>
+<li>Durchmesser: 25 mm</li>
+<li>Höhe: 55 mm</li>
+<li>Gewindetyp: 510</li>
+<br>
+<br>',
+    ),
+    'DD100SM' => array(
+        'icNumber' => 'DD100SM',
+        'number' => 'DD100SM',
+        'name' => 'Desire Design - SCC Mesh Head - 0,17 Ohm (5 Stück pro Packung)',
+        'commonName' => 'SCC Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Desire Design',
+        'brand' => 'Desire Design',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Für den Squonky Bottom-Feed Subohm Mesh Verdampfer kommen die SCC Mesh Verdampferköpfe mit 0,17 Ohm in Frage. Der Verdampferkopf von der Marke Desire Design kann zwischen 40 Watt und 70 Watt betrieben werden. Bitte tauschen Sie den Verdampferkopf aus, sobald Sie eine negative Geschmacksentwicklung Ihres Liquids wahrnehmen. Pro Packung sind 5 SCC Mesh Verdampferköpfe enthalten.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>5 Heads pro Packung</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 0,17 Ohm</li>
+<li>Leistungsbereich: 40 Watt - 70 Watt</li>
+<br>
+<br>
+<strong>Geeigent für:</strong>
+<li>Squonky Bottom-Feed Subohm Mesh Clearomizer Set</li>
+<br>
+<br>',
+    ),
+    'IC100TE' => array(
+        'icNumber' => 'IC100TE',
+        'number' => 'IC100TE',
+        'name' => 'Joyetech - Teros ONE - E-Zigarette - by InnoCigs',
+        'commonName' => 'Teros ONE',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Teros ONE Set besteht aus dem Teros ONE Akku und aus dem Teros ONE Kartuschen-System. Der Akku hat eine Kapazität von 650mAh und wird über das mitgelieferte USB-Kabel geladen. Die Kartusche fasst bis zu 2ml Liquid. Das Liquid wird dabei über  das Bottom-Filling System in den Tank gegeben wird. Eine Feuertaste befindet sich relativ weit unten am Akku. Darüber können Sie dampfen und das Gerät ein- und ausschalten. Zudem ist eine LED in der Feuertaste verbaut, worüber Sie über den Akkuladestand informiert werden. Die Teros ONE Kartusche hat einen fest verbauten Mesh Verdampferkopf mit 0,8 Ohm. Bitte tauschen Sie die komplette Kartusche gegen eine Neue, sobald Sie eine negative Geschmacksentwicklung Ihres Liquids feststellen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Teros ONE Akku</li>
+<li>2x Teros ONE Cartridge, je 0,8 Ohm</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Teros ONE</strong>
+<ul>
+<li>Akkukapazität: 650mAh</li>
+<li>Ausgabemodi: 3 Stufen</li>
+<li>Ausgangsleistung: konstant</li>
+<li>Tankvolumen: 2ml</li>
+<li>Mesh Coil mit je 0,8 Ohm | MTL</li>
+<li>Bottom-Filling-System</li>
+<li>LED-Akkuanzeige</li>
+<li>Maße: 15,2 mm x 29,5 mm x 80 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IC100TEC' => array(
+        'icNumber' => 'IC100TEC',
+        'number' => 'IC100TEC',
+        'name' => 'Joyetech - Teros ONE - Cartridge, 2 ml (2 Stück pro Packung) - by InnoCigs',
+        'commonName' => 'Teros ONE',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Kartuschen System Teros ONE der Marke InnoCigs kann bis zu 2ml Liquid fassen. Das Liquid wird über das Bottom-Filling-System in die Kartusche gegeben. In der Kartusche befindet sich ein fest verbauter Mesh Verdampferkopf mit 0,8 Ohm. Sobald Sie eine verfälschte Geschmacksentwicklung wahrnehmen, tauschen Sie die gesamte Kartusche gegen eine Neue. Pro Packung befinden sich insgesamt zwei Teros ONE Cartridges.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x Teros ONE Cartridges</li>
+</ul>
+<br>
+<br>
+<strong>Teros ONE Cartridge</strong>
+<ul>
+<li>Tankvolumen: 2ml</li>
+<li>Widerstand: 0,8 Ohm</li>
+<li>Material: Mesh</li>
+</ul>
+<br>
+<br>',
+    ),
+    'OS100L' => array(
+        'icNumber' => 'OS100L',
+        'number' => 'OS100L',
+        'name' => 'OBS - Land - E-Zigarette',
+        'commonName' => 'Land',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Land Pod E-Zigaretten Set der Marke OBS besteht aus dem Land Pod Akku mit 750mAh und dem Land Pod-System mit 1,5ml. Das Pod-System wird über Magneten mit dem Akku verbunden. Das Laden der E-Zigarette erfolgt über das mitgelieferte USB-Ladekabel. Das Land Pod-System hat einen fest verbauten Verdampferkopf mit 1,4 Ohm. Das OBS E-Zigaretten Set ist daher für das moderate Dampfen ausgelegt. Der Leistungsbereich liegt hier zwischen 7 Watt und 10 Watt. Wenn Sie Ihr Pod vor Schmutz schützen wollen, können Sie über den Pod-Schieberegler das Pod in den Akku reinschieben und bei Bedarf können Sie es wieder hochschieben. Bitte tauschen Sie den gesamten Pod aus, sobald Sie eine negative Geschmacksentwickelung Ihres Liquids feststellen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Land Pod Akku</li>
+<li>1x Land Pod-System mit 1,4 Ohm</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Land Pod</strong>
+<ul>
+<li>Akkukapazität: 750mAh</li>
+<li>Ausgangsleistung: konstant</li>
+<li>Leistungsbereich: 7 Watt - 10 Watt</li>
+<li>Spannungsbereich: 3,3 Volt - 4,2 Volt</li>
+<li>Tankvolumen: 1,5ml</li>
+<li>Head mit 1,4 Ohm | MTL</li>
+<li>Side-Filling-System</li>
+<li>Pod-Schieberegler</li>
+<li>Maße: 73 mm x 32 mm x 24 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'OS100LP' => array(
+        'icNumber' => 'OS100LP',
+        'number' => 'OS100LP',
+        'name' => 'OBS - Land - Pod - 1,4 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Land',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Land Pod-System ist der wichtigste Zubehörartikel für die gleichnamige E-Zigarette der Marke OBS. Bis zu 1,5ml Liquid kann das System aufnehmen. Die Befüllung erfolgt über das Side-Filling-System. Das Land Pod-System hat einen fest verbauten Verdampferkopf mit 1,4 Ohm. Daher ist das Cartridge-System für Backendampfen (MTL) ausgelegt. Pro Packung erhalten Sie insgesamt 3x Land Pod Cartridges.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x Land Pod mit 1,4 Ohm</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<br>
+<br>
+<strong>Land Pod</strong>
+<ul>
+<li>Tankvolumen: 1,5ml</li>
+<li>Head mit 1,4 Ohm | MTL</li>
+<li>Side-Filling-System</li>
+</ul>
+<br>
+<br>',
+    ),
+    'HE100FR' => array(
+        'icNumber' => 'HE100FR',
+        'number' => 'HE100FR',
+        'name' => 'HellVape - Fat Rabbit - Verdampfer',
+        'commonName' => 'Fat Rabbit',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Verdampfer Set Fat Rabbit kommt von der Marke HellVape. Ein Glastank mit einem Tankvolumen von 2ml ist bereits vorinstalliert. Darüber hinaus befindet sich ein 5ml Bubble Glastank im Lieferumfang. Auch im Lieferumfang enthalten sind ein Hellcoil H7-02 Single Mesh Coil mit einem Widerstand von 0,2 Ohm und ein Hellcoil H7-03 Quad OCC Coil mit einem Widerstand von 0,15 Ohm. Mit diesen Verdampferköpfen ist das Dampfen im Subohm-Bereich möglich. Bitte beachten Sie, dass die Heads zu den Verschleißteilen einer E-Zigarette gehören. Sollten Sie eine Veränderung der Geschmacks- und/oder der Dampfentwicklung feststellen, tauschen Sie diesen gegen einen neuen Verdampferkopf aus. Die Luftzufuhr des Fat Rabbits können Sie sowohl über eine Top-Airflow-Control als auch über eine Bottom-Airflow-Control regulieren. Ein Full-Airflow-System kann auch eingestellt werden, indem Sie die Top und Bottom-Airflow-Control öffnen. Dieses soll sich kühlend auf den Verdampfer auswirken.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Fat Rabbit Verdampfer</li>
+<li>1x Hellcoil H7-02 0,2 Ohm</li>
+<li>1x Hellcoil H7-03 0,15 Ohm</li>
+<li>1x Bubble-Glastank (5ml)</li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale/b>
+<ul>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 46 mm</li>
+<li>Tankvolumen: 2 ml (vorinstalliert)</li>
+<li>Top und Bottom-Airflow-Control</li>
+<li>Top-Filling System</li>
+<li>Gewindetyp: 510</li>
+</ul>',
+    ),
+    'HE100HC2' => array(
+        'icNumber' => 'HE100HC2',
+        'number' => 'HE100HC2',
+        'name' => 'HellVape - Hellcoil H7-02 - 0.2 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Hellcoil H7-02',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Hellcoil H7-02 Verdampferköpfe aus dem Hause HellVape können Sie mit dem Fat Rabbit Verdampfer nutzen. Pro bestellter Packung bekommen Sie drei Verdampferköpfe, die einen Widerstand von je 0,2 Ohm aufweisen. Somit sind diese für das Dampfen mit direkter Lungeninhalation ausgelegt. Bei Veränderung des Geschmacks des von Ihnen verwendeten Liquids, sollten Sie den Head durch einen neuen austauschen, da diese zu den Verschleißartikeln gehören.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,2 Ohm</li>
+</ul>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>HellVape Fat Rabbit Verdampfer</li>
+</ul>
+<br>
+<br>',
+    ),
+    'HE100HC3' => array(
+        'icNumber' => 'HE100HC3',
+        'number' => 'HE100HC3',
+        'name' => 'HellVape - Hellcoil H7-03 - 0.15 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Hellcoil H7-03',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Hellcoil H7-03 von HellVape ist ein Quad OCC Verdampferkopf mit einem Widerstand von 0,15 Ohm. Dieser Verdampferkopf ist für das Dampfen mit direkter Lungeninhalation ausgelegt. Pro bestellter Packung erhalten Sie 3 Stück der Verdampferköpfe. Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören. Sollten Sie eine Veränderung der Geschmacks- und/oder der Dampfentwicklung feststellen, tauschen Sie diesen gegen einen neuen Verdampferkopf aus.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Wicklung: Quad OCC</li>
+</l>
+<br>
+<b>Geeignet für:</b>
+<li>HellVape Fat Rabbit Verdampfer </li>
+<br>',
+    ),
+    'HE100FRG' => array(
+        'icNumber' => 'HE100FRG',
+        'number' => 'HE100FRG',
+        'name' => 'HellVape - Fat Rabbit - Glastank',
+        'commonName' => 'Fat Rabbit',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Für den Fat Rabbit Verdampfer von HellVape ist der Fat Rabbit Glastank der passende Zubehör- und/oder Ersatzartikel. Diesen gibt es in der Bubble Variante, welche ein Tankvolumen von 5ml besitzt.
+<br>
+<br>
+<strong>Passend für:</strong>
+<ul>
+<li>HellVape Fat Rabbit Verdampfer</li>
+</ul>',
+    ),
+    'PV100FP' => array(
+        'icNumber' => 'PV100FP',
+        'number' => 'PV100FP',
+        'name' => 'VooPoo - Find Pod - E-Zigarette',
+        'commonName' => 'Find Pod',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das VooPoo Find Pod E-Zigaretten Set ist eine E-Zigarette mit Pod-System. Sie besitzt einen fest verbauten Akku mit einer Kapazität von 420mAh. Geladen werden kann der Akku über ein mitgeliefertes Micro-USB Kabel. Neben dem Ladekabel finden Sie im Lieferumfang auch dem zum Set passenden Pod. Dieser besitzt einen fest verbauten Verdampferkopf mit einem Widerstand von 1,2 Ohm und ist somit für das Dampfen im moderaten Bereich (MTL) ausgelegt. Der Pod kommt mit einem Tankvolumen von 1,8ml und wird über ein Side-Filling System befüllt. Dazu müssen Sie den Pod vom Akku entfernen und den Stöpsel an der Seite des Pods lösen.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Find Pod Akku</li>
+<li>1x Find Pod (fest verbauter Verdampferkopf)</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+<li>1x Garantiekarte</li>
+</ul>
+<br>
+<br>
+<strong>Find Pod Akku</strong>
+<ul>
+<li>Akkukapazität: 420mAh</li>
+<li>konstante Spannungsabgabe: 3,2 - 4,2V</li>
+<li>Ausgangsleistung: 6-12 Watt</li>
+<li>Maße: 85,7mm x 28,8mm x 12,4mm</li>
+</ul>
+strong>Find Pod</strong>
+<ul>
+<li>Tankvolumen: 1,8 ml</li>
+<li>Side-Filling System</li>
+<li>Widerstand: 1,2 Ohm</li>
+</ul>',
+    ),
+    'PV100FPP' => array(
+        'icNumber' => 'PV100FPP',
+        'number' => 'PV100FPP',
+        'name' => 'VooPoo - Find Pod - 1,8 ml (4 Stück pro Packung)',
+        'commonName' => 'Find Pod',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 4,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '"Für das VooPoo Find Pod E-Zigaretten Set finden Sie hier den passenden Pod. Der Pod kommt mit einem Tankvolumen von 1,8ml. Über ein Side-Filling System gelangt Ihr Liquid in den Pod hinein. Zudem ist ein Verdampferkopf im Pod fest verbaut. Dieser verfügt einen Widerstand von 1,2 Ohm. Da der Verdampferkopf fest verbaut ist, ist es notwendig, dass Sie die Pods in regelmäßigen Abständen auswechseln.
+<br>
+<br>
+<b>Lieferumfang</b>
+<li>4x Find Pod</li>
+<br>
+<br>
+<b>Wichtige Merkmale/b>
+<ul>
+<li>Tankvolumen: 1,8 ml</li>
+<li>Widerstand: 1,2 Ohm (fest verbaut)</li>
+<li>Side-Filling System</li>
+</ul>"',
+    ),
+    'PV100FD' => array(
+        'icNumber' => 'PV100FD',
+        'number' => 'PV100FD',
+        'name' => 'VooPoo - Find - E-Zigarette',
+        'commonName' => 'Find',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Find E-Zigaretten Set aus dem Hause VooPoo ist eine Kombination des Find Akkus und dem Uforce T2 Verdampfer. Der VooPoo Uforce T2 Verdampfer kann mit seinem Glastank bis zu 5ml Liquid aufnehmen. Dies geschieht über ein sogenanntes Top-Filling-System direkt von oben. Sie haben aufgrund des UForce P2 Verdampferkopfes, der einen Widerstand von 0,13 Ohm aufweist, die Möglichkeit den entstehenden Dampf direkt in die Lunge zu inhalieren. Es befindet sich ein weiterer UForce N3 Verdampferkopf mit einem Widerstand von 0,2 Ohm im Lieferumfang. Sollte es beim Dampfen zu einer Veränderung des Geschmacks- und/oder der Dampfentwicklung kommen, sollten Sie den, zu den Verschleißartikeln zählenden, Verdampferkopf gegen einen neuen Verdampferkopf tauschen. Den Find Akku zeichnet eine Kapazität von 4.400mAh aus. Mit dem Akku können Sie in unterschiedlichen Modi (VW / TC / TV / Fit (1,2,3) dampfen und diese jederzeit wechseln. Sie können mit einer maximalen Leistung von 120 Watt dampfen. Alle Ihre getätigten Einstellungen werden Ihnen auf dem Display des Find Akkus übersichtlich dargestellt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Find Akku</li>
+<li>1x Uforce T2 Clearomizer</li>
+<li>1x UForce P2 Head 0,13 Ohm (vorinstalliert)</li>
+<li>1x UForce N3 Head 0,2 Ohm</li>
+<li>1x O-Ringe</li>
+<li>1x Ersatzglastank 3,5ml</li>
+<li>1x USB-Kabel</li>
+<li>2x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Find Akku</strong>
+<ul>
+<li>Ausgangsleistung: 5 - 120 Watt</li>
+<li>Kapazität: 4400mAh</li>
+<li>Ausgabemodi: VW / TC / TV / Fit (1,2,3)</li>
+<li>Widerstandsbereich: 0,05 – 5,0 Ohm</li>
+<li>Gewindetyp: 510</li>
+<li>Display</li>
+<li>Maße: 83,5 mm x 25 mm x 48 mm</li>
+</ul>
+<br>
+<br>
+<strong>Uforce T2 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 5ml</li>
+<li>Höhe (inkl. Mundstück): 43 mm</li>
+<li>Durchmesser: 24 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+</ul>
+<br>
+<br>',
+    ),
+    'AK100WLG' => array(
+        'icNumber' => 'AK100WLG',
+        'number' => 'AK100WLG',
+        'name' => 'Advken - Owl - Glastank',
+        'commonName' => 'Owl',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Advken',
+        'brand' => 'Advken',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Für das Advken Owl E-Zigaretten Set haben Sie die Wahl zwischen zwei unterschiedlichen Glastanks. Beide Advken Owl Glastanks bestehen aus Pyrexglas und sind transparent, sodass das eingefüllte Liquid gut erkennbar ist. Ein Model hat eine Zylinder-Form sowie ein Füllvolumen von 3 ml und das andere Model hat eine Bubble-Form mit einer Tankgröße von 4 ml. Je bestellter Packung erhalten Sie eine Variante des Advken Owl Glastanks.
+<br>
+<br>
+</ul>
+<b>Wichtige Merkmale</b>
+<ul>
+<li>Tankvolumen: 3 ml oder 4 ml</li>
+<li>Transparent</li>
+<li>Material: Pyrexglas</li>
+<li>passend für Advken Owl Clearomizer Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'GF100L10-AG' => array(
+        'icNumber' => 'GF100L10-AG',
+        'number' => 'GF100L10-AG',
+        'name' => 'GermanFLAVOURS - American Blend Gold - Liquid - 10 ml',
+        'commonName' => 'American Blend Gold',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-MB' => array(
+        'icNumber' => 'GF100L10-MB',
+        'number' => 'GF100L10-MB',
+        'name' => 'GermanFLAVOURS - Maxx Blend - Liquid - 10 ml',
+        'commonName' => 'Maxx Blend',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-VT' => array(
+        'icNumber' => 'GF100L10-VT',
+        'number' => 'GF100L10-VT',
+        'name' => 'GermanFLAVOURS - Virginia Tobacco - Liquid - 10 ml',
+        'commonName' => 'Virginia Tobacco',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-R4' => array(
+        'icNumber' => 'GF100L10-R4',
+        'number' => 'GF100L10-R4',
+        'name' => 'GermanFLAVOURS - RY4 Blend - Liquid - 10 ml',
+        'commonName' => 'RY4 Blend',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-AN' => array(
+        'icNumber' => 'GF100L10-AN',
+        'number' => 'GF100L10-AN',
+        'name' => 'GermanFLAVOURS - Arabian Nights - Liquid - 10 ml',
+        'commonName' => 'Arabian Nights',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-DB' => array(
+        'icNumber' => 'GF100L10-DB',
+        'number' => 'GF100L10-DB',
+        'name' => 'GermanFLAVOURS - Dragon Blood - Liquid - 10 ml',
+        'commonName' => 'Dragon Blood',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'rote Früchte',
+        'flavorCategory' => 'Früchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Rote Früchte.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Rote Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-BB' => array(
+        'icNumber' => 'GF100L10-BB',
+        'number' => 'GF100L10-BB',
+        'name' => 'GermanFLAVOURS - Blaubeer - Liquid - 10 ml',
+        'commonName' => 'Blaubeer',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Blaubeere',
+        'flavorCategory' => 'Beeren',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Blaubeere.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-AT' => array(
+        'icNumber' => 'GF100L10-AT',
+        'number' => 'GF100L10-AT',
+        'name' => 'GermanFLAVOURS - American Blend Tobacco - Liquid - 10 ml',
+        'commonName' => 'American Blend Tobacco',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-ME' => array(
+        'icNumber' => 'GF100L10-ME',
+        'number' => 'GF100L10-ME',
+        'name' => 'GermanFLAVOURS - Menthol - Liquid - 10 ml',
+        'commonName' => 'Menthol',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Menthol',
+        'flavorCategory' => 'Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Menthol.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-EB' => array(
+        'icNumber' => 'GF100L10-EB',
+        'number' => 'GF100L10-EB',
+        'name' => 'GermanFLAVOURS - Eisbonbon - Liquid - 10 ml',
+        'commonName' => 'Eisbonbon',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Bonbons & Kaugummi#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Eisbonbon',
+        'flavorCategory' => 'Bonbons & Kaugummi, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Eisbonbon.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Eisbonbon</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-GA' => array(
+        'icNumber' => 'GF100L10-GA',
+        'number' => 'GF100L10-GA',
+        'name' => 'GermanFLAVOURS - Grüner Apfel - Liquid - 10 ml',
+        'commonName' => 'Grüner Apfel',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'grüner Apfel',
+        'flavorCategory' => 'Früchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Grüner Apfel.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Grüner Apfel</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-ER' => array(
+        'icNumber' => 'GF100L10-ER',
+        'number' => 'GF100L10-ER',
+        'name' => 'GermanFLAVOURS - Erdbeer - Liquid - 10 ml',
+        'commonName' => 'Erdbeer',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Erdbeere',
+        'flavorCategory' => 'Beeren',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Erdbeere.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-CR' => array(
+        'icNumber' => 'GF100L10-CR',
+        'number' => 'GF100L10-CR',
+        'name' => 'GermanFLAVOURS - Cherry - Liquid - 10 ml',
+        'commonName' => 'Cherry',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Kirsche',
+        'flavorCategory' => 'Früchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Kirsche.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-WM' => array(
+        'icNumber' => 'GF100L10-WM',
+        'number' => 'GF100L10-WM',
+        'name' => 'GermanFLAVOURS - Wassermelone - Liquid - 10 ml',
+        'commonName' => 'Wassermelone',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Melonen',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Wassermelone',
+        'flavorCategory' => 'Melonen',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Wassermelone.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-TB' => array(
+        'icNumber' => 'GF100L10-TB',
+        'number' => 'GF100L10-TB',
+        'name' => 'GermanFLAVOURS - Tobacco - Liquid - 10 ml',
+        'commonName' => 'Tobacco',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-DM' => array(
+        'icNumber' => 'GF100L10-DM',
+        'number' => 'GF100L10-DM',
+        'name' => 'GermanFLAVOURS - Dragon Blood Menthol - Liquid - 10 ml',
+        'commonName' => 'Dragon Blood Menthol',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'rote Früchte, Menthol',
+        'flavorCategory' => 'Früchte, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Rote Früchte, Menthol.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Rote Früchte, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-AS' => array(
+        'icNumber' => 'GF100L10-AS',
+        'number' => 'GF100L10-AS',
+        'name' => 'GermanFLAVOURS - American Blend Silver - Liquid - 10 ml',
+        'commonName' => 'American Blend Silver',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-PM' => array(
+        'icNumber' => 'GF100L10-PM',
+        'number' => 'GF100L10-PM',
+        'name' => 'GermanFLAVOURS - Pfirsich Maracuja - Liquid - 10 ml',
+        'commonName' => 'Pfirsich Maracuja',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte#!#E-LIQUIDS > exotische Früchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Pfirsich, Maracuja',
+        'flavorCategory' => 'Früchte, exotische Früchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Pfirsich, Maracuja.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich, Maracuja</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-MY' => array(
+        'icNumber' => 'GF100L10-MY',
+        'number' => 'GF100L10-MY',
+        'name' => 'GermanFLAVOURS - Mystery - Liquid - 10 ml',
+        'commonName' => 'Mystery',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Früchte, Koolada',
+        'flavorCategory' => 'Früchte, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Früchte, Koolada.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Früchte, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-LZ' => array(
+        'icNumber' => 'GF100L10-LZ',
+        'number' => 'GF100L10-LZ',
+        'name' => 'GermanFLAVOURS - Lemon Zombie - Liquid - 10 ml',
+        'commonName' => 'Lemon Zombie',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Zitrusfrüchte#!#E-LIQUIDS > Getränke#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Limette, Zitrusfrüchte, Cassis, Koolada',
+        'flavorCategory' => 'Zitrusfrüchte, Getränke, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Limette, Zitrusfrüchte, Cassis, Koolada.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Limette, Zitrusfrüchte, Cassis, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-HS' => array(
+        'icNumber' => 'GF100L10-HS',
+        'number' => 'GF100L10-HS',
+        'name' => 'GermanFLAVOURS - Halfzware Shag - Liquid - 10 ml',
+        'commonName' => 'Halfzware Shag',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-KS' => array(
+        'icNumber' => 'GF100L10-KS',
+        'number' => 'GF100L10-KS',
+        'name' => 'GermanFLAVOURS - Kaffee Sahne - Liquid - 10 ml',
+        'commonName' => 'Kaffee Sahne',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tee & Kaffee#!#E-LIQUIDS > Milch & Co.',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Kaffee, Sahne',
+        'flavorCategory' => 'Tee & Kaffee, Milch & Co.',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Kaffee, Sahne.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaffee, Sahne</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-RB' => array(
+        'icNumber' => 'GF100L10-RB',
+        'number' => 'GF100L10-RB',
+        'name' => 'GermanFLAVOURS - Dragons Breath Menthol - Liquid - 10 ml',
+        'commonName' => 'Dragons Breath Menthol',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte#!#E-LIQUIDS > Frisches & Eiscreme#!#E-LIQUIDS > Getränke',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Früchte, Banane, Menthol, Brause',
+        'flavorCategory' => 'Früchte, Frisches & Eiscreme, Getränke',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Früchte, Banane, Menthol, Brause.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Früchte, Banane, Menthol, Brause</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-BL' => array(
+        'icNumber' => 'GF100L10-BL',
+        'number' => 'GF100L10-BL',
+        'name' => 'GermanFLAVOURS - BREEZYBLUE - Liquid - 10 ml',
+        'commonName' => 'BREEZYBLUE',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Blaubeere, Menthol',
+        'flavorCategory' => 'Beeren, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Blaubeere, Menthol.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-CV' => array(
+        'icNumber' => 'GF100L10-CV',
+        'number' => 'GF100L10-CV',
+        'name' => 'GermanFLAVOURS - Creamy Vanilla - Liquid - 10 ml',
+        'commonName' => 'Creamy Vanilla',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Gewürze#!#E-LIQUIDS > Cremiges',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Vanille, Cream',
+        'flavorCategory' => 'Gewürze, Cremiges',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Vanille, Cream.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille, Cream</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-WL' => array(
+        'icNumber' => 'GF100L10-WL',
+        'number' => 'GF100L10-WL',
+        'name' => 'GermanFLAVOURS - White Lion - Liquid - 10 ml',
+        'commonName' => 'White Lion',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak#!#E-LIQUIDS > Gewürze',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Zigarrentabak, Vanille',
+        'flavorCategory' => 'Tabak, Gewürze',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Zigarrentabak, Vanille.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zigarrentabak, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-VH' => array(
+        'icNumber' => 'GF100L10-VH',
+        'number' => 'GF100L10-VH',
+        'name' => 'GermanFLAVOURS - Vanille Tahiti - Liquid - 10 ml',
+        'commonName' => 'Vanille Tahiti',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Gewürze',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Vanille',
+        'flavorCategory' => 'Gewürze',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Vanille.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-TF' => array(
+        'icNumber' => 'GF100L10-TF',
+        'number' => 'GF100L10-TF',
+        'name' => 'GermanFLAVOURS - Tropical Fruits - Liquid - 10 ml',
+        'commonName' => 'Tropical Fruits',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > exotische Früchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'tropische Früchte',
+        'flavorCategory' => 'exotische Früchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tropische Früchte.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tropische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-PF' => array(
+        'icNumber' => 'GF100L10-PF',
+        'number' => 'GF100L10-PF',
+        'name' => 'GermanFLAVOURS - Pfefferminz - Liquid - 10 ml',
+        'commonName' => 'Pfefferminz',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Pfefferminze',
+        'flavorCategory' => 'Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Pfefferminze.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfefferminze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-WF' => array(
+        'icNumber' => 'GF100L10-WF',
+        'number' => 'GF100L10-WF',
+        'name' => 'GermanFLAVOURS - Waldfrucht - Liquid - 10 ml',
+        'commonName' => 'Waldfrucht',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Waldfrüchte',
+        'flavorCategory' => 'Früchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Waldfrüchte.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldfrüchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-MS' => array(
+        'icNumber' => 'GF100L10-MS',
+        'number' => 'GF100L10-MS',
+        'name' => 'GermanFLAVOURS - Menthol Extra Stark - Liquid - 10 ml',
+        'commonName' => 'Menthol Extra Stark',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Menthol',
+        'flavorCategory' => 'Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Menthol.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-CC' => array(
+        'icNumber' => 'GF100L10-CC',
+        'number' => 'GF100L10-CC',
+        'name' => 'GermanFLAVOURS - Cappuccino - Liquid - 10 ml',
+        'commonName' => 'Cappuccino',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tee & Kaffee',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Cappuccino',
+        'flavorCategory' => 'Tee & Kaffee',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Cappuccino.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cappuccino</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-SL' => array(
+        'icNumber' => 'GF100L10-SL',
+        'number' => 'GF100L10-SL',
+        'name' => 'GermanFLAVOURS - Seven Leaves - Liquid - 10 ml',
+        'commonName' => 'Seven Leaves',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Rohtabakblätter',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Rohtabakblätter.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Rohtabakblätter</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-MM' => array(
+        'icNumber' => 'GF100L10-MM',
+        'number' => 'GF100L10-MM',
+        'name' => 'GermanFLAVOURS - Mix Mint - Liquid - 10 ml',
+        'commonName' => 'Mix Mint',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Minzmix',
+        'flavorCategory' => 'Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Minzmix.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Minzmix</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-TO' => array(
+        'icNumber' => 'GF100L10-TO',
+        'number' => 'GF100L10-TO',
+        'name' => 'GermanFLAVOURS - Timebomb Orange - Liquid - 10 ml',
+        'commonName' => 'Timebomb Orange',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Zitrusfrüchte#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Orange, Koolada',
+        'flavorCategory' => 'Zitrusfrüchte, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Orange, Koolada.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Orange, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-FK' => array(
+        'icNumber' => 'GF100L10-FK',
+        'number' => 'GF100L10-FK',
+        'name' => 'GermanFLAVOURS - F.U.C.K - Liquid - 10 ml',
+        'commonName' => 'F.U.C.K',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren#!#E-LIQUIDS > Früchte#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Beeren, Früchte, Menthol',
+        'flavorCategory' => 'Beeren, Früchte, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Beeren, Früchte, Menthol.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Früchte, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-EM' => array(
+        'icNumber' => 'GF100L10-EM',
+        'number' => 'GF100L10-EM',
+        'name' => 'GermanFLAVOURS - Erdbeer Minze - Liquid - 10 ml',
+        'commonName' => 'Erdbeer Minze',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Erdbeere, Minze',
+        'flavorCategory' => 'Beeren, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Erdbeere, Minze.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-CM' => array(
+        'icNumber' => 'GF100L10-CM',
+        'number' => 'GF100L10-CM',
+        'name' => 'GermanFLAVOURS - Crazy Crocodile Menthol - Liquid - 10 ml',
+        'commonName' => 'Crazy Crocodile Menthol',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren#!#E-LIQUIDS > exotische Früchte#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Erdbeere, Kiwi, Menthol',
+        'flavorCategory' => 'Beeren, exotische Früchte, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Erdbeere, Kiwi, Menthol.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Kiwi, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-BM' => array(
+        'icNumber' => 'GF100L10-BM',
+        'number' => 'GF100L10-BM',
+        'name' => 'GermanFLAVOURS - Black Mamba - Liquid - 10 ml',
+        'commonName' => 'Black Mamba',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-SJ' => array(
+        'icNumber' => 'GF100L10-SJ',
+        'number' => 'GF100L10-SJ',
+        'name' => 'GermanFLAVOURS - Schwarze Johannisbeere - Liquid - 10 ml',
+        'commonName' => 'Schwarze Johannisbeere',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'schwarze Johannisbeere',
+        'flavorCategory' => 'Beeren',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Schwarze Johannisbeere.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Johannisbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-MG' => array(
+        'icNumber' => 'GF100L10-MG',
+        'number' => 'GF100L10-MG',
+        'name' => 'GermanFLAVOURS - Mango - Liquid - 10 ml',
+        'commonName' => 'Mango',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > exotische Früchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Mango',
+        'flavorCategory' => 'exotische Früchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Mango.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-CK' => array(
+        'icNumber' => 'GF100L10-CK',
+        'number' => 'GF100L10-CK',
+        'name' => 'GermanFLAVOURS - Cookie - Liquid - 10 ml',
+        'commonName' => 'Cookie',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Süßigkeiten#!#E-LIQUIDS > Gebäck',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Schokolade, Keks',
+        'flavorCategory' => 'Süßigkeiten, Gebäck',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Schokolade, Keks.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schokolade, Keks</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-BF' => array(
+        'icNumber' => 'GF100L10-BF',
+        'number' => 'GF100L10-BF',
+        'name' => 'GermanFLAVOURS - Brazilian Flavour - Liquid - 10 ml',
+        'commonName' => 'Brazilian Flavour',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-WE' => array(
+        'icNumber' => 'GF100L10-WE',
+        'number' => 'GF100L10-WE',
+        'name' => 'GermanFLAVOURS - Waldmeister - Liquid - 10 ml',
+        'commonName' => 'Waldmeister',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Pflanzen',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Waldmeister',
+        'flavorCategory' => 'Pflanzen',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Waldmeister.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldmeister</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-CT' => array(
+        'icNumber' => 'GF100L10-CT',
+        'number' => 'GF100L10-CT',
+        'name' => 'GermanFLAVOURS - Coffee Time - Liquid - 10 ml',
+        'commonName' => 'Coffee Time',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tee & Kaffee#!#E-LIQUIDS > Gebäck',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Kaffee, Käsekuchen',
+        'flavorCategory' => 'Tee & Kaffee, Gebäck',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Kaffee, Käsekuchen.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaffee, Käsekuchen</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-ZG' => array(
+        'icNumber' => 'GF100L10-ZG',
+        'number' => 'GF100L10-ZG',
+        'name' => 'GermanFLAVOURS - Zitronengras - Liquid - 10 ml',
+        'commonName' => 'Zitronengras',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Zitrusfrüchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Zitronengras',
+        'flavorCategory' => 'Zitrusfrüchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Zitronengras.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitronengras</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-PA' => array(
+        'icNumber' => 'GF100L10-PA',
+        'number' => 'GF100L10-PA',
+        'name' => 'GermanFLAVOURS - Planet der Äpfel - Liquid - 10 ml',
+        'commonName' => 'Planet der Äpfel',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Apfelmix',
+        'flavorCategory' => 'Früchte',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Apfelmix.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfelmix</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-CL' => array(
+        'icNumber' => 'GF100L10-CL',
+        'number' => 'GF100L10-CL',
+        'name' => 'GermanFLAVOURS - Cola - Liquid - 10 ml',
+        'commonName' => 'Cola',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Getränke',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Cola',
+        'flavorCategory' => 'Getränke',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Cola.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-YM' => array(
+        'icNumber' => 'GF100L10-YM',
+        'number' => 'GF100L10-YM',
+        'name' => 'GermanFLAVOURS - Mystery Menthol - Liquid - 10 ml',
+        'commonName' => 'Mystery Menthol',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Früchte, Menthol',
+        'flavorCategory' => 'Früchte, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Früchte, Menthol.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Früchte, Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'GF100L10-CO' => array(
+        'icNumber' => 'GF100L10-CO',
+        'number' => 'GF100L10-CO',
+        'name' => 'GermanFLAVOURS - Cherry Cola - Liquid - 10 ml',
+        'commonName' => 'Cherry Cola',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Früchte#!#E-LIQUIDS > Getränke#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'GermanFLAVOURS',
+        'brand' => 'GermanFLAVOURS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => 'Kirsche, Cola, Koolada',
+        'flavorCategory' => 'Früchte, Getränke, Frisches & Eiscreme',
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von GermanFLAVOURS für die E-Zigarette. Geschmack: Kirsche, Cola, Koolada.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Cola, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'SM100PD' => array(
+        'icNumber' => 'SM100PD',
+        'number' => 'SM100PD',
+        'name' => 'Wismec - Preva DNA - E-Zigarette - by Steamax',
+        'commonName' => 'Preva DNA',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Wismec',
+        'brand' => 'Steamax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Steamax Preva DNA E-Zigarette hat einen fest verbauten 1050mah Akku welchen Sie über ein Micro-USB Kabel laden können. Im Lieferumfang erhalten Sie zwei Pods. Der KTR 0,5 Ohm Pod ist für das Dampfen mit moderaten Zügen vom Mund in die Lunge (MTL) geeignet. Der 0,25 Ohm SS316L Pod ist geeignet um mit Zügen direkt in die Lunge zu dampfen (DL). Beide Pods haben ein Tankvolumen von 3ml und verfügen über ein Top-Filling System um Ihr Liquid von oben in den Tank zu füllen. Hierzu schieben Sie den neben dem Mundstück sitzenden Schieber zur Seite um die Befüllöffnung freizulegen. Der in der Steamax Preva DNA verbaute DNA GO Chip der Firma Evolv kann mittels der EScribe Software, welche Sie optional auf der Herstellerseite herunterladen können, konfiguriert werden. Hier ist es möglich die Ausgabeleistung zu ändern sowie die Farben der LED Beleuchtung. Auch Software Updates werden Ihnen in der Software angezeigt und können hier installiert werden. Über die an der unteren Seite sitzende Pfeiltaste können Sie die Ausgangsleistung in drei Stufen ändern. Hier stehen orange für Low, grün für medium und blau für high output. Bitte beachten Sie, dass Pods zu den Verschleißteilen gehören und diese regelmäßig bei Veränderungen im Geschmack sowie der Dampfentwicklung gewechselt werden sollten. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Preva DNA</li>
+<li>1x KTR 0,5 Ohm Pod </li>
+<li>1x SS316L dual 0,25 Ohm Pod</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Preva DNA</strong>
+<ul>
+<li>Akkukapazität: 1050mAh</li>
+<li>Ausgangsleistung: 10 bis 20 Watt</li>
+<li>Tankvolumen: 3 ml</li>
+<li>Top Filling</li>
+<li>Airflow</li>
+<li>Maße: 96 mm x 43 mm x 18,6 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SM100PP' => array(
+        'icNumber' => 'SM100PP',
+        'number' => 'SM100PP',
+        'name' => 'Wismec - Preva SS316 Dual - Pod - 0,25 Ohm - by Steamax',
+        'commonName' => 'Preva SS316 Dual',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Wismec',
+        'brand' => 'Steamax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro bestellter Packung erhalten Sie einen Preva DNA 0,25 Ohm SS316L Pod für Ihre Preva DNA von Steamax. Der 0,25 Ohm SS316L Pod ist für das Dampfen mit direkten Zügen in die Lunge ausgelegt. Ihre Preva DNA erkennt den eingesetzten Pod automatisch und nutzt die voreingestellten Ausgabe Spannungen. Hier stehen folgende zur Auswahl: gelb 14 Watt, grün 16 Watt und blau 20 Watt. Bitte beachten Sie, dass die Steamax Preva DNA Pods zu den Verschleißteilen gehören und diese regelmäßig bei Veränderungen im Geschmack gewechselt werden müssen. Die Steamax Preva DNA SS316L 0,25 Ohm Pods haben ein Tankvolumen von 3 ml und werden über ein Top-Filling System von oben mit Liquid befüllt.
+<br>
+<br>
+<ul>
+<li>1x SS316L Pod mit integriertem Coil 0,25 Ohm | DL</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<p><strong>Preva DNA SS316L Pod</strong></p>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Widerstand der verbauten Wicklung: 0,25 Ohm</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+<li>DL</li>
+<li>passgenaue Cartridge für die Steamax Preva DNA E-Zigarette</li>
+</ul>
+',
+    ),
+    'SM100PK' => array(
+        'icNumber' => 'SM100PK',
+        'number' => 'SM100PK',
+        'name' => 'Wismec - Preva KTR - Pod - 0,5 Ohm - by Steamax',
+        'commonName' => 'Preva KTR',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Wismec',
+        'brand' => 'Steamax',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro Bestellter Packung einen Steamax Preva DNA KTR 0,5 Ohm Pod. Der KTR Pod ist für das Dampfen mit Zügen vom Mund in die Lunge (MTL) geeignet und ist somit für moderate Züge ausgelegt. Der KTR Pod von Stemax hat ein Tankvolumen von 3 ml und wird über ein Top-Filling System von oben mit frischem Liquid befüllt. Die Preva DNA erkennt automatisch den KTR Pod und stellt Ihnen folgende Ausgangsspannungen zur Auswahl: gelb 10 Watt, grün 12 Watt und blau 14 Watt. Bitte beachten Sie, dass die Steamax Preva DNA Pods zu den Verschleißteilen gehören und diese regelmäßig bei Veränderungen im Geschmack gewechselt werden müssen. 
+<br>
+<br>
+<ul>
+<li>1x KTR Pod mit integriertem Coil 0,5 Ohm | MTL</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<p><strong>Preva DNA KTR Pod</strong></p>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Widerstand der verbauten Wicklung: 0,5 Ohm</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+<li>MTL</li>
+<li>passgenaue Cartridge für die Steamax Preva DNA E-Zigarette</li>
+</ul>
+',
+    ),
+    'VV100A10-HE' => array(
+        'icNumber' => 'VV100A10-HE',
+        'number' => 'VV100A10-HE',
+        'name' => 'Vampire Vape - Heisenberg - Aroma - 14 ml',
+        'commonName' => 'Heisenberg',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gewürze#!#AROMEN > Beeren#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Vampire Vape',
+        'brand' => 'Vampire Vape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => '60',
+        'flavor' => 'Anis, Beeren, Koolada',
+        'flavorCategory' => 'Gewürze, Beeren, Frisches & Eiscreme',
+        'dosage' => '23',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Anis, Beeren, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'VV100A10-PN' => array(
+        'icNumber' => 'VV100A10-PN',
+        'number' => 'VV100A10-PN',
+        'name' => 'Vampire Vape - Pinkman - Aroma - 14 ml',
+        'commonName' => 'Pinkman',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Früchte',
+        'supplier' => 'Vampire Vape',
+        'brand' => 'Vampire Vape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => '60',
+        'flavor' => 'rote Beeren, rote Früchte',
+        'flavorCategory' => 'Beeren, Früchte',
+        'dosage' => '23',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Rote Beeren, rote Früchte</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Rote Beeren, rote Früchte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'VV100A10-CU' => array(
+        'icNumber' => 'VV100A10-CU',
+        'number' => 'VV100A10-CU',
+        'name' => 'Vampire Vape - Catapult - Aroma - 14 ml',
+        'commonName' => 'Catapult',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Beeren#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Vampire Vape',
+        'brand' => 'Vampire Vape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => '60',
+        'flavor' => 'Sommerfrüchte, schwarze Johannisbeere, Koolada',
+        'flavorCategory' => 'Früchte, Beeren, Frisches & Eiscreme',
+        'dosage' => '23',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Sommerfrüchte, schwarze Johannisbeere, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Sommerfrüchte, schwarze Johannisbeere, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'VV100A10-SLP' => array(
+        'icNumber' => 'VV100A10-SLP',
+        'number' => 'VV100A10-SLP',
+        'name' => 'Vampire Vape - Sweet Lemon Pie - Aroma - 14 ml',
+        'commonName' => 'Sweet Lemon Pie',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gebäck#!#AROMEN > Süßigkeiten',
+        'supplier' => 'Vampire Vape',
+        'brand' => 'Vampire Vape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => '60',
+        'flavor' => 'Zitronentorte, Zuckersirup',
+        'flavorCategory' => 'Gebäck, Süßigkeiten',
+        'dosage' => '23',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Zitronentorte, Zuckersirup</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitronentorte, Zuckersirup</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'EZRL-TSHIRT' => array(
+        'icNumber' => 'EZRL-TSHIRT',
+        'number' => 'EZRL-TSHIRT',
+        'name' => 'T-Shirt E-Zigaretten Leben',
+        'commonName' => 'T-Shirt E-Zigaretten Leben',
+        'type' => 'ACCESSORY',
+        'category' => 'ZUBEHÖR > Accessoires',
+        'supplier' => 'Vape Dat',
+        'brand' => 'Vape Dat',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '',
+    ),
+    'UW100EO' => array(
+        'icNumber' => 'UW100EO',
+        'number' => 'UW100EO',
+        'name' => 'Uwell - Evdilo - E-Zigarette',
+        'commonName' => 'Evdilo',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Evdilo E-Zigaretten Set der Marke Uwell besteht aus dem gleichnamigen Akkuträger und dem Valyrian 2 Clearomizer. Der Akkuträger wird über zwei 18650er/20700er/21700er Akkuzellen betrieben und erreicht eine maximale Leistung von 200 Watt. Über die Feuertaste und zwei Einstelltasten können Sie zwischen den Ausgabemodi VW und TC auswählen. Der verbaute OLED Bildschirm informiert Sie dabei über Ihre ausgewählten Parameter. Der OLED Bildschirm befindet sich zwischen der Feuertaste und den Einstelltasten. Wenn Sie sich für den VW-Modus entscheiden, so können Sie zwischen 5 Watt und 300 Watt dampfen und einen Widerstandsbereich zwischen 0,1 Ohm und 3,0 Ohm auswählen. Im TC Modus liegt der Temperaturbereich zwischen 100°C und 315°C und der Widerstandsbereich liegt zwischen 0,1 Ohm und 1,0 Ohm. Der Valyrian II Verdampfer fasst bis zu 6ml Liquid, das über das Flip Top Filling-System in den Tank gegeben wird. Das bedeutet, dass Sie die Topkappe inkl. dem Mundstück vorsichtig zur Seite schieben, sodass Sie die Top Kappe anschließend aufklappen können und somit das Einfüllloch freilegen. Bitte achten Sie hierbei darauf, dass sich die Einfülllöcher seitlich am Verdampfer befinden. Das mittig liegende Loch ist der Luftkanal; bitte füllen Sie das Liquid dort <b>nicht</b> ein. Im Lieferumfang finden Sie zwei unterschiedliche Verdampferköpfe der Valyrian II UN2 Reihe: Einmal den Valyrian II UN2 Single Mesh mit 0,32 Ohm und einmal den Valyrian II UN2-2 Dual Mesh mit 0,14 Ohm. Beide sind für das Dampfen im Subohm-Bereich ausgelegt.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Evdilo 200 Watt Akkuträger</li>
+<li>1x Valyrian 2 Clearomizer</li>
+<li>1x Valyrian 2 UN2 Single Mesh Head 0,32 Ohm</li>
+<li>1x Valyrian 2 UN2-2 Dual Mesh Head 0,14 Ohm</li>
+<li>1x Micro USB-Ladekabel</li>
+<li>1x Ersatz-Glastank</li>
+<li>Ersatzteile</li>
+<li>2x Akkuhülsen</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+</ul>
+<strong>18650er/20700er/21700er Akkuzelle(n) sind nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Evdilo 200 Watt Akkuträger</strong>
+<ul>
+<li>Ausgangsleistung: 5 - 200 Watt</li>
+<li>Höhe: 83,7 mm</li>
+<li>Durchmesser: 32,5 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Ausgabemodi: VW & TC</li>
+<li>Widerstandsbereich: 0,1 - 3,0 Ohm (VW),  0,1 - 1,0 Ohm (TC)</li>
+</ul>
+<br>
+<br>
+<strong>Valyrian 2 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 6 ml</li>
+<li>Höhe (inkl. Mundstück): 60,6 mm</li>
+<li>Durchmesser: 29 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Flip-Top Filling-System</li>
+<li>Airflow-Control</li>
+<li>Material: Edelstahl und Pyrexglas</li>
+<li>Selbstreinigungs-System</li>
+</ul>
+<br>
+<br>',
+    ),
+    'UW100EOA' => array(
+        'icNumber' => 'UW100EOA',
+        'number' => 'UW100EOA',
+        'name' => 'Uwell - Evdilo - Akkuträger - 200 Watt',
+        'commonName' => 'Evdilo',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Evdilo Akkuträger von Uwell wird über insgesamt zwei 18650er/20700er/21700er Akkuzellen betrieben und erreicht eine maximale Ausgangsleistung von 200 Watt. Die Akkuzellen sind im Lieferumfang nicht enthalten und müssen separat erworben werden. Ihr Evdilo Akkuträger unterstützt 2 Ausgabemodi: VW | TC. Im VW Modus können Sie einen Leistungsbereich von 5 Watt bis 200 Watt einstellen; dabei können Sie Verdampferköpfe verwenden mit einem Widerstandsbereich zwischen 0,1 und 3,0 Ohm. Der Widerstandsbereich liegt im Temperatur-Modus zwischen 0,1 und 1,0 Ohm.In diesem Modus können Sie zum Dampfen einen Bereich von 100°C und 315°C einstellen. Der Evdilo Akkuträger verfügt über einen OLED Bildschirm.Über diesen können Sie zum Beispiel den Akkuladestand oder Ihre Einstellungen ablesen. Sämtliche Einstellungen werden über die Feuertaste und zwei Einstelltasten eingestellt. Die Tasten befinden sich oberhalb bzw. unterhalb vom OLED Bildschirm.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x Evdilo 200 Watt Akkuträger</li>
+<li>1x Micro USB-Ladekabel</li>
+<li>2x Akkuhülsen</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+</ul>
+<strong>18650er/20700er/21700er Akkuzelle(n) sind nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<strong>Evdilo 200 Watt Akkuträger</strong>
+<ul>
+<li>Ausgangsleistung: 5 - 200 Watt</li>
+<li>Höhe: 83,7 mm</li>
+<li>Durchmesser: 32,5 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Ausgabemodi: VW & TC</li>
+<li>Widerstandsbereich: 0,1 - 3,0 Ohm (VW),  0,1 - 1,0 Ohm (TC)</li>
+</ul>',
+    ),
+    'UW100NK' => array(
+        'icNumber' => 'UW100NK',
+        'number' => 'UW100NK',
+        'name' => 'Uwell - Nunchaku 2 - E-Zigarette',
+        'commonName' => 'Nunchaku 2',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Uwell Nunchaku 2 E-Zigaretten Set benötigt eine 21700er Akkuzelle um in Betrieb genommen zu werden. Im Set enthalten ist ein 18650er Adapter um vorhandene 18650er Akkuzellen nutzen zu können. Die maximale Ausgangsspannung des Uwell Nunchaku 2 E-Zigaretten Sets liegt bei 100 Watt. Der ebenfalls im Lieferumfang befindliche Nunchaku 2 Verdampfer hat ein Füllvolumen von 5ml und wird mittels eines Top-Filling Systems von oben mit frischem Liquid befüllt. Sie haben die Möglichkeit den Luftzug variabel einzustellen, indem Sie die Airflow-Control auf Ihre Vorlieben anpassen. Die zwei Verdampferköpfe im Lieferumfang haben einen Widerstand von 0,2 Ohm und 0,14 Ohm. Aufgrund des geringen Widerstandes eignen sich beide Verdampferköpfe für das Dampfen mit Zügen direkt in die Lunge (DL). Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen gehören und diese regelmäßig bei Veränderungen im Geschmack oder der Dampfentwicklung gewechselt werden sollten. Neben der Möglichkeit, die Leistung im Watt Modus zu regeln, haben Sie auch die Option des Temperatur geregelten Dampfens. Die Leistung Ihres Nunchaku 2 Akkuträgers können Sie mittels eines verbauten Neigungswinkel Sensors verstellen. Hierzu neigen Sie lediglich den Akkuträger nach links oder rechts, um beispielsweise die Ausgabespannung zu verstellen.  
+<br>
+<br>
+<ul>
+<strong>Lieferumfang</li>
+<li>1x Nunchaku 2 Akkuträger</li>
+<li>1x Nunchaku 2 Clearomizer</li>
+<li>1x UN2 Meshed-H 0.2 Ohm Head</li>
+<li>1x UN2 Meshed-H 0.14Ohm Head</li>
+<li>1x 18650er Akku Adapter</li>
+<li>1x Ersatzteil Set</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er/20700er/21700er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>NUNCHAKU 2 AKKUTRÄGER</strong>
+<ul>
+<li>Ausgabemodi: POWER | TC (Ni, SS)</li>
+<li>Ausgangsleistung: 5 – 100 Watt</li>
+<li>Temperaturbereich: 100 – 315 °C | 200°F – 600°F </li>
+<li>Widerstandsbereich: 0,1 – 3,0 Ohm (POWER) | 0,1 bis 1,0 Ohm (TC)</li>
+<li>Neigungswinkel Sensor</li>
+<li>Durchmesser: 29,9 mm</li>
+<li>Höhe: 100 mm</li>
+<li>Gewindetyp: 510</li>
+<li>OLED-Display</li>
+</ul>
+<br>
+<br>
+<strong>Nunchaku 2 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 5ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Plug-Pull</li>
+<li>Gewindetyp: 510er</li>
+<li>Höhe: 28,3 mm</li>
+<li>Durchmesser 29 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'UW100NKM' => array(
+        'icNumber' => 'UW100NKM',
+        'number' => 'UW100NKM',
+        'name' => 'Uwell - Nunchaku 2 - Akkuträger - 100 Watt',
+        'commonName' => 'Nunchaku 2',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Nunchaku 2 Akkuträger ist der Nachfolger vom Nunchaku mit 80 Watt. Anders als sein Vorgänger können Sie mit dem Nunchaku 2 Akkuträger eine Ausgangsleistung von bis zu 100 Watt erreichen. Die Energie kann er über eine 18650er / 20700er oder eine 21700er Akkuzelle bekommen. Bitte beachten Sie, dass die besagten Akkuzellen nicht im Lieferumfang enthalten sind und separat erworben werden müssen. Über ein OLED-Display können Sie beispielsweise die momentane Ausgangsleistung, Temperatur oder den Akkuladestand ablesen. Die Einstellungen nehmen Sie nicht klassisch über die Einstelltasten vor. Der Akkuträger hat einen Neigungswinkel-Sensor, worüber Sie diese Einstellungen tätigen können. Da der Nunchaku 2 Akkuträger über einen 510er Anschluss verfügt, können diverse gängige Verdampfer mit diesem kombiniert werden. Der Nunchaku 2 Verdampfer mit 5ml Tankvolumen kommt beispielsweise dafür in Frage. Aber auch andere Verdampfer mit 510er Gewinde können verwendet werden, sofern dessen Verdampferköpfe leistungstechnisch zum Nunchaku 2 Akkuträger passen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Nunchaku 2 Akkuträger</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er/20700er/21700er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>NUNCHAKU 2 AKKUTRÄGER</strong>
+<ul>
+<li>Ausgabemodi: POWER | TC (Ni, SS)</li>
+<li>Ausgangsleistung: 5 – 100 Watt</li>
+<li>Temperaturbereich: 100 – 315 °C | 200°F – 600°F </li>
+<li>Widerstandsbereich: 0,1 – 3,0 Ohm (POWER) | 0,1 bis 1,0 Ohm (TC)</li>
+<li>Durchmesser: 29,9 mm</li>
+<li>Höhe: 100 mm</li>
+<li>Gewindetyp: 510</li>
+<li>OLED-Display</li>
+</ul>
+<br>
+<br>',
+    ),
+    'UW100NKC' => array(
+        'icNumber' => 'UW100NKC',
+        'number' => 'UW100NKC',
+        'name' => 'Uwell - Nunchaku 2 - Verdampfer',
+        'commonName' => 'Nunchaku 2',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Nunchaku 2 Verdampfer stammt aus dem Hause Uwell. Er besitzt ein Tankvolumen von 5ml. Dieses befüllen Sie über das vorhandene Top-Filling System. Dazu müssen Sie lediglich die Top-Cap abschrauben und so die Füllöffnung freilegen. Mit zum Lieferumfang des Nunchaku 2 Verdampfers gehören auch zwei kompatible Verdampferköpfe. Einmal den im Verdampfer vorinstallierten FeCrAl UN2 Meshed-H Verdampferkopf mit einem Widerstand von 0,2 Ohm. Zu guter Letzt erhalten Sie noch den SS316L UN2 Meshed-H Verdampferkopf, welcher einen Widerstand von 0,14 Ohm mit sich bringt. Beide Uwell Verdampferköpfe sind für das Dampfen im subohmen Bereich gefertigt. Bei dieser Variante des Dampfens inhalieren Sie den Dampf direkt in die Lunge. Die Verdampferköpfe werden beim Nunchaku 2 durch das sogenannte "Plug-Pull" Prinzip ausgewechselt. Das bedeutet, dass Sie einfach den Head aus dem Verdampfer herausziehen und den Neuen lediglich hineinstecken müssen. Des Weiteren verfügt der Nunchaku 2 Verdampfer eine Airflow Control. Mit dieser können Sie den Luftwiderstand individuell an Ihre Dampfvorlieben anpassen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Nunchaku 2 Clearomizer Set</li>
+<li>1x FeCrAl UN2 Meshed-H Head 0,2 Ohm (vorinstalliert)</li>
+<li>1x SS316L UN2 Meshed-H Head 0,14 Ohm</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Nunchaku 2 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 5ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Plug-Pull</li>
+<li>Gewindetyp: 510er</li>
+<li>Höhe: 28,3 mm</li>
+<li>Durchmesser 29 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'UW100NV' => array(
+        'icNumber' => 'UW100NV',
+        'number' => 'UW100NV',
+        'name' => 'Uwell - Nunchaku - UN2 Mesh Head - 0,14 Ohm (4 Stück pro Packung)',
+        'commonName' => 'Nunchaku',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 4,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Uwell hat mit diesem 0,14 Ohm starken Mesh Verdampferkopf den passenden Zubehörartikel für das Nunchaku 2 E-Zigaretten Set bzw. für den Nunchaku 2 Verdampfer. Die Verdampferköpfe ermöglichen das Dampfen mit direkter Lungeninhalation im sogenannten Subohm-Bereich. Verdampferköpfe gehören zu den Verschleißteilen einer E-Zigarette und sollten in regelmäßigen Abständen gewechselt werden, um eine negative Entwicklung des Geschmacks- und/oder des Dampfes entgegenzuwirken. Sie erhalten vier Stück der Verdampferköpfe pro bestellter Packung.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,14 Ohm</li>
+<li>Leistungsbereich: 50 - 60 Watt</li>
+</ul>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>Uwell Nunchaku 2 E-Zigaretten Set</li>
+<li>Uwell Nunchaku 2 Clearomizer Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'UW100NKG' => array(
+        'icNumber' => 'UW100NKG',
+        'number' => 'UW100NKG',
+        'name' => 'Uwell - Nunchaku 2 - Glastank',
+        'commonName' => 'Nunchaku 2',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Nunchaku 2 Glastank wurde mit einem Tankvolumen von 5 ml versehen und ist der passende Zubehör- und/oder Ersatzartikel für den gleichnamigen Nunchaku 2 Verdampfer. Durch das verwendete Pyrexglas ist der Glastank hitzebeständig und Sie können Ihren Liquidstand schnell und unkompliziert im Auge behalten.',
     ),
 );

@@ -245,11 +245,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
         $article->setDescription($product->getSeoDescription());
         $article->setMetaTitle($product->getSeoTitle());
-
-        $probe = $article->getKeywords();
-        if ($created || !$probe || $probe === '') {
-            $article->setKeywords('');
-        }
+        $article->setKeywords($product->getSeoKeywords());
 
         $article->setName($product->getName());
         $article->setDescriptionLong($product->getDescription());

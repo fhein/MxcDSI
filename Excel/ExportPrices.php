@@ -2,6 +2,8 @@
 
 namespace MxcDropshipInnocigs\Excel;
 
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Option;
@@ -12,8 +14,10 @@ use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
 use Shopware\Models\Customer\Group;
 
-class ExportPrices extends AbstractProductExport
+class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
 {
+    use LoggerAwareTrait;
+
     /** @var array */
     protected $models;
 
@@ -156,7 +160,12 @@ class ExportPrices extends AbstractProductExport
 
     protected function isSinglePack(Variant $variant)
     {
+
         $model = $this->getModels()[$variant->getIcNumber()];
+        if ($model === null) {
+            $this->log->debug('No model for : '. $variant->getIcNumber(). '. Ignoring ' . $variant->getProduct()->getName());
+            return false;
+        }
         $options = $model->getOptions();
 
         $pattern = 'PACKUNG' . MxcDropshipInnocigs::MXC_DELIMITER_L1;

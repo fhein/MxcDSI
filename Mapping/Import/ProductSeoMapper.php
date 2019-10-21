@@ -159,6 +159,10 @@ class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterfac
 
         $this->report[$name]['url'] = $url;
         $product->setSeoUrl($url);
+
+        // compute and set seo keywords
+        $keywords = implode(',',array_unique([$commonName, $supplier, $brand]));
+        $product->setSeoKeywords($keywords);
     }
 
     protected function getTypeMap() {

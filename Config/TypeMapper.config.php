@@ -61,6 +61,7 @@ return [
     ],
 
     'name_type_mapping' => [
+        '~T-Shirt~'                 => TypeMapper::TYPE_ACCESSORY,
         '~Reinigungsbürste~'        => TypeMapper::TYPE_TOOL,
         '~Seitenschneider~'         => TypeMapper::TYPE_TOOL,
         '~Keramikstäbe~'            => TypeMapper::TYPE_TOOL,
@@ -76,6 +77,8 @@ return [
         '~Verdampferständer~'       => TypeMapper::TYPE_STORAGE,
         '~Verdampfer~'              => TypeMapper::TYPE_CLEAROMIZER,
         '~Cartridge~'               => TypeMapper::TYPE_CARTRIDGE,
+        '~Nikotinsalz-Liquid~'      => TypeMapper::TYPE_LIQUID,
+        '~QPod - E-Zigarette~'       => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod~'                     => TypeMapper::TYPE_POD,
         '~E-Pfeife~'                => TypeMapper::TYPE_E_PIPE,
         '~E-Hookah~'                => TypeMapper::TYPE_E_HOOKAH,
@@ -99,6 +102,7 @@ return [
         '~Easy 3.*Cap~'             => TypeMapper::TYPE_EASY3_CAP,
         '~Fused Clapton Head~'      => TypeMapper::TYPE_COIL,
         '~Head~'                    => TypeMapper::TYPE_HEAD,
+        '~Hellcoil~'                => TypeMapper::TYPE_HEAD,
         '~[Tt]asche~'               => TypeMapper::TYPE_BAG,
         '~Lederschale~'             => TypeMapper::TYPE_BAG,
         '~Steam Bag~'               => TypeMapper::TYPE_BAG,

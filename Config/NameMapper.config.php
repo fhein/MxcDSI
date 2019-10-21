@@ -451,6 +451,10 @@ return [
             '~(Lux) 200~'                                         => '$1',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
             '~(Lunar) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(Magma) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(Rudder) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(Taggerz) (- \d+ Watt)~'                            => '$1 - Akkuträger $2',
+            '~(Cube X) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(VX200) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Morph) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Aegis Solo) (- \d+ Watt)~'                         => '$1 - Akkuträger $2',
@@ -483,6 +487,8 @@ return [
             '~(Puma) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(V-IT) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Invoke) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(Evdilo) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(Nunchaku 2) (- \d+ Watt)~'                         => '$1 - Akkuträger $2',
             '~(iKonn) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Lexicon) (- \d+ Watt)~'                            => '$1 - Akkuträger $2',
             '~(Lucid) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
@@ -557,6 +563,9 @@ return [
             '~(N\d\d ((Framed)|(Fused)) Clapton) Head~'           => '$1 Coil',
             '~(Metal Edition) (E-Zigarette)~'                     => '$1 - $2',
             '~(0,2 Ohm) (Mesh Head)~'                             => '$2 - $1',
+            '~(Land) Pod (E-Zigarette)~'                          => '$1 $2',
+            '~(A1 MTL Clapton)~'                                  => '$1 Coils',
+            '~Shortfill 5 in 1 (.*)~'                             => '5-in-1 $1',
         ],
     ],
     'product_names'             => [
@@ -645,11 +654,15 @@ return [
         'Ehpro'         => [
             '~(Panther RDA)~',
         ],
+        'Famovape' => [
+            '~(Magma)~',
+        ],
         'FreeMax'       => [
             '~(Twister mit Fireluke 2)~',
             '~(Fireluke 2)~',
             '~(Fireluke Mesh)~',
             '~(M Pro)~',
+            '~(Gemm)~',
         ],
         'GeekVape'      => [
             '~(Alpha)~',
@@ -671,20 +684,23 @@ return [
             '~(Loop( V1.5)? RDA)~',
             '~(Lucid)~',
             '~(Flint)~',
+            '~(Frenzy)~'
         ],
         'HellVape'      => [
             '~(Anglo RDA)~',
             '~(Dead Rabbit RTA)~',
             '~(Dead Rabbit RDA)~',
+            '~(Fat Rabbit)~',
             '~(Dead Rabbit SQ RDA)~',
             '~(Drop Dead RDA)~',
             '~(Hellbeast)~',
             '~(Rebirth RDA)~',
             '~(Passage RDA)~',
             '~(Rebirth RTA)~',
+            '~(Hellcoil H7-0\d)~'
         ],
         'Horizontech' => [
-          '~(Falcon)~'
+          '~(Falcon( King)?)~'
         ],
         'iPV'           => [
             '~(V-IT)~',
@@ -694,7 +710,13 @@ return [
             '~(Lapetus)~',
         ],
         'Oumier' => [
-            '~(Wasp Nano RTA)~'
+            '~(Rudder)~',
+            '~(Bombus RTA)~',
+            '~(VLS RDA)~',
+            '~(Wasp Nano(( RDTA)|( RTA)|( RDA)))~',
+            '~(Bulk RTA)~',
+            '~(Armadillo RDA)~',
+
         ],
         'SC'            => [
             '~(iJust ((21700)|(ECM)|(3))?)~',
@@ -712,6 +734,7 @@ return [
             '~(Lexicon)~',
             '~(Melo \d)~',
             '~(Easy 3)~',
+            '~(Tance( Max)?)~',
         ],
         'Innokin'       => [
             '~(Endura ((T18)|(T20S)|(T22))?)~',
@@ -735,7 +758,7 @@ return [
             '~(Presence)~',
             '~(ProCore (Air Plus)|(Air)|(Conquer)|(Remix)|(X))~',
             '~(Riftcore Duo)~',
-            '~(Teros)~',
+            '~(Teros( ONE)?)~',
             '~(Unimax 22)~',
         ],
         'JustFog'       => [
@@ -747,6 +770,7 @@ return [
             '~(P16A)~',
             '~(Q14)~',
             '~(Q16(( C)|( Pro)))~',
+            '~(QPod)~',
         ],
         'Lost Vape'     => [
             '~(Original Q)~',
@@ -758,7 +782,8 @@ return [
             '~(KFB 2 AIO)~',
             '~(Engine MTL)~',
             '~(Cheetah 3 RDA)~',
-            '~(Cube(( Mini)|( MTL))?)~',
+            '~(Cube(( Mini)|( MTL)|( X))?)~',
+            '~(Land)~',
         ],
         'OFRF' => [
             '~(Gear RTA)~',
@@ -810,9 +835,10 @@ return [
         ],
         'Smoant'        => [
             '~(Battlestar Squonker( RDA)?)~',
+            '~(Taggerz)~',
         ],
         'Snowwolf' => [
-            '~(Mfeng Baby)~',
+            '~(Mfeng( Baby)?)~',
             '~(Wolf Tank Mini)~',
             '~(Mini)~',
         ],
@@ -838,6 +864,7 @@ return [
             '~(Species)~',
 
             // Wismec
+            '~(Preva(( DNA)|( KTR)|( SS316 Dual)))~',
             '~(Amor NS Pro)~',
             '~(Amor NSE)~',
             '~(Column)~',
@@ -868,11 +895,12 @@ return [
             '~(Glaz RTA)~',
         ],
         'Uwell'         => [
+            '~(Evdilo)~',
             '~(Crown (3|4))~',
             '~(Fancier RTA)~',
             '~(Hypercar)~',
             '~(Ironfist)~',
-            '~(Nunchaku( RDA)?)~',
+            '~(Nunchaku(( RDA)|( 2))?)~',
             '~(Valyrian( 2)?)~',
             '~(Blocks)~',
             '~(Whirl(( 20)|( 22))?)~',
@@ -893,9 +921,13 @@ return [
         'VooPoo'        => [
             '~(Drag 2)~',
             '~(Drag Mini)~',
+            '~(Drag Nano)~',
+            '~(Drag Baby Trio)~',
             '~(X217)~',
             '~(Maat)~',
+            '~(Find(( Pod)|( S Trio))?)~',
             '~((Zip)|((Alpha Zip)( (Mini))?))~',
+            '~(Uforce T2)~',
         ],
         'Vaporesso'     => [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
@@ -933,6 +965,7 @@ return [
             '~(Vlit Vowl 40)~',
         ],
         'Wismec'        => [
+            '~(Preva(( DNA)|( KTR)|( SS316 Dual)))~',
             '~(Bellerophon RTA)~',
             '~(Tobhino BF RDA)~',
             '~(Amor NS Pro)~',

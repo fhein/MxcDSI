@@ -13,6 +13,7 @@ use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryTreeBuilder;
 use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
+use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
@@ -807,6 +808,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 if ($article === null) continue;
                 $article->setDescription($product->getSeoDescription());
                 $article->setMetaTitle($product->getSeoTitle());
+                $article->setKeywords($product->getSeoKeywords());
                 $seoUrl = $product->getSeoUrl();
                 if (! empty($seoUrl)) {
                     ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
@@ -995,23 +997,16 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $log = MxcDropshipInnocigs::getServices()->get('logger');
-            /** @var Article $article */
-            $article = $this->getManager()->getRepository(Article::class)->findOneBy(['name' => 'Advken - Manta RTA - Verdampfer']);
+            $services = MxcDropshipInnocigs::getServices();
+            $log = $services->get('logger');
+            $seoMapper = $services->get(ProductSeoMapper::class);
             $repository = $this->getManager()->getRepository(Product::class);
-            /** @var Product $product */
-            $product = $repository->getProduct($article);
-            if ($product === null)
-                $log->debug('Could not find product for: ' . $article->getName());
-            else
-                $log->debug('Product name: '. $product->getName());
-
-            $product = $repository->findOneBy(['name' => 'Advken - Manta RTA - Verdampfer']);
-            $article = $product->getArticle();
-            if ($article === 'null')
-                $log->debug('Could not find article for: ' . $product->getName());
-            else
-                $log->debug('Article name: ' . $article->getName());
+            $products = $repository->getAllIndexed();
+            $model = new Model();
+            foreach ($products as $product) {
+                $seoMapper->map($model, $product);
+            }
+            $this->getManager()->flush();
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {

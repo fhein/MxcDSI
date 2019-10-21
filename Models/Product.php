@@ -81,6 +81,13 @@ class Product extends ModelEntity  {
     /**
      * PropertyMapper mapped
      *
+     * @ORM\Column(name="seo_keywords", type="string", nullable=true)
+     */
+    private $seoKeywords;
+
+    /**
+     * PropertyMapper mapped
+     *
      * @var string $commonName
      *
      * @ORM\Column(name="common_name", type="string", nullable=true)
@@ -782,5 +789,21 @@ class Product extends ModelEntity  {
     public function setSeoDescription($seoDescription)
     {
         $this->seoDescription = $seoDescription;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeoKeywords()
+    {
+        return $this->seoKeywords;
+    }
+
+    /**
+     * @param mixed $seoKeywords
+     */
+    public function setSeoKeywords($seoKeywords)
+    {
+        $this->seoKeywords = $seoKeywords;
     }
 }
