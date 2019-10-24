@@ -251,6 +251,8 @@ return [
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
+            '~(Ant) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
+            '~(GangGang) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
             '~(Archangel) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
             '~(5Elements) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
             '~(Frankonia) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
@@ -450,6 +452,7 @@ return [
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
+            '~(Revo) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Lunar) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Magma) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Rudder) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
@@ -704,6 +707,9 @@ return [
         ],
         'iPV'           => [
             '~(V-IT)~',
+            '~(Revo)~',
+            '~(Finder BF RDA)~',
+            '~(V3 mini( ADA)?)~',
         ],
         'Nikola'        => [
             '~(Medea)~',
@@ -719,7 +725,7 @@ return [
 
         ],
         'SC'            => [
-            '~(iJust ((21700)|(ECM)|(3))?)~',
+            '~(iJust(( 21700)|( ECM)|( 3)|( Mini))?)~',
             '~(Ello( ((Vate)|(Duro)|(Pop))?))~',
             '~(iCare Flask)~',
             '~(iKuu Lite)~',
@@ -1006,6 +1012,7 @@ return [
         ],
         'ZQ'            => [
             '~(Vi)~',
+            '~(GO)~',
         ],
 
     ],

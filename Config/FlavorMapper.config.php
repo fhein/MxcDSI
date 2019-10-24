@@ -138,6 +138,7 @@ return array(
         27 => 'Zimtschnecke',
         28 => 'Zironenkuchen',
         29 => 'Zitronentorte',
+        30 => 'Cookie',
     ),
     'Getränke' => array(
         0 => 'Apfelsaft',
