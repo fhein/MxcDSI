@@ -635,7 +635,7 @@ return [
         'Cthulhu'       => [
             '~(Iris Mesh RDA)~',
             '~(1928 MTL RDA)~',
-            '~(Hastur(( MTL RTA Mini)|( MTL RDA))?)~',
+            '~(Hastur(( MTL RTA Mini)|( MTL RDA)|( MTL RTA))?)~',
             '~(Zathog RDA)~',
             '~(Mjölnir RDA)~',
             //            '~(Hastur)~',
@@ -867,6 +867,7 @@ return [
             '~(TFV12 ((Baby Prince)|(Prince))?)~',
             '~(TFV8 ((Baby)|(X-Baby))?)~',
             '~(Baby V2)~',
+            '~(Trough)~',
             '~(Species)~',
 
             // Wismec
