@@ -44,6 +44,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcRemapDescriptions',
           'mxcRemapCategories',
           'mxcSetReferencePrices',
+          'mxcCheckSupplierLogo',
           'mxcPullAssociatedProducts',
           'mxcPushAssociatedProducts',
 
@@ -577,6 +578,12 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text: 'Set reference prices',
                     handler: function() {
                         me.fireEvent('mxcSetReferencePrices', me);
+                    }
+                },
+                {
+                    text: 'Get suppliers without Logo',
+                    handler: function() {
+                        me.fireEvent('mxcCheckSupplierLogo', me);
                     }
                 },
 

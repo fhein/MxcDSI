@@ -942,6 +942,20 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function checkSupplierLogoAction()
+    {
+        try {
+            $missingLogos = [];
+            $suppliers = $this->getManager()->getRepository(\Shopware\Models\Article\Supplier::class)->findBy(array('image' => ''), array('name' => 'ASC'));
+            foreach ($suppliers as $supplier) {
+                array_push($missingLogos, $supplier->getName());
+            }
+            $this->view->assign([ 'success' => true, 'message' => 'The following Logos are missing:', 'value' => $missingLogos ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function dev1Action()
     {
         // find mismatches between purchase prices reported by model and variant and adjust variant accordingly
