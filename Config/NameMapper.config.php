@@ -19,6 +19,7 @@ return [
             '~America´s~'                           => 'America\'s',
             '~AsMODus~'                             => 'asMODus',
             '~Asmodus~'                             => 'asMODus',
+            '~Hellvape~'                            => 'HellVape',
             '~(Heads )+~'                           => '$1',
             '~(Head )+~'                            => '$1',
             '~(10er Packung)en~'                    => '$1',
@@ -96,6 +97,7 @@ return [
             '~(Solo) - (mit Cerberus)~'                    => '$1 $2',
             '~(Morph) - (Akkuträger)~'                     => '$1 219 - $2',
             '~Tank (BF Mesh Head)~'                        => '$1',
+            '~- (Mac Advanced)~'                           => '$1 -',
             '~(-)+~'                                       => '$1',
         ],
     ],
@@ -204,6 +206,7 @@ return [
 
     'product_name_replacements' => [
         'preg_replace' => [
+            '~(1,5 Ohm) (Cartridge)~'                                    => '$2, $1',
             '~(Elli)´s~'                                                 => 'Elli\'s',
             '~(Roofy)`s~'                                                => 'Roofy\'s',
             '~(Manta) (Glastank)~'                                       => '$1 RTA $2',
@@ -251,6 +254,8 @@ return [
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
+            '~(Dr. Kero) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
+            '~(Dampfdidas) (- Aroma)(.*)(- \d+ ml)~'                     => '$1 - $3 $2 $4',
             '~(Ant) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
             '~(GangGang) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
             '~(Archangel) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
@@ -690,6 +695,8 @@ return [
             '~(Frenzy)~'
         ],
         'HellVape'      => [
+            '~(Grimm)~',
+            '~(MD RTA)~',
             '~(Anglo RDA)~',
             '~(Dead Rabbit RTA)~',
             '~(Dead Rabbit RDA)~',
@@ -710,6 +717,9 @@ return [
             '~(Revo)~',
             '~(Finder BF RDA)~',
             '~(V3 mini( ADA)?)~',
+        ],
+        'Joyetech' => [
+            '~(eRoll)~',
         ],
         'Nikola'        => [
             '~(Medea)~',

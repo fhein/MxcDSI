@@ -24,6 +24,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcPushAssociatedProducts:           me.onPushAssociatedProducts,
                 mxcPullAssociatedProducts:           me.onPullAssociatedProducts,
                 mxcSetReferencePrices:               me.onSetReferencePrices,
+                mxcCheckSupplierLogo:                me.onCheckSupplierLogo,
 
                 mxcPullShopwareDescriptions:         me.onPullShopwareDescriptions,
                 mxcUpdateImages:                     me.onUpdateImages,
@@ -340,6 +341,16 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let url = '{url controller=MxcDsiProduct action=setReferencePrices}';
         let growlTitle = 'Set reference prices';
         let maskText = 'Setting reference prices ...';
+
+        let params = {};
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onCheckSupplierLogo: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=checkSupplierLogo}';
+        let growlTitle = 'Get suppliers without logo';
+        let maskText = 'Getting suppliers without Logo ...';
 
         let params = {};
         me.doRequest(grid, url, params, growlTitle, maskText, true);
@@ -701,7 +712,26 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 if (!result) {
                     me.showError(response.responseText);
                 } else if (result.success) {
-                    Shopware.Notification.createGrowlMessage(growlTitle, result.message);
+                    if (result.value != null) {
+                        let textvalue = Array.isArray(result.value)? result.value.join('<br>') : result.value;
+
+                        resultWindow = new Ext.Window({
+                            height: 400,
+                            width: 300,
+                            autoScroll: true,
+                            title: result.message,
+                            buttons: [
+                                {
+                                    text: 'OK',
+                                    handler: function () { this.up('window').close(); }
+                                }
+                            ],
+                            html: textvalue
+                        });
+                        resultWindow.show();
+                    } else {
+                        Shopware.Notification.createGrowlMessage(growlTitle, result.message);
+                    }
                     if (reloadGrid === true) {
                         grid.store.load();
                     }

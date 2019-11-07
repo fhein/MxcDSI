@@ -31,6 +31,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
+use Shopware\Models\Article\Supplier;
 use Zend\Config\Factory;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
@@ -942,6 +943,20 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function checkSupplierLogoAction()
+    {
+        try {
+            $missingLogos = [];
+            $suppliers = $this->getManager()->getRepository(\Shopware\Models\Article\Supplier::class)->findBy(array('image' => ''), array('name' => 'ASC'));
+            foreach ($suppliers as $supplier) {
+                array_push($missingLogos, $supplier->getName());
+            }
+            $this->view->assign([ 'success' => true, 'message' => 'The following Logos are missing:', 'value' => $missingLogos ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function dev1Action()
     {
         // find mismatches between purchase prices reported by model and variant and adjust variant accordingly
@@ -1040,10 +1055,15 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function dev5Action() {
         try {
-            $params = $this->request->getParams();
+            // $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
-            $ids = json_decode($params['ids'], true);
+            // $ids = json_decode($params['ids'], true);
             // Do something with the ids
+            $suppliers = $this->getManager()->getRepository(Supplier::class)->findAll();
+            /** @var Supplier $supplier */
+            foreach ($suppliers as $supplier) {
+
+            }
             $this->view->assign([ 'success' => true, 'message' => 'Development 5 slot is currently free.']);
         } catch (Throwable $e) {
             $this->handleException($e);

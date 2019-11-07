@@ -2,13 +2,17 @@
 
 namespace MxcDropshipInnocigs\Excel;
 
+use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
+use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 
-class ImportPrices extends AbstractProductImport
+class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
 {
+    use LoggerAwareTrait;
+
     /** @var array */
     protected $indexMap;
 
