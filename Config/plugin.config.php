@@ -237,12 +237,12 @@ return [
             'Mapping'      => ImportMapping::class,
         ],
         'export' => [
-            'Neue Produkte' => ExportNewProducts::class,
+//            'Neue Produkte' => ExportNewProducts::class,
             'Preise'        => ExportPrices::class,
-            'Dosierung'     => ExportDosage::class,
-            'Geschmack'     => ExportFlavor::class,
-            'Beschreibung'  => ExportDescription::class,
-            'Mapping'       => ExportMapping::class,
+//            'Dosierung'     => ExportDosage::class,
+//            'Geschmack'     => ExportFlavor::class,
+//            'Beschreibung'  => ExportDescription::class,
+//            'Mapping'       => ExportMapping::class,
         ],
     ],
 ];

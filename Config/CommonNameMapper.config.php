@@ -39,6 +39,7 @@ return [
         ],
         'Yankee Juice'   => [
             'Sweets' => 2,
+            'Ice' => 2,
         ],
         '5 Stars Peine'  => [
             'Flavor Monster'   => 2,
