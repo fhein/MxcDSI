@@ -616,6 +616,8 @@ return [
             '~((Revvo)( Mini)?)~',
             '~((K1 Plus)|(K1 Stealth)|((K\d)( \& K3)?))~',
             '~(AVP)~',
+            '~(K-Lite)~',
+            '~(Odan)~',
         ],
         'asMODus'       => [
             '~((Minikin V3S mit Viento)|(Minikin(( V2 Kodama)|( V2)|( V3S)|( V3)|( Reborn))?))~',
