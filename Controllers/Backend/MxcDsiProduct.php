@@ -28,6 +28,7 @@ use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
@@ -1059,12 +1060,22 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @noinspection PhpUnusedLocalVariableInspection */
             // $ids = json_decode($params['ids'], true);
             // Do something with the ids
+
+            // @todo: this has to be integrated to the standard process of product creation and change
+
             $suppliers = $this->getManager()->getRepository(Supplier::class)->findAll();
             /** @var Supplier $supplier */
-            foreach ($suppliers as $supplier) {
+            $title = 'E-Zigaretten, E-Liquids und Zubehör: Unsere Produkte von %s';
+            $description = 'Produkte für Dampfer von %s ✓ vapee.de bietet ein breites Sortiment von E-Zigaretten, E-Liquids und Zubehör zu fairen Preisen ► Besuchen Sie uns!';
 
+            foreach ($suppliers as $supplier) {
+                $name = $supplier->getName();
+                $metaTitle = sprintf($title, $name);
+                $metaDescription = sprintf($description, $name);
+                SupplierTool::setSupplierMetaInfo($supplier, $metaTitle, $metaDescription, $name);
             }
-            $this->view->assign([ 'success' => true, 'message' => 'Development 5 slot is currently free.']);
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Supplier meta information successfully applied.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

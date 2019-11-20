@@ -292,7 +292,10 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         if (is_int(strpos($name, 'Koncept XIX'))) {
             return $this->descriptionShakeVape['Koncept XIX'] ?? null;
         }
-        $content = $product->getContent();
+        // Note: We assume that all variants have the same content
+        // so that we can use the content value of the first
+        $variant = $product->getVariants()[0];
+        $content = $variant->getContent();
         $capacity = $product->getCapacity();
 
         if (! $content && ! $capacity) {

@@ -31,4 +31,21 @@ class SupplierTool
         }
         return $supplier;
     }
+
+    public static function setSupplierMetaInfo(
+        Supplier $supplier,
+        string $metaTitle = null,
+        string $metaDescription = null,
+        string $metaKeywords = null)
+    {
+        if ($metaTitle !== null) {
+            $supplier->setMetaTitle($metaTitle);
+        }
+        if ($metaDescription !== null) {
+            $supplier->setMetaDescription($metaDescription);
+        }
+        if ($metaKeywords !== null) {
+            $supplier->setMetaKeywords($metaKeywords);
+        }
+    }
 }

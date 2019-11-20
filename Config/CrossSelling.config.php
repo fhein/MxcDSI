@@ -20480,11 +20480,6 @@ return array(
             0 => 'SC100IAA',
             1 => 'SC100GAH',
         ),
-        'VS100SK' => array(
-            0 => 'VS100ST',
-            1 => 'VS100SR',
-            2 => 'VS100SG',
-        ),
         'VS100SM' => array(
             0 => 'VS100SMG',
         ),

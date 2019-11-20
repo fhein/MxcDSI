@@ -106,6 +106,7 @@ return array(
         26 => 'saure Früchte',
         27 => 'süße Früchte',
         28 => 'süße Kirsche',
+        29 => 'saure Kirsche'
     ),
     'Gebäck' => array(
         0 => 'Apfelstrudel',
@@ -272,6 +273,7 @@ return array(
         19 => 'gebrannte Mandeln',
         20 => 'saures Weingummi',
         21 => 'weiße Schokolade',
+        22 => 'Weingummi',
     ),
     'Tabak' => array(
         0 => 'Burley Tabak',
