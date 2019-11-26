@@ -58,9 +58,12 @@ return [
         TypeMapper::TYPE_CLEANING_SUPPLY    => 'CLEANING_SUPPLY',
         TypeMapper::TYPE_COVER              => 'COVER',
         TypeMapper::TYPE_DISPLAY            => 'DISPLAY',
+        TypeMapper::TYPE_SPARE_PARTS        => 'SPARE_PARTS',
     ],
 
     'name_type_mapping' => [
+        '~Ersatzteil-Set~'          => TypeMapper::TYPE_SPARE_PARTS,
+        '~Kamin~'                   => TypeMapper::TYPE_SPARE_PARTS,
         '~T-Shirt~'                 => TypeMapper::TYPE_ACCESSORY,
         '~Reinigungsbürste~'        => TypeMapper::TYPE_TOOL,
         '~Seitenschneider~'         => TypeMapper::TYPE_TOOL,
@@ -78,7 +81,8 @@ return [
         '~Verdampfer~'              => TypeMapper::TYPE_CLEAROMIZER,
         '~Cartridge~'               => TypeMapper::TYPE_CARTRIDGE,
         '~Nikotinsalz-Liquid~'      => TypeMapper::TYPE_LIQUID,
-        '~QPod - E-Zigarette~'       => TypeMapper::TYPE_E_CIGARETTE,
+        '~QPod - E-Zigarette~'      => TypeMapper::TYPE_E_CIGARETTE,
+        '~Preva Pod - E-Zigarette~' => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod~'                     => TypeMapper::TYPE_POD,
         '~E-Pfeife~'                => TypeMapper::TYPE_E_PIPE,
         '~E-Hookah~'                => TypeMapper::TYPE_E_HOOKAH,

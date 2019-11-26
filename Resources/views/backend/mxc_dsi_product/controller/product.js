@@ -14,13 +14,17 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcImportItems:                      me.onImportItems,
                 mxcImportItemsSequential:            me.onImportItemsSequential,
 
+                // meta information
+
+                mxcUpdateSupplierSeo:                me.onUpdateSupplierSeo,
+                mxcUpdateCategorySeo:                me.onUpdateCategorySeo,
+                mxcUpdateArticleSeo:                 me.onUpdateArticleSeo,
+
                 // Remapping
 
                 mxcRemapCategories:                  me.onRemapCategories,
                 mxcRemapProperties:                  me.onRemapProperties,
                 mxcRemapDescriptions:                me.onRemapDescriptions,
-                mxcUpdateCategorySeo:                me.onUpdateCategorySeo,
-                mxcUpdateArticleSeo:                 me.onUpdateArticleSeo,
                 mxcPushAssociatedProducts:           me.onPushAssociatedProducts,
                 mxcPullAssociatedProducts:           me.onPullAssociatedProducts,
                 mxcSetReferencePrices:               me.onSetReferencePrices,
@@ -189,6 +193,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Update category SEO information';
         let maskText = 'Updating category SEO information ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onUpdateSupplierSeo: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=remapSupplierSeoInformation}';
+        let params = {};
+        let growlTitle = 'Update supplier SEO information';
+        let maskText = 'Updating supplier SEO information ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

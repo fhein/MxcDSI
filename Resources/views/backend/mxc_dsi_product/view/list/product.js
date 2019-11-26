@@ -37,6 +37,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
         me.addEvents(
           'mxcUpdateCategorySeo',
           'mxcUpdateArticleSeo',
+          'mxcUpdateSupplierSeo',
           'mxcSaveProduct',
           'mxcRelink',
 
@@ -551,6 +552,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     }
                 },
                 '-',
+                {
+                    text: 'Update supplier SEO items',
+                    iconCls: 'sprite-building-medium',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateSupplierSeo', me);
+                    }
+                },
                 {
                     text: 'Update category SEO items',
                     iconCls: 'sprite-folder-tree',

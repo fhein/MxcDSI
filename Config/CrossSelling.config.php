@@ -20346,10 +20346,6 @@ return array(
             0 => 'SC100MD2G',
             1 => 'SC100EC2',
         ),
-        'UW100VY' => array(
-            0 => 'UW100VYD',
-            1 => 'UW100VYH',
-        ),
         'IC100ED' => array(
             0 => 'IC100EBA',
             1 => 'IC100EDG',

@@ -958,6 +958,27 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function remapSupplierSeoInformationAction()
+    {
+        try {
+            $suppliers = $this->getManager()->getRepository(Supplier::class)->findAll();
+            /** @var Supplier $supplier */
+            $title = 'E-Zigaretten und E-Liquids: Unsere Produkte von %s';
+            $description = 'Produkte für Dampfer von %s ✓ vapee.de bietet ein breites Sortiment von E-Zigaretten und E-Liquids zu fairen Preisen ► Besuchen Sie uns!';
+
+            foreach ($suppliers as $supplier) {
+                $name = $supplier->getName();
+                $metaTitle = sprintf($title, $name);
+                $metaDescription = sprintf($description, $name);
+                SupplierTool::setSupplierMetaInfo($supplier, $metaTitle, $metaDescription, $name);
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Supplier meta information successfully applied.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function dev1Action()
     {
         // find mismatches between purchase prices reported by model and variant and adjust variant accordingly
@@ -1056,26 +1077,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function dev5Action() {
         try {
-            // $params = $this->request->getParams();
+             $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
-            // $ids = json_decode($params['ids'], true);
+            $ids = json_decode($params['ids'], true);
             // Do something with the ids
-
-            // @todo: this has to be integrated to the standard process of product creation and change
-
-            $suppliers = $this->getManager()->getRepository(Supplier::class)->findAll();
-            /** @var Supplier $supplier */
-            $title = 'E-Zigaretten, E-Liquids und Zubehör: Unsere Produkte von %s';
-            $description = 'Produkte für Dampfer von %s ✓ vapee.de bietet ein breites Sortiment von E-Zigaretten, E-Liquids und Zubehör zu fairen Preisen ► Besuchen Sie uns!';
-
-            foreach ($suppliers as $supplier) {
-                $name = $supplier->getName();
-                $metaTitle = sprintf($title, $name);
-                $metaDescription = sprintf($description, $name);
-                SupplierTool::setSupplierMetaInfo($supplier, $metaTitle, $metaDescription, $name);
-            }
-            $this->getManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Supplier meta information successfully applied.']);
+            $this->view->assign([ 'success' => true, 'message' => 'Development slot #5 is currently free.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

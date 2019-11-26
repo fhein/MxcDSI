@@ -19,6 +19,7 @@ return [
             '~America´s~'                           => 'America\'s',
             '~AsMODus~'                             => 'asMODus',
             '~Asmodus~'                             => 'asMODus',
+            '~(Amnis 2) mit GS Drive~'              => '$1',
             '~Hellvape~'                            => 'HellVape',
             '~(Rabbit) V2 (RDA)~'                   => '$1 $2 v2',
             '~CoilART~'                             => 'CoilArt',
@@ -28,6 +29,7 @@ return [
             '~(10er Packung)en~'                    => '$1',
             '~[^\(](3 Stück pro Packung\))~'        => ' ($1',
             '~(Aromamizer Plus) Bubble (Glastank)~' => '$1 $2',
+            '~(Merlin Nano MTL) (Glastank)~'        => '$1 RTA $2',
             '~(V1.5)~'                              => 'v1.5',
             '~(JVIC)\d~'                            => '$1',
             '~((HW1)|(HW2)) (Heads)~'               => 'HW1/HW2 $4',
@@ -96,6 +98,7 @@ return [
             '~(Star Spangled), 9 mg/ml~'                   => '$1',
             '~(Ultem Tank), (5 ml)~'                       => '$1 - $2',
             '~(Akkuträger) - Akkuträger~'                  => '$1',
+            '~Smok TFV8 -~'                                => 'SMOK - TFV8',
             '~(Aegis X) - (mit Cerberus)~'                 => '$1 $2',
             '~(Solo) - (mit Tengu)~'                       => '$1 $2 -',
             '~(Solo) - (mit Cerberus)~'                    => '$1 $2',
@@ -104,7 +107,10 @@ return [
             '~- (Mac Advanced)~'                           => '$1 -',
             '~(TF) -(Tank Stick)~'                         => '$1 $2',
             '~80W (E-Zigarette)~'                          => '$1',
+            '~(Cygnet) - (Revvo)~'                         => '$1 $2',
+            '~(1,4 Ohm) (Pod)~'                            => '$2, $1',
             '~(-)+~'                                       => '$1',
+            '~(Liquidflasche) (5 Stück pro Packung).*~'    => '$1 ($2)',
         ],
     ],
 
@@ -642,6 +648,7 @@ return [
             '~(Templar RDA)~',
             '~(Occula RDA)~',
             '~(Skynet( Pro)?)~',
+            '~(Merlin Nano MTL RTA)~',
         ],
         'CoilArt'       => [
             '~(Mage RTA V2)~',
@@ -757,7 +764,7 @@ return [
             '~(GS ((Air 2)|(Air 3)|(Air)|(Baby)|(Drive)|(Turbo))?)~',
             '~(iKonn)~',
             '~(Invoke)~',
-            '~(iStick ((T80)|(Melo)|(Amnis)|(Pico X)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim)|(Nowos)|(Mix)|(Rim))?)~',
+            '~(iStick ((T80)|(Melo)|(Amnis( 2)?)|(Pico X)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim)|(Nowos)|(Mix)|(Rim))?)~',
             '~(iWu)~',
             '~(Lexicon)~',
             '~(Melo \d)~',
@@ -813,6 +820,7 @@ return [
             '~(Cheetah 3 RDA)~',
             '~(Cube(( Mini)|( MTL)|( X))?)~',
             '~(Land)~',
+            '~(Prow)~',
         ],
         'OFRF' => [
             '~(Gear RTA)~',
@@ -847,7 +855,7 @@ return [
 
         ],
         'ThunderHead Creations' => [
-            '~(Tauren(( RDTA)|( RDA)|( RTA)|( Solo RDA)))~',
+            '~(Tauren(( RDTA)|( RDA)|( RTA)|( Solo RDA)|( Pro)))~',
             '~(Tauren One RTA)~',
         ],
         'Renova'        => [
@@ -923,6 +931,7 @@ return [
             '~(Aromamizer Supreme RDTA V2(\.1)?)~',
             '~(Aromamizer Titan RDTA)~',
             '~(Aromamizer Lite RTA( v1.5)?)~',
+            '~(Glaz Mini MTL RTA)~',
             '~(Glaz RDSA)~',
             '~(Mico)~',
             '~(Glaz RTA)~',
@@ -1019,6 +1028,7 @@ return [
             '~(Reux)~',
             '~(Kestrel RDTA)~',
             '~(Reuleaux Tinker( 2)?)~',
+            '~(Preva Pod)~',
         ],
         'Wotofo'        => [
             '~(Warrior RDA)~',
@@ -1041,6 +1051,7 @@ return [
             '~(SX Mini Mi Class)~',
             '~(SX Mini SL Class)~',
             '~(SX Mini X Class)~',
+            '~(SX Mini Divine RDA)~',
         ],
         'ZQ'            => [
             '~(Vi)~',

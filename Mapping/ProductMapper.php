@@ -257,10 +257,18 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
         }
 
-        $supplier = $product->getSupplier();
-        if ($supplier === 'InnoCigs') $supplier = $product->getBrand();
+        $supplierName = $product->getSupplier();
+        if ($supplierName === 'InnoCigs') $supplierName = $product->getBrand();
+        $supplier = SupplierTool::getSupplier($supplierName);
+        $article->setSupplier($supplier);
 
-        $article->setSupplier(SupplierTool::getSupplier($supplier));
+        // set supplier page meta information
+        $title = 'E-Zigaretten und E-Liquids: Unsere Produkte von %s';
+        $description = 'Produkte für Dampfer von %s ✓ vapee.de bietet ein breites Sortiment von E-Zigaretten und E-Liquids zu fairen Preisen ► Besuchen Sie uns!';
+        $metaTitle = sprintf($title, $supplierName);
+        $metaDescription = sprintf($description, $supplierName);
+        SupplierTool::setSupplierMetaInfo($supplier, $metaTitle, $metaDescription, $supplierName);
+
         $this->categoryMapper->map($product);
     }
 }

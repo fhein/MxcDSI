@@ -270,6 +270,12 @@ return array(
             ),
             'path' => 'ZUBEHÖR > Aufbewahrung',
         ),
+        32 => array(
+            'types' => array(
+                0 => 'SPARE_PARTS',
+            ),
+            'path' => 'SELBSTWICKLER > Sonstige Ersatzteile',
+        )
     ),
     'category_seo_items' => array(
         'E-ZIGARETTEN' => array(
@@ -439,6 +445,12 @@ return array(
             'description' => 'Selbstwickel-Verdampfer günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Selbstwickler,Verdampfer,Selbstwickel-Verdampfer,Clearomizer,Atomizer,E-Zigarette,günstig,kaufen',
             'h1' => 'SELBSTWICKEL-VERDAMPFER',
+        ),
+        'SELBSTWICKLER > Sonstige Ersatzteile' => array(
+            'title' => 'Ersatzteile für Selbstwickel-Verdampfer günstig online kaufen!',
+            'description' => 'Ersatzteile für Selbstwickel-Verdampfer günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Erstatzteile,Selbstwickler,Verdampfer,Selbstwickel-Verdampfer,Clearomizer,Atomizer,E-Zigarette,günstig,kaufen',
+            'h1' => 'ERSATZTEILE FÜR SELBSTWICKEL-VERDAMPFER',
         ),
         'SHAKE & VAPE' => array(
             'title' => 'Shake & Vape E-Liquids für E-Zigaretten günstig online kaufen!',
