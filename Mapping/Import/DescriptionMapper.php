@@ -295,7 +295,12 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         // Note: We assume that all variants have the same content
         // so that we can use the content value of the first
         $variant = $product->getVariants()[0];
-        $content = $variant->getContent();
+        if ($variant === null) {
+            $this->log->err('Product ' . $product->getName() . ' has no variant 0.');
+            $content = 0;
+        } else  {
+            $content = $variant->getContent();
+        }
         $capacity = $product->getCapacity();
 
         if (! $content && ! $capacity) {

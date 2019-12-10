@@ -44,7 +44,6 @@ return [
         ],
     ],
 
-
     'name_cleanup'              => [
         'preg_replace' => [
             '~\s+~'                                        => ' ',
@@ -110,7 +109,12 @@ return [
             '~(Cygnet) - (Revvo)~'                         => '$1 $2',
             '~(1,4 Ohm) (Pod)~'                            => '$2, $1',
             '~(-)+~'                                       => '$1',
+            '~- pro (Pod)~'                                => 'Pro - $1',
             '~(Liquidflasche) (5 Stück pro Packung).*~'    => '$1 ($2)',
+            '~(SX Auto) - Liquidt(ank)~'                   => '$1 - T$2',
+            '~(Pink Soda) Liquid~'                         => '$1',
+            '~(Blue Slush) Liquid~'                        => '$1',
+            '~(Marsupod) - mit~'                           => '$1 - Pod -',
         ],
     ],
 
@@ -264,6 +268,8 @@ return [
             '~([^,\-]) (\d+ ml, \d+ mg/ml)~'                             => '$1 - $2',
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
+            '~(Pyromania) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
+            '~(hilda.) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
             '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(Yankee Juice.*) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
@@ -421,6 +427,7 @@ return [
             '~(Anniversary)-(Edition) (E-Zigarette)~'             => '$1 $2 - $3',
             '~E-Zigaretten Set~'                                  => 'E-Zigarette',
             '~E-Zigaretten-Set~'                                  => 'E-Zigarette',
+            '~(Pasito) Pod (E-Zigarette)~'                        => '$1 $2',
             '~(J-Easy)((3)|(9))~'                                 => '$1 $2',
             '~Nautilus Mini BVC Clearomizer~'                     => 'Nautilus Mini Clearomizer',
             '~Clearomizer( Set)?~'                                => 'Verdampfer',
@@ -470,6 +477,9 @@ return [
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
+            '~(Aegis Squonker) (- \d+ Watt)~'                     => '$1 - Squonker Box $2',
+            '~(Double Barrel V3) (- \d+ Watt)~'                   => '$1 - Akkuträger $2',
+            '~(Detonator) (- \d+ Watt)~'                          => '$1 - Akkuträger $2',
             '~(Revo) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Mag P3) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(Tribeaut) (- \d+ Watt)~'                           => '$1 - Akkuträger $2',
@@ -620,7 +630,7 @@ return [
             '~((Zelos)( 2.0)?)~',
             '~(Revvo(( Mini)|( Boost))?)~',
             '~(Nautilus(( 2S?)|( X)|( Mini)|( AIO))?)~',
-            '~(Cleito(( 120)?( Pro)?)?)~',
+            '~(Cleito((( Shot)|( 120)?( Pro)?))?)~',
             '~(SkyStar)~',
             '~(Feedlink)~',
             '~((Revvo)( Mini)?)~',
@@ -703,7 +713,7 @@ return [
             '~(Zeus Dual RTA)~',
             '~(Zeus RTA)~',
             '~(Ammit Dual Coil RTA)~',
-            '~(Aegis(( Legend)|( Mini)|( X)|( Solo))?)~',
+            '~(Aegis(( Legend)|( Mini)|( X)|( Solo)|( Squonker))?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
             '~(Creed RTA)~',
@@ -809,7 +819,7 @@ return [
             '~(QPod)~',
         ],
         'Lost Vape'     => [
-            '~(Original Q)~',
+            '~(Original Q( Pro)?)~',
             '~(Lyra)~',
         ],
         'OBS'           => [
@@ -876,11 +886,15 @@ return [
         'Smoant'        => [
             '~(Battlestar Squonker( RDA)?)~',
             '~(Taggerz)~',
+            '~(Pasito)~',
         ],
         'Snowwolf' => [
-            '~(Mfeng( Baby)?)~',
+            '~(Mfeng(( Baby)|( UX))?)~',
+            '~(Mfeng(( Baby)|( UX))?)~',
             '~(Wolf Tank Mini)~',
             '~(Mini)~',
+            '~(Exilis X)~',
+            '~(Wocket)~',
         ],
         'Steamax'       => [
             // Smok
@@ -938,6 +952,7 @@ return [
         ],
         'Uwell'         => [
             '~(Evdilo)~',
+            '~(Marsupod)~',
             '~(Crown (3|4))~',
             '~(Fancier RTA)~',
             '~(Hypercar)~',
@@ -1052,6 +1067,8 @@ return [
             '~(SX Mini SL Class)~',
             '~(SX Mini X Class)~',
             '~(SX Mini Divine RDA)~',
+            '~(SXmini SX Auto)~',
+            '~(SX Auto)~',
         ],
         'ZQ'            => [
             '~(Vi)~',

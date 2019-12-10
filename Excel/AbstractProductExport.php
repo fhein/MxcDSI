@@ -1,8 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-
 namespace MxcDropshipInnocigs\Excel;
-
 
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;

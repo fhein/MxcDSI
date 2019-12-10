@@ -21,6 +21,7 @@ use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
@@ -362,7 +363,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function linkSelectedProductsAction()
     {
         try {
-            list($value, $products) = $this->setStatePropertyOnSelected();
+            [$value, $products] = $this->setStatePropertyOnSelected();
             $services = MxcDropshipInnocigs::getServices();
             $productMapper = $services->get(ProductMapper::class);
             switch ($value) {
@@ -387,7 +388,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function acceptSelectedProductsAction() {
         try {
-            list($value, $products) = $this->setStatePropertyOnSelected();
+            [$value, $products] = $this->setStatePropertyOnSelected();
             $services = MxcDropshipInnocigs::getServices();
             $productMapper = $services->get(ProductMapper::class);
             switch ($value) {
@@ -414,7 +415,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function activateSelectedProductsAction()
     {
         try {
-            list($value, $products) = $this->setStatePropertyOnSelected();
+            [$value, $products] = $this->setStatePropertyOnSelected();
             $services = MxcDropshipInnocigs::getServices();
             $productMapper = $services->get(ProductMapper::class);
             switch ($value) {
@@ -948,7 +949,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $missingLogos = [];
-            $suppliers = $this->getManager()->getRepository(\Shopware\Models\Article\Supplier::class)->findBy(array('image' => ''), array('name' => 'ASC'));
+            $suppliers = $this->getManager()->getRepository(Supplier::class)->findBy(array('image' => ''), array('name' => 'ASC'));
             foreach ($suppliers as $supplier) {
                 array_push($missingLogos, $supplier->getName());
             }
@@ -1080,6 +1081,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
              $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
+
+            $engine = MxcDropshipInnocigs::getServices()->get(PriceEngine::class);
+            $engine->createDefaultConfiguration();
+
+
             // Do something with the ids
             $this->view->assign([ 'success' => true, 'message' => 'Development slot #5 is currently free.']);
         } catch (Throwable $e) {
@@ -1165,7 +1171,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     }
 
     public function save($data) {
-        list($product, $changes) = $this->getStateUpdates($data);
+        [$product, $changes] = $this->getStateUpdates($data);
         if (! $product) {
             return [ 'success' => false, 'message' => 'Creation of new products via GUI is not supported.'];
         }

@@ -2,23 +2,21 @@
 
 namespace MxcDropshipInnocigs\Excel;
 
-use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
-
 abstract class AbstractSheetImport
 {
     protected $data;
 
-    abstract protected function processImportData();
+    abstract public function processImportData(array &$data);
 
-    public function import(Worksheet $sheet)
-    {
-        $this->data = $this->entitiesToArray($sheet->toArray());
-        if (! is_array($this->data) || empty($this->data)) return;
+//    public function import(Worksheet $sheet)
+//    {
+//        $this->data = $this->entitiesToArray($sheet->toArray());
+//        if (! is_array($this->data) || empty($this->data)) return;
+//
+//        $this->processImportData();
+//    }
 
-        $this->processImportData();
-    }
-
-    protected function entitiesToArray(array $entities)
+    public function entitiesToArray(array $entities)
     {
         $headers = null;
         foreach ($entities as &$entity) {
@@ -33,5 +31,4 @@ abstract class AbstractSheetImport
         return $entities;
 
     }
-
 }

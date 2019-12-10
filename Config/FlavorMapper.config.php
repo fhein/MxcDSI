@@ -106,7 +106,6 @@ return array(
         26 => 'saure Früchte',
         27 => 'süße Früchte',
         28 => 'süße Kirsche',
-        29 => 'saure Kirsche'
     ),
     'Gebäck' => array(
         0 => 'Apfelstrudel',
@@ -247,9 +246,6 @@ return array(
         11 => 'Rhabarber',
         12 => 'Waldmeister',
     ),
-    'Sonstige' => array(
-        0 => 'Crème brûlée',
-    ),
     'Süßigkeiten' => array(
         0 => 'Buttercreme',
         1 => 'Candy',
@@ -268,12 +264,12 @@ return array(
         14 => 'Rosine',
         15 => 'Rosinen',
         16 => 'Schokolade',
-        17 => 'Zuckersirup',
-        18 => 'Zuckerwatte',
-        19 => 'gebrannte Mandeln',
-        20 => 'saures Weingummi',
-        21 => 'weiße Schokolade',
-        22 => 'Weingummi',
+        17 => 'Weingummi',
+        18 => 'Zuckersirup',
+        19 => 'Zuckerwatte',
+        20 => 'gebrannte Mandeln',
+        21 => 'saures Weingummi',
+        22 => 'weiße Schokolade',
     ),
     'Tabak' => array(
         0 => 'Burley Tabak',
@@ -319,6 +315,7 @@ return array(
         6 => 'Zitrone',
         7 => 'Zitronengras',
         8 => 'Zitrusfrüchte',
+        9 => 'Bergamotte',
     ),
     'exotische Früchte' => array(
         0 => 'Drachenfrucht',

@@ -26,6 +26,7 @@ return [
             'Polar Ice Vapes' => 2,
             'Candy Mints'     => 2,
             'Frosty Shakes'   => 2,
+            'Frosty Fizz'     => 2,
         ],
         'Brateflavour'   => [
             'X-TRM' => 2,

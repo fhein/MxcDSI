@@ -58,6 +58,7 @@ use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DropshippersCompanion;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Category;
 use MxcDropshipInnocigs\Models\Group;
@@ -144,6 +145,7 @@ return [
     'services'     => [
         'factories' => [
             ProductMappings::class           => AugmentedObjectFactory::class,
+            PriceEngine::class               => AugmentedObjectFactory::class,
             ImportPiecesPerPackMapper::class => AugmentedObjectFactory::class,
             ProductNumberMapper::class       => AugmentedObjectFactory::class,
             TypeMapper::class                => AugmentedObjectFactory::class,

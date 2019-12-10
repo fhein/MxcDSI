@@ -14,12 +14,12 @@ class ImportFlavor extends AbstractProductImport
         return (implode(', ', $values));
     }
 
-    protected function processImportData()
+    public function processImportData(array &$data)
     {
         $repository = $this->modelManager->getRepository(Product::class);
         /** @noinspection PhpUndefinedMethodInspection */
         $products = $repository->getFlavoredProducts();
-        foreach ($this->data as $record) {
+        foreach ($data as $record) {
             /** @var Product $product */
             $product = $products[$record['icNumber']];
             if (! $product) continue;

@@ -7,12 +7,12 @@ use Shopware\Models\Article\Article;
 
 class ImportDescription extends AbstractProductImport
 {
-    protected function processImportData()
+    public function processImportData(array &$data)
     {
         $repository = $this->modelManager->getRepository(Product::class);
         /** @noinspection PhpUndefinedMethodInspection */
         $products = $repository->getAllIndexed();
-        foreach ($this->data as $record) {
+        foreach ($data as $record) {
             /** @var Product $product */
             $product = $products[$record['icNumber']];
             if (! $product) continue;

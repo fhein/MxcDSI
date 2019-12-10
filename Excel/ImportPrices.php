@@ -28,9 +28,9 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
         $this->priceMapper = $priceMapper;
     }
 
-    protected function processImportData()
+    public function processImportData(array &$data)
     {
-        $keys = array_keys($this->data[0]);
+        $keys = array_keys($data[0]);
         $this->indexMap = [];
         foreach ($keys as $key) {
             if (strpos($key, 'VK Brutto') === 0) {
@@ -38,18 +38,13 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
                 $this->indexMap[$key] = $customerGroupKey;
             }
         }
-        $this->updatePrices();
 
-        $this->modelManager->flush();
-    }
-
-    protected function updatePrices()
-    {
         /** @noinspection PhpUndefinedMethodInspection */
         $variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         /** @var Variant $variant */
-        foreach ($this->data as $record) {
+
+        foreach ($data as $record) {
             $variant = $variants[$record['icNumber']] ?? null;
             if (!$variant) continue;
             $variant->setRetailPriceDampfPlanet($record['Dampfplanet']);
@@ -59,7 +54,9 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
             $variant->setRecommendedRetailPrice($record['UVP Brutto']);
 
             $this->updateVariantPrice($variant, $record);
-       }
+        }
+
+        $this->modelManager->flush();
     }
 
     protected function updateVariantPrice(Variant $variant, array $record)

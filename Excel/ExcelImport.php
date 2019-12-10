@@ -52,7 +52,15 @@ class ExcelImport implements ModelManagerAwareInterface
         $spreadSheet = (new Reader())->load($importFile);
         $sheet = $spreadSheet->getSheetByName($sheetName);
         if (! $sheet) return false;
-        $importer->import($sheet);
+        $data = $sheet->toArray();
+        if (! is_array($data) || empty($data)) return false;
+        $data = $importer->entitiesToArray($data);
+        if (! is_array($data) || empty($data)) return false;
+
+        // free memory used by PHPSpreadsheet
+        $spreadSheet->disconnectWorksheets();
+        unset($spreadSheet);
+        $importer->processImportData($data);
         $this->modelManager->getRepository(Product::class)->exportMappedProperties();
         return true;
     }
