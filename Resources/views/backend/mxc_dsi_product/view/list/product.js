@@ -69,12 +69,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcCheckVariantsWithoutOptions',
           'mxcExportConfig',
           'mxcExcelExport',
-          'mxcExcelImport',
-          'mxcExcelImportFlavors',
-          'mxcExcelImportDosages',
-          'mxcExcelImportMappings',
           'mxcExcelImportPrices',
-          'mxcExcelImportDescriptions',
 
           'mxcTestImport1',
           'mxcTestImport2',
@@ -331,30 +326,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
             },
             items: [
                 {
-                    text: 'Excel Export',
+                    text: 'Export prices',
                     iconCls: 'sprite-table-export',
                     handler: function () {
                         window.open('/backend/MxcDsiProduct/excelExport');
                     }
                 },
-                me.createImportMenuItem('Excel Import', 'mxcExcelImport'),
-                me.createImportFileField('mxcExcelImport', me),
-                '-',
-                me.createImportMenuItem('Import prices only', 'mxcExcelImportPrices'),
+                me.createImportMenuItem('Import prices', 'mxcExcelImportPrices'),
                 me.createImportFileField('mxcExcelImportPrices', me),
-
-                me.createImportMenuItem('Import descriptions only', 'mxcExcelImportDescriptions'),
-                me.createImportFileField('mxcExcelImportDescriptions', me),
-
-                me.createImportMenuItem('Import flavors only', 'mxcExcelImportFlavors'),
-                me.createImportFileField('mxcExcelImportFlavors', me),
-
-                me.createImportMenuItem('Import dosages only', 'mxcExcelImportDosages'),
-                me.createImportFileField('mxcExcelImportDosages', me),
-
-                me.createImportMenuItem('Import mappings only', 'mxcExcelImportMappings'),
-                me.createImportFileField('mxcExcelImportMappings', me),
-
             ]
         });
         return Ext.create('Ext.button.Button', {

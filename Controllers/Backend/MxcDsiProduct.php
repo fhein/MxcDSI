@@ -233,60 +233,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function excelImportAction()
-    {
-        // Try to get the transferred file
-        try {
-            $file = $_FILES['file'];
-            $services = MxcDropshipInnocigs::getServices();
-            $log = $services->get('logger');
-
-            if ($file === null) $log->debug('file is null');
-            $fileName = $file['name'];
-            $tmpName = $_FILES['file']['tmp_name'];
-            $fileNamePos= strrpos ($tmpName, '/');
-            $tmpPath= substr($tmpName, 0, $fileNamePos);
-            $newFilePath = $tmpPath.'/' . $fileName; //'/../Config/' . $file['originalName'];
-            move_uploaded_file($tmpName, $newFilePath);
-
-            $services = MxcDropshipInnocigs::getServices();
-            $excel = $services->get(ExcelProductImport::class);
-            $result = $excel->import($newFilePath);
-
-            unlink($newFilePath);
-            if ($result){
-                $this->view->assign([ 'success' => $result, 'message' => 'Settings successfully imported from ' . $fileName . '.' ]);
-            }else{
-                $this->view->assign([ 'success' => $result, 'message' => 'File ' . $fileName . ' could not be imported.' ]);
-            }
-        } catch (Throwable $e) {
-            $this->handleException($e);
-        }
-    }
-
     public function excelImportPricesAction()
     {
         $this->excelImportSheet('Preise');
-    }
-
-    public function excelImportDescriptionsAction()
-    {
-        $this->excelImportSheet('Beschreibung');
-    }
-
-    public function excelImportFlavorsAction()
-    {
-        $this->excelImportSheet('Geschmack');
-    }
-
-    public function excelImportDosagesAction()
-    {
-        $this->excelImportSheet('Dosierung');
-    }
-
-    public function excelImportMappingsAction()
-    {
-        $this->excelImportSheet('Mapping');
     }
 
     protected function excelImportSheet(string $sheet)

@@ -7,17 +7,9 @@ use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelImport;
 use MxcDropshipInnocigs\Excel\ExcelImportFactory;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
-use MxcDropshipInnocigs\Excel\ExportDescription;
-use MxcDropshipInnocigs\Excel\ExportDosage;
-use MxcDropshipInnocigs\Excel\ExportFlavor;
-use MxcDropshipInnocigs\Excel\ExportMapping;
 use MxcDropshipInnocigs\Excel\ExportNewProducts;
 use MxcDropshipInnocigs\Excel\ExportPrices;
 use MxcDropshipInnocigs\Excel\ExportSheetFactory;
-use MxcDropshipInnocigs\Excel\ImportDescription;
-use MxcDropshipInnocigs\Excel\ImportDosage;
-use MxcDropshipInnocigs\Excel\ImportFlavor;
-use MxcDropshipInnocigs\Excel\ImportMapping;
 use MxcDropshipInnocigs\Excel\ImportPrices;
 use MxcDropshipInnocigs\Excel\ImportSheetFactory;
 use MxcDropshipInnocigs\Import\ApiClient;
@@ -174,16 +166,7 @@ return [
             CategoryMapper::class    => MappingConfigFactory::class,
             DescriptionMapper::class => MappingConfigFactory::class,
 
-            ImportDosage::class      => AugmentedObjectFactory::class,
-            ImportFlavor::class      => AugmentedObjectFactory::class,
-            ImportDescription::class => AugmentedObjectFactory::class,
-            ImportMapping::class     => AugmentedObjectFactory::class,
-
-            ExportDosage::class      => AugmentedObjectFactory::class,
-            ExportFlavor::class      => AugmentedObjectFactory::class,
-            ExportDescription::class => AugmentedObjectFactory::class,
             ExportNewProducts::class => AugmentedObjectFactory::class,
-            ExportMapping::class     => AugmentedObjectFactory::class,
 
             ExcelProductImport::class => ExcelImportFactory::class,
         ],
@@ -233,18 +216,10 @@ return [
     'excel'        => [
         'import' => [
             'Preise'       => ImportPrices::class,
-            'Dosierung'    => ImportDosage::class,
-            'Geschmack'    => ImportFlavor::class,
-            'Beschreibung' => ImportDescription::class,
-            'Mapping'      => ImportMapping::class,
         ],
         'export' => [
 //            'Neue Produkte' => ExportNewProducts::class,
             'Preise'        => ExportPrices::class,
-//            'Dosierung'     => ExportDosage::class,
-//            'Geschmack'     => ExportFlavor::class,
-//            'Beschreibung'  => ExportDescription::class,
-//            'Mapping'       => ExportMapping::class,
         ],
     ],
 ];
