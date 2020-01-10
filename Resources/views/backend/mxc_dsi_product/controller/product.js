@@ -53,6 +53,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcCheckVariantMappingConsistency:   me.onCheckVariantMappingConsistency,
                 mxcCheckNameMappingConsistency:      me.onCheckNameMappingConsistency,
                 mxcCheckRegularExpressions:          me.onCheckRegularExpressions,
+                mxcCheckMissingModels:               me.onCheckMissingModels,
 
                 // Excel import/export
 
@@ -377,6 +378,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Check regular expresions';
         let maskText = 'Checking regular expresions ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, false);
+    },
+
+    onCheckMissingModels: function(grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=checkMissingModels}';
+        let params = {};
+        let growlTitle = 'Check missing models';
+        let maskText = 'Checking missing models ...';
         me.doRequest(grid, url, params, growlTitle, maskText, false);
     },
 

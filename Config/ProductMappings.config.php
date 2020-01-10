@@ -559,7 +559,21 @@ Die Funktionalität des Gerätes wird durch den Aspire Nautilus Mini "Hollowed O
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>Mit den SC Silikon Mundstücken können Sie eine eine reinliche Verwendung der E-Zigarette gewährleisten. Es ermöglicht Ihnen Ihre E-Zigarette auch von anderen Menschen nutzen zu lassen, ohne Einbußen in der Hygiene. Das Silikon Mundstück wird auf die E-Zigarette aufgesteckt und kann nach Bedarf mit Wasser gesäubert werden.</p>
+<p>Aus hygienischen Gründen empfiehlt sich der regelmäßige Austausch!</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">1 x SC Silikon Mundstück</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Transparent</td>
+</tr>
+</tbody>
+</table>',
     ),
     'SC10000L10-TOT' => array(
         'icNumber' => 'SC10000L10-TOT',
@@ -1153,7 +1167,30 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p>Die GS Air 2 Mundstücke sind für den Einsatz mit dem GS Air 2 Clearomizer gedacht. Dank des 510er Anschlusses passen sie jedoch in eine Vielzahl anderer Modelle. Die Mundstücke von SC sind aus hochwertigem Edelstahl gefertigt, was sie sehr strapazierfähig und hitzebeständig macht. Aufgrund ihrer Gummidichtung bilden das Mundstück und die Verdampferhülse nach dem Zusammenstecken eine wackelfreie Einheit. Sie erhalten 5 Stück pro Packung.&nbsp;</p>',
+        'description' => '<p>5er Packung Mundstücke, auch Drip-Tip genannt, für den Eleaf GS Air 2 Clearomizer mit einem 510er Anschluss, der auch auf andere Clearomizer passt.</p>
+<p>Sie werden aus hochwertigem Edelstahl gefertigt, was sie sehr strapazierfähig und hitzebeständig macht. Dank einer Gummidichtung bilden das Mundstück und die Verdampferhülse nach dem Zusammenstecken eine wackelfreie Einheit!</p>
+<p>Drip-Tips sollten aus hygienischen Gründen regelmäßig ausgetauscht werden.&nbsp;</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5 Mundstücke pro Packung</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Anschluss:</td>
+<td class="auto-style1">510er</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Material:</td>
+<td class="auto-style1">hochwertiger Edelstahl</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu:</h2>
+<ul>
+<li>Eleaf GS Air 2 Clearomizer</li>
+</ul>',
     ),
     'SC10000GSAIR2SET' => array(
         'icNumber' => 'SC10000GSAIR2SET',
@@ -1536,8 +1573,27 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'InnoCigs eGo AIO Mundstücke erzeugen einen längeren Luftstrom, da das Innere des Mundstücks spiralförmig ist. Die Mundstücke sind aus Plastik und in 7 Farben erhältlich, sodass sie an die passende AIO E-Zigarette angeglichen werden können.<br>
-<br>',
+        'description' => '<p>Passende Mundstücke für die Joyetech eGo AIO E-Zigarette sowie weitere Geräte von Joyetech.&nbsp;</p>
+<p>Der spiralförmige Kamin im Mundstück verhindert das spritzendes oder heisses Kondenswasser beim Dampfen an den Mund gelangt.</p>
+<p>Sie erhalten pro Packung 5x Joyetech Spiral Mundstücke mit InnoCigs Branding, in der bestellten Farbe.</p>
+<p>Mundstücke sind Hygieneartikel und vom Umtausch ausgeschlossen!</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5x Spiral Mundstücke pro Packung</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Schwarz oder Transparent</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Passend für:</td>
+<td class="auto-style1">eGrip2, eGo AIO, eGo AIO Pro C, Cubis und Cubis Pro Clearomizer</td>
+</tr>
+</tbody>
+</table>',
     ),
     'AS10000CLEITOSS' => array(
         'icNumber' => 'AS10000CLEITOSS',
@@ -2063,7 +2119,27 @@ InnoCigs Garantie: Sie erhalten 6 Monate Garantie auf alle InnoCigs Produkte aus
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => 'Das XTAR VC4 4 USB-Ladegerät ist kompatibel für Ni-MH und Li-Ion Akkus und kann diese gleichzeitig laden. Durch die LEDs ist der Ladeprozess immer gut sichtbar und das große Display informiert zusätzlich über den Ladeprozess und über die Kapazität. Die schnellste Ladezeit erreicht das Gerät mit einem USB-Netzteil mit 2 A Ausgangsleistung. D.h. Sie können dazu Ihr vorhandenes Smartphone Netzteil nutzen.<br>
+<br>
+<b>Lieferumfang:</b>
+<ul><li>1x Ladegerät XTAR VC4</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Schutzbeutel</li>
+<li>1x Bedienungsanleitung</li></ul><br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul><li>Maße: 14,9cm x 11,5cm x 3,5cm</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>4-Kanal-Ladegerät für Ni-MH-Akkus mit 1,2 V oder Li-Ion-Akkus mit 3,7 V Nennspannung</li>
+<li>Verpolungsschutz</li>
+<li>USB-Eingang: 5 V/2100 mA</li>
+<li>Ladeverfahren: TC/CC/CV mit Überwachung des Ladezustandes</li>
+<li>Ladbare Akkugrößen:
+Ni-MH: AAA, AA, C, D
+Li-Ion: 10440, 14500, 16340, 17670, 18350, 18500, 18650, 22650, 26650, 32650</li>
+<li>Besondeheiten bei Ni-MH-Akkus: Plusladeverfahren, automatische Abschaltung mit Negativ Delta V-, max. Ladespannung 1,45 V, Ladezeitbegrenzung mit Abschaltung</li>
+<li>Besondeheiten bei Li-Ion-Akkus: Ladeverfahren TC/CC/CV mit Überwachung des Akku-Ladezustandes, max. Ladespannung 4,2 V, Erhaltungsladung; bei Unterschreiten der Ladeschlussspannung unter 3,9 V beginnt der Ladeprozess erneut</li></ul>
+<br>',
     ),
     'AS10000EVOH' => array(
         'icNumber' => 'AS10000EVOH',
@@ -3069,7 +3145,9 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>Die Nautilus X Mundstücke (Drip Tips) sind die original verbauten Mundstücke für den Nautilus X Clearomizer von Aspire.<br> Mundstücke gehören zu den Hygieneartikeln und sollten deshalb regelmäßig ausgewechselt werden.</p>
+<h2>Lieferumfang</h2>
+<p>10x Aspire Nautilus X Drip Tip</p>',
     ),
     'IC10000TA' => array(
         'icNumber' => 'IC10000TA',
@@ -3306,7 +3384,23 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => '',
         'dosage' => '',
         'base' => null,
-        'description' => '',
+        'description' => '<p>Die Chubby Gorilla 510er Drip Tips (Mundstücke) werden aus besonders robustem ABS-Kunststoff hergestellt.</p>
+<p>Mit dem Standard-510 Anschluss passt das Chubby Gorilla Mundstück auf fast alle gängigen Clearomizer.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Anschluss:</td>
+<td class="auto-style1">510er</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Material:</td>
+<td class="auto-style1">ABS Kunststoff</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
+<p>1x Chubby Gorilla 510er Drip Tip</p>',
     ),
     'CG10000BCD' => array(
         'icNumber' => 'CG10000BCD',
@@ -3504,7 +3598,20 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => 'Der K4 Akku von Aspire hat eine Kapazität von 2000 mAh und ist für das Set K4 geeignet. Somit können Sie den Akku auch einzeln nachbestellen, falls der Akku aus Ihrem Set nicht mehr funktionieren sollte. Beim Dampfen gibt der Aspire K4 die maximale verfügbare Leistung aus. Den Aspire K4 Akku können Sie über den USB-Anschluss laden.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<li>1x K4 Akku 2000 mAh</li>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Akkukapazität: 2000 mAh</li>
+<li>Länge:: 100 mm</li>
+<li>Durchmesser: 22 mm</li>
+<li>Gewindetyp: 510 </li>
+<br>
+<br>',
     ),
     'ES100L10-AD' => array(
         'icNumber' => 'ES100L10-AD',
@@ -4895,7 +5002,21 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>Diese Mundstücke eignen sich für Verdampfer, die über ein 510er Anschluss verfügen. Sie können zwischen 3 Designs wählen. Sie erhalten 5 x Edelstahl Mundstücke pro Packung im bestellten Design.</p>
+<p>Mundstücke sind Hygieneartikel und daher vom Umtausch ausgeschlossen.&nbsp;</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5 x S1Z Edelstahl Mundstücke</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Anschluss:</td>
+<td class="auto-style1">510er</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IC100KM' => array(
         'icNumber' => 'IC100KM',
@@ -4914,7 +5035,20 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>Die Kunststoff Mundstücke im 5er-Pack haben einen 510er Anschluss und können deswegen mit vielen Verdampfern verwendet werden.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5 x Kunststoff Mundstücke pro Packung</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Anschluss:</td>
+<td class="auto-style1">510er</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IC100PRC' => array(
         'icNumber' => 'IC100PRC',
@@ -5326,17 +5460,9 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Sie haben die Möglichkeit die Aspire K2 & K3 Mundstücke entweder aus Edelstahl oder aus Kunststoff zu erwerben. Die Aspire K2 & K3 Edelstahlmundstücke bekommen Sie in einer 5er Packung und die Kunststoffmundstücke in einer 10er Packung. Beide Mundstücke eignen sich für das Aspire K2 und K3 Set.
-<br>
-<br>
-<b>Lieferumfang Edelstahlmundstücke:</b>
-<li>Je Packung 5x Edelstahlmundstücke </li>
-<br>
-<br>
-<b>Lieferumfang Kunststoffmundstücke:</b>
-<li>Je Packung 10x Kunststoffmundstücke </li>
-<br>
-<br>',
+        'description' => '<p class="auto-style3">Die Aspire K2 &amp; K3 Mundstücke gibt es in den Ausführungen Kunststoff und Edelstahl. Sie sind die originalen Zubehörartikel für die Aspire K2 und K3 Sets.&nbsp;</p>
+<h2 class="auto-style3">Lieferumfang</h2>
+<p class="auto-style3">Edelstahl: 5 Mundstücke pro bestelltes Produkt<br> Kunststoff: 10 Mundstücke pro bestelltes Produkt</p>',
     ),
     'SM100P228NS' => array(
         'icNumber' => 'SM100P228NS',
@@ -7308,8 +7434,8 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'supplier' => 'InnoCigs',
         'brand' => 'SC',
         'piecesPerPack' => 1,
-        'content' => '1000',
-        'capacity' => null,
+        'content' => '',
+        'capacity' => '6000',
         'flavor' => '',
         'flavorCategory' => null,
         'addlCategory' => '',
@@ -7750,7 +7876,54 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>Die Aspire PockeX ist eine All-in-One E-Zigarette bei der der Clearomizer (Verdampfer) und der Akku optisch fließend eine Einheit bilden. Sie ist ein handliches Gerät, welches lediglich über die Feuertaste bedient wird und ist somit auch gut für Einsteiger geeignet.&nbsp;</p>
+<h2>Aspire PockeX E-Zigaretten Set</h2>
+<p>Der Tank der Aspire PockeX E-Zigarette fasst 2 ml Liquid. Nachdem Sie die Topkappe entfernt haben, können Sie das Liquid bequem von oben einfüllen. Achten Sie jedoch darauf, dass Sie nicht die Maximalanzeige auf der Tankaußenseite überschreiten. Der Verdampferkopf wird in der Basis eingeschraubt und ist mit wenigen Handgriffen zu wechseln. Im Set enthalten sind 2 PockeX Heads (Verdampferköpfe) mit einem Widerstand von 0,6 Ohm. Sie wurden von Aspire in der sogenannten U-Coil Technologie entwickelt. Die Luft strömt hierbei durch eine Kammer in U-Form vorbei an 2 Spulen. Dies soll das geschmacksintensive Vapen mit moderater Dampfentwicklung unterstützen. Der Zugwiderstand (Airflow) ist nicht einstellbar.<br>Nach dem Austausch des Verdampferkopfes (Head oder Coil) sollten Sie ein paar Minuten warten, bevor Sie Ihre E-Zigarette wieder benutzen. Die neuen Köpfe brauchen etwas Zeit, damit sie sich mit Liquid vollsaugen.</p>
+<p>Der Akku der PockeX E-Zigarette ist fest verbaut und verfügt über eine Kapazität von 1.500 mAh. Die Aspire PockeX arbeitet im Bypass-Modus, die Leistung wird also direkt an den Coil abgegeben. Aufgeladen wird die E-Zigarette über einen Micro-USB Anschluss an der Unterseite des Gerätes.</p>
+<h2><strong>Eigenschaften&nbsp;</strong></h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Design</td>
+<td>All-In-One Gerät</td>
+</tr>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbauter Akku, 1.500 mAh</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>4,2 Volt</td>
+</tr>
+<tr>
+<td class="auto-style1">Ausgabemodus</td>
+<td class="auto-style1">Bypass (direkte Leistungsabgabe)</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td class="auto-style1">Maße (inkl. Mundstück)</td>
+<td>117,7 mm x 19,7 mm</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top-Filling</td>
+</tr>
+<tr>
+<td>Inhalation</td>
+<td>MTL, Mouth to Lung<br>DL, Direct Lung</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
+<ul>
+<li>1x Aspire PockeX E-Zigaretten Set</li>
+<li>2x Aspire PockeX Head 0,6 Ohm</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung&nbsp;</li>
+</ul>',
     ),
     'AS100PXH' => array(
         'icNumber' => 'AS100PXH',
@@ -7769,17 +7942,43 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Für das Aspire PockeX E-Zigaretten Set eignen sich die PockeX U-Tech Heads von Aspire. Sie haben ein Widerstand von 0,6 Ohm und sind daher für die Lungeninhalation geeignet oder einen Widerstand von 1,2 Ohm womit Sie den Dampf erst in die Mundhöhle ziehen und dann in die Lunge inhalieren. Damit Ihr Liquidgeschmack unverfälscht bleibt, tauschen Sie die Heads in regelmäßigen Zeitabständen um. Sie erhalten insgesamt 5 PockeX U-Tech Heads pro Packung
-<br>
-<br>
-<b>Wichtige Merkmale:</b>
-<ul><li>Widerstand: 0,6 oder 1,2 Ohm</li></ul><br>
-<b>Geeignet Für:</b>
+        'description' => '<p>Die Aspire PockeX Heads (Verdampferköpfen) erhalten Sie wahlweise mit 0,6 oder 1,2 Ohm Widerstand. Sie wurden von Aspire in der sogenannten U-Coil Technologie entwickelt. Die Luft strömt hierbei durch eine Kammer in U-Form vorbei an 2 Spulen. Sie erhalten 5 Heads mit dem gleichen Widerstand pro bestellter Packung. Sie sind z.B. für die Aspire PockeX E-Zigarette oder den Nautilus X Clearomizer geeignet. Da die Leistung an der PockeX nicht einstellbar ist, wählen Sie für diese E-Zigarette bitte die Heads mit 0,6 Ohm Widerstand.</p>
+<p>Verdampferköpfe sind Verschleißteile, Sie sollten diese daher regelmäßig wechseln. Spätestens, wenn sich der Geschmack Ihres gewählten Liquids verändert. Nach dem Austausch des Verdampferkopfes sollten Sie ein paar Minuten warten, bevor Sie Ihre E-Zigarette wieder benutzen. Die neuen Köpfe brauchen etwas Zeit, damit sie sich mit Liquid vollsaugen.</p>
+<h2>Eigenschaften Aspire PockeX Heads</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Widerstand</td>
+<td class="auto-style1">0,6 oder 1,2 Ohm</td>
+</tr>
+<tr>
+<td>Material</td>
+<td class="auto-style1">Edelstahl SS316L</td>
+</tr>
+<tr>
+<td>Wicklung</td>
+<td class="auto-style1">U-Coil</td>
+</tr>
+<tr>
+<td>Leistungsbereich 0,6 Ohm</td>
+<td class="auto-style1">18 - 23 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Leistungsbereich 1,2 Ohm</td>
+<td class="auto-style1">8 - 12 Watt</td>
+</tr>
+<tr>
+<td class="auto-style1">Stil</td>
+<td class="auto-style1">DL - Direct Lung<br> MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<h2>passend zu</h2>
 <ul>
-<li>Aspire Pockex E-Zigaretten Set</li>
+<li>Aspire PockeX E-Zigaretten Set</li>
+<li>Aspire Nautilus X Clearomizer</li>
 </ul>
-<br>
-<br>',
+<p>&nbsp;</p>',
     ),
     'AS100PXG' => array(
         'icNumber' => 'AS100PXG',
@@ -7798,9 +7997,11 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Aspire PockeX E-Zigarette gibt es in 6 Farben; so auch der Ersatzartikel Aspire PockeX Glastank. Der PockeX Glastank von Aspire fasst 2 Milliliter Liquid und kann eigenständig ausgetauscht werden. Pro Packung erhalten Sie 1 PockeX Glastank.
-<br>
-<br>',
+        'description' => '<p>Der Aspire PockeX Glastank fasst bis zu 2 ml Liquid und ist für die gleichnamige E-Zigarette in 5 Farben erhältlich.</p>
+<h2>passend zu</h2>
+<ul>
+<li>Aspire PockeX E-Zigarette</li>
+</ul>',
     ),
     'CG100LDPE30' => array(
         'icNumber' => 'CG100LDPE30',
@@ -8084,8 +8285,8 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'supplier' => 'InnoCigs',
         'brand' => 'SC',
         'piecesPerPack' => 1,
-        'content' => '100',
-        'capacity' => null,
+        'content' => '',
+        'capacity' => '1000',
         'flavor' => '',
         'flavorCategory' => null,
         'addlCategory' => '',
@@ -8391,9 +8592,26 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Presence Mundstück Kappen (auch Caps genannt) werden aus Silikon hergestellt. Sie erhalten pro bestellter Packung insgesamt 10 Mundstück-Kappen. Die Caps verhindern die Verschmutzung des Mundstücks Ihrer Presence E-Zigarette vor Schmutz oder Fremdkörpern aus Hand- und Hosentaschen. Es können sich auch während des Vapens Liquid- und Speichelrückstände im Mundstück ansammeln, die durch die Mundstück Kappen nicht auslaufen können. Beachten Sie, dass Mundstück Kappen zu Verschleiß- und Hygieneartikeln zählen und daher regelmäßig gewechselt werden sollten. Sie haben die Wahl zwischen den Farben: braun, rot, blau, weiß und schwarz.
-<br>
-<br>',
+        'description' => '<p>Die InnoCigs Presence Mundstück Kappen (auch Caps genannt) sind Zubehörartikel. Sie werden aus Silikon hergestellt.</p>
+<p>Die Caps verhindern die Verschmutzung des Mundstücks Ihrer Presence E-Zigarette vor Schmutz oder Fremdkörpern aus Hand- und Hosentaschen. Es können sich auch während des Vapens Liquid- und Speichelrückstände im Mundstück ansammeln, die durch die Mundstück Kappen nicht auslaufen können.</p>
+<p>Beachten Sie, dass Mundstück Kappen zu Verschleiß- und Hygieneartikeln zählen und daher regelmäßig gewechselt werden sollten.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">10 x Presence Mundstücke Caps pro Packung</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Material:</td>
+<td class="auto-style1">Silikon</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farben:</td>
+<td class="auto-style1">Braun, Rot, Blau, Weiß oder Schwarz</td>
+</tr>
+</tbody>
+</table>',
     ),
     'SC100EDT' => array(
         'icNumber' => 'SC100EDT',
@@ -8851,7 +9069,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'name' => 'asMODus - Minikin V2 - Akkuträger - 180 Watt',
         'commonName' => 'Minikin V2',
         'type' => 'BOX_MOD_CELL',
-        'category' => 'BOXEN > asMODus',
+        'category' => 'AKKUTRÄGER',
         'supplier' => 'asMODus',
         'brand' => 'asMODus',
         'piecesPerPack' => 1,
@@ -9040,7 +9258,10 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Aspire Athos Mundstücke können Sie in schwarz oder transparent erwerben. Die Mundstücke sind für den gleichnamigen Verdampfer Aspire Athos geeignet. Pro Packung und Variante erhalten Sie 1 Mundstück.',
+        'description' => '<p>Die Aspire Athos Mundstücke sind Zubehörartikel für den gleichnamigen Verdampfer Aspire Athos und in schwarz und transparent erhältlich.</p>
+<p>Aus hygienischen Gründen sollten die Mundstücke regelmäßig ausgewechselt werden!</p>
+<h2>Lieferumfang</h2>
+<p>1x Aspire Athos Mundstück</p>',
     ),
     'AS100A5' => array(
         'icNumber' => 'AS100A5',
@@ -10344,9 +10565,25 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Exceed D22 Mundstücke von InnoCigs eignen sich ideal für den gleichnamigen Exceed D22 Verdampfer. Das Mundstück verfügt über einen 510er Anschluss und kann unkompliziert bei bedarf ausgetauscht werden. Aus hygienischen Gründen sollten Sie die Mundstücke regelmäßig austauschen. Pro Packung sind insgesamt 5 Exceed D22 Mundstücke enthalten.
-<br>
-<br>',
+        'description' => '<p>Passende Mundstücke für den Exceed D22 Clearomizer mit 510er Anschluss. Sie erhalten pro Packung 5 Stück.</p>
+<p>Aus hygienischen Gründen sollten Sie die Mundstücke regelmäßig austauschen.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5 x Exceed D22 Mundstücke pro Packung</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Schwarz</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Passend für:</td>
+<td class="auto-style1">Exceed D22 Clearomizer von InnoCigs</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IC100EDG' => array(
         'icNumber' => 'IC100EDG',
@@ -11204,7 +11441,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Erste Sahne. Geschmack: Eisbonbon.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Eisbonbon</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Erste Sahne. Geschmack: Eisbonbon.</strong></p><p>Die 120 ml Flasche enthält 1200 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit -1080 ml Nikotin-Shot oder -1080 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>1200 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Eisbonbon</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'ES100L10-CP' => array(
         'icNumber' => 'ES100L10-CP',
@@ -11499,10 +11736,21 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Hier finden Sie die passenden Mundstücke für Ihren Exceed D19 Clearomizer. Pro besteller Packung erhalten Sie insgesamt fünf Mundstücke. Es wird empfohlen Mundstücke regelmäßig zu tauschen, da es sich hierbei um einen Hygieneartikel handelt.
-<br>
-<br>
-',
+        'description' => '<p>Passende Mundstück für den Joyetech Exceed D19 Clearomizer. Pro Packung erhalten Sie 5x Joyetech Exceed D19 Mundstücke mit InnoCigs Branding.</p>
+<p>Mundstücke sind Hygieneartikel und vom Umtausch ausgeschlossen!</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Schwarz</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Passend für:</td>
+<td class="auto-style1">Exceed D19 Clearomizer</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IC100EXG' => array(
         'icNumber' => 'IC100EXG',
@@ -13623,7 +13871,31 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => 'Ein weiterer Akkuträger aus dem Hause asMODus ist der Lustro mit einer maximalen Ausgangsleistung von 200 Watt. Damit der Akkuträger in Betrieb genommen werden kann, müssen zwei 18650er Akkuzellen eingesetzt werden. Bitte beachten Sie, dass sich keine Akkuzellen im Lieferumfang befinden. Wie auch seine Vorgänger unterstützt der Lustro das Dampfen mit den Modi: VW / TC (Ni200, SS304, SS316, SS317, Ti) / TCR / TFR und Curve. Die Bedienung erfolgt via Touch-Funktion oder Sie können aufgrund eines Infrarot-Sensors eine komplett freihändige Einstellung vornehmen. <br>
+<br>
+<b>Der asMODus Lustro 200 Watt Akkuträger wird ohne 18650er Akkus ausgeliefert.</b>
+<br>
+<br>
+<b> Lieferumfang:</b><ul>
+<li>1x asMODus Lustro Akkuträger 200 Watt</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li></ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Ausgabemodi: VW / TC (Ni200, SS304, SS316, SS317, Ti) / TCR/ TFR / Curve</li>
+<li>Ausgangsleistung: 5 Watt - 200 Watt (5 Watt - 120 Watt im TC-Modus)</li>
+<li>Widerstandsbereich: 0,1 - 2,5 Ohm</li>
+<li>Temperaturbereich: 100°C - 300°C (212° - 572°F)</li>
+<li>Touchscreen-Display mit IR-Sensor</li>
+<li>Gewindetyp: 510er</li>
+<li>Chip: GX-200-HUT</li>
+<li>max. Ausgangsspannung: 7,5 V</li>
+<li>max. Ausgangsstrom 45 A</li>
+<li>Maße: 80,4 mm x 40,5 mm x 36,0 mm</li>
+<br>
+<br>
+',
     ),
     'VV100A10-KS' => array(
         'icNumber' => 'VV100A10-KS',
@@ -14654,10 +14926,22 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die P16A Mundstücke von Justfog sind für den gleichnamigen Clearomizer geeignet. Pro Packung erhalten Sie insgesamt 5 Mundstücke. Tauschen Sie die Mundstücke regelmäßig aus, da diese zu den Hygieneartikeln gehören.
-<br>
-<br>
-',
+        'description' => '<p>Passende Mundstücke für den Justfog P16A Clearomizer. In jeder Packung, die Sie bestellen, sind fünf P16A Mundstücke enthalten.</p>
+<p>Durch&nbsp;vorsichtiges Drehen und&nbsp;Ziehen&nbsp;des Mundstücks wird es aus&nbsp;der Top Kappe gelöst und man kann es&nbsp;durch ein neues Mundstück austauschen.</p>
+<p>Bitte beachten&nbsp;Sie, dass Mundstücke&nbsp;Hygiene-Artikel sind und&nbsp;zeitnah ausgewechselt werden sollten.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5 x P16A Mundstücke pro Packung</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Schwarz</td>
+</tr>
+</tbody>
+</table>',
     ),
     'JF100Q16' => array(
         'icNumber' => 'JF100Q16',
@@ -15745,7 +16029,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'XTARPB2' => array(
         'icNumber' => 'XTARPB2',
@@ -15764,7 +16048,7 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'VV100L10-BH' => array(
         'icNumber' => 'VV100L10-BH',
@@ -17631,7 +17915,7 @@ Die Chubby Gorilla Vitrine weist einen Durchmesser von 50cm und eine Höhe von 1
         'brand' => 'Simple Essentials',
         'piecesPerPack' => 1,
         'content' => '10',
-        'capacity' => '10',
+        'capacity' => '100',
         'flavor' => 'Tabak',
         'flavorCategory' => 'Tabak',
         'addlCategory' => null,
@@ -19251,12 +19535,12 @@ Die Chubby Gorilla Vitrine weist einen Durchmesser von 50cm und eine Höhe von 1
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
-        'flavor' => '',
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
         'flavorCategory' => null,
         'addlCategory' => '',
-        'dosage' => '',
+        'dosage' => null,
         'base' => null,
         'description' => '<p>Die Aspire Breeze 2 ist eine E-Zigarette, die sich besonders gut für den Umstieg vom Rauchen auf das Dampfen eignet. Sie ist aus leichtem Aluminium gefertigt und hat ein kompaktes, schlichtes unaufdringliches Design.</p>
 <p>Die Aspire Breeze 2 ist so einfach zu bedienen wie andere Pod-Systeme auch, bietet Ihnen aber anders als meisten Pod-Systeme darüber hinaus die Möglichkeit, verschiedene Verdampferköpfe einzusetzen und die Luftzufuhr individuell einzustellen. Deshalb ist die Aspire Breeze 2 E-Zigarette besonders gut geeignet, die eigenen Vorlieben zu erforschen und einen eigenen Dampfstil zu entwickeln.</p>
@@ -20577,7 +20861,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: Anis, Beeren, Birne, Orange, Zitrone.</strong></p><p>Wählen Sie zwischen 25 ml und 200 ml überaromatisiertem, nikotinfreien E-Liquid aus.</p><p>Die Variante mit 25 ml E-Liquid erhalten in einer 30 ml Flasche. Füllen Sie diese Flasche einfach mit 5 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><p>In der 200 ml Variante erhalten Sie neben der vollständig mit überaromatisiertem E-Liquid gefüllten 200 ml Flasche zwei 60 ml Leerflaschen zum Mischen Ihres E-Liquids. Füllen Sie dazu eine 60 ml Flasche mit 50 ml E-Liquid und 10 ml Nikotin-Shot oder Basis. Gut schütteln und Ihr E-Liquid ist fertig.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid</td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Birne, Orange, Zitrone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: Anis, Beeren, Birne, Orange, Zitrone.</strong></p><p>Die  ml Flasche enthält 25 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit -25 ml Nikotin-Shot oder -25 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>25 ml überaromatisiertes E-Liquid in  ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Birne, Orange, Zitrone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'CS10010-TT' => array(
         'icNumber' => 'CS10010-TT',
@@ -20596,7 +20880,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: Mango, schwarze Johannisbeere, tropische Früchte.</strong></p><p>Wählen Sie zwischen 25 ml und 200 ml überaromatisiertem, nikotinfreien E-Liquid aus.</p><p>Die Variante mit 25 ml E-Liquid erhalten in einer 30 ml Flasche. Füllen Sie diese Flasche einfach mit 5 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><p>In der 200 ml Variante erhalten Sie neben der vollständig mit überaromatisiertem E-Liquid gefüllten 200 ml Flasche zwei 60 ml Leerflaschen zum Mischen Ihres E-Liquids. Füllen Sie dazu eine 60 ml Flasche mit 50 ml E-Liquid und 10 ml Nikotin-Shot oder Basis. Gut schütteln und Ihr E-Liquid ist fertig.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid</td></tr><tr><td>Geschmack </td><td>Mango, schwarze Johannisbeere, tropische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: Mango, schwarze Johannisbeere, tropische Früchte.</strong></p><p>Die  ml Flasche enthält 25 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit -25 ml Nikotin-Shot oder -25 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>25 ml überaromatisiertes E-Liquid in  ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, schwarze Johannisbeere, tropische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'CS10010-LR' => array(
         'icNumber' => 'CS10010-LR',
@@ -20615,7 +20899,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: Beeren, Erdbeere, Limonade.</strong></p><p>Wählen Sie zwischen 25 ml und 200 ml überaromatisiertem, nikotinfreien E-Liquid aus.</p><p>Die Variante mit 25 ml E-Liquid erhalten in einer 30 ml Flasche. Füllen Sie diese Flasche einfach mit 5 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><p>In der 200 ml Variante erhalten Sie neben der vollständig mit überaromatisiertem E-Liquid gefüllten 200 ml Flasche zwei 60 ml Leerflaschen zum Mischen Ihres E-Liquids. Füllen Sie dazu eine 60 ml Flasche mit 50 ml E-Liquid und 10 ml Nikotin-Shot oder Basis. Gut schütteln und Ihr E-Liquid ist fertig.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid</td></tr><tr><td>Geschmack </td><td>Beeren, Erdbeere, Limonade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: Beeren, Erdbeere, Limonade.</strong></p><p>Die  ml Flasche enthält 25 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit -25 ml Nikotin-Shot oder -25 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>25 ml überaromatisiertes E-Liquid in  ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Erdbeere, Limonade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'CS10010-DD' => array(
         'icNumber' => 'CS10010-DD',
@@ -20634,7 +20918,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: Donut, Erdbeere, Vanille.</strong></p><p>Wählen Sie zwischen 25 ml und 200 ml überaromatisiertem, nikotinfreien E-Liquid aus.</p><p>Die Variante mit 25 ml E-Liquid erhalten in einer 30 ml Flasche. Füllen Sie diese Flasche einfach mit 5 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><p>In der 200 ml Variante erhalten Sie neben der vollständig mit überaromatisiertem E-Liquid gefüllten 200 ml Flasche zwei 60 ml Leerflaschen zum Mischen Ihres E-Liquids. Füllen Sie dazu eine 60 ml Flasche mit 50 ml E-Liquid und 10 ml Nikotin-Shot oder Basis. Gut schütteln und Ihr E-Liquid ist fertig.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid</td></tr><tr><td>Geschmack </td><td>Donut, Erdbeere, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Chicken Shop. Geschmack: Donut, Erdbeere, Vanille.</strong></p><p>Die  ml Flasche enthält 25 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit -25 ml Nikotin-Shot oder -25 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>25 ml überaromatisiertes E-Liquid in  ml Flasche </td></tr><tr><td>Geschmack </td><td>Donut, Erdbeere, Vanille</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'DJ10010-PC' => array(
         'icNumber' => 'DJ10010-PC',
@@ -20672,7 +20956,7 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Disco Juice. Geschmack: Anis, Cola, Limette, Zitrone.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Anis, Cola, Limette, Zitrone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DJ10010-MM' => array(
         'icNumber' => 'DJ10010-MM',
@@ -21531,14 +21815,28 @@ Für das Aspire Breeze 2 E-Zigaretten Set eignet sich das Aspire Breeze 2 Cartri
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die Aero Mesh Mundstücke sind passende Zubehörartikel für den gleichnamigen Verdampfer. Pro Packung und Farbe ist ein Mundstück enthalten. Sie haben die Wahl zwischen den Farben schwarz oder orange.
-<br><br>',
+        'description' => '<p>Mundstück für den GeekVape Aero Mesh Verdampfer.</p>
+<p>Pro Packung und Farbe ist ein Mundstück enthalten.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">1 x GeekVape Resin Mundstück</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farben:</td>
+<td class="auto-style1">Schwarz, Orange</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>',
     ),
     'AS100CR' => array(
         'icNumber' => 'AS100CR',
         'number' => 'AS100CR',
-        'name' => 'Aspire - Cygnet - Revvo - E-Zigarette',
-        'commonName' => 'Cygnet',
+        'name' => 'Aspire - Cygnet Revvo - E-Zigarette',
+        'commonName' => 'Cygnet Revvo',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN',
         'supplier' => 'Aspire',
@@ -22552,7 +22850,7 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'name' => 'Aspire - Puxos - E-Zigarette',
         'commonName' => 'Puxos',
         'type' => 'E_CIGARETTE',
-        'category' => 'E-ZIGARETTEN > Aspire',
+        'category' => 'E-ZIGARETTEN',
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
@@ -22909,7 +23207,21 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>Passende Mundstücke für den Joyetech Exceed Air Plus Clearomizer. Pro bestellter Packung erhalten Sie 5 x Mundstücke.</p>
+<p>Mundstücke sind Hygieneartikel und vom Umtausch ausgeschlossen!</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Schwarz</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Passend für:</td>
+<td class="auto-style1">Exceed Air Plus Clearomizer</td>
+</tr>
+</tbody>
+</table>',
     ),
     'AS100DY' => array(
         'icNumber' => 'AS100DY',
@@ -23692,7 +24004,25 @@ Die Whirl Verdampferköpfe von Uwell sind die passenden Heads für die Uwell Whi
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>Passende Mundstücke für den Joytech NotchCore Clearomizer. Durch eine leichte Drehbewegung lässt sich das Mundstück lösen und austauschen.</p>
+<p>Aus hygienischen Gründen sollten Sie die Mundstücke regelmäßig austauschen.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">5 x Joyetech Notchcore Mundstücke pro Packung</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Schwarz</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Passend für:</td>
+<td class="auto-style1">NotchCore Clearomizer von InnoCigs</td>
+</tr>
+</tbody>
+</table>',
     ),
     'IC100NCG' => array(
         'icNumber' => 'IC100NCG',
@@ -26221,8 +26551,8 @@ strong>Lieferumfang</strong>
         'supplier' => 'InnoCigs',
         'brand' => 'SC',
         'piecesPerPack' => 1,
-        'content' => '500',
-        'capacity' => null,
+        'content' => '',
+        'capacity' => '3000',
         'flavor' => '',
         'flavorCategory' => null,
         'addlCategory' => '',
@@ -28025,10 +28355,10 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'SK100V8T10' => array(
         'icNumber' => 'SK100V8T10',
         'number' => 'SK100V8T10',
-        'name' => 'Smok TFV8 - V8-T10 Decuple Head - 0,12 Ohm (3 Stück pro Packung) - by Steamax',
-        'commonName' => 'V8-T10 Decuple',
+        'name' => 'SMOK - TFV8 V8-T10 Decuple Head - 0,12 Ohm (3 Stück pro Packung) - by Steamax',
+        'commonName' => 'TFV8 V8-T10 Decuple',
         'type' => 'HEAD',
-        'category' => 'ZUBEHÖR > Verdampferköpfe > Smoktech',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
         'supplier' => 'Smoktech',
         'brand' => 'Steamax',
         'piecesPerPack' => 3,
@@ -28755,7 +29085,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Twisted. Geschmack: Birne, Pfirsich, Sahne.</strong></p><p>Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Birne, Pfirsich, Sahne</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Twisted. Geschmack: Birne, Pfirsich, Sahne.</strong></p><p>Die 60 ml Flasche enthält  ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 60 ml Nikotin-Shot oder 60 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Birne, Pfirsich, Sahne</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'TW100L10-CT' => array(
         'icNumber' => 'TW100L10-CT',
@@ -28888,7 +29218,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Twisted. Geschmack: Erdbeere, Koolada.</strong></p><p>Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Twisted. Geschmack: Erdbeere, Koolada.</strong></p><p>Die 60 ml Flasche enthält  ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 60 ml Nikotin-Shot oder 60 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'TW100L10-KF' => array(
         'icNumber' => 'TW100L10-KF',
@@ -29116,10 +29446,24 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Mundstück ist kombinierbar mit dem Nautilus 2S Verdampfer von der Marke Aspire. Bitte beachten Sie, dass Sie Mundstücke aus hygienischen Gründen regelmäßig austauschen sollten.
-<br>
-<br>
-',
+        'description' => '<p>Das Nautilus 2S Mundstück wird speziell für den Aspire Nautilus 2S Verdampfer hergestellt.</p>
+<p><span>Mit dem Aspire Nautilus 2S Mundstück halten Sie Ihren Verdampfer durch einen regelmäßigen Wechsel stets sauber und hygienisch.&nbsp;<br></span>Das Mundstück wird einfach vom Clearomizer abgezogen, durch ein neues Mundstück ersetzt und einfach wieder auf die Mundstückvorrichtung am Clearomizer gedrückt.</p>
+<p>Die Variante in Acryl besteht aus Kunststoff, wohingegen die Variante in Silber aus Edelstahl gefertigt wurde.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Silber oder Acryl</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Material:</td>
+<td class="auto-style1">Edelstahl oder Kunststoff</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
+<p>1x Aspire Nautilus S2 Mundstück</p>',
     ),
     'WM100LM' => array(
         'icNumber' => 'WM100LM',
@@ -30609,8 +30953,8 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'VS100LN' => array(
         'icNumber' => 'VS100LN',
         'number' => 'VS100LN',
-        'name' => 'Vaporesso - Luxe - Nano E-Zigarette',
-        'commonName' => 'Luxe',
+        'name' => 'Vaporesso - Luxe Nano - E-Zigarette',
+        'commonName' => 'Luxe Nano',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN',
         'supplier' => 'Vaporesso',
@@ -30667,8 +31011,8 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'VS100LNA' => array(
         'icNumber' => 'VS100LNA',
         'number' => 'VS100LNA',
-        'name' => 'Vaporesso - Luxe - Nano Akku - 2.500 mAh',
-        'commonName' => 'Luxe',
+        'name' => 'Vaporesso - Luxe Nano - Akku - 2.500 mAh',
+        'commonName' => 'Luxe Nano',
         'type' => 'BOX_MOD',
         'category' => 'AKKUTRÄGER',
         'supplier' => 'Vaporesso',
@@ -31238,11 +31582,21 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Verwenden Sie Baby V2 Mundstück für den TFV8 Baby V2 Clearomizer von Smok. Mundstücke zählen zu den Hygieneartikeln und Sie sollten diese regelmäßig auswechseln. 
-<br>
-<br>
-
-',
+        'description' => '<p>Passendes Mundstück für den SMOK TFV8 Baby V2 Clearomizer. Für den Austausch benötigen Sie kein Werkzeug. Sie ziehen lediglich das Mundstück von der Top Kappe ab und setzen das neue Mundstück wieder ein.</p>
+<p>Mundstücke sind Hygieneartikel und sollten daher in regelmäßigen Zeitintervallen ausgetasucht werden.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">1 SMOK TFV8 Baby V2 Mundstück</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farbe:</td>
+<td class="auto-style1">Schwarz</td>
+</tr>
+</tbody>
+</table>',
     ),
     'GV100AT' => array(
         'icNumber' => 'GV100AT',
@@ -31516,8 +31870,8 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
     'GV100LV' => array(
         'icNumber' => 'GV100LV',
         'number' => 'GV100LV',
-        'name' => 'GeekVape - Loop V1.5 RDA - Verdampfer',
-        'commonName' => 'Loop V1.5 RDA',
+        'name' => 'GeekVape - Loop v1.5 RDA Verdampfer',
+        'commonName' => 'Loop v1.5 RDA Verdampfer',
         'type' => 'CLEAROMIZER_RDA',
         'category' => 'SELBSTWICKLER > Verdampfer',
         'supplier' => 'GeekVape',
@@ -35287,15 +35641,35 @@ Der Ammit Dual Coil RTA ist ein Verdampfer aus dem Hause GeekVape, der für das 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Pro bestellter Packung erhalten Sie 10 Resin-Mundstücke. Diese sind unter anderem geeignet für Ihren Ammit MTL RTA oder Zeus Dual RTA  von der Marke GeekVape. Zum Wechseln des Mundstücks muss lediglich vorsichtig daran gezogen werden um es zu lösen.
-<br>
-<br>
-<strong>Wichtige Merkmale</li>
-<ul>
-<li>Material: Epoxy Resin</li>
-<li>Durchmesser: 18mm</li>
-<li>Höhe: 1mm</li>
-</ul>',
+        'description' => '<p>Die 810er Resin Mundstücke von GeekVape sind Zubehörartikel für die GeekVape <span> Ammit MTL RTA, </span>Blitzen RTA, Zeus RTA oder Loop RDA Clearomizer.</p>
+<p>Mundstücke sind Hygieneartikel und sollten daher regelmäßig ausgetauscht werden.</p>
+<p>Der Austausch ist relativ simpel. Sie ziehen lediglich das Mundstück behutsam von der Top Kappe Ihres Clearomizers ab und setzen das neue Mundstück wieder auf. So einfach geht´s!</p>
+<div>Pro bestellter Packung erhalten Sie 10 GeekVape 810 Resin Mundstücke in der von Ihnen gewählten Farbe.</div>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Lieferumfang:</td>
+<td class="auto-style1">10 Mundstücke pro Packung</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Material:&nbsp;</td>
+<td class="auto-style1">Epoxy Resin</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Durchmesser:</td>
+<td class="auto-style1">18 mm</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Höhe:</td>
+<td class="auto-style1">11 mm</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farben:</td>
+<td class="auto-style1">Blau, Grün, Hellgrün, Rot</td>
+</tr>
+</tbody>
+</table>',
     ),
     'HE100HB' => array(
         'icNumber' => 'HE100HB',
@@ -37692,12 +38066,12 @@ Bei der Ausgangsleistung können Sie zwischen den drei Leistungsstufen von 9, 10
         'supplier' => 'Uwell',
         'brand' => 'Uwell',
         'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
         'flavorCategory' => null,
         'addlCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
         'description' => 'Die aus dem Hause Uwell stammende Caliburn ist eine All-In-One E-Zigarette. Dabei bilden der festverbaute Akku mit einer Kapazität von 520mAh und der wechselbare Pod mit einem integriertem Verdampferkopf (1,4 Ohm) eine fließende Einheit. Das Pod können Sie per Top-Filling von oben mit frischem Liquid befüllen. Die Uwell Caliburn E-Zigarette verfügt über eine Zugautomatik, mit der Sie nach dem Einschalten (5-Klick-Automatik) ohne weiteres betätigen der Feuertaste Vapen können. Die Caliburn ist für das moderate Dampfen (MTL) bzw. Backdampfen ausgelegt.  
 <br>
@@ -37983,17 +38357,10 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Mit dem kabellosen Ladegerät von Digiflavor können Sie beispielsweise die Akkuzellen Ihres Digiflavor Edge Akkuträgers wieder aufladen. Das Laden der Zellen erfolgt lediglich über Berührung bei einer maximalen Ausgabespannung von 15 Watt. Ein Überladungs- sowie ein Kurzschlussschutz geben Ihnen eine zusätzliche Sicherheit beim Laden der Akkuzellen.
-<br>
-<br> 
-<strong>Lieferumfang</strong>
-<ul>
-<li>1x Digiflavor Edge Ladegerät</li>
-<li>1x USB-Ladekabel</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<strong>Wichtige Merkmale:</strong>
+        'description' => '<p>Mit dem kabellosen Ladegerät von Digiflavor können Sie beispielsweise die Akkuzellen Ihres Digiflavor Edge Akkuträgers wieder aufladen. Das Laden der Zellen erfolgt lediglich über Berührung bei einer maximalen Ausgabespannung von 15 Watt. Sogar Smartphones, die das Induktionsladen unterstützen, können mit diesem Ladegerät aufgeladen werden. Ein Überladungs- sowie ein Kurzschlussschutz geben Ihnen eine zusätzliche Sicherheit beim Laden der Akkuzellen.</p>
+<h2>Lieferumfang</h2>
+<p>1x Digiflavor Edge Ladegerät<br>1x USB-Ladekabel<br>1x Bedienungsanleitung</p>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Ladegeschwindigkeit: 5V/2A - 9V/1.67A - 12V/1.5A</li>
 <li>Ausgabespannung: 15 Watt</li>
@@ -38004,8 +38371,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 <li>Maße: 100mm x 99mm x 65mm</li>
 <li>USB-C-Anschluss</li>
 </ul>
-<br>
-',
+<p>&nbsp;</p>',
     ),
     'GV100F' => array(
         'icNumber' => 'GV100F',
@@ -40675,8 +41041,8 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SK100V9' => array(
         'icNumber' => 'SK100V9',
         'number' => 'SK100V9',
-        'name' => 'SMOK - Stick - V9 E-Zigarette',
-        'commonName' => 'Stick',
+        'name' => 'SMOK - Stick V9 - E-Zigarette',
+        'commonName' => 'Stick V9',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN',
         'supplier' => 'Smoktech',
@@ -40964,7 +41330,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Wassermelone, Koolada.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Wassermelone, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'AS100KP' => array(
         'icNumber' => 'AS100KP',
@@ -41012,7 +41378,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Erdbeere, Koolada.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Erdbeere, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-OM' => array(
         'icNumber' => 'DR100L10-OM',
@@ -41031,7 +41397,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Orange, Mango, Koolada.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Orange, Mango, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-GP' => array(
         'icNumber' => 'DR100L10-GP',
@@ -41050,7 +41416,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Traube, Koolada.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Traube, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-CY' => array(
         'icNumber' => 'DR100L10-CY',
@@ -41069,7 +41435,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Kirsche, Koolada.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Kirsche, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-HB' => array(
         'icNumber' => 'DR100L10-HB',
@@ -41088,7 +41454,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Honigmelone, Johannisbeere, Koolada.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Honigmelone, Johannisbeere, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-AC' => array(
         'icNumber' => 'DR100L10-AC',
@@ -41107,7 +41473,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Apfel, Cranberry, Koolada.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Apfel, Cranberry, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-CC' => array(
         'icNumber' => 'DR100L10-CC',
@@ -41126,7 +41492,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Pfefferminzbonbon.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Pfefferminzbonbon</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-CB' => array(
         'icNumber' => 'DR100L10-CB',
@@ -41145,7 +41511,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Pfefferminzbonbon, Kaugummi.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Pfefferminzbonbon, Kaugummi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-CR' => array(
         'icNumber' => 'DR100L10-CR',
@@ -41164,7 +41530,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Pfefferminzbonbon, Himbeere.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Pfefferminzbonbon, Himbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-RM' => array(
         'icNumber' => 'DR100L10-RM',
@@ -41183,7 +41549,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Erdbeere.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-EG' => array(
         'icNumber' => 'DR100L10-EG',
@@ -41202,7 +41568,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Energy Drink, Koolada.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Energy Drink, Koolada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-SS' => array(
         'icNumber' => 'DR100L10-SS',
@@ -41221,7 +41587,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Erdbeere, Milchshake.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Erdbeere, Milchshake</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-BR' => array(
         'icNumber' => 'DR100L10-BR',
@@ -41240,7 +41606,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Himbeere, Milchshake.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Himbeere, Milchshake</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'DR100L10-SN' => array(
         'icNumber' => 'DR100L10-SN',
@@ -41259,7 +41625,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Banane, Milchshake.</strong></p><p>Wählen Sie zwischen einer 30 ml Flasche mit 25 ml und einer 120 ml Flasche mit 100 ml überaromatisiertem, nikotinfreien E-Liquid aus. Füllen Sie die Flasche einfach mit 5 ml bzw. 20 ml Nikotin-Shot oder Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Überaromatisiertes E-Liquid in Flasche zum Auffüllen</td></tr><tr><td>Geschmack </td><td>Banane, Milchshake</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '',
     ),
     'CA100L' => array(
         'icNumber' => 'CA100L',
@@ -41439,8 +41805,8 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SK100V9M' => array(
         'icNumber' => 'SK100V9M',
         'number' => 'SK100V9M',
-        'name' => 'SMOK - Stick - V9 Max E-Zigarette',
-        'commonName' => 'Stick',
+        'name' => 'SMOK - Stick V9 Max - E-Zigarette',
+        'commonName' => 'Stick V9 Max',
         'type' => 'E_CIGARETTE',
         'category' => 'E-ZIGARETTEN',
         'supplier' => 'Smoktech',
@@ -41498,8 +41864,8 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
     'SK100V9G' => array(
         'icNumber' => 'SK100V9G',
         'number' => 'SK100V9G',
-        'name' => 'SMOK - Stick - V9 Bulb Glastank',
-        'commonName' => 'Stick',
+        'name' => 'SMOK - Stick V9 - Bulb Glastank',
+        'commonName' => 'Stick V9',
         'type' => 'TANK',
         'category' => 'ZUBEHÖR > Glastanks & Schutz',
         'supplier' => 'Smoktech',
@@ -46055,25 +46421,21 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Für den Minkin V3S von Asmodus gibt es mit dem Wireless-Charger eine kabellose Möglichkeit Ihren Akku aufzuladen. Somit brauchen Sie Ihren Minikin V3S nicht mehr mit einem USB-Kabel zu verbinden, sondern stellen diesen einfach auf die Ladestation. Ein USB-Kabel um den Wireless-Charger mit Strom zu versorgen ist im Lieferumfang enthalten. Ein Kurzschlussschutz ist integriert.
-<br>
-<br>
-<b>Lieferumfang</b>
+        'description' => '<p>Der asMODus Wireless Charger ist ein kabelloses Ladegerät für den asMODus Minikin V3S. Sie benötigen kein USB-Kabel, sondern legen es einfach auf die Ladestation.</p>
+<p>Ein USB-Kabel, um den Wireless Charger zu laden, ist im Lieferumfang enthalten. Ein Kurzschlussschutz ist integriert.</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1 x Minikin V3S Wireless-Charger </li>
-<li>1 x USB-Kabel</li>
+<li>1x Minikin V3S Wireless-Charger</li>
+<li>1x USB-Kabel</li>
 </ul>
-<br>
-<br>
-<b>Wichtige Merkmale</b>
+<h2>Eigenschaften</h2>
 <ul>
 <li>Output: 5V / 2A</li>
 <li>Maße: 87,6 x 71,5 x 17 mm</li>
-<li>Kabellos</li>
+<li>Kabelloses Laden</li>
 <li>Überladungsschutz</li>
 <li>Kurzschlussschutz</li>
-</ul>
-',
+</ul>',
     ),
     'SG100MM' => array(
         'icNumber' => 'SG100MM',
@@ -47333,16 +47695,16 @@ Der Zahtog RDA Verdampfer aus dem Hause Cthulhu ist ein Selbstwickel-Verdampfer.
         'name' => 'Nikola - Medea - Akkuträger - 218 Watt',
         'commonName' => 'Medea',
         'type' => 'BOX_MOD_CELL',
-        'category' => 'BOXEN',
+        'category' => 'AKKUTRÄGER',
         'supplier' => 'Nikola',
         'brand' => 'Nikola',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
-        'flavor' => '',
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
         'flavorCategory' => null,
         'addlCategory' => '',
-        'dosage' => '',
+        'dosage' => null,
         'base' => null,
         'description' => 'Sie können mit dem Akkuträger Medea 218 Watt von Nikola in unterschiedlichen Modi dampfen. Die maximale Ausgangsleistung liegt bei 218 Watt. Damit Sie den Medea Akkuträger in Betrieb nehmen können, müssen zwei 18650er Akkuzellen eingesetzt werden, welche nicht Teil des Lieferumfangs sind. Der Medea Akkuträger aus dem Hause Nikola verfügt über ein 0,96 Zoll großes OLED-Display über welches Sie alle Ihre Einstellungen einsehen  können. Den Akkuträger richten Sie über die Feuer-, sowie zwei Einstelltasten ein.
 <br>
@@ -49291,8 +49653,27 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Furai 510er Drip Tip Set von Cthulhu besteht aus 10 Mundstücken. Das Set ist sowohl in silber, als auch in schwarz erhältlich. Pro Set sind fünf Mundstücke in Edelstahl und somit auch in der gewählten Farbe und fünf Mundstücke aus Kunststoff welche die Farben Weiß oder Gelb aufweisen. Sie erhalten verschiedene Mundstücke die überwiegend für das Dampfen im moderaten bereich ausgelegt sind, da sie einen geringeren Durchmesser haben. Die Längen der Mundstücke variieren zwischen 5mm und 29,5mm. 
-',
+        'description' => '<p>Das Furei 510er Drip Tip Set von Cthulhu besteht aus 10 Drip Tips mit 510er Anschluss in silber oder schwarz. Jedes Set enthält 5 Edelstahl Mundstücke und 5 Kunststoff Mundstücke mit verschiedenen Längen und Durchmessern.</p>
+<p>Die Mundstücke sind überwiegend für das Dampfen im moderaten Bereich gedacht, da sie einen geringen Durchmesser haben.</p>
+<h2>Eigenschaften</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1" valign="middle">Anschluss:</td>
+<td class="auto-style1">510er</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Material:</td>
+<td class="auto-style1">Edelstahl und Kunststoff</td>
+</tr>
+<tr>
+<td class="auto-style1" valign="middle">Farben:</td>
+<td class="auto-style1">Silber oder Schwarz</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
+<p>10x Cthulhu Furai 510er Drip Tip</p>',
     ),
     'EA100A10-MG' => array(
         'icNumber' => 'EA100A10-MG',
@@ -49925,7 +50306,7 @@ Die am oberen Ende des Akkuträgers befindliche Airflow stellt sich bei diesem G
         'name' => 'Innokin - Prism S Head (5 Stück pro Packung)',
         'commonName' => 'Prism S',
         'type' => 'HEAD',
-        'category' => 'ZUBEHÖR > Verdampferköpfe > Innokin',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
         'supplier' => 'Innokin',
         'brand' => 'Innokin',
         'piecesPerPack' => 5,
@@ -50504,39 +50885,7 @@ wurden zwei Mesh-Wickklungen verbaut. Das Trägermaterial in den Heads setzt sic
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das OBS Cube Mini E-Zigaretten Set hat einen fest verbauten Akku welcher eine Laufzeit von 1500mAh besitzt. Der im Set enthaltene Cube Mini Clearomizer hat ein Tankvolumen von 2ml und kann mittels eines Top-Filling Systems von oben befüllt werden. Im Lieferumfang befinden sich zwei Verdampferköpfe mit folgenden Merkmalen: 1x S1 Mesh Verdampfer mit 0,6 Ohm Widerstand welcher für das Dampfen mit herkömmlichen Liquids geeignet ist und 1x N1 Verdampfer mit 1,2 Ohm Widerstand der für das Dampfen mit Nikotinsalz-Liquids empfohlen wird. Den Ladestand des Akkus erfahren Sie über eine LED unterhalt des Feuertasters, hier signalisiert die Farbe weiß einen Ladestand über 75%. Die LED leuchtet rot sobald der Ladezustand des Akkus unterhalb von 75% liegt. Trotz der geringen größe des Cube Mini E-Zigaretten Sets sind alle Sicherheitsfunktionen verbaut. Es kommen Tiefenentlade-, Überlade-, Kurzschluss-, sowie ein Überhitzungsschutz zum Einsatz. 
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>         
-<li>1x Cube Mini 1500mAh Akku</li>
-<li>1x Cube Mini Clearomizer</li>
-<li>1x S1 Mesh Head 0,6 Ohm</li>
-<li>1x N1 Head 1,2 Ohm</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Cube Mini 1500mAh Akku</strong>
-<ul>
-<li>Akku: 1500mAh</li>
-<li>Ausgabemodi: konstant 3,5 Volt</li>
-<li>Gewindetyp: 510</li>
-<li>Höhe: 71mm</li>
-<li>Durchmesser: 26mm</li>
-</ul>
-<strong>Cube Mini Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 2 ml</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Glas, Edelstahl</li>
-<li>MTL-fähig</li>
-<li>Top Filling</li>
-<li>Airflow Control</li>
-<li>Höhe: 42mm</li>
-<li>Durchmesser: 21mm</li>
-</ul>
-',
+        'description' => '',
     ),
     'SP100A10-HB' => array(
         'icNumber' => 'SP100A10-HB',
@@ -52207,8 +52556,8 @@ Das Liquid füllen Sie über ein Side-Filling System in den Pod. Den Ladestand d
         'number' => 'SR100GTK',
         'name' => 'Steam Crave - Glaz RTA V2 - Glas-Kamin (2 Stück pro Packung)',
         'commonName' => 'Glaz RTA V2',
-        'type' => 'TANK',
-        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'type' => 'SPARE_PARTS',
+        'category' => 'SELBSTWICKLER > Sonstige Ersatzteile',
         'supplier' => 'Steam Crave',
         'brand' => 'Steam Crave',
         'piecesPerPack' => 2,
@@ -54025,12 +54374,12 @@ Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Z
         'supplier' => 'SONE',
         'brand' => 'SONE',
         'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
         'flavorCategory' => null,
         'addlCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
         'description' => 'Die SONE Leerflasche hat ein Füllvolumen von 60ml. Der abschraubbare Deckel hat eine Kindersicherung. Über das e-Flip & Click System von SONE haben Sie die Möglichkeit das Liquid, ohne die Dosier-spitze aus der Flasche zu ziehen, in den Tank Ihrer E-Zigarette  hinein zu füllen.
 Hierzu kippen Sie die Spitze zur Seite um an die Einfüllöffnung zu gelangen. Im Schraubverschluss befindet sich die Dosier-spitze, welche sich beim ersten Verschließen fest in die Flasche einsetzt. 
@@ -55233,49 +55582,79 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'supplier' => 'eLeaf',
         'brand' => 'SC',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
-        'flavor' => '',
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
         'flavorCategory' => null,
         'addlCategory' => '',
-        'dosage' => '',
+        'dosage' => null,
         'base' => null,
-        'description' => 'Das iCare Flask E-Zigaretten Set von der Marke SC kommt mit einem fest verbauten Akku dessen Kapazität bei 520mAh liegt. Der gleichnamige Verdampfer hat ein Tankvolumen von 1ml. Dieses können Sie über das Top-Filling System befüllen. Im Verdampfer befindet sich ein Keramik-Verdampferkopf, der fest verbaut ist. Sollte es also passieren, dass Sie eine Veränderung der Dampfentwicklung oder des Liquidsgeschmacks feststellen, ist es ratsam den Verdampfer durch einen neuen auszutauschen. Das iCare Flask E-Zigaretten Set verfügt über keine Feuertaste, da es durch eine Zugautomatik betrieben wird. Zudem wird der Verdampfer am Akku nicht festgeschraubt sondern hält durch ein magnetisches 510er Verbindungsstück. Geladen wird das SC iCare Flask E-Zigaretten Set über das mitgelieferte USB-Kabel.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die ein wenig eigenwillig anmutende Eleaf iCare Flask E-Zigarette zeichnet sich durch eine kompakte Bauweise aus. Der Akku ist in der iCare Flask fest verbaut und verfügt über 520 mAh. Ebenfalls fest verbaut ist der Verdampferkopf im iCare Flask Clearomizer, der bis auf das Mundstück im Akku verschwindet und dessen Tank bis 1 ml Liquid fasst. Die iCare Flask E-Zigarette ist für das moderate Dampfen - auch MTL (Mouth to Lung) genannt - geeignet.</p>
+<p>Die iCare Flask E-Zigarette hat keine Bedienelemente. Sie verfügt über eine Zugautomatik, d.h. Sie müssen einfach nur am Mundstück ziehen, um sie zu bedienen.&nbsp;&nbsp;</p>
+<p>Der Tank des iCare Flask Clearomizer fasst 1 ml Liquid, welches Sie durch das Top-Filling-System von oben in den Clearomizer einfüllen. Der Glastank des Clearomizers wird im Gehäuse des Akkus versenkt und eine magnetische 510er Verbindung hält ihn fest. Um den Clearomzer, der mit einem Keramik-Head mit 1,35 Ohm Widerstand bestückt ist, auszuwechseln, müssen Sie lediglich fest am Mundstück ziehen. Ein Sichtfenster im Akku sorgt dafür, dass Sie den Glastank und seinen Füllstand im Blick haben. Die iCare Flask unterstützt das MTL-Dampfen (Mouth to Lung), bei dem der Dampf zunächst in den Mund gesogen wird und von dort erst in die Lunge inhaliert wird. Es wird auch als Backendampfen bezeichnet.</p>
+<h2>Eigenschaften iCare Flask Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 520 mAh</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>12 mm x 42 mm x 71 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>56 Gramm</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>Zugautomatik, LED-Indikator</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften iCare Flask Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>1 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>10 mm</td>
+</tr>
+<tr>
+<td>Höhe inkl. Mundstück</td>
+<td>51 mm</td>
+</tr>
+<tr>
+<td>Verdampferkopf</td>
+<td>fest verbauter 1,35 Ohm Keramik-Head</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>12,5 Gramm</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x iCare Flask Akku 520 mAh</li>
-<li>1x iCare Flask Clearomizer</li>
-<li>1x 510er Magnet-Verbindung</li>
-<li>1x USB-Kabel</li>
+<li>1x Eleaf iCare Flask Akku</li>
+<li>1x Eleaf iCare Flask Clearomizer mit 1,35 Ohm Head</li>
+<li>1x USB-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>iCare Flask Akku</strong>
-<ul>
-<li>Akkukapazität: 520 mAh</li>
-<li>Zugautomatik</li>
-<li>LED-Indikator</li>
-<li>Maße: 12 mm x 42 mm x 71 mm</li>
-<li>Gewicht: 56 Gramm</li>
-</ul>
-<br>
-<br>
-<strong>iCare Flask Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 1 ml</li>
-<li>fest verbauter 1,35 Ohm Keramik-Head</li>
-<li>Höhe (inkl. Mundstück): 51 mm</li>
-<li>Durchmesser: 10 mm</li>
-<li>Gewicht: 12,5 Gramm</li>
-<li>MTL</li>
-<li>Top-Filling-System</li>
-</ul>
-<br>
-<br>
-',
+</ul>',
     ),
     'SC100CFA' => array(
         'icNumber' => 'SC100CFA',
@@ -55283,40 +55662,45 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'name' => 'eLeaf - iCare Flask - Akku - 520 mAh - by SC',
         'commonName' => 'iCare Flask',
         'type' => 'BOX_MOD',
-        'category' => 'BOXEN',
+        'category' => 'AKKUTRÄGER',
         'supplier' => 'eLeaf',
         'brand' => 'SC',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
-        'flavor' => '',
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
         'flavorCategory' => null,
         'addlCategory' => '',
-        'dosage' => '',
+        'dosage' => null,
         'base' => null,
-        'description' => 'Das SC iCare Flask Akku ist der passende Akku für Ihren iCare Flask Verdampfer vom gleichnamigen Hersteller. Zusammen bilden Sie das iCare Flask E-Zigaretten Set. Das iCare Flask ist fest verbaut und hat einen Akkukapazität von 520mAh. Im Lieferumfang finden Sie ein USB-Kabel mit dem Sie Ihren Akku, wenn nötig, mit neuer Energie versorgen können. Das iCare Flask Akku kommt ohne Feuertaste oder Einstelltaste aus, weil es zusammengesetzt mit dem iCare Flask Verdampfer mit einer Zugautomatik bedient wird.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der iCare Flask Akku ist hat einen fest verbauten Akku mit 520 mAh und wird zusammen mit dem iCare Flask Clearomizer betrieben. Der Akku hat keinerlei Bedienelemente, weil er gemeinsam mit dem iCare Flask Clearomizer über eine Zugautomatik verfügt.&nbsp;</p>
+<h2>Eigenschaften iCare Flask Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 520 mAh</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>12 mm x 42 mm x 71 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>56 Gramm</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>510er Magnet-Verbindung, LED-Indikator</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x iCare Flask Akku 520 mAh</li>
-<li>1x 510er Magnet-Verbindung</li>
-<li>1x USB-Kabel</li>
+<li>1x Eleaf iCare Flask Akku</li>
+<li>1x USB-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>iCare Flask Akku</strong>
-<ul>
-<li>Akkukapazität: 520 mAh</li>
-<li>Zugautomatik</li>
-<li>LED-Indikator</li>
-<li>Maße: 12 mm x 42 mm x 71 mm</li>
-<li>Gewicht: 56 Gramm</li>
-</ul>
-<br>
-<br>
-',
+</ul>',
     ),
     'SC100CFC' => array(
         'icNumber' => 'SC100CFC',
@@ -55324,40 +55708,62 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'name' => 'eLeaf - iCare Flask - Verdampfer - by SC',
         'commonName' => 'iCare Flask',
         'type' => 'CLEAROMIZER',
-        'category' => 'VERDAMPFER > eLeaf',
+        'category' => 'VERDAMPFER',
         'supplier' => 'eLeaf',
         'brand' => 'SC',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
-        'flavor' => '',
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
         'flavorCategory' => null,
         'addlCategory' => '',
-        'dosage' => '',
+        'dosage' => null,
         'base' => null,
-        'description' => 'Von der Marke SC kommt der iCare Flask Verdampfer. Dieser ist der passende Verdampfer für gleichnamigen Akku. Das Fassungsvermögen des Verdampfers beträgt 1ml. Dieses wird über das Top-Filling Prinzip befüllt. Hierzu müssen Sie das Mundstück vom Verdampfer abschrauben und die Tanköffnung freilegen. Der iCare Flask Verdampfer besitzt außerdem einen fest verbauten Keramik-Verdampferkopf mit einem Widerstand von 1,35 Ohm. Mit diesem Widerstand ist Dampfen um moderaten Bereich gewährleistet. Da der Verdampferkopf nicht austauschbar ist, müssen Sie, falls eine Geschmacksveränderung auftritt, den Verdampfer durch einen neuen auswechseln.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der iCare Flask Clearomizer ist der passende Verdampfer für die gleichnamige E-Zigarette. Er fasst 1 ml Liquid, welches Sie durch das Top-Filling-System von oben in den Clearomizer einfüllen. Der Keramik-Head mit 1,35 Ohm Widerstand ist fest im iCare Flask Clearomizer verbaut. Um ihn auszuwechseln müssen Sie lediglich fest am Mundstück ziehen, um die magnetische 510er Verbindung zu lösen und einen neuen Verdampfer einsetzen. Der iCare Flask Clearomizer unterstützt das MTL-Dampfen (Mouth to Lung), bei dem der Dampf zunächst in den Mund gesogen wird und von dort erst in die Lunge inhaliert wird. Es wird auch als Backendampfen bezeichnet.</p>
+<h2>Eigenschaften iCare Flask Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>1 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>&nbsp;10 mm</td>
+</tr>
+<tr>
+<td>Höhe inkl. Mundstück</td>
+<td>51 mm</td>
+</tr>
+<tr>
+<td>Verdampferkopf</td>
+<td>fest verbauter 1,35 Ohm Keramik-Head</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>12,5 Gramm</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x iCare Flask Verdampfer</li>
+<li>1x Eleaf iCare Flask Clearomizer mit 1,35 Ohm Head</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>iCare Flask Verdampfer</strong>
+<h2>passend für:</h2>
 <ul>
-<li>Tankvolumen: 1 ml</li>
-<li>fest verbauter 1,35 Ohm Keramik-Verdampferkopf</li>
-<li>Höhe (inkl. Mundstück): 51 mm</li>
-<li>Durchmesser: 10 mm</li>
-<li>Gewicht: 12,5 Gramm</li>
-<li>MTL</li>
-<li>Top-Filling-System</li>
-</ul>
-<br>
-<br>
-',
+<li>Eleaf iCare Flask Akku</li>
+<li>Eleaf iCare Flask E-Zigarette</li>
+</ul>',
     ),
     'CY100FSA' => array(
         'icNumber' => 'CY100FSA',
@@ -56086,7 +56492,7 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die E-Zigarette namens Mfeng Baby stammt aus dem Hause Snowwolf. Diese besteht aus dem Mfeng Baby Akku mit 2000mAh und dem Wolf Tank Mini mit 5ml Tankvolumen. Beide werden über ein 510er Gewinde miteinander verbunden, das sich unten am Verdampfer befindet. Im Lieferumfang sind zweit Verdampferköpfe enthalten, die für das Dampfen in den Subohm-Bereich ausgelegt sind. Der WF Mini Verdampferkopf hat einen Widerstand von 0,28 Ohm und der MS-M Mesh einen Widerstand von 0,2 Ohm. Den WF Mini Verdampferkopf können Sie zwischen 30 Watt und 60 Watt betreiben, wobei der MS-M Mesh zwischen 40 Watt und 80 Watt betrieben werden kann. Tauschen Sie die Verdampferköpfe in regelmäígen Zeitabständen aus, damit Ihr Liquidgeschmack unverfälscht bleibt.
+        'description' => 'Die E-Zigarette namens Mfeng Baby stammt aus dem Hause Snowwolf. Diese besteht aus dem Mfeng Baby Akku mit 2000mAh und dem Wolf Tank Mini mit 5ml Tankvolumen. Beide werden über ein 510er Gewinde miteinander verbunden, das sich unten am Verdampfer befindet. Im Lieferumfang sind zweit Verdampferköpfe enthalten, die für das Dampfen in den Subohm-Bereich ausgelegt sind. Der WF Mini Verdampferkopf hat einen Widerstand von 0,28 Ohm und der WF-H Mini einen Widerstand von 0,25 Ohm. Den WF Mini Verdampferkopf können Sie zwischen 30 Watt und 60 Watt betreiben, wobei der WF-H Mini zwischen 40 Watt und 80 Watt betrieben werden kann. Tauschen Sie die Verdampferköpfe in regelmäígen Zeitabständen aus, damit Ihr Liquidgeschmack unverfälscht bleibt.
 <br>
 <br>
 <strong>Lieferumfang</strong>
@@ -56094,7 +56500,7 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
 <li>1x Mfeng Baby Akku </li>
 <li>1x Wolf Tank Mini Clearomizer </li>
 <li>1x WF Mini Head mit 0,28 Ohm</li>
-<li>1x MS-M Mesh Head mit 0,20 Ohm</li>
+<li>1x WF-H Mini Head mit 0,25 Ohm</li>
 <li>1x Ersatzglastank</li>
 <li>1x Ersatzteil-Set</li>
 <li>1x USB-Kabel</li>
@@ -56847,19 +57253,19 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
     'WM100LSL' => array(
         'icNumber' => 'WM100LSL',
         'number' => 'WM100LSL',
-        'name' => 'Wismec - Luxotic Surface - Liquidflasche',
+        'name' => 'Wismec - Luxotic Surface - Liquidflasche (5 Stück pro Packung)',
         'commonName' => 'Luxotic Surface',
         'type' => 'SQUONKER_BOTTLE',
         'category' => 'ZUBEHÖR > Squonker-Flaschen',
         'supplier' => 'Wismec',
         'brand' => 'Wismec',
-        'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
-        'flavor' => null,
+        'piecesPerPack' => 5,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
         'flavorCategory' => null,
         'addlCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
         'description' => 'Das Füllvolumen von der Luxotic Surface Liquidflasche beträgt 6,5 Milliliter. Nach dem Befüllen mit Liquid kann diese in den Luxotic Surface Akkuträger bzw. dem Set von Steamax eingesetzt werden. Über die Liquidflasche befördern Sie das Liquid per Druck in den Tank des von Ihnen verwendeten Clearomizers.
 <br>
@@ -57705,29 +58111,7 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => 'Früchte, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von 510CloudPark</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfel, Koolada</strong>.</p>
-<p>15 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>
-<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>
-<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">
-<tbody>
-<tr>
-<td>Produkt</td>
-<td>15 ml Aroma in einer 120 ml Flasche</td>
-</tr>
-<tr>
-<td>Geschmack</td>
-<td>Apfel, Koolada</td>
-</tr>
-<tr>
-<td>Dosierung</td>
-<td>Flasche bis oben mit Basis auffüllen</td>
-</tr>
-<tr>
-<td>Inhaltsstoffe</td>
-<td>Propylenglykol, Aromastoffe</td>
-</tr>
-</tbody>
-</table>',
+        'description' => '<p><strong>Longfill-Aroma von 510CloudPark</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfel, Koolada</strong>.</p><p>15 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SK100PN' => array(
         'icNumber' => 'SK100PN',
@@ -62258,7 +62642,7 @@ strong>Find Pod</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Für den Advken Owl E-Clearomizer haben Sie die Wahl zwischen zwei unterschiedlichen Glastanks. Beide Advken Owl Glastanks bestehen aus Pyrexglas und sind transparent, sodass das eingefüllte Liquid gut erkennbar ist. Ein Model hat eine Zylinder-Form sowie ein Füllvolumen von 3 ml und das andere Model hat eine Bubble-Form mit einer Tankgröße von 4 ml. Je bestellter Packung erhalten Sie eine Variante des Advken Owl Glastanks.
+        'description' => 'Für das Advken Owl E-Zigaretten Set haben Sie die Wahl zwischen zwei unterschiedlichen Glastanks. Beide Advken Owl Glastanks bestehen aus Pyrexglas und sind transparent, sodass das eingefüllte Liquid gut erkennbar ist. Ein Model hat eine Zylinder-Form sowie ein Füllvolumen von 3 ml und das andere Model hat eine Bubble-Form mit einer Tankgröße von 4 ml. Je bestellter Packung erhalten Sie eine Variante des Advken Owl Glastanks.
 <br>
 <br>
 </ul>
@@ -63370,7 +63754,19 @@ strong>Find Pod</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '',
+        'description' => '<p>T-Shirt mit dem Aufdruck "E-ZigaRETTEN Leben" in 8 Größen, nicht nur für Dampfer.</p>
+<h2>Eigenschaften:</h2>
+<ul>
+<li>Größen: S bis 5XL</li>
+<li>Farbe T-Shirt: schwarz</li>
+<li>Farbe Aufdruck: weiss / orange</li>
+<li>Grammatur: 145g/m²</li>
+<li>Siebdruck</li>
+<li>100% einlaufvorbehandelte Ringspun-Baumwolle</li>
+<li>Nackenband</li>
+<li>Exact-Rundhalsausschnitt, doppelt gelegt</li>
+<li>Bund unten und Ärmelbund mit doppelter Steppnaht&nbsp;</li>
+</ul>',
     ),
     'UW100EO' => array(
         'icNumber' => 'UW100EO',
@@ -63686,10 +64082,7 @@ strong>Find Pod</strong>
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das GeekVape Frenzy E-Zigaretten Set ist ein Pod-System und wird mit zwei verschiedenen Verdampferköpfen ausgeliefert. Dazu gehören ein 0,7 Ohm NS Mesh Head, welcher bereits vorinstalliert ist, und ein 1,2 Ohm NS Verdampferkopf. Der Pod verfügt über ein Tankvolumen von bis zu 2ml Ihres gewünschten Liquids und wird über die Unterseite befüllt. Des Weiteren verfügt der Pod des Frenzy E-Zigaretten Sets eine stufenlos regulierbare Airflow-Control. Der im Set enthaltene Akku ist fest verbaut und wurde mit einer Akkukapazität von 950mAh ausgestattet und lediglich durch eine Feuertaste gestartet und bedient. Wenn Sie den 0,7 Ohm NS Mesh Verdampferkopf verwenden, arbeitet die Frenzy E-Zigarette automatisch im Power-Modus. In diesem Modus haben Sie die Möglichkeit zwischen 2,5V, 2,7V und 2,9V als Ausgabestärke zu wählen. Beim Verwenden des 1,2 Ohm NS Heads arbeitet die E-Zigarette automatisch im TC-Modus (Temperature-Control). Bitte beachten Sie, dass Verdampferköpfe (Heads) zu den Verschleißteilen einer E-Zigarette gehören und ausgetauscht werden sollten, sobald Sie eine Veränderung des Geschmacks und/oder der Dampfentwicklung feststellen.
-<br>
-<br>
-<b>Lieferumfang</b>
+        'description' => '<p>Das GeekVape Frenzy E-Zigaretten Set ist ein Pod-System und wird mit zwei verschiedenen Verdampferköpfen ausgeliefert. Dazu gehören ein 0,7 Ohm NS Mesh Head, welcher bereits vorinstalliert ist, und ein 1,2 Ohm NS Verdampferkopf. Der Pod verfügt über ein Tankvolumen von bis zu 2ml Ihres gewünschten Liquids und wird über die Unterseite befüllt. Des Weiteren verfügt der Pod des Frenzy E-Zigaretten Sets eine stufenlos regulierbare Airflow-Control. Der im Set enthaltene Akku ist fest verbaut und wurde mit einer Akkukapazität von 950mAh ausgestattet und lediglich durch eine Feuertaste gestartet und bedient. Wenn Sie den 0,7 Ohm NS Mesh Verdampferkopf verwenden, arbeitet die Frenzy E-Zigarette automatisch im Power-Modus. In diesem Modus haben Sie die Möglichkeit zwischen 2,5V, 2,7V und 2,9V als Ausgabestärke zu wählen. Beim Verwenden des 1,2 Ohm NS Heads arbeitet die E-Zigarette automatisch im TC-Modus (Temperature-Control). Bitte beachten Sie, dass Verdampferköpfe (Heads) zu den Verschleißteilen einer E-Zigarette gehören und ausgetauscht werden sollten, sobald Sie eine Veränderung des Geschmacks und/oder der Dampfentwicklung feststellen. <br> <br> <strong>Lieferumfang</strong></p>
 <ul>
 <li>1x Frenzy E-Zigaretten Set</li>
 <li>1x NS Head 1,2 Ohm</li>
@@ -63697,9 +64090,7 @@ strong>Find Pod</strong>
 <li>1x USB-Kabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<b>Wichtige Merkmale/b>
+<p><br> <br> <strong><strong>Wichtige Merkmale/b&gt;</strong></strong></p>
 <ul>
 <li>Durchmesser: 37 mm</li>
 <li>Höhe: 86,1 mm</li>
@@ -64840,40 +65231,82 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Das SC E-Zigaretten Set Namens iJust Mini besteht aus dem iJust Mini Akku und dem iJust Mini Verdampfer. Der iJust Mini Akku hat eine fest verbaute Zelle, die eine Kapazität von 1100mAh hat und bis zu 25 Watt betrieben werden kann. Über eine LED-Anzeige, die sich um die Feuertaste befindet, werden Sie über den Akkustand informiert. Der iJust Mini Verdampfer wird über das Top-Filling System direkt von oben mit Liquid befüllt. Maximal können Sie 3ml Liquid einfüllen. Im Lieferumfang befindet sich ein Verdampferkopf der SC GT-Reihe. Der GT Head mit 1,2 Ohm ist für das Backendampfen ausgelegt. Über das USB-Kabel können Sie Ihr iJust Mini E-Zigaretten Set bei Bedarf laden.
-<br>
-<br>
-<b>Lieferumfang:</b>
-<li>1x iJust Mini Akku</li>
-<li>1x iJust Mini Clearomizer</li>
+        'description' => '<p>Die Eleaf iJust Mini E-Zigarette besteht aus dem iJust Mini Akku und dem iJust Mini Clearomizer. Der fest eingebaute 1.100 mAh Akku sorgt für eine konstante Leistungsabgabe bis max. 25 Watt. Der iJust Mini Clearomizer hat einen Tank für bis zu 3 ml Liquid. Die iJust Mini E-Zigarette ist für das moderate Dampfen - auch MTL (Mouth to Lung) genannt - geeignet.</p>
+<p>Die iJust Mini E-Zigarette wird lediglich über die Feuertaste gesteuert. Eine in die Feuertaste integrierte LED informiert Sie über unterschiedliche Farben über den Ladestand des Akkus. Der fest eingebaute Akku mit 1.100 mAh gibt eine konstante Leistung von max. 25 Watt ab.&nbsp;</p>
+<p>Der Tank des iJust Mini Clearomizer fasst 3 ml Liquid. Durch das integrierte Top-Filling-System befüllen Sie den Clearomizer bequem von oben, ohne ihn vom Akkuträger abschrauben zu müssen. Mittels eines Ringes am unteren Rand des Clearomizer regeln Sie stufenlos den Zugwiderstand über den Airflow Control. Im Lieferumfang enthalten ist ein GT-Head (Verdampferkopf) mit 1,2 Ohm Widerstand. Dieser hohe Widerstand unterstützt das MTL-Dampfen (Mouth to Lung), bei dem der Dampf zunächst in den Mund gesogen wird und von dort erst in die Lunge inhaliert wird. Es wird auch als Backendampfen bezeichnet.</p>
+<h2>Eigenschaften iJust Mini Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest verbaute Akkuzelle mit 1.100 mAh</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>max. 25 Watt</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>konstante Leistungsabgabe</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,3 - 3,0 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser: 22 mm, Höhe: 58 mm</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>LED-Indikator</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften iJust Mini Clearomizer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3 ml</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>Durchmesser: 22 mm, Höhe: 51 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis - stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL - Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x Eleaf iJust Mini Akku</li>
+<li>1x Eleaf iJust Mini Clearomizer</li>
 <li>1x GT Head 1,2 Ohm</li>
-<li>1x Ersatzteilset</li>
 <li>1x USB-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
-<br>
-<br>
-<b>Wichtige Merkmale iJust Mini Akku:</b>
-<li>Akkukapazität: 1100 mAh</li>
-<li>Ausgabemodi: konstante Leistungsabgabe</li>
-<li>Ausgangsleistung: max. 25 Watt</li>
-<li>Widerstandsbereich: 0,3 bis 3,0 Ohm</li>
-<li>LED-Indikator</li>
-<li>Gewindetyp: 510</li>
-<li>Länge: 58 mm</li>
-<li>Durchmesser: 22 mm</li>
-<br>
-<br>
-<b>Wichtige Merkmale iJust Mini Clearomizer:</b>
-<li>Tankvolumen: 3 ml</li>
-<li>Bottom-Airflow-Control</li>
-<li>Top-Filling-System</li>
-<li>Gewindetyp: 510</li>
-<li>subohm-fähig</li>
-<li>MTL-fähig</li>
-<li>Höhe: 51 mm</li>
-<li>Durchmesser: 22 mm</li>
-<br>
-<br>',
+<li>1x Ersatzteilset</li>
+</ul>',
     ),
     'SC100JMM' => array(
         'icNumber' => 'SC100JMM',
@@ -65970,20 +66403,15 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'flavorCategory' => null,
         'dosage' => '',
         'base' => null,
-        'description' => 'Der Trough von Steamax ist ein Clearomizer mit einem Tankvolumen von 6,5 Millilitern, Side Top Filling-System und stufenlos regelbarer Airflow Control. Sein Durchmesser misst 30 Millimeter und seine Höhe beträgt 50 Millimeter. Die beiden im Lieferumfang des Kit gehörenden WT Heads unterstützen mit einem Widerstandswert von 0,35 Ohm und 0,2 Ohm das Vapen mit direkter Lungeninhalation. Sollten Sie eine Veränderung der Geschmacks und/oder der Dampfentwicklung feststellen, ist es empfehlenswert den Verdampferkopf zu wechseln.  
-<br>
-<br>
-<b>Lieferumfang<b>
+        'description' => '<p>Der Trough von Steamax ist ein Clearomizer mit einem Tankvolumen von 6,5 Millilitern, Side Top Filling-System und stufenlos regelbarer Airflow Control. Sein Durchmesser misst 30 Millimeter und seine Höhe beträgt 50 Millimeter. Die beiden im Lieferumfang des Kit gehörenden WT Heads unterstützen mit einem Widerstandswert von 0,35 Ohm und 0,2 Ohm das Vapen mit direkter Lungeninhalation. Sollten Sie eine Veränderung der Geschmacks und/oder der Dampfentwicklung feststellen, ist es empfehlenswert den Verdampferkopf zu wechseln. <br> <br> <strong><strong>Lieferumfang</strong></strong></p>
 <ul>
 <li>1x Trough Clearomizer</li>
 <li>1x WT01 Single Head 0,35 Ohm</li>
-<li>1x WT02 Dual Head 0,2 Ohm </li>
+<li>1x WT02 Dual Head 0,2 Ohm</li>
 <li>1x Ersatzteil-Set</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>Trough CLEAROMIZER</strong>
+<p><strong><strong><strong><br> <br> <strong>Trough CLEAROMIZER</strong></strong></strong></strong></p>
 <ul>
 <li>Tankvolumen: 6,5 ml</li>
 <li>Durchmesser: 30 mm</li>
@@ -66295,7 +66723,7 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'flavorCategory' => 'Beeren',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Shake & Vape E-Liquid von Jucce. Geschmack: Erdbeere.</strong></p><p>Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+        'description' => '<p><strong>Shake & Vape E-Liquid von Jucce. Geschmack: Erdbeere.</strong></p><p>Die 60 ml Flasche enthält 10 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 50 ml Nikotin-Shot oder 50 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
     'JC100L10-TO' => array(
         'icNumber' => 'JC100L10-TO',
@@ -66517,7 +66945,7 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'name' => 'Juccier - Verkaufsdisplay als Aufsteller mit 48 Flaschen',
         'commonName' => 'Verkaufsdisplay als Aufsteller mit 48 Flaschen',
         'type' => 'DISPLAY',
-        'category' => '',
+        'category' => null,
         'supplier' => 'Jucce',
         'brand' => 'Jucce',
         'piecesPerPack' => 1,
@@ -66594,6 +67022,10524 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
 <li>Tankvolumen: 2ml</li>
 <li>transparent</li>
 <li>Passend für den Cthulhu Hastur MTL RTA Mini Clearomizer</li>
+<br>
+<br>',
+    ),
+    'FT100L10-ZB' => array(
+        'icNumber' => 'FT100L10-ZB',
+        'number' => 'FT100L10-ZB',
+        'name' => 'Flavour Trade - Zitronenbrause - Liquid - 10 ml',
+        'commonName' => 'Zitronenbrause',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Zitrusfrüchte#!#E-LIQUIDS > Getränke',
+        'supplier' => 'Flavour Trade',
+        'brand' => 'Flavour Trade',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '10',
+        'flavor' => 'Zitrone, Brause',
+        'flavorCategory' => 'Zitrusfrüchte, Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von Flavour Trade für die E-Zigarette. Geschmack: Zitrone, Brause.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitrone, Brause</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'FT100L10-CB' => array(
+        'icNumber' => 'FT100L10-CB',
+        'number' => 'FT100L10-CB',
+        'name' => 'Flavour Trade - Colabrause - Liquid - 10 ml',
+        'commonName' => 'Colabrause',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Getränke',
+        'supplier' => 'Flavour Trade',
+        'brand' => 'Flavour Trade',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '10',
+        'flavor' => 'Cola, Brause',
+        'flavorCategory' => 'Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von Flavour Trade für die E-Zigarette. Geschmack: Cola, Brause.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola, Brause</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'FT100L10-HB' => array(
+        'icNumber' => 'FT100L10-HB',
+        'number' => 'FT100L10-HB',
+        'name' => 'Flavour Trade - Himbeerbrause - Liquid - 10 ml',
+        'commonName' => 'Himbeerbrause',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren#!#E-LIQUIDS > Getränke',
+        'supplier' => 'Flavour Trade',
+        'brand' => 'Flavour Trade',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '10',
+        'flavor' => 'Himbeere, Brause',
+        'flavorCategory' => 'Beeren, Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von Flavour Trade für die E-Zigarette. Geschmack: Himbeere, Brause.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere, Brause</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'FT100L10-WB' => array(
+        'icNumber' => 'FT100L10-WB',
+        'number' => 'FT100L10-WB',
+        'name' => 'Flavour Trade - Waldmeisterbrause - Liquid - 10 ml',
+        'commonName' => 'Waldmeisterbrause',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Pflanzen#!#E-LIQUIDS > Getränke',
+        'supplier' => 'Flavour Trade',
+        'brand' => 'Flavour Trade',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '10',
+        'flavor' => 'Waldmeister, Brause',
+        'flavorCategory' => 'Pflanzen, Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von Flavour Trade für die E-Zigarette. Geschmack: Waldmeister, Brause.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldmeister, Brause</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'FT100L10-SB' => array(
+        'icNumber' => 'FT100L10-SB',
+        'number' => 'FT100L10-SB',
+        'name' => 'Flavour Trade - Cassisbrause - Liquid - 10 ml',
+        'commonName' => 'Cassisbrause',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Getränke',
+        'supplier' => 'Flavour Trade',
+        'brand' => 'Flavour Trade',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '10',
+        'flavor' => 'Cassis, Brause',
+        'flavorCategory' => 'Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von Flavour Trade für die E-Zigarette. Geschmack: Cassis, Brause.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cassis, Brause</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'FT100L10-MB' => array(
+        'icNumber' => 'FT100L10-MB',
+        'number' => 'FT100L10-MB',
+        'name' => 'Flavour Trade - Mandarinenbrause - Liquid - 10 ml',
+        'commonName' => 'Mandarinenbrause',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Zitrusfrüchte#!#E-LIQUIDS > Getränke',
+        'supplier' => 'Flavour Trade',
+        'brand' => 'Flavour Trade',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '10',
+        'flavor' => 'Mandarine, Brause',
+        'flavorCategory' => 'Zitrusfrüchte, Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von Flavour Trade für die E-Zigarette. Geschmack: Mandarine, Brause.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mandarine, Brause</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'JFR100ER' => array(
+        'icNumber' => 'JFR100ER',
+        'number' => 'JFR100ER',
+        'name' => 'Joyetech - eRoll Mac Advanced - E-Zigarette',
+        'commonName' => 'eRoll Mac Advanced',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Joyetech',
+        'brand' => 'Joyetech',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Bei diesem Vape Pen handelt es sich um die All-In-One E-Zigarette eRoll Mac Advanced aus dem Hause Joyetech. Dabei erhalten Sie neben der E-Zigarette auch noch drei Cartridges mit einem fest integrierten 1,5 Ohm starken Keramik Verdampferkopf. Dieses Set wird in einem Portable Charging Case (PCC) oder auch Ladebox geliefert. Mit Hilfe dieser Ladebox haben Sie die Möglichkeit Ihre eRoll Mac Advanced ohne Probleme unterwegs zu laden. Die Ladebox besitzt einen fest verbauten 2000mAh starken Akku und kann innerhalb von 90 Minuten voll geladen werden. Den 180mAh starken Akku der E-Zigarette laden Sie dann innerhalb von 30 Minuten. Die drei Cartridges können Sie nach Ihren Wünschen befüllen. Dabei haben Sie ein Tankvolumen von 0,55ml zur Verfügung. Durch den 1,5 Ohm starken Verdampferkopf, sowie einer integrierten Airflow spricht die eRoll Mac Advanced eher Dampfer an, welche das moderate Dampfen von Mund zu Lunge bevorzugen. Bitte beachten Sie, dass die Cartridges in regelmäßigen Abständen ausgetauscht werden sollten, um eine gleichbleibende Dampf- und/oder Geschmacksentwicklung gewährleisten zu können.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x eRoll Mac Advanced 180mAh Akku</li>
+<li>3x eRoll 1,5 Ohm Cartridge</li>
+<li>1x eRoll Mac Advanced Portable Charging Case</li>
+<li>1x USB-C Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>eRoll Mac Advanced E-Zigaretten Set</strong>
+<ul>
+<li>Höhe: 100 mm</li>
+<li>Durchmesser: 9,2 mm</li>
+<li>Tankvolumen: 0,55 ml</li>
+<li>Akkukapazität: 180mAh</li>
+<li>Airflow</li>
+<li>Top-Filling System</li>
+<li>konstante Leistungsabgabe: 3,7V</li>
+</ul>
+<br>
+<br>
+<strong>eRoll Mac Portable Charging Case</strong>
+<ul>
+<li>Höhe: 12 mm</li>
+<li>Breite: 115 mm</li>
+<li>Länge: 65 mm</li>
+<li>Akkukapazität: 2000mAh</li>
+</ul>',
+    ),
+    'JFR100ERC' => array(
+        'icNumber' => 'JFR100ERC',
+        'number' => 'JFR100ERC',
+        'name' => 'Joyetech - eRoll - Cartridge, 1,5 Ohm (5 Stück pro Packung)',
+        'commonName' => 'eRoll',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Joyetech',
+        'brand' => 'Joyetech',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Joyetech´s eRoll Cartridge ist der passende Zubehör- und/oder Ersatzartikel für das eRoll Mac Advanced E-Zigaretten Set. Die Cartridge besitzt einen fest verbauten Verdampferkopf aus Keramik mit einem Widerstand von 1,5 Ohm. Somit richtet sich die Cartridge an Dampfer, die das Dampfen von Mund zu Lunge (MTL) bevorzugen. Pro Packung erhalten Sie 5 Cartridges, welche durch einfaches an- und abschrauben gewechselt werden können. Dies sollten Sie auch in regelmäßigen Abständen machen, um einer negativen Geschmacks- und/oder Dampfentwicklung entgegenwirken zu können. Die Cartridge bietet Ihnen Platz für bis zu 0,55ml Ihres Liquids. Das Liquid können Sie einfüllen, indem Sie das Mundstück der Cartridge abschrauben.',
+    ),
+    'HE100G' => array(
+        'icNumber' => 'HE100G',
+        'number' => 'HE100G',
+        'name' => 'HellVape - Grimm - E-Zigarette',
+        'commonName' => 'Grimm',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das E-Zigaretten Set Grimm von der Marke HellVape setzt sich aus dem Grimm Akku mit 1200mAh und dem Grimm Pod-System mit 3ml Fassungsvolumen zusammen. Beide werden über eine Steck-Funktion miteinander verbunden. Der Akku wird über das mitgelieferte USB-Kabel geladen. Den Akkustand sowie andere Parameter lesen Sie über den 0,69" großen Bildschirm ab. Über zwei Einstelltasten und eine Feuertaste wählen Sie Ihre Einstellungen aus. Das Pod-System ist transparent, sodass Sie den Liquidstand jederzeit im Blick haben. Das Befüllen erfolgt über das Top-Filling System direkt von oben. Im Lieferumfang sind zwei unterschiedliche Verdampferköpfe enthalten, die entweder für das Subohm-Dampfen oder moderate Dampfen geeignet sind. Bevor Sie das Pod-System mit dem Akku verbinden, muss zuallerst ein Verdampferkopf am Pod-System angebracht werden. Das gleiche geschieht mit der Base, die am Verdampferkopf verbaut werden muss. Die Base hat eine verbaute Airflow-Control, die Sie eigenständig regulieren können. Bitte achten Sie darauf, dass diese beim Subohm-Dampfen weit geöffnet ist.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Grimm Akku 1200mAh</li>
+<li>1x Grimm Cartridge</li>
+<li>1x Hellcoil H3-01 Head 0,7 Ohm </li>
+<li>1x Hellcoil H3-02 Head 1,2 Ohm</li>
+<li>2x Base inkl. Airflow-Control</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Grimm Akku 1200mAh</strong>
+<ul>
+<li>Akkukapazität: 1200mAh</li>
+<li>0,69" OLED-Display</li>
+<li>Ausgangsleistung: 5 Watt - 30 Watt</li>
+<li>Widerstandsbereich: 0,4 Ohm - 3,0 Ohm</li>
+<li>Maße: 44,5mm x 19mm x 60mm</li>
+</ul>
+<br>
+<br>
+<strong>Grimm Cartridge</strong>
+<ul>
+<li>Tankvolumen: 3ml</li>
+<li>Top-Filling</li>
+<li>MTL</li>
+<li>DL</li>
+<li>510er Mundstück</li>
+<li>transparent</li>
+</ul>
+<br>
+<br>',
+    ),
+    'HE100GC' => array(
+        'icNumber' => 'HE100GC',
+        'number' => 'HE100GC',
+        'name' => 'HellVape - Grimm - Cartridge, 3 ml',
+        'commonName' => 'Grimm',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das HellVape Grimm Cartridge System wird über das Top-Filling-System von oben mit Liquid befüllt. Darin können bis zu 3ml Liquid Platz nehmen. Da das System durchsichtig ist, können Sie den Liquidstand ablesen und den Tank bei Bedarf nachfüllen, ohne den vom Akku trennen zu müssen. Das Grimm Cartridge System ist ein passender Zubehörartikel für das Grimm E-Zigaretten Set. Pro Packung ist ein Grimm Cartridge enthalten.
+<br>
+<br>
+<strong>Grimm Cartridge</strong>
+<ul>
+<li>Tankvolumen: 3ml</li>
+<li>Top-Filling</li>
+<li>MTL</li>
+<li>DL</li>
+<li>510er Mundstück</li>
+<li>transparent</li>
+</ul>
+<br>
+<br>',
+    ),
+    'HE100HC1' => array(
+        'icNumber' => 'HE100HC1',
+        'number' => 'HE100HC1',
+        'name' => 'HellVape - Hellcoil H3-01 Head - 0,7 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Hellcoil H3-01',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Hellcoil H3-01 Verdampferköpfe von der Marke HellVape sind für die E-Zigarette namens Grimm geeignet. Der Widerstand liegt hier bei 0,7 Ohm, sodass diese für das Dampfen im Subohm-Bereich ausgelegt sind. Pro Packung finden Sie drei Verdampferköpfe.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<li>3x Hellvape Hellcoil H3-01 Heads</li>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 0,7 Ohm</lI>
+<li>Mesh</li>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<li>Hellvape Grimm E-Zigaretten Set</li>
+<li>Hellvape Grimm Cartridge 3ml</li>
+<br>
+<br>',
+    ),
+    'HE100HC02' => array(
+        'icNumber' => 'HE100HC02',
+        'number' => 'HE100HC02',
+        'name' => 'HellVape - Hellcoil H3-02 Head - 1,2 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Hellcoil H3-02',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Wenn Sie die HellVape Grimm E-Zigarette besitzen, so können Sie die Hellcoil H3-02 Verdampferköpfe mit 1,2 Ohm damit verwenden. Diese sind für das moderate Dampfen ausgelegt, sodass Sie den Dampf erst in den Mundraum und dann in die Lunge inhalieren. Pro Packung erhalten Sie 3x HellVape Heads.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<li>3x Hellvape Hellcoil H3-02 Heads</li>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 1,2 Ohm</lI>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<li>Hellvape Grimm E-Zigaretten Set</li>
+<li>Hellvape Grimm Cartridge 3ml</li>
+<br>
+<br>',
+    ),
+    'HE100MD' => array(
+        'icNumber' => 'HE100MD',
+        'number' => 'HE100MD',
+        'name' => 'HellVape - MD RTA - Verdampfer',
+        'commonName' => 'MD RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Hellvape MD RTA Verdampfer kann maximal 2ml oder 4ml Liquid aufnehmen. Dies geschieht über das Top-Filling-System. Ebenso können Sie auch die Airflow-Control regulieren. Da im Lieferumfang Coils enthalten sind, die sowohl für das Subohm, als auch für das moderate Dampfen geeignet sind, ist der Verdampfer für beide Dampf-Arten ausgelegt. Bitte tauschen Sie die Coils regelmäßig aus, damit Ihr Liquidgeschmack unverfälscht bleibt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x MD RTA</li>
+<li>1x Ersatz-Driptip</li>
+<li>1x Coil 0,7 Ohm</li>
+<li>1x Coil 1,2 Ohm</li>
+<li>1x Ersatz-Pyrexglastank</li>
+<li>1x Zubehör- und Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>MD RTA Clearomizer</strong></p>
+<ul>
+<li>Tankvolumen: 2 ml | 4 ml</li>
+<li>Durchmesser: 24 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Edelstahl, Pyrexglas</li>
+<li>subohm-fähig</li>
+<li>MTL-fähig</li>
+<li>Top-Filling</li>
+<li>Airflow Control</li>
+<li>Rebuildable Tank Atomizer</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'HE100MDG' => array(
+        'icNumber' => 'HE100MDG',
+        'number' => 'HE100MDG',
+        'name' => 'HellVape - MD RTA - Glastank',
+        'commonName' => 'MD RTA',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Wenn Sie den MD RTA Verdampfer der Marke Hellvape besitzen, dürfen die Glastanks MD RTA und MD RTA Bubble nicht fehlen. Beide sind transparent und bestehen aus dem Material Pyrex. Der MD RTA Glastank hat ein Tankvolumen von 2ml und der MD RTA Bubble ein Volumen von 4ml, wenn diese in einem Verdampfer verbaut sind. Pro Packung und Variante erhalten Sie insgesamt einen Hellvape Glastank.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Tankvolumen: 2ml oder 4ml</li>
+<li>transparent</li>
+<li>Passend für den Hellvape MD RTA Clearomizer</li>
+<br>
+<br>',
+    ),
+    'DK100A10-PG' => array(
+        'icNumber' => 'DK100A10-PG',
+        'number' => 'DK100A10-PG',
+        'name' => 'Dr. Kero - Pfirsich Grüner Tee - Aroma - 20 ml',
+        'commonName' => 'Pfirsich Grüner Tee',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Tee & Kaffee',
+        'supplier' => 'Dr. Kero',
+        'brand' => 'Dr. Kero',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Pfirsich, grüner Tee',
+        'flavorCategory' => 'Früchte, Tee & Kaffee',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dr. Kero</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pfirsich, grüner Tee</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich, grüner Tee</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DK100A10-KE' => array(
+        'icNumber' => 'DK100A10-KE',
+        'number' => 'DK100A10-KE',
+        'name' => 'Dr. Kero - Kiwi Erdbeere - Aroma - 20 ml',
+        'commonName' => 'Kiwi Erdbeere',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Beeren',
+        'supplier' => 'Dr. Kero',
+        'brand' => 'Dr. Kero',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Kiwi, Erdbeere',
+        'flavorCategory' => 'exotische Früchte, Beeren',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dr. Kero</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kiwi, Erdbeere</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kiwi, Erdbeere</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DK100A10-KM' => array(
+        'icNumber' => 'DK100A10-KM',
+        'number' => 'DK100A10-KM',
+        'name' => 'Dr. Kero - Kirsche Minze - Aroma - 20 ml',
+        'commonName' => 'Kirsche Minze',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Dr. Kero',
+        'brand' => 'Dr. Kero',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Kirsche, Minze',
+        'flavorCategory' => 'Früchte, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dr. Kero</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche, Minze</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Minze</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DK100A10-HN' => array(
+        'icNumber' => 'DK100A10-HN',
+        'number' => 'DK100A10-HN',
+        'name' => 'Dr. Kero - Haselnuss - Aroma - 20 ml',
+        'commonName' => 'Haselnuss',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Nüsse',
+        'supplier' => 'Dr. Kero',
+        'brand' => 'Dr. Kero',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Haselnuss',
+        'flavorCategory' => 'Nüsse',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dr. Kero</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Haselnuss</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Haselnuss</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-8V' => array(
+        'icNumber' => 'DD100A10-8V',
+        'number' => 'DD100A10-8V',
+        'name' => 'Dampfdidas - 8-Vape - Aroma - 18 ml',
+        'commonName' => '8-Vape',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Süßigkeiten#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Schokolade, Minze',
+        'flavorCategory' => 'Süßigkeiten, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schokolade, Minze</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schokolade, Minze</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-BD' => array(
+        'icNumber' => 'DD100A10-BD',
+        'number' => 'DD100A10-BD',
+        'name' => 'Dampfdidas - Banadidas - Aroma - 18 ml',
+        'commonName' => 'Banadidas',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Milch & Co.',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Banane, Milchshake',
+        'flavorCategory' => 'Früchte, Milch & Co.',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Banane, Milchshake</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Banane, Milchshake</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-BW' => array(
+        'icNumber' => 'DD100A10-BW',
+        'number' => 'DD100A10-BW',
+        'name' => 'Dampfdidas - Black & White - Aroma - 18 ml',
+        'commonName' => 'Black & White',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gebäck#!#AROMEN > Milch & Co.#!#AROMEN > Süßigkeiten',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Keks, Sahne, weiße Schokolade',
+        'flavorCategory' => 'Gebäck, Milch & Co., Süßigkeiten',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Keks, Sahne, weiße Schokolade</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Keks, Sahne, weiße Schokolade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-CL' => array(
+        'icNumber' => 'DD100A10-CL',
+        'number' => 'DD100A10-CL',
+        'name' => 'Dampfdidas - Chai Latte - Aroma - 18 ml',
+        'commonName' => 'Chai Latte',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Tee & Kaffee',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Chai Latte',
+        'flavorCategory' => 'Tee & Kaffee',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Chai Latte</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Chai Latte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-ED' => array(
+        'icNumber' => 'DD100A10-ED',
+        'number' => 'DD100A10-ED',
+        'name' => 'Dampfdidas - Erdbeerdidas - Aroma - 18 ml',
+        'commonName' => 'Erdbeerdidas',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Milch & Co.',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Erdbeere, Milchshake',
+        'flavorCategory' => 'Beeren, Milch & Co.',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Erdbeere, Milchshake</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Milchshake</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-JC' => array(
+        'icNumber' => 'DD100A10-JC',
+        'number' => 'DD100A10-JC',
+        'name' => 'Dampfdidas - Jogocuja - Aroma - 18 ml',
+        'commonName' => 'Jogocuja',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Milch & Co.#!#AROMEN > exotische Früchte',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Joghurt, Maracuja',
+        'flavorCategory' => 'Milch & Co., exotische Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Joghurt, Maracuja</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Joghurt, Maracuja</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-MT' => array(
+        'icNumber' => 'DD100A10-MT',
+        'number' => 'DD100A10-MT',
+        'name' => 'Dampfdidas - Monstaahh!! - Aroma - 18 ml',
+        'commonName' => 'Monstaahh!!',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Getränke',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Energy Drink',
+        'flavorCategory' => 'Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Energy Drink</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Energy Drink</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-SD' => array(
+        'icNumber' => 'DD100A10-SD',
+        'number' => 'DD100A10-SD',
+        'name' => 'Dampfdidas - Sweet Donut - Aroma - 18 ml',
+        'commonName' => 'Sweet Donut',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gebäck',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Donut',
+        'flavorCategory' => 'Gebäck',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Donut</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Donut</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'DD100A10-KT' => array(
+        'icNumber' => 'DD100A10-KT',
+        'number' => 'DD100A10-KT',
+        'name' => 'Dampfdidas - Kokostazie - Aroma - 18 ml',
+        'commonName' => 'Kokostazie',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Milch & Co.#!#AROMEN > Nüsse',
+        'supplier' => 'Dampfdidas',
+        'brand' => 'Dampfdidas',
+        'piecesPerPack' => 1,
+        'content' => '18',
+        'capacity' => '120',
+        'flavor' => 'Kokos, Milch, Pistazie',
+        'flavorCategory' => 'exotische Früchte, Milch & Co., Nüsse',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Dampfdidas</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kokos, Milch, Pistazie</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kokos, Milch, Pistazie</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'CA100BL' => array(
+        'icNumber' => 'CA100BL',
+        'number' => 'CA100BL',
+        'name' => 'CoilArt - Blazar MTL - E-Zigarette',
+        'commonName' => 'Blazar MTL',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'CoilArt',
+        'brand' => 'CoilArt',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das CoilART Blazar MTL E-Zigaretten Set wird mit einer 18350er Akkuzelle betrieben, welche kein Bestandteil des Lieferumfangs ist. Der semi mechanische Akkuträger verfügt über einen verbauten Chip, welcher vor Kurzschlüssen und Tiefentladung der Akkuzellen schützt. Über den Akkudeckel lässt sich das E-Zigaretten Set sperren um ein ungewolltes Feuern zu verhindern. Der im Lieferumfang enthaltene Blazar MTL Selbtwickel-Verdampfer hat ein Tankvolumen von 4 ml welches über das Top-Filling System mit frischem Liquid befüllt wird. Das Single Coil Deck muss vor dem Betrieb mit einer eigenen selbst hergestellten Wicklung versehen werden, sowie mit Watte bestückt werden. Der CoilART Blazar Akkuträger erkennt Widerstände zwischen 0,1 und 3,0 Ohm. Für den Betrieb mit einem 18350er Akku empfiehlt sich allerdings ein Widerstand zwischen 0,7 und 1,5 Ohm um eine adäquate Akkulaufzeit zu gewährleisten. Der CoilART Blazar Akkuträger ist einem mechanischem Akkuträger nachempfunden. Bei voll geladenem Akku beträgt die Ausgangsspannung 4,2 Volt. Im laufe der Nutzung verringert sich die Leistung entsprechend des Ladestandes der Akkuzelle bis Sie mindestens 3,0 Volt erreicht haben. Bitte nutzen Sie in dem Gerät ausschließlich geeignete 18350er Akkuzellen und prüfen Sie vor der ersten Inbetriebnahme den Widerstand Ihrer Wicklung um einen Kurzschluss zu vermeiden. 
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Blazar Akkuträger</li>
+<li>1x Blazar Blazar MTL RTA Clearomizer</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Ersatz-Glastank</li>
+</ul>
+<br>
+<br>
+<strong>Blazar Akkuträger</strong>
+<ul>
+<li>Ausgabemodi: Volt</li>
+<li>Ausgangsleistung: 3,00 – 4,2 Volt</li>
+<li>Widerstandsbereich: 0,1 – 3,0 Ohm</li>
+<li>Durchmesser: 24 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Seitlicher Feuertaster</li>
+<li>Bottom Lock Ring</li>
+</ul>
+<strong>Blazar MTL RTA Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Single Coil Deck</li>
+<li>Gewindetyp: 510er</li>
+<li>Durchmesser 24 mm</li>
+</ul>
+<br>
+
+',
+    ),
+    'SR100LR' => array(
+        'icNumber' => 'SR100LR',
+        'number' => 'SR100LR',
+        'name' => 'Steam Crave - Aromamizer Lite RTA v1.5 - Verdampfer',
+        'commonName' => 'Aromamizer Lite RTA v1.5',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Verdampfer namens Aromamizer Lite RTA v1.5 kommt aus dem Hause Steam Crave und kann entweder 4,5ml oder 3,5ml Liquid fassen. Das Liquid wird via Top-Filling-System in den Tank gegeben. Dafür brauchen Sie den Verdampfer nicht vom Akku/Akkutäger abschrauben. Das Deck ist für eine Single-Coil Wicklung ausgelegt. Die passenden Zubehörartikel finden Sie im Lieferumfang, sodass Sie damit die Wicklung an das Deck anbringen können. Der Verdampfer ist für das DL- und MTL-Dampfen ausgelegt. Die verstellbare Airflow-Control befindet sich an der Base. Bitte achten Sie darauf, dass diese weit geöffnet ist, wenn Sie sich für das DL-Damfpfen entscheiden. Über das 510er Gewinde ist der Verdampfer mit allen marktüblichen Akkus/Akkuträgern kompatibel.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Aromamizer Lite RTA v1.5 Clearomizer</li>
+<li>1x Sechskantschlüssel</li>
+<li>1x Ersatz-Driptip</li>
+<li>1x Ersatz-Pyrexglastank</li>
+<li>1x Zubehör- und Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>Aromamizer Lite RTA v1.5 Clearomizer</strong></p>
+<ul>
+<li>Tankvolumen: 3,5 ml | 4,5 ml</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Edelstahl, Pyrexglas</li>
+<li>MTL-fähig</li>
+<li>DL-fähig</li>
+<li>Top-Filling-System</li>
+<li>Bottom-Airflow Control</li>
+<li>Rebuildable Tank Atomizer</li>
+</ul>
+</ul>
+<br>
+<br>',
+    ),
+    'SR100LRG' => array(
+        'icNumber' => 'SR100LRG',
+        'number' => 'SR100LRG',
+        'name' => 'Steam Crave - Aromamizer Lite RTA v1.5 - Glastank (2 Stück pro Packung)',
+        'commonName' => 'Aromamizer Lite RTA v1.5',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Aromamizer Lite RTA v1.5 Glastanks von der Marke Steam Crave sind passende Zubehörartikel für den Steam Crave Aromamizer Lite RTA v1.5 Verdampfer. Sie haben die Wahl zwischen den Aromamizer Lite RTA v1.5 Bubble Glastank mit 4,5ml oder den Aromamizer Lite RTA v1.5 Glastank mit 3,5ml. <b>Je Variante und Packung</b> bekommen Sie je zwei Glastanks geliefert.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>2x Aromamizer Lite RTA v1.5 Bubble Glastank 4,5ml</li>
+<li>2x Aromamizer Lite RTA v1.5 Glastank 3,5ml</li>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<li>Steam Crave Aromamizer Lite RTA v1.5 Clearomizer Set</li>
+<br>
+<br>',
+    ),
+    'SR100LRD' => array(
+        'icNumber' => 'SR100LRD',
+        'number' => 'SR100LRD',
+        'name' => 'Steam Crave - Aromamizer Lite RTA v1.5 - Single Coil Deck',
+        'commonName' => 'Aromamizer Lite RTA v1.5',
+        'type' => 'DECK',
+        'category' => 'SELBSTWICKLER > Decks',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Eine Packung besteht aus einem Aromamizer Lite RTA V1.5 Single Coil Deck der Marke Steam Crave. Das Deck ist ein Zubehörartikel für den Aromamizer Lite RTA v1.5 Verdampfer mit 4,5ml oder 3,5ml. Das Deck ist zudem für einen Coil/Wicklung konzipiert. Das Austauschen kann ohne Werkzeug durchgeführt werden.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>1x Steam Crave Aromamizer Lite RTA V1.5 Single Coil Deck</li>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<li>Steam Crave Aromamizer Lite RTA v1.5 Clearomizer Set</li>
+<br>
+<br>',
+    ),
+    'HE100DR2' => array(
+        'icNumber' => 'HE100DR2',
+        'number' => 'HE100DR2',
+        'name' => 'HellVape - Dead Rabbit RDA v2 - Verdampfer',
+        'commonName' => 'Dead Rabbit RDA v2',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'HellVape',
+        'brand' => 'HellVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Dead Rabbit V2 Rebuildable Dripping Atomizer kurz RDA Verdampfer aus dem Hause HellVape ist er Nachfolger des Dead Rabbit RDA. Der HellVape Dead Rabbit V2 RDA hat einen Durchmesser von 24mm und kann als Bottom Feeder oder Tröpfler genutzt werden. Der Dead Rabbit V2 RDA besitzt ein sogenanntes Dual-Coil Deck. Das heißt, Sie können am Wickeldeck zwei Coils/Wicklungen verbauen. Natürlich können Sie aber auch nur eine Wicklung benutzen. Der Dead Rabbit V2 RDA verfügt über zwei seitlich verbaute Luftöffnungen (Side-Airflow), über diese Sie die Luftzufuhr regulieren können. Eine davon hat eine Wabenstruktur. So soll die Luft besser im Verdampfer zirkulieren. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Dead Rabbit V2 RDA Clearomizer</li>
+<li>1x 810er Resin Mundstück</li>
+<li>1x 510er Adapter</li>
+<li>1x vergoldeter BF Pin</li>
+<li>1x Ersatz-Teile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Dead Rabbit V2 RDA</strong>
+<ul>
+<li>Airflow-Control</li>
+<li>Material: Edelstahl</li>
+<li>Deck: Single- & Dual-Coil</li>
+<li>Gewindetyp: 510er</li>
+<li>Höhe inkl. Mundstück: 32,5mm</li>
+<li>Durchmesser: 24mm</li>
+<li>Tröpfler oder Bottom Feed</li>
+</ul>
+<br>',
+    ),
+    'CY100TFC' => array(
+        'icNumber' => 'CY100TFC',
+        'number' => 'CY100TFC',
+        'name' => 'Coilology - Tri-Core Staggered Fused Clapton Ni80 (2 Stück pro Packung)',
+        'commonName' => 'Tri-Core Staggered Fused Clapton Ni80',
+        'type' => 'COIL',
+        'category' => 'SELBSTWICKLER > Coils',
+        'supplier' => 'Coilology',
+        'brand' => 'Coilology',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten wahlweise zwei  Tri-Core Staggered Fused Clapton Ni80 Coils mit 0,1 Ohm Widerstand oder 0,18 Ohm Widerstand von Coilology. Bitte beachten Sie, dass die auf der Verpackung angegebenen Widerstände auf die Nutzung in einem Dual Coil Verdampfer ausgelegt sind. Bei der Nutzung im Single Coil Betrieb verdoppelt sich der angegebene Widerstand. Bitte prüfen Sie vor der ersten Inbetriebnahme den Widerstand Ihrer Wicklung um einen Kurzschluss auszuschließen. 
+',
+    ),
+    'YJ100A10-IM' => array(
+        'icNumber' => 'YJ100A10-IM',
+        'number' => 'YJ100A10-IM',
+        'name' => 'Yankee Juice - Ice - Mango - Aroma - 15 ml',
+        'commonName' => 'Mango',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Yankee Juice',
+        'brand' => 'Yankee Juice',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '60',
+        'flavor' => 'Mango, Koolada',
+        'flavorCategory' => 'exotische Früchte, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Mango, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'YJ100A10-IC' => array(
+        'icNumber' => 'YJ100A10-IC',
+        'number' => 'YJ100A10-IC',
+        'name' => 'Yankee Juice - Ice - Cherry - Aroma - 15 ml',
+        'commonName' => 'Cherry',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Trauben#!#AROMEN > Gewürze#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Yankee Juice',
+        'brand' => 'Yankee Juice',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '60',
+        'flavor' => 'Kirsche, Traube, Anis, Koolada',
+        'flavorCategory' => 'Früchte, Trauben, Gewürze, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche, Traube, Anis, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Traube, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'YJ100A10-IB' => array(
+        'icNumber' => 'YJ100A10-IB',
+        'number' => 'YJ100A10-IB',
+        'name' => 'Yankee Juice - Ice - Black Grape - Aroma - 15 ml',
+        'commonName' => 'Black Grape',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Trauben#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Yankee Juice',
+        'brand' => 'Yankee Juice',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '60',
+        'flavor' => 'schwarze Traube, Koolada',
+        'flavorCategory' => 'Trauben, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarze Traube, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Traube, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'YJ100A10-IG' => array(
+        'icNumber' => 'YJ100A10-IG',
+        'number' => 'YJ100A10-IG',
+        'name' => 'Yankee Juice - Ice - Grape Currency - Aroma - 15 ml',
+        'commonName' => 'Grape Currency',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Trauben#!#AROMEN > Gewürze#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Yankee Juice',
+        'brand' => 'Yankee Juice',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '60',
+        'flavor' => 'schwarze Traube, Anis, Koolada',
+        'flavorCategory' => 'Trauben, Gewürze, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarze Traube, Anis, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Traube, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'YJ100A10-IL' => array(
+        'icNumber' => 'YJ100A10-IL',
+        'number' => 'YJ100A10-IL',
+        'name' => 'Yankee Juice - Ice - Lychee Elderflower - Aroma - 15 ml',
+        'commonName' => 'Lychee Elderflower',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Pflanzen#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Yankee Juice',
+        'brand' => 'Yankee Juice',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '60',
+        'flavor' => 'Litschi, Holunderblüte, Passionsfrucht, Koolada',
+        'flavorCategory' => 'exotische Früchte, Pflanzen, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Litschi, Holunderblüte, Passionsfrucht, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Litschi, Holunderblüte, Passionsfrucht, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'YJ100A10-IS' => array(
+        'icNumber' => 'YJ100A10-IS',
+        'number' => 'YJ100A10-IS',
+        'name' => 'Yankee Juice - Ice - Blue Slush - Aroma - 15 ml',
+        'commonName' => 'Blue Slush',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Yankee Juice',
+        'brand' => 'Yankee Juice',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '60',
+        'flavor' => 'Slush Eis',
+        'flavorCategory' => 'Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Slush Eis</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Slush Eis</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'AS100KL' => array(
+        'icNumber' => 'AS100KL',
+        'number' => 'AS100KL',
+        'name' => 'Aspire - K-Lite - E-Zigarette',
+        'commonName' => 'K-Lite',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der K-Lite Clearomizer und der K-Lite Akku bilden zusammen das Aspire K-Lite E-Zigaretten Set. Der K-Lite Clearomizer, auch Verdampfer genannt, hat ein Füllvolumen von 2 ml und verfügt über ein Top-Filling System, sodass Sie Ihren Verdampfer direkt von oben mit Liquid befüllen können. Die Bottom Airflow Control ist in der Base eingebaut, sodass Sie darüber die Luftzirkulation individuell regulieren können. Der K-Lite hat eine Kapazität von 900mAh und wird über ein USB-Ladekabel aufgeladen, das im Lieferumfang enthalten ist. Im Set befinden sich 2 Nautilus BVC Heads mit jeweils 1,6 Ohm und 1,8 Ohm. Daher ist die K-Lite E-Zigarette für das moderate Dampfen geeignet. 
+<br>
+<br>
+<b>Lieferumfang:</b>
+<li>1x K-Lite Akku</li>
+<li>1x K-Lite Clearomizer</li>
+<li>1x Nautilus BVC Head 1,6 Ohm</li>
+<li>1x Nautilus BVC Head 1,8 Ohm (vorinstalliert)</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+<br>
+<br>
+<b>Wichtige Merkmale K-Lite Akku:</b>
+<li>konstante Leistungsabgabe</li>
+<li>Spannungsabgabe: 3,0V, 3,5V, 4,0V, 4,5V, 5,0V</li>
+<li>Akkukapazität: 900 mAh</li>
+<li>OLED Display</li>
+<li>LED-Akkuleuchte</li>
+<li>Gewindetyp: 510er</li>
+<br>
+<br>
+<b>Wichtige Merkmale K-Lite Clearomizer:</b>
+<li>Tankvolumen: 2 ml</li>
+<li>Bottom-Airflow-Control</li>
+<li>Top-Filling</li>
+<li>Gewindetyp: 510</li>
+<br>
+<br>',
+    ),
+    'AS100KLM' => array(
+        'icNumber' => 'AS100KLM',
+        'number' => 'AS100KLM',
+        'name' => 'Aspire - K-Lite - Akku - 900 mAh',
+        'commonName' => 'K-Lite',
+        'type' => 'BOX_MOD',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der K-Lite Akku ist beispielsweise ein passender Akku für den K-Lite Verdampfer mit 2ml Tankvolumen. Er verfügt über eine fest verbaute Akkuzelle mit einer Kapazität von 900mAh. Über die Mode-Taste können Sie die Spannungsabgabe auswählen und der Bildschirm informiert Sie über den ausgewählten Modus. Eine LED ist in der Feuertaste verbaut, die Ihnen Auskunft über den Akkuladestand gibt. Im Lieferumfang ist ein USB-Kabel enthalten, worüber Sie Ihren K-Lite Akku bei Bedarf laden können.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<li>1x K-Lite Akku</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+<br>
+<br>
+<b>Wichtige Merkmale K-Lite Akku:</b>
+<li>konstante Leistungsabgabe</li>
+<li>Spannungsabgabe: 3,0V, 3,5V, 4,0V, 4,5V, 5,0V</li>
+<li>Akkukapazität: 900 mAh</li>
+<li>OLED Display</li>
+<li>LED-Akkuleuchte</li>
+<li>Gewindetyp: 510er</li>
+<br>
+<br>',
+    ),
+    'AS100KLC' => array(
+        'icNumber' => 'AS100KLC',
+        'number' => 'AS100KLC',
+        'name' => 'Aspire - K-Lite - Verdampfer',
+        'commonName' => 'K-Lite',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der K-Lite Verdampfer von der Marke Aspire kann bis zu 2ml Liquid aufnehmen. Über das bekannte Top-Filling System wird das Liquid von oben in den Tank gegeben. Dafür wird die Top-Kappe inkl. Mundstück abgeschraubt, sodass das Einfülloch freigelegt wird. Im Lieferumfang sind zwei Aspire Nautilus BVC Heads enthalten, die für das moderate Dampfen ausgelegt sind. Bitte tauschen Sie die Heads in regelmäßigen Abständen aus, damit ein unverfälschter Liquidgeschmack gewährleistet ist.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<li>1x K-Lite Clearomizer</li>
+<li>1x Nautilus BVC Head 1,6 Ohm</li>
+<li>1x Nautilus BVC Head 1,8 Ohm (vorinstalliert)</li>
+<li>1x Bedienungsanleitung</li>
+<br>
+<br>
+<b>Wichtige Merkmale K-Lite Clearomizer:</b>
+<li>Tankvolumen: 2 ml</li>
+<li>Bottom-Airflow-Control</li>
+<li>Top-Filling</li>
+<li>Gewindetyp: 510</li>
+<br>
+<br>',
+    ),
+    'IC100NS10-SS' => array(
+        'icNumber' => 'IC100NS10-SS',
+        'number' => 'IC100NS10-SS',
+        'name' => 'InnoCigs - Star Spangled - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Star Spangled',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-DD' => array(
+        'icNumber' => 'IC100NS10-DD',
+        'number' => 'IC100NS10-DD',
+        'name' => 'InnoCigs - Devil\'s Darling - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Devil\'s Darling',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-IR' => array(
+        'icNumber' => 'IC100NS10-IR',
+        'number' => 'IC100NS10-IR',
+        'name' => 'InnoCigs - Inside Red - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Inside Red',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Melonen',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Wassermelone',
+        'flavorCategory' => 'Melonen',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Wassermelone.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-WG' => array(
+        'icNumber' => 'IC100NS10-WG',
+        'number' => 'IC100NS10-WG',
+        'name' => 'InnoCigs - White Glacier - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'White Glacier',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Menthol',
+        'flavorCategory' => 'Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Menthol.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Menthol</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-BS' => array(
+        'icNumber' => 'IC100NS10-BS',
+        'number' => 'IC100NS10-BS',
+        'name' => 'InnoCigs - Blue Spot - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Blue Spot',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Beeren',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Blaubeere',
+        'flavorCategory' => 'Beeren',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Blaubeere.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-GC' => array(
+        'icNumber' => 'IC100NS10-GC',
+        'number' => 'IC100NS10-GC',
+        'name' => 'InnoCigs - Gentleman´s Cloud - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Gentleman´s Cloud',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-WA' => array(
+        'icNumber' => 'IC100NS10-WA',
+        'number' => 'IC100NS10-WA',
+        'name' => 'InnoCigs - MyWay - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'MyWay',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Pfeifentabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Pfeifentabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfeifentabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-SN' => array(
+        'icNumber' => 'IC100NS10-SN',
+        'number' => 'IC100NS10-SN',
+        'name' => 'InnoCigs - Shaken, not stirred - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Shaken, not stirred',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Zitrusfrüchte#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Orange, Minze',
+        'flavorCategory' => 'Zitrusfrüchte, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Orange, Minze.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Orange, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-BT' => array(
+        'icNumber' => 'IC100NS10-BT',
+        'number' => 'IC100NS10-BT',
+        'name' => 'InnoCigs - Black Tie - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Black Tie',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Tabak',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Tabak',
+        'flavorCategory' => 'Tabak',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Tabak.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tabak</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-CK' => array(
+        'icNumber' => 'IC100NS10-CK',
+        'number' => 'IC100NS10-CK',
+        'name' => 'InnoCigs - Courtesy of the Kings - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Courtesy of the Kings',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Süßigkeiten#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Schokolade, Minze',
+        'flavorCategory' => 'Süßigkeiten, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Schokolade, Minze.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schokolade, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-LK' => array(
+        'icNumber' => 'IC100NS10-LK',
+        'number' => 'IC100NS10-LK',
+        'name' => 'InnoCigs - Lady-Like - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Lady-Like',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > exotische Früchte',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'tropische Früchte',
+        'flavorCategory' => 'exotische Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Tropische Früchte.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tropische Früchte</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-KD' => array(
+        'icNumber' => 'IC100NS10-KD',
+        'number' => 'IC100NS10-KD',
+        'name' => 'InnoCigs - Kings Dessert - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Kings Dessert',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Cremiges',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Crème Brûlée',
+        'flavorCategory' => 'Cremiges',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Crème Brûlée.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Crème Brûlée</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-LX' => array(
+        'icNumber' => 'IC100NS10-LX',
+        'number' => 'IC100NS10-LX',
+        'name' => 'InnoCigs - Atlantis Luxury - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Atlantis Luxury',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Getränke',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Tequila Sunrise',
+        'flavorCategory' => 'Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Tequila Sunrise.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Tequila Sunrise</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-MI' => array(
+        'icNumber' => 'IC100NS10-MI',
+        'number' => 'IC100NS10-MI',
+        'name' => 'InnoCigs - My Island - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'My Island',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Getränke',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Virgin Colada',
+        'flavorCategory' => 'Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Virgin Colada.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Virgin Colada</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-BB' => array(
+        'icNumber' => 'IC100NS10-BB',
+        'number' => 'IC100NS10-BB',
+        'name' => 'InnoCigs - Babette´s - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Babette´s',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > Gewürze#!#E-LIQUIDS > Cremiges',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Vanille, Pudding',
+        'flavorCategory' => 'Gewürze, Cremiges',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Vanille, Pudding.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille, Pudding</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-MF' => array(
+        'icNumber' => 'IC100NS10-MF',
+        'number' => 'IC100NS10-MF',
+        'name' => 'InnoCigs - Mystery Fruits - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Mystery Fruits',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > exotische Früchte',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Kaktusfeige',
+        'flavorCategory' => 'exotische Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Kaktusfeige.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kaktusfeige</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'IC100NS10-ST' => array(
+        'icNumber' => 'IC100NS10-ST',
+        'number' => 'IC100NS10-ST',
+        'name' => 'InnoCigs - Stirred, not Shaken - Nikotinsalz-Liquid - 10 ml',
+        'commonName' => 'Stirred, not Shaken',
+        'type' => 'LIQUID',
+        'category' => 'E-LIQUIDS > exotische Früchte#!#E-LIQUIDS > Frisches & Eiscreme',
+        'supplier' => 'InnoCigs',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '10',
+        'flavor' => 'Mango, Minze',
+        'flavorCategory' => 'exotische Früchte, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von InnoCigs für die E-Zigarette. Geschmack: Mango, Minze.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'AS100DT' => array(
+        'icNumber' => 'AS100DT',
+        'number' => 'AS100DT',
+        'name' => 'Aspire - Odan - Verdampfer',
+        'commonName' => 'Odan',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Aspire Odan Tank erhalten Sie einen Verdampfer für E-Zigaretten der für das Dampfen im Subohmbereich ausgelegt ist. Der Odan Tank hat eine Füllvolumen von 5 Millilitern das über das sogenannte Top-Filling-System befüllt wird. Dabei geben Sie Ihre Liquid von oben in den Tank ein. Das Füllvolumen können Sie bei Bedarf auf bis zu 7 Millilitern erweitern, in dem Sie den mitgelieferten Glastank installieren. Der vorinstallierte Glastank wurde aus Kristallglas gefertigt und optisch kommt dieser mit der Diamantoptik daher. Durch dieses optisches Merkmal unterscheidet sich der Odan Tank von vielen auf dem Markt erhältlichen Verdampfern. Die mit dem Set mitgelieferten Mesh Heads haben einen Widerstand von 0,2 Ohm und 0,3 Ohm. Beide Varianten haben unterschiedlichen Leistungsbereiche sind aber jeweils für das Vapen mit direkten Lungenzügen ausgelegt.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x Odan Tank Clearomizer</li>
+<li>1x Odan Mesh 0,3 Ohm Head, vorinstalliert</li>
+<li>1x Odan Mesh 0,2 Ohm Head</li>
+<li>1x Ersatz-Glastank 7 ml</li>
+<li>1x Dichtungsringe-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Tankvolumen: 5 ml | 7 ml</li>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 56 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>Side-Top Filling</li>
+<li>Airflow Control</li>
+<li>subohm-fähig</li>
+</ul>
+',
+    ),
+    'AS100DTH' => array(
+        'icNumber' => 'AS100DTH',
+        'number' => 'AS100DTH',
+        'name' => 'Aspire - Odan - Mesh Head (3 Stück pro Packung)',
+        'commonName' => 'Odan',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Insgesamt erhalten Sie pro Bestellung 3 Mesh Heads in den von Ihnen ausgewählten Widerstand. Die Mesh können Sie mit einem Widerstand von 0,2 Ohm oder 0,3 Ohm erwerben. Durch Ihren geringen Widerstand sind die Aspire Odan Mesh Heads für das Dampfen im Subohm-Bereich ausgelegt. In den Odan Mesh Heads wird ein Trägermaterial aus 80% Leinen und 20% Baumwolle verwendet. Dieses soll sich positiv auf den Liquidnachfluss auswirken sowie auf eine gleichmäßige Verteilung.  Geeignet sind die Heads für den von Aspire hergestellten Odan Tank Verdampfer. 
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<ul>
+<li>Widerstand: 0,2 Ohm, 0,3 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Trägermaterial: 80% Leinen, 20% Watte</li>
+<li>Leistungsbereich 0,2 Ohm: 50 – 60 Watt</li>
+<li>Leistungsbereich 0,3 Ohm: 35 – 45 Watt</li>
+<li>geeignet für Lungeninhalation (DTL): 0,5 Ohm </li>
+</ul>
+<br>
+<b>geeignet für</b>
+<ul>
+<li>Aspire Odan Tank Clearomizer Set</li>
+</ul>
+',
+    ),
+    'AS100DTG' => array(
+        'icNumber' => 'AS100DTG',
+        'number' => 'AS100DTG',
+        'name' => 'Aspire - Odan - Tank Glastank',
+        'commonName' => 'Odan',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Für die Herstellung von dem Glastank wurde das hitzebeständige und formstabile Material Pryexglas verwendet. Das Material ist zudem transparent womit das Füllvolumen im Tank kontrolliert werden kann. Der Odan Tank Glastank hat ein Fassungsvolumen von 7 Millilitern und kompatibel mit den Odan Tank Verdampfer von Aspire.
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<ul>
+<li>Tankvolumen: 7ml</li>
+<li>Material: Pyrex</li>
+</ul>
+<br>
+</ul>
+<br>
+<b>geeignet für</b>
+<ul>
+<li>Aspire Odan Tank Clearomizer Set</li>
+</ul>
+',
+    ),
+    'AS100DTD' => array(
+        'icNumber' => 'AS100DTD',
+        'number' => 'AS100DTD',
+        'name' => 'Aspire - Odan - Tank Diamant Glastank',
+        'commonName' => 'Odan',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Odan Tank Diamant Glastank ist im dem Odan Tank Clearomizer Set vorinstalliert und kann bei Bedarf einzeln erworben werden. Das Fassungsvolumen von dem Glastank beträgt 5 Millilitern. Das Besondere an dem Glastank ist, das diese aus Kristallglas gefertigt wurde und über eine Diamantoptik verfügt. 
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<ul>
+<li>Tankvolumen: 5ml</li>
+<li>Material: Kristallglas</li>
+</ul>
+<br>
+</ul>
+<br>
+<b>geeignet für</b>
+<ul>
+<li>Aspire Odan Tank Clearomizer Set</li>
+</ul>
+',
+    ),
+    'XTARVP4' => array(
+        'icNumber' => 'XTARVP4',
+        'number' => 'XTARVP4',
+        'name' => 'XTAR - Dragon VP4 Plus - Ladegerät',
+        'commonName' => 'Dragon VP4 Plus',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das Xtar VP4 Plus diagnose Ladegerät kann nahezu alle Arten von Akkuzellen laden. Auch 3s Li-Po Akkupacks können mit dem VP4 Plus geladen werden. Das Ladegerät kann ebenso als Multimeter genutzt werden, hierzu ist das geeignete Zubehör im Lieferumfang enthalten.  Ebenfalls im Lieferumfang enthalten ist ein 220V Netzstecker. Es ist möglich gleichzeitig vier Akkuzellen bis zu einer Größe von 32650 mit bis zu 1A zu laden. Über das große LCD-Display haben Sie alle relevanten Informationen im Blick.<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul><li>1x Ladegerät XTAR Dragon VP4 Plus </li>
+<li>1x Netzteil 230V</li>
+<li>1x KFZ-Adapter</li>
+<li>1x Messfühler</li>
+<li>1x Tragetasche</li>
+<li>1x Bedienungsanleitung</li></ul><br>
+<br>
+<p><strong>XTAR Dragon VP4 Plus Ladegerät</strong></p>
+<ul><li>Maße: 15,80 cm x 14,70 cm x 4 cm</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>Verpolungsschutz</li>
+<li>Ladeverfahren: TC/CC/CV mit Überwachung des Ladezustandes</li>
+<li>Ladestromstärken: 0,5A, 1A, 2A (nur in den äußern Ladeschächten</li>
+<li>Ladespannung: Li-Ion 4,2V, Ni-Mh 1,45V</li>
+<li>Ladbare Akkugrößen: Li-Ion, Ni-Mh, 3x Li-Ion, LiPo-Akkupacks</li>
+<li>Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 18700 /  22650 / 25500 / 26650 / 32650 </li>
+<li>Ni-Mh: AAAA / AAA / AA / SC / C / D </li>
+<li>Refresh-Funktion für Ni-Mh Akkus</li>
+<li>Anzeige LCD Display: Akkutyp, Ladezustand, Ladestrom, Kapazität, Innenwiderstand </li></ul>
+<br>
+<br>
+',
+    ),
+    'OF100NM' => array(
+        'icNumber' => 'OF100NM',
+        'number' => 'OF100NM',
+        'name' => 'OFRF - nexMESH - Verdampfer',
+        'commonName' => 'nexMESH',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'OFRF',
+        'brand' => 'OFRF',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der nexMESH Verdampfer aus dem Hause OFRF ist ein Subohm-Verdampfer. Dies bedeutet, dass Sie den entstehenden Dampf direkt in die Lunge inhalieren können. Dies ermöglicht unter anderem der bereits installierte nexMesh 0,2 Ohm Verdampferkopf. Sollten Sie eine Veränderung des Geschmacks- oder der Dampfentwicklung feststellen, tauschen Sie den zu den Verschleißteilen zählenden Verdampferkopf gegen einen neuen. Im Lieferumfang enthalten ist ein weiterer nexMESH Verdampferkopf mit einem Widerstand von 0,15 Ohm. Das Tankvolumen des nexMESH Verdampfers liegt bei 4 ml. Sie können das Tankvolumen mit dem mitgelieferten Bubble-Glastank auf 5,5 ml erhöhen. Die Befüllung des Verdampfers erfolgt über ein Top-Filling-System direkt von oben. Die Glastanks wurden aus dem Material PCTG gefertigt, welches laut Hersteller eine höhere Stabilität und Stoßfestigkeit gewährleisten soll.
+<br>
+<br>
+<strong>nexMesh CLEAROMIZER</strong>
+<ul>
+<li>Tankvolumen: 4ml</li>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 40,5 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Top Filling-System</li>
+<li>Airflow-Control</li>
+<li>PCTG-Glastank</li>
+</ul>
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x nexMESH Clearomizer</li>
+<li>1x nexMESH 0,2 Ohm Head (vorinstalliert)</li>
+<li>1x nexMESH 0,15 Ohm Head</li>
+<li>1x Glastank 5,5ml</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+<br>
+<br>
+</ul>
+',
+    ),
+    'OF100NMH' => array(
+        'icNumber' => 'OF100NMH',
+        'number' => 'OF100NMH',
+        'name' => 'OFRF - nexMESH Head (2 Stück pro Packung)',
+        'commonName' => 'nexMESH',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'OFRF',
+        'brand' => 'OFRF',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die nexMESH Verdampferköpfe aus dem Hause OFRF sind aufgrund Ihrer Widerstände für das Dampfen im Subohm-Bereich ausgelegt. Sie haben die Wahl zwischen einem Widerstand von 0,15 Ohm oder 0,2 Ohm. Pro bestellter Packung werden Ihnen je zwei der von Ihnen gewählten Verdampferköpfe ausgeliefert. Bitte beachten Sie, dass es sich bei den Verdampferköpfen um sogenannte Verschleißartikel handelt, deren regelmäßiger Austausch empfehlenswert ist. Verwenden Sie die nexMESH 0,15 Ohm Verdampferköpfe in einem Leistungsbereich von 55 bis 75 Watt und die 0,2 Ohm Verdampferköpfe in ihrem vorgesehenen Leistungsbereich von 75 bis 85 Watt.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Dampfmodus: VW</li>
+<li>Widerstand: 0,15 Ohm oder 0,2 Ohm</li>
+<li>Leistungswerte: 0,15 Ohm: 55 - 75 Watt, 0,2 Ohm: 75 - 85 Watt</li>
+<li>Geeignet für Lungeninhalation</li>
+<br>
+<br>
+',
+    ),
+    'OF100NMG' => array(
+        'icNumber' => 'OF100NMG',
+        'number' => 'OF100NMG',
+        'name' => 'OFRF - nexMESH - Glastank',
+        'commonName' => 'nexMESH',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'OFRF',
+        'brand' => 'OFRF',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Glastank ist für den gleichnamigen nexMESH Verdampfer von der Marke OFRF geeignet. Sie können sich zwischen einem Fassungsvermögen von 4 ml oder 5,5 ml entscheiden. Die Glastanks sind transparent, sodass Sie den Liquidstand jederzeit im Blick haben. Wenn Sie Ihren Glastank reinigen wollen, reichen warmes Wasser und ein trockenes Tuch vollkommen aus. Sie erhalten pro bestellter Packung einen Glastank in der von Ihnen gewählten Größe.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Tankvolumen: 4 ml oder 5,5 ml</li>
+<li>Material: PCTG</li>
+<li>transparent</li>
+<br>
+<br>
+',
+    ),
+    'SK100S8' => array(
+        'icNumber' => 'SK100S8',
+        'number' => 'SK100S8',
+        'name' => 'SMOK - Stick - E-Zigarette',
+        'commonName' => 'Stick',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Stick 80W E-Zigaretten Set setzt sich aus dem Stick 80W Akku und dem TF Tank Clearomizer zusammen. Das Set erreicht eine maximale Ausgangsleistung von 80 Watt. Das Set unterstützt eine Ausgangsleistung von 5 bis 80 Watt. Diese können Sie dank des Einstellrads am Boden des Akkus individuell einstellen. Der Akku ist fest verbaut und verfügt über eine Kapazität von 2800Ah. Ein eingebauter LED-Indikator gibt den aktuellen Akkustand des Geräts an. Der subohmfähige Verdampfer TF Tank weist mit einem aus Pyrexglas gefertigtem Tank ein Fassungsvermögen von 6ml auf. Zur Befüllung des Tanks mit Liquids nutzen Sie ein Top-Filling-System. Drücken Sie den an der Top Kappe befindlichen Knopf und Sie können anschließend die Top Kappe entgegen des Uhrzeigersinns drehen und legen so einen seitlichen Einfüllschlitz frei, über welchen Liquid in den Tank gelangt. Über eine Airflow-Control können Sie die Luftzufuhr individuell Ihren Bedürfnissen anpassen. Über eine Drehbewegung an der Base öffnen bzw. schließen Sie die Airflow-Control. Je weiter die Airflow-Control geöffnet ist, desto geringer ist der Luftwiderstand während des Dampfens. Zwei subohmfähige Verdampferköpfe sind im Lieferumfang enthalten - zwei  TF Tank Stick Mesh Verdampferköpfe mit einem Widerstand von je 0,15 Ohm. Verdampferköpfe zählen zu den Verschleißteilen und sollten in regelmäßigen Zeitabständen ausgewechselt werden. <br>
+<br>
+<b>Lieferumfang:</b>
+<li>1x Smok Stick 80W Akku</li>
+<li>1x Smok TF Tank Clearomizer</li>
+<li>2x Smok TF Tank Stick Mesh Head</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+<br>
+<br>
+<strong>Stick 80W:</strong>
+<li>Akkukapazität: 2800mAh</li>
+<li>Ausggangsleistung: 5-80 Watt</li>
+<li>Widerstandsbereich: 0,15 - 2,5 Ohm</li>
+<li>Spannungsbereich: 3,3V - 4,2V</li>
+<li>Anschluss: 510er-Gewinde</li>
+<li>Gewicht: 117 Gramm</li>
+<li>Höhe: 95 mm</li>
+<li>Durchmesser: 24,5 mm</li>
+<br>
+<br>
+<strong>TF Tank Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 6 ml</li>
+<li>Top Filling</li>
+<li>Airflow-Controll</li>
+<li>Maße: 56 mm x 122 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100TFH' => array(
+        'icNumber' => 'SK100TFH',
+        'number' => 'SK100TFH',
+        'name' => 'SMOK - TF Tank Stick - Mesh Head - 0,15 Ohm (3 Stück pro Packung)',
+        'commonName' => 'TF Tank Stick',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die TF Tank Stick Mesh Verdampferköpfe haben einen Widerstand von 0,15 Ohm und benötigen eine Leitung zwischen 40 und 80 Watt. Smok empfiehlt eine Leistung zwischen 60 und 70 Watt. Aufgrund des geringen Widerstands von 0,15 Ohm sind die Verdampferköpfe für das subohme Dampfen ausgelegt und müssen mit direkten Lungenzügen genutzt werden. Smok setzt bei diesen Verdampferköpfen auf eine Mesh Wicklung im Inneren der Köpfe. Dies führt zu einer größeren Oberfläche zum Verdampfen des Liquids als es bei herkömmlichen Verdampferköpfen der Fall ist. Sie erhalten pro Packung drei TF Tank Stick Mesh Verdampferköpfe mit 0,15 Ohm. Sollten Sie Veränderungen in Geschmack oder Leistung feststellen, sollten Sie den Verdampferkopf wechseln. 
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Leistungsbereich: 40 bis 80 Watt</li>
+<li>empohlen: 60 - 70 Watt</li>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Geeignet für direkte Lungenzüge (DL)</li>
+</ul>
+<br>
+<strong>geeignet für:</strong>
+<li>Smok TF Tank Clearomizer Set</li>
+<br>
+<br>',
+    ),
+    'SK100MP' => array(
+        'icNumber' => 'SK100MP',
+        'number' => 'SK100MP',
+        'name' => 'SMOK - Mag P3 - E-Zigarette',
+        'commonName' => 'Mag P3',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das SMOK Mag P3 E-Zigaretten Set besteht aus dem TFV16 und dem Mag P3 230 Watt. Der Akkuträger ist bei dem Mag P3 nicht fest verbaut, sodass zwei 18650er Akkuzellen separat erworben werden müssen. Der Mag P3 Akkuträger unterstützt das Dampfen im VW- und TC-Modus. Die maximale Ausgangsleistung beträgt 230 Watt. Über den 1,9 Zoll großen HD-TOuch-Bildschirm können Sie Ihre Einstellungen vornehmen und die Parameter jederzeit ablesen. Der TFV16 Verdampfer fasst bis zu 9ml Liquid und wird von oben über ein Top-Filling-System mit Liquid befüllt. Die individuell verstellbare Airflow-Control befindet sich an der Base. Im Lieferumfang sind zwei Verdampferköpfe enthalten, die das Dampfen im Subohm-Bereich unterstützen.
+<br>
+<br>
+<strong>Lieferumfang:</strong><ul>
+<li>1x Mag P3 Akkuträger</li>
+<li>1x TFV16 Clearomizer</li>
+<li>1x TFV16 Mesh Head mit 0,17 Ohm</li>
+<li>1x TFV16 Dual Mesh Head mit 0,12 Ohm</li>
+<li>1x Glastank Silikon-Schutzhülle</li>
+<li>1x Ersatzglastank </li>
+<li>1x Ersatzteil-Set</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitungen</li></ul>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Mag P3 230 Watt:</strong><ul>
+<li>Ausgabemodi: VW / TC</li>
+<li>Ausgangsleistung: max. 230 Watt</li>
+<li>Widerstandsbereich: 0,05 bis 2,0 Ohm im TC-Modus 0,1 bis 2,5 Ohm im VW </li>
+<li>wasserdicht und staubgeschützt (IP67)</li>
+<li>stoß- und sturzgesichert (IP67)</li>
+<li>1,9" HD-Touch-Display</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 72,3 mm x 36 mm x 91,6 mm</li></ul>
+<br>
+<br>
+<strong>TFV16:</strong><ul>
+<li>Tankvolumen: 9ml</li>
+<li>Top-Filling-System</li>
+<li>Bottom-Airflow-Control</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe: 64,5 mm</li>
+<li>Durchmesser: 32 mm</li></ul>
+<br>
+<br>',
+    ),
+    'SK100MPA' => array(
+        'icNumber' => 'SK100MPA',
+        'number' => 'SK100MPA',
+        'name' => 'SMOK - Mag P3 - Akkuträger - 230 Watt',
+        'commonName' => 'Mag P3',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der SMOK Mag P3 Akkuträger kann durch die zwei 18650er Akkuzellen bis zu 230 Watt Ausgangsleistung erreichen. Die Akkuzellen sind nicht Teil des Lieferumfangs und müssen separat erworben werden. Sie können mit ihm wahlweise im VW-Modus oder im TC-Modus dampfen. Über dem 1,9" großen HD-TOuch-Bildschirm tätigen Sie Ihre Einstellungen. Der Leistungsbereich des SMOK Mag P3 Akkuträgers liegt zwischen 1 und maximal 230 Watt. Über den 510er Anschluss verbinden Sie denn Mag P3 beispielsweise mit dem TFV16 Verdampfer mit 9ml Tankvolumen.
+<br>
+<br>
+<strong>Lieferumfang:</strong><ul>
+<li>1x Mag P3 Akkuträger</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitungen</li></ul>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Mag P3 230 Watt:</strong><ul>
+<li>Ausgabemodi: VW / TC</li>
+<li>Ausgangsleistung: max. 230 Watt</li>
+<li>Widerstandsbereich: 0,05 bis 2,0 Ohm im TC-Modus 0,1 bis 2,5 Ohm im VW </li>
+<li>wasserdicht und staubgeschützt (IP67)</li>
+<li>stoß- und sturzgesichert (IP67)</li>
+<li>1,9" HD-Touch-Display</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 72,3 mm x 36 mm x 91,6 mm</li></ul>
+<br>
+<br>',
+    ),
+    'SK100V16' => array(
+        'icNumber' => 'SK100V16',
+        'number' => 'SK100V16',
+        'name' => 'SMOK - TFV16 - Verdampfer',
+        'commonName' => 'TFV16',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Smok TFV16 Verdampfer Set ist übersichtlich gehalten und verfügt doch über alles, was Sie für intensives Vapen im Subohm-Bereich benötigen. Sein sehr großzügiger Tank mit einem Liquidvolumen von 9 Millilitern, kann dank Top-Filling-System bzw. durch einfaches seitliches Drehen der Verdampfer-Kappe ganz unkompliziert von oben befüllt werden. Die an der Base vorhandene Airflow Control des TFV16 Verdampfers ermöglicht Ihnen eine ganz individuelle und für Ihre Dampfvorlieben optimale Regelung der Luftzufuhr. m Lieferumfang sind zwei unterschiedliche Verdampferköpfe enthalten, die für direkte Lungenzüge ausgelegt sind.
+<br>
+<br>
+<strong>Lieferumfang:</strong><ul>
+<li>1x TFV16 Clearomizer</li>
+<li>1x TFV16 Mesh Head mit 0,17 Ohm</li>
+<li>1x TFV16 Dual Mesh Head mit 0,12 Ohm</li>
+<li>1x Glastank Silikon-Schutzhülle</li>
+<li>1x Ersatzglastank </li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitungen</li></ul>
+<br>
+<br>
+<strong>TFV16:</strong><ul>
+<li>Tankvolumen: 9ml</li>
+<li>Top-Filling-System</li>
+<li>Bottom-Airflow-Control</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe: 64,5 mm</li>
+<li>Durchmesser: 32 mm</li></ul>
+<br>
+<br>',
+    ),
+    'SK100V16M' => array(
+        'icNumber' => 'SK100V16M',
+        'number' => 'SK100V16M',
+        'name' => 'SMOK - TFV16 - Mesh Head - 0,17 Ohm (3 Stück pro Packung)',
+        'commonName' => 'TFV16',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der TFV16 Mesh Verdampferkopf hat einen Widerstand von 0,17 Ohm und kommt für den TFV16 Clearomizer mit 9ml Fassungsvolumen in Frage. Pro Packung sind drei Verdampferköpfe von Smok enthalten. Verdampferköpfe zählen zu den Verschleißteilen, sodass diese in regelmäßigen Abständen ausgetauscht werden sollen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>3x Smok TFV16 Mesh Heads mit 0,17 Ohm</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 0,17 Ohm</li>
+<li>empfohlener Leistungswert: 120 Watt</li>
+<li>Mesh</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>SMOK Mag P3 E-Zigaretten Set</li>
+<li>SMOK TFV16 Clearomizer Set </li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SK100V16D' => array(
+        'icNumber' => 'SK100V16D',
+        'number' => 'SK100V16D',
+        'name' => 'SMOK - TFV16 - Dual Mesh Head - 0,12 Ohm (3 Stück pro Packung)',
+        'commonName' => 'TFV16',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Smok TFV16 Dual Mesh Verdampferköpfe verfügen über Dual Mesh Wicklungen. Die Verdampferköpfe haben einen Widerstand von 0,12 Ohm und eignen sich für einen Betrieb bei einer Leistung zwischen 80 Watt und 160 Watt. Die TFV16 Dual Mesh Verdampferköpfe von Smok bekommen Sie im 3er-Pack geliefert. Tauschen Sie die Verdampferköpfe in regelmäßigen Abständen aus.<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>3x Smok TFV16 Dual Mesh Heads mit 0,12 Ohm</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 0,12 Ohm</li>
+<li>Leistungsbereich: 80 Watt - 160 Watt</li>
+<li>empfohlener Leistungswert: 120 Watt</li>
+<li>Dual Mesh</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>SMOK Mag P3 E-Zigaretten Set</li>
+<li>SMOK TFV16 Clearomizer Set </li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100V16G' => array(
+        'icNumber' => 'SK100V16G',
+        'number' => 'SK100V16G',
+        'name' => 'SMOK - TFV16 - Glastank - 9 ml',
+        'commonName' => 'TFV16',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Ein Ersatzglas für Ihren TFV16 Verdampfer sollten Sie immer im Haus haben, weil auch das hochwertigste Material durch einen ungünstigen Stoß oder Schlag mal zu Bruch gehen kann. Mit einem Ersatz-Pyrexglas für Ihren Smok TFV16 Verdampfer haben Sie im Bedarfsfall immer das passende Ersatzteil zur Hand. Der Austausch ist ganz unkompliziert zu handhaben, sodass Sie keinen längeren Dampfstopp zu befürchten haben. Ein schadhaftes Glas entfernen Sie einfach, indem Sie die Top-Cap und die Basis voneinander trennen. Pyrex-Glas verhält sich aufgrund seiner Beschaffenheit geschmacksneutral und lässt sich rückstandslos reinigen.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>transparent</li>
+<li>Material: Pyrexglas</li>
+<li>Tankvolumen: 9ml</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>SMOK Mag P3 E-Zigaretten Set</li>
+<li>SMOK TFV16 Clearomizer Set </li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SK100RP' => array(
+        'icNumber' => 'SK100RP',
+        'number' => 'SK100RP',
+        'name' => 'SMOK - RPM40 - E-Zigarette',
+        'commonName' => 'RPM40',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Hier erhalten Sie das RPM40 E-Zigaretten Set aus dem Hause Smok, ein All-In-One-Gerät mit einem fest verbauten Akku mit einer Kapazität von 1500 mAh. Der verarbeitete IQ-R-Chip versetzt den Akku mit einer Reaktionszeit von 0,001 Sekunden auf bis zu 40 Watt. Die relevanten Parameter Ihrer RPM40 E-Zigarette, wie Akkustand, die gewählte Ausgangsleistung, den aktuellen Widerstand, die Spannung und die Anzahl Ihrer getätigten Züge stellt Ihnen das 0,96” große TFT-Farbdisplay dar. Darüber hinaus haben Sie die Möglichkeit die Farbe der Schrift Ihren Wünschen anzupassen. Dabei stehen sechs Farben zur Wahl. Zusätzlich zu der Smok RPM40 E-Zigarette erhalten Sie zwei Pod-Systeme mit jeweils einem vorinstallierten Verdampferkopf. Das Smok RPM Standard Pod-System mit einem Tankvolumen von 4,3 ml und dem passendem RPM 0,4 Ohm Mesh Head. Das zweite Pod-System nennt sich Smok RPM Nord Pod-System und besitzt ein Tankvolumen von 4,5ml. Hier ist der Smok Nord Regular DC 0,6 Ohm Head verbaut. Als empfohlener Leistungsbereich werden beim Nord Regular DC 0,6 Ohm Head 20 Watt angegeben, beim RPM 0,4 Ohm Mesh Head liegt der Wert bei 25 Watt. Die Verdampferköpfe liegen mit einem Widerstand von 0,4 Ohm und 0,6 Ohm in einem Bereich, in dem das Subohm-fähige Dampfen möglich ist. Sie können den Dampf somit direkt in die Lunge (DL) einatmen. Beide Pod-Systeme werden seitlich über das Side-Filling-System mit Liquid befüllt. Den Pod müssen Sie dafür vom Akku trennen und den Stopfen aus Gummi aus dem Einfüllloch entfernen. Wenn Sie eine Geschmacksveränderungen oder einer geringere Dampfentwicklung feststellen sollten, sollten Sie den Verdampferkopf wechseln. Die Verdampferköpfe gehören zu den Verschleißteilen einer E-Zigarette. Ein Wechsel in regelmäßigen Abständen ist daher zu empfehlen. Den Akku der RPM40 E-Zigarette können Sie über das mitgelieferte USB-Kabel mit Energie versorgen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x RPM40 E-Zigaretten Set</li>
+<li>1x RPM Standard Pod 4,3ml mit RPM 0,4 Ohm Mesh Head (eingesetzt)</li>
+<li>1x RPM Nord Pod 4,5ml mit Nord Regular DC 0,6 Ohm Head</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<strong>RPM40 Akku</strong>
+<li>0,96” TFT-Farbdisplay</li>
+<li>Akkukapazität: 1500mAh</li>
+<li>Ausgangsleistung: 1 Watt – 40 Watt</li>
+<li>IQ-R-Chip</li>
+<li>Reaktionszeit: 0,001 Sekunden</li>
+<li>Maße ohne Pod: 25 mm x 25 mm x 99 mm</li>
+<li>Gewicht: 99 Gramm</li>
+<li>Ausgangsspannung: 0,5 Volt - 4,1 Volt</li>
+<li>Material: Aluminium Gehäuse</li>
+<li>Airflow Control</li>
+<br>
+<strong>RPM Standard Pod 4,3ml mit RPM 0,4 Ohm Mesh Verdampferkopf</strong>
+<li>Tankvolumen: 4,3 ml</li>
+<li>Widerstand: 0,4 Ohm</li>
+<li>Subohm-fähig</li>
+<li>Wicklung: Mesh</li>
+<li>Side-Filling-System</li>
+<li>Gehäuse aus Kunststoff</li>
+<br>
+<strong>RPM Nord Pod 4,5ml mit Nord Regular DC 0,6 Ohm Verdampferkopf</strong>
+<li>Tankvolumen: 4,5 ml</li>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Subohm-fähig</li>
+<li>Wicklung: Dual Coil</li>
+<li>Side-Filling-System</li>
+<li>Gehäuse aus Kunststoff</li>
+</ul>
+<br>
+<br>
+<strong> Diese Gerät ist kompatibel mit folgenden Verdampferköpfen:</strong> 
+<li>RPM 0,4 Ohm Mesh Verdampferkopf</li>
+<li>Nord Regular DC 0,6 Ohm Verdampferkopf</li>
+<li>Nord Mesh-MTL 0,8 Ohm Verdampferkopf</li>
+<li>Nord 1,4 Ohm regular Verdampferkopf</li>
+<li>Nord 0,6 Ohm Mesh Verdampferkopf</li>',
+    ),
+    'SK100RPS' => array(
+        'icNumber' => 'SK100RPS',
+        'number' => 'SK100RPS',
+        'name' => 'SMOK - RPM Standard Pod, 4,3 ml (3 Stück pro Packung)',
+        'commonName' => 'RPM Standard Pod, 4,3 ml',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Smok RPM Standard Pod-System kann bis zu 4,3 ml Liquid fassen. Dieses wird über das Side-Filling-System in den Tank gefüllt. Hierzu ist es notwendig den Pod vom Akku zu entfernen. Das Pod-System ist aus Kunststoff und hat ein festes Mundstück. Der Pod hat im Inneren Platz für zum Beispiel einen Smok RPM 0,4 Ohm Mesh Verdampferkopf, welcher bereits vorinstalliert ist. Der RPM Standard Pod ist für die Smok RPM40 E-Zigarette geeignet. Pro bestellter Packung erhalten Sie drei RPM Standard Pod-Systeme.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x RPM Standard Pod 4,3 ml</li>
+<li>1x Produktinformation</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 4,3 ml</li>
+<li>Side-Filling-System</li>
+<li>Gehäuse aus Kunststoff</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100RPN' => array(
+        'icNumber' => 'SK100RPN',
+        'number' => 'SK100RPN',
+        'name' => 'SMOK - RPM Nord - Pod, 4,5 ml (3 Stück pro Packung)',
+        'commonName' => 'RPM Nord',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das RPM Nord Pod-System hat ein Tankvolumen von 4,5ml und einen vorinstallieren Nord Regular DC 0,6 Ohm Verdampferkopf. Der Tank des Pod-Systems ist aus schwarzem transparentem Kunststoff verarbeitet. Damit Sie Ihr frisches Liquid in den Tank des Pod-Systems füllen können, müssen Sie es vom Akku trennen und die Gummiabdeckung des Einfüllloches abnehmen. Beim Kauf einer Packung erhalten Sie drei Stück des RPM Nord Pod-Systems.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x RPM Nord Pod 4,5 ml</li>
+<li>1x Produktinformation</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 4,5 ml</li>
+<li>Side-Filling-System</li>
+<li>Gehäuse aus Kunststoff</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100RPM' => array(
+        'icNumber' => 'SK100RPM',
+        'number' => 'SK100RPM',
+        'name' => 'SMOK - RPM - 0,4 Ohm Mesh Head (5 Stück pro Packung)',
+        'commonName' => 'RPM',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Insgesamt erhalten Sie fünf der RPM 0,4 Ohm Mesh Verdampferköpfe von Smok. Sie sind kombinierbar mit den Pod-Systemen des Smok RPM40 E-Zigaretten Sets. Jeder Verdampferkopf weist einen Widerstand von 0,4 Ohm auf. Mit den Verdampferköpfen sind direkte Lungenzüge möglich. Die empfohlene Leistung der Verdampferköpfe liegt bei 25 Watt. Sollten Sie eine Veränderung des Geschmacks oder der Dampfentwicklung feststellen, ist es an der Zeit, den zu den Verschleißteilen zählenden Verdampferkopf gegen einen Neuen zu wechseln.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Smok RPM 0,4 Ohm Mesh Heads</li>
+</ul>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 0,4 Ohm</li>
+<li>Empfohlene Leistung 25 Watt</li>
+<li>Subohm-fähig</li>
+<li>Wicklung: Mesh</li>
+</ul>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Smok RPM40 E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100NRC' => array(
+        'icNumber' => 'SK100NRC',
+        'number' => 'SK100NRC',
+        'name' => 'SMOK - Nord - Regular DC Head - 0,6 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Nord',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Nord Regular DC 0,6 Ohm Verdampferköpfe von Smok sind durch ihren geringen Widerstand von 0,6 Ohm für das Dampfen Direkt auf Lunge (DL) geeignet. Beachten Sie bitte, dass Verdampferköpfe Verschleißteile sind. Wenn Sie Veränderungen im Geschmack oder in der Dampfentwicklung feststellen, tauschen Sie den Verdampferkopf gegen einen neuen aus. Es wird empfohlen, die Verdampferköpfe bei einer Leistung von 20 Watt zu verwenden. Pro Packung bekommen Sie fünf der Smok Nord Regular DC 0,6 Ohm Verdampferköpfe. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Nord Regular DC 0,6 Ohm Heads</li>
+</ul>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Empfohlene Leistung 20 Watt</li>
+<li>Subohm-fähig</li>
+<li>Wicklung: Dual Coil</li>
+</ul>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Smok RPM40 E-Zigarette</li>
+<li>Smok Nord E-Zigarette</li>
+</ul>
+<br>
+<br>',
+    ),
+    'XTARVC' => array(
+        'icNumber' => 'XTARVC',
+        'number' => 'XTARVC',
+        'name' => 'XTAR - VC2 - Ladegerät',
+        'commonName' => 'VC2',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Von Xtar erhalten Sie das VC2 Ladegerät. Über das große LCD Display haben Sie alle relevanten Informationen stets im Blick. Es werden Ihnen die bereits geladenen mAh angezeigt sowie die Ladegeschwindigkeit in A (Ampere). Zum Lieferumfang gehört ein Micro-USB Kabel, welches Sie an ein 5V 1A USB Netzstecker anschließen sollten, um die maximale Ladespannung zu erreichen. Der Netzstecker ist nicht Bestandteil des Lieferumfangs. Das Xtar VC2 kann alle gängigen Li-ion Akkuzellen mit Strom versorgen. Hier stellen lediglich 20700 und 21700er Akkuzellen mit PCB Schutzschaltung ein Problem dar, da diese Zellen zu lang sind. Im Ladegerät können Sie bis zu zwei Akkuzellen mit maximal 0,5 A laden. 
+<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul>
+<li>1x XTAR VC2</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>XTAR XTAR VC2 LADEGERÄT</strong></p>
+<ul>
+<li>Ladeverfahren: TC/CC/CV</li>
+<li>Überwachung des Ladefortschritts</li>
+<li>Ladespannung: max. 4,2V</li>
+<li>Ladestrom: DC 5V / 1.0A</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>geeignet für Li-ion</li>
+<li>mögliche Größen: 10440 | 14500 | 14650 | 16340 | 17335 | 17500 | 17670 | 18350 | 18490 | 18500 | 18650 | 18700 | 20700 | 21700 | 22650 | 25500 | 26650</li>
+<li>nicht geeignet für geschützte 20700/21700 Zellen</li>
+<li>Maße: 131mm x 66mm x 33mm</li>
+<li>LCD-Display</li>
+<li>Verpolungsschutz</li>
+<li>Überladungsschutz</li>
+</ul>
+',
+    ),
+    'XTARVC4S' => array(
+        'icNumber' => 'XTARVC4S',
+        'number' => 'XTARVC4S',
+        'name' => 'XTAR - VC4S - Ladegerät',
+        'commonName' => 'VC4S',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Von Xtar erhalten Sie das VC4S Ladegerät für bis zu vier Akkuzellen. Bitte beachten Sie dass das Laden von 20700 und 21700er Akkuzellen mit PCB Schutzschaltung in diesem Ladegerät aufgrund Ihrer Länge nicht möglich ist. Über das LCD Display des VC4S Ladegeräts haben Sie stets alle Informationen Ihrer Akkuzellen im Blick. Die maximale Ladespannung von 3A erreichen Sie mit einem optional erhältlichen 5V/3A Netzstecker. Mit diesem ist es möglich eine Akkuzelle mit maximal 3A zu laden. Sobald Sie eine weitere Akkuzelle einlegen, verringert sich der Ladestrom automatisch auf 1A, welche mit bis zu vier Zellen möglich sind. Das Ladegerät hat weitere Funktionen wie die Möglichkeit Ihre Akkuzellen in eine Lagerladung zu versetzen, hier wird der Akku auf 3,5 Volt geladen, was zur Lagerung optimal ist. 
+<br>
+<br>
+<p><strong>Lieferumfang:</strong></p>
+<ul>
+<li>1x XTAR VC4S</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>XTAR VC4S LADEGERÄT</strong></p>
+<ul>
+<li>Ladeverfahren: TC/CC/CV</li>
+<li>Überwachung des Ladefortschritts</li>
+<li>Ladespannung: max. 4,2V</li>
+<li>Ladestrom: DC 5V / 3A</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>geeignet für 3.6V/3.7V Li-ion/IMR/INR/ICR-Zellen</li>
+<li>mögliche Größen: 10440 | 14500 | 14650 | 16340 | 17335 | 17500 | 17670 | 18350 | 18490 | 18500 | 18650 | 18700 | 20700 | 21700 | 22650 | 25500 | 26650 | 32650</li>
+<li>geeignet für: 1.2V Ni-MH / Ni-CD:  AAA / AA</li>
+<li>nicht geeignet für geschützte 20700/21700 Zellen</li>
+<li>lädt max. zwei 32650 Akkuzellen (CH1 & CH4) oder zwei 18650er Akkuzellen (CH1 & CH4) <b>gleichzeitig</b></li>
+<li>Maße: 140mm x 128mm x 31mm</li>
+<li>Verpolungsschutz</li>
+<li>Überladungsschutz</li>
+</ul>
+',
+    ),
+    'XTARMC1P' => array(
+        'icNumber' => 'XTARMC1P',
+        'number' => 'XTARMC1P',
+        'name' => 'XTAR - ANT MC1 Plus - Ladegerät',
+        'commonName' => 'ANT MC1 Plus',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Aus dem Hause Xtar erhalten Sie das ANT MC1 Plus Li-ion Ladegerät für eine Akkuzelle. Das MC1 Plus erkennt automatisch den eingelegten Akku und lädt dann intelligent mit 0,5 oder 1A. Die maximale Ladespannung von 1A ist ausschließlich mit einem 1A Netzstecker möglich, welchen Sie separat erwerben müssen. Bitte beachten Sie, dass das Laden von 20700 und 21700er Akkuzellen mit PCB Schutzschaltung bedingt durch die Länge nicht möglich ist. Über die Anzeige an der Oberen Seite des MC1 Plus erfahren Sie den aktuellen Ladestand Ihres Akkus sowie den aktuellen Ladestrom.
+<br>
+<br>
+<p><strong>XTAR ANT MC1 Plus LADEGERÄT</strong></p>
+<ul>
+<li>1x ANT MC1 Plus</li>
+<li>1x Micro-USB Kabel</li>
+<li>1x Tasche</li>
+</ul>
+<br>
+<br>
+<p><strong>XTAR ANT MC1 Plus LADEGERÄT</strong></p>
+<ul>
+<li>Ladeverfahren: TC/CC/CV</li>
+<li>Überwachung des Ladefortschritts</li>
+<li>Ladespannung: max. 4,2V</li>
+<li>Ladestrom: DC 5V / 1A</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>geeignet für 3.6V/3.7V Li-ion/IMR/INR/ICR-Zellen</li>
+<li>mögliche Größen: 10440 | 14500 | 14650 | 16340 | 17335 | 17500 | 17670 | 18350 | 18500 | 18650 | 18700 | 20700 | 21700 | 22650 | 25650 | 26650</li>
+<li>nicht geeignet für geschützte 20700/21700 Zellen sowie button Top 26650er Zellen</li>
+<li>Maße: 92mm x 27mm x 26mm</li>
+<li>Verpolungsschutz</li>
+<li>Überladungsschutz</li>
+<li>0V-Aktivierungsfunktion</li>
+</ul>
+',
+    ),
+    'XTARMC1S' => array(
+        'icNumber' => 'XTARMC1S',
+        'number' => 'XTARMC1S',
+        'name' => 'XTAR - MC1S - Ladegerät',
+        'commonName' => 'MC1S',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das von Xtar gefertigte Ladegerät MC1S ist das kleinste der Xtar Familie. Es können alle gängigen Li-ion Zellen mit diesem Ladegerät geladen werden. Bitte achten Sie darauf, dass 20700er und 21700er Akkuzellen mit PCB Schutzschaltung aufgrund Ihrer Länge nicht passend sind. Sie benötigen für den Betrieb ein USB-Kabel sowie einen geeigneten Netzstecker mit 5V/1A, da beides nicht Bestandteil des Lieferumfangs sind. 
+<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul>
+<li>1x MC1S Ladegerät</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>XTAR MC1S LADEGERÄT</strong></p>
+<ul>
+<li>Ladeverfahren: TC/CC/CV</li>
+<li>Überwachung des Ladefortschritts</li>
+<li>Ladespannung: max. 4,2V</li>
+<li>Ladestrom: DC 5V / 1A</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>geeignet für 3.6V/3.7V Li-ion/IMR/INR/ICR-Zellen</li>
+<li>mögliche Größen: 10440 | 14500 | 14650 | 16340 | 17335 | 17500 | 17670 | 18350 | 18500 | 18650 | 18700 | 20700 | 21700 | 22650 | 25500 | 26650</li>
+<li>nicht geeignet für geschützte 20700/21700 Zellen</li>
+<li>Maße: 92mm x 22mm x 26mm</li>
+<li>Verpolungsschutz</li>
+<li>Überladungsschutz</li>
+<li>0V-Aktivierungsfunktion</li>
+</ul>
+',
+    ),
+    'XTARMC' => array(
+        'icNumber' => 'XTARMC',
+        'number' => 'XTARMC',
+        'name' => 'XTAR - MC2 - Ladegerät',
+        'commonName' => 'MC2',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Aus dem Hause Xtar erhalten Sie ein MC2 Ladegerät zum laden handelsüblicher Li-ion Akkuzellen. Im Lieferumfang erhalten Sie ein Micro-USB Kabel, welches Sie mit einem 5V/1A Netzstecker verwenden können. Der Netzstecker ist nicht Bestandteil des Lieferumfangs und muss separat erworben werden. Selbstverständlich ist es auch möglich das Ladegerät an einem PC oder Laptop anzuschließen. Trotz der geringen Größe des Ladegerätes ist es möglich zeitgleich eine 26650er Akkuzelle und eine 21700er Akkuzelle zu laden. 
+<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul>
+<li>1x MC2 Ladegerät</li>
+<li>1x Micro USB Kabel</lI>
+<li>1x Tasche</li>
+</ul>
+<br>
+<br>
+<p><strong>XTAR MC2 LADEGERÄT</strong></p>
+<ul>
+<li>Ladeverfahren: TC/CC/CV</li>
+<li>Überwachung des Ladefortschritts</li>
+<li>Ladespannung: max. 4,2V</li>
+<li>Ladestrom: DC 5V / 1A</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>geeignet für 3.6V/3.7V Li-ion/IMR/INR/ICR-Zellen</li>
+<li>mögliche Größen: 10440 | 14500 | 14650 | 16340 | 17335 | 17500 | 17670 | 18350 | 18500 | 18650 | 18700 | 20700 | 21700 | 22650 | 25500 | 26650</li>
+<li>nicht geeignet für geschützte 20700/21700 Zellen</li>
+<li>Maße: 92mm x 40mm x 32mm</li>
+<li>Verpolungsschutz</li>
+<li>Überladungsschutz</li>
+<li>0V-Aktivierungsfunktion</li>
+</ul>
+',
+    ),
+    'XTARMC2S' => array(
+        'icNumber' => 'XTARMC2S',
+        'number' => 'XTARMC2S',
+        'name' => 'XTAR - MC2S - Ladegerät',
+        'commonName' => 'MC2S',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das aus dem Hause Xtar stammende MC2S Ladegerät für bis zu zwei Li-ion Akkuzellen kann mit bis zu 0,5A pro Ladeschacht laden. Hierzu ist ein USB Netzstecker mit 5V/1A vonnöten. Der Netzstecker ist nicht Bestandteil des Lieferumfangs und muss separat erworben werden. Sie haben auch die Möglichkeit das Ladegerät mit dem im Lieferumfang enthaltenen USB-Kabels am PC oder Laptop zu laden. Hier kommt es aufgrund des geringeren Ladestroms zu einer längeren Ladezeit, da pro Schacht nur 0,25A Ladestrom ankommen. Zwei LED´s an der Oberseite des Ladegerätes informieren Sie über den Ladezustand. Hier sind rot für den Status “lädt” und grün für “voll”. 
+<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul>
+<li>1x MC2 Ladegerät</li>
+<li>1x Micro USB Kabel</lI>
+<li>1x Tasche</li>
+</ul>
+<br>
+<br>
+<p><strong>XTAR MC2S LADEGERÄT</strong></p>
+<ul>
+<li>Ladeverfahren: TC/CC/CV</li>
+<li>Überwachung des Ladefortschritts</li>
+<li>Ladespannung: max. 4,2V</li>
+<li>Ladestrom: DC 5V / 1A</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>geeignet für 3.6V/3.7V Li-ion/IMR/INR/ICR-Zellen</li>
+<li>mögliche Größen: 10440 | 14500 | 14650 | 16340 | 17335 | 17500 | 17670 | 18350 | 18500 | 18650 | 18700 | 20700 | 21700 | 22650 | 25500 | 26650</li>
+<li>nicht geeignet für geschützte 20700/21700 Zellen</li>
+<li>Maße: 92mm x 40mm x 32mm</li>
+<li>Verpolungsschutz</li>
+<li>Überladungsschutz</li>
+<li>0V-Aktivierungsfunktion</li>
+</ul>
+',
+    ),
+    'XTARMC4' => array(
+        'icNumber' => 'XTARMC4',
+        'number' => 'XTARMC4',
+        'name' => 'XTAR - MC4 - Ladegerät',
+        'commonName' => 'MC4',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das vier schacht Ladegerät MC4 von Xtar kann zeitgleich vier Li-ion Akkuzellen laden. Hierzu benötigen Sie einen USB Netzstecker mit 5V/2,1A, welcher nicht Bestandteil des Lieferumfangs ist. Sie haben auch die Möglichkeit zwei 26650 sowie zwei 18650er Akkuzellen zeitgleich zu laden. Hier sind die beiden äußeren Ladeschächte für die größeren Akkuzellen gedacht. Über den Ladestatus informieren Sie LED´s über jedem Schacht. Hier steht grün für voll und rot für wird geladen. Bitte achten Sie darauf in diesem Ladegerät keine 20700 und 21700er Akkuzellen mit PCB Schutzschaltung geladen werden können, da diese aufgrund der Länge nicht passen. 
+<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul>
+<li>1x MC4 Ladegerät</li>
+<li>1x Micro USB Kabel</lI>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>XTAR MC2S LADEGERÄT</strong></p>
+<ul>
+<li>Ladeverfahren: TC/CC/CV</li>
+<li>Überwachung des Ladefortschritts</li>
+<li>Ladespannung: max. 4,2V</li>
+<li>Ladestrom: DC 5V / 2,1A</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>geeignet für 3.6V/3.7V Li-ion/IMR/INR/ICR-Zellen</li>
+<li>mögliche Größen: 10440 | 14500 | 14650 | 16340 | 17335 | 17500 | 17670 | 18350 | 18500 | 18650 | 18700 | 20700 | 21700 | 22650 | 25500 | 26650</li>
+<li>nicht geeignet für geschützte 20700/21700 Zellen</li>
+<li>Maße: 100mm x 97mm x 26,5mm</li>
+<li>Verpolungsschutz</li>
+<li>Überladungsschutz</li>
+<li>0V-Aktivierungsfunktion</li>
+</ul>
+',
+    ),
+    'XTARST2' => array(
+        'icNumber' => 'XTARST2',
+        'number' => 'XTARST2',
+        'name' => 'XTAR - ST2 - Ladegerät',
+        'commonName' => 'ST2',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Von Xtar erhalten Sie das ST2 Schnellladegerät welches zwei Li-ion Akkuzellen mit bis zu 4,1A laden kann. Für die maximale Ladegeschwindigkeit benötigen Sie einen optionalen Netzstecker, welcher nicht Bestandteil des Lieferumfangs ist. Hier empfiehlt Xtar folgende Eigenschaften: PD2.0 15V/3A oder alternativ QC3.0 5V/3A respective 9V/2A. Ein schwächerer Netzstecker hat zur folge geringere Ladegeschwindigkeiten zu erzielen. Das ST2 erkennt automatisch die eingelegten Li-ion Akkuzellen und ermittelt die optimale Ladegeschwindigkeit. Selbstverständlich haben Sie auch die Möglichkeit die Einstellungen Manuell vorzunehmen. Im Lieferumfang sind zwei USB-C Kabel enthalten. Über das LCD Display haben Sie stets den Überblick aller wichtigen Parameter während der Ladung Ihrer Akkuzellen. 
+<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul>
+<ul><li>1x ST2 Ladegerät</li>
+<li>1x USB-C Kabel</li>
+<li>1x USB-C zu USB-C Kabel</li>
+<li>1x Bedienungsanleitung</li></ul><br>
+<br>
+<p><strong>XTAR ST2 Ladegerät</strong></p>
+<ul><li>Maße: 75 mm x 149 mm x 33 mm</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>Verpolungsschutz</li>
+<li>Ladeverfahren: TC/CC/CV mit Überwachung des Ladezustandes</li>
+<li>Ladestromstärken: 4,1A, 2A, 1A</li>
+<li>Ladespannung: Li-Ion 4,2V</li>
+<li>Ladbare Akkugrößen: Li-Ion</li>
+<li>Li-Ion: 18650 / 18700 / 20700 / 21700 / 22650 / 25500 / 26650</li>
+<li>Anzeige LCD Display: Akkutyp, Ladezustand, Ladestrom, Kapazität, Innenwiderstand </li></ul>
+<br>
+<br>
+
+',
+    ),
+    'XTARSC1' => array(
+        'icNumber' => 'XTARSC1',
+        'number' => 'XTARSC1',
+        'name' => 'XTAR - SC1 - Ladegerät',
+        'commonName' => 'SC1',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das von Xtar extra für den E-Zigaretten Markt produzierte SC1 Ladegerät kann Ihre Li-ion Akkuzelle mit bis zu 2A laden. Es passen Akkuzellen der Typen 18650 bis 26650. Zum Betrieb mit 2A Ladestrom benötigen Sie einen 5V/2A Netzstecker da dieser nicht Bestandteil des Lieferumfangs ist. Über eine Balkenanzeige an der Oberen Seite des SC1 Ladegeräts können Sie problemlos den aktuellen Ladestand Ihrer Akkuzelle erfahren. Im Lieferumfang enthalten ist ein USB-Kabel. 
+<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul><li>1x SC1 Ladegerät</li>
+<li>1x USB Kabel</li>
+<li>1x Bedienungsanleitung</li></ul><br>
+<br>
+<p><strong>XTAR SC1 Ladegerät</strong></p>
+<ul><li>Maße: 35 mm x 105 mm x 39 mm</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>Verpolungsschutz</li>
+<li>Ladeverfahren: TC/CC/CV mit Überwachung des Ladezustandes</li>
+<li>Ladestromstärken: 2A</li>
+<li>Ladespannung: Li-Ion 4,2V</li>
+<li>Ladbare Akkugrößen: Li-Ion</li>
+<li>Li-Ion: 18650 / 18700 / 20700 / 21700 / 22650 / 25500 / 26650</li>
+<li>Ladestandsanzeige</li>
+</ul>
+<br>
+<br>',
+    ),
+    'XTARSC2' => array(
+        'icNumber' => 'XTARSC2',
+        'number' => 'XTARSC2',
+        'name' => 'XTAR - SC2 - Ladegerät',
+        'commonName' => 'SC2',
+        'type' => 'CHARGER',
+        'category' => 'ZUBEHÖR > Ladegeräte & -kabel',
+        'supplier' => 'XTAR',
+        'brand' => 'XTAR',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das von Xtar extra für den E-Zigaretten Markt entworfene SC2 Ladegerät kann zwei Li-ion Akkuzellen mit bis zu 2A laden. Mit einer eingelegten Akkuzelle sind sogar 3A Ladestrom möglich. Um die Ladegeschwindigkeiten zu erreichen benötigen Sie einen passenden Netzstecker, da dieser nicht bestandteil des Lieferumfangs ist. Xtar empfiehlt folgende Leistungsmerkmale für den Netzstecker: QC3,0 5V/3A, 9V/2A oder 12V/1,5A. Im SC2 Ladegerät finden Akkuzellen der größen 18650 bis 26650 platz. Auch 20700 und 21700er Akkuzellen mit PCB Schutzschaltung haben ausreichend Platz im Ladegerät. Den Akkuladestand erfahren Sie über die Anzeige oberhalb der Akkuaufnahmen. 
+<br>
+<br>
+<p><strong>Lieferumfang</strong></p>
+<ul><li>1x SC2 Ladegerät</li>
+<li>1x USB Kabel</li>
+<li>1x Bedienungsanleitung</li></ul><br>
+<br>
+<p><strong>XTAR SC2 Ladegerät</strong></p>
+<ul><li>Maße: 105 mm x 53 mm x 27 mm</li>
+<li>Betriebstemperatur: 0 bis 40°C</li>
+<li>Verpolungsschutz</li>
+<li>Ladeverfahren: TC/CC/CV mit Überwachung des Ladezustandes</li>
+<li>Ladestromstärken: 2x 2A oder 1x 3A</li>
+<li>Ladespannung: Li-Ion 4,2V</li>
+<li>Ladbare Akkugrößen: Li-Ion</li>
+<li>Li-Ion: 18650 / 18700 / 20700 / 21700 / 22650 / 25500 / 26650</li>
+<li>Ladestandsanzeige</li>
+</ul>
+<br>
+<br>',
+    ),
+    'A100TB' => array(
+        'icNumber' => 'A100TB',
+        'number' => 'A100TB',
+        'name' => 'asMODus - Tribeaut - Akkuträger - 80 Watt',
+        'commonName' => 'Tribeaut',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'asMODus',
+        'brand' => 'asMODus',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Ein weiterer Akkuträger von der Marke AsMODus ist der Tribeaut, der bis zu 80 Watt Ausgangsleistung erreichen kann. Der Akkuträger unterstützt 18650er Akkuzellen und wird über eine einzige betrieben. Im Lieferumfang ist aber <b>keine</b> enthalten. Der Tribeaut hat folgende Ausgabemodi: VW/TFR/TCR/Curve Mode, die über die Feuertaste und die zwei Einstelltasten ausgewählt werden und über das Display eingesehen werden können. Im temparaturgeregelten Bereich können Sie zwischen 100°C und 300°C dampfen. Ein Verdampfer, der über ein 510er Gewinde verfügt, kann mit dem Tribeaut verbunden und genutzt werden.
+<br>  
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Tribeaut 80 Watt</li>
+<li>1x USB-Kabel </li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er nicht im Lieferumfang enthalten!</strong>
+<br>
+<strong>Tribeaut 80 Watt</strong>
+<ul>
+<li>Ausgabemodi: VW/TFR/TCR/Curve Mode</li>
+<li>Ausgangsleistung VW/Curve: 5 - 80 Watt</li>
+<li>Ausgangsleistung TCR: 5 - 80 Watt</li>
+<li>Widerstandsbereich: 0,1 Ohm - 3,0 Ohm</li>
+<li>Temperaturbereich: 100 °C - 300 °C</li>
+<li>80-H Chipsatz</li>
+<li>Display</li>
+<li>Gewindetyp: 510</li>
+<li>Geeignete Akkuzelle: 18650er</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SC100T80' => array(
+        'icNumber' => 'SC100T80',
+        'number' => 'SC100T80',
+        'name' => 'eLeaf - iStick T80 - E-Zigarette - by SC',
+        'commonName' => 'iStick T80',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das von SC entwickelte und hergestellte iStick T80 E-Zigaretten Set setzt sich aus dem Pesso Clearomizer und dem iStick T80 Akku zusammen. Der Pesso Clearomizer weist ein Fassungsvermögen von 5 ml Liquid auf. Zur Befüllung nutzen Sie ein Top-Filling-System, indem Sie lediglich die Top Kappe des Clearomizers nach hinten schieben. Der iStick T80 ist mit einem fest verbauten Akku ausgestattet, wodurch das Einsetzen oder Austauschen von Akkuzellen entfällt. Den Akku mit einer Kapazität von 3.000 mAh können Sie über das mitgelieferte USB Typ-C Ladekabel aufladen. Der SC iStick T80 Akku erreicht eine maximale Ausgangsleistung von 80 Watt. Auf dem Display können Sie alle relevanten Parameter entnehmen. Einstellungen nehmen Sie über zwei Einstelltasten sowie einer Feuertaste vor. Komplettiert wird das Set durch zwei Verdampferköpfe aus der EF-Serie von SC. Die Heads haben einen Widerstand von 0,3 Ohm und 0,6 Ohm. Achten Sie bitte darauf, das es sich um Verschleißartikel handelt und diese regelmäßig ausgetauscht werden sollten.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x iStick T80 Akku 3000 mAh</li>
+<li>1x Pesso Clearomizer</li>
+<li>1x EF Head 0,3 Ohm | DL</li>
+<li>1x EF-M Head 0,6 Ohm | DL</li>
+<li>1x USB Type-C Ladekabel</li>
+<li>2x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<strong>iStick T80 Akku 3000 mAh</strong>
+<ul>
+<li>Akkukapazität: 3000 mAh</li>
+<li>Ausgangsleistung: 1 – 80 Watt</li>
+<li>Widerstandsbereich: 0,05 – 3,0 Ohm</li>
+<li>Gewicht: 130g</li>
+<li>Maße: 36 mm x 28 mm x 78 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Display</li>
+</ul>
+<br>
+<br>
+<strong>Pesso Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 2 ml / 5 ml</li>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 57 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Gewicht: 66 g</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+</ul>',
+    ),
+    'SC100T80M' => array(
+        'icNumber' => 'SC100T80M',
+        'number' => 'SC100T80M',
+        'name' => 'eLeaf - iStick T80 - Akku - 3.000 mAh - by SC',
+        'commonName' => 'iStick T80',
+        'type' => 'BOX_MOD',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der SC iStick T80 Akku besitzt eine Akkukapazität von 3000mAh. Die Ausgangsleistung ist regelbar und kann zwischen 1 bis 80 Watt eingestellt werden. Der iStick T80 unterstützt Verdampferköpfe mit einem Widerstand von 0,05 bis 3,0 Ohm. Der Akku wird über zwei Einstelltasten sowie der Feuertaste bedient. Die eingestellten Parameter werden Ihnen auf dem seitlich platzierten Display angezeigt. Ihren SC iStick T80 Akku können Sie mit dem im Lieferumfang enthalten USB Typ-C Ladekabel mit neuer Energie versorgen.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x iStick T80 Akku 3000 mAh</li>
+<li>1x USB Type-C Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<strong>iStick T80 Akku 3000 mAh</strong>
+<ul>
+<li>Akkukapazität: 3000 mAh</li>
+<li>Ausgangsleistung: 1 – 80 Watt</li>
+<li>Widerstandsbereich: 0,05 – 3,0 Ohm</li>
+<li>Gewicht: 130g</li>
+<li>Maße: 36 mm x 28 mm x 78 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Display</li>
+</ul>',
+    ),
+    'SC100EF' => array(
+        'icNumber' => 'SC100EF',
+        'number' => 'SC100EF',
+        'name' => 'eLeaf - EF Head - 0,3 Ohm (3 Stück pro Packung) - by SC',
+        'commonName' => 'EF',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 3,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Aus dem Hause SC kommt der EF 0,3 Ohm Verdampferkopf. Dieser ist der passende Zubehörartikel für den Pesso Verdampfer von SC. Der Verdampferkopf kann in einem Leistungsbereich von 30 bis 60 Watt genutzt werden und wurde mit einem Widerstand von 0,3 Ohm ausgestattet. Somit ist der Head für das Dampfen im SubOhm-Bereich ausgelegt. Bitte beachten Sie, dass der Head zu den Verschleißteilen einer E-Zigarette gehört. Dieser sollte in regelmäßigen Abständen gegen einen neuen Head ausgetauscht werden, um einer negativen Dampf- und/oder Geschmacksentwicklung entgegenzuwirken. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x SC EF 0,3 Ohm Head</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 0,3 Ohm</li>
+<li>Leistungsbereich: 30 - 60 Watt</li>
+<li>Material: Kanthal</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>SC iStick T80 E-Zigaretten Set</li>
+<li>SC Pesso Clearomizer</li>
+<br>',
+    ),
+    'SC100EFM' => array(
+        'icNumber' => 'SC100EFM',
+        'number' => 'SC100EFM',
+        'name' => 'eLeaf - EF-M Head - 0,6 Ohm (3 Stück pro Packung) - by SC',
+        'commonName' => 'EF-M',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 3,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der EF-M 0,6 Ohm Verdampferkopf ist der Mesh Verdampferkopf der EF-Serie von SC. Mit seinem Widerstand von 0,6 Ohm unterstützt der EF-M das Dampfen im Subohm-Bereich mit direkter Lungeninhalation. Den Verdampferkopf können Sie in einem Leistungsbereich von 18 bis 35 Watt nutzen. Beachten Sie bitte, das Heads regelmäßig gegen neue Heads ausgetauscht werden sollten, da diese zu den Verschleißteilen einer E-Zigarette gehören. Sollten Sie beim Vapen eine Geschmacksveränderung bzw. einen Leistungsverlust feststellen, ist es empfehlenswert den Verdampferkopf zu tauschen. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x SC EF-M 0,6 Ohm Head</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Leistungsbereich: 18 - 35 Watt</li>
+<li>Material: SS316L</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>SC iStick T80 E-Zigaretten Set</li>
+<li>SC Pesso Clearomizer</li>
+<br>',
+    ),
+    'SC100POG' => array(
+        'icNumber' => 'SC100POG',
+        'number' => 'SC100POG',
+        'name' => 'eLeaf - Pesso - Glastank - by SC',
+        'commonName' => 'Pesso',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der SC Pesso Glastank ist der passende Zubehör- und/oder Ersatzartikel für den Pesso Clearomizer. Bei diesem Glastank können Sie zwischen der 2ml und der 5ml Variante wählen. Hergestellt sind die Glastanks aus hitzebeständigem Pyrex.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x SC Pesso Glastank 2ml bzw. 5ml</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Tankvolumen: 2ml bzw. 5ml</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>SC iStick T80 E-Zigaretten Set</li>
+<li>SC Pesso Clearomizer</li>
+<br>',
+    ),
+    'SC100PO' => array(
+        'icNumber' => 'SC100PO',
+        'number' => 'SC100PO',
+        'name' => 'eLeaf - Pesso - Verdampfer - by SC',
+        'commonName' => 'Pesso',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der subohm-fähige Pesso Verdampfer von SC kann bis zu 5 Milliliter Liquid fassen und verfügt über einen 510er Gewinde, sodass er zum Beispiel mit dem iStick T80 Akku kompatibel ist. Den Verdampfer können Sie durch das standardisierte 510er Gewinde auch mit Akkuträgern von anderen Herstellern kombinieren. Der Pesso Verdampfer wird dank des Top Filling System direkt von oben mit Liquid befüllt. Die verbaute Airflow-Control befindet sich in der Base, worüber Sie die Luftzufuhr individuell einstellen können. Im Lieferumfang sind zwei SC EF Heads mit einem Widerstand von 0,3 Ohm und 0,6 Ohm enthalten.
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x Pesso Clearomizer</li>
+<li>1x EF Head 0,3 Ohm | DL</li>
+<li>1x EF-M Head 0,6 Ohm | DL</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<strong>Pesso CLEAROMIZER</strong>
+<ul>
+<li>Tankvolumen: 2 ml / 5 ml</li>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 57 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Gewicht: 66 g</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+</ul>',
+    ),
+    'UR100L10-SG' => array(
+        'icNumber' => 'UR100L10-SG',
+        'number' => 'UR100L10-SG',
+        'name' => 'Unruly - Strawberry Gummies - Shake & Vape - 100 ml, 0 mg/ml',
+        'commonName' => 'Strawberry Gummies',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Beeren#!#SHAKE & VAPE > Süßigkeiten',
+        'supplier' => 'Unruly',
+        'brand' => 'Unruly',
+        'piecesPerPack' => 1,
+        'content' => '100',
+        'capacity' => '120',
+        'flavor' => 'Erdbeere, Weingummi',
+        'flavorCategory' => 'Beeren, Süßigkeiten',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Shake & Vape E-Liquid von Unruly. Geschmack: Erdbeere, Weingummi.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Erdbeere, Weingummi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'UR100L10-GB' => array(
+        'icNumber' => 'UR100L10-GB',
+        'number' => 'UR100L10-GB',
+        'name' => 'Unruly - Grape Bubblegum - Shake & Vape - 100 ml, 0 mg/ml',
+        'commonName' => 'Grape Bubblegum',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Trauben#!#SHAKE & VAPE > Bonbons & Kaugummi',
+        'supplier' => 'Unruly',
+        'brand' => 'Unruly',
+        'piecesPerPack' => 1,
+        'content' => '100',
+        'capacity' => '120',
+        'flavor' => 'Traube, Kaugummi',
+        'flavorCategory' => 'Trauben, Bonbons & Kaugummi',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Shake & Vape E-Liquid von Unruly. Geschmack: Traube, Kaugummi.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Traube, Kaugummi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'UR100L10-SM' => array(
+        'icNumber' => 'UR100L10-SM',
+        'number' => 'UR100L10-SM',
+        'name' => 'Unruly - Extra Strong Mint - Shake & Vape - 100 ml, 0 mg/ml',
+        'commonName' => 'Extra Strong Mint',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Frisches & Eiscreme',
+        'supplier' => 'Unruly',
+        'brand' => 'Unruly',
+        'piecesPerPack' => 1,
+        'content' => '100',
+        'capacity' => '120',
+        'flavor' => 'Minze',
+        'flavorCategory' => 'Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Shake & Vape E-Liquid von Unruly. Geschmack: Minze.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Minze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'UR100L10-CS' => array(
+        'icNumber' => 'UR100L10-CS',
+        'number' => 'UR100L10-CS',
+        'name' => 'Unruly - Fizzy Cherry Sour - Shake & Vape - 100 ml, 0 mg/ml',
+        'commonName' => 'Fizzy Cherry Sour',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Früchte#!#SHAKE & VAPE > Süßigkeiten',
+        'supplier' => 'Unruly',
+        'brand' => 'Unruly',
+        'piecesPerPack' => 1,
+        'content' => '100',
+        'capacity' => '120',
+        'flavor' => 'Kirsche, saures Weingummi',
+        'flavorCategory' => 'Früchte, Süßigkeiten',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Shake & Vape E-Liquid von Unruly. Geschmack: Kirsche, saures Weingummi.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, saures Weingummi</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'UR100L10-CP' => array(
+        'icNumber' => 'UR100L10-CP',
+        'number' => 'UR100L10-CP',
+        'name' => 'Unruly - White Chocolate Peppermint - Shake & Vape - 100 ml, 0 mg/ml',
+        'commonName' => 'White Chocolate Peppermint',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Süßigkeiten#!#SHAKE & VAPE > Frisches & Eiscreme',
+        'supplier' => 'Unruly',
+        'brand' => 'Unruly',
+        'piecesPerPack' => 1,
+        'content' => '100',
+        'capacity' => '120',
+        'flavor' => 'weiße Schokolade, Pfefferminze',
+        'flavorCategory' => 'Süßigkeiten, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Shake & Vape E-Liquid von Unruly. Geschmack: Weiße Schokolade, Pfefferminze.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Weiße Schokolade, Pfefferminze</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'UR100L10-PD' => array(
+        'icNumber' => 'UR100L10-PD',
+        'number' => 'UR100L10-PD',
+        'name' => 'Unruly - Pear Drops - Shake & Vape - 100 ml, 0 mg/ml',
+        'commonName' => 'Pear Drops',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Früchte#!#SHAKE & VAPE > Bonbons & Kaugummi',
+        'supplier' => 'Unruly',
+        'brand' => 'Unruly',
+        'piecesPerPack' => 1,
+        'content' => '100',
+        'capacity' => '120',
+        'flavor' => 'Birne, Bonbon',
+        'flavorCategory' => 'Früchte, Bonbons & Kaugummi',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Shake & Vape E-Liquid von Unruly. Geschmack: Birne, Bonbon.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Birne, Bonbon</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'A100MA' => array(
+        'icNumber' => 'A100MA',
+        'number' => 'A100MA',
+        'name' => 'asMODus - 510er Verdampferständer',
+        'commonName' => '510er Verdampferständer',
+        'type' => 'STORAGE',
+        'category' => 'ZUBEHÖR > Aufbewahrung',
+        'supplier' => 'asMODus',
+        'brand' => 'asMODus',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '',
+    ),
+    'GV100RMS' => array(
+        'icNumber' => 'GV100RMS',
+        'number' => 'GV100RMS',
+        'name' => 'GeekVape - 810 Resin Mundstück (10 Stück pro Packung)',
+        'commonName' => '810 Resin Mundstück',
+        'type' => 'DRIP_TIP',
+        'category' => 'ZUBEHÖR > Mundstücke & Schutz',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 10,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro bestellter Packung erhalten Sie 10 Resin-Mundstücke. Diese sind unter anderem geeignet für Ihren Ammit MTL RTA oder Zeus Dual RTA  von der Marke GeekVape. Zum Wechseln des Mundstücks muss lediglich vorsichtig daran gezogen werden um es zu lösen.
+<br>
+<br>
+<strong>Wichtige Merkmale</li>
+<ul>
+<li>Material: Epoxy Resin</li>
+<li>Durchmesser: 18mm</li>
+<li>Höhe: 1mm</li>
+</ul>',
+    ),
+    'AG100MN' => array(
+        'icNumber' => 'AG100MN',
+        'number' => 'AG100MN',
+        'name' => 'Augvape - Merlin Nano MTL RTA - Verdampfer',
+        'commonName' => 'Merlin Nano MTL RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Augvape',
+        'brand' => 'Augvape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Merlin Nano MTL RTA von der Marke Augvape ist ein Rebuildable Tank Atomizer. Somit muss bei diesem Single-Coil-Verdampfer die Wicklung selber verbaut werden. Zwei passende Verdampferköpfe befinden sich dafür im Lieferumfang. Es gibt eine Premade Nichrome Wicklung  mit 0,6 Ohm und eine Premade Kanthal Wicklung mit 1,0 Ohm. Bitte beachten Sie, dass die Wicklungen zu den Verschleißteilen einer E-Zigarette gehören und bei einer negativen Dampf- und/oder Geschmacksentwicklung gegen einen neuen ausgetauscht werden sollten. Dieser Verdampfer ist für das moderate Dampfen von Mund zu Lunge ausgelegt. Ein 2ml großer Glastank ist bereits verbaut. Durch einen mitgelieferten 3,5ml Bubble Glastank können Sie das Tankvolumen vergrößern. Der Durchmesser beträgt 18mm, kann durch einen sogenannten Beautyring aber vergrößert werden, um den Verdampfer somit auch mit größeren Akkus/Akkuträgern kombinieren zu können. Das Regulieren der Luftzufuhr erfolgt über zwei Airhole Einsätze. Diese haben ein 1,0mm bzw. 1,2mm großes Loch. Diese können Sie je nach Belieben im Merlin Nano MTL RTA einsetzen und tauschen.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Merlin Nano MTL RTA Clearomizer</li>
+<li>1x 3,5ml Bubble PCTG Tank</li>
+<li>1x Werkzeug</li>
+<li>1x Premade Kanthal Coil 1,0 Ohm</li>
+<li>1x Premade Nichrome Coil 0,6 Ohm</li>
+<li>2x Airhole Einsätze (1x 1,0mm, 1x 1,2mm) </li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale/b>
+<ul>
+<li>Durchmesser: 18 mm</li>
+<li>Höhe: 55,8 mm</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Airflow-Control über Airhole Einsätze</li>
+<li>Bottom-Filling System</li>
+<li>Gewindetyp: 510</li>
+</ul>',
+    ),
+    'AG100MNG' => array(
+        'icNumber' => 'AG100MNG',
+        'number' => 'AG100MNG',
+        'name' => 'Augvape - Merlin Nano MTL RTA - Glastank',
+        'commonName' => 'Merlin Nano MTL RTA',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Augvape',
+        'brand' => 'Augvape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sollten Sie einen Glastank für Ihren Merlin Nano MTL RTA Verdampfer von Vaporesso benötigen, ist dieser Glastank der passende Ersatzartikel. Sie können hierbei zwischen der 2ml und der 3,5ml Variante wählen. Die können bei Bedarf selbstständig ausgetauscht werden.
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<li>Tankvolumen: 2ml oder 3,5ml</li>
+<br>',
+    ),
+    'YH100DR' => array(
+        'icNumber' => 'YH100DR',
+        'number' => 'YH100DR',
+        'name' => 'Yihi - SX Mini Divine RDA - Verdampfer',
+        'commonName' => 'SX Mini Divine RDA',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Yihi',
+        'brand' => 'Yihi',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Divine RDA Verdampfer Set aus dem Hause Yihi ist ein Bottom Feeder bzw. Tröpfler Verdampfer. Im Lieferumfang sind 2 Wicklungen mit je 0,4 Ohm enthalten, die Sie eigenständig verbauen können. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x SX Mini Divine RDA Clearomizer</li>
+<li>2x NI80 Wicklungen mit je 0,4 Ohm</li>
+<li>1x Schraubenschlüssel</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>SX Mini Divine RDA CLEAROMIZER</strong></p>
+<ul>
+<li>Durchmesser: 24 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Edelstahl</li>
+<li>subohm-fähig</li>
+<li>Bottom Airflow Control</li>
+<li>im Dual Coil Betrieb nutzbar</li>
+<li>Bottom Feeder</li>
+</ul>',
+    ),
+    'SR100LRE' => array(
+        'icNumber' => 'SR100LRE',
+        'number' => 'SR100LRE',
+        'name' => 'Steam Crave - Aromamizer Lite RTA v1.5 - Ersatzteil-Set',
+        'commonName' => 'Aromamizer Lite RTA v1.5',
+        'type' => 'SPARE_PARTS',
+        'category' => 'SELBSTWICKLER > Sonstige Ersatzteile',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Ein Verdampfer besteht nicht nur aus der Base, dem Glastank, der Topkappe, dem Mundstück und Verdampferköpfen bzw. Wicklungen. Wichtig sind auch die Dichtungsringe zwischen den Bestandteilen. Diese sind in dem Steam Crave Aromamizer Lite RTA V1.5 Ersatzteil-Set enthalten und sind für den gleichnamigen Verdampfer geeignet. Ebenso sind Ersatzschrauben dabei, anhand dessen Sie die jeweilige Wicklung am Deck anbringen können.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>1x Steam Crave Aromamizer Lite RTA V1.5 Ersatzteil-Set</li>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<li>Steam Crave Aromamizer Lite RTA v1.5 Clearomizer Set</li>
+<br>
+<br>',
+    ),
+    'SR100GM' => array(
+        'icNumber' => 'SR100GM',
+        'number' => 'SR100GM',
+        'name' => 'Steam Crave - Glaz Mini MTL RTA Verdampfer',
+        'commonName' => 'Glaz Mini MTL RTA Verdampfer',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Mini MTL RTA Clearomizer ist nicht für vorgefertigte Heads ausgelegt. Hier wird Ihr Liquid über eine Wicklung und Watte erwärmt, die Sie eigenständig in den Clearomizer einbauen. Die Zubehörartikel und das Werkzeug befinden sich im Lieferumfang. Der Tank ist durchsichtig und fasst 2ml oder 5ml Liquid, das Sie über das Top-Filling System von oben in den Tank geben. Die 4-stufige Airflow-Control wurde mit in der Atomizer-Base integriert. Diese lässt sich regulieren und so an die jeweiligen Bedürfnisse anpassen. Den Mini MTL RTA können Sie mit vielen Akkus kombinieren, da dieser mit dem 510er Gewinde ausgestattet ist.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Glaz Mini MTL RTA</li>
+<li>1x Ersatz-Glastank 5,0 ml</li>
+<li>1x Ersatz-Glastank 2,0 ml</li>
+<li>1x Sechskantschlüssel</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale Glaz Mini MTL RTA</strong>
+<ul>
+<li>Tankvolumen: 2 ml | 5ml</li>
+<li>Höhe: 40 mm | 49,6 mm</li>
+<li>Durchmesser: 23 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+<li>Rebuildable Tank Atomizer</li>
+<li>Single Coil-Technologie</li>
+<li>unte',
+    ),
+    'SR100GMD' => array(
+        'icNumber' => 'SR100GMD',
+        'number' => 'SR100GMD',
+        'name' => 'Steam Crave - Glaz Mini MTL RTA Single Coil Deck',
+        'commonName' => 'Glaz Mini MTL RTA Single Coil Deck',
+        'type' => 'DECK',
+        'category' => 'SELBSTWICKLER > Decks',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Bei diesem Artikel handelt es sich um einen passenden Ersatzartikel für den Glaz Mini MTL RTA aus dem Hause Steam Crave. Das Deck ist der Zentrale Punkt in einem Selbstwickel-Clearomizer. Auf diesem bringen Sie die selbsterstellten und vorgefertigte Wicklung an. Das Glaz Mini MTL RTA Single Coil Deck ist speziell für die installation eigener Wicklungen ausgelegt. 
+<br>
+<br>
+<strong>Geeignet für::</strong>
+<ul>
+<li>Steam Crave Glaz Mini MTL RTA </li>
+</ul>',
+    ),
+    'SR100GMC' => array(
+        'icNumber' => 'SR100GMC',
+        'number' => 'SR100GMC',
+        'name' => 'Steam Crave - Glaz Mini MTL RTA - Kamin (2 Stück pro Packung)',
+        'commonName' => 'Glaz Mini MTL RTA',
+        'type' => 'SPARE_PARTS',
+        'category' => 'SELBSTWICKLER > Sonstige Ersatzteile',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Nutzen Sie den Kamin in dem passenden Glaz Mini MTL RTA Clearomizer von Steam Crave. Der Kamin wird auf das Deck des Glaz Mini MTL RTA Clearomizers gesetzt und über den Kamin gelangt der entstehende Dampf von den Wicklungen zum Mundstück und kann inhaliert werden. Herstellt wird der Kamin von Steam Crave aus Pyrexglas. Dieses bringt die Eigenschaft mit das es stabil sowie hitzebeständig ist. Mit einer Bestellung erhalten Sie insgesamt 2 Kamine. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>2x Glaz Mini MTL RTA Kamine</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Material: Glas</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für::</strong>
+<ul>
+<li>Steam Crave Glaz Mini MTL RTA </li>
+</ul>',
+    ),
+    'SR100GMG' => array(
+        'icNumber' => 'SR100GMG',
+        'number' => 'SR100GMG',
+        'name' => 'Steam Crave - Glaz Mini MTL RTA - Glastank (2 Stück pro Packung)',
+        'commonName' => 'Glaz Mini MTL RTA',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Steam Crave Glaz Mini MTL RTA ist aus robustem und hitzebeständigem Pyrexglas gefertigt. Das Material ist transparent und ermöglicht es dadurch den Liquidstand jederzeit im Blick zu haben. Der leichte Ein- und Ausbau ermöglicht eine schnelle Reinigung sowie den Austausch vom Tank
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>2x Glaz Mini MTL RTA Glastanks</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Material: Glas</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für::</strong>
+<ul>
+<li>Steam Crave Glaz Mini MTL RTA </li>
+</ul>',
+    ),
+    'SC100IA2' => array(
+        'icNumber' => 'SC100IA2',
+        'number' => 'SC100IA2',
+        'name' => 'eLeaf - iStick Amnis 2 - E-Zigarette - by SC',
+        'commonName' => 'iStick Amnis 2',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => '<h2>iStick Amnis 2 E-Zigaretten Set - 1100mAh - 2 ml</h2>
+Bestandteil des E-Zigaretten Set von SC ist der iStick Amnis 2 1100mAh Akku mit einer maximalen Ausgangsleistung von 23 Watt, ebenso der GS Drive Clearomizer mit einem Tankvolumen von 2 Millilitern, Top Filling-System und regulierbar Airflow Control. Zum Lieferumfang gehören zudem zwei Verdampferköpfe aus der GS Air-Serie von SC. Der GS Air M Head hat einen Widerstand von 0,6 Ohm und ist für das Dampfen mit direkter Lungeninhalation ausgelegt. Für das Vapen von Mund-zur-Lunge (Backendampfen) ist der GS Air S Head geeignet mit seinem Widerstand von 1,6 Ohm. Zum Laden des SC iStick Amnis 2 Akkus können Sie das beigefügte USB Typ-C Ladekabel verwenden.  
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x iStick Anis 2 Akku 1100 mAh<li>
+<li>1x GS Drive Clearomizer<li>
+<li>1x GS Air M Head 0,6 Ohm<li>
+<li>1x GS Air S Head 1,6 Ohm<li>
+<li>1x USB Typ-C Ladekabel<li>
+<li>2x Bedienungsanleitungen<li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale ISTICK AMNIS 2 AKKU</strong>
+<ul>
+<li>Kapazität: 1100 mAh</li>
+<li>Ausgabemodi: Bypass, Low, Medium, High, Max</li>
+<li>Ausgangsspannung: 3 – 4,2 V</li>
+<li>Ausgangsleistung: max. 23 W</li>
+<li>Widerstandsbereich: 0,3 – 3 Ohm</li>
+<li>Ladestrom: DC 5V / 1A</li>
+<li>Maße: 70 mm x 30 mm x 19,5 mm</li>
+<li>Gewindetyp: 510</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale GS DRIVE CLEAROMIZER</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Durchmesser: 16,5 mm</li>
+<li>Höhe: 56 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+</ul>
+',
+    ),
+    'SC100IA2A' => array(
+        'icNumber' => 'SC100IA2A',
+        'number' => 'SC100IA2A',
+        'name' => 'eLeaf - iStick Amnis 2 - Akku - 1.100 mAh - by SC',
+        'commonName' => 'iStick Amnis 2',
+        'type' => 'BOX_MOD',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der iStick Amnis 2 Akku besitzt eine Akkukapazität von 1.100 mAh. Die Ausgangsleistung variiert je nachdem welchen der fünf Leistungsstufen Sie auswählen. Die maximale Ausgangsleistung beträgt 23 Watt. Der Akku des iStick Amnis 2 ist fest verbaut und Sie können ihn über das im Lieferumfang enthaltene USB Typ-C Kabel aufladen. Über eine LED-Beleuchtung die sich bei der Feuertaste befindet, wird Ihnen farblich der Ladezustand angezeigt. Der SC Amnis 2 Akku weist kompakte Maße von 30 mm x 19,5mm x 70mm auf. Über den standardisierten 510er Anschluss können Sie iStick Amnis 2 Akku mit zahlreichen auf dem Markt erhältlichen Verdampfern kombinieren. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x iStick Anis 2 Akku 1100 mAh<li>
+<li>1x USB Typ-C Ladekabel<li>
+<li>1x Bedienungsanleitung<li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale ISTICK AMNIS 2 AKKU</strong>
+<ul>
+<li>Kapazität: 1100 mAh</li>
+<li>Ausgabemodi: Bypass, Low, Medium, High, Max</li>
+<li>Ausgangsspannung: 3 – 4,2 V</li>
+<li>Ausgangsleistung: max. 23 W</li>
+<li>Widerstandsbereich: 0,3 – 3 Ohm</li>
+<li>Ladestrom: DC 5V / 1A</li>
+<li>Maße: 70 mm x 30 mm x 19,5 mm</li>
+<li>Gewindetyp: 510</li>
+</ul>',
+    ),
+    'OS100PW' => array(
+        'icNumber' => 'OS100PW',
+        'number' => 'OS100PW',
+        'name' => 'OBS - Prow - E-Zigarette',
+        'commonName' => 'Prow',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die OBS Prow E-Zigarette hat mit den Maßen von 83 mm x 24 mm x 15 mm eine kompakte Bauweise im Hosentaschenformat und ist damit eine der kleineren wieder befüllbaren E-Zigaretten auf dem Markt. Das Prow E-Zigaretten-Set besteht aus einem Akku mit einer Kapazität von 300mAh und einem Prow Pod mit einem Widerstand von 1,4 Ohm. Damit unterstützt die OBS Prow E-Zigarette das moderate Dampfen von Mund zur Lunge (MTL). Um frisches Liquid nachzufüllen entfernen Sie den Pod nach oben hinaus vom Akku und drehen Sie den Pod auf den Kopf. Das Einfüllloch befindet sich an der Unterseite des OBS Prow Pods und ist durch einen Silikonstopfen gesichert. Um Ihre OBS Prow E-Zigarette laden zu können Sie das im Lieferumfang beiliegende Micro-USB-Kabel verwenden, laut Hersteller beträgt die Ladezeit 40 Minuten. Drücken Sie die Feuertaste und beginnen Sie zu Dampfen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x OBS Prow Akkuträger</li>
+<li>1x OBS Prow 1,4 Ohm Pod (vorinstalliert)</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 1,5 ml</li>
+<li>Bottom Filling</li>
+<li>Akku Kapazität: 300 mAh</li>
+<li>Gewicht 39 Gramm</li>
+<li>Maße: 83 mm x 24 mm x 15 mm</li>
+<li>Ausgangsspannung: 3,5 Volt</li>
+<li>Ausgangsleistung: 7 Watt - 11 Watt</li>
+<li>Widerstand: 1,4 Ohm</li>
+<li>Bottom-Airflow</li>
+<br>
+<br>',
+    ),
+    'OS100PWP' => array(
+        'icNumber' => 'OS100PWP',
+        'number' => 'OS100PWP',
+        'name' => 'OBS - Prow - Pod, 1,4 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Prow',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das OBS Prow 1,4 Ohm Pod-System verfügt über einen verbauten Verdampferkopf mit einem Widerstand von 1,4 Ohm und ist für die OBS Prow E-Zigarette geeignet. Aufgrund des hohen Widerstandes eignet sich das Prow Pod-System für das Dampfen mit Zügen vom Mund in die Lunge (MTL). Das Tankvolumen beträgt 1,5 ml und Ihr frisches Liquid füllen Sie über das Bottom-Filling-System hinein. Pro bestellter Packung erhalten Sie zwei OBS Prow 1,4 Ohm Pod-Systeme. Bitte beachten Sie, dass Pods zu den Verschleißteilen einer E-Zigarette gehören und bei Veränderungen im Geschmack oder der Dampfmenge regelmäßig gewechselt werden sollten. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>2x Prow 1,4 Ohm Pod</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 1,4 Ohm</li>
+<li>Tankvolumen: 1,5 ml</li>
+<li>Bottom-Filling</li>
+<li>MTL geeignet</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>OBS Prow E-Zigarette</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'THC100TPT' => array(
+        'icNumber' => 'THC100TPT',
+        'number' => 'THC100TPT',
+        'name' => 'ThunderHead Creations - Tauren Pro - Werkzeug-Set',
+        'commonName' => 'Tauren Pro',
+        'type' => 'TOOL',
+        'category' => 'SELBSTWICKLER > Werkzeug',
+        'supplier' => 'ThunderHead Creations',
+        'brand' => 'ThunderHead Creations',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '',
+    ),
+    'WM100PP' => array(
+        'icNumber' => 'WM100PP',
+        'number' => 'WM100PP',
+        'name' => 'Wismec - Preva Pod - E-Zigarette',
+        'commonName' => 'Preva Pod',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Wismec',
+        'brand' => 'Wismec',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Preva von Wismec ist eine E-Zigarette im All-In-One Design. Sie setzt sich aus dem Akku mit der Kapazität von 1050mAh und einem Pod mit einem Tankvolumen von 3ml zusammen. Der Pod hat eine integrierte SS316 Dual Wicklung mit einem Widerstand von 0,25 Ohm. Auf Grund des geringen Widerstand ist der Pod für das Dampfen mit dirketer Lungeninhalation ausgelegt. Sollten Sie beim Dampfen feststellen, das die Dampfentwicklung weniger wird, bzw. Sie eine Geschmacksveränderung feststellen, sollten Sie den POD austauschen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Preva Pod Akku</li>
+<li>1x Preva SS316 Dual Pod 0,25 Ohm</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Akkukapazität: 1050mAh</li>
+<li>Ausgabemodi: Low | Medium | High</li>
+<li>Ausgangsleistung: max. 20 Watt</li>
+<li>Widerstandsbereich: 0,2 bis 1,7 Ohm</li>
+<li>LED-Beleuchtung</li>
+<li>Tankvolumen: 3ml</li>
+<li>Widerstand: 0,25 Ohm</li>
+<li>Maße: 43 x 18.6 x 96 mm</li>
+<li>Gewicht: 136</li>
+</ul>',
+    ),
+    'SR100GME' => array(
+        'icNumber' => 'SR100GME',
+        'number' => 'SR100GME',
+        'name' => 'Steam Crave - Glaz Mini MTL RTA - Ersatzteil-Set',
+        'commonName' => 'Glaz Mini MTL RTA',
+        'type' => 'SPARE_PARTS',
+        'category' => 'SELBSTWICKLER > Sonstige Ersatzteile',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit diesem Set erhalten Sie O-Ringe, Dichtungsringe und Schrauben. Diese sind alle für die Verwendung im Steam Crave Glaz Mini MTL RTA Verdampfer vorgesehen. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>Schrauben</li>
+<li>Silikon O-Ringe</li>
+<li>Dichtungsring</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<ul>
+<li>Steam Crave Glaz Mini MTL RTA </li>
+</ul>',
+    ),
+    'KZ100CD' => array(
+        'icNumber' => 'KZ100CD',
+        'number' => 'KZ100CD',
+        'name' => 'Kizoku - Chess Series Drip Tips 6in1',
+        'commonName' => 'Chess Series Drip Tips 6in1',
+        'type' => 'DRIP_TIP',
+        'category' => 'ZUBEHÖR > Mundstücke & Schutz',
+        'supplier' => 'Kizoku',
+        'brand' => 'Kizoku',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Kizoku stammen die Chess Series Mundstücke, auch Drip Tips genannt. Pro bestellter Packung erhalten Sie 6 Mundstücke in verschiedenen Designs. Jedes Mundstück ist nämlich einer Schachfigut nachempfunden. Das bedeutet Sie bekommen je eine Königin, König, Läufer, Turm, Springer und Bauer. Erhältlich sind die Mundstücke in den Farben schwarz und/oder silber.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Königin Drip Tip</li> 
+<li>1x König Drip Tip</li> 
+<li>1x Läufer Drip Tip</li> 
+<li>1x Springer Drip Tip</li> 
+<li>1x Turm Drip Tip</li> 
+<li>1x Bauer Drip Tip</li> 
+</ul>',
+    ),
+    'VS100GN' => array(
+        'icNumber' => 'VS100GN',
+        'number' => 'VS100GN',
+        'name' => 'Vaporesso - GEN - E-Zigarette',
+        'commonName' => 'GEN',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Vaporesso GEN E-Zigaretten Set besteht aus dem GEN 220 Watt und dem SKRR-S Verdampfer. Der Akkuträger benötigt zwei 18650er Akkuzellen, um in Betrieb genommen zu werden. Diese befinden sich nicht im Lieferumfang und müssen separat bestellt werden. Der einstellbare Leistungsbereich beläuft sich auf 5 bis maximal 220 Watt. Der SKRR-S Verdampfer ist für das direkte Inhalieren in die Lunge ausgelegt. Sie erhalten zwei passende Verdampferköpfe, einen QF Strip 0,15 Ohm Head und einen QF Meshed Head, der einen Widerstand von 0,2 Ohm aufweist. Verdampferköpfe sollten regelmäßig getauscht werden um ein gleichbleibendes Dampferlebnis zu gewährleisten. Der Glastank des SKRR-S Verdampfers kann maximal 8ml fassen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x GEN 220 Watt</li>
+<li>1x SKRR Clearomizer</li>
+<li>1x QF Strip 0,15 Ohm Head</li>
+<li>1x QF Meshed 0,2 Ohm Head</li>
+<li>1x Extra-Glastank (5ml)</li>
+<li>1x USB-Kabel</li>
+<li>2x Dichtungsringe</li>
+<li>1x Bedienungsanleitung</li>
+<li>1x Garantiekarte</li>
+</ul>
+<br>
+<br>
+<strong>GEN 220 Watt</strong>
+<ul>
+<li>Ausgangsleistung: 5 - 220 Watt</li>
+<li>Ausgabemodi: Puls, Power-ECO, Smart-TC, DIY-Mode</li>
+<li>AXON Chip</li>
+<li>0,91” OLED-Display</li>
+<li>Widerstandsbereich: 0,03 - 5,0 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 55 mm x 27 mm x 93,5 mm</li>
+</ul>
+<br>
+<br>
+<strong>SKRR S Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 8 ml</li>
+<li>Höhe (inkl. Mundstück): 59,85 mm</li>
+<li>Durchmesser: 30 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'VS100GNM' => array(
+        'icNumber' => 'VS100GNM',
+        'number' => 'VS100GNM',
+        'name' => 'Vaporesso - GEN - Akkuträger - 220 Watt',
+        'commonName' => 'GEN',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Setzen Sie zwei 18650er Akkuzellen in den GEN 220 Watt ein, damit Sie den Akkuträger verwenden können. Diese befinden sich nicht im Lieferumfang und müssen separat bestellt werden. Der Leistungsbereich liegt zwischen 5 und maximal 220 Watt. Der Akkuträger unterstützt diverse unterschiedliche Modi zum Dampfen. Ein 0,91 Zoll OLED-Display informiert Sie über Ihre vorgenommenen Parameter. Im GEN 220 Watt ist der AXON Chip verbaut. Dieser arbeitet in den Modi Puls, Power-ECO, Smart-TC, DIY-Modus. Das besondere am Puls-Modus ist, dass das Befeuern des Verdampferkopfs alle 0,02 Sekunden unterbrochen wird und somit eine bessere Dampf- und Geschmacksentwicklung erfolgen soll.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x GEN 220 Watt</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>GEN 220 Watt</strong>
+<ul>
+<li>Ausgangsleistung: 5 - 220 Watt</li>
+<li>Ausgabemodi: Puls, Power-ECO, Smart-TC, DIY-Mode</li>
+<li>AXON Chip</li>
+<li>0,91” OLED-Display</li>
+<li>Widerstandsbereich: 0,03 - 5,0 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 55 mm x 27 mm x 93,5 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'VP100TRT' => array(
+        'icNumber' => 'VP100TRT',
+        'number' => 'VP100TRT',
+        'name' => 'Vapanion - Traditional EUC Head (5 Stück pro Packung)',
+        'commonName' => 'Traditional EUC',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Vapanion',
+        'brand' => 'Vapanion',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<h2>Traditional EUC Heads von Vapanion</h2>
+Die Vapanion Traditional EUC Heads haben eine Clatpon Wicklung mit 0,4 Ohm Widerstand. Aufgrund der niedrigohmigen sind die Heads für eine direkte Lungeninhalation geeignet. Damit Ihr Liquid-Geschmack unverfälscht bleibt, sollten Sie die Heads in regelmäßigen Zeitabständen austauschen. Im Lieferumfang befinden sich je Packung fünf Verdampferköpfe.
+<br>
+<br>',
+    ),
+    'SM100PRE' => array(
+        'icNumber' => 'SM100PRE',
+        'number' => 'SM100PRE',
+        'name' => 'SMOK - TFV12 Prince - Glastank + Mundstück (Set) - by Steamax',
+        'commonName' => 'TFV12 Prince',
+        'type' => 'DRIP_TIP',
+        'category' => 'ZUBEHÖR > Mundstücke & Schutz',
+        'supplier' => 'Smoktech',
+        'brand' => 'Steamax',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das Steamax Zubehör-Set besteht aus dem TFV12 Prince Bulb Glastank und dem Steamax Mundstück. Also erhalten Sie pro Packung 1x Glastank und 1x Mundstück. Sie haben die Wahl zwischen insgesamt 8 Farben, wie: weiss, grün, gold, lila, schwarz, pink, blau-prisma, rot.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul><li>Tankvolumen: 8 ml</li></ul><br>
+<br>
+',
+    ),
+    'FM100G1S' => array(
+        'icNumber' => 'FM100G1S',
+        'number' => 'FM100G1S',
+        'name' => 'FreeMax - Gemm - G1 SS316L Mesh - 0,12 Ohm Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'Gemm',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'FreeMax',
+        'brand' => 'FreeMax',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestelltem Paket zwei FreeMax Gemm G1 SS316L  Tanks. Die fest verbauten Heads des wiederbefüllbaren Einweg-Tanks haben einen Widerstand von 0,12 Ohm. FreeMax empfiehlt hier eine Leistung von 80 Watt, wobei der Verdampferkopf auch zwischen 50 und 90 Watt nutzbar ist. Befüllt wird der Gemm G1 Tank über eine Öffnung an der Oberseite des Verdampfers. Das Tankvolumen beträgt 5ml. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x Gemm G1 SS316L Mesh 0,12 Ohm Clearomizer</li>
+</ul>
+<br>
+<br>
+<strong>Gemm G1 Mesh SS316L 0,12 Ohm Clearomizer Set</strong>
+<ul>
+<li>Widerstand: 0,12 Ohm</li>
+<li>Leistung: 50 - 90 Watt</li>
+<li>Tankvolumen: 5 ml</li>
+<li>Anzahl der Wicklungen: eine</li>
+<li>Top Filling</li>
+<li>Variable Airflow</li>
+<li>Maße: 51,35 mm x 25 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SW100UX' => array(
+        'icNumber' => 'SW100UX',
+        'number' => 'SW100UX',
+        'name' => 'Snowwolf - Mfeng UX - E-Zigarette',
+        'commonName' => 'Mfeng UX',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die E-Zigarette namens Mfeng UX stammt aus dem Hause Snowwolf. Diese besteht aus dem Mfeng UX Akkuträger mit 200 Watt Ausgangsleistung und dem Mfeng UX Tank Clearomizer mit 4,5ml Tankvolumen. Beide werden über ein 510er Gewinde miteinander verbunden, das sich unten am Verdampfer befindet. Im Lieferumfang sind zwei WF-M Verdampferköpfe von Snowwolf enthalten, die für das Dampfen im Subohm-Bereich ausgelegt sind. Beide haben einen Widerstand von je 0,13 Ohm. Die Verdampferköpfe können Sie zwischen 50 Watt und 120 Watt betreiben. Tauschen Sie die Verdampferköpfe in regelmäßigen Zeitabständen aus, damit Ihr Liquidgeschmack unverfälscht bleibt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Mfeng UX Akkträger 200 Watt</li>
+<li>1x Mfeng UX Tank Clearomizer </li>
+<li>2x WF-M Head mit 0,13 Ohm</li>
+<li>1x Ersatzglastank 3,5ml</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Mfeng UX Akkträger 200 Watt</strong>
+<ul>
+<li>1,3“ TFT-Display </li>
+<li>Ausgangsleistung: max. 200 Watt </li>
+<li>Ausgabemodi: Power, SS (304/316/317), Ti1, Ni200, TCR</li>
+<li>Ausgangsspannung: 1,0V - 7,5V</li>
+<li>Temperaturbereich: 100°C - 300°C</li>
+<li>Widerstandbereich: 0,05 Ohm - 3,0 Ohm</li>
+<li>Maße: 30 mm x 49 mm x 91,5 mm</li>
+</ul>
+<br>
+<br>
+<strong>Mfeng UX Tank Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4,5 ml</li>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 46 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling-System</li>
+<li>Bottom Airflow </li>
+</ul>
+<br>
+
+',
+    ),
+    'SW100UXT' => array(
+        'icNumber' => 'SW100UXT',
+        'number' => 'SW100UXT',
+        'name' => 'Snowwolf - Mfeng UX - Glastank',
+        'commonName' => 'Mfeng UX',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Snowwolf Mfeng UX Glastank ist geeigneter Zubehörartikel für den gleichnamigen Verdampfer der Marke Snowwolf. Der Glastank hat ein Fassungsvermögen von 4,5 Millilitern. Er ist zudem durchsichtig. Somit haben Sie Ihren Liquidstand jederzeit im Blick und können bei Bedarf nachfüllen.',
+    ),
+    'SI100DB' => array(
+        'icNumber' => 'SI100DB',
+        'number' => 'SI100DB',
+        'name' => 'Squid Industries - Double Barrel V3 - Akkuträger - 150 Watt',
+        'commonName' => 'Double Barrel V3',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Squid Industries',
+        'brand' => 'Squid Industries',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Squid Industries kommt die Double Barrel V3 150 Watt. Der Akkuträger wird mit zwei 18650er Akkuzellen betrieben, welche nicht Bestandteil des Lieferumfangs sind und separat erworben werden müssen. Sie haben die Möglichkeit zwischen 5 und 150 Watt zu dampfen. Die Wattleistung stellen Sie mittels des Rädchens an der vorderseite der Double Barrel V3 ein. Über das Display an der Oberseite des Akkuträgers können Sie jederzeit die eingestellte Watt-Leistung sowie den Widerstand des Clearomizers und die getätigten Züge ablesen. Die Squid Industries Double Barrel V3 ist mit widerstandsfähiger Pulverbeschichtung lackiert. Die Farben Chieftain, Inferno, Samurai und Flower of Life wurden hingegen mit einem Wassertransfer-Druck versehen. Auf der Double Barrel V3 haben Clearomizer mit einem Durchmesser von bis zu 25 mm Platz, ohne an der Seite über zustehen. Aufgrund der hohen Leistungen die der Squid Industries Double Barrel V3 150 Watt erreichen kann, achten Sie bitte stets auf geeignete Akkuzellen für den Betrieb. Desweiteren benötigen Sie ein Ladegerät zum Laden der 18650er Akkuzellen, da der Double Barrel V3 150 Watt über keinen USB Anschluss zum Laden verfügt. 
+<br>
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x Double Barrel V3 150 Watt</li>
+<li>2x Clearomizer Schoner</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Double Barrel V3 150 Watt</b>
+<ul>
+<li>Ausgangsleistung: 5 - 150 Watt</li>
+<li>Modi: Power (VW)</li>
+<li>Gewindetyp: 510er</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SI100DT' => array(
+        'icNumber' => 'SI100DT',
+        'number' => 'SI100DT',
+        'name' => 'Squid Industries - Detonator - Akkuträger - 120 Watt',
+        'commonName' => 'Detonator',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Squid Industries',
+        'brand' => 'Squid Industries',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => ' Aus dem Hause Squid Industries kommt der  Detonator 120 Watt Akkuträger. Er unterstützt das Dampfen in mehreren Modi: VW / VV / TC. Sie können über die zwei Einstell- sowie der Feuertaste den Detonator 120 Watt einstellen. Alle Ihre Einstellungen entnehmen Sie dem 0,96 Zoll großem OLED-Farbdisplay des Detonator 120 Watt. Bitte beachten Sie,  dass Sie für die Inbetriebnahme eine geladen 20700er oder 21700er Akkuzelle in den Akkuträger einsetzen müssen. Im Lieferumfang sind keine Akkuzellen vorhanden, sodass Sie diese separat bestellen müssen. Der Squid Industries Detonator erreicht eine maximale Ausgangsleistung von 120 Watt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Detonator 120 Watt</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>20700er / 21700er Akkuzelle(n) nicht im Lieferumfang enthalten</strong>
+<br>
+<strong>Detonator 120 Watt</strong>
+<ul>
+<li>Ausgabemodi: VW / VV / TC</li>
+<li>Ausgangsleistung: max. 120 Watt</li>
+<li>0,96” OLED-Farbdisplay</li>
+<li>On/Off-Taste</li>
+</ul>
+<br>
+',
+    ),
+    'SN100PS' => array(
+        'icNumber' => 'SN100PS',
+        'number' => 'SN100PS',
+        'name' => 'Smoant - Pasito - E-Zigarette',
+        'commonName' => 'Pasito',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Smoant',
+        'brand' => 'Smoant',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Smoant Pasito Pod ist eine E-Zigarette im All-In-One-Stil mit einer Kapazität von 1100mAh. Der Akku der E-Zigarette ist fest integriert und wird über das im Lieferumfang beigelegte USB-C-Kabel geladen. Die Pasito Pod E-Zigarette bietet Ihnen den VV-Modus, mit dem Sie die Ausgangsspannung in einem Bereich von 3,2 Volt bis 4,2 Volt einstellen können und den VW-Modus mit fünf Stufen, 10 W, 13 W, 16 W, 20 W und 25 W. Durch der verbauten Ant-constant-Output-Chip verlieren Sie nicht an Leistung bei geringem Akkuladestand. Den Ladestand des Akkus verrät Ihnen die leuchtende LED. Das Smoant Pasito Pod E-Zigaretten Set ist ein Pod-System, das sich einfach herausnehmen lässt, da es an einem Magneten haftet. Der Pod hat ein Tankvolumen von 3 ml und keinen fest verbauten Verdampferkopf und ist daher wiederverwendbar. Der Head ist dagegen ein Verschleißteil und sollte regelmäßig gewechselt werden. Das Auswechseln des Heads erfolgt über eine Steckfunktion. Mit dem Smoant Pasito Pod E-Zigaretten Set erhalten Sie zwei verschiedene Heads mit unterschiedlichen Widerständen, ein Ni-80 Head mit 1,4 Ohm und einen Mesh Head mit einem Widerstand von 0,6 Ohm.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Smoant Pasito Akku</li>
+<li>1x Smoant Pasito Pod 3ml</li>
+<li>1x 1,4 Ohm Ni-80 Head</li>
+<li>1x 0,6 Ohm Mesh Head</li>
+<li>1x USB-C-Ladekabel </li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Smoant Pasito Pod E-Zigaretten Set</strong>
+<ul>
+<li>Maße: 102 x 38 x 18 mm</li>
+<li>Tankvolumen: 3 ml</li>
+<li>Kapazität: 1100 mAh</li>
+<li>Ausgangsleistung: 10 bis 25 Watt</li>
+<li>Ausgangsspannung: 3,2 bis 4,2 Volt</li>
+<li>Top-Filling</li>
+<li>Ant constant-output Chip</li>
+<li>Ausgabemodi: VV-Modus</li>
+<li>Airflow Control</li>
+<li>Material: Aluminium</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SN100PSP' => array(
+        'icNumber' => 'SN100PSP',
+        'number' => 'SN100PSP',
+        'name' => 'Smoant - Pasito - Pod, 3 ml',
+        'commonName' => 'Pasito',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Smoant',
+        'brand' => 'Smoant',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Hier erhalten Sie den passgenauen Smoant Pasito Pod mit verbauter Airflow-Control für die Smoant Pasito Pod E-Zigarette. Das Pod-System ist explizit für diese E-Zigarette gedacht und wird durch den magnetischen Anschluss kurzerhand miteinander verbunden. Das Smoant Pasito Pod hat einen wiederbefüllbaren Tank mit einem Volumen von 3 ml. Das Liquid füllen Sie über das Top-Filling-System direkt in den Pod. Durch die leichte Transparenz des Pod-Systems haben Sie einen unmittelbaren Blick auf den gegenwärtigen Füllstand Ihres Liquid-Tanks. Auch der eingesetzte  Pasito Mesh 0,6 Ohm Head ist sichtbar und ein weiterer Pasito MTL 1,4 Ohm Verdampferkopf liegt dem Lieferumfang bei. Sie haben die Wahl zwischen insgesamt drei verschiedenen passenden Heads, die Sie separat käuflich erwerben können. Beachten Sie, dass die Heads Verschleißteile sind und regelmäßig ausgetauscht werden sollten, um einer Geschmacksveränderung und einer nachlassenden Dampfleistung vorzubeugen. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Pasito Pod-System</li>
+<li>1x Pasito MTL 1,4 Ohm Head</li>
+<li>1x Pasito Mesh 0,6 Ohm Head</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Smoant Pasito Pod 3 ml</strong>
+<li>Tankvolumen: 3 ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<br>
+<br>',
+    ),
+    'SN100PSM' => array(
+        'icNumber' => 'SN100PSM',
+        'number' => 'SN100PSM',
+        'name' => 'Smoant - Pasito - Mesh Head - 0,6 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Pasito',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoant',
+        'brand' => 'Smoant',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Hier erhalten Sie beim Kauf einer Packung 3 Stück des Smoant Pasito Mesh 0,6 Ohm Heads. Diese Verdampferköpfe sind für die Smoant Pasito Pod E-Zigarette geeignet und werden über eine Steckfunktion mit dem Pod verbunden. Mit einem Widerstand von 0,6 Ohm ist der Pasito Mesh Head Subohm-fähig und somit für das direkte Einatmen in die Lunge (DL) ausgelegt. Sobald Sie eine Geschmacksveränderung oder eine geringere Dampfentwicklung feststellen sollten Sie einen Wechsel des Verdampferkopfes vornehmen.
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Subohm-fähig</li>
+<li>Empfohlene Leistungsbereich: 20 Watt - 25 Watt</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Smoant Pasito Pod E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SN100PST' => array(
+        'icNumber' => 'SN100PST',
+        'number' => 'SN100PST',
+        'name' => 'Smoant - Pasito - MTL Head - 1,4 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Pasito',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoant',
+        'brand' => 'Smoant',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Smoant Pasito MTL 1,4 Ohm Heads sind die Verschleißteile des Smoant Pasito Pod E-Zigaretten Sets. Hier erhalten Sie 3 Verdampferköpfe mit einer integrierten Nickel-Wicklung in einer Packung. Damit Sie die Qualität des Geschmacks und der Dampfentwicklung gleich halten, empfehlen wir Ihnen den Verdampferkopf Ihrer Pasito Pod E-Zigarette in gewissen Zeitabständen zu wechseln. Der Smoant Pasito MTL Head hat einen Widerstand von 1,4 Ohm und ist damit für Dampfer gedacht, die das Dampfen von Mund zu Lunge (MTL) vollführen.
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 1,4 Ohm</li>
+<li>geeignet für Mundinhalation (MTL)</li>
+<li>Empfohlene Leistungsbereich: 10 Watt - 13 Watt</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Smoant Pasito Pod E-Zigaretten Set</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'AS100CS' => array(
+        'icNumber' => 'AS100CS',
+        'number' => 'AS100CS',
+        'name' => 'Aspire - Cleito Shot - Verdampfer (3 Stück pro Packung)',
+        'commonName' => 'Cleito Shot',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Aspire Cleito Shot bekommen Sie einen Einweg-Verdampfer. Dieser ist mit einem festverbauten Mesh-Verdampferkopf ausgestattet, welcher einen Widerstand von 0,3 Ohm besitzt. Diesen können Sie nicht wechseln. Das heißt, Sie müssen den ganzen Clearomizer nach Verschleiß austauschen. Durch den geringen Widerstand von unter 1,0 Ohm, ist der Verdampferkopf für das Vapen mit direkten Lungenzügen ausgelegt. Aufgrund des 510er Gewindes ist es Ihnen möglich den Aspire Cleito Shot Verdampfer mit zahlreichen Akkus und Akkuträgern zu kombinieren.
+<br>
+<br>
+<b>Lieferumfang:</li>
+<li>3x Cleito Shot Clearomizer (inkl. fest verbauter Mesh-Head)</li>
+<li>1x Bedienungsanleitung</li>
+<br>
+<br>
+<b>Cleito Shot Clearomizer</b>
+<li>Tankvolumen: 4,3 ml</li>
+<li>Durchmesser: 27mm</li>
+<li>Höhe: 45mm</li>
+<li>Top Filling-System</li>
+<li>Widerstand: 0,3 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Leistungsbereich: 35 - 45 Watt</li>
+<br>
+',
+    ),
+    'GV100AS' => array(
+        'icNumber' => 'GV100AS',
+        'number' => 'GV100AS',
+        'name' => 'GeekVape - Aegis Squonker - E-Zigarette',
+        'commonName' => 'Aegis Squonker',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Aegis Squonker E-Zigaretten Set aus dem Hause GeekVape beinhaltet den gleichnamigen Akkuträger und den Tengu RDA Clearomizer. Mit dem Akkuträger ist es möglich eine maximale Ausgangsleistung von bis zu 100 Watt zu erreichen. Diese Ausgangsleistung wird durch eine 18650er Akkuzelle hervorgerufen. Bitte beachten Sie, dass die Akkuzelle nicht Teil des Lieferumfangs ist und separat erworben werden muss. Beim Aegis Squonker Akkuträger handelt es sich um ein 2 in 1 Gerät. Dieser kann als normaler Akkuträger, aber durch den Einsatz einer Squonk Flasche auch als Bottom Feeder verwendet werden. Der Aegis Squonker Akkuträger unterstützt das Dampfen im Temperature-Control bzw. TC-Modus (SS,NI,TI). Im mitgelieferten Tengu RDA ist das Verwenden von einer wie auch zwei Wicklungen möglich. An der Seite des Verdampfers ist die Airflow-Control im Stile einer Wabe angebracht. Mit dieser lässt sich die Luftzufuhr nach Ihren Wünschen regulieren.
+<br>
+<br>
+<ul>
+<strong>Lieferumfang</strong>:
+<li>1x Aegis Squonker 100 Watt Akkuträger</li>
+<li>1x Tengu RDA Clearomizer</li>
+<li>1x 10ml Squonk-Flasche</li>
+<li>1x 810er Mundstück</li>
+<li>1x 510er Drip Tip-Adapter</li>
+<li>2x N80 Fused Clapton Coil </li>
+<li>2x Feather-Watte</li>
+<li>1x Werkzeug-Set</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er/20700er/21700er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Wichtige Merkmale Aegis Squonker 100 Watt Akkuträger</strong>
+<ul>
+<li>Ausgabemodi: TC
+<li>Durchmesser: 53,5mm</li>
+<li>Höhe: 87,7 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Ausgangsleistung: 5 bis 100 Watt</li>
+<li>Ausgangsspannung: 3,2 bis 4,2 Volt</li>
+<li>Widerstandsbereich: 0,05 bis 3,0 Ohm</li>
+<li>0,96" Display </li>
+<li>Kapazität Squonk-Flasche: 10ml</li>
+</ul>
+<br>
+<br>
+<strong>Tengu RDA Clearomizer</strong>
+<ul>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 28,3 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Side Airflow (Wabendesign)</li>
+<li>Top Filling</li>
+<li>Liquidwanne: 6mm tief</li>
+<li>als RDA und Bottom Feeder nutzbar</li>
+<li>im Dual- oder Single Coil-Betrieb nutzbar</li>
+</ul>',
+    ),
+    'GV100ASA' => array(
+        'icNumber' => 'GV100ASA',
+        'number' => 'GV100ASA',
+        'name' => 'GeekVape - Aegis Squonker - Squonker Box - 100 Watt',
+        'commonName' => 'Aegis Squonker',
+        'type' => 'SQUONKER_BOX',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Aegis Squonker ist ein von GeekVape produzierter Akkuträger mit einer maximalen Ausgangsleistung von 100 Watt. Dieser hat eine Höhe von 87,7mm und einen Durchmesser von 53,5mm. Durch das Einsetzen einer 18650er Akkuzelle versorgen Sie den Akkuträger mit Energie. Bitte beachten Sie, dass die benötigte Akkuzelle nicht im Lieferumfang enthalten ist und separat erworben werden muss. Sie haben die Möglichkeit den Mod in zweierlei Art zu nutzen. Mit dem Einsatz einer Squonk Flasche können Sie den Akkuträger als squonk-fähigen Mod nutzen. Allerdings können Sie diese auch entfernen und den Aegis Squonker als normalen Akkuträger verwenden.
+<br>
+<br>
+<ul>
+<strong>Lieferumfang:</b>
+<li>1x Aegis Squonker 100 Watt Akkuträger</li>
+<li>1x 10ml Squonk-Flasche</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er/20700er/21700er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Aegis Squonker 100 Watt Akkuträger</strong>
+<ul>
+<li>Ausgabemodi: TC<li>
+<li>Durchmesser: 53,5mm</li>
+<li>Höhe: 87,7 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Ausgangsleistung: 5 bis 100 Watt</li>
+<li>Ausgangsspannung: 3,2 bis 4,2 Volt</li>
+<li>Widerstandsbereich: 0,05 bis 3,0 Ohm</li>
+<li>0,96" Display </li>
+<li>Kapazität Squonk-Flasche: 10ml</li>
+</ul>',
+    ),
+    'SW10EX' => array(
+        'icNumber' => 'SW10EX',
+        'number' => 'SW10EX',
+        'name' => 'Snowwolf - Exilis X - E-Zigarette',
+        'commonName' => 'Exilis X',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Exilis X E-Zigaretten Set der Marke Snowwolf besitzt einen fest verbauten Akku mit einer Kapazität von 980 mAh. Vervollständigt wird der Akku durch den Exilis X Pod. Dieser kann mit insgesamt 2,5 Millilitern über ein Bottom-Filling System mit Liquid befüllt werden. Im Pod ist ein 1,8 Head bereits vorinstalliert. Dieser kann bei Bedarf ausgewechselt werden, sobald das Ende des Lebenszyklus vom Head erreicht ist. Dieses können Sie feststellen, sobald sich die Dampf- und Geschmacksentwicklung zum Negativen verändert. Dem Set ist ein USB-Kabel beigefügt mit welchem Sie das Exilis X Pod E-Zigaretten Set mit Energie versorgen können. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Snowwolf Exilis X E-Zigaretten Set</li>
+<li>2x Exilis X 1,8 Ohm Heads</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Akkukapazität: 980mAh</li>
+<li>Ausgangsleistung: max. 15 Watt</li>
+<li>Tankvolumen: 2,5 ml</li>
+<li>Widerstandsbereich: 1,0 - 3,0 Ohm</li>
+<li>Widerstand: 1,8 Ohm</li>
+<li>Bottom Filling</li>
+<li>LED Indikation</li>
+<li>Maße: 40 x 14 x 83 mm</li>
+<li>Geeignet für: MTL Vaping</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SW10EXP' => array(
+        'icNumber' => 'SW10EXP',
+        'number' => 'SW10EXP',
+        'name' => 'Snowwolf - Exilis X - Pod',
+        'commonName' => 'Exilis X',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<h2>Der Exilis X Pod von Snowwolf</h2>
+Der Exilis X Pod von Snowwolf ist der passende Pod für Ihre Snowwolf Exilis X Pod E-Zigarette. Das Füllvolumen vom Exilis X Pod beträgt 2,5 ml. Im Pod befindet sich ein vorinstallierter Exilis X mit einem Widerstand von 1,8 Ohm. Der Head ist für das Backendampfen bzw. MTL-Dampfen ausgelegt. ',
+    ),
+    'SW10EXH' => array(
+        'icNumber' => 'SW10EXH',
+        'number' => 'SW10EXH',
+        'name' => 'Snowwolf - Exilis X Head - 1,8 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Exilis X',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Exilis X Heads haben einen Widerstand von 1,8 Ohm und werden Ihnen in einer 5er Packung geliefert. Aufgrund des Widerstandes sind die Exilis X Heads für das Vapen von Mund-zur-Lunge (MTL) ausgelegt. Die Heads sind kompatibel mit der Snowwolf Exilis X E-Zigarette.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Widerstand: 1,8</li>
+<li>Wicklung: eine</li>
+<li>Für Mundinhalation | MTL</li>
+</ul>
+<br>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>Snowwolf Exilis X Pod E-Zigaretten Set</li>
+</ul>',
+    ),
+    'SW100WC' => array(
+        'icNumber' => 'SW100WC',
+        'number' => 'SW100WC',
+        'name' => 'Snowwolf - Wocket - E-Zigarette',
+        'commonName' => 'Wocket',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Snowwolf Wocket E-Zigaretten Set setzt sich aus dem 1150mAh starken Akku und dem Wocket Pod mit einem Tankvolumen von 3ml zusammen . Der Akku kann über das mitgelieferte USB-Kabel geladen werden und hat eine Ausgangsleistung von 5 bis 25 Watt. Ihre gewünschte Wattanzahl können Sie dem 0,69 Zoll großen OLED-Display entnehmen. Der Pod hat ein Tankvolumen von 3ml und wird über ein Top-Filling System befüllt. Im Pod ist zudem der Wocket Verdampferkopf mit 0,7 Ohm Widerstand verbaut. Ein zweiter Wocket Verdampferkopf ist zudem Teil des Lieferumfangs. Mit 0,7 Ohm ist der Verdampferkopf zum Dampfen im moderaten Bereich ausgelegt. Dennoch können Sie, dank der Dual-Airflow, auch im moderaten Bereich dampfen. Wie der Name es schon sagt, verfügt der Pod über zwei Airflow Controlls. Zum Einen unterhalb des Mundstücks und zum Anderen am Boden des Pods. Bedenken Sie bitte, dass die im Lieferumfang enthaltenen Verdampferköpfe Verschleißteile sind und somit in regelmäßigen Abständen ausgetauscht werden müssen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Wocket Akku</li>
+<li>1x Wocket Pod mit 0,7 Ohm Wocket Head (vorinstalliert)</li>
+<li>1x Wocket 0,7 Ohm Head</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wocket Akku</strong>
+<ul>
+<li>Kapazität: 1150 mAh</li>
+<li>Ausgangsleistung: 5-25 Watt</li>
+<li>Widerstandsbereich: 0,4-3,0 Ohm</li>
+<li>0,69" OLED-Display</li>
+<li>Gewicht: 87 Gramm</li>
+<li>Maße: 93 mm x 40,5 mm x 15,4 mm</li>
+</ul>
+<br>
+<br>
+<strong>Wocket Pod</strong>
+<ul>
+<li>Tankvolumen: 3ml</li>
+<li>DL und MTL</li>
+<li>Dual-Airflow Control</li>
+<li>Top-Filling</li>
+<li>Durchmesser: 40,5mm</li>
+<li>Höhe: 39,1</li>
+</ul>
+',
+    ),
+    'SW100WCP' => array(
+        'icNumber' => 'SW100WCP',
+        'number' => 'SW100WCP',
+        'name' => 'Snowwolf - Wocket - Pod, 3 ml',
+        'commonName' => 'Wocket',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Pod-System Wocket Pod ist der passende Artikel für Ihre Wocket E-Zigarette. Ihr gewünschtes Liquid füllen Sie über das Top-Filling System in den 3ml fassenden Wocket Pod. Zum Lieferumfang des Pod-Systems gehören zwei Verdampferköpfe. Hier handelt es sich um die Wocket Verdampferköpfen mit einem Widerstand von je 0,7 Ohm. Ein Verdampferkopf ist vorab im Pod installiert. Dank des Widerstandes von 0,7 Ohm können Sie im Subohm-Bereich dampfen. Aufgrund der zwei vorhandenen Airflow Controls können Sie aber auch mit moderaten Zügen dampfen. Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören und ausgetauscht werden sollten, sobald Sie eine Veränderung der Geschmacks- und/oder der Dampfentwicklung feststellen. <br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Wocket Pod mit 0,7 Ohm Wocket Head (vorinstalliert)</li>
+<li>1x Wocket 0,7 Ohm Head</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>Wocket Pod</strong>
+<ul>
+<li>Tankvolumen: 3ml</li>
+<li>DL und MTL</li>
+<li>Dual-Airflow Control</li>
+<li>Top-Filling</li>
+<li>Durchmesser: 40,5mm</li>
+<li>Höhe: 39,1</li>
+</ul>',
+    ),
+    'SW100WCH' => array(
+        'icNumber' => 'SW100WCH',
+        'number' => 'SW100WCH',
+        'name' => 'Snowwolf - Wocket Head - 0,7 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Wocket',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Von Snowwolf kommt der 0,7 Ohm starke Wocket Verdampferkopf. Dieser Verdampferkopf ist passender Zubehörartikel für die Wocket E-Zigarette und ist für das Dampfen mit direkter Lungeninhalation ausgelegt. Sie erhalten 5 Verdampferköpfe pro bestellter Packung. Da es sich bei Verdampferköpfen um Verschleißteile einer E-Zigarette handelt, tauschen Sie diese gegen einen neuen Head aus, sobald Sie eine Veränderung der Geschmacks- und/oder der Dampfentwicklung feststellen.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Widerstand: 0,7 Ohm</li>
+</ul>
+<b>Geeignet für:</b>
+<li>Snowwolf Wocket E-Zigarette</li>
+<li>Snowwolf Wocket Pod</li>
+<br>',
+    ),
+    'SK100V16T' => array(
+        'icNumber' => 'SK100V16T',
+        'number' => 'SK100V16T',
+        'name' => 'SMOK - TFV16 - Triple Mesh Head - 0,15 Ohm (3 Stück pro Packung)',
+        'commonName' => 'TFV16',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem TFV16 Verdampfer von Smok können Sie die Smok TFV16 Triple Mesh Verdampferköpfe mit je 0,15 Ohm verwenden. Diese haben 3 Mesh Wicklungen und eignen sich für das Subohm-Dampfen. Pro Packung befinden sich insgesamt drei TFV16 Triple Mesh Verdampferköpfe. Bitte wechseln Sie die Verdampferköpfe in regelmäßigen Zeitabständen aus.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>3x Smok TFV16 Triple Mesh Heads mit 0,15 Ohm</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 0,15 Ohm</li>
+<li>empfohlener Leistungswert: 90 Watt</li>
+<li>Triple Mesh</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>SMOK Mag P3 E-Zigaretten Set</li>
+<li>SMOK TFV16 Clearomizer Set </li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'YH100SA' => array(
+        'icNumber' => 'YH100SA',
+        'number' => 'YH100SA',
+        'name' => 'Yihi - SXmini SX Auto - E-Zigarette',
+        'commonName' => 'SXmini SX Auto',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Yihi',
+        'brand' => 'Yihi',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das E-Zigaretten Set SXmini Auto von Yihi ist eine E-Zigarette mit automatischer Sqounk-Funktion. Dies bedeutet, dass das Liquid aus dem am unteren Teil des Akkus befestigten Tanks durch den Akku in den Clearomizer gelangt. Das Tankvolumen liegt bei 3,5ml. Die SXmini Auto E-Zigarette besitzt einen fest verbauten, mit einer Kapazität von 1.400mAh ausgestatteten Akku. Die zwei im Lieferumfang Yihi SXmini SX-ADA Verdampfer sind Einweg-Verdampfer, die komplett ausgetauscht werden müssen, sobald Sie eine negative Entwicklung des Geschmacks oder der Dampfentwicklung feststellen. Der SX-ADA 0,2 Ohm Verdampfer kann für das direkte Inhalieren in die Lunge verwendet werden. Der SXmini SX-ADA 0,8 Ohm Verdampfer hingegen kann für das moderate Backendampfen verwendet werden, bei dem der entstehende Dampf erst im Mundraum gesammelt und anschließend inhaliert wird.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Yihi SXmini Auto Akku</li>
+<li>1x Yihi SXmini SX-ADA 0,2 Ohm Clearomizer (DTL)</li>
+<li>1x Yihi SXmini SX-ADA 0,8 Ohm Clearomizer (MTL)</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Yihi SXmini Auto E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 1.400mAh</li>
+<li>Tankvolumen: 3,5ml</li>
+<li>Ausgabemodi: TC-Modus</li>
+<li>Temperaturbereich: 180 - 260°</li>
+<li>Maße: 81,8 x 48 x 20,3 mm</li>
+<li>Geeignet für: DL und MTL Vaping</li>
+</ul>
+',
+    ),
+    'YH100S8' => array(
+        'icNumber' => 'YH100S8',
+        'number' => 'YH100S8',
+        'name' => 'Yihi - SXmini SX-ADA - 0,8 Ohm Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'SXmini SX-ADA',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Yihi',
+        'brand' => 'Yihi',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro bestellter Packung erhalten Sie zwei der Yihi SXmini SX-ADA Verdampfer, die einen Widerstand von je 0,8  Ohm aufweisen. Bitte beachten Sie, dass es sich um Verschleißteile handelt und Sie die Einweg-Verdampfer regelmäßig austauschen sollten um ein gleichbleibendes Dampferlebnis zu gewährleisten. Beim Dampfen können Sie aufgrund des Widerstandes den Dampf erst im Mund sammeln und ihn anschließend inhalieren.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x Yihi SXmini SX-ADA 0,8 Ohm Clearomizer (MTL)</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Yihi SXmini SX-ADA 0,8 Ohm Clearomizer</strong>
+<ul>
+<li>Widerstand: 0,8 Ohm</li>
+<li>Geeignet für: MTL Vaping</li>
+</ul>
+',
+    ),
+    'YH100S2' => array(
+        'icNumber' => 'YH100S2',
+        'number' => 'YH100S2',
+        'name' => 'Yihi - SXmini SX-ADA - 0,2 Ohm Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'SXmini SX-ADA',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Yihi',
+        'brand' => 'Yihi',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Nutzen Sie die Yihi SXmini SX-ADA Verdampfer für die SXmini Auto E-Zigarette aus gleichem Hause. Sie haben die Möglichkeit, der Widerstand der Verdampfer liegt bei 0,2 Ohm, den Dampf direkt in die Lunge zu inhalieren. Bitte beachten Sie, dass Sie bei einer abnehmenden Dampfentwicklung oder einer negativen Geschmacksentwicklung den kompletten Verdampfer auswechseln müssen, da es sich um ein Einweg-Verdampfer handelt. Ihnen werden pro bestellter Packung zwei der Verdampfer ausgeliefert.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x Yihi SXmini SX-ADA 0,2 Ohm Clearomizer (MTL)</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Yihi SXmini SX-ADA 0,2 Ohm Clearomizer</strong>
+<ul>
+<li>Widerstand: 0,2 Ohm</li>
+<li>Geeignet für: DTL Vaping</li>
+</ul>
+',
+    ),
+    'LV100GPH' => array(
+        'icNumber' => 'LV100GPH',
+        'number' => 'LV100GPH',
+        'name' => 'Lost Vape - Original Plus Head (5 Stück pro Packung)',
+        'commonName' => 'Original Plus',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Lost Vape',
+        'brand' => 'Lost Vape',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Lost Vape erhalten Sie pro bestellter Packung fünf Verdampferköpfe mit 0,25 oder 0,5 Ohm Widerstand. Ihnen stehen beide Versionen zur Wahl. Der 0,25 Ohm Mesh Verdampferkopf ist aufgrund des geringen Widerstandes für das Vapen mit direkten Zügen in die Lunge geeignet. Hierzu empfiehlt es sich die Aiflow weit geöffnet zu lassen. Der 0,5 Ohm Regular Verdampferkopf kann sowohl mit direkten Lungenzügen gedampft werden als auch mit moderaten Zügen vom Mund in die Lunge. Sollten Sie sich für letztere Option entscheiden ist es ratsam die Leistung Ihrer Lost Vape Original Plus DNA oder Original Q Pro zu verringern sowie die Airflow-Control weit zu schließen. Bitte achten Sie darauf die Verdampferköpfe regelmäßig zu wechseln um ein gleichbleibendes Geschmackserlebnis zu gewährleisten. 
+<br>
+<br>
+<strong>Wichtige Merkmale Mesh Head:</strong>
+<ul>
+<li>Widerstand: 0,25 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Material: SS316L</li>
+<li>Leistungsbereich: 13 Watt - 24 Watt</li>
+<li>geeignet für direkte Lungeninhalation | DL 
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale Regular Head:</strong>
+<ul>
+<li>Widerstand: 0,5 Ohm</li>
+<li>Wicklung: Spule</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Material: SS316L</li>
+<li>Leistungsbereich: 12 Watt - 20 Watt</li>
+<li>geeignet für Mund zu Lunge Inhalation | MTL
+</ul>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<ul>
+<li> Lost Vape Original Plus DNA E-Zigaretten Set </li>
+<li> Lost Vape Original Q Pro E-Zigaretten Set </li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'LV100QP' => array(
+        'icNumber' => 'LV100QP',
+        'number' => 'LV100QP',
+        'name' => 'Lost Vape - Original Q Pro - E-Zigarette',
+        'commonName' => 'Original Q Pro',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Lost Vape',
+        'brand' => 'Lost Vape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Lost Vape Original Q Pro E-Zigaretten Set setzt sich zusammen aus dem 950mAh starken Akku und dem Original Q Pro Pod mit einem Tankvolumen von 2ml. Der Akku kann über das mitgelieferte USB-Kabel geladen werden und hat eine maximale Ausgangsleistung von 24 Watt. Der Pod besitzt einen wechselbaren Verdampferkopf mit 1,0 Ohm Widerstand. So ist der Lost Vape Original Q Pro Pod zum Dampfen im moderaten Bereich (MTL) ausgelegt. Dank des zweiten im Lieferumfang enthaltenen Verdampferkopfes mit 0,5 Ohm haben Sie auch die Möglichkeit im Sub-Ohm Bereich zu dampfen. Das 2ml große Tankvolumen füllen Sie über ein Top-Filling System in den Pod. Hierzu muss der Pod nicht vom Akku entfernt werden. Zudem können Sie auch jederzeit dank des durchsichtigen Pods den Liquidstand Ihres Pods im Auge behalten und bei Gelegenheit nachfüllen. Bitte beachten Sie dass Verdampferköpfe zu den Verschleißteilen gehören. Sollte sich eine Veränderung des Liquidgeschmacks bemerkbar machen, ist es von Nöten einen neuen Verdampferkopf zu verwenden.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Original Q Pro Akku</li>
+<li>1x Original Q Pro Pod mit 1,0 Ohm Head</li>
+<li>1x Original Q Pro 0,5 Ohm Head</li>
+<li>1x USB-Kabel</li>
+<li>1x Schlüsselanhänger</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Original Q E-Zigarette</strong>
+<ul>
+<li>Kapazität: 950 mAh</li>
+<li>max. Ausgangsleistung: 8 bis 24 Watt</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Top-Filling</li>
+<li>Airflow Control</li>
+<li>MTL und DL fähig</li>
+<li>Gewicht: 87 Gramm</li>
+<li>Maße: 37 mm x 13,5 mm x 93 mm</li>
+</ul>
+<br>
+<br>
+
+
+
+
+',
+    ),
+    'LV100QPH' => array(
+        'icNumber' => 'LV100QPH',
+        'number' => 'LV100QPH',
+        'name' => 'Lost Vape - Original Q Pro Head - 1,0 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Original Q Pro',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Lost Vape',
+        'brand' => 'Lost Vape',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestellter Packung fünf Lost Vape Original Q Pro Verdampferköpfe mit 1,0 Ohm Widerstand. Aufgrund des hohen Widerstandes von 1,0 Ohm eignen sich die Verdampferköpfe für das Dampfen mit moderaten Zügen vom Mund in die Lunge. Lost Vape empfiehlt eine Leistung zwischen 8 und 16 Watt. Bitte achten Sie darauf, dass Verdampferköpfe verschleißteile sind. Sollten Sie veränderungen im Geschmack oder der Dampfmenge feststellen, sollte der Verdampferkopf gegen einen neuen getauscht werden. 
+<br>
+<br>
+<strong>Wichtige Merkmale Mesh Head:</strong>
+<ul>
+<li>Widerstand: 1,0 Ohm</li>
+<li>Wicklung: Spule</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Material: SS316L</li>
+<li>Leistungsbereich: 8 Watt - 18 Watt</li>
+<li>geeignet für MTL
+</ul>
+<br>
+<br>',
+    ),
+    'LV100QPP' => array(
+        'icNumber' => 'LV100QPP',
+        'number' => 'LV100QPP',
+        'name' => 'Lost Vape - Original Q Pro - Pod - 1,0 Ohm (1 Pod plus 2 Head)',
+        'commonName' => 'Original Q Pro',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Lost Vape',
+        'brand' => 'Lost Vape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der  Original Q Pod von der Marke Lost Vape kann bis zu 2ml Liquid fassen. Dieses wird via das Top-Filling System in den Tank gefüllt. Hierzu ist es nicht notwendig den Pod vom Akku zu entfernen. Zudem können Sie Ihren Füllstand dank des durchsichtigen Pod jederzeit im Auge behalten und bei Notwendigkeit nachfüllen. Im Pod verbaut ist ein 1,0 Ohm Verdampferkopf der sich zum Dampfen im moderaten BEreich eignet. Desweiteren ist ein zweiter Verdampferkopf mit einen Widerstand von 0,5 Ohm enthalten, welchen Sie im Sub-Ohm Bereich dampfen können (DL). Somit ist der Pod zum Dampfen mit beiden Zugtechniken ausgelegtt. Bitte bedenken Sie, dass Verdampferköpfe Verschleißteile sind. Sollte der Liquidgeschmack sich also verändern, ist es ratsam den benutzten Verdampferkopf durch einen neuen zu tauschen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Original Q Pro Pod</li>
+<li>2x Original Q Pro 1,0 Ohm Head</li>
+</ul>
+<br>
+<strong> Original Q Pods</strong>
+<ul>
+<li>Tankvolumen: 2ml</li>
+<li>Widerstand: 1,0 Ohm</li>
+<li>Top-Filling System</li>
+<li>MTL</li>
+</ul>
+<br>
+
+
+
+
+
+
+',
+    ),
+    'UW100YA' => array(
+        'icNumber' => 'UW100YA',
+        'number' => 'UW100YA',
+        'name' => 'Yearn E-Zigarette',
+        'commonName' => 'Yearn E-Zigarette',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p>Die Yearn E-Zigarette ist eine All-In-One E-Zigarette mit einem sogenannten Pod-System. Dabei bilden der festverbaute Akku mit einer Kapazität von 370Ah und der wechselbare Pod mit einem fest integriertem Verdampferkopf (1,4 Ohm) eine fließende Einheit. Den Pod können Sie per Side-Filling seitlich mit frischem Liquid befüllen. Die Yearn E-Zigarette verfügt über eine Zugautomatik. Sie müssen die E-Zigarette auch nicht über eine Taste einschalten. Wenn der Akku leer ist, können Sie nicht mehr ziehen. Die Yearn ist für das moderate Dampfen (MTL) bzw. Backendampfen ausgelegt. Da beim Pod der Verdampferkopf fest verbaut ist, müssen Sie den Pod in regelmäßigen Abständen austauschen. So wirken Sie einer negativen Geschmacksentwicklung gegen. <br> <br> <strong>Lieferumfang</strong></p>
+<ul>
+<li>1x Yearn E-Zigarette</li>
+<li>1x Yearn Pod</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<p><br> <br> <strong>Yearn E-ZIGARETTE</strong></p>
+<ul>
+<li>Akkukapazität: 370 mAh</li>
+<li>Ausgangsleistung: 11 Watt</li>
+<li>Tankvolumen: 1,5 ml</li>
+<li>Widerstand der Wicklung: 1,4 Ohm</li>
+<li>Side Filling</li>
+<li>Zugautomatik</li>
+<li>LED Indikatoren</li>
+<li>Gewicht: 30g</li>
+<li>Höhe: 86,7 mm</li>
+<li>Breite: 20,2 mm</li>
+<li>Tiefe: 10,4 mm</li>
+</ul>',
+    ),
+    'UW100YAP' => array(
+        'icNumber' => 'UW100YAP',
+        'number' => 'UW100YAP',
+        'name' => 'Yearn Pod - 1,4 Ohm (4 Stück pro Packung)',
+        'commonName' => '1,4 Ohm',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 4,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p>Die Yearn Pod verfügt über einen fest verbauten Verdampferkopf mit einem Widerstand von 1,4 Ohm. Sollten Sie eine Geschmacksveränderung bzw. Leistungsverlust feststellen, können Sie den Pod eigenständig austauschen. Das Tankvolumen der Yearn Pod beträgt 1,4 Milliliter. Frisches Liquid können Sie seitlich über das Side-Filling System in den Tank des Pod einfüllen. Dazu müssen Sie den Gummi-Stöpsel lediglich aus dem Pod herausziehen. <br> <br> <strong>Lieferumfang</strong></p>
+<ul>
+<li>4x Yearn Pod mit integriertem Coil</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<p><br> <strong>Yearn Pod</strong></p>
+<ul>
+<li>Tankvolumen: 1,5 ml</li>
+<li>Widerstand der Wicklung: 1,4 Ohm</li>
+<li>Side Filling</li>
+<li>passgenauer Pod für die Yearn E-Zigarette</li>
+</ul>',
+    ),
+    'YH100SAF' => array(
+        'icNumber' => 'YH100SAF',
+        'number' => 'YH100SAF',
+        'name' => 'Yihi - SX Auto - Tank (2 Stück pro Packung)',
+        'commonName' => 'SX Auto',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Yihi',
+        'brand' => 'Yihi',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p><strong>Gebrauchsfertiges E-Liquid von Yihi für die E-Zigarette. Geschmack: .</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td></tr><tr><td>Geschmack </td><td></td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe, Nikotin nach Wahl</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
+    ),
+    'PY100A10-FZ' => array(
+        'icNumber' => 'PY100A10-FZ',
+        'number' => 'PY100A10-FZ',
+        'name' => 'Pyromania - Fuze - Aroma - 15 ml',
+        'commonName' => 'Fuze',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Zitrusfrüchte',
+        'supplier' => 'Pyromania',
+        'brand' => 'Pyromania',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'schwarze Johannisbeere, Grapefruit',
+        'flavorCategory' => 'Beeren, Zitrusfrüchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Pyromania</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarze Johannisbeere, Grapefruit</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Johannisbeere, Grapefruit</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'PY100A10-DT' => array(
+        'icNumber' => 'PY100A10-DT',
+        'number' => 'PY100A10-DT',
+        'name' => 'Pyromania - Destruction - Aroma - 15 ml',
+        'commonName' => 'Destruction',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Milch & Co.#!#AROMEN > Zitrusfrüchte#!#AROMEN > exotische Früchte',
+        'supplier' => 'Pyromania',
+        'brand' => 'Pyromania',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'Joghurt, Limette, Kokos',
+        'flavorCategory' => 'Milch & Co., Zitrusfrüchte, exotische Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Pyromania</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Joghurt, Limette, Kokos</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Joghurt, Limette, Kokos</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'PY100A10-BL' => array(
+        'icNumber' => 'PY100A10-BL',
+        'number' => 'PY100A10-BL',
+        'name' => 'Pyromania - Blast - Aroma - 15 ml',
+        'commonName' => 'Blast',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte',
+        'supplier' => 'Pyromania',
+        'brand' => 'Pyromania',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'Drachenfrucht, Papaya',
+        'flavorCategory' => 'exotische Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Pyromania</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Drachenfrucht, Papaya</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Drachenfrucht, Papaya</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'HD100A10-YT' => array(
+        'icNumber' => 'HD100A10-YT',
+        'number' => 'HD100A10-YT',
+        'name' => 'hilda. - Yuzu Tea - Aroma - 15 ml',
+        'commonName' => 'Yuzu Tea',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Tee & Kaffee#!#AROMEN > Zitrusfrüchte',
+        'supplier' => 'hilda.',
+        'brand' => 'hilda.',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'schwarzer Tee, Zitrusfrüchte',
+        'flavorCategory' => 'Tee & Kaffee, Zitrusfrüchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von hilda.</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarzer Tee, Zitrusfrüchte</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarzer Tee, Zitrusfrüchte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'HD100A10-BT' => array(
+        'icNumber' => 'HD100A10-BT',
+        'number' => 'HD100A10-BT',
+        'name' => 'hilda. - Black Tea - Aroma - 15 ml',
+        'commonName' => 'Black Tea',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Tee & Kaffee#!#AROMEN > Zitrusfrüchte',
+        'supplier' => 'hilda.',
+        'brand' => 'hilda.',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'schwarzer Tee, Bergamotte',
+        'flavorCategory' => 'Tee & Kaffee, Zitrusfrüchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von hilda.</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarzer Tee, Bergamotte</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarzer Tee, Bergamotte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'HD100A10-PT' => array(
+        'icNumber' => 'HD100A10-PT',
+        'number' => 'HD100A10-PT',
+        'name' => 'hilda. - Peach Tea - Aroma - 15 ml',
+        'commonName' => 'Peach Tea',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Tee & Kaffee#!#AROMEN > Früchte#!#AROMEN > Zitrusfrüchte',
+        'supplier' => 'hilda.',
+        'brand' => 'hilda.',
+        'piecesPerPack' => 1,
+        'content' => '15',
+        'capacity' => '60',
+        'flavor' => 'schwarzer Tee, Pfirsich, Bergamotte',
+        'flavorCategory' => 'Tee & Kaffee, Früchte, Zitrusfrüchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von hilda.</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarzer Tee, Pfirsich, Bergamotte</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarzer Tee, Pfirsich, Bergamotte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JF100C16' => array(
+        'icNumber' => 'JF100C16',
+        'number' => 'JF100C16',
+        'name' => 'JustFog - Compact 16 - E-Zigarette',
+        'commonName' => 'Compact 16',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'JustFog',
+        'brand' => 'JustFog',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Compact 16 E-Zigaretten Set von JustFog besteht aus dem Compact 16 Akku und dem Q16 PRO Verdampfer. Der Akku hat eine Kapazität von 1400mAh und verfügt über eine fest verbaute Akkuzelle. Die Inbetriebnahme erfolgt über die Feuertaste, die sich auf der Oberseite des Akkus befindet. In der Feuertaste ist eine LED verbaut, die durch ein Aufleuchten Sie über den Akkustand informiert. Direkt neben der Feuertaste befinden sich drei weitere LEDs, die Sie über die Spannungsabgabe informieren. Es gibt hier drei Stufen: 3,4V / 3,8V / 4,2V. Der Q16 PRO Verdampfer kann bis zu 1,9ml Liquid via Top-Filling aufnehmen und ist für das moderate Dampfen ausgelegt. Im Set befindet sich ein JustFog Verdampferkopf mit 1,6 Ohm, der für das moderate Dampfen konzipiert ist. Sie können aber auch den JustFog Verdampferkopf mit 1,2 Ohm mit Ihrer Compact 16 verwenden. Diese müssten separat erworben werden. Das Compact 16 E-Zigaretten Set eignet sich für Anfänger, aber auch für erfahrene Dampfer, die das moderate Dampfen bevorzugen. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Compact 16 Akku</li>
+<li>1x Q16 PRO Clearomizer</li>
+<li>1x JustFog Head 1,6 Ohm</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Compact 16 Akku</strong>
+<ul>
+<li>Spannungsausgabe: 3,4V / 3,8V / 4,2V</li>
+<li>Akkukapazität: 1400mAh</li>
+<li>Widerstandsbereich: 1,6 Ohm / 1,2 Ohm</li>
+<li>3 LEDs</li>
+<li>Gewindetyp: 510</li>
+<li>Maße: 24 mm x 39 mm x 58 mm</li>
+</ul>
+<br>
+<strong>Q16 PRO CLEAROMIZER</strong>
+<ul>
+<li>Tankvolumen: 1,9 ml</li>
+<li>Durchmesser: 16 mm</li>
+<li>Höhe: 60 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Pyrex-Glas und Edelstahl</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SC100SC' => array(
+        'icNumber' => 'SC100SC',
+        'number' => 'SC100SC',
+        'name' => 'eLeaf - iStick Rim C - E-Zigarette - by SC',
+        'commonName' => 'iStick Rim C',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das SC iStick Rim C mit Melo 5 E-Zigaretten Set setzt sich aus dem iStick Rim C Akkuträger und dem Verdampfer Melo 5 zusammen. Sie können den Melo 5 Verdampfer direkt von oben mit Liquid befüllen und der Glastank bietet so bis zu 4ml Liquid Platz. Der mitgelieferte EC-S Verdampferkopf mit 0,6 Ohm und der EC-M Verdampferkopf mit 0,15 Ohm sind aufgrund ihres Widerstandes dafür geeignet, den entstehenden Dampf direkt in die Lunge zu inhalieren. Bitte beachten Sie, dass es sich bei Verdampferköpfen um Verschleißartikel handelt, deren periodischer Austausch für ein gleichbleibendes Dampferlebnis empfehlenswert ist. Der iStick Rim C Akkuträger besitzt eine max. Ausgangsleistung von 80 Watt. Um diese Leistung abrufen zu können, benötigt der iStick Rim C eine externe Energiequelle in Form einer 18650er Akkuzelle. Diese ist kein Teil des Lieferumfangs und muss separat erworben werden. Sie könne in den Modi VW, Bypass und TC dampfen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x iStick Rim C 80 Watt</li>
+<li>1x Melo 5 Clearomizer</li>
+<li>1x EC-S 0,6 Ohm Head</li>
+<li>1x EC-M 0,15 Ohm Head</li>
+<li>1x QC3.0 USB-Kabel</li>
+<li>1x Ersatzteil-Set</li>
+<li>2x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>iStick Rim 80 Watt</strong>
+<ul>
+<li>Ausgabemodus: VW, Bypass, TC (Ni, Ti, SS, TCR-M1/M2/M3)
+<li>Ausgangsleistung: max. 80 Watt</li>
+<li>Widerstandsbereich: 0,05 - 3 Ohm</li>
+<li>Abmessung: 35 mm x 29,5 mm x 82 mm</li>
+<li>Widerstandsbereich: 0,05 Ohm - 3,0 Ohm</li>
+<li>Gewicht ohne Akkuzelle: 81 Gramm</li>
+</ul>
+<br>
+<strong>Melo 5 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4 ml</li>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 57,3 mm</li>
+<li>Bottom Airflow Control</li>
+<li>Top Filling System</li>
+<li>subohm-fähig</li>
+</ul>',
+    ),
+    'SC100SCA' => array(
+        'icNumber' => 'SC100SCA',
+        'number' => 'SC100SCA',
+        'name' => 'eLeaf - iStick Rim C - Akkuträger - 80 Watt - by SC',
+        'commonName' => 'iStick Rim C',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der SC Akkuträger mit dem Namen iStick Rim C unterstützt das Dampfen in den Modi VW, Bypass und TC (Ni, Ti, SS, TCR-M1/M2/M3) bei einer maximalen Leistung von 80 Watt. Konfiguriert wird der iStick Rim C über eine Feuertaste, sowie über zwei Einstelltasten. Um einsehen zu können, wie Sie Ihr Gerät eingestellt haben, ist im Akkuträger ein OLED-Display eingelassen. Bitte beachten Sie, dass der Mod durch eine externe 18650er Akkuzelle in Betrieb genommen wird, welche jedoch nicht Teil des Lieferumfangs ist und daher separat erworben muss. Sie können die Akkuzelle entweder im Gerät durch das sich im Lieferumfang befindende USB-C Ladekabel laden (PC, Laptop) oder mit einer externen Ladestation.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x iStick Rim C 80 Watt</li>
+<li>1x QC3.0 USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>iStick Rim 80 Watt</strong>
+<ul>
+<li>Ausgabemodus: VW, Bypass, TC (Ni, Ti, SS, TCR-M1/M2/M3)
+<li>Ausgangsleistung: max. 80 Watt</li>
+<li>Widerstandsbereich: 0,05 - 3 Ohm</li>
+<li>Abmessung: 35 mm x 29,5 mm x 82 mm</li>
+<li>Widerstandsbereich: 0,05 Ohm - 3,0 Ohm</li>
+<li>Gewicht ohne Akkuzelle: 81 Gramm</li>
+</ul>
+<br>',
+    ),
+    'UW100MD' => array(
+        'icNumber' => 'UW100MD',
+        'number' => 'UW100MD',
+        'name' => 'Uwell - Marsupod - E-Zigarette',
+        'commonName' => 'Marsupod',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das E-Zigaretten Set Marsupod aus dem Hause Uwell gehört zu der Kategorie Pod-Systeme. Das Set setzt sich nämlich aus einem Akku und Pod-System zusammen. Diese werden über einen Magneten zu eine Einheit verbunden. Der Akku hat eine Kapazität von 150mAh und erreicht eine maximale Ausgangsleistung von 11 Watt. Das Pod-System fasst bis zu 1,3ml Liquid, das über das Side-Filling-System in den Tank gegeben wird. Im Pod befindet sich ein Verdampferkopf mit einem Widerstand von 1,2 Ohm. Daher ist die Uwell Marsupod E-Zigarette für das moderate Dampfen ausgelegt. Im Lieferumfang befindet sich noch eine Akku-Ladestation, worüber Sie Ihre E-Zigarette jederzeit und vor allem unterwegs laden können.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Marsupod Akku</li>
+<li>1x Marsupod Cartridge, 1,2 Ohm</li>
+<li>1x Akku-Ladestation</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Marsupod</strong>
+<ul>
+<li>Akkukapazität: 150mAh</li>
+<li>Ausgabemodus: konstante</li>
+<li>Ausgangsleistung: max. 11 Watt</li>
+<li>Tankvolumen: 1,3ml</li>
+<li>Coil mit je 1,2 Ohm / MTL</li>
+<li>Side-Filling System</li>
+<li>LED-Akkuanzeige</li>
+<li>Maße: 10,6 mm x 18,4 mm x 65,4 mm</li>
+</ul>
+<br>
+<br>
+<strong>Marsupod-Ladestation</strong>
+<ul>
+<li>Akkukapazität: 1000mAh</li>
+<li>LED-Akkuanzeige</li>
+<li>Maße: 25,2 mm x 43 mm x 76,5 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'UW100MDP' => array(
+        'icNumber' => 'UW100MDP',
+        'number' => 'UW100MDP',
+        'name' => 'Uwell - Marsupod - Pod - 1,2 Ohm (4 Stück pro Packung)',
+        'commonName' => 'Marsupod',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Uwell',
+        'brand' => 'Uwell',
+        'piecesPerPack' => 4,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Marsupod Cartridges sind wichtige Zubehörartikel für die gleichnamige E-Zigarette aus dem Hause Uwell. Je Pod ist ein Verdampferkopf mit je 1,2 Ohm verbaut. Daher eignet sich das Cartride-System für das moderate Dampfen. Das Liquid wird über das Side-Filling in den Tank gegeben. Pro Packung sind vier Marsupod Cartridges von Uwell enthalten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>4x Marsupod Cartridges</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<br>
+<br>
+<strong> Marsupod Cartridge</strong>
+<ul>
+<li>Tankvolumen: 1,3ml</li>
+<li>Widerstand: 1,2 Ohm</li>
+<li>MTL-fähig</li>
+<li>Side-Filling</li>
+</ul>
+<br>
+<br>',
+    ),
+    'DR100L10-PS' => array(
+        'icNumber' => 'DR100L10-PS',
+        'number' => 'DR100L10-PS',
+        'name' => 'Dr. Frost - Frosty Fizz - Pink Soda - Shake & Vape - 0 mg/ml',
+        'commonName' => 'Pink Soda',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Trauben#!#SHAKE & VAPE > Getränke',
+        'supplier' => 'Dr. Frost',
+        'brand' => 'Dr. Frost',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '120',
+        'flavor' => 'Traube, Limonade',
+        'flavorCategory' => 'Trauben, Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Traube, Limonade.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Traube, Limonade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'DR100L10-BS' => array(
+        'icNumber' => 'DR100L10-BS',
+        'number' => 'DR100L10-BS',
+        'name' => 'Dr. Frost - Frosty Fizz - Blue Slush - Shake & Vape - 0 mg/ml',
+        'commonName' => 'Blue Slush',
+        'type' => 'SHAKE_VAPE',
+        'category' => 'SHAKE & VAPE > Beeren#!#SHAKE & VAPE > Getränke',
+        'supplier' => 'Dr. Frost',
+        'brand' => 'Dr. Frost',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '120',
+        'flavor' => 'Beeren, Limonade',
+        'flavorCategory' => 'Beeren, Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Shake & Vape E-Liquid von Dr. Frost. Geschmack: Beeren, Limonade.</strong></p><p>Die 120 ml Flasche enthält 100 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 20 ml Nikotin-Shot oder 20 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>100 ml überaromatisiertes E-Liquid in 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Beeren, Limonade</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
+    ),
+    'IK100T8' => array(
+        'icNumber' => 'IK100T8',
+        'number' => 'IK100T8',
+        'name' => 'Innokin - Endura T18 - E-Zigarette',
+        'commonName' => 'Endura T18',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Endura T18 E-Zigarette Set ist ein Gerät aus dem Hause Innokin. Die E-Zigarette ist eine Kombination aus dem Endura T18 Akku mit 1000mAh Akkukapazität und dem Prism T18 Clearomizer. Dieser verfügt über ein Tankvolumen von 2,5ml, welches durch das vorhandene Top-Filling System befüllt wird. Die im Set enthaltenen zwei Prism T18 Verdampferköpfe sind zudem für das Dampfen im MTL-Bereich ausgelegt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Innokin Endura T18 Akku 1000mAh</li>
+<li>1x Innokin Prism T18 Clearomizer mit Head</li>
+<li>1x Innokin Prism Head 1,5 Ohm</li>
+<li>1x Innokin Endura T18 E-Zigarettenständer</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Endura T18 Akku</strong>
+<ul>
+<li>Akkukapazität: 1000mAh</li>
+<li>Ausgabemodi: konstante Leistungsabgabe</li>
+<li>Ausgangsleistung: max. 14 Watt</li>
+<li>Widerstandsbereich: 1,2 Ohm - 2,5 Ohm</li>
+<li>Höhe: 84mm</li>
+<li>Durchmesser: 18mm</li>
+</ul>
+<br>
+<br>
+<strong>Prism T18 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 2,5ml</li>
+<li>Top-Filling</li>
+<li>MTL</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe: 64mm</li>
+<li>Durchmesser: 18mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IK100P8C' => array(
+        'icNumber' => 'IK100P8C',
+        'number' => 'IK100P8C',
+        'name' => 'Innokin - Prism T18 - Verdampfer',
+        'commonName' => 'Prism T18',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Clearomizer mit dem Namen Prism T18 kommt aus dem Hause Innokin und verfügt über ein Fassungsvermögen von 2,5ml. Der Tank wird von oben aus über das Top-Filling System gefüllt. Im Lieferumfang befinden sich dazu noch zwei Prism Verdampferköpfe mit jeweils 1,5 Ohm Widerstand. Diese sind für das moderate Dampfen, also MTL-Bereich ausgelegt. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Prism T18 Clearomizer</li>
+<li>2x Prism Verdampferkopf 1,5 Ohm</li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Prism T18 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 2,5ml</li>
+<li>Top-Filling</li>
+<li>MTL</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe: 64mm</li>
+<li>Durchmesser: 18mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IK100PTH' => array(
+        'icNumber' => 'IK100PTH',
+        'number' => 'IK100PTH',
+        'name' => 'Innokin - Prism T18/T22 Head - 1,5 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Prism T18/T22',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Prism Verdampferköpfe aus dem Hause Innokin sind sowohl für die Endura T18 E-Zigarette als auch für die Endura T22 E-Zigarette kompatibel. Pro bestellter Packung erhalten Sie fünf Verdampferköpfe mit je 1,5 Ohm Widerstand. Beachten Sie bitte, dass Verdampferköpfe zu den Verschleißartikeln gehören und in regelmäßigen Abständen ausgewechselt werden sollten.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul><li>Widerstand: 1,5 Ohm </li>
+<li>Für moderates Dampfen | MTL</li></ul><br>
+<br>',
+    ),
+    'IK100T2' => array(
+        'icNumber' => 'IK100T2',
+        'number' => 'IK100T2',
+        'name' => 'Innokin - Endura T22 - E-Zigarette',
+        'commonName' => 'Endura T22',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Endura T22 ist ein E-Zigaretten Set aus dem Hause Innokin. Das Gerät besitzt einen fest verbauten Akku mit 2000mAh und eine maximale Ausgangsleistung von 14 Watt. Der zum Set zugehörige Prism T22 Clearomizer verfügt über ein Tankvolumen von 4ml Liquid. Das Liquid wird über ein Top-Filling System in den Verdampfer eingefüllt. Im Lieferumfang enthalten sind noch zwei Prism T18/T22 Verdampferköpfe mit jeweils 1,5 Ohm Widerstand. Somit sind diese für das Dampfen im MTL-Bereich ausgelegt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Innokin Endura T22 Akku 2000mAh</li>
+<li>1x Innokin Prism T22 Clearomizer</li>
+<li>1x Innokin Prism T18/T22 Head 1,5 Ohm (vorinstalliert)</li>
+<li>1x Innokin Prism T18/T22 Head 1,5 Ohm</li>
+<li>2x Ersatzmundstücke</li>
+<li>1x Ersatzteil-Set</li>
+<li>USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Endura T22 Akku</strong>
+<ul>
+<li>Akkukapazität: 2000mAh</li>
+<li>Ausgabemodi: konstante Leistungsabgabe</li>
+<li>Ausgangsleistung: max. 14 Watt</li>
+<li>Widerstandsbereich: 1,2 Ohm - 2,5 Ohm</li>
+<li>Maße: 85mm x 22mm x 32mm</li>
+</ul>
+<br>
+<br>
+<strong>Prism T22 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4ml</li>
+<li>Top-Filling</li>
+<li>MTL</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe: 64mm</li>
+<li>Durchmesser: 22mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IK100P2C' => array(
+        'icNumber' => 'IK100P2C',
+        'number' => 'IK100P2C',
+        'name' => 'Innokin - Prism T22 - Verdampfer',
+        'commonName' => 'Prism T22',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Prism T22 Clearomizer Set aus dem Hause Innokin verfügt über ein Top-Fillin System. Das heißt, dass Sie Ihr Liquid von oben aus in den Tank einfüllen. Das Tankvolumen beläuft sich beim Prism T22 Clearomizer auf 4,5ml. Im Lieferumfang enthalten, sind zwei Prism T18/T22 Verdampferköpfe mit je 1,5 Ohm Widerstand. Anhand des hohen Widerstandwertes sind die Prism T18/T22 Heads für das Dampfen im moderaten Bereich (MTL) ausgelegt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>Prism T22 Clearomizer</li>
+<li>2x Prism T18/T22 Heads 1,5 Ohm</li>
+<li>1x Ersatzteilset</li>
+<li>Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Prism T22 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4,5ml</li>
+<li>Top-Filling</li>
+<li>MTL</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe: 64mm</li>
+<li>Durchmesser: 22mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'IK100T2S' => array(
+        'icNumber' => 'IK100T2S',
+        'number' => 'IK100T2S',
+        'name' => 'Innokin - Endura T20S - E-Zigarette',
+        'commonName' => 'Endura T20S',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Endura T20S ist eine All-in-One E-Zigarette von Innokin. Sie kann bis zu 2ml Liquid fassen und wird über ein Top-Filling-System direkt von oben befüllt. Der Akku mit einer Kapazität von 1.500mAh ist fest verbaut und  kann im Bedarfsfall über das beiliegende Micro USB-Ladekabel mit einem Notebook verbunden werden um den Akku mit Energie zu versorgen. Eine Akkulaufanzeige informiert Sie über den aktuellen Akkustand. Das Endura T20S Set unterstützt das Dampfen bei konstanter Leistungsabgabe (maximal 18 Watt). Im Lieferumfang enthalten sind zwei Prism S 0,8 Ohm Heads, die für das moderate Backendampfen, bei dem der Dampf erst im Mundraum gesammelt wird, geeignet. Tauschen Sie die zu den Verschleißteilen zählenden Verdampferköpfe regelmäßig, um ein gleichbleibendes Geschmackserlebnis zu gewährleisten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Innokin Endura T20S E-Zigaretten</li>
+<li>2x Prism S Head 0,8 Ohm</li>
+<li>1x Ersatz-Mundstück</li>
+<li>1x Micro USB-Kabel</li>
+<li>2x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Endura T20S All-in-One E-Zigarette</strong>
+<ul>
+<li>Kapazität: 1.500mAh</li>
+<li>Ausgabemodi: konstante Leistungsabgabe</li>
+<li>Ausgangsleistung: max. 18 Watt</li>
+<li>maximaler Ausgangsstrom: 6A</li>
+<li>maximale Ausgangsspannung: 3,85 V</li>
+<li>Akkulaufzeitanzeige</li>
+<li>Top-Filling-System</li>
+<li>Tankvolumen: 2ml</li>
+<li>Höhe: 132 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IK100T2H' => array(
+        'icNumber' => 'IK100T2H',
+        'number' => 'IK100T2H',
+        'name' => 'Innokin - Prism T20 Head - 1,5 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Prism T20',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Verwenden Sie diese Verdampferköpfe für die T20 E-Zigarette von der Marke Innokin. Jeder Verdampferkopf zeichnet einen Widerstand von 1,5 Ohm aus. Sie können mit diesen Verdampferköpfen den Dampf erst im Mundraum sammeln und anschließend inhalieren. Für ein gleichbleibendes Dampferlebnis ist es empfehlenswert, dass Sie die Verdampferköpfe regelmäßig austauschen. In jeder bestellten Packung sind je fünf der T20 Verdampferköpfe enthalten.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul><li>Widerstand: 1,5 Ohm </li>
+<li>Für moderates Dampfen | MTL</li></ul><br>
+<b>Geeignet Für:</b>
+<ul>
+<li>Innokin Endura T20 E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'IK100EZ' => array(
+        'icNumber' => 'IK100EZ',
+        'number' => 'IK100EZ',
+        'name' => 'Innokin - EZ.Watt - E-Zigarette',
+        'commonName' => 'EZ.Watt',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das aus dem Hause stammende Innokin E-Zigaretten Set EZ.WATT verfügt über einen fest verbauten Akku mit einer Kapazität von 1500 mAh. Die Leistung kann in den folgenden 6 Stufen ausgegeben werden: 13 bis 14 Watt, 16 bis 18 Watt oder 30 bis 35 Watt. Das Set bekommen Sie zusammen mit dem Innokin Prism T20-S Verdampfer der für das MTL-Vapen ausgelegt ist. Der Prism T20-S hat ein Tankvolumen von 2 Millilitern und wird über ein Top-Filling-System von oben mit Liquid befüllt. Die im Set enthaltenen Verdampferköpfe haben einen Widerstand von 0,8 Ohm und 1,5 Ohm.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x EZ.WATT Akku</li>
+<li>1x Prism T20S Clearomizer</li>
+<li>1x Prism S Head 0,8 Ohm (vorinstalliert) | DL</li>
+<li>1x Prism S Head 1,5 Ohm | MTL</li>
+<li>1x Ersatz-Mundstück</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>EZ.WATT AKKU</strong></p>
+<ul>
+<li>Kapazität: 1.500 mAh</li>
+<li>Elektrische Spannung: max. 7,5 V</li>
+<li>Ausgangsleistung: 13 – 35 W</li>
+<li>Ladestrom: DC 5V/1A</li>
+<li>Ausgangsstrom: max. 13,5 A</li>
+<li>Maße: 70 mm x 32 mm x 22 mm</li>
+<li>Gewindetyp: 510</li>
+</ul>
+<br>
+<br>
+<p><strong>PRISM T20S CLEAROMIZER</strong></p>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Durchmesser: 20 mm</li>
+<li>Höhe: 47,5 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>subohm-fähig</li>
+<li>Top Filling-System</li>
+<li>Plug and Pull Coils</li>
+</ul>',
+    ),
+    'SK100NV' => array(
+        'icNumber' => 'SK100NV',
+        'number' => 'SK100NV',
+        'name' => 'SMOK - Novo 2 - E-Zigarette',
+        'commonName' => 'Novo 2',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit der Novo 2 E-Zigarette können Sie im moderaten Bereich Dampfen. Im Lieferumfang sind folgende Pod-System enthalten, die je einen fest verbauten Verdampferkopf haben. 1x Novo 2 Pod Mesh mit 1,0 Ohm und 1x Novo 2 Pod DC mit 1,4 Ohm. Beide sind für das MTL-Dampfen geeignet. Bitte tauschen Sie das ganze Pod-System, sobald Sie eine negative Geschmacksentwicklung wahrnehmen und eine abnehmende Dampfentwicklung feststellen. Der Akku hat eine Kapazität von 800mAh und wird über die Zugautomatik aktiviert. Das heißt, dass die E-Zigarette keine Feuertaste besitzt und Sie nur an dem Pod-System nur ziehen brauchen, um dampfen zu können. Im Lieferumfang ist ein USB-Ladekabel enthalten, worüber Sie Ihre Novo 2 laden können.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+
+<li>1x Novo 2 Akku</li>
+<li>1x Novo 2 Pod Mesh mit 1,0 Ohm</li>
+<li>1x Novo 2 Pod DC mit 1,4 Ohm</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Novo 2 E-Zigarette</strong>
+<ul>
+<li>Kapazität: 800mAh</li>
+<li>Ausgangsleistung: 60-25 Watt</li>
+<li>Ausgangsspannung: 3,0-4,0 Volt</li>
+<li>Akkustand-LED-Indikator</li> 
+<li>8-Sekunden Zug-Schutz</li>
+<li>Kurzschlussschutz</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Side-Filling</li>
+<li>Maße: 24,5 mm x 14,5 mm x 88,3 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SK100NVM' => array(
+        'icNumber' => 'SK100NVM',
+        'number' => 'SK100NVM',
+        'name' => 'SMOK - Novo 2 - Pod Mesh - 1,0 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Novo 2',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro Packung sind drei Novo 2 Pod Mesh mit 1,0 Ohm enthalten. Die Pods haben einen fest verbauten Verdampferkopf, sodass Sie das Pod-System austauschen müssen, sobald Ihr Liquidgeschmack verfälscht schmeckt. Das Pod-System kann bis zu 2 ml Liquid aufnehmen, das über das Side-Filling System in den Pod gegeben wird. Die Pods sind für die Novo 2 E-Zigarette geeignet und sind für das Dampfen im moderaten Bereich ausgelegt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x Novo 2 Pod Mesh mit 1,0 Ohm</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<br>
+<br>
+<p><strong>Novo 2 Pod Mesh</strong></p>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Side-Filling</lI>
+<li>Widerstand der verbauten Wicklung: 1,0 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Geeignet für MTL</li>
+<li>passgenauer Pod für die SMOK Novo 2 E-Zigarette</li>
+</ul>
+',
+    ),
+    'SK100NVD' => array(
+        'icNumber' => 'SK100NVD',
+        'number' => 'SK100NVD',
+        'name' => 'SMOK - Novo 2 - Pod DC - 1,4 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Novo 2',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Für die Novo 2 E-Zigarette sind die Novo 2 Pod DC mit 1,4 Ohm konzipiert und fassen bis zu 2 ml Liquid. Das Liquid wird seitlich über das Side-Filling System in den Pod gegeben. Bitte tauschen Sie das Pod-System, sobald das Liquid verfälscht schmeckt. Der Verdampferkopf ist nämlich fest verbaut und kann nicht im einzelnen ausgetauscht werden. Pro Packung sind drei Pods enthalten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x Novo 2 Pod DC 1,4 Ohm</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<br>
+<br>
+<p><strong>Novo 2 Pod DC</strong></p>
+<ul>
+<li>Tankvolumen: 2ml</li>
+<li>Side-Filling</lI>
+<li>Widerstand der verbauten Wicklung: 1,4 Ohm</li>
+<li>Geeignet für MTL</li>
+<li>passgenauer Pod für die SMOK Novo 2 E-Zigarette</li>
+</ul>
+',
+    ),
+    'IP100V3A' => array(
+        'icNumber' => 'IP100V3A',
+        'number' => 'IP100V3A',
+        'name' => 'iPV - V3 mini ADA - 1,0 Ohm Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'V3 mini ADA',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'iPV',
+        'brand' => 'iPV',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestellten Paket drei iPV ADA Verdampfer mit Ihrem gewählten Widerstand. Es stehen der ADA 0,3 Ohm Verdampfer sowie der ADA 1,0 Ohm Verdampfer zur Auswahl. Die ADA Verdampfer sind sogenannte Squonker, da das Liquid von unten in den Tank transportiert wird. Da es sich um Einwegtanks handelt, sollten Sie den gesamten Verdampfer gegen einen neuen tauschen, sobald sich Veränderungen im Geschmack oder der Dampfmenge abzeichnen. Die ADA Verdampfer von iPV sind ausschließlich zur Nutzung mit der iPV V3 mini vorgesehen. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x ADA Clearomizer 1,0 Ohm</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+
+',
+    ),
+    'SN100PSR' => array(
+        'icNumber' => 'SN100PSR',
+        'number' => 'SN100PSR',
+        'name' => 'Smoant - Pasito - RBA Head',
+        'commonName' => 'Pasito',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoant',
+        'brand' => 'Smoant',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten mit dem Smoant Pasito RBA Head die Möglichkeit Ihre eigene Wicklung in der Smoant Pasito Pod E-Zigarette verwenden zu können. Der Verdampferkopf  ist ein Single Coil und beinhaltet keine vorgefertigte Wicklung. Laut Hersteller wird ein Widerstand von 0,5 Ohm bis zu 1 Ohm empfohlen. Ist Ihr Verdampferkopf mit einer Wicklung versehen und Watte hindurchgezogen, so nutzen Sie die Steckverbindung im Pod um den Smoant Pasito RBA Head darin einzuführen. Bitte bedenken Sie, dass auch bei Ihre Wicklung bei regelmäßigem Gebrauch eine Abnutzung stattfindet und Sie diese zyklisch wechseln sollten.
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Empfohlener Widerstand: 0,5 Ohm - 1 Ohm</li>
+<li>Eigene Wicklung </li>
+<li>Empfohlene Leistungsbereich: 10 Watt - 13 Watt</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Smoant Pasito Pod E-Zigaretten Set</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'AY100P' => array(
+        'icNumber' => 'AY100P',
+        'number' => 'AY100P',
+        'name' => 'Artery - Pal Stick - E-Zigarette',
+        'commonName' => 'Pal Stick',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Artery',
+        'brand' => 'Artery',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Artery Pal Stick E-Zigaretten Set hat einen fest verbauten 750mAh Akku. Der Akku wird mit dem mitgelieferten Micro-USB Kabel geladen. Der Feuertaster zeigt Ihnen den Akkustand an, indem Sie diesen zweimal betätigen. Hier stehen Blau für 100 - 80%, Lila für 80 - 30% und Rot für unter 30% Akkuspannung. Mittels drei Klicks auf den Feuertaster haben Sie auch die Möglichkeit die Ausgangsspannung Ihrer Pal Stick E-Zigarette zu regulieren. Es stehen Ihnen folgende Ausgabe Spannungen zur Verfügung: 3,0 V, 3,3 V, 3,5 Volt. Der ebenfalls im Set enthaltene Pal Stick Tank hat ein Tankvolumen von 1,6ml und wird über ein Top-Filling System von oben mit neuem Liquid befüllt. Hierzu schrauben Sie lediglich das Mundstück Ihrer Pal Stick E-Zigarette ab um an die Öffnung für das Liquid zu gelangen. In der Base des Verdampfers befindet sich die Airflow-Kontrolle, hier haben Sie die Möglichkeit Ihren Zugwiderstand einzustellen. Der Pal Stick Verdampfer eignet sich für das Dampfen im moderaten Bereich von Mund zu Lunge. Da der Pal Stick Verdampfer anstelle eines 510er Anschlusses über einen Magneten verfügt, gestaltet sich die Installation des Verdampfers einfacher, da dieser lediglich in den Akku eingeschoben werden muss. Die ebenfalls im Lieferumfang  befindlichen Artery HP Verdampfer haben einen Widerstand von 1,0 Ohm une benötigen eine Leistung zwischen 9 und 13,5 Watt. Alle drei Leistungsstufen der Pal Stick E-Zigarette ermöglichen Ihnen das Dampfen mit diesem Verdampferkopf. Artery gibt an, dass es möglich ist, Liquids mit bis zu 70% VG Anteil zu Dampfen. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen gehören und diese regelmäßig bei Geschmacksveränderungen gewechselt werden sollten. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Pal Stick E-Zigarette</li>
+<li>2x HP Heads 1,0 Ohm </li>
+<li>1x USB-Ladekabel</li>
+<li>1x Ersatzteil Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Pal Stick</strong>
+<ul>
+<li>Akkukapazität: 750mAh</li>
+<li>Ausgangsspannung: 3 bis 3,5 Volt</li>
+<li>Tankvolumen: 1,6 ml</li>
+<li>Top Filling</li>
+<li>Airflow</li>
+<li>MTL</li>
+<li>Maße: 18 mm x 119 mm</li>
+</ul>
+<br>
+<br>
+
+
+',
+    ),
+    'AY100B' => array(
+        'icNumber' => 'AY100B',
+        'number' => 'AY100B',
+        'name' => 'Artery - Baton - E-Zigarette',
+        'commonName' => 'Baton',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Artery',
+        'brand' => 'Artery',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Artery Baton E-Zigarettten Set besteht aus dem Baton Akkuträger und dem Hive S Tank. Für die Inbetriebnahme Ihrer Baton E-Zigarette benötigen Sie eine 18650er, 20700er oder eine 21700er Akkuzelle. Diese muss separat erworben werden, da die nicht Teil des Lieferumfangs ist. Über den 510er Anschluss verbinden Sie den Baton Akkuträger mit dem Hive S Tank. Der Verdampfer kann bis zu 2ml Liquid über das Top-Filling-System aufnehmen. Sie können aber auch den Ersatzglastank verwenden und diesen daher mit 3ml Liquid befüllen. Beide Tanks sind transparent, sodass Sie den Liquidstand im Auge behalten und bei Bedarf mit Liquid auffüllen können. Im Lieferumfang erhalten Sie zwei Baton AL1B-3 Verdampferköpfe mit je 0,3 Ohm. Damit ist es Ihnen möglich, direkte Lungenzüge zu tätigen. Tauschen Sie den Verdampferkopf gegen einen Neuen aus, sobald Sie einen verfälschten Liquidgeschmack wahrnehmen. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Baton Akkuträger</li>
+<li>1x Hive S Tank Clearomizer</li>
+<li>2x Baton AL1B-3 Mesh-Head 0,3 Ohm</li>
+<li>1x 18650er Batterie-Adapter</li>
+<li>1x Ersatzglastank</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<p><strong>18650er/20700er/21700er Akkuzellen(n) <strong>nicht </strong>im Lieferumfang enthalten!</strong></p>
+<br>
+<br>
+<p><strong>Baton Akkuträger</strong></p>
+<ul>
+<li>Direkte Leistungsabgabe (halbmechanisch)</li>
+<li>Alle wichtigen Sicherheitsschaltungen vorhanden</li>
+<li>Ausgangsspannung: 3,0V - 4,2V</li>
+<li>Widerstandsbereich: 0,1 Ohm - 3,0 Ohm</li>
+<li>Maße: 93,15 mm x 27 mm</li>
+</ul>
+<br>
+<br>
+<p><strong>Hive S Tank</strong></p>
+<ul>
+<li>Tankvolumen: 2ml / 3ml</li>
+<li>Durchmesser: 24,5 mm / 27 mm</li>
+<li>Höhe: 39,8 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling-System</li>
+<li>Bottom Airflow</li>
+</ul>
+<br>
+<br>',
+    ),
+    'AY100BH' => array(
+        'icNumber' => 'AY100BH',
+        'number' => 'AY100BH',
+        'name' => 'Artery - Baton - AL1B-3 Head - 0,3 Ohm (4 Stück pro Packung)',
+        'commonName' => 'Baton',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Artery',
+        'brand' => 'Artery',
+        'piecesPerPack' => 4,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro Packung sind insgesamt Baton AL1B-3 Verdampferköpfe enthalten. Jeder Verdampferkopf hat einen Widerstand von 0,3 Ohm, sodass die Verdampferköpfe für direkte Lungenzüge ausgelegt sind. Diese können Sie mit der Artery Baton E-Zigarette verwenden. Der Leistunsbereich liegt je Verdampferkopf zwischen 30 Watt und 50 Watt. Bitte tauschen Sie den Verdampferkopf aus, sobald Sie eine negative Geschmacksveränderung Ihres Liquids wahrnehmen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>4x Baton AL1B-3 Heads mit je 0,3 Ohm</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Widerstand: 0,3 Ohm</li>
+<li>Leistungsbereich: 30 Watt bis 50 Watt</li>
+<li>Mesh Coil</li>
+<li>DL-geeignet</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Artery Baton E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'AS100AVPM' => array(
+        'icNumber' => 'AS100AVPM',
+        'number' => 'AS100AVPM',
+        'name' => 'Aspire - AVP - Pod - 0,6 Ohm Mesh Head (2 Stück pro Packung)',
+        'commonName' => 'AVP',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das AVP Pod-System hat einen Mesh Verdampferkopf mit einem Widerstand von 0,6 Ohm und ist für die gleichnamige Aspire AVP E-Zigarette geeignet. Dieses Pod-System ist eines von drei passenden Pod-Systemen für das Aspire AVP E-Zigaretten Set. Durch den Widerstand des Mesh Verdampferkopfes von 0,6 Ohm ist das AVP Pod-System für das direkte Inhalieren in die Lunge (DL) geeignet. Der Inhalt des Pods umfasst 2 ml. Ihr Liquid füllen Sie über das Bottom-Filling-System ein und warten vor der Inbetriebnahme, bis die Watte im Mesh Verdampferkopf sich vollständig mit Ihrem Liquid vollgesogen hat. Bitte beachten Sie, dass der verbaute Verdampferkopf ein Verschleißteil ist und das Aspire AVP Pod-System in regelmäßigen Abständen im Ganzen ausgetauscht werden sollte, um einer Geschmacksveränderung entgegenzuwirken. Das Pod-System ist magnetisch und wird durch ein einfaches Stecken an dem Akku befestigt. Mit dem Kauf dieses Artikels erhalten Sie zwei Aspire AVP Pod-Systeme mit je 0,6 Ohm Mesh Verdampferköpfen.
+<br>
+<br>
+<strong>Lieferumfang</strong><ul>
+<li>2x Aspire AVP Pod | Mesh Head 0,6 Ohm</li>
+<li>1x Produktinformation</li>
+</ul>
+<br>
+<br>
+<strong>Aspire AVP Pod mit 0,6 Ohm Mesh Head</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Bottom-Filling-System</li>
+<li>Widerstandsbereich: 0,6 Ohm</li>
+<li>passgenauer Pod für die Aspire APV E-Zigarette</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SG100OD' => array(
+        'icNumber' => 'SG100OD',
+        'number' => 'SG100OD',
+        'name' => 'Sigelei - Odo 2 - E-Zigarette',
+        'commonName' => 'Odo 2',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Sigelei',
+        'brand' => 'Sigelei',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Sigelei Odo 2 E-Zigaretten Set ist ein Pod-System im Stile eines Vape Pens. Das Set zeichnet sich durch seinen 450mAh starken Akku und einem Pod mit einem Widerstand von 1,5 Ohm aus. Der Akku ist, wie auch der Verdampferkopf im Pod, fest verbaut und kann nicht gewechselt werden. Den Akku können Sie über ein mitgeliefertes USB-Kabel wieder mit Energie versorgen und aufladen. Der Pod inklusive Verdampferkopf gehört zu den Verschleißteilen der E-Zigarette und sollte in regelmäßigen Abständen gewechselt werden um ein gleichbleibendes Dampf- und/oder Geschmackserlebnis gewährleisten zu können. Den Tank des Pods können Sie an der Seite, an dem dafür vorgesehenen Einfüllloch, wieder befüllen. Der Pod bietet Platz für bis zu 2ml Liquid.
+<br>
+<br>
+<ul>
+<strong>Lieferumfang</strong>:
+<ul>
+<li>1x Odo 2 E-Zigaretten Set</li>
+<li>1x Odo 2 Pod mit 1,5 Ohm</li>
+<li>1x Mundstück</li>
+<li>1x USB-Ladekabel</li>
+<li>2x Bedienungsanleitung</li>
+<li>1x Silikon Podschutz</li>
+<li>1x Schlüsselband</li>
+</ul>
+<br>
+<br>
+<strong>Odo 2 E-Zigaretten Set</strong>
+<ul>
+<li>Höhe Akku: 86,2mm</li>
+<li>Höhe Pod: 35,6mm</li>
+<li>Durchmesser: 14,5mm</li>
+<li>Akkukapazität: 450mAh</li>
+<li>Ausgangsleistung: 3,7V</li>
+<li>Tankvolumen: 2ml</li>
+<li>Widerstand: 1,5 Ohm</li>
+<li>Side Filling</li>
+</ul>',
+    ),
+    'SG100ODP' => array(
+        'icNumber' => 'SG100ODP',
+        'number' => 'SG100ODP',
+        'name' => 'Sigelei - Odo 2 - Pod - 1,5 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Odo 2',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Sigelei',
+        'brand' => 'Sigelei',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Odo 2 Pod von Sigelei ist der passende Pod für das Odo 2 E-Zigaretten Set. Dieser Pod besitzt einen fest verbauten Verdampferkopf mit einem Widerstand von 1,5 Ohm. Pro bestellter Packung erhalten Sie fünf der Odo 2 Pods. Die Pods besitzen ein Tankvolumen von 2ml. Ein passendes Einfüllloch ,für das Befüllen des Pods, ist an der Seite angebracht. Verdampferköpfe zählen zu den Verschleißteilen einer E-Zigarette. Sollten Sie eine negative Veränderung des Geschmacks- und/oder des Dampfes wahrnehmen, wechseln Sie den gesamten Pod gegen einen neuen aus.
+<br>
+<br>
+<ul>
+<strong>Lieferumfang</strong>:
+<ul>
+<li>5x Odo 2 Pod mit 1,5 Ohm</li>
+<li>1x Garantiekarte</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Odo 2 Pod</strong>
+<ul>
+<li>Tankvolumen: 2ml</li>
+<li>Höhe: 35,6mm</li>
+<li>Durchmesser: 14,5mm</li>
+<li>Widerstand: 1,5 Ohm</li>
+<li>Side Filling</li>
+</ul>',
+    ),
+    'AY100PT' => array(
+        'icNumber' => 'AY100PT',
+        'number' => 'AY100PT',
+        'name' => 'Artery - Pal Stick - Ersatztank',
+        'commonName' => 'Pal Stick',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Artery',
+        'brand' => 'Artery',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Pal Stick Ersatztank hat ein Tankvolumen von 1,6ml. Sie haben die Möglichkeit den Tank von oben über ein Top-Filling System aufzufüllen. An der Verdampfer Aufnahme oder auch Base genannt befindet sich der Airflow Ring zum Einstellen des von Ihnen bevorzugten Luftwiderstandes. Bitte beachten Sie, dass der Verdampferkopf nicht Bestandteil des Lieferumfangs ist. 
+',
+    ),
+    'AY100P2' => array(
+        'icNumber' => 'AY100P2',
+        'number' => 'AY100P2',
+        'name' => 'Artery - Pal 2 Pro - E-Zigarette',
+        'commonName' => 'Pal 2 Pro',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Artery',
+        'brand' => 'Artery',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Artery Pal 2 Pro E-Zigaretten Set verfügt über ein Pod-System, welches mit einem integrierten Airflow-Control ausgestattet ist. Das Fassungsvermögen des Pods liegt bei 3ml und kann bei Bedarf gewechselt werden. Dafür öffnen Sie die E-Zigarette, indem Sie die obere Abdeckung entfernen. So können Sie den Pod einfach herausnehmen und den neuen wieder einsetzen. Das Pod-System ist voll in die E-Zigarette integriert. Daher können Sie den Füllstand Ihre Liquids durch das dafür konzipierte Sichtfenster ablesen. Über das Side-Filling-System wird der Pod mit frischem Liquid befüllt. Das Pod-System der Artery Pal 2 Pro E-Zigarette hat keinen fest verbauten Verdampferkopf. So können Sie den Verdampferkopf, der zu den Verschleißteilen gehört, austauschen. Die Artery Pal 2 Pro E-Zigarette verfügt über einen Akku mit einer Kapazität von 1000mAh und Sie Dampfen in einem Leistungsbereich von 5 Watt bis 22 Watt. Sie wählen die gewünschte Leistung in 0,5 Watt Schritten über die Pfeiltasten. Der integrierte Chip speichert Ihre Einstellungen zu den jeweiligen Verdampferköpfen. Die Artery Pal 2 Pro E-Zigarette hat eine Größe von 43 mm x 19 mm x 83 mm und verfügt über einen Micro-USB-Anschluss an der Unterseite des Gehäuses aus Aluminium.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Pal 2 Pro E-Zigaretten Set</li>
+<li>1x Verdampferkopf mit 1 Ohm (eingesetzt)</li>
+<li>1x Verdampferkopf mit 0,6 Ohm</li>
+<li>1x Pod-Verschlusskappe</li>
+<li>1x USB-Kabel</li>
+<li>2x O-Dichtungsringe</li>
+<li>1x Bedienungsanleitung</li>
+<li>1x Garantiekarte</li>
+</ul>
+<br>
+<br>
+<strong>Pal 2 Pro E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 1000mAh</li>
+<li>Ausgangsleistung: 5 Watt – 22 Watt</li>
+<li>Maße: 43 mm x 19 mm x 83 mm</li>
+<li>Tankvolumen: 3,0 ml</li>
+<li>Material: Aluminiumgehäuse</li>
+<li>Displayanzeige</li>
+<li>DL und MTL</li>
+<li>Side-Filling-System</li>
+<li>Airflow Control</li>
+</ul>
+<br>
+<br>',
+    ),
+    'AY100P2P' => array(
+        'icNumber' => 'AY100P2P',
+        'number' => 'AY100P2P',
+        'name' => 'Artery - Pal 2 Pro - Pod, 3 ml',
+        'commonName' => 'Pal 2 Pro',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Artery',
+        'brand' => 'Artery',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Pal 2 Pro Pod von der Marke Artery kann bis zu 3 ml Liquid fassen. Dieses wird über das Side-Filling-System in den Tank gefüllt. Hierzu ist es nicht notwendig den Pod vom Akku zu entfernen. Das Pod-System ist aus Kunststoff und verfügt über ein integriertes Airflow-Control-System. Der Pod hat einen austauschbaren Verdampferkopf mit 1 Ohm Widerstand vorinstalliert und ist zum Backendampfen geeignet. In der Lieferung erhalten Sie zusätzlich einen Artery Pal 2 Pod HP Verdampferkopf mit einem Widerstand von 0,6 Ohm. Somit ist dieser Verdampferkopf zum Dampfen direkt in die Lunge (DL) geeignet. Bitte bedenken Sie, dass der Verdampferkopf im Pod ein Verschleißteil ist. Sollte der Liquidgeschmack sich also verändern, ist es ratsam den benutzten Verdampferkopf durch einen neuen zu tauschen. Das Pod-System ist wiederbefüllbar. Der Artery Pal 2 Pro Pod ist für die gleichnamige Artery Pal 2 Pro E-Zigarette geeignet.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Pal 2 Pro Pod 3 ml mit Pal 2 Pod HP 1 Ohm Head</li>
+<li>1x Pal 2 Pod HP 0,6 Ohm Head</li>
+<li>1x Produktinformation</li>
+</ul>
+<br>
+<br>
+<strong>Artery Pal 2 Pro Pod 3 ml</strong>
+<ul>
+<li>Ausgangsleistung: 5 – 22 Watt</li>
+<li>Tankvolumen: 3,0 ml</li>
+<li>Material: Kunststoff</li>
+<li>Verdampferkopf auswechselbar</li>
+<li>subohm-fähig</li>
+<li>Side-Filling-System</li>
+<li>Airflow Control</li>
+</ul>
+<br>',
+    ),
+    'AY100P2H' => array(
+        'icNumber' => 'AY100P2H',
+        'number' => 'AY100P2H',
+        'name' => 'Artery - Pal 2 - Pod HP Head (5 Stück pro Packung)',
+        'commonName' => 'Pal 2',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Artery',
+        'brand' => 'Artery',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Von Artery kommen die Pal 2 Pod HP Verdampferköpfe mit den Widerständen von 0,6 Ohm und 1 Ohm. Sie sind passend für die Artery Pal 2 Pro E-Zigarette. Sie erhalten 5 Verdampferköpfe eines Models pro bestellter Packung. Da es sich bei einem Verdampferkopf um ein Verschleißteil einer E-Zigarette handelt, tauschen Sie diesen gegen einen neuen Verdampferkopf aus, sobald Sie eine Veränderung der Geschmacks- und/oder der Dampfentwicklung feststellen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Artery Pal 2 Pod HP</li>
+</ul>
+<br>
+<br>
+<strong>Artery Pal 2 Pod HP Head</strong>
+<ul>
+<li>Widerstand: 0,6 Ohm, 1,0 Ohm</li>
+<li>Leistungsbereich 0,6 Ohm Head: 15 Watt – 23 Watt</li>
+<li>Leistungsbereich 1 Ohm Head: 9 Watt – 13,5 Watt</li>
+<li>passend für die Artery Pal 2 Pro E-Zigarette</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'GV100BT' => array(
+        'icNumber' => 'GV100BT',
+        'number' => 'GV100BT',
+        'name' => 'GeekVape - Bident - E-Zigarette',
+        'commonName' => 'Bident',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'GeekVape bringt mit seinem Bident E-Zigaretten Set das erste Dual Coil Pod-System auf den Markt. Diese E-Zigarette besitzt einen fest verbauten Akku mit einer Kapazität von 950mAh. Sie können mit der Bident E-Zigarette sowohl von Mund zu Lunge (MTL) als auch im Subohm-Bereich dampfen. Dies spiegeln auch die im Lieferumfang enthaltenen Pods wieder. Der vorinstallierte Bident B1 Pod verfügt über einen Widerstand von 0,8 Ohm und ein Tankvolumen von 3,5ml. Das gleiche Tankvolumen finden Sie auch im 1,2 Ohm starken Bident B2 Pod. Beide Pods haben einen fest verbauten Verdampferkopf und sollten gewechselt werden, sobald Sie eine negative Geschmacks- und/oder Dampfentwicklung feststellen sollten. Mit der einzigen Taste an der E-Zigarette können Sie zwischen drei Ausgangsleistungen wählen. Sie haben die Wahl zwischen 3,4 Volt, 3,6 Volt oder 3,8 Volt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Bident Akku</li>
+<li>1x Bident B1 Pod mit 0,8 Ohm (vorinstalliert)</li>
+<li>1x Bident B2 Pod mit 1,2 Ohm</li>
+<li>1x USB-C Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+<li>1x Garantiekarte</li>
+</ul>
+<br>
+<br>
+<strong>Bident E-Zigaretten Set</strong>
+<ul>
+<li>Höhe: 88,5 mm</li>
+<li>Durchmesser: 32 mm</li>
+<li>Akkukapazität: 950mAh</li>
+<li>max. Ausgangsleistung: 3,8V</li>
+<li>Tankvolumen Pods: 3,5 ml</li>
+<li>Ausgabemodus: Power Mode</li>
+<li>Bottom Airflow</li>
+<li>MTL und DL möglich</li>
+</ul>',
+    ),
+    'GV100BTP' => array(
+        'icNumber' => 'GV100BTP',
+        'number' => 'GV100BTP',
+        'name' => 'GeekVape - Bident - Pod (2 Stück pro Packung)',
+        'commonName' => 'Bident',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die GeekVape Bident Pods können Sie in zwei unterschiedlichen Ohm-Stärken erwerben und sind die passenden Pods für das Bident E-Zigaretten Set von GeekVape. Die Pods stehen mit einem Widerstand von 0,8 Ohm und 1,2 Ohm zur Verfügung. Die Bident B1 bzw B2 Pods werden mit einem Tankvolumen von 3,5ml ausgeliefert und haben jeweils zwei verbaute Coils. Sie erhalten pro bestellter Packung zwei Pods mit dem gewählten Widerstand
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>Je Variante: 2x Bident Pods</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand B1 Pod: 0,8 Ohm</li>
+<li>Leistungsbereich B1 Pod: 14 - 18 Watt</li>
+<br>
+<li>Widerstand B2 Pod: 1,4 Ohm</li>
+<li>Leistungsbereich B2 Pod: 9 - 12 Watt</li>
+<li>Tankvolumen: 3,5 ml</li>
+</ul>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>GeekVape Bident E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SI100TC' => array(
+        'icNumber' => 'SI100TC',
+        'number' => 'SI100TC',
+        'name' => 'Squid Industries - Tac21 - Akkuträger - 200 Watt',
+        'commonName' => 'Tac21',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Squid Industries',
+        'brand' => 'Squid Industries',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der von Squid Industries konzipierte Tac21 unterstützt das Dampfen im VW, Power und Bypass-Modus. Den Akkuträger nehmen Sie in Betrieb, in dem Sie zwei 18650er, 20700er oder 21700er Akkuzellen in den Akkuträger einsetzen. Falls es die 18650er Akkuzellen seien sollen, benötigen Sie dafür noch 18650er Adapter. Diese sind Teil des Lieferumfangs. Die Akkuzellen, ob nun 18650er, 20700er oder 21700er, müssen jedoch Sie seaparat erwerben. Diese sind nicht im Lieferumfang enthalten. Sie dampfen im Variabel Wattmodus bei einer maximalen Ausgangsleistung von 200 Watt. Die vorgenommenen Einstellungen können Sie dem Display entnehmen, welches sich neben dem 510er Anschluss für den Verdampfer befindet. Die Einstellungen können Sie über die Multifunktionstaste einnehmen. Diese fungiert zugleich auch als Feuertaste. Drücken Sie diese, wird die Wicklung befeuert. Drehen Sie an ihr können Sie den Tac 21 einstellen. Zudem ist der Tac 21 Akkuträger dazu fähig Wicklungen mit einem Widerstand von 0,1 bis 3 Ohm zu befeuern. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Tac 21 200 Watt Akkuträger</li>
+<li>2x 18650er Adapter</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er Akkuezelle/n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Tac 21 200 Watt Akkuträger</strong>
+<ul>
+<li>Ausgabemodi: VW, Power, Bypass</li>
+<li>Ausgangsleistung: 5 bis 200 Watt </li>
+<li>Widerstandsbereich: 0,1 – 3,0 Ohm</li>
+<li>Gewindetyp: 510</li>
+<li>Display</li>
+</ul>',
+    ),
+    'SK100FM' => array(
+        'icNumber' => 'SK100FM',
+        'number' => 'SK100FM',
+        'name' => 'SMOK - Fetch Mini - E-Zigarette',
+        'commonName' => 'Fetch Mini',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Fetch Mini E-Zigaretten Set von Smok ist eine E-Zigaretten im Stile eines Pod-Systems. Das Set besteht aus einem Akku, zwei Pods sowie zwei Verdampferköpfen. Der Fetch Mini Akku besitzt eine Kapazität von 1200mAh und verfügt über ein 0,96”-Display. Über dieses Display können Sie zum Beispiel ablesen, mit welcher Ausgangsleistung Sie momentan dampfen. Denn Sie haben die Möglichkeit im Bereich von 5 bis 40 Watt die gewünschte Ausgangsleistung zu wählen. Neben dem Akku bekommen Sie den Fetch Mini Nord Pod, inklusive 3,7ml Tankvolumen, mit passendem Nord Regular DC 0,6 Ohm Verdampferkopf. Auch im Lieferumfang enthalten ist der Fetch Mini RPM Pod, ebenfalls mit 3,7ml Tankvolumen und den RPM 0,4 Ohm Verdampferkopf. Ihr Liquid können Sie an der Unterseite der Pods einfüllen. Dafür müssen Sie den jeweiligen Pod lediglich vom Akku trennen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Fetch Mini Akku</li>
+<li>1x Fetch Mini RPM Pod 3,7ml</li>
+<li>1x Fetch Mini Nord Pod 3,7ml</li>
+<li>1x RPM 0,4 Ohm Mesh Head</li>
+<li>1x Nord Regular DC 0,6 Ohm Head</li>
+<li>1x USB Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Fetch Mini E-Zigaretten Set</strong>
+<ul>
+<li>Höhe: 76 mm</li>
+<li>Durchmesser: 42,8 mm</li>
+<li>Akkukapazität: 1200mAh</li>
+<li>Ausgangsleistung: 5 - 40 Watt</li>
+<li>Widerstandsbereich: 0,3 - 2,5 Ohm</li>
+<li>Ausgabemodus: VW</li>
+<li>0,96" - Display</li>
+<li>Bottom-Filling System</li>
+</ul>',
+    ),
+    'AC100FU' => array(
+        'icNumber' => 'AC100FU',
+        'number' => 'AC100FU',
+        'name' => 'Acrohm - Fush - Akkuträger - 80 Watt',
+        'commonName' => 'Fush',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Acrohm',
+        'brand' => 'Acrohm',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Fush 80 Watt von Acrohm ist ein semi mechanischer Akkuträger. Er verfügt über eine Vielzahl an Sicherheits Funktionen die durch den verbauten Chip realisiert werden. Es sind folgende Sicherheitsmerkmale vorhanden: Kurzschluss-, Verpol-, Temperatur-, Tiefentlade- sowie Überhitzungsschutz. Der Acrohm Fush 80 Watt verfügt über eine Beleuchtung die sich nach Ihren Vorlieben steuern können. Um eine Farbauswahl zu treffen, schütteln Sie lediglich den Akkuträger. Folgende Farben stehen Ihnen zur Auswahl:  rot, grün, blau, lila und weiß. Sie haben über den Feuertaster am unteren Ende des Akkuträgers auch die Möglichkeit die Beleuchtung gänzlich auszuschalten. Ebenfalls im Feuertaster integriert, ist die Möglichkeit den Fush 80 Watt ein oder aus zu schalten. Hierzu betätigen Sie in kurzen Abständen fünf mal den Taster für ein oder aus. Der Acrohm Fush 80 Watt wird mittels eines 18650er Akkus betrieben. Die Akkuzelle ist nicht Bestandteil des Lieferumfangs und muss separat erworben werden. Die maximale Ausgangsspannung beträgt 80 Watt. Es werden Widerstände zwischen 0,07 und 2,5 Ohm erkannt. Der Acrohm Fush 80 Watt ist ein sogenannter semi mechanischer Akkuträger. Dies bedeutet dass er die Leistung im Bypass Modus ausgibt. Bei voll geladenen 18650er Akku beträgt hier die Leistung 4,2 Volt, welche im Verlauf langsam abnimmt und zum schluss minimal 3,5 Volt beträgt bevor sich der Akkuträger selbstständig ausschaltet. Bitte prüfen Sie, trotz der vorhandenen Sicherheitsfunktionen, vor dem ersten Gebrauch den Widerstand Ihres Clearomizers um einen Kurzschluss zu vermeiden. 
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Fush 80 Watt</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<b>Fush 80 Watt</b>
+<ul>
+<li>Ausgangsleistung: max. 80 Watt</li>
+<li>Ausgangsspannung: 4,2 bis 3,5 Volt</li>
+<li>Widerstandsbereich: 0,07 bis 2,5 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 26 mm x 110 mm</li>
+<li>Material: Kupfer, Edelstahl, Kugelsicheres Polycarbonat</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SK100FMR' => array(
+        'icNumber' => 'SK100FMR',
+        'number' => 'SK100FMR',
+        'name' => 'SMOK - Fetch Mini - RPM Pod, 3,7 ml (2 Stück pro Packung)',
+        'commonName' => 'Fetch Mini',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Für das Smok Fetch Mini E-Zigaretten Set ist dieser Fetch Mini RPM Pod der passende Zubehör- und/oder Ersatzartikel. Sie haben die Möglichkeit bis zu 3,7ml Ihres gewünschten Liquids an der Unterseite des Pods einzufüllen. Dafür müssen Sie den Pod vom Akku abziehen. Bitte beachten Sie, dass der passende RPM 0,4 Ohm Verdampferkopf nicht Teil des Lieferumfangs ist und separat erworben werden muss.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x Smok Fetch Mini RPM Pod 3,7ml</li>
+</ul>
+<br>
+<strong>Fetch Mini RPM Pod</strong>
+<ul>
+<li>Tankvolumen: 3,7 ml</li>
+<li>Bottom-Filling-System</li>
+</ul>
+<br>
+<b>Kompatibel mit:</b>
+<ul>
+<li>Smok RPM 0,4 Ohm Mesh Head</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100FMN' => array(
+        'icNumber' => 'SK100FMN',
+        'number' => 'SK100FMN',
+        'name' => 'SMOK - Fetch Mini - Nord - Pod, 3,7 ml (2 Stück pro Packung)',
+        'commonName' => 'Fetch Mini',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Smok Fetch Mini Nord Pod hat ein Tankvolumen von 3,7ml und ist der passende Pod für das Fetch Mini E-Zigaretten Set. Der Pod kann mit verschiedenen Verdampferköpfen der Nord-Serie verwendet werden. Achten Sie aber bitte darauf, das keine Verdampferköpfe im Lieferumfang enthalten sind und separat erworben werden müssen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x Smok Fetch Mini Nord Pod 3,7ml</li>
+</ul>
+<br>
+<strong>Fetch Mini Nord Pod</strong>
+<ul>
+<li>Tankvolumen: 3,7 ml</li>
+<li>Bottom-Filling-System</li>
+</ul>
+<br>
+<b>Kompatibel mit:</b>
+<ul>
+<li>Smok Nord Regular DC 0,6 Ohm Head</li>
+<li>Smok Nord Regular 1,4 Head</li>
+<li>Smok Nord Mesh 0,6 Ohm Head</li>
+<li>Smok Nord Mesh 0,8 Ohm Mesh Head</li>
+</ul>
+<br>
+<br>',
+    ),
+    'DU100DV' => array(
+        'icNumber' => 'DU100DV',
+        'number' => 'DU100DV',
+        'name' => 'Dejavu - DJV D7 - Akkuträger - 180 Watt',
+        'commonName' => 'DJV D7',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Dejavu',
+        'brand' => 'Dejavu',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Dejavu DJV D7 180 Watt hat eine Ausgangsleistung von bis zu 180 Watt. Betrieben wird der DJV D7 mit zwei 18650er Akkuzellen welche nicht im Lieferumfang enthalten sind und separat erworben werden müssen. Bitte achten Sie aufgrund der hohen Leistung des DJV D7 auf geeignete 18650er Akkuzellen. Im Inneren des DJV D7 180 Watt von Dejavu arbeitet der GX 180 UTC Chip aus dem Hause Asmodus, welcher in vielen Akkuträgern von Asmodus zum Einsatz kam. Über das HD Touch Display haben Sie alle wichtigen Einstellungen im Blick. folgende Modi kommen beim DJV D7 180 Watt zum Einsatz:  Power-, Temperatur-, Curve-, und der TCR Modus. Aufgrund des verbauten 510er Anschlusses haben Sie eine Vielzahl an Clearomizern zur Verfügung, welche Sie mit dem Dejavu DJV D7 180 Watt kombinieren können. Die Maße des DJV D7 betragen: 50 mm x 35 mm x 85 mm. Aufgrund des widerstandsfähigem Polymer, welcher auch beim Militär eingesetzt wird, ist der Dejavu DJV D7 180 Watt laut Hersteller robust gebaut. 
+<br>
+<br>
+<ul>         
+<li>1x DJV D7 180 Watt</li>
+<li>1x Schlüsselanhänger</li>
+<li>1x Tasche</li>
+<li>1x USB Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>18650er Akkuzellen sind nicht im Lieferumfang enthalten!</li>
+<br>
+<br>
+<b>DJV D7 180 Watt</b>
+<ul>
+<li>Ausgangsleistung: 5 - 180 Watt</li>
+<li>Ausgangsspannung: max. 7,5 Volt</li>
+<li>Temperaturbereich: 100 - 300 grad Celsius</li>
+<li>Widerstandsbereich: 0,1 bis 3,0 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 50 mm x 35 mm x 85 mm</li>
+<li>Material: Polymer</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'HC100RS' => array(
+        'icNumber' => 'HC100RS',
+        'number' => 'HC100RS',
+        'name' => 'Hotcig - R150S - Akkuträger - 150 Watt',
+        'commonName' => 'R150S',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Hotcig',
+        'brand' => 'Hotcig',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der R150S 150 Watt Akkuträger aus dem Hause Hotcig besitzt im Inneren einen Wasserfesten HM Chip. Aufgrund der Wasserfestigkeit des Chips ist dieser weniger anfällig gegen eindringendes Liquid. Bitte beachten Sie, dass der Hotcig R150S 150 Watt jedoch nicht wasserfest ist und eindringende Flüssigkeiten zum Schaden führen können. Der HM Chip erreicht eine Ausgangsleistung bis zu 150 Watt, welche mit zwei 18650er Akkuzellen erreicht werden können. 18650er Akkuzellen sind nicht Bestandteil des Lieferumfangs. Über das 0,96 Zoll Farbdisplay haben Sie alle eingestellten Parameter stets im Blick. Ihnen werden die aktuelle Leistung, getätigte Züge sowie der Widerstand des aufgeschraubten Clearomizers angezeigt. Die Maße des Hotcig R15S 150 Watt betragen: 90 mm x 55 mm x 25 mm. Sie haben die Möglichkeit in zwei Modi zu vapen. Hier stehen Ihnen der Power (VW) sowie der TC Modus zur Auswahl. Im TC Modus werden Ni200, Titan und SS316 unterstützt. Aufgrund des gefederten 510er Anschlusses ist stets ein Kontakt zum Clearomizer gewährleistet. 
+<br>
+<br>
+<li>1x R150S 150 Watt</li>
+<li>1x USB Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>R150S 150 Watt</b>
+<ul>
+<li>Ausgangsleistung: 1 - 150 Watt</li>
+<li>Temperaturbereich: 100 - 315 grad Celsius</li>
+<li>Modi: Power | TC</li>
+<li>Gewindetyp: 510er</li>
+<li>Maße: 90 mm x 55 mm x 25 mm</li>
+<li>Material: Flugzeugaluminium</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'HC100RM' => array(
+        'icNumber' => 'HC100RM',
+        'number' => 'HC100RM',
+        'name' => 'Hotcig - RSQ Mate - Akkuträger - 213 Watt',
+        'commonName' => 'RSQ Mate',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Hotcig',
+        'brand' => 'Hotcig',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Hotcig erhalten Sie den RSQ Mate mit einer Ausgangsleistung von bis zu 213 Watt. Um den Akkuträger mit Strom zu versorgen, sind zwei 18650er Akkuzellen vonnöten, welche Sie separat erwerben müssen, da diese nicht Bestandteil des Lieferumfangs sind. Der verbaute HM Chipsatz bringt viele nutzbare Modi mit sich. Es stehen Ihnen VW, TC, Bypass und ein TCR Modus zur Verfügung. Im VW Modus haben Sie die Möglichkeit die Wattleistung zwischen 1 und 213 Watt zu regulieren. Der TC Modus erlaubt es Ihnen mit geeigneten Verdampfern eine Gradzahl zwischen 100 und 315 Grad Celsius zu wählen. Das im Lieferumfang enthaltene USB Ladekabel können Sie nutzen, um die Akkuzellen in Ihrem Gerät mit bis zu 2A zu laden. Das 0,96 Zoll OLED Display informiert Sie stets über alle Parameter und eingestellten Modi. Dank des 510er Anschlusses und einer Breite von 25,5 mm ist eine Vielzahl verschiedener Verdampfer mit dem Hotcig RSQ Mate 213 kompatibel. 
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x RSQ Mate 213 Watt Akku</li>
+<li>1x USB-C Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Abmessung: 86 x 50 x 25,2 mm</li>
+<li>Ausgangsleistung: 1 - 213 Watt</li>
+<li>Ausgabemodi: VW/TC/VV/CUSTOM/BYPASS/TCR</li>
+<li>Temperaturbereich: 100°C - 315°C</li>
+<li>Display: 0,96 Zoll</li>
+<li>Update-fähig</li>
+</ul>',
+    ),
+    'HC100G1' => array(
+        'icNumber' => 'HC100G1',
+        'number' => 'HC100G1',
+        'name' => 'Hotcig - G100 - Akkuträger - 100 Watt',
+        'commonName' => 'G100',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Hotcig',
+        'brand' => 'Hotcig',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Akkuträger G100 100 Watt aus dem Hause Hotcig ist dank seines 510er Gewindes mit verschiedenen Verdampfern kombinierbar. Mit ihm haben Sie die Möglichkeit in den Modi VW, TC (Ni/Ti/TCR) und Bypass zu dampfen. Wie man vielleicht dem Namen des G100 100 Watt schon entnehmen kann, beträgt die maximale Ausgangsleistung bis zu 100 Watt. Zudem liegt der Temperaturbereich zwischen 100°C und 300°C. Die von Ihnen getätigten Einstellungen können Sie jederzeit auf dem 0,9 Zoll großen Display einsehen und gegebenfalls ändern. Der Hotcig G100 Akkuträger kann mit 18650er, 20700er und 21700er Akkuzellen in Betrieb genommen werden. Bitte beachten Sie, dass diese jedoch nicht Teil des Lieferumfangs sind und separat erworben werden müssen. Zum laden besagter Akkuzellen verwenden Sie bitte ein externes Ladegerät. Der G100 Akkuträger von Hotcig verfügt zudem einen gefederten 510er Anschluss damit immer ein Kontakt zum aufgesetzten Verdampfer besteht.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x G100 100 Wattt</li>
+<li>1x Batterie-Adapter</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>G100 100 Watt Akkuträger</strong>
+<ul>
+<li>Ausgangsleistung: 5 - 100 Watt</li>
+<li>Ausgabemodi: VW, TC (Ni/Ti/TCR), Bypass</li>
+<li>Temperaturbereich: 100°C – 300°C </li>
+<li>Widerstandsbereich: 0,05 – 3 Ohm</li>
+<li>Gewindetyp: 510</li>
+<li>0,9” OLED-Display</li>
+<li>Maße: 34 x 31 x 92mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'VK100SM' => array(
+        'icNumber' => 'VK100SM',
+        'number' => 'VK100SM',
+        'name' => 'Vsticking - VKsma - E-Zigarette',
+        'commonName' => 'VKsma',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Vsticking',
+        'brand' => 'Vsticking',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die VKsma aus dem Hause Vsticking ist eine E-Zigarette im All-in-One Design mit einem Gehäuse aus einer Zinklegierung. Das VKsma E-Zigaretten Set hat einen fest verbauten 1400mah Akku, welchen Sie mittels des mitgelieferten USB Kabels laden können.
+ Im Lieferumfang enthalten ist der  Vsticking SMA ADA 0,3 Ohm Clearomizer sowie eine wiederbefüllbare 3ml Liquidflasche. Die VKsma E-Zigarette hat ein automatisches Squonker-System ESS (Electronic Spray System) welche auf Knopfdruck das Liquid aus der integrierten Flasche direkt in den verschraubten Clearomizer zur Wicklung pumpt. Durch den geringen Widerstand ist das Dampfen mit direkten Zügen in die Lunge möglich (DL). Das Gerät ist somit Subohm-fähig. Als optionales Zubehör stehen Ihnen zwei SMA ADA Clearomizer sowie ein SMI ADA Selbstwickel Clearomizer zur Verfügung. Der SMA ADA 0,3 Ohm Clearomizer für das Dampfen mit direkten Lungen Zügen (DL) sowie der SMA ADA 1,0 Ohm Clearomizer für moderate Züge vom Mund in die Lunge (MTL). Des Weiteren steht Ihnen der SMI ADA Selbstwickel Clearomizer zur Auswahl, welcher es Ihnen ermöglicht eigene selbst hergestellte Wicklungen zu nutzen. Der vorgegebene Widerstandsbereich liegt zwischen 0,2 Ohm und 1 Ohm. Die E-Zigarette erkennt den aufgeschraubten Clearomizer und stellt alle Parameter selbstständig ein. Alle weiteren Einstellungen tätigen Sie über die Feuertaste und die beiden Plus und Minus Tasten. Alle relevanten Parameter entnehmen Sie dem 0,69” großen OLED Display.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x VKsma E-Zigaretten Set</li>
+<li>1x SMA ADA 0,3 Ohm Clearomizer</li>
+<li>1x Ersatz-Abdeckung aus Silikon für die Liquidflasche</li>
+<li>1x integrierte Liquidflasche</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+<li>1x Garantiekarte</li>
+</ul>
+<br>
+<br>
+<strong>Besondere Merkmale</strong>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Maße: 47,5 mm x 79 mm x 18,6 mm</li>
+<li>Akku Kapazität: 1400 mAh</li>
+<li>0,69 Zoll OLED Display</li>
+<li>Temperaturbereich: 180°C bis 260°C</li>
+<li>Ausgangsspannung: 1,73 Volt - 3,5 Volt</li>
+<li>Modi:</li>
+<li>P1: 0,3 Ohm  10-15 Watt / P2 20-25 Watt</li>
+<li>P1: 1,0 Ohm 5- 6 Watt / P2 10-12 Watt</li>
+<li>subohm-fähig</li>
+<li>Auto Squonk System</li>
+<li>Airflow</li>
+<li>Material: Zinklegierung</li>
+<br>
+<br>
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Vsticking VKsma E-Zigarette</li>
+<li>1x Vsticking SMA ADA 0,3 Ohm Clearomizer (Vorinstalliert)</li>
+<li>1x Ersatz-Abdeckung aus Silikon für die Liquidflasche</li>
+<li>1x integrierte Liquidflasche</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+<li>1x Garantiekarte</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Maße: 47,5 mm x 79 mm x 18,6 mm (ohne Mundstück)</li>
+<li>Akku Kapazität: 1400 mAh</li>
+<li>0,69” OLED Display</li>
+<li>Temperaturbereich: 180°C bis 260°C</li>
+<li>Ausgangsspannung: 1,73 Volt - 3,5 Volt</li>
+<li>Automodus:</li>
+<ol>
+<li>1. 0,3 Ohm - P1: 10-15 Watt / P2 20-25 Watt</li>
+<li>1. 1,0 Ohm - P1: 5- 6 Watt / P2 10-12 Watt</li>
+</ol>
+<li>subohm-fähig</li>
+<li>Bottom Filling-System</li>
+<li>Airflow</li>
+<li>Material: Zinklegierung</li>
+</ul>
+<br>
+<br>',
+    ),
+    'VK100SMA' => array(
+        'icNumber' => 'VK100SMA',
+        'number' => 'VK100SMA',
+        'name' => 'Vsticking - SMA ADA - Verdampfer (2 Stück pro Packung)',
+        'commonName' => 'SMA ADA',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Vsticking',
+        'brand' => 'Vsticking',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Vsticking SMA ADA Verdampfer ist pass-genau für die Vsticking VKsma E-Zigarette. Es hat eine Höhe von 28,1 mm und einen Durchmessen von 18,6 mm. Das Liquid wird durch das automatische Squonk-System über die Betätigung der Feuertaste direkt hoch zur Wicklung gepumpt. Sie können sich hier zwischen zwei Modellen des Verdampferkopfes entscheiden. Es gibt den SMA ADA 0,3 Ohm Verdampfer mit einem geringen Widerstand und einer Wicklung, verarbeitet aus einer Ni211 Nickellegierung. Es gibt zwei Power-Modi: P1 arbeitet im Leistungsbereich zwischen 10 Watt und 15 Watt und der Modus P2 liegt bei 20 Watt bis 25 Watt. Der Vsticking SMA ADA 1 Ohm Verdampfer hat einen Widerstand von 1 Ohm und ist für MTL Dampfer geeignet. Hier wurde die Wicklung aus dem hitzebeständigem Material SS316 Edelstahl gefertigt. Auch der SMA ADA 1 Ohm Verdampfer hat zwei Power-Modi, P1 (5 Watt bis 6 Watt) und P2 (10 Watt bis 12 Watt). Beim Kauf einer Packung erhalten Sie zwei Verdampfer einer Sorte.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>2x SMA ADA Clearomizer 0,3 Ohm oder 1 Ohm</li>
+</ul>
+<br>
+<br>
+<strong>Vsticking SMA ADA Clearomizer Set</strong>
+<ul>
+<li>Widerstand: 0,3 Ohm, 1 Ohm</li>
+<li>Durchmesser: 18,6 mm</li>
+<li>Höhe: 28,1 mm</li>
+<li>Material: Kunststoff mit Messing</li>
+<li>Wicklung: Ni211 Nickel, SS316 Edelstahl</li>
+<li>passend für Vsticking VKsma E-Zigaretten</li>
+</ul>
+<br>
+<br>',
+    ),
+    'VK100SMF' => array(
+        'icNumber' => 'VK100SMF',
+        'number' => 'VK100SMF',
+        'name' => 'Vsticking - VKsma - Liquid Flasche (3 Stück pro Packung)',
+        'commonName' => 'VKsma',
+        'type' => 'SQUONKER_BOTTLE',
+        'category' => 'ZUBEHÖR > Squonker-Flaschen',
+        'supplier' => 'Vsticking',
+        'brand' => 'Vsticking',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Hier erhalten Sie die passende Liquidflasche mit einem Tankvolumen von 3 ml für Ihre Vsticking VKsma E-Zigarette mit Squonk-System. Damit Sie die VKsma Liquid Flasche mit Ihrem frischen Liquid befüllen können, entfernen Sie die Flasche vom Akkuträger, sodass das Einfüllloch zu erreichen ist.  Zum Befüllen verwenden Sie das mittlere Einfüllloch der Liquidflasche. Im Anschluss setzen Sie die Flasche einfach wieder in den Akkuträger. Pro bestellter Packung erhalten Sie drei E-Liquid-Flaschen.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>3x VKsma Liquid Flaschen</li>
+</ul>
+<br>
+<b>Geeignet für</b>
+<ul>
+<li>VKsma E-Zigarette</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SC100RO' => array(
+        'icNumber' => 'SC100RO',
+        'number' => 'SC100RO',
+        'name' => 'eLeaf - Rotor - Verdampfer - by SC',
+        'commonName' => 'Rotor',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Von SC kommt der Verdampfer mit dem Namen Rotor. Dieser hat einen verbauten Glastank mit einem Tankvolumen von 5,5ml. Namensgebend für den Verdampfer sind kleine Rotorblätter, welche im Inneren der beiden Verdampferköpfe verbaut sind. Sowohl der HW-T als auch der HW-T2 ist Bestandteil des Lieferumfangs und hat einen Widerstand von 0,2 Ohm. Somit richtet sich der Verdampfer an Nutzer, welche das Vapen im Subohm-Bereich bevorzugen. Die verbauten Rotorblätter sorgen für eine stärkere Verwirbelung und sollen so einen intensiveren, besseren Geschmack möglich machen. Im Gegensatz zum HW-T2, bei welchem die Rotorblätter unterhalb der Wicklung angebracht sind, sind beim HW-T Verdampferkopf diese oberhalb der Wicklung verbaut. Dadurch soll nicht verdampftes Liquid durch die Zirkulation wieder zurück in die Wicklung gedrückt und verdampft werden. Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören. Um einer negativen Geschmacks- und/oder Dampfentwicklung entgegenzuwirken, sollten diese regelmäßig ausgetauscht werden.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Rotor Clearomizer</li>
+<li>1x HW-T 0,2 Ohm Head (vorinstalliert)</li>
+<li>1x HW-T2 0,2 Ohm Head</li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Rotor Clearomizer Set</strong>
+<ul>
+<li>Höhe: 56 mm</li>
+<li>Durchmesser: 26 mm</li>
+<li>Tankvolumen: 5,5 ml</li>
+<li>Bottom-Airflow Control</li>
+<li>Top-Filling System</li>
+</ul>',
+    ),
+    'SC100HT' => array(
+        'icNumber' => 'SC100HT',
+        'number' => 'SC100HT',
+        'name' => 'eLeaf - HW-T Head - 0,2 Ohm (3 Stück pro Packung) - by SC',
+        'commonName' => 'HW-T',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 3,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der Verdampferkopf HW-T der Marke SC kommt mit einem Widerstand von 0,2 Ohm. Mit diesem Widerstand ist es möglich im Subohm-Bereich bzw. mit direkter Lungeninhalation zu dampfen. In einer Packung befinden sich drei der SC HW-T Verdampferköpfe. Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören und sollten in regelmäßigen Abständen ausgetauscht werden. So können Sie einer negativen Dampf- und/oder Geschmacksentwicklung entgegenwirken. Dem HW-T wurden oberhalb der Wicklung kleine Rotorblätter verbaut. Durch dieses “Turbinen-System” soll ein intensiverer Geschmack erzielt werden. Die Rotorblätter lassen den Dampf sowie die eingesogene Luft besser zirkulieren. Des Weiteren wird nicht verdampftes Liquid durch die Rotorblätter zurück in die Wicklung gedrückt und verdampft.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x SC HW-T 0,2 Ohm Heads</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 0,2 Ohm</li>
+<li>Leistungsbereich: 40 - 90 Watt</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>SC Rotor Clearomizer</li>
+<br>
+<br>',
+    ),
+    'SC100HT2' => array(
+        'icNumber' => 'SC100HT2',
+        'number' => 'SC100HT2',
+        'name' => 'eLeaf - HW-T2 Head - 0,2 Ohm (3 Stück pro Packung) - by SC',
+        'commonName' => 'HW-T2',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 3,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der HW-T2 Verdampferkopf aus dem Hause SC zeichnet sich durch das integrierte “Turbinen-System aus. Unterhalb der 0,2 Ohm starken Wicklung sind kleine Rotorblätter verbaut. Diese sollen laut Hersteller für einen besseren Geschmack sorgen, da das verdampfte Liquid durch die Rotorblätter verwirbelt wird. Der HW-T2 ist für das Dampfen im Subohm-Bereich bzw. mit direkter Lungeninhalation ausgelegt. Pro bestellter Packung erhalten Sie drei HW-T2 Verdampferköpfe. Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören und regelmäßig ausgetauscht werden sollten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x SC HW-T2 0,2 Ohm Heads</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 0,2 Ohm</li>
+<li>Leistungsbereich: 35 - 75 Watt</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>SC Rotor Clearomizer</li>
+<br>
+<br>',
+    ),
+    'SC100ROG' => array(
+        'icNumber' => 'SC100ROG',
+        'number' => 'SC100ROG',
+        'name' => 'eLeaf - Rotor - Glastank - by SC',
+        'commonName' => 'Rotor',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Wenn Sie einen passenden Glastank für Ihren SC Rotor Verdampfer suchen, sind Sie hier fündig geworden. Der Zubehör- und/oder Ersatzartikel wurde mit einem Tankvolumen von bis zu 5,5ml ausgestattet. Bei Bedarf können Sie den Glastank ohne Werkzeug selbstständig austauschen.
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<li>Tankvolumen: 5,5ml</li>
+<br>
+<b>Geeignet für:</b>
+<li>SC Rotor Clearomizer</li>
+<br>
+<br>',
+    ),
+    'VS100PS' => array(
+        'icNumber' => 'VS100PS',
+        'number' => 'VS100PS',
+        'name' => 'Vaporesso - PodStick - E-Zigarette',
+        'commonName' => 'PodStick',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit der Vaporesso PodStick E-Zigarette erhalten Sie eine E-Zigarette im sogenannten Pen-Style Design. Hierbei bilden der fest verbaute Akku mit einer Kapazität von 900mAh und das Pod-System eine fließende Einheit. Das Tankvolumen vom Pod liegt bei 2ml und zur Befüllung nutzen Sie ein Press-to-Fill System. Sie drücken die Spitze der Liquidflasche in das Pod-System und füllen so den Tank mit Liquid. Dafür brauchen Sie das Pod-System nicht vom Akku trennen. Sie haben bei den Pods die Wahl zwischen zwei Varianten mit fest verbauten Verdampferkopf. Zum einen mit 1,3 Ohm CCell Verdampferkopf und zum anderen mit einem 0,6 Ohm Mesh Verdampferkopf. Die Pods sind entweder für das Dampfen im moderaten Bereich (1,3 Ohm) oder Subohm-Bereich (0,6 Ohm) ausgelegt.
+<br>
+Bei der Ausgangsleistung für den 1,3 Ohm Pod können Sie zwischen drei Leistungsstufen von 9, 10,5 oder 12,5 Watt wählen. Beim 0,6 Ohm Pod sind es die Leistungsstufen 17, 20 und 22 Watt. Durch dreimaliges Betätigen der Feuertaste können Sie die Stufen einstellen. Eine integrierte LED sagt Ihnen über ein Farbschema an, welche Stufe ausgewählt ist. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x PodStick E-Zigarette</li>
+<li>1x PodStick Pod inkl. 1,3 Ohm CCell Head</li>
+<li>1x PodStick Pod inkl. 0,6 Ohm Mesh Head</li>
+<li>1x Einfüllflasche 10ml</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>PodStick E-Zigarette</strong>
+<ul>
+<li>Ausgabemodus mit 1,3 Ohm CCell Head: 9 Watt I 10,5 Watt I 12,5 Watt</li>
+<li>Ausgabemodus mit 0,6 Ohm Mesh Head: 17 Watt I 20 Watt I 22 Watt</li>
+<li>Akkukapazität: 900 mAh</li>
+<li>Tankvolumen: 2 ml</li>
+<li>"Press to Fill"-System</li>
+<li>LED-Anzeige</li>
+<li>Maße: 111 mm x 18 mm x 22 mm</li>
+</ul>',
+    ),
+    'VS100PSM' => array(
+        'icNumber' => 'VS100PSM',
+        'number' => 'VS100PSM',
+        'name' => 'Vaporesso - PodStick - Pod - 0,6 Ohm Mesh Head',
+        'commonName' => 'PodStick',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Vaporesso PodStick Pod-System fasst bis zu 2ml Liquid und pro Packung sind insgesamt 2 Pods enthalten. Das System hat einen fest verbauten Verdampferkopf mit 0,6 Ohm, sodass damit im Subohm-Bereich gedampft werden kann. Das Pod-System ist für das gleichnamige E-Zigaretten Set geeignet.
+<br>
+<br> 
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x PodStick Pod mit 0,6 Ohm Mesh Head</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<br>
+<strong>PodStick 0,6 Ohm Pod</strong>
+<ul>
+<li>Tankvolumen:2 ml</li>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Press-to-Fill-System</li>
+</ul>
+<br>
+<br>',
+    ),
+    'VS100PSC' => array(
+        'icNumber' => 'VS100PSC',
+        'number' => 'VS100PSC',
+        'name' => 'Vaporesso - PodStick - Pod - 1,3 Ohm cCell Head',
+        'commonName' => 'PodStick',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Vaporesso PodStick POD-System ist der geeignete Zubehörartikel für die gleichnamige E-Zigarette PodStick. Das Fassungsvermögen des Pods beträgt 2 Milliliter und wird über ein sogenanntes "Press-to-Fill"-System befüllt. Dafür muss das POD-System nicht vom Akku entfernt werden. Im PodStick Pod ist ein CCell Verdampferkopf mit einem Widerstandswert von 1,3 Ohm festverbaut. Dieser ist für das Vapen von Mund-zur-Lunge (MTL) ausgelegt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x PodStick Pod mit integriertem CCell Head 1,3 Ohm</li>
+<li>1x Gebrauchsinformation</li>
+</ul>
+<strong>PodStick Pod</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Widerstand: 1,3 Ohm</li>
+<li>”Press to Fill”-System</li>
+</ul>
+<br>',
+    ),
+    'SW100AF' => array(
+        'icNumber' => 'SW100AF',
+        'number' => 'SW100AF',
+        'name' => 'Snowwolf - Afeng - E-Zigarette',
+        'commonName' => 'Afeng',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Afeng E-Zigaretten Set der Marke Snowwolf hat eine maximale Ausgangsleistung von 22 Watt. Um diese Abrufen zu können, müssen Sie eine 18650er Akkuzelle einsetzen. Bitte beachten Sie aber, dass sich diese nicht im Lieferumfang befindet und separat erworben werden muss. Die Afeng Cartridge hat ein Tankvolumen von 3ml, welche über das Side-Filling System befüllt wird. Zudem befindet sich am Boden der Cartridge auch eine Airflow-Control. Um Akkuzelle und Cartridge in den Akkuträger einsetzen zu können, müssen Sie die magnetische Seitenabdeckung entfernen. Der Akkuträger verfügt über einen LED-Indikator. Hier können Sie anhand der leuchtenden Farben entnehmen, wie hoch die enthaltene Energie der Akkuzelle ist; 0-20% = rot, 20-60% = blau und 60-100% = grün. Außerdem ist im Akkuträger ein IFV-Chip verbaut. Dieser regelt die Ausgangsleistung ganz automatisch. Sie müssen also nichts einstellen. Im Lieferumfang befindet sich ein Wicked Mesh Verdampferkopf mit 0,6 Ohm Widerstand. Dieser ist ausgelegt für das Dampfen im Subohm- und moderaten Bereich.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Afeng Akkuträger</li>
+<li>1x Afeng Cartridge</li>
+<li>1x Wicked 0,6 Ohm Head</li>
+<li>1x Mundstück-Schutz</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Ersatzteile</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Afeng Akkuträger</strong>
+<ul>
+<li>Ausgangsleistung: 16 - 22 Watt</li>
+<li>Widerstandsbereich: 0,3 - 1,5 Ohm</li>
+<li>Maße: 44 x 22,5 x 78,5 mm</li>
+<li>Geeignet für: MTL Vaping</li>
+</ul>
+<br>
+<strong>Afeng Cartridge</strong>
+<ul>
+<li>Tankvolumen: 3ml</li>
+<li>MTL & DL</li>
+<li>Side-Filling</li>
+<li>Bottom Airflow</li>
+</ul>',
+    ),
+    'SW100AFC' => array(
+        'icNumber' => 'SW100AFC',
+        'number' => 'SW100AFC',
+        'name' => 'Snowwolf - Afeng - Cartridge, 3 ml (2 Stück pro Packung)',
+        'commonName' => 'Afeng',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Afeng Cartridge von Snowwolf ist passende Cartridge für gleichnamige E-Zigarette. Das Füllvolumen beträgt 3ml. In der Cartridge befindet sich kein Verdampferkopf. Dieser muss separat erworben werden. Die Cartridge verfügt über ein Side-Filling System, sowie eine BottomAirflow Control. Pro Packung erhalten Sie zwei Snowwolf Afeng Cartridges. <br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>2x Afeng Cartridge</li>
+</ul>
+<br>
+<strong>Afeng Cartridge</strong>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Side-Filling System</li>
+<li>Bottom-Airflow</li>
+<li>passgenaue Cartridge für die Snowwolf Afeng E-Zigarette</li>
+</ul>
+<br>',
+    ),
+    'SW100WH' => array(
+        'icNumber' => 'SW100WH',
+        'number' => 'SW100WH',
+        'name' => 'Snowwolf - Wicked Head - 0,6 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Wicked',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Snowwolf Wicked 0,6 Ohm Mesh Verdampferköpfe haben einen Widerstand von je 0,6 Ohm und werden Ihnen in einer 5er Packung geliefert. Aufgrund des Widerstandes sind die Wicked Verdampferköpfe für das Vapen im Subphm-Bereich (DL) und für das MTL-Dampfen ausgelegt. Die Heads sind kompatibel mit der Snowwolf Afeng E-Zigarette.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>DL / MTL</li>
+</ul>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>Snowwolf Afeng E-Zigaretten Set</li>
+</ul>
+<br>',
+    ),
+    'SG100HV' => array(
+        'icNumber' => 'SG100HV',
+        'number' => 'SG100HV',
+        'name' => 'Sigelei - Humvee - Akkuträger - 215 Watt',
+        'commonName' => 'Humvee',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Sigelei',
+        'brand' => 'Sigelei',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Humvee 215 Watt Akkuträger aus dem Hause Sigelei können Sie Ihr Liquid mit einer Ausgangsleistung im Bereich von 5 bis 215 Watt dampfen. Dafür wurde der Akkuträger mit einem variablen Wattmodus ausgestattet. Ebenfalls haben Sie die Möglichkeit im Powermodus oder auch im Temperature Control Modus zu dampfen. Dabei können Sie die Temperatur im Bereich von 100°C bis 300°C einstellen. Damit Sie den Akku und seine Modi nutzen können, müssen Sie im Vorwege zwei 18650er Akkuzellen in den Akku einsetzen. Bitte beachten Sie, dass die benötigten Akkuzellen nicht zum Lieferumfang gehören und separat erworben werden müssen. Welchen Modi Sie ausgewählt haben und mit welcher Leistung Sie dampfen, können Sie auf dem 0,66” Display ablesen. Einstellungen werden über zwei Einstelltasten vorgenommen. Des Weiteren sind unter anderem mit einem Überladungsschutz und einem Kurzschlussschutz mehrere Schutzfunktionen im Akkuträger integriert.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Humvee 215 Watt Akkuträger</li>
+<li>1x USB-C Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+<li>1x Garantiekarte</li>
+</ul>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Humvee 215 Watt Akkuträger</strong>
+<ul>
+<li>Ausgangsspannung: 1V - 7,5V</li>
+<li>Ausgangsleistung: 5 Watt - 215 Watt</li>
+<li>Widerstandsbereich: 0,05 – 3,0 Ohm</li>
+<li>Ausgabemodi: Powermode / VW / Temperature Control (Ti1/Ni/SS) / TCR / TFR</li>
+<li>Temperaturbereich: 100°C - 300°C</li>
+<li>Höhe: 90 mm</li>
+<li>Durchmesser: 33 mm/li>
+<li>Gewindetyp: 510</li>
+<li>Display: 0,66" OLED</li>
+</ul>',
+    ),
+    'IC100XX' => array(
+        'icNumber' => 'IC100XX',
+        'number' => 'IC100XX',
+        'name' => 'Joyetech - Exceed X - E-Zigarette - by InnoCigs',
+        'commonName' => 'Exceed X',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das InnoCigs Exceed X E-Zigaretten Set hat einen fest verbauten 1000mAh Akku, welchen Sie mit dem USB-C-Kabel laden können. Oberhalb des USB-C-Anschlusses befindet sich eine LED, welche den Ladezustand des Akkus anzeigt. Die Exceed X E-Zigarette verfügt über den Powermodus, Sie haben die Wahl zwischen drei Stufen, auch diese werden Ihnen farblich über die LED-Leuchte angezeigt. Der im Set enthaltene Exceed X Clearomizer hat ein Tankvolumen von 1,8 ml und verfügt über ein Top-Filling System, welches Ihnen ermöglicht den Tank von oben mit frischem Liquid zu befüllen. Das InnoCigs Exceed X E-Zigaretten Set verfügt über alle sicherheitsrelevanten Funktionen. Zum Einsatz kommen: Überlade-, Tiefenentlade-, Kurzschluss-, sowie ein Überhitzungsschutz und weitere. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Exceed X Akku 1.000mAh</li>
+<li>1x Exceed X Clearomizer</li>
+<li>1x EX 1,2 Ohm MTL Head (vorinstalliert)</li>
+<li>1x EX-M 0,4 Ohm Head</li>
+<li>1x USB-C-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 1,8 ml</li>
+<li>Maße: 117,2 mm x 23,4 mm x 24,4 mm</li>
+<li>Akku Kapazität: 1000 mAh</li>
+<li>Gewicht 98 Gramm</li>
+<li>Modus: Power Mode</li>
+<li>Ausgangsleistung: 13 Watt</li>
+<li>subohm-fähig</li>
+<li>Airflow-Control</li>
+<br>
+<br>',
+    ),
+    'IC100XXA' => array(
+        'icNumber' => 'IC100XXA',
+        'number' => 'IC100XXA',
+        'name' => 'Joyetech - Exceed X - Akku - 1.000 mAh - by InnoCigs',
+        'commonName' => 'Exceed X',
+        'type' => 'BOX_MOD',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der InnoCigs Exceed X 1000 mAh Mod hat einen fest verbauten Akku, welchen Sie mit dem im Lieferumfang enthaltenen USB-C-Kabel laden können. Oberhalb des USB-C-Anschlusses befindet sich eine LED, welche den Ladezustand des Akkus anzeigt. Der Exceed X Mod verfügt über den Power-Modus oder auch VW-Modus genannt (variable Watt). In diesem Modus können Sie die Ausgangsleistung bestimmen, drei Stufen stehen Ihnen zur Wahl. Auch diese werden Ihnen farblich über den LED-Indikator angezeigt. Der InnoCigs Exceed X 1000 mAh Akku verfügt über alle sicherheitsrelevanten Funktionen. Zum Einsatz kommen: Überlade-, Tiefenentlade-, Kurzschluss-, sowie ein Überhitzungsschutz und weitere. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Exceed X 1000mAh Akku</li>
+<li>1x USB-C-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Maße: 72,9 mm x 23,4 mm x 24,4 mm</li>
+<li>Akku Kapazität: 1000 mAh</li>
+<li>Gewicht 55 Gramm</li>
+<li>Modus: Power Mode</li>
+<li>Ausgangsleistung: 13 Watt</li>
+<li>USB-C-Anschluss</li>
+<br>
+<br>',
+    ),
+    'IC100XXC' => array(
+        'icNumber' => 'IC100XXC',
+        'number' => 'IC100XXC',
+        'name' => 'Joyetech - Exceed X - Verdampfer - by InnoCigs',
+        'commonName' => 'Exceed X',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das InnoCigs Exceed X Verdampfer Set besteht aus dem Verdampfer und dem im Lieferumfang enthaltenen EX 1,2 Ohm MTL Verdampferkopf. Der Verdampferkopf ist mit seinem Widerstand von über 1 Ohm für das moderate Dampfen von Mund zu Lunge (MTL) geeignet. Der Verdampfer kann bis zu 1,8 ml Liquid aufnehmen und er wird von oben über das Top-Filling System befüllt, ohne dass Sie den Verdampfer vom Akku trennen müssen. Aufgrund des transparenten Tanks haben Sie Ihren Liquidstand stets im Blick. Der Exceed X Verdampfer ist mit einer Airflow-Control ausgestattet, welche Ihnen ermöglicht den Zugwiderstand an Ihre persönlichen Vorlieben anzupassen. Bitte beachten Sie, dass es sich bei den Verdampferköpfen um Verschleißartikel handelt, deren regelmäßiger Wechsel ein gleichbleibendes Dampferlebnis gewährleistet.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Exceed X Clearomizer Set</li>
+<li>1x EX 1,2 Ohm MTL Head (vorinstalliert)</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 1,8 ml</li>
+<li>Durchmesser: 19 mm</li>
+<li>Höhe: 44,2 mm</li>
+<li>Gewicht 31 Gramm</li>
+<li>subohm-fähig</li>
+<li>Airflow-Control</li>
+<br>
+<br>
+',
+    ),
+    'IC100XXG' => array(
+        'icNumber' => 'IC100XXG',
+        'number' => 'IC100XXG',
+        'name' => 'Joyetech - Exceed X - 1,8 ml Glastank - by InnoCigs',
+        'commonName' => 'Exceed X',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der InnoCigs Exceed X 1,8 ml Glastank ist passgenau den den gleichnamigen InnoCigs Exceed X Clearomizer. Das Fassungsvermögen umfasst 1,8 ml. Durch die Transparenz des Glastanks können Sie stets den aktuellen Stand Ihres Liquids einsehen.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Exceed X 1,8 ml Glastank</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 1,8 ml</li>
+<li> Durchmesser: 19 mm</li>
+<li>Transparent</li>
+<li>Passend für: InnoCigs Exceed X E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'AL100CR' => array(
+        'icNumber' => 'AL100CR',
+        'number' => 'AL100CR',
+        'name' => 'Arctic Dolphin - Crea RDA - Verdampfer',
+        'commonName' => 'Crea RDA',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Arctic Dolphin',
+        'brand' => 'Arctic Dolphin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Bei dem Crea RDA Verdampfer von der Marke Arctic Dolphin handelt es sich um einen Selbstwickel-Verdampfer. RDA ist die Abkürzung für Rebuildable Dripping Atomizer. Es handelt sich um einen Tröpfelverdampfer. Geliefert wird der Crea RDA mit einem Squonk-Pin, der es Ihnen ermöglicht, squonk fähige Akkus und Akkuträger zu verwenden, die das Liquid direkt von unten in den Verdampfer pumpen. Um den Crea RDA als einen Tröpflerverdampfer zu verwenden, tauschen Sie die im Lieferumfang enthaltenen 510er Pin in dem Gewinde aus. Das Deck des Crea RDA Verdampfers bietet einer Ihrer Wicklungen Platz. Sie können die Wicklung im Deck platzieren, Watte durch die Wicklung ziehen und anschließend Liquid auf die Watte träufeln, um mit dem Dampfen zu beginnen. Bitte tauschen Sie die zu den Verschleißteilen zählende Watte und die Wicklungen regelmäßig, um eine gleichbleibende Dampferfahrung zu gewährleisten.
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x Crea RDA Clearomizer</li>
+<li>1x Clapton Coil<li>
+<li>1x Schraubendreher</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x 510er Pin</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Durchmesser: 22 mm</li>
+<li>Höhe: 26,9 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Edelstahl</li>
+<li>subohm-fähig</li>
+<li>Airflow Control</li>
+<li>im Single-Coil Betrieb nutzbar</li>
+<li>Gewicht: 54,4g</li>
+</ul>',
+    ),
+    'IK100T2C' => array(
+        'icNumber' => 'IK100T2C',
+        'number' => 'IK100T2C',
+        'name' => 'Innokin - Prism T20 -S Verdampfer',
+        'commonName' => 'Prism T20 -S Verdampfer',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Prism T20S Verdampfer aus dem Hause Innokin fasst bist zu 2ml Liquid, das direkt von oben via Top-Filling System in den Tank gegeben wird. Über die Airflow-Control, die sich an der Base befindet, regulieren Sie den Luftwiderstand. Beim Subohm-Dampfen soll die Airflow-Control weit geöffnet sein und beim moderaten Dampfen soll diese möglichst geschlossen sein. Im Lieferumfang sind zwei Prism S Verdampferköpfe mit je 0,8 Ohm, die für das moderate- und Subohm-Dampfen ausgelegt sind.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Prism T20S Clearomizer</li>
+<li>2x Prism S Verdampferkopf 0,8 Ohm | MTL, DL</li>
+<li>1x Ersatzteil-Mundstück</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>PRISM T20S CLEAROMIZER</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Durchmesser: 20 mm</li>
+<li>Höhe: 52 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>Top Filling-System</li>
+<li>Plug and Pull Coils</li>
+</ul>
+<br>',
+    ),
+    'IK100ZNP' => array(
+        'icNumber' => 'IK100ZNP',
+        'number' => 'IK100ZNP',
+        'name' => 'Innokin - Zenith -Plexus Head - 0,5 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Zenith -Plexus',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Von Innokin kommt der Zenith Plexus 0,5 Ohm Verdampferkopf mit einem Widerständen von 0,5 Ohm. Er ist  passend für das Innokin Kroma A Zenith E-Zigaretten Set. Sie erhalten fünf Verdampferköpfe pro bestellter Packung. Sie können in einem Leistungsbereich von 14 Watt bis 19 Watt dampfen. Da es sich bei einem Verdampferkopf um ein Verschleißteil einer E-Zigarette handelt, tauschen Sie diesen gegen einen neuen Verdampferkopf aus, sobald Sie eine Veränderung der Geschmacks- und/oder der Dampfentwicklung feststellen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Zenith Plexus 0,5 Ohm Heads</li>
+</ul>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 0,5 Ohm</li>
+<li>Leistungsbereich: 14 Watt - 19 Watt</li>
+<li>Subohm-fähig</li>
+</ul>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Innokin Kroma A Zenith E-Zigaretten Set</li>
+<li>Innokin Zenith Clearomizer Set</li>
+<li>Innokin Zenith D22 Clearomizer Set</li>
+<li>Innokin Cool Fire Mini mit Zenith D22 E-Zigaretten Set</li>
+<br>
+<br>',
+    ),
+    'IK100ZN3' => array(
+        'icNumber' => 'IK100ZN3',
+        'number' => 'IK100ZN3',
+        'name' => 'Innokin - Zenith -PLEX3D Head - 0,48 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Zenith -PLEX3D',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Innokin Zenith PLEX3D 0,48 Ohm Verdampferköpfe weisen einen Widerstand von 0,48 Ohm auf. Aufgrund des Widerstandes unter 1,0 Ohm können Sie den entstehenden Dampf direkt in die Lunge inhalieren und im Subohm-Bereich dampfen. Der Verdampferkopf kann mit einer Leistung von 13 Watt bis 16 Watt betrieben werden. Sie können die Verdampferköpfe für das Innokin Z Biip Starter E-Zigaretten Set verwenden. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen gehören und Sie diese regelmäßig wechseln sollten, um ein gleichbleibendes Dampferlebnis zu gewährleisten. Ihnen werden pro bestellter Packung fünf Zenith PLEX3D 0,48 Ohm Verdampferköpfe der Marke Innokin ausgeliefert.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Zenith PLEX3D 0,48 Ohm Heads</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 0,48 Ohm</li>
+<li>Leistungsbereich: 13 Watt - 16 Watt</li>
+<li>Subohm-fähig</li>
+</ul>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Innokin Z Biip Starter E-Zigaretten Set</li>
+<li>Innokin Z Biip Pod</li>
+<li>Innokin Zlide Clearomizer Set</li>
+<br>
+<br>',
+    ),
+    'IK100ZNH' => array(
+        'icNumber' => 'IK100ZNH',
+        'number' => 'IK100ZNH',
+        'name' => 'Innokin - Zenith -Head (5 Stück pro Packung)',
+        'commonName' => 'Zenith -',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Innokin Zenith Verdampferköpfe sind passend für diverse E-Zigaretten und Verdampfer Sets. Sie können sich zwischen zwei Varianten entscheiden. Der Innokin Zenith 1,6 Ohm Head ist, dank seines Widerstandes über 1 Ohm, für MTL Dampfer geeignet. Der Leistungsbereich von 10 Watt bis 14 Watt ist für diesen Head geeignet. Der Innokin Zenith 0,8 Ohm Head verfügt über einen geringeren Widerstand und arbeitet im Leistungsbereich zwischen 15 Watt und 18 Watt. Mit diesem können Sie direkte Züge in Lunge tätigen (DL). Beim Kauf einer Packung erhalten Sie 5 Verdampfer einer Variante.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Innokin Scion 2 Plexus Head mit 0,13 oder 0,15 Ohm</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 0,8 Ohm, 1,6 Ohm</li>
+<li>Leistungsbereich 0,8 Ohm Head: 15 Watt – 18 Watt</li>
+<li>Leistungsbereich 1,6 Ohm Head: 10 Watt – 14 Watt</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Innokin Z Biip Starter E-Zigaretten Set</li>
+<li>Innokin Z Biip Pod</li>
+<li>Innokin Cool Fire Mini mit Zenith D22 E-Zigaretten Set</li>
+<li>Innokin Kroma A Zenith E-Zigaretten Set</li>
+<li>Innokin Zlide Clearomizer Set </li>
+<li>Innokin Zenith Clearomizer Set</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IK100SPH' => array(
+        'icNumber' => 'IK100SPH',
+        'number' => 'IK100SPH',
+        'name' => 'Innokin - Scion 2 Plexus Head (3 Stück pro Packung)',
+        'commonName' => 'Scion 2 Plexus',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Von Innokin kommen die Scion 2 Plexus Verdampferköpfe mit den Widerständen von 0,13 Ohm und 0,15 Ohm. Sie sind passend für den Innokin Scion 2 Plexus Verdampfer. Es wird empfohlen in folgenden Leistungsbereichen zu Dampfen: Beim Innokin Scion 2 Plexus 0,13 Ohm Verdampferkopf zwischen 80 Watt und 110 Watt und beim Innokin Scion 2 Plexus 0,1 Ohm Verdampferkopf ab 60 Watt bis 110 Watt. Da es sich bei einem Verdampferkopf um ein Verschleißteil einer E-Zigarette handelt, tauschen Sie diesen gegen einen neuen Verdampferkopf aus, sobald Sie eine Veränderung der Geschmacks- und/oder der Dampfentwicklung feststellen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Scion 2 Plexus Head mit 0,13 oder 0,15 Ohm</li>
+</ul>
+<br>
+<br>
+<strong>Innokin Scion 2 Plexus Head</strong>
+<ul>
+<li>Widerstand: 0,13 Ohm, 0,15 Ohm</li>
+<li>Leistungsbereich 0,13 Ohm Head: 80 Watt – 110 Watt</li>
+<li>Leistungsbereich 0,15 Ohm Head: 60 Watt – 110 Watt</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Innokin Scion 2 Plexus Clearomizer</li>
+</ul>
+<br>
+<br>',
+    ),
+    'GV100ZS' => array(
+        'icNumber' => 'GV100ZS',
+        'number' => 'GV100ZS',
+        'name' => 'GeekVape - Zeus - Verdampfer',
+        'commonName' => 'Zeus',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der GeekVape Zeus Subohm Verdampfer kann maximal 5ml Liquid aufnehmen, das über das Top-Filling-System in den Tank gegeben wird. Dafür wird nur die Topkappe inkl. Mundstück abgeschraubt. Einen Ersatzglastank mit 3,5ml befindet sich im Lieferumfang. Neben dem Tank finden Sie zwei Mesh Verdampferköpfe, die für das Dampfen im Subohm-Bereich ausgelegt sind. Die Airflow-Control, die beim Subohm-Dampfen weit geöffnet sein soll, befindet sich in der Topkappe. Bitte tauschen Sie die Verdampferköpfe regelmäßig, um einen unverfälschten Liquidgeschmack zu gewährleisten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Zeus Subohm Clearomizer</li>
+<li>1x Mesh Z1 0,4 Ohm Head</li>
+<li>1x Mesh Z2 0,2 Ohm Head</li>
+<li>1x Ersatzglastank 3,5ml</li>
+<li>1x Ersatzteilset</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Zeus Subohm Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 5 ml</li>
+<li>Top-Filling</li>
+<li>DL</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe (ohne Mundstück): 42,5mm</li>
+<li>Durchmesser: 26mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'GV100Z1' => array(
+        'icNumber' => 'GV100Z1',
+        'number' => 'GV100Z1',
+        'name' => 'GeekVape - Mesh Z1 Head - 0,4 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Mesh Z1',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro Packung sind insgesamt fünf Mesh Z1 Verdampferköpfe mit je 0,4 Ohm enthalten. Die Geekvape Verdampferköpfe können zwischen 60 Watt und 70 Watt betrieben werden. Sobald Sie eine Geschmackveränderung und eine sinkende Dampfentwicklung wahrnehmen, tauschen Sie den Verdampferkopf gegen einen Neuen aus. Die Mesh Z1 Verdampferköpfe sind für das Subohm-Dampfen (DL) ausgelegt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<li>5x Geekvape Mesh Z1 0,4 Ohm Heads</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 0,4 Ohm</li>
+<li>Leistungsbereich: 60 Watt - 70 Watt</li>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<li>Geekvape Zeus Subohm Clearomizer Set </li>
+<br>
+<br>',
+    ),
+    'GV100Z2' => array(
+        'icNumber' => 'GV100Z2',
+        'number' => 'GV100Z2',
+        'name' => 'GeekVape - Mesh Z2 Head - 0,2 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Mesh Z2',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit den GeekVape Mesh Z2 Verdampferköpfen mit 0,2 Ohm können Sie direkte Lungenzüge tätigen. Diese können zwischen 70 Watt und 80 Watt verwendet werden. Die Verdampferköpfe gehören generell zu den Verschleißteilen, weshalb das regelmäßige Austauschen der Verdampferköpfen empfohlen wird. Pro Packung befinden sich fünf GeekVape Mesh Z2 Verdampferköpfe. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<li>5x GeekVape Mesh Z2 0,2 Ohm Heads</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 0,2 Ohm</li>
+<li>Leistungsbereich: 70 Watt - 80 Watt</li>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<li>GeekVape Zeus Subohm Clearomizer Set </li>
+<br>
+<br>',
+    ),
+    'IK100SP' => array(
+        'icNumber' => 'IK100SP',
+        'number' => 'IK100SP',
+        'name' => 'Innokin - Scion 2 Plexus - Verdampfer',
+        'commonName' => 'Scion 2 Plexus',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der subohm-fähige Scion 2 Plexus Verdampfer aus dem Hause Innokin mit 3,5 ml Fassungsvermögen arbeitet zuverlässig im leistungsstarken Bereich und ist wegen seines 510er Gewindes mit verschiedenen Modellen kompatibel. Mit dem integrierten Airflow-Control-System lässt sich der Zugwiderstand der Verdampfers regulieren. Der Top-Filling-Mechanismus soll ein einfaches Nachfüllen von Liquid unterstützen, da Sie den Verdampferkopf dafür nicht vom Akkuträger entfernen müssen. So schieben Sie die lediglich die Top-Kappe vorsichtig zur Seite, bis das Einfüllloch vollständig frei liegt und können den Tank direkt von oben befüllen. Im Lieferumfang finden Sie zwei Innokin Scion 2 Plexus 0,15 Ohm Verdampferköpfe.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Scion 2 Plexus Clearomizer Set</li>
+<li>2x Scion 2 Plexus 0,15 Ohm Head (1x vorinstalliert)</li> 
+<li>1x Vape Band</li>
+<li>1x Glastank</li>
+<li>1x Ersatz Mundstück</li> 
+<li>1x Ersatz O-Ringe-Set</li>
+<li>1x Kurzanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Tankvolumen: 3,5 ml</li>
+<li>Durchmesser: 24 mm</li>
+<li>Top-Filling-System</li>
+<li>subohm-fähig</li>
+<li>Airflow-Control</li>
+<br>
+<br>',
+    ),
+    'AS100MU' => array(
+        'icNumber' => 'AS100MU',
+        'number' => 'AS100MU',
+        'name' => 'Aspire - Mulus - E-Zigarette',
+        'commonName' => 'Mulus',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Aspire kommt das E-Zigaretten Set Mulus. Diese E-Zigarette wird in der Kategorie der Pod-Systeme angesiedelt und unterstützt sowohl das Dampfen im Subohm-Bereich als auch das moderate Dampfen. Die Mulus kommt mit einem relativ großen Lieferumfang. So erhalten Sie beim Kauf des Mulus E-Zigaretten Sets eine 4,2 ml große Cartridge, einen Tigon 0,4 Ohm Verdampferkopf, einen Tigon Verdampferkopf mit 1,2 Ohm. Darüber hinaus werden noch zwei Verdampferköpfe der Nautilus Reihe mitgeliefert. Dies sind der vorinstallierte Nautilus 2S Mesh mit einem Widerstand von 0,7 Ohm und ein Nautilus BVC mit 1,8 Ohm. Um die beiden Nautilus nutzen zu können, liegt ein passender Adapter mit regulierbarer Airflow-Control bereit. Beachten Sie bitte, dass Sie die Heads in regelmäßigen Abständen gegen neue austauschen sollten, um so eine negative Entwicklung des Geschmacks und /oder des Dampfes entgegenzuwirken. Für die benötigte Energie muss eine 18650er Akkuzelle eingesetzt werden. Die 18650er Akkuzelle befindet sich nicht im Lieferumfang und muss separat erworben werden. Mit der Mulus können Sie im Bypass-, im VV- sowie im VW-Modus dampfen. Dabei liegt der Leistungsbereich zwischen einem und 80 Watt. Über ein Display können Sie die getätigten Einstellungen und auch den Akkustand ablesen. Einstellungen geschehen über zwei Einstelltasten. Eine magnetische Abdeckung sorgt dafür, dass die Tasten wie auch die eingesetzte Akkuzelle geschützt sind. Wie viel Liquid sich noch in der Cartridge befindet, können Sie aber trotzdem noch sehen. Die Cartridge lässt sich über ein Side-Filling-System wieder befüllen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Mulus Akku</li>
+<li>1x Mulus 4,2ml Cartridge</li>
+<li>1x Nautilus Coil Adapter</li>
+<li>1x Nautilus 2S Mesh Head 0,7 Ohm (vorinstalliert)</li>
+<li>1x Nautilus BVC Head 1,8 Ohm</li>
+<li>1x Tigon Head 0,4 Ohm</li>
+<li>1x Tigon Head 1,2 Ohm</li>
+<li>1x USB-C Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Mulus E-Zigaretten Set</strong>
+<ul>
+<li>Höhe: 97,4 mm</li>
+<li>Breite: 50 mm</li>
+<li>Länge: 24 mm</li>
+<li>Tankvolumen: 4,2 ml</li>
+<li>Ausgangsleistung: 1 - 80 Watt</li>
+<li>Ausgabemodi: Bypass, VV, VW
+<li>Low-Feed-Airflow Control</li>
+<li>Side-Filling System</li>
+<li>DL und MTL möglich</li>
+</ul>',
+    ),
+    'AS100MUC' => array(
+        'icNumber' => 'AS100MUC',
+        'number' => 'AS100MUC',
+        'name' => 'Aspire - Mulus - 4,2 ml Cartridge',
+        'commonName' => 'Mulus',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Für das Aspire Mulus E-Zigaretten Set ist diese Cartridge der passende Zubehör-und/oder Ersatzartikel. Ausgestattet mit einem Tankvolumen von 4,2 ml gehört die Cartridge zu den größeren ihrer Art. Die Cartridge kann über ein Side-Filling System befüllt werden, ohne dass diese aus der E-Zigarette genommen werden muss.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Aspire Mulus 4,2ml Cartridge</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Tankvolumen: 4,2 ml</li>
+<li>Side-Filling-System</li>
+</ul>
+<br>
+<b>Kompatibel mit:</b>
+<ul>
+<li>Nautilus 2S Mesh Head 0,7 Ohm</li>
+<li>Nautilus BVC Head 1,8 Ohm</li>
+<li>Tigon Head 0,4 Ohm</li>
+<li>Tigon Head 1,2 Ohm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'IK100AR' => array(
+        'icNumber' => 'IK100AR',
+        'number' => 'IK100AR',
+        'name' => 'Innokin - Ares RTA - Verdampfer',
+        'commonName' => 'Ares RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Ares RTA Verdampfer von der Marke Innokin kann bis zu 5ml Liquid aufnehmen und ist in 5 Farben erhältlich. Den Tank füllen Sie über das Top-Filling-System mit Liquid auf. Hier müssen Sie die Top-Cap nach hinten schieben bis Sie schließlich das Einfüllloch sehen können. Da der Tank transparent ist, können Sie den Liquidstand jederzeit im Auge behalten. Das Deck ist für eine Single-Coil Wicklung konzipiert. Die Airflow-Control befindet sich in der Base und diese können Sie eigenständig auf Ihre Bedürfnisse anpassen. Im Lieferumfang ist ausreichend Zubehör enthalten, so dass Sie, nachdem Sie eine Wicklung und entsprechende Watte verbaut haben, direkt mit dem Dampfen im moderaten Bereich beginnen können. Bitte bedenken Sie, dass die Wicklungen bzw. Coils Verschleißartikel sind. Sollten Sie also eine Veränderung des Geschmacks oder der Dampfentwicklung bemerken, wird es Zeit die benutzte Wicklung durch eine neue zu ersetzen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Ares RTA Clearomizer </li>
+<li>1x Watte</li>
+<li>2x Coils</li>
+<li>1x 1 Meter Wickeldraht</li>
+<li>2x Mundstück</li>
+<li>1x Schraubenschlüssel</li>
+<li>1x Ersatzglastank</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Ares RTA</strong>
+<ul>
+<li>Tankvolumen: 5 ml</li>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 52,5 mm</li>
+<li>Gewindetyp: 510</li>
+<li>MTL</li>
+<li>Top Filling-System</li>
+<li>Side Airflow </li>
+<li>Rebuildable Tank Atomizer</li>
+<li>im Single-Coil Betrieb nutzbar</li>
+</ul>',
+    ),
+    'IK100CZ' => array(
+        'icNumber' => 'IK100CZ',
+        'number' => 'IK100CZ',
+        'name' => 'Innokin - Cool Fire Mini - mit Zenith D22 - E-Zigarette',
+        'commonName' => 'Cool Fire Mini',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Cool Fire Mini mit Zenith D22 E-Zigarette aus dem Hause Innokin ist sowohl für erfahrene Dampfer als auch Umsteiger geeignet. Sie dampfen mit einem einstellbaren Leistungsbereich von 6 bis maximal 40 Watt. Die Einstellungen nehmen Sie über die zwei Einstelltasten und einer Feuertaste vor. Der Akku des Cool Fire Minis ist fest verbaut und zeichnet sich durch eine Kapazität von 1.300mAh auf. Mit dem im Lieferumfang enthaltenen Micro-USB-Ladekabel können Sie den Akku wieder mit neuer Energie versorgen. Der Zenith D22 Clearomizer wird mit einem Plexus Head, der einen Widerstand von 0,5 Ohm aufweist, ausgeliefert. Ein Zenith 1,6 Ohm Verdampferkopf liegt dem Lieferumfang bei. Bitte beachten Sie, dass es sich bei den Verdampferköpfen um Verschleißartikel handelt, deren periodischer Wechsel empfehlenswert für ein gleichbleibendes Dampferlebnis ist. Der Zenith D22 Verdampfer kann mit seinem Tank maximal 3ml Liquid aufnehmen, welches über ein Top-Filling-System direkt von oben in den Tank gelangt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Cool Fire Mini Akku</li>
+<li>1x Zenith D22 Clearomizer</li>
+<li>1x Plexus 0,5 Ohm Head (vorinstalliert)</li>
+<li>1x Zenith 1,6 Ohm Head</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Innokin Cool Fire Mini Akku</strong>
+<ul>
+<li>Akkukapazität: 1.300mAh</li>
+<li>Ausgabemodi: variable Wattage</li>
+<li>Ausgangsleistung: 6 - 40 Watt</li>
+<li>Widerstandsbereich: 0,2 - 3,5 Ohm</li>
+<li>Maße: 62,5 x 23,5 x 36 mm</li>
+</ul>
+<strong>Zenith D22 Clearomizer</strong>
+<li>Tankvolumen: 3ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Geeignet für: DL und MTL Vaping</li>
+<br>
+<br>',
+    ),
+    'IK100ZN' => array(
+        'icNumber' => 'IK100ZN',
+        'number' => 'IK100ZN',
+        'name' => 'Innokin - Zenith D22 - Verdampfer',
+        'commonName' => 'Zenith D22',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Bei dem Zenith D22 Verdampfer aus dem Hause Innokin handelt es sich um einen Verdampfer, der gleichermaßen im Subohm-Bereich (direkte Lungenzüge) als auch im moderaten Bereich gedampft werden kann. Im Verdampfer ist bereits ein Plexus 0,5 Ohm Verdampferkopf vorinstalliert, welchen Sie für direkte Züge in die Lunge verwenden können. Wenn Sie lieber den entstehenden Dampf im Mundraum sammeln und anschließend inhalieren möchten, verwenden Sie dem Lieferumfang beiliegenden Zenith 1,6 Ohm Verdampferkopf. Bitte beachten Sie, dass es sich bei Verdampferköpfen um Verschleißartikel handelt, deren regelmäßiger Austausch empfehlenswert für ein gleichbleibendes Dampferlebnis ist. Liquid gelangt via Top-Filling-System direkt von oben in den Verdampfer. Sie drehen die Top Kappe und legen so das Einfüllloch frei. Auf diese Art nimmt der Tank bis zu 3ml Ihres Liquids auf.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Zenith D22 Clearomizer</li>
+<li>1x Plexus 0,5 Ohm Head (vorinstalliert)</li>
+<li>1x Zenith 1,6 Ohm Head</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Zenith D22 Clearomizer</strong>
+<li>Tankvolumen: 3ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Geeignet für: DL und MTL Vaping</li>
+<br>
+<br>',
+    ),
+    'IK100T82' => array(
+        'icNumber' => 'IK100T82',
+        'number' => 'IK100T82',
+        'name' => 'Innokin - Endura T18 2 - E-Zigarette',
+        'commonName' => 'Endura T18 2',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das E-Zigaretten Set Endura T18 2 aus dem Hause Innokin setzt sich aus dem fest verbauten Endura T18 2 Akku und dem Prism T18 2 Verdampfer zusammen. Den Akku zeichnen eine Kapazität von 1.300mAh und drei einstellbare Leistungsstufen (10,5 Watt /  12 Watt / 13,5 Watt) aus. Sie können jederzeit zwischen den Leistungsstufen wechseln. Verbinden Sie den Akku über das mitgelieferte Micro-USB-Ladekabel mit einem PC, um den Akku mit neuer Energie zu versorgen. Der Prism T18 2 Verdampfer kann maximal 2ml Liquid aufnehmen, welches über ein Top-Filling-System direkt von oben in den Tank gefüllt wird. Im Lieferumfang  sind zwei Verdampferköpfe mit einem Widerstand von je 1,5 Ohm enthalten und sie sind aufgrund des Widerstandes von über 1 Ohm für das moderate Backendampfen geeignet. Sollte Ihnen eine negative Entwicklung des Geschmacks oder der Dampfentwicklung auffallen, sollten Sie den zu den Verschleißartikeln gehörenden Verdampferkopf gegen einen neuen wechseln.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Endura T18 2 Akku</li>
+<li>1x Prism T18 2 Clearomizer</li>
+<li>2x 1,5 Ohm Head</li>
+<li>1x Magnet-Kappe</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Innokin Endura T18 2 Akku</strong>
+<ul>
+<li>Akkukapazität: 1.300mAh</li>
+<li>Ausgabemodi: variable Wattage (10,5 Watt /  12 Watt / 13,5 Watt)</li>
+<li>Widerstandsbereich: 1,2 - 3,9 Ohm</li>
+</ul>
+<strong>Innokin Prism T18 2 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 2ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Geeignet für: MTL Vaping</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IK100PR2' => array(
+        'icNumber' => 'IK100PR2',
+        'number' => 'IK100PR2',
+        'name' => 'Innokin - Prism T18 2 - Verdampfer',
+        'commonName' => 'Prism T18 2',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Verdampfer Prism T18 2 von Innokin wird Ihnen mit zwei passenden 1,5 Ohm Verdampferköpfen ausgeliefert. Sie können, aufgrund des Widerstandes der Verdampferköpfe, den entstehenden Dampf erst im Mundraum sammeln und den Dampf anschließend in die Lunge inhalieren. Bei dieser Art des Dampfens wird von dem moderaten Backendampfen gesprochen. Sollte Ihnen beim Dampfen eine negative Entwicklung der Dampfmenge oder des Geschmacks auffallen, tauschen Sie den zu den Verschleißartikeln zählenden Verdampferkopf gegen einen neuen aus. Der Prism T18 2 kann maximal 2ml Liquid aufnehmen. Um den Tank mit Liquid zu befüllen, entfernen Sie über eine Drehbewegung die Top Kappe und dann können Sie anschließend 2ml Liquid in den Tank füllen. Nutzen Sie die mitgelieferte Magnet-Kappe, um das Mundstück beim Transport vor Schmutz zu schützen. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Prism T18 2 Clearomizer</li>
+<li>2x 1,5 Ohm Head</li>
+<li>1x Magnet-Kappe</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+</ul>
+<strong>Innokin Prism T18 2 Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 2ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Geeignet für: MTL Vaping</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IK100PR2K' => array(
+        'icNumber' => 'IK100PR2K',
+        'number' => 'IK100PR2K',
+        'name' => 'Innokin - Prism T18 2 - Magnet-Kappe',
+        'commonName' => 'Prism T18 2',
+        'type' => 'MAGNET',
+        'category' => 'ZUBEHÖR > Magnet & Magnetadapter',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Wenn Sie die Endura T18 2 E-Zigarette bzw. den Prism T18 2 Verdampfer von Innokin besitzen, ist die Magnet-Kappe ein passender Zubehörartikel. Pro bestellter Packung wird Ihnen eine Magnet-Kappe ausgeliefert. Die Magnet-Kappe kann auf das Mundstück gesetzt werden, um vor Fremdkörpern und Schmutz zu schützen. Wenn Sie Dampfen möchten, nehmen Sie die Schutzkappe ab und befestigen Sie für die Zeit an der dafür vorgesehen magnetischen Stelle an der Unterseite der E-Zigarette.
+<br>
+<br>
+',
+    ),
+    'IK100PR2M' => array(
+        'icNumber' => 'IK100PR2M',
+        'number' => 'IK100PR2M',
+        'name' => 'Innokin - Prism T18 2 - Mundstück',
+        'commonName' => 'Prism T18 2',
+        'type' => 'DRIP_TIP',
+        'category' => 'ZUBEHÖR > Mundstücke & Schutz',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Es handelt sich um einen passenden Zubehörartikel für das Innokin Endura T18 2 E-Zigaretten Set. Sie erhalten ein Mundstück pro bestellter Packung. Der Wechsel des Mundstücks ist simpel, Sie ziehen das alte Mundstück von der Top Kappe des Verdampfers ab und setzen das neue auf. Da Mundstücke Hygieneartikel sind, ist es empfehlenswert, wenn Sie die Mundstücke regelmäßig auswechseln.
+<br>
+<br>',
+    ),
+    'IK100IS' => array(
+        'icNumber' => 'IK100IS',
+        'number' => 'IK100IS',
+        'name' => 'Innokin - iSub B - Verdampfer',
+        'commonName' => 'iSub B',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Innokin iSub B Verdampfer ist für das Dampfen mit direkten Lungenzügen ausgelegt. Hierzu ist ein PLEX3D 0,35 Ohm Verdampferkopf bereits im Verdampfer vorinstalliert. Ein weiterer PLEX3D 0,35 Ohm Verdampferkopf liegt dem Lieferumfang bei. Sollten Sie eine negative Veränderung des Geschmacks oder der Dampfentwicklung realisieren, sollten Sie den zu den Verschleißartikel zählenden Verdampferkopf gegen einen neuen wechseln. Es ist empfehlenswert, wenn Sie im Subohm-Bereich dampfen, die Airflow-Control möglichst weit zu öffnen. Sie ist nämlich der Bestandteil einer E-Zigarette, der während des Dampfens den Luftwiderstand reguliert. Sie füllen via Top-Filling-Systems Ihr Liquid in den Glastank, der ein Tankvolumen von 3ml aufweist. 
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x iSub B Clearomizer (PLEX3D 0,35 Ohm Head vorinstalliert)</li>
+<li>1x PLEX3D 0,35 Ohm Head<li>
+<li>1x Vape Band</li>
+<li>1x Ersatzglas 3ml</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<liu>Tankvolumen: 3ml</li>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 51 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Edelstahl</li>
+<li>subohm-fähig</li>
+<li>Airflow Control</li>
+</ul>
+',
+    ),
+    'IK100ISH' => array(
+        'icNumber' => 'IK100ISH',
+        'number' => 'IK100ISH',
+        'name' => 'Innokin - iSub - PLEX 3D Head - 0,35 Ohm (5 Stück pro Packung)',
+        'commonName' => 'iSub',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Innokin iSub PLEX 3D Verdampferköpfe sind passendes Zubehör für den iSub B Clearomizer. Ihnen werden pro bestellter Packung fünf der Verdampferköpfe geliefert. Sollte Ihnen eine negative Geschmacks- oder Dampfentwicklung auffallen, sollten Sie den zu den Verschleißteilen zählenden Verdampferkopf austauschen. Jeder Verdampferkopf weist einen Widerstand von 0,35 Ohm auf, sodass Sie direkte Lungenzüge tätigen können. Es ist empfehlenswert, die Verdampferköpfe in ihrem vorgesehenen Leistungsbereich von 30 bis maximal 55 Watt zu verwenden.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand iSub PLEX 3D Heads: 0,35 Ohm</li>
+<li>Wicklung: Kanthal</li>
+<li>Leistungsbereich: 30 - 55 Watt
+<li>Für Lungeninhalation geeignet (DTL)</li>
+<br>
+<b>Geeignet Für:</b>
+<ul>
+<li>Innokin iSub B Clearomizer Set</li>
+</ul>
+<br>
+',
+    ),
+    'IK100ISG' => array(
+        'icNumber' => 'IK100ISG',
+        'number' => 'IK100ISG',
+        'name' => 'Innokin - iSub B - Glastank',
+        'commonName' => 'iSub B',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestellter Packung einen Glastank in der von Ihnen ausgesuchten Größe. Sie haben die Wahl zwischen einem Fassungsvermögen von 3ml oder 4ml.  Die Glastank sind aus dem Material Pyrex gefertigt, welches besonders stabil und hitzebeständig ist. Im Bedarfsfall kann der Glastank ohne die Zuhilfenahme von Werkzeug ausgetauscht werden. 
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Tankvolumen: 3ml oder 4ml</li>
+<li>Material: Pyrex</li>
+<br>
+',
+    ),
+    'IK100KR' => array(
+        'icNumber' => 'IK100KR',
+        'number' => 'IK100KR',
+        'name' => 'Innokin - Kroma A - Zenith - E-Zigarette',
+        'commonName' => 'Kroma A',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Innokin Kroma A Zenith E-Zigaretten Set wird mit einem fest verbauten Akku mit einer Kapazität von 2000 mAh und einer Ausgangsleistung von 6 bis 75 Watt betrieben. Der dazugehörige Zenith Verdampfer komplettiert das Set. Mit im Set sind zwei Verdampferköpfe mit einem Widerstand von 0,5 Ohm und 1,6 Ohm. Diese sind für das Dampfen im MTL-Bereich ausgelegt. Der Zenith Verdampfer bietet ein Tankvolumen von 4ml und wird via Top-Filling System befüllt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Kroma A Akku 2000mAh</li>
+<li>1x Zenith Clearomizer</li>
+<li>1x Zenith Plexus 0,5 Ohm Head</li>
+<li>1x Zenith 1,6 Ohm Head</li>
+<li>1x Ersatzmundstücke</li>
+<li>1x Ersatzteil-Set</li>
+<li>USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Kroma A Akku</strong>
+<ul>
+<li>Ausgabemodi: VW / TC (Ni,Ti, SS316)</li>
+<li>Akkukapazität: 2000mAh</li>
+<li>Ausgangsleistung: 6 - 75 Watt</li>
+<li>Temperaturbereich: 100°C – 315°C </li>
+<li>Widerstandsbereich: 0,2 Ohm - 3,5 Ohm</li>
+<li>Maße: 70mm x 24mm x 47mm</li>
+<li>510er Anschluss</li>
+</ul>
+<br>
+<br>
+<strong>Zenith Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4ml</li>
+<li>Top-Filling</li>
+<li>MTL</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe: 53mm</li>
+<li>Durchmesser: 24mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'IK100KRM' => array(
+        'icNumber' => 'IK100KRM',
+        'number' => 'IK100KRM',
+        'name' => 'Innokin - Kroma A - Akku - 2.000 mAh',
+        'commonName' => 'Kroma A',
+        'type' => 'BOX_MOD',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Kroma A Akku von Innokin ist für das Dampfen in den Betriebsmodi VW und TC ausgelegt.  Er besitzt einen fest verbauten Akku mit 2000mAh Kapazität, welche über das USB-Kabel bei Bedarf mit neuer Energie versorgt werden kann. Im leistungsbezogenen Modus erreicht der Kroma A eine Ausgangsleistung von 75 Watt. Falls Sie sich für den TC-Modus entscheiden, können Sie hier die Temperatur zwischen 100°C und 315°C einstellen. Der Kroma A 2000mAh unterstützt einen Widerstandsbereich, der sich zwischen 0,2 und 3,5 Ohm bewegt. Sämtliche von Ihnen vorgenommen Einstellungen können dem OLED-Display entnommen werden, welches sich an der Seite des Akkus befindet. Durch den standardisierten 510er Anschluss können Sie den Kroma A Akku mit einer Vielzahl, auf dem Markt erhältlichen Verdampfern kombinieren. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Innokin Kroma A 2000mAh</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Kroma A Akku</strong>
+<ul>
+<li>Ausgabemodi: VW / TC (Ni,Ti, SS316)</li>
+<li>Akkukapazität: 2000mAh</li>
+<li>Ausgangsleistung: 6 - 75 Watt</li>
+<li>Temperaturbereich: 100°C – 315°C </li>
+<li>Widerstandsbereich: 0,2 Ohm - 3,5 Ohm</li>
+<li>Maße: 70mm x 24mm x 47mm</li>
+<li>OLED-Display</li>
+<li>510er Anschluss</li>
+</ul>
+<br>',
+    ),
+    'IK100ZT' => array(
+        'icNumber' => 'IK100ZT',
+        'number' => 'IK100ZT',
+        'name' => 'Innokin - Zenith - Verdampfer',
+        'commonName' => 'Zenith',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Innokin Zenith Verdampfer ist u.a. passender Verdampfer für Ihren Kroma A Akku mit einer Kapazität von 2000mAh. Der Zenith Verdampfer hat eine Füllmenge von 4 Millilitern. Diese wird via Top-Filling System von oben mit frischem Liquid befüllt. Hierzu müssen Sie die Top-Cap So lange drehen bis das Einfüllloch zum Vorschein kommt. Am unteren Teil des Verdampfers finden Sie ein Airflow-Control mit der Sie Ihren Zugwiderstand individuell einstellen können. Im Lieferumfang sind zwei Verdampferköpfe enthalten. Der Zenith Plexus Verdampferkopf mit 0,5 Ohm ist vorinstalliert und ist für das Dampfen im Subohm-Bereich ausgelegt. Der Zenith Verdampferkopf mit 1,6 Ohm liegt dem Lieferumfang bei. Dieser ist dank des hohen Widerstandes für das Dampfen im moderaten Bereich konzipiert. Bitte bedenken Sie, dass Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören und in regelmäßigen Abständen ausgetauscht werden müssen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Zenith Clearomizer</li>
+<li>1x Zenith Plexus 0,5 Ohm Head</li>
+<li>1x Zenith 1,6 Ohm Head</li>
+<li>1x Ersatzmundstücke</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Zenith Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4ml</li>
+<li>Top-Filling</li>
+<li>MTL</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe: 53mm</li>
+<li>Durchmesser: 24mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'IK100ZB' => array(
+        'icNumber' => 'IK100ZB',
+        'number' => 'IK100ZB',
+        'name' => 'Innokin - Z Biip - E-Zigarette',
+        'commonName' => 'Z Biip',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die E-Zigarette Z Biip von der Marke Innokin verfügt über einen fest verbauten Akku, der über eine Kapazität von 1.500mAh verfügt. Der Akku unterstützt insgesamt 3 verschiedene Watt-Level (11 Watt, 14 Watt und 16  Watt) in denen gedampft werden kann. Zum einen werden Sie über eine farbliche LED (blau, grün und rot) informiert zum anderen besteht die Möglichkeit an der Unterseite des Akkus einen Schalter zu betätigen, sodass Sie zusätzlich über eine akustische Darstellung informiert werden, welchen Watt-Level Sie nutzen. Der im Lieferumfang enthaltene Pod besitzt einen bereits vorinstallierten Head mit einem Widerstand von 0,48 Ohm. Im Lieferumfang ist noch ein weitere Verdampferkopf mit einem Widerstand von 1,6 Ohm enthalten. Bitte beachten Sie. dass Sie die zu den Verschleißteilen zählenden Verdampferkopf regelmäßig wechseln um ein gleichbleibendes Dampferlebnis zu gewährleisten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Z Biip Akku</li>
+<li>1x Z Biip Pod (0,48 Ohm Coil vorinstalliert)</li>
+<li>1x Z Biip 1,6 Ohm Coil</li>
+<li>1x Liquidflasche</li>
+<li>1x Micro-USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Innokin Z Biip E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 1.500mAh</li>
+<li>Tankvolumen: 2ml</li>
+<li>Ausgabemodi: variable Wattage (11 / 14 / 16 Watt)</li>
+<li>Widerstandsbereich: 0,2 - 3,5 Ohm</li>
+<li>Maße: 95 x 45 x 25 mm</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Geeignet für: DL und MTL Vaping</li>
+</ul>
+',
+    ),
+    'IK100ZBP' => array(
+        'icNumber' => 'IK100ZBP',
+        'number' => 'IK100ZBP',
+        'name' => 'Innokin - Z Biip - Pod',
+        'commonName' => 'Z Biip',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Es ist ein passender Zubehörartikel für die E-Zigarette Z Biip von der Marke Innokin. Ihnen werden pro bestellter Packung ein Pod-System für Ihre Z Biip E-Zigarette. Sie können zwischen den Tankvolumen von 2 oder 4 Millilitern wählen.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Tankvolumen: 2 oder 4 Milliliter</li>
+<li>Top Filling System</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'IK100ZBB' => array(
+        'icNumber' => 'IK100ZBB',
+        'number' => 'IK100ZBB',
+        'name' => 'Innokin - Z Biip - Pod Base',
+        'commonName' => 'Z Biip',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Es handelt sich um einen kompatiblen Ersatzartikel für die Innokin Z Biip E-Zigarette und den gleichnamigen Pod. Es befindet sich die Airflow-Control zur Regulierung des Luftwiderstandes in der Z Biip Base. Durch eine Drehbewegung wird die Airflow-Control geöffnet bzw. geschlossen. Es gilt zu beachten, wenn Sie sich für das moderate Backendampfen entscheiden, dass Sie die Airflow-Control schließen. Dampfen Sie hingegen mit direkten Lungenzügen (Subohm-Dampfen) ist es empfehlenswert, die Airflow-Control möglichst weit zu öffnen.
+<br>
+<br>
+',
+    ),
+    'IK100JM' => array(
+        'icNumber' => 'IK100JM',
+        'number' => 'IK100JM',
+        'name' => 'Innokin - JEM - E-Zigarette',
+        'commonName' => 'JEM',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das von Innokin produzierte E-Zigaretten Set mit dem Namen JEM besteht aus dem gleichnamigen Akku, dem gleichnamigen Verdampfer und auch der Verdampferkopf trägt den Namen JEM. Der Akku ist fest verbaut und bringt eine Akkukapazität von 1000mAh mit sich. Mit dem JEM Akku können Sie in 5 verschiedenen Leistungsstufen dampfen. Zur Auswahl stehen 10 Watt, 11 Watt, 12 Watt, 13 Watt und 13,5 Watt. Die Leistungsstufen lassen sich über zwei Pfeiltasten einstellen und können über ein Display abgelesen werden. Die JEM richtet sich an Einsteiger und Dampfer, die das moderate Dampfen von Mund zu Lunge (MTL) bevorzugen. Dies spiegelt sich im Verdampfer und dem bereits vorinstalliertem JEM Verdampferkopf wider. Dieser besitzt einen Widerstand von 1,6 Ohm. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören und in regelmäßigen Zeitabständen gegen neue Heads getauscht werden sollten. So können Sie einer negativen Dampf- und/oder Geschmacksentwicklung entgegenwirken. Das Tankvolumen des JEM Verdampfers beläuft sich auf 2ml und die an der Base verbaute Airflow-Control lässt sich in drei Stufen einstellen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x JEM 1000mAh Akku</li>
+<li>1x JEM Clearomizer</li>
+<li>1x JEM 1,6 Ohm Head</li>
+<li>1x Micro-USB Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>JEM E-Zigaretten Set</strong>
+<ul>
+<li>Höhe inkl. Clearomizer: 168,5 mm</li>
+<li>Durchmesser: 22 mm</li>
+<li>Durchmesser Clearomizer: 15 mm</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Widerstand: 1,6 Ohm</li>
+<li>Ausgangsleistung: 10 Watt - 13,5 Watt</li>
+<li>Airflow-Control</li>
+<li>Top-Filling System</li>
+<li>Mund zu Lunge (MTL)</li>
+</ul>',
+    ),
+    'IK100JMC' => array(
+        'icNumber' => 'IK100JMC',
+        'number' => 'IK100JMC',
+        'name' => 'Innokin - JEM - Verdampfer',
+        'commonName' => 'JEM',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Von Innokin erhalten Sie den JEM Verdampfer mit passenden Verdampferköpfen. Dieses Gerät richtet sich an Einsteiger und Dampfer mit Vorliebe für das moderate Backendampfen (MTL). Im Verdampfer befindet sich ein 1,6 Ohm starker JEM Verdampferkopf und ein weiterer befindet sich im Lieferumfang. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören und in regelmäßigen Zeitabständen gegen neue Heads getauscht werden sollten. So können Sie einer negativen Dampf- und/oder Geschmacksentwicklung entgegenwirken. Das Liquid, welches die Verdampferköpfe verdampfen sollen, findet in einem 2ml großen Glastank Platz. Befüllt werden kann der Glastank nachdem die Top Kappe des Verdampfers abschrauben. An der Unterseite befindet sich eine Airflow-Control, mit welcher sich der Luftzug in drei Stufen einstellen lässt. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x JEM Clearomizer</li>
+<li>2x JEM 1,6 Ohm Head (1x vorinstalliert)</li>
+<li>1x Ersatzglastank</li>
+<li>1x Ersatzteile-Set</li>
+</ul>
+<br>
+<br>
+<strong>JEM Clearomizer Set</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Höhe: 45 mm</li>
+<Durchmesser: 15mm</li>
+<li>Mund zu Lunge (MTL)</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+</ul>',
+    ),
+    'IK100JMH' => array(
+        'icNumber' => 'IK100JMH',
+        'number' => 'IK100JMH',
+        'name' => 'Innokin - JEM Head - 1,6 Ohm (5 Stück pro Packung)',
+        'commonName' => 'JEM',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die JEM Verdampferköpfe wurden speziell für den gleichnamigen Verdampfer entwickelt. Ausgestattet mit einem Widerstand von 1,6 Ohm richten sich die Verdampferköpfe an Dampfer die das moderate Dampfen von Mund zu Lunge (MTL) bevorzugen. Mit einer bestellten Packung erhalten Sie 5 Stück der JEM Verdampferköpfe. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören und in regelmäßigen Zeitabständen gegen neue Heads getauscht werden sollten. So können Sie einer negativen Dampf- und/oder Geschmacksentwicklung entgegenwirken.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Innokin JEM 1,6 Ohm Verdampferköpfe</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 1,6 Ohm</li>
+<li>Material: Kanthal</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>Innokin JEM E-Zigaretten Set</li>
+<li>Innokin JEM Clearomizer</li>
+<br>
+<br>',
+    ),
+    'IK100JMG' => array(
+        'icNumber' => 'IK100JMG',
+        'number' => 'IK100JMG',
+        'name' => 'Innokin - JEM - Glastank',
+        'commonName' => 'JEM',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der JEM Glastank aus der Produktion von Innokin wurde speziell für den JEM Verdampfer konzipiert. Diesen Glastank können Sie bis zu 2ml Ihres gewünschten Liquids befüllen. Mit dem transparenten Glastank können Sie Ihren Liquidstand jederzeit kontrollieren.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Innokin JEM Glastank</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Tankvolumen: 2ml</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>Innokin JEM E-Zigaretten Set</li>
+<li>Innokin JEM Clearomizer</li>
+<br>
+<br>',
+    ),
+    'GV100AXZ' => array(
+        'icNumber' => 'GV100AXZ',
+        'number' => 'GV100AXZ',
+        'name' => 'GeekVape - Aegis X - mit Zeus - E-Zigarette',
+        'commonName' => 'Aegis X',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Aegis X Akkuträger und dem Zeus Subohm verdampfer setzt sich das E-Zigaretten Set von GeekVape zusammen. Der Aegis X Akkuträger der Aegis Reihe der Marke GeekVape unterstützt das Dampfen bei einer Ausgangsleistung von 5 bis maximal 200 Watt. Damit Sie den Akkuträger in Betrieb nehmen können, ist es erforderlich zwei 18650er Akkuzellen (nicht im Lieferumfang enthalten) in den Akkuträger einzusetzen. Der Aegis X 200 Watt unterstützt das Dampfen in mehreren Modi (Memory (M1-4) / Power / TC(SS, Ni, Ti, TCR) VPC / Bypass) zwischen denen Sie frei wählen können. Auf dem 2,4 Zoll großem TFT-Farbdisplay haben Sie alle Einstellungen im Blick. Den Zeus Subohm Verdampfer füllen Sie via Top-Filling System direkt von oben mit Liquid. Da der Tank transparent ist, können Sie Ihren Liquidstand im Auge behalten und insgesamt 5ml Liquid einfüllen. Im Lieferumfang sind zwei unterschiedliche Subohm-Verdampferköpfe enthalten, womit direkte Lungenzüge möglich sind.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Aegis X Akkuträger</li>
+<li>1x Zeus Subohm Clearomizer</li>
+<li>1x Mesh Z1 0,4 Ohm Head</li>
+<li>1x Mesh Z2 0,2 Ohm Head (vorinstalliert)</li>
+<li>1x Ersatzglastank 3,5ml</li>
+<li>1x Ersatzteilset</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<p><strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong></p>
+<br>
+<br>
+<p><strong>AEGIS X AKKUTRÄGER</strong></p>
+<ul>
+<li>Ausgabemodi: VW/POWER | TC (Ni, Ti, SS) | TCR | VPC | BYPASS | MEMORY (M1 – M4</li>
+<li>Ausgangsspannung: 0,1 – 12 Volt</li>
+<li>Ausgangsleistung: 5 – 200 Watt</li>
+<li>Temperaturbereich: 100 °C – 315 °C | 200°F bis 600°F</li>
+<li>Widerstandsbereich: 0,05 – 3,0 Ohm</li>
+<li>Ladestrom: DC 5V/2A</li>
+<li>Maße: 86,4 mm x 41,2 mm x 31,5 mm</li>
+<li>Gewindetyp: 510</li>
+<li>2,4” OLED Farb-Display</li>
+<li>update-fähig</li>
+<li>wasserdicht und staubgeschützt (IP67)</li>
+<li>stoß- und sturzgesichert</li>
+</ul>
+<br>
+<br>
+<strong>Zeus Subohm Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 5 ml</li>
+<li>Top-Filling</li>
+<li>DL</li>
+<li>Gewindetyp: 510</li>
+<li>Höhe (ohne Mundstück): 42,5mm</li>
+<li>Durchmesser: 26mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'IK100ZL' => array(
+        'icNumber' => 'IK100ZL',
+        'number' => 'IK100ZL',
+        'name' => 'Innokin - Zlide - Verdampfer',
+        'commonName' => 'Zlide',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Zlide Clearomizer von der Marke Innokin können Sie sowohl moderate Backenzüge tätigen, als auch beim Dampfen direkt in die Lunge inhalieren. Für direkte Lungenzüge (Subohm-Dampfen) ist ein Zenith Plex 3D 0,48 Ohm Verdampferkopf bereits vorinstalliert. Nutzen Sie den mitgelieferten Zenith 1,6 Ohm Verdampferkopf, wenn Sie mit moderaten Backenzügen dampfen wollen. Mit der Airflow-Control an der Unterseite des Verdampfers können Sie den Luftwiderstand Ihren persönlichen Dampfgewohnheiten anpassen. Sollten Sie eine Veränderung des Geschmacks oder der Dampfentwicklung feststellen, tauschen Sie den zu den Verschleißteilen zählenden Verdampferkopf gegen einen neuen aus. Das Tankvolumen des Zlide Verdampfers beträgt 2ml. Über ein Top-Filling-System gelangt Ihr Liquid direkt von oben in den Tank.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Zlide Clearomizer</li>
+<li>1x Zenith Plex 3D 0,48 Ohm Head (vorinstalliert)</li>
+<li>1x Zenith 1,6 Ohm Head</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Zlide Clearomizer</strong>
+<li>Tankvolumen: 2ml</li>
+<li>Top-Filling System</li>
+<li>Airflow-Control</li>
+<li>Geeignet für: DL und MTL Vaping</li>
+<li>Höhe:46mm</li>
+<li>Durchmesser: 22,5mm</li>
+<br>
+<br>',
+    ),
+    'IK100ZLG' => array(
+        'icNumber' => 'IK100ZLG',
+        'number' => 'IK100ZLG',
+        'name' => 'Innokin - Zlide - Glastank',
+        'commonName' => 'Zlide',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro bestellter Packung erhalten Sie je ein Mundstück für den Innokin Zlide Verdampfer. Mundstücke werden auch als Drip Tips bezeichnet. Wenn Sie ihr altes Mundstück gegen ein neues auswechseln wollen, entfernen Sie durch das Ziehen am Mundstück selbiges von der Top Kappe, anschließend können Sie ein neues aufsetzen. Da Mundstücke Hygieneartikel sind, ist es empfehlenswert, wenn Sie die Mundstücke periodisch austauschen.
+<br>
+<br>',
+    ),
+    'IK100ZLM' => array(
+        'icNumber' => 'IK100ZLM',
+        'number' => 'IK100ZLM',
+        'name' => 'Innokin - Zlide - Resin Mundstück',
+        'commonName' => 'Zlide',
+        'type' => 'DRIP_TIP',
+        'category' => 'ZUBEHÖR > Mundstücke & Schutz',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro bestellter Packung erhalten Sie je ein Mundstück für den Innokin Zlide Verdampfer. Mundstücke werden auch als Drip Tips bezeichnet. Wenn Sie ihr altes Mundstück gegen ein neues auswechseln wollen, entfernen Sie durch das Ziehen am Mundstück selbiges von der Top Kappe, anschließend können Sie ein neues aufsetzen. Da Mundstücke Hygieneartikel sind, ist es empfehlenswert, wenn Sie die Mundstücke periodisch austauschen.
+<br>
+<br>',
+    ),
+    'IK100PTM' => array(
+        'icNumber' => 'IK100PTM',
+        'number' => 'IK100PTM',
+        'name' => 'Innokin - Proton - Akkuträger - 235 Watt',
+        'commonName' => 'Proton',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Proton 235 Watt ist ein Akkuträger aus dem Hause Innokin. Wie Sie dem Namen schon entnehmen können, besitzt dieser eine maximale Ausgangsleistung von 235 Watt. Für die Inbetriebnahme setzen Sie zwei 18650er Akkuzellen ein. Es befinden sich keine Akkuzellen im Lieferumfang, bitte bestellen Sie diese separat. Sie können wahlweise im VW und TC/TCR Modus dampfen. Die einstellbare Ausgangsleistung liegt zwischen 6 und 235 Watt. Alle Ihre Einstellungen haben Sie auf einem 1,45” großen TFT-Farbdisplay im Überblick. Passende Verdampfer für den innokin Proton 235 sind unter anderem der Scion 2 und Plex; ebenfalls aus der Innokin-Schmiede.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Innokin Proton 235 Watt</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Proton 235 Watt</strong>
+<ul>
+<li>Ausgabemodi: VW / TC/TCR (Ni,Ti, SS316)</li>
+<li>Ausgangsleistung: 6 - 235 Watt</li>
+<li>Ausgangsspannung: max. 9 V</li>
+<li>Widerstandsbereich: 0,05 – 3,5 Ohm</li>
+<li>Temperaturbereich: 100°C – 315°C </li>
+<li>Maße: 44,6 mm x 29,6 mm x 64,5 mm</li>
+<li>1,45” TFT-Farbdisplay</li>
+<li>Steuerung über Joystick</li>
+</ul>
+<br>
+<br>',
+    ),
+    'IK100ET' => array(
+        'icNumber' => 'IK100ET',
+        'number' => 'IK100ET',
+        'name' => 'Innokin - Endura T20 - 1.000 mAh E-Zigarette',
+        'commonName' => 'Endura T20',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Innokin erhalten Sie das Endura T20 E-Zigaretten Set. Das Set besteht aus dem gleichnamigen Akku und einem Prism T20 Verdampfer. Der Akku wurde mit einer Akkukapazität von 1000mAh ausgestattet und kann über ein mitgeliefertes Micro-USB Ladekabel wieder aufgeladen werden. Der Verdampfer wird mit einem Prism T20 Verdampferkopf ausgeliefert. Dieser Verdampferkopf besitzt einen Widerstand von 1,5 Ohm und ist somit für das moderate Backendampfen ausgelegt. Das Set unterstützt Verdampferköpfe in einem Widerstandsbereich zwischen 1,2 Ohm und 3,5 Ohm. Bitte beachten Sie, dass der Verdampferkopf zu den Verschleißteilen einer E-Zigarette gehören. Dieser sollte in regelmäßigen Abständen gegen einen neuen ausgetauscht werden. So können Sie einer negativen Geschmacks- und/oder Dampfentwicklung entgegenwirken. Des Weiteren besitzt die Endura T20 nur eine Feuertaste, über welche Sie das Gerät ein- bzw. ausschalten und das Liquid verdampfen. Der Prism T20 hat ein Tankvolumen von 2ml und kann über ein Top-Filling System immer wieder befüllt werden.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Endura T20 1000mAh Akku</li>
+<li>1x Prism T20 Clearomizer</li>
+<li>1x Micro-USB Ladekabel</li>
+<li>1x Mundstück-Abdeckung</li>
+<li>1x Ersatzteile</li>
+</ul>
+<br>
+<br>
+<strong>Endura T20 1000maAh E-Zigaretten Set</strong>
+<ul>
+<li>Höhe: 115 mm</li>
+<li>Durchmesser: 20 mm</li>
+<li>Widerstandsbereich: 1,2 Ohm - 3,5 Ohm</li>
+<li>Ausgangsleistung: max. 13 Watt</li>
+<li>Ausgangsspannung: max. 4,5V</li>
+</ul>
+<br>
+<br>
+<strong>Prism T20 Clearomizer Set</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Durchmesser: 20 mm</li>
+<li>Höhe: 45 mm</li>
+<li>Mund zu Lunge (MTL)</li>
+<li>Top-Filling System</li>
+</ul>',
+    ),
+    'IK100PC' => array(
+        'icNumber' => 'IK100PC',
+        'number' => 'IK100PC',
+        'name' => 'Innokin - Plex - Verdampfer',
+        'commonName' => 'Plex',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Plex Verdampfer aus dem Hause Innokin ist ein Subohm-Verdampfer. Bei dieser Variante des Dampfens wird der Dampf direkt in die Lunge inhaliert. Zudem verfügt er über ein Top-Filling System. Das heißt, dass Sie Ihr Liquid von oben in den Tank einfüllen. Das Tankvolumen beläuft sich beim Plex Verdampfer auf 4ml. Im Lieferumfang enthalten, sind zwei Scion 2 Plexus Verdampferköpfe mit einem Widerstand von 0,13 Ohm und 0,15 Ohm. Der 0,13 Ohm Verdampferkopf ist vorab im Verdampfer installiert. Die Verdampferköpfe arbeiten im höher angelegten Leistungsbereich. Wenn Sie den 0,13 Ohm Verdampferkopf verwenden, ist ein Leistungsbereich zwischen 80 und 110 Watt empfehlenswert. Der 0,15 Ohm Verdampferkopf arbeitet in einem Leistungsbereich von 60 Watt bis 110 Watt. Anhand des niedrigen Widerstandwertes sind die Scion 2 Plexus Verdampferköpfe für das Dampfen im Subohm-Bereich ausgelegt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Plex Clearomizer</li>
+<li>1x Scion 2 Plexus 0,13 Ohm Head (vorinstalliert)</li>
+<li>1x Scion 2 Plexus 0,15 Ohm Head</li>
+<li>1x Ersatzglastank</li>
+<li>1x Ersatz-Mundstück</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>Plex Clearomizer</strong>
+<ul>
+<li>Tankvolumen: 4 ml</li>
+<li>Höhe (inkl. Mundstück): 55 mm</li>
+<li>Durchmesser: 25 mm</li>
+<li>Gewindetyp: 510</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow-Control</li>
+</ul>
+<br>
+<br>',
+    ),
+    'IK100ET2' => array(
+        'icNumber' => 'IK100ET2',
+        'number' => 'IK100ET2',
+        'name' => 'Innokin - Endura T20 - 1.500 mAh E-Zigarette',
+        'commonName' => 'Endura T20',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Innokin erhalten Sie das Endura T20 E-Zigaretten Set. Das Set besteht aus dem gleichnamigen Akku und einem Prism T20 Verdampfer. Der Akku wurde mit einer Akkukapazität von 1500mAh ausgestattet und kann über ein mitgeliefertes Micro-USB Ladekabel wieder aufgeladen werden. Der Verdampfer wird mit einem Prism T20 Verdampferkopf ausgeliefert. Dieser Verdampferkopf besitzt einen Widerstand von 1,5 Ohm und ist somit für das moderate Backendampfen ausgelegt. Das Set unterstützt Verdampferköpfe in einem Widerstandsbereich zwischen 1,2 Ohm und 3,5 Ohm. Bitte beachten Sie, dass der Head zu den Verschleißteilen einer E-Zigarette gehören. Dieser sollte in regelmäßigen Abständen gegen einen neuen ausgetauscht werden. So können Sie einer negativen Geschmacks- und/oder Dampfentwicklung entgegenwirken. Des Weiteren besitzt die Endura T20 nur eine Feuertaste, über welche Sie das Gerät ein- bzw. ausschalten und das Liquid verdampfen. Der Prism T20 hat ein Tankvolumen von 2ml und kann über ein Top-Filling System immer wieder befüllt werden.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Endura T20 1500mAh Akku</li>
+<li>1x Prism T20 Clearomizer</li>
+<li>1x Micro-USB Ladekabel</li>
+<li>1x Mundstück-Abdeckung</li>
+<li>1x Ersatzteile</li>
+</ul>
+<br>
+<br>
+<strong>Endura T20 1500maAh E-Zigaretten Set</strong>
+<ul>
+<li>Höhe: 130 mm</li>
+<li>Durchmesser: 20 mm</li>
+<li>Widerstandsbereich: 1,2 Ohm - 3,5 Ohm</li>
+<li>Ausgangsleistung: max. 13 Watt</li>
+<li>Ausgangsspannung: max. 4,5V</li>
+</ul>
+<br>
+<br>
+<strong>Prism T20 Clearomizer Set</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Durchmesser: 20 mm</li>
+<li>Höhe: 45 mm</li>
+<li>Mund zu Lunge (MTL)</li>
+<li>Top-Filling System</li>
+</ul>',
+    ),
+    'IK100PCG' => array(
+        'icNumber' => 'IK100PCG',
+        'number' => 'IK100PCG',
+        'name' => 'Innokin - Plex - Glastank',
+        'commonName' => 'Plex',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Plex Glastank ist im Lieferumfang des Innokin Plex Verdampfer Sets vorinstalliert und kann bei Bedarf einzeln erworben werden. Das Fassungsvolumen von diesem Glastank beträgt 4 Milliliter. Der Glastank wurde aus hitzebeständigen Pyrexglas hergestellt.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Tankvolumen: 4ml</li>
+<li>transparent</li>
+<li>Passend für den Innokin Plex Clearomizer</li>
+<br>
+<br>
+',
+    ),
+    'IK100PCD' => array(
+        'icNumber' => 'IK100PCD',
+        'number' => 'IK100PCD',
+        'name' => 'Innokin - Plex - Drip Tip',
+        'commonName' => 'Plex',
+        'type' => 'DRIP_TIP',
+        'category' => 'ZUBEHÖR > Mundstücke & Schutz',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro bestellter Packung erhalten Sie insgesamt 1 Plex Mundstück von Innokin. Dieses erhalten Sie in der Farbe resin-schwarz. Sie können es für den Plex Verdampfer verwenden.
+<br>
+<br>',
+    ),
+    'IK100PTC' => array(
+        'icNumber' => 'IK100PTC',
+        'number' => 'IK100PTC',
+        'name' => 'Innokin - Prism T20 - Verdampfer',
+        'commonName' => 'Prism T20',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Endura T20 Verdampfer aus dem Hause Innokin ist ein Verdampfer mit einem Durchmesser von 20mm und besitzt ein Tankvolumen in welchem bis zu 2ml Ihres Liquids Platz finden. Mit seinem vorinstallierten 1,5 Ohm starken Prism T20 Verdampferkopf, richtet sich das Gerät an Einsteiger bzw. Dampfer die das moderate Dampfen von Mund zu Lunge (MTL) bevorzugen. Verdampferköpfe zählen zu den Verschleißteilen einer E-Zigarette, beachten Sie daher bitte diese in regelmäßigen Abständen gegen neue auszutauschen. So können Sie einer negativen Dampf- und/oder Geschmacksentwicklung entgegenwirken. Arbeiten kann der Prism T20 Verdampfer in einem Leistungsbereich von 12-14 Watt. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Prism T20 Clearomizer</li>
+<li>1x Prism T20 1,5 Ohm Head</li>
+<li>1x Ersatzteil-Set</li>
+</ul>
+<br>
+<br>
+<strong>Prism T20 Clearomizer Set</strong>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>Durchmesser: 20 mm</li>
+<li>Höhe: 45 mm</li>
+<li>Mund zu Lunge (MTL)</li>
+<li>Top-Filling System</li>
+</ul>',
+    ),
+    'IK100SCH' => array(
+        'icNumber' => 'IK100SCH',
+        'number' => 'IK100SCH',
+        'name' => 'Innokin - Scion 2 Head - 0,36 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Scion 2',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Innokin',
+        'brand' => 'Innokin',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Innokin kommen die Scion 2 Verdampferköpfe mit einem Widerstand von 0,6 Ohm. Es sind passende Verdampferköpfe für Ihren Innokin Scion 2 Plexus Verdampfer. Es wird empfohlen die Scion 2 Verdampferköpfe in einem Leistungsbereich von 80 Watt bis 150 Watt zu benutzen. Da Verdampferköpfe Verschleißteil einer E-Zigarette sind, ist es ratsam, dass Sie diese in regelmäßigen Abständen austauschen. Dies hat zur Folge, dass es bei einem gleichbleibenden Geschmack und einer gleichbleibenden Dampfentwicklung bleibt.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x Scion 2 0,36 Ohm Heads</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Widerstand: 0,36 Ohm</li>
+<li>Leistungsbereich: 80 Watt – 150 Watt</li>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Innokin Scion 2 Plexus Clearomizer</li>
+</ul>
+<br>',
+    ),
+    'SK100FMC' => array(
+        'icNumber' => 'SK100FMC',
+        'number' => 'SK100FMC',
+        'name' => 'SMOK - Fetch Mini - Lederhülle',
+        'commonName' => 'Fetch Mini',
+        'type' => 'BAG',
+        'category' => 'ZUBEHÖR > Taschen & Etuis',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Lederhülle wurde passgenau für die Smok Fetch Mini E-Zigarette angefertigt. Mit Hilfe der Lederhülle schützen Sie Ihre E-Zigarette vor Stößen und beugen optischen Beschädigungen vor. ',
+    ),
+    'VM100TP' => array(
+        'icNumber' => 'VM100TP',
+        'number' => 'VM100TP',
+        'name' => 'Vapor Storm - Trip - E-Zigarette',
+        'commonName' => 'Trip',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Vapor Storm',
+        'brand' => 'Vapor Storm',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Vapor Storm Trip E-Zigaretten Set ist ein subohmfähiges E-Zigaretten Set. Sie können wahlweise im  VW, Curve, TC oder im Bypass-Modus dampfen. Die maximale Ausgangsleistung des Vapor Storm Trip E-Zigaretten Sets beträgt 200 Watt. Damit Sie das Set verwenden können, müssen zwei 18650er Akkuzellen eingesetzt werden. Bitte beachten Sie, dass sich keine Akkuzellen im Lieferumfang befinden. Der Trip Akkuträger wird klassisch über drei Tasten gesteuert. Das übersichtlich gestaltete Display erlaubt es Ihnen, alle wesentlichen Leistungsparameter stets im Blick zu behalten
+<br>
+<br>
+Der im Set enthaltene Trip Clearomizer von Vapor Storm unterstützt direkte Lungenzüge. Sie erhalten zwei Trip Mesh Heads mit einem Widerstand von 0,20 Ohm.  Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen zählen und ein regelmäßiges Austauschen empfehlenswert ist. Das Tankvolumen beträgt 6ml. Über ein Top-Filling-System haben Sie die Möglichkeit, von oben den Tank mit Liquid zu befüllen. Öffnen Sie die in der Base sitzende Airflow-Control möglichst weit, um das Dampfen im Subohm-Bereich zu unterstützen. 
+<br>
+<br>
+
+<ul>
+<strong>Lieferumfang:</strong>
+<li>1x Trip 200 Watt Akkuträger</li>
+<li>1x Trip Clearomizer</li>
+<li>2x Trip Mesh Heads 0,2 Ohm</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<p><strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong></p>
+<br>
+<br>
+<p><strong>Wichtige Merkmale: Trip 200 Watt AKKUTRÄGER</strong></p>
+<ul>
+<li>Ausgabemodi: VW | TC (Ni, Ti, SS) | Bypass | Cube</li>
+<li>Ausgangsspannung: 6,4 – 8,4 Volt</li>
+<li>Ausgangsleistung: 5 – 200 Watt</li>
+<li>Temperaturbereich: 100 °C – 315 °C | 200°F bis 600°F</li>
+<li>Widerstandsbereich: 0,06 – 3,0 Ohm (VW) | 0,05­ bis 1,0 Ohm (TC/)</li>
+<li>Ladestrom: DC 5V/2A</li>
+<li>Maße: 85 mm x 51 mm x 27 mm</li>
+<li>Gewindetyp: 510</li>
+<li>update-fähig</li>
+<li>0.91” Display</li>
+<li>Gewicht: 90g</li>
+</ul>
+<br>
+<br>
+<p><strong>Wichtige Merkmale: Trip CLEAROMIZER</strong></p>
+<ul>
+<li>Tankvolumen: 6,0 ml</li>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 51 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>subohm-fähig</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+<li>Gewicht: 58</li>
+</ul>',
+    ),
+    'VM100TPM' => array(
+        'icNumber' => 'VM100TPM',
+        'number' => 'VM100TPM',
+        'name' => 'Vapor Storm - Trip - Akkuträger - 200 Watt',
+        'commonName' => 'Trip',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Vapor Storm',
+        'brand' => 'Vapor Storm',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Trip Akkuträger von Vapor Storm erreicht eine Leistung von bis zu 200 Watt und hat trotz seine Maße von 85 mm x 51 mm x 27 mm eine ergonomische Bauform. Über das Display können Sie alle relevanten Parameter ablesen. Einstellung nehmen Sie bei dem Trip 200 Watt Akkuträger klassisch über die Feuertaste sowie den zwei Einstelltasten vor. Der Vapor Storm Trip 200 Watt unterstützt das Vapen im Variable Wattage, Variable Temperature, Curve oder Bypass Modus. Den Akkuträger nehmen Sie über zwei wechselbare wiederaufladbare 18650er Akkuzellen in Betrieb. Dieses sind aber nicht Bestandteil des Lieferumfangs und müssen bei Bedarf dazu erworben werden. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Trip 200 Watt Akkuträger</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>Wichtige Merkmale: Trip 200 Watt AKKUTRÄGER</strong></p>
+<ul>
+<li>Ausgabemodi: VW | TC (Ni, Ti, SS) | Bypass | Cube</li>
+<li>Ausgangsspannung: 6,4 – 8,4 Volt</li>
+<li>Ausgangsleistung: 5 – 200 Watt</li>
+<li>Temperaturbereich: 100 °C – 315 °C | 200°F bis 600°F</li>
+<li>Widerstandsbereich: 0,06 – 3,0 Ohm (VW) | 0,05­ bis 1,0 Ohm (TC/)</li>
+<li>Ladestrom: DC 5V/2A</li>
+<li>Maße: 85 mm x 51 mm x 27 mm</li>
+<li>Gewindetyp: 510</li>
+<li>update-fähig</li>
+<li>0.91” Display</li>
+<li>Gewicht: 90g</li>
+</ul>',
+    ),
+    'VM100TPC' => array(
+        'icNumber' => 'VM100TPC',
+        'number' => 'VM100TPC',
+        'name' => 'Vapor Storm - Trip - Verdampfer',
+        'commonName' => 'Trip',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Vapor Storm',
+        'brand' => 'Vapor Storm',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Bei dem Trip Verdampfer von der Marke Vapor Storm handelt es sich um einen passender Verdampfer für den gleichnamigen Trip Akkuträger mit einer Ausgangsleistung von 200 Watt. Der Vapor Storm Trip Verdampfer fasst insgesamt sechs Milliliter E-Liquid. Frisches Liquid wird dabei über das Top-Side-Filling System von oben in den Tank eingefüllt. Der Tank wurde aus dem durchsichtigen Material Pyrex angefertigt. Somit haben Sie den Liquidstand in Ihrem Trip Verdampfer stets im Blick. Über die in der Base integrierten Airflow-Control können Sie den Luftwiderstand auf Ihre persönlichen Bedürfnisse anpassen. Der Trip Verdampfer wird Ihnen zusammen mit zwei Mesh-Verdampferköpfen geliefert. Diese haben einen geringen Widerstand von 0,2 Ohm und sind für das Vapen im Subohm-Bereich ausgelegt. Der dabei entstehende Dampfen sollte direkt in die Lunge inhaliert werden. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Trip Clearomizer</li>
+<li>2x Trip Mesh Heads 0,2 Ohm</li>
+<li>1x Ersatz-Glastank</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>Wichtige Merkmale: Trip CLEAROMIZER</strong></p>
+<ul>
+<li>Tankvolumen: 6,0 ml</li>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 51 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>subohm-fähig</li>
+<li>Top Filling-System</li>
+<li>Airflow Control</li>
+<li>Gewicht: 58</li>
+</ul>',
+    ),
+    'VM100TPH' => array(
+        'icNumber' => 'VM100TPH',
+        'number' => 'VM100TPH',
+        'name' => 'Vapor Storm - Trip - Mesh Head - 0,2 Ohm (3 Stück pro Packung)',
+        'commonName' => 'Trip',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Vapor Storm',
+        'brand' => 'Vapor Storm',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Trip Mesh Heads von Vapor Storm arbeiten in einem Leistungsbereich von 20 Watt bis 80 Watt. Der von Vapor Storm empfohlene Leistungsbereich beträgt 40 Watt bis 60 Watt. In den Mesh Verdampferköpfen ist eine Mesh-Wicklung mit einem Widerstand von 0,2 Ohm. Somit sind die Trip Mesh Verdampferköpfe für das Dampfen im Subohm-Bereich ausgelegt. Verdampferköpfe gehören zu den Verschleißteilen einer E-Zigarette und sollten in regelmäßigen Abständen ausgetauscht werden. 
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,2 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Leistungsbereich: 80 Watt - 80 Watt</li>
+<li>empfohlener Leistungsbereich: 40 Watt - 60 Watt</li>
+</ul>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<ul>
+<li>Vapor Storm Trip Clearomizer Set</li>
+<li>Vapor Storm Trip E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'Z100LX' => array(
+        'icNumber' => 'Z100LX',
+        'number' => 'Z100LX',
+        'name' => 'ZQ - LEX - E-Zigarette',
+        'commonName' => 'LEX',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'ZQ',
+        'brand' => 'ZQ',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause ZQ erhalten Sie das Lex E-Zigaretten Set. Bei der Lex E-Zigarette handelt es sich um ein Pod System. Hier wechseln Sie in regelmäßigen Abständen selbstständig den Pod, der einen fest verbauten Verdampferkopf besitzt. Der ZQ Lex Akku hat eine Kapazität von 420mAh. Das Laden des Akkus erfolgt über das mitgelieferte USB-C Kabel. Bei einem Ladestrom von 1A ist das vollständige Laden innerhalb einer halben Stunde möglich. Die im Lieferumfang enthaltenen Pods haben einen Widerstand von je 1,6 Ohm, sowie ein Tankvolumen von je 1,5ml. Über das Side-Filling System haben Sie die Möglichkeit frisches Liquid in den Tank zu füllen. Die an der unteren Seite des Akkus sitzende LED informiert Sie über den aktuellen Ladestand des Akkus. Grün steht hier für 100% - 75%, Blau für 75% - 35% und Rot für 35% - 0%. Sobald Sie einen Pod in den Akku einführen, informiert Sie der Lex Akku durch eine kurze Vibration über den korrekten Sitz. Trotz der kompakten Bauform der ZQ Lex E-Zigarette sind einige Sicherheits-Features verbaut. Es sind ein Kurzschluss-, Tiefentladeschutz sowie eine acht Sekunden Zugbegrenzung vorhanden.
+Die fest verbauten Verdampferköpfe sind aus robuster Keramik, welche laut Hersteller einen reinen Geschmack liefern sollen. Aufgrund des hohen Widerstandes von 1,6 Ohm eignet sich das Lex E-Zigaretten Set für moderate Züge vom Mund in die Lunge. Bitte beachten Sie, dass Pods zu den Verschleißteilen gehören und diese regelmäßig gewechselt werden müssen. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Lex E-Zigaretten Set</li>
+<li>2x ZQ LEX Pods mit 1,6 Ohm</li>
+<li>1x USB-C Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>ZQ Lex E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 420mAh</li>
+<li>Ausgangsleistung: 8 bis 12 Watt</li>
+<li>Tankvolumen: 1,5 ml</li>
+<li>Side Filling</li>
+<li>Zugautomatik</li>
+<li>USB-C</li>
+<li>Maße: 21,25 mm x 11 mm x 113,65 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'Z100LXP' => array(
+        'icNumber' => 'Z100LXP',
+        'number' => 'Z100LXP',
+        'name' => 'ZQ - LEX - Pod - 1,6 Ohm (2 Stück pro Packung)',
+        'commonName' => 'LEX',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'ZQ',
+        'brand' => 'ZQ',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die von ZQ hergestellten Pods für das Lex E-Zigaretten Set haben ein Tankvolumen von je 1,5 ml. Der verbaute Verdampferkopf hat einen Widerstand von 1,6 Ohm und eignet sich somit für das moderate Dampfen vom Mund in die Lunge (MTL). Über die Lasche an der Seite des Pods haben Sie die Möglichkeit frisches Liquid in den Tank zu füllen. Beachten Sie bitte, dass Pods zu den Verschleißteilen gehören und diese regelmäßig bei Veränderungen im Geschmack oder der Dampfentwicklung gewechselt werden sollen. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>2x ZQ LEX Pod mit 1,6 Ohm</li>
+<br>
+<br>',
+    ),
+    'VS100DG' => array(
+        'icNumber' => 'VS100DG',
+        'number' => 'VS100DG',
+        'name' => 'Vaporesso - Degree - E-Zigarette',
+        'commonName' => 'Degree',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Vaporesso erhalten Sie das Degree E-Zigaretten Set. Bei dem Set handelt es sich um ein sogenanntes Pod System, welches wechselbare Pods besitzt anstelle eines Tanks mit 510er Gewinde zum schrauben. Die Verdampferköpfe sind hier fest verbaut und werden mit dem gesamten Pod getauscht sobald Sie Veränderungen im Geschmack feststellen. Der fest verbaute Akku des Degree E-Zigaretten Sets hat 950mAh und wird mittels des im Lieferumfang enthaltenen USB-Kabels geladen. Dank des 0,69 Zoll Displays haben Sie alle Einstellungen stets im Blick. Der im inneren des Degree Akkus verbaute AXON Chip hat eine vielzahl an Funktionen. Er erkennt automatisch den Liquidstand im Pod und warnt Sie sobald das Liquid einen bestimmten Füllstand erreicht hat. Desweiteren stoppt er auch die Ausgabe sollte das Liquid im Tank einmal leer sein und schützt somit vor einem Trockenlaufen der Verdampferköpfe. Sie erhalten im Set zwei Pods. Der 0,6 Ohm Pod ist aufgrund des geringen Widerstandes für das Dampfen mit tiefen Zügen direkt in die Lunge geeignet (DL). Der 1,3 Ohm Pod hingegen ist für das moderate Dampfen vom Mund in die Lunge geeignet. Hier wird der Dampf zuerst im Mund gesammelt und anschließend inhaliert. Der Vaporesso Degree Akku erkennt automatisch den genutzten Pod und stellt anschließend die Leistung für Sie ein. Dennoch haben Sie über die Einstelltasten unterhalb des Displays die Möglichkeit die Spannung an Ihre Vorstellungen anzupassen. Die Maximale Ausgangsspannung liegt bei 30 Watt. Zum befüllen der Pods nutzen Sie die Öffnung neben dem Mundstück an der Oberseite des Pods. Hier wird lediglich die Spitze Ihrer Liquidflasche aufgesetzt und mittels leichtem Druck das Liquid in den Tank gefüllt. Bitte beachten Sie dass Pods zu den Verschleißteilen gehören und diese regelmäßig bei abnehmender Dampfentwicklung oder veränderungen im Geschmack gewechselt werden müssen. Zum wechseln der Pods nehmen Sie die Abdeckung an der Seite des Vaporesso Degree E-Zigaretten Sets ab und ziehen den Pod heraus. anschließend setzen Sie einen neuen Pod ein. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Degree E-Zigaretten Set</li>
+<li>1x Vaporesso CCell Pod mit 1,3 Ohm</li>
+<li>1x Vaporesso Meshed Pod mit 0,6 Ohm</li>
+<li>1x USB-Ladekabel</li>
+<li>10 ml Liquidflasche</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Degree E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 950mAh</li>
+<li>Ausgangsleistung: 5 bis 30 Watt</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Top Filling</li>
+<li>Airflow</li>
+<li>Dry-Hit Protection</li>
+<li>AXON Chip</li>
+<li>Maße: 16,45 mm x 41,5 mm x 90,5 mm</li>
+</ul>
+<br>
+<br>
+<strong>CCell Pod</strong>
+<ul>
+<li>Widerstand: 1,3 Ohm</li>
+<li>Wicklung: Spule</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Leistungsbereich: 7 Watt - 12,5 Watt</li>
+<li>geeignet für MTL
+</ul>
+<br>
+<br>
+<strong>Meshed Pod</strong>
+<ul>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Leistungsbereich: 16 Watt - 22Watt</li>
+<li>geeignet für DL
+</ul>
+<br>
+<br>
+',
+    ),
+    'VS100DGC' => array(
+        'icNumber' => 'VS100DGC',
+        'number' => 'VS100DGC',
+        'name' => 'Vaporesso - cCell Pod - 1,3 Ohm (2 Stück pro Packung)',
+        'commonName' => 'cCell Pod',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause Vaporesso erhalten Sie pro bestellter Packung zwei 1,3 Ohm CCell Pods. Das Tankvolumen beträgt 2 ml. Zum Nachfüllen setzen Sie lediglich Ihre Liquidflasche auf die neben dem Mundstück gelegene Öffnung, um anschließend mit leichtem Druck das Liquid in den Tank zu füllen. Durch den hohen Widerstand von 1,3 Ohm ist der Pod für das Vapen mit moderaten Zügen vom mund in die Lunge geeignet. Bitte beachten Sie dass der Pod zu den Verschleißteilen gehört und regelmäßig bei Veränderungen im Geschmack gewechselt werden sollte.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x Vaporesso CCell Pod mit 1,3 Ohm</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>CCell Pod</strong>
+<ul>
+<li>Widerstand: 1,3 Ohm</li>
+<li>Wicklung: Spule</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Leistungsbereich: 7 Watt - 12,5 Watt</li>
+<li>geeignet für MTL
+</ul>
+<br>
+<br>',
+    ),
+    'VS100DGM' => array(
+        'icNumber' => 'VS100DGM',
+        'number' => 'VS100DGM',
+        'name' => 'Vaporesso - Meshed Pod - 0,6 Ohm (2 Stück pro Packung)',
+        'commonName' => 'Meshed Pod',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie erhalten pro bestellter Packung zwei 0,6 Ohm Meshed Pods von Vaporesso für Ihr Degree E-Zigaretten Set. Da der Widerstand unter einem Ohm liegt, eignet sich der 0,6 Ohm Pod für das Dampfen mit tiefen Zügen direkt in die Lunge (DL). Um Ihr Liquid in Tank zu füllen, setzen Sie einfach die Spitze Ihrer Liquidflasche auf die Öffnung neben dem Mundstück. Im Anschluss drücken Sie leicht auf die Flasche um das Liquid in den Tank zu befördern. Auch Pods gehören zu den Verschleißteilen. Bitte Tauschen Sie diese um einen gleichbleibenden Geschmack zu gewährleisten. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>2x Vaporesso Meshed Pod mit 0,6 Ohm</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Meshed Pod</strong>
+<ul>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Anzahl der Wicklung: eine</li>
+<li>Leistungsbereich: 16 Watt - 22Watt</li>
+<li>geeignet für DL
+</ul>
+<br>
+<br>
+',
+    ),
+    'SG100WXH' => array(
+        'icNumber' => 'SG100WXH',
+        'number' => 'SG100WXH',
+        'name' => 'Sigelei - WF-X1 Head - 0,17 Ohm (5 Stück pro Packung)',
+        'commonName' => 'WF-X1',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Sigelei',
+        'brand' => 'Sigelei',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Dieser WF-X1 Verdampferkopf aus dem Hause Sigelei wurde mit einem Widerstand von 0,17 Ohm ausgestattet. Der bestmögliche Leistungsbereich, in dem Sie den WF-X1 nutzen können, liegt zwischen 50 und 70 Watt. Entwickelt wurde der Verdampferkopf für das Dampfen im Subohm-Bereich mit direkter Lungeninhalation. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören. Um einer negativen Dampf- und/oder Geschmacksentwicklung entgegenzuwirken, sollten Sie den Verdampferkopf in regelmäßigen Abständen gegen einen neuen austauschen. Eine Packung enthält 5 Sigelei WF-X1 0,17 Ohm Verdampferköpfe.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Sigelei WF-X1 0,17 Ohm Verdampferkopf</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 0,17 Ohm</li>
+<li>Leistungsbereich: 50 - 70 Watt</li>
+<li>Material: Mesh</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>Snowwolf Mfeng UX E-Zigaretten Set</li>
+<br>',
+    ),
+    'PV100VI' => array(
+        'icNumber' => 'PV100VI',
+        'number' => 'PV100VI',
+        'name' => 'VooPoo - Vinci - E-Zigarette',
+        'commonName' => 'Vinci',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das E-Zigaretten Set Vinci by Voopoo beseht aus einem Akku mit 1500mAh und einem Pod-System mit 5,5ml Tankvolumen. Der Vinci Akku kann über das mitgelieferte USB-Kabel geladen werden. Zudem können Sie Ihre Parameter über den 0,96" Farb-Bildschirm ablesen. Das Vinci Pod-System wird über die sogenannte Steckfunktion mit dem Akku verbunden. Den Tank vom Pod-System fülllen Sie über das Side-Filling-System mit Liquid. Im Lieferumfang sind zwei Verdampferköpfe enthalten, die für die direkte Lungenzüge ausgelegt sind.
+<br>
+<br>
+<strong>Lieferumfang:</li>
+<ul>
+<li>1x Vinci Akku</li>
+<li>1x Vinci Pod</li>
+<li>1x PnP-VM1 0,3 Ohm Head</li>
+<li>1x PnP-R1 0,8 Ohm Head</li>
+<li>1x USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Vinci E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 1500mAh</li>
+<li>Spannungsausgabe: 3,2V - 4,2V</li>
+<li>Ausgangsleistung: 5 - 40 Watt</li>
+<li>Widerstandsbereich: 0,1 - 3,0 Ohm</li>
+<li>0,96" Farb-Display</li>
+<li>GENE.AI Chip</li>
+<li>Tankvolumen: 5,5 ml</li>
+<li>Side-Filling-System</li>
+<li>Maße: 25,3 mm x 25,3 mm x 104 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'PV100VM1' => array(
+        'icNumber' => 'PV100VM1',
+        'number' => 'PV100VM1',
+        'name' => 'VooPoo - PnP-VM1 Head - 0,3 Ohm (5 Stück pro Packung)',
+        'commonName' => 'PnP-VM1',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Pro Packung erhalten Sie insgesamt 5 Voopoo Verdampferköpfe. Der PnP-VM1 Verdampferkopf mit 0,3 Ohm kann zwischen 32 Watt und 40 Watt betrieben werden. Diese sind zudem auch für das Subohm-Dampfen ausgelegt. Die Voopoo Vinci E-Zigarette unterstützt beispielsweise die PnP-VM1 Verdampferköpfe.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,3 Ohm</li>
+<li>Wicklung: Regular</li>
+<li>Leistungsbereich: 32-40 Watt</li>
+<li>geeignet für DL</li>
+</ul>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>Drag Baby Trio</li>
+<li>Vinci E-Zigaretten Set</li>',
+    ),
+    'PV100M1H' => array(
+        'icNumber' => 'PV100M1H',
+        'number' => 'PV100M1H',
+        'name' => 'VooPoo - PnP-M1 Head - 0,45 Ohm (5 Stück pro Packung)',
+        'commonName' => 'PnP-M1',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Verdampferköpfe zählen zu den Verschleißteilen und sollten in regelmäßigen Intervalen ausgetauscht werden. Dieses betrifft auch den PnP-M1 Verdampferkopf mit 0,45 Ohm. Der Leistungsbereich liegt hier zwischen 28 Watt und 35 Watt und pro Packung sind 5 Voopoo Verdampferköpfe enthalten.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,45 Ohm</li>
+<li>Wicklung: Single Mesh Coil</li>
+<li>Leistungsbereich: 28-35 Watt</li>
+<li>geeignet für DL</li>
+</ul>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>Drag Baby Trio</li>
+<li>Vinci E-Zigaretten Set</li>',
+    ),
+    'PV100M2H' => array(
+        'icNumber' => 'PV100M2H',
+        'number' => 'PV100M2H',
+        'name' => 'VooPoo - PnP-M2 Head - 0,6 Ohm (5 Stück pro Packung)',
+        'commonName' => 'PnP-M2',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Subohm-Verdampferköpfe namens PnP-M2 der Marke Voopoo haben einen Widerstand von 0,6 Ohm und sind <b>nicht</b> für das moderate Dampfen geeignet. Zwischen 20 Watt und 28 Watt werden die Verdampferkpfe betrieben. Pro Packung finden Sie insgesamt 5 Verdampferköpfe vor.
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Wicklung: Single Mesh</li>
+<li>Leistungsbereich: 20-28 Watt</li>
+<li>geeignet für DL</li>
+</ul>
+<br>
+<b>Geeignet für:</b>
+<ul>
+<li>Drag Baby Trio</li>
+<li>Vinci E-Zigaretten Set</li>',
+    ),
+    'AS100TA' => array(
+        'icNumber' => 'AS100TA',
+        'number' => 'AS100TA',
+        'name' => 'Aspire - Tigon AIO - E-Zigarette',
+        'commonName' => 'Tigon AIO',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<h2>Aspire Tigon Pod mit 0,4 Ohm</h2>
+Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die Akkuzelle lässt sich über das mitgelieferte USB-C Kabel laden. Es ist möglich mit einem Quick Charge Netzstecker den Akku bis zu 2A aufzuladen. Der Netzstecker ist nicht im Lieferumfang enthalten und muss separat erworben werden. Der Tigon AIO Pod hat ein Fassungsvolumen von 4,6 ml, welchen Sie über ein Bottom-Filling System von unten befüllen können. Ebenfalls im Lieferumfang enthalten sind zwei Verdampferköpfe. Zum einen der bereits im Pod verbaute 0,4 Ohm Verdampferkopf als auch der 0,7 Ohm Mesh Verdampferkopf. Da Aspire hier auf die bekannten Tigon Verdampferköpfe setzt, sind somit alle Verdampferköpfe aus der Tigon-Reihe nutzbar. Die Tigon AIO gibt seine Spannung im Bypass Modus aus, dies bedeutet dass Sie bei voll geladenem Akku eine Ausgangsspannung von 4,2 Volt erreichen und im weiteren Verlauf bei mindestens 3,3 Volt enden. Den Aktuellen Ladestand erfahren Sie über eine LED, welche um die Feuertaste herum angebracht ist. Folgende Farben stehen für den Akkustand: grün bis 3,8 Volt, blau bis 3,5 Volt sowie rot unter 3,5 Volt.Die Airflow-Control ist oberhalb des Feuertasters angebracht und kann von offen bis moderat eingestellt werden. Somit ist das Gerät sowohl für Dampfer mit direkten Zügen in die Lunge geeignet, als auch für Dampfer mit moderaten Zügen vom Mund in die Lunge. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Tigon AIO</li>
+<li>1x Tigon Head 0,4 Ohm</li>
+<li>1x Tigon Mesh Head 0,7 Ohm</li>
+<li>1x Tigon AIO Pod</li>
+<li>1x USB-C Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale Aspire Tigon AIO E-Zigaretten Set</strong>
+<ul>
+<li>Akkukapazität: 1300mAh</li>
+<li>Ausgangsspannung: 3,3 bis 4,2 Volt</li>
+<li>Tankvolumen: 4,6 ml</li>
+<li>Bottom Filling</li>
+<li>Variable Airflow</li>
+<li>Bypass Modus</li>
+<li>MTL und DL</li>
+<li>Quick Charge mit bis zu 2A</li>
+<li>Maße: 23 mm x 312 mm x 109,5 mm</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'AS100TAP' => array(
+        'icNumber' => 'AS100TAP',
+        'number' => 'AS100TAP',
+        'name' => 'Aspire - Tigon AIO - Pod - 0,4 Ohm',
+        'commonName' => 'Tigon AIO',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Aspire Tigon AIO Pod besitzt ein 4,6 ml Tankvolumen. Sie können über das an der Unterseite angebrachte einfüllloch frisches Liquid in den Tank geben. Hierzu entfernen Sie lediglich den Pod vom Akku und öffnen die kleine Lasche welche das Einfüllloch verschließt. Ein 0,4 Ohm Tigon Verdampferkopf ist bereits installiert. Die Verdampferköpfe sind wechselbar, was den Pod somit wiederverwendbar macht. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen gehören und diese regelmäßig bei abnehmender Dampfmenge oder Veränderungen im Geschmack getauscht werden sollten. <br>
+<br>
+<strong>Lieferumfang</strong>
+<li>1x Aspire Tigon AIO Pod</li>
+<li>1x Aspire Tigon 0,4 Ohm Head</li>
+<br>
+<br>
+<strong>Wichtige Merkmale Aspire Tigon Pod</strong>
+<li>Widerstand: 0,4 Ohm</li>
+<li>Tankvolumen: 4,6 ml</li>
+<li>geeignet für alle Tigon Heads</li>
+<br>
+<br>',
+    ),
+    'AS100AP' => array(
+        'icNumber' => 'AS100AP',
+        'number' => 'AS100AP',
+        'name' => 'Aspire - AVP Pro - E-Zigarette',
+        'commonName' => 'AVP Pro',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Aspire AVP Pro E-Zigaretten Set besitzt einen fest verbauten Akku mit einer Kapazität von 1.200mAh. Der Akku unterstützt das Dampfen mit vier einstellbaren Ausgangsleistungen (10, 12, 14 und 16 Watt). Über zweimaliges Bedienen der Feuertaste wechseln Sie zwischen den Ausgangsleistungen. Eine LED informiert Sie darüber, in welchem Modi Sie sich gerade befinden und gibt darüber hinaus Info, sobald Sie den Akku mit neuer Energie versorgen sollten. Sie können das im Lieferumfang befindliche Pod-System mit bis zu 4ml Liquid befüllen. Sie nutzen hierzu ein Bottom-Filling-System. Sie können wahlweise einen der mitgelieferten Verdampferköpfe in das Pod-System einsetzen. Sie können wählen zwischen einem Widerstand von 0,65 Ohm, dieser ist für das Dampfen im Subohm-Bereich geeignet, oder Sie nutzen den Verdampferkopf mit 1,15 Ohm und sammeln zuerst den Dampf im Mundraum und inhalieren anschließendin die Lunge. Bitte beachten Sie, dass es sich bei den Verdampferköpfen um sogenannte Verschleißartikel handelt, deren regelmäßiger Wechsel für ein gleichbleibendes Dampferlebnis empfehlenswert ist.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x AVP Pro Akku</li>
+<li>2x AVP Pro Pod </li>
+<li>1x AVP Pro Mesh Head 0,65 Ohm</li>
+<li>1x AVP Pro Head 1,15 Ohm</li>
+<li>1x USB-C-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>AVP PRO E-ZIGARETTE</strong>
+<ul>
+<li>Akkukapazität: 1.200 mAh</li>
+<li>Tankvolumen: 4 ml</li>
+<li>Ausgangsleistung/ Modi: 10, 12, 14 und 16 Watt (konstant)</li>
+<li>Material Head: Kanthal AF</li>
+<li>Höhe: 96 mm</li>
+<li>Breite: 44 mm</li>
+<li>Tiefe: 17 mm</li>
+<li>Bottom-Filling System</li>
+<li>Airflow-Control</li>
+<li>LED-Indikator</li>
+</ul>
+<br>
+<br>',
+    ),
+    'AS100APP' => array(
+        'icNumber' => 'AS100APP',
+        'number' => 'AS100APP',
+        'name' => 'Aspire - AVP Pro - Pod - 0,65 Ohm Mesh Head',
+        'commonName' => 'AVP Pro',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Nutzen Sie das Aspire AVP Pro Pod-System in der Aspire AVP Pro E-Zigarette. Das Tankvolumen des Pods liegt bei 4ml, welches über ein Bottom-Filling-System gefüllt wird. Im Lieferumfang befindet sich ein AVP Pro Mesh Verdampferkopf, der einen Widerstand von 0,65 Ohm aufweist. Aufgrund des Widerstandes können Sie den entstehenden Dampf ohne Umwege direkt in die Lunge inhalieren. Bitte beachten Sie, dass Verdampferköpfe Verschleißartikel sind und Sie sie daher regelmäßig wechseln sollten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x AVP Pro Pod </li>
+<li>1x AVP Pro Mesh Head 0,65 Ohm</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>AVP PRO Pod</strong>
+<ul>
+<li>Tankvolumen: 4 ml</li>
+<li>Material Head: Kanthal AF</li>
+<li>Bottom-Filling System</li>
+<li>Airflow-Control</li>
+</ul>
+<br>
+<br>',
+    ),
+    'AS100APM' => array(
+        'icNumber' => 'AS100APM',
+        'number' => 'AS100APM',
+        'name' => 'Aspire - AVP Pro - Mesh Head - 0,65 Ohm (5 Stück pro Packung)',
+        'commonName' => 'AVP Pro',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Es handelt sich um einen passenden Ersatzartikel für die AVP Pro E-Zigarette von Aspire. Sie erhalten insgesamt 5 Verdampferköpfe mit einem Widerstand von je 0,65 Ohm. Sie können, aufgrund des Widerstandes, im Subohm-Bereich, also mit direkten Lungenzügen dampfen. Bitte beachten Sie, dass Verdampferköpfe regelmäßig ausgewechselt sollten, da sich sonst die Geschmacks- oder Dampfentwicklung negativ beeinflussen lässt, da Verdampferköpfe Verschleißartikel sind.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,65 Ohm</li>
+<li>Geeignet für Lungeninhalation</li>
+<br>
+<br>
+<br>
+<b>Geeignet für:</b>
+<li>Aspire AVP Pro Pod-System</li>
+<li>Aspire AVP Pro E-Zigaretten Set</li>
+<br>
+<br>',
+    ),
+    'AS100APH' => array(
+        'icNumber' => 'AS100APH',
+        'number' => 'AS100APH',
+        'name' => 'Aspire - AVP Pro Head - 1,15 Ohm (5 Stück pro Packung)',
+        'commonName' => 'AVP Pro',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Es handelt sich um einen passenden Ersatzartikel für die AVP Pro E-Zigarette von Aspire. Sie erhalten insgesamt 5 Verdampferköpfe mit einem Widerstand von je 0,65 Ohm. Sie können, aufgrund des Widerstandes, im Subohm-Bereich, also mit direkten Lungenzügen dampfen. Bitte beachten Sie, dass Verdampferköpfe regelmäßig ausgewechselt sollten, da sich sonst die Geschmacks- oder Dampfentwicklung negativ beeinflussen lässt, da Verdampferköpfe Verschleißartikel sind.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,65 Ohm</li>
+<li>Geeignet für Lungeninhalation</li>
+<br>
+<br>
+<br>
+<b>Geeignet für:</b>
+<li>Aspire AVP Pro Pod-System</li>
+<li>Aspire AVP Pro E-Zigaretten Set</li>
+<br>
+<br>',
+    ),
+    'JK100A10-KM' => array(
+        'icNumber' => 'JK100A10-KM',
+        'number' => 'JK100A10-KM',
+        'name' => 'Joker Flavour - King Mint - Aroma - 10 ml',
+        'commonName' => 'King Mint',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Minze',
+        'flavorCategory' => 'Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Minze</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Minze</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JK100A10-BQ' => array(
+        'icNumber' => 'JK100A10-BQ',
+        'number' => 'JK100A10-BQ',
+        'name' => 'Joker Flavour - Blueberry Queen - Aroma - 10 ml',
+        'commonName' => 'Blueberry Queen',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Cremiges',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Blaubeere, Cream',
+        'flavorCategory' => 'Beeren, Cremiges',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Blaubeere, Cream</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere, Cream</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JK100A10-JB' => array(
+        'icNumber' => 'JK100A10-JB',
+        'number' => 'JK100A10-JB',
+        'name' => 'Joker Flavour - Jacks MTL Butterscotch Tobacco - Aroma - 10 ml',
+        'commonName' => 'Jacks MTL Butterscotch Tobacco',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Tabak#!#AROMEN > Süßigkeiten',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Tabak, Karamell',
+        'flavorCategory' => 'Tabak, Süßigkeiten',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Tabak, Karamell</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak, Karamell</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JK100A10-JN' => array(
+        'icNumber' => 'JK100A10-JN',
+        'number' => 'JK100A10-JN',
+        'name' => 'Joker Flavour - Jacks MTL NuttyBacco - Aroma - 10 ml',
+        'commonName' => 'Jacks MTL NuttyBacco',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Tabak#!#AROMEN > Nüsse',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Tabak, Nuss',
+        'flavorCategory' => 'Tabak, Nüsse',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Tabak, Nuss</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak, Nuss</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JK100A10-AA' => array(
+        'icNumber' => 'JK100A10-AA',
+        'number' => 'JK100A10-AA',
+        'name' => 'Joker Flavour - Ace Apple - Aroma - 10 ml',
+        'commonName' => 'Ace Apple',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Zitrusfrüchte#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Apfel, Limette, Koolada',
+        'flavorCategory' => 'Früchte, Zitrusfrüchte, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfel, Limette, Koolada</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel, Limette, Koolada</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JK100A10-DC' => array(
+        'icNumber' => 'JK100A10-DC',
+        'number' => 'JK100A10-DC',
+        'name' => 'Joker Flavour - Diamond Cake - Aroma - 10 ml',
+        'commonName' => 'Diamond Cake',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gewürze#!#AROMEN > Süßigkeiten#!#AROMEN > Cremiges',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Vanille, Karamell, Cream',
+        'flavorCategory' => 'Gewürze, Süßigkeiten, Cremiges',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille, Karamell, Cream</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille, Karamell, Cream</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JK100A10-KB' => array(
+        'icNumber' => 'JK100A10-KB',
+        'number' => 'JK100A10-KB',
+        'name' => 'Joker Flavour - King Berrys - Aroma - 10 ml',
+        'commonName' => 'King Berrys',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > Beeren',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Orange, Zitrone, Himbeere, Erdbeere',
+        'flavorCategory' => 'Zitrusfrüchte, Beeren',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Orange, Zitrone, Himbeere, Erdbeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Orange, Zitrone, Himbeere, Erdbeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JK100A10-SA' => array(
+        'icNumber' => 'JK100A10-SA',
+        'number' => 'JK100A10-SA',
+        'name' => 'Joker Flavour - Spades Apple Cake - Aroma - 10 ml',
+        'commonName' => 'Spades Apple Cake',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gebäck',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Apfelkuchen',
+        'flavorCategory' => 'Gebäck',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfelkuchen</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfelkuchen</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'JK100A10-CC' => array(
+        'icNumber' => 'JK100A10-CC',
+        'number' => 'JK100A10-CC',
+        'name' => 'Joker Flavour - Caramel Cream Ace - Aroma - 10 ml',
+        'commonName' => 'Caramel Cream Ace',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Süßigkeiten#!#AROMEN > Bonbons & Kaugummi#!#AROMEN > Milch & Co.',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Karamell, Toffee, Sahne',
+        'flavorCategory' => 'Süßigkeiten, Bonbons & Kaugummi, Milch & Co.',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Karamell, Toffee, Sahne</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Toffee, Sahne</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'SW100KF' => array(
+        'icNumber' => 'SW100KF',
+        'number' => 'SW100KF',
+        'name' => 'Snowwolf - Kfeng - E-Zigarette',
+        'commonName' => 'Kfeng',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Snowwolf Kfeng E-Zigaretten Set setzt sich aus dem Kfeng Akkuträger mit einer max. Ausgangsleistung von 80 Watt und dem Kfeng Verdampfer mit dem verbauten Kfeng-X Mesh Verdampferkopf zusammen. Der Verdampfer kommt mit einer Füllmenge von 3 Millilitern. Es handelt sich um ein Top-Filling-Gerät mit regulierbarer Luftzirkulation. Sie gibt Ihnen die Option, den Zugwiderstand Ihrer E-Zigarette entsprechend Ihrer persönlichen Vorlieben anzupassen. Über einen in der Verdampferbasis verbauten Ring lässt sie sich stufenlos steuern. Der vorinstallierte Kfeng-X Mesh Verdampferkopf mit einem Widerstand von 0,3 Ohm zielt auf direkte Lungeninhalationen ab. Die optimale Leistung für den Verdampferkopf beträgt 30 Watt, Sie können sich jedoch noch sicher in einem Bereich von 25 Watt bis 35 Watt bewegen. Die Snowwolf Kfeng E-Zigarette bietet diverse Modi zur Wahl. Unter anderem den Temperatur Control-Modus (TC/TCR), den Variable Wattage Modus (VW) und den Smart Curve-Modus, in dem Sie für die einzelnen Zugphasen mehrere verschiedene Werte einstellen können. Der Mod arbeitet mit einer Reaktionsgeschwindigkeit von 0,008 Sekunden. Für Reaktionsgeschwindigkeit sorgt der eingesetzte IFV 80 Smart Chip. Alle relevanten Daten und Ihre Einstellungen können Sie dem eingelassenen 0,69” OLED Display entnehmen. Geladen wird das Gerät über das im Lieferumfang enthaltene USB-C-Kabel. Die Snowwolf Kfeng E-Zigarette verfügt über alle sicherheitsrelevanten Funktionen. Zum Einsatz kommen: Überlade-, Tiefenentlade-, Kurzschluss-, sowie ein Überhitzungsschutz.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Kfeng Akkuträger</li>
+<li>1x Kfeng Clearomizer Set mit Kfeng-X Mesh 0,3 Ohm Head</li>
+<li>1x Ersatz-Glastank 2ml</li>
+<li>1x Ersatz O-Ringe</li>
+<li>1x USB-C-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Top-Filling</li>
+<li>Akku Kapazität: 2500mAh</li>
+<li>0,69” OLED Display</li>
+<li>Ausgabe-Modi: VW, Smart Curve, TC/TCR (NI, TI, SS)</li>
+<li>Chip: IFV80 Smart Chip</li>
+<li>Maße: 125 mm x 35 mm x 30 mm</li>
+<li>Ausgangsspannung: 7,5 Volt</li>
+<li>Ausgangsleistung: 5 Watt - 80 Watt</li>
+<li>Widerstandsbereich: 0,2 Ohm - 3 Ohm</li>
+<li>Widerstand: 0,3 Ohm</li>
+<li>Airflow-Control</li>
+<br>
+<br>
+',
+    ),
+    'SW100MA' => array(
+        'icNumber' => 'SW100MA',
+        'number' => 'SW100MA',
+        'name' => 'Snowwolf - Kfeng - Verdampfer',
+        'commonName' => 'Kfeng',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Snowwolf Kfeng Verdampfer hat einen verbauten Snowwolf Kfeng-X Mesh Verdampferkopf mit einem Widerstand von 0,3 Ohm und wird dadurch von Dampfern gewählt, die das Dampfen mit direkten Lungenzügen (DL) bevorzugen. Der Einsatzbereich des Verdampferkopfes liegt in einer Spanne zwischen 25 Watt und 35 Watt. Der Hersteller empfiehlt jedoch mit einer Ausgangsleistung von 30 Watt zu dampfen. Das integrierte Top-Filling-System erlaubt es Ihnen, frisches Liquid direkt von oben nachzufüllen, indem Sie das Mundstück vorsichtig zur Seite schieben bis das Einfüllloch vollständig frei liegt. Dort füllen Sie bitte Ihr frisches Liquid hinein. Im Anschluss bewegen Sie das Mundstück wieder an seinen ursprünglichen Platz zurück. Das Volumen des gläsernen Tanks beträgt 3 Milliliter und ermöglicht die Sicht auf den aktuellen Füllstand. Die regulierbare Luftzufuhr gibt Ihnen die Option, den Zugwiderstand Ihrer E-Zigarette entsprechend Ihrer persönlichen Vorlieben anzupassen. Über einen, in der Verdampferbasis, verbauten Ring lässt sie sich stufenlos steuern. Je weiter die Lufteinlassschlitze geöffnet sind, desto geringer fällt der Zugwiderstand aus. Beim Dampfen im Subohm Bereich ist eine weit geöffnete Luftzufuhr zu empfehlen. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Kfeng Clearomizer Set mit Kfeng-X Mesh 0,3 Ohm Head</li>
+<li>1x Ersatz-Glastank 2ml</li>
+<li>1x Ersatz O-Ringe</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Tankvolumen: 3 ml</li>
+<li>Top-Filling</li>
+<li>Höhe: 43 mm</li>
+<li>Durchmesser: 22 mm</li>
+<li>Leistungsbereich: 25 Watt - 35 Watt</li>
+<li>Empfohlene Leistung: 30 Watt</li>
+<li>Widerstand: 0,3 Ohm</li>
+<li>Airflow-Control</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Snowwolf Kfeng E-Zigarette</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'SW100MX' => array(
+        'icNumber' => 'SW100MX',
+        'number' => 'SW100MX',
+        'name' => 'Snowwolf - Kfeng-X - Mesh Head - 0,3 Ohm (5 Stück pro Packung)',
+        'commonName' => 'Kfeng-X',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Snowwolf',
+        'brand' => 'Snowwolf',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Insgesamt erhalten Sie fünf Stück der Kfeng-X Mesh 0,3 Ohm Verdampferköpfe von Snowwolf. Es wurde eine Mesh-Wicklung verwendet und sie sind kombinierbar mit der Snowwolf Kfeng E-Zigarette bzw. dem Snowwolf Kfeng Verdampfer. Jeder Verdampferkopf weist einen Widerstand von 0,3 Ohm auf. Mit den Verdampferköpfen sind direkte Lungenzüge möglich. Die empfohlene Leistung der Verdampferköpfe liegt bei 30 Watt. Sie können sich jedoch in einer Spanne von 25 Watt bis zu 35 Watt bewegen. Sollten Sie eine Veränderung des Geschmacks oder der Dampfentwicklung feststellen, ist es an der Zeit den zu den Verschleißteilen zählenden Verdampferkopf gegen einen Neuen zu wechseln.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Kfeng-X Mesh 0,3 Ohm Heads</li>
+</ul>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstand: 0,3 Ohm</li>
+<li>empfohlener Leistungsbreich: 30 Watt</li>
+<li>Leistungsbereich: 25 Watt - 35 Watt</li>
+<li>Subohm-fähig</li>
+<li>Wicklung: Mesh</li>
+</ul>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Snowwolf Kfeng Clearomizer</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SC1003P' => array(
+        'icNumber' => 'SC1003P',
+        'number' => 'SC1003P',
+        'name' => 'eLeaf - iJust 3 Pro - E-Zigarette - by SC',
+        'commonName' => 'iJust 3 Pro',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Das iJust 3 Pro E-Zigaretten Set ist ein subohmfähiges E-Zigaretten Set von der Marke SC. Das Set setzt sich aus dem fest verbauten iJust 3 Pro Akku und dem Ello Duro Clearomizer zusammen. Der Akku verfügt über eine Akkukapazität von 3.000 mAh. Mit dem beiliegenden USB Typ-C Ladekabel können Sie den Akku mit neuer Energie versorgen. Eine LED an der Feuertaste informiert Sie über den aktuellen Ladestand. Sie Dampfen im Leistungsgeregeltenmodus mit einer maximalen Ausgangsleistung von 30 bis 75 Watt. Der Ello Duro Clearomizer wird mit passenden Verdampferköpfen geliefert. Sie erhalten einen HW-M Head, der einen Widerstand von 0,15 Ohm aufweist und einen HW-T2 Head mit einem Widerstand von 0,20 Ohm. Mit diesen Verdampferköpfen ist das Dampfen im Subohm-Bereich möglich. Wenn Sie einen Unterschied des Geschmacks beim Dampfen feststellen, sollten Sie den zu den Verschleißteilen zählenden Verdampferkopf gegen einen neuen austauschen. In der Base des Verdampfers ist eine Airflow-Control verbaut über die Sie den Luftwiderstand individuell regulieren können. Der Glastank des Ello Duro Clearomizers kann bis zu 6,5ml Liquid aufnehmen. Die Befüllung erfolgt über ein Top-Filling-System direkt von oben. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x iJust 3 Pro Akku</li>
+<li>1x ELLO Duro Clearomizer</li>
+<li>1x HW-T2 Head 0,2 Ohm | DL</li>
+<li>1x HW-M Head 0,15 Ohm | DL</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x USB-Kabel Typ-C</li>
+<li>2x Bedienungsanleitungen</li>
+</ul>
+<br>
+<br>
+<strong>IJUST 3 AKKU</strong>
+<ul>
+<li>Kapazität: 3.000 mAh</li>
+<li>Ausgabemodi: VW</li>
+<li>Ausgangsleistung: 30 - 75 Watt</li>
+<li>Ausgangsspannung: 3,3 – 4,2 Volt</li>
+<li>Widerstandsbereich: 0,1 – 3,0 Ohm</li>
+<li>LED-Indikation</li>
+<li>Ladestrom: DC 5V/1A</li>
+<li>Durchmesser: 25 mm</li>
+<li>Höhe: 86 mm</li>
+<li>Gewindetyp: 510</li>
+</ul>
+<br>
+<br>
+<strong>ELLO DURO CLEAROMIZER</strong>
+<ul>
+<li>Tankvolumen: 6,5 ml</li>
+<li>Durchmesser: 28 mm</li>
+<li>Höhe: 54 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Pyrex-Glas und Edelstahl/PMMA</li>
+<li>subohm-fähig</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+</ul>
+',
+    ),
+    'SC1003PA' => array(
+        'icNumber' => 'SC1003PA',
+        'number' => 'SC1003PA',
+        'name' => 'eLeaf - iJust 3 Pro - Akku - 3.000 mAh - by SC',
+        'commonName' => 'iJust 3 Pro',
+        'type' => 'BOX_MOD',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'eLeaf',
+        'brand' => 'SC',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der von Eleaf für SC hergestellte iJust 3 Pro Akku verfügt über eine Kapazität von 3000mAh. Den fest verbauten Akku können Sie über das beiliegende USB Typ-C Kabel mit Energie versorgen. Der iJust 3 Pro Akku zeigt Ihnen über eine farbliche LED-Indikation an, in drei unterschiedlichen Farben den Ladestand an. Mit dem iJust 3 Pro Akku vapen Sie im variablen Wattmodus mit einer Leistung von 30 bis 75 Watt. Über den standardisierten 510er Anschluss können Sie den Ijust 3 Pro mit einer vielzahl an Verdampfer kombinieren. Passender Verdampfer wäre zum Beispiel der SC Ello Duro Verdampfer mit einem Fassungsvolumen von 6,5 ml.  
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x iJust 3 Pro Akku</li>
+<li>1x USB-Kabel Typ-C</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>IJUST 3 AKKU</strong>
+<ul>
+<li>Kapazität: 3.000 mAh</li>
+<li>Ausgabemodi: VW</li>
+<li>Ausgangsleistung: 30 - 75 Watt</li>
+<li>Ausgangsspannung: 3,3 – 4,2 Volt</li>
+<li>Widerstandsbereich: 0,1 – 3,0 Ohm</li>
+<li>LED-Indikation</li>
+<li>Ladestrom: DC 5V/1A</li>
+<li>Durchmesser: 25 mm</li>
+<li>Höhe: 86 mm</li>
+<li>Gewindetyp: 510</li>
+</ul>',
+    ),
+    'UB100A10-SG' => array(
+        'icNumber' => 'UB100A10-SG',
+        'number' => 'UB100A10-SG',
+        'name' => 'Ultrabio - Smaragd Green - Aroma - 10 ml',
+        'commonName' => 'Smaragd Green',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > Tee & Kaffee',
+        'supplier' => 'Ultrabio',
+        'brand' => 'Ultrabio',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '120',
+        'flavor' => 'Pfirsich, grüner Tee',
+        'flavorCategory' => 'Früchte, Tee & Kaffee',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Ultrabio</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pfirsich, grüner Tee</strong>.</p><p> ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich, grüner Tee</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'UB100A10-SY' => array(
+        'icNumber' => 'UB100A10-SY',
+        'number' => 'UB100A10-SY',
+        'name' => 'Ultrabio - Smaragd Yellow - Aroma - 10 ml',
+        'commonName' => 'Smaragd Yellow',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Melonen#!#AROMEN > Getränke',
+        'supplier' => 'Ultrabio',
+        'brand' => 'Ultrabio',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '120',
+        'flavor' => 'Wassermelone, Energy Drink',
+        'flavorCategory' => 'Melonen, Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Ultrabio</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Wassermelone, Energy Drink</strong>.</p><p> ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone, Energy Drink</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'IC100GM' => array(
+        'icNumber' => 'IC100GM',
+        'number' => 'IC100GM',
+        'name' => 'Joyetech - eGrip Mini - E-Zigarette - by InnoCigs',
+        'commonName' => 'eGrip Mini',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Die eGrip Mini E-Zigarette von InnoCigs ist ein handliches POD-Gerät mit einer Akkukapazität von 420mAh, einer Ausgangsleistung von 13 Watt und einem Tankvolumen von 1,3 Millilitern. Sie ist mit einem wechselbaren Pod ausgestattet, bei dem der Verdampferkopf fest integriert ist. Dank unterschiedlicher Widerstandswerte der beiden mitgelieferten Pods haben Sie die Möglichkeit, Ihre Züge direkt in die Lungen zu inhalieren (DL) oder sie vom Mund zur Lunge (MTL) einzuatmen. Mit dem mitgelieferten USB Typ-C Ladekabel können Sie die eGrip Mini mit Energie versorgen.  
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x eGrip Mini Akku</li>
+<li>1x eGrip Mini Pod mit 0,5 Ohm Head</li>
+<li>1x eGrip Mini Pod mit 1,2 Ohm Head</li>
+<li>1x USB-C Ladekabel</li>
+<li>1x Umhängeband</li>
+<li>1x Bedienungsanleitung</li>
+</ul>',
+    ),
+    'IC100GMP' => array(
+        'icNumber' => 'IC100GMP',
+        'number' => 'IC100GMP',
+        'name' => 'Joyetech - eGrip Mini - Pod inkl. Head (5 Stück pro Packung) - by InnoCigs',
+        'commonName' => 'eGrip Mini',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Joyetech',
+        'brand' => 'InnoCigs',
+        'piecesPerPack' => 5,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => '',
+        'flavorCategory' => null,
+        'dosage' => '',
+        'base' => null,
+        'description' => 'Der eGrip Pod von InnoCigs ist der passende Pod für Ihre eGrip Mini E-Zigarette. Das Füllvolumen von dem eGrip Mini Pod beträgt 1,3ml. Im Pod befindet sich ein vorinstallierter Head mit Wahlweise einem Widerstand von 0,5 Ohm oder 1,2 Ohm. Der 1,2 Ohm Head ist für das Backendampfen bzw. MTL-Dampfen ausgelegt. Mit dem 0,5 Ohm Heads können Sie direkte Züge in die Lunge tätigen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>5x eGrip Mini Pods mit 1,2 oder 0,5 Ohm Ohm Head</li>
+</ul>
+',
+    ),
+    'GG100A10-BH' => array(
+        'icNumber' => 'GG100A10-BH',
+        'number' => 'GG100A10-BH',
+        'name' => 'GangGang - BluffBerliner Blue Homeboy - Aroma - 20 ml',
+        'commonName' => 'BluffBerliner Blue Homeboy',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gebäck#!#AROMEN > Beeren#!#AROMEN > Süßigkeiten',
+        'supplier' => 'GangGang',
+        'brand' => 'GangGang',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '60',
+        'flavor' => 'Berliner, Erdbeere, Marmelade',
+        'flavorCategory' => 'Gebäck, Beeren, Süßigkeiten',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von GangGang</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Berliner, Erdbeere, Marmelade</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Berliner, Erdbeere, Marmelade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'SR100HR' => array(
+        'icNumber' => 'SR100HR',
+        'number' => 'SR100HR',
+        'name' => 'Steam Crave - Hadron - Akkuträger - 220 Watt',
+        'commonName' => 'Hadron',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Steam Crave',
+        'brand' => 'Steam Crave',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Steam Crave Hadron 220 Watt wird über zwei 21700er Akkuzellen mit Energie versorgt. Mit der 18650er Silikonsleeve, welche sich im Lieferumfang befindet, besteht zudem auch noch die Möglichkeit 18650er Akkuzellen zu verwenden. Bitte beachten Sie, dass sich keine Akkuzellen im Lieferumfang befinden. Diese müssen Sie separat erwerben. Aufgrund des verbauten Yihi SX490 Chipset haben Sie neben den Dampf-Modi VW, Power und TC noch die für Yihi Produkte bekannten Modi Soft, Standard, Powerful und Powerful+ zur Auswahl. Die Einstellungen können Sie über die Einstelltasten und Feuertaste einrichten und über das Farb-Display einsehen. Mit dem 510er Anschluss können Sie Verdampfer mit einem 510er Gewinde verwenden. Hier gibt es also eine Bandbreite an passenden Verdampfern. Ein passender Verdampfer wäre zum Beispiel der Glaz RTA V2 aus gleichem Hause.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Hadron 220 Watt</li>
+<li>1x USB-Kabel</li>
+<li>1x 18650er Silikonsleeve</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<strong>21700er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<strong>Hadron 220 Watt</strong>
+<ul>
+<li>Ausgangsleistung: max. 220 Watt</li>
+<li>Yihi SX490 Chipset</li>
+<li>Ausgabemodi: Power, VW, TC, Soft, Standard, Powerful, Powerful+</li>
+<li>Gewindetyp: 510</li>
+<li>Display</li>
+<li>Maße: 38 mm x 48 mm x 99,2 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'PV100VIC' => array(
+        'icNumber' => 'PV100VIC',
+        'number' => 'PV100VIC',
+        'name' => 'VooPoo - Vinci - Cartridge, 5,5 ml (2 Stück pro Packung)',
+        'commonName' => 'Vinci',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'VooPoo',
+        'brand' => 'VooPoo',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Je Packung sind insgesamt zwei VooPoo Vinci Cartridges enthalten. Die Cartridges sind für die VooPoo Vinci und auch Vinci X E-Zigarette geeignet. Ganze 5,5ml Liquid können Sie in den Tank füllen. Passende Verdampferköpfe sind zum Beispiel die VooPoo PnP-R1 mit 0,8 Ohm und VooPoo PnP-VM1 mit 0,3 Ohm. Diese sind nicht im Lieferumfang enthalten.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>2x VooPoo Vinci Cartridge 5,5ml</li>
+<li>1x Gebrauchsinformation</li>
+<br>
+<br>
+<strong>Geeignet für:</strong>
+<li>VooPoo Vinci E-Zigaretten Set</li>
+<li>VooPoo Vinci X E-Zigaretten Set</li>
+<li>VooPoo PnP-R1 0,8 Ohm Head (5 Stück pro Packung)</li>
+<li>VooPoo PnP-VM1 0,3 Ohm Head (5 Stück pro Packung)</li>
+<br>
+<br>',
+    ),
+    'JK100A10-QC' => array(
+        'icNumber' => 'JK100A10-QC',
+        'number' => 'JK100A10-QC',
+        'name' => 'Joker Flavour - Cola Queen - Aroma - 10 ml',
+        'commonName' => 'Cola Queen',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Getränke',
+        'supplier' => 'Joker Flavour',
+        'brand' => 'Joker Flavour',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Cola',
+        'flavorCategory' => 'Getränke',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Cola</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cola</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'CR100A10-BC' => array(
+        'icNumber' => 'CR100A10-BC',
+        'number' => 'CR100A10-BC',
+        'name' => 'Cream Team - Buttercream - Aroma - 18 ml',
+        'commonName' => 'Buttercream',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Süßigkeiten#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Cream Team',
+        'brand' => 'Cream Team',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Buttercreme, Eis',
+        'flavorCategory' => 'Süßigkeiten, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Buttercreme, Eis</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Buttercreme, Eis</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'CR100A10-CR' => array(
+        'icNumber' => 'CR100A10-CR',
+        'number' => 'CR100A10-CR',
+        'name' => 'Cream Team - Cinnaroll - Aroma - 18 ml',
+        'commonName' => 'Cinnaroll',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gebäck#!#AROMEN > Gewürze#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Cream Team',
+        'brand' => 'Cream Team',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Zimtrolle, Vanille, Eis',
+        'flavorCategory' => 'Gebäck, Gewürze, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Zimtrolle, Vanille, Eis</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Zimtrolle, Vanille, Eis</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'CR100A10-NE' => array(
+        'icNumber' => 'CR100A10-NE',
+        'number' => 'CR100A10-NE',
+        'name' => 'Cream Team - Neapolitan - Aroma - 18 ml',
+        'commonName' => 'Neapolitan',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Gewürze#!#AROMEN > Süßigkeiten#!#AROMEN > Beeren#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Cream Team',
+        'brand' => 'Cream Team',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Vanille, Schokolade, Erdbeere, Eis',
+        'flavorCategory' => 'Gewürze, Süßigkeiten, Beeren, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille, Schokolade, Erdbeere, Eis</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille, Schokolade, Erdbeere, Eis</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'CE100A10-BS' => array(
+        'icNumber' => 'CE100A10-BS',
+        'number' => 'CE100A10-BS',
+        'name' => 'The Custard Shoppe - Butterscotch - Aroma - 18 ml',
+        'commonName' => 'Butterscotch',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Cremiges#!#AROMEN > Gebäck#!#AROMEN > Süßigkeiten',
+        'supplier' => 'Custard Shoppe',
+        'brand' => 'Custard Shoppe',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Pudding, Kuchen, Butterscotch',
+        'flavorCategory' => 'Cremiges, Gebäck, Süßigkeiten',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Butterscotch</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Butterscotch</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'CE100A10-RB' => array(
+        'icNumber' => 'CE100A10-RB',
+        'number' => 'CE100A10-RB',
+        'name' => 'The Custard Shoppe - Raspberry - Aroma - 18 ml',
+        'commonName' => 'Raspberry',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Cremiges#!#AROMEN > Gebäck#!#AROMEN > Beeren',
+        'supplier' => 'Custard Shoppe',
+        'brand' => 'Custard Shoppe',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Pudding, Kuchen, Erdbeere',
+        'flavorCategory' => 'Cremiges, Gebäck, Beeren',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Erdbeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Erdbeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'CE100A10-BB' => array(
+        'icNumber' => 'CE100A10-BB',
+        'number' => 'CE100A10-BB',
+        'name' => 'The Custard Shoppe - Blackberry - Aroma - 18 ml',
+        'commonName' => 'Blackberry',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Cremiges#!#AROMEN > Gebäck#!#AROMEN > Beeren',
+        'supplier' => 'Custard Shoppe',
+        'brand' => 'Custard Shoppe',
+        'piecesPerPack' => 1,
+        'content' => '',
+        'capacity' => '',
+        'flavor' => 'Pudding, Kuchen, Brombeere',
+        'flavorCategory' => 'Cremiges, Gebäck, Beeren',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Brombeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Brombeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'GV100FT' => array(
+        'icNumber' => 'GV100FT',
+        'number' => 'GV100FT',
+        'name' => 'GeekVape - Feather Cotton Threads (20 Stück pro Packung)',
+        'commonName' => 'Feather Cotton Threads',
+        'type' => 'WADDING',
+        'category' => 'SELBSTWICKLER > Watte',
+        'supplier' => 'GeekVape',
+        'brand' => 'GeekVape',
+        'piecesPerPack' => 20,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Feather Cotton Threads von GeekVape wurden aus Baumwolle gefertigt. Mit einer bestellten Packung erhalten Sie insgesamt 20 Threads. Die vorgefertigten Wattestreifen/Wattestränge können Sie einfach mit in Ihrer Wicklung integrieren bzw. durch die Watte vervollständigen. Achten Sie darauf, das die Feather Cotton Threads beim Dampfen nicht austrocknen umso einen Dry-Burn vorzubeugen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>20x Feather Cotton Threads von GeekVape</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Material: Baumwolle</li>
+<li>Geschmacksneutral</li>
+<li>Länge: 110mm</li>
+<li>Durchmesser Watte: 3mm</li>
+<li>Durchmesser Schnüre: 2,5mm</li>
+</ul>',
+    ),
+    'GK100V1' => array(
+        'icNumber' => 'GK100V1',
+        'number' => 'GK100V1',
+        'name' => 'Gorilla Killa - eVolut1on - Flaschenöffner',
+        'commonName' => 'eVolut1on',
+        'type' => 'TOOL',
+        'category' => 'SELBSTWICKLER > Werkzeug',
+        'supplier' => 'Gorilla Killa',
+        'brand' => 'Gorilla Killa',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Gorilla Killa eVolut1ion Flaschenöffner ist ein deutsches Produkt aus dem Hause Gorilla Killa zum öffnen von Liquidflaschen der Marke Chubby Gorilla. Er öffnet die verschiedensten Größen der Nikotinshots, Aromen und V1 Flaschen. Der Öffner besteht aus Aluminium und verfügt über zwei Öffner. Der kleinere Öffner ist für 10 ml Flaschen vorgesehen und der größere Öffner ist für die 100 ml und 120 ml Flaschen. 
+<br>
+<ul>
+<strong>Lieferumfang</strong>
+<li>1x Gorilla Killa eVolut1on Flaschenöffner</li>
+</ul>
+<br>
+<strong>Gorilla Killa eVolut1on Flaschenöffner</strong>
+<ul>
+<li>Material: Aluminium</li>
+<li>drei Öffner in einem</li>
+<li>geeignet für alle Chubby Gorilla Flaschen V1 und 10ml Flaschen</li>
+</ul>
 <br>
 <br>',
     ),

@@ -204,6 +204,31 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function checkMissingModelsAction()
+    {
+        // find variants which do not have an associated model and log the numbers
+        try {
+            $modelManager = $this->getModelManager();
+            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $variants = $modelManager->getRepository(Variant::class)->getAllIndexed();
+            $models = $modelManager->getRepository(Model::class)->getAllIndexed();
+            $missingModels = array_keys(array_diff_key($variants, $models));
+            if (empty($missingModels)) {
+                $log->debug('No missing models.');
+            } else {
+                $log->debug('Start of missing models log.');
+                foreach ($missingModels as $missingModel) {
+                    $log->debug('Model missing for variant ' . $missingModel);
+                }
+                $log->debug('End of missing models log.');
+            }
+
+            $this->view->assign([ 'success' => true, 'message' => 'Missing models logged.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function excelExportAction()
     {
         try {

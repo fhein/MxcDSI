@@ -115,6 +115,11 @@ return [
             '~(Pink Soda) Liquid~'                         => '$1',
             '~(Blue Slush) Liquid~'                        => '$1',
             '~(Marsupod) - mit~'                           => '$1 - Pod -',
+            '~Subohm (Verdampfer)~'                        => '$1',
+            '~Subohm (E-Zigarette)~'                       => '$1',
+            '~(iSub -)(PLEX)~'                             => '$1 $2',
+            '~(eGrip) - (Mini)~'                           => '$1 $2', // don't know why this does not work with other rules
+            '~- -(Verdampfer)~'                            => '- $1',
         ],
     ],
 
@@ -269,6 +274,10 @@ return [
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Pyromania) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
+            '~(Ultrabio) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
+            '~(Cream Team) (- Aroma)(.*)(- \d+(,\d+)? ml)~'              => '$1 - $3 $2 $4',
+            '~(Joker Flavour) (- Aroma)(.*)(- \d+(,\d+)? ml)~'           => '$1 - $3 $2 $4',
+            '~(The Custard Shoppe) (- Aroma)(.*)(- \d+(,\d+)? ml)~'      => '$1 - $3 $2 $4',
             '~(hilda.) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
             '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(Yankee Juice.*) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
@@ -466,6 +475,8 @@ return [
             '~(Aegis Mini) (- \d\.\d+ mAh)~'                      => '$1 - Akku $2',
             '~(Drag Mini) (- \d\.\d+ mAh)~'                       => '$1 - Akku $2',
             '~(Target Mini 2) (- \d\.\d+ mAh)~'                   => '$1 - Akku $2',
+            '~(Exceed X) (- \d\.\d+ mAh)~'                        => '$1 - Akku $2',
+            '~(Kroma A) (- \d\.\d+ mAh)~'                         => '$1 - Akku $2',
             '~(Mag Baby) (- \d+ Watt)~'                           => '$1 - Akku $2',
             //            '~(Compact 14) (Akku)~'                                  => '$1 - $2',
             '~(Pumper.*) (- \d+ Watt)~'                           => '$1 - Squonker Box $2',
@@ -478,6 +489,17 @@ return [
             '~(Lux) 200~'                                         => '$1',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
             '~(Aegis Squonker) (- \d+ Watt)~'                     => '$1 - Squonker Box $2',
+            '~(DJV D7) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(Hadron) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(Trip) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
+            '~(Proton) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(Humvee) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(R150S) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(RSQ Mate) (- \d+ Watt)~'                           => '$1 - Akkuträger $2',
+            '~(G100) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
+            '~(Tac21) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
+            '~(Fush) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
+            '~(GEN) (- \d+ Watt)~'                                => '$1 - Akkuträger $2',
             '~(Double Barrel V3) (- \d+ Watt)~'                   => '$1 - Akkuträger $2',
             '~(Detonator) (- \d+ Watt)~'                          => '$1 - Akkuträger $2',
             '~(Revo) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
@@ -609,6 +631,14 @@ return [
             '~(CP TF RTA)~',
             '~(Owl)~',
         ],
+        'Arctic Dolphin' => [
+            '~(Crea RDA)~',
+        ],
+        'Artery' => [
+            '~(Pal Stick)~',
+            '~(Pal 2 (Pro)?)~',
+            '~(Baton)~'
+        ],
         'Aspire'        => [
             // Aspire
             '~(Reax Mini)~',
@@ -624,7 +654,7 @@ return [
             '~(Cygnet)~',
             '~(Speeder)~',
             '~(Puxos)~',
-            '~(Tigon)~',
+            '~(Tigon( AIO)?)~',
             '~((Triton)( 2)?)~',
             '~((Breeze)(( 2)|( NXT))?)~',
             '~((Zelos)( 2.0)?)~',
@@ -635,9 +665,11 @@ return [
             '~(Feedlink)~',
             '~((Revvo)( Mini)?)~',
             '~((K1 Plus)|(K1 Stealth)|((K\d)( \& K3)?))~',
-            '~(AVP)~',
+            '~((K1 Plus)|(K1 Stealth)|((K\d)( \& K3)?))~',
+            '~(AVP( Pro)?)~',
             '~(K-Lite)~',
             '~(Odan)~',
+            '~(Mulus)~',
         ],
         'asMODus'       => [
             '~((Minikin V3S mit Viento)|(Minikin(( V2 Kodama)|( V2)|( V3S)|( V3)|( Reborn))?))~',
@@ -675,6 +707,9 @@ return [
             //            '~(Hastur)~',
             '~(Furai 510)~',
         ],
+        'Dejavu' => [
+            '~(DJV D7)~',
+        ],
         'Desire Design' => [
             '~(Cut Premium)~',
             '~(Rage)~',
@@ -703,6 +738,7 @@ return [
         ],
         'GeekVape'      => [
             '~(Alpha)~',
+            '~(Bident)~',
             '~(Ammit 25 RTA)~',
             '~(Baron RDA)~',
             '~(Blitzen RTA)~',
@@ -712,6 +748,7 @@ return [
             '~(Zeus X RTA)~',
             '~(Zeus Dual RTA)~',
             '~(Zeus RTA)~',
+            '~(Zeus)~',
             '~(Ammit Dual Coil RTA)~',
             '~(Aegis(( Legend)|( Mini)|( X)|( Solo)|( Squonker))?)~',
             '~(Aero Mesh)~',
@@ -722,6 +759,9 @@ return [
             '~(Lucid)~',
             '~(Flint)~',
             '~(Frenzy)~'
+        ],
+        'Gorilla Killa' => [
+            '~(eVolut1on)~',
         ],
         'HellVape'      => [
             '~(Grimm)~',
@@ -749,6 +789,7 @@ return [
         ],
         'Joyetech' => [
             '~(eRoll)~',
+            '~(eGrip Mini)~'
         ],
         'Nikola'        => [
             '~(Medea)~',
@@ -764,7 +805,7 @@ return [
 
         ],
         'SC'            => [
-            '~(iJust(( 21700)|( ECM)|( 3)|( Mini))?)~',
+            '~(iJust(( 21700)|( ECM)|( 3 Pro)|( 3)|( Mini))?)~',
             '~(Ello( ((Vate)|(Duro)|(Pop))?))~',
             '~(iCare Flask)~',
             '~(iKuu Lite)~',
@@ -774,21 +815,34 @@ return [
             '~(GS ((Air 2)|(Air 3)|(Air)|(Baby)|(Drive)|(Turbo))?)~',
             '~(iKonn)~',
             '~(Invoke)~',
-            '~(iStick ((T80)|(Melo)|(Amnis( 2)?)|(Pico X)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim)|(Nowos)|(Mix)|(Rim))?)~',
+            '~(iStick ((T80)|(Melo)|(Amnis( 2)?)|(Pico X)|(Pico 21700)|(Pico Baby)|(Pico S)|(Pico)|(Trim)|(Nowos)|(Mix)|(Rim C)|(Rim))?)~',
             '~(iWu)~',
             '~(Lexicon)~',
             '~(Melo \d)~',
             '~(Easy 3)~',
             '~(Tance( Max)?)~',
             '~(Pesso)~',
+            '~(Rotor)~'
         ],
         'Innokin'       => [
-            '~(Endura ((T18)|(T20S)|(T22))?)~',
-            '~(Prism ((S)|(T18/T22)|(T18)|(T20)|(T22))?)~',
+            '~(Endura ((T18 2)|(T18)|(T20S)|(T20)|(T22))?)~',
+            '~(Prism ((S)|(T18/T22)|(T18 2)|(T18)|(T20)|(T22))?)~',
             '~(Proton)~',
             '~(EZ.Watt)~',
+            '~(Zenith (D22)?)~',
+            '~(Scion 2 Plexus)~',
+            '~(Ares RTA)~',
+            '~(Cool Fire Mini)~',
+            '~(iSub (B)?)~',
+            '~(Kroma A)~',
+            '~(Zenith)~',
+            '~(Z Biip)~',
+            '~(JEM)~',
+            '~(Zlide)~',
+            '~(Plex)~',
         ],
         'InnoCigs'      => [
+            '~(eGrip Mini)~',
             '~(Batpack)~',
             '~(Atopack( Magic)?)~',
             '~(Cubis 2)~',
@@ -813,6 +867,7 @@ return [
             '~(J-Easy3)~',
             '~(Minifit)~',
             '~(Compact 14)~',
+            '~(Compact 16)~',
             '~(P16A)~',
             '~(Q14)~',
             '~(Q16(( C)|( Pro)))~',
@@ -861,7 +916,9 @@ return [
             '~(Species)~',
             '~(Mico)~',
             '~(Priv N19)~',
-            '~(RPM40)~'
+            '~(RPM40)~',
+            '~(Novo 2)~',
+            '~(Fetch Mini)~',
 
         ],
         'ThunderHead Creations' => [
@@ -881,7 +938,8 @@ return [
             '~(Sobra)~',
             '~(Moonshot 120)~',
             '~(Wolf Mini)~',
-            '~(Etiny Plus)~'
+            '~(Etiny Plus)~',
+            '~(Odo 2)~',
         ],
         'Smoant'        => [
             '~(Battlestar Squonker( RDA)?)~',
@@ -891,6 +949,8 @@ return [
         'Snowwolf' => [
             '~(Mfeng(( Baby)|( UX))?)~',
             '~(Mfeng(( Baby)|( UX))?)~',
+            '~(Kfeng(-X)?)~',
+            '~(Afeng)~',
             '~(Wolf Tank Mini)~',
             '~(Mini)~',
             '~(Exilis X)~',
@@ -985,12 +1045,14 @@ return [
             '~(Find(( Pod)|( S Trio))?)~',
             '~((Zip)|((Alpha Zip)( (Mini))?))~',
             '~(Uforce T2)~',
+            '~(Vinci)~',
         ],
         'Vaporesso'     => [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
             '~(Sky Solo( Plus)?)~',
+            '~(GEN)~',
             '~(Aurora Play)~',
-            '~(Luxe( S)?)~',
+            '~(Luxe(( S)|( Nano))?)~',
             '~(NRG)~',
             '~(Orca Solo)~',
             '~(Polar)~',
@@ -1003,16 +1065,21 @@ return [
             '~(VM Solo 22)~',
             '~(VM Stick 18)~',
             '~(VM \d\d)~',
+            '~(PodStick)~',
+            '~(Degree)~',
         ],
         'Vapor Storm'   => [
             '~(Puma)~',
             '~(Subverter 1)~',
             '~(ECO( Pro)?)~',
             '~(Lion RDA)~',
+            '~(Trip)~',
         ],
         'Vsticking'     => [
             '~(VK530)~',
             '~(VIY)~',
+            '~(VKsma)~',
+            '~(SMA ADA)~',
         ],
         'Vzone'         => [
             '~(Scado)~',
@@ -1073,6 +1140,7 @@ return [
         'ZQ'            => [
             '~(Vi)~',
             '~(GO)~',
+            '~(LEX)~',
         ],
 
     ],
