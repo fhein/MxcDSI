@@ -39,6 +39,7 @@ return [
             '~(Skynet) (Pro )?Sub-Ohm ~'            => '$1 $2',
             '~(Aegis X) (\d+ Watt) (mit Cerberus)~' => '$1 $3',
             '~(Lunar)~'                             => '$1 45 Watt',
+            '~(Horizon)T(ech)~'                     => '$1t$2',
             // separator different from '-'
             '~–~'                                   => '-',
         ],
@@ -120,6 +121,7 @@ return [
             '~(iSub -)(PLEX)~'                             => '$1 $2',
             '~(eGrip) - (Mini)~'                           => '$1 $2', // don't know why this does not work with other rules
             '~- -(Verdampfer)~'                            => '- $1',
+            '~(SC - .*) - by SC$~'                         => '$1',
         ],
     ],
 
@@ -274,7 +276,8 @@ return [
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Pyromania) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
-            '~(Ultrabio) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
+            '~(Pyromania.*)3in1 Bundle(.*)(Aroma)(.*)~'                  => '$1Fuze, Destruction, Blast$2 3in1 $3 Bundle$4',
+            '~(Ultrabio) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                => '$1 - $3 $2 $4',
             '~(Cream Team) (- Aroma)(.*)(- \d+(,\d+)? ml)~'              => '$1 - $3 $2 $4',
             '~(Joker Flavour) (- Aroma)(.*)(- \d+(,\d+)? ml)~'           => '$1 - $3 $2 $4',
             '~(The Custard Shoppe) (- Aroma)(.*)(- \d+(,\d+)? ml)~'      => '$1 - $3 $2 $4',
@@ -283,6 +286,7 @@ return [
             '~(Yankee Juice.*) (- Aroma)(.*)(- \d+ ml)~'                 => '$1 - $3 $2 $4',
             '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
             '~(Dr. Kero) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
+            '~(Dr. Vapes - Pink Series) (- Aroma)(.*)(- \d+ ml)~'        => '$1 - $3 $2 $4',
             '~(Dampfdidas) (- Aroma)(.*)(- \d+ ml)~'                     => '$1 - $3 $2 $4',
             '~(Ant) (- Aroma)(.*)(- \d+ ml)~'                            => '$1 - $3 $2 $4',
             '~(GangGang) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
@@ -489,6 +493,7 @@ return [
             '~(Lux) 200~'                                         => '$1',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
             '~(Aegis Squonker) (- \d+ Watt)~'                     => '$1 - Squonker Box $2',
+            '~(Glint) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(DJV D7) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(Hadron) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(Trip) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
@@ -630,6 +635,7 @@ return [
             '~(Dark Mesh)~',
             '~(CP TF RTA)~',
             '~(Owl)~',
+            '~(Artha V2 RDA)~',
         ],
         'Arctic Dolphin' => [
             '~(Crea RDA)~',
@@ -659,7 +665,7 @@ return [
             '~((Breeze)(( 2)|( NXT))?)~',
             '~((Zelos)( 2.0)?)~',
             '~(Revvo(( Mini)|( Boost))?)~',
-            '~(Nautilus(( 2S?)|( X)|( Mini)|( AIO))?)~',
+            '~(Nautilus(( 2S?)|( X)|( Mini)|( AIO)|( GT))?)~',
             '~(Cleito((( Shot)|( 120)?( Pro)?))?)~',
             '~(SkyStar)~',
             '~(Feedlink)~',
@@ -840,6 +846,7 @@ return [
             '~(JEM)~',
             '~(Zlide)~',
             '~(Plex)~',
+            '~(Ajax)~',
         ],
         'InnoCigs'      => [
             '~(eGrip Mini)~',
@@ -955,6 +962,10 @@ return [
             '~(Mini)~',
             '~(Exilis X)~',
             '~(Wocket)~',
+            '~(P200)~',
+        ],
+        'Squid Industries' => [
+            '~(Squad( RTA)?)~',
         ],
         'Steamax'       => [
             // Smok
@@ -1021,7 +1032,7 @@ return [
             '~(Valyrian( 2)?)~',
             '~(Blocks)~',
             '~(Whirl(( 20)|( 22))?)~',
-            '~(Caliburn)~',
+            '~(Caliburn( Koko)?)~',
             '~(Amulet)~'
 
         ],
@@ -1045,7 +1056,8 @@ return [
             '~(Find(( Pod)|( S Trio))?)~',
             '~((Zip)|((Alpha Zip)( (Mini))?))~',
             '~(Uforce T2)~',
-            '~(Vinci)~',
+            '~(Vinci( X)?)~',
+            '~(Navi)~',
         ],
         'Vaporesso'     => [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',

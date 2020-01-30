@@ -106,6 +106,7 @@ return array(
         26 => 'saure Früchte',
         27 => 'süße Früchte',
         28 => 'süße Kirsche',
+        29 => 'Fruchtsäure',
     ),
     'Gebäck' => array(
         0 => 'Apfelstrudel',
