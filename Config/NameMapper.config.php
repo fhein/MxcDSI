@@ -122,6 +122,8 @@ return [
             '~(eGrip) - (Mini)~'                           => '$1 $2', // don't know why this does not work with other rules
             '~- -(Verdampfer)~'                            => '- $1',
             '~(SC - .*) - by SC$~'                         => '$1',
+            '~(.*)(3in1 Aroma.*)15( ml)~'                  => '$1$2 45$3',
+            '~(Salt Stick) (E-Zigarette)~'                 => '$1 - $2',
         ],
     ],
 
@@ -473,6 +475,7 @@ return [
             '~(Zelos) - 5~'                                       => '$1 - Akku - 5',
             '~(iStick Nowos) (- \d\.\d+ mAh)~'                    => '$1 - Akku $2',
             '~(iStick Rim) (- \d\.\d+ mAh)~'                      => '$1 - Akku $2',
+            '~(Adept) (- \d\.\d+ mAh)~'                           => '$1 - Akku $2',
             '~(Typhon) (- \d+ Watt)~'                             => '$1 - Akku $2',
             '~(Amnis) (- \d+ mAh)~'                               => '$1 - Akku $2',
             '~(X-Priv Baby) (- \d\.\d+ mAh)~'                     => '$1 - Akku $2',
@@ -761,7 +764,7 @@ return [
             '~(Cerberus)~',
             '~(Creed RTA)~',
             '~(Nova)~',
-            '~(Loop( V1.5)? RDA)~',
+            '~(Loop( v1.5)? RDA)~',
             '~(Lucid)~',
             '~(Flint)~',
             '~(Frenzy)~'
@@ -785,7 +788,8 @@ return [
             '~(Hellcoil H7-0\d)~'
         ],
         'Horizontech' => [
-          '~(Falcon( King)?)~'
+          '~(Falcon( King)?)~',
+          '~(Magico)~',
         ],
         'iPV'           => [
             '~(V-IT)~',
@@ -842,10 +846,12 @@ return [
             '~(iSub (B)?)~',
             '~(Kroma A)~',
             '~(Zenith)~',
+            '~(Gala)~',
             '~(Z Biip)~',
             '~(JEM)~',
+            '~(Jem Pen)~',
             '~(Zlide)~',
-            '~(Plex)~',
+            '~(Plex((ar)|( 3D))?)~',
             '~(Ajax)~',
         ],
         'InnoCigs'      => [

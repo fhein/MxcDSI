@@ -1069,9 +1069,25 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function dev6Action() {
         try {
+            // write all e-cigarettes with ic descriptions to icProductDescriptions log
+
             $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
+
+            $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'E_CIGARETTE']);
+            /** @var Product $product */
+            $productsIcDescription = [];
+            foreach ($products as $product) {
+                $description = $product->getDescription();
+                if ($description === $product->getIcDescription()) {
+                    $productsIcDescription[$product->getIcNumber()] = $product->getName();
+                }
+            }
+            ksort($productsIcDescription);
+            $report = new \MxcDropshipInnocigs\Report\ArrayReport();
+            $report(['icProductDescriptions' => $productsIcDescription]);
+
             // Do something with the ids
             $this->view->assign([ 'success' => true, 'message' => 'Development 6 slot is currently free.']);
         } catch (Throwable $e) {

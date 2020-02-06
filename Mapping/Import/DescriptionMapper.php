@@ -244,6 +244,49 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         . '</table>'
         . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>';
 
+    protected $descriptionsByProductNumber = [
+        'PY100A10-3B' =>
+            '<p><strong>Dieses Bundle enthält die drei Longfill-Aromen Fuze, Destruction und Blast von Pyromania</strong> zur Herstellung von E-Liquid.</p>'
+            . '<p>Jeweils 15 ml Aroma sind in eine 60 ml Chubby Gorilla Flasche abgefüllt.'
+            . ' Füllen Sie eine Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie '
+            . ' durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich '
+            . 'die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>'
+            . '<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>'
+            . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
+            . '<tbody>'
+            . '<tr>'
+            . '<td>Produkt</td>'
+            . '<td> 3 x 15 ml Aroma in 60 ml Flasche</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Geschmack</td>'
+            . '<td>Blast</td>'
+            . '<td>Drachenfrucht, Papaya</td>'
+            . '</tr>'
+            . '<tr>'
+            . '</tr>'
+            . '<tr>'
+            . '<td></td>'
+            . '<td>Destruction</td>'
+            . '<td>Joghurt, Limette, Kokos</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td></td>'
+            . '<td>Fuze</td>'
+            . '<td>schwarze Johannisbeere, Grapefruit</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Dosierung</td>'
+            . '<td>Flasche bis oben mit Base auffüllen</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Inhaltsstoffe</td>'
+            . '<td>Propylenglykol, Aromastoffe</td>'
+            . '</tr>'
+            .'</tbody>'
+            . '</table>',
+    ];
+
     public function __construct(array $mappings)
     {
         $this->mappings = $mappings;
@@ -340,18 +383,29 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         return @$this->descriptionShakeVape[$product->getBrand()];
     }
 
-    public function map(Model $model, Product $product, bool $remap = false)
+    public function map(Model $model, Product $product, bool $remap = true)
     {
+        $this->log->enter();
         $description = @$this->mappings[$product->getIcNumber()]['description'];
         if ($remap || ! $description) {
             $this->remap($product);
+            $this->log->leave();
             return;
         }
         $product->setDescription($description);
+        $this->log->leave();
     }
 
     public function remap(Product $product)
     {
+        $number = $product->getIcNumber();
+        $description = $this->descriptionsByProductNumber[$number];
+        $this->log->debug('Description by product-number ' . $number . ': ' . $description);
+        if ($description !== null) {
+            $product->setDescription($description);
+            return;
+        }
+
         $type = $product->getType();
         $flavor = ucfirst($product->getFlavor());
         $supplier = $product->getBrand();
