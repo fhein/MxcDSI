@@ -276,7 +276,9 @@ return [
             '~(\d+ mg/ml),? (\d+ ml)~'                                   => '$2, $1',
             '~([^,\-]) (\d+ ml, \d+ mg/ml)~'                             => '$1 - $2',
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
+            '~(Bad Candy Liquids) (- .*)(- 20 ml)~'                      => '$1 $2 - Aroma $3',
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
+            '~(Oceans) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
             '~(Pyromania) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
             '~(Pyromania.*)3in1 Bundle(.*)(Aroma)(.*)~'                  => '$1Fuze, Destruction, Blast$2 3in1 $3 Bundle$4',
             '~(Ultrabio) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                => '$1 - $3 $2 $4',
@@ -700,6 +702,7 @@ return [
             '~(Occula RDA)~',
             '~(Skynet( Pro)?)~',
             '~(Merlin Nano MTL RTA)~',
+            '~(Druga Narada( Pod)?)~',
         ],
         'CoilArt'       => [
             '~(Mage RTA V2)~',
@@ -888,6 +891,7 @@ return [
         ],
         'Lost Vape'     => [
             '~(Original Q( Pro)?)~',
+            '~(Original Plus( DNA)?)~',
             '~(Lyra)~',
         ],
         'OBS'           => [
@@ -1098,6 +1102,7 @@ return [
             '~(VIY)~',
             '~(VKsma)~',
             '~(SMA ADA)~',
+            '~(SMI ADA)~',
         ],
         'Vzone'         => [
             '~(Scado)~',

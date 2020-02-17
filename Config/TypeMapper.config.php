@@ -82,6 +82,7 @@ return [
         '~Cartridge~'               => TypeMapper::TYPE_CARTRIDGE,
         '~Nikotinsalz-Liquid~'      => TypeMapper::TYPE_LIQUID,
         '~QPod - E-Zigarette~'      => TypeMapper::TYPE_E_CIGARETTE,
+        '~Pod - E-Zigarette~'       => TypeMapper::TYPE_E_CIGARETTE,
         '~Preva Pod - E-Zigarette~' => TypeMapper::TYPE_E_CIGARETTE,
         '~PodStick - E-Zigarette~'  => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod~'                     => TypeMapper::TYPE_POD,

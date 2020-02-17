@@ -3088,12 +3088,12 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'supplier' => 'Joyfect',
         'brand' => 'Joyfect',
         'piecesPerPack' => 1,
-        'content' => null,
-        'capacity' => null,
+        'content' => '',
+        'capacity' => '',
         'flavor' => '',
         'flavorCategory' => null,
         'addlCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
         'description' => 'Der <b>Multi One Vaporizer</b> von der Marke Joyfect, ist ein intelligenter Tisch-Vaporizer, welcher mit seiner hohen Akkukapazität von <b>5.000 mAh</b> auch unterwegs genutzt werden kann. Das Gerät erkennt automatisch ob Sie die normale Keramik Heizkammer oder den Wachs- oder Öleinsatz verwenden und stellt anschließend den richtigen Betriebsmodus ein. Die Aufheizzeit beim Joyfect Multi One beträgt gerade einmal <b>15 Sekunden</b> nach dem das Gerät eingeschaltet wurde. Wenn das Gerät 10 Minuten nicht verwendet wird, schaltet der Vaporizer sich vollautomatisch aus.
 <br>
@@ -19641,7 +19641,7 @@ Die Chubby Gorilla Vitrine weist einen Durchmesser von 50cm und eine Höhe von 1
         'name' => 'Aspire - Breeze 2 - Cartridge mit Head - 0,6 Ohm',
         'commonName' => 'Breeze 2',
         'type' => 'CARTRIDGE',
-        'category' => 'ZUBEHÖR > Pods & Cartridges > Breeze 2',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
         'supplier' => 'Aspire',
         'brand' => 'Aspire',
         'piecesPerPack' => 1,
@@ -57365,8 +57365,8 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'base' => null,
         'description' => '<p>Die SMOK Morph 219 E-Zigarette besteht aus dem gleichnamigen Akkuträger mit 219 Watt und dem SMOK TF Tank Verdampfer mit einem Tankvolumen von 6 ml. Zum Lieferumfang gehören zwei Mesh-Verdamferköpfe für den SMOK TF Tank mit einem Widerstand von je 0,25 Ohm.&nbsp;</p>
 <h2>SMOK Morph 219 Akkuträger</h2>
-<p>Der SMOK Morph Akkuträger wird über einen farbigen Touch Screen in Kombination mit einer zusätzlichen Taste gesteuert. Mit dieser kann das Gerät gesperrt oder das Display abgeschaltet werden (Stealth-Modus). Am 1,9” Touch Screen lesen Sie die aktuellen Einstellungen des Akkuträgers ab, wie den Betriebsmodus und den Ladestand der Akkuzellen. Das Hintergrundbild des Displays ist anpassbar.</p>
-<p>Der SMOK Morph 219 Akkuträger wird mit zwei 18650er Akkuzellen betrieben, die nicht zum Lieferumfang gehören und separat bestellt werden müssen. Der Verbindung des Verdampfers erfolgt über einen 510er Standard-Gewindeanschluss. Der Anschlusskontakt ist federnd gelagert. Der SMOK Morph 219 Akkuträger ist für Verdampferköpfe mit einem maximalen Durchmesser von 30 mm ausgelegt.</p>
+<p>Der SMOK Morph 219 Akkuträger wird über einen farbigen Touch Screen in Kombination mit einer zusätzlichen Taste gesteuert. Mit dieser kann das Gerät gesperrt oder das Display abgeschaltet werden (Stealth-Modus). Am 1,9” Touch Screen lesen Sie die aktuellen Einstellungen des Akkuträgers ab, wie den Betriebsmodus und den Ladestand der Akkuzellen. Das Hintergrundbild des Displays ist anpassbar.</p>
+<p>Der SMOK Morph 219 Akkuträger wird mit zwei 18650er Akkuzellen betrieben, die nicht zum Lieferumfang gehören und separat bestellt werden müssen. Der Verbindung des Verdampfers erfolgt über einen 510er Standard-Gewindeanschluss. Der Anschlusskontakt ist federnd gelagert. Der SMOK Morph 219 Akkuträger ist für Verdampfer mit einem maximalen Durchmesser von 30 mm ausgelegt.</p>
 <p>Um den SMOK Morph 219 Akkuträger leistungsgeregelt zu betreiben, steht der sog. Variable Wattage Modus (VW-Modus) zur Verfügung. Dieser erlaubt es Ihnen, die Ausgangsleistung des Akkuträgers zwischen 1 und 219 Watt festzulegen.&nbsp; Im VW-Modus kann ein Vorheizen des Verdampferkopfes in drei Intensitätsstufen festgelegt werden.</p>
 <p>Im Temperature Controlled Modus (TC/TCR-Modus) können Sie die gewünschte Temperatur in einem Bereich zwischen 100 und 315 °C festlegen. Im TC/TCR-Modus werden Verdampferköpfe mit Spulen aus Nickel, Titan und Edelstahl unterstützt. In einem Bereich vom 10 bis 219 Watt ist im TC/TCR-Modus wählbar, mit welcher Leistung der Akkuträger den Verdampferkopf befeuert.</p>
 <p>Es können bis zu vier individuelle Leistungsprofile hinterlegt werden, etwa für Spulen aus anderen Materialien, deren Temperaturkoeffizienten Sie kennen. Für diese Leistungsprofile können Sie individuelle Namen vergeben. Der Akkuträger verfügt über einen aktivierbaren Passwortschutz und einen Zugzähler.</p>
@@ -57489,7 +57489,62 @@ Das Wickeldeck lässt sich auch bei gefülltem Tank erreichen ohne vorher den Ta
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Smok Morph 219 Watt Akkuträger benötigt zur Inbetriebnahme zwei 18650er Akkuzellen, welche nicht im Lieferumfang enthalten sind. Der Smok Morph 219 Watt Akkuträger kann, wie der Name schon verrät, eine maximale Leistung von 219 Watt ausgeben. Der Akkuträger hat diverse Funktionen, so ist es zum Beispiel möglich verschiedene Hintergrundbilder, sowie eine Pin Sperre für den Bildschirm einzurichten. Auf dem Smok Morph 219 Watt Akkuträger haben bis zu 30mm Clearomizer Platz. Über das 1,9 Zoll HD-Touch Display haben Sie alle relevanten Funktionen und Informationen stets im Blick und können hierüber gegebenenfalls Ihre Einstellungen vornehmen.',
+        'description' => '<p>Der SMOK Morph 219 ist ein Akkuträger mit einer maximalen Ausgabeleistung von 219 Watt. Er wird über einen farbigen Touch Screen in Kombination mit einer zusätzlichen Taste gesteuert. Mit dieser kann das Gerät gesperrt oder das Display abgeschaltet werden (Stealth-Modus). Am 1,9” Touch Screen lesen Sie die aktuellen Einstellungen des Akkuträgers ab, wie den Betriebsmodus und den Ladestand der Akkuzellen. Das Hintergrundbild des Displays ist anpassbar.</p>
+<p>Der SMOK Morph 219 Akkuträger wird mit zwei 18650er Akkuzellen betrieben, die nicht zum Lieferumfang gehören und separat bestellt werden müssen. Der Verbindung des Verdampfers erfolgt über einen 510er Standard-Gewindeanschluss. Der Anschlusskontakt ist federnd gelagert. Der SMOK Morph 219 Akkuträger ist für Verdampfer mit einem maximalen Durchmesser von 30 mm ausgelegt.</p>
+<p>Um den SMOK Morph 219 Akkuträger leistungsgeregelt zu betreiben, steht der sog. Variable Wattage Modus (VW-Modus) zur Verfügung. Dieser erlaubt es Ihnen, die Ausgangsleistung des Akkuträgers zwischen 1 und 219 Watt festzulegen. Im VW-Modus kann ein Vorheizen des Verdampferkopfes in drei Intensitätsstufen festgelegt werden.</p>
+<p>Im Temperature Controlled Modus (TC/TCR-Modus) können Sie die gewünschte Temperatur in einem Bereich zwischen 100 und 315 °C festlegen. Im TC/TCR-Modus werden Verdampferköpfe mit Spulen aus Nickel, Titan und Edelstahl unterstützt. In einem Bereich vom 10 bis 219 Watt ist im TC/TCR-Modus wählbar, mit welcher Anfangsleistung der Akkuträger den Verdampferkopf befeuert.</p>
+<p>Es können bis zu vier individuelle Leistungsprofile hinterlegt werden, etwa für Spulen aus anderen Materialien, deren Temperaturkoeffizienten Sie kennen. Für diese Leistungsprofile können Sie individuelle Namen vergeben. Der Akkuträger verfügt über einen aktivierbaren Passwortschutz und einen Zugzähler.</p>
+<h2>Eigenschaften SMOK Morph 219 Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>2 x 18650er Akkuzelle (<strong>nicht im Lieferumfang enthalten</strong>)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW | TC/TCR (Nickel, Titan, Edelstahl)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 – 219 Watt (VW) | 5 - 60 Watt (TEMP)</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>0,5 - 8,2 Volt</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 °C – 315 °C</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,1 – 2,5 Ohm (VW) | 0,1 - 2,0 Ohm (TC/TCR)</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Farbiges Touch Display, Passwortschutz, update-fähig</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>84,5 mm x 44,8 mm x 30,2 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x SMOK Morph 219 Akkuträger</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>',
     ),
     'SM100TF' => array(
         'icNumber' => 'SM100TF',
@@ -79172,5 +79227,566 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
 <li>Leistungsbereich: 13 - 16 Watt</li>
 <li>Bottom-Airflow-Control</li>
 </ul>',
+    ),
+    'VK100SMC' => array(
+        'icNumber' => 'VK100SMC',
+        'number' => 'VK100SMC',
+        'name' => 'Vsticking - SMI ADA - Verdampfer',
+        'commonName' => 'SMI ADA',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Vsticking',
+        'brand' => 'Vsticking',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Beim Vsticking SMI ADA Clearomizer handelt es sich um einen Selbstwickel-Tröpfel Verdampfer für Ihr VKsma E-Zigaretten Set. Der SMI ADA Verdampfer hat ein single Coil Deck auf dem Sie Ihre selbst hergestellten Wicklungen platzieren können. Hier ist darauf zu achten dass der Widerstand der eingebauten Wicklung zwischen 0,2 und 1,0 Ohm liegt, da die Vsticking VKsma ausschließlich im TC Modus arbeitet, können Sie ausschließlich TC fähige Drähte verarbeiten. Mögliche Draht Sorten sind: Ni211, SS316, Ti01 und Ni200. Im Lieferumfang enthalten sind zwei SS316 Wicklungen, Watte sowie Ersatzschrauben und ein Schraubendreher zum befestigen Ihrer Wicklung. Bitte beachten Sie, dass der Vsticking SMI ADA Verdampfer ein eigenes Gewinde nutzt, welches nur mit dem VKsma E-Zigaretten Set kompatibel ist. Sollten Sie Veränderungen im Geschmack oder der Dampfentwicklung feststellen, ist es ratsam die Watte oder die gesamte Wicklung gegen eine neue zu ersetzen.  
+<br>
+<br>
+<b>Lieferumfang</b>
+<ul>
+<li>1x SMI ADA Clearomizer</li>
+<li>2x SS316 Draht</li>
+<li>4x Ersatzschrauben</li>
+<li>2x Watte</li>
+<li>1x Schraubendreher</li>
+</ul>
+<br>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Widerstandsbereich: 0,2 Ohm bis 1 Ohm</li>
+<li>Durchmesser: 15,5 mm</li>
+<li>Höhe: 33,5 mm</li>
+<li>Material: Kunststoff mit Edelstahl</li>
+<li>nur für TC-Wicklungen</li>
+<li>passend für Vsticking VKsma E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100RMC' => array(
+        'icNumber' => 'SK100RMC',
+        'number' => 'SK100RMC',
+        'name' => 'SMOK - RPM SC Head - 1,0 Ohm (5 Stück pro Packung)',
+        'commonName' => 'RPM SC',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die RPM SC Smok Heads können mit einer Leistung von 14 Watt betrieben werden. Aufgrund des Widerstandes von 1,0 Ohm sind die PRM SC Heads für das MTL-Vapen geeignet. Bei dieser Variante des Vapens inhalieren Sie den entstehenden Dampf erst in den Mundraum und anschließend in die Lunge. Bei den Verdampferköpfen handelt es sich um Verschleißartikel, welche in regelmäßigen Abständen getauscht werden sollten. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x RPM SC 1,0 Ohm Heads</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 1,0 Ohm</li>
+<li>empfohlene Leistung: 14 Watt</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Smok RPM40 E-Zigaretten Set</li>
+<li>Smok Fetch Mini E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100RMQ' => array(
+        'icNumber' => 'SK100RMQ',
+        'number' => 'SK100RMQ',
+        'name' => 'SMOK - RPM Quartz Head - 1,2 Ohm (5 Stück pro Packung)',
+        'commonName' => 'RPM Quartz',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die PRM Quart Heads von Smok sind für die Verwendung im RMP40 und Fetch Mini E-Zigaretten Set von Smok geeignet. Der Widerstand der PRM Quartz Heads beträgt 1,2 Ohm. Entsprechend sind die Heads für das MTL-Vapen ausgelegt. Sollten Sie beim Dampfen eine Veränderung beim Geschmack- oder der Dampfentwicklung feststellen, ist es empfehlenswert den Verdampferkopf zu tauschen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x RPM Quartz 1,2 Ohm Heads</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 1,2 Ohm</li>
+<li>empfohlene Leistung: 12 Watt</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Smok RPM40 E-Zigaretten Set</li>
+<li>Smok Fetch Mini E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'LV100GP' => array(
+        'icNumber' => 'LV100GP',
+        'number' => 'LV100GP',
+        'name' => 'Lost Vape - Original Plus DNA - E-Zigarette',
+        'commonName' => 'Original Plus DNA',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Lost Vape',
+        'brand' => 'Lost Vape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Lost Vape Original Plus DNA E-Zigaretten Set verfügt über ein POD-System. Die Kartusche oder auch Pod genannt kann bis zu 2 ml Liquid aufnehmen. Frisches Liquid können Sie über das Top-Filling System von oben in Tank einfüllen. Der Pod muss dazu nicht vom Akku entfernt werden. Der Akku ist fest verbaut und verfügt über eine Kapazität von 950mAh. Zum Laden können Sie das beigefügte Ladekabel verwenden. Mit dem Set Plus DNA können Sie in einem Leistungsbereich von 10 bis 22 Watt dampfen. Mit im Lieferumfang enthalten sind ein Mesh Head mit einem Widerstand 0,25 Ohm und ein Regular Head mit einem Widerstand von 0,5 Ohm. 
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Lost Vape Original Plus DNA E-Zigarette</li>
+<li>1x Lost Vape Original Plus Pod</li>
+<li>1x Original Plus Mesh 0,25 Ohm Heads | DL</li>
+<li>1x Original Plus Regular 0,5 Ohm Head | MTL</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Kapazität: 950 mAh</li>
+<li>Ausgangsleistung: 10-22 Watt</li>
+<li>Leistungsstufen: weiß, blau, rot, gelb, lila</li>
+<li>Tankvolumen: 2 ml</li>
+<li>Top-Filling</li>
+<li>Airflow Control</li>
+<li>MTL und DL fähig</li>
+<li>Gewicht: 87 Gramm</li>
+<li>Maße: 93 mm x 37 mm x 13,5 mm</li>
+</ul>
+',
+    ),
+    'LV100GPP' => array(
+        'icNumber' => 'LV100GPP',
+        'number' => 'LV100GPP',
+        'name' => 'Lost Vape - Original Plus - Pod',
+        'commonName' => 'Original Plus',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Lost Vape',
+        'brand' => 'Lost Vape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<h2>Original Plus Pod von Lost Vape</h2>
+Das Original Plus Pod von Lost Vape ist passgenau für die Original Plus DNA E-Zigarette und explizit zur Nutzung mit dieser vorgesehen. Das Füllvolumen des Tanks liegt bei 2 Millilitern. Er kann via Top- Filling System  von oben mit frisch Liquid befüllt werden. Der Lost Vape Original Plus Pod wird Ihnen zusammen mit einem 0,25 Ohm Verdampferkopf und einem 0,5 Ohm Verdampferkopf ausgeliefert.  Damit unterstützt das Gerät das moderate Dampfen vom Mund zur Lunge, als auch das Dampfen im Subohm-Bereich mit direkten Lungenzügen. Bitte beachten Sie, dass es sich bei Verdampferköpfen um Verschleißteile handelt, die gewechselt werden müssen, sobald sich der Geschmack des Liquids verändert oder die Dampfleistung der E-Zigarette nachlässt.',
+    ),
+    'AG100DN' => array(
+        'icNumber' => 'AG100DN',
+        'number' => 'AG100DN',
+        'name' => 'Augvape - Druga Narada Pod - E-Zigarette',
+        'commonName' => 'Druga Narada Pod',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Augvape',
+        'brand' => 'Augvape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => '<p>Die Augvape Druga Narada Pod E-Zigarette ist ein Pod-System in edler Optik. Die Bedienung ist denkbar einfach, es muss nichts eingestellt werden. Die E-Zigarette ist für das Dampfen mit direkten Lungenzügen (Direct Lung) ausgelegt. Lesen Sie dazu bitte auch unsere <strong><a title="Informationen zu den verschiedenen Dampfstilen" href="https://www.vapee.de/e-zigarette-ratgeber-mtl-und-dtl-dampf-stil/" target="_self">Informationen zu den verschiedenen Dampfstilen</a></strong>.</p>
+<p>Der Akkuträger der&nbsp;Augvape Druga Narada Pod E-Zigarette ist aus einer hochwertigen Zinklegierung gefertigt. Die Akkuzelle ist fest verbaut und verfügt über eine Kapazität von 1.100 mAh. Augeladen wird die E-Zigarette über das mitgelieferte USB-C Ladekabel. Die moderne Ladeelektronik mit Quick Charge sorgt für ein rasches Laden. Das Ladekabel ist so ausgelegt, dass es auch als Umhängeband für die E-Zigarette genutzt werden kann.</p>
+<p>Das Pod der Augvape Druga Narada Pod E-Zigarette ist aus PCTG Kunststoff gefertigt. Es verfügt über ein Tankvolumen von 2,8 ml. Frisches Liquid wird von der Seite eingefüllt (Side Filling). Dazu entfernen Sie eine kleine Gummiabdeckung und füllen das Liquid in die nun zugängliche Öffnung. Der Zugwiderstand des Pods ist einstellbar (Airflow Control).</p>
+<p>Der Verdampferkopf des Pods ist austauschbar. Zum Lieferumfang gehören zwei Verdampferköpfe. Der erste hat eine Mesh-Wicklung und einen Widerstand von 0,5 Ohm. Der zweite Verdampferkopf hat eine Spulenwicklung aus Edelstahl (SS316), die einen Widerstand von 0,6 Ohm aufweist.</p>
+<p>Bitte beachten Sie, dass Vedampferköpfe Verschleißteile sind, die regelmäßig ausgetauscht werden müssen, damit Ihre E-Zigarette gleichmäßig gut schmeckt. Bitte lesen Sie dazu auch unsere <strong><a title="Informationen zu Verdampferköpfen" href="https://www.vapee.de/wie-lang-halten-verdampferkoepfe-und-wann-muessen-sie-ausgetauscht-werden/" target="_self">Informationen zum Austausch von Verdampferköpfen</a></strong>.</p>
+<p>Eine Besonderheit der Augvape Druga Narada Pod E-Zigarette ist die Möglichkeit, sie mit selbstgewickelten Verdampferspulen (Coils) nutzen zu können. Der dazu benötigte Druga Narada RBA Pod Verdampferkopf ist nicht im Lieferumfang enthalten. Sie können ihn separat bei uns erwerben.</p>
+<h2>Eigenschaften Augvape Druga Narada Pod E-Zigarette</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Stromversorgung</td>
+<td>fest eingebauter Akku, Kapazität 1.100 mAh</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DV 5V über USB-C mit Quick Charge Funktion</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>2,8 ml</td>
+</tr>
+<tr>
+<td>Verdampferköpfe</td>
+<td>Mesh (0,5 Ohm) + SS316 (0,6 Ohm)</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>Pod-System</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Zinklegierung + PCTG Kunststoff</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Verschluss von Belüftungsöffnungen</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Side Filling, Befüllung von der Seite</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+<tr>
+<td>Besonderheiten</td>
+<td>für Selbstwickler geeignet mit separat<br>erhältlichem RBA Verdampferkopf</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>129 g</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>85 mm x 37 mm x 19 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x Druga Narada Pod Akkuträger</li>
+<li>1x Pod-System</li>
+<li>2x Druga Narada Pod Verdampferköpfe</li>
+<li>1x USB-C-Ladekabel, als Umhängeband ausgelegt</li>
+<li>1x Bedienungsanleitung</li>
+</ul>',
+    ),
+    'AG100DNH' => array(
+        'icNumber' => 'AG100DNH',
+        'number' => 'AG100DNH',
+        'name' => 'Augvape - Druga Narada Pod Head (5 Stück pro Packung)',
+        'commonName' => 'Druga Narada Pod',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Augvape',
+        'brand' => 'Augvape',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Für die Augvape Druga Narada Pod E-Zigarette sind die Druga Narada Pod Verdampferköpfe von Augvape geeignet. Es werden zwei Varianten angeboten. Zum einen gibt es den Druga Narada Pod Verdampferkopf mit einem Widerstand von 0,6 Ohm und einer Kanthal Mesh-Wicklung und zum anderen den Druga Narada Pod Verdampferkopf mit einer 316 SS Spulenwicklung und einem Widerstand von 0,5 Ohm. Beide sind für die direkte Lungeninhalation (DL) geeignet. Es gilt zu beachten, dass es sich bei Verdampferköpfen um Verschleißartikel handelt, deren periodischer Wechsel empfehlenswert ist.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Druga Narada Pod Heads mit 0,5 Ohm oder 0,6 Ohm</li>
+<li>1x Produktinformation</li>
+</ul>
+<br>
+<strong>Druga Narada Pod 0,6 Ohm Head</strong>
+<ul>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Material: Kanthal</li>
+<li>Wicklung: Mesh</li>
+</ul>
+<br>
+<strong>Druga Narada Pod 0,5 Ohm Head</strong>
+<ul>
+<li>Widerstand: 0,5 Ohm</li>
+<li>Material: Edelstahl</li>
+<li>Wicklung: Spule</li>
+</ul>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Druga Narada Pod E-Zigaretten Set</li>
+</ul>
+<br>
+<br>',
+    ),
+    'AG100DNR' => array(
+        'icNumber' => 'AG100DNR',
+        'number' => 'AG100DNR',
+        'name' => 'Augvape - Druga Narada - RBA Pod',
+        'commonName' => 'Druga Narada',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Augvape',
+        'brand' => 'Augvape',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit der Augvape Druga Narada RBA Pod Selbstwickel-Einheit erhalten Sie ein Pod-System mit einem RBA-Verdampferkopf. Zusätzlich finden Sie im Lieferumfang zwei vorgefertigte Wicklungen, Watte und einen Dichtungsring. Dazu haben Sie die Möglichkeit, Ihre eigene Wicklung in der Augvape Druga Narada Pod E-Zigarette zu verwenden.  Der Verdampferkopf ist ein Single Coil und beinhaltet keine vorgefertigte Wicklung. Ist Ihre Selbstwickel-Einheit mit einer Wicklung versehen und Watte hindurch gezogen, so können Sie den fertigen Verdampferkopf in das Pod-System der Augvape Druga Narada Pod E-Zigarette einsetzen. Bitte bedenken Sie, dass bei regelmäßigem Gebrauch der Wicklung eine Abnutzung stattfindet und Sie diese in periodischen Abständen wechseln sollten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Augvape Druga Narada RBA Pod Pod-System mit RBA-Head</li>
+<li>2x Wicklungen</li>
+<li>1x Watte</li>
+<li>1x Dichtungsring</li>
+</ul>
+<br>
+<strong>Merkmale</strong>
+<ul>
+<li>Eigene Wicklung und Watte (RBA)</li>
+</ul>
+<br>
+<strong>Geeignet für</strong>
+<ul>
+<li>Augvape Druga Narada Pod E-Zigarette</li>
+</ul>
+<br>
+<br>',
+    ),
+    'SK100RPT' => array(
+        'icNumber' => 'SK100RPT',
+        'number' => 'SK100RPT',
+        'name' => 'SMOK - RPM Triple Head - 0,6 Ohm (5 Stück pro Packung)',
+        'commonName' => 'RPM Triple',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Smoktech',
+        'brand' => 'Smok',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Smok RPM Triple Coil ist ein Verdampferkopf mit einem Widerstandswert von 0,6 Ohm. Durch diesen geringen Widerstand ist das Dampfen mit direkter Lungeninhalation im Subohm-Bereich möglich. Bitte beachten Sie, dass die Verdampferköpfe zu den Verschleißteilen einer E-Zigarette gehören. Um einer negativen Geschmacks- und/oder Dampfentwicklung entgegenzuwirken, sollten Sie diese regelmäßig gegen neue austauschen. Sie erhalten fünf RPM Triple Verdampferköpfe pro bestellter Packung.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>5x Smok RPM Triple Coil 0,6 Ohm Verdampferkopf</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale</strong>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Leistungsbereich: 25 Watt</li>
+<li>Material: Kanthal</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>Smok Fetch Mini E-Zigaretten Set</li>
+<li>Smok RPM40 E-Zigaretten Set</li>
+<br>',
+    ),
+    'BV100A10-AF' => array(
+        'icNumber' => 'BV100A10-AF',
+        'number' => 'BV100A10-AF',
+        'name' => 'Oceans - Arctic Frost - Aroma - 20 ml',
+        'commonName' => 'Arctic Frost',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > exotische Früchte#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Oceans',
+        'brand' => 'Oceans',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Blaubeere, Kokos, Koolada',
+        'flavorCategory' => 'Beeren, exotische Früchte, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Oceans</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Blaubeere, Kokos, Koolada</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Kokos, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BV100A10-AR' => array(
+        'icNumber' => 'BV100A10-AR',
+        'number' => 'BV100A10-AR',
+        'name' => 'Oceans - Atlantic Role - Aroma - 20 ml',
+        'commonName' => 'Atlantic Role',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Tee & Kaffee#!#AROMEN > Früchte',
+        'supplier' => 'Oceans',
+        'brand' => 'Oceans',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'grüner Tee, Früchte',
+        'flavorCategory' => 'Tee & Kaffee, Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Oceans</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Grüner Tee, Früchte</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Grüner Tee, Früchte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BV100A10-IR' => array(
+        'icNumber' => 'BV100A10-IR',
+        'number' => 'BV100A10-IR',
+        'name' => 'Oceans - Indian Raw - Aroma - 20 ml',
+        'commonName' => 'Indian Raw',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Zitrusfrüchte#!#AROMEN > Frisches & Eiscreme#!#AROMEN > exotische Früchte',
+        'supplier' => 'Oceans',
+        'brand' => 'Oceans',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Grapefruit, Minze, Papaya',
+        'flavorCategory' => 'Zitrusfrüchte, Frisches & Eiscreme, exotische Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Oceans</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Grapefruit, Minze, Papaya</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Grapefruit, Minze, Papaya</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BV100A10-PW' => array(
+        'icNumber' => 'BV100A10-PW',
+        'number' => 'BV100A10-PW',
+        'name' => 'Oceans - Pacific Wave - Aroma - 20 ml',
+        'commonName' => 'Pacific Wave',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > exotische Früchte',
+        'supplier' => 'Oceans',
+        'brand' => 'Oceans',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Kirsche, Granatapfel',
+        'flavorCategory' => 'Früchte, exotische Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Oceans</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche, Granatapfel</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Granatapfel</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BC100A10-AA' => array(
+        'icNumber' => 'BC100A10-AA',
+        'number' => 'BC100A10-AA',
+        'name' => 'Bad Candy Liquids - Angry Apple - Aroma - 20 ml',
+        'commonName' => 'Angry Apple',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Früchte#!#AROMEN > exotische Früchte',
+        'supplier' => 'Bad Candy Liquids',
+        'brand' => 'Bad Candy Liquids',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Apfel, Kiwi',
+        'flavorCategory' => 'Früchte, exotische Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Bad Candy Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfel, Kiwi</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Apfel, Kiwi</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BC100A10-BB' => array(
+        'icNumber' => 'BC100A10-BB',
+        'number' => 'BC100A10-BB',
+        'name' => 'Bad Candy Liquids - Blue Bubble - Aroma - 20 ml',
+        'commonName' => 'Blue Bubble',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Getränke#!#AROMEN > Bonbons & Kaugummi',
+        'supplier' => 'Bad Candy Liquids',
+        'brand' => 'Bad Candy Liquids',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Blaubeere, Johannisbeere, Limonade, Kaugummi',
+        'flavorCategory' => 'Beeren, Getränke, Bonbons & Kaugummi',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Bad Candy Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Blaubeere, Johannisbeere, Limonade, Kaugummi</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Blaubeere, Johannisbeere, Limonade, Kaugummi</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BC100A10-CC' => array(
+        'icNumber' => 'BC100A10-CC',
+        'number' => 'BC100A10-CC',
+        'name' => 'Bad Candy Liquids - Crazy Cola - Aroma - 20 ml',
+        'commonName' => 'Crazy Cola',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Getränke#!#AROMEN > Zitrusfrüchte#!#AROMEN > Früchte',
+        'supplier' => 'Bad Candy Liquids',
+        'brand' => 'Bad Candy Liquids',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Cola, Limone, Kirsche',
+        'flavorCategory' => 'Getränke, Zitrusfrüchte, Früchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Bad Candy Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Cola, Limone, Kirsche</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Cola, Limone, Kirsche</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BC100A10-MM' => array(
+        'icNumber' => 'BC100A10-MM',
+        'number' => 'BC100A10-MM',
+        'name' => 'Bad Candy Liquids - Mad Mango - Aroma - 20 ml',
+        'commonName' => 'Mad Mango',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Früchte#!#AROMEN > Zitrusfrüchte',
+        'supplier' => 'Bad Candy Liquids',
+        'brand' => 'Bad Candy Liquids',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Mango, Kokos, Maracuja, Ananas, Zitrone',
+        'flavorCategory' => 'exotische Früchte, Früchte, Zitrusfrüchte',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Bad Candy Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Mango, Kokos, Maracuja, Ananas, Zitrone</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, Kokos, Maracuja, Ananas, Zitrone</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BC100A10-LL' => array(
+        'icNumber' => 'BC100A10-LL',
+        'number' => 'BC100A10-LL',
+        'name' => 'Bad Candy Liquids - Lucky Lychee - Aroma - 20 ml',
+        'commonName' => 'Lucky Lychee',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > exotische Früchte#!#AROMEN > Zitrusfrüchte#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Bad Candy Liquids',
+        'brand' => 'Bad Candy Liquids',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Litschi, Maracuja, Zitrone, Koolada',
+        'flavorCategory' => 'exotische Früchte, Zitrusfrüchte, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Bad Candy Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Litschi, Maracuja, Zitrone, Koolada</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Litschi, Maracuja, Zitrone, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'BC100A10-RR' => array(
+        'icNumber' => 'BC100A10-RR',
+        'number' => 'BC100A10-RR',
+        'name' => 'Bad Candy Liquids - Raspberry Rage - Aroma - 20 ml',
+        'commonName' => 'Raspberry Rage',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Beeren#!#AROMEN > Pflanzen#!#AROMEN > Zitrusfrüchte#!#AROMEN > Gewürze#!#AROMEN > Frisches & Eiscreme',
+        'supplier' => 'Bad Candy Liquids',
+        'brand' => 'Bad Candy Liquids',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Himbeere, Guave, Limone, Vanille, Koolada',
+        'flavorCategory' => 'Beeren, Pflanzen, Zitrusfrüchte, Gewürze, Frisches & Eiscreme',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Bad Candy Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Himbeere, Guave, Limone, Vanille, Koolada</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere, Guave, Limone, Vanille, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
 );
