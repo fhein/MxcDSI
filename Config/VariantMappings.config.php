@@ -38217,8 +38217,8 @@ return array(
         'icNumber' => 'SK100VN9-13',
         'capacity' => null,
         'retailPriceDampfplanet' => null,
-        'retailPriceMaxVapor' => '19.95',
-        'retailPriceOthers' => '18.90',
+        'retailPriceMaxVapor' => null,
+        'retailPriceOthers' => null,
     ),
     'SK100VN9-14' => array(
         'icNumber' => 'SK100VN9-14',

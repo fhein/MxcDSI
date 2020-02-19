@@ -67838,39 +67838,115 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das CoilART Blazar MTL E-Zigaretten Set wird mit einer 18350er Akkuzelle betrieben, welche kein Bestandteil des Lieferumfangs ist. Der semi mechanische Akkuträger verfügt über einen verbauten Chip, welcher vor Kurzschlüssen und Tiefentladung der Akkuzellen schützt. Über den Akkudeckel lässt sich das E-Zigaretten Set sperren um ein ungewolltes Feuern zu verhindern. Der im Lieferumfang enthaltene Blazar MTL Selbtwickel-Verdampfer hat ein Tankvolumen von 4 ml welches über das Top-Filling System mit frischem Liquid befüllt wird. Das Single Coil Deck muss vor dem Betrieb mit einer eigenen selbst hergestellten Wicklung versehen werden, sowie mit Watte bestückt werden. Der CoilART Blazar Akkuträger erkennt Widerstände zwischen 0,1 und 3,0 Ohm. Für den Betrieb mit einem 18350er Akku empfiehlt sich allerdings ein Widerstand zwischen 0,7 und 1,5 Ohm um eine adäquate Akkulaufzeit zu gewährleisten. Der CoilART Blazar Akkuträger ist einem mechanischem Akkuträger nachempfunden. Bei voll geladenem Akku beträgt die Ausgangsspannung 4,2 Volt. Im laufe der Nutzung verringert sich die Leistung entsprechend des Ladestandes der Akkuzelle bis Sie mindestens 3,0 Volt erreicht haben. Bitte nutzen Sie in dem Gerät ausschließlich geeignete 18350er Akkuzellen und prüfen Sie vor der ersten Inbetriebnahme den Widerstand Ihrer Wicklung um einen Kurzschluss zu vermeiden. 
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die CoilArt Blazar MTL ist eine E-Zigarette für Selbstwickler. Sie richtet sich an erfahrene Dampfer. Für Anfänger und Umsteiger ist sie nicht geeignet. Die CoilArt Blazar MTL besteht aus dem CoilArt Blazar Akkuträger und dem CoilArt Blazar MTL RTA Verdampfer. Das Akronym RTA steht für Rebuildable Tank Atomizer und bezeichnet einen Verdampfer, der mit selbstgewickelten Spulen betrieben wird und über einen Tank für E-Liquid verfügt. Die E-Zigarette ist auf das Dampfen im MTL-Stil ausgelegt.&nbsp;Lesen Sie dazu bitte auch unsere <strong><a title="DL und MTL Dampfstile" href="https://www.vapee.de/e-zigarette-ratgeber-mtl-und-dtl-dampf-stil/" target="_self">Informationen über die verschiedenen Dampfstile</a></strong>.&nbsp;</p>
+<p>Bitte beachten Sie, dass für den Betrieb der E-Zigarette eine Akkuzelle im Format 18350 erforderlich ist, das in E-Zigaretten selten zum Einsatz kommt. Die Akkuzelle ist nicht im Lieferumfang enthalten.</p>
+<h2>CoilArt Blazar MTL Akkuträger</h2>
+<p>Der CoilArt Blazar MTL Akkuträger ist ein sogenannter halbmechanischer Mod, d.h. die Spannungsabgabe hängt vom Ladezustand der Akkuzelle ab und wird umso geringer, je mehr sich die Akkuzelle entlädt. Ist sie voll geladen, liegt die Spannungsabgabe bei etwa 4,2 Volt und reduziert sich bei Entladung bis auf 3,0 Volt, bevor die E-Zigarette zum Schutz der Akkuzelle abschaltet.</p>
+<p>Diese Betriebsart des Akkuträgers wird Bypass Modus genannt und simuliert das Verhalten früher E-Zigaretten, die noch nicht über eine Steuerelektronik verfügt haben. Anders als diese frühen sogenannten mechanischen Mods verfügt der CoilArt Blazar MTL Akkuträger über eine Steuerlelektronik, die für den sicheren Betrieb einen Schutz vor Kurzschluss und Unterspannung bereitstellt.</p>
+<p>Der Akkuträger wird ausschließlich über die Feuertaste gesteuert. Sie befindet sich an der Basis des Akkuträgers und kann gesperrt werden (Twisted Button Lock System). Die Verbindung zwischen Akkuträger und Verdampfer erfolgt über einen standardisierten 510er Gewindeanschluss.</p>
+<p>Zum Laden der Akkuzelle ist ein externes Ladegerät erforderlich, das nicht im Lieferumfang enthalten ist. Ein Aufladen über einen USB-Anschluss, wie bei den meisten E-Zigaretten üblich, ist nicht vorgesehen. Geeignete Ladegeräte finden Sie in unserem Zubehör.</p>
+<h2>Coilart Blazar MTL RTA Verdampfer</h2>
+<p>Der CoilArt Blazar MTL RTA Verdampfer verfügt über einen Tank mit einem Fassungsvermögen von 4 ml. E-Liquid wird von oben in den Verdampfer eingefüllt (Top FIlling). Der Verdampfer muss dazu nicht vom Akkuträger getrennt werden. Den Zugwiderstand bestimmen Sie über eine in sechs Stufen regelbare Luftzufuhr (Airflow Control) mit einem Einstellring nach Ihren Wünschen.</p>
+<p>Das Deck des Verdampfers ist auf den Betrieb mit einer einzigen Heizspule (Coil) ausgelegt. Diese befestigen Sie an den zwei Befestigungspfosten (Posts) des Decks. Die Heizspule wickeln Sie entweder selbst oder Sie verwenden vorgefertigte Spulen. Wickeldraht und fertige Wicklungen finden Sie in unserem Zubehörprogram für Selbstwickler.</p>
+<p>Die CoilArt Blazar MTL E-Zigarette unterstützt Wicklungen mit einem Widerstand zwischen 0,15 Ohm und 3,0 Ohm. Bitte überprüfen Sie vor dem Einbau einer selbstgewickelten Spule unbedingt, ob deren Widerstand im zulässigen Bereich liegt, da sonst die Schutzschaltungen der E-Zigarette den Betrieb verhindern.</p>
+<p>Der CoilArt MTL RTA Verdampfer ist von der Konstruktion her auf Dampfen vom Mund in die Lunge ausgelegt (MTL). Daher und im Interesse einer guten Akkulaufzeit empfehlen wir, dass Sie auf die Verwendung von Spulen mit einem Widerstand unter 0,7 Ohm verzichten.&nbsp;</p>
+<p>Zum Lieferumfang der CoilArt Blazar MTL E-Zigarette gehört ein Sechskantschlüssel, den Sie zur Befestigung der Spule am Deck des Verdampfers benötigen. Außerdem erhalten Sie einen Ersatz-Glastank und Ersatzdichtungen.</p>
+<h2>Eigenschaften CoilArt Blazar MTL Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>13650er Akkuzelle über Adapter<br>(nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>Bypass</td>
+</tr>
+<tr>
+<td>Prozessor</td>
+<td>GX-100UTC</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>abhängig vom Widerstand der Spule</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>3,0 - 4,2 Volt abhängig vom Ladestand der Akkuzelle</td>
+</tr>
+<tr>
+<td>Temperaturbereich</td>
+<td>100 °C – 300 °C | 212° - 572° F</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,15 – 3 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>externes Ladegerät erforderlich</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>Bottom Lock Ring</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Eigenschaften CoilArt Blazar MTL RTA Verdampfer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>4 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Deck</td>
+<td>Single Coil</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>6 Stufen, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Blazar Akkuträger</li>
-<li>1x Blazar Blazar MTL RTA Clearomizer</li>
+<li>1x CoilArt Blazar MTL Akkuträger</li>
+<li>1x CoilArt Blazar Blazar MTL RTA Clearomizer</li>
 <li>1x Ersatz-Glastank</li>
 <li>1x Ersatzteil-Set</li>
-<li>1x Ersatz-Glastank</li>
+<li>1x Sechskantschlüssel</li>
+<li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>Blazar Akkuträger</strong>
-<ul>
-<li>Ausgabemodi: Volt</li>
-<li>Ausgangsleistung: 3,00 – 4,2 Volt</li>
-<li>Widerstandsbereich: 0,1 – 3,0 Ohm</li>
-<li>Durchmesser: 24 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Seitlicher Feuertaster</li>
-<li>Bottom Lock Ring</li>
-</ul>
-<strong>Blazar MTL RTA Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 4ml</li>
-<li>Top-Filling</li>
-<li>Airflow-Control</li>
-<li>Single Coil Deck</li>
-<li>Gewindetyp: 510er</li>
-<li>Durchmesser 24 mm</li>
-</ul>
-<br>
-
-',
+<p>&nbsp;&nbsp;</p>',
     ),
     'SR100LR' => array(
         'icNumber' => 'SR100LR',
@@ -72955,34 +73031,73 @@ Der Exilis X Pod von Snowwolf ist der passende Pod für Ihre Snowwolf Exilis X P
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Artery Pal Stick E-Zigaretten Set hat einen fest verbauten 750mAh Akku. Der Akku wird mit dem mitgelieferten Micro-USB Kabel geladen. Der Feuertaster zeigt Ihnen den Akkustand an, indem Sie diesen zweimal betätigen. Hier stehen Blau für 100 - 80%, Lila für 80 - 30% und Rot für unter 30% Akkuspannung. Mittels drei Klicks auf den Feuertaster haben Sie auch die Möglichkeit die Ausgangsspannung Ihrer Pal Stick E-Zigarette zu regulieren. Es stehen Ihnen folgende Ausgabe Spannungen zur Verfügung: 3,0 V, 3,3 V, 3,5 Volt. Der ebenfalls im Set enthaltene Pal Stick Tank hat ein Tankvolumen von 1,6ml und wird über ein Top-Filling System von oben mit neuem Liquid befüllt. Hierzu schrauben Sie lediglich das Mundstück Ihrer Pal Stick E-Zigarette ab um an die Öffnung für das Liquid zu gelangen. In der Base des Verdampfers befindet sich die Airflow-Kontrolle, hier haben Sie die Möglichkeit Ihren Zugwiderstand einzustellen. Der Pal Stick Verdampfer eignet sich für das Dampfen im moderaten Bereich von Mund zu Lunge. Da der Pal Stick Verdampfer anstelle eines 510er Anschlusses über einen Magneten verfügt, gestaltet sich die Installation des Verdampfers einfacher, da dieser lediglich in den Akku eingeschoben werden muss. Die ebenfalls im Lieferumfang  befindlichen Artery HP Verdampfer haben einen Widerstand von 1,0 Ohm une benötigen eine Leistung zwischen 9 und 13,5 Watt. Alle drei Leistungsstufen der Pal Stick E-Zigarette ermöglichen Ihnen das Dampfen mit diesem Verdampferkopf. Artery gibt an, dass es möglich ist, Liquids mit bis zu 70% VG Anteil zu Dampfen. Bitte beachten Sie, dass Verdampferköpfe zu den Verschleißteilen gehören und diese regelmäßig bei Geschmacksveränderungen gewechselt werden sollten. 
-<br>
-<br>
-<strong>Lieferumfang:</strong>
-<ul>         
+        'description' => '<p>Die Artery Pal Stick ist eine formschöne und handliche E-Zigarette im Stift-Design. Sie ist für das Dampfen im MTL-Stil (Mouth To Lung) ausgelegt. Lesen Sie dazu auch unsere <strong><a title="Informationen zu den Dampf-Stilen" href="https://www.vapee.de/e-zigarette-ratgeber-mtl-und-dtl-dampf-stil/" target="_self">Informationen zu den verschiedenen Dampf-Stilen</a></strong>.</p>
+<h2>Artery Pal Stick Akkuträger</h2>
+<p>Die Akkuzelle des Artery Pal Stick ist fest eingebaut und hat eine Kapazität von 750 mAh. Laden Sie die E-Zigarette über das mitgelieferte Micro-USB Kabel rasch wieder auf.</p>
+<p>Die E-Zigarette arbeitet mit einer konstanten Ausgabespannung, die in drei Stufen einstellbar ist: 3,0 V, 3,3 V und 3,5 V. Um die Ausgabespannung zu wechseln, betätigen Sie die Feuertaste dreimal.</p>
+<p>In die Feuertaste ist eine LED integriert, die den aktuellen Ladezustand der Akkuzelle farbig anzeigt, wenn Sie die Feuertaste zweimal drücken. Dabei steht Blau für 80% - 100%, Lila für 30% - 80% und Rot für eine Restladung von weniger als 30%.</p>
+<h2>Artery Pal Stick Verdampfer</h2>
+<p>Der Verdampfer ist über einen Magnetanschluss mit dem Akkuträger verbunden. Um ihn vom Pal Stick zu trennen, ziehen Sie ihn vom Akkuträger ab. Zur Befestigung schieben Sie ihn einfach wieder in das Gehäuse des Akkuträgers ein.</p>
+<p>Der Tank des Pal Stick Verdampfers hat ein Volumen von 1,6 ml. Er wird von oben mit E-Liquid befüllt (Top Filling). Schrauben Sie einfach die obere Kappe (Top Cap) des Verdampfers ab, dann wird die Einfüllöffnung sichtbar. Am Fuß des Verdampfer befindet sich ein Einstellring für die Luftzufuhr (Airflow Control), mit der Sie den Zugwiderstand nach Ihren Wünschen anpassen.</p>
+<p>Im Lieferumfang sind zwei Pal HP Verdampferköpfe enthalten. Sie haben einen Widerstand von 1,0 Ohm. Abhängig von der eingestellten Ausgabespannung wird der Verdampferkopf mit 9 - 13,5 Watt Leistung versorgt. Die Verdampferköpfe sind so ausgelegt, dass Sie das Dampfen von E-Liquids mit einem Gehalt von bis zu 70%&nbsp; VG (pflanzliches Glycerin) erlauben. Lesen Sie auch unsere <strong><a title="Inhaltsstoffe von E-Liquids" href="https://www.vapee.de/e-zigarette-ratgeber-bestandteile-von-e-liquid/" target="_self">Informationen zu den Inhaltsstoffen von E-Liquids</a></strong>.</p>
+<p>Bitte beachten Sie, dass Verdampferköpfe Verschleißteile sind und regelmäßig ausgetauscht werden müssen. Bestellen Sie deshalb am besten einige Ersatzköpfe für Ihre E-Zigarette mit. Lesen Sie dazu auch unsere <strong><a title="Austausch von Verdampferköpfen" href="https://www.vapee.de/wie-lang-halten-verdampferkoepfe-und-wann-muessen-sie-ausgetauscht-werden/" target="_self">Informationen zur Lebensdauer von Verdampferköpfen</a></strong>.</p>
+<h2>Eigenschaften Artery Pal Stick E-Zigarette</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Stromversorgung</td>
+<td>fest eingebauter Akku, Kapazität 750 mAh</td>
+</tr>
+<tr>
+<td>Ausgabespannung</td>
+<td>drei Stufen 3 V - 3,3 V - 3,5 V</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V über Micro-USB</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>1,6 ml</td>
+</tr>
+<tr>
+<td>Verdampferköpfe</td>
+<td>1 Ohm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>Magnethalterung</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Verdampferbasis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL, vom Mund in die Lunge</td>
+</tr>
+<tr>
+<td>Besonderheiten</td>
+<td>Magnetbefestigung des Verdampfers</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>18 mm x 119 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
+<ul>
 <li>1x Pal Stick E-Zigarette</li>
-<li>2x HP Heads 1,0 Ohm </li>
+<li>2x HP Heads 1,0 Ohm</li>
 <li>1x USB-Ladekabel</li>
 <li>1x Ersatzteil Set</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<strong>Pal Stick</strong>
-<ul>
-<li>Akkukapazität: 750mAh</li>
-<li>Ausgangsspannung: 3 bis 3,5 Volt</li>
-<li>Tankvolumen: 1,6 ml</li>
-<li>Top Filling</li>
-<li>Airflow</li>
-<li>MTL</li>
-<li>Maße: 18 mm x 119 mm</li>
-</ul>
-<br>
-<br>
-
-
-',
+</ul>',
     ),
     'AY100B' => array(
         'icNumber' => 'AY100B',
@@ -73233,36 +73348,88 @@ Der Exilis X Pod von Snowwolf ist der passende Pod für Ihre Snowwolf Exilis X P
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Artery Pal 2 Pro E-Zigaretten Set verfügt über ein Pod-System, welches mit einem integrierten Airflow-Control ausgestattet ist. Das Fassungsvermögen des Pods liegt bei 3ml und kann bei Bedarf gewechselt werden. Dafür öffnen Sie die E-Zigarette, indem Sie die obere Abdeckung entfernen. So können Sie den Pod einfach herausnehmen und den neuen wieder einsetzen. Das Pod-System ist voll in die E-Zigarette integriert. Daher können Sie den Füllstand Ihre Liquids durch das dafür konzipierte Sichtfenster ablesen. Über das Side-Filling-System wird der Pod mit frischem Liquid befüllt. Das Pod-System der Artery Pal 2 Pro E-Zigarette hat keinen fest verbauten Verdampferkopf. So können Sie den Verdampferkopf, der zu den Verschleißteilen gehört, austauschen. Die Artery Pal 2 Pro E-Zigarette verfügt über einen Akku mit einer Kapazität von 1000mAh und Sie Dampfen in einem Leistungsbereich von 5 Watt bis 22 Watt. Sie wählen die gewünschte Leistung in 0,5 Watt Schritten über die Pfeiltasten. Der integrierte Chip speichert Ihre Einstellungen zu den jeweiligen Verdampferköpfen. Die Artery Pal 2 Pro E-Zigarette hat eine Größe von 43 mm x 19 mm x 83 mm und verfügt über einen Micro-USB-Anschluss an der Unterseite des Gehäuses aus Aluminium.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die Artery Pal 2 Pro E-Zigarette ist ein kleines und leichtes Pod-System in dezenter Optik. Die Hülle ist aus Aluminium gefertigt. Sie ist sowohl für Dampfen vom Mund in die Lunge als auch für direkte Lungenzüge geeignet.&nbsp;</p>
+<h2>Artery Pal 2 Pro Akkuträger und Verdampferköpfe</h2>
+<p>Der Akkuzelle der Artery Pal 2 Pro E-Zigarette ist fest eingebaut und verfügt über eine Kapazität von 1.000 mAh. Die E-Zigarette arbeitet im Variable Wattage Modus (VW) mit fester Ausgabeleistung, die über den Leistungsbereich von 5 bis 22 Watt in Schritten von 0,5 Watt einstellbar ist. Mit dem mitgelieferten Micro-USB Kabel laden Sie die E-Zigarette in ca. 75 Minuten vollständig auf.</p>
+<p>Für die Artery Pal 2 Pro E-Zigarette stehen zwei verschiedene Verdampferköpfe mit Widerstandswerten von 1,0 Ohm und 0,6 Ohm zur Verfügung. Beide Köpfe sind im Lieferumfang enthalten. Während der vorinstallierte 1,0 Ohm Kopf für das Dampfen vom Mund in die Lunge optimiert ist (MTL-Stil), eignet sich der 0,6 Ohm Kopf für direkte Lungenzüge (DL-Stil). Lesen Sie dazu bitte auch unsere <strong><a title="Informationen zu den Dampf-Stilen" href="https://www.vapee.de/e-zigarette-ratgeber-mtl-und-dtl-dampf-stil/" target="_self">Informationen zu den verschiedenen Dampfstilen</a></strong>.</p>
+<p>Die Elektronik des Artery Pal 2 Pro E-Zigarette erkennt automatisch, welchen Widerstandswert der gerade verwendete Verdampferkopf hat. Wenn Sie den 0,6 Ohm Kopf verwenden, beträgt die maximal einstellbare Leistung des Akkuträgers 22 Watt, und 13,5 Watt, wenn Sie den 1,0 Ohm Kopf einsetzen. Die Elektronik speichert Ihre Einstellungen für den jeweiligen Kopf und stellt sie beim Wechsel des Verdampferkopfes automatisch wieder her.</p>
+<p>Das integrierte Display zeigt den Widerstand der gerade aktiven Verdampferkopfes, die aktuell eingestellte Leistung sowie den Ladestand des Akkus an. Durch gleichzeitiges Drücken beider Pfeiltasten für 2 Sekunden schalten Sie das Display ein oder aus. Dazu entfernen Sie die Vorderseite des Gehäuses des Akkuträgers.</p>
+<h2>Artery Pal 2 Pro Verdampfer (Pod)</h2>
+<p>Das Pal 2 Pro Pod hat ein Fassungsvermögen von 3 ml. Das reicht in der Regel für einen Arbeitstag. Das Pod wird von der Seite mit E-Liquid befüllt (Side Filling). Es muss dazu nicht vom Akkuträger getrennt werden. Durch das Entfernen der Hülle des Aluminium-Gehäuses erreichen Sie die großzügig bemessene Einfüllöffnung. Den Zugwiderstand stellen Sie über einen Ring an der Basis des Pods stufenlos nach Ihren Wünschen ein.</p>
+<p>Das Pal 2 Pro Pod ist eingesetzt vollständig in die E-Zigarette integriert. Lediglich das Mundstück ragt aus dem Gehäuse heraus. Über ein Sichtfenster überprüfen Sie den Füllstand des Pods, ohne es aus der E-Zigarette entfernen zu müssen.</p>
+<p>Bitte beachten Sie, dass Verdampferköpfe Verschleißteile sind und regelmäßig austauscht werden müssen. Falls Sie bereits wissen, welchen der Verdampferköpfe Sie bevorzugen, bestellen Sie am besten gleich ein paar Ersatzköpfe mit. Lesen Sie hierzu bitte auch unsere <strong><a title="Austausch von Verdampferköpfen" href="https://www.vapee.de/wie-lang-halten-verdampferkoepfe-und-wann-muessen-sie-ausgetauscht-werden/" target="_self">Informationen zur Lebensdauer von Verdampferköpfen</a></strong>.</p>
+<h2>Eigenschaften Artery Pal 2 Pro E-Zigarette</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Stromversorgung</td>
+<td>fest eingebauter Akku, Kapazität 1.000 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodus</td>
+<td>Variable Wattage (VW)</td>
+</tr>
+<tr>
+<td>Leistung</td>
+<td>5 - 22 Watt (VW) <br>einstellbar in Schritten von 0,5 Watt</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V über Micro-USB&nbsp;</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>3,0 ml</td>
+</tr>
+<tr>
+<td>Verdampferköpfe</td>
+<td>Pal 2 Pod HP, 1 Ohm und 0,6 Ohm</td>
+</tr>
+<tr>
+<td>Mundstück</td>
+<td>510er Standard-Anschluss</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>Pod-System</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis des Pods, stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Side Filling, Befüllung von der Seite</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Gehäuse: Aluminium<br>Pod: Kunststoff</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL, vom Mund in die Lunge<br>DL, direkte Lungenzüge</td>
+</tr>
+<tr>
+<td>Besonderheiten</td>
+<td>Smart Wattage System<br>Display</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>83 mm x 43 mm x 19 mm</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
 <ul>
 <li>1x Pal 2 Pro E-Zigaretten Set</li>
-<li>1x Verdampferkopf mit 1 Ohm (eingesetzt)</li>
-<li>1x Verdampferkopf mit 0,6 Ohm</li>
+<li>1x Pal 2 Pod HP Head 1,0 Ohm (vorinstalliert) | MTL (9 - 13,5 Watt)</li>
+<li>1x Pal 2 Pod HP Mesh Head 0,6 Ohm | DL (15 - 23 Watt)</li>
 <li>1x Pod-Verschlusskappe</li>
-<li>1x USB-Kabel</li>
+<li>1x Micro-USB-Kabel</li>
 <li>2x O-Dichtungsringe</li>
 <li>1x Bedienungsanleitung</li>
-<li>1x Garantiekarte</li>
-</ul>
-<br>
-<br>
-<strong>Pal 2 Pro E-Zigaretten Set</strong>
-<ul>
-<li>Akkukapazität: 1000mAh</li>
-<li>Ausgangsleistung: 5 Watt – 22 Watt</li>
-<li>Maße: 43 mm x 19 mm x 83 mm</li>
-<li>Tankvolumen: 3,0 ml</li>
-<li>Material: Aluminiumgehäuse</li>
-<li>Displayanzeige</li>
-<li>DL und MTL</li>
-<li>Side-Filling-System</li>
-<li>Airflow Control</li>
-</ul>
-<br>
-<br>',
+<li>1x Garantiekarte&nbsp;</li>
+</ul>',
     ),
     'AY100P2P' => array(
         'icNumber' => 'AY100P2P',
