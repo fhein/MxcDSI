@@ -11936,14 +11936,14 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'supplier' => 'Bozz Liquids',
         'brand' => 'Bozz Liquids',
         'piecesPerPack' => 1,
-        'content' => null,
+        'content' => '10',
         'capacity' => '10',
         'flavor' => 'Karamell, Mandarine, Vanille',
         'flavorCategory' => 'Süßigkeiten, Zitrusfrüchte, Gewürze',
         'addlCategory' => null,
         'dosage' => '4 - 7',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Bozz Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Karamell, Mandarine, Vanille</strong>.</p><p> ml Aroma sind in eine 10 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Karamell, Mandarine, Vanille</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Bozz Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Karamell, Mandarine, Vanille</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Mandarine, Vanille</td></tr><tr><td>Dosierung</td><td>4 - 7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'BL100A10-FM' => array(
         'icNumber' => 'BL100A10-FM',
@@ -15091,24 +15091,91 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Die E-Zigarette Fog1 aus dem Hause Justfog hat einen fest verbauten Akku mit 1500 mAh Akkukapazität. Die E-Zigarette ist ein All-In-One Gerät, d. h. der Clearomizer und Akku bilden eine fließende Einheit. Der Tank kann bis zu 1,99ml Liquid aufnehmen und über die Airflow Control können Sie den Luftwiderstand regulieren. Im Lieferumfang sind zwei Heads aus der Fog-1 Reihe enthalten; 1x Fog1 Head mit 0,5 Ohm und 1x Fog1 Head mit 0,8 Ohm. Aufgrund der Leistung ist die E-Zigarette für das moderate Dampfen geeignet.
-<br>
-<br>
-<b>Lieferumfang:</b>
-<ul><li>1x JustFog Fog1 E-Zigaretten Set</li>
-<li>1x JustFog Fog1 Head 0,5 Ohm</li>
-<li>1x JustFog Fog1 Head 0,8 Ohm</li>
-<li>1x USB-Ladekabel</li>
-<li>1x Bedienungsanleitung</li></ul><br>
-<br>
-<b>Wichtige Merkmale:</b>\\n<ul><li>Akkukapazität: 1.500 mAh</li>
-<li>Ausgabemodus: Konstante Ausgangsspannung</li>
-<li>Tankvolumen: 1,99 ml</li>
-<li>Top Filling System</li>
-<li>Airflow-Control</li>
-<li>Höhe: 113,5 mm</li>
-<li>Durchmesser 20 mm</li>
-<li>Gewicht: 82,9 Gramm</li>
+        'description' => '<p>Die JustFog Fog1 ist eine für Einsteiger und Umsteiger sehr gut geeignete All-In-One E-Zigarette im Stift-Design. Sie unterstützt das Dampfen sowohl mit direkten Lungenzügen (Direct Lung) als auch mit Zügen vom Mund in die Lunge (Mouth To Lung). Lesen Sie dazu bitte auch unsere <strong><a title="Informationen zu Direct Lung und Mouth To Lung" href="https://www.vapee.de/e-zigarette-ratgeber-mtl-und-dtl-dampf-stil/" target="_self">Informationen zu den verschiedenen Dampfstilen</a></strong>.&nbsp;Die Dampf- und Geschmacksentwicklung ist für ein Gerät dieser Klasse sehr gut.</p>
+<h2>JustFog Fog1 Akku</h2>
+<p>Die JustFog Fog1 arbeitet mit konstanter Leistungsabgabe. Unabhängig vom Ladestand des Akkus sorgt die Steuerlektronik also für eine konstante Dampfentwicklung. Die fest eingebaute Akkuzelle hat eine Kapazität von 1.500 mAh. Das ist für ein All-In-One Gerät großzügig und sicher ausreichend für einen Arbeitstag. Die Bedienung der Justfog Fog1 ist denkbar einfach. Die Steuerung erfolgt ausschließlich über den Feuertaster.</p>
+<p>Eine integrierte LED zeigt den Ladestand des Akkus über verschiedene Farben an. Leuchtet die LED rot, so hat der Akku eine Restladung von weniger als 25%. Bei leerem Akku laden das Gerät über den Micro-USB Anschluss rasch wieder auf. Das Ladekabel ist anders als bei den meisten E-Zigaretten nicht im Lieferumfang enthalten.&nbsp;Die JustFog Fog1 kann während des Aufladens benutzt werden (Passthrough).</p>
+<h2>JustFog Fog1 Verdampfer</h2>
+<p>Der Tank des Verdampfers der JustFog Fog1 hat ein Fassungsvermögen von 1,99 ml. Frisches Liquid füllen Sie von oben ein (Top Filling). Der Verdampfer muss dazu nicht vom Akku getrennt werden.</p>
+<p>Die Luftzufuhr kann über einen Einstellring an der Basis des Verdampfers stufenlos geregelt werden (Airflow Control). So stellen Sie den Zugwiderstand nach Ihren Wünschen ein. Je weiter der Lufteinlass geöffnet ist, umso geringer fällt der Zugwiderstand aus.</p>
+<p>Zum Lieferumfang gehören zwei JustFog Fog1 Organic Cotton Verdampferköpfe, bei denen als Buffermaterial natürliche Baumwolle aus Japan dient. Der eine Kopf hat einen Widerstand von 0,8 Ohm ist für das Dampfen im Mouth To Lung Stil gedacht. Die Justfog Fog1 arbeitet mit diesem Kopf mit einer Leistung von 15 Watt. Der andere Kopf ist mit einem Widerstand von 0,5 Ohm auf direkte Lungenzüge ausgelegt. Bei Verwendung dieses Kopfes arbeitet die Justfog Fog1 mit einer konstanten Leistung von 24 Watt. Bitte achten Sie auf eine ausreichend weit geöffnete Luftzufuhr, wenn Sie Direct Lung dampfen.</p>
+<p>Verdampferköpfe Verschleißteile sind und müssen regelmäßig ausgewechselt werden. Bestellen Sie deshalb am besten zu Ihrer Justfog Fog1 einige Verdampferköpfe zum Ersatz mit. Lesen Sie dazu bitte auch unsere <a title="Information zum Austausch von Verdampferköpfen" href="https://www.vapee.de/wie-lang-halten-verdampferkoepfe-und-wann-muessen-sie-ausgetauscht-werden/" target="_self">I<strong>nformationen zum Austausch von Verdampferköpfen</strong></a>. Für den Austausch des Verdampferkopfes muss der Tank der JustFog Fog1 leer sein.</p>
+<h2>Eigenschaften JustFog Fog1&nbsp; E-Zigarette</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Stromversorgung</td>
+<td>fest eingebauter Akku, Kapazität 1.500 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodus</td>
+<td>konstante Leistung</td>
+</tr>
+<tr>
+<td>Leistung</td>
+<td>0,5 Ohm Head: 24 Watt<br>0,8 Ohm Head: 15 Watt</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V über Micro-USB</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>1,99 ml</td>
+</tr>
+<tr>
+<td>Verdampferköpfe</td>
+<td>JustFog Fog1 Organic Cotton<br>0,5 Ohm und 0,8 Ohm</td>
+</tr>
+<tr>
+<td>Mundstück</td>
+<td>510er Standard-Anschluss</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>Stecksystem</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>Einstellring an der Basis des Pods, stufenlos</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Edelstahl, Pyrex-Glas</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL, vom Mund in die Lunge<br>DL, direkte Lungenzüge</td>
+</tr>
+<tr>
+<td>Besonderheiten</td>
+<td>einfachste Bedienung</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>20 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>113,5 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>82,9 g</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x JustFog Fog1 E-Zigaretten Set</li>
+<li>1x JustFog Fog1 Organic Cotton Head 0,5 Ohm</li>
+<li>1x JustFog Fog1 Organic Cotton Head 0,8 Ohm</li>
+<li>5x Ersatz-Dichtungsring</li>
+<li>1x Bedienungsanleitung</li>
 </ul>',
     ),
     'JF100F1H' => array(
@@ -16166,14 +16233,14 @@ Li-Ion: 10440 / 14500 / 14650 / 16340 / 17500 / 17670 / 18350 / 18500 / 18650 / 
         'supplier' => 'Twisted',
         'brand' => 'Twisted',
         'piecesPerPack' => 1,
-        'content' => null,
+        'content' => '10',
         'capacity' => '10',
         'flavor' => 'Bier, Zitrone',
         'flavorCategory' => 'Getränke, Zitrusfrüchte',
         'addlCategory' => null,
         'dosage' => '3 - 7',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Twisted</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Bier, Zitrone</strong>.</p><p> ml Aroma sind in eine 10 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 10 ml Flasche </td></tr><tr><td>Geschmack </td><td>Bier, Zitrone</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Twisted</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Bier, Zitrone</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Bier, Zitrone</td></tr><tr><td>Dosierung</td><td>3 - 7 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VG10010-PS' => array(
         'icNumber' => 'VG10010-PS',
@@ -27085,7 +27152,7 @@ strong>Lieferumfang</strong>
         'flavor' => 'Aloe Vera, Traube',
         'flavorCategory' => 'Pflanzen, Trauben',
         'addlCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
         'description' => '<p><strong>Shake & Vape E-Liquid von The Fog Clown. Geschmack: Aloe Vera, Traube.</strong></p><p>Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Aloe Vera, Traube</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
@@ -31390,7 +31457,7 @@ Der Creed RTA kann zudem sowohl mit einem Coil als auch mit zwei Coils betrieben
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => null,
+        'description' => '',
     ),
     'SK100V8C' => array(
         'icNumber' => 'SK100V8C',
@@ -42628,40 +42695,108 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
         'addlCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das OBS Cube E-Zigaretten Set hat einen fest verbauten 3000mAh Akku der über das mitgelieferte USB Kabel geladen wird. Sie können sowohl im Variablen Watt Modus (VW) als auch im Temperatur Kontrollierten Modus (TC) Dampfen. Der im Set enthaltene Cube Clearomizer verfügt über einen 4ml großen Tank welchen Sie über ein Top-Filling System mit Liquid befüllen. Hierzu schrauben Sie lediglich Die Top-Kappe ab um an die Befüllöffnung zu gelangen. Die M1 Mesh Heads haben einen Widerstand von 0,2 Ohm und sind für eine Leistung von 50 bis 80 Watt ausgelegt wobei die empfohlene Watt Einstellung zwischen 65 und 75 Watt liegt. Bitte beachten Sie dass Verdampferköpfe Verschleißteile sind und diese regelmäßig bei Geschmacks- oder Leistungsverlust getauscht werden müssen. Auf dem 0,96 Zoll LED-Display können Sie alle relevanten Informationen ablesen wie zum Beispiel die eingestellte Leistung, den Widerstand der Heads, Zugzeit und die Anzahl der getätigten Züge. Trotz der kompakten Bauweise die durch den mittig sitzenden 510er Anschluss kommt müssen Sie nicht auf die Üblichen Sicherheits Features verzichten. Es sind Zugzeit begrenzer, Kuzschluss-, Tiefenentlade-, Überlade- und Überhitzungsschutz auf dem Chip im OBS Cube E-zigaretten Set enthalten. 
-<strong>Lieferumfang:</strong>
-<ul>         
-<li>1x OBS Cube E-Zigaretten Set</li>
-<li>2x Mesh M1 0,2 Ohm Heads (50 - 80 Watt)  </li>
+        'description' => '<p>Schlank und mit originellem Design ist die OBS Cube E-Zigarette ausschließlich auf das Dampfen mit direkten Lungenzügen ausgelegt. Dank der großzügig abgerundeten Kanten liegt die kompakte OBS Cube sehr angenehm in der Hand. Die Bedientasten sind wertig verarbeitet und haben einen angenehmen Druckpunkt.</p>
+<p>Die OBS Cube verfügt über einige Einstellmöglichkeiten, ist aber nicht überkompliziert. Deshalb ist sie sowohl für den erfahrenen Dampfer als auch für den ambitionierten Einsteiger, der sich auf das Direct Lung Dampfen einlassen möchte, gut geeignet.&nbsp;Lesen Sie dazu bitte auch unsere <strong><a title="Die Dampfstile DL und MTL" href="https://www.vapee.de/e-zigarette-ratgeber-mtl-und-dtl-dampf-stil/" target="_self">Informationen zu den verschiedenen Dampfstilen</a></strong>.&nbsp;</p>
+<h2>OBS Cube Akku</h2>
+<p>Die Akkuzelle ist bei der OBS Cube fest eingebaut und hat eine sehr großzügige Kapazität von 3.000 mAh, mit der Sie gut über den Tag kommen. Laden Sie den Akku über das mitgelieferte USB-Ladekabel wieder auf. Die OBS Cube verträgt einen Ladestrom von 1,5 Ampere und ermöglicht so ein rasches Laden. Eine Vollaufladung bei leerem Akku dauert ca. 2,5 Stunden.</p>
+<p>Der OBS Cube Akku verfügt über zwei Betriebsarten. Im Variable Wattage Modus (VW) gibt der Akku unabhängig vom Ladestand eine konstante, einstellbare Leistung aus. Im Temperature Controlled Modus (TC) erfolgt die Leistungsabgabe so, dass im Verdampferkopf eine maximale Temperatur nicht überschritten wird.</p>
+<p>Die Elektronik der OBS Cube arbeitet sehr schnell, sie "feuert" bereits nach 10 ms. Damit ist die OBS Cube um einiges schneller als viele andere E-Zigaretten. Der Verdampfer wird über einen standardisierten 510er Schraubanschluss mit dem Akku verbunden, der sich mittig oben auf dem OBS Cube Akku befindet.</p>
+<p>Der OBS Cube Akku verfügt über ein eingebautes Display zur Anzeige der aktuellen Einstellungen und des Akkuladestands. Für ein sicheres Dampfen sind wichtige Sicherheitsfunktionen an Bord: Zugzeit-Begrenzer sowie Kuzschluss-, Tiefenentlade-, Überlade- und Überhitzungsschutz.</p>
+<h2>OBS Cube Verdampfer</h2>
+<p>Der Verdampfer der OBS Cube verfügt über einen Liquidtank mit einem Fassungsvermögen von 2 ml. Frisches Liquid füllen Sie von oben in den Verdampfer ein, der dazu nicht vom Akku getrennt werden muss. Wenn Sie die Top-Kappe abschrauben, wird die Einfüllöffnung freigelegt.</p>
+<p>Den Zugwiderstand stellen Sie über einen Einstellring an der Basis des Verdampfers stufenlos ein. Je weiter die Luftzufuhr geöffnet ist, desto geringer ist der Zugwiderstand.</p>
+<p>Die mitgelieferten Verdampferköpfe der OBS Cube haben einen elektrischen Widerstand von 0,2 Ohm. Das Liquid wird nicht an einer klassischen Wicklung, sonder an einem Drahtnetz (Mesh) verdampft. Dadurch erfolgt die Verdampfung gleichmäßiger, und es entsteht eine größere Dampfmenge. Die Köpfe können im Bereich zwischen 50 und 80 Watt betrieben werden. OBS empfiehlt einen Betrieb zwischen 65 und 75 Watt.</p>
+<p>Bitte beachten Sie, dass Verdampferköpfe Verschleißteile sind und regelmäßig ausgetauscht werden müssen. Bestellen Sie deshalb zu Ihrer OBS Cube am besten gleich ein paar Ersatzköpfe mit. Lesen Sie dazu bitte auch unsere <strong><a title="Wann muss der Verdampferkopf getauscht werden?" href="https://www.vapee.de/wie-lang-halten-verdampferkoepfe-und-wann-muessen-sie-ausgetauscht-werden/">Informationen zur Lebensdauer von Verdampferköpfen</a></strong>.</p>
+<h2>Eigenschaften OBS Cube Akku</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>fest eingebaute Akkuzelle, Kapazität 3.000 mAh</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW, TC</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>80 Watt max.</td>
+</tr>
+<tr>
+<td>Ausgangsspannung</td>
+<td>3,2 - 4,2 Volt</td>
+</tr>
+<tr>
+<td>Widerstandsbereich</td>
+<td>0,1 – 3 Ohm</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V/1,5A</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>10 ms Reaktionszeit beim Feuern</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>81,5 mm x 30,6 mm x 30,6 mm</td>
+</tr>
+<tr>
+<td>Gewicht</td>
+<td>152 Gramm</td>
+</tr>
+</tbody>
+</table>
+<h2>Eigenschaften OBS Cube Verdampfer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>2 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24 mm</td>
+</tr>
+<tr>
+<td>Höhe</td>
+<td>45,6 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Glas und Edelstahl</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>stufenlos, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>Direct Lung, Direkte Lungeninhalation</td>
+</tr>
+</tbody>
+</table>
+<h2>Lieferumfang</h2>
+<ul>
+<li>1x OBS Cube E-Zigarette</li>
+<li>2x Mesh M1 0,2 Ohm Heads (50 - 80 Watt)</li>
 <li>1x Ersatztank</li>
 <li>1x USB-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<br>
-<b>Cube 80 Watt</b>
-<ul>
-<li>Akkukapazität: 3000mAh</li>
-<li>Ausgangsleistung: max. 80 Watt</li>
-<li>Ausgangsspannung: 3,2 bis 4,2 Volt</li>
-<li>Widerstandsbereich: 0,1 bis 3 Ohm</li>
-<li>Gewindetyp: 510er</li>
-<li>Maße: 81,5 mm x 30,6 mm</li>
-</ul>
-<br>
-<br>
-<b>Cube Clearomizer</b>
-<ul>
-<li>Tankvolumen: 4 ml</li>
-<li>Höhe: 45,6 mm</li>
-<li>Durchmesser: 24 mm</li>
-<li>Gewindetyp: 510</li>
-<li>Material: Edelstahl und Glas</li>
-<li>subohm-fähig</li>
-<li>Top Filling</li>
-<li>Airflow-Control</li>
-</ul>
-',
+</ul>',
     ),
     'OS100CBM' => array(
         'icNumber' => 'OS100CBM',
@@ -48232,12 +48367,12 @@ Um den Tank mit Liquid zu befüllen, müssen Sie den Knopf an der Vorderseite de
         'supplier' => 'The Fog Clown',
         'brand' => 'The Fog Clown',
         'piecesPerPack' => 1,
-        'content' => null,
+        'content' => '50',
         'capacity' => '60',
         'flavor' => 'Limette, Vanille, Eiscreme',
         'flavorCategory' => 'Zitrusfrüchte, Gewürze, Cremiges, Frisches & Eiscreme',
         'addlCategory' => null,
-        'dosage' => null,
+        'dosage' => '',
         'base' => null,
         'description' => '<p><strong>Shake & Vape E-Liquid von The Fog Clown. Geschmack: Limette, Vanille, Eiscreme.</strong></p><p>Die 60 ml Flasche enthält 50 ml überaromatisiertes, nikotinfreies E-Liquid. Füllen Sie die Flasche einfach mit 10 ml Nikotin-Shot oder 10 ml Basis auf. Anschließend gut schütteln, und Ihr E-Liquid ist fertig zum Gebrauch.</p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>50 ml überaromatisiertes E-Liquid in 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Limette, Vanille, Eiscreme</td></tr><tr><td>Inhaltsstoffe<sup>1</sup></td><td>PG, VG, Aromastoffe</td></tr></tbody></table><p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin. </p>',
     ),
@@ -63839,13 +63974,13 @@ strong>Find Pod</strong>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'content' => null,
+        'content' => '14',
         'capacity' => '60',
         'flavor' => 'Anis, Beeren, Koolada',
         'flavorCategory' => 'Gewürze, Beeren, Frisches & Eiscreme',
         'dosage' => '23',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Anis, Beeren, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Anis, Beeren, Koolada</strong>.</p><p>14 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>14 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Anis, Beeren, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-PN' => array(
         'icNumber' => 'VV100A10-PN',
@@ -63857,13 +63992,13 @@ strong>Find Pod</strong>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'content' => null,
+        'content' => '14',
         'capacity' => '60',
         'flavor' => 'rote Beeren, rote Früchte',
         'flavorCategory' => 'Beeren, Früchte',
         'dosage' => '23',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Rote Beeren, rote Früchte</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Rote Beeren, rote Früchte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Rote Beeren, rote Früchte</strong>.</p><p>14 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>14 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Rote Beeren, rote Früchte</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-CU' => array(
         'icNumber' => 'VV100A10-CU',
@@ -63875,13 +64010,13 @@ strong>Find Pod</strong>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'content' => null,
+        'content' => '14',
         'capacity' => '60',
         'flavor' => 'Sommerfrüchte, schwarze Johannisbeere, Koolada',
         'flavorCategory' => 'Früchte, Beeren, Frisches & Eiscreme',
         'dosage' => '23',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Sommerfrüchte, schwarze Johannisbeere, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Sommerfrüchte, schwarze Johannisbeere, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Sommerfrüchte, schwarze Johannisbeere, Koolada</strong>.</p><p>14 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>14 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Sommerfrüchte, schwarze Johannisbeere, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VV100A10-SLP' => array(
         'icNumber' => 'VV100A10-SLP',
@@ -63893,13 +64028,13 @@ strong>Find Pod</strong>
         'supplier' => 'Vampire Vape',
         'brand' => 'Vampire Vape',
         'piecesPerPack' => 1,
-        'content' => null,
+        'content' => '14',
         'capacity' => '60',
         'flavor' => 'Zitronentorte, Zuckersirup',
         'flavorCategory' => 'Gebäck, Süßigkeiten',
         'dosage' => '23',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Zitronentorte, Zuckersirup</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitronentorte, Zuckersirup</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Vampire Vape</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Zitronentorte, Zuckersirup</strong>.</p><p>14 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>14 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zitronentorte, Zuckersirup</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'EZRL-TSHIRT' => array(
         'icNumber' => 'EZRL-TSHIRT',
@@ -66166,9 +66301,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Blaubeere',
         'flavorCategory' => 'Beeren',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Blaubeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Blaubeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-CE' => array(
         'icNumber' => 'VL100A10-CE',
@@ -66184,9 +66319,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Espresso',
         'flavorCategory' => 'Tee & Kaffee',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Espresso</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Espresso</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Espresso</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Espresso</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-CY' => array(
         'icNumber' => 'VL100A10-CY',
@@ -66202,9 +66337,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Kirsche',
         'flavorCategory' => 'Früchte',
-        'dosage' => '',
+        'dosage' => '2 - 3',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kirsche</td></tr><tr><td>Dosierung</td><td>2 - 3 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-RB' => array(
         'icNumber' => 'VL100A10-RB',
@@ -66220,9 +66355,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Himbeere',
         'flavorCategory' => 'Beeren',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Himbeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Himbeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Himbeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Himbeere</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-MG' => array(
         'icNumber' => 'VL100A10-MG',
@@ -66238,9 +66373,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Mango',
         'flavorCategory' => 'exotische Früchte',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Mango</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Mango</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Mango</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Mango</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-VB' => array(
         'icNumber' => 'VL100A10-VB',
@@ -66256,9 +66391,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Vanille',
         'flavorCategory' => 'Gewürze',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-VC' => array(
         'icNumber' => 'VL100A10-VC',
@@ -66274,9 +66409,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Vanille, Eis',
         'flavorCategory' => 'Gewürze, Frisches & Eiscreme',
-        'dosage' => '',
+        'dosage' => '3 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille, Eis</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille, Eis</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille, Eis</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille, Eis</td></tr><tr><td>Dosierung</td><td>3 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-HZ' => array(
         'icNumber' => 'VL100A10-HZ',
@@ -66292,9 +66427,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Haselnuss',
         'flavorCategory' => 'Nüsse',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Haselnuss</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Haselnuss</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Haselnuss</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Haselnuss</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-PH' => array(
         'icNumber' => 'VL100A10-PH',
@@ -66310,9 +66445,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Pfirsich',
         'flavorCategory' => 'Früchte',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pfirsich</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pfirsich</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pfirsich</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pfirsich</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-AA' => array(
         'icNumber' => 'VL100A10-AA',
@@ -66328,9 +66463,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Ananas',
         'flavorCategory' => 'Früchte',
-        'dosage' => '',
+        'dosage' => '2 - 3',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Ananas</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Ananas</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Ananas</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Ananas</td></tr><tr><td>Dosierung</td><td>2 - 3 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-BN' => array(
         'icNumber' => 'VL100A10-BN',
@@ -66346,9 +66481,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Banane',
         'flavorCategory' => 'Früchte',
-        'dosage' => '',
+        'dosage' => '2 - 3',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Banane</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Banane</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Banane</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Banane</td></tr><tr><td>Dosierung</td><td>2 - 3 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-CS' => array(
         'icNumber' => 'VL100A10-CS',
@@ -66364,9 +66499,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Kokos',
         'flavorCategory' => 'exotische Früchte',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kokos</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kokos</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kokos</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Kokos</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-PC' => array(
         'icNumber' => 'VL100A10-PC',
@@ -66382,9 +66517,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Karamell, Popcorn',
         'flavorCategory' => 'Süßigkeiten',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Karamell, Popcorn</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Popcorn</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Karamell, Popcorn</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Popcorn</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-BC' => array(
         'icNumber' => 'VL100A10-BC',
@@ -66400,9 +66535,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Biskuit, Keks, Vanille, Karamell, Früchte',
         'flavorCategory' => 'Gebäck, Gewürze, Süßigkeiten, Früchte',
-        'dosage' => '',
+        'dosage' => '3 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Biskuit, Keks, Vanille, Karamell, Früchte</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Biskuit, Keks, Vanille, Karamell, Früchte</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Biskuit, Keks, Vanille, Karamell, Früchte</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Biskuit, Keks, Vanille, Karamell, Früchte</td></tr><tr><td>Dosierung</td><td>3 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'VL100A10-LC' => array(
         'icNumber' => 'VL100A10-LC',
@@ -66418,9 +66553,9 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'capacity' => '10',
         'flavor' => 'Lakritz',
         'flavorCategory' => 'Gewürze',
-        'dosage' => '',
+        'dosage' => '2 - 4',
         'base' => null,
-        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Lakritz</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Lakritz</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Vapors Line</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Lakritz</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Lakritz</td></tr><tr><td>Dosierung</td><td>2 - 4 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'FT100A10-FY' => array(
         'icNumber' => 'FT100A10-FY',
@@ -66432,13 +66567,13 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'Flavour Trade',
         'brand' => 'Flavour Trade',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '20',
+        'capacity' => '60',
         'flavor' => 'Mandarine, Blutorange, Cookie',
         'flavorCategory' => 'Zitrusfrüchte, Gebäck',
-        'dosage' => '',
+        'dosage' => '33',
         'base' => null,
-        'description' => '<p><strong>Aroma von Flavour Trade</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Mandarine, Blutorange, Cookie</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Mandarine, Blutorange, Cookie</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Flavour Trade</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Mandarine, Blutorange, Cookie</strong>.</p><p>20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mandarine, Blutorange, Cookie</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'FT100A10-YB' => array(
         'icNumber' => 'FT100A10-YB',
@@ -66450,13 +66585,13 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'Flavour Trade',
         'brand' => 'Flavour Trade',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '20',
+        'capacity' => '60',
         'flavor' => 'Yubari Melone, Brause',
         'flavorCategory' => 'Melonen, Getränke',
-        'dosage' => '',
+        'dosage' => '33',
         'base' => null,
-        'description' => '<p><strong>Aroma von Flavour Trade</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Yubari Melone, Brause</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Yubari Melone, Brause</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Flavour Trade</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Yubari Melone, Brause</strong>.</p><p>20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Yubari Melone, Brause</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'GV100ASD' => array(
         'icNumber' => 'GV100ASD',
@@ -68120,13 +68255,13 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'Yankee Juice',
         'brand' => 'Yankee Juice',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '15',
         'capacity' => '60',
         'flavor' => 'Mango, Koolada',
         'flavorCategory' => 'exotische Früchte, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Mango, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Mango, Koolada</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Mango, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'YJ100A10-IC' => array(
         'icNumber' => 'YJ100A10-IC',
@@ -68138,13 +68273,13 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'Yankee Juice',
         'brand' => 'Yankee Juice',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '15',
         'capacity' => '60',
         'flavor' => 'Kirsche, Traube, Anis, Koolada',
         'flavorCategory' => 'Früchte, Trauben, Gewürze, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche, Traube, Anis, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Traube, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche, Traube, Anis, Koolada</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Traube, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'YJ100A10-IB' => array(
         'icNumber' => 'YJ100A10-IB',
@@ -68156,13 +68291,13 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'Yankee Juice',
         'brand' => 'Yankee Juice',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '15',
         'capacity' => '60',
         'flavor' => 'schwarze Traube, Koolada',
         'flavorCategory' => 'Trauben, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarze Traube, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Traube, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarze Traube, Koolada</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Traube, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'YJ100A10-IG' => array(
         'icNumber' => 'YJ100A10-IG',
@@ -68174,13 +68309,13 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'Yankee Juice',
         'brand' => 'Yankee Juice',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '15',
         'capacity' => '60',
         'flavor' => 'schwarze Traube, Anis, Koolada',
         'flavorCategory' => 'Trauben, Gewürze, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarze Traube, Anis, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Traube, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Schwarze Traube, Anis, Koolada</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Schwarze Traube, Anis, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'YJ100A10-IL' => array(
         'icNumber' => 'YJ100A10-IL',
@@ -68192,13 +68327,13 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'Yankee Juice',
         'brand' => 'Yankee Juice',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '15',
         'capacity' => '60',
         'flavor' => 'Litschi, Holunderblüte, Passionsfrucht, Koolada',
         'flavorCategory' => 'exotische Früchte, Pflanzen, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Litschi, Holunderblüte, Passionsfrucht, Koolada</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Litschi, Holunderblüte, Passionsfrucht, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Litschi, Holunderblüte, Passionsfrucht, Koolada</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Litschi, Holunderblüte, Passionsfrucht, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'YJ100A10-IS' => array(
         'icNumber' => 'YJ100A10-IS',
@@ -68210,13 +68345,13 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'Yankee Juice',
         'brand' => 'Yankee Juice',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '15',
         'capacity' => '60',
         'flavor' => 'Slush Eis',
         'flavorCategory' => 'Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Slush Eis</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Slush Eis</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Yankee Juice</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Slush Eis</strong>.</p><p>15 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>15 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Slush Eis</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'AS100KL' => array(
         'icNumber' => 'AS100KL',
@@ -69692,11 +69827,11 @@ Die WF-H Verdampferköpfe der Marke Snowwolf weisen einen Widerstand von 0,16 Oh
         'supplier' => 'XTAR',
         'brand' => 'XTAR',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
-        'flavor' => '',
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
         'flavorCategory' => null,
-        'dosage' => '',
+        'dosage' => null,
         'base' => null,
         'description' => 'Das aus dem Hause Xtar stammende MC2S Ladegerät für bis zu zwei Li-ion Akkuzellen kann mit bis zu 0,5A pro Ladeschacht laden. Hierzu ist ein USB Netzstecker mit 5V/1A vonnöten. Der Netzstecker ist nicht Bestandteil des Lieferumfangs und muss separat erworben werden. Sie haben auch die Möglichkeit das Ladegerät mit dem im Lieferumfang enthaltenen USB-Kabels am PC oder Laptop zu laden. Hier kommt es aufgrund des geringeren Ladestroms zu einer längeren Ladezeit, da pro Schacht nur 0,25A Ladestrom ankommen. Zwei LED´s an der Oberseite des Ladegerätes informieren Sie über den Ladezustand. Hier sind rot für den Status “lädt” und grün für “voll”. 
 <br>
@@ -72463,7 +72598,7 @@ Der Exilis X Pod von Snowwolf ist der passende Pod für Ihre Snowwolf Exilis X P
         'supplier' => 'Dr. Frost',
         'brand' => 'Dr. Frost',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '100',
         'capacity' => '120',
         'flavor' => 'Traube, Limonade',
         'flavorCategory' => 'Trauben, Getränke',
@@ -72481,7 +72616,7 @@ Der Exilis X Pod von Snowwolf ist der passende Pod für Ihre Snowwolf Exilis X P
         'supplier' => 'Dr. Frost',
         'brand' => 'Dr. Frost',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '100',
         'capacity' => '120',
         'flavor' => 'Beeren, Limonade',
         'flavorCategory' => 'Beeren, Getränke',
@@ -75053,36 +75188,67 @@ Bei der Ausgangsleistung für den 1,3 Ohm Pod können Sie zwischen drei Leistung
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Aus dem Hause Aspire kommt das E-Zigaretten Set Mulus. Diese E-Zigarette wird in der Kategorie der Pod-Systeme angesiedelt und unterstützt sowohl das Dampfen im Subohm-Bereich als auch das moderate Dampfen. Die Mulus kommt mit einem relativ großen Lieferumfang. So erhalten Sie beim Kauf des Mulus E-Zigaretten Sets eine 4,2 ml große Cartridge, einen Tigon 0,4 Ohm Verdampferkopf, einen Tigon Verdampferkopf mit 1,2 Ohm. Darüber hinaus werden noch zwei Verdampferköpfe der Nautilus Reihe mitgeliefert. Dies sind der vorinstallierte Nautilus 2S Mesh mit einem Widerstand von 0,7 Ohm und ein Nautilus BVC mit 1,8 Ohm. Um die beiden Nautilus nutzen zu können, liegt ein passender Adapter mit regulierbarer Airflow-Control bereit. Beachten Sie bitte, dass Sie die Heads in regelmäßigen Abständen gegen neue austauschen sollten, um so eine negative Entwicklung des Geschmacks und /oder des Dampfes entgegenzuwirken. Für die benötigte Energie muss eine 18650er Akkuzelle eingesetzt werden. Die 18650er Akkuzelle befindet sich nicht im Lieferumfang und muss separat erworben werden. Mit der Mulus können Sie im Bypass-, im VV- sowie im VW-Modus dampfen. Dabei liegt der Leistungsbereich zwischen einem und 80 Watt. Über ein Display können Sie die getätigten Einstellungen und auch den Akkustand ablesen. Einstellungen geschehen über zwei Einstelltasten. Eine magnetische Abdeckung sorgt dafür, dass die Tasten wie auch die eingesetzte Akkuzelle geschützt sind. Wie viel Liquid sich noch in der Cartridge befindet, können Sie aber trotzdem noch sehen. Die Cartridge lässt sich über ein Side-Filling-System wieder befüllen.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Die Aspire Mulus E-Zigarette ist ein sogenanntes POD-System und klein und kompakt - aber nicht zu unterschätzen! Trotz ihrer Kompaktheit bietet die Aspire Mulus Platz für ein 18650er Akku, natürlich austauschbar. Ebenfalls im Inneren befindet sich ein Pod-System mit 4,2 ml Tankvolumen, welches seitlich befüllt wird. An Akku und Pod gelangt man, nachdem man das Gehäusecover entfernt hat, welches über Magnete sicher gehalten wird und dennoch leicht zu entfernen ist. Als Verdampferköpfe (Heads) können sowohl Nautilus- als auch Tigon-Coils genutzt werden.</p>
+<p>Die Aspire Mulus benötigt einen 18650er Akku und arbeitet im Bypass-, Volt- oder Watt-Modus. Einstellen kann man den gewünschten Modus über die zwei Tasten (+ und -), die sich ebenfalls unter dem Gehäusecover befinden.</p>
+<p>Das Pod-System der Aspire Mulus hat ein Tankvolumen von 4,2 ml und wird über ein Side-Filling-System befüllt. Es können sowohl Nautilus- als auch Tigon-Coils genutzt werden. Für den Einsatz von Nautilus-Coils wird der mitgelieferte Adapter benötigt und der Airflow kann eingestellt werden. Mit dem Nautilus-Coil wird diese E-Zigarette im MTL-Dampfstil verwendet. Mit dem Tigon-Coil ist die Aspire Mulus für das DL-Dampen (direct lung) geeignet. Hier kann der Airflow nicht eingestellt werden. Beide Coils sind im Lieferumfang enthalten.</p>
+<p>Verdampferköpfe (Coils) sind Verbrauchsartikel. Sobald sich der Geschmack Ihres Liquids verändert oder die Dampfentwicklung geringer wird, sollten Sie einen neuen einsetzen.</p>
+<p>Der 18650er Akku ist nicht im Lieferumfang enthalten!</p>
+<h2><strong>Eigenschaften Aspire Mulus E-Zigarette</strong></h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Akku</td>
+<td>1 x 18650er (nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 bis 80 Watt</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW, VV, Bypass</td>
+</tr>
+<tr>
+<td>Tankvolumen</td>
+<td>5,4 ml</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Side-Filling-System unter dem Cover</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>ja, mit Nautilus Coil</td>
+</tr>
+<tr>
+<td valign="middle">Inhalation</td>
+<td>MTl, Mouth to Lung <br>DL, Direct Lung</td>
+</tr>
+<tr>
+<td>Ladestrom</td>
+<td>DC 5V/2A</td>
+</tr>
+<tr>
+<td>Maße</td>
+<td>97,4 mm x 50 mm x 24 mm</td>
+</tr>
+<tr>
+<td>besondere Merkmale</td>
+<td>LCD Display</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
-<li>1x Mulus Akku</li>
+<li>1x Aspire Mulus E-Zigarette</li>
 <li>1x Mulus 4,2ml Cartridge</li>
 <li>1x Nautilus Coil Adapter</li>
 <li>1x Nautilus 2S Mesh Head 0,7 Ohm (vorinstalliert)</li>
-<li>1x Nautilus BVC Head 1,8 Ohm</li>
+<li>1x Axpire Nautilus BVC Head 1,8 Ohm</li>
 <li>1x Tigon Head 0,4 Ohm</li>
 <li>1x Tigon Head 1,2 Ohm</li>
 <li>1x USB-C Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
-</ul>
-
-<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<br>
-<strong>Mulus E-Zigaretten Set</strong>
-<ul>
-<li>Höhe: 97,4 mm</li>
-<li>Breite: 50 mm</li>
-<li>Länge: 24 mm</li>
-<li>Tankvolumen: 4,2 ml</li>
-<li>Ausgangsleistung: 1 - 80 Watt</li>
-<li>Ausgabemodi: Bypass, VV, VW
-<li>Low-Feed-Airflow Control</li>
-<li>Side-Filling System</li>
-<li>DL und MTL möglich</li>
 </ul>',
     ),
     'AS100MUC' => array(
@@ -75101,29 +75267,36 @@ Bei der Ausgangsleistung für den 1,3 Ohm Pod können Sie zwischen drei Leistung
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Für das Aspire Mulus E-Zigaretten Set ist diese Cartridge der passende Zubehör-und/oder Ersatzartikel. Ausgestattet mit einem Tankvolumen von 4,2 ml gehört die Cartridge zu den größeren ihrer Art. Die Cartridge kann über ein Side-Filling System befüllt werden, ohne dass diese aus der E-Zigarette genommen werden muss.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Das Mulus Cartridge ist für die Aspire Mulus E-Zigaretten-Set. Das Cartridge hat einen Tank für 4,2 ml Liquid welches über ein Side-Filling-System eingefüllt wird.</p>
+<h2>Eigenschaften Aspire Mulus Cartridge</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td class="auto-style1">Tankvolumen</td>
+<td class="auto-style1">4,2 ml</td>
+</tr>
+<tr>
+<td class="auto-style1">Befüllung</td>
+<td class="auto-style1">Side-Filling-System</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Lieferumfang</strong></h2>
 <ul>
-<li>1x Aspire Mulus 4,2ml Cartridge</li>
+<li>1x Aspire Mulus Cartridge</li>
+<li>1x Axpire Breeze NXT Mesh Head 0,8 Ohm</li>
 </ul>
-<br>
-<strong>Wichtige Merkmale</strong>
+<h2>passend zu</h2>
 <ul>
-<li>Tankvolumen: 4,2 ml</li>
-<li>Side-Filling-System</li>
+<li>Aspire Mulus E-Zigaretten-Set</li>
 </ul>
-<br>
-<b>Kompatibel mit:</b>
+<h2>kompatibel mit</h2>
 <ul>
 <li>Nautilus 2S Mesh Head 0,7 Ohm</li>
 <li>Nautilus BVC Head 1,8 Ohm</li>
 <li>Tigon Head 0,4 Ohm</li>
 <li>Tigon Head 1,2 Ohm</li>
-</ul>
-<br>
-<br>',
+</ul>',
     ),
     'IK100AR' => array(
         'icNumber' => 'IK100AR',
@@ -77030,21 +77203,16 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Das Aspire AVP Pro E-Zigaretten Set besitzt einen fest verbauten Akku mit einer Kapazität von 1.200mAh. Der Akku unterstützt das Dampfen mit vier einstellbaren Ausgangsleistungen (10, 12, 14 und 16 Watt). Über zweimaliges Bedienen der Feuertaste wechseln Sie zwischen den Ausgangsleistungen. Eine LED informiert Sie darüber, in welchem Modi Sie sich gerade befinden und gibt darüber hinaus Info, sobald Sie den Akku mit neuer Energie versorgen sollten. Sie können das im Lieferumfang befindliche Pod-System mit bis zu 4ml Liquid befüllen. Sie nutzen hierzu ein Bottom-Filling-System. Sie können wahlweise einen der mitgelieferten Verdampferköpfe in das Pod-System einsetzen. Sie können wählen zwischen einem Widerstand von 0,65 Ohm, dieser ist für das Dampfen im Subohm-Bereich geeignet, oder Sie nutzen den Verdampferkopf mit 1,15 Ohm und sammeln zuerst den Dampf im Mundraum und inhalieren anschließendin die Lunge. Bitte beachten Sie, dass es sich bei den Verdampferköpfen um sogenannte Verschleißartikel handelt, deren regelmäßiger Wechsel für ein gleichbleibendes Dampferlebnis empfehlenswert ist.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Das Aspire AVP Pro E-Zigaretten Set besitzt einen fest verbauten Akku mit einer Kapazität von 1.200mAh. Der Akku unterstützt das Dampfen mit vier einstellbaren Ausgangsleistungen (10, 12, 14 und 16 Watt). Über zweimaliges Bedienen der Feuertaste wechseln Sie zwischen den Ausgangsleistungen. Eine LED informiert Sie darüber, in welchem Modi Sie sich gerade befinden und gibt darüber hinaus Info, sobald Sie den Akku mit neuer Energie versorgen sollten. Sie können das im Lieferumfang befindliche Pod-System mit bis zu 4ml Liquid befüllen. Sie nutzen hierzu ein Bottom-Filling-System. Sie können wahlweise einen der mitgelieferten Verdampferköpfe in das Pod-System einsetzen. Sie können wählen zwischen einem Widerstand von 0,65 Ohm, dieser ist für das Dampfen im Subohm-Bereich geeignet, oder Sie nutzen den Verdampferkopf mit 1,15 Ohm und sammeln zuerst den Dampf im Mundraum und inhalieren anschließendin die Lunge. Bitte beachten Sie, dass es sich bei den Verdampferköpfen um sogenannte Verschleißartikel handelt, deren regelmäßiger Wechsel für ein gleichbleibendes Dampferlebnis empfehlenswert ist. <br> <br> <strong>Lieferumfang</strong></p>
 <ul>
 <li>1x AVP Pro Akku</li>
-<li>2x AVP Pro Pod </li>
+<li>2x AVP Pro Pod</li>
 <li>1x AVP Pro Mesh Head 0,65 Ohm</li>
 <li>1x AVP Pro Head 1,15 Ohm</li>
 <li>1x USB-C-Ladekabel</li>
 <li>1x Bedienungsanleitung</li>
 </ul>
-<br>
-<br>
-<strong>AVP PRO E-ZIGARETTE</strong>
+<p><br> <br> <strong>AVP PRO E-ZIGARETTE</strong></p>
 <ul>
 <li>Akkukapazität: 1.200 mAh</li>
 <li>Tankvolumen: 4 ml</li>
@@ -77057,8 +77225,7 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
 <li>Airflow-Control</li>
 <li>LED-Indikator</li>
 </ul>
-<br>
-<br>',
+<p>&nbsp;</p>',
     ),
     'AS100APP' => array(
         'icNumber' => 'AS100APP',
@@ -77169,13 +77336,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Minze',
         'flavorCategory' => 'Frisches & Eiscreme',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Minze</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Minze</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Minze</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Minze</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'JK100A10-BQ' => array(
         'icNumber' => 'JK100A10-BQ',
@@ -77187,13 +77354,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Blaubeere, Cream',
         'flavorCategory' => 'Beeren, Cremiges',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Blaubeere, Cream</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere, Cream</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Blaubeere, Cream</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Blaubeere, Cream</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'JK100A10-JB' => array(
         'icNumber' => 'JK100A10-JB',
@@ -77205,13 +77372,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Tabak, Karamell',
         'flavorCategory' => 'Tabak, Süßigkeiten',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Tabak, Karamell</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak, Karamell</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Tabak, Karamell</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak, Karamell</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'JK100A10-JN' => array(
         'icNumber' => 'JK100A10-JN',
@@ -77223,13 +77390,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Tabak, Nuss',
         'flavorCategory' => 'Tabak, Nüsse',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Tabak, Nuss</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak, Nuss</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Tabak, Nuss</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Tabak, Nuss</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'JK100A10-AA' => array(
         'icNumber' => 'JK100A10-AA',
@@ -77241,13 +77408,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Apfel, Limette, Koolada',
         'flavorCategory' => 'Früchte, Zitrusfrüchte, Frisches & Eiscreme',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfel, Limette, Koolada</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel, Limette, Koolada</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfel, Limette, Koolada</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfel, Limette, Koolada</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'JK100A10-DC' => array(
         'icNumber' => 'JK100A10-DC',
@@ -77259,13 +77426,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Vanille, Karamell, Cream',
         'flavorCategory' => 'Gewürze, Süßigkeiten, Cremiges',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille, Karamell, Cream</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille, Karamell, Cream</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille, Karamell, Cream</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille, Karamell, Cream</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'JK100A10-KB' => array(
         'icNumber' => 'JK100A10-KB',
@@ -77277,13 +77444,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Orange, Zitrone, Himbeere, Erdbeere',
         'flavorCategory' => 'Zitrusfrüchte, Beeren',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Orange, Zitrone, Himbeere, Erdbeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Orange, Zitrone, Himbeere, Erdbeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Orange, Zitrone, Himbeere, Erdbeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Orange, Zitrone, Himbeere, Erdbeere</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'JK100A10-SA' => array(
         'icNumber' => 'JK100A10-SA',
@@ -77295,13 +77462,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Apfelkuchen',
         'flavorCategory' => 'Gebäck',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfelkuchen</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfelkuchen</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Apfelkuchen</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Apfelkuchen</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'JK100A10-CC' => array(
         'icNumber' => 'JK100A10-CC',
@@ -77313,13 +77480,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Karamell, Toffee, Sahne',
         'flavorCategory' => 'Süßigkeiten, Bonbons & Kaugummi, Milch & Co.',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Karamell, Toffee, Sahne</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Toffee, Sahne</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Karamell, Toffee, Sahne</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Karamell, Toffee, Sahne</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SW100KF' => array(
         'icNumber' => 'SW100KF',
@@ -77559,13 +77726,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Ultrabio',
         'brand' => 'Ultrabio',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '10',
         'capacity' => '120',
         'flavor' => 'Pfirsich, grüner Tee',
         'flavorCategory' => 'Früchte, Tee & Kaffee',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Ultrabio</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pfirsich, grüner Tee</strong>.</p><p> ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich, grüner Tee</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Ultrabio</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pfirsich, grüner Tee</strong>.</p><p>10 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Pfirsich, grüner Tee</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'UB100A10-SY' => array(
         'icNumber' => 'UB100A10-SY',
@@ -77577,13 +77744,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Ultrabio',
         'brand' => 'Ultrabio',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '10',
         'capacity' => '120',
         'flavor' => 'Wassermelone, Energy Drink',
         'flavorCategory' => 'Melonen, Getränke',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von Ultrabio</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Wassermelone, Energy Drink</strong>.</p><p> ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone, Energy Drink</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Ultrabio</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Wassermelone, Energy Drink</strong>.</p><p>10 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Wassermelone, Energy Drink</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'IC100GM' => array(
         'icNumber' => 'IC100GM',
@@ -77649,13 +77816,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'GangGang',
         'brand' => 'GangGang',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '20',
         'capacity' => '60',
         'flavor' => 'Berliner, Erdbeere, Marmelade',
         'flavorCategory' => 'Gebäck, Beeren, Süßigkeiten',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von GangGang</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Berliner, Erdbeere, Marmelade</strong>.</p><p> ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Berliner, Erdbeere, Marmelade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von GangGang</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Berliner, Erdbeere, Marmelade</strong>.</p><p>20 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Berliner, Erdbeere, Marmelade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'SR100HR' => array(
         'icNumber' => 'SR100HR',
@@ -77740,13 +77907,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Joker Flavour',
         'brand' => 'Joker Flavour',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '10',
+        'capacity' => '10',
         'flavor' => 'Cola',
         'flavorCategory' => 'Getränke',
-        'dosage' => '',
+        'dosage' => '7 - 10',
         'base' => null,
-        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Cola</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cola</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Joker Flavour</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Cola</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Cola</td></tr><tr><td>Dosierung</td><td>7 - 10 %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'CR100A10-BC' => array(
         'icNumber' => 'CR100A10-BC',
@@ -77758,13 +77925,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Cream Team',
         'brand' => 'Cream Team',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '18',
+        'capacity' => '60',
         'flavor' => 'Buttercreme, Eis',
         'flavorCategory' => 'Süßigkeiten, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Buttercreme, Eis</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Buttercreme, Eis</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Buttercreme, Eis</strong>.</p><p>18 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Buttercreme, Eis</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'CR100A10-CR' => array(
         'icNumber' => 'CR100A10-CR',
@@ -77776,13 +77943,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Cream Team',
         'brand' => 'Cream Team',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '18',
+        'capacity' => '60',
         'flavor' => 'Zimtrolle, Vanille, Eis',
         'flavorCategory' => 'Gebäck, Gewürze, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Zimtrolle, Vanille, Eis</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Zimtrolle, Vanille, Eis</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Zimtrolle, Vanille, Eis</strong>.</p><p>18 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Zimtrolle, Vanille, Eis</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'CR100A10-NE' => array(
         'icNumber' => 'CR100A10-NE',
@@ -77794,13 +77961,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Cream Team',
         'brand' => 'Cream Team',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '18',
+        'capacity' => '60',
         'flavor' => 'Vanille, Schokolade, Erdbeere, Eis',
         'flavorCategory' => 'Gewürze, Süßigkeiten, Beeren, Frisches & Eiscreme',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille, Schokolade, Erdbeere, Eis</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Vanille, Schokolade, Erdbeere, Eis</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von Cream Team</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Vanille, Schokolade, Erdbeere, Eis</strong>.</p><p>18 ml Aroma sind in eine 60 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 60 ml Flasche </td></tr><tr><td>Geschmack </td><td>Vanille, Schokolade, Erdbeere, Eis</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'CE100A10-BS' => array(
         'icNumber' => 'CE100A10-BS',
@@ -77812,13 +77979,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Custard Shoppe',
         'brand' => 'Custard Shoppe',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '18',
+        'capacity' => '18',
         'flavor' => 'Pudding, Kuchen, Butterscotch',
         'flavorCategory' => 'Cremiges, Gebäck, Süßigkeiten',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Butterscotch</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Butterscotch</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Butterscotch</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Butterscotch</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'CE100A10-RB' => array(
         'icNumber' => 'CE100A10-RB',
@@ -77830,13 +77997,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Custard Shoppe',
         'brand' => 'Custard Shoppe',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '18',
+        'capacity' => '18',
         'flavor' => 'Pudding, Kuchen, Erdbeere',
         'flavorCategory' => 'Cremiges, Gebäck, Beeren',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Erdbeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Erdbeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Erdbeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Erdbeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'CE100A10-BB' => array(
         'icNumber' => 'CE100A10-BB',
@@ -77848,13 +78015,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => 'Custard Shoppe',
         'brand' => 'Custard Shoppe',
         'piecesPerPack' => 1,
-        'content' => '',
-        'capacity' => '',
+        'content' => '18',
+        'capacity' => '18',
         'flavor' => 'Pudding, Kuchen, Brombeere',
         'flavorCategory' => 'Cremiges, Gebäck, Beeren',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Brombeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Brombeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Aroma von Custard Shoppe</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Pudding, Kuchen, Brombeere</strong>.</p><p>Geben Sie das Aroma entsprechend der Dosierempfehlung des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma zur Herstellung von E-Liquids </td></tr><tr><td>Geschmack </td><td>Pudding, Kuchen, Brombeere</td></tr><tr><td>Dosierung</td><td> %</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'GV100FT' => array(
         'icNumber' => 'GV100FT',
@@ -78104,13 +78271,13 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'supplier' => '5Elements',
         'brand' => '5Elements',
         'piecesPerPack' => 1,
-        'content' => '',
+        'content' => '18',
         'capacity' => '120',
         'flavor' => 'Kirsche, Marmelade',
         'flavorCategory' => 'Früchte, Süßigkeiten',
         'dosage' => '',
         'base' => null,
-        'description' => '<p><strong>Longfill-Aroma von 5Elements</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche, Marmelade</strong>.</p><p> ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td> ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Marmelade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+        'description' => '<p><strong>Longfill-Aroma von 5Elements</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirsche, Marmelade</strong>.</p><p>18 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>18 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirsche, Marmelade</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
     ),
     'DV100A10-PO' => array(
         'icNumber' => 'DV100A10-PO',
@@ -79955,5 +80122,713 @@ Das Original Plus Pod von Lost Vape ist passgenau für die Original Plus DNA E-Z
         'dosage' => '',
         'base' => null,
         'description' => '<p><strong>Longfill-Aroma von Bad Candy Liquids</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Himbeere, Guave, Limone, Vanille, Koolada</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Himbeere, Guave, Limone, Vanille, Koolada</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'VM100AP' => array(
+        'icNumber' => 'VM100AP',
+        'number' => 'VM100AP',
+        'name' => 'Vapor Storm - Ares Pod - E-Zigarette',
+        'commonName' => 'Ares Pod',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Vapor Storm',
+        'brand' => 'Vapor Storm',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Bei der Ares E-Zigarette aus dem Hause Vapor Storm handelt es sich um eine E-Zigarette, die Umsteiger und Freunde des moderaten Backendampfens anspricht. Die Ares E-Zigarette besteht aus einem fest verbauten Akku, der eine Kapazität von 560mAh auszeichnet, sowie ein Pod-System mit einem Tankvolumen von 1,6ml. Das Pod-System besitzt einen fest verbauten Verdampferkopf mit einem Widerstand von 1,3 Ohm. Sie können mit dem Pod-System im moderaten Bereich, ergo von Mund zur Lunge, dampfen. Bitte beachten Sie, dass Verdampferköpfe Verschleißartikel sind, deren regelmäßiger Wechsel für ein gleichbleibendes Dampferlebnis empfehlenswert ist. Da der Verdampferkopf fest verbaut ist, muss im Bedarfsfall das gesamte Pod-System getauscht werden. Der fest verbaute Akku der Ares E-Zigarette besitzt eine Kapazität von 560mAh. Zum Laden befindet sich ein USB-Ladekabel im Lieferumfang. Die Ares E-Zigarette besitzt keine Feuertaste, sie wird über eine Zugautomatik in Betrieb genommen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Vapors Storm Ares Akku</li>
+<li>2x Vapors Storm Ares Pod 1,3 Ohm </li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Vapors Storm Ares E-ZIGARETTE</strong>
+<ul>
+<li>Akkukapazität: 560 mAh</li>
+<li>Tankvolumen: 1,6 ml</li>
+<li>Ausgangsleistung: 8,5 Watt</li>
+<li>Höhe: 92 mm</li>
+<li>Durchmesser: 16 mm</li>
+<li>-Side-Filling System</li>
+<li>LED-Indikator</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'VM100APP' => array(
+        'icNumber' => 'VM100APP',
+        'number' => 'VM100APP',
+        'name' => 'Vapor Storm - Ares Pod (3 Stück pro Packung)',
+        'commonName' => 'Ares Pod',
+        'type' => 'POD',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'Vapor Storm',
+        'brand' => 'Vapor Storm',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das Ares Pod-System aus dem Hause Vapor Storm weist ein Fassungsvermögen von 1,6ml auf. Bitte beachten Sie, dass ein fest verbauter Verdampferkopf in dem Pod-System vorhanden ist. Sollte es zu einer negativen Geschmacksentwicklung kommen, tauschen Sie bitte das gesamte Pod-System aus. Sie erhalten pro bestellter Packung je drei der Ares Pod-Systeme von Vapors Storm. Der Widerstand liegt bei 1,3 Ohm, sodass Sie den entstehenden Dampf erst im Mundraum sammeln und anschließend inhalieren können. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>3x Vapors Storm Ares Pod 1,3 Ohm </li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Vapors Storm Ares Pod</strong>
+<ul>
+<li>Widerstand: 1,3 Ohm</li>
+<li>Tankvolumen: 1,6 ml</li>
+<li>-Side-Filling System</li>
+</ul>
+<br>
+<br>
+',
+    ),
+    'WT100ST' => array(
+        'icNumber' => 'WT100ST',
+        'number' => 'WT100ST',
+        'name' => 'Wotofo - STNG MTL RDA - Verdampfer',
+        'commonName' => 'STNG MTL RDA',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Wotofo',
+        'brand' => 'Wotofo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der STNG MTL RDA ist ein Verdampfer für Selbstwickler, die das moderate Dampfen von Mund zu Lunge bevorzugen. Der Verdampfer wurde in Kooperation mit dem russischen Youtuber Vapor Place (a.k.a. Uncle Stas) hergestellt. Der STNG Verdampfer besitzt einen Durchmesser von 22mm und kann sowohl mit squonk-fähigen Akkus aber durch den 510er Pin auch mit vielen verschiedenen “normalen” Akkus kombiniert werden. Im Verdampfer kann durch das Single-Coil Deck eine Wicklung verbaut werden. Im Lieferumfang finden Sie zwei bereits vorgefertigte Wicklungen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x STNG MTL RDA Clearomizer</li>
+<li>1x Dual Core Fused Clapton Coil 0,75 Ohm</li>
+<li>1x Single-Strand Coil 1,2 Ohm</li>
+<li>1x Ersatz-Mundstück</li>
+<li>1x Dichtungsringe-Set</li>
+<li>1x Werkzeug</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>STNG MTL RDA CLEAROMIZER</strong>
+<ul>
+<li>Durchmesser: 22 mm</li>
+<li>Höhe inkl. Mundstück: 43,15 mm</li>
+<li>Leistungsbereich: 5 - 30 Watt</li>
+<li>emfohlener Widerstandsbereich: 0,4 - 1,8 Ohm</li>
+<li>Material: Edelstahl</li>
+<li>Single-Coil Deck</li>
+</ul>
+<br>
+<strong>Dual Core Fused Clapton Coil</strong>
+<ul>
+<li>Widerstand: 0,75 Ohm</li>
+<li>Durchmesser: 2,5 mm</li>
+<li>Material: Ni80 30G*2+38G</li>
+</ul>
+<br>
+<strong>Single-Strand Coil</strong>
+<ul>
+<li>Widerstand: 1,2 Ohm</li>
+<li>Durchmesser: 2,5 mm</li>
+<li>Material: Ni80 28G</li>
+<li>empfohlen für Nikotinsalze</li>
+</ul>',
+    ),
+    'WT100PU' => array(
+        'icNumber' => 'WT100PU',
+        'number' => 'WT100PU',
+        'name' => 'Wotofo - Profile Unity RTA - Verdampfer',
+        'commonName' => 'Profile Unity RTA',
+        'type' => 'CLEAROMIZER_RTA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Wotofo',
+        'brand' => 'Wotofo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Wotofo Profile Unity RTA bekommen Sie einen Selbstwickel-Verdampfer. In diesem können keine vorgefertigten Coils eingesetzt werden. Im Lieferumfang ist ein Selbstwickel-Set enthalten, mit welchem Sie eigene Wicklungen anfertigen können. Der Verdampfer ist für das Subohm-Dampfen ausgelegt und kann über das 510er Gewinde mit diversen handelsüblichen Akkus/Akkuträgern kombiniert werden. Der Verdampfer hat eine gefederte Keramikfläche, worauf die Watte platziert wird. Auf diese Watte, wird Ihr Mesh-Coil positioniert. Durch die Federung bleiben die Watte und der Coil stets in Kontakt, sodass ein Durchbrennen der Watte ausgeschlossen ist. Die seitliche am Gehäuse angebrachte Airflow Control ist stufenlos einstellbar und sollte beim Subohm-Dampfen weit geöffnet sein.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>1x Profile Unity RTA Clearomizer</li>
+<li>1x Profile Unity RTA Glastank 5ml</li>
+<li>1x 5ml Tube Adapter</li>
+<li>2x nexMesh Heads mit je 0,13 Ohm</li>
+<li>1x Watte</li>
+<li>1x Sechskantschlüssel</li>
+<li>1x Schraubendreher</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong>Profile Unity RTA Clearomizer</strong>
+<ul>
+<li>Durchmesser: 25 mm</li>
+<li>Höhe: 48,5 mm</li>
+<li>Tankvolumen: 3,5ml & 5ml</li>
+<li>Gewindetyp: 510</li>
+<li>Ausgangsleistungsbereich: 60-70 Watt</li>
+<li>Bottom Airflow Control</li>
+<li>Top-Filling-System</li>
+<li>RTA</li>
+<li>DL</li>
+</ul>
+<br>
+<br>',
+    ),
+    'WT100PUG' => array(
+        'icNumber' => 'WT100PUG',
+        'number' => 'WT100PUG',
+        'name' => 'Wotofo - Profile Unity RTA - Glastank',
+        'commonName' => 'Profile Unity RTA',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Wotofo',
+        'brand' => 'Wotofo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Bei dem Profile Unity RTA Glastank von der Marke Wotofo haben Sie die Wahl zwischen einem Glastank mit 3,5ml oder 5ml. Beide sind geeignete Zubehörartikel für den Wotofo Profile Unity RTA Verdampfer. Pro Packung und Variante bekommen Sie einen Glastank. Da beide Tanks durchsichtig sind, können Sie Ihr Liquidstand jederzeit prüfen und den Tank bei Bedarf mit Liquid nachfüllen
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>1x 5ml Profile Unity RTA Glastank oder 1x 3,5ml Profile Unity RTA Glastank</li>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Tankvolumen: 5ml oder 3,5ml</li>
+<li>transparent</li>
+<li>Wotofo Profile Unity RTA Clearomizer Set</li>
+<br>
+<br>',
+    ),
+    'VH100A10-PW' => array(
+        'icNumber' => 'VH100A10-PW',
+        'number' => 'VH100A10-PW',
+        'name' => 'VapeHansa - Woodruffin’ Milk - ClouDrippin’ Psychedelic Edition - Aroma - 20 ml',
+        'commonName' => 'Woodruffin’ Milk',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Pflanzen#!#AROMEN > Nüsse#!#AROMEN > Gewürze#!#AROMEN > Milch & Co.',
+        'supplier' => 'VapeHansa',
+        'brand' => 'VapeHansa',
+        'piecesPerPack' => 1,
+        'content' => '20',
+        'capacity' => '120',
+        'flavor' => 'Waldmeister, Pistazie, Vanille, Sahne, Milch',
+        'flavorCategory' => 'Pflanzen, Nüsse, Gewürze, Milch & Co.',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von VapeHansa</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Waldmeister, Pistazie, Vanille, Sahne, Milch</strong>.</p><p>20 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>20 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Waldmeister, Pistazie, Vanille, Sahne, Milch</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'OS100AR' => array(
+        'icNumber' => 'OS100AR',
+        'number' => 'OS100AR',
+        'name' => 'OBS - Alter - E-Zigarette',
+        'commonName' => 'Alter',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das OBS Alter E-Zigaretten Set ist sowohl für das Subohm- als auch für das moderate Dampfen geeignet. Es verfügt über einen fest verbauten Akku mit 2300mAh. Dieser kann zwischen 5 Watt und 70 Watt betrieben werden. Dabei muss auf den Leistungsbereich der Verdampferköpfe geachtet werden. Das Cartridge-System kann 2ml, 3,5ml oder 5ml Liquid aufnehmen. Auch hier kommt es darauf an, welchen Verdampferkopf Sie dort einsetzen. Das Liquid wird wie gewohnt über das Top-Filling-System in den Tank gegeben. Über einen Magneten verbinden Sie den Akku und die Cartridge zu einer Einheit. Im Lieferumfang finden Sie insgesamt drei Verdampferköpfe. Wechseln Sie die Verdampferköpfe regelmäßig, damit ein unverfälschter Liquidgeschmack gewährleistet ist. Über das mitgelieferte USB-C-Kabel laden Sie Ihre Alter E-Zigarette auf. Über den LED-Bildschirm können Sie wichtige Infos wie Ladestand, Ausgangsspannung, getätigten Züge usw. ablesen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Alter Akku</li>
+<li>2x Alter Cartridges</li>
+<li>1x NX Head 1,4 Ohm (vorinstalliert) | MTL</li>
+<li>1x M1 Head 0,2 Ohm (vorinstalliert) | DL</li>
+<li>1x SX Mesh Head 0,15 Ohm | DL</li>
+<li>1x Ersatz-Mundstück</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x USB-C-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>Alter Akku</strong></p>
+<ul>
+<li>Kapazität: 2300 mAh</li>
+<li>Elektrische Spannung: 1V - 8V</li>
+<li>Ausgangsleistung: 5 – 70W</li>
+<li>Ausgangsspannung: 3,3V - 4,2V</li>
+<li>Ladestrom: 5V/1,6A</li>
+<li>Widersandbereich: 0,1 Ohm - 3,0 Ohm</li>
+<li>LED-Display</li>
+<li>Maße: 85 mm x 43 mm x 24 mm</li>
+</ul>
+<br>
+<br>
+<p><strong>Alter Cartirdge</strong></p>
+<ul>
+<li>Tankvolumen: max. 5ml</li>
+<li>MTL und DL fähig</li>
+<li>Top-Filling-System</li>
+<li>Bottom-Airflow-Control</li>
+<li>DL- & MTL-fähig</li>
+<li>Plug and Pull Coils</li>
+</ul>
+<br>
+<br>',
+    ),
+    'OS100ARM' => array(
+        'icNumber' => 'OS100ARM',
+        'number' => 'OS100ARM',
+        'name' => 'OBS - Alter - Cartridge für M1 und M3 Head (2 Stück pro Packung)',
+        'commonName' => 'Alter',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die OBS Cartridge namens Alter ist für Subohm-Verdampferköpfe ausgelegt. Und zwar für M1 und M3 mit 0,2 Ohm bzw. 0,15 Ohm. Je nach dem, welchen Verdampferkopf Sie in dem Tank einsetzen, hat dieser entweder ein Tankvolumen von 2ml oder 3,5ml. Pro Packung befinden sich zwei Alter Cartridhes für M1/M3 Verdampferköpfe.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x Alter Cartridges</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>Alter Cartirdge</strong></p>
+<ul>
+<li>Tankvolumen: 2ml oder 3,5ml</li>
+<li>MTL und DL fähig</li>
+<li>Top-Filling-System</li>
+<li>Bottom-Airflow-Control</li>
+<li>DL-fähig</li>
+<li>Plug and Pull Coils</li>
+</ul>
+<br>
+<br>',
+    ),
+    'OS100ARN' => array(
+        'icNumber' => 'OS100ARN',
+        'number' => 'OS100ARN',
+        'name' => 'OBS - Alter - Cartridge für NX und SX Head (2 Stück pro Packung)',
+        'commonName' => 'Alter',
+        'type' => 'CARTRIDGE',
+        'category' => 'ZUBEHÖR > Pods & Cartridges',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 2,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Ein NX oder SX Verdampferkopf kann in der Alter Cartridge von OBS eingesetzt werden. Der NX Vedampferkopf ist für das moderate und der SX für das Subohm-Dampfen geeignet. Je nachdem, welchen Verdampferkopf dort eingesetzt wird, hat der Tank ein Tankvolumen von 2ml oder 5ml. Ihren Tank füllen Sie via Top-Filling-System direkt von oben mit Liquid. Je Packung sind zwei OBS Alter Cartridges für NX/SX Verdampferköpfe enthalten.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>2x Alter Cartridges</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>Alter Cartirdge</strong></p>
+<ul>
+<li>Tankvolumen: 2ml oder 5ml</li>
+<li>MTL und DL fähig</li>
+<li>Top-Filling-System</li>
+<li>Bottom-Airflow-Control</li>
+<li>DL- & MTL-fähig</li>
+<li>Plug and Pull Coils</li>
+</ul>
+<br>
+<br>',
+    ),
+    'OS100NX' => array(
+        'icNumber' => 'OS100NX',
+        'number' => 'OS100NX',
+        'name' => 'OBS - NX Head - 1,4 Ohm (5 Stück pro Packung)',
+        'commonName' => 'NX',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Verdampferköpfe namens NX mit je 1,4 Ohm sind für das moderate Dampfen konzipiert. Das heißt, Sie sammeln den Dampf zu erst im Mund und inhalieren diesen dann in die Lunge. Pro Packung bekommen Sie insgesamt fünf Verdampferköpfe. Ein passendes E-Zigaretten Set ist das OBS Alter mit 2300mAh. Tauschen Sie den Verdampferkopf aus, sobald Sie eine negative Geschmacksentwicklung feststellen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>5x OBS NX 1,4 Ohm Heads</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 1,4 Ohm</li>
+<li>Leistungsbereich: 8 - 12 Watt</li>
+<li>MTL-fähig</li>
+</ul>
+<br>
+<strong>Geeignet für:</strong>
+<ul>
+<li>OBS Alter E-Zigaretten Set</li>
+<li>OBS Alter Cartridge für NX und SX Heads</li>
+</ul>
+<br>
+<br>',
+    ),
+    'OS100SX' => array(
+        'icNumber' => 'OS100SX',
+        'number' => 'OS100SX',
+        'name' => 'OBS - SX Head - 0,15 Ohm (5 Stück pro Packung)',
+        'commonName' => 'SX',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'OBS',
+        'brand' => 'OBS',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Direkte Lungenzüge können Sie mit den OBS SX Verdampferköpfe mit je 0,15 Ohm tätigen. Die Alter E-Zigarette unterstützt diese Verdampferköpfe. Wenn Sie feststellen, dass die Dampfentwicklung abnimmt und Sie auch eine Geschmacksverfälschung Ihres Liquids wahrnehmen, dann sollten Sie den Verdampferkopf gegen einen Neuen tauschen. Pro Packung sind fünf Verdampferköpfe enthalten.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>
+<li>5x OBS SX 0,15 Ohm Heads</li>
+</ul>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<ul>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Leistungsbereich: 20 - 25 Watt</li>
+<li>DL-fähig</li>
+</ul>
+<br>
+<strong>Geeignet für:</strong>
+<ul>
+<li>OBS Alter E-Zigaretten Set</li>
+<li>OBS Alter Cartridge für NX und SX Heads</li>
+</ul>
+<br>
+<br>',
+    ),
+    'THC100TX' => array(
+        'icNumber' => 'THC100TX',
+        'number' => 'THC100TX',
+        'name' => 'ThunderHead Creations - Tauren X Pod - E-Zigarette',
+        'commonName' => 'Tauren X Pod',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'ThunderHead Creations',
+        'brand' => 'ThunderHead Creations',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Tauren X Akku und das Tauren X Mesh Cartridge bilden das Tauren X Pod E-Zigaretten Set von der Firma ThunderHead Creations. Der Akku hat eine Kapazität von 1.000mAh und kann zwischen 5 Watt und 25 Watt betrieben werden. Über einen Magneten verbinden Sie den Akku mit dem Tauren X Mesh Cartridge, das bis zu 2ml Liquid über das Top-Filling-System aufnimmt. Auch das Tauren X Pod RBA Cartridge können Sie mit dem Tauren X Akku verwenden; dieses ist jedoch <b>nicht</b> im Lieferumfang enthalten. Das Tauren X Mesh Cartridge unterstützt die Mesh Verdampferköpfe mit 0,6 Ohm und 1,0 Ohm. Beide sind im Lieferumfang vorhanden. Tauschen Sie die Verdampferköpfe aus, sobald Sie eine Geschmacksverfälschung Ihres Liquids wahrnehmen.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>1x Tauren X Akku</li>
+<li>1x Tauren X Mesh Cartridge</li>
+<li>1x Mesh Heads 0,6 Ohm</li>
+<li>1x Mesh Heads 1,0 Ohm</li>
+<li>1x Umhängeband</li>
+<li>1x Ersatzteilset</li>
+<li>1x Micro-USB-Kabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<p><strong>Tauren X AKKU</strong></p>
+<ul>
+<li>Kapazität: 1.000 mAh</li>
+<li>Ausgangsleistung: 5 – 25 W</li>
+<li>Ladestrom: DC 5V/1A</li>
+<li>Maße: 40 mm x 20 mm x 97 mm</li>
+<li>0,42" OLED</li>
+</ul>
+<br>
+<br>
+<p><strong>Tauren X Mesh Cartridge</strong></p>
+<ul>
+<li>Tankvolumen: 2 ml</li>
+<li>DT & MTL</li>
+<li>Top Filling-System</li>
+<li>Bottom-Airflow-Control</li>
+</ul>
+<br>',
+    ),
+    'THC100TXM' => array(
+        'icNumber' => 'THC100TXM',
+        'number' => 'THC100TXM',
+        'name' => 'ThunderHead Creations - Mesh Head (5 Stück pro Packung)',
+        'commonName' => 'Mesh',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'ThunderHead Creations',
+        'brand' => 'ThunderHead Creations',
+        'piecesPerPack' => 5,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus dem Hause ThunderHead Creations können Sie die Mesh Heads mit 0,6 Ohm oder 1,0 Ohm erwerben. Die Verdampferköpfe bestehen im Inneren aus einer Mesh "Wicklung". Je Packung und Variante sind je 5 Verdampferköpfe enthalten. Tauschen Sie diese aus, sobald Sie eine Geschmacksverfälschung Ihres Liquids wahrnehmen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>5x ThunderHead Creations Mesh Heads 0,6 Ohm</li>
+<li>5x ThunderHead Creations Mesh Heads 1,0 Ohm</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 0,6 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Leistungsbereich: 5 Watt - 23 Watt</li>
+<br>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Widerstand: 1,0 Ohm</li>
+<li>Wicklung: Mesh</li>
+<li>Leistungsbereich: 9 Watt - 14 Watt</li>
+<br>
+<br>
+<strong>Geeignet für</strong>
+<li>ThunderHead Creations Tauren X Pod E-Zigaretten Set</li>
+<li>ThunderHead Creations Tauren X Mesh Cartridge 2ml</li>
+<br>
+<br>',
+    ),
+    'WT100PR' => array(
+        'icNumber' => 'WT100PR',
+        'number' => 'WT100PR',
+        'name' => 'Wotofo - Profile 1.5 RDA - Verdampfer',
+        'commonName' => 'Profile 1.5 RDA',
+        'type' => 'CLEAROMIZER_RDA',
+        'category' => 'SELBSTWICKLER > Verdampfer',
+        'supplier' => 'Wotofo',
+        'brand' => 'Wotofo',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Wotofo Profile 1.5 RDA ist ein Selbstwickelverdampfer. RDA ist die Abkürzung für Rebuildable Dripping Atomizer, also einem  Selbstwickel-Tröpfelverdampfer. Sie können in dem Profile 1.5 Ihre eignen Mesh-Wicklungen verwenden. Lieferumfang befinden sich bereits drei kompatible Wicklungen. Sie erhalten jeweils einen nexMESH Chill A1 Coil 0,15 Ohm, einen nexMESH Turbo A1 Coil 0,13 Ohm und einen nexMESH Extreme A1 Coil 0,16 Ohm. Aufgrund der Widerstände können Sie den entstehenden Dampf direkt in die Lunge inhalieren. Bei dieser Art des Dampfens spricht man vom Subohm-Dampfen. Damit Sie mit dem Dampfen starten können, befestigen Sie eine der mitgelieferten Mesh-Wicklungen in dem Deck des Wotofo Profile 1.5 RDA Verdampfers, ziehen Watte hindurch (im Lieferumfang sind drei xfiber Wattestränge enthalten), tröpfeln Liquid auf die Watte und können anschließend mit dem Dampfen beginnen. Ein im Lieferumfang enthaltener Squonk-Pin ermöglicht es Ihnen, den Wotofo Profile 1.5 RDA Verdampfer mit Squonk-Akkuträgern zu kombinieren, die Liquid direkt von unten in den Verdampfer pumpen.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<li>1x Profile 1.5 RDA Clearomizer</li>
+<li>1x nexMESH Chill A1 Coil 0,15 Ohm | DL</li>
+<li>1x nexMESH Turbo A1 Coil 0,13 Ohm | DL</li>
+<li>1x nexMESH Extreme A1 Coil 0,16 Ohm | DL</li>
+<li>3x xfiber Wattestränge</li>
+<li>1x Ersatz-Mundstück</li>
+<li>1x Selbstwickel-Werkzeug</li>
+<li>1x Ersatzteil-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<strong> Warrior RDA Clearomizer</strong>
+<ul>
+<li>Durchmesser: 24 mm</li>
+<li>Höhe: 33,1 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Airflow Control</li>
+<li>Bottom Feeder möglich</li>
+<li>Leistungsbereich: 60 - 80 Watt (empfohlen 70 - 75 Watt)</li>
+<li>Single Mesh Coil</li>
+<li>RDA</li>
+</ul>
+',
+    ),
+    'WT100PRC' => array(
+        'icNumber' => 'WT100PRC',
+        'number' => 'WT100PRC',
+        'name' => 'Wotofo - nexMESH Coil (10 Stück pro Packung)',
+        'commonName' => 'nexMESH Coil',
+        'type' => 'COIL',
+        'category' => 'SELBSTWICKLER > Coils',
+        'supplier' => 'Wotofo',
+        'brand' => 'Wotofo',
+        'piecesPerPack' => 10,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Sie können die nexMESH Wicklungen für den Profile 1.5 RDA Verdampfer von Wotofo verwenden. Sie können zwischen drei Widerständen wählen: Chill A1 0,15 Ohm | Turbo A1 0,13 Ohm | Extreme A1 0,16 Ohm. Alle Widerstände sind für das subohme Dampfen mit direkten Lungenzügen ausgelegt. Bitte beachten Sie, dass die Wicklungen Verschleißteile sind, deren periodischer Wechsel für ein gleichbleibendes Dampferlebnis wichtig ist. Sie erhalten, unabhängig des gewählten Widerstandes je zehn der nexMESH Coils von Wotofo.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<li>10x nexMESH Coil je Variante und Packung</li>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Material: A1 (Kanthal)</li>
+<li>Widerstand: Chill A1 0,15 Ohm | Turbo A1 0,13 Ohm | Extreme A1 0,16 Ohm </li>
+<li>Leistungsbereich: 60 - 80 Watt (empfohlen 70 - 75 Watt)</li>
+<li>Geeignet für: Wotofo Profile 1.5 RDA Clearomizer Set</li>
+<li>
+<br>
+<br>',
+    ),
+    'WT100W3' => array(
+        'icNumber' => 'WT100W3',
+        'number' => 'WT100W3',
+        'name' => 'Wotofo - Profile Xfiber Watte, 3 mm (30 Stück pro Packung)',
+        'commonName' => 'Profile Xfiber Watte, 3 mm',
+        'type' => 'WADDING',
+        'category' => 'SELBSTWICKLER > Watte',
+        'supplier' => 'Wotofo',
+        'brand' => 'Wotofo',
+        'piecesPerPack' => 30,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Es handelt sich um passendes Zubehör für Ihren Wotofo Profile 1.5 RDA Verdampfers. Sie erhalten pro bestellter Packung insgesamt 30 der vorgefertigten Wattestreifen. Hergestellt werden die Wattestreifen aus Bio-Baumwolle. Jeder der Wattestreifen weist einen Durchmesser von 3mm aus. Da die Watte zum Dampfen in Gebrauch genommen wird, ist es empfehlenswert, wenn Sie die Watte in regelmäßigen Abständen wechseln, um ein gleichbleibendes Dampferlebnis zu gewährleisten. 
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>30x Profile Xfiber Watte-Threads von Wotofo</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Material: Bio-Baumwolle</li>
+<li>Geschmacksneutral</li>
+<li>Durchmesser Watte: 3mm</li>
+</ul>
+',
+    ),
+    'WT100W6' => array(
+        'icNumber' => 'WT100W6',
+        'number' => 'WT100W6',
+        'name' => 'Wotofo - Profile Xfiber Watte, 6 mm (10 Stück pro Packung)',
+        'commonName' => 'Profile Xfiber Watte, 6 mm',
+        'type' => 'WADDING',
+        'category' => 'SELBSTWICKLER > Watte',
+        'supplier' => 'Wotofo',
+        'brand' => 'Wotofo',
+        'piecesPerPack' => 10,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Xfiber Wattestreifen von Wotofo können Sie für Ihren Profile 1.5 RDA Verdampfer verwenden. Sie erhalten pro bestellter Packung je 10 der sogenannten Watt-Threads. Die Wattestreifen wurden aus Bio-Baumwolle gefertigt. Damit Sie ein gleichbleibendes Dampferlebnis gewährleisten können, empfiehlt es sich, wenn Sie die zu den Verschleißteilen zählenden Wattestreifen regelmäßig austauschen. Jeder Wattestreifen weist einen Durchmesser von 6mm auf.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<ul>
+<li>10x Profile Xfiber Watte-Threads von Wotofo</li>
+</ul>
+<br>
+<br>
+<strong>Wichtige Merkmale</strong>
+<ul>
+<li>Material: Bio-Baumwolle</li>
+<li>Geschmacksneutral</li>
+<li>Durchmesser Watte: 6mm</li>
+</ul>
+',
+    ),
+    'WT100MC' => array(
+        'icNumber' => 'WT100MC',
+        'number' => 'WT100MC',
+        'name' => 'Wotofo - Profile Mesh Coil - 0,18 Ohm (10 Stück pro Packung)',
+        'commonName' => 'Profile Mesh Coil',
+        'type' => 'COIL',
+        'category' => 'SELBSTWICKLER > Coils',
+        'supplier' => 'Wotofo',
+        'brand' => 'Wotofo',
+        'piecesPerPack' => 10,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Nutzen Sie die Profile Mesh Coils für den Profile RDA und den Profile Unity RTA Verdampfer von Wotofo. Pro bestellter Packung werden Ihnen 10 der Coils ausgeliefert. Jeder Coil weist einen Widerstand von je 0,18 Ohm auf, sodass das direkte Inhalieren in die Lunge möglich ist.
+Zum Dampfen wird zusätzlich noch Watte benötigt, der Coil verdampft so Ihr Liquid. Sollte Ihnen beim Dampfen ein negativer Geschmack oder ein Rückgang der Dampfentwicklung auffallen, ist es an der Zeit, die zu den Verschleißteilen zählenden Watte und Coil auszuwechseln.
+<br>
+<br>
+<strong>Lieferumfang</strong>
+<li>10x Profile Mesh Coil 0,18 Ohm</li>
+<br>
+<strong>Wichtige Merkmale:</strong>
+<li>Material: A1 (Kanthal)</li>
+<li>Widerstand: 0,18 Ohm </li>
+<li>Leistungsbereich: 45 - 65 Watt</li>
+<br>
+<strong>Geeignet für:</strong>
+<li>Wotofo Profile/Unity RDA Clearomizer Set</li>
+<br>
+<br>',
     ),
 );

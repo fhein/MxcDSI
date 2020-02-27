@@ -124,6 +124,7 @@ return [
             '~(SC - .*) - by SC$~'                         => '$1',
             '~(.*)(3in1 Aroma.*)15( ml)~'                  => '$1$2 45$3',
             '~(Salt Stick) (E-Zigarette)~'                 => '$1 - $2',
+            '~(Ares Pod) - \(~'                            => '$1 (',
         ],
     ],
 
@@ -902,6 +903,7 @@ return [
             '~(Cheetah 3 RDA)~',
             '~(Cube(( Mini)|( MTL)|( X))?)~',
             '~(Land)~',
+            '~(Alter)~',
             '~(Prow)~',
         ],
         'OFRF' => [
@@ -939,8 +941,7 @@ return [
 
         ],
         'ThunderHead Creations' => [
-            '~(Tauren(( RDTA)|( RDA)|( RTA)|( Solo RDA)|( Pro)))~',
-            '~(Tauren One RTA)~',
+            '~(Tauren(( RDTA)|( RDA)|( RTA)|( Solo RDA)|( Pro)|( One RTA)|( X Pod)))~',
         ],
         'Renova'        => [
             '~(Zero)~',
@@ -1092,6 +1093,7 @@ return [
         ],
         'Vapor Storm'   => [
             '~(Puma)~',
+            '~(Ares Pod)~',
             '~(Subverter 1)~',
             '~(ECO( Pro)?)~',
             '~(Lion RDA)~',
@@ -1138,6 +1140,8 @@ return [
         'Wotofo'        => [
             '~(Warrior RDA)~',
             '~(Recurve RDA)~',
+            '~(STNG MTL RDA)~',
+            '~(Profile(( Unity RTA)|( 1.5 RDA)))~'
         ],
         'XTAR'          => [
             '~(Queen ANT MC6C)~',
