@@ -42699,7 +42699,7 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 <p>Die OBS Cube verfügt über einige Einstellmöglichkeiten, ist aber nicht überkompliziert. Deshalb ist sie sowohl für den erfahrenen Dampfer als auch für den ambitionierten Einsteiger, der sich auf das Direct Lung Dampfen einlassen möchte, gut geeignet.&nbsp;Lesen Sie dazu bitte auch unsere <strong><a title="Die Dampfstile DL und MTL" href="https://www.vapee.de/e-zigarette-ratgeber-mtl-und-dtl-dampf-stil/" target="_self">Informationen zu den verschiedenen Dampfstilen</a></strong>.&nbsp;</p>
 <h2>OBS Cube Akku</h2>
 <p>Die Akkuzelle ist bei der OBS Cube fest eingebaut und hat eine sehr großzügige Kapazität von 3.000 mAh, mit der Sie gut über den Tag kommen. Laden Sie den Akku über das mitgelieferte USB-Ladekabel wieder auf. Die OBS Cube verträgt einen Ladestrom von 1,5 Ampere und ermöglicht so ein rasches Laden. Eine Vollaufladung bei leerem Akku dauert ca. 2,5 Stunden.</p>
-<p>Der OBS Cube Akku verfügt über zwei Betriebsarten. Im Variable Wattage Modus (VW) gibt der Akku unabhängig vom Ladestand eine konstante, einstellbare Leistung aus. Im Temperature Controlled Modus (TC) erfolgt die Leistungsabgabe so, dass im Verdampferkopf eine maximale Temperatur nicht überschritten wird.</p>
+<p>Die OBS Cube verfügt über eine einzige Betriebsart, den Variable Wattage Modus (VW).&nbsp; Der Akku gibt unabhängig vom Ladestand eine konstante, einstellbare Leistung aus. Die Leistung ist im Bereich von 1 - 80 Watt einstellbar.</p>
 <p>Die Elektronik der OBS Cube arbeitet sehr schnell, sie "feuert" bereits nach 10 ms. Damit ist die OBS Cube um einiges schneller als viele andere E-Zigaretten. Der Verdampfer wird über einen standardisierten 510er Schraubanschluss mit dem Akku verbunden, der sich mittig oben auf dem OBS Cube Akku befindet.</p>
 <p>Der OBS Cube Akku verfügt über ein eingebautes Display zur Anzeige der aktuellen Einstellungen und des Akkuladestands. Für ein sicheres Dampfen sind wichtige Sicherheitsfunktionen an Bord: Zugzeit-Begrenzer sowie Kuzschluss-, Tiefenentlade-, Überlade- und Überhitzungsschutz.</p>
 <h2>OBS Cube Verdampfer</h2>
@@ -42716,11 +42716,11 @@ Von der Marke Vaporesso kommt das Sky Solo Plus E-Zigaretten Set. Das Set besitz
 </tr>
 <tr>
 <td>Ausgabemodi</td>
-<td>VW, TC</td>
+<td>VW</td>
 </tr>
 <tr>
 <td>Ausgangsleistung</td>
-<td>80 Watt max.</td>
+<td>1 - 80 Watt</td>
 </tr>
 <tr>
 <td>Ausgangsspannung</td>
@@ -75267,7 +75267,7 @@ Bei der Ausgangsleistung für den 1,3 Ohm Pod können Sie zwischen drei Leistung
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => '<p>Das Mulus Cartridge ist für die Aspire Mulus E-Zigaretten-Set. Das Cartridge hat einen Tank für 4,2 ml Liquid welches über ein Side-Filling-System eingefüllt wird.</p>
+        'description' => '<p>Passendes Cartridge für das Aspire Mulus E-Zigaretten-Set. Das Cartridge hat einen Tank für 4,2 ml Liquid welches über ein Side-Filling-System eingefüllt wird.</p>
 <h2>Eigenschaften Aspire Mulus Cartridge</h2>
 <table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
 <tbody>
@@ -75284,7 +75284,6 @@ Bei der Ausgangsleistung für den 1,3 Ohm Pod können Sie zwischen drei Leistung
 <h2><strong>Lieferumfang</strong></h2>
 <ul>
 <li>1x Aspire Mulus Cartridge</li>
-<li>1x Axpire Breeze NXT Mesh Head 0,8 Ohm</li>
 </ul>
 <h2>passend zu</h2>
 <ul>
@@ -78699,44 +78698,76 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Der Glint Akkuträger und Nautilus GT Verdampfer von der Marke Aspire bilden das Nautilus GT E-Zigaretten Set. Betrieben wird das ganze über eine 18650er Akkuzelle, die nicht im Lieferumfang enthalten ist. Die besagte Akkuzelle wird in den Glint Akkuträger von unten eingeführt. Über die Feuertaste bzw. zwei Einstelltasten können Sie Ihre Einstellungen vornehmen und diese über den 0,91" Bildschrim ablesen. Der Nautilus GT Verdampfer kann bis zu 3ml Liquid fassen und wird via Top-Filling-Systen von oben befüllt. Im Lieferumfang sind zwie verschiedene Verdampferköpfe enthalten, die für das Dampfen im moderaten Bereicht ausgelegt sind. Bitte achten Sie darauf, dass der Nautilus GT Verdampfer ausschließlich für das MTL-Dampfen konzipiert wurde.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Das Aspire Nautilus GT E-Zigaretten Set für das MTL-Dampfen besteht aus dem Aspire Glint Akkuträger mit einer maximalen Ausgangsleistung von 75 Watt und dem Aspire Nautilus GT Clearomizer (Verdampfer) mit einem Füllvolumen von 3 ml.</p>
+<p>Der Aspire Glint Akkuträger wird über die Feuertaste sowie 2 weiterer Tasten (+ und -) bedient. Der Akkuträger wird im VW Modus betrieben, in dem man zwischen 1 und 75 Watt auswählen kann. Das integrierte 0,91 Zoll große OLED-Display zeigt die gewählte Einstellung und den Akkuladestand an. Für den Betrieb wird eine 18650er Akkuzelle benötigt, die nicht im Lieferumfang enthalten ist.</p>
+<p>Der Aspire Nautilus GT Clearomizer hat im Standard ein Füllvolumen von 3 ml Liquid, lässt sich jedoch über einen separat zu erwerbenden Glastank auf 4,2 ml erhöhen. Die Befüllung mit Liquid erfolgt von oben über ein Top-Filling-System. Den Zugwiderstand regeln Sie in 5 Stufen über den Airflow Control an der Base des Clearomizers. Der Nautilus GT Clearomizer ist für das MTL-Dampfen (Mouth to Lung oder gerne auch Backendampfen genannt) konzipiert. Im Lieferumfang sind 2 Verdampferköpfe enthalten, der Nautilus 2S Mesh Head mit einem Widerstand von 0,7 Ohm und der Nautilus BVC Head mit 1,6 Ohm. Nautilus X Heads unterstützt dieser Clearomizer <strong>nicht</strong>.</p>
+<p>Das E-Zigaretten Set wird durch eine 18650er Akkuzelle betrieben, die nicht im Lieferumfang enthalten ist.</p>
+<h2>Aspire Glint Akkuträger</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="middle">Stromversorgung</td>
+<td>1 x 18650er Akkuzelle (nicht im Lieferumfang enthalten)</td>
+</tr>
+<tr>
+<td>Ausgabemodi</td>
+<td>VW (Variable Watt)</td>
+</tr>
+<tr>
+<td>Ausgangsleistung</td>
+<td>1 - 75 Watt</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Besondere Merkmale</td>
+<td>0,91 Zoll OLED-Display</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Eigenschaften Aspire Nautilus GT Verdampfer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>5 Stufen, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL, Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Glint Akkuträger</li>
-<li>1x Nautilus GT Clearomizer</li>
-<li>1x Nautilus 2S Mesh Head 0,7 Ohm</li>
-<li>1x Nautilus BVC Head 1,6 Ohm</li>
-<li>1x Glastank 3 ml</li>
-<li>1x Ladekabel Typ-C</li>
+<li class="auto-style4">1x Aspire Glint Akkuträger</li>
+<li>1x Aspire Nautilus GT Clearomizer mit 3 ml Glastank</li>
+<li>1x Aspire Nautilus BVC Head 1,6 Ohm</li>
+<li>1x Aspire Nautilus 2S Mesh Head 0,7 Ohm</li>
+<li>1x Ladekabel Typ C</li>
 <li>1x Ersatzteil</li>
-<li>1x Bedienungsanleitung</li>
-</ul>
-<br>
-<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
-<br>
-<strong>Glint Akkuträger</strong>
-<ul>
-<li>Ausgabemodus: VW</li>
-<li>0,91" OLED Display</li>
-<li>Gewindetyp: 510</li>
-<li>Ausgangsleistung: 1 Watt - 75 Watt</li>
-<li>Aspire ASP Chipset</li>
-</ul>
-<br>
-<br>
-<strong>Nautilus GT Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 3ml</li>
-<li>Gewindetyp: 510</li>
-<li>Top-Filling-System</li>
-<li>Airflow-Control</li>
-<li>MTL-fähig</li>
-<li>Durchmesser: 24mm</li>
-</ul>
-<br>
-<br>',
+<li>1x Bedienungsanleitung&nbsp;</li>
+</ul>',
     ),
     'AS100NGM' => array(
         'icNumber' => 'AS100NGM',
@@ -78793,31 +78824,46 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Insgesamt 3ml Liquid kann der Nautilus GT Verdampfer über das Top-Filling-System aufnehmen. Top-Filling-System bedeutet, dass das Liquid direkt von oben in den Tank gegeben wird. Der Glastank ist transparent, sodass Sie Ihren Liquidstand im Auge behalten können. Wenn Sie einen größeren Tank in Ihrem Verdampfer einbauen möchten, so können Sie den passenden Ersatzglastank mit 4,2ml separat erwerben. Im Lieferumfang befinden sich zwei Verdampferköpfe, die für das moderade Dampfen ausgelegt sind. Die Airflow-Control befindet sich in der Base und kann in 5 Stufen eingestellt werden.
-<br>
-<br>
-<strong>Lieferumfang</strong>
+        'description' => '<p>Der Aspire Nautilus GT Clearomizer hat ein Füllvolumen von 3 ml Liquid. Sie können jedoch als Zubehör einen Glastank mit 4,2 ml Füllvolumen erwerben. Der Clearomizer wird von oben über ein Top-Filling-System befüllt. Den Zugwiderstand regeln Sie in 5 Stufen über den Airflow Control an der Base des Clearomizers. Der Nautilus GT Clearomizer ist für das MTL-Dampfen (Mouth to Lung oder auch Backendampfen genannt) konzipiert. Im Lieferumfang sind 2 Verdampferköpfe enthalten, der Nautilus 2S Mesh Head mit einem Widerstand von 0,7 Ohm und der Nautilus BVC Head mit 1,6 Ohm. Nautilus X Heads unterstützt dieser Clearomizer <strong>nicht</strong>.</p>
+<h2>Eigenschaften Aspire Nautilus GT Verdampfer</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3 ml</td>
+</tr>
+<tr>
+<td>Durchmesser</td>
+<td>24 mm</td>
+</tr>
+<tr>
+<td>Gewindetyp</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Airflow Control</td>
+<td>5 Stufen, Einstellring an der Basis</td>
+</tr>
+<tr>
+<td>Befüllung</td>
+<td>Top Filling, Befüllung von oben</td>
+</tr>
+<tr>
+<td>Stil</td>
+<td>MTL, Mouth to Lung</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Lieferumfang</h2>
 <ul>
-<li>1x Nautilus GT Clearomizer</li>
-<li>1x Nautilus 2S Mesh Head 0,7 Ohm</li>
-<li>1x Nautilus BVC Head 1,6 Ohm</li>
-<li>1x Glastank 3 ml</li>
+<li>1x Aspire Nautilus GT Clearomizer mit 3 ml Glastank</li>
+<li>1x Aspire Nautilus BVC Head 1,6 Ohm</li>
+<li>1x Aspire Nautilus 2S Mesh Head 0,7 Ohm</li>
 <li>1x Ersatzteil</li>
-<li>1x Bedienungsanleitung</li>
+<li>1x Bedienungsanleitung&nbsp;</li>
 </ul>
-<br>
-<br>
-<strong>Nautilus GT Clearomizer</strong>
-<ul>
-<li>Tankvolumen: 3ml</li>
-<li>Gewindetyp: 510</li>
-<li>Top-Filling-System</li>
-<li>Airflow-Control</li>
-<li>MTL-fähig</li>
-<li>Durchmesser: 24mm</li>
-</ul>
-<br>
-<br>',
+<p>&nbsp;</p>',
     ),
     'AS100NGG' => array(
         'icNumber' => 'AS100NGG',
@@ -78835,20 +78881,25 @@ Das Aspire Tigon AIO E-Zigaretten Set hat einen fest verbauten 1300mAh Akku. Die
         'flavorCategory' => null,
         'dosage' => null,
         'base' => null,
-        'description' => 'Je Variante und Packung erhalten Sie insgesamt 1 Nautilus GT Glastank. Sie können entweder den Tank mit 4,2ml, 3ml oder beide erwerben. Beide Tanks sind transparent, sodass Sie Ihren Liquidstand im Auge behalten können. Bei dem 3ml Tank handelt es sich um das Material Pyrex, wobei der 4,2ml Tank aus Polysulfone gefertigt wurde. Die Glastanks sind passende Zubehörartikel für den Nautilus GT Verdampfer by Aspire.
-<br>
-<br>
-<b>Wichtige Merkmale</b>
+        'description' => '<p>Glastank für den Aspire Nautilus GT Clearomizer mit einem Tankvolumen von wahlweise 3 ml oder 4,2 ml. Beide Glastanks sind transparent, der 3ml Tank wird aus Pyrex gefertigt, der 4,2ml Tank aus Polysulfone.</p>
+<h2>Eigenschaften Aspire Nautilus GT Glastank</h2>
+<table border="5" frame="void" rules="rows" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td>Tankvolumen</td>
+<td>3 ml | 4,2 ml</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Pyrex | Polysulfone</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>passend für:</h2>
 <ul>
-<li>Tankvolumen: 3ml | 4,2ml</li>
-<li>Material: Pyrex | Polysulfone</li>
-</ul>
-<br>
-<br>
-<b>geeignet für</b>
-<ul>
-<li>Aspire Nautilus GT E-Zigaretten Set</li>
-<li>Aspire Nautilus GT Clearomizer Set</li>
+<li>Aspire Nautilus GT Clearomizer</li>
+<li>Aspire Nautilus GT E-Zigaretten-Set</li>
 </ul>',
     ),
     'PV100NA' => array(
@@ -80830,5 +80881,285 @@ Zum Dampfen wird zusätzlich noch Watte benötigt, der Coil verdampft so Ihr Liq
 <li>Wotofo Profile/Unity RDA Clearomizer Set</li>
 <br>
 <br>',
+    ),
+    'VS100S2' => array(
+        'icNumber' => 'VS100S2',
+        'number' => 'VS100S2',
+        'name' => 'Vaporesso - Swag 2 - E-Zigarette',
+        'commonName' => 'Swag 2',
+        'type' => 'E_CIGARETTE',
+        'category' => 'E-ZIGARETTEN',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Das E-Zigaretten Set Swag 2 besteht aus dem NRG PE Verdampfer und dem Swag 2 Akkuträger von Vaporesso. Sie müssen eine 18650er Akkuzelle in den Akkuträger einsetzen, damit Sie das Set in Betrieb nehmen können. Bitte beachten Sie, dass keine Akkuzellen im Lieferumfang enthalten sind. Sie dampfen mit einer maximalen Ausgangsleistung von 80 Watt. Es stehen Ihnen noch die Modi Pulse, DIY, TC zur Verfügung. Alle Ihre getätigten Parameter werden Ihnen auf einem 0,91" OLED-Display angezeigt. Mit dem NRG PE Verdampfer können Sie den entstehenden Dampf direkt in die Lunge inhalieren. Dies ermöglichen die mitgelieferten Verdampferköpfe (GT4 Meshed 0,15 Ohm und GT Ccell 0,5 Ohm). Bitte beachten Sie, dass es sich bei den Verdampferköpfen um Verschleißartikel handelt, deren regelmäßiger Wechsel empfehlenswert ist.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Swag 2 80 Watt Akkuträger</li>
+<li>1x NRG PE Clearomizer</li>
+<li>1x GT4 Meshed 0,15 Ohm Head (vorinstalliert)</li>
+<li>1x GT Ccell 0,5 Ohm Head</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Ersatzteil Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+ <br>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<b>Swag 2 80 Watt</b>
+<ul>
+<li>Ausgabemodi: Pulse, Power, DIY, TC</li>
+<li>Ausgangsleistung: 5 bis 80 Watt</li>
+<li>Widerstandsbereich: 0,03 bis 5 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>0,91" OLED-Display</li>
+<li>Maße: 50 mm x 25 mm x 75 mm</li>
+</ul>
+<br>
+<br>
+<b>NRG PE Clearomizer</b>
+<ul>
+<li>Tankvolumen: 3,5ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Gewindetyp: 510er</li>
+<li>Durchmesser: 25 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'VS100S2M' => array(
+        'icNumber' => 'VS100S2M',
+        'number' => 'VS100S2M',
+        'name' => 'Vaporesso - Swag 2 - Akkuträger - 80 Watt',
+        'commonName' => 'Swag 2',
+        'type' => 'BOX_MOD_CELL',
+        'category' => 'AKKUTRÄGER',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Akkuträger Swag 2 der Marke Vaporesso wird über eine 18650er Akkuzelle in Betrieb genommen. Bitte beachten Sie, dass sich keine Akkuzelle im Lieferumfang befindet, sodass Sie diese separat erwerben müssen. Der Swag 2 unterstützt die Dampfmodi Pulse, Power, DIY und TC. Sie können jederzeit zwischen den unterschiedlichen Modi wechseln und dampfen. Alle Ihre Einstellungen können Sie dem 0,91” großem OLED-Display entnehmen. Aufgrund des Gewindes können Sie den Swag 2 Akkuträgern mit einer Vielzahl an Verdampfern kombinieren.
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x Swag 2 80 Watt Akkuträger</li>
+<li>1x USB-Ladekabel</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<strong>18650er Akkuzelle(n) nicht im Lieferumfang enthalten!</strong>
+<br>
+<br>
+<b>Swag 2 80 Watt</b>
+<ul>
+<li>Ausgabemodi: Pulse, Power, DIY, TC</li>
+<li>Ausgangsleistung: 5 bis 80 Watt</li>
+<li>Widerstandsbereich: 0,03 bis 5 Ohm</li>
+<li>Gewindetyp: 510er</li>
+<li>0,91" OLED-Display</li>
+<li>Maße: 50 mm x 25 mm x 75 mm</li>
+</ul>',
+    ),
+    'VS100NP' => array(
+        'icNumber' => 'VS100NP',
+        'number' => 'VS100NP',
+        'name' => 'Vaporesso - NRG-PE - Verdampfer',
+        'commonName' => 'NRG-PE',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Verdampfer NRG PE von Vaporesso ist für direkte Lungenzüge ausgelegt. Zusätzlich zum Verdampfer befinden sich außerdem zwei Verdampferköpfe im Lieferumfang. Einen GT4 Meshed 0,15 Ohm und einen GT Ccell 0,5 Ohm Verdampferkopf. Bitte beachten Sie, dass Verdampferköpfe Verschleißartikel sind und Sie diese regelmäßig wechseln sollten, um ein gleichbleibendes Dampferlebnis zu gewährleisten. Öffnen Sie die Airflow-Control, welche der Luftregulierung dient, möglichst weit, wenn Sie direkte Lungenzüge tätigen. Das Tankvolumen des NRG PE Verdampfers liegt bei 3,5ml und kann über ein Top-Filling-System befüllt werden
+<br>
+<br>
+<strong>Lieferumfang:</strong>
+<ul>         
+<li>1x NRG PE Clearomizer</li>
+<li>1x GT4 Meshed 0,15 Ohm Head (vorinstalliert)</li>
+<li>1x GT Ccell 0,5 Ohm Head</li>
+<li>1x Ersatzteil Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+ <br>
+<br>
+<b>NRG PE Clearomizer</b>
+<ul>
+<li>Tankvolumen: 3,5ml</li>
+<li>Top-Filling</li>
+<li>Airflow-Control</li>
+<li>Gewindetyp: 510er</li>
+<li>Durchmesser: 25 mm</li>
+</ul>
+<br>
+<br>',
+    ),
+    'VS100G4' => array(
+        'icNumber' => 'VS100G4',
+        'number' => 'VS100G4',
+        'name' => 'Vaporesso - GT4 Meshed Head - 0,15 Ohm (3 Stück pro Packung)',
+        'commonName' => 'GT4 Meshed',
+        'type' => 'HEAD',
+        'category' => 'ZUBEHÖR > Verdampferköpfe',
+        'supplier' => 'Vaporesso',
+        'brand' => 'Vaporesso',
+        'piecesPerPack' => 3,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Die Vaporesso GT4 Meshed Verdampferköpfe sind kompatibel mit dem NRG PE Verdampfer von Vaporesso. Der Leistungsbereich der GT4 Meshed Verdampferköpfe liegt zwischen 50 bis 75 Watt. Die Verdampferköpfe weisen einem Widerstand von je 0,15 Ohm.
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<li>Widerstand: 0,15 Ohm</li>
+<li>Leistungsbereich 50 - 75 Watt</li>
+<li>Geeignet für Lungenzüge</li>
+<br>
+<br>',
+    ),
+    'KL100A10-KL' => array(
+        'icNumber' => 'KL100A10-KL',
+        'number' => 'KL100A10-KL',
+        'name' => 'Kirschlolli - Kirschlolli - Aroma - 10 ml',
+        'commonName' => 'Kirschlolli',
+        'type' => 'AROMA',
+        'category' => 'AROMEN > Süßigkeiten',
+        'supplier' => 'Kirschlolli',
+        'brand' => 'Kirschlolli',
+        'piecesPerPack' => 1,
+        'content' => '10',
+        'capacity' => '120',
+        'flavor' => 'Kirschlolli',
+        'flavorCategory' => 'Süßigkeiten',
+        'dosage' => '',
+        'base' => null,
+        'description' => '<p><strong>Longfill-Aroma von Kirschlolli</strong> zur Herstellung von E-Liquid. <strong>Geschmack: Kirschlolli</strong>.</p><p>10 ml Aroma sind in eine 120 ml Flasche abgefüllt. Füllen Sie die Flasche einfach mit einer nikotinfreien oder nikotinhaltigen Base bis oben auf. Verschließen Sie dann die Flasche und schütteln Sie  durch, damit sich die Flüssigkeiten gut vermischen. Das fertige E-Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p><p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p><table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2"><tbody><tr><td>Produkt</td><td>10 ml Aroma in einer 120 ml Flasche </td></tr><tr><td>Geschmack </td><td>Kirschlolli</td></tr><tr><td>Dosierung</td><td>Flasche bis oben mit Basis auffüllen</td></tr><tr><td>Inhaltsstoffe</td><td>Propylenglykol, Aromastoffe</td></tr></tbody></table>',
+    ),
+    'AS100DM' => array(
+        'icNumber' => 'AS100DM',
+        'number' => 'AS100DM',
+        'name' => 'Aspire - Odan Mini - Verdampfer',
+        'commonName' => 'Odan Mini',
+        'type' => 'CLEAROMIZER',
+        'category' => 'VERDAMPFER',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Mit dem Aspire Odan Mini bekommen Sie einen Verdampfer für E-Zigaretten, der für das Dampfen im Subohmbereich gefertigt ist. Der Odan Mini hat eine Tankvolumen von 4 Milliliter, welches via Top-Filling System befüllt wird. Dabei geben Sie das Liquid von oben in den Tank. Das Füllvolumen können Sie bei Bedarf auf bis zu 5,5 Millilitern erweitern, indem Sie den mitgelieferten Glastank installieren. Der vorinstallierte Glastank wurde aus Kristallglas gefertigt und das Design erinnert an einen Diamantenschliff. Durch dieses optisches Merkmal unterscheidet sich der Odan Mini Verdampfer von vielen auf dem Markt erhältlichen Verdampfern. Die mit dem Set mitgelieferten Mesh Heads haben einen Widerstand von 0,2 Ohm und 0,3 Ohm. Beide Varianten haben unterschiedliche Leistungsbereiche, sind aber jeweils für das Dampfen im Subohm-Bereich ausgelegt.
+<br>
+<b>Lieferumfang:</b>
+<ul>
+<li>1x Odan Mini Clearomizer</li>
+<li>1x Odan Mesh 0,3 Ohm Head, vorinstalliert</li>
+<li>1x Odan Mesh 0,2 Ohm Head</li>
+<li>1x Ersatz-Glastank 5,5 ml</li>
+<li>1x Dichtungsringe-Set</li>
+<li>1x Bedienungsanleitung</li>
+</ul>
+<br>
+<br>
+<b>Wichtige Merkmale:</b>
+<ul>
+<li>Tankvolumen: 4 ml | 5,5 ml</li>
+<li>Durchmesser: 25 mm</li>
+<li>Höhe: 57,5 mm</li>
+<li>Gewindetyp: 510</li>
+<li>Material: Glas und Edelstahl</li>
+<li>Top Filling</li>
+<li>Airflow Control</li>
+<li>subohm-fähig</li>
+</ul>',
+    ),
+    'AS100DMD' => array(
+        'icNumber' => 'AS100DMD',
+        'number' => 'AS100DMD',
+        'name' => 'Aspire - Odan Mini - Diamant Glastank',
+        'commonName' => 'Odan Mini',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Aus Kristallglas wurde der Aspire Odan Mini Diamant Glastank in der Optik und Form eines Diamanten hergestellt. Das Material zeichnet sich dadurch aus, dass es formstabil sowie hitzebeständig ist. Wie der Name es bereits erahnen lässt, ist der Diamant Glastank mit dem Aspire Odan Mini Verdampfer kompatibel. Der Glastank kann insgesamt bis zu 4 Milliliter Liquid aufnehmen. 
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<ul>
+<li>Tankvolumen: 4ml</li>
+<li>Material: Kristallglas</li>
+</ul>
+<br>
+<b>geeignet für</b>
+<ul>
+<li>Aspire Odan mini Clearomizer Set</li>
+</ul>',
+    ),
+    'AS100DMG' => array(
+        'icNumber' => 'AS100DMG',
+        'number' => 'AS100DMG',
+        'name' => 'Aspire - Odan Mini - Glastank',
+        'commonName' => 'Odan Mini',
+        'type' => 'TANK',
+        'category' => 'ZUBEHÖR > Glastanks & Schutz',
+        'supplier' => 'Aspire',
+        'brand' => 'Aspire',
+        'piecesPerPack' => 1,
+        'content' => null,
+        'capacity' => null,
+        'flavor' => null,
+        'flavorCategory' => null,
+        'dosage' => null,
+        'base' => null,
+        'description' => 'Der Odan Mini Glastank ist im Lieferumfang des Odan Mini Verdampfer Sets vorinstalliert und kann bei Bedarf einzeln erworben werden. Das Fassungsvolumen von diesem Glastank beträgt 5,5 Milliliter. Der Glastank wurde aus hitzebeständigen Pyrexglas hergestellt.
+<br>
+<br>
+<b>Wichtige Merkmale</b>
+<ul>
+<li>Tankvolumen: 5,5ml</li>
+<li>Material: Pyrexglas</li>
+</ul>
+<br>
+<b>geeignet für</b>
+<ul>
+<li>Aspire Odan Mini Clearomizer Set</li>
+</ul>
+',
     ),
 );
