@@ -18511,6 +18511,22 @@ return array(
         'GV100ALA' => array(
             0 => 'GV100ALM',
         ),
+        'OS100CM' => array(
+            0 => 'IC100KTV8',
+            1 => 'CN100TH',
+            2 => 'CN100LP',
+            3 => 'GV100HS',
+            4 => 'GV100KGD',
+            5 => 'CM100V3',
+            6 => 'OS100CBM',
+            7 => 'OS100EM',
+        ),
+        'OS100CMS' => array(
+            0 => 'IC10000EGOEGOCASE',
+            1 => 'IC10000USB',
+            2 => 'OS100S1',
+            3 => 'OS100N1',
+        ),
         'AS100AV' => array(
             0 => 'AS100AVP',
         ),
@@ -18915,6 +18931,20 @@ return array(
         'UW100V2M' => array(
             0 => 'UW100V2C',
         ),
+        'OS100CX' => array(
+            0 => 'SONYVTC5A',
+            1 => 'OS100M1',
+            2 => 'OS100CXM',
+            3 => 'OS100M3',
+            4 => 'OS100CBG',
+        ),
+        'OS100KB' => array(
+            0 => 'IC10000EGOEGOCASE',
+            1 => 'IC10000USB',
+            2 => 'OS100KBG',
+            3 => 'OS100S1',
+            4 => 'OS100N1',
+        ),
         'SC100JM' => array(
             0 => 'SC100GT6',
             1 => 'SC100GTH',
@@ -18935,6 +18965,10 @@ return array(
             7 => 'GV100N8',
             8 => 'GV100KW',
             9 => 'GV100SS',
+        ),
+        'OS100PW' => array(
+            0 => 'IC10000USB',
+            1 => 'OS100PWP',
         ),
         'AY100P' => array(
             0 => 'IC10000EGOEGOCASE',
@@ -18981,6 +19015,13 @@ return array(
         'AG100DN' => array(
             0 => 'AG100DNH',
             1 => 'AG100DNR',
+        ),
+        'OS100AR' => array(
+            0 => 'OS100M1',
+            1 => 'OS100ARM',
+            2 => 'OS100ARN',
+            3 => 'OS100NX',
+            4 => 'OS100SX',
         ),
     ),
 );
