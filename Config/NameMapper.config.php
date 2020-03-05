@@ -707,6 +707,7 @@ return [
             '~(Skynet( Pro)?)~',
             '~(Merlin Nano MTL RTA)~',
             '~(Druga Narada( Pod)?)~',
+            '~(iNtake Dual RTA)~',
         ],
         'CoilArt'       => [
             '~(Mage RTA V2)~',
@@ -722,6 +723,7 @@ return [
             '~(Mjölnir RDA)~',
             //            '~(Hastur)~',
             '~(Furai 510)~',
+            '~(Mulan MTL RDTA)~',
         ],
         'Dejavu' => [
             '~(DJV D7)~',
