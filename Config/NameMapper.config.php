@@ -100,6 +100,7 @@ return [
             '~(Akkuträger) - Akkuträger~'                  => '$1',
             '~Smok TFV8 -~'                                => 'SMOK - TFV8',
             '~(Aegis X) - (mit Cerberus)~'                 => '$1 $2',
+            '~(Aegis X) - (mit Zeus)~'                     => '$1 $2',
             '~(Solo) - (mit Tengu)~'                       => '$1 $2 -',
             '~(Solo) - (mit Cerberus)~'                    => '$1 $2',
             '~(Morph) - (Akkuträger)~'                     => '$1 219 - $2',
@@ -233,6 +234,7 @@ return [
 
     'product_name_replacements' => [
         'preg_replace' => [
+            '~(Aegis Squonk)er~'                                         => '$1',
             '~(1,5 Ohm) (Cartridge)~'                                    => '$2, $1',
             '~(Elli)´s~'                                                 => 'Elli\'s',
             '~(Roofy)`s~'                                                => 'Roofy\'s',
@@ -499,7 +501,7 @@ return [
             '~(RX Gen3)~'                                         => 'Reuleaux RX Gen3',
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
-            '~(Aegis Squonker) (- \d+ Watt)~'                     => '$1 - Squonker Box $2',
+            '~(Aegis Squonk) (- \d+ Watt)~'                       => '$1 - Squonker Box $2',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
             '~(Swag 2) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(Glint) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
@@ -768,7 +770,7 @@ return [
             '~(Zeus RTA)~',
             '~(Zeus)~',
             '~(Ammit Dual Coil RTA)~',
-            '~(Aegis(( Legend)|( Mini)|( X)|( Solo)|( Squonker))?)~',
+            '~(Aegis(( Legend)|( Mini)|( X)|( Solo)|( Squonk))?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
             '~(Creed RTA)~',
