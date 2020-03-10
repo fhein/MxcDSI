@@ -1100,8 +1100,27 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $params = $this->request->getParams();
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
+
+            // write all clearomizers with empty zubehör to icClearomizers Log
+
+            $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'CLEAROMIZER']);
+            /** @var Product $product */
+            $productsIcDescription = [];
+            foreach ($products as $product) {
+                /** @var Article $article */
+                $article = $product->getArticle();
+                if ($article === null) continue;
+                $related = $article->getRelated();
+                if ($related->isEmpty()) {
+                    $productsIcDescription[$product->getIcNumber()] = $product->getName();
+                }
+            }
+            krsort($productsIcDescription);
+            $report = new \MxcDropshipInnocigs\Report\ArrayReport();
+            $report(['icClearomizers' => $productsIcDescription]);
+
             // Do something with the ids
-            $this->view->assign([ 'success' => true, 'message' => 'Development 7 slot is currently free.']);
+            $this->view->assign([ 'success' => true, 'message' => 'Clearomizers wihout related articles exported.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

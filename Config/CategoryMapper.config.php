@@ -237,6 +237,12 @@ return array(
             ),
             'path' => 'ZUBEHÖR > Accessoires',
         ),
+        32 => array(
+            'types' => array(
+                0 => 'COVER',
+            ),
+            'path' => 'ZUBEHÖR > Abdeckungen',
+        ),
         28 => array(
             'types' => array(
                 0 => 'E_HOOKAH',
@@ -265,12 +271,6 @@ return array(
             'path' => 'ZUBEHÖR > Aufbewahrung',
         ),
         32 => array(
-            'types' => array(
-                0 => 'COVER',
-            ),
-            'path' => 'ZUBEHÖR > Abdeckungen',
-        ),
-        33 => array(
             'types' => array(
                 0 => 'SPARE_PARTS',
             ),
