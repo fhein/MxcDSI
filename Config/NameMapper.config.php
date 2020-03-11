@@ -127,6 +127,8 @@ return [
             '~(Salt Stick) (E-Zigarette)~'                 => '$1 - $2',
             '~(Ares Pod) - \(~'                            => '$1 (',
             '~(NRG) - (PE) (Verdampfer)~'                  => '$1-$2 - $3',
+            '~(E-Zigarette)n (Bundle) Set~'                => '$1 ($2)',
+            '~(Zenith -) -(Head)~'                         => '$1 $2',
         ],
     ],
 
@@ -504,6 +506,7 @@ return [
             '~(Aegis Squonk) (- \d+ Watt)~'                       => '$1 - Squonker Box $2',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
             '~(Swag 2) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
+            '~(G-Priv 3) (- \d+ Watt)~'                           => '$1 - Akkuträger $2',
             '~(Glint) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(DJV D7) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(Hadron) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
@@ -846,7 +849,7 @@ return [
             '~(Rotor)~'
         ],
         'Innokin'       => [
-            '~(Endura ((T18 2)|(T18)|(T20S)|(T20)|(T22))?)~',
+            '~(Endura ((T18 2 Mini)|(T18 2)|(T18)|(T20S)|(T20)|(T22))?)~',
             '~(Prism ((S)|(T18/T22)|(T18 2)|(T18)|(T20)|(T22))?)~',
             '~(Proton)~',
             '~(EZ.Watt)~',
@@ -861,9 +864,10 @@ return [
             '~(Z Biip)~',
             '~(JEM)~',
             '~(Jem Pen)~',
-            '~(Zlide)~',
+            '~(Zlide( Tube)?)~',
             '~(Plex((ar)|( 3D))?)~',
             '~(Ajax)~',
+            '~(I.O)~',
         ],
         'InnoCigs'      => [
             '~(eGrip Mini)~',
@@ -1122,7 +1126,7 @@ return [
             '~(Vlit Vowl 40)~',
         ],
         'Wismec'        => [
-            '~(Preva(( DNA)|( KTR)|( SS316 Dual)))~',
+            '~(Preva(( DNA)|( KTR)|( SS316 Dual)|( Pod))?)~',
             '~(Bellerophon RTA)~',
             '~(Tobhino BF RDA)~',
             '~(Amor NS Pro)~',
@@ -1143,7 +1147,6 @@ return [
             '~(Reux)~',
             '~(Kestrel RDTA)~',
             '~(Reuleaux Tinker( 2)?)~',
-            '~(Preva Pod)~',
         ],
         'Wotofo'        => [
             '~(Warrior RDA)~',

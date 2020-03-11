@@ -1103,10 +1103,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             // write all clearomizers with empty zubehör to icClearomizers Log
 
-            $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'CLEAROMIZER']);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
             /** @var Product $product */
             $productsIcDescription = [];
             foreach ($products as $product) {
+                $type = $product->getType();
+                if (! (($type === 'CLEAROMIZER_RDA') || ($type === 'CLEAROMIZER_RTA') || ($type === 'CLEAROMIZER_RDTA'))) continue;
                 /** @var Article $article */
                 $article = $product->getArticle();
                 if ($article === null) continue;

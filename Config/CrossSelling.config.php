@@ -15058,6 +15058,9 @@ return array(
             0 => 'RO100A10-LB',
             1 => 'RO100A10-SB',
         ),
+        'GV100F' => array(
+            0 => 'AY100P',
+        ),
         'FM100TF' => array(
             0 => 'FM100WM',
         ),
@@ -15128,6 +15131,9 @@ return array(
         ),
         'FM100WM' => array(
             0 => 'FM100TF',
+        ),
+        'GV100BT' => array(
+            0 => 'OS100PW',
         ),
         'GV100AXZ' => array(
             0 => 'GV100AX',
@@ -18324,8 +18330,7 @@ return array(
         ),
         'AS100Z2' => array(
             0 => 'AS10000MININAUTHEADS',
-            1 => 'AS10000BVCHEADS',
-            2 => 'AS100NSH',
+            1 => 'AS100NSH',
         ),
         'WM100LM' => array(
             0 => 'WM100LMM',
@@ -18386,6 +18391,10 @@ return array(
         ),
         'VS100SP' => array(
             0 => 'VS100SPG',
+        ),
+        'GV100F' => array(
+            0 => 'IC10000USB',
+            1 => 'GV100NS',
         ),
         'SC100IJ' => array(
             0 => 'SONYVTC5A',
@@ -18588,6 +18597,20 @@ return array(
             2 => 'GV100MX',
             3 => 'GV100SM',
         ),
+        'VM100LN' => array(
+            0 => 'CN100LP',
+            1 => 'GV100WS',
+            2 => 'JB100NF',
+            3 => 'JB100NA',
+            4 => 'CM100TM',
+            5 => 'CM100WH',
+            6 => 'CM100RB',
+            7 => 'AK100WA',
+            8 => 'GV100SS',
+            9 => 'GV100SF',
+            10 => 'MB100KS',
+            11 => 'CM100SN',
+        ),
         'GV100TG' => array(
             0 => 'CN100TH',
             1 => 'GV100FU',
@@ -18600,6 +18623,12 @@ return array(
             8 => 'GV100KA',
             9 => 'CM100SN',
             10 => 'GV100FT',
+        ),
+        'WM100KS' => array(
+            0 => 'CN100LP',
+            1 => 'GV100KGD',
+            2 => 'WM100LSM',
+            3 => 'WM100KSG',
         ),
         'SK100NP' => array(
             0 => 'SK100NR',
@@ -18638,6 +18667,12 @@ return array(
         'SC10000PDM' => array(
             0 => 'SC10000PDMT',
             1 => 'SC10000PDH',
+        ),
+        'AS1000N2' => array(
+            0 => 'AS100ZEM',
+            1 => 'AS10000MININAUTHEADS',
+            2 => 'AS100N2M',
+            3 => 'AS1000N2TD',
         ),
         'IC100C2' => array(
             0 => 'IC100PCBF',
@@ -18787,6 +18822,15 @@ return array(
             0 => 'SM100CLG',
             1 => 'SM100CLM',
         ),
+        'AS100KP' => array(
+            0 => 'AS10000BVCHEADS',
+        ),
+        'CA100LC' => array(
+            0 => 'CA100L',
+            1 => 'CA100LM1',
+            2 => 'CA100LM4',
+            3 => 'CA100LM',
+        ),
         'VS100SKS' => array(
             0 => 'VS100ST',
             1 => 'VS100SR',
@@ -18832,6 +18876,28 @@ return array(
             7 => 'GV100JG',
             8 => 'GV100K5',
         ),
+        'FM100FM' => array(
+            0 => 'FM100TF',
+            1 => 'FM100BG',
+            2 => 'FM100FMT',
+            3 => 'FM100X1M',
+            4 => 'FM100X2M',
+            5 => 'FM100X1S',
+            6 => 'FM100X3M',
+            7 => 'FM100TX1',
+            8 => 'FM100TNX2',
+            9 => 'FM100TX3',
+            10 => 'FM100TX4',
+            11 => 'FM100TX1S',
+        ),
+        'FM100MP' => array(
+            0 => 'FM100MPG',
+            1 => 'FM100DM',
+            2 => 'FM100TM',
+            3 => 'FM100QM',
+            4 => 'FM100SM',
+            5 => 'FM100KM',
+        ),
         'VZ100VPC' => array(
             0 => 'VZ100PP',
             1 => 'VZ100VO',
@@ -18840,6 +18906,26 @@ return array(
             0 => 'JF100CPS',
             1 => 'JF100CPA',
             2 => 'JF100P16H',
+        ),
+        'A100VN' => array(
+            0 => 'A100M3V',
+            1 => 'A100AV',
+            2 => 'A100MH',
+            3 => 'A100MHD',
+        ),
+        'HT100FC' => array(
+            0 => 'HT100FCG',
+            1 => 'HT100FCT',
+            2 => 'HT100F1',
+            3 => 'HT100F2',
+            4 => 'HT100M1',
+        ),
+        'AG100SP' => array(
+            0 => 'AG100DM',
+            1 => 'AG100TM',
+        ),
+        'AG100SC' => array(
+            0 => 'AG100SM',
         ),
         'VZ100VPT' => array(
             0 => 'VZ100PP',
@@ -18911,6 +18997,37 @@ return array(
             3 => 'SM100TFG',
             4 => 'SK100TFH',
         ),
+        'THC100TR' => array(
+            0 => 'CN100TH',
+            1 => 'CN100LP',
+            2 => 'JB100NL',
+            3 => 'JB100NF',
+            4 => 'JB100SA',
+            5 => 'CM100V3',
+            6 => 'AK100CS',
+            7 => 'AK100WA',
+        ),
+        'THC100TD' => array(
+            0 => 'CN100TH',
+            1 => 'CN100LP',
+            2 => 'GV100HS',
+            3 => 'GV100N9',
+            4 => 'GV100KGD',
+            5 => 'AS100FRM',
+            6 => 'A100AM',
+            7 => 'A100P18',
+        ),
+        'THC100TS' => array(
+            0 => 'GV100KGD',
+            1 => 'CM100WH',
+            2 => 'CM100RB',
+            3 => 'AK100WA',
+            4 => 'GV100SS',
+            5 => 'A100P18',
+            6 => 'MB100KS',
+            7 => 'GV100AC',
+            8 => 'CM100SN',
+        ),
         'JF100QPC' => array(
             0 => 'JF100P16H',
             1 => 'JF100QP',
@@ -18929,6 +19046,16 @@ return array(
             0 => 'SC10000L10-S',
             1 => 'VV100L10-S',
             2 => 'PL100L10-NS',
+        ),
+        'WFR100BP' => array(
+            0 => 'IC100RCW',
+            1 => 'GV100WS',
+            2 => 'GV100KGD',
+            3 => 'CM100TM',
+            4 => 'GV100SG',
+            5 => 'GV100SF',
+            6 => 'WFR100BPH',
+            7 => 'CM100SN',
         ),
         'PV100AM' => array(
             0 => 'PV100M1',
@@ -19017,6 +19144,17 @@ return array(
         'PV100ZP' => array(
             0 => 'PV100PS',
         ),
+        'THC100TOR' => array(
+            0 => 'CN100TH',
+            1 => 'CN100LP',
+            2 => 'GV100HS',
+            3 => 'GV100N9',
+            4 => 'GV100WS',
+            5 => 'GV100KGD',
+            6 => 'UW100CR4M',
+            7 => 'GV100AIM',
+            8 => 'THC100PC',
+        ),
         'UW100V2M' => array(
             0 => 'UW100V2C',
         ),
@@ -19070,8 +19208,33 @@ return array(
         'FM100G2' => array(
             0 => 'FM100GS',
         ),
+        'FM100G1' => array(
+            0 => 'FM100GS',
+        ),
+        'FM100G2M' => array(
+            0 => 'FM100GS',
+        ),
         'FM100G4' => array(
             0 => 'FM100GS',
+        ),
+        'HT100FK' => array(
+            0 => 'HT100FCG',
+            1 => 'HT100F1',
+            2 => 'HT100F2',
+            3 => 'HT100M1',
+            4 => 'HT100M1M',
+            5 => 'HT100MD',
+        ),
+        'DD100SB' => array(
+            0 => 'RA100DM',
+            1 => 'DD100CPM',
+            2 => 'WM100LSM',
+            3 => 'DD100SM',
+        ),
+        'HE100FR' => array(
+            0 => 'HE100HC2',
+            1 => 'HE100HC3',
+            2 => 'HE100FRG',
         ),
         'UW100NKC' => array(
             0 => 'UW100NH',
@@ -19133,6 +19296,9 @@ return array(
             6 => 'SM100THG',
             7 => 'SM100THM',
         ),
+        'UW100FC' => array(
+            0 => 'UW100CR4M',
+        ),
         'SC100CF' => array(
             0 => 'SC100CFA',
             1 => 'SC100CFC',
@@ -19152,6 +19318,11 @@ return array(
             8 => 'GV100KW',
             9 => 'GV100SS',
         ),
+        'AS100DT' => array(
+            0 => 'AS100DTH',
+            1 => 'AS100DTG',
+            2 => 'AS100DTD',
+        ),
         'OF100NM' => array(
             0 => 'YH100SL',
             1 => 'OF100NMH',
@@ -19165,6 +19336,7 @@ return array(
             4 => 'SK100V16G',
             5 => 'SK100V16T',
             6 => 'SK100TCM',
+            7 => 'SK100G3M',
         ),
         'SC100PO' => array(
             0 => 'SC100T80',
@@ -19173,12 +19345,41 @@ return array(
             3 => 'SC100EFM',
             4 => 'SC100POG',
         ),
+        'IC100EA' => array(
+            0 => 'IC100EXH',
+            1 => 'IC100ECH',
+        ),
+        'AS100COC' => array(
+            0 => 'AS10000K4AK',
+            1 => 'AS10000CLEITOTANK',
+            2 => 'AS10000CLEITOHEAD',
+        ),
         'OS100PW' => array(
             0 => 'IC10000USB',
             1 => 'OS100PWP',
         ),
+        'OS100PWP' => array(
+            0 => 'OS100PW',
+        ),
+        'YH100DR' => array(
+            0 => 'CN100TH',
+            1 => 'CN100LP',
+            2 => 'GV100KGD',
+            3 => 'WFR100LTF',
+            4 => 'CY100IA',
+            5 => 'CY100NS',
+            6 => 'WFR100LT',
+            7 => 'WM100LDM',
+            8 => 'YH100XC',
+            9 => 'GV100N8',
+            10 => 'GV100KA',
+            11 => 'GV100FS',
+        ),
         'FM100G1S' => array(
             0 => 'FM100GS',
+        ),
+        'AS100CS' => array(
+            0 => 'AS100RXM',
         ),
         'GV100AS' => array(
             0 => 'SONYVTC5A',
@@ -19204,6 +19405,14 @@ return array(
         'YH100S2' => array(
             0 => 'YH100SA',
         ),
+        'IK100P8C' => array(
+            0 => 'IK100T8',
+            1 => 'IK100PTH',
+        ),
+        'IK100P2C' => array(
+            0 => 'IK100PTH',
+            1 => 'IK100T2',
+        ),
         'IP100V3A' => array(
             0 => 'IP100V3',
         ),
@@ -19226,6 +19435,12 @@ return array(
             0 => 'AY100P2P',
             1 => 'AY100P2H',
         ),
+        'GV100BT' => array(
+            0 => 'GV100BTP',
+        ),
+        'GV100BTP' => array(
+            0 => 'GV100BT',
+        ),
         'VK100SMA' => array(
             0 => 'VK100SM',
         ),
@@ -19242,12 +19457,29 @@ return array(
             9 => 'SC100HT2',
             10 => 'SC100ROG',
         ),
+        'IC100XXC' => array(
+            0 => 'IC100EXH',
+            1 => 'IC100ECH',
+            2 => 'IC100XM',
+            3 => 'IC100XXA',
+            4 => 'IC100XXG',
+        ),
+        'IK100T2C' => array(
+            0 => 'IK100T2S',
+            1 => 'IK100PSH',
+            2 => 'IK100EZ',
+        ),
         'GV100ZS' => array(
             0 => 'GV100AIM',
             1 => 'GV100ASM',
             2 => 'GV100AXM',
             3 => 'GV100Z1',
             4 => 'GV100Z2',
+        ),
+        'IK100SP' => array(
+            0 => 'IK100PT',
+            1 => 'IK100SPH',
+            2 => 'IK100PTM',
         ),
         'AS100MU' => array(
             0 => 'SONYVTC5A',
@@ -19265,6 +19497,16 @@ return array(
             2 => 'IK100ZNH',
             3 => 'IK100CZ',
         ),
+        'IK100PR2' => array(
+            0 => 'IK100PTH',
+            1 => 'IK100T82',
+            2 => 'IK100PR2K',
+            3 => 'IK100PR2M',
+        ),
+        'IK100IS' => array(
+            0 => 'IK100ISH',
+            1 => 'IK100ISG',
+        ),
         'IK100ZT' => array(
             0 => 'IK100ZNP',
             1 => 'IK100ZNH',
@@ -19273,6 +19515,11 @@ return array(
         ),
         'IK100JM' => array(
             0 => 'IK100JMC',
+            1 => 'IK100JMH',
+            2 => 'IK100JMG',
+        ),
+        'IK100JMC' => array(
+            0 => 'IK100JM',
             1 => 'IK100JMH',
             2 => 'IK100JMG',
         ),
@@ -19292,6 +19539,17 @@ return array(
             3 => 'IK100ZLG',
             4 => 'IK100ZLM',
             5 => 'IK100AZ',
+        ),
+        'IK100PC' => array(
+            0 => 'IK100SPH',
+            1 => 'IK100PTM',
+            2 => 'IK100PCG',
+            3 => 'IK100PCD',
+        ),
+        'IK100PTC' => array(
+            0 => 'IK100T2H',
+            1 => 'IK100ET',
+            2 => 'IK100ET2',
         ),
         'VM100TPC' => array(
             0 => 'VM100TPM',
@@ -19340,6 +19598,10 @@ return array(
             0 => 'IC10000USB',
             1 => 'IK100GAP',
         ),
+        'IK1003D' => array(
+            0 => 'IK100PK',
+            1 => 'IK1003DH',
+        ),
         'AS100BS2C' => array(
             0 => 'AS100BS2H',
         ),
@@ -19349,6 +19611,35 @@ return array(
         'AG100DN' => array(
             0 => 'AG100DNH',
             1 => 'AG100DNR',
+        ),
+        'VP100CBS' => array(
+            0 => 'VS100GTM',
+        ),
+        'WT100ST' => array(
+            0 => 'GV100WS',
+            1 => 'MB100SG',
+            2 => 'MB100SS',
+            3 => 'CM100TM',
+            4 => 'CM100WH',
+            5 => 'CM100MF',
+            6 => 'CM100SS',
+            7 => 'CU100CS',
+            8 => 'CY100FSA',
+            9 => 'GV100SG',
+        ),
+        'WT100PU' => array(
+            0 => 'CN100TH',
+            1 => 'CN100LP',
+            2 => 'GV100N9',
+            3 => 'GV100KGD',
+            4 => 'MB100SP',
+            5 => 'MB100SG',
+            6 => 'MB100SS',
+            7 => 'GV100KW',
+            8 => 'GV100SS',
+            9 => 'GV100FT',
+            10 => 'WT100PUG',
+            11 => 'WT100PRC',
         ),
         'OS100AR' => array(
             0 => 'OS100M1',
@@ -19374,9 +19665,23 @@ return array(
             0 => 'OS100AR',
             1 => 'OS100ARN',
         ),
+        'WT100PR' => array(
+            0 => 'UW100EOA',
+            1 => 'DU100DV',
+            2 => 'IK100PTM',
+            3 => 'WT100PRC',
+            4 => 'WT100W3',
+            5 => 'WT100W6',
+        ),
         'VS100NP' => array(
             0 => 'VS100S2M',
             1 => 'VS100G4',
+        ),
+        'AS100DM' => array(
+            0 => 'AS100RXM',
+            1 => 'AS100DTH',
+            2 => 'AS100DMD',
+            3 => 'AS100DMG',
         ),
     ),
 );
