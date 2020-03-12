@@ -1108,7 +1108,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $productsIcDescription = [];
             foreach ($products as $product) {
                 $type = $product->getType();
-                if (! (($type === 'CLEAROMIZER_RDA') || ($type === 'CLEAROMIZER_RTA') || ($type === 'CLEAROMIZER_RDTA'))) continue;
+                if (($type === 'AROMA') || ($type === 'LIQUID') || ($type === 'SHAKE_VAPE')) continue;
                 /** @var Article $article */
                 $article = $product->getArticle();
                 if ($article === null) continue;
