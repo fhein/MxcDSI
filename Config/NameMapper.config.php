@@ -493,6 +493,7 @@ return [
             '~(Target Mini 2) (- \d\.\d+ mAh)~'                   => '$1 - Akku $2',
             '~(Exceed X) (- \d\.\d+ mAh)~'                        => '$1 - Akku $2',
             '~(Kroma A) (- \d\.\d+ mAh)~'                         => '$1 - Akku $2',
+            '~(MVP5) (- \d\.\d+ mAh)~'                            => '$1 - Akku $2',
             '~(Mag Baby) (- \d+ Watt)~'                           => '$1 - Akku $2',
             //            '~(Compact 14) (Akku)~'                                  => '$1 - $2',
             '~(Pumper.*) (- \d+ Watt)~'                           => '$1 - Squonker Box $2',
