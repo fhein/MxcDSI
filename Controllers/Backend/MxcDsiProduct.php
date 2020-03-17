@@ -1077,16 +1077,18 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'E_CIGARETTE']);
             /** @var Product $product */
-            $productsIcDescription = [];
             foreach ($products as $product) {
-                $description = $product->getDescription();
-                if ($description === $product->getIcDescription()) {
-                    $productsIcDescription[$product->getIcNumber()] = $product->getName();
+                /** @var Shopware\Models\Article\Article $article */
+                $article = $product->getArticle();
+                if ($article === null) continue;
+                $description = $article->getDescriptionLong();
+                if (strpos($description, '<tbody>') === false) {
+                    $productsToDo[$product->getIcNumber()] = $product->getName();
                 }
             }
-            ksort($productsIcDescription);
+            ksort($productsToDo);
             $report = new \MxcDropshipInnocigs\Report\ArrayReport();
-            $report(['icProductDescriptions' => $productsIcDescription]);
+            $report(['icProductDescriptions' => $productsToDo]);
 
             // Do something with the ids
             $this->view->assign([ 'success' => true, 'message' => 'Development 6 slot is currently free.']);
