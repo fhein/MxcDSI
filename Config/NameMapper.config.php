@@ -40,7 +40,9 @@ return [
             '~(Aegis X) (\d+ Watt) (mit Cerberus)~' => '$1 $3',
             '~(Lunar)~'                             => '$1 45 Watt',
             '~(Horizon)T(ech)~'                     => '$1t$2',
+            '~(Tauren X) (Mesh)~'                   => '$1 Pod $2',
             // separator different from '-'
+            '~(SX-RSA Esea) DIY~'                   => '$1',
             '~–~'                                   => '-',
         ],
     ],
@@ -129,6 +131,7 @@ return [
             '~(NRG) - (PE) (Verdampfer)~'                  => '$1-$2 - $3',
             '~(E-Zigarette)n (Bundle) Set~'                => '$1 ($2)',
             '~(Zenith -) -(Head)~'                         => '$1 $2',
+            '~(Crown Pod) - (\()~'                         => '$1 $2',
         ],
     ],
 
@@ -774,7 +777,7 @@ return [
             '~(Zeus RTA)~',
             '~(Zeus)~',
             '~(Ammit Dual Coil RTA)~',
-            '~(Aegis(( Legend)|( Mini)|( X)|( Solo)|( Squonk))?)~',
+            '~(Aegis(( Boost)|( Legend)|( Mini)|( X)|( Solo)|( Squonk))?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
             '~(Creed RTA)~',
@@ -1047,7 +1050,7 @@ return [
         'Uwell'         => [
             '~(Evdilo)~',
             '~(Marsupod)~',
-            '~(Crown (3|4))~',
+            '~(Crown(( 3)|( 4)|( Pod)))~',
             '~(Fancier RTA)~',
             '~(Hypercar)~',
             '~(Ironfist)~',
@@ -1175,6 +1178,7 @@ return [
             '~(SX Mini Divine RDA)~',
             '~(SXmini SX Auto)~',
             '~(SX Auto)~',
+            '~(SX-RSA Esea)~',
         ],
         'ZQ'            => [
             '~(Vi)~',

@@ -77,6 +77,7 @@ return [
         '~RDSA.*Verdampfer~'        => TypeMapper::TYPE_CLEAROMIZER_RDSA,
         '~RDTA.*Verdampfer~'        => TypeMapper::TYPE_CLEAROMIZER_RDTA,
         '~RDA.*Verdampfer~'         => TypeMapper::TYPE_CLEAROMIZER_RDA,
+        '~SX-RSA.*Verdampfer~'      => TypeMapper::TYPE_CLEAROMIZER_RDA,
         '~Verdampferständer~'       => TypeMapper::TYPE_STORAGE,
         '~Verdampfer~'              => TypeMapper::TYPE_CLEAROMIZER,
         '~Cartridge~'               => TypeMapper::TYPE_CARTRIDGE,
