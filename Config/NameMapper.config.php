@@ -132,6 +132,7 @@ return [
             '~(E-Zigarette)n (Bundle) Set~'                => '$1 ($2)',
             '~(Zenith -) -(Head)~'                         => '$1 $2',
             '~(Crown Pod) - (\()~'                         => '$1 $2',
+            '~( Pod) - (E-Zigarette)~'                     => ' -$1 $2',
         ],
     ],
 

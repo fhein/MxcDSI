@@ -60,6 +60,14 @@ class Product extends ModelEntity  {
     /**
      * PropertyMapper mapped
      *
+     * @var string $shortNameSeoUrl
+     * @ORM\Column(name="seo_url_name", type="string", nullable=true)
+     */
+    private $shortNameSeoUrl;
+
+    /**
+     * PropertyMapper mapped
+     *
      * @ORM\Column(name="seo_url", type="string", nullable=true)
      */
     private $seoUrl;
@@ -805,5 +813,21 @@ class Product extends ModelEntity  {
     public function setSeoKeywords($seoKeywords)
     {
         $this->seoKeywords = $seoKeywords;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortNameSeoUrl()
+    {
+        return $this->shortNameSeoUrl;
+    }
+
+    /**
+     * @param string $shortNameSeoUrl
+     */
+    public function setShortNameSeoUrl(string $shortNameSeoUrl)
+    {
+        $this->shortNameSeoUrl = $shortNameSeoUrl;
     }
 }
