@@ -954,6 +954,32 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function rebuildProductSeoInformationAction() {
+        try {
+            $services = MxcDropshipInnocigs::getServices();
+            $log = $services->get('logger');
+            $seoMapper = $services->get(ProductSeoMapper::class);
+            $repository = $this->getManager()->getRepository(Product::class);
+            $products = $repository->getAllIndexed();
+            $model = new Model();
+            $seoUrls = [];
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $seoMapper->map($model, $product);
+                $seoUrls[$product->getIcNumber()] = $product->getSeoUrl();
+            }
+            $this->getManager()->flush();
+            ksort($seoUrls);
+            $report = new \MxcDropshipInnocigs\Report\ArrayReport();
+            $report(['icSeoUrls' => $seoUrls]);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Product SEO information successfully rebuilt.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+
+    }
+
     public function dev1Action()
     {
         // find mismatches between purchase prices reported by model and variant and adjust variant accordingly
@@ -1136,6 +1162,17 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
             // Do something with the ids
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            $seoUrls = [];
+            foreach ($products as $product) {
+                $seoUrls[$product->getIcNumber()] = $product->getSeoUrl();
+            }
+            $duplicates = array_diff_key($seoUrls, array_unique($seoUrls));
+            ksort($seoUrls);
+            $report = new \MxcDropshipInnocigs\Report\ArrayReport();
+            $report(['icSeoUrls' => $seoUrls, 'icSeoUrlDuplicates' => $duplicates]);
+
             $this->view->assign([ 'success' => true, 'message' => 'Development 8 slot is currently free.']);
         } catch (Throwable $e) {
             $this->handleException($e);

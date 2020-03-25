@@ -18,6 +18,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
                 mxcUpdateSupplierSeo:                me.onUpdateSupplierSeo,
                 mxcUpdateCategorySeo:                me.onUpdateCategorySeo,
+                mxcRebuildArticleSeo:                me.onRebuildArticleSeo,
                 mxcUpdateArticleSeo:                 me.onUpdateArticleSeo,
 
                 // Remapping
@@ -148,6 +149,23 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let growlTitle = 'Update supplier SEO information';
         let maskText = 'Updating supplier SEO information ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onRebuildArticleSeo: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=rebuildProductSeoInformation}';
+        let growlTitle = 'Rebuild product SEO information';
+        let maskText = 'Rebuilding product SEO information ...';
+        let params = {};
+        let selModel = grid.getSelectionModel();
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
     },
 
     onUpdateArticleSeo: function (grid) {

@@ -155,9 +155,39 @@ class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterfac
         $url = str_replace('/', '-', $title);
         $url = str_replace('Dr.', 'Dr', $url);
         $url = preg_replace('~([^ ])\'([^ ])~', '$1$2', $url);
+        $url = preg_replace('~(\d)\.(\d{3} ((mAh)|(ml)))~', '$1$2', $url);
+
         $url = mb_strtolower($this->slug->slugify($url));
 
+        $url = str_replace('-akku-', '-', $url);
+        $url = preg_replace('~-e-zigarette$~', '', $url);
+        $url = preg_replace('~-e-liquid$~', '', $url);
+        $url = preg_replace('~-liquid$~', '', $url);
+        $url = preg_replace('~-aroma$~', '', $url);
+        $url = preg_replace('~-verdampfer$~', '', $url);
+        $url = preg_replace('~-akkutraeger-~', '-', $url);
+        $url = preg_replace('~-squonker-box-~', '-', $url);
+        $url = preg_replace('~-leerflasche-~', '-', $url);
+        $url = preg_replace('~-shake-vape$~', '', $url);
+        $url = preg_replace('~(suenden-)\d\.-~', '$1', $url);
+        $url = preg_replace('~(cartridge-)mit-head-~', '$1', $url);
+        $url = preg_replace('~-e-hookah-set$~', '', $url);
+        $url = preg_replace('~(flavour)-(trade)~', '$1$2', $url);
+        $url = preg_replace('~-fuer-chubby-gorilla$~', '', $url);
+        $url = preg_replace('~-inkl.-head~', '', $url);
+
+        $type = $product->getType();
+        if (in_array($type, ['AROMA', 'LIQUID', 'SHAKE_VAPE'])) {
+            $content = $product->getContent();
+            if ($content > 0) {
+                $url .= '-' . $product->getContent() . '-ml';
+            }
+        }
+        $baseUrl = $this->classConfig['base_urls'][$type];
+        $url = $baseUrl . $url;
+
         $this->report[$name]['url'] = $url;
+
         $product->setSeoUrl($url);
 
         // compute and set seo keywords

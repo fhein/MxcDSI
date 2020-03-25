@@ -109,7 +109,7 @@ return [
         TypeMapper::TYPE_DECK               => 'e-zigaretten/decks/',
         TypeMapper::TYPE_HEATING_PLATE      => 'e-zigaretten/heizplatten/',
         TypeMapper::TYPE_TOOL_HEATING_PLATE => 'e-zigaretten/heizplatten/',
-        TypeMapper::TYPE_DRIP_TIP_CAP       => 'e-zigaretten/mundstuecke/',
+        TypeMapper::TYPE_DRIP_TIP_CAP       => 'e-zigaretten/driptips/',
         TypeMapper::TYPE_TANK_PROTECTION    => 'e-zigaretten/tanks/',
         TypeMapper::TYPE_STORAGE            => 'e-zigaretten/aufbewahrung/',
         TypeMapper::TYPE_BATTERY_SLEEVE     => 'e-zigaretten/kappen/',
