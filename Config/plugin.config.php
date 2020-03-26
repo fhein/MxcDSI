@@ -69,7 +69,6 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
-use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
 
 return [
     'plugin'   => [
@@ -86,25 +85,26 @@ return [
         ],
         'attributes' => [
             's_articles_attributes' => [
-                'mxc_dsi_active'         => ['type' => TypeMapping::TYPE_BOOLEAN],
-                'mxc_dsi_product_number' => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_dsi_product_name'   => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_dsi_retail_price'   => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_dsi_purchase_price' => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_dsi_instock'        => ['type' => TypeMapping::TYPE_INTEGER],
-
-                'mxc_meta_type'         => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_common_name'  => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_manufacturer' => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_supplier'     => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_brand'        => ['type' => TypeMapping::TYPE_STRING],
-
-                'mxc_meta_flavor'         => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_flavor_group'   => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_base'           => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_nicotine'       => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_bottle_size'    => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_meta_bottle_content' => ['type' => TypeMapping::TYPE_STRING],
+                // here I started to implement meta information for articles
+                //                'mxc_dsi_active'         => ['type' => TypeMapping::TYPE_BOOLEAN],
+                //                'mxc_dsi_product_number' => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_dsi_product_name'   => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_dsi_retail_price'   => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_dsi_purchase_price' => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_dsi_instock'        => ['type' => TypeMapping::TYPE_INTEGER],
+                //
+                //                'mxc_meta_type'         => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_common_name'  => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_manufacturer' => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_supplier'     => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_brand'        => ['type' => TypeMapping::TYPE_STRING],
+                //
+                //                'mxc_meta_flavor'         => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_flavor_group'   => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_base'           => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_nicotine'       => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_bottle_size'    => ['type' => TypeMapping::TYPE_STRING],
+                //                'mxc_meta_bottle_content' => ['type' => TypeMapping::TYPE_STRING],
 
                 //                'mxc_dsi_mod_cell_type'        => ['type' => 'string'],
                 //                'mxc_dsi_mod_power'            => ['type' => 'string'],
