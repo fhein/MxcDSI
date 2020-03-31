@@ -1116,7 +1116,25 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $productsIcDescription = [];
             foreach ($products as $product) {
                 $type = $product->getType();
-                if (($type === 'AROMA') || ($type === 'LIQUID') || ($type === 'SHAKE_VAPE')) continue;
+//                if (
+//                    ($type === 'AROMA')
+//                    || ($type === 'LIQUID')
+//                    || ($type === 'SHAKE_VAPE')
+//                    || ($type === 'HEAD')
+//                    || ($type === 'TANK')
+//                    || ($type === 'SEAL')
+//                    || ($type === 'EASY3_CAP')
+//                    || ($type === 'LIQUID_BOX')
+//                    || ($type === 'DRIP_TIP')
+//                    || ($type === 'WADDING')
+//                    || ($type === 'MAGNET')
+//                    || ($type === 'MAGNET_ADAPTER')
+//                    || ($type === 'BATTERY_CAP')
+//                    || ($type === 'BATTERY_SLEEVE')
+//                ) {
+//                    continue;
+//                }
+                if (! $product->isNew()) continue;
                 /** @var Article $article */
                 $article = $product->getArticle();
                 if ($article === null) continue;
@@ -1130,7 +1148,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $report(['icClearomizers' => $productsIcDescription]);
 
             // Do something with the ids
-            $this->view->assign([ 'success' => true, 'message' => 'Clearomizers wihout related articles exported.']);
+            $this->view->assign([ 'success' => true, 'message' => 'New products wihout related articles exported.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

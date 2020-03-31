@@ -133,6 +133,7 @@ return [
             '~(Zenith -) -(Head)~'                         => '$1 $2',
             '~(Crown Pod) - (\()~'                         => '$1 $2',
             '~( Pod) - (E-Zigarette)~'                     => ' -$1 $2',
+            '~(E-Zigarette \(Bundle\)).*~'                 => '$1',
         ],
     ],
 
@@ -287,6 +288,7 @@ return [
             '~([^,\-]) (\d+ ml, \d+ mg/ml)~'                             => '$1 - $2',
             '~(Treib.*100 ml$)~'                                         => '$1, 0 mg/ml',
             '~(Bad Candy Liquids) (- .*)(- 20 ml)~'                      => '$1 $2 - Aroma $3',
+            '~(Refresh Gazoz) (- Aroma)(.*)(- \d+(,\d+)? ml)~'           => '$1 - $3 $2 $4',
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Kirschlolli) (- Aroma)(.*)(- \d+(,\d+)? ml)~'             => '$1 - $3 $2 $4',
             '~(Oceans) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
