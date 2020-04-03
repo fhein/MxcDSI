@@ -836,7 +836,7 @@ return [
 
         ],
         'SC'            => [
-            '~(iJust(( 21700)|( ECM)|( 3 Pro)|( 3)|( Mini))?)~',
+            '~(iJust(( 21700)|( ECM)|( 3 Pro)|( 3)|( Mini)|( AIO))?)~',
             '~(Ello( ((Vate)|(Duro)|(Pop))?))~',
             '~(iCare Flask)~',
             '~(iKuu Lite)~',
@@ -857,7 +857,7 @@ return [
         ],
         'Innokin'       => [
             '~(Endura ((T18 2 Mini)|(T18 2)|(T18)|(T20S)|(T20)|(T22))?)~',
-            '~(Prism ((S)|(T18/T22)|(T18 2)|(T18)|(T20)|(T22))?)~',
+            '~(Prism ((S)|(T18/T22)|(T18 2)|(T18E)|(T18)|(T20)|(T22))?)~',
             '~(Proton)~',
             '~(EZ.Watt)~',
             '~(Zenith (D22)?)~',
@@ -1072,7 +1072,7 @@ return [
 
         ],
         'VapeOnly'      => [
-            '~(vPipe III)~',
+            '~(vPipe(( III)|( Mini)))~',
             '~(Zen Pipe)~',
         ],
         'VooPoo'        => [
