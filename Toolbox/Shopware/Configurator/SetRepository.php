@@ -33,7 +33,7 @@ class SetRepository implements ModelManagerAwareInterface, LoggerAwareInterface
         $this->modelManager->persist($set);
         $set->setName($name);
         $set->setPublic(false);
-        $set->setType(0);
+        $set->setType(1);
         return $set;
     }
 
