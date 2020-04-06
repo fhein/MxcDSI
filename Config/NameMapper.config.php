@@ -1159,6 +1159,7 @@ return [
             '~(Warrior RDA)~',
             '~(Recurve RDA)~',
             '~(STNG MTL RDA)~',
+            '~(COG MTL RTA)~',
             '~(Profile(( Unity RTA)|( 1.5 RDA)))~'
         ],
         'XTAR'          => [

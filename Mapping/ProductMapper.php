@@ -84,6 +84,12 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $this->configureArticle($product, true);
         $this->activateArticle($product);
         $this->modelManager->flush(); //temporary
+        // if this works, seo url has to be applied after flush because
+        // article attributes do not exist before
+        $seoUrl = $product->getSeoUrl();
+        if (! empty($seoUrl)) {
+            ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
+        }
         return true;
     }
 
@@ -112,6 +118,13 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $this->configureArticle($product, $forceUpdate);
         $this->activateArticle($product);
         $this->modelManager->flush(); // temporary
+
+        // if this works, seo url has to be applied after flush because
+        // article attributes do not exist before
+        $seoUrl = $product->getSeoUrl();
+        if (! empty($seoUrl)) {
+            ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
+        }
         return true;
     }
 
