@@ -78,7 +78,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             return;
         }
 
-        list($needsOptionUpdate, $configuratorSet) = $this->optionMapper->updateConfiguratorSet($product);
+        [$needsOptionUpdate, $configuratorSet] = $this->optionMapper->updateConfiguratorSet($product);
         $article->setConfiguratorSet($configuratorSet);
 
         $variants = $product->getVariants();
@@ -150,12 +150,12 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
         $this->setShopwareDetailProperties($variant);
 
-        // All valid details are marked active
+        // All valid details are marked active and lastStock
         $detail->setActive(true);
-
-        // set next three properties only on detail creation
-        $this->priceMapper->setRetailPrices($variant);
         $detail->setLastStock(1);
+
+        // set next two properties only on detail creation
+        $this->priceMapper->setRetailPrices($variant);
 
         // Note: shopware options were added non persistently to variants when configurator set was created
         $detail->setConfiguratorOptions(new ArrayCollection($variant->getShopwareOptions()));
