@@ -146,6 +146,7 @@ return [
         '~Preva Pod - E-Zigarette~' => TypeMapper::TYPE_E_CIGARETTE,
         '~PodStick - E-Zigarette~'  => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod~'                     => TypeMapper::TYPE_POD,
+        '~Unipod~'                  => TypeMapper::TYPE_POD,
         '~E-Pfeife~'                => TypeMapper::TYPE_E_PIPE,
         '~E-Hookah~'                => TypeMapper::TYPE_E_HOOKAH,
         '~Vaporizer~'               => TypeMapper::TYPE_VAPORIZER,
@@ -217,5 +218,6 @@ return [
         '~[Mm]agnet~'               => TypeMapper::TYPE_MAGNET,
         '~Batteriehülse~'           => TypeMapper::TYPE_BATTERY_SLEEVE,
         '~Batteriekappe~'           => TypeMapper::TYPE_BATTERY_CAP,
+        '~Zeus X2.*Micromesh~'      => TypeMapper::TYPE_COIL,
     ],
 ];
