@@ -145,6 +145,7 @@ return [
         '~Pod E-Zigarette~'         => TypeMapper::TYPE_E_CIGARETTE,
         '~Preva Pod - E-Zigarette~' => TypeMapper::TYPE_E_CIGARETTE,
         '~PodStick - E-Zigarette~'  => TypeMapper::TYPE_E_CIGARETTE,
+        '~Podin.*E-Zigarette~'      => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod~'                     => TypeMapper::TYPE_POD,
         '~Unipod~'                  => TypeMapper::TYPE_POD,
         '~E-Pfeife~'                => TypeMapper::TYPE_E_PIPE,
