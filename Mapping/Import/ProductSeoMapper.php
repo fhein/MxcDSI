@@ -37,6 +37,8 @@ class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterfac
         ' günstig kaufen',
         ' günstig online kaufen',
         ' bequem online kaufen',
+        'bequem günstig online',
+        'bequem und günstig online kaufen',
     ];
 
     protected $descriptionMaxLength;
@@ -122,7 +124,6 @@ class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterfac
         if ($titleLength < $titleMin) {
             $titleMax = $this->classConfig['sizes']['titleMax'];
             $snippets = $this->titleSnippets;
-            $titleSnippet = '';
             foreach ($snippets as $snippet => $length) {
                 if ($titleLength + $length >= $titleMax) break;
                 $titleSnippet = $snippet;

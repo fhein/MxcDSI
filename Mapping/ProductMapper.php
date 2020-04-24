@@ -276,7 +276,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $article->setSupplier($supplier);
 
         // set supplier page meta information
-        $title = 'E-Zigaretten und E-Liquids: Unsere Produkte von %s';
+        $title = 'E-Zigaretten: Unsere Produkte von %s';
         $description = 'Produkte für Dampfer von %s ✓ vapee.de bietet ein breites Sortiment von E-Zigaretten und E-Liquids zu fairen Preisen ► Besuchen Sie uns!';
         $metaTitle = sprintf($title, $supplierName);
         $metaDescription = sprintf($description, $supplierName);

@@ -938,7 +938,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $suppliers = $this->getManager()->getRepository(Supplier::class)->findAll();
             /** @var Supplier $supplier */
-            $title = 'E-Zigaretten und E-Liquids: Unsere Produkte von %s';
+            $title = 'E-Zigaretten: Unsere Produkte von %s';
             $description = 'Produkte für Dampfer von %s ✓ vapee.de bietet ein breites Sortiment von E-Zigaretten und E-Liquids zu fairen Preisen ► Besuchen Sie uns!';
 
             foreach ($suppliers as $supplier) {

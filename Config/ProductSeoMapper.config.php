@@ -4,8 +4,8 @@ return [
     'sizes' => [
         'urlMin' => 30,
         'urlMax' => 42,
-        'titleMin' => 40,
-        'titleMax' => 54,
+        'titleMin' => 35,
+        'titleMax' => 45,
         'descriptionMin' => 135,
         'descriptionMax' => 155,
     ],
