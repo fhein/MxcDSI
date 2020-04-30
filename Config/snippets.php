@@ -48,29 +48,4 @@
 //$this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
 
 
-// find mismatches between purchase prices reported by model and variant and adjust variant accordingly
-//try {
-//    $log = MxcDropshipInnocigs::getServices()->get('logger');
-//    $manager = $this->getManager();
-//    $models = $manager->getRepository(Model::class)->getAllIndexed();
-//    $variants = $manager->getRepository(Variant::class)->getAllIndexed();
-//    /**
-//     * @var string $number
-//     * @var  Model $model
-//     */
-//    foreach ($models as $number => $model) {
-//        /** @var Variant $variant */
-//        $variant = $variants[$number];
-//        $mPrice = str_replace(',', '.', $model->getPurchasePrice());
-//        $vPrice = $variant->getPurchasePrice();
-//        if ($mPrice !== $vPrice) {
-//            $log->debug('Purchase price mismatch: ' . $variant->getName() . ': Model: '. $mPrice . ', variant: '. $vPrice);
-//            $variant->setPurchasePrice($mPrice);
-//        }
-//    }
-//    $manager->flush();
-//    $this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
-//} catch (Throwable $e) {
-//    $this->handleException($e);
-//}
 

@@ -237,7 +237,7 @@ return array(
             ),
             'path' => 'ZUBEHÖR > Accessoires',
         ),
-        33 => array(
+        32 => array(
             'types' => array(
                 0 => 'COVER',
             ),
