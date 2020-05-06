@@ -142,6 +142,7 @@ return array(
         30 => 'Zimtschnecke',
         31 => 'Zironenkuchen',
         32 => 'Zitronentorte',
+        33 => 'Schwarzwälder Kirschtorte'
     ),
     'Getränke' => array(
         0 => 'Apfelsaft',

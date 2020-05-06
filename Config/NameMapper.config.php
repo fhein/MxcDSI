@@ -123,7 +123,8 @@ return [
             '~Subohm (Verdampfer)~'                        => '$1',
             '~Subohm (E-Zigarette)~'                       => '$1',
             '~(iSub -)(PLEX)~'                             => '$1 $2',
-            '~(eGrip) - (Mini)~'                           => '$1 $2', // don't know why this does not work with other rules
+            '~(eGrip) - (Mini)~'                           => '$1 $2', // does not work with rules below, reason unknown
+            '~(Nord) -( 2 -)~'                             => '$1 $2', // does not work with rules below, reason unknown
             '~- -(Verdampfer)~'                            => '- $1',
             '~(SC - .*) - by SC$~'                         => '$1',
             '~(.*)(3in1 Aroma.*)15( ml)~'                  => '$1$2 45$3',
@@ -135,6 +136,7 @@ return [
             '~(Crown Pod) - (\()~'                         => '$1 $2',
             '~( Pod) - (E-Zigarette)~'                     => ' -$1 $2',
             '~(E-Zigarette \(Bundle\)).*~'                 => '$1',
+            '~(Nord) - (Pod)~'                             => '$1 $2',
         ],
     ],
 
@@ -488,7 +490,8 @@ return [
             '~(Glastank),? (\d+ ml)~'                             => '$1 - $2',
             '~(Head) - (ARC)~'                                    => '$2 $1 -',
             '~(Hookah) (Set)~'                                    => '$1 ($2)',
-            '~(Zelos) - 5~'                                       => '$1 - Akku - 5',
+            '~(Zelos) - 5~'                                       => '$1 - Akku $2',
+            '~(NX40) (- \d\.\d+ mAh)~'                            => '$1 - Akku $2',
             '~(iStick Nowos) (- \d\.\d+ mAh)~'                    => '$1 - Akku $2',
             '~(iStick Rim) (- \d\.\d+ mAh)~'                      => '$1 - Akku $2',
             '~(Adept) (- \d\.\d+ mAh)~'                           => '$1 - Akku $2',
@@ -671,10 +674,12 @@ return [
         ],
         'Aspire'        => [
             // Aspire
+            '~(Rover 2)~',
             '~(Reax Mini)~',
             '~(Nepho)~',
             '~(Athos)~',
             '~(Dynamo)~',
+            '~(Cloudflask)~',
             '~(Atlantis Evo)~',
             '~(PockeX)~',
             '~((Cobble)( AIO)?)~',
@@ -689,7 +694,7 @@ return [
             '~((Breeze)(( 2)|( NXT))?)~',
             '~((Zelos)( 2.0)?)~',
             '~(Revvo(( Mini)|( Boost))?)~',
-            '~(Nautilus(( 2S?)|( X)|( Mini)|( AIO)|( GT))?)~',
+            '~(Nautilus(( 2S?)|( XS)|( X)|( Mini)|( AIO)|( GT))?)~',
             '~(Cleito((( Shot)|( 120)?( Pro)?))?)~',
             '~(SkyStar)~',
             '~(Feedlink)~',
@@ -806,7 +811,8 @@ return [
             '~(Rebirth RDA)~',
             '~(Passage RDA)~',
             '~(Rebirth RTA)~',
-            '~(Hellcoil H7-0\d)~'
+            '~(Hellcoil H7-0\d)~',
+            '~(Ravana RTA)~',
         ],
         'Horizontech' => [
           '~(Falcon( King)?)~',
@@ -930,6 +936,7 @@ return [
             '~(nexMESH)~',
         ],
         'Smok'          => [
+            '~(Nord( 2)?)~',
             '~(Mag P3)~',
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
@@ -1001,7 +1008,6 @@ return [
             // Smok
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
-            '~(Nord)~',
             '~(R-Kiss)~',
             '~(H-Priv 2)~',
             '~(Mag Baby)~',
