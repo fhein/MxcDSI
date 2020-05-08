@@ -19,6 +19,7 @@ return [
             '~America´s~'                           => 'America\'s',
             '~AsMODus~'                             => 'asMODus',
             '~Asmodus~'                             => 'asMODus',
+            '~(Original Q) PRO~'                    => '$1 Pro',
             '~(Zeus X) (2)~'                        => '$1$2',
             '~(Amnis 2) mit GS Drive~'              => '$1',
             '~Hellvape~'                            => 'HellVape',
@@ -864,7 +865,7 @@ return [
         ],
         'Innokin'       => [
             '~(Endura ((T18 2 Mini)|(T18 2)|(T18)|(T20S)|(T20)|(T22))?)~',
-            '~(Prism ((S)|(T18/T22)|(T18 2)|(T18E)|(T18)|(T20)|(T22))?)~',
+            '~(Prism ((S)|(T18/T22)|(T18 2)|(T18E)|(T18)|(T20(S)?)|(T22))?)~',
             '~(Proton( Mini)?)~',
             '~(EZ.Watt)~',
             '~(Zenith(( D22)|( Pro))?)~',
