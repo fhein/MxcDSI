@@ -75,6 +75,7 @@ return array(
         11 => 'Pfefferminze',
         12 => 'Slush Eis',
         13 => 'Zitronensorbet',
+        14 => 'Sandwich-Eis',
     ),
     'Früchte' => array(
         0 => 'Amarenakirsche',
@@ -177,6 +178,7 @@ return array(
         29 => 'Zitronentee',
         30 => 'bittere Limonade',
         31 => 'karibischer Rum',
+        32 => 'Cherry Cola',
     ),
     'Gewürze' => array(
         0 => 'Anis',
@@ -302,6 +304,7 @@ return array(
         11 => 'Tee',
         12 => 'grüner Tee',
         13 => 'schwarzer Tee',
+        14 => 'grüner Zitronentee'
     ),
     'Trauben' => array(
         0 => 'Traube',

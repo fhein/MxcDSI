@@ -1,6 +1,9 @@
 <?php
 return [
     'common_name_index' => [
+        '510CloudPark' => [
+            'BenchmarX' => 2,
+        ],
         'Twelve Monkeys' => [
             'Origins' => 2,
         ],
