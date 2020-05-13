@@ -296,6 +296,7 @@ return [
             '~(Treib.*100 ml$)~'                                          => '$1, 0 mg/ml',
             '~(Bad Candy Liquids) (- .*)(- 20 ml)~'                       => '$1 $2 - Aroma $3',
             '~(Refresh Gazoz) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
+            '~(Kaffeeklatsch) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'             => '$1 - $3 $2 $4',
             '~(510CloudPark - BenchmarX) (- Aroma)(.*)(- \d+(,\d+)? ml)~' => '$1 - $3 $2 $4',
             '~(Kirschlolli) (- Aroma)(.*)(- \d+(,\d+)? ml)~'              => '$1 - $3 $2 $4',

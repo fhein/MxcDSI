@@ -76,6 +76,7 @@ return array(
         12 => 'Slush Eis',
         13 => 'Zitronensorbet',
         14 => 'Sandwich-Eis',
+        15 => 'Vanilleeis'
     ),
     'Früchte' => array(
         0 => 'Amarenakirsche',
