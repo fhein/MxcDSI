@@ -8,6 +8,7 @@ use MxcDropshipInnocigs\Excel\ExcelImport;
 use MxcDropshipInnocigs\Excel\ExcelImportFactory;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Excel\ExportNewProducts;
+use MxcDropshipInnocigs\Excel\ExportPriceIssues;
 use MxcDropshipInnocigs\Excel\ExportPrices;
 use MxcDropshipInnocigs\Excel\ExportSheetFactory;
 use MxcDropshipInnocigs\Excel\ImportPrices;
@@ -182,6 +183,7 @@ return [
             ExcelExport::class,
             ExcelImport::class,
             ExportPrices::class,
+            ExportPriceIssues::class,
             FilterTest::class,
             ImageMapper::class,
             ImportClient::class,
@@ -219,7 +221,8 @@ return [
         ],
         'export' => [
 //            'Neue Produkte' => ExportNewProducts::class,
-            'Preise'        => ExportPrices::class,
+//            'Preise'        => ExportPrices::class,
+            'Preise'  => ExportPriceIssues::class,
         ],
     ],
 ];

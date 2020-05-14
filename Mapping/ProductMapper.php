@@ -256,6 +256,11 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $article = $product->getArticle();
         if (! $article) return;
 
+        //--- setLastStock will get deprecated with Shopware 5.7
+        if (method_exists($article, 'setLastStock')) {
+            $article->setLastStock(1);
+        }
+
         $article->setDescription($product->getSeoDescription());
         $article->setMetaTitle($product->getSeoTitle());
         $article->setKeywords($product->getSeoKeywords());

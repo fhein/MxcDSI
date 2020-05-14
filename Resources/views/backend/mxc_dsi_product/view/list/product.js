@@ -41,6 +41,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcUpdateSupplierSeo',
           'mxcSaveProduct',
           'mxcRelink',
+          'mxcSetLastStock',
 
           'mxcRemapProperties',
           'mxcRemapDescriptions',
@@ -49,6 +50,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcCheckSupplierLogo',
           'mxcPullAssociatedProducts',
           'mxcPushAssociatedProducts',
+          'mxcComputeAssociatedProducts',
+          'mxcUpdateAssociatedLiguids',
 
           'mxcUpdateImages',
           'mxcPullShopwareDescriptions',
@@ -587,8 +590,24 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         me.fireEvent('mxcCheckSupplierLogo', me);
                     }
                 },
-
-
+                {
+                    text: 'Globally set laststock',
+                    handler: function() {
+                        me.fireEvent('mxcSetLastStock', me);
+                    }
+                },
+                {
+                    text: 'Compute associated products',
+                    handler: function() {
+                        me.fireEvent('mxcComputeAssociatedProducts', me);
+                    }
+                },
+                {
+                    text: 'Update associated products for liquids',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateAssociatedLiguids', me);
+                    }
+                },
             ]
         });
         return Ext.create('Ext.button.Button', {

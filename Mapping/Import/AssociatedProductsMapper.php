@@ -94,15 +94,24 @@ class AssociatedProductsMapper
     {
         $flavor1 = array_map('trim', explode(',', $product1->getFlavor()));
         $flavor2 = array_map('trim', explode(',', $product2->getFlavor()));
+
+        // Zunächst prüfen wir gegen eine Liste von Geschmacken.
+        // Wenn der Geschmack bei beiden Produkten vorkommt, gelten Sie als ähnlich.
         $similarFlavors = $this->classConfig['similar_flavors'] ?? [];
         foreach ($similarFlavors as $flavor) {
             if (in_array($flavor, $flavor1) && in_array($flavor, $flavor2)) {
                 return true;
             }
         }
+        // Falls der obige Test fehlschlägt, haben zwei Produkte dann einen ähnlichen Geschmack,
+        // wenn die Anzahl der gemeinsamen Geschmacke bis auf eine Abweichung von minimal 1
+        // mit der kürzeren Liste übereinstimmt. Diese Heuristik ist bisher nicht auf daraufhin
+        // geprüft, ob die so als ähnlich charakterisierten Produkte auch als ähnlich empfunden werden.
+
         $common = array_intersect($flavor1, $flavor2);
         $min = min(count($flavor1), count($flavor2));
         $count = count($common);
+
         $requiredMatches = $min === 1 ? 1 : $min - 1;
         return ($count === $requiredMatches);
     }

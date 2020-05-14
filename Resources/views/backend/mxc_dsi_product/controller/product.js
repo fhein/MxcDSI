@@ -20,6 +20,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcUpdateCategorySeo:                me.onUpdateCategorySeo,
                 mxcRebuildArticleSeo:                me.onRebuildArticleSeo,
                 mxcUpdateArticleSeo:                 me.onUpdateArticleSeo,
+                mxcSetLastStock:                     me.onSetLastStock,
 
                 // Remapping
 
@@ -28,6 +29,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcRemapDescriptions:                me.onRemapDescriptions,
                 mxcPushAssociatedProducts:           me.onPushAssociatedProducts,
                 mxcPullAssociatedProducts:           me.onPullAssociatedProducts,
+                mxcComputeAssociatedProducts:        me.onComputeAssociatedProducts,
+                mxcUpdateAssociatedLiguids:          me.onUpdateAssociatedLiquids,
                 mxcSetReferencePrices:               me.onSetReferencePrices,
                 mxcCheckSupplierLogo:                me.onCheckSupplierLogo,
 
@@ -185,6 +188,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         }
     },
 
+    onSetLastStock: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=setLastStock}';
+        let growlTitle = 'Globally set laststock';
+        let maskText = 'Setting laststock globally ...';
+        let params = {};
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
     onImportItems: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=import}';
@@ -266,14 +278,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
         let selModel = grid.getSelectionModel();
         let params = {};
-        if (selModel.getCount() > 0) {
-            params = {
-                ids: me.getSelectedIds(grid.getSelectionModel())
-            };
-            me.doRequest(grid, url, params, growlTitle, maskText, true);
-        } else {
-            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
-        }
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
     onPushAssociatedProducts: function (grid) {
@@ -284,14 +289,29 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
         let selModel = grid.getSelectionModel();
         let params = {};
-        if (selModel.getCount() > 0) {
-            params = {
-                ids: me.getSelectedIds(grid.getSelectionModel())
-            };
-            me.doRequest(grid, url, params, growlTitle, maskText, true);
-        } else {
-            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
-        }
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onComputeAssociatedProducts: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=computeAssociatedProducts}';
+        let growlTitle = 'Compute associated products';
+        let maskText = 'Computing associated products ...';
+
+        let selModel = grid.getSelectionModel();
+        let params = {};
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onUpdateAssociatedLiquids: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=updateAssociatedLiquids}';
+        let growlTitle = 'Update associated products for liquids';
+        let maskText = 'Updating associated products for liquids ...';
+
+        let selModel = grid.getSelectionModel();
+        let params = {};
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
     onRemapDescriptions: function (grid) {

@@ -10,6 +10,7 @@ use MxcDropshipInnocigs\Import\UpdateStockCronJob;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
+use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
 use MxcDropshipInnocigs\Mapping\Import\CategoryTreeBuilder;
 use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
@@ -19,6 +20,7 @@ use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
+use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
@@ -28,11 +30,13 @@ use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\ProductRepository;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
+use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Zend\Config\Factory;
 
@@ -178,6 +182,29 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 default: $message = $count . ' empty categories were successfully removed.'; break;
             }
             $this->view->assign([ 'success' => true, 'message' => $message]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function setLastStockAction()
+    {
+        try {
+            $manager = $this->getManager();
+            $articles = $manager->getRepository(Article::class)->findAll();
+            /** @var Article $article */
+            foreach ($articles as $article) {
+                if (method_exists($article, 'setLastStock')) {
+                    $article->setLastStock(1);
+                }
+                $details = $article->getDetails();
+                /** @var Detail $detail */
+                foreach ($details as $detail) {
+                    $detail->setLastStock(1);
+                }
+            }
+            $manager->flush();
+            $this->view->assign(['success' => true, 'Laststock successfully globally set.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -829,6 +856,23 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->handleException($e);
         }
     }
+    // Berechnet nach den implementierten Heuristiken die Zubehör- und ähnlichen Produkte
+    // Shopware Artikel werden nicht angepasst.
+    public function computeAssociatedProductsAction()
+    {
+        try {
+            $services = MxcDropshipInnocigs::getServices();
+            /** @var AssociatedProductsMapper $mapper */
+            $mapper = $services->get(AssociatedProductsMapper::class);
+            $manager = $this->getManager();
+            $products = $manager->getRepository(Product::class)->getAllIndexed();
+            $mapper->map($products);
+            $manager->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Associated products successfully computed.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
 
     public function pushAssociatedProductsAction()
     {
@@ -970,7 +1014,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
             $this->getManager()->flush();
             ksort($seoUrls);
-            $report = new \MxcDropshipInnocigs\Report\ArrayReport();
+            $report = new ArrayReport();
             $report(['icSeoUrls' => $seoUrls]);
 
             $this->view->assign([ 'success' => true, 'message' => 'Product SEO information successfully rebuilt.' ]);
@@ -980,10 +1024,32 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     }
 
+    public function updateAssociatedLiquidsAction()
+    {
+        try {
+            $services = MxcDropshipInnocigs::getServices();
+            /** @var AssociatedArticlesMapper $mapper */
+            $mapper = $services->get(AssociatedArticlesMapper::class);
+            $manager = $this->getManager();
+            $products = $manager->getRepository(Product::class)->getAllIndexed();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $type = $product->getType();
+                if ($type != 'LQIUID' && $type != 'SHAKE_VAPE' && $type != 'AROMA') continue;
+                $mapper->setRelatedArticles($product);
+                $mapper->setSimilarArticles($product);
+            }
+            $manager->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Similar and related articles set for liquids etc.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function dev1Action()
     {
         try {
-            $this->view->assign([ 'success' => true, 'message' => 'Dev slot 1 is free.' ]);
+            $this->view->assign([ 'success' => true, 'message' => 'Development slot 1 is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1093,7 +1159,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 }
             }
             ksort($productsToDo);
-            $report = new \MxcDropshipInnocigs\Report\ArrayReport();
+            $report = new ArrayReport();
             $report(['icProductDescriptions' => $productsToDo]);
 
             // Do something with the ids
@@ -1144,7 +1210,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 }
             }
             krsort($productsIcDescription);
-            $report = new \MxcDropshipInnocigs\Report\ArrayReport();
+            $report = new ArrayReport();
             $report(['icClearomizers' => $productsIcDescription]);
 
             // Do something with the ids
@@ -1168,7 +1234,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
             $duplicates = array_diff_key($seoUrls, array_unique($seoUrls));
             ksort($seoUrls);
-            $report = new \MxcDropshipInnocigs\Report\ArrayReport();
+            $report = new ArrayReport();
             $report(['icSeoUrls' => $seoUrls, 'icSeoUrlDuplicates' => $duplicates]);
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 8 slot is currently free.']);

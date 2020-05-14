@@ -18,42 +18,6 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
 
-    public function getRelatedProducts(array $products, bool $recursive): array
-    {
-        $associatedProducts = [];
-        foreach ($products as $product) {
-            $this->findRelatedProducts($product, $associatedProducts, $recursive);
-        }
-        return $associatedProducts;
-    }
-
-    protected function findRelatedProducts(Product $product, array &$associatedProducts, bool $recursive)
-    {
-        foreach ($product->getRelatedProducts() as $relatedProduct) {
-            if ($associatedProducts[$relatedProduct->getIcNumber()]) continue;
-            $associatedProducts[$relatedProduct->getIcNumber()] = $relatedProduct;
-            if ($recursive) $this->findRelatedProducts($relatedProduct, $associatedProducts, $recursive);
-        }
-    }
-
-    public function getSimilarProducts(array $products, bool $recursive): array
-    {
-        $associatedProducts = [];
-        foreach ($products as $product) {
-            $this->findSimilarProducts($product, $associatedProducts, $recursive);
-        }
-        return $associatedProducts;
-    }
-
-    protected function findSimilarProducts(Product $product, array &$associatedProducts, bool $recursive)
-    {
-        foreach ($product->getRelatedProducts() as $relatedProduct) {
-            if ($associatedProducts[$relatedProduct->getIcNumber()]) continue;
-            $associatedProducts[$relatedProduct->getIcNumber()] = $relatedProduct;
-            if ($recursive) $this->findRelatedProducts($relatedProduct, $associatedProducts, $recursive);
-        }
-    }
-
     /**
      * Set the related articles of a Shopware article according to the settings of the InnoCigs product.
      * If the $replace flag is true, the related articles of the Shopware article will be replaced. If the
@@ -62,7 +26,7 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
      * @param Product $product
      * @param bool $replace true: replace related articles, false: add related articles
      */
-    protected function setRelatedArticles(Product $product, bool $replace = false)
+    public function setRelatedArticles(Product $product, bool $replace = false)
     {
         /** @var Article $article */
         $article = $product->getArticle();
@@ -83,7 +47,7 @@ class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwar
      * @param Product $product
      * @param bool $replace true: replace related articles, false: add related articles
      */
-    protected function setSimilarArticles(Product $product, bool $replace = false)
+    public function setSimilarArticles(Product $product, bool $replace = false)
     {
         /** @var Article $article */
         $article = $product->getArticle();
