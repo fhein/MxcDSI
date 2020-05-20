@@ -246,6 +246,7 @@ return [
 
     'product_name_replacements' => [
         'preg_replace' => [
+            '~(PnP) (0,6 Ohm) (Coil)~'                                    => '$1 $3 - $2',
             '~(SKRR) (S)~'                                                => '$1-$2',
             '~(Wolf) Tank (Mini)~'                                        => '$1 $2',
             '~(Aegis Squonk)er~'                                          => '$1',
@@ -499,6 +500,7 @@ return [
             '~(Zelos) - 5~'                                       => '$1 - Akku $2',
             '~(NX40) (- \d\.\d+ mAh)~'                            => '$1 - Akku $2',
             '~(iStick Nowos) (- \d\.\d+ mAh)~'                    => '$1 - Akku $2',
+            '~(CoolFire Z50) (- \d\.\d+ mAh)~'                    => '$1 - Akku $2',
             '~(iStick Rim) (- \d\.\d+ mAh)~'                      => '$1 - Akku $2',
             '~(Adept) (- \d\.\d+ mAh)~'                           => '$1 - Akku $2',
             '~(Typhon) (- \d+ Watt)~'                             => '$1 - Akku $2',
@@ -523,6 +525,7 @@ return [
             '~(Lux) 200~'                                         => '$1',
             '~(Aegis Squonk) (- \d+ Watt)~'                       => '$1 - Squonker Box $2',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
+            '~(Aegis Max)( Zeus) (- \d+ Watt)~'                   => '$1 - Akkuträger $3', //special
             '~(Kroma-R) (- \d+ Watt)~'                            => '$1 - Akkuträger $2',
             '~(Centaurus DNA 250C) (- \d+ Watt)~'                 => '$1 - Akkuträger $2',
             '~(Swag 2) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
@@ -701,7 +704,7 @@ return [
             '~((Breeze)(( 2)|( NXT))?)~',
             '~((Zelos)( 2.0)?)~',
             '~(Revvo(( Mini)|( Boost))?)~',
-            '~(Nautilus(( 2S?)|( XS)|( X)|( Mini)|( AIO)|( GT))?)~',
+            '~(Nautilus(( 2S?)|( XS)|( X)|( Mini)|( AIO)|( GT( Mini)?))?)~',
             '~(Cleito((( Shot)|( 120)?( Pro)?))?)~',
             '~(SkyStar)~',
             '~(Feedlink)~',
@@ -792,7 +795,7 @@ return [
             '~(Creed RTA)~',
             '~(Zeus(( X2)|( X RTA)|( Dual RTA)|( RTA))?)~',
             '~(Ammit Dual Coil RTA)~',
-            '~(Aegis(( Pod)|( Boost)|( Legend)|( Mini)|( X)|( Solo)|( Squonk))?)~',
+            '~(Aegis(( Max)|( Pod)|( Boost)|( Legend)|( Mini)|( X)|( Solo)|( Squonk))?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
             '~(Creed RTA)~',
@@ -872,10 +875,12 @@ return [
         'Innokin'       => [
             '~(Endura ((T18 2 Mini)|(T18 2)|(T18)|(T20S)|(T20)|(T22))?)~',
             '~(Prism ((S)|(T18/T22)|(T18 2)|(T18E)|(T18)|(T20(S)?)|(T22))?)~',
+            '~(CoolFire Z50)~',
             '~(Proton( Mini)?)~',
             '~(EZ.Watt)~',
             '~(Zenith(( D22)|( Pro))?)~',
             '~(Scion 2 Plexus)~',
+            '~(Ares 2 D24)~',
             '~(Ares RTA)~',
             '~(Cool Fire Mini)~',
             '~(iSub (B)?)~',
@@ -1101,11 +1106,12 @@ return [
             '~(Find(( Pod)|( S Trio))?)~',
             '~((Zip)|((Alpha Zip)( (Mini))?))~',
             '~(Uforce T2)~',
-            '~(Vinci( X)?)~',
+            '~(Vinci(( X)|( Air))?)~',
             '~(Navi)~',
         ],
         'Vaporesso'     => [
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
+            '~(Osmall)~',
             '~(Sky Solo( Plus)?)~',
             '~(GEN)~',
             '~(Aurora Play)~',

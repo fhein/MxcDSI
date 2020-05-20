@@ -200,6 +200,7 @@ return [
         '~Ersatztank~'              => TypeMapper::TYPE_TANK,
         '~Tank~'                    => TypeMapper::TYPE_TANK,
         '~Glastank~'                => TypeMapper::TYPE_TANK,
+        '~Glaserweiterungssatz~'    => TypeMapper::TYPE_TANK,
         '~Glas-Kamin~'              => TypeMapper::TYPE_TANK,
         '~Ultem Tank~'              => TypeMapper::TYPE_TANK,
         '~Top-Kappe~'               => TypeMapper::TYPE_TANK,

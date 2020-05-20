@@ -221,8 +221,8 @@ return [
         ],
         'export' => [
 //            'Neue Produkte' => ExportNewProducts::class,
-//            'Preise'        => ExportPrices::class,
-            'Preise'  => ExportPriceIssues::class,
+            'Preise'        => ExportPrices::class,
+//            'Preise'  => ExportPriceIssues::class,
         ],
     ],
 ];
