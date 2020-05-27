@@ -1175,46 +1175,26 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
 
-            // write all clearomizers with empty zubehör to icClearomizers Log
-
             $products = $this->getManager()->getRepository(Product::class)->findAll();
             /** @var Product $product */
             $productsIcDescription = [];
             foreach ($products as $product) {
                 $type = $product->getType();
-//                if (
-//                    ($type === 'AROMA')
-//                    || ($type === 'LIQUID')
-//                    || ($type === 'SHAKE_VAPE')
-//                    || ($type === 'HEAD')
-//                    || ($type === 'TANK')
-//                    || ($type === 'SEAL')
-//                    || ($type === 'EASY3_CAP')
-//                    || ($type === 'LIQUID_BOX')
-//                    || ($type === 'DRIP_TIP')
-//                    || ($type === 'WADDING')
-//                    || ($type === 'MAGNET')
-//                    || ($type === 'MAGNET_ADAPTER')
-//                    || ($type === 'BATTERY_CAP')
-//                    || ($type === 'BATTERY_SLEEVE')
-//                ) {
-//                    continue;
-//                }
-                if (! $product->isNew()) continue;
+                if ($type != 'E_CIGARETTE') continue;
                 /** @var Article $article */
                 $article = $product->getArticle();
                 if ($article === null) continue;
-                $related = $article->getRelated();
-                if ($related->isEmpty()) {
+                $similar = $article->getSimilar();
+                if ($similar->count() < 5) {
                     $productsIcDescription[$product->getIcNumber()] = $product->getName();
                 }
             }
             krsort($productsIcDescription);
             $report = new ArrayReport();
-            $report(['icClearomizers' => $productsIcDescription]);
+            $report(['icNotEnoughSimilarECigs' => $productsIcDescription]);
 
             // Do something with the ids
-            $this->view->assign([ 'success' => true, 'message' => 'New products wihout related articles exported.']);
+            $this->view->assign([ 'success' => true, 'message' => 'Ecigs with less similar products exported.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
