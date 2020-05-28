@@ -220,9 +220,13 @@ return [
             'Preise'       => ImportPrices::class,
         ],
         'export' => [
-//            'Neue Produkte' => ExportNewProducts::class,
-            'Preise'        => ExportPrices::class,
-//            'Preise'  => ExportPriceIssues::class,
+            'Prices' => [
+//              'Neue Produkte' => ExportNewProducts::class,
+                'Preise'        => ExportPrices::class,
+            ],
+            'Price Issues' => [
+                'Preisprobleme'  => ExportPriceIssues::class,
+            ]
         ],
     ],
 ];

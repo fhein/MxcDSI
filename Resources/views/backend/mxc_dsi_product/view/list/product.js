@@ -73,7 +73,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcCheckVariantMappingConsistency',
           'mxcCheckVariantsWithoutOptions',
           'mxcExportConfig',
-          'mxcExcelExport',
+          'mxcExcelExportPrices',
+          'mxcExcelExportPriceIssues',
           'mxcExcelImportPrices',
 
           'mxcTestImport1',
@@ -340,7 +341,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text: 'Export prices',
                     iconCls: 'sprite-table-export',
                     handler: function () {
-                        window.open('/backend/MxcDsiProduct/excelExport');
+                        window.open('/backend/MxcDsiProduct/excelExportPrices');
+                    }
+                },
+                {
+                    text: 'Export price issues',
+                    iconCls: 'sprite-table-export',
+                    handler: function () {
+                        window.open('/backend/MxcDsiProduct/excelExportPriceIssues');
                     }
                 },
                 me.createImportMenuItem('Import prices', 'mxcExcelImportPrices'),

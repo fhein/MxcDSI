@@ -48,7 +48,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function getWhitelistedCSRFActions()
     {
         return [
-            'excelExport',
+            'excelExportPrices',
+            'excelExportPriceIssues'
         ];
     }
 
@@ -256,13 +257,21 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function excelExportAction()
+    public function excelExportPricesAction() {
+        $this->doExcelExport(['Prices']);
+    }
+
+    public function excelExportPriceIssuesAction() {
+        $this->doExcelExport(['Price Issues']);
+    }
+
+    protected function doExcelExport(array $options)
     {
         try {
             $this->get('plugins')->Controller()->ViewRenderer()->setNoRender();
             $this->Front()->Plugins()->Json()->setRenderer(false);
             $services = MxcDropshipInnocigs::getServices();
-            $excel = $services->get(ExcelExport::class);
+            $excel = $services->build(ExcelExport::class, $options);
             $excel->export();
 
             $filepath = $excel->getExcelFile();
@@ -825,37 +834,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function pullAssociatedProductsAction()
-    {
-        try {
-            $articles = $this->getManager()->getRepository(Article::class)->findAll();
-            $repo = $this->getManager()->getRepository(Product::class);
-            /** @var Article $article */
-            $relations = [];
-            foreach ($articles as $article) {
-                /** @var Product $product */
-                $product = $repo->getProduct($article);
-                if ($product === null) continue;
-                $number = $product->getIcNumber();
-                $related = $article->getRelated();
-                foreach ($related as $relatedArticle) {
-                    $product = $repo->getProduct($relatedArticle);
-                    $relations['related'][$number][] = $product->getIcNumber();
-                }
-                $similar = $article->getSimilar();
-                foreach ($similar as $similarArticle) {
-                    $product = $repo->getProduct($similarArticle);
-                    $relations['similar'][$number][] = $product->getIcNumber();
-                }
-            }
-            $fileNameShort = 'Config/CrossSelling.config.php';
-            $fileName = __DIR__ . '/../../' . $fileNameShort;
-            Factory::toFile($fileName, $relations);
-            $this->view->assign([ 'success' => true, 'message' => 'Cross selling products saved to ' . $fileNameShort . '.']);
-        } catch (Throwable $e) {
-            $this->handleException($e);
-        }
-    }
     // Berechnet nach den implementierten Heuristiken die Zubehör- und ähnlichen Produkte
     // Shopware Artikel werden nicht angepasst.
     public function computeAssociatedProductsAction()
@@ -869,6 +847,55 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $mapper->map($products);
             $manager->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Associated products successfully computed.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function pullAssociatedProductsAction()
+    {
+        try {
+            $articles = $this->getManager()->getRepository(Article::class)->findAll();
+            $repo = $this->getManager()->getRepository(Product::class);
+
+            $fileNameShort = 'Config/CrossSelling.config.php';
+            $fileName = __DIR__ . '/../../' . $fileNameShort;
+            /** @noinspection PhpIncludeInspection */
+            $relations = include $fileName;
+            $similarArticles = $relations['similar'];
+            $relatedArticles = $relations['related'];
+
+            /** @var Article $article */
+            $relations = [];
+            foreach ($articles as $article) {
+                /** @var Product $product */
+                $product = $repo->getProduct($article);
+                if ($product === null) continue;
+                $number = $product->getIcNumber();
+                $related = $article->getRelated();
+                $pool = [];
+                foreach ($related as $relatedArticle) {
+                    $product = $repo->getProduct($relatedArticle);
+                    $pool[] = $product->getIcNumber();
+                }
+                if (! empty($pool)) {
+                    $relatedArticles[$number] = $pool;
+                }
+
+                $similar = $article->getSimilar();
+                $pool = [];
+                foreach ($similar as $similarArticle) {
+                    $product = $repo->getProduct($similarArticle);
+                    $pool[] = $product->getIcNumber();
+                }
+                if (! empty($pool)) {
+                    $similarArticles[$number] = $pool;
+                }
+            }
+            $relations['related'] = $relatedArticles;
+            $relations['similar'] = $similarArticles;
+            Factory::toFile($fileName, $relations);
+            $this->view->assign([ 'success' => true, 'message' => 'Cross selling products saved to ' . $fileNameShort . '.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1154,11 +1181,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $article = $product->getArticle();
                 if ($article === null) continue;
                 $description = $article->getDescriptionLong();
-                if (strpos($description, '<tbody>') === false) {
+//                if (strpos($description, 'Pod') !== false || strpos($description, 'Cartridge') !== false) {
+//                if (strpos($description, '<tbody>') === false) {
                     $productsToDo[$product->getIcNumber()] = $product->getName();
-                }
+//                }
             }
-            ksort($productsToDo);
+            sort($productsToDo);
             $report = new ArrayReport();
             $report(['icProductDescriptions' => $productsToDo]);
 

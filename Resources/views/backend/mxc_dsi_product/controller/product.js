@@ -61,7 +61,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
                 // Excel import/export
 
-                mxcExcelExport:                      me.onExcelExport,
+                mxcExcelExportPrices:                me.onExcelExportPrices,
+                mxcExcelExportPriceIssues:           me.onExcelExportPriceIssues,
                 mxcExcelImportPrices:                me.onExcelImportPrices,
 
                 // InnoCigs import tests
@@ -96,12 +97,21 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onExcelExport: function (grid) {
+    onExcelExportPrices: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=excelExport}';
+        let url = '{url controller=MxcDsiProduct action=excelExportPrices}';
         let params = {};
-        let growlTitle = 'Excel export';
-        let maskText = 'Exporting to Excel ...';
+        let growlTitle = 'Prices: Excel export';
+        let maskText = 'Exporting prices to Excel ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onExcelExportPriceIssues: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=excelExportPriceIssues}';
+        let params = {};
+        let growlTitle = 'Price Issues: Excel export';
+        let maskText = 'Exporting price issues to Excel ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
