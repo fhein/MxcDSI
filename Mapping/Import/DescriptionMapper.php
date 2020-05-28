@@ -344,6 +344,7 @@ DescriptionMapper implements ProductMapperInterface, LoggerAwareInterface
         } else  {
             $content = $variant->getContent();
         }
+        $content = $product->getContent();
         $capacity = $product->getCapacity();
 
         if (! $content && ! $capacity) {

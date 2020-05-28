@@ -1174,7 +1174,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
 
-            $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'E_CIGARETTE']);
+            $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'BOX_MOD_CELL']);
             /** @var Product $product */
             foreach ($products as $product) {
                 /** @var Shopware\Models\Article\Article $article */
@@ -1182,9 +1182,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 if ($article === null) continue;
                 $description = $article->getDescriptionLong();
 //                if (strpos($description, 'Pod') !== false || strpos($description, 'Cartridge') !== false) {
-//                if (strpos($description, '<tbody>') === false) {
+                if (strpos($description, '<tbody>') === false) {
                     $productsToDo[$product->getIcNumber()] = $product->getName();
-//                }
+                }
             }
             sort($productsToDo);
             $report = new ArrayReport();
