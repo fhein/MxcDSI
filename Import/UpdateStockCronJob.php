@@ -8,6 +8,7 @@ use Enlight\Event\SubscriberInterface;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Plugin\Plugin;
 
@@ -43,6 +44,7 @@ class UpdateStockCronJob implements SubscriberInterface
 
         try {
             $this->updateStockInfo();
+            $this->unsetOutdatedReleaseDates();
         } catch (Throwable $e) {
             $result = false;
         }
@@ -51,6 +53,46 @@ class UpdateStockCronJob implements SubscriberInterface
         $this->log->debug('Update stock cronjob ran from ' . $start . ' to ' . $end . $resultMsg);
 
         return $result;
+    }
+
+    // unset the (future) release date for articles in stock
+    protected function unsetOutdatedReleaseDates() {
+        $articles = $this->modelManager->getRepository(Article::class)->findAll();
+        /** @var Article $article */
+        foreach ($articles as $article) {
+            $details = $article->getDetails();
+            /** @var Detail $detail */
+
+            // check if any of the details has an release date !== null
+            $releaseDate = null;
+            foreach ($details as $detail) {
+                $releaseDate = $detail->getReleaseDate();
+                if ($releaseDate !== null) break;
+            }
+            // skip article if there is no release date
+            if ($releaseDate === null) continue;
+
+            // determine if a quantity of any of the details is in stock
+            $instock = 0;
+            foreach ($details as $detail) {
+                $attr = ArticleTool::getDetailAttributes($detail);
+                $instock += $attr['dc_ic_instock'];
+            }
+            // unset the release date if the any of the product's variants is in stock
+            if ($instock !== 0) {
+                $this->log->debug('Unsetting release dates for '. $article->getName());
+                $releaseDate = null;
+            } else {
+                $this->log->debug('Aligning release dates for ' . $article->getName());
+            }
+
+            // sync release dates if the article is still out of stock
+            // unset release date if at least one variant is in stock
+            foreach ($details as $detail) {
+                $detail->setReleaseDate($releaseDate);
+            }
+        }
+        $this->modelManager->flush();
     }
 
     protected function updateStockInfo()
