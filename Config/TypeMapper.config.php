@@ -59,11 +59,13 @@ return [
         TypeMapper::TYPE_COVER              => 'COVER',
         TypeMapper::TYPE_DISPLAY            => 'DISPLAY',
         TypeMapper::TYPE_SPARE_PARTS        => 'SPARE_PARTS',
+        TypeMapper::TYPE_POD_SYSTEM         => 'POD_SYSTEM',
     ],
 
     // Dependent on the product type these are the base pathes of the SEO url
     'base_urls' => [
         TypeMapper::TYPE_E_CIGARETTE        => 'e-zigaretten/',
+        TypeMapper::TYPE_POD_SYSTEM         => 'e-zigaretten/pod-systeme/',
         TypeMapper::TYPE_BOX_MOD            => 'e-zigaretten/akkus/',
         TypeMapper::TYPE_E_PIPE             => 'e-zigaretten/e-pfeifen/',
         TypeMapper::TYPE_CLEAROMIZER        => 'e-zigaretten/verdampfer/',

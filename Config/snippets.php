@@ -48,4 +48,32 @@
 //$this->view->assign([ 'success' => true, 'message' => 'Development 1 slot is currently free.' ]);
 
 
+// set associated products for SC Easy 3
+//$repo = $this->getManager()->getRepository(Product::class);
+//$easy3 = $repo->findOneBy(['name' => 'SC - Easy 3 - E-Zigarette']);
+///** @var Article $easy */
+//$easy = $easy3->getArticle();
+//$easyRel = $easy->getRelated();
+//$easyRel->clear();
+//$caps = $repo->findBy(['type' => 'EASY3_CAP']);
+///** @var Product $cursor */
+///** @var Product $cap */
+//foreach ($caps as $cursor) {
+//    /** @var Article $act */
+//    $act = $cursor->getArticle();
+//    if ($act === null) continue;
+//    $easyRel->add($act);
+//    $similar = $act->getSimilar();
+//    $similar->clear();
+//    foreach ($caps as $cap) {
+//        if ($cap->getIcNumber() === $cursor->getIcNumber()) continue;
+//        $sim = $cap->getArticle();
+//        if ($sim === null) continue;
+//        $similar->add($sim);
+//    }
+//    $related = $act->getRelated();
+//    $related->clear();
+//    $related->add($easy);
+//}
+//$this->getManager()->flush();
 

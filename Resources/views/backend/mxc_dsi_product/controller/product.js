@@ -25,6 +25,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 // Remapping
 
                 mxcRemapCategories:                  me.onRemapCategories,
+                mxcComputeCategories:                me.onComputeCategories,
                 mxcRemapProperties:                  me.onRemapProperties,
                 mxcRemapDescriptions:                me.onRemapDescriptions,
                 mxcPushAssociatedProducts:           me.onPushAssociatedProducts,
@@ -403,11 +404,28 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
+    onComputeCategories: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=computeCategories}';
+        let growlTitle = 'Compute categories';
+        let maskText = 'Recalculatings categories ...';
+        let selModel = grid.getSelectionModel();
+        let params = {};
+        if (selModel.getCount() > 0) {
+            params = {
+                ids: me.getSelectedIds(grid.getSelectionModel())
+            };
+            me.doRequest(grid, url, params, growlTitle, maskText, true);
+        } else {
+            me.doRequestConfirm(grid, url, params, growlTitle, maskText, true);
+        }
+    },
+
     onRemapCategories: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=remapCategories}';
-        let growlTitle = 'Update categories';
-        let maskText = 'Updating categories ...';
+        let growlTitle = 'Remap categories';
+        let maskText = 'Remapping categories ...';
         let selModel = grid.getSelectionModel();
         let params = {};
         if (selModel.getCount() > 0) {

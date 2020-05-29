@@ -202,6 +202,7 @@ return [
     'class_config' => [
         AssociatedProductsMapper::class => 'AssociatedProductsMapper.config.php',
         CategoryMapper::class           => 'CategoryMapper.config.php',
+        DescriptionMapper::class        => 'DescriptionMapper.config.php',
         CommonNameMapper::class         => 'CommonNameMapper.config.php',
         FlavorMapper::class             => 'FlavorMapper.config.php',
         ImportClient::class             => 'ImportClient.config.php',

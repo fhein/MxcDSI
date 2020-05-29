@@ -46,6 +46,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcRemapProperties',
           'mxcRemapDescriptions',
           'mxcRemapCategories',
+          'mxcComputeCategories',
           'mxcSetReferencePrices',
           'mxcCheckSupplierLogo',
           'mxcPullAssociatedProducts',
@@ -434,6 +435,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-maps',
                     handler: function() {
                         me.fireEvent('mxcRemapDescriptions', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Compute categories',
+                    iconCls: 'sprite-category',
+                    handler: function() {
+                        me.fireEvent('mxcComputeCategories', me);
                     }
                 },
                 {

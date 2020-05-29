@@ -3,12 +3,10 @@ return array(
     'product_categories' => array(
         0 => 'E-ZIGARETTTEN',
         1 => 'E-LIQUIDS',
-        2 => 'SHAKE & VAPE',
-        3 => 'AROMEN',
-        4 => 'AKKUTRÄGER',
-        5 => 'SELBSTWICKLER',
-        6 => 'VERDAMPFER',
-        7 => 'ZUBEHÖR',
+        2 => 'AKKUTRÄGER',
+        3 => 'SELBSTWICKLER',
+        4 => 'VERDAMPFER',
+        5 => 'ZUBEHÖR',
     ),
     'flavor_category_map' => array(
         'E-LIQUIDS' => array(
@@ -72,7 +70,7 @@ return array(
                 1 => 'LIQUID_BOX',
                 2 => 'EASY3_CAP',
             ),
-            'path' => 'E-LIQUIDS',
+            'path' => 'E-LIQUIDS > Fertig-Liquids',
             'append' => ['flavor'],
             'seo' => array(
                 'flavor' => array(
@@ -87,7 +85,7 @@ return array(
             'types' => array(
                 0 => 'AROMA',
             ),
-            'path' => 'AROMEN',
+            'path' => 'E-LIQUIDS > Aromen',
             'append' => ['flavor'],
             'seo' => array(
                 'flavor' => array(
@@ -102,7 +100,7 @@ return array(
             'types' => array(
                 0 => 'SHAKE_VAPE',
             ),
-            'path' => 'SHAKE & VAPE',
+            'path' => 'E-LIQUIDS > Shake & Vape',
             'append' => ['flavor'],
             'seo' => array(
                 'flavor' => array(
@@ -158,7 +156,7 @@ return array(
                 0 => 'BASE',
                 1 => 'SHOT',
             ),
-            'path' => 'ZUBEHÖR > Basen & Shots',
+            'path' => 'E-LIQUIDS > Basen & Shots',
         ),
         15 => array(
             'types' => array(

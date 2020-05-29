@@ -49,7 +49,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         return [
             'excelExportPrices',
-            'excelExportPriceIssues'
+            'excelExportPriceIssues',
         ];
     }
 
@@ -139,31 +139,54 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    protected function computeCategories($products)
+    {
+        $services = MxcDropshipInnocigs::getServices();
+        $categoryMapper = $services->get(CategoryMapper::class);
+        /** @var Product $product */
+        foreach ($products as $product) {
+            $categoryMapper->remap($product);
+        }
+        $categoryMapper->report();
+        $this->getManager()->flush();
+    }
+
+    protected function remapCategories($products)
+    {
+        $services = MxcDropshipInnocigs::getServices();
+
+        $categoryMapper = $services->get(ShopwareCategoryMapper::class);
+        $categoryMapper->removeEmptyProductCategories();
+        $this->getManager()->flush();
+
+        foreach ($products as $product) {
+            $article = $product->getArticle();
+            if ($article === null) continue;
+            $article->getCategories()->clear();
+            $categoryMapper->map($product, true);
+        }
+        $this->getManager()->flush();
+    }
+
+    public function computeCategoriesAction() {
+        try {
+            $products = $this->getSelectedProducts($this->request);
+            // recompute the category attribute in our products
+            $this->computeCategories($products);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Categories were successfully recalculated.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function remapCategoriesAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
-            $categoryMapper = $services->get(CategoryMapper::class);
             $products = $this->getSelectedProducts($this->request);
-            /** @var Product $product */
-            foreach ($products as $product) {
-                $categoryMapper->remap($product);
-                /** @var Article $article */
-                $article = $product->getArticle();
-                if ($article === null) continue;
-                $article->getCategories()->clear();
-            }
-            $categoryMapper->report();
-            $this->getManager()->flush();
-
-            $categoryMapper = $services->get(ShopwareCategoryMapper::class);
-            $categoryMapper->removeEmptyProductCategories();
-            $this->getManager()->flush();
-
-            foreach ($products as $product) {
-                $categoryMapper->map($product, true);
-                $this->getManager()->flush();
-            }
+            // recompute the category attribute in our products
+            $this->computeCategories($products);
+            $this->remapCategories($products);
 
             $this->view->assign([ 'success' => true, 'message' => 'Categories were successfully remapped.' ]);
         } catch (Throwable $e) {
