@@ -57,6 +57,18 @@ DescriptionMapper extends BaseImportMapper implements ProductMapperInterface, Lo
         return $description;
     }
 
+    protected function getLiquidDescription(Product $product)
+    {
+        $name = $product->getName();
+        if (strpos($name, 'mg/ml')!== false) {
+            $description = @$this->classConfig['descriptionLiquidFixedNicotine'];
+            $description = str_replace('##nicotine##', '20', $description);
+        } else {
+            $description = @$this->classConfig['descriptionLiquidDefault'];
+        }
+        return $description;
+    }
+
     protected function getShakeVapeDescription(Product $product)
     {
         $name = $product->getName();
@@ -131,7 +143,6 @@ DescriptionMapper extends BaseImportMapper implements ProductMapperInterface, Lo
     {
         $number = $product->getIcNumber();
         $description = $this->classConfig['descriptionsByProductNumber'][$number];
-        $this->log->debug('Description by product-number ' . $number . ': ' . $description);
         if ($description !== null) {
             $product->setDescription($description);
             return;
@@ -143,7 +154,7 @@ DescriptionMapper extends BaseImportMapper implements ProductMapperInterface, Lo
 
         switch ($type) {
             case 'LIQUID':
-                $description = $this->classConfig['descriptionLiquidDefault'];
+                $description = $this->getLiquidDescription($product);
                 $description = str_replace(['##flavor##', '##supplier##'], [$flavor, $supplier], $description);
                 break;
             case 'SHAKE_VAPE':
@@ -154,10 +165,8 @@ DescriptionMapper extends BaseImportMapper implements ProductMapperInterface, Lo
                 $description = $this->getAromaDescription($product);
                 break;
             case 'EASY3_CAP':
-                $this->log->debug('EASY3');
                 $description = $this->classConfig['descriptionEasy3'];
                 $description = str_replace(['##flavor##', '##supplier##'], [$flavor, $supplier], $description);
-                $this->log->debug($description);
                 break;
             default:
                 $description = $this->mappings[$product->getIcNumber()]['description'] ?? $product->getIcDescription();

@@ -6,6 +6,7 @@ return [
         ],
         'Twelve Monkeys' => [
             'Origins' => 2,
+            'Cirlce of Life' => 2,
         ],
         'Vaporist'       => [
             'Midnight Munchies' => 2,
