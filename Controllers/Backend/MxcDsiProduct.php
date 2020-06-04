@@ -3,6 +3,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
+use Mxc\Shopware\Plugin\Database\SchemaManager;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
@@ -1068,6 +1069,19 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $report(['icSeoUrls' => $seoUrls]);
 
             $this->view->assign([ 'success' => true, 'message' => 'Product SEO information successfully rebuilt.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+
+    }
+
+    public function updateSchemaAction()
+    {
+        try {
+            $services = MxcDropshipInnocigs::getServices();
+            $schemaManager = $services->get(SchemaManager::class);
+            $schemaManager->updateSchema();
+            $this->view->assign([ 'success' => true, 'message' => 'Database schema was updated.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

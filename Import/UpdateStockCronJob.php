@@ -82,8 +82,6 @@ class UpdateStockCronJob implements SubscriberInterface
             if ($instock !== 0) {
                 $this->log->debug('Unsetting release dates for '. $article->getName());
                 $releaseDate = null;
-            } else {
-                $this->log->debug('Aligning release dates for ' . $article->getName());
             }
 
             // sync release dates if the article is still out of stock

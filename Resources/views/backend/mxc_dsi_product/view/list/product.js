@@ -35,6 +35,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     registerEvents: function() {
         let me = this;
         me.addEvents(
+          'mxcUpdateSchema',
+
           'mxcUpdateCategorySeo',
           'mxcRebuildArticleSeo',
           'mxcUpdateArticleSeo',
@@ -623,6 +625,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text: 'Update associated products for liquids',
                     handler: function() {
                         me.fireEvent('mxcUpdateAssociatedLiguids', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Update database schema',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateSchema', me);
                     }
                 },
             ]

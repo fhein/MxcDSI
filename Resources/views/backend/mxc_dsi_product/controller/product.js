@@ -75,6 +75,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcTestImport5:                      me.onTestImport5,
                 mxcTestImport6:                      me.onTestImport6,
 
+                // database schema
+                mxcUpdateSchema:                     me.onUpdateSchema,
+
                 // for development/test purposes
                 mxcDev1:                             me.onDev1,
                 mxcDev2:                             me.onDev2,
@@ -95,6 +98,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Export product configuration';
         let maskText = 'Exporting product configuration ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onUpdateSchema: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=updateSchema}';
+        let params = {};
+        let growlTitle = 'Update database schema';
+        let maskText = 'Updating database schema ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
