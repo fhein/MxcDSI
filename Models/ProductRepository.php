@@ -124,6 +124,11 @@ class ProductRepository extends BaseEntityRepository
             'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.description, p.icDescription '
             . 'FROM MxcDropshipInnocigs\Models\Product p',
 
+        'getExcelExportEcigMetaData' =>
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.wattage, p.headChangeable, p.cellChangeable '
+            . 'FROM MxcDropshipInnocigs\Models\Product p '
+            . 'WHERE p.type IN (\'E_CIGARETTE\', \'POD_SYSTEM\', \'E_PIPE\')',
+
         'getExcelExportFlavoredProducts' =>
             'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.flavor, p.content, p.capacity '
             . 'FROM MxcDropshipInnocigs\Models\Product p '

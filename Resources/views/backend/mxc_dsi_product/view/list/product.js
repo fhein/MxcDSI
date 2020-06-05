@@ -78,6 +78,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcExportConfig',
           'mxcExcelExportPrices',
           'mxcExcelExportPriceIssues',
+          'mxcExcelExportEcigMetaData',
           'mxcExcelImportPrices',
 
           'mxcTestImport1',
@@ -354,6 +355,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         window.open('/backend/MxcDsiProduct/excelExportPriceIssues');
                     }
                 },
+                {
+                    text: 'Export ecig meta data',
+                    iconCls: 'sprite-table-export',
+                    handler: function () {
+                        window.open('/backend/MxcDsiProduct/excelExportEcigMetaData');
+                    }
+                },
+                '-',
                 me.createImportMenuItem('Import prices', 'mxcExcelImportPrices'),
                 me.createImportFileField('mxcExcelImportPrices', me),
             ]

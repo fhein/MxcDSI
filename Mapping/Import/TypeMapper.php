@@ -79,13 +79,23 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
     {
         $name = $product->getName();
         $types = $this->classConfig['name_type_mapping'] ?? [];
+        $type = '';
         foreach ($types as $pattern => $type) {
             if (preg_match($pattern, $name) === 1) {
-                $product->setType($this->classConfig['types'][$type]);
-                return;
+                $type = $this->classConfig['types'][$type];
+                break;
             }
         }
-        $product->setType('');
+        // check if e-cigarette is a pod-system
+        if ($type = 'E_CIGARETTE') {
+            $description = $product->getIcDescription();
+            if (strpos($description, 'Pod') !== false
+                || strpos($description, 'Cartridge') !== false) {
+                $type = 'POD_SYSTEM';
+            }
+        }
+
+        $product->setType($type);
     }
 
     public function getType(string $strType)

@@ -51,6 +51,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return [
             'excelExportPrices',
             'excelExportPriceIssues',
+            'excelExportEcigMetaData',
         ];
     }
 
@@ -160,6 +161,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $categoryMapper->removeEmptyProductCategories();
         $this->getManager()->flush();
 
+        /** @var ShopwareCategoryMapper $categoryMapper */
         foreach ($products as $product) {
             $article = $product->getArticle();
             if ($article === null) continue;
@@ -187,6 +189,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $products = $this->getSelectedProducts($this->request);
             // recompute the category attribute in our products
             $this->computeCategories($products);
+            // assign computed categories to articles
             $this->remapCategories($products);
 
             $this->view->assign([ 'success' => true, 'message' => 'Categories were successfully remapped.' ]);
@@ -287,6 +290,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function excelExportPriceIssuesAction() {
         $this->doExcelExport(['Price Issues']);
+    }
+
+    public function excelExportEcigMetaDataAction() {
+        $this->doExcelExport(['Ecig Meta Data']);
     }
 
     protected function doExcelExport(array $options)
@@ -1113,7 +1120,35 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev1Action()
     {
         try {
-            $this->view->assign([ 'success' => true, 'message' => 'Development slot 1 is currently free.' ]);
+            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $type = $product->getType();
+                if ($type !== 'E_CIGARETTE' && $type !== 'POD_SYSTEM') continue;
+                $description = $product->getDescription();
+                if (strpos($description, 'Pod') !== false || strpos($description, 'Cartridge') !== false) {
+                    $product->setType('POD_SYSTEM');
+                }
+                $cellChangeable = strpos($description, '18650') !== false ||
+                    strpos($description, '20700') !== false ||
+                    strpos($description, '21700') !== false;
+                $product->setCellChangeable($cellChangeable);
+                if ($cellChangeable) {
+                    $log->debug('Cell changeable: ' . $product->getName());
+                }
+                $matches = [];
+                $wattage = null;
+                if (preg_match('~(\d+) Watt~', $description, $matches) === 1) {
+                    $wattage = $matches[1];
+                    $log->debug('Wattage: '  . $matches[1] . ', ' . $product->getName());
+                }
+                $product->setWattage($wattage);
+
+                $product->setHeadChangeable(preg_match('~\d.*x.*Head~', $description) === 1);
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Pod systems marked.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

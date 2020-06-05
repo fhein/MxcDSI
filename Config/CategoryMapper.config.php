@@ -39,7 +39,7 @@ return array(
                 0 => 'E_CIGARETTE',
                 1 => 'E_PIPE',
             ),
-            'path' => 'E-ZIGARETTEN',
+            'path' => 'E-ZIGARETTEN > weitere E-Zigaretten',
         ),
         1 => array(
             'types' => array(
@@ -268,12 +268,18 @@ return array(
             ),
             'path' => 'ZUBEHÖR > Aufbewahrung',
         ),
-        32 => array(
+        33 => array(
             'types' => array(
                 0 => 'SPARE_PARTS',
             ),
             'path' => 'SELBSTWICKLER > Sonstige Ersatzteile',
-        )
+        ),
+        34 => array(
+            'types' => array(
+                0 => 'POD_SYSTEM',
+            ),
+            'path' => 'E-ZIGARETTEN > Pod-Systeme',
+        ),
     ),
     'category_seo_items' => array(
         'E-ZIGARETTEN' => array(
@@ -281,6 +287,18 @@ return array(
             'description' => 'E-Zigaretten günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'E-Zigarette,günstig,kaufen',
             'h1' => 'E-ZIGARETTEN',
+        ),
+        'E-ZIGARETTEN > Pod-Systeme' => array(
+            'title' => 'Pod-Systeme günstig online kaufen!',
+            'description' => 'Pod-Systeme günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme',
+        ),
+        'E-ZIGARETTEN > weitere E-Zigaretten' => array(
+            'title' => 'E-Zigaretten günstig online kaufen!',
+            'description' => 'E-Zigaretten günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'E-Zigarette,günstig,kaufen',
+            'h1' => 'Weitere E-Zigaretten',
         ),
         'E-ZIGARETTEN > E-Hookah & Vaporizer' => array(
             'title' => 'E-Hookah und Vaporizer günstig online kaufen!',

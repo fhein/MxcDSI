@@ -20,6 +20,9 @@ return [
             'Truckin Vaporz'                       => 2,
             'Peng Juice'                           => 2,
         ],
+        'Ultrabio' => [
+            'Singular' => 2,
+        ],
         'Illusions'      => [
             'Beyond Series' => 2,
         ],

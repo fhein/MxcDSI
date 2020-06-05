@@ -7,6 +7,7 @@ use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelImport;
 use MxcDropshipInnocigs\Excel\ExcelImportFactory;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
+use MxcDropshipInnocigs\Excel\ExportEcigMetaData;
 use MxcDropshipInnocigs\Excel\ExportNewProducts;
 use MxcDropshipInnocigs\Excel\ExportPriceIssues;
 use MxcDropshipInnocigs\Excel\ExportPrices;
@@ -137,6 +138,8 @@ return [
 
     'services'     => [
         'factories' => [
+            ExportEcigMetaData::class        => AugmentedObjectFactory::class,
+            ExportPriceIssues::class         => AugmentedObjectFactory::class,
             ProductMappings::class           => AugmentedObjectFactory::class,
             PriceEngine::class               => AugmentedObjectFactory::class,
             ImportPiecesPerPackMapper::class => AugmentedObjectFactory::class,
@@ -183,7 +186,6 @@ return [
             ExcelExport::class,
             ExcelImport::class,
             ExportPrices::class,
-            ExportPriceIssues::class,
             FilterTest::class,
             ImageMapper::class,
             ImportClient::class,
@@ -227,7 +229,10 @@ return [
             ],
             'Price Issues' => [
                 'Preisprobleme'  => ExportPriceIssues::class,
-            ]
+            ],
+            'Ecig Meta Data' => [
+                'Metadata' => ExportEcigMetaData::class,
+            ],
         ],
     ],
 ];

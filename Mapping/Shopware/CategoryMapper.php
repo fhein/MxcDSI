@@ -65,9 +65,12 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
                 $this->setCategoryProperties($idx, $parent);
                 $parent->setChanged();
             }
-
-            if ($parent !== null) $article->addCategory($parent);
-            $this->modelManager->flush();
+            if ($parent !== null) {
+                $this->log->debug('Adding category ' . $parent->getName() . ' to ' . $product->getName());
+                $article->addCategory($parent);
+            }
+            $this->modelManager->flush($parent);
+            $this->modelManager->flush($article);
         }
     }
 

@@ -11214,6 +11214,10 @@ return array(
         'GV100AUC' => array(
             0 => 'GV100AU',
         ),
+        'IK100ZP' => array(
+            0 => 'IK100ZNT',
+            1 => 'IK100ZH',
+        ),
     ),
     'similar' => array(
         'SP100A10-HB' => array(
@@ -30741,6 +30745,9 @@ return array(
             11 => 'SK100RL',
             12 => 'IC100GP',
             13 => 'IC100RP',
+        ),
+        'IK100ZP' => array(
+            0 => 'IK100ZT',
         ),
     ),
 );

@@ -87,7 +87,9 @@ return [
     ],
     'base_urls' => [
         'E_CIGARETTE'        => 'e-zigaretten/',
+        'POD_SYSTEM'         => 'e-zigaretten/pod-systeme/',
         'BOX_MOD'            => 'e-zigaretten/akkus/',
+        'BOX_MOD_CELL'       => 'e-zigaretten/akkutraeger/',
         'E_PIPE'             => 'e-zigaretten/e-pfeifen/',
         'CLEAROMIZER'        => 'e-zigaretten/verdampfer/',
         'CLEAROMIZER_RTA'    => 'e-zigaretten/verdampfer/',
@@ -116,7 +118,6 @@ return [
         'VAPORIZER'          => 'e-zigaretten/vaporizer/',
         'SHOT'               => 'e-liquids/liquids/shots/',
         'CABLE'              => 'e-zigaretten/kabel/',
-        'BOX_MOD_CELL'       => 'e-zigaretten/akkutraeger/',
         'COIL'               => 'e-zigaretten/coils/',
         'RDA_BASE'           => 'e-zigaretten/base/',
         'MAGNET'             => 'e-zigaretten/magnet/',

@@ -60,14 +60,6 @@ class Product extends ModelEntity  {
     /**
      * PropertyMapper mapped
      *
-     * @var string $shortNameSeoUrl
-     * @ORM\Column(name="seo_url_name", type="string", nullable=true)
-     */
-    private $shortNameSeoUrl;
-
-    /**
-     * PropertyMapper mapped
-     *
      * @ORM\Column(name="seo_url", type="string", nullable=true)
      */
     private $seoUrl;
@@ -229,6 +221,33 @@ class Product extends ModelEntity  {
      * @ORM\Column(type="string", nullable=true)
      */
     private $base;
+
+    /**
+     * Pod system with changeable head
+     *
+     * @var boolean $headChangeable
+     * @ORM\Column(name="head_changeable", type="boolean", nullable=true)
+     *
+     */
+    private $headChangeable;
+
+    /**
+     * E-Cigarette cell changeable
+     *
+     * @var boolean $cellChangeable
+     * @ORM\Column(name="cell_changeable", type="boolean", nullable=true)
+     *
+     */
+    private $cellChangeable;
+
+    /**
+     * E-Cigarette wattage
+     *
+     * @var int $wattage
+     * @ORM\Column(name="wattage", type="integer", nullable=true)
+     *
+     */
+    private $wattage;
 
     /**
      * @var boolean $accepted
@@ -816,18 +835,50 @@ class Product extends ModelEntity  {
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getShortNameSeoUrl()
+    public function getWattage()
     {
-        return $this->shortNameSeoUrl;
+        return $this->wattage;
     }
 
     /**
-     * @param string $shortNameSeoUrl
+     * @param int $wattage
      */
-    public function setShortNameSeoUrl(string $shortNameSeoUrl)
+    public function setWattage($wattage)
     {
-        $this->shortNameSeoUrl = $shortNameSeoUrl;
+        $this->wattage = $wattage;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCellChangeable()
+    {
+        return $this->cellChangeable;
+    }
+
+    /**
+     * @param bool $cellChangeable
+     */
+    public function setCellChangeable($cellChangeable)
+    {
+        $this->cellChangeable = $cellChangeable;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isHeadChangeable()
+    {
+        return $this->headChangeable;
+    }
+
+    /**
+     * @param bool $headChangeable
+     */
+    public function setHeadChangeable(bool $headChangeable)
+    {
+        $this->headChangeable = $headChangeable;
     }
 }
