@@ -107,7 +107,6 @@ return [
             '~(Aegis X) - (mit Zeus)~'                     => '$1 $2',
             '~(Solo) - (mit Tengu)~'                       => '$1 $2 -',
             '~(Solo) - (mit Cerberus)~'                    => '$1 $2',
-            '~(Solo) - (mit Cerberus)~'                    => '$1 $2',
             '~(Morph) - (Akkuträger)~'                     => '$1 219 - $2',
             '~Tank (BF Mesh Head)~'                        => '$1',
             '~- (Mac Advanced)~'                           => '$1 -',
@@ -140,6 +139,7 @@ return [
             '~(E-Zigarette \(Bundle\)).*~'                 => '$1',
             '~(Nord) - (Pod)~'                             => '$1 $2',
             '~(Kfeng) - (Verdampfer)~'                     => '$1 Mark - $2',
+            '~(vPipe Mini) - E-Zigarette~'                 => '$1 - E-Pfeife',
         ],
     ],
 
@@ -645,7 +645,8 @@ return [
             '~(Devil)s (Darling)~'                                => '$1\'s $2',
             '~(Prince)-((X6)|(M4)|(T10)|(Q4))~'                   => '$1 $2',
             '~(SMOK) (V8)~'                                       => '$1 TF$2',
-            '~((vPipe III)|(Zen Pipe)) (Set)~'                    => '$1 - E-Pfeife (Set)',
+            '~((vPipe III)|(Zen Pipe)) Set~'                      => '$1 - E-Pfeife',
+            '~(vPipe III) (- E-Pfeife) (Ebony)~'                  => '$1 $3 $2',
             '~(Pod) mit Head -~'                                  => '$1 -',
             '~(Pod) mit~'                                         => '$1 -',
             '~(Watt)s$~'                                          => '$1',
@@ -1109,7 +1110,7 @@ return [
           '~(Kriemhild)~',
         ],
         'VapeOnly'      => [
-            '~(vPipe(( III)|( Mini)))~',
+            '~(vPipe(( III)|( Mini)) (Ebony)?)~',
             '~(Zen Pipe)~',
         ],
         'VooPoo'        => [

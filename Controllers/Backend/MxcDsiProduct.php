@@ -1125,27 +1125,44 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @var Product $product */
             foreach ($products as $product) {
                 $type = $product->getType();
-                if ($type !== 'E_CIGARETTE' && $type !== 'POD_SYSTEM') continue;
+                if (/*$type !== 'E_CIGARETTE' && */$type !== 'POD_SYSTEM') continue;
                 $description = $product->getDescription();
-                if (strpos($description, 'Pod') !== false || strpos($description, 'Cartridge') !== false) {
-                    $product->setType('POD_SYSTEM');
-                }
-                $cellChangeable = strpos($description, '18650') !== false ||
-                    strpos($description, '20700') !== false ||
-                    strpos($description, '21700') !== false;
-                $product->setCellChangeable($cellChangeable);
-                if ($cellChangeable) {
-                    $log->debug('Cell changeable: ' . $product->getName());
-                }
+//                if (strpos($description, 'Pod') !== false || strpos($description, 'Cartridge') !== false) {
+//                    $product->setType('POD_SYSTEM');
+//                }
+//                $cellChangeable = strpos($description, '18650') !== false ||
+//                    strpos($description, '20700') !== false ||
+//                    strpos($description, '21700') !== false;
+//                $product->setCellChangeable($cellChangeable);
+//                if ($cellChangeable) {
+//                    $log->debug('Cell changeable: ' . $product->getName());
+//                }
                 $matches = [];
-                $wattage = null;
-                if (preg_match('~(\d+) Watt~', $description, $matches) === 1) {
-                    $wattage = $matches[1];
-                    $log->debug('Wattage: '  . $matches[1] . ', ' . $product->getName());
+                $cellCapacity = null;
+                if (preg_match('~(\d?\.?\d+) mAh~', $description, $matches) === 1) {
+                    $cellCapacity = $matches[1];
+                    $cellCapacity = str_replace('.', '', $cellCapacity);
+                    $log->debug('Cell Capacity: '  . $cellCapacity . ', ' . $product->getName());
+                    $product->setCellChangeable(false);
+                } else {
+                    $product->setCellChangeable(true);
+                    if ($type === 'POD_SYSTEM') {
+                        $product->setNumberOfCells(1);
+                    }
                 }
-                $product->setWattage($wattage);
+                $product->setCellCapacity($cellCapacity);
 
-                $product->setHeadChangeable(preg_match('~\d.*x.*Head~', $description) === 1);
+                $matches = [];
+                $tank = 0;
+                if (preg_match('~(\d?,?\d+) ml~', $description, $matches) === 1) {
+                    $tank = $matches[1];
+                    if (strpos($tank, ',') === false) {
+                        $tank .= ',0';
+                    }
+                }
+                $product->setCapacity($tank);
+
+                // $product->setHeadChangeable(preg_match('~\d.*x.*Head~', $description) === 1);
             }
             $this->getManager()->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Pod systems marked.']);
@@ -1246,7 +1263,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
 
-            $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'E_CIGARETTE']);
+            $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'E_PIPE']);
             /** @var Product $product */
             foreach ($products as $product) {
                 /** @var Shopware\Models\Article\Article $article */

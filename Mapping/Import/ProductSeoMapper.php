@@ -162,6 +162,7 @@ class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterfac
 
         $url = str_replace('-akku-', '-', $url);
         $url = preg_replace('~-e-zigarette$~', '', $url);
+        $url = preg_replace('~-e-pfeife$~', '', $url);
         $url = preg_replace('~-e-liquid$~', '', $url);
         $url = preg_replace('~-liquid$~', '', $url);
         $url = preg_replace('~-aroma$~', '', $url);

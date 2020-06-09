@@ -241,13 +241,25 @@ class Product extends ModelEntity  {
     private $cellChangeable;
 
     /**
-     * E-Cigarette wattage
+     * @var int $numberOfCells
+     * @ORM\Column(name="cell_count", type="integer", nullable=true)
+     */
+    private $numberOfCells;
+
+    /**
+     * @var int $cellCapacity
+     * @ORM\Column(name="cell_capacity", type="integer", nullable=true)
+     */
+    private $cellCapacity;
+
+    /**
+     * E-Cigarette power
      *
-     * @var int $wattage
-     * @ORM\Column(name="wattage", type="integer", nullable=true)
+     * @var int $power
+     * @ORM\Column(name="power", type="integer", nullable=true)
      *
      */
-    private $wattage;
+    private $power;
 
     /**
      * @var boolean $accepted
@@ -837,17 +849,17 @@ class Product extends ModelEntity  {
     /**
      * @return int
      */
-    public function getWattage()
+    public function getPower()
     {
-        return $this->wattage;
+        return $this->power;
     }
 
     /**
-     * @param int $wattage
+     * @param int $power
      */
-    public function setWattage($wattage)
+    public function setPower($power)
     {
-        $this->wattage = $wattage;
+        $this->power = $power;
     }
 
     /**
@@ -880,5 +892,37 @@ class Product extends ModelEntity  {
     public function setHeadChangeable(bool $headChangeable)
     {
         $this->headChangeable = $headChangeable;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCellCapacity()
+    {
+        return $this->cellCapacity;
+    }
+
+    /**
+     * @param int $cellCapacity
+     */
+    public function setCellCapacity($cellCapacity)
+    {
+        $this->cellCapacity = $cellCapacity;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumberOfCells()
+    {
+        return $this->numberOfCells;
+    }
+
+    /**
+     * @param int $numberOfCells
+     */
+    public function setNumberOfCells($numberOfCells)
+    {
+        $this->numberOfCells = $numberOfCells;
     }
 }

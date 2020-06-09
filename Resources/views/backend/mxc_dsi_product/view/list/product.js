@@ -24,6 +24,11 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 content:                    { header: 'Content' },
                 capacity:                   { header: 'Capacity' },
                 dosage:                     { header: 'Dosage' },
+                cellChangeable:             { header: 'Cell Changeable'},
+                numberOfCells:              { header: '# Cells'},
+                headChangeable:             { header: 'Head Changeable'},
+                cellCapacity:               { header: 'Cell Capacity'},
+                power:                      { header: 'Power'},
                 accepted:                   { header: 'accept', width:45, flex: 0}
             },
             addButton: false,
@@ -802,6 +807,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     return (
                         header === 'Brand'
                         || header === 'Supplier'
+                        || header === 'Cell Changeable'
+                        || header === 'Head Changeable'
+                        || header === 'Cell Capacity'
+                        || header === 'Type'
+
+                        || header === '# Cells'
+                        || header === 'Power'
                         || header === 'Flavor'
                         || header === '+ Category'
                         || header === 'Capacity'

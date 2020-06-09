@@ -6934,9 +6934,10 @@ return array(
             3 => 'CU100IM',
         ),
         'VO100PE' => array(
-            0 => 'VO100VPA',
-            1 => 'VO100VPM',
-            2 => 'VO100VPH',
+            0 => 'VO100AZ',
+            1 => 'VO100VPA',
+            2 => 'VO100VPM',
+            3 => 'VO100VPH',
         ),
         'UW100BM' => array(
             0 => 'AG100CL',

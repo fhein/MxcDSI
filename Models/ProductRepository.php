@@ -125,7 +125,7 @@ class ProductRepository extends BaseEntityRepository
             . 'FROM MxcDropshipInnocigs\Models\Product p',
 
         'getExcelExportEcigMetaData' =>
-            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.wattage, p.headChangeable, p.cellChangeable '
+            'SELECT p.icNumber, p.type, p.supplier, p.brand, p.name, p.power, p.headChangeable, p.cellChangeable '
             . 'FROM MxcDropshipInnocigs\Models\Product p '
             . 'WHERE p.type IN (\'E_CIGARETTE\', \'POD_SYSTEM\', \'E_PIPE\')',
 
@@ -170,6 +170,11 @@ class ProductRepository extends BaseEntityRepository
         'flavorCategory',
         'dosage',
         'base',
+        'power',
+        'numberOfCells',
+        'cellCapacity',
+        'cellChangeable',
+        'headChangeable',
         'description',
     ];
 

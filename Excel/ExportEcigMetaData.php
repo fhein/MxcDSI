@@ -23,9 +23,11 @@ class ExportEcigMetaData extends AbstractProductExport implements LoggerAwareInt
     protected function registerColumns()
     {
         parent::registerColumns();
-        $this->registerColumn('Wattage');
-        $this->registerColumn('Head Change');
+        $this->registerColumn('Power');
         $this->registerColumn('Cell Change');
+        $this->registerColumn('Capacity');
+        $this->registerColumn('# Cells');
+        $this->registerColumn('Head Change');
     }
 
     protected function setSheetData()
@@ -42,7 +44,7 @@ class ExportEcigMetaData extends AbstractProductExport implements LoggerAwareInt
             $info['supplier'] = $product['supplier'];
             $info['brand'] = $product['brand'];
             $info['name'] = $product['name'];
-            $info['Wattage'] = $product['wattage'];
+            $info['Power'] = $product['power'];
             $info['Head Change'] = intval($product['headChangeable']);
             $info['Cell Change'] = intval($product['cellChangeable']);
             $data[] = $info;
