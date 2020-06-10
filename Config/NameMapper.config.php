@@ -140,6 +140,7 @@ return [
             '~(Nord) - (Pod)~'                             => '$1 $2',
             '~(Kfeng) - (Verdampfer)~'                     => '$1 Mark - $2',
             '~(vPipe Mini) - E-Zigarette~'                 => '$1 - E-Pfeife',
+            '~InnoCigs (Caliburn)~'                        => 'Uwell - $1',
         ],
     ],
 

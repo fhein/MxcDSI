@@ -33,13 +33,14 @@ return array(
         'AROMEN' => '<p>Sehen Sie sich in dieser Kategorie <b>##flavorcategory##</b> alle unsere <b>Aromen</b> an, die einen der folgenden Geschmacke in der Beschreibung haben:</p>',
         'SHAKE & VAPE' => '<p>In der Kategorie <b>##flavorcategory##</b> zeigen wir alle unsere <b>Shake & Vape E-Liquids</b>, die eine oder mehrere dieser Geschmacksnoten aufweisen:</p>',
     ),
+
     'type_category_map' => array(
         0 => array(
             'types' => array(
                 0 => 'E_CIGARETTE',
                 1 => 'E_PIPE',
             ),
-            'path' => 'E-ZIGARETTEN > weitere E-Zigaretten',
+            'path' => 'E-ZIGARETTEN > E-Zigaretten',
         ),
         1 => array(
             'types' => array(
@@ -279,6 +280,7 @@ return array(
                 0 => 'POD_SYSTEM',
             ),
             'path' => 'E-ZIGARETTEN > Pod-Systeme',
+            'append' => ['pod-system'],
         ),
     ),
     'category_seo_items' => array(
@@ -294,7 +296,68 @@ return array(
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme',
         ),
-        'E-ZIGARETTEN > weitere E-Zigaretten' => array(
+        'E-Zigaretten > Pod-Systeme > Akku bis 500 mAh' => [
+            'title' => 'Pod-Systeme mit Akkukapazität bis 500 mAh',
+            'description' => 'Kleine Pod-Systeme für unterwegs ✓ Akku bis 500 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit Akkukapazität bis 500 mAh',
+
+        ],
+        'E-Zigaretten > Pod-Systeme > Akku bis 1.000 mAh' => [
+            'title' => 'Pod-Systeme mit Akkukapazität bis 1.000 mAh',
+            'description' => 'Mittelgroße Pod-Systeme ✓ Akku bis 1.000 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit AkkuAkkukapazität bis 1.000 mAh',
+
+        ],
+        'E-Zigaretten > Pod-Systeme > Akku über 1.000 mAh' => [
+            'title' => 'Pod-Systeme mit Akkukapazität über 1.000 mAh',
+            'description' => 'Große Pod-Systeme ✓ Akku über 1.000 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit Akkukapazität über 1.000 mAh',
+        ],
+        'E-Zigaretten > Pod-Systeme > Akku wechselbar' => [
+            'title' => 'Pod-Systeme mit wechselbarem Akku',
+            'description' => 'Pod-Systeme mit wechselbarem Akku ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit wechselbarem Akku',
+
+        ],
+        'E-Zigaretten > Pod-Systeme > Kopf wechselbar' => [
+            'title' => 'Pod-Systeme mit wechselbarem Verdampferkopf',
+            'description' => 'Pod-Systeme mit wechselbarem Verdampferkopf ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit wechselbarem Verdampferkopf',
+
+        ],
+        'E-Zigaretten > Pod-Systeme > Kopf integriert' => [
+            'title' => 'Pod-Systeme mit integriertem Verdampferkopf',
+            'description' => 'Pod-Systeme mit fest eingebautem Verdampferkopf ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit integriertem Verdampferkopf',
+        ],
+        'E-Zigaretten > Pod-Systeme > Tank bis 2 ml' => [
+            'title' => 'Pod-Systeme mit Tankvolumen bis 2 ml',
+            'description' => 'Pod-Systeme mit Tankvolumen bis 2 ml ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit Tankvolumen bis 2 ml',
+
+        ],
+        'E-Zigaretten > Pod-Systeme > Tank bis 4 ml' => [
+            'title' => 'Pod-Systeme mit Tankvolumen bis 4 ml',
+            'description' => 'Pod-Systeme mit Tankvolumen bis 4 ml ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit Tankvolumen bis 4 ml',
+
+        ],
+        'E-Zigaretten > Pod-Systeme > Tank über 4 ml' => [
+            'title' => 'Pod-Systeme mit großem Tank',
+            'description' => 'Pod-Systeme mit Tankvolumen über 4 ml ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Pod-System,günstig,kaufen',
+            'h1' => 'Pod-Systeme mit großem Tankvolumen über 4 ml',
+        ],
+
+        'E-ZIGARETTEN > E-Zigaretten' => array(
             'title' => 'E-Zigaretten günstig online kaufen!',
             'description' => 'E-Zigaretten günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'E-Zigarette,günstig,kaufen',

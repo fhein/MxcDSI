@@ -74,15 +74,16 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
      */
     protected function getCategoryPathes(Product $product)
     {
+        $categories = [];
         $type = $product->getType();
-        if (empty($type)) return [];
+        if (empty($type)) return $categories;
 
         $typeMap = $this->getTypeMap();
         $map = $this->classConfig['type_category_map'][$typeMap[$type]] ?? null;
-        if ($map === null) return [];
+        if ($map === null) return $categories;
 
         $path = $map['path'] ?? null;
-        if ($path === null) return [];
+        if ($path === null) return $categories;
 
         $append = $map['append'] ?? null;
         if ($append === null) return [$path];
@@ -107,12 +108,51 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                     $flavorGroups = array_map('trim', explode(',', $product->getFlavorCategory()));
                     $subCategories = array_replace($subCategories, $flavorGroups);
                     break;
+                case 'pod-system':
+                    $subCategories = array_replace($subCategories, $this->getPodSystemAppendices($product));
+                    break;
             }
         }
-        $categories = [];
         foreach ($subCategories as $subCategory) {
             if (empty($subCategory)) continue;
             $categories[] = $path . ' > ' . $subCategory;
+        }
+        return $categories;
+    }
+
+    protected function getPodSystemAppendices(Product $product) {
+        $appendices = [];
+
+        // cell capacity
+        $capacity = $product->getCellCapacity();
+        if (empty($capacity)) {
+            $categories[] = 'Akku wechselbar';
+        } elseif ($capacity <= 500) {
+            $categories[] = 'Akku bis 500 mAh';
+        } elseif ($capacity <= 1000) {
+            $categories[] = 'Akku bis 1.000 mAh';
+        } else {
+            $categories[] = 'Akku über 1.000 mAh';
+        }
+
+        // intrated or changeable head
+        $headChangeable = $product->isHeadChangeable();
+        if ($headChangeable) {
+            $categories[] = 'Kopf wechselbar';
+        } else {
+            $categories[] = 'Kopf integriert';
+        }
+
+        // tank capacity
+        $capacity = $product->getCapacity();
+        $capacity = floatval(str_replace(',', '.', $capacity));
+        if ($capacity <= 2.0) {
+            $categories[] = 'Tank bis 2 ml';
+
+        } elseif ($capacity <= 4.0) {
+            $categories[] = 'Tank bis 4 ml';
+        } else {
+            $categories[] = 'Tank über 4 ml';
         }
         return $categories;
     }
@@ -148,19 +188,25 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             'common_name' => [$commonName],
             'flavor' => array_map('trim', explode(',',$flavorGroups))
         ];
+        if ($type === 'POD_SYSTEM') {
+            $subCategoryAppendices['pod-system'] = $this->getPodSystemAppendices($product);
+        }
         $categoryRepository = $this->getCategoryRepository();
 
         foreach ($append as $subCategoryType) {
             $appendices = $subCategoryAppendices[$subCategoryType] ?? null;
             if (! $appendices) continue;
 
+            // ***!*** dies funktioniert nicht bei Pod-Systemen
+            // weil deren seo Beschreibung woanders gespeichert ist
             $seoSettings = $map['seo'][$subCategoryType];
-            if (empty($seoSettings)) continue;
+            if (empty($seoSettings)) continue; // hier leider exit für pod-systeme
 
             foreach ($appendices as $appendix) {
                 if (empty($appendix)) continue;
 
                 $idx = $path . ' > ' . $appendix;
+                $this->log->debug('index: ' . $idx);
                 if (isset($this->categorySeoItems[$idx])) continue;
 
                 $title = $seoSettings['title'] ?? null;
@@ -188,14 +234,10 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                         [$supplier, $brand, $commonName, $appendix], $h1));
                 }
                 $category = $categoryRepository->findOneBy(['path' => $idx]) ?? new Category();
-                $category->fromArray([
-                    'path' => $idx,
-                    'title' => $title,
-                    'description' => $description,
-                    'keywords' => $keywords,
-                    'h1' => $h1
-
-                ]);
+                $category->setDescription($description);
+                $category->setTitle($title);
+                $category->setKeywords($keywords);
+                $category->setH1($h1);
                 $this->modelManager->persist($category);
                 $this->categorySeoItems[$idx] = $category;
             }
