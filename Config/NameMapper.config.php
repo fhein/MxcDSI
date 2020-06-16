@@ -322,6 +322,7 @@ return [
             '~(WSY) (- Aroma)(.*)(- \d+ ml)~'                             => '$1 - $3 $2 $4',
             '~(Dr. Kero) (- Aroma)(.*)(- \d+ ml)~'                        => '$1 - $3 $2 $4',
             '~(Dr. Vapes - Pink Series) (- Aroma)(.*)(- \d+ ml)~'         => '$1 - $3 $2 $4',
+            '~(Dr. Vapes) (- Aroma)(.*)(- \d+ ml)~'                       => '$1 - $3 $2 $4',
             '~(Dampfdidas) (- Aroma)(.*)(- \d+ ml)~'                      => '$1 - $3 $2 $4',
             '~(Ant) (- Aroma)(.*)(- \d+ ml)~'                             => '$1 - $3 $2 $4',
             '~(GangGang) (- Aroma)(.*)(- \d+ ml)~'                        => '$1 - $3 $2 $4',
@@ -533,6 +534,7 @@ return [
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
             '~(Aegis Squonk) (- \d+ Watt)~'                       => '$1 - Squonker Box $2',
+            '~(MIXX) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Kriemhild) (- \d+ Watt)~'                          => '$1 - Akkuträger $2',
             '~(V200 Vtec 1.8) (- \d+ Watt)~'                      => '$1 - Akkuträger $2',
             '~(Aegis Max)( Zeus) (- \d+ Watt)~'                   => '$1 - Akkuträger $3', //special
@@ -695,6 +697,7 @@ return [
         ],
         'Aspire'        => [
             // Aspire
+            '~(BP60)~',
             '~(Rover 2)~',
             '~(Reax Mini)~',
             '~(Nepho)~',
@@ -958,7 +961,11 @@ return [
             '~(Gear RTA)~',
             '~(nexMESH)~',
         ],
+        'OXVA' => [
+            '~(Idian)~',
+        ],
         'Smok'          => [
+            '~(NexM)~',
             '~(Alike)~',
             '~(Nord( 2)?)~',
             '~(Mag P3)~',
@@ -987,6 +994,7 @@ return [
             '~(Mico)~',
             '~(Priv N19)~',
             '~(RPM40)~',
+            '~(RPM80 Pro)~',
             '~(Novo 2)~',
             '~(Fetch Mini)~',
 
@@ -1142,7 +1150,7 @@ return [
             '~(Tarot Baby)~',
             '~(Veco)~',
             '~(Zero)~',
-            '~(Target Mini 2)~',
+            '~(Target(( Mini 2)|( PM80)|( PM30))?)~',
             '~(VM Solo 22)~',
             '~(VM Stick 18)~',
             '~(VM \d\d)~',

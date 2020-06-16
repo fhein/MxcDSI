@@ -9,6 +9,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
         return {
             detailWindow: 'Shopware.apps.MxcDsiProduct.view.detail.Window',
             columns: {
+                // created:                    { header: 'created', width: 80, flex: 0, renderer: this.dateRenderer},
                 new:                        { header: 'new', width: 40, flex: 0 },
                 linked:                     { header: 'linked', width: 40, flex: 0 },
                 active:                     { header: 'active', width: 40, flex: 0 },
@@ -20,6 +21,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 commonName:                 { header: 'Common' },
                 category:                   { header: 'Category'},
                 name:                       { header: 'Name', flex: 3 },
+                // releaseDate:                { header: 'Release', width: 80, flex: 0, renderer: this.dateRenderer },
                 flavor:                     { header: 'Flavor' },
                 content:                    { header: 'Content' },
                 capacity:                   { header: 'Capacity' },
@@ -805,12 +807,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                         return e.record.get('accepted') === true;
                     }
                     return (
+                        // editable columns
                         header === 'Brand'
                         || header === 'Supplier'
                         || header === 'Cell Changeable'
                         || header === 'Head Changeable'
                         || header === 'Cell Capacity'
                         || header === 'Type'
+                        || header === 'Common'
+                        || header ===  'Release'
 
                         || header === '# Cells'
                         || header === 'Power'
@@ -877,6 +882,21 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 }
             }
         };
+    },
+
+    dateRenderer: function (value) {
+        console.log(value);
+        if (value) {
+            console.log(value.date);
+            return value.date;
+        }
+        // if (value && value instanceof Date) {
+        //     if (value.getTime() > 0) {
+        //         return Ext.Date.format(value, Ext.Date.defaultFormat)
+        //     }
+        // }
+
+        return '';
     },
 
     onSelectionChange: function(selModel, selection) {

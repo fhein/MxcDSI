@@ -87,7 +87,7 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
             }
         }
         // check if e-cigarette is a pod-system
-        if ($type = 'E_CIGARETTE') {
+        if ($type === 'E_CIGARETTE') {
             $description = $product->getIcDescription();
             if (strpos($description, 'Pod') !== false
                 || strpos($description, 'Cartridge') !== false) {

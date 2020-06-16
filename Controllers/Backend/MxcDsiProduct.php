@@ -1263,9 +1263,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
 
-            $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'E_PIPE']);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
             /** @var Product $product */
             foreach ($products as $product) {
+                $type = $product->getType();
+                if ($type !== 'E_CIGARETTE' && $type !== 'E_PIPE' && $type !== 'POD_SYSTEM') continue;
                 /** @var Shopware\Models\Article\Article $article */
                 $article = $product->getArticle();
                 if ($article === null) continue;
