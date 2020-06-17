@@ -46,6 +46,7 @@ use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
+use MxcDropshipInnocigs\Mapping\Pullback\SpellChecker;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
@@ -155,6 +156,7 @@ return [
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
             ConfiguratorSetRepository::class   => AugmentedObjectFactory::class,
             DescriptionPullback::class         => AugmentedObjectFactory::class,
+            SpellChecker::class                => AugmentedObjectFactory::class,
             FilterGroupRepository::class       => AugmentedObjectFactory::class,
             MappingFilePersister::class        => AugmentedObjectFactory::class,
             MediaTool::class                   => AugmentedObjectFactory::class,
@@ -217,6 +219,7 @@ return [
         VariantNumberMapper::class      => 'VariantNumberMapper.config.php',
         ProductSeoMapper::class         => 'ProductSeoMapper.config.php',
         ShopwareCategoryMapper::class   => 'CategoryMapper.config.php',
+        SpellChecker::class             => 'SpellChecker.config.php',
     ],
     'excel'        => [
         'import' => [
