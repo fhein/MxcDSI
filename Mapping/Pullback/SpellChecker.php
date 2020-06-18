@@ -15,7 +15,7 @@ class SpellChecker implements LoggerAwareInterface, ModelManagerAwareInterface, 
     use ModelManagerAwareTrait;
     use ClassConfigAwareTrait;
 
-    private $separators = '([\;\,\. \?\!\-\>\<])';
+    private $separators = '([\;\,\. \?\!\-\>\<\n])';
 
     private $patternMappings;
 

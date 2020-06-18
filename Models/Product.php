@@ -5,6 +5,7 @@ namespace MxcDropshipInnocigs\Models;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use Shopware\Components\Model\ModelEntity;
 
 /**
@@ -245,6 +246,12 @@ class Product extends ModelEntity  {
      * @ORM\Column(name="cell_count", type="integer", nullable=true)
      */
     private $numberOfCells;
+
+    /**
+     * @var string $cellTypes
+     * @ORM\Column(name="cell_types", type="string", length=80, nullable=true)
+     */
+    private $cellTypes;
 
     /**
      * @var int $cellCapacity
@@ -924,5 +931,27 @@ class Product extends ModelEntity  {
     public function setNumberOfCells($numberOfCells)
     {
         $this->numberOfCells = $numberOfCells;
+    }
+
+    /**
+     * @return array | string | null
+     */
+    public function getCellTypes()
+    {
+        if (is_string($this->cellTypes)) {
+            return explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $this->cellTypes);
+        }
+        return $this->cellTypes;
+    }
+
+    /**
+     * @param string|array|null $cellTypes
+     */
+    public function setCellTypes($cellTypes)
+    {
+        if (is_array($cellTypes)) {
+            $cellTypes = implode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $cellTypes);
+        }
+        $this->cellTypes = $cellTypes;
     }
 }

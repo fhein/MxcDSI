@@ -20,5 +20,9 @@ return [
         'ensteht' => 'entsteht',
         'wiederstand' => 'Widerstand',
         'Wiederstand' => 'Widerstand',
+        'Bezeichung' => 'Bezeichnung',
+        'beispielweise' => 'beispielsweise',
+        'Beispielweise' => 'Beispielsweise',
+        'Heas'          => 'Head',
     ],
 ];
