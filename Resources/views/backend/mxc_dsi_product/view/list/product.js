@@ -77,11 +77,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcImportItemsSequential',
           'mxcUpdatePrices',
           'mxcRefreshItems',
+
           'mxcCheckRegularExpressions',
           'mxcCheckMissingModels',
           'mxcCheckNameMappingConsistency',
           'mxcCheckVariantMappingConsistency',
           'mxcCheckVariantsWithoutOptions',
+          'mxcCheckArticlesWithoutProducts',
+
           'mxcExportConfig',
           'mxcExcelExportPrices',
           'mxcExcelExportPriceIssues',
@@ -323,6 +326,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text : 'Look for variants without model',
                     handler: function() {
                         me.fireEvent('mxcCheckMissingModels', me);
+                    }
+                },
+                '-',
+                {
+                    text : 'Find articles without product',
+                    handler: function() {
+                        me.fireEvent('mxcCheckArticlesWithoutProducts', me);
                     }
                 },
             ]

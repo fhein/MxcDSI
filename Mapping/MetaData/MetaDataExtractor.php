@@ -8,6 +8,7 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\Toolbox\Html\HtmlDocument;
 
 
 /**
@@ -22,30 +23,67 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
 
+    private $document;
     private $cellTypes = [ '18350', '18650', '20700', '21700'];
 
-    public function extractMetaData()
+    public function __construct(HtmlDocument $document)
     {
-        $products = $this->modelManager->getRepository(Product::class)->findAll();
-        /** @var Product $product */
-        foreach ($products as $product) {
-            $type = $product->getType();
-            switch ($type) {
-                case 'POD_SYSTEM':
-                    $this->extractMetaDataPodSystem($product);
-                    break;
-            }
+        $this->document = $document;
+    }
+
+    public function extractMetaData(Product $product)
+    {
+        $type = $product->getType();
+        switch ($type) {
+            case 'POD_SYSTEM':
+                $this->extractMetaDataPodSystem($product);
+                break;
+            case 'E_CIGARETTE':
+                $this->extractMetaDataEcigarette($product);
+                break;
         }
-        $this->modelManager->flush();
+        // $this->modelManager->flush();
+    }
+
+    protected function setupSearchTopics(Product $product)
+    {
+        $description = $product->getDescription();
+        $topics['name'] = $product->getName();
+        $topics['description'] = $description;
+
+        $tables = $this->document->getHtmlByTagName('table', $description);
+        $topics['tables'] = $tables;
+        $tables = $this->document->getTablesAsArray($description);
+        $topics['arrays'] = $tables;
+        $topics['scopeOfDelivery'] = $this->document->getScopeOfDelivery($description);
+        $this->log->debug(var_export($topics, true));
+        return $topics;
+    }
+
+    protected function extractMetaDataEcigarette(Product $product)
+    {
+        $topics = $this->setupSearchTopics($product);
+
+        $cellCapacity = $this->extractCellCapacity($topics);
+        $product->setCellCapacity($cellCapacity);
+
+        $cellChangeable = $cellCapacity = null;
+        $product->setCellChangeable($cellChangeable);
+
+        $numberOfCells = $this->extractNumberOfCells($topics);
+        $numberOfCells = $numberOfCells === null && $cellChangeable ? 1 : 0;
+        $product->setNumberOfCells($numberOfCells);
+
+        $tankCapacity = $this->extractTankCapacity($topics);
+        $product->setCapacity($tankCapacity);
     }
 
     protected function extractMetaDataPodSystem(Product $product)
     {
-            $description = $product->getDescription();
-            $name = $product->getName();
+            $topics = $this->setupSearchTopics($product);
 
             // Suche eine mAh Angabe im Namen und in der Beschreibung
-            $cellCapacity = $this->extractCellCapacity($name, $description);
+            $cellCapacity = $this->extractCellCapacity($topics);
             $product->setCellCapacity($cellCapacity);
 
             // Wenn keine Kapazitätsangabe vorhanden ist, ist der Akku wechselbar
@@ -57,28 +95,34 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
             $product->setNumberOfCells($numberOfCells);
 
             // Eine ml Angabe ist bei einem Pod-System das Tankvolumen
-            $tankCapacity = $this->extractTankCapacity($name, $description);
+            $tankCapacity = $this->extractTankCapacity($topics);
             $product->setCapacity($tankCapacity);
 
             // Wenn im Lieferumfang das Wort Head auftaucht, sind die Köpfe wechselbar
-            $headChangeable = $this->extractHeadChangeable($description);
+            $headChangeable = $this->extractHeadChangeable($topics);
             $product->setHeadChangeable($headChangeable);
 
             // Sucht nach Vorkommen der unter $this->cellTypes konfigurierten Typen
-            $cellTypes = $this->extractCellTypes($description);
+            $cellTypes = $this->extractCellTypes($topics);
             $product->setCellTypes($cellTypes);
     }
 
-    protected function extractCellCapacity(string $name, string $description)
+    /**
+     * Suche Akkukapazität im Produktnamen, in der ersten Tabelle oder in der gesamten Beschreibung
+     */
+    protected function extractCellCapacity(array $topics)
     {
         $cellCapacity = null;
-        $matches = [];
 
-        // Suche Akkukapazität im Produktnamen und dann in der Beschreibung
-        if (preg_match('~(\d?\.?\d+) mAh~', $name, $matches) === 1) {
-            $cellCapacity = $matches[1];
-        } elseif (preg_match('~(\d?\.?\d+) mAh~', $description, $matches) === 1) {
-            $cellCapacity = $matches[1];
+        $sources = [ $topics['name'], $topics['tables'][0], $topics['description']];
+
+        $matches = [];
+        foreach ($sources as $source) {
+            if ($source === null) continue;
+            if (preg_match('~(\d?\.?\d+) mAh~', $source, $matches) === 1) {
+                $cellCapacity = $matches[1];
+                break;
+            }
         }
 
         // Entferne Dezimalpunkt
@@ -88,16 +132,29 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         return $cellCapacity;
     }
 
-    protected function extractTankCapacity(string $name, string $description)
+    /**
+     * Suche Tankkapazität im Namen, in der letzten Tabelle und in der gesamten Beschreibung
+     *
+     * @param array $topics
+     * @return mixed|string|null
+     */
+
+    protected function extractTankCapacity(array $topics)
     {
         $matches = [];
-        $tankCapacity = 0;
+        $tankCapacity = null;
 
-        // Suche ml Angabe im Produktnamen und dann in der Besschreibung
-        if (preg_match('~(\d?,?\d+) ml~', $name, $matches) === 1) {
-            $tankCapacity = $matches[1];
-        } elseif (preg_match('~(\d?,?\d+) ml~', $description, $matches) === 1) {
-            $tankCapacity = $matches[1];
+        // Bei Produkten mit zwei Tabellen findet sich die Info in der zweiten Tabelle, sonst in der ersten
+        $tableIdx = count($topics['tables']) === 2 ? 1 : 0;
+
+        $sources = [ $topics['name'], $topics['tables'][$tableIdx], $topics['description']];
+
+        foreach ($sources as $source) {
+            if ($source === null) continue;
+            if (preg_match('~(\d?,?\d+) ml~', $source, $matches) === 1) {
+                $tankCapacity = $matches[1];
+                break;
+            }
         }
 
         // Bei ganzen Zahlen füge ,0 hinzu
@@ -109,20 +166,62 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         return $tankCapacity;
     }
 
-    protected function extractHeadChangeable(string $description)
+    /**
+     * Wir nehmen an, das der Kopf wechselbar ist, wenn das Wort Head im Lieferumfang vorkommt
+     *
+     * @param string $description
+     * @return bool
+     */
+    protected function extractHeadChangeable(array $topics)
     {
         // Suche im Lieferumfang nach dem Wort Head
-        return preg_match('~\d.*x.*Head~', $description) === 1;
+        $source = $topics['scopeOfDelivery'];
+        if ($source === null) return false;
+
+        return preg_match('~\d.*x.*Head~', $source) === 1;
     }
 
-    protected function extractCellTypes(string $description): ?array
+    /**
+     * Wir suchen in der ersten Tabelle oder in der gesamten Beschreibung
+     * nach Vorkommen der Akkutypen, die unter $this->cellTypes konfiguriert sind
+     *
+     * @param array $topics
+     * @return array|null
+     */
+    protected function extractCellTypes(array $topics): ?array
     {
+
+        $sources = [ $topics['tables'][0], $topics['description']];
+
         $cellTypes = [];
-        foreach ($cellTypes as $cellType) {
-            if (strpos($cellType, $description) !== false) {
-                $cellTypes[] = $cellType;
+        foreach ($sources as $source) {
+            if ($source === null) continue;
+            foreach ($cellTypes as $cellType) {
+                if (strpos($cellType, $source) !== false) {
+                    $cellTypes[] = $cellType;
+                }
             }
+            if (! empty($cellTypes)) break;
         }
         return isempty($cellTypes) ? null : $cellTypes;
+    }
+
+    /**
+     * Finde in der ersten Tabelle einen Text mit Anzahl der Akkuzellen (z.B. 2x 18650er Akkuzelle)
+     * Wenn keine erste Tabelle existiert, Abbruch.
+     *
+     * @param array $topics
+     * @return int|null
+     */
+    protected function extractNumberOfCells(array $topics)
+    {
+        $source = $topics['tables'][0];
+        if ($source === null) return null;
+
+        $numberOfCells = null;
+        if (preg_match('~(\d) ?x.*Akkuzelle~', $source, $matches) === 1) {
+            $numberOfCells = $matches[1];
+        }
+        return intval($numberOfCells);
     }
 }

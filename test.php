@@ -119,6 +119,60 @@ $text = '<p>Dieses E-Zigaretten-Set besteht aus dem ergonomisch gestalteten Akku
 
 class HtmlDocument
 {
+    private $tableStart = '<table frame="void" rules="rows" cellspacing="0" cellpadding="2" border="5"><tbody>';
+    private $tableRow = '<tr><td>%s</td><td>%s</td></tr>';
+    private $tableEnd = '</tbody></table>';
+
+    public function getScopeOfDelivery(string $text)
+    {
+        $uls = $this->getHtmlByTagName('ul', $text);
+        return end($uls);
+    }
+
+    /**
+     * Baut aus einem Array eine Html-Tabelle ohne Headers mit zwei Spalten für Produktbeschreibungen.
+     */
+    public function buildTable(array $content)
+    {
+        $rows = [];
+        foreach ($content as $key => $value) {
+            $rows[] = sprintf($this->tableRow, $key, $value);
+        }
+        $rows = implode("\n", $rows);
+        $table = $this->tableStart . "\n" . $rows . "\n" . $this->tableEnd;
+        return $table;
+    }
+
+    /**
+     * Findet Html-Snippets nach Name des Tags. Liefert ein Array, dessen Schlüssel
+     * die StartPosition im Text und dessen Wert das html des Tags ist.
+     *
+     * Achtung: Diese Funktion ist nicht rekursiv und funktioniert daher nicht mit verschachtelten Tags.
+     *
+     * @param string $tagName
+     * @param string $text
+     * @return array
+     */
+    public function getHtmlByTagName(string $tagName, string $text)
+    {
+        $startTag = '<' . $tagName;
+        $endTag = '</' . $tagName . '>';
+        $endLen = strlen($endTag);
+        $offset = 0;
+        $tags = [];
+        $startPos = strpos($text, $startTag, $offset);
+        while ($startPos !== false) {
+            $endPos = strpos($text, $endTag, $startPos);
+            if ($endPos === false) break;
+            $len = $endPos - $startPos + $endLen;
+            $tag = substr($text, $startPos, $len);
+            $tags[$startPos] = $tag;
+            $offset += $startPos + $len;
+            $startPos = @strpos($text, $startTag, $offset);
+        }
+        return $tags;
+    }
+
     /**
      * Extrahiere aus einem Html-Text alle Tabellen und liefere das Ergebnis als Array zurück.
      * Die linke Spalte der Tabelle dient als Array-Key, die anderen Spalten werden zu einem String implodiert,
@@ -131,17 +185,13 @@ class HtmlDocument
         $document = $this->getDOMDocument($text);
         $result = [];
         $tables = $document->getElementsByTagName('table');
-        if ($tables->count() === 0) {
-            return $result;
-        }
+        if ($tables->count() === 0) return $result;
 
         foreach ($tables as $table) {
+            echo $table->textContent . "\n\n";
             $rows = $table->getElementsByTagName('tr');
-            if ($rows->count() === 0) {
-                continue;
-            }
+            if ($rows->count() === 0) continue;
             $i = 0;
-
             $temp = [];
             foreach ($rows as $row) {
                 $cells = $row->getElementsByTagName('td');
@@ -150,7 +200,6 @@ class HtmlDocument
                 }
                 $i++;
             }
-
             $array = [];
             foreach ($temp as $line) {
                 $topic = $line[0];
@@ -163,22 +212,6 @@ class HtmlDocument
         return $result;
     }
 
-    public function getScopeOfDelivery(string $text, bool $removeLineBreaks) {
-
-        $offset = strrpos($text, '<ul>');
-        if ($offset === false) return '';
-        $result = substr($text, $offset);
-        $result = preg_replace('~</?li>~','', $result);
-        $result = preg_replace('~</?ul>~','', $result);
-        if ($removeLineBreaks) {
-            $result = preg_replace('~\r?\n|\r~', '#!#', $result);
-            $result = explode('#!#', $result);
-            $result = implode(' ', $result);
-        }
-
-        return trim($result);
-    }
-
     protected function getDOMDocument(string $text)
     {
         $text = preg_replace('~<br/?>~', "\n", $text);
@@ -187,7 +220,21 @@ class HtmlDocument
         return $document;
     }
 }
-
 $doc = new HtmlDocument();
 // var_export($doc->getTablesAsArray($text));
 var_export($doc->getScopeOfDelivery($text, true));
+die();
+
+$testTable = [
+    'Property 1' => 'Value 1',
+    'Property 2' => 'Value 2',
+    'Property 3' => 'Value 3',
+];
+
+$table = $doc->buildTable($testTable);
+
+var_export($table);
+
+
+$tags = $doc->getHtmlByTagName('h2', $text);
+var_export($tags);

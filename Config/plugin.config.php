@@ -44,6 +44,7 @@ use MxcDropshipInnocigs\Mapping\Import\TypeMapper;
 use MxcDropshipInnocigs\Mapping\Import\VariantNumberMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
+use MxcDropshipInnocigs\Mapping\MetaData\MetaDataExtractor;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
 use MxcDropshipInnocigs\Mapping\Pullback\SpellChecker;
@@ -64,6 +65,7 @@ use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
+use MxcDropshipInnocigs\Toolbox\Html\HtmlDocument;
 use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
@@ -139,7 +141,6 @@ return [
 
     'services'     => [
         'factories' => [
-            ExportEcigMetaData::class        => AugmentedObjectFactory::class,
             ExportPriceIssues::class         => AugmentedObjectFactory::class,
             ProductMappings::class           => AugmentedObjectFactory::class,
             PriceEngine::class               => AugmentedObjectFactory::class,
@@ -161,6 +162,7 @@ return [
             MappingFilePersister::class        => AugmentedObjectFactory::class,
             MediaTool::class                   => AugmentedObjectFactory::class,
 
+
             CategoryTool::class => AugmentedObjectFactory::class,
 
             CommonNameMapper::class  => MappingConfigFactory::class,
@@ -175,6 +177,7 @@ return [
             ExportNewProducts::class => AugmentedObjectFactory::class,
 
             ExcelProductImport::class => ExcelImportFactory::class,
+
         ],
         'magicals'  => [
             ApiClient::class,
@@ -194,6 +197,7 @@ return [
             ImportMapper::class,
             ImportPrices::class,
             ManufacturerMapper::class,
+            MetaDataExtractor::class,
             NameMappingConsistency::class,
             OptionMapper::class,
             PriceMapper::class,
@@ -201,6 +205,7 @@ return [
             PropertyMapper::class,
             RegexChecker::class,
             RegularExpressions::class,
+            HtmlDocument::class,
         ],
     ],
     'class_config' => [

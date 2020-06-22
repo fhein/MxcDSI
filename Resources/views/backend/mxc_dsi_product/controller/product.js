@@ -59,6 +59,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcCheckNameMappingConsistency:      me.onCheckNameMappingConsistency,
                 mxcCheckRegularExpressions:          me.onCheckRegularExpressions,
                 mxcCheckMissingModels:               me.onCheckMissingModels,
+                mxcCheckArticlesWithoutProducts:     me.onCheckArticlesWithoutProducts,
 
                 // Excel import/export
 
@@ -460,6 +461,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         }
     },
 
+    onCheckArticlesWithoutProducts: function(grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=checkArticlesWithoutProducts}';
+        let params = {};
+        let growlTitle = 'Find articles without $products';
+        let maskText = 'Searching articles without $products ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, false);
+    },
+
     onCheckRegularExpressions: function(grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=checkRegularExpressions}';
@@ -754,7 +764,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let me = this;
         let mask = new Ext.LoadMask(grid, { msg: maskText });
         mask.show();
-        console.log(url);
         Ext.Ajax.request({
             method: 'POST',
             url: url,
@@ -762,6 +771,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
             success: function (response) {
                 mask.hide();
+                console.log(response.responseText);
                 let result = Ext.JSON.decode(response.responseText);
                 console.log(result);
                 if (!result) {

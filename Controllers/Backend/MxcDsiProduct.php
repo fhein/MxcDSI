@@ -19,6 +19,7 @@ use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
 use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
+use MxcDropshipInnocigs\Mapping\MetaData\MetaDataExtractor;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
 use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
@@ -1117,55 +1118,55 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function checkArticlesWithoutProductsAction()
+    {
+        try {
+            $articles = $this->getManager()->getRepository(Article::class)->findAll();
+            $repository = $this->getManager()->getRepository(Product::class);
+            $list1 = [];
+            foreach ($articles as $article) {
+                $product = $repository->getProduct($article);
+                if ($product === null) {
+                    $list1[] = $article->getName();
+                }
+            }
+            $articles = $repository->getArticlesWithoutProduct();
+            $list2 = [];
+            foreach ($articles as $article) {
+                $list2[] = $article->getName();
+            }
+            $list = [
+                'by repository->getProduct' => $list1,
+                'by repositpory->getArticlesWithoutProduct' => $list2
+            ];
+            $report = new ArrayReport();
+            $report(['ckArticlesWithoutProduct' => $list]);
+
+            $this->view->assign([ 'success' => true, 'message' => 'Articles without product logged to ckArticlesWithoutProducts.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function dev1Action()
     {
         try {
-            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $services = MxcDropshipInnocigs::getServices();
+            $log = $services->get('logger');
             $products = $this->getManager()->getRepository(Product::class)->findAll();
+
+            /** @var MetaDataExtractor $metaDataExtractor */
+            $metaDataExtractor = $services->get(MetaDataExtractor::class);
+
             /** @var Product $product */
             foreach ($products as $product) {
                 $type = $product->getType();
-                if (/*$type !== 'E_CIGARETTE' && */$type !== 'POD_SYSTEM') continue;
-                $description = $product->getDescription();
-//                if (strpos($description, 'Pod') !== false || strpos($description, 'Cartridge') !== false) {
-//                    $product->setType('POD_SYSTEM');
-//                }
-//                $cellChangeable = strpos($description, '18650') !== false ||
-//                    strpos($description, '20700') !== false ||
-//                    strpos($description, '21700') !== false;
-//                $product->setCellChangeable($cellChangeable);
-//                if ($cellChangeable) {
-//                    $log->debug('Cell changeable: ' . $product->getName());
-//                }
-                $matches = [];
-                $cellCapacity = null;
-                if (preg_match('~(\d?\.?\d+) mAh~', $description, $matches) === 1) {
-                    $cellCapacity = $matches[1];
-                    $cellCapacity = str_replace('.', '', $cellCapacity);
-                    $log->debug('Cell Capacity: '  . $cellCapacity . ', ' . $product->getName());
-                    $product->setCellChangeable(false);
-                } else {
-                    $product->setCellChangeable(true);
-                    if ($type === 'POD_SYSTEM') {
-                        $product->setNumberOfCells(1);
-                    }
-                }
-                $product->setCellCapacity($cellCapacity);
+                if ($type !== 'E_CIGARETTE' /*&& $type !== 'POD_SYSTEM'*/) continue;
 
-                $matches = [];
-                $tank = 0;
-                if (preg_match('~(\d?,?\d+) ml~', $description, $matches) === 1) {
-                    $tank = $matches[1];
-                    if (strpos($tank, ',') === false) {
-                        $tank .= ',0';
-                    }
-                }
-                $product->setCapacity($tank);
-
-                // $product->setHeadChangeable(preg_match('~\d.*x.*Head~', $description) === 1);
+                $metaDataExtractor->extractMetaData($product);
+                break;
             }
-            $this->getManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Pod systems marked.']);
+            $this->view->assign([ 'success' => true, 'message' => 'Metadata successfully extracted.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
