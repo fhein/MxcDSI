@@ -1154,6 +1154,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $services = MxcDropshipInnocigs::getServices();
             $log = $services->get('logger');
             $products = $this->getManager()->getRepository(Product::class)->findAll();
+            $log->debug ('Found ' . count($products) . ' products.');
 
             /** @var MetaDataExtractor $metaDataExtractor */
             $metaDataExtractor = $services->get(MetaDataExtractor::class);
@@ -1161,10 +1162,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @var Product $product */
             foreach ($products as $product) {
                 $type = $product->getType();
-                if ($type !== 'E_CIGARETTE' /*&& $type !== 'POD_SYSTEM'*/) continue;
-
+                if ($type !== 'E_CIGARETTE') continue;
                 $metaDataExtractor->extractMetaData($product);
-                break;
             }
             $this->view->assign([ 'success' => true, 'message' => 'Metadata successfully extracted.']);
         } catch (Throwable $e) {

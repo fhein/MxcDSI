@@ -296,67 +296,66 @@ return array(
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme',
         ),
-        'E-Zigaretten > Pod-Systeme > Akku bis 500 mAh' => [
+        'E-ZIGARETTEN > Pod-Systeme > Akku bis 500 mAh' => [
             'title' => 'Pod-Systeme mit Akkukapazität bis 500 mAh',
             'description' => 'Kleine Pod-Systeme für unterwegs ✓ Akku bis 500 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit Akkukapazität bis 500 mAh',
 
         ],
-        'E-Zigaretten > Pod-Systeme > Akku bis 1.000 mAh' => [
+        'E-ZIGARETTEN > Pod-Systeme > Akku bis 1.000 mAh' => [
             'title' => 'Pod-Systeme mit Akkukapazität bis 1.000 mAh',
             'description' => 'Mittelgroße Pod-Systeme ✓ Akku bis 1.000 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit AkkuAkkukapazität bis 1.000 mAh',
 
         ],
-        'E-Zigaretten > Pod-Systeme > Akku über 1.000 mAh' => [
+        'E-ZIGARETTEN > Pod-Systeme > Akku über 1.000 mAh' => [
             'title' => 'Pod-Systeme mit Akkukapazität über 1.000 mAh',
             'description' => 'Große Pod-Systeme ✓ Akku über 1.000 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit Akkukapazität über 1.000 mAh',
         ],
-        'E-Zigaretten > Pod-Systeme > Akku wechselbar' => [
+        'E-ZIGARETTEN > Pod-Systeme > Akku wechselbar' => [
             'title' => 'Pod-Systeme mit wechselbarem Akku',
             'description' => 'Pod-Systeme mit wechselbarem Akku ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit wechselbarem Akku',
 
         ],
-        'E-Zigaretten > Pod-Systeme > Kopf wechselbar' => [
+        'E-ZIGARETTEN > Pod-Systeme > Kopf wechselbar' => [
             'title' => 'Pod-Systeme mit wechselbarem Verdampferkopf',
             'description' => 'Pod-Systeme mit wechselbarem Verdampferkopf ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit wechselbarem Verdampferkopf',
 
         ],
-        'E-Zigaretten > Pod-Systeme > Kopf integriert' => [
+        'E-ZIGARETTEN > Pod-Systeme > Kopf integriert' => [
             'title' => 'Pod-Systeme mit integriertem Verdampferkopf',
             'description' => 'Pod-Systeme mit fest eingebautem Verdampferkopf ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit integriertem Verdampferkopf',
         ],
-        'E-Zigaretten > Pod-Systeme > Tank bis 2 ml' => [
+        'E-ZIGARETTEN > Pod-Systeme > Tank bis 2 ml' => [
             'title' => 'Pod-Systeme mit Tankvolumen bis 2 ml',
             'description' => 'Pod-Systeme mit Tankvolumen bis 2 ml ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit Tankvolumen bis 2 ml',
 
         ],
-        'E-Zigaretten > Pod-Systeme > Tank bis 4 ml' => [
+        'E-ZIGARETTEN > Pod-Systeme > Tank bis 4 ml' => [
             'title' => 'Pod-Systeme mit Tankvolumen bis 4 ml',
             'description' => 'Pod-Systeme mit Tankvolumen bis 4 ml ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit Tankvolumen bis 4 ml',
 
         ],
-        'E-Zigaretten > Pod-Systeme > Tank über 4 ml' => [
+        'E-ZIGARETTEN > Pod-Systeme > Tank über 4 ml' => [
             'title' => 'Pod-Systeme mit großem Tank',
             'description' => 'Pod-Systeme mit Tankvolumen über 4 ml ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
             'h1' => 'Pod-Systeme mit großem Tankvolumen über 4 ml',
         ],
-
         'E-ZIGARETTEN > E-Zigaretten' => array(
             'title' => 'E-Zigaretten günstig online kaufen!',
             'description' => 'E-Zigaretten günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
@@ -435,7 +434,7 @@ return array(
             'keywords' => 'Verdampfer, Verdampferkopf,Coil,E-Zigarette,günstig,kaufen',
             'h1' => 'VERDAMPFERKÖPFE',
         ),
-        'ZUBEHÖR > Basen & Shots' => array(
+        'E-LIQUIDS > Basen & Shots' => array(
             'title' => 'Basis und Nikotin-Shots für die E-Liquid günstig online kaufen!',
             'description' => 'Basis und Nikotin-Shots für E-Liquid günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Base,Basis,Nikotinshot,Nikotin-Shot,Liquid,E-Liquid,E-Zigarette,günstig,kaufen',
@@ -546,6 +545,24 @@ return array(
         'E-LIQUIDS' => array(
             'title' => 'E-Liquids für E-Zigaretten günstig online kaufen!',
             'description' => 'E-Liquids für E-Zigaretten günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
+            'h1' => 'E-LIQUIDS',
+        ),
+        'E-LIQUIDS > Fertig-Liquids' => array(
+            'title' => 'Gebrauchsfertige E-Liquids günstig online kaufen!',
+            'description' => 'Gebrauchsfertige E-Liquids für E-Zigaretten günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
+            'h1' => 'E-LIQUIDS',
+        ),
+        'E-LIQUIDS > Skake & Vape' => array(
+            'title' => 'Shake & Vape E-Liquids günstig online kaufen!',
+            'description' => 'Shake & Vape Liquids für E-Zigaretten günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
+            'h1' => 'E-LIQUIDS',
+        ),
+        'E-LIQUIDS > Aromen' => array(
+            'title' => 'Aromen für E-Liquids günstig online kaufen!',
+            'description' => 'Aromen für E-Liquids günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
             'h1' => 'E-LIQUIDS',
         ),

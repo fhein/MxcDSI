@@ -303,6 +303,7 @@ return [
             '~(Brunhilde) (RTA) (Edel)~'                                  => '$1 Top Coiler $2 $3',
             '~(Brunhilde) (RTA), (\d ml) (.*)~'                           => '$1 Top Coiler $2 $4 - $3',
             '~(Bad Candy Liquids) (- .*)(- 20 ml)~'                       => '$1 $2 - Aroma $3',
+            '~(Bamberger Dampferlädla) (- Aroma)(.*)(- \d+(,\d+)? ml)~'   => '$1 - $3 $2 $4',
             '~(Refresh Gazoz) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Kaffeeklatsch) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'             => '$1 - $3 $2 $4',
@@ -799,6 +800,7 @@ return [
             '~(Gemm)~',
         ],
         'GeekVape'      => [
+            '~(Wenax Stylus)~',
             '~(Alpha)~',
             '~(Bident)~',
             '~(Ammit 25 RTA)~',

@@ -234,6 +234,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                         [$supplier, $brand, $commonName, $appendix], $h1));
                 }
                 $category = $categoryRepository->findOneBy(['path' => $idx]) ?? new Category();
+                $category->setPath($idx);
                 $category->setDescription($description);
                 $category->setTitle($title);
                 $category->setKeywords($keywords);
@@ -247,6 +248,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
     protected function getBasePathSeoItems(string $path)
     {
+        $this->log->debug('getBasePathSeoItems: ' . $path);
         if (isset($this->categorySeoItems[$path])) return;
 
         $map = $this->classConfig['category_seo_items'];
@@ -258,6 +260,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             if (isset($this->categorySeoItems[$idx])) continue;
             $items = $map[$idx] ?? null;
             if ($items) {
+                $this->log->debug('idx: \'' . $idx . '\'');
                 $items['path'] = $idx;
                 $category = $categoryRepository->findOneBy(['path' => $idx]) ?? new Category();
                 $this->modelManager->persist($category);

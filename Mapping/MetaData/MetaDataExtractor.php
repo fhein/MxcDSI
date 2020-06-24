@@ -42,7 +42,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
                 $this->extractMetaDataEcigarette($product);
                 break;
         }
-        // $this->modelManager->flush();
+        $this->modelManager->flush();
     }
 
     protected function setupSearchTopics(Product $product)
@@ -52,11 +52,10 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         $topics['description'] = $description;
 
         $tables = $this->document->getHtmlByTagName('table', $description);
-        $topics['tables'] = $tables;
+        $topics['tables'] = array_values($tables);
         $tables = $this->document->getTablesAsArray($description);
         $topics['arrays'] = $tables;
         $topics['scopeOfDelivery'] = $this->document->getScopeOfDelivery($description);
-        $this->log->debug(var_export($topics, true));
         return $topics;
     }
 
@@ -67,15 +66,23 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         $cellCapacity = $this->extractCellCapacity($topics);
         $product->setCellCapacity($cellCapacity);
 
-        $cellChangeable = $cellCapacity = null;
+        $cellChangeable = $cellCapacity === null;
         $product->setCellChangeable($cellChangeable);
 
         $numberOfCells = $this->extractNumberOfCells($topics);
-        $numberOfCells = $numberOfCells === null && $cellChangeable ? 1 : 0;
+        if ($numberOfCells === null && $cellChangeable) {
+            $numberOfCells = 1;
+        }
         $product->setNumberOfCells($numberOfCells);
 
         $tankCapacity = $this->extractTankCapacity($topics);
         $product->setCapacity($tankCapacity);
+
+        $power = $this->extractPower($topics);
+        $product->setPower($power);
+
+        $headChangeable = $this->extractHeadChangeable($topics);
+        $product->setHeadChangeable($headChangeable);
     }
 
     protected function extractMetaDataPodSystem(Product $product)
@@ -151,7 +158,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
 
         foreach ($sources as $source) {
             if ($source === null) continue;
-            if (preg_match('~(\d?,?\d+) ml~', $source, $matches) === 1) {
+            if (preg_match('~(\d+,\d+|\d+) ml~', $source, $matches) === 1) {
                 $tankCapacity = $matches[1];
                 break;
             }
@@ -178,7 +185,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         $source = $topics['scopeOfDelivery'];
         if ($source === null) return false;
 
-        return preg_match('~\d.*x.*Head~', $source) === 1;
+        return preg_match('~<li>.*(Head|Verdampferkopf).*</li>~', $source) === 1;
     }
 
     /**
@@ -203,7 +210,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
             }
             if (! empty($cellTypes)) break;
         }
-        return isempty($cellTypes) ? null : $cellTypes;
+        return $cellTypes;
     }
 
     /**
@@ -219,9 +226,37 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         if ($source === null) return null;
 
         $numberOfCells = null;
-        if (preg_match('~(\d) ?x.*Akkuzelle~', $source, $matches) === 1) {
+        $matches = [];
+        if (preg_match('~(\d+) ?x.*Akkuzelle~', $source, $matches) === 1) {
             $numberOfCells = $matches[1];
         }
-        return intval($numberOfCells);
+        return $numberOfCells;
+    }
+
+    /**
+     * Finde die Wattzahl entweder im Namen oder in der ersten Tabelle der Produktbeschreibung
+     *
+     * @param array $topics
+     * @return mixed|null
+     */
+    protected function extractPower(array $topics)
+    {
+        $sources = [ $topics['name'], $topics['tables'][0]];
+        $power = null;
+
+        $matches = [];
+        foreach ($sources as $source) {
+            if ($source === null) continue;
+
+            if (preg_match('~(\d+,\d|\d+) Watt~', $source, $matches) === 1) {
+                $power = $matches[1];
+                if (strpos($power, ',') !== false)
+                    $this->log->debug('Decimal power: '. $power);
+                str_replace(',', '.', $power);
+                break;
+            }
+        }
+
+        return $power;
     }
 }
