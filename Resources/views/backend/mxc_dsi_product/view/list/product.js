@@ -76,6 +76,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcImportItems',
           'mxcImportItemsSequential',
           'mxcUpdatePrices',
+          'mxcUpdateVat',
           'mxcRefreshItems',
 
           'mxcCheckRegularExpressions',
@@ -568,6 +569,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-money--arrow',
                     handler: function() {
                         me.fireEvent('mxcUpdatePrices', me);
+                    }
+                },
+                {
+                    text: 'Update VAT',
+                    iconCls: 'sprite-money--arrow',
+                    handler: function() {
+                        me.fireEvent('mxcUpdateVat', me);
                     }
                 },
                 '-',

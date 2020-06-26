@@ -24,6 +24,7 @@ use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\Models\VariantRepository;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 
 class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -159,6 +160,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     {
         $product = new Product();
         $this->modelManager->persist($product);
+        $product->setTax(TaxTool::getCurrentVatPercentage());
         $product->setIcNumber($model->getMaster());
         $product->setActive(false);
         $product->setAccepted(true);

@@ -11,6 +11,7 @@ use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 
 class ExportPriceIssues extends AbstractProductExport implements LoggerAwareInterface, ModelManagerAwareInterface
@@ -66,11 +67,12 @@ class ExportPriceIssues extends AbstractProductExport implements LoggerAwareInte
                 $purchasePrice = floatVal($variant->getPurchasePrice());
                 $eks[] = $purchasePrice;
                 $info['EK Netto'] = $purchasePrice;
-                $info['EK Brutto'] = $purchasePrice * 1.19;
+                $taxFactor = TaxTool::getCurrentVatPercentage() / 100 + 1;
+                $info['EK Brutto'] = $purchasePrice * $taxFactor;
                 $uvp = floatVal($variant->getRecommendedRetailPrice());
                 $uvps[] = $uvp;
                 $info['UVP Brutto'] = $uvp;
-                $margin[] = ($uvp - ($purchasePrice * 1.19))/$uvp * 100;
+                $margin[] = ($uvp - ($purchasePrice * $taxFactor))/$uvp * 100;
                 $options = $variant->getOptions();
                 $optionNames = [];
                 /** @var Option $option */

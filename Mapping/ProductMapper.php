@@ -268,7 +268,8 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $article->setName($product->getName());
         $article->setDescriptionLong($product->getDescription());
 
-        $article->setTax(TaxTool::getTax($product->getTax()));
+        // findet oder erzeugt ein Tax Object mit dem aktuellen Mehrwertsteuersatz
+        $article->setTax(TaxTool::getTax());
 
         $seoUrl = $product->getSeoUrl();
         if (! empty($seoUrl)) {

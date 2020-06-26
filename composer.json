@@ -1,6 +1,6 @@
 {
   "require": {
-    "shopware/shopware": "5.6.0",
+    "shopware/shopware": "5.6.7",
     "zendframework/zend-http" : "~2.8",
     "zendframework/zend-config": "~3.2",
     "mxc-commons/mxc-shopware-plugin" : "^0.1",

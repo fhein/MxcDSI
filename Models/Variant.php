@@ -82,6 +82,16 @@ class Variant extends ModelEntity
     private $retailPriceDampfplanet;
 
     /**
+     * @ORM\Column(name="retail_vapee",type="string", nullable=true)
+     */
+    private $retailPriceVapee;
+
+    /**
+     * @ORM\Column(name="retail_vapee_computed",type="string", nullable=true)
+     */
+    private $computedRetailPriceVapee;
+
+    /**
      * @ORM\Column(name="retail_maxvapor",type="string", nullable=true)
      */
     private $retailPriceMaxVapor;

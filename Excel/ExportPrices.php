@@ -4,19 +4,24 @@ namespace MxcDropshipInnocigs\Excel;
 
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
+use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
-use Shopware\Models\Customer\Group;
 
-class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
+class ExportPrices extends AbstractProductExport implements LoggerAwareInterface, ModelManagerAwareInterface
 {
     use LoggerAwareTrait;
+    use ModelManagerAwareTrait;
 
     /** @var array */
     protected $models;
@@ -24,11 +29,21 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
     /** @var PriceMapper $priceMapper */
     protected $priceMapper;
 
+    /** @var PriceTool $priceTool */
+    protected $priceTool;
+
+    /** @var PriceEngine  */
+    protected $priceEngine;
+
     private $customerGroupKeys;
 
-    public function __construct(PriceMapper $priceMapper)
+    private $excludedCustomerGroupKeys = [ 'H', 'FR', 'MA'];
+
+    public function __construct(PriceEngine $priceEngine, PriceMapper $priceMapper, PriceTool $priceTool)
     {
+        $this->priceEngine = $priceEngine;
         $this->priceMapper = $priceMapper;
+        $this->priceTool = $priceTool;
     }
 
     protected function registerColumns()
@@ -49,6 +64,8 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
         foreach ($customerGroupKeys as $key) {
             $this->registerColumn('VK Brutto ' . $key);
             $this->registerColumn('Marge ' . $key);
+            $this->registerColumn('Corrected VK ' . $key);
+            $this->registerColumn('Marge C ' . $key);
         }
     }
 
@@ -66,6 +83,7 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
         $products = $this->data;
         $data = [];
         $headers = null;
+        $count = 0;
         /** @var Product $product */
         foreach ($products as $product) {
             $info = $this->getColumns();
@@ -82,7 +100,8 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
                 $info['icNumber'] = $variant->getIcNumber();
                 $price = floatVal($variant->getPurchasePrice());
                 $info['EK Netto'] = $price;
-                $info['EK Brutto'] = $price * 1.19;
+                $vat = $price / 100 * TaxTool::getCurrentVatPercentage();
+                $info['EK Brutto'] = $price + $vat;
                 $price = floatVal($variant->getRecommendedRetailPrice());
                 $info['UVP Brutto'] = $price;
                 $price = floatVal($variant->getRecommendedRetailPriceOld());
@@ -104,18 +123,23 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
                 $info['options'] = $optionText;
 
                 $customerGroupKeys = $this->getCustomerGroupKeys();
-                $vapeePrices = $this->getVapeePrices($variant);
+                $vapeePrices = $this->priceTool->getRetailPrices($variant);
+                $correctedRetailPrices = $this->priceEngine->getCorrectedRetailPrices($variant);
                 foreach ($customerGroupKeys as $key) {
                     $price = $vapeePrices[$key] ?? null;
+                    $correctedPrice = $correctedRetailPrices[$key] ?? null;
                     if ($key !== 'EK') {
                         $price = $price === $info['UVP Brutto'] ? null : $price;
                     }
                     $info['VK Brutto ' . $key] = $price;
+                    $info['Corrected VK ' . $key] = $correctedPrice;
                 }
 
                 $data[] = $info;
             }
+            // if ($count++ > 1) break;
         }
+        $this->priceEngine->report();
 
         $headers[] = array_keys($data[0]);
 
@@ -130,6 +154,9 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
             foreach ($customerGroupKeys as $key) {
                 $cellRetail = $this->getRange([$this->getColumn('VK Brutto ' . $key), $row]);
                 $record['Marge ' . $key] = $this->getMarginColumnFormula($cellRetail, $cellPurchase);
+                $cellRetail = $this->getRange([$this->getColumn('Corrected VK ' . $key), $row]);
+                $record['Marge C ' . $key] = $this->getMarginColumnFormula($cellRetail, $cellPurchase);
+
             }
 
             $row++;
@@ -138,24 +165,6 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
         $data = array_merge($headers, $data);
         $this->sheet->fromArray($data);
 
-    }
-
-    /**
-     * Get the maximum retail prices for each variant. Single Pack only (1er Packung)
-     *
-     * @param Variant $variant
-     * @return array
-     */
-    protected function getVapeePrices(Variant $variant)
-    {
-        $variantPrices = [];
-        /** @var Variant $variant */
-        $sPrices = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $variant->getRetailPrices());
-        foreach ($sPrices as $sPrice) {
-            list($key, $price) = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $sPrice);
-            $variantPrices[$key] = floatVal(str_replace(',', '.', $price));
-        }
-        return $variantPrices;
     }
 
     protected function isSinglePack(Variant $variant)
@@ -271,21 +280,26 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
                 Conditional::OPERATOR_LESSTHAN,
                 25,
                 'FFCCCC');
+
+            $this->setConditionalFormat($column,
+                Conditional::CONDITION_CELLIS,
+                Conditional::OPERATOR_LESSTHAN,
+                25,
+                'FFCCCC');
+
+            $this->setConditionalFormat('Corrected VK ' . $key,
+                Conditional::CONDITION_CELLIS,
+                Conditional::OPERATOR_NOTEQUAL,
+                'VK Brutto ' . $key,
+                'FFC000');
         }
     }
 
     protected function getCustomerGroupKeys()
     {
         if ($this->customerGroupKeys !== null) return $this->customerGroupKeys;
-
-        $this->modelManager = Shopware()->Models();
-        $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
-        /** @var Group $customerGroup */
-        foreach ($customerGroups as $customerGroup) {
-            $key = $customerGroup->getKey();
-            if ($key === 'H') continue;
-            $this->customerGroupKeys[] = $key;
-        }
+        $customerGroupKeys = $this->priceTool->getCustomerGroupKeys();
+        $this->customerGroupKeys = array_values(array_diff($customerGroupKeys, $this->excludedCustomerGroupKeys));
         return $this->customerGroupKeys;
     }
 

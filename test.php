@@ -93,4 +93,152 @@ $value = null;
 if (preg_match('~(\d+) ?x.*Akkuzelle~', $text, $matches) === 1) {
     $value = $matches[1];
 }
-var_export($value);
+//var_export($value);
+
+$vatConfig = [
+    [
+        'start' => '01.01.2020 00:00:00',
+        'vat'   => 19.0,
+    ],
+    [
+        'start' => '01.07.2020 00:00:00',
+        'vat' => 16.0,
+    ],
+    [
+        'start' => '01.01.2021 00:00:00',
+        'vat' => 19.0,
+    ]
+];
+
+$currentTime = DateTimeImmutable::createFromFormat('d.m.Y H:i:s', '02.07.2020 00:00:00');
+
+foreach ($vatConfig as $vatSetting) {
+    $start = DateTimeImmutable::createFromFormat('d.m.Y H:i:s', $vatSetting['start']);
+    if ($start < $currentTime) {
+        $vat = $vatSetting['vat'];
+        echo $vatSetting['start'] . ': ' . $vat . "\n";
+        $validSince = $vatSetting['start'];
+    }
+}
+echo 'Current tax valid since ' . $validSince . ': ' . $vat . "\n";
+echo "\n";
+
+$priceConfig = array(
+    'price' => null,
+    'margin_min_percent' => 25,
+    'margin_min_abs' => 1.85,
+    'margin_max_percent' => 40,
+    'margin_max_abs' => 15,
+);
+
+function getNetDiscount(float $netRetailPrice) {
+
+    $discounts = [
+        [
+            'price' => 0,
+            'discount' => 0,
+        ],
+        [
+            'price' => 75,
+            'discount' => 7.5
+        ]
+    ];
+    $vatFactor = 0.19;
+    $grossRetailPrice = $netRetailPrice / ( 1 + $vatFactor);
+    echo $grossRetailPrice . "\n";
+
+    if ($discounts === null) return 0;
+    foreach ($discounts as $discount) {
+        if ($grossRetailPrice > $discount['price']) {
+            $result = $discount['discount'];
+            echo 'Discount set to ' . $result . "\n";
+        }
+    }
+    return $result;
+}
+
+function correctPrice(float $netPurchasePrice, float $grossRetailPrice, array $priceConfig)
+{
+    $log = [];
+    $netRetailPrice = $grossRetailPrice / ( 1 + 0.19);
+    $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+
+    // Ist die minimale prozentuale Marge nicht erreicht, wird der Netto-Verkaufspreis erhöht
+    // und die Marge neu berechnet
+    $minMarginPercent = $priceConfig['margin_min_percent'];
+    if ($minMarginPercent !== null && $margin < $minMarginPercent) {
+        $netRetailPrice = $netPurchasePrice / (1 - ($minMarginPercent / 100));
+        $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+        $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
+    };
+
+    // Ist die minimale absolute Marge in EUR nicht erreicht, wird der Netto-Verkaufspreis erhöht
+    // und die Marge neu berechnet
+    $limit = $priceConfig['margin_min_abs'];
+    if ($limit !== null && $netRetailPrice - $netPurchasePrice < $limit) {
+        $netRetailPrice = $netPurchasePrice + $limit;
+        $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+        $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR.';
+    }
+
+    // Ist die maximale prozentuale Marge überschritten, wird der Netto-Verkaufspreis gesenkt
+    $maxMarginPercent = $priceConfig['margin_max_percent'];
+    if ($maxMarginPercent !== null && $margin > $maxMarginPercent) {
+        $netRetailPrice = $netPurchasePrice / (1 - ($maxMarginPercent / 100));
+        $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+        $log[] = 'Maximim margin adjusted to ' . $maxMarginPercent . '%.';
+    }
+
+    // Ist die maximale absolute Marge in EUR (dennoch) überschritten, wird der Netto-Verkaufspreis gesenkt
+    // und die Marge neu berechnet
+    $limit = $priceConfig['margin_max_abs'];
+    if ($limit !== null && $netRetailPrice - $netPurchasePrice > $limit) {
+        $netRetailPrice = $netPurchasePrice + $limit;
+        $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+        $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR.';
+    }
+
+    // Stelle einen mininalen Ertrag von 6 EUR sicher, auch dann, wenn das Produkt rabattiert wird, weil es
+    // mehr als 75 EUR kostet
+    $discount = getNetDiscount($netRetailPrice);
+    echo 'Discount: ' . $discount . "\n";
+
+    if ($discount != 0) {
+        $discountValue = $netRetailPrice * $discount / 100;
+        $discountedNetRetailPrice = $netRetailPrice - $discountValue;
+
+        $netRevenue = $discountedNetRetailPrice - $netPurchasePrice;
+        // Dropship Versandkosten
+        $netRevenue -= 6.12;
+
+        if ($netRevenue < 6.0) {
+            $netRetailPrice = $netPurchasePrice + $discountValue + 6.0 / 0.925 + 6.12;
+            $log[] = 'Minimum revenue adjusted';
+        }
+    }
+
+    $vatFactor = 0.19;
+    $newGrossRetailPrice = $netRetailPrice * (1 + $vatFactor);
+
+    // Rundung des Kundenverkaufspreises auf 5 Cent
+    //$newGrossRetailPrice = round($newGrossRetailPrice / 0.05) * 0.05;
+
+    // Hier könnten noch weitere psychogische Preisverschönerungen durchgeführt werden
+
+    return [ $newGrossRetailPrice, $log ];
+}
+
+$netPurchasePrice = 92.90;
+$grossRetailPrice = 179.90;
+
+list($newPrice, $log) = correctPrice($netPurchasePrice, $grossRetailPrice, $priceConfig);
+
+echo $newPrice . "\n";
+var_export($log);
+
+echo 'Margin abs: ' . (($newPrice / 1.19) - $netPurchasePrice). "\n";
+
+echo 'Net Revenue: ' . (($newPrice / 1.19 * 0.925) - $netPurchasePrice - 6.12) . "\n";
+
+
+

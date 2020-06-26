@@ -184,8 +184,7 @@ class Product extends ModelEntity  {
      *
      * @ORM\Column(type="float", nullable=false)
      */
-    private $tax = 19.0;
-
+    private $tax;
 
     private $article;
 

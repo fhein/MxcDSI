@@ -1,15 +1,13 @@
 <?php
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipInnocigs\Mapping\Shopware;
 
 use Interop\Container\ContainerInterface;
 use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class ExportPricesFactory implements FactoryInterface
+class PriceEngineFactory implements FactoryInterface
 {
     use ObjectAugmentationTrait;
 
@@ -23,10 +21,7 @@ class ExportPricesFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $priceMapper = $container->get(PriceMapper::class);
         $priceTool = $container->get(PriceTool::class);
-        $priceEngine = $container->get(PriceEngine::class);
-        return $this->augment($container, new $requestedName($priceEngine, $priceMapper, $priceTool));
+        return $this->augment($container, new $requestedName($priceTool));
     }
-
 }

@@ -74,6 +74,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
+use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 
 return [
     'plugin'   => [
@@ -141,9 +142,9 @@ return [
 
     'services'     => [
         'factories' => [
+            PriceTool::class                 => AugmentedObjectFactory::class,
             ExportPriceIssues::class         => AugmentedObjectFactory::class,
             ProductMappings::class           => AugmentedObjectFactory::class,
-            PriceEngine::class               => AugmentedObjectFactory::class,
             ImportPiecesPerPackMapper::class => AugmentedObjectFactory::class,
             ProductNumberMapper::class       => AugmentedObjectFactory::class,
             TypeMapper::class                => AugmentedObjectFactory::class,
@@ -206,6 +207,7 @@ return [
             RegexChecker::class,
             RegularExpressions::class,
             HtmlDocument::class,
+            PriceEngine::class,
         ],
     ],
     'class_config' => [
@@ -225,6 +227,7 @@ return [
         ProductSeoMapper::class         => 'ProductSeoMapper.config.php',
         ShopwareCategoryMapper::class   => 'CategoryMapper.config.php',
         SpellChecker::class             => 'SpellChecker.config.php',
+        PriceEngine::class              => 'PriceEngine.config.php',
     ],
     'excel'        => [
         'import' => [

@@ -46,6 +46,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
                 mxcUpdatePrices:                     me.onUpdatePrices,
                 mxcUpdateStockInfo:                  me.onUpdateStockInfo,
+                mxcUpdateVat:                        me.onUpdateVat,
                 mxcCreateAll:                        me.onCreateAll,
                 mxcDeleteAll:                        me.onDeleteAll,
                 mxcRemoveEmptyCategories:            me.onRemoveEmptyCategories,
@@ -255,6 +256,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Update';
         let maskText = 'Updating product prices from InnoCigs ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onUpdateVat: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=updateVat}';
+        let params = {};
+        let growlTitle = 'Update VAT';
+        let maskText = 'Updating VAT for all products ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

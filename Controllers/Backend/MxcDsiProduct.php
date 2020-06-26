@@ -95,6 +95,18 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function updateVatAction()
+    {
+        try {
+            $services = MxcDropshipInnocigs::getServices();
+            /** @var PriceMapper $priceMapper */
+            $priceMapper = $services->get(PriceMapper::class);
+            $priceMapper->updateVat();
+            $this->view->assign(['success' => true, 'message' => 'Vat settings successfully updated.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
 
     public function refreshAction() {
         try {
@@ -1174,19 +1186,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
-            $log = MxcDropshipInnocigs::getServices()->get('logger');
-            $articles = $this->getManager()->getRepository(Article::class)->findAll();
-            $repository = $this->getManager()->getRepository(Product::class);
-            foreach ($articles as $article) {
-                $product = $repository->getProduct($article);
-                if ($product === null) {
-                    $log->debug('Article without product (1): ' . $article->getName());
-                }
-            }
-            $articles = $repository->getArticlesWithoutProduct();
-            foreach ($articles as $article) {
-                $log->debug('Article without product (2): ' . $article->getName());
-            }
+            $services = MxcDropshipInnocigs::getServices();
+            $log = $services->get('logger');
+            /** @var PriceEngine $priceEngine */
+            $priceEngine = $services->get(PriceEngine::class);
+            $priceEngine->createDefaultConfiguration();
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {

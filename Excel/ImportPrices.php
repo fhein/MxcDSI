@@ -63,7 +63,9 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
     {
         $prices = [];
         $customerPrice = $record['VK Brutto EK'];
+        // if no price is specified we take the UVP
         if (! $customerPrice || $customerPrice === '') $customerPrice = $record['UVP Brutto'];
+
         $customerPrice = $customerPrice === '' ? null : $customerPrice;
 
         foreach ($this->indexMap as $column => $customerGroup) {
@@ -74,7 +76,7 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
                 $prices[] = $customerGroup . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $price;
             }
         }
-
+        $this->log->debug(var_export($prices, true));
         $prices = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $prices);
         $variant->setRetailPrices($prices);
         $this->priceMapper->setRetailPrices($variant);

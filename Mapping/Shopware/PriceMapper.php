@@ -5,8 +5,10 @@ namespace MxcDropshipInnocigs\Mapping\Shopware;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\UnitTool;
 use Shopware\Components\Model\ModelManager;
+use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
 use Shopware\Models\Customer\Group;
@@ -98,7 +100,7 @@ class PriceMapper
 
         $retailPrices = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $variant->getRetailPrices());
         foreach ($retailPrices as $retailPrice) {
-            list($customerGroupKey, $retailPrice) = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $retailPrice);
+            [$customerGroupKey, $retailPrice] = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $retailPrice);
             $price = $this->getPrice($detail, $customerGroupKey);
 
             if (!$price) {
@@ -141,6 +143,33 @@ class PriceMapper
             $detail->setUnit(UnitTool::getUnit('ml'));
 
         }
+    }
+
+    /**
+     * Passt bei allen Produkten den den Mehrwertsteuersatz an den aktuell geltenden Wert an.
+     * Die Gültigkeitsperioden der Mehrwertsteuersätze sind im TaxTool konfiguriert.
+     *
+     * Wir arbeiten bei vapee.de ausschließlich mit dem Standard-Mehrwertsteuersatz
+     *
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
+    public function updateVat()
+    {
+        $articles = $this->modelManager->getRepository(Article::class)->findAll();
+        $tax = TaxTool::getTax();
+        /** @var Article $article */
+        foreach ($articles as $article) {
+            $article->setTax($tax);
+        }
+        $this->modelManager->flush();
+
+        $currentVatPercentage = TaxTool::getCurrentVatPercentage();
+        $products = $this->modelManager->getRepository(Product::class)->findAll();
+        foreach ($products as $product) {
+            $product->setTax($currentVatPercentage);
+        }
+        $this->modelManager->flush();
     }
 
     protected function getCustomerGroupRepository()
