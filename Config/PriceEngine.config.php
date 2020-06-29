@@ -175,7 +175,7 @@ return array(
             '_default' => array(
                 'price' => null,
                 'margin_min_percent' => 25,
-                'margin_min_abs' => 1,
+                'margin_min_abs' => 0.85,
                 'margin_max_percent' => null,
                 'margin_max_abs' => 15,
             ),
@@ -193,7 +193,7 @@ return array(
             '_default' => array(
                 'price' => null,
                 'margin_min_percent' => 25,
-                'margin_min_abs' => 1,
+                'margin_min_abs' => 0.85,
                 'margin_max_percent' => null,
                 'margin_max_abs' => 15,
             ),

@@ -74,7 +74,7 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         $retailPrices = $this->priceTool->getRetailPrices($variant);
 
         $correctedPrices = [];
-        $log = [];
+        // $log = [];
         $purchasePrice = floatval($variant->getPurchasePrice());
         foreach ($retailPrices as $key => $retailPrice) {
             [$newRetailPrice, $log] = $this->correctPrice($purchasePrice, $retailPrice, $priceConfig);
@@ -96,43 +96,54 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         return $correctedPrices;
     }
 
-    protected function getNetDiscount(float $netRetailPrice) {
-        $vatFactor = TaxTool::getCurrentVatPercentage() / 100;
-        $grossRetailPrice = $netRetailPrice / ( 1 + $vatFactor);
-
+    protected function getDiscount(float $grossRetailPrice) {
         $discounts = @$this->classConfig['discounts'];
-        if ($discounts === null) return 0;
+        $result = 0;
+        if ($discounts === null) return $result;
         foreach ($discounts as $discount) {
             if ($grossRetailPrice > $discount['price']) {
-                $discount = $discount['discount'];
+                $result = $discount['discount'];
             }
         }
-        return $discount;
+        $this->log->debug('Discount: ' . $result);
+        return $result;
     }
 
-    protected function correctPrice(float $netPurchasePrice, float $grossRetailPrice, array $priceConfig)
+    protected function beautifyPrice(float $grossRetailPrice)
+    {
+        // Rundung des Kundenverkaufspreises auf 5 Cent
+        $grossRetailPrice = round($grossRetailPrice / 0.05) * 0.05;
+
+        // x,05 Preise um 10 Cent senken
+        // x.00 Preise um 5 Cent senken
+        $fraction = round($grossRetailPrice - floor($grossRetailPrice), 2);
+        $adjustment = 0.0;
+        if ($fraction == 0.05) {
+            $adjustment = 0.10;
+        } elseif ($fraction == 0.0) {
+            $adjustment = 0.05;
+        }
+
+        return $grossRetailPrice - $adjustment;
+    }
+
+    protected function correctPrice(float $netPurchasePrice, float $grossRetailPrice, array $priceConfig) : array
     {
         $log = [];
-        $netRetailPrice = $grossRetailPrice / ( 1 + TaxTool::getCurrentVatPercentage() / 100);
+
+        $vatFactor = (1 + TaxTool::getCurrentVatPercentage() / 100);
+        $netRetailPrice = $grossRetailPrice / $vatFactor;
+
         $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
 
         // Ist die minimale prozentuale Marge nicht erreicht, wird der Netto-Verkaufspreis erhöht
         // und die Marge neu berechnet
         $minMarginPercent = $priceConfig['margin_min_percent'];
-        if ($minMarginPercent !== null && $margin < $minMarginPercent) {
+        if ($minMarginPercent !== null && round($margin,5) < $minMarginPercent) {
             $netRetailPrice = $netPurchasePrice / (1 - ($minMarginPercent / 100));
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
             $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
         };
-
-        // Ist die minimale absolute Marge in EUR nicht erreicht, wird der Netto-Verkaufspreis erhöht
-        // und die Marge neu berechnet
-        $limit = $priceConfig['margin_min_abs'];
-        if ($limit !== null && $netRetailPrice - $netPurchasePrice < $limit) {
-            $netRetailPrice = $netPurchasePrice + $limit;
-            $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR.';
-        }
 
         // Ist die maximale prozentuale Marge überschritten, wird der Netto-Verkaufspreis gesenkt
         $maxMarginPercent = $priceConfig['margin_max_percent'];
@@ -145,37 +156,48 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         // Ist die maximale absolute Marge in EUR (dennoch) überschritten, wird der Netto-Verkaufspreis gesenkt
         // und die Marge neu berechnet
         $limit = $priceConfig['margin_max_abs'];
-        if ($limit !== null && $netRetailPrice - $netPurchasePrice > $limit) {
+        $marginAbsolute = round($netRetailPrice - $netPurchasePrice, 5);
+        if ($limit !== null && $marginAbsolute > $limit) {
             $netRetailPrice = $netPurchasePrice + $limit;
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR.';
+            $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR (from ' . (round($marginAbsolute, 2)) . ' EUR). New margin: ' . round($margin, 2) . '.';
         }
+        $newGrossRetailPrice = $netRetailPrice * $vatFactor;
 
-        // Stelle einen mininalen Ertrag von 6 EUR sicher, auch dann, wenn das Produkt rabattiert wird, weil es
-        // mehr als 75 EUR kostet
-        $discount = $this->getNetDiscount($netRetailPrice) / 100;
+        $discount = $this->getDiscount($newGrossRetailPrice) / 100;
+
         if ($discount != 0) {
             $discountValue = $netRetailPrice * $discount;
             $discountedNetRetailPrice = $netRetailPrice - $discountValue;
 
             $netRevenue = $discountedNetRetailPrice - $netPurchasePrice;
+            $dropShip = 6.12;
             // Dropship Versandkosten
-            $netRevenue -= 6.12;
+            $netRevenue -= $dropShip;
 
             if ($netRevenue < 6.0) {
-                $netRetailPrice = $netPurchasePrice + $discountValue + 6.0 / $discount + 6.12;
-                $log[] = 'Minimum revenue adjusted to ';
+                $minRevenue = $discountValue + (6.0 + $dropShip) / 0.925;
+                $netRetailPrice = $netPurchasePrice + $minRevenue;
+                $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+                $log[] = 'Minimum revenue adjusted to ' . round($minRevenue,2) . '. New margin: ' . round($margin, 2). '.';
             }
         }
+        $this->log->debug('5');
 
-        $vatFactor = TaxTool::getCurrentVatPercentage() / 100;
-        $newGrossRetailPrice = $netRetailPrice * (1 + $vatFactor);
+        // Ist die minimale absolute Marge in EUR nicht erreicht, wird der Netto-Verkaufspreis erhöht
+        // und die Marge neu berechnet
+        $limit = $priceConfig['margin_min_abs'];
+        if ($limit !== null && floatval($netRetailPrice - $netPurchasePrice) < $limit) {
+            $netRetailPrice = $netPurchasePrice + $limit;
+            $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+            $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR. New margin: ' . round($margin, 2). '.';
+        }
+        $this->log->debug('6');
 
-        // Rundung des Kundenverkaufspreises auf 5 Cent
-        $newGrossRetailPrice = round($newGrossRetailPrice / 0.05) * 0.05;
+        $newGrossRetailPrice = $netRetailPrice * $vatFactor;
 
-        // Hier könnten noch weitere psychogische Preisverschönerungen durchgeführt werden
-        
+        $newGrossRetailPrice = $this->beautifyPrice($newGrossRetailPrice);
+
         return [ $newGrossRetailPrice, $log ];
     }
 

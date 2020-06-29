@@ -95,43 +95,37 @@ if (preg_match('~(\d+) ?x.*Akkuzelle~', $text, $matches) === 1) {
 }
 //var_export($value);
 
-$vatConfig = [
-    [
-        'start' => '01.01.2020 00:00:00',
-        'vat'   => 19.0,
-    ],
-    [
-        'start' => '01.07.2020 00:00:00',
-        'vat' => 16.0,
-    ],
-    [
-        'start' => '01.01.2021 00:00:00',
-        'vat' => 19.0,
-    ]
-];
 
-$currentTime = DateTimeImmutable::createFromFormat('d.m.Y H:i:s', '02.07.2020 00:00:00');
+function getCurrentVatPercentage()
+{
+    $vatConfig = [
+        [
+            'start' => '01.01.2020 00:00:00',
+            'vat'   => 19.0,
+        ],
+        [
+            'start' => '01.07.2020 00:00:00',
+            'vat' => 16.0,
+        ],
+        [
+            'start' => '01.01.2021 00:00:00',
+            'vat' => 19.0,
+        ]
+    ];
 
-foreach ($vatConfig as $vatSetting) {
-    $start = DateTimeImmutable::createFromFormat('d.m.Y H:i:s', $vatSetting['start']);
-    if ($start < $currentTime) {
-        $vat = $vatSetting['vat'];
-        echo $vatSetting['start'] . ': ' . $vat . "\n";
-        $validSince = $vatSetting['start'];
+    $currentTime = new DateTimeImmutable();
+    foreach ($vatConfig as $vatSetting) {
+        $start = DateTimeImmutable::createFromFormat('d.m.Y H:i:s', $vatSetting['start']);
+        if ($start < $currentTime) {
+            $vat = $vatSetting['vat'];
+            $validSince = $vatSetting['start'];
+        }
     }
+    return $vat;
 }
-echo 'Current tax valid since ' . $validSince . ': ' . $vat . "\n";
-echo "\n";
 
-$priceConfig = array(
-    'price' => null,
-    'margin_min_percent' => 25,
-    'margin_min_abs' => 1.85,
-    'margin_max_percent' => 40,
-    'margin_max_abs' => 15,
-);
 
-function getNetDiscount(float $netRetailPrice) {
+function getNetDiscount(float $grossRetailPrice) {
 
     $discounts = [
         [
@@ -143,43 +137,37 @@ function getNetDiscount(float $netRetailPrice) {
             'discount' => 7.5
         ]
     ];
-    $vatFactor = 0.19;
-    $grossRetailPrice = $netRetailPrice / ( 1 + $vatFactor);
-    echo $grossRetailPrice . "\n";
 
     if ($discounts === null) return 0;
     foreach ($discounts as $discount) {
-        if ($grossRetailPrice > $discount['price']) {
+        if ($grossRetailPrice >= $discount['price']) {
             $result = $discount['discount'];
-            echo 'Discount set to ' . $result . "\n";
         }
     }
     return $result;
 }
 
+function println (?string  $text = null){
+    echo $text . "\n";
+}
+
 function correctPrice(float $netPurchasePrice, float $grossRetailPrice, array $priceConfig)
 {
     $log = [];
-    $netRetailPrice = $grossRetailPrice / ( 1 + 0.19);
+    $vatFactor = (1 + getCurrentVatPercentage() / 100);
+    $netRetailPrice = $grossRetailPrice / $vatFactor;
+
     $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+    // println('Initial Margin: ' . $margin);
 
     // Ist die minimale prozentuale Marge nicht erreicht, wird der Netto-Verkaufspreis erhöht
     // und die Marge neu berechnet
     $minMarginPercent = $priceConfig['margin_min_percent'];
-    if ($minMarginPercent !== null && $margin < $minMarginPercent) {
+    if ($minMarginPercent !== null && round($margin,5) < $minMarginPercent) {
         $netRetailPrice = $netPurchasePrice / (1 - ($minMarginPercent / 100));
         $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
         $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
     };
-
-    // Ist die minimale absolute Marge in EUR nicht erreicht, wird der Netto-Verkaufspreis erhöht
-    // und die Marge neu berechnet
-    $limit = $priceConfig['margin_min_abs'];
-    if ($limit !== null && $netRetailPrice - $netPurchasePrice < $limit) {
-        $netRetailPrice = $netPurchasePrice + $limit;
-        $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-        $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR.';
-    }
 
     // Ist die maximale prozentuale Marge überschritten, wird der Netto-Verkaufspreis gesenkt
     $maxMarginPercent = $priceConfig['margin_max_percent'];
@@ -192,53 +180,156 @@ function correctPrice(float $netPurchasePrice, float $grossRetailPrice, array $p
     // Ist die maximale absolute Marge in EUR (dennoch) überschritten, wird der Netto-Verkaufspreis gesenkt
     // und die Marge neu berechnet
     $limit = $priceConfig['margin_max_abs'];
-    if ($limit !== null && $netRetailPrice - $netPurchasePrice > $limit) {
+    $marginAbsolute = round($netRetailPrice - $netPurchasePrice, 5);
+    if ($limit !== null && $marginAbsolute > $limit) {
         $netRetailPrice = $netPurchasePrice + $limit;
         $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-        $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR.';
+        $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR (from ' . (round($marginAbsolute, 2)) . ' EUR). New margin: ' . round($margin, 2) . '.';
     }
-
-    // Stelle einen mininalen Ertrag von 6 EUR sicher, auch dann, wenn das Produkt rabattiert wird, weil es
-    // mehr als 75 EUR kostet
-    $discount = getNetDiscount($netRetailPrice);
-    echo 'Discount: ' . $discount . "\n";
+    //println ('Margin after rules: ' . $margin);
+    $newGrossRetailPrice = $netRetailPrice * $vatFactor;
+    //println('New gross retail price: ' . $newGrossRetailPrice);
+    $discount = getNetDiscount($newGrossRetailPrice) / 100;
+    // println("Discount: " . $discount);
+    // $netRetailPrice *= (1 - $discount / 100);
 
     if ($discount != 0) {
-        $discountValue = $netRetailPrice * $discount / 100;
+        $discountValue = $netRetailPrice * $discount;
+       // println("Discount value: " . $discountValue);
         $discountedNetRetailPrice = $netRetailPrice - $discountValue;
 
         $netRevenue = $discountedNetRetailPrice - $netPurchasePrice;
+        $dropShip = 6.12;
         // Dropship Versandkosten
-        $netRevenue -= 6.12;
+        $netRevenue -= $dropShip;
 
         if ($netRevenue < 6.0) {
-            $netRetailPrice = $netPurchasePrice + $discountValue + 6.0 / 0.925 + 6.12;
-            $log[] = 'Minimum revenue adjusted';
+            $minRevenue = $discountValue + (6.0 + $dropShip) / 0.925;
+            $netRetailPrice = $netPurchasePrice + $minRevenue;
+            $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+            $log[] = 'Minimum revenue adjusted to ' . round($minRevenue,2) . '. New margin: ' . round($margin, 2). '.';
         }
     }
 
-    $vatFactor = 0.19;
-    $newGrossRetailPrice = $netRetailPrice * (1 + $vatFactor);
+    // Ist die minimale absolute Marge in EUR nicht erreicht, wird der Netto-Verkaufspreis erhöht
+    // und die Marge neu berechnet
+    $limit = $priceConfig['margin_min_abs'];
+    if ($limit !== null && floatval($netRetailPrice - $netPurchasePrice) < $limit) {
+        $netRetailPrice = $netPurchasePrice + $limit;
+        $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
+        $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR. New margin: ' . round($margin, 2). '.';
+    }
+
+    $newGrossRetailPrice = $netRetailPrice * $vatFactor;
 
     // Rundung des Kundenverkaufspreises auf 5 Cent
-    //$newGrossRetailPrice = round($newGrossRetailPrice / 0.05) * 0.05;
+    $newGrossRetailPrice = round($newGrossRetailPrice / 0.05) * 0.05;
 
     // Hier könnten noch weitere psychogische Preisverschönerungen durchgeführt werden
 
     return [ $newGrossRetailPrice, $log ];
 }
 
-$netPurchasePrice = 92.90;
-$grossRetailPrice = 179.90;
+function getPaddedRoundedValue(float $value)
+{
+    return str_pad(sprintf('%.2f', round($value,2)), 15, ' ', STR_PAD_LEFT);
+}
+
+println();
+println();
+$h0 = str_pad('Brutto EK', 15, ' ', STR_PAD_LEFT);
+$h1 = str_pad('Brutto VK alt', 15, ' ', STR_PAD_LEFT);
+$h2 = str_pad('Brutto VK neu', 15, ' ', STR_PAD_LEFT);
+$h3 = str_pad('Rabatt VK', 15, ' ', STR_PAD_LEFT);
+$h4 = str_pad('Netto Marge %', 15, ' ', STR_PAD_LEFT);
+$h5 = str_pad('Abs Marge', 15, ' ', STR_PAD_LEFT);
+$h6 = '    ' . 'rules applied';
+println ($h0. $h1 . $h2 . $h3 . $h4 . $h5. $h6);
+
+$priceConfig = array(
+    'price' => null,
+    'margin_min_percent' => 27,
+    'margin_min_abs' => 0.85,
+    'margin_max_percent' => 40,
+    'margin_max_abs' => 16,
+);
+
+$vatFactor = 1 + getCurrentVatPercentage() / 100;
+
+
+$grossRetailPriceStart = 70;
+$netPurchasePriceFactor = 0.5;
+$step = 1;
+//$margin_abs = 10;
+$end = 130;
+
+$grossRetailPrice = $grossRetailPriceStart;
+$netRetailPrice = $grossRetailPrice / $vatFactor;
+$netPurchasePrice = $netRetailPrice * ( 1 - $netPurchasePriceFactor);
+
+$fraction = round(20.05 - floor(20.05), 2);
+echo $fraction;
+die();
+
+
+
+while (true) {
+    $log = [];
+    list($newPrice, $log) = correctPrice($netPurchasePrice, $grossRetailPrice, $priceConfig);
+    $discountFactor = 1 - getNetDiscount($newPrice) / 100;
+
+    $nrp = $newPrice / $vatFactor * $discountFactor;
+    $margin = ($nrp - $netPurchasePrice) / $nrp * 100;
+    $margin_abs = $nrp - $netPurchasePrice;
+    $margin_abs = getPaddedRoundedValue($margin_abs);
+
+    $margin = getPaddedRoundedValue($margin);
+
+
+    $gross = getPaddedRoundedValue($grossRetailPrice);
+    $new = getPaddedRoundedValue($newPrice);
+    $dn = getPaddedRoundedValue($newPrice * $discountFactor);
+    $grossPurchasePrice = $netPurchasePrice * $vatFactor;
+    $gp = getPaddedRoundedValue($grossPurchasePrice);
+    if (empty($log)) $log = '    No changes.'; else
+    $log = '    ' . implode(' ', $log);
+
+    println($gp . $gross . $new . $dn . $margin . $margin_abs . $log);
+
+    $grossRetailPrice += $step;
+    if ($grossRetailPrice > $end) break;
+    $netRetailPrice = $grossRetailPrice / $vatFactor;
+    $netPurchasePrice = $netRetailPrice * ( 1 - $netPurchasePriceFactor);
+}
+
+die();
 
 list($newPrice, $log) = correctPrice($netPurchasePrice, $grossRetailPrice, $priceConfig);
 
-echo $newPrice . "\n";
-var_export($log);
+println();
+println();
+println("Results:");
+println();
 
-echo 'Margin abs: ' . (($newPrice / 1.19) - $netPurchasePrice). "\n";
+println('New price: ' . $newPrice);
+$newPrice = round( $newPrice / 0.05) * 0.05;
+println('Beautified new price: ' . $newPrice);
 
-echo 'Net Revenue: ' . (($newPrice / 1.19 * 0.925) - $netPurchasePrice - 6.12) . "\n";
+println('Old price: ' . round($grossRetailPrice, 2));
+println('New Price: ' . round($newPrice, 2));
+$discountFactor  = 1 - getNetDiscount($grossRetailPrice / $vatFactor) / 100;
+$dropShipCost = 6.12;
+
+if ($grossRetailPrice > 75) {
+    println('Discounted new price: ' . ($newPrice * $discountFactor));
+    println('Margin abs on discounted price: ' . round( $newPrice / $vatFactor * $discountFactor - $netPurchasePrice, 2 ));
+    println('Net Revenue on discounted price: ' . round($newPrice / $vatFactor * $discountFactor - $netPurchasePrice - $dropShipCost, 2));
+} else {
+    println('Margin abs on discounted price: ' . round($newPrice / $vatFactor - $netPurchasePrice, 2));
+    println('Net Revenue on discounted price: ' . round($newPrice / $vatFactor - $netPurchasePrice - $dropShipCost, 2));
+}
+
+println(var_export($log, true));
 
 
 
