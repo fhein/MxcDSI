@@ -10,9 +10,10 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Report\ArrayReport;
-use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use Shopware\Models\Customer\Group;
 use Zend\Config\Factory;
 
 class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
@@ -35,14 +36,16 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
 
     protected $config;
 
-    /**
-     * @var PriceTool $priceTool
-     */
-    protected $priceTool;
+    private $customerGroups = null;
 
-    public function __construct(PriceTool $priceTool)
+    /**
+     * Liefert ein Array mit allen Schlüsseln der Shopware Kundengruppen (EK, H, usw.)
+     *
+     * @return array
+     */
+    public function getCustomerGroupKeys(): array
     {
-        $this->priceTool = $priceTool;
+        return array_keys($this->getCustomerGroups());
     }
 
     public function createDefaultConfiguration()
@@ -71,7 +74,7 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
     public function getCorrectedRetailPrices(Variant $variant)
     {
         $priceConfig = $this->getPriceConfig($variant);
-        $retailPrices = $this->priceTool->getRetailPrices($variant);
+        $retailPrices = $this->getRetailPrices($variant);
 
         $correctedPrices = [];
         // $log = [];
@@ -90,8 +93,8 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
                 ];
             }
         }
-        $report = new ArrayReport();
-        $report(['pePriceCorrections' => $this->report]);
+        // $report = new ArrayReport();
+        // $report(['pePriceCorrections' => $this->report]);
 
         return $correctedPrices;
     }
@@ -105,11 +108,10 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
                 $result = $discount['discount'];
             }
         }
-        $this->log->debug('Discount: ' . $result);
         return $result;
     }
 
-    protected function beautifyPrice(float $grossRetailPrice)
+    public function beautifyPrice(float $grossRetailPrice)
     {
         // Rundung des Kundenverkaufspreises auf 5 Cent
         $grossRetailPrice = round($grossRetailPrice / 0.05) * 0.05;
@@ -127,13 +129,11 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         return $grossRetailPrice - $adjustment;
     }
 
-    protected function correctPrice(float $netPurchasePrice, float $grossRetailPrice, array $priceConfig) : array
+    protected function correctPrice(float $netPurchasePrice, float $netRetailPrice, array $priceConfig) : array
     {
         $log = [];
 
-        $vatFactor = (1 + TaxTool::getCurrentVatPercentage() / 100);
-        $netRetailPrice = $grossRetailPrice / $vatFactor;
-
+        $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
         $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
 
         // Ist die minimale prozentuale Marge nicht erreicht, wird der Netto-Verkaufspreis erhöht
@@ -142,7 +142,7 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($minMarginPercent !== null && round($margin,5) < $minMarginPercent) {
             $netRetailPrice = $netPurchasePrice / (1 - ($minMarginPercent / 100));
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
+            // $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
         };
 
         // Ist die maximale prozentuale Marge überschritten, wird der Netto-Verkaufspreis gesenkt
@@ -150,7 +150,7 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($maxMarginPercent !== null && $margin > $maxMarginPercent) {
             $netRetailPrice = $netPurchasePrice / (1 - ($maxMarginPercent / 100));
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            $log[] = 'Maximim margin adjusted to ' . $maxMarginPercent . '%.';
+            // $log[] = 'Maximim margin adjusted to ' . $maxMarginPercent . '%.';
         }
 
         // Ist die maximale absolute Marge in EUR (dennoch) überschritten, wird der Netto-Verkaufspreis gesenkt
@@ -160,11 +160,10 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($limit !== null && $marginAbsolute > $limit) {
             $netRetailPrice = $netPurchasePrice + $limit;
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR (from ' . (round($marginAbsolute, 2)) . ' EUR). New margin: ' . round($margin, 2) . '.';
+            // $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR (from ' . (round($marginAbsolute, 2)) . ' EUR). New margin: ' . round($margin, 2) . '.';
         }
-        $newGrossRetailPrice = $netRetailPrice * $vatFactor;
 
-        $discount = $this->getDiscount($newGrossRetailPrice) / 100;
+        $discount = $this->getDiscount($netRetailPrice * $vatFactor) / 100;
 
         if ($discount != 0) {
             $discountValue = $netRetailPrice * $discount;
@@ -179,10 +178,9 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
                 $minRevenue = $discountValue + (6.0 + $dropShip) / 0.925;
                 $netRetailPrice = $netPurchasePrice + $minRevenue;
                 $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-                $log[] = 'Minimum revenue adjusted to ' . round($minRevenue,2) . '. New margin: ' . round($margin, 2). '.';
+                // $log[] = 'Minimum revenue adjusted to ' . round($minRevenue,2) . '. New margin: ' . round($margin, 2). '.';
             }
         }
-        $this->log->debug('5');
 
         // Ist die minimale absolute Marge in EUR nicht erreicht, wird der Netto-Verkaufspreis erhöht
         // und die Marge neu berechnet
@@ -190,15 +188,10 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($limit !== null && floatval($netRetailPrice - $netPurchasePrice) < $limit) {
             $netRetailPrice = $netPurchasePrice + $limit;
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR. New margin: ' . round($margin, 2). '.';
+            // $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR. New margin: ' . round($margin, 2). '.';
         }
-        $this->log->debug('6');
 
-        $newGrossRetailPrice = $netRetailPrice * $vatFactor;
-
-        $newGrossRetailPrice = $this->beautifyPrice($newGrossRetailPrice);
-
-        return [ $newGrossRetailPrice, $log ];
+        return [ $netRetailPrice, $log ];
     }
 
     public function report()
@@ -230,5 +223,43 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($config !== null) return $config;
         $config = $this->defaultConfig;
         return $config;
+    }
+
+    /**
+     * Liefert ein Array der Shopware Kundengruppen indiziert nach den Schlüsseln (EK, H, usw.)
+     *
+     * @return array
+     */
+    public function getCustomerGroups(): array
+    {
+        if ($this->customerGroups !== null) return $this->customerGroups;
+        $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
+        /** @var Group $customerGroup */
+        foreach ($customerGroups as $customerGroup) {
+            $this->customerGroups[$customerGroup->getKey()] = $customerGroup;
+        }
+        return $this->customerGroups;
+    }
+
+    public function setRetailPrices(Variant $variant, array $grossRetailPrices)
+    {
+        $prices = [];
+        foreach ($grossRetailPrices as $key => $price) {
+            $prices[] = $key . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $price;
+        }
+        $grossRetailPrices = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $prices);
+        $variant->setRetailPrices($grossRetailPrices);
+    }
+
+    public function getRetailPrices(Variant $variant)
+    {
+        $retailPrices = [];
+        /** @var Variant $variant */
+        $sPrices = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $variant->getRetailPrices());
+        foreach ($sPrices as $sPrice) {
+            [$key, $price] = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $sPrice);
+            $retailPrices[$key] = floatVal(str_replace(',', '.', $price));
+        }
+        return $retailPrices;
     }
 }

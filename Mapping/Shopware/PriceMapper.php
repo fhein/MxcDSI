@@ -21,9 +21,11 @@ class PriceMapper
     /** @var array */
     protected $customerGroups;
 
+    protected $priceEngine;
+
     protected $customerGroupRepository;
 
-    public function __construct()
+    public function __construct(PriceEngine $priceEngine)
     {
         $this->modelManager = Shopware()->Models();
         $customerGroups = $this->modelManager->getRepository(Group::class)->findAll();
@@ -31,6 +33,7 @@ class PriceMapper
         foreach ($customerGroups as $customerGroup) {
             $this->customerGroups[$customerGroup->getKey()] = $customerGroup;
         }
+        $this->priceEngine = $priceEngine;
     }
 
     /**
@@ -96,19 +99,19 @@ class PriceMapper
         if (!$detail) return;
         if (!$variant->getRetailPrices()) return;
 
-        $tax = $detail->getArticle()->getTax()->getTax();
+        $vatFactor = 1 + $detail->getArticle()->getTax()->getTax() / 100;
 
         $retailPrices = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $variant->getRetailPrices());
         foreach ($retailPrices as $retailPrice) {
             [$customerGroupKey, $retailPrice] = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $retailPrice);
             $price = $this->getPrice($detail, $customerGroupKey);
+            if (!$price) continue;
 
-            if (!$price) {
-                continue;
-            }
-            $retailPrice = floatval(str_replace(',', '.', $retailPrice));
-            $netPrice = $retailPrice / (1 + ($tax / 100));
-            $price->setPrice($netPrice);
+            $netRetailPrice = floatval(str_replace(',', '.', $retailPrice));
+            $grossRetailPrice = $this->priceEngine->beautifyPrice($netRetailPrice * $vatFactor);
+            $netRetailPrice = $grossRetailPrice / $vatFactor;
+
+            $price->setPrice($netRetailPrice);
             $price->setFrom(1);
             $price->setTo(null);
         }
@@ -156,6 +159,7 @@ class PriceMapper
      */
     public function updateVat()
     {
+        // Set the tax member of all articles to the current vat percentage
         $articles = $this->modelManager->getRepository(Article::class)->findAll();
         $tax = TaxTool::getTax();
         /** @var Article $article */
@@ -164,12 +168,20 @@ class PriceMapper
         }
         $this->modelManager->flush();
 
+        // Set the tax member of all products to the current vat percentage
         $currentVatPercentage = TaxTool::getCurrentVatPercentage();
         $products = $this->modelManager->getRepository(Product::class)->findAll();
         foreach ($products as $product) {
             $product->setTax($currentVatPercentage);
         }
         $this->modelManager->flush();
+
+        // Pull back shopware prices to products
+        /** @var Article $article */
+        foreach ($articles as $article) {
+            $details = $article->getDetails();
+
+        }
     }
 
     protected function getCustomerGroupRepository()

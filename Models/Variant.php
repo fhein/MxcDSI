@@ -57,47 +57,37 @@ class Variant extends ModelEntity
     private $ean;
 
     /**
-     * @ORM\Column(name="purchase_price", type="string", nullable=false)
+     * @ORM\Column(name="purchase_price", type="float", nullable=false)
      */
     private $purchasePrice;
 
     /**
-     * @ORM\Column(name="purchase_price_old", type="string", nullable=true)
+     * @ORM\Column(name="purchase_price_old", type="float", nullable=true)
      */
     private $purchasePriceOld;
 
     /**
-     * @ORM\Column(name="uvp", type="string", nullable=false)
+     * @ORM\Column(name="uvp", type="float", nullable=false)
      */
     private $recommendedRetailPrice;
 
     /**
-     * @ORM\Column(name="uvp_old", type="string", nullable=true)
+     * @ORM\Column(name="uvp_old", type="float", nullable=true)
      */
     private $recommendedRetailPriceOld;
 
     /**
-     * @ORM\Column(name="retail_dampfplanet",type="string", nullable=true)
+     * @ORM\Column(name="retail_dampfplanet",type="float", nullable=true)
      */
     private $retailPriceDampfplanet;
 
     /**
-     * @ORM\Column(name="retail_vapee",type="string", nullable=true)
-     */
-    private $retailPriceVapee;
-
-    /**
-     * @ORM\Column(name="retail_vapee_computed",type="string", nullable=true)
-     */
-    private $computedRetailPriceVapee;
-
-    /**
-     * @ORM\Column(name="retail_maxvapor",type="string", nullable=true)
+     * @ORM\Column(name="retail_maxvapor",type="float", nullable=true)
      */
     private $retailPriceMaxVapor;
 
     /**
-     * @ORM\Column(name="retail_others",type="string", nullable=true)
+     * @ORM\Column(name="retail_others",type="float", nullable=true)
      */
     private $retailPriceOthers;
 

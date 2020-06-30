@@ -11,6 +11,7 @@ use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 
 class ImportPriceMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -31,22 +32,27 @@ class ImportPriceMapper implements ModelManagerAwareInterface, LoggerAwareInterf
 
             $icNumber = $variant->getIcNumber();
 
-            $innocigsRecommendedRetailPrice = str_replace(',', '.', $model->getRecommendedRetailPrice());
-            $currentRecommendedRetailPrice = $variant->getRecommendedRetailPrice();
-            
-            if ($innocigsRecommendedRetailPrice !== $currentRecommendedRetailPrice) {
-                $variant->setRecommendedRetailPriceOld($currentRecommendedRetailPrice);
-                $variant->setRecommendedRetailPrice($innocigsRecommendedRetailPrice);
+            $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
+
+            $newUvp = floatval(str_replace(',', '.', $model->getRecommendedRetailPrice()));
+            $newUvp /= $vatFactor;
+
+            $currentUvp = $variant->getRecommendedRetailPrice();
+
+            if (round($newUvp,2) !== round($currentUvp, 2)) {
+                $variant->setRecommendedRetailPriceOld($currentUvp);
+                $variant->setRecommendedRetailPrice($newUvp);
                 $this->log->info(sprintf("UVP change: Variant %s (old: %s, new: %s)",
                     $icNumber,
-                    $currentRecommendedRetailPrice,
-                    $innocigsRecommendedRetailPrice));
+                    round($currentUvp * $vatFactor, 2),
+                    round($newUvp * $vatFactor, 2)
+                ));
             }
 
-            $innocigsPurchasePrice = str_replace(',', '.', $model->getPurchasePrice());
+            $innocigsPurchasePrice = floatval(str_replace(',', '.', $model->getPurchasePrice()));
             $currentPurchasePrice = $variant->getPurchasePrice();
 
-            if ($innocigsPurchasePrice !== $currentPurchasePrice) {
+            if (round($innocigsPurchasePrice, 2) !== round($currentPurchasePrice, 2)) {
                 $variant->setPurchasePriceOld($currentPurchasePrice);
                 $variant->setPurchasePrice($innocigsPurchasePrice);
                 $this->log->info(sprintf("EK change: Variant %s (old: %s, new: %s)",

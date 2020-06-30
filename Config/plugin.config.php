@@ -74,7 +74,6 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 
 return [
     'plugin'   => [
@@ -142,7 +141,7 @@ return [
 
     'services'     => [
         'factories' => [
-            PriceTool::class                 => AugmentedObjectFactory::class,
+            PriceEngine::class                 => AugmentedObjectFactory::class,
             ExportPriceIssues::class         => AugmentedObjectFactory::class,
             ProductMappings::class           => AugmentedObjectFactory::class,
             ImportPiecesPerPackMapper::class => AugmentedObjectFactory::class,
@@ -207,7 +206,6 @@ return [
             RegexChecker::class,
             RegularExpressions::class,
             HtmlDocument::class,
-            PriceEngine::class,
         ],
     ],
     'class_config' => [

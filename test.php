@@ -268,7 +268,9 @@ $netRetailPrice = $grossRetailPrice / $vatFactor;
 $netPurchasePrice = $netRetailPrice * ( 1 - $netPurchasePriceFactor);
 
 $fraction = round(20.05 - floor(20.05), 2);
-echo $fraction;
+println( $fraction);
+println (strval(floatval('1.21')));
+
 die();
 
 

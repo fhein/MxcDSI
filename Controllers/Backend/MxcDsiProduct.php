@@ -85,10 +85,31 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updatePricesAction()
     {
         try {
+            // Import InnoCigs purchase price and recommended retail price
             $services = MxcDropshipInnocigs::getServices();
             $client = $services->get(ImportClient::class);
             $mapper = $services->get(ImportPriceMapper::class);
             $mapper->import($client->import(false));
+
+            // Apply pricing rules
+
+            /** @var PriceEngine $priceEngine */
+            $priceEngine = $services->get(PriceEngine::class);
+            /** @var PriceMapper $priceMapper */
+            $priceMapper = $services->get(PriceMapper::class);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $variants = $product->getVariants();
+                /** @var Variant $variant */
+                foreach ($variants as $variant) {
+                    $correctedPrices = $priceEngine->getCorrectedRetailPrices($variant);
+                    $priceEngine->setRetailPrices($variant, $correctedPrices);
+                    $priceMapper->setRetailPrices($variant);
+                }
+            }
+            $this->getManager()->flush();
+
             $this->view->assign(['success' => true, 'message' => 'Prices were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -849,7 +870,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                     }
                 }
             }
-            $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
+            $this->view->assign([ 'success' => true, 'message' => 'Products with inactive variants logged.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1095,6 +1116,32 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     }
 
+    public function applyPriceRulesAction()
+    {
+        try {
+            $services = MxcDropshipInnocigs::getServices();
+            /** @var PriceEngine $priceEngine */
+            $priceEngine = $services->get(PriceEngine::class);
+            /** @var PriceMapper $priceMapper */
+            $priceMapper = $services->get(PriceMapper::class);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $variants = $product->getVariants();
+                /** @var Variant $variant */
+                foreach ($variants as $variant) {
+                    $correctedPrices = $priceEngine->getCorrectedRetailPrices($variant);
+                    $priceEngine->setRetailPrices($variant, $correctedPrices);
+                    $priceMapper->setRetailPrices($variant);
+                }
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Corrected prices were applied.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function updateSchemaAction()
     {
         try {
@@ -1149,7 +1196,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
             $list = [
                 'by repository->getProduct' => $list1,
-                'by repositpory->getArticlesWithoutProduct' => $list2
+                'by repositpory->getArticlesWithoutProduct' => $list2,
             ];
             $report = new ArrayReport();
             $report(['ckArticlesWithoutProduct' => $list]);
@@ -1187,10 +1234,23 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $services = MxcDropshipInnocigs::getServices();
-            $log = $services->get('logger');
             /** @var PriceEngine $priceEngine */
             $priceEngine = $services->get(PriceEngine::class);
-            $priceEngine->createDefaultConfiguration();
+            /** @var PriceMapper $priceMapper */
+            $priceMapper = $services->get(PriceMapper::class);
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $variants = $product->getVariants();
+                /** @var Variant $variant */
+                foreach ($variants as $variant) {
+                    $correctedPrices = $priceEngine->getCorrectedRetailPrices($variant);
+                    $priceEngine->setRetailPrices($variant, $correctedPrices);
+                    $priceMapper->setRetailPrices($variant);
+                }
+            }
+            $this->getManager()->flush();
+            $this->view->assign([ 'success' => true, 'message' => 'Corrected prices were applied.' ]);
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {

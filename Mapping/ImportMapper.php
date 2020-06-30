@@ -209,9 +209,14 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             $variant->setIcNumber($model->getModel());
             $variant->setName($model->getName());
             $variant->setEan($model->getEan());
-            $variant->setPurchasePrice(str_replace(',', '.', $model->getPurchasePrice()));
-            $recommendedRetailPrice = str_replace(',', '.', $model->getRecommendedRetailPrice());
-            $variant->setRecommendedRetailPrice($recommendedRetailPrice);
+
+            $purchasePrice = floatval(str_replace(',', '.', $model->getPurchasePrice()));
+            $variant->setPurchasePrice($purchasePrice);
+
+            $uvp = floatval(str_replace(',', '.', $model->getRecommendedRetailPrice()));
+            $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
+            $variant->setRecommendedRetailPrice($uvp / $vatFactor);
+
             $variant->setImages($model->getImages());
             $unit = $model->getUnit();
             if (! empty($unit)) $variant->setUnit($unit);
@@ -222,7 +227,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
             $variant->setActive($active);
             $variant->setAccepted(true);
-            $variant->setRetailPrices('EK' . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $recommendedRetailPrice);
+            $variant->setRetailPrices('EK' . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $uvp);
             $options = $this->mapOptions($model->getOptions());
             $variant->setOptions($options);
             $this->propertyMapper->mapModelToVariant($model, $variant);
@@ -345,8 +350,11 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
                     if ($detail !== null) $detail->setEan($ean);
                     break;
                 case 'recommendedRetailPrice':
-                    $recommendedRetailPrice = str_replace(',', '.', $model->getRecommendedRetailPrice());
-                    $variant->setRecommendedRetailPrice($recommendedRetailPrice);
+                    $uvp = floatval(str_replace(',', '.', $model->getRecommendedRetailPrice()));
+                    // @todo: Change price datatype in database to float
+                    $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
+                    $uvp = strval(round($uvp / $vatFactor, 2));
+                    $variant->setRecommendedRetailPrice($uvp);
                     break;
                 case 'purchasePrice':
                     $purchasePrice = str_replace(',', '.', $model->getPurchasePrice());

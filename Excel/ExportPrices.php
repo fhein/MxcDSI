@@ -13,7 +13,6 @@ use MxcDropshipInnocigs\Models\Option;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Shopware\PriceTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
@@ -29,9 +28,6 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
     /** @var PriceMapper $priceMapper */
     protected $priceMapper;
 
-    /** @var PriceTool $priceTool */
-    protected $priceTool;
-
     /** @var PriceEngine  */
     protected $priceEngine;
 
@@ -39,11 +35,10 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
 
     private $excludedCustomerGroupKeys = [ 'H', 'FR', 'MA'];
 
-    public function __construct(PriceEngine $priceEngine, PriceMapper $priceMapper, PriceTool $priceTool)
+    public function __construct(PriceEngine $priceEngine, PriceMapper $priceMapper)
     {
         $this->priceEngine = $priceEngine;
         $this->priceMapper = $priceMapper;
-        $this->priceTool = $priceTool;
     }
 
     protected function registerColumns()
@@ -96,18 +91,20 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
             $variants = $product->getVariants();
             /** @var Variant $variant */
             foreach ($variants as $variant) {
+
+                $vatFactor = (1 + TaxTool::getCurrentVatPercentage() / 100);
+
                 if (! $this->isSinglePack($variant)) continue;
                 $info['icNumber'] = $variant->getIcNumber();
                 $price = floatVal($variant->getPurchasePrice());
                 $info['EK Netto'] = $price;
-                $vat = $price / 100 * TaxTool::getCurrentVatPercentage();
-                $info['EK Brutto'] = $price + $vat;
+                $info['EK Brutto'] = round($price * $vatFactor, 2);
                 $price = floatVal($variant->getRecommendedRetailPrice());
-                $info['UVP Brutto'] = $price;
+                $info['UVP Brutto'] = round($price * $vatFactor, 2);
                 $price = floatVal($variant->getRecommendedRetailPriceOld());
-                $info['UVP Brutto alt'] = $price;
+                $info['UVP Brutto alt'] = round($price * $vatFactor, 2);
                 $price = floatVal($variant->getPurchasePriceOld());
-                $info['EK Netto alt'] = $price;
+                $info['EK Netto alt'] = round($price, 2);
                 $info['Dampfplanet'] = $variant->getRetailPriceDampfplanet();
                 $info['MaxVapor'] = $variant->getRetailPriceMaxVapor();
                 $info['andere'] = $variant->getRetailPriceOthers();
@@ -123,7 +120,7 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
                 $info['options'] = $optionText;
 
                 $customerGroupKeys = $this->getCustomerGroupKeys();
-                $vapeePrices = $this->priceTool->getRetailPrices($variant);
+                $vapeePrices = $this->priceEngine->getRetailPrices($variant);
                 $correctedRetailPrices = $this->priceEngine->getCorrectedRetailPrices($variant);
                 foreach ($customerGroupKeys as $key) {
                     $price = $vapeePrices[$key] ?? null;
@@ -131,15 +128,15 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
                     if ($key !== 'EK') {
                         $price = $price === $info['UVP Brutto'] ? null : $price;
                     }
-                    $info['VK Brutto ' . $key] = $price;
-                    $info['Corrected VK ' . $key] = $correctedPrice;
+                    $info['VK Brutto ' . $key] = round($this->priceEngine->beautifyPrice($price * $vatFactor), 2);
+                    $info['Corrected VK ' . $key] = round($this->priceEngine->beautifyPrice( $correctedPrice * $vatFactor), 2);
                 }
 
                 $data[] = $info;
             }
             // if ($count++ > 1) break;
         }
-        $this->priceEngine->report();
+        // $this->priceEngine->report();
 
         $headers[] = array_keys($data[0]);
 
@@ -298,7 +295,7 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
     protected function getCustomerGroupKeys()
     {
         if ($this->customerGroupKeys !== null) return $this->customerGroupKeys;
-        $customerGroupKeys = $this->priceTool->getCustomerGroupKeys();
+        $customerGroupKeys = $this->priceEngine->getCustomerGroupKeys();
         $this->customerGroupKeys = array_values(array_diff($customerGroupKeys, $this->excludedCustomerGroupKeys));
         return $this->customerGroupKeys;
     }

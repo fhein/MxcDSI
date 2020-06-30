@@ -8,6 +8,7 @@ use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 
 class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
 {
@@ -28,6 +29,11 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
         $this->priceMapper = $priceMapper;
     }
 
+    protected function getFloatVal(string $value)
+    {
+        return floatval(str_replace(',', '.', $value));
+    }
+
     public function processImportData(array &$data)
     {
         $keys = array_keys($data[0]);
@@ -44,14 +50,13 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
         $this->models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         /** @var Variant $variant */
 
+        $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
         foreach ($data as $record) {
             $variant = $variants[$record['icNumber']] ?? null;
             if (!$variant) continue;
-            $variant->setRetailPriceDampfPlanet($record['Dampfplanet']);
-            $variant->setRetailPriceMaxVapor($record['MaxVapor']);
-            $variant->setRetailPriceOthers($record['andere']);
-            $variant->setPurchasePrice($record['EK Netto']);
-            $variant->setRecommendedRetailPrice($record['UVP Brutto']);
+            $variant->setRetailPriceDampfPlanet($this->getFloatVal($record['Dampfplanet']));
+            $variant->setRetailPriceMaxVapor($this->getFloatVal($record['MaxVapor']));
+            $variant->setRetailPriceOthers($this->getFloatVal($record['andere']));
 
             $this->updateVariantPrice($variant, $record);
         }
@@ -68,15 +73,17 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
 
         $customerPrice = $customerPrice === '' ? null : $customerPrice;
 
+        $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
         foreach ($this->indexMap as $column => $customerGroup) {
             $price = $record[$column];
             $price = $price === '' ? null : $price;
             $price = $price ?? $customerPrice;
+            $netPrice = $this->getFloatVal($price) / $vatFactor;
             if ($price) {
-                $prices[] = $customerGroup . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $price;
+                $prices[] = $customerGroup . MxcDropshipInnocigs::MXC_DELIMITER_L1 . strval($price);
             }
         }
-        $this->log->debug(var_export($prices, true));
+        // $this->log->debug(var_export($prices, true));
         $prices = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $prices);
         $variant->setRetailPrices($prices);
         $this->priceMapper->setRetailPrices($variant);
