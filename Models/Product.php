@@ -61,6 +61,15 @@ class Product extends ModelEntity  {
     /**
      * PropertyMapper mapped
      *
+     * @var string $commonName
+     *
+     * @ORM\Column(name="common_name", type="string", nullable=true)
+     */
+    private $commonName;
+
+    /**
+     * PropertyMapper mapped
+     *
      * @ORM\Column(name="seo_url", type="string", nullable=true)
      */
     private $seoUrl;
@@ -89,15 +98,6 @@ class Product extends ModelEntity  {
     /**
      * PropertyMapper mapped
      *
-     * @var string $commonName
-     *
-     * @ORM\Column(name="common_name", type="string", nullable=true)
-     */
-    private $commonName;
-
-    /**
-     * PropertyMapper mapped
-     *
      * @var string $type
      *
      * @ORM\Column(type="string", nullable=true)
@@ -117,7 +117,7 @@ class Product extends ModelEntity  {
 
     /**
      * @var string $category
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $category;
 

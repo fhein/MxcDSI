@@ -8,6 +8,8 @@ use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\UpdateStockCronJob;
+use MxcDropshipInnocigs\Jobs\ApplyPriceRules;
+use MxcDropshipInnocigs\Jobs\UpdateInnocigsPrices;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
@@ -18,7 +20,6 @@ use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
 use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
 use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
 use MxcDropshipInnocigs\Mapping\ImportMapper;
-use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
 use MxcDropshipInnocigs\Mapping\MetaData\MetaDataExtractor;
 use MxcDropshipInnocigs\Mapping\ProductMapper;
 use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
@@ -85,31 +86,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updatePricesAction()
     {
         try {
-            // Import InnoCigs purchase price and recommended retail price
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
-            $mapper = $services->get(ImportPriceMapper::class);
-            $mapper->import($client->import(false));
-
-            // Apply pricing rules
-
-            /** @var PriceEngine $priceEngine */
-            $priceEngine = $services->get(PriceEngine::class);
-            /** @var PriceMapper $priceMapper */
-            $priceMapper = $services->get(PriceMapper::class);
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            /** @var Product $product */
-            foreach ($products as $product) {
-                $variants = $product->getVariants();
-                /** @var Variant $variant */
-                foreach ($variants as $variant) {
-                    $correctedPrices = $priceEngine->getCorrectedRetailPrices($variant);
-                    $priceEngine->setRetailPrices($variant, $correctedPrices);
-                    $priceMapper->setRetailPrices($variant);
-                }
-            }
-            $this->getManager()->flush();
-
+            UpdateInnocigsPrices::run();
+            ApplyPriceRules::run();
             $this->view->assign(['success' => true, 'message' => 'Prices were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);

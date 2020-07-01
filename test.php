@@ -271,6 +271,24 @@ $fraction = round(20.05 - floor(20.05), 2);
 println( $fraction);
 println (strval(floatval('1.21')));
 
+$key = 'EK';
+$oldPrice = 1.23456;
+$newPrice = 2.98765;
+$margin = 17.3;
+$name = 'Fantastic product';
+$icNumber = 'FP1000AS';
+
+$msg1 = sprintf('Price change: %s (%s)', $name, $icNumber);
+
+$msg2 = sprintf( '  Group %s: Old price: %.2f. New price: %.2f. New margin %.2f%%.',
+    $key,
+    $oldPrice,
+    $newPrice,
+    $margin
+);
+println($msg1);
+println($msg2);
+
 die();
 
 

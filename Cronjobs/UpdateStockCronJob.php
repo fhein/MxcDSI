@@ -7,6 +7,7 @@ namespace MxcDropshipInnocigs\Cronjobs;
 use DateTime;
 use Enlight\Event\SubscriberInterface;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Import\ApiClient;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Article\Article;
@@ -50,8 +51,11 @@ class UpdateStockCronJob implements SubscriberInterface
             $result = false;
         }
         $end = date('d-m-Y H:i:s');
+
         $resultMsg = $result === true ? '. Success.' : '. Failure.';
-        $this->log->debug('Update stock cronjob ran from ' . $start . ' to ' . $end . $resultMsg);
+        $msg = 'Update stock cronjob ran from ' . $start . ' to ' . $end . $resultMsg;
+
+        $result === true ? $this->log->info($msg) : $this->log->error($msg);
 
         return $result;
     }

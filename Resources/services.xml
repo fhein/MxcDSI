@@ -12,7 +12,7 @@
             <tag name="shopware.event_subscriber"/>
         </service>
         <service id="Shopware_CronJob_MxcDsiImport"
-                 class="MxcDropshipInnocigs\Import\ImportCronJob">
+                 class="MxcDropshipInnocigs\Cronjobs\ImportCronJob">
             <tag name="shopware.event_subscriber"/>
         </service>
         <service
@@ -21,7 +21,11 @@
             <tag name="console.command" command="mxcdsi:import"/>
         </service>
         <service id="Shopware_CronJob_MxcDsiUpdateStock"
-                 class="MxcDropshipInnocigs\Import\UpdateStockCronJob">
+                 class="MxcDropshipInnocigs\Cronjobs\UpdateStockCronJob">
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        <service id="Shopware_CronJob_MxcDsiUpdatePrices"
+                 class="MxcDropshipInnocigs\Cronjobs\UpdatePricesCronJob">
             <tag name="shopware.event_subscriber"/>
         </service>
         <service

@@ -32,11 +32,22 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         'margin_max_abs'        => 15,
     ];
 
+    protected $logEnabled = false;
+
     protected $configFile = __DIR__ . '/../../Config/PriceEngine.config.php';
 
     protected $config;
 
     private $customerGroups = null;
+
+    // Wenn das Log eingeschaltet ist, werden die Modifikationen der PriceEngine detailliert in die Datei
+    // pe_price_corrections.php protokolliert. Dies führt zu einer massiven Verlängerung der Laufzeit und
+    // sollte daher nur für das Debugging aktiviert werden.
+    //
+    public function enableLog(bool $logEnabled = true)
+    {
+        $this->logEnabled = $logEnabled;
+    }
 
     /**
      * Liefert ein Array mit allen Schlüsseln der Shopware Kundengruppen (EK, H, usw.)
@@ -48,53 +59,34 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         return array_keys($this->getCustomerGroups());
     }
 
-    public function createDefaultConfiguration()
-    {
-        $config = [];
-        $config['_default'] = $this->defaultConfig;
-        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
-        /** @var Product $product */
-        foreach ($products as $product) {
-            $type = $product->getType();
-            if (empty($config[$type]['_default'])) {
-                $config[$type]['_default'] = $this->defaultConfig;
-            }
-//            $supplier = $product->getSupplier();
-//            if ($supplier === 'InnoCigs') {
-//                $supplier = $product->getBrand();
-//            }
-//            if (empty($config[$type][$supplier]['_default'])) {
-//                $config[$type][$supplier]['_default'] = $this->defaultConfig;
-//            }
-        }
-        Factory::toFile($this->configFile, [ 'rules' => $config]);
-
-    }
-
     public function getCorrectedRetailPrices(Variant $variant)
     {
         $priceConfig = $this->getPriceConfig($variant);
         $retailPrices = $this->getRetailPrices($variant);
 
         $correctedPrices = [];
-        // $log = [];
+        $log = [];
         $purchasePrice = floatval($variant->getPurchasePrice());
         foreach ($retailPrices as $key => $retailPrice) {
             [$newRetailPrice, $log] = $this->correctPrice($purchasePrice, $retailPrice, $priceConfig);
             $correctedPrices[$key] = $newRetailPrice;
             if ($retailPrice !== $newRetailPrice) {
-                $this->report[] = [
-                    'name' => $variant->getName(),
-                    'purchasePrice' => $purchasePrice,
-                    'oldRetailPrice' => $retailPrice,
-                    'newRetailPrice' => $newRetailPrice,
-                    'priceConfig'    => $priceConfig,
-                    'log'  => $log,
-                ];
+                if ($this->logEnabled) {
+                    $this->report[] = [
+                        'name'           => $variant->getName(),
+                        'purchasePrice'  => $purchasePrice,
+                        'oldRetailPrice' => $retailPrice,
+                        'newRetailPrice' => $newRetailPrice,
+                        'priceConfig'    => $priceConfig,
+                        'log'            => $log,
+                    ];
+                }
             }
         }
-        // $report = new ArrayReport();
-        // $report(['pePriceCorrections' => $this->report]);
+        if ($this->logEnabled) {
+            $report = new ArrayReport();
+            $report(['pePriceCorrections' => $this->report]);
+        }
 
         return $correctedPrices;
     }
@@ -142,7 +134,9 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($minMarginPercent !== null && round($margin,5) < $minMarginPercent) {
             $netRetailPrice = $netPurchasePrice / (1 - ($minMarginPercent / 100));
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            // $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
+            if ($this->logEnabled) {
+                $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
+            }
         };
 
         // Ist die maximale prozentuale Marge überschritten, wird der Netto-Verkaufspreis gesenkt
@@ -150,7 +144,9 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($maxMarginPercent !== null && $margin > $maxMarginPercent) {
             $netRetailPrice = $netPurchasePrice / (1 - ($maxMarginPercent / 100));
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            // $log[] = 'Maximim margin adjusted to ' . $maxMarginPercent . '%.';
+            if ($this->logEnabled) {
+                $log[] = 'Maximim margin adjusted to ' . $maxMarginPercent . '%.';
+            }
         }
 
         // Ist die maximale absolute Marge in EUR (dennoch) überschritten, wird der Netto-Verkaufspreis gesenkt
@@ -160,7 +156,10 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($limit !== null && $marginAbsolute > $limit) {
             $netRetailPrice = $netPurchasePrice + $limit;
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            // $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR (from ' . (round($marginAbsolute, 2)) . ' EUR). New margin: ' . round($margin, 2) . '.';
+            if ($this->logEnabled) {
+                $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR (from ' . (round($marginAbsolute,
+                        2)) . ' EUR). New margin: ' . round($margin, 2) . '.';
+            }
         }
 
         $discount = $this->getDiscount($netRetailPrice * $vatFactor) / 100;
@@ -178,7 +177,10 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
                 $minRevenue = $discountValue + (6.0 + $dropShip) / 0.925;
                 $netRetailPrice = $netPurchasePrice + $minRevenue;
                 $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-                // $log[] = 'Minimum revenue adjusted to ' . round($minRevenue,2) . '. New margin: ' . round($margin, 2). '.';
+                if ($this->logEnabled) {
+                    $log[] = 'Minimum revenue adjusted to ' . round($minRevenue, 2) . '. New margin: '
+                             . round($margin,2) . '.';
+                }
             }
         }
 
@@ -188,7 +190,10 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         if ($limit !== null && floatval($netRetailPrice - $netPurchasePrice) < $limit) {
             $netRetailPrice = $netPurchasePrice + $limit;
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
-            // $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR. New margin: ' . round($margin, 2). '.';
+            if ($this->logEnabled) {
+                $log[] = 'Minimum absolute margin adjusted to ' . $limit . ' EUR. New margin: ' . round($margin,
+                        2) . '.';
+            }
         }
 
         return [ $netRetailPrice, $log ];
@@ -196,9 +201,11 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
 
     public function report()
     {
-        $report = new ArrayReport;
-        $report(['pePriceCorrections' => $this->report]);
-        $this->report = [];
+        if ($this->logEnabled) {
+            $report = new ArrayReport;
+            $report(['pePriceCorrections' => $this->report]);
+            $this->report = [];
+        }
     }
 
     protected function getPriceConfig(Variant $variant)
@@ -262,4 +269,28 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         }
         return $retailPrices;
     }
+
+    public function createDefaultConfiguration()
+    {
+        $config = [];
+        $config['_default'] = $this->defaultConfig;
+        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
+        /** @var Product $product */
+        foreach ($products as $product) {
+            $type = $product->getType();
+            if (empty($config[$type]['_default'])) {
+                $config[$type]['_default'] = $this->defaultConfig;
+            }
+//            $supplier = $product->getSupplier();
+//            if ($supplier === 'InnoCigs') {
+//                $supplier = $product->getBrand();
+//            }
+//            if (empty($config[$type][$supplier]['_default'])) {
+//                $config[$type][$supplier]['_default'] = $this->defaultConfig;
+//            }
+        }
+        Factory::toFile($this->configFile, [ 'rules' => $config]);
+
+    }
+
 }

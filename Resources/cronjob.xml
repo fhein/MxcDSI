@@ -14,7 +14,14 @@
         <action>Shopware_CronJob_MxcDsiUpdateStock</action>
         <active>true</active>
         <interval>1200</interval>
-        <disableOnError>true</disableOnError>
+        <disableOnError>false</disableOnError>
+    </cronjob>
+    <cronjob>
+        <name>InnoCigs Preisaktualisierung</name>
+        <action>Shopware_CronJob_MxcDsiUpdatePrices</action>
+        <active>true</active>
+        <interval>14400</interval>
+        <disableOnError>false</disableOnError>
     </cronjob>
 
 </cronjobs>

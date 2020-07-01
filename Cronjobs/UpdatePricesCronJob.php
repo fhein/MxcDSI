@@ -5,8 +5,11 @@
 namespace MxcDropshipInnocigs\Cronjobs;
 
 use Enlight\Event\SubscriberInterface;
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcDropshipInnocigs\Jobs\ApplyPriceRules;
+use MxcDropshipInnocigs\Jobs\UpdateInnocigsPrices;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use Throwable;
+
 
 class UpdatePricesCronJob implements SubscriberInterface
 {
@@ -25,11 +28,23 @@ class UpdatePricesCronJob implements SubscriberInterface
 
     public function onUpdatePrices(/** @noinspection PhpUnusedParameterInspection */$job)
     {
+        $start = date('d-m-Y H:i:s');
+
         $services = MxcDropshipInnocigs::getServices();
-        /** @var LoggerInterface $log */
-        $this->log = $services->get('logger');
-        $this->modelManager = Shopware()->Models();
+        $log = $services->get('logger');
         $result = true;
+
+        try {
+            UpdateInnocigsPrices::run();
+            ApplyPriceRules::run();
+        } catch (Throwable $e) {
+            $result = false;
+        }
+        $resultMsg = $result === true ? '. Success.' : '. Failure.';
+        $end = date('d-m-Y H:i:s');
+        $msg = 'Update prices cronjob ran from ' . $start . ' to ' . $end . $resultMsg;
+
+        $result === true ? $log->info($msg) : $log->error($msg);
 
         return $result;
     }
