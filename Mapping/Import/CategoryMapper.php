@@ -111,12 +111,71 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                 case 'pod-system':
                     $subCategories = array_replace($subCategories, $this->getPodSystemAppendices($product));
                     break;
+                case 'e-cigarette':
+                    $subCategories = array_replace($subCategories, $this->getEcigAppendices($product));
+                    break;
             }
         }
         foreach ($subCategories as $subCategory) {
             if (empty($subCategory)) continue;
             $categories[] = $path . ' > ' . $subCategory;
         }
+        return $categories;
+    }
+
+    protected function getEcigAppendices(Product $product)
+    {
+        // cell capacity
+        $capacity = $product->getCellCapacity();
+        if (empty($capacity)) {
+            $cellCount = $product->getCellCount();
+            if ($cellCount == 1) {
+                $categories[] = '1 Akkuzelle';
+            } elseif ($cellCount == 2) {
+                $categories[] = '2 Akkuzellen';
+            } elseif ($cellCount == 3) {
+                $categories[] = '3 Akkuzellen';
+            }
+        } elseif ($capacity <= 500) {
+            $categories[] = 'Akku bis 500 mAh';
+        } elseif ($capacity <= 1000) {
+            $categories[] = 'Akku bis 1.000 mAh';
+        } elseif ($capacity <= 1500) {
+            $categories[] = 'Akku bis 1.500 mAh';
+        } elseif ($capacity <= 2000) {
+            $categories[] = 'Akku bis 2.000 mAh';
+        } elseif ($capacity <= 2500) {
+            $categories[] = 'Akku bis 2.500 mAh';
+        } else {
+            $categories[] = 'Akku über 2.500 mAh';
+        }
+
+        // tank capacity
+        $capacity = $product->getCapacity();
+        $capacity = floatval(str_replace(',', '.', $capacity));
+        if ($capacity <= 2.0) {
+            $categories[] = 'Tank bis 2 ml';
+
+        } elseif ($capacity <= 4.0) {
+            $categories[] = 'Tank bis 4 ml';
+        } else {
+            $categories[] = 'Tank über 4 ml';
+        }
+
+        // power
+        $power = $product->getPower();
+        if (empty($power)) {
+            $categories[] = 'ohne Wattangabe';
+        } elseif ($power <= 25) {
+            $categories[] = 'bis 25 Watt';
+        } elseif ($power <= 75) {
+            $categories[] = 'bis 75 Watt';
+        } elseif ($power <= 120) {
+            $categories[] = 'bis 120 Watt';
+        } else {
+            $categories[] = 'über 12 Watt';
+        }
+
         return $categories;
     }
 
@@ -190,6 +249,8 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         ];
         if ($type === 'POD_SYSTEM') {
             $subCategoryAppendices['pod-system'] = $this->getPodSystemAppendices($product);
+        } elseif ($type === 'E_CIGARETTE') {
+            $subCategoryAppendices['e-cigarette'] = $this->getEcigAppendices($product);
         }
         $categoryRepository = $this->getCategoryRepository();
 

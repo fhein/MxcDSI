@@ -232,19 +232,10 @@ class Product extends ModelEntity  {
     private $headChangeable;
 
     /**
-     * E-Cigarette cell changeable
-     *
-     * @var boolean $cellChangeable
-     * @ORM\Column(name="cell_changeable", type="boolean", nullable=true)
-     *
-     */
-    private $cellChangeable;
-
-    /**
-     * @var int $numberOfCells
+     * @var int $cellCount
      * @ORM\Column(name="cell_count", type="integer", nullable=true)
      */
-    private $numberOfCells;
+    private $cellCount;
 
     /**
      * @var string $cellTypes
@@ -871,22 +862,6 @@ class Product extends ModelEntity  {
     /**
      * @return bool
      */
-    public function isCellChangeable()
-    {
-        return $this->cellChangeable;
-    }
-
-    /**
-     * @param bool $cellChangeable
-     */
-    public function setCellChangeable($cellChangeable)
-    {
-        $this->cellChangeable = $cellChangeable;
-    }
-
-    /**
-     * @return bool
-     */
     public function isHeadChangeable()
     {
         return $this->headChangeable;
@@ -919,17 +894,17 @@ class Product extends ModelEntity  {
     /**
      * @return int
      */
-    public function getNumberOfCells()
+    public function getCellCount()
     {
-        return $this->numberOfCells;
+        return $this->cellCount;
     }
 
     /**
-     * @param int $numberOfCells
+     * @param int $cellCount
      */
-    public function setNumberOfCells($numberOfCells)
+    public function setCellCount($cellCount)
     {
-        $this->numberOfCells = $numberOfCells;
+        $this->cellCount = $cellCount;
     }
 
     /**

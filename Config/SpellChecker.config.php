@@ -24,5 +24,6 @@ return [
         'beispielweise' => 'beispielsweise',
         'Beispielweise' => 'Beispielsweise',
         'Heas'          => 'Head',
+        'Umängeband'    => 'Umhängeband',
     ],
 ];

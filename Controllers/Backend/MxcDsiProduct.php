@@ -1199,7 +1199,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @var Product $product */
             foreach ($products as $product) {
                 $type = $product->getType();
-                if ($type !== 'E_CIGARETTE') continue;
+                if (/*$type !== 'E_CIGARETTE' && */ $type !== 'POD_SYSTEM') continue;
                 $metaDataExtractor->extractMetaData($product);
             }
             $this->view->assign([ 'success' => true, 'message' => 'Metadata successfully extracted.']);
@@ -1211,25 +1211,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
-            /** @var PriceEngine $priceEngine */
-            $priceEngine = $services->get(PriceEngine::class);
-            /** @var PriceMapper $priceMapper */
-            $priceMapper = $services->get(PriceMapper::class);
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            /** @var Product $product */
-            foreach ($products as $product) {
-                $variants = $product->getVariants();
-                /** @var Variant $variant */
-                foreach ($variants as $variant) {
-                    $correctedPrices = $priceEngine->getCorrectedRetailPrices($variant);
-                    $priceEngine->setRetailPrices($variant, $correctedPrices);
-                    $priceMapper->setRetailPrices($variant);
-                }
-            }
-            $this->getManager()->flush();
-            $this->view->assign([ 'success' => true, 'message' => 'Corrected prices were applied.' ]);
-
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

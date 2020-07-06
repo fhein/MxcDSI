@@ -254,6 +254,19 @@ $priceConfig = array(
     'margin_max_abs' => 16,
 );
 
+$source = '13 Watt | 14 Watt | 15 Watt';
+
+$matches = [];
+if (preg_match_all('~(\d+,\d|\d+) Watt~', $source, $matches, PREG_SET_ORDER) !== false) {
+    $power = end($matches)[0];
+    $power = str_replace(',', '.', $power);
+}
+println('Power: ' . $power);
+println('Matches');
+println(var_export($matches));
+
+println('Found' . end($matches)[1]);
+
 $vatFactor = 1 + getCurrentVatPercentage() / 100;
 
 

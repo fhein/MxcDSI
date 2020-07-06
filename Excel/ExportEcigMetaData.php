@@ -46,7 +46,6 @@ class ExportEcigMetaData extends AbstractProductExport implements LoggerAwareInt
             $info['name'] = $product['name'];
             $info['Power'] = $product['power'];
             $info['Head Change'] = intval($product['headChangeable']);
-            $info['Cell Change'] = intval($product['cellChangeable']);
             $data[] = $info;
         }
 

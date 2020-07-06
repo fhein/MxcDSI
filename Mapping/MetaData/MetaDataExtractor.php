@@ -3,11 +3,14 @@
 
 namespace MxcDropshipInnocigs\Mapping\MetaData;
 
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
+use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
 use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Html\HtmlDocument;
 
 
@@ -18,10 +21,11 @@ use MxcDropshipInnocigs\Toolbox\Html\HtmlDocument;
  * Extraktion von Metadaten aus Produktbeschreibungen
  *
  */
-class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterface
+class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterface, ClassConfigAwareInterface
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
+    use ClassConfigAwareTrait;
 
     private $document;
     private $cellTypes = [ '18350', '18650', '20700', '21700'];
@@ -31,17 +35,58 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         $this->document = $document;
     }
 
-    public function extractMetaData(Product $product)
+    public function extractMetaData(Product $product, ?array $what = null)
     {
-        $type = $product->getType();
-        switch ($type) {
-            case 'POD_SYSTEM':
-                $this->extractMetaDataPodSystem($product);
-                break;
-            case 'E_CIGARETTE':
-                $this->extractMetaDataEcigarette($product);
-                break;
+        if (null === $what) {
+            $type = $product->getType();
+            $what = @$this->classConfig['defaults'][$type];
         }
+        if ($what === null) return;
+
+        $topics = $this->setupSearchTopics($product);
+
+        foreach ($what as $topic) {
+            switch ($topic) {
+                case 'BATTERIES':
+                    $cellCapacity = $this->extractCellCapacity($topics);
+                    $product->setCellCapacity($cellCapacity);
+
+                    $cellCount = $this->extractCellCount($topics);
+                    if ($cellCount === null && $cellCapacity === null) {
+                        $cellCount = 1;
+                    }
+                    $product->setCellCount($cellCount);
+
+                    $cellTypes = $this->extractCellTypes($topics);
+                    if (! empty($cellTypes)) {
+                        $cellTypes = implode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $cellTypes);
+                        $product->setCellTypes($cellTypes);
+                    }
+
+                    break;
+
+                case 'TANK_CAPACITY':
+                    $tankCapacity = $this->extractTankCapacity($topics);
+                    $product->setCapacity($tankCapacity);
+                    break;
+
+                case 'POWER':
+                    $power = $this->extractPower($topics);
+                    $product->setPower($power);
+                    break;
+
+                case 'HEAD_CHANGABLE':
+                    $headChangeable = $this->extractHeadChangeable($topics);
+                    $product->setHeadChangeable($headChangeable);
+                    break;
+
+                case 'INHALATION_STYLE':
+                    $this->extractStyle($topics);
+                    // @todo: INHALATION_STYLE property in product
+                    break;
+            }
+        }
+
         $this->modelManager->flush();
     }
 
@@ -57,61 +102,6 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         $topics['arrays'] = $tables;
         $topics['scopeOfDelivery'] = $this->document->getScopeOfDelivery($description);
         return $topics;
-    }
-
-    protected function extractMetaDataEcigarette(Product $product)
-    {
-        $topics = $this->setupSearchTopics($product);
-
-        $cellCapacity = $this->extractCellCapacity($topics);
-        $product->setCellCapacity($cellCapacity);
-
-        $cellChangeable = $cellCapacity === null;
-        $product->setCellChangeable($cellChangeable);
-
-        $numberOfCells = $this->extractNumberOfCells($topics);
-        if ($numberOfCells === null && $cellChangeable) {
-            $numberOfCells = 1;
-        }
-        $product->setNumberOfCells($numberOfCells);
-
-        $tankCapacity = $this->extractTankCapacity($topics);
-        $product->setCapacity($tankCapacity);
-
-        $power = $this->extractPower($topics);
-        $product->setPower($power);
-
-        $headChangeable = $this->extractHeadChangeable($topics);
-        $product->setHeadChangeable($headChangeable);
-    }
-
-    protected function extractMetaDataPodSystem(Product $product)
-    {
-            $topics = $this->setupSearchTopics($product);
-
-            // Suche eine mAh Angabe im Namen und in der Beschreibung
-            $cellCapacity = $this->extractCellCapacity($topics);
-            $product->setCellCapacity($cellCapacity);
-
-            // Wenn keine Kapazitätsangabe vorhanden ist, ist der Akku wechselbar
-            $cellChangeable = $cellCapacity === null;
-            $product->setCellChangeable($cellChangeable);
-
-            // Pod-Systeme haben heutzutage höchstens einen Akku
-            $numberOfCells = $cellChangeable ? 1 : 0;
-            $product->setNumberOfCells($numberOfCells);
-
-            // Eine ml Angabe ist bei einem Pod-System das Tankvolumen
-            $tankCapacity = $this->extractTankCapacity($topics);
-            $product->setCapacity($tankCapacity);
-
-            // Wenn im Lieferumfang das Wort Head auftaucht, sind die Köpfe wechselbar
-            $headChangeable = $this->extractHeadChangeable($topics);
-            $product->setHeadChangeable($headChangeable);
-
-            // Sucht nach Vorkommen der unter $this->cellTypes konfigurierten Typen
-            $cellTypes = $this->extractCellTypes($topics);
-            $product->setCellTypes($cellTypes);
     }
 
     /**
@@ -220,7 +210,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
      * @param array $topics
      * @return int|null
      */
-    protected function extractNumberOfCells(array $topics)
+    protected function extractCellCount(array $topics)
     {
         $source = $topics['tables'][0];
         if ($source === null) return null;
@@ -244,19 +234,35 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
         $sources = [ $topics['name'], $topics['tables'][0]];
         $power = null;
 
-        $matches = [];
         foreach ($sources as $source) {
             if ($source === null) continue;
-
-            if (preg_match('~(\d+,\d|\d+) Watt~', $source, $matches) === 1) {
-                $power = $matches[1];
-                if (strpos($power, ',') !== false)
-                    $this->log->debug('Decimal power: '. $power);
-                str_replace(',', '.', $power);
+            $matches = [];
+            $count = preg_match_all('~(\d+,\d|\d+) Watt~', $source, $matches, PREG_SET_ORDER);
+            if ($count != false && $count > 0) {
+                $power = end($matches)[1];
+                $power = str_replace(',', '.', $power);
                 break;
             }
         }
 
         return $power;
+    }
+
+    protected function extractStyle(array $topics)
+    {
+        $source = $topics['tables'][1] ?? $topics['tables'][0];
+        if ($source = null) return null;
+
+        $mtlStyles = [ '~MTL~', '~[Mm]outh [Tt]o [Ll]ung~', '~Mund.*Lunge~'];
+        $dlStyles = ['~DL~', '~Direct Lung~', '~direkte Lungeninhalation~', '~direkte Lungenzüge~' ];
+
+        if (preg_match('~(\d+,\d|\d+) Watt~', $source, $matches) === 1) {
+            $power = $matches[1];
+            if (strpos($power, ',') !== false)
+                $this->log->debug('Decimal power: '. $power);
+            str_replace(',', '.', $power);
+        }
+
+
     }
 }

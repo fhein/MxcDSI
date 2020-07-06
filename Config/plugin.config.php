@@ -226,6 +226,7 @@ return [
         ShopwareCategoryMapper::class   => 'CategoryMapper.config.php',
         SpellChecker::class             => 'SpellChecker.config.php',
         PriceEngine::class              => 'PriceEngine.config.php',
+        MetaDataExtractor::class        => 'MetaDataExtractor.config.php',
     ],
     'excel'        => [
         'import' => [
