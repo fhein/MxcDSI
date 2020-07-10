@@ -29,6 +29,10 @@ return [
         'Dr. Vapes'      => [
             'Panther Series' => 2,
         ],
+        'Dr. Fog' => [
+            'Shisha' => 2,
+            'All Stars' => 2,
+        ],
         'Dr. Frost'      => [
             'Polar Ice Vapes' => 2,
             'Candy Mints'     => 2,
@@ -73,6 +77,9 @@ return [
             'Menthol'  => 2,
             'Sweets'   => 2,
             'Pops'     => 2,
+        ],
+        'WeFog' => [
+            'Blizzard' => 2,
         ],
     ],
 

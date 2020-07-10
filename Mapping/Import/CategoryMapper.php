@@ -112,6 +112,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                     $subCategories = array_replace($subCategories, $this->getPodSystemAppendices($product));
                     break;
                 case 'e-cigarette':
+                    $this->log->debug(var_export($this->getEcigAppendices($product), true));
                     $subCategories = array_replace($subCategories, $this->getEcigAppendices($product));
                     break;
             }
@@ -125,16 +126,18 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
     protected function getEcigAppendices(Product $product)
     {
+        $categories = [];
+
         // cell capacity
         $capacity = $product->getCellCapacity();
         if (empty($capacity)) {
             $cellCount = $product->getCellCount();
             if ($cellCount == 1) {
-                $categories[] = '1 Akkuzelle';
+                $categories[] = 'für eine Akkuzelle';
             } elseif ($cellCount == 2) {
-                $categories[] = '2 Akkuzellen';
+                $categories[] = 'für zwei Akkuzellen';
             } elseif ($cellCount == 3) {
-                $categories[] = '3 Akkuzellen';
+                $categories[] = 'für mehr Akkuzellen';
             }
         } elseif ($capacity <= 500) {
             $categories[] = 'Akku bis 500 mAh';
@@ -164,23 +167,25 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
         // power
         $power = $product->getPower();
-        if (empty($power)) {
-            $categories[] = 'ohne Wattangabe';
-        } elseif ($power <= 25) {
-            $categories[] = 'bis 25 Watt';
-        } elseif ($power <= 75) {
-            $categories[] = 'bis 75 Watt';
-        } elseif ($power <= 120) {
-            $categories[] = 'bis 120 Watt';
-        } else {
-            $categories[] = 'über 12 Watt';
+        if ($power != 0 && $power !== null)
+        {
+            if ($power <= 25) {
+                $categories[] = 'bis 25 Watt';
+            } elseif ($power <= 75) {
+                $categories[] = 'bis 75 Watt';
+            } elseif ($power <= 120) {
+                $categories[] = 'bis 120 Watt';
+            } else {
+                $categories[] = 'über 120 Watt';
+            }
         }
 
         return $categories;
     }
 
-    protected function getPodSystemAppendices(Product $product) {
-        $appendices = [];
+    protected function getPodSystemAppendices(Product $product)
+    {
+        $categories = [];
 
         // cell capacity
         $capacity = $product->getCellCapacity();

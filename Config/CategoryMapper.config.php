@@ -40,6 +40,7 @@ return array(
                 0 => 'E_CIGARETTE',
                 1 => 'E_PIPE',
             ),
+            'append' => ['e-cigarette'],
             'path' => 'E-ZIGARETTEN > E-Zigaretten',
         ),
         1 => array(
@@ -288,7 +289,7 @@ return array(
             'title' => 'E-Zigaretten günstig online kaufen!',
             'description' => 'E-Zigaretten günstig kaufen ✓ E-Zigaretten für Einsteiger und Profis ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'E-Zigarette,günstig,kaufen',
-            'h1' => 'E-ZIGARETTEN',
+            'h1' => 'E-ZIGARETTEN UND POD-SYSTEME',
         ),
         'E-ZIGARETTEN > Pod-Systeme' => array(
             'title' => 'Pod-Systeme günstig online kaufen!',
@@ -307,7 +308,7 @@ return array(
             'title' => 'Pod-Systeme mit Akkukapazität bis 1.000 mAh',
             'description' => 'Mittelgroße Pod-Systeme ✓ Akku bis 1.000 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod-System,günstig,kaufen',
-            'h1' => 'Pod-Systeme mit AkkuAkkukapazität bis 1.000 mAh',
+            'h1' => 'Pod-Systeme mit Akkukapazität bis 1.000 mAh',
 
         ],
         'E-ZIGARETTEN > Pod-Systeme > Akku über 1.000 mAh' => [

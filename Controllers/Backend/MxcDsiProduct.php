@@ -41,6 +41,7 @@ use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
+use Shopware\Models\Customer\Customer;
 use Zend\Config\Factory;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
@@ -54,6 +55,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             'excelExportPrices',
             'excelExportPriceIssues',
             'excelExportEcigMetaData',
+            'csvExportCustomers',
         ];
     }
 
@@ -170,8 +172,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $services = MxcDropshipInnocigs::getServices();
 
         $categoryMapper = $services->get(ShopwareCategoryMapper::class);
-        $categoryMapper->removeEmptyProductCategories();
-        $this->getManager()->flush();
+        //$categoryMapper->removeEmptyProductCategories();
+        // $this->getManager()->flush();
 
         /** @var ShopwareCategoryMapper $categoryMapper */
         foreach ($products as $product) {
@@ -311,8 +313,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     protected function doExcelExport(array $options)
     {
         try {
-            $this->get('plugins')->Controller()->ViewRenderer()->setNoRender();
-            $this->Front()->Plugins()->Json()->setRenderer(false);
             $services = MxcDropshipInnocigs::getServices();
             $excel = $services->build(ExcelExport::class, $options);
             $excel->export();
@@ -320,21 +320,27 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $filepath = $excel->getExcelFile();
             $batchfile = file_get_contents($filepath);
             $size = filesize($filepath);
-
-            $response = $this->Response();
-            $response->setHeader('Cache-Control', 'must-revalidate');
-            $response->setHeader('Content-Description', 'File Transfer');
-            $response->setHeader('Content-disposition', 'attachment; filename=' . 'vapee.export.xlsx');
-            $response->setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            $response->setHeader('Content-Transfer-Encoding', 'binary');
-            $response->setHeader('Content-Length', $size);
-            $response->setHeader('Pragma', 'public');
-
-            echo $batchfile;
+            $this->exportFile('vapee.export.xlsx', $size, $batchfile);
 
         } catch (Throwable $e) {
             $this->handleException($e);
         }
+    }
+
+    protected function exportFile(string $filename, int $size, $content) {
+        $this->get('plugins')->Controller()->ViewRenderer()->setNoRender();
+        $this->Front()->Plugins()->Json()->setRenderer(false);
+
+        $response = $this->Response();
+        $response->setHeader('Cache-Control', 'must-revalidate');
+        $response->setHeader('Content-Description', 'File Transfer');
+        $response->setHeader('Content-disposition', 'attachment; filename=' . $filename);
+        $response->setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        $response->setHeader('Content-Transfer-Encoding', 'binary');
+        $response->setHeader('Content-Length', $size);
+        $response->setHeader('Pragma', 'public');
+
+        echo $content;
     }
 
     public function excelImportPricesAction()
@@ -1131,6 +1137,37 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->handleException($e);
         }
 
+    }
+
+    public function csvExportCustomersAction()
+    {
+        try {
+            $salutationMap = [
+                'mr' => 'Herr',
+                'ms' => 'Frau',
+            ];
+
+            $services = MxcDropshipInnocigs::getServices();
+            $manager = $this->getManager();
+            $customers = $manager->getRepository(Customer::class)->findAll();
+            /** @var Customer $customer */
+            $lines[] = implode(';', [ 'Salutation','First Name','Last Name','eMail' ]);
+
+            foreach ($customers as $customer) {
+                $firstname = $customer->getFirstname();
+                $firstname = iconv('UTF-8', 'WINDOWS-1252', $firstname);
+                $lastname = $customer->getLastname();
+                $lastname = iconv('UTF-8', 'WINDOWS-1252', $lastname);
+                $salutation = $salutationMap[$customer->getSalutation()];
+                $email = $customer->getEmail();
+                $lines[] = implode(';', [$salutation, $firstname, $lastname, $email]);
+            }
+            $lines = implode("\n", $lines);
+            $this->exportFile('vapee.customers.csv', strlen($lines), $lines);
+
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
     }
 
     public function updateAssociatedLiquidsAction()

@@ -91,6 +91,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcExcelExportEcigMetaData',
           'mxcExcelImportPrices',
 
+          'mxcCsvExportCustomers',
+
           'mxcTestImport1',
           'mxcTestImport2',
           'mxcTestImport3',
@@ -377,6 +379,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-table-export',
                     handler: function () {
                         window.open('/backend/MxcDsiProduct/excelExportEcigMetaData');
+                    }
+                },
+                '-',
+                {
+                    text: 'CSV Export Customers',
+                    iconCls: 'sprite-table-export',
+                    handler: function () {
+                        window.open('/backend/MxcDsiProduct/csvExportCustomers');
                     }
                 },
                 '-',

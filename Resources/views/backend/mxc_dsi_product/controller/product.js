@@ -68,6 +68,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcExcelExportPriceIssues:           me.onExcelExportPriceIssues,
                 mxcExcelExportEcigMetaData:          me.onExcelExportEcigMetaData,
                 mxcExcelImportPrices:                me.onExcelImportPrices,
+                mxcCsvExportCustomers:               me.onCsvExportCustomers,
 
                 // InnoCigs import tests
 
@@ -119,6 +120,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Prices: Excel export';
         let maskText = 'Exporting prices to Excel ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onCsvExportCustomers: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=csvExportCustomers}';
+        let params = {};
+        let growlTitle = 'Customers CSV Export';
+        let maskText = 'Exporting customer to CSV ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

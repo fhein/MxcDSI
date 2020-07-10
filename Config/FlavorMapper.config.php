@@ -48,6 +48,7 @@ return array(
         2 => 'Müsli',
         3 => 'Müsliriegel',
         4 => 'Rice Crispies',
+        5 => 'Cornflakes'
     ),
     'Cremiges' => array(
         0 => 'Cream',
@@ -143,8 +144,10 @@ return array(
         29 => 'Waffel',
         30 => 'Zimtrolle',
         31 => 'Zimtschnecke',
-        32 => 'Zironenkuchen',
+        32 => 'Zitronenkuchen',
         33 => 'Zitronentorte',
+        34 => 'Blaubeerkuchen',
+        35 => 'Meringe',
     ),
     'Getränke' => array(
         0 => 'Apfelsaft',
@@ -253,6 +256,7 @@ return array(
         10 => 'Orchidee',
         11 => 'Rhabarber',
         12 => 'Waldmeister',
+        13 => 'OG Kush',
     ),
     'Sonstige' => array(
         0 => 'Test',
@@ -286,6 +290,8 @@ return array(
         25 => 'gebrannte Mandeln',
         26 => 'saures Weingummi',
         27 => 'weiße Schokolade',
+        28 => 'Frucht-Loops',
+        29 => 'gebackene Mandeln',
     ),
     'Tabak' => array(
         0 => 'Burley Tabak',

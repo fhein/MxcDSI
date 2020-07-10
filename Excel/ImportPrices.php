@@ -29,8 +29,9 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
         $this->priceMapper = $priceMapper;
     }
 
-    protected function getFloatVal(string $value)
+    protected function getFloatVal(?string $value)
     {
+        if ($value === null) return $value;
         return floatval(str_replace(',', '.', $value));
     }
 
@@ -80,7 +81,7 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
             $price = $price ?? $customerPrice;
             $netPrice = $this->getFloatVal($price) / $vatFactor;
             if ($price) {
-                $prices[] = $customerGroup . MxcDropshipInnocigs::MXC_DELIMITER_L1 . strval($price);
+                $prices[] = $customerGroup . MxcDropshipInnocigs::MXC_DELIMITER_L1 . strval($netPrice);
             }
         }
         // $this->log->debug(var_export($prices, true));
