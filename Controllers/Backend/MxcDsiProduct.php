@@ -9,6 +9,7 @@ use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Import\UpdateStockCronJob;
 use MxcDropshipInnocigs\Jobs\ApplyPriceRules;
+use MxcDropshipInnocigs\Jobs\PullCategorySeoInformation;
 use MxcDropshipInnocigs\Jobs\UpdateInnocigsPrices;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
@@ -684,6 +685,16 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function pullCategorySeoInformationAction()
+    {
+        try {
+            PullCategorySeoInformation::run();
+            $this->view->assign([ 'success' => true, 'message' => 'Category SEO information saved.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function pullShopwareDescriptionsAction()
     {
         try {
@@ -1248,6 +1259,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
+            $this->pullCategorySeoInformationAction();
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
