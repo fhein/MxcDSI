@@ -44,6 +44,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcUpdateSchema',
 
           'mxcUpdateCategorySeo',
+          'mxcSaveCategorySeo',
           'mxcRebuildArticleSeo',
           'mxcUpdateArticleSeo',
           'mxcUpdateSupplierSeo',
@@ -622,6 +623,13 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-folder-tree',
                     handler: function() {
                         me.fireEvent('mxcUpdateCategorySeo', me);
+                    }
+                },
+                {
+                    text: 'Save category SEO items',
+                    iconCls: 'sprite-folder-tree',
+                    handler: function() {
+                        me.fireEvent('mxcSaveCategorySeo', me);
                     }
                 },
                 {

@@ -211,12 +211,12 @@ return [
         ],
 
     'descriptionLiquidDefault' =>
-        '<p><strong>Gebrauchsfertiges E-Liquid von ##supplier## für die E-Zigarette. Geschmack: ##flavor##.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p>'
+        '<p><strong>Gebrauchsfertiges ##type##-Liquid von ##supplier## für die E-Zigarette. Geschmack: ##flavor##.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
         . '<tbody>'
         . '<tr>'
         . '<td>Produkt</td>'
-        . '<td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td>'
+        . '<td>Gebrauchsfertiges ##type##-Liquid, 10 ml Flasche </td>'
         . '</tr>'
         . '<tr>'
         . '<td>Geschmack </td>'
@@ -231,12 +231,12 @@ return [
         . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>',
 
     'descriptionLiquidFixedNicotine' =>
-        '<p><strong>Gebrauchsfertiges E-Liquid von ##supplier## für die E-Zigarette. Geschmack: ##flavor##.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p>'
+        '<p><strong>Gebrauchsfertiges ##type##-Liquid von ##supplier## für die E-Zigarette. Geschmack: ##flavor##.</strong></p><p>Einfach in den Verdampfer der E-Zigarette einfüllen und losdampfen!</p>'
         . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
         . '<tbody>'
         . '<tr>'
         . '<td>Produkt</td>'
-        . '<td>Gebrauchsfertiges E-Liquid, 10 ml Flasche </td>'
+        . '<td>Gebrauchsfertiges ##type##-Liquid, 10 ml Flasche </td>'
         . '</tr>'
         . '<tr>'
         . '<td>Geschmack </td>'

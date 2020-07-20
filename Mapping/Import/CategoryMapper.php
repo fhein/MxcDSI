@@ -11,6 +11,7 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
 
 class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -68,6 +69,20 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         $product->setCategory($category);
     }
 
+    public function sortCategories()
+    {
+        $services = MxcDropshipInnocigs::getServices();
+        $categoryTool = $services->get(CategoryTool::class);
+        $parentPathes = @$this->classConfig['sort_child_categories'];
+        $root = $categoryTool->findCategoryPath('Deutsch', null);
+        foreach ($parentPathes as $parentPath) {
+            $parent = $categoryTool->findCategoryPath($parentPath, $root);
+            if ($parent !== null) {
+                $categoryTool->sortSubCategories($parent);
+            }
+        }
+    }
+
     /**
      * @param Product $product
      * @return mixed|string|null
@@ -112,7 +127,6 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                     $subCategories = array_replace($subCategories, $this->getPodSystemAppendices($product));
                     break;
                 case 'e-cigarette':
-                    $this->log->debug(var_export($this->getEcigAppendices($product), true));
                     $subCategories = array_replace($subCategories, $this->getEcigAppendices($product));
                     break;
             }
@@ -238,8 +252,8 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         $append = $map['append'] ?? null;
         if ($append === null) return;
 
-        $brand = [$product->getBrand()];
-        $supplier = [$product->getSupplier()];
+        $brand = $product->getBrand();
+        $supplier = $product->getSupplier();
         if ($supplier === 'InnoCigs') {
             $supplier = $brand;
         }
@@ -254,12 +268,13 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         ];
         if ($type === 'POD_SYSTEM') {
             $subCategoryAppendices['pod-system'] = $this->getPodSystemAppendices($product);
-        } elseif ($type === 'E_CIGARETTE') {
+        } elseif ($type === 'E_CIGARETTE' || $type === 'E_PIPE') {
             $subCategoryAppendices['e-cigarette'] = $this->getEcigAppendices($product);
         }
         $categoryRepository = $this->getCategoryRepository();
 
         foreach ($append as $subCategoryType) {
+
             $appendices = $subCategoryAppendices[$subCategoryType] ?? null;
             if (! $appendices) continue;
 
@@ -272,7 +287,6 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                 if (empty($appendix)) continue;
 
                 $idx = $path . ' > ' . $appendix;
-                $this->log->debug('index: ' . $idx);
                 if (isset($this->categorySeoItems[$idx])) continue;
 
                 $title = $seoSettings['title'] ?? null;
@@ -314,7 +328,6 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
     protected function getBasePathSeoItems(string $path)
     {
-        $this->log->debug('getBasePathSeoItems: ' . $path);
         if (isset($this->categorySeoItems[$path])) return;
 
         $map = $this->classConfig['category_seo_items'];
@@ -326,7 +339,6 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             if (isset($this->categorySeoItems[$idx])) continue;
             $items = $map[$idx] ?? null;
             if ($items) {
-                $this->log->debug('idx: \'' . $idx . '\'');
                 $items['path'] = $idx;
                 $category = $categoryRepository->findOneBy(['path' => $idx]) ?? new Category();
                 $this->modelManager->persist($category);

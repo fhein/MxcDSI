@@ -107,6 +107,28 @@ class CategoryTool implements LoggerAwareInterface, ModelManagerAwareInterface
         return $child;
     }
 
+    /** Sort the subcategories of a given Category alphabetically by name
+     *  No recursion.
+     */
+
+    public function sortSubCategories(Category $parent)
+    {
+        $children = $parent->getChildren();
+        $array = [];
+        /** @var Category $child */
+        foreach ($children as $child) {
+            $array[strtolower($child->getName())] = $child;
+        }
+        ksort($array);
+        $i = 1;
+        /** @var Category $child */
+        foreach ($array as $child) {
+            $child->setPosition($i);
+            $i++;
+        }
+        $this->modelManager->flush();
+    }
+
     protected function getRepository()
     {
         return $this->repository ?? $this->repository = $this->modelManager->getRepository(Category::class);

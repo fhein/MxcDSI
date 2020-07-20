@@ -1259,7 +1259,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
-            $this->pullCategorySeoInformationAction();
+            $services = MxcDropshipInnocigs::getServices();
+            /** @var CategoryMapper $categoryMapper */
+            $categoryMapper = $services->get(CategoryMapper::class);
+            $categoryMapper->sortCategories();
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

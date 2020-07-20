@@ -8,31 +8,6 @@ return array(
         4 => 'VERDAMPFER',
         5 => 'ZUBEHÖR',
     ),
-    'flavor_category_map' => array(
-        'E-LIQUIDS' => array(
-            'title' => 'E-Liquids - Geschmack: ##flavor## - online kaufen!',
-            'description' => 'E-Liquids für die E-Zigarette ✓ Geschmack: ##flavor## ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-            'keywords' => 'E-Liquid,Liquid,E-Zigarette,günstig,kaufen,Geschmacksrichtung,##flavor##',
-            'h1' => 'E-LIQUIDS - ##flavor##',
-        ),
-        'SHAKE & VAPE' => array(
-            'title' => 'Shake & Vape - Geschmack: ##flavor## - online kaufen!',
-            'description' => 'Shake & Vape für die E-Zigarette ✓ Geschmack: ##flavor## ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-            'keywords' => 'Shake,Vape,Shake&Vape,E-Liquid,Liquid,E-Zigarette,günstig,kaufen,Geschmacksrichtung,##flavor##',
-            'h1' => 'SHAKE & VAPE - ##flavor##',
-        ),
-        'AROMEN' => array(
-            'title' => 'E-Liquid Aroma - Geschmack: ##flavor## - online kaufen!',
-            'description' => 'Aroma für E-Liquid ✓ Geschmack: ##flavor## ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
-            'keywords' => 'Aromen,Aroma,E-Liquid,Liquid,E-Zigarette,günstig,kaufen,Geschmacksrichtung,##flavor##',
-            'h1' => 'AROMEN - ##flavor##',
-        ),
-    ),
-    'flavor_category_cms_description_map' => array(
-        'E-LIQUIDS' => '<p>In der Kategorie <b>##flavorcategory##</b> zeigen wir alle unsere <b>E-Liquids</b>, die eine oder mehrere dieser Geschmacksnoten aufweisen:</p>',
-        'AROMEN' => '<p>Sehen Sie sich in dieser Kategorie <b>##flavorcategory##</b> alle unsere <b>Aromen</b> an, die einen der folgenden Geschmacke in der Beschreibung haben:</p>',
-        'SHAKE & VAPE' => '<p>In der Kategorie <b>##flavorcategory##</b> zeigen wir alle unsere <b>Shake & Vape E-Liquids</b>, die eine oder mehrere dieser Geschmacksnoten aufweisen:</p>',
-    ),
 
     'type_category_map' => array(
         0 => array(
@@ -83,6 +58,21 @@ return array(
                 ),
             ),
         ),
+        5 => array(
+            'types' => array(
+                0 => 'NICSALT_LIQUID',
+            ),
+            'path' => 'E-LIQUIDS > Nikotinsalz-Liquids',
+            'append' => ['flavor'],
+            'seo' => array(
+                'flavor' => array(
+                    'title' => 'Nikotinsalz-Liquids - Geschmack: ##flavor## - online kaufen!',
+                    'description' => 'Nikotinsalz-Liquids für die E-Zigarette ✓ Geschmack: ##flavor## ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Nikotinsalz-Liquid,E-Liquid,Liquid,E-Zigarette,günstig,kaufen,Geschmacksrichtung,##flavor##',
+                    'h1' => 'NIKOTINSALZ-LIQUIDS - ##flavor##',
+                ),
+            ),
+        ),
         6 => array(
             'types' => array(
                 0 => 'AROMA',
@@ -118,6 +108,15 @@ return array(
                 0 => 'HEAD',
             ),
             'path' => 'ZUBEHÖR > Verdampferköpfe',
+            'append' => ['supplier'],
+            'seo' => array(
+                'supplier' => array(
+                    'title' => 'Verdampferköpfe von ##supplier## - online kaufen!',
+                    'description' => 'Verdampferköpfe von ##supplier## ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Verdampferkopf,Head,##supplier##',
+                    'h1' => 'VERDAMPFERKÖPFE - ##supplier##',
+                ),
+            ),
         ),
         9 => array(
             'types' => array(
@@ -125,6 +124,15 @@ return array(
                 1 => 'TANK_PROTECTION',
             ),
             'path' => 'ZUBEHÖR > Glastanks & Schutz',
+            'append' => ['supplier'],
+            'seo' => array(
+                'supplier' => array(
+                    'title' => 'Glastanks & Schutz von ##supplier## - online kaufen!',
+                    'description' => 'Glastanks und Tankschutz von ##supplier## ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Glastank,Tankschutz,,##supplier##',
+                    'h1' => 'GLASTANKS & SCHUTZ - ##supplier##',
+                ),
+            ),
         ),
         10 => array(
             'types' => array(
@@ -145,6 +153,15 @@ return array(
                 1 => 'CARTRIDGE',
             ),
             'path' => 'ZUBEHÖR > Pods & Cartridges',
+            'append' => ['supplier'],
+            'seo' => array(
+                'supplier' => array(
+                    'title' => 'Pods und Cartridges von ##supplier## - online kaufen!',
+                    'description' => 'Pods und Cartridges von ##supplier## ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+                    'keywords' => 'Pod,Cartridge,Head,##supplier##',
+                    'h1' => 'PODS & CARTRIDGES - ##supplier##',
+                ),
+            ),
         ),
         13 => array(
             'types' => array(
@@ -282,6 +299,7 @@ return array(
             ),
             'path' => 'E-ZIGARETTEN > Pod-Systeme',
             'append' => ['pod-system'],
+
         ),
     ),
     'category_seo_items' => array(
@@ -457,7 +475,7 @@ return array(
             'title' => 'Pods für E-Zigaretten günstig online kaufen!',
             'description' => 'Pods für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Pod,Cartridge,E-Zigarette,günstig,kaufen',
-            'h1' => 'PODS UND CARTRIDGES FÜR DIE E-ZIGARETTE',
+            'h1' => 'PODS & CARTRIDGES FÜR DIE E-ZIGARETTE',
         ),
         'ZUBEHÖR > Dichtungen' => array(
             'title' => 'Ersatz-Dichtungen für E-Zigaretten günstig online kaufen!',
@@ -549,6 +567,12 @@ return array(
             'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
             'h1' => 'E-LIQUIDS',
         ),
+        'E-LIQUIDS > Nikotinsalz-Liquids' => array(
+            'title' => 'Nikotinsalz-Liquids günstig online kaufen!',
+            'description' => 'Nikotinsalz-Liquids für E-Zigaretten günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Liquid,E-Liquid,Nikotinsalz-Liquid,günstig,kaufen,E-Zigarette',
+            'h1' => 'NIKOTINSALZ-LIQUIDS',
+        ),
         'E-LIQUIDS > Fertig-Liquids' => array(
             'title' => 'Gebrauchsfertige E-Liquids günstig online kaufen!',
             'description' => 'Gebrauchsfertige E-Liquids für E-Zigaretten günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
@@ -580,4 +604,13 @@ return array(
             'h1' => 'AKKUTRÄGER',
         ),
     ),
+    'sort_child_categories' => [
+        'E-LIQUIDS > Fertig-Liquids',
+        'E-LIQUIDS > Nikotinsalz-Liquids',
+        'E-LIQUIDS > Aromen',
+        'E-LIQUIDS > Shake & Vape',
+        'ZUBEHÖR > Pods & Cartridges',
+        'ZUBEHÖR > Verdampferköpfe',
+        'ZUBEHÖR > Glastanks & Schutz',
+    ],
 );

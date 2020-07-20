@@ -83,6 +83,13 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
         $variants = $product->getVariants();
 
+        // get product flavor
+        $flavor = $product->getFlavor();
+        if (! empty($flavor)) {
+            $flavor = implode(', ', array_map('trim', explode(',', $flavor)));
+        }
+
+
         $isMainDetail = true;
         /** @var Variant $variant */
         foreach ($variants as $variant) {
@@ -94,6 +101,10 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
                 $detail->setKind(1);
                 $article->setMainDetail($detail);
                 $isMainDetail = false;
+            }
+            // set 'mxc_flavor' attribute if not empty (used in frontend product lists)
+            if (! empty($flavor)) {
+                ArticleTool::setDetailAttribute($detail, 'mxc_flavor', $flavor);
             }
         }
     }
@@ -141,12 +152,6 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         // The next two settings have to be made upfront because the later code relies on these
         $variant->setDetail($detail);
         $detail->setArticle($article);
-
-        // The class \Shopware\Models\Attribute\Product ist part of the Shopware attribute system.
-        // It gets (re)generated automatically by Shopware core, when attributes are added/removed
-        // via the attribute crud service. It is located in \var\cache\production\doctrine\attributes.
-//        $attribute = new Attribute();
-//        $detail->setAttribute($attribute);
 
         $this->setShopwareDetailProperties($variant);
 

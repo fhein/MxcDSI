@@ -60,6 +60,7 @@ return [
         TypeMapper::TYPE_DISPLAY            => 'DISPLAY',
         TypeMapper::TYPE_SPARE_PARTS        => 'SPARE_PARTS',
         TypeMapper::TYPE_POD_SYSTEM         => 'POD_SYSTEM',
+        TypeMapper::TYPE_NICSALT_LIQUID     => 'NICSALT_LIQUID'
     ],
 
     // Dependent on the product type these are the base pathes of the SEO url
@@ -73,6 +74,7 @@ return [
         TypeMapper::TYPE_CLEAROMIZER_RDA    => 'e-zigaretten/verdampfer/',
         TypeMapper::TYPE_CLEAROMIZER_RDTA   => 'e-zigaretten/verdampfer/',
         TypeMapper::TYPE_CLEAROMIZER_RDSA   => 'e-zigaretten/verdampfer/',
+        TypeMapper::TYPE_NICSALT_LIQUID     => 'e-liquids/nikotinsalz/',
         TypeMapper::TYPE_LIQUID             => 'e-liquids/gebrauchsfertig/',
         TypeMapper::TYPE_LIQUID_BOX         => 'e-liquids/gebrauchsfertig/',
         TypeMapper::TYPE_AROMA              => 'e-liquids/aromen/',
@@ -141,7 +143,7 @@ return [
         '~Verdampferständer~'       => TypeMapper::TYPE_STORAGE,
         '~Verdampfer~'              => TypeMapper::TYPE_CLEAROMIZER,
         '~Cartridge~'               => TypeMapper::TYPE_CARTRIDGE,
-        '~Nikotinsalz-Liquid~'      => TypeMapper::TYPE_LIQUID,
+        '~Nikotinsalz-Liquid~'      => TypeMapper::TYPE_NICSALT_LIQUID,
         '~QPod - E-Zigarette~'      => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod - E-Zigarette~'       => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod E-Zigarette~'         => TypeMapper::TYPE_E_CIGARETTE,

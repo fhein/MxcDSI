@@ -18,6 +18,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
                 mxcUpdateSupplierSeo:                me.onUpdateSupplierSeo,
                 mxcUpdateCategorySeo:                me.onUpdateCategorySeo,
+                mxcSaveCategorySeo:                  me.onSaveCategorySeo,
                 mxcRebuildArticleSeo:                me.onRebuildArticleSeo,
                 mxcUpdateArticleSeo:                 me.onUpdateArticleSeo,
                 mxcSetLastStock:                     me.onSetLastStock,
@@ -187,6 +188,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Update category SEO information';
         let maskText = 'Updating category SEO information ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onSaveCategorySeo: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=pullCategorySeoInformation}';
+        let params = {};
+        let growlTitle = 'Save category SEO information';
+        let maskText = 'Saving category SEO information ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

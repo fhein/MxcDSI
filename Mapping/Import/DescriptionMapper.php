@@ -153,9 +153,15 @@ DescriptionMapper extends BaseImportMapper implements ProductMapperInterface, Lo
         $supplier = $product->getBrand();
 
         switch ($type) {
-            case 'LIQUID':
+            case 'NICSALT_LIQUID':
+                $ltype = 'Nikotinsalz';
                 $description = $this->getLiquidDescription($product);
-                $description = str_replace(['##flavor##', '##supplier##'], [$flavor, $supplier], $description);
+                $description = str_replace(['##type##', '##flavor##', '##supplier##'], [$ltype, $flavor, $supplier], $description);
+                break;
+            case 'LIQUID':
+                $ltype = 'E';
+                $description = $this->getLiquidDescription($product);
+                $description = str_replace(['##type##', '##flavor##', '##supplier##'], [$ltype, $flavor, $supplier], $description);
                 break;
             case 'SHAKE_VAPE':
                 $description = $this->getShakeVapeDescription($product);
