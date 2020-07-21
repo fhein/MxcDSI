@@ -263,9 +263,10 @@ return array(
         1 => 'Kirsch',
         2 => 'Kokosnuss',
         3 => 'Kokosnuss',
-        4 => 'Test',
-        5 => 'Weintraube',
-        6 => 'scharzer Tee',
+        4 => 'Süßigkeiten',
+        5 => 'Test',
+        6 => 'Weintraube',
+        7 => 'scharzer Tee',
     ),
     'Süßigkeiten' => array(
         0 => 'Buttercreme',

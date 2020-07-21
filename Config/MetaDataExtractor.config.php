@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'types' => [
+        // 'BOX_MOD',
+        // 'BOX_MOD_CELL',
+        // 'SQUONKER_BOX',
+    ],
+
     'defaults' => [
         'POD_SYSTEM' => [
             'BATTERIES',
@@ -16,5 +22,17 @@ return [
             'HEAD_CHANGABLE',
             'INHALATION_STYLE',
         ],
+        'BOX_MOD' => [
+            'BATTERIES',
+            'POWER'
+        ],
+        'BOX_MOD_CELL' => [
+            'BATTERIES',
+            'POWER'
+        ],
+        'SQUONKER_BOX' => [
+            'BATTERIES',
+            'POWER'
+        ]
     ],
 ];

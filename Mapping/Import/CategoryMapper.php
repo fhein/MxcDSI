@@ -129,11 +129,55 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                 case 'e-cigarette':
                     $subCategories = array_replace($subCategories, $this->getEcigAppendices($product));
                     break;
+                case 'box-mod':
+                    $subCategories = array_replace($subCategories, $this->getBoxModAppendices($product));
+                    break;
             }
         }
         foreach ($subCategories as $subCategory) {
             if (empty($subCategory)) continue;
             $categories[] = $path . ' > ' . $subCategory;
+        }
+        return $categories;
+    }
+
+    protected function getBoxModAppendices(Product $product)
+    {
+        $categories = [];
+
+        // cell capacity
+        $capacity = $product->getCellCapacity();
+        if (empty($capacity)) {
+            $cellCount = $product->getCellCount();
+            if ($cellCount == 1) {
+                $categories[] = 'für eine Akkuzelle';
+            } elseif ($cellCount == 2) {
+                $categories[] = 'für zwei Akkuzellen';
+            } elseif ($cellCount == 3) {
+                $categories[] = 'für drei Akkuzellen';
+            }
+        } elseif ($capacity <= 1000) {
+            $categories[] = 'Akku bis 1.000 mAh';
+        } elseif ($capacity <= 2500) {
+            $categories[] = 'Akku bis 2.500 mAh';
+        } else {
+            $categories[] = 'Akku über 2.500 mAh';
+        }
+
+        // power
+        $power = $product->getPower();
+        if ($power <= 25 || $power == 0 || $power == null) {
+            $categories[] = 'bis 25 Watt';
+        } elseif ($power <= 75) {
+            $categories[] = 'bis 75 Watt';
+        } elseif ($power <= 100) {
+            $categories[] = 'bis 100 Watt';
+        } elseif ($power <= 180) {
+            $categories[] = 'bis 180 Watt';
+        } elseif ($power <= 200) {
+            $categories[] = 'bis 200 Watt';
+        } else {
+            $categories[] = 'über 200 Watt';
         }
         return $categories;
     }

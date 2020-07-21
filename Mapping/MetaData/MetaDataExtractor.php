@@ -37,8 +37,10 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
 
     public function extractMetaData(Product $product, ?array $what = null)
     {
+        $type = $product->getType();
+        if (! in_array($type, $this->classConfig['types'])) return;
+
         if (null === $what) {
-            $type = $product->getType();
             $what = @$this->classConfig['defaults'][$type];
         }
         if ($what === null) return;

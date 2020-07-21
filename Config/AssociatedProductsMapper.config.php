@@ -134,21 +134,32 @@ return [
             'match_common_name' => true,
             'groups'            => [
                 'LQIUID',
-                'SHAKE_VAPE'
+                'SHAKE_VAPE',
+                'NICSALT_LIQUID',
             ],
         ],
         'LIQUID'     => [
             'match_common_name' => true,
             'groups'            => [
                 'AROMA',
-                'SHAKE_VAPE'
+                'SHAKE_VAPE',
+                'NICSALT_LIQUID',
             ],
         ],
         'SHAKE_VAPE' => [
             'match_common_name' => true,
             'groups'            => [
                 'AROMA',
-                'LIQUID'
+                'LIQUID',
+                'NICSALT_LIQUID',
+            ],
+        ],
+        'NICSALT_LIQUID' => [
+            'match_common_name' => true,
+            'groups'            => [
+                'AROMA',
+                'LIQUID',
+                'SHAKE_VAPE',
             ],
         ],
     ],

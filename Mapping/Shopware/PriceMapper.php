@@ -128,9 +128,11 @@ class PriceMapper
     {
 
         $type = $product->getType();
-        if (! in_array($type, ['LIQUID', 'LIQUID_BOX', 'AROMA', 'SHAKE_VAPE', 'BASE', 'EASY3_CAP'])) return;
-
-        $reference = $type === 'BASE' ? 1000 : 100;
+        if (in_array($type, ['NICSALT_LIQUID', 'LIQUID', 'LIQUID_BOX', 'AROMA', 'SHAKE_VAPE', 'BASE', 'EASY3_CAP'])) {
+            $reference = $type === 'BASE' ? 1000 : 100;
+        } elseif (in_array($type, ['EMPTY_BOTTLE', 'SQUONKER_BOTTLE'])) {
+            $reference = null;
+        } else return;
 
         $variants = $product->getVariants();
         /** @var Variant $variant */
@@ -139,11 +141,14 @@ class PriceMapper
             if ($detail === null) continue;
 
             $content = $variant->getContent() * $variant->getPiecesPerOrder();
+            if ($content === 0) continue;
 
             // set reference volume and unit
             $detail->setPurchaseUnit($content);
-            $detail->setReferenceUnit($reference);
             $detail->setUnit(UnitTool::getUnit('ml'));
+            if ($reference !== null) {
+                $detail->setReferenceUnit($reference);
+            }
 
         }
     }

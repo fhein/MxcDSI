@@ -179,7 +179,7 @@ class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterfac
         $url = preg_replace('~-inkl.-head~', '', $url);
 
         $type = $product->getType();
-        if (in_array($type, ['AROMA', 'LIQUID', 'SHAKE_VAPE'])) {
+        if (in_array($type, ['AROMA', 'LIQUID', 'NICSALT_LIQUID','SHAKE_VAPE'])) {
             $content = $product->getContent();
             if ($content > 0) {
                 $url .= '-' . $product->getContent() . '-ml';

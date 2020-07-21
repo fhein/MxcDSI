@@ -1246,8 +1246,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             /** @var Product $product */
             foreach ($products as $product) {
-                $type = $product->getType();
-                if (/*$type !== 'E_CIGARETTE' && */ $type !== 'POD_SYSTEM') continue;
                 $metaDataExtractor->extractMetaData($product);
             }
             $this->view->assign([ 'success' => true, 'message' => 'Metadata successfully extracted.']);

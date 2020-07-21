@@ -27,10 +27,10 @@ class CapacityMapper extends BaseImportMapper implements ProductMapperInterface,
     public function map(Model $model, Product $product, bool $remap = false)
     {
         $type = $product->getType();
-        if (! in_array($type, ['AROMA', 'SHAKE_VAPE', 'LIQUID', 'LIQUID_BOX', 'BASE', 'EASY3_CAP'])) return;
+        if (! in_array($type, ['AROMA', 'SHAKE_VAPE', 'NICSALT_LIQUID', 'LIQUID', 'LIQUID_BOX', 'BASE', 'EASY3_CAP'])) return;
 
         $capacity = NULL;
-        if (in_array($type, ['LIQUID', 'LIQUID_BOX', 'BASE'])) {
+        if (in_array($type, ['NICSALT_LIQUID', 'LIQUID', 'LIQUID_BOX', 'BASE'])) {
             $variants = $product->getVariants();
             foreach ($variants as $variant) {
                 $capacity = $variant->getContent();

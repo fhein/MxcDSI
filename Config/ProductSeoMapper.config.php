@@ -62,6 +62,14 @@ return [
         ],
         [
             'types' => [
+              'NICSALT_LIQUID'
+            ],
+            'title' => [
+                '~(Nikotinsalz-Liquid) - \d+ mg/ml~' => '$1'
+            ]
+        ],
+        [
+            'types' => [
                 'EASY3_CAP'
             ],
             'title' => [
@@ -96,6 +104,7 @@ return [
         'CLEAROMIZER_RDA'    => 'e-zigaretten/verdampfer/',
         'CLEAROMIZER_RDTA'   => 'e-zigaretten/verdampfer/',
         'CLEAROMIZER_RDSA'   => 'e-zigaretten/verdampfer/',
+        'NICSALT_LIQUID'     => 'e-liquids/nikotinsalz/',
         'LIQUID'             => 'e-liquids/gebrauchsfertig/',
         'LIQUID_BOX'         => 'e-liquids/gebrauchsfertig/',
         'AROMA'              => 'e-liquids/aromen/',

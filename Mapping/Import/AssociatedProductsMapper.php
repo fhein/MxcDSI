@@ -32,7 +32,6 @@ class AssociatedProductsMapper
     {
         if (null !== $this->productGroups) return $this->productGroups;
         $this->productGroups = [];
-        /** @noinspection PhpUndefinedMethodInspection */
         $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
         /** @var Product $product */
         foreach ($products as $product) {
@@ -153,7 +152,7 @@ class AssociatedProductsMapper
             }
         }
 
-        foreach (['SHAKE_VAPE', 'LIQUID', 'AROMA'] as $group) {
+        foreach (['SHAKE_VAPE', 'LIQUID', 'NICSALT_LIQUID', 'AROMA'] as $group) {
             $this->deriveSimilarFlavoredProducts($group);
         }
     }

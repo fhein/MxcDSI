@@ -25,6 +25,7 @@ return array(
                 2 => 'SQUONKER_BOX',
             ),
             'path' => 'AKKUTRÄGER',
+            'append' => ['box-mod'],
         ),
         2 => array(
             'types' => array(
@@ -300,6 +301,12 @@ return array(
             'path' => 'E-ZIGARETTEN > Pod-Systeme',
             'append' => ['pod-system'],
 
+        ),
+        35 => array(
+            'types' => array(
+                0 => 'SQUONKER_BOX',
+            ),
+            'path' => 'AKKUTRÄGER > Squonker-Boxen',
         ),
     ),
     'category_seo_items' => array(
@@ -603,6 +610,85 @@ return array(
             'keywords' => 'Akkuträger,Box,Box Mod,E-Zigarette,günstig,kaufen',
             'h1' => 'AKKUTRÄGER',
         ),
+        'AKKUTRÄGER > Squonker-Boxen' => array(
+            'title' => 'Squonker-Boxen günstig online kaufen!',
+            'description' => 'Squonker-Boxen günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Squonker-Box,Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'SQUONKER-BOXEN',
+        ),
+        'AKKUTRÄGER > bis 25 Watt' => array(
+            'title' => 'Akkuträger bis 25 Watt Leistung günstig online kaufen!',
+            'description' => 'Akkuträger bis 25 Watt Leistung ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER BIS ZU 25 WATT LEISTUNG',
+        ),
+        'AKKUTRÄGER > bis 75 Watt' => array(
+            'title' => 'Akkuträger bis 75 Watt Leistung günstig online kaufen!',
+            'description' => 'Akkuträger bis 75 Watt Leistung ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER BIS ZU 75 WATT LEISTUNG',
+        ),
+        'AKKUTRÄGER > bis 100 Watt' => array(
+            'title' => 'Akkuträger bis 100 Watt Leistung günstig online kaufen!',
+            'description' => 'Akkuträger bis 100 Watt Leistung ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER MIT BIS ZU 100 WATT LEISTUNG',
+        ),
+        'AKKUTRÄGER > bis 180 Watt' => array(
+            'title' => 'Akkuträger bis 180 Watt Leistung günstig online kaufen!',
+            'description' => 'Akkuträger bis 180 Watt Leistung ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER BIS ZU 180 WATT LEISTUNG',
+        ),
+        'AKKUTRÄGER > bis 200 Watt' => array(
+            'title' => 'Akkuträger bis 200 Watt Leistung günstig online kaufen!',
+            'description' => 'Akkuträger bis 200 Watt Leistung ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER BIS ZU 200 WATT LEISTUNG',
+        ),
+        'AKKUTRÄGER > über 200 Watt' => array(
+            'title' => 'Akkuträger mit über 200 Watt Leistung günstig online kaufen!',
+            'description' => 'Akkuträger mit über 200 Watt Leistung ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER MIT ÜBER 200 WATT LEISTUNG',
+        ),
+        'AKKUTRÄGER > für eine Akkuzelle' => array(
+            'title' => 'Akkuträger für eine Akkuzelle günstig online kaufen!',
+            'description' => 'Akkuträger für eine Akkuzelle ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER FÜR EINE WECHSELBARE AKKUZELLE',
+        ),
+        'AKKUTRÄGER > für zwei Akkuzellen' => array(
+            'title' => 'Akkuträger für zwei Akkuzellen günstig online kaufen!',
+            'description' => 'Akkuträger für zwei Akkuzellen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER FÜR ZWEI WECHSELBARE AKKUZELLEN',
+        ),
+        'AKKUTRÄGER > für drei Akkuzellen' => array(
+            'title' => 'Akkuträger für zwei Akkuzellen günstig online kaufen!',
+            'description' => 'Akkuträger für drei Akkuzellen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER FÜR DREI WECHSELBARE AKKUZELLEN',
+        ),
+        'AKKUTRÄGER > Akku bis 1.000 mAh' => array(
+            'title' => 'Akkuträger mit eingebautem Akku bis 1.000 mAh günstig online kaufen!',
+            'description' => 'Akkuträger mit Akku bis 1.000 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER MIT EINGEBAUTEM AKKU BIS 1.000 mAh KAPAZITÄT',
+        ),
+        'AKKUTRÄGER > Akku bis 2.500 mAh' => array(
+            'title' => 'Akkuträger mit eingebautem Akku bis 2.500 mAh günstig online kaufen!',
+            'description' => 'Akkuträger mit Akku bis 2.500 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER MIT EINGEBAUTEM AKKU BIS 2.500 mAh KAPAZITÄT',
+        ),
+        'AKKUTRÄGER > Akku über 2.500 mAh' => array(
+            'title' => 'Akkuträger mit eingebautem Akku über 2.500 mAh günstig online kaufen!',
+            'description' => 'Akkuträger mit Akku über 2.500 mAh ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
+            'h1' => 'AKKUTRÄGER MIT EINGEBAUTEM AKKU ÜBER 2.500 mAh KAPAZITÄT',
+        ),
+
     ),
     'sort_child_categories' => [
         'E-LIQUIDS > Fertig-Liquids',
