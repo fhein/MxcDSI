@@ -30,8 +30,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.model.Product', {
         { name : 'accepted', type: 'boolean' },
         { name : 'new', type: 'boolean' },
         { name : 'linked', type: 'boolean' },
-        //    { name : 'releaseDate', type: 'date', dateFormat: 'd.m.Y' },
-        //    { name : 'created', type: 'date', dateFormat: 'd.m.Y' },
+        { name : 'releaseDate', type: 'string' }
     ],
 
     associations: [

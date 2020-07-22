@@ -8,6 +8,7 @@ use DateTime;
 use Enlight\Event\SubscriberInterface;
 use Mxc\Shopware\Plugin\Service\LoggerInterface;
 use MxcDropshipInnocigs\Import\ApiClient;
+use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Article\Article;
@@ -46,6 +47,7 @@ class UpdateStockCronJob implements SubscriberInterface
 
         try {
             $this->updateStockInfo();
+            $this->syncReleaseDates();
             $this->unsetOutdatedReleaseDates();
         } catch (Throwable $e) {
             $result = false;
@@ -60,9 +62,64 @@ class UpdateStockCronJob implements SubscriberInterface
         return $result;
     }
 
+    /** Return the release date of a Shopware article
+     */
+    protected function getArticleReleaseDate(Article $article)
+    {
+        $releaseDate = null;
+        $details = $article->getDetails();
+        /** @var Detail $detail */
+        foreach ($details as $detail) {
+            $releaseDate = $detail->getReleaseDate();
+            if ($releaseDate !== null) break;
+        }
+        return $releaseDate;
+    }
+
+    /**
+     * Write release date to all details belonging to an article
+     */
+    protected function setArticleReleaseDate(Article $article, DateTime $releaseDate)
+    {
+        $details = $article->getDetails();
+        /** @var Detail $detail */
+        foreach ($details as $detail) {
+            $detail->setReleaseDate($releaseDate);
+        }
+    }
+
+    /** Get all products with release date set. Get associated article.
+     *  Set article release date if not set already.
+     *  Pullback article release date to product if article release date is set
+     */
+    protected function syncReleaseDates()
+    {
+        $products = $this->modelManager->getRepository(Product::class)->getProductsWithReleaseDate();
+        /** @var Product $product */
+        foreach ($products as $product) {
+            /** @var Article $article */
+            $article = $product->getArticle();
+            if ($article === null) continue;
+            $articleReleaseDate = $this->getArticleReleaseDate($article);
+            if ($articleReleaseDate === null) {
+                $releaseDate = DateTime::createFromFormat('d.m.Y H:i:s', $product->getReleaseDate() . ' 00:00:00');
+                $this->setArticleReleaseDate($article, $releaseDate);
+                $this->log->info('Setting release date of ' . $article->getName() . ' to ' . $product->getReleaseDate());
+            } else {
+                $releaseDate = $articleReleaseDate->format('d.m.Y');
+                if ($product->getReleaseDate() != $releaseDate) {
+                    $product->setReleaseDate($releaseDate);
+                    $this->log->info('Pulling back release date of ' . $article->getName() . ': ' . $releaseDate);
+                }
+            }
+        }
+        $this->modelManager->flush();
+    }
+
     // unset the (future) release date for articles in stock
     protected function unsetOutdatedReleaseDates() {
         $articles = $this->modelManager->getRepository(Article::class)->findAll();
+        $productRepository = $this->modelManager->getRepository(Product::class);
         /** @var Article $article */
         foreach ($articles as $article) {
             $details = $article->getDetails();
@@ -85,14 +142,15 @@ class UpdateStockCronJob implements SubscriberInterface
             }
             // unset the release date if the any of the product's variants is in stock
             if ($instock !== 0) {
-                $this->log->debug('Unsetting release dates of '. $article->getName());
+                $this->log->info('Unsetting release dates of '. $article->getName());
                 $releaseDate = null;
+                $productRepository->getProduct($article)->setReleaseDate($releaseDate);
             } else {
                 // if the product is still not in stock and the releasedate is in the past
                 // set the release date 3 days in the future
                 $now = new DateTime();
                 if ($now > $releaseDate) {
-                    $this->log->debug('Promoting the release date of ' . $article->getName());
+                    $this->log->info('Promoting the release date of ' . $article->getName());
                     $releaseDate = new DateTime('+3 days');
                 }
             }

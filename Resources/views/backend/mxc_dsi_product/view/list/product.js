@@ -21,7 +21,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 commonName:                 { header: 'Common' },
                 category:                   { header: 'Category'},
                 name:                       { header: 'Name', flex: 3 },
-                // releaseDate:                { header: 'Release', width: 80, flex: 0, renderer: this.dateRenderer },
                 flavor:                     { header: 'Flavor' },
                 content:                    { header: 'Content' },
                 capacity:                   { header: 'Capacity' },
@@ -30,6 +29,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 headChangeable:             { header: 'Head Changeable'},
                 cellCapacity:               { header: 'Cell Capacity'},
                 power:                      { header: 'Power'},
+                releaseDate:                { header: 'Release'},
                 accepted:                   { header: 'accept', width:45, flex: 0}
             },
             addButton: false,
@@ -917,21 +917,6 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 }
             }
         };
-    },
-
-    dateRenderer: function (value) {
-        console.log(value);
-        if (value) {
-            console.log(value.date);
-            return value.date;
-        }
-        // if (value && value instanceof Date) {
-        //     if (value.getTime() > 0) {
-        //         return Ext.Date.format(value, Ext.Date.defaultFormat)
-        //     }
-        // }
-
-        return '';
     },
 
     onSelectionChange: function(selModel, selection) {

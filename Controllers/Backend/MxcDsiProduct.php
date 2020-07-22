@@ -4,10 +4,10 @@
 
 use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
 use Mxc\Shopware\Plugin\Database\SchemaManager;
+use MxcDropshipInnocigs\Cronjobs\UpdateStockCronJob;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Import\UpdateStockCronJob;
 use MxcDropshipInnocigs\Jobs\ApplyPriceRules;
 use MxcDropshipInnocigs\Jobs\PullCategorySeoInformation;
 use MxcDropshipInnocigs\Jobs\UpdateInnocigsPrices;
@@ -1258,9 +1258,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $services = MxcDropshipInnocigs::getServices();
+            $log = $services->get('logger');
             /** @var CategoryMapper $categoryMapper */
-            $categoryMapper = $services->get(CategoryMapper::class);
-            $categoryMapper->sortCategories();
+            $products = $this->getManager()->getRepository(Product::class)->getProductsWithReleaseDate();
+            foreach ($products as $product) {
+                $log->debug('Release Date: ' . $product->getName());
+            }
+//            $categoryMapper = $services->get(CategoryMapper::class);
+//            $categoryMapper->sortCategories();
             $this->view->assign([ 'success' => true, 'message' => 'Development 2 slot is currently free.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

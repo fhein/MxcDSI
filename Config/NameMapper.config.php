@@ -142,6 +142,7 @@ return [
             '~(vPipe Mini) - E-Zigarette~'                 => '$1 - E-Pfeife',
             '~(Care Edition) (E-Zigarette)~'               => '$1 - $2',
             '~InnoCigs (Caliburn)~'                        => 'Uwell - $1',
+            '~(KA1) (- 0,6 Ohm) (Coil)~'                   => '$1 $3 $2'
         ],
     ],
 
@@ -308,6 +309,11 @@ return [
             '~(Dr. Fog - Shisha) (- Aroma)(.*)(- \d+(,\d+)? ml)~'         => '$1 - $3 $2 $4',
             '~(Dr. Fog - All Stars) (- Aroma)(.*)(- \d+(,\d+)? ml)~'      => '$1 - $3 $2 $4',
             '~(Alphavirus) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
+            '~(MakeYourLiquid) (- Aroma)(.*)(- \d+(,\d+)? ml)~'           => '$1 - $3 $2 $4',
+            '~(Galaxy) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                   => '$1 - $3 $2 $4',
+            '~(Samurai Maza) (- Aroma)(.*)(- \d+(,\d+)? ml)~'             => '$1 - $3 $2 $4',
+            '~(Samurai) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
+            '~(MaZa) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                     => '$1 - $3 $2 $4',
             '~(Gedankenlos) (- Aroma)(.*)(- \d+(,\d+)? ml)~'              => '$1 - $3 $2 $4',
             '~(Tom Klarks) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
             '~(WeFog - Blizzard) (- Aroma)(.*)(- \d+(,\d+)? ml)~'         => '$1 - $3 $2 $4',
@@ -1133,6 +1139,7 @@ return [
           '~(Brunhilde MTL RTA)~',
           '~(Brunhilde Top Coiler RTA)~',
           '~(Kriemhild)~',
+          '~(TGO( Pod Mod)?)~',
         ],
         'VapeOnly'      => [
             '~(vPipe(( III)|( Mini)) (Ebony)?)~',
@@ -1152,7 +1159,7 @@ return [
             '~(Navi)~',
         ],
         'Vaporesso'     => [
-            '~(GTX Tank 22)~',
+            '~(GTX(( Tank 22)|( One)|( 18)))~',
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
             '~(Osmall)~',
             '~(Sky Solo( Plus)?)~',

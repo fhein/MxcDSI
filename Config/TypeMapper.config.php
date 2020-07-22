@@ -64,6 +64,7 @@ return [
     ],
 
     'name_type_mapping' => [
+        '~TGO Pod Mod~'             => TypeMapper::TYPE_POD_SYSTEM,
         '~Ersatzteil-Set~'          => TypeMapper::TYPE_SPARE_PARTS,
         '~Kamin~'                   => TypeMapper::TYPE_SPARE_PARTS,
         '~T-Shirt~'                 => TypeMapper::TYPE_ACCESSORY,

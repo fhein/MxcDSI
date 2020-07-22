@@ -78,6 +78,7 @@ return array(
         13 => 'Slush Eis',
         14 => 'Vanilleeis',
         15 => 'Zitronensorbet',
+        16 => 'Spearmint',
     ),
     'Früchte' => array(
         0 => 'Amarenakirsche',
@@ -205,6 +206,7 @@ return array(
         17 => 'Zucker',
         18 => 'brauner Zucker',
         19 => 'schwarzer Trüffel',
+        20 => 'Gewürze',
     ),
     'Melonen' => array(
         0 => 'Cantaloupe-Melone',
@@ -258,16 +260,6 @@ return array(
         12 => 'Rhabarber',
         13 => 'Waldmeister',
     ),
-    'Sonstige' => array(
-        0 => 'Frucht',
-        1 => 'Kirsch',
-        2 => 'Kokosnuss',
-        3 => 'Kokosnuss',
-        4 => 'Süßigkeiten',
-        5 => 'Test',
-        6 => 'Weintraube',
-        7 => 'scharzer Tee',
-    ),
     'Süßigkeiten' => array(
         0 => 'Buttercreme',
         1 => 'Butterscotch',
@@ -299,6 +291,7 @@ return array(
         27 => 'gebrannte Mandeln',
         28 => 'saures Weingummi',
         29 => 'weiße Schokolade',
+        30 => 'Erdbeerschnüre',
     ),
     'Tabak' => array(
         0 => 'Burley Tabak',
@@ -326,6 +319,7 @@ return array(
         12 => 'grüner Tee',
         13 => 'grüner Zitronentee',
         14 => 'schwarzer Tee',
+        15 => 'Jasmintee',
     ),
     'Trauben' => array(
         0 => 'Traube',

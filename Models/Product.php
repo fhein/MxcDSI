@@ -4,7 +4,6 @@ namespace MxcDropshipInnocigs\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use Shopware\Components\Model\ModelEntity;
 
@@ -31,6 +30,12 @@ class Product extends ModelEntity  {
      * @ORM\Column(type="string", nullable=true)
      */
     private $number;
+
+    /**
+     * @var string $releaseDate
+     * @ORM\Column(name="release_date", type="string", length=12, nullable=true)
+     */
+    private $releaseDate;
 
     /**
      * @ORM\ManyToMany(targetEntity="Product")
@@ -927,5 +932,21 @@ class Product extends ModelEntity  {
             $cellTypes = implode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $cellTypes);
         }
         $this->cellTypes = $cellTypes;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReleaseDate()
+    {
+        return $this->releaseDate;
+    }
+
+    /**
+     * @param string | null $releaseDate
+     */
+    public function setReleaseDate($releaseDate)
+    {
+        $this->releaseDate = $releaseDate;
     }
 }

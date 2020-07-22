@@ -7,7 +7,12 @@
         
         {if $sArticle.attributes.mxc_in_stock->get('in_stock') < 1}
             <div class="product--badge badge--sold">
-                {s name="twBadgeSoldText"}Ausverkauft{/s}
+                {$releaseDate = $sArticle.attributes.mxc_releasedate->get('releasedate')}
+                {if $releaseDate != null}
+                    {s name="mxcCaAb"}ca. ab{/s} {$releaseDate}
+                {else}
+                    {s name="twBadgeSoldText"}Ausverkauft{/s}
+                {/if}
             </div>
         {elseif $sArticle.attributes.mxc_in_stock->get('in_stock') le $theme.product_box_badge_instock_threshold}
             <div class="product--badge badge--low-stock">

@@ -78,6 +78,9 @@ return [
             'Sweets'   => 2,
             'Pops'     => 2,
         ],
+        'Samurai' => [
+            'Maza'  => 2,
+        ],
         'WeFog' => [
             'Blizzard' => 2,
         ],

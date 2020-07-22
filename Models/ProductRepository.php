@@ -74,6 +74,9 @@ class ProductRepository extends BaseEntityRepository
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
             . 'JOIN p.relatedProducts r  WHERE r.id IN (:relatedIds)',
 
+        'getProductsWithReleaseDate' =>
+            'SELECT p FROM MxcDropshipInnocigs\Models\Product p WHERE p.releaseDate IS NOT NULL',
+
         // get all products which have an associated Shopware article and which have a similar product from :similarIds
         'getProductsHavingSimilarArticles' =>
             'SELECT DISTINCT p FROM MxcDropshipInnocigs\Models\Product p INDEX BY p.icNumber '
