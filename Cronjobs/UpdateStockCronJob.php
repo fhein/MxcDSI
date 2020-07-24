@@ -102,9 +102,16 @@ class UpdateStockCronJob implements SubscriberInterface
             if ($article === null) continue;
             $articleReleaseDate = $this->getArticleReleaseDate($article);
             if ($articleReleaseDate === null) {
-                $releaseDate = DateTime::createFromFormat('d.m.Y H:i:s', $product->getReleaseDate() . ' 00:00:00');
-                $this->setArticleReleaseDate($article, $releaseDate);
-                $this->log->info('Setting release date of ' . $article->getName() . ' to ' . $product->getReleaseDate());
+                $productReleaseDate = $product->getReleaseDate();
+                if (! empty($productReleaseDate)) {
+                   $releaseDate = DateTime::createFromFormat('d.m.Y H:i:s', $product->getReleaseDate() . ' 00:00:00');
+                    if (!$releaseDate instanceof DateTime) {
+                        $this->log->warn('Wrong release date string: ' . $product->getName() . ', string: ' . $productReleaseDate);
+                    } else {
+                        $this->setArticleReleaseDate($article, $releaseDate);
+                        $this->log->info('Setting release date of ' . $article->getName() . ' to ' . $product->getReleaseDate());
+                    }
+                }
             } else {
                 $releaseDate = $articleReleaseDate->format('d.m.Y');
                 if ($product->getReleaseDate() != $releaseDate) {
@@ -133,6 +140,7 @@ class UpdateStockCronJob implements SubscriberInterface
             }
             // skip article if there is no release date
             if ($releaseDate === null) continue;
+            $this->log->debug('Processing release date');
 
             // determine if a quantity of any of the details is in stock
             $instock = 0;

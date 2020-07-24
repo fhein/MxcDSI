@@ -5,6 +5,8 @@ return [
         // 'BOX_MOD',
         // 'BOX_MOD_CELL',
         // 'SQUONKER_BOX',
+        'CLEAROMIZER',
+
     ],
 
     'defaults' => [
@@ -33,6 +35,9 @@ return [
         'SQUONKER_BOX' => [
             'BATTERIES',
             'POWER'
-        ]
+        ],
+        'CLEAROMIZER' => [
+            'TANK_CAPACITY'
+        ],
     ],
 ];

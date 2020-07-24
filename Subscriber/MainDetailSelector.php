@@ -10,14 +10,22 @@ use Shopware_Controllers_Frontend_Index;
 
 class MainDetailSelector implements SubscriberInterface
 {
+    // Diese Klasse soll dafür sorgen, dass im Falle, dass die Hauptvariante nicht verfügbar ist,
+    // eine verfügbare Variante zur Hauptvariante gemacht wird, so dass wenn man ein Produkt öffnet,
+    // eine verfügbare Variante angezeigt wird.
+    //
+    // Der Wechsel der Hauptvariante funktioniert, die Anzeige der neuen Hauptvariante nicht.
+    // Deshalb erst einmal keine Aktion hier.
+
     /**
      * {@inheritdoc}
      */
     public static function getSubscribedEvents()
     {
+        // Abgeschaltet
         return [
-            'Enlight_Controller_Action_PreDispatch' => 'onPreDispatch',
-            'Enlight_Controller_Action_PostDispatch' => 'onPostDispatch',
+            // 'Enlight_Controller_Action_PreDispatch' => 'onPreDispatch',
+            // 'Enlight_Controller_Action_PostDispatch' => 'onPostDispatch',
         ];
     }
 
@@ -58,6 +66,7 @@ class MainDetailSelector implements SubscriberInterface
 
     public function onPostDispatch(Enlight_Event_EventArgs $args)
     {
+
         /** @var Shopware_Controllers_Frontend_Index $controller */
         /** @noinspection PhpUndefinedMethodInspection */
         $controller = $args->getSubject();

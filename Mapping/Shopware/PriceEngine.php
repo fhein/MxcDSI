@@ -8,13 +8,11 @@ use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
 use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
 use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Product;
 use MxcDropshipInnocigs\Models\Variant;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Customer\Group;
-use Zend\Config\Factory;
 
 class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
 {
@@ -23,14 +21,6 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
     use ClassConfigAwareTrait;
 
     private $report;
-
-    protected $defaultConfig = [
-        'price' => null,
-        'margin_min_percent'    => 25,
-        'margin_min_abs'        => 1,
-        'margin_max_percent'    => null,
-        'margin_max_abs'        => 15,
-    ];
 
     protected $logEnabled = false;
 
@@ -149,12 +139,13 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
             }
         }
 
-        // Ist die maximale absolute Marge in EUR (dennoch) überschritten, wird der Netto-Verkaufspreis gesenkt
-        // und die Marge neu berechnet
+        // Ist die maximale absolute Marge in EUR (dennoch) überschritten, wird der Netto-Verkaufspreis entsprechend
+        // gesenkt, die Paypal-Kosten werden aufgeschlagen, und die Marge neu berechnet
         $limit = $priceConfig['margin_max_abs'];
         $marginAbsolute = round($netRetailPrice - $netPurchasePrice, 5);
         if ($limit !== null && $marginAbsolute > $limit) {
-            $netRetailPrice = $netPurchasePrice + $limit;
+            $paypalFactor = 1.03;
+            $netRetailPrice = ($netPurchasePrice + $limit) * $paypalFactor;
             $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
             if ($this->logEnabled) {
                 $log[] = 'Maximum absolute margin adjusted to ' . $limit . ' EUR (from ' . (round($marginAbsolute,
@@ -164,7 +155,8 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
 
         $discount = $this->getDiscount($netRetailPrice * $vatFactor) / 100;
 
-        if ($discount != 0) {
+        $marginMinDiscountAbs = @$priceConfig['margin_min_discount_abs'];
+        if ($discount != 0 && $marginMinDiscountAbs != null) {
             $discountValue = $netRetailPrice * $discount;
             $discountedNetRetailPrice = $netRetailPrice - $discountValue;
 
@@ -173,9 +165,10 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
             // Dropship Versandkosten
             $netRevenue -= $dropShip;
 
-            if ($netRevenue < 6.0) {
-                $minRevenue = $discountValue + (6.0 + $dropShip) / 0.925;
-                $netRetailPrice = $netPurchasePrice + $minRevenue;
+            if ($netRevenue < $marginMinDiscountAbs) {
+                $minRevenue = $discountValue + ($marginMinDiscountAbs + $dropShip) / 0.925;
+                $paypalFactor = 1.03;
+                $netRetailPrice = ($netPurchasePrice + $minRevenue) * $paypalFactor;
                 $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
                 if ($this->logEnabled) {
                     $log[] = 'Minimum revenue adjusted to ' . round($minRevenue, 2) . '. New margin: '
@@ -219,16 +212,16 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
 
         $rules = $this->classConfig['rules'];
 
-        $config = null;
-        $config = @$rules[$type][$supplier][$productNumber][$variantNumber];
-        if ($config !== null) return $config;
-        $config = @$rules[$type][$supplier][$productNumber]['_default'];
-        if ($config !== null) return $config;
-        $config = @$rules[$type][$supplier]['_default'];
-        if ($config !== null) return $config;
-        $config = @$rules[$type]['_default'];
-        if ($config !== null) return $config;
-        $config = $this->defaultConfig;
+        $config = $rules['_default'];
+        $cursor = @$rules[$type]['_default'];
+        if ($cursor != null) $config = array_merge($config, $cursor);
+        $cursor = @$rules[$type][$supplier]['_default'];
+        if ($cursor != null) $config = array_merge($config, $cursor);
+        $cursor = @$rules[$type][$supplier][$productNumber]['_default'];
+        if ($cursor != null) $config = array_merge($config, $cursor);
+        $cursor = @$rules[$type][$supplier][$productNumber][$variantNumber];
+        if ($cursor != null) $config = array_merge($config, $cursor);
+
         return $config;
     }
 
@@ -269,28 +262,4 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         }
         return $retailPrices;
     }
-
-    public function createDefaultConfiguration()
-    {
-        $config = [];
-        $config['_default'] = $this->defaultConfig;
-        $products = $this->modelManager->getRepository(Product::class)->getAllIndexed();
-        /** @var Product $product */
-        foreach ($products as $product) {
-            $type = $product->getType();
-            if (empty($config[$type]['_default'])) {
-                $config[$type]['_default'] = $this->defaultConfig;
-            }
-//            $supplier = $product->getSupplier();
-//            if ($supplier === 'InnoCigs') {
-//                $supplier = $product->getBrand();
-//            }
-//            if (empty($config[$type][$supplier]['_default'])) {
-//                $config[$type][$supplier]['_default'] = $this->defaultConfig;
-//            }
-        }
-        Factory::toFile($this->configFile, [ 'rules' => $config]);
-
-    }
-
 }

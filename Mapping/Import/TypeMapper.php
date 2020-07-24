@@ -46,7 +46,7 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
     const TYPE_CLEAROMIZER          = 35;
     const TYPE_CLEAROMIZER_RTA      = 36;
     const TYPE_CLEAROMIZER_RDTA     = 37;
-    const TYPE_CLEAROMIZER_RDSA     = 38;
+    const TYPE_CLEAROMIZER_ADA      = 38;
     const TYPE_E_HOOKAH             = 39;
     const TYPE_SQUONKER_BOX         = 40;
     const TYPE_EMPTY_BOTTLE         = 41;

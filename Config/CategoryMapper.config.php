@@ -31,16 +31,8 @@ return array(
             'types' => array(
                 0 => 'CLEAROMIZER',
             ),
-            'path' => 'VERDAMPFER',
-        ),
-        3 => array(
-            'types' => array(
-                0 => 'CLEAROMIZER_RTA',
-                1 => 'CLEAROMIZER_RDA',
-                2 => 'CLEAROMIZER_RDTA',
-                3 => 'CLEAROMIZER_RDSA',
-            ),
-            'path' => 'SELBSTWICKLER > Verdampfer',
+            'append' => ['clearomizer'],
+            'path' => 'VERDAMPFER > für Verdampferköpfe',
         ),
         4 => array(
             'types' => array(
@@ -308,6 +300,30 @@ return array(
             ),
             'path' => 'AKKUTRÄGER > Squonker-Boxen',
         ),
+        3 => array(
+            'types' => array(
+                0 => 'CLEAROMIZER_RTA',
+            ),
+            'path' => 'VERDAMPFER > für Selbstwickler > RTA',
+        ),
+        36 => array(
+            'types' => array(
+                0 => 'CLEAROMIZER_RDTA',
+            ),
+            'path' => 'VERDAMPFER > für Selbstwickler > RDTA',
+        ),
+        37 => array(
+            'types' => array(
+                0 => 'CLEAROMIZER_RDA',
+            ),
+            'path' => 'VERDAMPFER > für Selbstwickler > RDA',
+        ),
+        38 => array(
+            'types' => array(
+                0 => 'CLEAROMIZER_ADA',
+            ),
+            'path' => 'VERDAMPFER > für Selbstwickler > ADA',
+        ),
     ),
     'category_seo_items' => array(
         'E-ZIGARETTEN' => array(
@@ -544,11 +560,18 @@ return array(
             'keywords' => 'Werkzeug,E-Zigarette,günstig,kaufen',
             'h1' => 'WERKZEUG FÜR SELBSTWICKLER',
         ),
-        'SELBSTWICKLER > Verdampfer' => array(
+        'VERDAMPFER > für Verdampferköpfe' => array(
+            'title' => 'Verdampfer für Fertigköpfe günstig online kaufen!',
+            'description' => 'Verdampfer für Fertigköpfe günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Verdampfer,Clearomizer,E-Zigarette,günstig,kaufen',
+            'h1' => 'VERDAMPFER FÜR FERTIGKÖPFE',
+        ),
+
+        'VERDAMPFER > für Selbstwickler' => array(
             'title' => 'Selbstwickel-Verdampfer für die E-Zigaratte günstig online kaufen!',
             'description' => 'Selbstwickel-Verdampfer günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Selbstwickler,Verdampfer,Selbstwickel-Verdampfer,Clearomizer,Atomizer,E-Zigarette,günstig,kaufen',
-            'h1' => 'SELBSTWICKEL-VERDAMPFER',
+            'h1' => 'VERDAMPFER FÜR SELBSTWICKLER',
         ),
         'SELBSTWICKLER > Sonstige Ersatzteile' => array(
             'title' => 'Ersatzteile für Selbstwickel-Verdampfer günstig online kaufen!',
@@ -688,7 +711,30 @@ return array(
             'keywords' => 'Box,Box Mod,E-Zigarette,günstig,kaufen',
             'h1' => 'AKKUTRÄGER MIT EINGEBAUTEM AKKU ÜBER 2.500 mAh KAPAZITÄT',
         ),
-
+        'VERDAMPFER > für Selbstwickler > RTA' => array(
+            'title' => 'RTA Verdampfer günstig online kaufen!',
+            'description' => 'Rebuildable Tank Atomizers ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Verdampfer,RTA,günstig,kaufen',
+            'h1' => 'REBUILDABLE TANK ATOMIZERS (RTA)',
+        ),
+        'VERDAMPFER > für Selbstwickler > RDTA' => array(
+            'title' => 'RDTA Verdampfer günstig online kaufen!',
+            'description' => 'Rebuildable Dripping Tank Atomizers ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Verdampfer,RDTA,günstig,kaufen',
+            'h1' => 'REBUILDABLE DRIPPING TANK ATOMIZERS (RDTA)',
+        ),
+        'VERDAMPFER > für Selbstwickler > RDA' => array(
+            'title' => 'RDA Verdampfer günstig online kaufen!',
+            'description' => 'Rebuildable Dripping Atomizers ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Verdampfer,RDA,günstig,kaufen',
+            'h1' => 'REBUILDABLE DRIPPING ATOMIZERS (RDA)',
+        ),
+        'VERDAMPFER > für Selbstwickler > ADA' => array(
+            'title' => 'ADA Verdampfer günstig online kaufen!',
+            'description' => 'ADA Verdampfer ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Verdampfer,ADA,günstig,kaufen',
+            'h1' => 'ADA Verdampfer',
+        ),
     ),
     'sort_child_categories' => [
         'E-LIQUIDS > Fertig-Liquids',

@@ -132,6 +132,9 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                 case 'box-mod':
                     $subCategories = array_replace($subCategories, $this->getBoxModAppendices($product));
                     break;
+                case 'clearomizer':
+                    $subCategories = array_replace($subCategories, $this->getClearomizerAppendics($product));
+                    break;
             }
         }
         foreach ($subCategories as $subCategory) {
@@ -178,6 +181,26 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             $categories[] = 'bis 200 Watt';
         } else {
             $categories[] = 'über 200 Watt';
+        }
+        return $categories;
+    }
+
+    protected function getClearomizerAppendics(Product $product)
+    {
+        $categories = [];
+        // tank capacity
+        $capacity = $product->getCapacity();
+        $capacity = floatval(str_replace(',', '.', $capacity));
+        if ($capacity <= 2.0) {
+            $categories[] = 'Tank bis 2 ml';
+        } elseif ($capacity <= 3.0) {
+            $categories[] = 'Tank bis 3 ml';
+        } elseif ($capacity <= 4.0) {
+            $categories[] = 'Tank bis 4 ml';
+        } elseif ($capacity <= 5.0) {
+            $categories[] = 'Tank bis 5 ml';
+        } else {
+            $categories[] = 'Tank über 5 ml';
         }
         return $categories;
     }

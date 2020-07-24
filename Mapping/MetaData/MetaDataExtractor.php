@@ -150,7 +150,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
 
         foreach ($sources as $source) {
             if ($source === null) continue;
-            if (preg_match('~(\d+,\d+|\d+) ml~', $source, $matches) === 1) {
+            if (preg_match('~(\d+,\d+|\d+) ?ml~', $source, $matches) === 1) {
                 $tankCapacity = $matches[1];
                 break;
             }
