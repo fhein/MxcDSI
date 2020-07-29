@@ -10,6 +10,8 @@ use MxcDropshipInnocigs\Excel\ExcelProductImport;
 use MxcDropshipInnocigs\Import\ImportClient;
 use MxcDropshipInnocigs\Jobs\ApplyPriceRules;
 use MxcDropshipInnocigs\Jobs\PullCategorySeoInformation;
+use MxcDropshipInnocigs\Jobs\RestoreEmailTemplates;
+use MxcDropshipInnocigs\Jobs\SaveEmailTemplates;
 use MxcDropshipInnocigs\Jobs\UpdateInnocigsPrices;
 use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
 use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
@@ -37,12 +39,15 @@ use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use MxcDropshipInnocigs\Report\ArrayReport;
 use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
 use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
+use MxcDropshipInnocigs\Workflow\DocumentRenderer;
+use MxcDropshipInnocigs\Workflow\MailRenderer;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Customer;
+use Shopware\Models\Order\Order;
 use Zend\Config\Factory;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
@@ -57,6 +62,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             'excelExportPriceIssues',
             'excelExportEcigMetaData',
             'csvExportCustomers',
+            'arrayExportDocumentationTodos',
         ];
     }
 
@@ -1181,6 +1187,63 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function arrayExportDocumentationTodosAction()
+    {
+        try {
+
+            $types = [
+                'E_CIGARETTE',
+                'BOX_MOD',
+                'BOX_MOD_CELL',
+                'SQUONKER_BOX',
+                'CLEAROMIZER',
+                'CLEAROMIZER_ADA',
+                'CLEAROMIZER_RTA',
+                'CLEAROMIZER_RDA',
+                'CLEAROMIZER_RDTA'
+            ];
+
+            $products = $this->getManager()->getRepository(Product::class)->findAll();
+            /** @var Product $product */
+            foreach ($products as $product) {
+                $type = $product->getType();
+                if (! in_array($type, $types)) continue;
+                /** @var Shopware\Models\Article\Article $article */
+                $article = $product->getArticle();
+                if ($article === null) continue;
+                $description = $article->getDescriptionLong();
+                if (strpos($description, '<tbody>') === false) {
+                    $productsToDo[$type][$product->getIcNumber()] = $product->getName();
+                }
+            }
+            foreach ($types as $type) {
+                if (isset($productsToDo[$type]))
+                    asort($productsToDo[$type]);
+            }
+            ksort($productsToDo);
+            $file = var_export($productsToDo, true);
+            $this->exportFile('vapee.documentation.todos.txt', strlen($file), $file);
+
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+
+    }
+
+    public function test () {
+
+        $services = MxcDropshipInnocigs::getServices();
+        /** @var DocumentRenderer $docRenderer */
+        $docRenderer = $services->get(DocumentRenderer::class);
+        $log = $services->get('logger');
+        /** @var \Shopware\Models\Order\Order $order */
+        $order = $this->getManager()->getRepository(\Shopware\Models\Order\Order::class)->find(2);
+        if ($order !== null) {
+            $docRenderer->createDocument($order, 'invoice');
+            $log->debug('Document path: '  . $docRenderer->getDocumentPath($order, 'invoice'));
+        }
+    }
+
     public function updateAssociatedLiquidsAction()
     {
         try {
@@ -1198,6 +1261,26 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
             $manager->flush();
             $this->view->assign([ 'success' => true, 'message' => 'Similar and related articles set for liquids etc.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function saveEmailTemplatesAction()
+    {
+        try {
+            SaveEmailTemplates::run();
+            $this->view->assign([ 'success' => true, 'message' => 'Email templates successfully saved.']);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
+    public function restoreEmailTemplatesAction()
+    {
+        try {
+            RestoreEmailTemplates::run();
+            $this->view->assign([ 'success' => true, 'message' => 'Email templates successfully restored.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1335,32 +1418,13 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function dev6Action() {
         try {
-            // write all e-cigarettes with ic descriptions to icProductDescriptions log
-
-            $params = $this->request->getParams();
-            /** @noinspection PhpUnusedLocalVariableInspection */
-            $ids = json_decode($params['ids'], true);
-
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            /** @var Product $product */
-            foreach ($products as $product) {
-                $type = $product->getType();
-                if ($type !== 'E_CIGARETTE' && $type !== 'E_PIPE' && $type !== 'POD_SYSTEM') continue;
-                /** @var Shopware\Models\Article\Article $article */
-                $article = $product->getArticle();
-                if ($article === null) continue;
-                $description = $article->getDescriptionLong();
-//                if (strpos($description, 'Pod') !== false || strpos($description, 'Cartridge') !== false) {
-                if (strpos($description, '<tbody>') === false) {
-                    $productsToDo[$product->getIcNumber()] = $product->getName();
-                }
-            }
-            sort($productsToDo);
-            $report = new ArrayReport();
-            $report(['icProductDescriptions' => $productsToDo]);
-
-            // Do something with the ids
-            $this->view->assign([ 'success' => true, 'message' => 'Development 6 slot is currently free.']);
+            /** @var Order $order */
+            $order = $this->getManager()->getRepository(\Shopware\Models\Order\Order::class)->find(720);
+            /** @var MailRenderer $mailRenderer */
+            $mailRenderer = MxcDropshipInnocigs::getServices()->get(MailRenderer::class);
+            $mail = $mailRenderer->renderStatusMail($order, 1);
+            $mailRenderer->sendStatusMail($mail);
+            $this->view->assign([ 'success' => true, 'message' => 'Development slot #6 is currently free.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }

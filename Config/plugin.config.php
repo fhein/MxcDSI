@@ -74,6 +74,8 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
+use MxcDropshipInnocigs\Workflow\DocumentRenderer;
+use MxcDropshipInnocigs\Workflow\MailRenderer;
 
 return [
     'plugin'   => [
@@ -141,7 +143,7 @@ return [
 
     'services'     => [
         'factories' => [
-            PriceEngine::class                 => AugmentedObjectFactory::class,
+            PriceEngine::class               => AugmentedObjectFactory::class,
             ExportPriceIssues::class         => AugmentedObjectFactory::class,
             ProductMappings::class           => AugmentedObjectFactory::class,
             ImportPiecesPerPackMapper::class => AugmentedObjectFactory::class,
@@ -152,6 +154,8 @@ return [
             AssociatedArticlesMapper::class  => AugmentedObjectFactory::class,
             VariantMappingConsistency::class => AugmentedObjectFactory::class,
             ImportPriceMapper::class         => AugmentedObjectFactory::class,
+            DocumentRenderer::class          => AugmentedObjectFactory::class,
+            MailRenderer::class              => AugmentedObjectFactory::class,
 
             ArticleTool::class                 => AugmentedObjectFactory::class,
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,

@@ -140,7 +140,6 @@ class UpdateStockCronJob implements SubscriberInterface
             }
             // skip article if there is no release date
             if ($releaseDate === null) continue;
-            $this->log->debug('Processing release date');
 
             // determine if a quantity of any of the details is in stock
             $instock = 0;

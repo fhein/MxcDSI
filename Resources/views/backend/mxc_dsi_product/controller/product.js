@@ -44,6 +44,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcSetAcceptedSelected:              me.onSetAcceptedSelected,
                 mxcSetLinkedSelected:                me.onSetLinkedSelected,
 
+                mxcSaveEmailTemplates:               me.onSaveEmailTemplates,
+                mxcRestoreEmailTemplates:            me.onRestoreEmailTemplates,
 
                 mxcUpdatePrices:                     me.onUpdatePrices,
                 mxcUpdateStockInfo:                  me.onUpdateStockInfo,
@@ -70,6 +72,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcExcelExportEcigMetaData:          me.onExcelExportEcigMetaData,
                 mxcExcelImportPrices:                me.onExcelImportPrices,
                 mxcCsvExportCustomers:               me.onCsvExportCustomers,
+                mxcArrayExportDocumentationTodos:    me.onArrayExportDocumentationTodos,
 
                 // InnoCigs import tests
 
@@ -133,6 +136,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
+    onArrayExportDocumentationTodos: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=arrayExportDocumentationTodos}';
+        let params = {};
+        let growlTitle = 'Export documentation todos';
+        let maskText = 'Exporting documentation todos ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
     onExcelExportPriceIssues: function (grid) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=excelExportPriceIssues}';
@@ -179,6 +191,24 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Refresh link state';
         let maskText = 'Refreshing products ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onSaveEmailTemplates: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=saveEmailTemplates}';
+        let params = {};
+        let growlTitle = 'Save email templates';
+        let maskText = 'Saving email templates ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onRestoreEmailTemplates: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=restoreEmailTemplates}';
+        let params = {};
+        let growlTitle = 'Restore email templates';
+        let maskText = 'Restoring email templates ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

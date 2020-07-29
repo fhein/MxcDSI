@@ -70,7 +70,7 @@ return array(
         'metaDescription' => 'Zubehör für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
         'metaKeywords' => 'Verdampfer, Verdampferkopf,Coil,E-Zigarette,günstig,kaufen',
         'header' => 'ZUBEHÖR FÜR DIE E-ZIGARETTE',
-        'description' => '',
+        'description' => '<p>In unserem reichhaltigen Zubehörprogramm finden Sie alles, was Sie außer der E-Zigarette und Liquid sonst noch brauchen. Das sind zum einen Verdampferköpfe und andere Verschleißteile wie Pods und Cartridges, aber auch Ersatzteile wie Glastanks, Mundstücke oder Dichtungen. Neben Akkuzellen finden Sie hier auch die passenden Ladegeräte. Und wenn Sie Ihr Liquid selbst mischen, haben wir für Sie die passendenden, lebensmittelechten Leerflaschen im Angebot. Für den sicheren Transport und Aufbewahrung Ihrer E-Zigarette finden Sie hier geeignete Taschen und Ständer.</p>',
     ),
     'E-LIQUIDS > Fertig-Liquids > Beeren' => array(
         'id' => 2027,
@@ -2039,7 +2039,7 @@ return array(
         'metaDescription' => 'Rebuildable Tank Atomizers ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
         'metaKeywords' => 'Verdampfer,RTA,günstig,kaufen',
         'header' => 'REBUILDABLE TANK ATOMIZERS (RTA)',
-        'description' => '<p>Rebuildable Tank Atomizers sind Verdampfer für selbstgewickelte Heizspulen, die davon abgesehen aber genauso funktionieren wie Clearomizer für industriell hergestellte Verdampferköpfe. Sie bauen Ihre selbstgewickelte Spule ein, versehen Sie mit Watte. Dann füllen Sie Liquid in den Tank und können nun solange dampfen, bis der Tank leer ist und nachgefüllt werden muss.</p>',
+        'description' => '<p>Rebuildable Tank Atomizers sind Verdampfer für selbstgewickelte Heizspulen, die davon abgesehen aber genauso funktionieren wie Clearomizer für industriell hergestellte Verdampferköpfe. Statt eines Verdampferkopfes bauen Sie hier Ihre selbstgewickelte Spule ein und versehen Sie mit Watte. Dann füllen Sie Liquid in den Tank und können nun solange dampfen, bis der Tank leer ist und nachgefüllt werden muss, genau wie bei jedem anderen Clearomizer.</p>',
     ),
     'VERDAMPFER > für Selbstwickler > ADA' => array(
         'id' => 2723,

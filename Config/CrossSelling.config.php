@@ -11355,6 +11355,10 @@ return array(
         'VS100GA' => array(
             0 => 'VS100GAM',
         ),
+        'LV100CT' => array(
+            0 => 'SONYVTC5A',
+            1 => 'XTARVC4S',
+        ),
     ),
     'similar' => array(
         'SP100A10-HB' => array(
@@ -28331,7 +28335,8 @@ return array(
         ),
         'LV100CT' => array(
             0 => 'SM100G3DM',
-            1 => 'VS100GNM',
+            1 => 'GV100AXM',
+            2 => 'VS100GNM',
         ),
         'CK100A10-PC' => array(
             0 => 'VV100A10-RC',

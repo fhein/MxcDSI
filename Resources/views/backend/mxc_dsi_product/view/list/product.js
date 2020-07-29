@@ -66,6 +66,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcUpdateImages',
           'mxcPullShopwareDescriptions',
 
+          'mxcSaveEmailTemplates',
+          'mxcRestoreEmailTemplates',
+
           'mxcUpdateStockInfo',
           'mxcRemoveEmptyCategories',
           'mxcDeleteAll',
@@ -93,6 +96,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcExcelImportPrices',
 
           'mxcCsvExportCustomers',
+          'mxcArrayExportDocumentationTodos',
 
           'mxcTestImport1',
           'mxcTestImport2',
@@ -391,6 +395,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     }
                 },
                 '-',
+                {
+                    text: 'Export Documentation Todos',
+                    iconCls: 'sprite-table-export',
+                    handler: function () {
+                        window.open('/backend/MxcDsiProduct/arrayExportDocumentationTodos');
+                    }
+                },
+                '-',
                 me.createImportMenuItem('Import prices', 'mxcExcelImportPrices'),
                 me.createImportFileField('mxcExcelImportPrices', me),
             ]
@@ -676,6 +688,19 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text: 'Update associated products for liquids',
                     handler: function() {
                         me.fireEvent('mxcUpdateAssociatedLiguids', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Save email templates',
+                    handler: function() {
+                        me.fireEvent('mxcSaveEmailTemplates', me);
+                    }
+                },
+                {
+                    text: 'Restore email templates',
+                    handler: function() {
+                        me.fireEvent('mxcRestoreEmailTemplates', me);
                     }
                 },
                 '-',
