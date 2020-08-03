@@ -46,7 +46,7 @@ class ApiClient
     public function getItemInfo($model)
     {
         $cmd = $this->authUrl . "&command=product&model=" . $model;
-        return $this->modelsToArray($this->send($cmd)->getBody());
+        return $this->modelsToArray($this->send($cmd)->getBody(), true);
     }
 
     public function modelsToArray(string $xml, bool $flat = false): ?array
@@ -236,18 +236,17 @@ class ApiClient
         return $this->client;
     }
 
-    public function getItemListEx(bool $flat) {
-        $cmd = $this->authUrl . '&command=products&type=extended';
-        return $this->modelsToArray($this->send($cmd)->getBody(), $flat);
-    }
-
     /**
      * @param bool $flat
+     * @param bool $include
      * @return array
      */
-    public function getItemList(bool $flat)
+    public function getItemList(bool $flat, bool $includeDescriptions)
     {
         $cmd = $this->authUrl . '&command=products';
+        if ($includeDescriptions) {
+            $cmd .= '&type=extended';
+        }
         return $this->modelsToArray($this->send($cmd)->getBody(), $flat);
     }
 

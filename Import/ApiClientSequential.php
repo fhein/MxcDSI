@@ -241,20 +241,12 @@ class ApiClientSequential
     /**
      * @return array
      */
-    public function getItemList()
+    public function getItemList(bool $includeDescriptions)
     {
         $cmd = $this->authUrl . '&command=products';
-        $this->import = [];
-        $this->readXML($cmd);
-        return $this->import;
-    }
-
-    /**
-     * @return array
-     */
-    public function getItemListEx()
-    {
-        $cmd = $this->authUrl . '&command=products&type=extended';
+        if ($includeDescriptions) {
+            $cmd .= '&type=extended';
+        }
         $this->import = [];
         $this->readXML($cmd);
         return $this->import;

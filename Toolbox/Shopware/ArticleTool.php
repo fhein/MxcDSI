@@ -201,4 +201,10 @@ class ArticleTool implements LoggerAwareInterface, ModelManagerAwareInterface
             ', array($detail->getId())
         );
     }
+
+    public static function getDetailAttribute(Detail $detail, string $attribute)
+    {
+        $attributes = self::getDetailAttributes($detail);
+        return $attributes[$attribute];
+    }
 }

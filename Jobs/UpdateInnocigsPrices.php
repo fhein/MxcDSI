@@ -15,6 +15,7 @@ class UpdateInnocigsPrices
     public static function run()
     {
         $services = MxcDropshipInnocigs::getServices();
+        /** @var ImportClient $client */
         $client = $services->get(ImportClient::class);
         $mapper = $services->get(ImportPriceMapper::class);
         $mapper->import($client->import(false));

@@ -17,9 +17,9 @@ use Shopware\Models\Plugin\Plugin;
 
 class UpdateStockCronJob implements SubscriberInterface
 {
-    protected $valid = null;
-
     protected $log = null;
+
+    protected $companionPresent = null;
 
     protected $modelManager = null;
 
@@ -38,9 +38,8 @@ class UpdateStockCronJob implements SubscriberInterface
         $this->modelManager = Shopware()->Models();
         $result = true;
 
-        if (! $this->validateCompanion()) {
-            $this->log->warn('Update stock cronjob: Companion is not installed. Nothing done');
-            return false;
+        if (! $this->isCompanionInstalled()) {
+            $this->log->info('Update stock cronjob: Companion is not installed.');
         }
 
         $start = date('d-m-Y H:i:s');
@@ -145,7 +144,7 @@ class UpdateStockCronJob implements SubscriberInterface
             $instock = 0;
             foreach ($details as $detail) {
                 $attr = ArticleTool::getDetailAttributes($detail);
-                $instock += $attr['dc_ic_instock'];
+                $instock += $attr['mxc_dsi_ic_instock'];
             }
             // unset the release date if the any of the product's variants is in stock
             if ($instock !== 0) {
@@ -173,44 +172,54 @@ class UpdateStockCronJob implements SubscriberInterface
 
     protected function updateStockInfo()
     {
+        /** @var ApiClient $apiClient */
         $apiClient = MxcDropshipInnocigs::getServices()->get(ApiClient::class);
         $details = $this->modelManager->getRepository(Detail::class)->findAll();
-        $info = $apiClient->getItemList(true);
+        $info = $apiClient->getItemList(true, false);
         $stockInfo = $apiClient->getAllStockInfo();
+
         /** @var Detail $detail */
         foreach ($details as $detail) {
+
             $attr = ArticleTool::getDetailAttributes($detail);
-            $icNumber = $attr['dc_ic_ordernumber'];
+            $icNumber = $attr['mxc_dsi_ic_productnumber'];
+
             if (empty($icNumber)) continue;
+
+            $purchasePrice = 0;
+            $retailPrice = 0;
+            $instock = 0;
+            $purchasePriceFloat = null;
 
             if ($info[$icNumber] !== null) {
                 // record from InnoCigs available
                 $purchasePrice = $info[$icNumber]['purchasePrice'];
-
-                ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', $purchasePrice);
-                ArticleTool::setDetailAttribute($detail, 'dc_ic_retail_price', $info[$icNumber]['recommendedRetailPrice']);
-                ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', intval($stockInfo[$icNumber] ?? 0));
-
-                $purchasePrice = floatval(str_replace(',', '.', $purchasePrice));
-                $detail->setPurchasePrice($purchasePrice);
-            } else {
-                // no record from InnoCigs available
-
-                ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', 0);
-                ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', 0);
+                $retailPrice = $info[$icNumber]['recommendedRetailPrice'];
+                $instock = intval($stockInfo[$icNumber] ?? 0);
+                $purchasePriceFloat = floatval(str_replace(',', '.', $purchasePrice));
             }
+
+            // dropshippers companion attributes (legacy dropship support)
+            if ($this->isCompanionInstalled()) {
+                ArticleTool::setDetailAttribute($detail, 'dc_ic_purchasing_price', $purchasePrice);
+                ArticleTool::setDetailAttribute($detail, 'dc_ic_retail_price', $retailPrice);
+                ArticleTool::setDetailAttribute($detail, 'dc_ic_instock', $instock);
+            }
+
+            // vapee dropship attributes
+            ArticleTool::setDetailAttribute($detail, 'mxc_dsi_ic_purchaseprice', $purchasePrice);
+            ArticleTool::setDetailAttribute($detail, 'mxc_dsi_ic_retailprice', $retailPrice);
+            ArticleTool::setDetailAttribute($detail, 'mxc_dsi_ic_instock', $instock);
+
+            if ($purchasePriceFloat !== null) $detail->setPurchasePrice($purchasePrice);
         }
         $this->modelManager->flush();
     }
 
-    protected function validateCompanion() {
-        if (! is_bool($this->valid)) {
-            if (null === $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs'])) {
-                $this->valid = false;
-            } else {
-                $this->valid = true;
-            }
+    protected function isCompanionInstalled() {
+        if ($this->companionPresent === null) {
+            $this->companionPresent = (null != $this->modelManager->getRepository(Plugin::class)->findOneBy(['name' => 'wundeDcInnoCigs']));
         };
-        return $this->valid;
+        return $this->companionPresent;
     }
 }

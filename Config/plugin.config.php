@@ -3,6 +3,7 @@
 namespace MxcDropshipInnocigs;
 
 use Mxc\Shopware\Plugin\Service\AugmentedObjectFactory;
+use MxcDropshipInnocigs\Dropship\Innocigs\Registration as InnocigsRegistration;
 use MxcDropshipInnocigs\Excel\ExcelExport;
 use MxcDropshipInnocigs\Excel\ExcelImport;
 use MxcDropshipInnocigs\Excel\ExcelImportFactory;
@@ -57,6 +58,7 @@ use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
 use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Category;
+use MxcDropshipInnocigs\Models\Dropship\Innocigs\Settings as InnocigsSettings;
 use MxcDropshipInnocigs\Models\Group;
 use MxcDropshipInnocigs\Models\Image;
 use MxcDropshipInnocigs\Models\Model;
@@ -76,6 +78,7 @@ use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRe
 use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
 use MxcDropshipInnocigs\Workflow\DocumentRenderer;
 use MxcDropshipInnocigs\Workflow\MailRenderer;
+use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
 
 return [
     'plugin'   => [
@@ -89,16 +92,14 @@ return [
             Option::class,
             Product::class,
             Variant::class,
+            InnocigsSettings::class,
+
         ],
         'attributes' => [
             's_articles_attributes' => [
+                'mxc_dsi_innocigs'      => ['type' => TypeMapping::TYPE_INTEGER]
+
                 // here I started to implement meta information for articles
-                //                'mxc_dsi_active'         => ['type' => TypeMapping::TYPE_BOOLEAN],
-                //                'mxc_dsi_product_number' => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_dsi_product_name'   => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_dsi_retail_price'   => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_dsi_purchase_price' => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_dsi_instock'        => ['type' => TypeMapping::TYPE_INTEGER],
                 //
                 //                'mxc_meta_type'         => ['type' => TypeMapping::TYPE_STRING],
                 //                'mxc_meta_common_name'  => ['type' => TypeMapping::TYPE_STRING],
@@ -165,6 +166,8 @@ return [
             FilterGroupRepository::class       => AugmentedObjectFactory::class,
             MappingFilePersister::class        => AugmentedObjectFactory::class,
             MediaTool::class                   => AugmentedObjectFactory::class,
+
+            InnocigsRegistration::class            => AugmentedObjectFactory::class,
 
 
             CategoryTool::class => AugmentedObjectFactory::class,

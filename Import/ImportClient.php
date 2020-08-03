@@ -130,13 +130,13 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
         return $this->importFromXmlSequential($xmlFile, $recreateSchema);
     }
 
-    public function import(bool $extended) {
-        $this->import = $extended ? $this->apiClient->getItemListEx(false) : $this->apiClient->getItemList(false);
+    public function import(bool $includeDescriptions) {
+        $this->import = $this->apiClient->getItemList(false, $includeDescriptions);
         return $this->doImport();
     }
 
-    public function importSequential(bool $extended) {
-        $this->import = $extended ? $this->apiClientSeq->getItemListEx() : $this->apiClientSeq->getItemList();
+    public function importSequential(bool $includeDesriptions) {
+        $this->import = $this->apiClientSeq->getItemList($includeDesriptions);
         return $this->doImport();
     }
 
@@ -313,7 +313,7 @@ class ImportClient implements EventSubscriber, ClassConfigAwareInterface, ModelM
             $options = $model->getOptions();
             $options = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $options);
             foreach ($options as $fullOption) {
-                list ($group, $option) = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $fullOption);
+                [$group, $option] = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $fullOption);
                 $groups[$group][$option] = $fullOption;
             }
         }
