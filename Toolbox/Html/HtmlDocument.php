@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Html;
+namespace MxcDropshipIntegrator\Toolbox\Html;
 
 use DOMDocument;
 
@@ -18,8 +18,7 @@ class HtmlDocument
             $rows[] = sprintf($this->tableRow, $key, $value);
         }
         $rows = implode("\n", $rows);
-        $table = $this->tableStart . '\n' . $rows . '\n' . $this->tableEnd;
-        return $table;
+        return $this->tableStart . '\n' . $rows . '\n' . $this->tableEnd;
     }
 
     /**
@@ -57,6 +56,7 @@ class HtmlDocument
      * Die linke Spalte der Tabelle dient als Array-Key, die anderen Spalten werden zu einem String implodiert,
      * mit MXC_DELIMITER_1 als Trenner zwischen den Zellen.
      *
+     * @param string $text
      * @return array
      */
     public function getTablesAsArray(string $text)

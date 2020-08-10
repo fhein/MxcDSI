@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Report\ArrayReport;
 
 class DosageMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
 {

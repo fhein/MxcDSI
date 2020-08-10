@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\MetaData;
+namespace MxcDropshipIntegrator\Mapping\MetaData;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Toolbox\Html\HtmlDocument;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
+use MxcDropshipIntegrator\Toolbox\Html\HtmlDocument;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class MetaDataExtractorFactory implements FactoryInterface
 {

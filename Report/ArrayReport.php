@@ -1,9 +1,9 @@
 <?php
 
-namespace MxcDropshipInnocigs\Report;
+namespace MxcDropshipIntegrator\Report;
 
-use Mxc\Shopware\Plugin\Utility\StringUtility;
-use Zend\Config\Factory;
+use MxcCommons\Plugin\Utility\StringUtility;
+use MxcCommons\Config\Factory;
 
 class ArrayReport
 {

@@ -1,6 +1,6 @@
 <?php
 
-// use MxcDropshipInnocigs\Models\Product;
+// use MxcDropshipIntegrator\Models\Product;
 
 return [
     'applyFilters' => false,

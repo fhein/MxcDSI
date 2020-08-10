@@ -1,18 +1,18 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Shopware\MediaTool;
 use Shopware\Models\Article\Article;
 
 class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
@@ -58,7 +58,7 @@ class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         if ($detail === null) return;
 
         $i = count($this->mainImages) + 1;
-        $icImageUrls = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $variant->getImages());
+        $icImageUrls = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $variant->getImages());
         foreach ($icImageUrls as $icImageUrl) {
             if (empty($icImageUrl)) continue;
             $image = $this->mainImages[$icImageUrl];

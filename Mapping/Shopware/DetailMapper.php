@@ -1,16 +1,16 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\ProductRepository;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\ProductRepository;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;

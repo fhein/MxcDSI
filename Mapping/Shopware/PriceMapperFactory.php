@@ -1,9 +1,9 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\AugmentedObjectFactory;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\AugmentedObjectFactory;
 
 class PriceMapperFactory extends AugmentedObjectFactory
 {

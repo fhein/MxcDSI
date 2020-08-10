@@ -1,26 +1,26 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
-use Zend\Config\Factory;
+use MxcCommons\Config\Factory;
 
 class VariantRepository extends BaseEntityRepository
 {
     protected $dql = [
-        'getAllIndexed'             => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v INDEX BY v.icNumber',
+        'getAllIndexed'             => 'SELECT v FROM MxcDropshipIntegrator\Models\Variant v INDEX BY v.icNumber',
         'getDetail'                 => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
-        'removeOrphaned'            => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v WHERE v.product IS NULL',
-        'getVariantsWithoutModel'   => 'SELECT v FROM MxcDropshipInnocigs\Models\Variant v '
+        'removeOrphaned'            => 'SELECT v FROM MxcDropshipIntegrator\Models\Variant v WHERE v.product IS NULL',
+        'getVariantsWithoutModel'   => 'SELECT v FROM MxcDropshipIntegrator\Models\Variant v '
                                         . 'LEFT JOIN MxcDropshipInnocigs\Models\Model m WITH m.model = v.icNumber '
                                         . 'WHERE m.id IS NULL',
 
         // DQL does not support parameters in SELECT
         'getProperties'  =>
-            'SELECT :properties FROM MxcDropshipInnocigs\Models\Variant p INDEX BY p.icNumber',
+            'SELECT :properties FROM MxcDropshipIntegrator\Models\Variant p INDEX BY p.icNumber',
 
         // DQL does not support parameters in SELECT
         'getPropertiesById'  =>
-            'SELECT :properties FROM MxcDropshipInnocigs\Models\Variant p WHERE p.id = :id',
+            'SELECT :properties FROM MxcDropshipIntegrator\Models\Variant p WHERE p.id = :id',
 
     ];
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace MxcDropshipInnocigs\Workflow;
+namespace MxcDropshipIntegrator\Workflow;
 
 use Enlight_Components_Mail;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Bundle\MailBundle\Service\LogEntryBuilder;
 use Shopware\Models\Order\Order;
 

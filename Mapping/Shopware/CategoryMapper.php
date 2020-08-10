@@ -1,19 +1,19 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Category as CategoryConfiguration;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
+use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Category as CategoryConfiguration;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
 
@@ -52,7 +52,7 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
         if ($replace === true) $article->getCategories()->clear();
 
         $root = $this->getRootCategory();
-        $categories = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $product->getCategory());
+        $categories = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $product->getCategory());
 
         foreach ($categories as $category) {
             $path = array_map('trim', explode('>', $category));
@@ -123,7 +123,6 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
     protected function getCategoryConfiguration()
     {
         if ($this->categoryConfiguration !== null) return $this->categoryConfiguration;
-        /** @noinspection PhpUndefinedMethodInspection */
         $config = $this->modelManager->getRepository(CategoryConfiguration::class)->getAllIndexed();
         return $this->categoryConfiguration = $config;
     }

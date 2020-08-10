@@ -1,11 +1,11 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Toolbox\Shopware\Configurator;
+namespace MxcDropshipIntegrator\Toolbox\Shopware\Configurator;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Models\Article\Configurator\Option;
 use Shopware\Models\Article\Configurator\Set;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
 
 class BaseImportMapper implements LoggerAwareInterface, ClassConfigAwareInterface
 {

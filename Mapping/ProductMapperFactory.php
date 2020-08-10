@@ -1,15 +1,15 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipIntegrator\Mapping;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
+use MxcDropshipIntegrator\Mapping\Shopware\AssociatedArticlesMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\CategoryMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\ImageMapper;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class ProductMapperFactory implements FactoryInterface
 {

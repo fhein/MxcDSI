@@ -1,8 +1,10 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 use Doctrine\ORM\Mapping as ORM;
+use MxcDropshipIntegrator\Toolbox\Models\PrimaryKeyTrait;
+use MxcDropshipIntegrator\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
 
 /**
@@ -12,7 +14,8 @@ use Shopware\Components\Model\ModelEntity;
  */
 class Category extends ModelEntity  {
 
-    use BaseModelTrait;
+    use PrimaryKeyTrait;
+    use TrackCreationAndUpdateTrait;
 
     /** @ORM\Column(type="string", nullable=false) */
     private $path;

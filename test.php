@@ -1,5 +1,11 @@
 <?php
 
+$attrId = 3;
+$detailId = 5;
+$array = compact('attrId','detailId');
+var_export($array);
+
+
 $text = '<table frame="void" rules="rows" cellspacing="0" cellpadding="2" border="5">
 <tbody>
 <tr>
@@ -167,7 +173,7 @@ function correctPrice(float $netPurchasePrice, float $grossRetailPrice, array $p
         $netRetailPrice = $netPurchasePrice / (1 - ($minMarginPercent / 100));
         $margin = ($netRetailPrice - $netPurchasePrice) / $netRetailPrice * 100;
         $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
-    };
+    }
 
     // Ist die maximale prozentuale Marge überschritten, wird der Netto-Verkaufspreis gesenkt
     $maxMarginPercent = $priceConfig['margin_max_percent'];

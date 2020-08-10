@@ -1,19 +1,19 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Option;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use MxcDropshipIntegrator\Models\Option;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
 
@@ -69,8 +69,7 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
         $condition = "AND(ISNUMBER({$cellRetail}), {$cellRetail}<>0)";
         $then = "({$cellRetail}-{$cellPurchase})/{$cellRetail}*100";
         $else = '""';
-        $statement = "=IF({$condition},{$then},{$else})";
-        return $statement;
+        return "=IF({$condition},{$then},{$else})";
     }
 
     protected function setSheetData()
@@ -174,7 +173,7 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
         }
         $options = $model->getOptions();
 
-        $pattern = 'PACKUNG' . MxcDropshipInnocigs::MXC_DELIMITER_L1;
+        $pattern = 'PACKUNG' . MxcDropshipIntegrator::MXC_DELIMITER_L1;
         if (strpos($options, $pattern) === false) return true;
 
         $pattern .= '1er Packung';

@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Regex;
+namespace MxcDropshipIntegrator\Toolbox\Regex;
 
 class RegexChecker
 {

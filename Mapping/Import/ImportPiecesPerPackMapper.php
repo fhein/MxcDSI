@@ -1,11 +1,11 @@
 <?php
 
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
 
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipIntegrator\Models\Product;
 
 class ImportPiecesPerPackMapper implements ProductMapperInterface
 {
@@ -26,7 +26,7 @@ class ImportPiecesPerPackMapper implements ProductMapperInterface
         $ppp = 1;
         if (preg_match('~\((\d+) Stück~', $name, $matches) === 1) {
             $ppp = $matches[1];
-        };
+        }
         $product->setPiecesPerPack($ppp);
     }
 

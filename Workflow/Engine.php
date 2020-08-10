@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Workflow;
+namespace MxcDropshipIntegrator\Workflow;
 
 class Engine
 {

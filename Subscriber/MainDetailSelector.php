@@ -1,10 +1,10 @@
 <?php
 
-namespace MxcDropshipInnocigs\Subscriber;
+namespace MxcDropshipIntegrator\Subscriber;
 
 use Enlight\Event\SubscriberInterface;
 use Enlight_Event_EventArgs;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Article\Article;
 use Shopware_Controllers_Frontend_Index;
 
@@ -107,7 +107,7 @@ class MainDetailSelector implements SubscriberInterface
 
             $groupIds[] = $group['groupID'];
 
-            foreach($group['values'] as &$value) {
+            foreach($group['values'] as $value) {
                 //Find the selected values
                 if(!empty($value['selected'])) {
                     $selectedValues[$value['groupID']] = $value['optionID'];

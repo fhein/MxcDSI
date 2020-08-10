@@ -1,11 +1,11 @@
 <?php
 
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Report\ArrayReport;
 
 class CommonNameMapper extends BaseImportMapper implements ProductMapperInterface
 {

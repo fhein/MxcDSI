@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Report\ArrayReport;
 
 class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInterface
 {

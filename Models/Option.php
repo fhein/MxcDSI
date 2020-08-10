@@ -1,9 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use MxcDropshipIntegrator\Toolbox\Models\PrimaryKeyTrait;
+use MxcDropshipIntegrator\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
 
 
@@ -15,7 +17,8 @@ use Shopware\Components\Model\ModelEntity;
  */
 class Option extends ModelEntity  {
 
-    use BaseModelTrait;
+    use PrimaryKeyTrait;
+    use TrackCreationAndUpdateTrait;
 
     /**
      * @var string $name

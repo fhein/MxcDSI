@@ -1,8 +1,8 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models\Dropship\Innocigs;
+namespace MxcDropshipIntegrator\Models\Dropship\Innocigs;
 
-use MxcDropshipInnocigs\Models\BaseModelTrait;
+use MxcDropshipIntegrator\Models\BaseModelTrait;
 use Shopware\Components\Model\ModelEntity;
 
 /**

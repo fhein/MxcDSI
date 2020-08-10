@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class ImportPricesFactory implements FactoryInterface
 {

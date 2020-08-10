@@ -1,86 +1,85 @@
 <?php
 
-namespace MxcDropshipInnocigs;
+namespace MxcDropshipIntegrator;
 
-use Mxc\Shopware\Plugin\Service\AugmentedObjectFactory;
-use MxcDropshipInnocigs\Dropship\Innocigs\Registration as InnocigsRegistration;
-use MxcDropshipInnocigs\Excel\ExcelExport;
-use MxcDropshipInnocigs\Excel\ExcelImport;
-use MxcDropshipInnocigs\Excel\ExcelImportFactory;
-use MxcDropshipInnocigs\Excel\ExcelProductImport;
-use MxcDropshipInnocigs\Excel\ExportEcigMetaData;
-use MxcDropshipInnocigs\Excel\ExportNewProducts;
-use MxcDropshipInnocigs\Excel\ExportPriceIssues;
-use MxcDropshipInnocigs\Excel\ExportPrices;
-use MxcDropshipInnocigs\Excel\ExportSheetFactory;
-use MxcDropshipInnocigs\Excel\ImportPrices;
-use MxcDropshipInnocigs\Excel\ImportSheetFactory;
-use MxcDropshipInnocigs\Import\ApiClient;
-use MxcDropshipInnocigs\Import\ApiClientSequential;
-use MxcDropshipInnocigs\Import\Credentials;
-use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Listener\FilterTest;
-use MxcDropshipInnocigs\Listener\MappingFilePersister;
-use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
-use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
-use MxcDropshipInnocigs\Mapping\EntityValidator;
-use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
-use MxcDropshipInnocigs\Mapping\Import\CapacityMapper;
-use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\ClassConfigFactory;
-use MxcDropshipInnocigs\Mapping\Import\CommonNameMapper;
-use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
-use MxcDropshipInnocigs\Mapping\Import\DosageMapper;
-use MxcDropshipInnocigs\Mapping\Import\FlavorMapper;
-use MxcDropshipInnocigs\Mapping\Import\ImportPiecesPerPackMapper;
-use MxcDropshipInnocigs\Mapping\Import\ManufacturerMapper;
-use MxcDropshipInnocigs\Mapping\Import\MappingConfigFactory;
-use MxcDropshipInnocigs\Mapping\Import\NameMapper;
-use MxcDropshipInnocigs\Mapping\Import\ProductMappings;
-use MxcDropshipInnocigs\Mapping\Import\ProductNumberMapper;
-use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
-use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
-use MxcDropshipInnocigs\Mapping\Import\TypeMapper;
-use MxcDropshipInnocigs\Mapping\Import\VariantNumberMapper;
-use MxcDropshipInnocigs\Mapping\ImportMapper;
-use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
-use MxcDropshipInnocigs\Mapping\MetaData\MetaDataExtractor;
-use MxcDropshipInnocigs\Mapping\ProductMapper;
-use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
-use MxcDropshipInnocigs\Mapping\Pullback\SpellChecker;
-use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\DropshippersCompanion;
-use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\OptionMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
-use MxcDropshipInnocigs\Models\Category;
-use MxcDropshipInnocigs\Models\Dropship\Innocigs\Settings as InnocigsSettings;
-use MxcDropshipInnocigs\Models\Group;
-use MxcDropshipInnocigs\Models\Image;
-use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Option;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Report\ArrayReport;
-use MxcDropshipInnocigs\Subscriber\ModelSubscriber;
-use MxcDropshipInnocigs\Toolbox\Html\HtmlDocument;
-use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGroupRepository;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
-use MxcDropshipInnocigs\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
-use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
-use MxcDropshipInnocigs\Workflow\DocumentRenderer;
-use MxcDropshipInnocigs\Workflow\MailRenderer;
+use MxcCommons\Plugin\Service\AugmentedObjectFactory;
+use MxcDropshipInnocigs\Models\Model as InnocigsModel;
+use MxcDropshipInnocigs\Services\ApiClient as ApiClientInnocigs;
+use MxcDropshipInnocigs\Services\ApiClientSequential as ApiClientSequentialInnocigs;
+use MxcDropshipInnocigs\Services\ArticleRegistry as ArticleRegistryInnocigs;
+use MxcDropshipInnocigs\Services\Credentials as CredentialsInnoCigs;
+use MxcDropshipInnocigs\Services\DropshipOrder as DropshipOrderInnocigs;
+use MxcDropshipInnocigs\Services\ImportClient as ImportClientInnocigs;
+
+use MxcDropshipIntegrator\Workflow\DocumentRenderer;
+use MxcDropshipIntegrator\Workflow\MailRenderer;
+use MxcDropshipIntegrator\Dropship\SupplierRegistry;
+use MxcDropshipIntegrator\Excel\ExcelExport;
+use MxcDropshipIntegrator\Excel\ExcelImport;
+use MxcDropshipIntegrator\Excel\ExcelImportFactory;
+use MxcDropshipIntegrator\Excel\ExcelProductImport;
+use MxcDropshipIntegrator\Excel\ExportEcigMetaData;
+use MxcDropshipIntegrator\Excel\ExportNewProducts;
+use MxcDropshipIntegrator\Excel\ExportPriceIssues;
+use MxcDropshipIntegrator\Excel\ExportPrices;
+use MxcDropshipIntegrator\Excel\ImportPrices;
+use MxcDropshipIntegrator\Listener\MappingFilePersister;
+use MxcDropshipIntegrator\Mapping\Check\NameMappingConsistency;
+use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
+use MxcDropshipIntegrator\Mapping\Check\VariantMappingConsistency;
+use MxcDropshipIntegrator\Mapping\Import\AssociatedProductsMapper;
+use MxcDropshipIntegrator\Mapping\Import\CapacityMapper;
+use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
+use MxcDropshipIntegrator\Mapping\Import\CommonNameMapper;
+use MxcDropshipIntegrator\Mapping\Import\DescriptionMapper;
+use MxcDropshipIntegrator\Mapping\Import\DosageMapper;
+use MxcDropshipIntegrator\Mapping\Import\FlavorMapper;
+use MxcDropshipIntegrator\Mapping\Import\ImportPiecesPerPackMapper;
+use MxcDropshipIntegrator\Mapping\Import\ManufacturerMapper;
+use MxcDropshipIntegrator\Mapping\Import\MappingConfigFactory;
+use MxcDropshipIntegrator\Mapping\Import\NameMapper;
+use MxcDropshipIntegrator\Mapping\Import\ProductMappings;
+use MxcDropshipIntegrator\Mapping\Import\ProductNumberMapper;
+use MxcDropshipIntegrator\Mapping\Import\ProductSeoMapper;
+use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
+use MxcDropshipIntegrator\Mapping\Import\TypeMapper;
+use MxcDropshipIntegrator\Mapping\Import\VariantNumberMapper;
+use MxcDropshipIntegrator\Mapping\ImportMapper;
+use MxcDropshipIntegrator\Mapping\ImportPriceMapper;
+use MxcDropshipIntegrator\Mapping\MetaData\MetaDataExtractor;
+use MxcDropshipIntegrator\Mapping\ProductMapper;
+use MxcDropshipIntegrator\Mapping\Pullback\DescriptionPullback;
+use MxcDropshipIntegrator\Mapping\Pullback\SpellChecker;
+use MxcDropshipIntegrator\Mapping\Shopware\AssociatedArticlesMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\DropshippersCompanion;
+use MxcDropshipIntegrator\Mapping\Shopware\ImageMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\OptionMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
+use MxcDropshipIntegrator\Models\Category;
+use MxcDropshipIntegrator\Models\Group;
+use MxcDropshipIntegrator\Models\Option;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcDropshipIntegrator\Toolbox\Html\HtmlDocument;
+use MxcDropshipIntegrator\Toolbox\Regex\RegexChecker;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\CategoryTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGroupRepository;
+use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
+use MxcDropshipIntegrator\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
+use MxcDropshipIntegrator\Toolbox\Shopware\MediaTool;
 use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
 
 return [
+    'dropship' => [
+        'suppliers' => [
+            'InnoCigs',
+        ],
+    ],
     'plugin'   => [
         MappingFilePersister::class,
     ],
@@ -88,56 +87,32 @@ return [
         'models'     => [
             Category::class,
             Group::class,
-            Model::class,
             Option::class,
             Product::class,
             Variant::class,
-            InnocigsSettings::class,
-
+            InnocigsModel::class, // @todo: Move to MxcDropshipInnocigs
         ],
         'attributes' => [
-            's_articles_attributes' => [
-                'mxc_dsi_innocigs'      => ['type' => TypeMapping::TYPE_INTEGER]
+            // @todo: Move to MxcDropshipInnocigs
+            's_order_attributes'         => [
+                'mxc_dsi_innocigs' => ['type' => TypeMapping::TYPE_INTEGER],
+            ],
+            's_order_details_attributes' => [
+                'mxc_dsi_innocigs' => ['type' => TypeMapping::TYPE_INTEGER],
+            ],
+            's_articles_attributes'      => [
+                'mxc_dsi_ic_registered'     => ['type' => TypeMapping::TYPE_BOOLEAN],
+                'mxc_dsi_ic_status'         => ['type' => TypeMapping::TYPE_INTEGER],
+                'mxc_dsi_ic_active'         => ['type' => TypeMapping::TYPE_BOOLEAN],
+                'mxc_dsi_ic_preferownstock' => ['type' => TypeMapping::TYPE_BOOLEAN],
+                'mxc_dsi_ic_productnumber'  => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_ic_productname'    => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_ic_purchaseprice'  => ['type' => TypeMapping::TYPE_FLOAT],
+                'mxc_dsi_ic_retailprice'    => ['type' => TypeMapping::TYPE_FLOAT],
+                'mxc_dsi_ic_instock'        => ['type' => TypeMapping::TYPE_INTEGER],
 
-                // here I started to implement meta information for articles
-                //
-                //                'mxc_meta_type'         => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_common_name'  => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_manufacturer' => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_supplier'     => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_brand'        => ['type' => TypeMapping::TYPE_STRING],
-                //
-                //                'mxc_meta_flavor'         => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_flavor_group'   => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_base'           => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_nicotine'       => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_bottle_size'    => ['type' => TypeMapping::TYPE_STRING],
-                //                'mxc_meta_bottle_content' => ['type' => TypeMapping::TYPE_STRING],
-
-                //                'mxc_dsi_mod_cell_type'        => ['type' => 'string'],
-                //                'mxc_dsi_mod_power'            => ['type' => 'string'],
-                //                'mxc_dsi_mod_capacity'         => ['type' => 'string'],
-                //                'mxc_dsi_mod_materials'        => ['type' => 'string'],
-                //                'mxc_dsi_mod_charging_current' => ['type' => 'string'],
-                //                'mxc_dsi_mod_processor'        => ['type' => 'string'],
-                //                'mxc_dsi_mod_output_modes'     => ['type' => 'string'],
-                //                'mxc_dsi_mod_output_voltage'   => ['type' => 'string'],
-                //                'mxc_dsi_mod_temperatur_range' => ['type' => 'string'],
-                //                'mxc_dsi_mod_resistance_range' => ['type' => 'string'],
-                //                'mxc_dsi_mod_thread_type'      => ['type' => 'string'],
-                //                'mxc_dsi_mod_special_features' => ['type' => 'string'],
-                //                'mxc_dsi_mod_size'             => ['type' => 'string'],
-
-                //                'mxc_dsi_clr_tank_volume'  => ['type' => 'string'],
-                //                'mxc_dsi_clr_diameter'     => ['type' => 'string'],
-                //                'mxc_dsi_clr_thread_type'  => ['type' => 'string'],
-                //                'mxc_dsi_clr_driptip_type' => ['type' => 'string'],
-                //                'mxc_dsi_clr_materials'    => ['type' => 'string'],
-                //                'mxc_dsi_clr_airflow'      => ['type' => 'string'],
-                //                'mxc_dsi_clr_filling'      => ['type' => 'string'],
-                //                'mxc_dsi_clr_inhalation'   => ['type' => 'string'],
-                //
-                //                'mxc_dsi_master' => ['type' => 'string'],
+                'mxc_product_type' => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_product_meta' => ['type' => TypeMapping::TYPE_INTEGER],
             ],
         ],
     ],
@@ -157,6 +132,8 @@ return [
             ImportPriceMapper::class         => AugmentedObjectFactory::class,
             DocumentRenderer::class          => AugmentedObjectFactory::class,
             MailRenderer::class              => AugmentedObjectFactory::class,
+            DropshipOrderInnocigs::class     => AugmentedObjectFactory::class,
+            SupplierRegistry::class          => AugmentedObjectFactory::class,
 
             ArticleTool::class                 => AugmentedObjectFactory::class,
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
@@ -166,9 +143,6 @@ return [
             FilterGroupRepository::class       => AugmentedObjectFactory::class,
             MappingFilePersister::class        => AugmentedObjectFactory::class,
             MediaTool::class                   => AugmentedObjectFactory::class,
-
-            InnocigsRegistration::class            => AugmentedObjectFactory::class,
-
 
             CategoryTool::class => AugmentedObjectFactory::class,
 
@@ -187,12 +161,13 @@ return [
 
         ],
         'magicals'  => [
-            ApiClient::class,
-            ApiClientSequential::class,
+            ArticleRegistryInnocigs::class,
+            ApiClientInnocigs::class,
+            ApiClientSequentialInnocigs::class,
             ArrayReport::class,
             ShopwareCategoryMapper::class,
             ConfiguratorSetRepository::class,
-            Credentials::class,
+            CredentialsInnocigs::class,
             DetailMapper::class,
             DropshippersCompanion::class,
             ExcelExport::class,
@@ -200,7 +175,7 @@ return [
             ExportPrices::class,
             FilterTest::class,
             ImageMapper::class,
-            ImportClient::class,
+            ImportClientInnocigs::class,
             ImportMapper::class,
             ImportPrices::class,
             ManufacturerMapper::class,
@@ -234,18 +209,20 @@ return [
         SpellChecker::class             => 'SpellChecker.config.php',
         PriceEngine::class              => 'PriceEngine.config.php',
         MetaDataExtractor::class        => 'MetaDataExtractor.config.php',
+        DropshipOrder::class            => 'DropshipOrder.config.php',
+        SupplierRegistry::class         => 'SupplierRegistry.config.php',
     ],
     'excel'        => [
         'import' => [
-            'Preise'       => ImportPrices::class,
+            'Preise' => ImportPrices::class,
         ],
         'export' => [
-            'Prices' => [
+            'Prices'         => [
 //              'Neue Produkte' => ExportNewProducts::class,
-                'Preise'        => ExportPrices::class,
+'Preise' => ExportPrices::class,
             ],
-            'Price Issues' => [
-                'Preisprobleme'  => ExportPriceIssues::class,
+            'Price Issues'   => [
+                'Preisprobleme' => ExportPriceIssues::class,
             ],
             'Ecig Meta Data' => [
                 'Metadata' => ExportEcigMetaData::class,

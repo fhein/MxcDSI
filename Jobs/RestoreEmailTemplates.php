@@ -1,8 +1,8 @@
 <?php
 
-namespace MxcDropshipInnocigs\Jobs;
+namespace MxcDropshipIntegrator\Jobs;
 
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Models\Mail\Mail;
 
 class RestoreEmailTemplates
@@ -15,7 +15,7 @@ class RestoreEmailTemplates
         $filename = __DIR__ . '/../Config/MailTemplates.config.php';
         $mailConfigs = include $filename;
 
-        $log = MxcDropshipInnocigs::getServices()->get('logger');
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
         if (! file_exists($filename)) {
             $log->err('File does not exist.');
         }

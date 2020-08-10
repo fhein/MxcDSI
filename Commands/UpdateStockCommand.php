@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Commands;
+namespace MxcDropshipIntegrator\Commands;
 
 use Shopware\Commands\ShopwareCommand;
 use Symfony\Component\Console\Input\InputInterface;

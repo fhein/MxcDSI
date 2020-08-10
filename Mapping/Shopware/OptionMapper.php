@@ -1,17 +1,17 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Option;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\GroupRepository;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\SetRepository;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Option;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\GroupRepository;
+use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\SetRepository;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 
@@ -79,6 +79,7 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
                 $optionName = array_keys($options)[0];
                 if ($optionName === '1er Packung') continue;
             }
+            //@todo: only variables can be passed by reference, param 1 is wrong
             array_multisort(array_keys($options), SORT_NATURAL, $options);
 
             // for an unknown reason it is necessary to recreate the group and option lookup table

@@ -2,12 +2,12 @@
 
 /** @noinspection PhpUndefinedMethodInspection */
 
-namespace MxcDropshipInnocigs\Cronjobs;
+namespace MxcDropshipIntegrator\Cronjobs;
 
 use Enlight\Event\SubscriberInterface;
-use MxcDropshipInnocigs\Jobs\ApplyPriceRules;
-use MxcDropshipInnocigs\Jobs\UpdateInnocigsPrices;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipIntegrator\Jobs\ApplyPriceRules;
+use MxcDropshipIntegrator\Jobs\UpdateInnocigsPrices;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Throwable;
 
 
@@ -30,7 +30,7 @@ class UpdatePricesCronJob implements SubscriberInterface
     {
         $start = date('d-m-Y H:i:s');
 
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         $log = $services->get('logger');
         $result = true;
 

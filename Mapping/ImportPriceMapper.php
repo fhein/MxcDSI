@@ -3,15 +3,15 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipIntegrator\Mapping;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
 
 class ImportPriceMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {

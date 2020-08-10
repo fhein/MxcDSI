@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
+use MxcDropshipIntegrator\Toolbox\Shopware\CategoryTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class CategoryMapperFactory implements FactoryInterface
 {

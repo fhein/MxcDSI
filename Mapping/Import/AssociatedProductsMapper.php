@@ -1,16 +1,16 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Report\ArrayReport;
+use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Report\ArrayReport;
 
 class AssociatedProductsMapper
     implements ClassConfigAwareInterface, ModelManagerAwareInterface, LoggerAwareInterface
@@ -123,7 +123,7 @@ class AssociatedProductsMapper
         foreach ($this->productGroups[$group] as $groupProducts) {
             foreach($groupProducts as $product) {
                 $products[] = $product;
-            };
+            }
         }
         /** @var Product $product1 */
         foreach ($products as $product1) {

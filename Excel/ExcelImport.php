@@ -1,11 +1,11 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Toolbox\Shopware\DatabaseTool;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Toolbox\Shopware\DatabaseTool;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
 use RuntimeException;
 

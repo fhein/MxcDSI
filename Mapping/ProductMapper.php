@@ -1,21 +1,21 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipIntegrator\Mapping;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Mapping\Shopware\AssociatedArticlesMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\CategoryMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\ImageMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\SupplierTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Article\Article;
 
 class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface

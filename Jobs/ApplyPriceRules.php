@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Jobs;
+namespace MxcDropshipIntegrator\Jobs;
 
-use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
 /**
  * This job checks all prices against the pricing rules using the PriceEngine
@@ -17,14 +17,14 @@ class ApplyPriceRules
 
     public static function run()
     {
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         $modelManager = $services->get('modelManager');
         self::$log = $services->get('logger');
         /** @var PriceEngine $priceEngine */
         $priceEngine = $services->get(PriceEngine::class);
         /** @var PriceMapper $priceMapper */
         $priceMapper = $services->get(PriceMapper::class);
-        $variants = $modelManager->getRepository(Variant::class)->findAll();;
+        $variants = $modelManager->getRepository(Variant::class)->findAll();
         /** @var Variant $variant */
         foreach ($variants as $variant) {
             $retailPrices = $priceEngine->getRetailPrices($variant);

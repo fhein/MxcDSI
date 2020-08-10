@@ -1,13 +1,13 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 class ModelRepository extends BaseEntityRepository
 {
     protected $dql = [
-        'getAllIndexed'             => 'SELECT ir FROM MxcDropshipInnocigs\Models\Model ir INDEX BY ir.model WHERE ir.deleted = :deleted',
-        'getModelsWithoutVariant'   => 'SELECT m FROM MxcDropshipInnocigs\Models\Model m '
-                                        . 'LEFT JOIN MxcDropshipInnocigs\Models\Variant v WITH m.model = v.icNumber '
+        'getAllIndexed'             => 'SELECT ir FROM MxcDropshipIntegrator\Models\Model ir INDEX BY ir.model WHERE ir.deleted = :deleted',
+        'getModelsWithoutVariant'   => 'SELECT m FROM MxcDropshipIntegrator\Models\Model m '
+                                        . 'LEFT JOIN MxcDropshipIntegrator\Models\Variant v WITH m.model = v.icNumber '
                                         . 'WHERE v.id IS NULL',
     ];
 

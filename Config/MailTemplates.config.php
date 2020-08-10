@@ -212,7 +212,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -255,7 +255,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -287,7 +287,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="30"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="30"></td></tr>
@@ -325,7 +325,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -356,7 +356,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -374,9 +374,9 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -631,7 +631,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -690,7 +690,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -712,7 +712,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -785,7 +785,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -870,7 +870,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -973,7 +973,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -1010,7 +1010,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -1047,7 +1047,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -1135,7 +1135,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -1167,7 +1167,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -1184,7 +1184,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                                     <table border="0" align="left" width="540" cellpadding="0" cellspacing="0" class="container540">
                                       <tr>
                                         <td align="center" width="30" height="40" valign="top">
-                                          <img editable="true" mc:edit="icon" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/info.png" style="display: block;" width="20" height="20" border="0" alt="icon" />
+                                          <img editable="true" mc:edit="icon" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/info.png" style="display: block;" width="20" height="20" border="0" alt="icon" />
                                         </td>
                                       </tr>
 
@@ -1226,7 +1226,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -1257,7 +1257,7 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -1275,9 +1275,9 @@ Sie können Ihr Kennwort jederzeit nachträglich ändern.
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -5560,7 +5560,7 @@ Hallo,
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -5603,7 +5603,7 @@ Hallo,
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -5637,7 +5637,7 @@ Hallo,
                       <tr><td height="30"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="30"></td></tr>
@@ -5687,7 +5687,7 @@ Hallo,
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -5718,7 +5718,7 @@ Hallo,
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -5736,9 +5736,9 @@ Hallo,
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -6024,7 +6024,7 @@ Ihr Gutschein-Code lautet: XXX
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -6065,7 +6065,7 @@ Ihr Gutschein-Code lautet: XXX
 
                             <tr>
                               <td align="center">
-											        	<img title="Gutschein!" editable="true" mc:edit="main-image" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/discount.png" style="display: block;" width="120" height="120" border="0" alt="discount" class="main-image" />
+											        	<img title="Gutschein!" editable="true" mc:edit="main-image" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/discount.png" style="display: block;" width="120" height="120" border="0" alt="discount" class="main-image" />
 											        </td>
 										        </tr>
 
@@ -6098,7 +6098,7 @@ Ihr Gutschein-Code lautet: XXX
                       <tr><td height="30"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="30"></td></tr>
@@ -6138,7 +6138,7 @@ Ihr Gutschein-Code lautet: XXX
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -6169,7 +6169,7 @@ Ihr Gutschein-Code lautet: XXX
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -6187,9 +6187,9 @@ Ihr Gutschein-Code lautet: XXX
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -6430,7 +6430,7 @@ Ab sofort kaufen Sie zum Netto-EK bei uns ein.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -6473,7 +6473,7 @@ Ab sofort kaufen Sie zum Netto-EK bei uns ein.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -6521,7 +6521,7 @@ Ab sofort kaufen Sie zum Netto-EK bei uns ein.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -6552,7 +6552,7 @@ Ab sofort kaufen Sie zum Netto-EK bei uns ein.
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -6570,9 +6570,9 @@ Ab sofort kaufen Sie zum Netto-EK bei uns ein.
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -6834,7 +6834,7 @@ Bei Rückfragen aller Art können Sie uns gerne telefonisch, per Fax oder per Ma
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -6877,7 +6877,7 @@ Bei Rückfragen aller Art können Sie uns gerne telefonisch, per Fax oder per Ma
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -6931,7 +6931,7 @@ Bei Rückfragen aller Art können Sie uns gerne telefonisch, per Fax oder per Ma
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -6962,7 +6962,7 @@ Bei Rückfragen aller Art können Sie uns gerne telefonisch, per Fax oder per Ma
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -6980,9 +6980,9 @@ Bei Rückfragen aller Art können Sie uns gerne telefonisch, per Fax oder per Ma
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -7244,7 +7244,7 @@ Vielen Dank für Ihre Unterstützung.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -7287,7 +7287,7 @@ Vielen Dank für Ihre Unterstützung.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -7351,7 +7351,7 @@ Vielen Dank für Ihre Unterstützung.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -7382,7 +7382,7 @@ Vielen Dank für Ihre Unterstützung.
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -7400,9 +7400,9 @@ Vielen Dank für Ihre Unterstützung.
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -7672,7 +7672,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -7716,7 +7716,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -7762,7 +7762,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -7793,7 +7793,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -7811,9 +7811,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -8253,7 +8253,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -8297,7 +8297,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -8343,7 +8343,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -8374,7 +8374,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -8392,9 +8392,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -8840,7 +8840,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -8884,7 +8884,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -8930,7 +8930,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -8961,7 +8961,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -8979,9 +8979,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -9427,7 +9427,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -9471,7 +9471,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -9517,7 +9517,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -9548,7 +9548,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -9566,9 +9566,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -10014,7 +10014,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -10058,7 +10058,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -10104,7 +10104,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -10135,7 +10135,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -10153,9 +10153,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -10600,7 +10600,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -10644,7 +10644,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -10690,7 +10690,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -10721,7 +10721,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -10739,9 +10739,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -11175,7 +11175,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -11219,7 +11219,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -11265,7 +11265,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -11296,7 +11296,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -11314,9 +11314,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -12042,7 +12042,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -12086,7 +12086,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -12132,7 +12132,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -12163,7 +12163,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -12181,9 +12181,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -12765,7 +12765,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -12809,7 +12809,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -12855,7 +12855,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -12886,7 +12886,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -12904,9 +12904,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -13343,7 +13343,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -13387,7 +13387,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -13433,7 +13433,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -13464,7 +13464,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -13482,9 +13482,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -13921,7 +13921,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -13965,7 +13965,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -14011,7 +14011,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -14042,7 +14042,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -14060,9 +14060,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -14604,7 +14604,7 @@ vielen Dank für Ihre Newsletter-Anmeldung bei {config name=shopName}.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -14677,7 +14677,7 @@ vielen Dank für Ihre Newsletter-Anmeldung bei {config name=shopName}.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -14708,7 +14708,7 @@ vielen Dank für Ihre Newsletter-Anmeldung bei {config name=shopName}.
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -14726,9 +14726,9 @@ vielen Dank für Ihre Newsletter-Anmeldung bei {config name=shopName}.
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -14979,7 +14979,7 @@ Bitte bestätigen Sie die Anmeldung über den nachfolgenden Link:
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -15020,7 +15020,7 @@ Bitte bestätigen Sie die Anmeldung über den nachfolgenden Link:
 
                             <tr>
                               <td align="center">
-                                <a href="{$sConfirmLink}" title="Bestätigen Sie den Newsletter!"><img editable="true" mc:edit="main-image" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/newsletter.png" style="display: block;" width="120" height="120" border="0" alt="newsletter" class="main-image" /></a>
+                                <a href="{$sConfirmLink}" title="Bestätigen Sie den Newsletter!"><img editable="true" mc:edit="main-image" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/newsletter.png" style="display: block;" width="120" height="120" border="0" alt="newsletter" class="main-image" /></a>
                               </td>
                             </tr>
 
@@ -15051,7 +15051,7 @@ Bitte bestätigen Sie die Anmeldung über den nachfolgenden Link:
                       <tr><td height="30"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="30"></td></tr>
@@ -15091,7 +15091,7 @@ Bitte bestätigen Sie die Anmeldung über den nachfolgenden Link:
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -15122,7 +15122,7 @@ Bitte bestätigen Sie die Anmeldung über den nachfolgenden Link:
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -15140,9 +15140,9 @@ Bitte bestätigen Sie die Anmeldung über den nachfolgenden Link:
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -15393,7 +15393,7 @@ Bitte bestätigen Sie die Bewertung über den nachfolgenden Link:
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -15436,7 +15436,7 @@ Bitte bestätigen Sie die Bewertung über den nachfolgenden Link:
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -15500,7 +15500,7 @@ Bitte bestätigen Sie die Bewertung über den nachfolgenden Link:
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -15531,7 +15531,7 @@ Bitte bestätigen Sie die Bewertung über den nachfolgenden Link:
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -15549,9 +15549,9 @@ Bitte bestätigen Sie die Bewertung über den nachfolgenden Link:
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -15798,7 +15798,7 @@ Ihr Artikel mit der Bestellnummer {$sOrdernumber} ist jetzt wieder verfügbar.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -15841,7 +15841,7 @@ Ihr Artikel mit der Bestellnummer {$sOrdernumber} ist jetzt wieder verfügbar.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -15895,7 +15895,7 @@ Ihr Artikel mit der Bestellnummer {$sOrdernumber} ist jetzt wieder verfügbar.
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -15926,7 +15926,7 @@ Ihr Artikel mit der Bestellnummer {$sOrdernumber} ist jetzt wieder verfügbar.
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -15944,9 +15944,9 @@ Ihr Artikel mit der Bestellnummer {$sOrdernumber} ist jetzt wieder verfügbar.
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -16397,7 +16397,7 @@ Bitte bestätigen Sie die Benachrichtigung über den nachfolgenden Link:
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -16440,7 +16440,7 @@ Bitte bestätigen Sie die Benachrichtigung über den nachfolgenden Link:
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -16503,7 +16503,7 @@ Bitte bestätigen Sie die Benachrichtigung über den nachfolgenden Link:
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -16534,7 +16534,7 @@ Bitte bestätigen Sie die Benachrichtigung über den nachfolgenden Link:
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -16552,9 +16552,9 @@ Bitte bestätigen Sie die Benachrichtigung über den nachfolgenden Link:
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -16797,7 +16797,7 @@ im Anhang finden Sie ein Lastschriftmandat zu Ihrer Bestellung {$paymentInstance
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -16840,7 +16840,7 @@ im Anhang finden Sie ein Lastschriftmandat zu Ihrer Bestellung {$paymentInstance
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -16884,7 +16884,7 @@ im Anhang finden Sie ein Lastschriftmandat zu Ihrer Bestellung {$paymentInstance
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -16915,7 +16915,7 @@ im Anhang finden Sie ein Lastschriftmandat zu Ihrer Bestellung {$paymentInstance
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -16933,9 +16933,9 @@ im Anhang finden Sie ein Lastschriftmandat zu Ihrer Bestellung {$paymentInstance
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -17182,7 +17182,7 @@ Dieser Link ist nur für die nächsten 2 Stunden gültig. Danach muss das Zurüc
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -17225,7 +17225,7 @@ Dieser Link ist nur für die nächsten 2 Stunden gültig. Danach muss das Zurüc
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -17280,7 +17280,7 @@ Dieser Link ist nur für die nächsten 2 Stunden gültig. Danach muss das Zurüc
                       <tr><td height="30"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="30"></td></tr>
@@ -17322,7 +17322,7 @@ Dieser Link ist nur für die nächsten 2 Stunden gültig. Danach muss das Zurüc
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -17353,7 +17353,7 @@ Dieser Link ist nur für die nächsten 2 Stunden gültig. Danach muss das Zurüc
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -17371,9 +17371,9 @@ Dieser Link ist nur für die nächsten 2 Stunden gültig. Danach muss das Zurüc
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -17643,7 +17643,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -17687,7 +17687,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -17733,7 +17733,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -17764,7 +17764,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -17782,9 +17782,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -18459,7 +18459,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -18503,7 +18503,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -18549,7 +18549,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -18580,7 +18580,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -18598,9 +18598,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -19281,7 +19281,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -19325,7 +19325,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -19371,7 +19371,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -19402,7 +19402,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -19420,9 +19420,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -19856,7 +19856,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -19900,7 +19900,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -19946,7 +19946,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -19977,7 +19977,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -19995,9 +19995,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -20432,7 +20432,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -20476,7 +20476,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -20522,7 +20522,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -20553,7 +20553,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -20571,9 +20571,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -21103,7 +21103,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Ihrerseits Fragen zum Angebot von
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -21147,7 +21147,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Ihrerseits Fragen zum Angebot von
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -21203,7 +21203,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Ihrerseits Fragen zum Angebot von
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -21234,7 +21234,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Ihrerseits Fragen zum Angebot von
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -21252,9 +21252,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Ihrerseits Fragen zum Angebot von
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -22025,7 +22025,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -22069,7 +22069,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -22127,7 +22127,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -22158,7 +22158,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -22176,9 +22176,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -22613,7 +22613,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -22657,7 +22657,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -22715,7 +22715,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -22746,7 +22746,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -22764,9 +22764,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -23350,7 +23350,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -23394,7 +23394,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -23450,7 +23450,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -23481,7 +23481,7 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -23499,9 +23499,9 @@ Gern stehen wir Ihnen zur Verfügung, wenn Sie Fragen zum Angebot von vapee.de o
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -24185,7 +24185,7 @@ Ihr persönlicher Geburtstags-Code lautet: {$sVoucher.code}
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -24226,7 +24226,7 @@ Ihr persönlicher Geburtstags-Code lautet: {$sVoucher.code}
 
                             <tr>
                               <td align="center">
-                                <img title="Herzlichen Glückwunsch!" editable="true" mc:edit="main-image" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/birthday.png" style="display: block;" width="120" height="120" border="0" alt="birthday" class="main-image" />
+                                <img title="Herzlichen Glückwunsch!" editable="true" mc:edit="main-image" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/birthday.png" style="display: block;" width="120" height="120" border="0" alt="birthday" class="main-image" />
                               </td>
                             </tr>
 
@@ -24258,7 +24258,7 @@ Ihr persönlicher Geburtstags-Code lautet: {$sVoucher.code}
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -24289,7 +24289,7 @@ Ihr persönlicher Geburtstags-Code lautet: {$sVoucher.code}
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -24307,9 +24307,9 @@ Ihr persönlicher Geburtstags-Code lautet: {$sVoucher.code}
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>
@@ -24596,7 +24596,7 @@ Bestellnummer     Artikelname     Bewertungslink
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -24639,7 +24639,7 @@ Bestellnummer     Artikelname     Bewertungslink
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -24693,7 +24693,7 @@ Bestellnummer     Artikelname     Bewertungslink
                       <tr><td height="30"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="30"></td></tr>
@@ -24734,7 +24734,7 @@ Bestellnummer     Artikelname     Bewertungslink
                       <tr><td height="40"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="40"></td></tr>
@@ -24765,7 +24765,7 @@ Bestellnummer     Artikelname     Bewertungslink
                       <tr><td height="20"></td></tr>
                       <tr>
                         <td align="center">
-                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
+                          <img src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/divider.png" editable="true" width="240" height="4" style="display: block;" alt="divider" />
                         </td>
                       </tr>
                       <tr><td height="20"></td></tr>
@@ -24783,9 +24783,9 @@ Bestellnummer     Artikelname     Bewertungslink
     										<table border="0" width="140" align="center" cellpadding="0" cellspacing="0">
     											<tr>
                           <td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/facebook.png" alt="Facebook" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.facebook.com/vapee.de/" title="Facebook"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/facebook.png" alt="Facebook" /></a>
           </td><td>
-            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipInnocigs/Resources/images/instagram.png" alt="Instagram" /></a>
+            <a style="display: block; width: 30px; border-style: none !important; border: 0 !important; margin: 0 auto;" href="https://www.instagram.com/vapee.de/" title="Instagram"><img editable="true" width="30" height="30" border="0" style="display: block;" src="https://www.vapee.de/custom/plugins/MxcDropshipIntegrator/Resources/images/instagram.png" alt="Instagram" /></a>
           </td>
     											</tr>
     										</table>

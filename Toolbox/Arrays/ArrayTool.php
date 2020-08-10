@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Arrays;
+namespace MxcDropshipIntegrator\Toolbox\Arrays;
 
 class ArrayTool
 {
@@ -50,8 +50,7 @@ class ArrayTool
                 if (self::ksort_recursive($node, $flags) === false) return false;
             }
         }
-        $result = ksort($tree, $flags);
-        return $result;
+        return ksort($tree, $flags);
     }
 
     public static function uksort_recursive(array &$tree, callable $compare)
@@ -61,8 +60,7 @@ class ArrayTool
                 if (self::uksort_recursive($node, $compare) === false) return false;
             }
         }
-        $result = uksort($tree, $compare);
-        return $result;
+        return uksort($tree, $compare);
     }
 
     public static function krsort_recursive(array &$tree, int $flags = SORT_NATURAL | SORT_FLAG_CASE)

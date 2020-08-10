@@ -1,7 +1,7 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Style\Border;

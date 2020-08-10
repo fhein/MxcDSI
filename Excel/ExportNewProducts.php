@@ -1,9 +1,9 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Models\Product;
+use MxcCommons\Plugin\Service\LoggerInterface;
+use MxcDropshipIntegrator\Models\Product;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use Shopware\Components\Model\ModelManager;
 

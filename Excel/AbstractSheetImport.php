@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
 abstract class AbstractSheetImport
 {

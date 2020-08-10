@@ -1,11 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Workflow;
+namespace MxcDropshipIntegrator\Workflow;
 
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Models\Order\Order;
 use Shopware_Components_Document;
+use DateTime;
 
 class DocumentRenderer implements ModelManagerAwareInterface
 {

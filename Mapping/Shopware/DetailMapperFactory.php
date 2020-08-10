@@ -1,13 +1,13 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class DetailMapperFactory implements FactoryInterface
 {

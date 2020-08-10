@@ -1,17 +1,17 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Option;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use MxcDropshipIntegrator\Models\Option;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 
 class ExportPriceIssues extends AbstractProductExport implements LoggerAwareInterface, ModelManagerAwareInterface
@@ -41,8 +41,7 @@ class ExportPriceIssues extends AbstractProductExport implements LoggerAwareInte
         $condition = "AND(ISNUMBER({$cellRetail}), {$cellRetail}<>0)";
         $then = "({$cellRetail}-{$cellPurchase})/{$cellRetail}*100";
         $else = '""';
-        $statement = "=IF({$condition},{$then},{$else})";
-        return $statement;
+        return "=IF({$condition},{$then},{$else})";
     }
 
     protected function setSheetData()
@@ -94,7 +93,7 @@ class ExportPriceIssues extends AbstractProductExport implements LoggerAwareInte
             $comments = [];
             if (count(array_unique($eks)) !== 1) {
                 $comments[] = 'EK';
-            };
+            }
             if (count(array_unique($uvps)) !== 1) {
                 $comments[] = 'UVP';
             }
@@ -133,7 +132,7 @@ class ExportPriceIssues extends AbstractProductExport implements LoggerAwareInte
         }
         $options = $model->getOptions();
 
-        $pattern = 'PACKUNG' . MxcDropshipInnocigs::MXC_DELIMITER_L1;
+        $pattern = 'PACKUNG' . MxcDropshipIntegrator::MXC_DELIMITER_L1;
         if (strpos($options, $pattern) === false) return true;
 
         $pattern .= '1er Packung';

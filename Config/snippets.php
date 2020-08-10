@@ -28,7 +28,7 @@
 //$manager = $this->getManager();
 //$articles = $manager->getRepository(Article::class)->findAll();
 ///** @var Article $article */
-//$services = MxcDropshipInnocigs::getServices();
+//$services = MxcDropshipIntegrator::getServices();
 //$log = $services->get('logger');
 //foreach ($articles as $article) {
 //    /** @noinspection PhpUndefinedMethodInspection */

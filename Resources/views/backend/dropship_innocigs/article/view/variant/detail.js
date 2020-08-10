@@ -1,6 +1,6 @@
 //{block name="backend/article/view/variant/detail"}
 //{$smarty.block.parent}
-Ext.define('Shopware.apps.MxcDropshipInnocigs.view.variant.Detail', {
+Ext.define('Shopware.apps.MxcDropshipIntegrator.view.variant.Detail', {
     override: 'Shopware.apps.Article.view.variant.Detail',
     createItems: function() {
 
@@ -75,7 +75,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.variant.Detail', {
                     preferOwnStock = preferOwnStock ? 1 : 0;
 
                     if (productNumber === '') {
-                        Shopware.Notification.createGrowlMessage('Fehler', 'Bitte geben Sie eine Artikelnummer an', 'MxcDropshipInnocigs');
+                        Shopware.Notification.createGrowlMessage('Fehler', 'Bitte geben Sie eine Artikelnummer an', 'MxcDropshipIntegrator');
                         me.mxc_dsi_ic_ordernumber.focus();
                         return;
                     }
@@ -96,7 +96,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.variant.Detail', {
                             me.setLoading(false);
                             if (response.success === false) {
                                 if (response.info !== '') {
-                                    Shopware.Notification.createGrowlMessage(response.info.title, response.info.message, 'MxcDropshipInnocigs');
+                                    Shopware.Notification.createGrowlMessage(response.info.title, response.info.message, 'MxcDropshipIntegrator');
                                 }
                             } else {
 
@@ -119,12 +119,12 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.variant.Detail', {
                                 me.mxc_dsi_ic_purchaseprice.setValue(mxc_dsi_ic_purchaseprice);
                                 me.mxc_dsi_ic_retailprice.setValue(mxc_dsi_ic_retailprice);
                                 me.mxc_dsi_ic_instock.setValue(response.data.mxc_dsi_ic_instock);
-                                Shopware.Notification.createGrowlMessage('Erfolg', 'Dropship erfolgreich registriert.', 'MxcDropshipInnocigs');
+                                Shopware.Notification.createGrowlMessage('Erfolg', 'Dropship erfolgreich registriert.', 'MxcDropshipIntegrator');
                             }
                         },
                         failure: function(responseData, request) {
                             me.setLoading(false);
-                            Shopware.Notification.createGrowlMessage('Fehler', 'Daten konnten nicht gespeichert werden.', 'MxcDropshipInnocigs');
+                            Shopware.Notification.createGrowlMessage('Fehler', 'Daten konnten nicht gespeichert werden.', 'MxcDropshipIntegrator');
                         }
                     });
                 }
@@ -141,7 +141,7 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.variant.Detail', {
                 click: function(editor, e) {
 
                     if (me.article.data.mainDetailId == null) {
-                        Shopware.Notification.createGrowlMessage('Fehler', 'Sie haben einen neuen Artikel angelegt aber nicht nicht gespeichert. Sie können einen Dropshipping-Artikel erst hinzufügen, sobald Sie den Artikel gespeichert haben.', 'MxcDropshipInnocigs');
+                        Shopware.Notification.createGrowlMessage('Fehler', 'Sie haben einen neuen Artikel angelegt aber nicht nicht gespeichert. Sie können einen Dropshipping-Artikel erst hinzufügen, sobald Sie den Artikel gespeichert haben.', 'MxcDropshipIntegrator');
                         return;
                     }
 
@@ -168,11 +168,11 @@ Ext.define('Shopware.apps.MxcDropshipInnocigs.view.variant.Detail', {
                             me.mxc_dsi_ic_retailprice.setValue('');
                             me.mxc_dsi_ic_instock.setValue('');
                             me.setLoading(false);
-                            Shopware.Notification.createGrowlMessage('Erfolgreich', 'Dropship Konfiguration gelöscht.', 'MxcDropshipInnocigs');
+                            Shopware.Notification.createGrowlMessage('Erfolgreich', 'Dropship Konfiguration gelöscht.', 'MxcDropshipIntegrator');
                         },
                         failure: function(responseData, request) {
                             me.setLoading(false);
-                            Shopware.Notification.createGrowlMessage('Fehler', 'Daten konnten nicht gespeichert werden.', 'MxcDropshipInnocigs');
+                            Shopware.Notification.createGrowlMessage('Fehler', 'Daten konnten nicht gespeichert werden.', 'MxcDropshipIntegrator');
                         }
                     });
                 }

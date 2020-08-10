@@ -1,13 +1,13 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
-namespace MxcDropshipInnocigs\Toolbox\Shopware\Filter;
+namespace MxcDropshipIntegrator\Toolbox\Shopware\Filter;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use Shopware\Models\Property\Option;
 use Shopware\Models\Property\Value;
 
@@ -72,8 +72,8 @@ class GroupRepository implements ModelManagerAwareInterface, LoggerAwareInterfac
         return $group;
     }
 
-    public function createOption(string $groupName, string $optionName) : Value {
-
+    public function createOption(string $groupName, string $optionName) : ?Value
+    {
         // we do not create an option if we do not know the group
         $group = $this->getGroup($groupName);
         if (null === $group) return null;

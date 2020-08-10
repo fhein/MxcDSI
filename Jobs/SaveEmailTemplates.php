@@ -1,9 +1,9 @@
 <?php
 
-namespace MxcDropshipInnocigs\Jobs;
+namespace MxcDropshipIntegrator\Jobs;
 
 use Shopware\Models\Mail\Mail;
-use Zend\Config\Factory;
+use MxcCommons\Config\Factory;
 
 class SaveEmailTemplates
 {
@@ -24,6 +24,7 @@ class SaveEmailTemplates
                 'fromMail' => $mail->getFromMail(),
                 'fromName' => $mail->getFromName(),
                 'subject'  => $mail->getSubject(),
+            // @todo: Should we ignore context??
                 'context'  => $mail->getContext(),
             ];
             $store[$mail->getName()] = $attr;

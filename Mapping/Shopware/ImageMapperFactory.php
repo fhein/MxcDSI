@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Toolbox\Shopware\Configurator\OptionSorter;
-use MxcDropshipInnocigs\Toolbox\Shopware\MediaTool;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
+use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcDropshipIntegrator\Toolbox\Shopware\MediaTool;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class ImageMapperFactory implements FactoryInterface
 {

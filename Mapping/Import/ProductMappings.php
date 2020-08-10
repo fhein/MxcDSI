@@ -1,9 +1,9 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
 
 class ProductMappings implements ClassConfigAwareInterface
 {

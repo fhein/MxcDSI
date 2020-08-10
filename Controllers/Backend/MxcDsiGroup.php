@@ -1,11 +1,11 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use MxcDropshipInnocigs\Mapping\ProductMapper;
-use MxcDropshipInnocigs\Models\Group;
-use MxcDropshipInnocigs\Models\Option;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcCommons\Plugin\Controller\BackendApplicationController;
+use MxcDropshipIntegrator\Mapping\ProductMapper;
+use MxcDropshipIntegrator\Models\Group;
+use MxcDropshipIntegrator\Models\Option;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
 class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationController
 {
@@ -14,7 +14,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
     public function indexAction()
     {
-        $log = MxcDropshipInnocigs::getServices()->get('logger');
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
         $log->enter();
         try {
             parent::indexAction();
@@ -27,7 +27,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
     public function updateAction()
     {
-        $log = MxcDropshipInnocigs::getServices()->get('logger');
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
         $log->enter();
         try {
             parent::updateAction();
@@ -88,7 +88,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
 
     public function save($data)
     {
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         $log = $services->get('logger');
         $log->enter();
 
@@ -126,7 +126,7 @@ class Shopware_Controllers_Backend_MxcDsiGroup extends BackendApplicationControl
     }
 
     protected function handleException(Throwable $e, bool $rethrow = false) {
-        $log = MxcDropshipInnocigs::getServices()->get('logger');
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
         $log->except($e, true, $rethrow);
         $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
     }

@@ -2,29 +2,29 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipIntegrator\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
-use MxcDropshipInnocigs\Models\Group;
-use MxcDropshipInnocigs\Models\GroupRepository;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
+use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
+use MxcDropshipIntegrator\Models\Group;
+use MxcDropshipIntegrator\Models\GroupRepository;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Models\ModelRepository;
-use MxcDropshipInnocigs\Models\Option;
-use MxcDropshipInnocigs\Models\OptionRepository;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\ProductRepository;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\Models\VariantRepository;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use MxcDropshipIntegrator\Models\Option;
+use MxcDropshipIntegrator\Models\OptionRepository;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\ProductRepository;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\Models\VariantRepository;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
 
 class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -133,10 +133,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     public function mapOptions(?string $optionString): ArrayCollection
     {
         if ($optionString === null) return new ArrayCollection();
-        $optionArray = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $optionString);
+        $optionArray = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $optionString);
         $options = [];
         foreach ($optionArray as $option) {
-            $param = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $option);
+            $param = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $option);
             $optionName = $this->propertyMapper->mapOptionName($param[1]);
             $groupName = $this->propertyMapper->mapGroupName($param[0]);
             $option = @$this->options[$groupName][$optionName];
@@ -227,7 +227,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
             $variant->setActive($active);
             $variant->setAccepted(true);
-            $variant->setRetailPrices('EK' . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $uvp);
+            $variant->setRetailPrices('EK' . MxcDropshipIntegrator::MXC_DELIMITER_L1 . $uvp);
             $options = $this->mapOptions($model->getOptions());
             $variant->setOptions($options);
             $this->propertyMapper->mapModelToVariant($model, $variant);
@@ -239,7 +239,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     {
         $options = $model->getOptions();
 
-        $pattern = 'PACKUNG' . MxcDropshipInnocigs::MXC_DELIMITER_L1;
+        $pattern = 'PACKUNG' . MxcDropshipIntegrator::MXC_DELIMITER_L1;
         if (strpos($options, $pattern) === false) return true;
 
         $pattern .= '1er Packung';
@@ -307,19 +307,19 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
     {
-        $oldOptions = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $oldValue);
-        $newOptions = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $newValue);
+        $oldOptions = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $oldValue);
+        $newOptions = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $newValue);
         $rOptions = array_diff($oldOptions, $newOptions);
         foreach ($rOptions as $option) {
             if ($option === null) continue;
-            $param = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $option);
+            $param = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $option);
             $o = $this->options[$param[0]][$param[1]];
             if ($o !== null) {
                 $variant->removeOption($o);
             }
         }
         $addedOptions = array_diff($newOptions, $oldOptions);
-        $addedOptions = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $addedOptions);
+        $addedOptions = implode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $addedOptions);
         $variant->addOptions($this->mapOptions($addedOptions));
     }
 
@@ -445,41 +445,26 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         return true;
     }
 
-    /**
-     * @return ProductRepository
-     */
     protected function getProductRepository()
     {
         return $this->productRepository ?? $this->productRepository = $this->modelManager->getRepository(Product::class);
     }
 
-    /**
-     * @return VariantRepository
-     */
     protected function getVariantRepository()
     {
         return $this->variantRepository ?? $this->variantRepository = $this->modelManager->getRepository(Variant::class);
     }
 
-    /**
-     * @return GroupRepository
-     */
     protected function getGroupRepository()
     {
         return $this->groupRepository ?? $this->groupRepository = $this->modelManager->getRepository(Group::class);
     }
 
-    /**
-     * @return OptionRepository
-     */
     protected function getOptionRepository()
     {
         return $this->optionRepository ?? $this->optionRepository = $this->modelManager->getRepository(Option::class);
     }
 
-    /**
-     * @return ModelRepository
-     */
     protected function getModelRepository()
     {
         return $this->modelRepository ?? $this->modelRepository = $this->modelManager->getRepository(Model::class);

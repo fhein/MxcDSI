@@ -1,13 +1,13 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Mapping\Pullback;
+namespace MxcDropshipIntegrator\Mapping\Pullback;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Models\Article\Article;
 
 class DescriptionPullback implements ModelManagerAwareInterface, LoggerAwareInterface
@@ -19,7 +19,7 @@ class DescriptionPullback implements ModelManagerAwareInterface, LoggerAwareInte
 
     public function __construct()
     {
-        $this->spellChecker = MxcDropshipInnocigs::getServices()->get(SpellChecker::class);
+        $this->spellChecker = MxcDropshipIntegrator::getServices()->get(SpellChecker::class);
     }
 
     public function pullDescriptions(array $products = null)

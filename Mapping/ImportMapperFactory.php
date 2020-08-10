@@ -1,14 +1,14 @@
 <?php /** @noinspection PhpUnusedParameterInspection */
 
-namespace MxcDropshipInnocigs\Mapping;
+namespace MxcDropshipIntegrator\Mapping;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\DetailMapper;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
+use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
+use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class ImportMapperFactory implements FactoryInterface
 {

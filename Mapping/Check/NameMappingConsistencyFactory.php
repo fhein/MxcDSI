@@ -1,11 +1,11 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Check;
+namespace MxcDropshipIntegrator\Mapping\Check;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipInnocigs\Mapping\Import\NameMapper;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
+use MxcDropshipIntegrator\Mapping\Import\NameMapper;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class NameMappingConsistencyFactory implements FactoryInterface
 {

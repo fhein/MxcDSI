@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 
 use Doctrine\DBAL\Driver\Statement;
@@ -8,8 +8,8 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Query;
 use Enlight_Hook;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use Zend\Log\LoggerInterface;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcCommons\Log\LoggerInterface;
 
 class BaseEntityRepository extends EntityRepository implements Enlight_Hook
 {
@@ -31,7 +31,7 @@ class BaseEntityRepository extends EntityRepository implements Enlight_Hook
     public function __construct($em, ClassMetadata $class)
     {
         parent::__construct($em, $class);
-        $this->log = MxcDropshipInnocigs::getServices()->get('logger');
+        $this->log = MxcDropshipIntegrator::getServices()->get('logger');
     }
 
     public function __call($method, $arguments)
@@ -39,8 +39,7 @@ class BaseEntityRepository extends EntityRepository implements Enlight_Hook
         switch (true) {
             case (null !== @$this->dql[$method]):
                 $query = $this->getQuery($method);
-                $result = $query->getResult();
-                return $result;
+                return $query->getResult();
             case (null !== @$this->sql[$method]):
                 return $this->getStatement($method)->execute();
             default:

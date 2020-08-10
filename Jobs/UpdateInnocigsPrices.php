@@ -1,10 +1,10 @@
 <?php
 
-namespace MxcDropshipInnocigs\Jobs;
+namespace MxcDropshipIntegrator\Jobs;
 
-use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Mapping\ImportPriceMapper;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipIntegrator\Dropship\SupplierRegistry;
+use MxcDropshipIntegrator\Mapping\ImportPriceMapper;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
 /**
  * This job pulls the Inncigs purchase and recommended retail prices and updates
@@ -14,9 +14,10 @@ class UpdateInnocigsPrices
 {
     public static function run()
     {
-        $services = MxcDropshipInnocigs::getServices();
-        /** @var ImportClient $client */
-        $client = $services->get(ImportClient::class);
+        $services = MxcDropshipIntegrator::getServices();
+
+        $registry = MxcDropshipIntegrator::getServices()->get(SupplierRegistry::class);
+        $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
         $mapper = $services->get(ImportPriceMapper::class);
         $mapper->import($client->import(false));
     }

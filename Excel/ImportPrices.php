@@ -1,14 +1,14 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
 
 class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
 {
@@ -31,7 +31,7 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
 
     protected function getFloatVal(?string $value)
     {
-        if ($value === null) return $value;
+        if ($value === null) return null;
         return floatval(str_replace(',', '.', $value));
     }
 
@@ -81,11 +81,11 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
             $price = $price ?? $customerPrice;
             $netPrice = $this->getFloatVal($price) / $vatFactor;
             if ($price) {
-                $prices[] = $customerGroup . MxcDropshipInnocigs::MXC_DELIMITER_L1 . strval($netPrice);
+                $prices[] = $customerGroup . MxcDropshipIntegrator::MXC_DELIMITER_L1 . strval($netPrice);
             }
         }
         // $this->log->debug(var_export($prices, true));
-        $prices = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $prices);
+        $prices = implode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $prices);
         $variant->setRetailPrices($prices);
         $this->priceMapper->setRetailPrices($variant);
     }

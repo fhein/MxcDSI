@@ -2,43 +2,48 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
-use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
-use Mxc\Shopware\Plugin\Database\SchemaManager;
-use MxcDropshipInnocigs\Cronjobs\UpdateStockCronJob;
-use MxcDropshipInnocigs\Excel\ExcelExport;
-use MxcDropshipInnocigs\Excel\ExcelProductImport;
-use MxcDropshipInnocigs\Import\ImportClient;
-use MxcDropshipInnocigs\Jobs\ApplyPriceRules;
-use MxcDropshipInnocigs\Jobs\PullCategorySeoInformation;
-use MxcDropshipInnocigs\Jobs\RestoreEmailTemplates;
-use MxcDropshipInnocigs\Jobs\SaveEmailTemplates;
-use MxcDropshipInnocigs\Jobs\UpdateInnocigsPrices;
-use MxcDropshipInnocigs\Mapping\Check\NameMappingConsistency;
-use MxcDropshipInnocigs\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Mapping\Check\VariantMappingConsistency;
-use MxcDropshipInnocigs\Mapping\Import\AssociatedProductsMapper;
-use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\CategoryTreeBuilder;
-use MxcDropshipInnocigs\Mapping\Import\DescriptionMapper;
-use MxcDropshipInnocigs\Mapping\Import\ProductSeoMapper;
-use MxcDropshipInnocigs\Mapping\Import\PropertyMapper;
-use MxcDropshipInnocigs\Mapping\ImportMapper;
-use MxcDropshipInnocigs\Mapping\MetaData\MetaDataExtractor;
-use MxcDropshipInnocigs\Mapping\ProductMapper;
-use MxcDropshipInnocigs\Mapping\Pullback\DescriptionPullback;
-use MxcDropshipInnocigs\Mapping\Shopware\AssociatedArticlesMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\ImageMapper;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceEngine;
-use MxcDropshipInnocigs\Mapping\Shopware\PriceMapper;
+use MxcDropshipInnocigs\Services\TrackingInfo;
+use MxcDropshipIntegrator\Exception\ApiException;
+use MxcDropshipInnocigs\Services\DropshipOrder;
+use MxcCommons\Plugin\Controller\BackendApplicationController;
+use MxcCommons\Plugin\Database\SchemaManager;
+use MxcDropshipIntegrator\Cronjobs\Innocigs\UpdateStockCronJob;
+use MxcDropshipIntegrator\Excel\ExcelExport;
+use MxcDropshipIntegrator\Excel\ExcelProductImport;
+use MxcDropshipInnocigs\Services\ImportClient;
+use MxcDropshipIntegrator\Jobs\ApplyPriceRules;
+use MxcDropshipIntegrator\Jobs\PullCategorySeoInformation;
+use MxcDropshipIntegrator\Jobs\RestoreEmailTemplates;
+use MxcDropshipIntegrator\Jobs\SaveEmailTemplates;
+use MxcDropshipIntegrator\Jobs\UpdateInnocigsPrices;
+use MxcDropshipIntegrator\Mapping\Check\NameMappingConsistency;
+use MxcDropshipIntegrator\Dropship\SupplierRegistry;
+use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
+use MxcDropshipIntegrator\Mapping\Check\VariantMappingConsistency;
+use MxcDropshipIntegrator\Mapping\Import\AssociatedProductsMapper;
+use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
+use MxcDropshipIntegrator\Mapping\Import\CategoryTreeBuilder;
+use MxcDropshipIntegrator\Mapping\Import\DescriptionMapper;
+use MxcDropshipIntegrator\Mapping\Import\ProductSeoMapper;
+use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
+use MxcDropshipIntegrator\Mapping\ImportMapper;
+use MxcDropshipIntegrator\Mapping\MetaData\MetaDataExtractor;
+use MxcDropshipIntegrator\Mapping\ProductMapper;
+use MxcDropshipIntegrator\Mapping\Pullback\DescriptionPullback;
+use MxcDropshipIntegrator\Mapping\Shopware\AssociatedArticlesMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\ImageMapper;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
+use MxcDropshipInnocigs\Models\ArticleAttributes;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\ProductRepository;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Report\ArrayReport;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\SupplierTool;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\ProductRepository;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\SupplierTool;
 use MxcDropshipInnocigs\Workflow\DocumentRenderer;
 use MxcDropshipInnocigs\Workflow\MailRenderer;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
@@ -48,7 +53,8 @@ use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Customer;
 use Shopware\Models\Order\Order;
-use Zend\Config\Factory;
+use MxcCommons\Config\Factory;
+use MxcDropshipInnocigs\Services\ApiClient as ApiClientInnocigs;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -69,8 +75,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function importAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var SupplierRegistry $registry */
+            $registry = $services->get(SupplierRegistry::class);
+            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->import(true));
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
@@ -82,8 +90,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function importSequentialAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var SupplierRegistry $registry */
+            $registry = $services->get(SupplierRegistry::class);
+            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importSequential(true));
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
@@ -106,7 +116,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updateVatAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             /** @var PriceMapper $priceMapper */
             $priceMapper = $services->get(PriceMapper::class);
             $priceMapper->updateVat();
@@ -133,7 +143,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $modelManager = $this->getManager();
             /** @noinspection PhpUndefinedMethodInspection */
             $associatedProducts = $modelManager->getRepository(Product::class)->getLinkedProductIds();
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $productMapper = $services->get(ProductMapper::class);
             $productMapper->updateAssociatedProducts($associatedProducts);
             $modelManager->flush();
@@ -148,7 +158,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $modelManager = $this->getManager();
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $imageMapper = $services->get(ImageMapper::class);
             /** @noinspection PhpUndefinedMethodInspection */
             $products = $this->getSelectedProducts($this->request);
@@ -164,7 +174,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     protected function computeCategories($products)
     {
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         $categoryMapper = $services->get(CategoryMapper::class);
         /** @var Product $product */
         foreach ($products as $product) {
@@ -176,7 +186,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     protected function remapCategories($products)
     {
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
 
         $categoryMapper = $services->get(ShopwareCategoryMapper::class);
         //$categoryMapper->removeEmptyProductCategories();
@@ -222,7 +232,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function removeEmptyCategoriesAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $mapper = $services->get(ShopwareCategoryMapper::class);
             $count = $mapper->removeEmptyProductCategories();
             switch ($count) {
@@ -285,7 +295,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         // find variants which do not have an associated model and log the numbers
         try {
             $modelManager = $this->getModelManager();
-            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $log = MxcDropshipIntegrator::getServices()->get('logger');
             $variants = $modelManager->getRepository(Variant::class)->getAllIndexed();
             $models = $modelManager->getRepository(Model::class)->getAllIndexed();
             $missingModels = array_keys(array_diff_key($variants, $models));
@@ -320,7 +330,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     protected function doExcelExport(array $options)
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $excel = $services->build(ExcelExport::class, $options);
             $excel->export();
 
@@ -360,7 +370,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         // Try to get the transferred file
         try {
             $file = $_FILES['file'];
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $log = $services->get('logger');
 
             if ($file === null) $log->debug('file is null');
@@ -371,7 +381,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $newFilePath = $tmpPath.'/' . $fileName; //'/../Config/' . $file['originalName'];
             move_uploaded_file($tmpName, $newFilePath);
 
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $excel = $services->get(ExcelProductImport::class);
             $result = $excel->importSheet($sheet, $newFilePath);
 
@@ -412,7 +422,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $repository->setStateByIds('linked', false, $ids);
             $products = $this->getRepository()->getProductsByIds($ids);
 
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $productMapper = $services->get(ProductMapper::class);
             $productMapper->deleteArticles($products);
 
@@ -430,7 +440,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             [$value, $products] = $this->setStatePropertyOnSelected();
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $productMapper = $services->get(ProductMapper::class);
             switch ($value) {
                 case true:
@@ -455,7 +465,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function acceptSelectedProductsAction() {
         try {
             [$value, $products] = $this->setStatePropertyOnSelected();
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $productMapper = $services->get(ProductMapper::class);
             switch ($value) {
                 case true:
@@ -482,7 +492,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             [$value, $products] = $this->setStatePropertyOnSelected();
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $productMapper = $services->get(ProductMapper::class);
             switch ($value) {
                 case true:
@@ -507,7 +517,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function checkRegularExpressionsAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $regularExpressions = $services->get(RegularExpressions::class);
             if (! $regularExpressions->check()) {
                 $this->view->assign(['success' => false, 'message' => 'Errors found in regular expressions. See log for details.']);
@@ -522,7 +532,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function checkNameMappingConsistencyAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $nameMappingConsistency = $services->get(NameMappingConsistency::class);
             $issueCount = $nameMappingConsistency->check();
             if ($issueCount > 0) {
@@ -541,7 +551,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function checkVariantMappingConsistencyAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $variantMappingConsistency = $services->get(VariantMappingConsistency::class);
             $issueCount = $variantMappingConsistency->check();
             if ($issueCount > 0) {
@@ -560,7 +570,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function createAllAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $productMapper = $services->get(ProductMapper::class);
             $products = $this->getRepository()->findAll();
             foreach ($products as $product) {
@@ -578,7 +588,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function deleteAllAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $productMapper = $services->get(ProductMapper::class);
             /** @noinspection PhpUndefinedMethodInspection */
             $products = $this->getRepository()->getLinkedProducts();
@@ -596,7 +606,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             /** @var ImportMapper $client */
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $propertyMapper = $services->get(PropertyMapper::class);
             $categoryMapper = $services->get(CategoryMapper::class);
             $productMapper = $services->get(ProductMapper::class);
@@ -620,7 +630,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function remapSelectedAction() {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $propertyMapper = $services->get(PropertyMapper::class);
             $productMapper = $services->get(ProductMapper::class);
             $modelManager = $this->getManager();
@@ -669,7 +679,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function remapDescriptionsAction() {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $mapper = $services->get(DescriptionMapper::class);
 
             $products = $this->getSelectedProducts($this->request);
@@ -705,7 +715,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             /** @var ImportMapper $client */
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $descriptions = $services->get(DescriptionPullback::class);
             $repository = $this->getManager()->getRepository(Product::class);
 
@@ -734,13 +744,15 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
 
             $xmlFile = $testDir . 'TESTErstimport.xml';
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var SupplierRegistry $registry */
+            $registry = $services->get(SupplierRegistry::class);
+            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFile($xmlFile, true));
 
             $products = $this->getManager()->getRepository(Product::class)->findAll();
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $productMapper = $services->get(ProductMapper::class);
             $productMapper->updateArticles($products, true);
 
@@ -756,8 +768,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateFeldwerte.xml';
 
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var SupplierRegistry $registry */
+            $registry = $services->get(SupplierRegistry::class);
+            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFile($xmlFile));
             $this->view->assign([ 'success' => true, 'message' => 'Values successfully updated.' ]);
@@ -771,8 +785,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateVarianten.xml';
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var SupplierRegistry $registry */
+            $registry = $services->get(SupplierRegistry::class);
+            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFile($xmlFile));
             $this->view->assign([ 'success' => true, 'message' => 'Variants successfully updated.' ]);
@@ -785,8 +801,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS></PRODUCTS></INNOCIGS_API_RESPONSE>';
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var SupplierRegistry $registry */
+            $registry = $services->get(SupplierRegistry::class);
+            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromXml($xml));
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
@@ -810,8 +828,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
 
             $xmlFile = $testDir . 'TESTHugeImport.xml';
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var SupplierRegistry $registry */
+            $registry = $services->get(SupplierRegistry::class);
+            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFileSequential($xmlFile, true));
 
@@ -841,8 +861,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
 
             $xmlFile = $testDir . 'TESTHugeImport.xml';
-            $services = MxcDropshipInnocigs::getServices();
-            $client = $services->get(ImportClient::class);
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var SupplierRegistry $registry */
+            $registry = $services->get(SupplierRegistry::class);
+            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFile($xmlFile, true));
 
@@ -861,7 +883,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $products = $this->getManager()->getRepository(Product::class)->findAll();
             /** @var Product $product */
-            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $log = MxcDropshipIntegrator::getServices()->get('logger');
             foreach ($products as $product) {
                 $variants = $product->getVariants();
                 /** @var Variant $variant */
@@ -905,7 +927,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function computeAssociatedProductsAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             /** @var AssociatedProductsMapper $mapper */
             $mapper = $services->get(AssociatedProductsMapper::class);
             $manager = $this->getManager();
@@ -1019,7 +1041,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function remapCategorySeoInformationAction() {
         try {
             // create category seo information for InnoCigs products
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $seoCategoryMapper = $services->get(CategoryMapper::class);
             $products = $this->getManager()->getRepository(Product::class)->findAll();
             $model = new Model();
@@ -1042,7 +1064,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function setReferencePricesAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $priceMapper = $services->get(PriceMapper::class);
             $products = $this->getManager()->getRepository(Product::class)->findAll();
             foreach ($products as $product) {
@@ -1093,7 +1115,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function rebuildProductSeoInformationAction() {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $log = $services->get('logger');
             $seoMapper = $services->get(ProductSeoMapper::class);
             $repository = $this->getManager()->getRepository(Product::class);
@@ -1120,7 +1142,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function applyPriceRulesAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             /** @var PriceEngine $priceEngine */
             $priceEngine = $services->get(PriceEngine::class);
             /** @var PriceMapper $priceMapper */
@@ -1146,7 +1168,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updateSchemaAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $schemaManager = $services->get(SchemaManager::class);
             $schemaManager->updateSchema();
             $this->view->assign([ 'success' => true, 'message' => 'Database schema was updated.' ]);
@@ -1164,7 +1186,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 'ms' => 'Frau',
             ];
 
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $manager = $this->getManager();
             $customers = $manager->getRepository(Customer::class)->findAll();
             /** @var Customer $customer */
@@ -1200,7 +1222,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 'CLEAROMIZER_ADA',
                 'CLEAROMIZER_RTA',
                 'CLEAROMIZER_RDA',
-                'CLEAROMIZER_RDTA'
+                'CLEAROMIZER_RDTA',
             ];
 
             $products = $this->getManager()->getRepository(Product::class)->findAll();
@@ -1232,12 +1254,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function test () {
 
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         /** @var DocumentRenderer $docRenderer */
         $docRenderer = $services->get(DocumentRenderer::class);
         $log = $services->get('logger');
-        /** @var \Shopware\Models\Order\Order $order */
-        $order = $this->getManager()->getRepository(\Shopware\Models\Order\Order::class)->find(2);
+        /** @var Order $order */
+        $order = $this->getManager()->getRepository(Order::class)->find(2);
         if ($order !== null) {
             $docRenderer->createDocument($order, 'invoice');
             $log->debug('Document path: '  . $docRenderer->getDocumentPath($order, 'invoice'));
@@ -1247,7 +1269,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updateAssociatedLiquidsAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             /** @var AssociatedArticlesMapper $mapper */
             $mapper = $services->get(AssociatedArticlesMapper::class);
             $manager = $this->getManager();
@@ -1316,10 +1338,56 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function importCompanionConfigurationAction()
+    {
+        try {
+            $detailRepository = $this->getManager()->getRepository(Detail::class);
+            $details = $detailRepository->findAll();
+            $attrRepository = $this->getManager()->getRepository(ArticleAttributes::class);
+            foreach ($details as $detail) {
+                $attr = ArticleTool::getDetailAttributes($detail);
+                if (! empty($attr['dc_ic_ordernumber'])) {
+                    $dropshipInfoId = $attr['mxc_dsi_innocigs'];
+                    if ($attr[$dropshipInfoId] !== null) {
+                        $dropshipInfo = $attrRepository->find($dropshipInfoId);
+                    } else {
+                        $dropshipInfo = new ArticleAttributes();
+                    }
+                    $purchasePrice = $attr['dc_ic_purchasing_price'];
+                    $purchasePrice = floatval(str_replace(',', '.', $purchasePrice));
+                    $retailPrice = $attr['dc_ic_retail_price'];
+                    $retailPrice = floatval(str_replace(',', '.', $retailPrice));
+
+                    $dropshipInfo->setPurchasePrice($purchasePrice);
+                    $dropshipInfo->setRecommendedRetailPrice($retailPrice);
+                    $dropshipInfo->setInstock($attr['dc_ic_instock']);
+                    $dropshipInfo->setProductName($attr['dc_ic_articlename']);
+                    $dropshipInfo->setProductNumber($attr['dc_ic_ordernumber']);
+                    $dropshipInfo->setActive(true);
+                    $dropshipInfo->setPreferOwnStock(false);
+                    $dropshipInfo->setDetailId($detail->getId());
+                    $this->getManager()->persist($dropshipInfo);
+                }
+            }
+            $this->getManager()->flush();
+            $dropshipInfos = $attrRepository->findAll();
+            /** @var ArticleAttributes $dropshipInfo */
+            foreach ($dropshipInfos as $dropshipInfo) {
+                /** @var Detail $detail */
+                $detail = $detailRepository->find($dropshipInfo->getDetailId());
+                ArticleTool::setDetailAttribute($detail, 'mxc_dsi_innocigs', $dropshipInfo->getId());
+            }
+
+            $this->view->assign([ 'success' => true, 'message' => 'Companion config sync completed.' ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function dev1Action()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $log = $services->get('logger');
             $products = $this->getManager()->getRepository(Product::class)->findAll();
             $log->debug ('Found ' . count($products) . ' products.');
@@ -1340,7 +1408,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev2Action()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $log = $services->get('logger');
             /** @var CategoryMapper $categoryMapper */
             $products = $this->getManager()->getRepository(Product::class)->getProductsWithReleaseDate();
@@ -1358,16 +1426,52 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
+
+            $services = MxcDropshipIntegrator::getServices();
             $log = $services->get('logger');
-            $seoMapper = $services->get(ProductSeoMapper::class);
-            $repository = $this->getManager()->getRepository(Product::class);
-            $products = $repository->getAllIndexed();
-            $model = new Model();
-            foreach ($products as $product) {
-                $seoMapper->map($model, $product);
-            }
-            $this->getManager()->flush();
+            $config = $services->get('config');
+
+            $exists = class_exists('MxcCommons\ServiceManager\ServiceManager') ? 'true' : 'false';
+            $log->debug('Class exists: ' . $exists);
+
+
+//            /** @var SupplierRegistry $supplierRegistry */
+//            $supplierRegistry = $services->get(SupplierRegistry::class);
+//            /** @var ApiClientInnocigs $client */
+//            $client = $supplierRegistry->getService(
+//                SupplierRegistry::SUPPLIER_INNOCIGS,
+//                'ApiClient'
+//            );
+//
+//            $time = DateTime::createFromFormat('d.m.Y', '31.07.2020');
+//
+//            $trackingInfo = $client->getTrackingData($time);
+//            $trackingInfo = $trackingInfo['TRACKING'];
+//            $log->debug('Tracking data: ' . var_export($trackingInfo, true));
+//
+//            if (isset($trackingInfo['DROPSHIP']['DROPSHIP_ID'])) {
+//                $dropShip = $trackingInfo['DROPSHIP'];
+//                $trackingInfo['DROPSHIP'] = null;
+//                $trackingInfo['DROPSHIP'][0] = $dropShip;
+//                $log->debug('Modified tracking info:');
+//                $log->debug(var_export($trackingInfo, true));
+//            }
+//
+//            foreach ($trackingInfo['DROPSHIP'] as $item) {
+//                $tracking = new TrackingInfo($item);
+//                $log->debug('Context:');
+//                $log->debug(var_export($tracking->getMailContext(), true));
+//            }
+//            /** @var DropshipOrder $dsOrder */
+//            $dsOrder = $services->get(DropshipOrder::class);
+//            $orders = $this->getManager()->getRepository(Order::class)->findAll();
+//            $order = $orders[0];
+//            if ($order !== 0) {
+//                $dsOrder->create($order);
+//                $request = $dsOrder->getXmlRequest(true);
+//                $result = $client->sendOrder($request);
+//            }
+
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
@@ -1381,7 +1485,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @noinspection PhpUndefinedMethodInspection */
             $variants = $this->getManager()->getRepository(Variant::class)->getAllIndexed();
             $models = $this->getManager()->getRepository(Model::class)->getAllIndexed();
-            $services = MxcDropshipInnocigs::getServices();
+            $services = MxcDropshipIntegrator::getServices();
             $log = $services->get('logger');
             /** @var Variant $variant */
             foreach ($variants as $variant) {
@@ -1405,7 +1509,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @noinspection PhpUnusedLocalVariableInspection */
             $ids = json_decode($params['ids'], true);
 
-            $engine = MxcDropshipInnocigs::getServices()->get(PriceEngine::class);
+            $engine = MxcDropshipIntegrator::getServices()->get(PriceEngine::class);
             $engine->createDefaultConfiguration();
 
 
@@ -1419,9 +1523,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev6Action() {
         try {
             /** @var Order $order */
-            $order = $this->getManager()->getRepository(\Shopware\Models\Order\Order::class)->find(720);
+            $order = $this->getManager()->getRepository(Order::class)->find(720);
             /** @var MailRenderer $mailRenderer */
-            $mailRenderer = MxcDropshipInnocigs::getServices()->get(MailRenderer::class);
+            $mailRenderer = MxcDropshipIntegrator::getServices()->get(MailRenderer::class);
             $mail = $mailRenderer->renderStatusMail($order, 1);
             $mailRenderer->sendStatusMail($mail);
             $this->view->assign([ 'success' => true, 'message' => 'Development slot #6 is currently free.']);
@@ -1500,7 +1604,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     protected function updateProductStates(Product $product, array $changes)
     {
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         $productMapper = $services->get(ProductMapper::class);
 
         $change = $changes['linked'] ?? null;
@@ -1548,7 +1652,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
         // The user may have changed the accepted state of variants to false in the detail view of an product.
         // So we need to check and remove invalid variants when the detail view gets saved.
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         $productMapper = $services->get(ProductMapper::class);
         if (! $fromListView) {
             $productMapper->updateArticleStructure($product);
@@ -1572,7 +1676,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     }
 
     protected function handleException(Throwable $e, bool $rethrow = false) {
-        MxcDropshipInnocigs::getServices()->get('logger')->except($e, true, $rethrow);
+        $showTrace = $e instanceof ApiException ? false : true;
+        MxcDropshipIntegrator::getServices()->get('logger')->except($e, $showTrace, $rethrow);
         $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
     }
 
@@ -1580,7 +1685,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $variants = $this->getManager()->getRepository(Variant::class)->findAll();
-            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $log = MxcDropshipIntegrator::getServices()->get('logger');
             $issues = [];
             /** @var Variant $variant */
             foreach ($variants as $variant) {

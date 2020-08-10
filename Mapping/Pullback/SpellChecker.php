@@ -1,13 +1,13 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Pullback;
+namespace MxcDropshipIntegrator\Mapping\Pullback;
 
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 
 class SpellChecker implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
 {
@@ -54,7 +54,7 @@ class SpellChecker implements LoggerAwareInterface, ModelManagerAwareInterface, 
             $currentSearch = array_map($position['search'], $search);
             $currentReplace = array_map($position['replace'], $replace);
             $text = preg_replace($currentSearch, $currentReplace, $text);
-        };
+        }
         return $text;
     }
 }

@@ -23,6 +23,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcUpdateArticleSeo:                 me.onUpdateArticleSeo,
                 mxcSetLastStock:                     me.onSetLastStock,
 
+                // dropshipper's companion deprecation
+                mxcImportCompanionSettings:         me.onImportCompanionSettings,
+
                 // Remapping
 
                 mxcRemapCategories:                  me.onRemapCategories,
@@ -98,6 +101,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
             }
         });
         me.mainWindow = me.getView('list.Window').create({}).show();
+    },
+
+    onImportCompanionSettings: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=importCompanionConfiguration}';
+        let params = {};
+        let growlTitle = 'Import companion settings';
+        let maskText = 'Importing companion settings ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
     onExportConfig: function (grid) {
@@ -923,7 +935,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
               text: message,
               log: true
           },
-          'MxcDropshipInnoCigs');
+          'MxcDropshipIntegrator');
     },
 
     handleError: function (record, operation) {

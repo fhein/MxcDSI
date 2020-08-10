@@ -1,14 +1,14 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Check;
+namespace MxcDropshipIntegrator\Mapping\Check;
 
-use Interop\Container\ContainerInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigTrait;
-use MxcDropshipInnocigs\Mapping\Import\CategoryMapper;
-use MxcDropshipInnocigs\Mapping\Import\NameMapper;
-use MxcDropshipInnocigs\Mapping\Import\TypeMapper;
-use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use MxcCommons\Interop\Container\ContainerInterface;
+use MxcCommons\Plugin\Service\ClassConfigTrait;
+use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
+use MxcDropshipIntegrator\Mapping\Import\NameMapper;
+use MxcDropshipIntegrator\Mapping\Import\TypeMapper;
+use MxcDropshipIntegrator\Toolbox\Regex\RegexChecker;
+use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class RegularExpressionsFactory implements FactoryInterface
 {

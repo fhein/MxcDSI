@@ -1,8 +1,8 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Shopware\Filter;
+namespace MxcDropshipIntegrator\Toolbox\Shopware\Filter;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
+use MxcCommons\Plugin\Service\LoggerInterface;
 use Shopware\Components\Model\ModelManager;
 
 class SetRepository

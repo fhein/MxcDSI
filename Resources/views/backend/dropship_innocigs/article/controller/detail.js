@@ -27,13 +27,13 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Detail', {
                 success: function(responseData, request) {
                     var response = Ext.JSON.decode(responseData.responseText);
                     if (!response.success) {
-                        Shopware.Notification.createGrowlMessage(response.info.title, response.info.message, 'MxcDropshipInnocigs');
+                        Shopware.Notification.createGrowlMessage(response.info.title, response.info.message, 'MxcDropshipIntegrator');
                     } else {
                         me.getDetailForm().getForm().findField('attribute[mxc_dsi_ic_instock]').setValue(response.data.mxc_dsi_ic_instock);
                     }
                 },
                 failure: function(responseData, request) {
-                    Shopware.Notification.createGrowlMessage('Fehler', 'InnoCigs-Werte konnten nicht gespeichert werden.', 'MxcDropshipInnocigs');
+                    Shopware.Notification.createGrowlMessage('Fehler', 'InnoCigs-Werte konnten nicht gespeichert werden.', 'MxcDropshipIntegrator');
                     console.log(responseData);
                 }
             });

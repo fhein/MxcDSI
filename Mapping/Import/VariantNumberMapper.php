@@ -1,9 +1,9 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Variant;
+use MxcDropshipIntegrator\Models\Variant;
 
 class VariantNumberMapper extends BaseImportMapper implements VariantMapperInterface
 {

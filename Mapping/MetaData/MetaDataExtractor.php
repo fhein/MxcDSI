@@ -1,22 +1,22 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
-namespace MxcDropshipInnocigs\Mapping\MetaData;
+namespace MxcDropshipIntegrator\Mapping\MetaData;
 
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Html\HtmlDocument;
+use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Html\HtmlDocument;
 
 
 /**
  * Class MetaDataExtractor
- * @package MxcDropshipInnocigs\Mapping\MetaData
+ * @package MxcDropshipIntegrator\Mapping\MetaData
  *
  * Extraktion von Metadaten aus Produktbeschreibungen
  *
@@ -61,7 +61,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
 
                     $cellTypes = $this->extractCellTypes($topics);
                     if (! empty($cellTypes)) {
-                        $cellTypes = implode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $cellTypes);
+                        $cellTypes = implode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $cellTypes);
                         $product->setCellTypes($cellTypes);
                     }
 
@@ -108,6 +108,8 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
 
     /**
      * Suche Akkukapazität im Produktnamen, in der ersten Tabelle oder in der gesamten Beschreibung
+     * @param array $topics
+     * @return mixed|string|string[]|null
      */
     protected function extractCellCapacity(array $topics)
     {
@@ -168,7 +170,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
     /**
      * Wir nehmen an, das der Kopf wechselbar ist, wenn das Wort Head im Lieferumfang vorkommt
      *
-     * @param string $description
+     * @param array $topics
      * @return bool
      */
     protected function extractHeadChangeable(array $topics)

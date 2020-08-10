@@ -1,10 +1,13 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
+use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Models\PrimaryKeyTrait;
+use MxcDropshipIntegrator\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
 
 /**
@@ -15,7 +18,8 @@ use Shopware\Components\Model\ModelEntity;
  */
 class Product extends ModelEntity  {
 
-    use BaseModelTrait;
+    use PrimaryKeyTrait;
+    use TrackCreationAndUpdateTrait;
 
     /**
      * @var string $icNumber
@@ -153,9 +157,9 @@ class Product extends ModelEntity  {
     // fetch="EAGER" is necessary for the next property to push Doctrine to eagerly load
     // all the variants of a product. Without this setting Doctrine throws with message
     //
-    // 'A new entity was found through the relationship 'MxcDropshipInnocigs\Models\Variant#product'
+    // 'A new entity was found through the relationship 'MxcDropshipIntegrator\Models\Variant#product'
     // that was not configured to cascade persist operations for entity:
-    // Shopware\Proxies\__CG__\MxcDropshipInnocigs\Models\Product@0000000014024956000000006670c47b. ...'
+    // Shopware\Proxies\__CG__\MxcDropshipIntegrator\Models\Product@0000000014024956000000006670c47b. ...'
     //
     // when ImportMapper tries to delete products or to map properties
 
@@ -368,7 +372,7 @@ class Product extends ModelEntity  {
     }
 
     public function setVariants($variants) {
-        $this->setOneToMany($variants, 'MxcDropshipInnocigs\Models\Variant', 'variants');
+        $this->setOneToMany($variants, 'MxcDropshipIntegrator\Models\Variant', 'variants');
     }
 
     /**
@@ -918,7 +922,7 @@ class Product extends ModelEntity  {
     public function getCellTypes()
     {
         if (is_string($this->cellTypes)) {
-            return explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $this->cellTypes);
+            return explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $this->cellTypes);
         }
         return $this->cellTypes;
     }
@@ -929,7 +933,7 @@ class Product extends ModelEntity  {
     public function setCellTypes($cellTypes)
     {
         if (is_array($cellTypes)) {
-            $cellTypes = implode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $cellTypes);
+            $cellTypes = implode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $cellTypes);
         }
         $this->cellTypes = $cellTypes;
     }

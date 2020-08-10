@@ -1,10 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use MxcDropshipIntegrator\Toolbox\Models\PrimaryKeyTrait;
+use MxcDropshipIntegrator\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
 use Shopware\Models\Article\Configurator\Option as ShopwareOption;
 use Shopware\Models\Article\Detail;
@@ -17,7 +19,8 @@ use Shopware\Models\Article\Detail;
  */
 class Variant extends ModelEntity
 {
-    use BaseModelTrait;
+    use PrimaryKeyTrait;
+    use TrackCreationAndUpdateTrait;
 
     /**
      * @var string $number
@@ -129,7 +132,8 @@ class Variant extends ModelEntity
     private $images;
 
     /**
-     * @var @ORM\Column(type="string", nullable=true)
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
      */
     private $description;
 
@@ -448,7 +452,7 @@ class Variant extends ModelEntity
     }
 
     /**
-     * @param Detail $detail
+     * @param Detail|null $detail
      */
     public function setDetail(?Detail $detail)
     {

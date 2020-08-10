@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Exception;
+namespace MxcDropshipIntegrator\Exception;
 
 class RuntimeException extends \RuntimeException
 {

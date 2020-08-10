@@ -1,8 +1,8 @@
 <?php
 
-namespace MxcDropshipInnocigs\Workflow;
+namespace MxcDropshipIntegrator\Workflow;
 
-use MxcDropshipInnocigs\Import\ApiClient;
+use MxcDropshipInnocigs\Services\ApiClient;
 use Shopware\Models\Order\Detail;
 use Shopware\Models\Order\Order as ShopwareOrder;
 
@@ -55,7 +55,7 @@ class Order
         return ($this->getOrderType($force) & self::ORDER_VAPEE) != 0;
     }
 
-    /** Ermittelt den Typ der Bestellung (Lager-Produkte, Dropship Produkte, oder beides) */
+    // Ermittelt den Typ der Bestellung (Lager-Produkte, Dropship Produkte, oder beides)
     public function getOrderType(bool $force = false)
     {
         if ($this->orderType === null || $force) {
@@ -72,9 +72,8 @@ class Order
         return $this->orderAvailability;
     }
 
-    /** Ermittelt ob die Order Dropship, Vapee, oder beides ist, abgebildet in $this->orderType
-     *  Ermittelt, ob die Order lieferbar ist, abgebildet in $this->orderAvailability
-     */
+    // Ermittelt ob die Order Dropship, Vapee, oder beides ist, abgebildet in $this->orderType
+    // Ermittelt, ob die Order lieferbar ist, abgebildet in $this->orderAvailability
     private function validate(bool $force = false) {
         if (empty($this->positions) || $force) {
             $this->positions = [];
@@ -104,8 +103,8 @@ class Order
         return $articleDetail->isDropShipProduct() ? self::ORDER_INNOCIGS : self::ORDER_VAPEE;
     }
 
-    /** Ermittelt die Verfügbarkeit einer Bestellposition */
-    /* @todo */
+    // Ermittelt die Verfügbarkeit einer Bestellposition
+    // @todo
     private function getPositionAvailability(Detail $detail, int $positionOrderType)
     {
         $articleDetail = $detail->getArticleDetail();

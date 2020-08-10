@@ -1,15 +1,15 @@
 <?php
 
-namespace MxcDropshipInnocigs\Listener;
+namespace MxcDropshipIntegrator\Listener;
 
 
-use Mxc\Shopware\Plugin\PluginListenerInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\Variant;
+use MxcCommons\Plugin\PluginListenerInterface;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
 use Shopware\Components\Plugin\Context\UninstallContext;
 
 class MappingFilePersister implements LoggerAwareInterface, ModelManagerAwareInterface

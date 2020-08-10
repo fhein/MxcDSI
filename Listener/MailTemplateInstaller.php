@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MxcDropshipInnocigs\Listener;
+namespace MxcDropshipIntegrator\Listener;
 
 use Shopware\Components\Plugin\Context\UninstallContext;
 use Shopware\Models\Mail\Log;
@@ -30,7 +30,7 @@ class MailTemplateInstaller
                 $mail->setSubject("Ihre {config name=shopName} Bestellung");
                 $mail->setIsHtml(true);
                 $mail->setContentHtml('');
-                $mail->setMailtype(\Shopware\Models\Mail\Mail::MAILTYPE_USER);
+                $mail->setMailtype(Mail::MAILTYPE_USER);
 
                 $manager->persist($mail);
             }

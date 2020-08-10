@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Toolbox\Csv;
+namespace MxcDropshipIntegrator\Toolbox\Csv;
 
 class CsvTool
 {

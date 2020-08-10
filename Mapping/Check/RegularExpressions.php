@@ -1,10 +1,10 @@
 <?php
 
 
-namespace MxcDropshipInnocigs\Mapping\Check;
+namespace MxcDropshipIntegrator\Mapping\Check;
 
-use Mxc\Shopware\Plugin\Service\LoggerInterface;
-use MxcDropshipInnocigs\Toolbox\Regex\RegexChecker;
+use MxcCommons\Plugin\Service\LoggerInterface;
+use MxcDropshipIntegrator\Toolbox\Regex\RegexChecker;
 
 class RegularExpressions
 {

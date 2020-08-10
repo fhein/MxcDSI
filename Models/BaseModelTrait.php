@@ -1,7 +1,7 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;

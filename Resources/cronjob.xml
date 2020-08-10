@@ -23,5 +23,12 @@
         <interval>14400</interval>
         <disableOnError>false</disableOnError>
     </cronjob>
+    <cronjob>
+        <name>InnoCigs Sendungsverfolgung</name>
+        <action>Shopware_CronJob_MxcDsiUpdateTrackingData</action>
+        <active>true</active>
+        <interval>300</interval>
+        <disableOnError>false</disableOnError>
+    </cronjob>
 
 </cronjobs>

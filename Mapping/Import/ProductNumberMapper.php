@@ -1,10 +1,10 @@
 <?php
 
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipIntegrator\Models\Product;
 
 class ProductNumberMapper extends BaseImportMapper implements ProductMapperInterface
 {

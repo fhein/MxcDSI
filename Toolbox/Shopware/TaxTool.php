@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Toolbox\Shopware;
+namespace MxcDropshipIntegrator\Toolbox\Shopware;
 
 use DateTimeImmutable;
 use Shopware\Models\Tax\Tax;
@@ -60,7 +60,6 @@ class TaxTool
      * Returns a Tax object for the currently valid VAT. If the requested Tax object does not exist
      * and $create is true the Tax object will be created.
      *
-     * @param float $taxValue
      * @param bool $create
      * @return Tax
      */

@@ -1,13 +1,13 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Report\ArrayMap;
-use MxcDropshipInnocigs\Report\ArrayReport;
-use MxcDropshipInnocigs\Report\Mapper\SuccessiveReplacer;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Report\ArrayMap;
+use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcDropshipIntegrator\Report\Mapper\SuccessiveReplacer;
 
 class NameMapper extends BaseImportMapper implements ProductMapperInterface
 {
@@ -112,10 +112,10 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
      */
     protected function removeOptionsFromModelName(string $name, Model $model)
     {
-        $options = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $model->getOptions());
+        $options = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $model->getOptions());
 
         foreach ($options as $option) {
-            $option = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $option)[1];
+            $option = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $option)[1];
             $number = $model->getModel();
 
             if (strpos($name, $option) !== false) {
@@ -286,13 +286,13 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
 
             if ($record['fixAvailable']) {
                 if ($record['fixApplied']) {
-                    $optionReport['mapped via fix'][$key] = $entry;;
+                    $optionReport['mapped via fix'][$key] = $entry;
                 } else {
-                    $optionReport['fix not applicable'][$key] = $entry;;
+                    $optionReport['fix not applicable'][$key] = $entry;
                 }
                 continue;
             }
-            $optionReport['no fix avalable'][$key] = $entry;;
+            $optionReport['no fix avalable'][$key] = $entry;
         }
         return $optionReport;
     }

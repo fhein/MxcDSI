@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 use Doctrine\ORM\Mapping as ORM;
 use Shopware\Components\Model\ModelEntity;

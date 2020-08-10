@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Jobs;
+namespace MxcDropshipIntegrator\Jobs;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Models\Category\Category;
-use Zend\Config\Factory;
+use MxcCommons\Config\Factory;
 
 /**
  * This job checks all prices against the pricing rules using the PriceEngine
@@ -18,7 +18,7 @@ class PullCategorySeoInformation
 
     public static function run(?array $options = null)
     {
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         /** @var EntityManager $modelManager */
         $modelManager = $services->get('modelManager');
         self::$log = $services->get('logger');

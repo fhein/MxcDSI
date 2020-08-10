@@ -1,12 +1,14 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
-use MxcDropshipInnocigs\Toolbox\Shopware\UnitTool;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\UnitTool;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
@@ -101,9 +103,9 @@ class PriceMapper
 
         $vatFactor = 1 + $detail->getArticle()->getTax()->getTax() / 100;
 
-        $retailPrices = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $variant->getRetailPrices());
+        $retailPrices = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $variant->getRetailPrices());
         foreach ($retailPrices as $retailPrice) {
-            [$customerGroupKey, $retailPrice] = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $retailPrice);
+            [$customerGroupKey, $retailPrice] = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $retailPrice);
             $price = $this->getPrice($detail, $customerGroupKey);
             if (!$price) continue;
 
@@ -159,8 +161,8 @@ class PriceMapper
      *
      * Wir arbeiten bei vapee.de ausschließlich mit dem Standard-Mehrwertsteuersatz
      *
-     * @throws \Doctrine\ORM\ORMException
-     * @throws \Doctrine\ORM\OptimisticLockException
+     * @throws ORMException
+     * @throws OptimisticLockException
      */
     public function updateVat()
     {

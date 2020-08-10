@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Toolbox\Shopware;
+namespace MxcDropshipIntegrator\Toolbox\Shopware;
 
 use Shopware\Models\Article\Unit;
 

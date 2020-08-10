@@ -1,8 +1,8 @@
 <?php
 
-use Mxc\Shopware\Plugin\Controller\BackendApplicationController;
+use MxcCommons\Plugin\Controller\BackendApplicationController;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
 class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationController
 {
@@ -10,7 +10,7 @@ class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationContro
     protected $alias = 'record';
 
     protected function handleException(Throwable $e, bool $rethrow = false) {
-        $log = MxcDropshipInnocigs::getServices()->get('logger');
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
         $log->except($e, true, $rethrow);
         $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
     }

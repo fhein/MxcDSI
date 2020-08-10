@@ -1,8 +1,8 @@
 <?php
 
-namespace MxcDropshipInnocigs\Excel;
+namespace MxcDropshipIntegrator\Excel;
 
-use MxcDropshipInnocigs\Models\Product;
+use MxcDropshipIntegrator\Models\Product;
 
 class ExcelProductImport extends ExcelImport
 {

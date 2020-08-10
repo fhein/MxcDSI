@@ -1,17 +1,17 @@
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Category;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Category;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Report\ArrayReport;
-use MxcDropshipInnocigs\Toolbox\Shopware\CategoryTool;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcDropshipIntegrator\Toolbox\Shopware\CategoryTool;
 
 class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -60,7 +60,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             // remove empty entries
             $categories = array_filter(array_map('trim', $categories));
             if (! empty($categories)) {
-                $category = implode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $categories);
+                $category = implode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $categories);
                 $this->report[$category][] = $product->getName();
             }
         } else {
@@ -71,7 +71,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
     public function sortCategories()
     {
-        $services = MxcDropshipInnocigs::getServices();
+        $services = MxcDropshipIntegrator::getServices();
         $categoryTool = $services->get(CategoryTool::class);
         $parentPathes = @$this->classConfig['sort_child_categories'];
         $root = $categoryTool->findCategoryPath('Deutsch', null);
@@ -390,7 +390,6 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
                 $this->categorySeoItems[$idx] = $category;
             }
         }
-        return;
     }
 
     protected function getBasePathSeoItems(string $path)

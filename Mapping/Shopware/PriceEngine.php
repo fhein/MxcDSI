@@ -1,17 +1,17 @@
 <?php
 
-namespace MxcDropshipInnocigs\Mapping\Shopware;
+namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareInterface;
-use Mxc\Shopware\Plugin\Service\ClassConfigAwareTrait;
-use Mxc\Shopware\Plugin\Service\LoggerAwareInterface;
-use Mxc\Shopware\Plugin\Service\LoggerAwareTrait;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareInterface;
-use Mxc\Shopware\Plugin\Service\ModelManagerAwareTrait;
-use MxcDropshipInnocigs\Models\Variant;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\Report\ArrayReport;
-use MxcDropshipInnocigs\Toolbox\Shopware\TaxTool;
+use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\Plugin\Service\LoggerAwareInterface;
+use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
+use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipIntegrator\Models\Variant;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Customer\Group;
 
 class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
@@ -127,7 +127,7 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
             if ($this->logEnabled) {
                 $log[] = 'Minimum margin adjusted to ' . $minMarginPercent . '%.';
             }
-        };
+        }
 
         // Ist die maximale prozentuale Marge überschritten, wird der Netto-Verkaufspreis gesenkt
         $maxMarginPercent = $priceConfig['margin_max_percent'];
@@ -245,9 +245,9 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
     {
         $prices = [];
         foreach ($grossRetailPrices as $key => $price) {
-            $prices[] = $key . MxcDropshipInnocigs::MXC_DELIMITER_L1 . $price;
+            $prices[] = $key . MxcDropshipIntegrator::MXC_DELIMITER_L1 . $price;
         }
-        $grossRetailPrices = implode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $prices);
+        $grossRetailPrices = implode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $prices);
         $variant->setRetailPrices($grossRetailPrices);
     }
 
@@ -255,9 +255,9 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
     {
         $retailPrices = [];
         /** @var Variant $variant */
-        $sPrices = explode(MxcDropshipInnocigs::MXC_DELIMITER_L2, $variant->getRetailPrices());
+        $sPrices = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $variant->getRetailPrices());
         foreach ($sPrices as $sPrice) {
-            [$key, $price] = explode(MxcDropshipInnocigs::MXC_DELIMITER_L1, $sPrice);
+            [$key, $price] = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $sPrice);
             $retailPrices[$key] = floatVal(str_replace(',', '.', $price));
         }
         return $retailPrices;

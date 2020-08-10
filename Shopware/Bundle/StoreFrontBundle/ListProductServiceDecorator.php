@@ -1,9 +1,9 @@
 <?php /** @noinspection PhpDeprecationInspection */
 
-namespace MxcDropshipInnocigs\Shopware\Bundle\StoreFrontBundle;
+namespace MxcDropshipIntegrator\Shopware\Bundle\StoreFrontBundle;
 
 use Exception;
-use MxcDropshipInnocigs\Toolbox\Shopware\ArticleTool;
+use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
 use Shopware\Bundle\StoreFrontBundle\Service\ListProductServiceInterface;
 use Shopware\Bundle\StoreFrontBundle\Struct\Attribute;
 use Shopware\Bundle\StoreFrontBundle\Struct\ListProduct;

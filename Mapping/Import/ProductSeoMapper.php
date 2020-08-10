@@ -1,12 +1,12 @@
 <?php
 
 
-namespace MxcDropshipInnocigs\Mapping\Import;
+namespace MxcDropshipIntegrator\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\Product;
-use MxcDropshipInnocigs\Report\ArrayReport;
-use Zend\Config\Factory;
+use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Config\Factory;
 
 class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterface
 {

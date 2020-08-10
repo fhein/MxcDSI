@@ -1,10 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use MxcDropshipIntegrator\Toolbox\Models\PrimaryKeyTrait;
+use MxcDropshipIntegrator\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
 
 
@@ -14,9 +16,10 @@ use Shopware\Components\Model\ModelEntity;
  * @ORM\Table(name="s_plugin_mxc_dsi_group")
  * @ORM\Entity(repositoryClass="GroupRepository")
  */
-class Group extends ModelEntity  {
-
-    use BaseModelTrait;
+class Group extends ModelEntity
+{
+    use PrimaryKeyTrait;
+    use TrackCreationAndUpdateTrait;
 
     /**
      * @var string $name
@@ -58,7 +61,7 @@ class Group extends ModelEntity  {
     }
 
     public function setOptions($options) {
-        $this->setOneToMany($options, 'MxcDropshipInnocigs\Models\Option', 'options');
+        $this->setOneToMany($options, 'MxcDropshipIntegrator\Models\Option', 'options');
     }
 
     /**

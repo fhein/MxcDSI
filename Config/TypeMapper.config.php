@@ -1,6 +1,6 @@
 <?php
 
-use MxcDropshipInnocigs\Mapping\Import\TypeMapper;
+use MxcDropshipIntegrator\Mapping\Import\TypeMapper;
 
 return [
     'types' => [

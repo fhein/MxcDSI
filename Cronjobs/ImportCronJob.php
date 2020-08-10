@@ -1,9 +1,9 @@
 <?php
 
-namespace MxcDropshipInnocigs\Cronjobs;
+namespace MxcDropshipIntegrator\Cronjobs;
 
 use Enlight\Event\SubscriberInterface;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
 class ImportCronJob implements SubscriberInterface
 {
@@ -16,7 +16,7 @@ class ImportCronJob implements SubscriberInterface
 
     public function onImportCronJob(/** @noinspection PhpUnusedParameterInspection */ $job)
     {
-        MxcDropshipInnocigs::getServices()->get(ImportClient::class)->import(true);
+        MxcDropshipIntegrator::getServices()->get(ImportClient::class)->import(true);
 
         return true;
     }

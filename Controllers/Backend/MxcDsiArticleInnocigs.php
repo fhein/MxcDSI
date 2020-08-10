@@ -1,11 +1,14 @@
 <?php
 
-use MxcDropshipInnocigs\Dropship\Innocigs\Registration;
-use MxcDropshipInnocigs\Models\Dropship\Innocigs\Settings;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\Services\ArticleRegistry;
+use MxcDropshipInnocigs\Models\ArticleAttributes;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Detail;
+use MxcDropshipIntegrator\Dropship\SupplierRegistry;
+use MxcDropshipIntegrator\Dropship\ArticleRegistryInterface;
 
-class Shopware_Controllers_Backend_MxcDsiArticleInnocigs extends Shopware_Controllers_Backend_ExtJs implements \Shopware\Components\CSRFWhitelistAware
+class Shopware_Controllers_Backend_MxcDsiArticleInnocigs extends Shopware_Controllers_Backend_ExtJs implements CSRFWhitelistAware
 {
     /**
      * @return array
@@ -18,41 +21,41 @@ class Shopware_Controllers_Backend_MxcDsiArticleInnocigs extends Shopware_Contro
         ];
     }
 
+    private $services;
+
     public function registerAction()
     {
         try {
-            $log = MxcDropshipInnocigs::getServices()->get('logger');
+            $services = $this->getServices();
+            $log = $services->get('logger');
+
+            /** @var ArticleRegistry $registry */
+            $registry = $services->get(ArticleRegistry::class);
+
             $request = $this->Request();
-            $active = $request->getParam('active');
-            $preferOwnStock = $request->getParam('preferOwnStock');
+            $active = $request->getParam('active', false) === "1" ;
+            $preferOwnStock = $request->getParam('preferOwnStock', false) === "1";
             $productNumber = trim($request->getParam('productNumber', null));
+            $detailId = $request->getParam('detailId', null);
 
-            /** @var Detail $detail */
-            $detailId = $this->Request()->getParam('articleId', null);
-            $detail = $this->getDetail($detailId);
-
-            /** @var Registration $registration */
-            $registration = MxcDropshipInnocigs::getServices()->get(Registration::class);
-            /** @var Settings $settings */
-            [$result, $settings] = $registration->register($detail, $productNumber, $active, $preferOwnStock);
+            [$result, $settings] = $registry->register($detailId, $productNumber, $active, $preferOwnStock);
 
             switch ($result) {
-                case Registration::NO_ERROR:
-                    $data = $this->setupResultData($settings);
-                    $this->View()->assign(['success' => true, 'data' => $data]);
+                case ArticleRegistry::NO_ERROR:
+                    $this->View()->assign(['success' => true, 'data' => $settings]);
                     break;
 
-                case Registration::ERROR_PRODUCT_UNKNOWN:
+                case ArticleRegistry::ERROR_PRODUCT_UNKNOWN:
                     $message = 'Unbekanntes Produkt: ' . $productNumber . '.';
                     $this->view()->assign(['success' => false, 'info' => [ 'title' => 'Fehler', 'message' => $message]]);
                     break;
 
-                case Registration::ERROR_DUPLICATE_REGISTRATION:
+                case ArticleRegistry::ERROR_DUPLICATE_REGISTRATION:
                     $message = 'Doppelte Registrierung für ' . $productNumber . '.';
                     $this->view()->assign(['success' => false, 'info' => [ 'title' => 'Fehler', 'message' => $message]]);
                     break;
 
-                case Registration::ERROR_INVALID_ARGUMENT:
+                case ArticleRegistry::ERROR_INVALID_ARGUMENT:
                     $this->View()->assign(['success' => false, 'info' => []]);
                     break;
 
@@ -69,21 +72,16 @@ class Shopware_Controllers_Backend_MxcDsiArticleInnocigs extends Shopware_Contro
     public function getSettingsAction()
     {
         try {
-            $services = MxcDropshipInnocigs::getServices();
-            $detailId = $this->Request()->getParam('articleId', null);
-            /** @var Detail $detail */
-            $detail = $this->getDetail($detailId);
+            $detailId = $this->Request()->getParam('detailId', null);
 
+            $services = MxcDropshipIntegrator::getServices();
             $log = $services->get('logger');
-            /** @var Registration $registration */
-            $registration = $services->get(Registration::class);
-            $settings = $registration->getSettings($detail);
-            $data = [];
-            if ($settings instanceof Settings) {
-                $data = $this->setupResultData($settings);
-            }
+            /** @var ArticleRegistry $registry */
+            $registry = $services->get(ArticleRegistry::class);
 
-            $this->View()->assign(['success' => true, 'data' => $data]);
+            $settings = $registry->getSettings($detailId);
+
+            $this->View()->assign(['success' => true, 'data' => $settings]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -91,38 +89,25 @@ class Shopware_Controllers_Backend_MxcDsiArticleInnocigs extends Shopware_Contro
     
     public function unregisterAction()
     {
-            $detailId = $this->Request()->getParam('articleId', null);
-            $detail = $this->getDetail($detailId);
-            /** @var Registration $registration */
-            $registration = MxcDropshipInnocigs::getServices()->get(Registration::class);
-            $registration->unregister($detail);
+            $request = $this->Request();
+            $detailId = $request->getParam('detailId', null);
+            /** @var Detail $detail */
+
+            $services = $this->getServices();
+            /** @var ArticleRegistry $registration */
+            $registry = $services->get(ArticleRegistry::class);
+            $registry->unregister($detailId);
             $message = 'Dropship registration deleted.';
             $this->View()->assign(['success' => true, 'info' => ['title' => 'Erfolg', 'message' => $message]]);
     }
 
-    protected function setupResultData(Settings $settings)
-    {
-        $data = [
-            'mxc_dsi_ic_productnumber' => $settings->getProductNumber(),
-            'mxc_dsi_ic_productname' => $settings->getProductName(),
-            'mxc_dsi_ic_purchaseprice' => $settings->getPurchasePrice(),
-            'mxc_dsi_ic_retailprice' => $settings->getRecommendedRetailPrice(),
-            'mxc_dsi_ic_instock' => $settings->getInstock(),
-            'mxc_dsi_ic_active' => $settings->isActive(),
-            'mxc_dsi_ic_preferownstock' => $settings->isPreferOwnStock()
-        ];
-        return $data;
-    }
-
     protected function handleException(Throwable $e, bool $rethrow = false) {
-        MxcDropshipInnocigs::getServices()->get('logger')->except($e, true, $rethrow);
-        $this->view->assign([ 'success' => false, 'message' => $e->getMessage() ]);
+        MxcDropshipIntegrator::getServices()->get('logger')->except($e, true, $rethrow);
+        $this->view->assign([ 'success' => false, 'info' => ['title' => 'Exception', 'message' => $e->getMessage()]]);
     }
 
-    protected function getDetail(?int $id)
-    {
-        if ($id === null) return null;
-        return $this->getModelManager()->getRepository(Detail::class)->find($id);
+    protected function getServices() {
+        return $this->services ?? $this->services = MxcDropshipIntegrator::getServices();
     }
 
 }

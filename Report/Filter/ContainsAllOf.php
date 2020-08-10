@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Report\Filter;
+namespace MxcDropshipIntegrator\Report\Filter;
 
 class ContainsAllOf
 {

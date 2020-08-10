@@ -1,12 +1,12 @@
 <?php
 
-namespace MxcDropshipInnocigs\Models;
+namespace MxcDropshipIntegrator\Models;
 
 class OptionRepository extends BaseEntityRepository
 {
     protected $dql = [
-        'removeOrphaned'    =>  'DELETE MxcDropshipInnocigs\Models\Option o WHERE o.variants is empty',
-        'getOption'         =>  'SELECT o FROM MxcDropshipInnocigs\Models\Option o '
+        'removeOrphaned'    =>  'DELETE MxcDropshipIntegrator\Models\Option o WHERE o.variants is empty',
+        'getOption'         =>  'SELECT o FROM MxcDropshipIntegrator\Models\Option o '
                                 . 'JOIN o.icGroup g WHERE o.name = :optionName AND g.name = :groupName',
     ];
 
