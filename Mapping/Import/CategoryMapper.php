@@ -11,7 +11,7 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcDropshipIntegrator\Report\ArrayReport;
-use MxcDropshipIntegrator\Toolbox\Shopware\CategoryTool;
+use MxcCommons\Toolbox\Shopware\CategoryTool;
 
 class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {

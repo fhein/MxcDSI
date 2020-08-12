@@ -7,7 +7,7 @@ use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
 use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class ImportMapperFactory implements FactoryInterface

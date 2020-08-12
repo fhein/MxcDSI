@@ -4,7 +4,7 @@
 namespace MxcDropshipIntegrator\Mapping\Check;
 
 use MxcCommons\Plugin\Service\LoggerInterface;
-use MxcDropshipIntegrator\Toolbox\Regex\RegexChecker;
+use MxcCommons\Toolbox\Regex\RegexChecker;
 
 class RegularExpressions
 {

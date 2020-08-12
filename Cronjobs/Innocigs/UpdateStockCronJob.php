@@ -12,7 +12,7 @@ use MxcDropshipIntegrator\Dropship\SupplierRegistry;
 use MxcDropshipInnocigs\Models\ArticleAttributes;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Plugin\Plugin;

@@ -5,7 +5,6 @@ namespace MxcDropshipIntegrator\Mapping\Shopware;
 use MxcCommons\Interop\Container\ContainerInterface;
 use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipInnocigs\Services\ApiClient;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class DropshippersCompanionFactory implements FactoryInterface

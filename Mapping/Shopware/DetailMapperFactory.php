@@ -4,8 +4,7 @@ namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use MxcCommons\Interop\Container\ContainerInterface;
 use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 

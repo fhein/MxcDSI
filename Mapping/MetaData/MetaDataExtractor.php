@@ -11,7 +11,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Toolbox\Html\HtmlDocument;
+use MxcCommons\Toolbox\Html\HtmlDocument;
 
 
 /**

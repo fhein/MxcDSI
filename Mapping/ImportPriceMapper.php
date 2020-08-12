@@ -11,7 +11,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
+use MxcCommons\Toolbox\Shopware\TaxTool;
 
 class ImportPriceMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {

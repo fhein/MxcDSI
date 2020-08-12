@@ -4,8 +4,8 @@ namespace MxcDropshipIntegrator\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use MxcDropshipIntegrator\Toolbox\Models\PrimaryKeyTrait;
-use MxcDropshipIntegrator\Toolbox\Models\TrackCreationAndUpdateTrait;
+use MxcCommons\Toolbox\Models\PrimaryKeyTrait;
+use MxcCommons\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
 
 

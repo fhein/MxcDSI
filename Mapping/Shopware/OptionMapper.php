@@ -9,9 +9,8 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Option;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\GroupRepository;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\SetRepository;
+use MxcCommons\Toolbox\Shopware\Configurator\GroupRepository;
+use MxcCommons\Toolbox\Shopware\Configurator\SetRepository;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 

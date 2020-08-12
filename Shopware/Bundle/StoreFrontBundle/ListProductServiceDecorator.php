@@ -3,7 +3,7 @@
 namespace MxcDropshipIntegrator\Shopware\Bundle\StoreFrontBundle;
 
 use Exception;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Bundle\StoreFrontBundle\Service\ListProductServiceInterface;
 use Shopware\Bundle\StoreFrontBundle\Struct\Attribute;
 use Shopware\Bundle\StoreFrontBundle\Struct\ListProduct;

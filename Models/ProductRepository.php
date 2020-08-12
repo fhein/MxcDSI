@@ -7,7 +7,7 @@ use MxcCommons\Config\Factory;
 
 class ProductRepository extends BaseEntityRepository
 {
-    protected $productConfigFile = __DIR__ . '/../Config/ProductMappings.config.php';
+    protected $productConfigFile = __DIR__ . '/../Config/ProductMappings.config.phpx';
 
     protected $dql = [
         'getAllIndexed' =>

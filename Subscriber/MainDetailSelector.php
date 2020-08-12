@@ -4,7 +4,7 @@ namespace MxcDropshipIntegrator\Subscriber;
 
 use Enlight\Event\SubscriberInterface;
 use Enlight_Event_EventArgs;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Article\Article;
 use Shopware_Controllers_Frontend_Index;
 

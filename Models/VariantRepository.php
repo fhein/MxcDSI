@@ -28,7 +28,7 @@ class VariantRepository extends BaseEntityRepository
         'removeOptions' => 'DELETE FROM s_plugin_mxc_dsi_x_variants_options WHERE variant_id = ?',
     ];
 
-    protected $variantConfigFile = __DIR__ . '/../Config/VariantMappings.config.php';
+    protected $variantConfigFile = __DIR__ . '/../Config/VariantMappings.config.phpx';
 
     private $mappedProperties = [
         'icNumber',

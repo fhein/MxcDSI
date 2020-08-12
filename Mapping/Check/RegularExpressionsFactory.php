@@ -7,7 +7,7 @@ use MxcCommons\Plugin\Service\ClassConfigTrait;
 use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
 use MxcDropshipIntegrator\Mapping\Import\NameMapper;
 use MxcDropshipIntegrator\Mapping\Import\TypeMapper;
-use MxcDropshipIntegrator\Toolbox\Regex\RegexChecker;
+use MxcCommons\Toolbox\Regex\RegexChecker;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class RegularExpressionsFactory implements FactoryInterface

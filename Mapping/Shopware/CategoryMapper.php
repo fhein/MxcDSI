@@ -13,7 +13,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Category as CategoryConfiguration;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Toolbox\Shopware\CategoryTool;
+use MxcCommons\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
 

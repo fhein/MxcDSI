@@ -23,8 +23,8 @@ use MxcDropshipIntegrator\Models\ProductRepository;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\Models\VariantRepository;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
-use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\TaxTool;
 
 class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {

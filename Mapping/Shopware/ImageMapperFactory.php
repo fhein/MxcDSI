@@ -4,8 +4,7 @@ namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use MxcCommons\Interop\Container\ContainerInterface;
 use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
-use MxcDropshipIntegrator\Toolbox\Shopware\MediaTool;
+use MxcCommons\Toolbox\Shopware\MediaTool;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class ImageMapperFactory implements FactoryInterface

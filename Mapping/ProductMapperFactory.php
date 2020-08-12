@@ -8,7 +8,7 @@ use MxcDropshipIntegrator\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\CategoryMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\ImageMapper;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class ProductMapperFactory implements FactoryInterface

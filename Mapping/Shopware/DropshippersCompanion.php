@@ -10,7 +10,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Services\ApiClient;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Plugin\Plugin;
 
 class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareInterface

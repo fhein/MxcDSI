@@ -4,8 +4,7 @@ namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use MxcCommons\Interop\Container\ContainerInterface;
 use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
-use MxcDropshipIntegrator\Toolbox\Shopware\CategoryTool;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\OptionSorter;
+use MxcCommons\Toolbox\Shopware\CategoryTool;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class CategoryMapperFactory implements FactoryInterface

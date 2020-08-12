@@ -12,7 +12,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Toolbox\Shopware\MediaTool;
+use MxcCommons\Toolbox\Shopware\MediaTool;
 use Shopware\Models\Article\Article;
 
 class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface

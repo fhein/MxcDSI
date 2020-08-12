@@ -2,41 +2,67 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <services>
+        <services>
+            <service id='MxcDropshipIntegrator\Test\Battelfield'>
+                <argument>Hallo, Welt</argument>
+            </service>
+
+        <service id="mxc_dropship_integrator.subscriber.maindetail"
+                 class="MxcDropshipIntegrator\Subscriber\MainDetailSelector">
+        </service>
+
+
         <service id="mxc_dropship_integrator.subscriber.templates" class="MxcDropshipIntegrator\Subscriber\TemplateRegistration">
             <argument>%mxc_dropship_integrator.plugin_dir%</argument>
             <argument type="service" id="template"/>
             <tag name="shopware.event_subscriber"/>
         </service>
-        <service id="mxc_dropship_integrator.subscriber.maindetail" class="MxcDropshipIntegrator\Subscriber\MainDetailSelector">
+
+        <service id="mxc_dropship_integrator.subscriber.maindetail"
+                 class="MxcDropshipIntegrator\Subscriber\MainDetailSelector">
             <tag name="shopware.event_subscriber"/>
         </service>
-        <service id="mxc_dropship_integrator.subscriber.backendarticle" class="MxcDropshipInnocigs\Subscribers\BackendArticleSubscriber">
+
+        <service id="mxc_dropship_integrator.subscriber.backendarticle"
+                 class="MxcDropshipInnocigs\Subscribers\BackendArticleSubscriber">
             <tag name="shopware.event_subscriber"/>
         </service>
-        <service id="mxc_dropship_integrator.subscriber.backendorder" class="MxcDropshipInnocigs\Subscribers\BackendOrderSubscriber">
+
+        <service id="mxc_dropship_integrator.subscriber.backendorder"
+                 class="MxcDropshipInnocigs\Subscribers\BackendOrderSubscriber">
             <tag name="shopware.event_subscriber"/>
         </service>
-        <service id="Shopware_CronJob_MxcDsiImport" class="MxcDropshipIntegrator\Cronjobs\Innocigs\ImportCronJob">
+
+        <service id="Shopware_CronJob_MxcDsiImport"
+                 class="MxcDropshipIntegrator\Cronjobs\Innocigs\ImportCronJob">
             <tag name="shopware.event_subscriber"/>
         </service>
-        <service id="Shopware_CronJob_MxcDsiUpdateStock" class="MxcDropshipIntegrator\Cronjobs\Innocigs\UpdateStockCronJob">
+
+        <service id="Shopware_CronJob_MxcDsiUpdateStock"
+                 class="MxcDropshipIntegrator\Cronjobs\Innocigs\UpdateStockCronJob">
             <tag name="shopware.event_subscriber"/>
         </service>
-        <service id="Shopware_CronJob_MxcDsiUpdatePrices" class="MxcDropshipIntegrator\Cronjobs\Innocigs\UpdatePricesCronJob">
+
+        <service id="Shopware_CronJob_MxcDsiUpdatePrices"
+                 class="MxcDropshipIntegrator\Cronjobs\Innocigs\UpdatePricesCronJob">
             <tag name="shopware.event_subscriber"/>
         </service>
-        <service id="Shopware_CronJob_MxcDsiUpdateTrackingData" class="MxcDropshipIntegrator\Cronjobs\Innocigs\UpdateTrackingDataCronJob">
+
+        <service id="Shopware_CronJob_MxcDsiUpdateTrackingData"
+                class="MxcDropshipIntegrator\Cronjobs\Innocigs\UpdateTrackingDataCronJob">
             <tag name="shopware.event_subscriber"/>
         </service>
+
         <service id="mxc_dropship_integrator.commands.import_command"
-                 class="MxcDropshipIntegrator\Commands\Innocigs\ImportCommand">
+                class="MxcDropshipIntegrator\Commands\Innocigs\ImportCommand">
             <tag name="console.command" command="mxcdsi:import"/>
         </service>
+
         <service id="mxc_dropship_integrator.commands.update_stock_command"
-                 class="MxcDropshipIntegrator\Commands\Innocigs\UpdateStockCommand">
+                class="MxcDropshipIntegrator\Commands\Innocigs\UpdateStockCommand">
             <tag name="console.command" command="mxcdsi:updatestock"/>
         </service>
+
         <service id="mxc_dropship_integrator.list_product_service"
                  class="MxcDropshipIntegrator\Shopware\Bundle\StoreFrontBundle\ListProductServiceDecorator"
                  decorates="shopware_storefront.list_product_service"

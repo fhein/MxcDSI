@@ -5,7 +5,7 @@ namespace MxcDropshipIntegrator\Excel;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Product;
-use MxcDropshipIntegrator\Toolbox\Shopware\DatabaseTool;
+use MxcCommons\Toolbox\Shopware\DatabaseTool;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
 use RuntimeException;
 

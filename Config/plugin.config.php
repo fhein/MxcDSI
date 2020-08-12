@@ -12,7 +12,7 @@ use MxcDropshipInnocigs\Services\DropshipOrder as DropshipOrderInnocigs;
 use MxcDropshipInnocigs\Services\ImportClient as ImportClientInnocigs;
 
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;
-use MxcDropshipIntegrator\Workflow\MailRenderer;
+use MxcCommons\Toolbox\Shopware\MailTool;
 use MxcDropshipIntegrator\Dropship\SupplierRegistry;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelImport;
@@ -64,14 +64,14 @@ use MxcDropshipIntegrator\Models\Option;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\Report\ArrayReport;
-use MxcDropshipIntegrator\Toolbox\Html\HtmlDocument;
-use MxcDropshipIntegrator\Toolbox\Regex\RegexChecker;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
-use MxcDropshipIntegrator\Toolbox\Shopware\CategoryTool;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGroupRepository;
-use MxcDropshipIntegrator\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
-use MxcDropshipIntegrator\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
-use MxcDropshipIntegrator\Toolbox\Shopware\MediaTool;
+use MxcCommons\Toolbox\Html\HtmlDocument;
+use MxcCommons\Toolbox\Regex\RegexChecker;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\CategoryTool;
+use MxcCommons\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGroupRepository;
+use MxcCommons\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
+use MxcCommons\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
+use MxcCommons\Toolbox\Shopware\MediaTool;
 use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
 
 return [
@@ -131,7 +131,7 @@ return [
             VariantMappingConsistency::class => AugmentedObjectFactory::class,
             ImportPriceMapper::class         => AugmentedObjectFactory::class,
             DocumentRenderer::class          => AugmentedObjectFactory::class,
-            MailRenderer::class              => AugmentedObjectFactory::class,
+            MailTool::class              => AugmentedObjectFactory::class,
             DropshipOrderInnocigs::class     => AugmentedObjectFactory::class,
             SupplierRegistry::class          => AugmentedObjectFactory::class,
 
@@ -199,7 +199,7 @@ return [
         ImportClient::class             => 'ImportClient.config.php',
         ManufacturerMapper::class       => 'ManufacturerMapper.config.php',
         NameMapper::class               => 'NameMapper.config.php',
-        ProductMappings::class          => 'ProductMappings.config.php',
+        ProductMappings::class          => 'ProductMappings.config.phpx',
         ProductNumberMapper::class      => 'ProductNumberMapper.config.php',
         PropertyMapper::class           => 'PropertyMapper.config.php',
         TypeMapper::class               => 'TypeMapper.config.php',

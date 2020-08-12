@@ -24,9 +24,8 @@ class MxcDropshipIntegrator extends Plugin {
     {
         if (self::$services !== null) return self::$services;
         $factory = new ServicesFactory();
-        self::$services = $factory->getServices(__DIR__);
+        self::$services = $factory->getServices(self::PLUGIN_DIR);
         return self::$services;
-
     }
 }
 

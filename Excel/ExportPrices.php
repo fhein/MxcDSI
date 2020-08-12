@@ -13,7 +13,7 @@ use MxcDropshipIntegrator\Models\Option;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
+use MxcCommons\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
 

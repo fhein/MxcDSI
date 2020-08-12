@@ -11,7 +11,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcDropshipIntegrator\Report\ArrayReport;
-use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
+use MxcCommons\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Customer\Group;
 
 class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface

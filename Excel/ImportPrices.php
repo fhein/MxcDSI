@@ -8,7 +8,7 @@ use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
+use MxcCommons\Toolbox\Shopware\TaxTool;
 
 class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
 {

@@ -13,9 +13,9 @@ use MxcDropshipIntegrator\Mapping\Shopware\ImageMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
-use MxcDropshipIntegrator\Toolbox\Shopware\SupplierTool;
-use MxcDropshipIntegrator\Toolbox\Shopware\TaxTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\SupplierTool;
+use MxcCommons\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Article\Article;
 
 class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface

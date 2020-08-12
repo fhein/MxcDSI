@@ -10,7 +10,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\ProductRepository;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;

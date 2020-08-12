@@ -3,6 +3,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 
 use MxcDropshipInnocigs\Services\TrackingInfo;
+use MxcDropshipInnocigs\Services\ArticleRegistry;
 use MxcDropshipIntegrator\Exception\ApiException;
 use MxcDropshipInnocigs\Services\DropshipOrder;
 use MxcCommons\Plugin\Controller\BackendApplicationController;
@@ -22,7 +23,6 @@ use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
 use MxcDropshipIntegrator\Mapping\Check\VariantMappingConsistency;
 use MxcDropshipIntegrator\Mapping\Import\AssociatedProductsMapper;
 use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
-use MxcDropshipIntegrator\Mapping\Import\CategoryTreeBuilder;
 use MxcDropshipIntegrator\Mapping\Import\DescriptionMapper;
 use MxcDropshipIntegrator\Mapping\Import\ProductSeoMapper;
 use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
@@ -42,10 +42,10 @@ use MxcDropshipIntegrator\Models\ProductRepository;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcDropshipIntegrator\Report\ArrayReport;
-use MxcDropshipIntegrator\Toolbox\Shopware\ArticleTool;
-use MxcDropshipIntegrator\Toolbox\Shopware\SupplierTool;
-use MxcDropshipInnocigs\Workflow\DocumentRenderer;
-use MxcDropshipInnocigs\Workflow\MailRenderer;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\SupplierTool;
+use MxcDropshipIntegrator\Workflow\DocumentRenderer;
+use MxcCommons\Toolbox\Shopware\MailTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
@@ -946,7 +946,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $articles = $this->getManager()->getRepository(Article::class)->findAll();
             $repo = $this->getManager()->getRepository(Product::class);
 
-            $fileNameShort = 'Config/CrossSelling.config.php';
+            $fileNameShort = 'Config/CrossSelling.config.phpx';
             $fileName = __DIR__ . '/../../' . $fileNameShort;
             /** @noinspection PhpIncludeInspection */
             $relations = include $fileName;
@@ -993,7 +993,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $repository = $this->getManager()->getRepository(Product::class);
-            $fileNameShort = 'Config/CrossSelling.config.php';
+            $fileNameShort = 'Config/CrossSelling.config.phpx';
             /** @noinspection PhpIncludeInspection */
             $relations = include __DIR__ . '/../../' . $fileNameShort;
             $similar = $relations['similar'];
@@ -1343,39 +1343,29 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $detailRepository = $this->getManager()->getRepository(Detail::class);
             $details = $detailRepository->findAll();
-            $attrRepository = $this->getManager()->getRepository(ArticleAttributes::class);
+            /** @var ArticleRegistry $registry */
+            $registry = MxcDropshipIntegrator::getServices()->get(ArticleRegistry::class);
+            /** @var Detail $detail */
             foreach ($details as $detail) {
                 $attr = ArticleTool::getDetailAttributes($detail);
                 if (! empty($attr['dc_ic_ordernumber'])) {
-                    $dropshipInfoId = $attr['mxc_dsi_innocigs'];
-                    if ($attr[$dropshipInfoId] !== null) {
-                        $dropshipInfo = $attrRepository->find($dropshipInfoId);
-                    } else {
-                        $dropshipInfo = new ArticleAttributes();
-                    }
                     $purchasePrice = $attr['dc_ic_purchasing_price'];
                     $purchasePrice = floatval(str_replace(',', '.', $purchasePrice));
                     $retailPrice = $attr['dc_ic_retail_price'];
                     $retailPrice = floatval(str_replace(',', '.', $retailPrice));
-
-                    $dropshipInfo->setPurchasePrice($purchasePrice);
-                    $dropshipInfo->setRecommendedRetailPrice($retailPrice);
-                    $dropshipInfo->setInstock($attr['dc_ic_instock']);
-                    $dropshipInfo->setProductName($attr['dc_ic_articlename']);
-                    $dropshipInfo->setProductNumber($attr['dc_ic_ordernumber']);
-                    $dropshipInfo->setActive(true);
-                    $dropshipInfo->setPreferOwnStock(false);
-                    $dropshipInfo->setDetailId($detail->getId());
-                    $this->getManager()->persist($dropshipInfo);
+                    $settings = [
+                        'mxc_dsi_ic_purchaseprice' => $purchasePrice,
+                        'mxc_dsi_ic_retailprice' => $retailPrice,
+                        'mxc_dsi_ic_productname' => $attr['dc_ic_articlename'],
+                        'mxc_dsi_ic_productnumber' => $attr['dc_ic_ordernumber'],
+                        'mxc_dsi_ic_instock' => $attr['dc_ic_instock'],
+                        'mxc_dsi_ic_active' => $attr['dc_ic_active'],
+                        'mxc_dsi_ic_preferownstock' => 0,
+                        'mxc_dsi_ic_registered' => true,
+                        'mxc_dsi_ic_status' => 0,
+                    ];
+                    $registry->updateSettings($detail->getId(), $settings);
                 }
-            }
-            $this->getManager()->flush();
-            $dropshipInfos = $attrRepository->findAll();
-            /** @var ArticleAttributes $dropshipInfo */
-            foreach ($dropshipInfos as $dropshipInfo) {
-                /** @var Detail $detail */
-                $detail = $detailRepository->find($dropshipInfo->getDetailId());
-                ArticleTool::setDetailAttribute($detail, 'mxc_dsi_innocigs', $dropshipInfo->getId());
             }
 
             $this->view->assign([ 'success' => true, 'message' => 'Companion config sync completed.' ]);
@@ -1428,11 +1418,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
 
             $services = MxcDropshipIntegrator::getServices();
-            $log = $services->get('logger');
+            //$log = $services->get('logger');
             $config = $services->get('config');
 
-            $exists = class_exists('MxcCommons\ServiceManager\ServiceManager') ? 'true' : 'false';
-            $log->debug('Class exists: ' . $exists);
+            $bf = $this->container->get(\MxcDropshipIntegrator\Test\Battlefield::class);
+
+
 
 
 //            /** @var SupplierRegistry $supplierRegistry */
@@ -1524,10 +1515,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             /** @var Order $order */
             $order = $this->getManager()->getRepository(Order::class)->find(720);
-            /** @var MailRenderer $mailRenderer */
-            $mailRenderer = MxcDropshipIntegrator::getServices()->get(MailRenderer::class);
-            $mail = $mailRenderer->renderStatusMail($order, 1);
-            $mailRenderer->sendStatusMail($mail);
+            /** @var MailTool $mail */
+            $mail = MxcDropshipIntegrator::getServices()->get(MailTool::class);
+            $mail = $mail->renderStatusMail($order, 1);
+            $mail->sendStatusMail($mail);
             $this->view->assign([ 'success' => true, 'message' => 'Development slot #6 is currently free.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1567,20 +1558,44 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function dev8Action() {
         try {
-            $params = $this->request->getParams();
-            /** @noinspection PhpUnusedLocalVariableInspection */
-            $ids = json_decode($params['ids'], true);
-            // Do something with the ids
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            /** @var Product $product */
-            $seoUrls = [];
-            foreach ($products as $product) {
-                $seoUrls[$product->getIcNumber()] = $product->getSeoUrl();
-            }
-            $duplicates = array_diff_key($seoUrls, array_unique($seoUrls));
-            ksort($seoUrls);
-            $report = new ArrayReport();
-            $report(['icSeoUrls' => $seoUrls, 'icSeoUrlDuplicates' => $duplicates]);
+            $log = MxcDropshipIntegrator::getServices()->get('logger');
+            $db = Shopware()->Db();
+
+            // Find all articles without details
+            $sql = 'SELECT a.id, a.name FROM s_articles a LEFT JOIN s_articles_details ad ON ad.articleID = a.id WHERE ad.id IS NULL';
+            $result = $db->fetchAll($sql);
+            $result = empty($result) ? 'none' : var_export($result, true);
+            $log->debug('Defective articles (no details): ' . $result);
+
+            // Find all details without articel
+            $sql = 'SELECT d.id FROM s_articles_details d LEFT JOIN s_articles a ON d.articleID = a.id WHERE a.id IS NULL';
+            $result = $db->fetchAll($sql);
+            $result = empty($result) ? 'none' : var_export($result, true);
+            $log->debug('Orphaned details (no article): ' . $result);
+
+            // Find all details without attributes
+            $sql = 'SELECT d.id FROM s_articles_details d LEFT JOIN s_articles_attributes a ON a.articledetailsID = d.id WHERE a.id IS NULL';
+            $result = $db->fetchAll($sql);
+            $result = empty($result) ? 'none' : var_export($result, true);
+            $log->debug('Details without attributes: ' . $result);
+
+            // Find all attributes without details
+            $sql = 'SELECT a.articledetailsID FROM s_articles_attributes a LEFT JOIN s_articles_details d ON a.articledetailsID = d.id WHERE a.id IS NULL';
+            $result = $db->fetchAll($sql);
+            $result = empty($result) ? 'none' : var_export($result, true);
+            $log->debug('Orphaned attributes (no detail): ' . $result);
+
+            // Find all article relations where article articleID does not exist
+            $sql = 'SELECT ar.articleID FROM s_articles_relationships ar LEFT JOIN s_articles a ON ar.articleID = a.id WHERE a.id IS NULL ';
+            $result = $db->fetchAll($sql);
+            $result = empty($result) ? 'none' : var_export($result, true);
+            $log->debug('Related Article does not exist:' . $result);
+
+            // Find all article relations where similar article of articleID does not exist
+            $sql = 'SELECT ar.articleID FROM s_articles_similar ar LEFT JOIN s_articles a ON ar.articleID = a.id WHERE a.id IS NULL ';
+            $result = $db->fetchAll($sql);
+            $result = empty($result) ? 'none' : var_export($result, true);
+            $log->debug('Similar Article does not exist:' . $result);
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 8 slot is currently free.']);
         } catch (Throwable $e) {
@@ -1665,7 +1680,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return ['success' => true, 'data' => $detail['data']];
     }
 
-    protected function getRepository() : ProductRepository
+    protected function getRepository()
     {
         return $this->getManager()->getRepository(Product::class);
     }
