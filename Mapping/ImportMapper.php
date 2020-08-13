@@ -25,6 +25,7 @@ use MxcDropshipIntegrator\Models\VariantRepository;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\Toolbox\Shopware\TaxTool;
+use MxcCommons\Defines\Constants;
 
 class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -133,10 +134,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     public function mapOptions(?string $optionString): ArrayCollection
     {
         if ($optionString === null) return new ArrayCollection();
-        $optionArray = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $optionString);
+        $optionArray = explode(Constants::DELIMITER_L2, $optionString);
         $options = [];
         foreach ($optionArray as $option) {
-            $param = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $option);
+            $param = explode(Constants::DELIMITER_L1, $option);
             $optionName = $this->propertyMapper->mapOptionName($param[1]);
             $groupName = $this->propertyMapper->mapGroupName($param[0]);
             $option = @$this->options[$groupName][$optionName];
@@ -227,7 +228,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
             $variant->setActive($active);
             $variant->setAccepted(true);
-            $variant->setRetailPrices('EK' . MxcDropshipIntegrator::MXC_DELIMITER_L1 . $uvp);
+            $variant->setRetailPrices('EK' . Constants::DELIMITER_L1 . $uvp);
             $options = $this->mapOptions($model->getOptions());
             $variant->setOptions($options);
             $this->propertyMapper->mapModelToVariant($model, $variant);
@@ -239,7 +240,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     {
         $options = $model->getOptions();
 
-        $pattern = 'PACKUNG' . MxcDropshipIntegrator::MXC_DELIMITER_L1;
+        $pattern = 'PACKUNG' . Constants::DELIMITER_L1;
         if (strpos($options, $pattern) === false) return true;
 
         $pattern .= '1er Packung';
@@ -307,19 +308,19 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
     {
-        $oldOptions = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $oldValue);
-        $newOptions = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $newValue);
+        $oldOptions = explode(Constants::DELIMITER_L2, $oldValue);
+        $newOptions = explode(Constants::DELIMITER_L2, $newValue);
         $rOptions = array_diff($oldOptions, $newOptions);
         foreach ($rOptions as $option) {
             if ($option === null) continue;
-            $param = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $option);
+            $param = explode(Constants::DELIMITER_L1, $option);
             $o = $this->options[$param[0]][$param[1]];
             if ($o !== null) {
                 $variant->removeOption($o);
             }
         }
         $addedOptions = array_diff($newOptions, $oldOptions);
-        $addedOptions = implode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $addedOptions);
+        $addedOptions = implode(Constants::DELIMITER_L2, $addedOptions);
         $variant->addOptions($this->mapOptions($addedOptions));
     }
 

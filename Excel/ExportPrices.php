@@ -16,6 +16,7 @@ use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
+use MxcCommons\Defines\Constants;
 
 class ExportPrices extends AbstractProductExport implements LoggerAwareInterface, ModelManagerAwareInterface
 {
@@ -173,7 +174,7 @@ class ExportPrices extends AbstractProductExport implements LoggerAwareInterface
         }
         $options = $model->getOptions();
 
-        $pattern = 'PACKUNG' . MxcDropshipIntegrator::MXC_DELIMITER_L1;
+        $pattern = 'PACKUNG' . Constants::DELIMITER_L1;
         if (strpos($options, $pattern) === false) return true;
 
         $pattern .= '1er Packung';

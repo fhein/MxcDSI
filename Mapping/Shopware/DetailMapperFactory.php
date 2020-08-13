@@ -23,11 +23,9 @@ class DetailMapperFactory implements FactoryInterface
     {
         $priceMapper = $container->get(PriceMapper::class);
         $articleTool = $container->get(ArticleTool::class);
-        $articleResource = new ArticleResource();
-        $articleResource->setManager($container->get('modelManager'));
         $companion = $container->get(DropshippersCompanion::class);
         $optionMapper = $container->get(OptionMapper::class);
 
-        return $this->augment($container, new DetailMapper($articleTool, $articleResource, $companion, $priceMapper, $optionMapper));
+        return $this->augment($container, new DetailMapper($articleTool, $companion, $priceMapper, $optionMapper));
     }
 }

@@ -4,6 +4,7 @@ namespace MxcDropshipIntegrator\Report;
 
 use MxcCommons\Plugin\Utility\StringUtility;
 use MxcCommons\Config\Factory;
+use MxcCommons\Toolbox\Config\Config;
 
 class ArrayReport
 {
@@ -54,10 +55,10 @@ class ArrayReport
 //                    unlink($diffFile);
 //                }
 //            } else {
-//                Factory::toFile($diffFile, array_diff($topic, $old));
+//                Config::toFile($diffFile, array_diff($topic, $old));
 //            }
 //        }
-        Factory::toFile($actFile, $topic);
+        Config::toFile($actFile, $topic);
     }
 
     protected function getFileName(string $value) {

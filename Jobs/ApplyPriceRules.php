@@ -18,7 +18,7 @@ class ApplyPriceRules
     public static function run()
     {
         $services = MxcDropshipIntegrator::getServices();
-        $modelManager = $services->get('modelManager');
+        $modelManager = $services->get('models');
         self::$log = $services->get('logger');
         /** @var PriceEngine $priceEngine */
         $priceEngine = $services->get(PriceEngine::class);

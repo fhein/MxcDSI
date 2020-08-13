@@ -14,6 +14,7 @@ use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\MediaTool;
 use Shopware\Models\Article\Article;
+use MxcCommons\Defines\Constants;
 
 class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
@@ -58,7 +59,7 @@ class ImageMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         if ($detail === null) return;
 
         $i = count($this->mainImages) + 1;
-        $icImageUrls = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $variant->getImages());
+        $icImageUrls = explode(Constants::DELIMITER_L1, $variant->getImages());
         foreach ($icImageUrls as $icImageUrl) {
             if (empty($icImageUrl)) continue;
             $image = $this->mainImages[$icImageUrl];

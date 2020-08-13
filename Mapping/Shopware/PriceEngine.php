@@ -13,6 +13,7 @@ use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcDropshipIntegrator\Report\ArrayReport;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Customer\Group;
+use MxcCommons\Defines\Constants;
 
 class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
 {
@@ -245,9 +246,9 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
     {
         $prices = [];
         foreach ($grossRetailPrices as $key => $price) {
-            $prices[] = $key . MxcDropshipIntegrator::MXC_DELIMITER_L1 . $price;
+            $prices[] = $key . Constants::DELIMITER_L1 . $price;
         }
-        $grossRetailPrices = implode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $prices);
+        $grossRetailPrices = implode(Constants::DELIMITER_L2, $prices);
         $variant->setRetailPrices($grossRetailPrices);
     }
 
@@ -255,9 +256,9 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
     {
         $retailPrices = [];
         /** @var Variant $variant */
-        $sPrices = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $variant->getRetailPrices());
+        $sPrices = explode(Constants::DELIMITER_L2, $variant->getRetailPrices());
         foreach ($sPrices as $sPrice) {
-            [$key, $price] = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $sPrice);
+            [$key, $price] = explode(Constants::DELIMITER_L1, $sPrice);
             $retailPrices[$key] = floatVal(str_replace(',', '.', $price));
         }
         return $retailPrices;

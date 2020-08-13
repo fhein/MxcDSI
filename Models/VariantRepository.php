@@ -2,7 +2,7 @@
 
 namespace MxcDropshipIntegrator\Models;
 
-use MxcCommons\Config\Factory;
+use MxcCommons\Toolbox\Config\Config;
 
 class VariantRepository extends BaseEntityRepository
 {
@@ -109,9 +109,9 @@ class VariantRepository extends BaseEntityRepository
             $currentMappings = include $variantConfigFile;
         }
         if (! empty($propertyMappings)) {
-            /** @noinspection PhpUndefinedFieldInspection */
             $propertyMappings = array_replace_recursive($currentMappings, $propertyMappings);
-            Factory::toFile($variantConfigFile, $propertyMappings);
+            $count = count($propertyMappings);
+            Config::toFile($variantConfigFile, $propertyMappings);
 
             $this->log->debug(sprintf("Exported %s variant mappings to Config\\%s.",
                 count($propertyMappings),

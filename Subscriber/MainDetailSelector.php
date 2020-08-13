@@ -57,7 +57,7 @@ class MainDetailSelector implements SubscriberInterface
             $instock = $detail['dc_ic_active'] == 1 ? $detail['dc_ic_instock'] : $detail['instock'];
 
             if ($instock > 0) {
-                ArticleTool::setArticleMainDetail($articleId, $detail['articledetailsID']);
+                ArticleTool::setMainDetail($articleId, $detail['articledetailsID']);
                 $request->setParam('number', $detail['ordernumber']);
                 break;
             }
@@ -66,9 +66,7 @@ class MainDetailSelector implements SubscriberInterface
 
     public function onPostDispatch(Enlight_Event_EventArgs $args)
     {
-
         /** @var Shopware_Controllers_Frontend_Index $controller */
-        /** @noinspection PhpUndefinedMethodInspection */
         $controller = $args->getSubject();
         $request = $controller->Request();
         $view = $controller->View();
@@ -138,9 +136,7 @@ class MainDetailSelector implements SubscriberInterface
                 }
             }
 
-            $sql .= sprintf("
-                WHERE ad.articleID = %d AND ad.active = 1;
-            ", $articleId);
+            $sql .= sprintf(" WHERE ad.articleID = %d AND ad.active = 1;", $articleId);
 
             // Fetches all details for this group
             $details = Shopware()->Db()->fetchAll($sql);
@@ -153,13 +149,14 @@ class MainDetailSelector implements SubscriberInterface
 
                 $detailIds = implode(',', $detailIds);
 
-                $sql = sprintf("
-                    SELECT option_id FROM `s_article_configurator_option_relations` as r
+                $sql = sprintf(
+                    "SELECT option_id FROM `s_article_configurator_option_relations` as r
                     INNER JOIN `s_article_configurator_options` as o
                     ON o.id = r.option_id
                     AND o.group_id = %d
-                    WHERE r.`article_id` IN (%s)
-                ", $groupId, $detailIds);
+                    WHERE r.`article_id` IN (%s)"
+                    , $groupId, $detailIds
+                );
                 $optionIds = Shopware()->Db()->fetchAll($sql);
                 if (!empty($optionIds)) {
                     foreach ($optionIds as $optionIdItem) {

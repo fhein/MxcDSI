@@ -16,6 +16,7 @@ use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\CategoryTool;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
+use MxcCommons\Defines\Constants;
 
 
 class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface, ModelManagerAwareInterface
@@ -52,7 +53,7 @@ class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface,
         if ($replace === true) $article->getCategories()->clear();
 
         $root = $this->getRootCategory();
-        $categories = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $product->getCategory());
+        $categories = explode(Constants::DELIMITER_L1, $product->getCategory());
 
         foreach ($categories as $category) {
             $path = array_map('trim', explode('>', $category));

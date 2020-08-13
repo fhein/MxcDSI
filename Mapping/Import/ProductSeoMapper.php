@@ -6,7 +6,6 @@ namespace MxcDropshipIntegrator\Mapping\Import;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Report\ArrayReport;
-use MxcCommons\Config\Factory;
 
 class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterface
 {
@@ -54,7 +53,8 @@ class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterfac
     public function __construct()
     {
         $this->descriptionMaxLength = $this->descriptionCharMax - $this->descriptionCharBias;
-        $commonNameIndex = Factory::fromFile(__DIR__ . '/../../Config/CommonNameMapper.config.php')['common_name_index'];
+        $commonNameIndex = include __DIR__ . '/../../Config/CommonNameMapper.config.php';
+        $commonNameIndex = $commonNameIndex['common_name_index'];
         $lastLength = 0;
         $snippets = [];
         foreach ($this->descriptionSnippets as $snippet) {

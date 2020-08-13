@@ -14,6 +14,7 @@ use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Price;
 use Shopware\Models\Customer\Group;
+use MxcCommons\Defines\Constants;
 
 class PriceMapper
 {
@@ -103,9 +104,9 @@ class PriceMapper
 
         $vatFactor = 1 + $detail->getArticle()->getTax()->getTax() / 100;
 
-        $retailPrices = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $variant->getRetailPrices());
+        $retailPrices = explode(Constants::DELIMITER_L2, $variant->getRetailPrices());
         foreach ($retailPrices as $retailPrice) {
-            [$customerGroupKey, $retailPrice] = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $retailPrice);
+            [$customerGroupKey, $retailPrice] = explode(Constants::DELIMITER_L1, $retailPrice);
             $price = $this->getPrice($detail, $customerGroupKey);
             if (!$price) continue;
 

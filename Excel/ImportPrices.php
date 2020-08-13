@@ -9,6 +9,7 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\TaxTool;
+use MxcCommons\Defines\Constants;
 
 class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
 {
@@ -81,11 +82,11 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
             $price = $price ?? $customerPrice;
             $netPrice = $this->getFloatVal($price) / $vatFactor;
             if ($price) {
-                $prices[] = $customerGroup . MxcDropshipIntegrator::MXC_DELIMITER_L1 . strval($netPrice);
+                $prices[] = $customerGroup . Constants::DELIMITER_L1 . strval($netPrice);
             }
         }
         // $this->log->debug(var_export($prices, true));
-        $prices = implode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $prices);
+        $prices = implode(Constants::DELIMITER_L2, $prices);
         $variant->setRetailPrices($prices);
         $this->priceMapper->setRetailPrices($variant);
     }

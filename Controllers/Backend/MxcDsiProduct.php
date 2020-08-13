@@ -2,23 +2,24 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
-use MxcDropshipInnocigs\Services\TrackingInfo;
-use MxcDropshipInnocigs\Services\ArticleRegistry;
-use MxcDropshipIntegrator\Exception\ApiException;
-use MxcDropshipInnocigs\Services\DropshipOrder;
 use MxcCommons\Plugin\Controller\BackendApplicationController;
 use MxcCommons\Plugin\Database\SchemaManager;
-use MxcDropshipIntegrator\Cronjobs\Innocigs\UpdateStockCronJob;
+use MxcCommons\Toolbox\Config\Config;
+use MxcCommons\Toolbox\Shopware\ArticleTool;
+use MxcCommons\Toolbox\Shopware\EmailTemplates;
+use MxcCommons\Toolbox\Shopware\MailTool;
+use MxcCommons\Toolbox\Shopware\SupplierTool;
+use MxcDropshipInnocigs\Cronjobs\StockUpdateCronJob;
+use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipInnocigs\Services\ArticleRegistry;
+use MxcDropshipIntegrator\Dropship\SupplierRegistry;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelProductImport;
-use MxcDropshipInnocigs\Services\ImportClient;
+use MxcDropshipIntegrator\Exception\ApiException;
 use MxcDropshipIntegrator\Jobs\ApplyPriceRules;
 use MxcDropshipIntegrator\Jobs\PullCategorySeoInformation;
-use MxcDropshipIntegrator\Jobs\RestoreEmailTemplates;
-use MxcDropshipIntegrator\Jobs\SaveEmailTemplates;
 use MxcDropshipIntegrator\Jobs\UpdateInnocigsPrices;
 use MxcDropshipIntegrator\Mapping\Check\NameMappingConsistency;
-use MxcDropshipIntegrator\Dropship\SupplierRegistry;
 use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
 use MxcDropshipIntegrator\Mapping\Check\VariantMappingConsistency;
 use MxcDropshipIntegrator\Mapping\Import\AssociatedProductsMapper;
@@ -35,17 +36,11 @@ use MxcDropshipIntegrator\Mapping\Shopware\CategoryMapper as ShopwareCategoryMap
 use MxcDropshipIntegrator\Mapping\Shopware\ImageMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
-use MxcDropshipInnocigs\Models\ArticleAttributes;
-use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
-use MxcDropshipIntegrator\Models\ProductRepository;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcDropshipIntegrator\Report\ArrayReport;
-use MxcCommons\Toolbox\Shopware\ArticleTool;
-use MxcCommons\Toolbox\Shopware\SupplierTool;
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;
-use MxcCommons\Toolbox\Shopware\MailTool;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
@@ -53,13 +48,13 @@ use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Customer;
 use Shopware\Models\Order\Order;
-use MxcCommons\Config\Factory;
-use MxcDropshipInnocigs\Services\ApiClient as ApiClientInnocigs;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
     protected $model = Product::class;
     protected $alias = 'product';
+
+    protected $emailTemplatesFile = __DIR__ . '/../../Config/MailTemplates.config.php';
 
     public function getWhitelistedCSRFActions()
     {
@@ -423,6 +418,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $products = $this->getRepository()->getProductsByIds($ids);
 
             $services = MxcDropshipIntegrator::getServices();
+            /** @var ProductMapper $productMapper */
             $productMapper = $services->get(ProductMapper::class);
             $productMapper->deleteArticles($products);
 
@@ -656,7 +652,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updateStockInfoAction()
     {
         try {
-            $updateCronJob = new UpdateStockCronJob();
+            $updateCronJob = new StockUpdateCronJob();
             $updateCronJob->onUpdateStockCronJob(null);
 
             $this->view->assign([ 'success' => true, 'message' => 'Successfully updated stock info from InnoCigs.' ]);
@@ -982,7 +978,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
             $relations['related'] = $relatedArticles;
             $relations['similar'] = $similarArticles;
-            Factory::toFile($fileName, $relations);
+            Config::toFile($fileName, $relations);
             $this->view->assign([ 'success' => true, 'message' => 'Cross selling products saved to ' . $fileNameShort . '.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1291,7 +1287,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function saveEmailTemplatesAction()
     {
         try {
-            SaveEmailTemplates::run();
+            $templates = EmailTemplates::getAll();
+            Config::toFile($this->emailTemplatesFile, $templates);
             $this->view->assign([ 'success' => true, 'message' => 'Email templates successfully saved.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1301,7 +1298,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function restoreEmailTemplatesAction()
     {
         try {
-            RestoreEmailTemplates::run();
+            if (! file_exists($this->emailTemplatesFile)) {
+                $this->view->assign([ 'success' => false, 'message' => 'File does not exist.']);
+                return;
+            }
+
+            $templates = include $this->emailTemplatesFile;
+            EmailTemplates::setAll($templates);
+
             $this->view->assign([ 'success' => true, 'message' => 'Email templates successfully restored.']);
         } catch (Throwable $e) {
             $this->handleException($e);

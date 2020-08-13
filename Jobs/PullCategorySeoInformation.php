@@ -6,7 +6,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Models\Category\Category;
-use MxcCommons\Config\Factory;
+use MxcCommons\Toolbox\Config\Config;
 
 /**
  * This job checks all prices against the pricing rules using the PriceEngine
@@ -20,7 +20,7 @@ class PullCategorySeoInformation
     {
         $services = MxcDropshipIntegrator::getServices();
         /** @var EntityManager $modelManager */
-        $modelManager = $services->get('modelManager');
+        $modelManager = $services->get('models');
         self::$log = $services->get('logger');
 
         $categorySeoInformation = [];
@@ -44,7 +44,7 @@ class PullCategorySeoInformation
             ];
         }
         $filename = __DIR__ . '/../Config/CategorySeoInformation.config.php';
-        Factory::toFile($filename, $categorySeoInformation);
+        Config::toFile($filename, $categorySeoInformation);
     }
 
     protected static function getPathString(EntityRepository $repository, $path)

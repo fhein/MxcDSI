@@ -9,6 +9,7 @@ use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Models\PrimaryKeyTrait;
 use MxcCommons\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
+use MxcCommons\Defines\Constants;
 
 /**
  * @ORM\Entity
@@ -922,7 +923,7 @@ class Product extends ModelEntity  {
     public function getCellTypes()
     {
         if (is_string($this->cellTypes)) {
-            return explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $this->cellTypes);
+            return explode(Constants::DELIMITER_L1, $this->cellTypes);
         }
         return $this->cellTypes;
     }
@@ -933,7 +934,7 @@ class Product extends ModelEntity  {
     public function setCellTypes($cellTypes)
     {
         if (is_array($cellTypes)) {
-            $cellTypes = implode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $cellTypes);
+            $cellTypes = implode(Constants::DELIMITER_L1, $cellTypes);
         }
         $this->cellTypes = $cellTypes;
     }

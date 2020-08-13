@@ -10,6 +10,7 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Report\ArrayReport;
 use MxcCommons\Config\Factory;
+use MxcCommons\Toolbox\Config\Config;
 
 class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
 {
@@ -105,7 +106,7 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
             sort($category);
             $category = array_values($category);
         }
-        Factory::toFile($this->categoryFile, $this->classConfig);
+        Config::toFile($this->categoryFile, $this->classConfig);
     }
 
     public function report()

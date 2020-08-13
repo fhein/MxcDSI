@@ -12,6 +12,7 @@ use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcDropshipIntegrator\Report\ArrayReport;
 use MxcCommons\Toolbox\Shopware\CategoryTool;
+use MxcCommons\Defines\Constants;
 
 class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface, LoggerAwareInterface
 {
@@ -60,7 +61,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
             // remove empty entries
             $categories = array_filter(array_map('trim', $categories));
             if (! empty($categories)) {
-                $category = implode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $categories);
+                $category = implode(Constants::DELIMITER_L1, $categories);
                 $this->report[$category][] = $product->getName();
             }
         } else {

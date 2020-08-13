@@ -2,6 +2,7 @@
 
 namespace MxcDropshipIntegrator\Models;
 
+use MxcCommons\Toolbox\Config\Config;
 use Shopware\Models\Article\Article;
 use MxcCommons\Config\Factory;
 
@@ -271,9 +272,8 @@ class ProductRepository extends BaseEntityRepository
             $currentMappings = include $productConfigFile;
         }
         if (! empty($propertyMappings)) {
-            /** @noinspection PhpUndefinedFieldInspection */
             $propertyMappings = array_replace_recursive($currentMappings, $propertyMappings);
-            Factory::toFile($productConfigFile, $propertyMappings);
+            Config::toFile($productConfigFile, $propertyMappings);
 
             $this->log->debug(sprintf("Exported %s product mappings to Config\\%s.",
                 count($propertyMappings),

@@ -33,8 +33,6 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     /** @var DropshippersCompanion */
     private $companion;
 
-    /** @var ArticleResource */
-    private $articleResource;
 
     /** \Doctrine\ORM\EntityRepository */
     private $setRepository;
@@ -44,7 +42,6 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
     public function __construct(
         ArticleTool $articleTool,
-        ArticleResource $articleResource,
         DropshippersCompanion $companion,
         PriceMapper $priceMapper,
         OptionMapper $optionMapper
@@ -53,7 +50,6 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->companion = $companion;
         $this->priceMapper = $priceMapper;
         $this->articleTool = $articleTool;
-        $this->articleResource = $articleResource;
     }
 
     public function needsStructureUpdate(Product $product)
@@ -207,7 +203,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         /** @var Article $article */
         $article = $product->getArticle();
         if (! $article) return;
-        $this->articleResource->delete($article->getId());
+        ArticleTool::deleteArticle($article);
 
         $configuratorSetName = 'mxc-set-' . $product->getIcNumber();
         if ($set = $this->getSetRepository()->findOneBy(['name' => $configuratorSetName]))

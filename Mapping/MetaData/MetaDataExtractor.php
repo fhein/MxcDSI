@@ -12,6 +12,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Html\HtmlDocument;
+use MxcCommons\Defines\Constants;
 
 
 /**
@@ -61,7 +62,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
 
                     $cellTypes = $this->extractCellTypes($topics);
                     if (! empty($cellTypes)) {
-                        $cellTypes = implode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $cellTypes);
+                        $cellTypes = implode(Constants::DELIMITER_L1, $cellTypes);
                         $product->setCellTypes($cellTypes);
                     }
 

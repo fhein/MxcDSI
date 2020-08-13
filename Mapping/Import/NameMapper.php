@@ -8,6 +8,7 @@ use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcDropshipIntegrator\Report\ArrayMap;
 use MxcDropshipIntegrator\Report\ArrayReport;
 use MxcDropshipIntegrator\Report\Mapper\SuccessiveReplacer;
+use MxcCommons\Defines\Constants;
 
 class NameMapper extends BaseImportMapper implements ProductMapperInterface
 {
@@ -112,10 +113,10 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
      */
     protected function removeOptionsFromModelName(string $name, Model $model)
     {
-        $options = explode(MxcDropshipIntegrator::MXC_DELIMITER_L2, $model->getOptions());
+        $options = explode(Constants::DELIMITER_L2, $model->getOptions());
 
         foreach ($options as $option) {
-            $option = explode(MxcDropshipIntegrator::MXC_DELIMITER_L1, $option)[1];
+            $option = explode(Constants::DELIMITER_L1, $option)[1];
             $number = $model->getModel();
 
             if (strpos($name, $option) !== false) {
