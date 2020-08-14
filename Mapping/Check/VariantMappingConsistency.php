@@ -9,7 +9,7 @@ use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 
 class VariantMappingConsistency implements LoggerAwareInterface, ModelManagerAwareInterface
 {

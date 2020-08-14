@@ -10,7 +10,7 @@ use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipIntegrator\Models\Product;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 
 class AssociatedProductsMapper
     implements ClassConfigAwareInterface, ModelManagerAwareInterface, LoggerAwareInterface

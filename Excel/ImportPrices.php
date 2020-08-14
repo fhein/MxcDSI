@@ -4,6 +4,7 @@ namespace MxcDropshipIntegrator\Excel;
 
 use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
@@ -30,12 +31,6 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
         $this->priceMapper = $priceMapper;
     }
 
-    protected function getFloatVal(?string $value)
-    {
-        if ($value === null) return null;
-        return floatval(str_replace(',', '.', $value));
-    }
-
     public function processImportData(array &$data)
     {
         $keys = array_keys($data[0]);
@@ -47,7 +42,6 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
             }
         }
 
-        /** @noinspection PhpUndefinedMethodInspection */
         $variants = $this->modelManager->getRepository(Variant::class)->getAllIndexed();
         $this->models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         /** @var Variant $variant */
@@ -56,9 +50,9 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
         foreach ($data as $record) {
             $variant = $variants[$record['icNumber']] ?? null;
             if (!$variant) continue;
-            $variant->setRetailPriceDampfPlanet($this->getFloatVal($record['Dampfplanet']));
-            $variant->setRetailPriceMaxVapor($this->getFloatVal($record['MaxVapor']));
-            $variant->setRetailPriceOthers($this->getFloatVal($record['andere']));
+            $variant->setRetailPriceDampfPlanet(StringTool::tofloat($record['Dampfplanet']));
+            $variant->setRetailPriceMaxVapor(StringTool::tofloat($record['MaxVapor']));
+            $variant->setRetailPriceOthers(StringTool::tofloat($record['andere']));
 
             $this->updateVariantPrice($variant, $record);
         }
@@ -80,7 +74,7 @@ class ImportPrices extends AbstractProductImport implements LoggerAwareInterface
             $price = $record[$column];
             $price = $price === '' ? null : $price;
             $price = $price ?? $customerPrice;
-            $netPrice = $this->getFloatVal($price) / $vatFactor;
+            $netPrice = StringTool::tofloat($price) / $vatFactor;
             if ($price) {
                 $prices[] = $customerGroup . Constants::DELIMITER_L1 . strval($netPrice);
             }

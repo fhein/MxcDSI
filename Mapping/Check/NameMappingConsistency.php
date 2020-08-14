@@ -11,7 +11,7 @@ use MxcDropshipIntegrator\Mapping\Import\NameMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 
 class NameMappingConsistency implements LoggerAwareInterface, ModelManagerAwareInterface
 {

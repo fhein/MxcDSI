@@ -7,14 +7,16 @@ use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcDropshipInnocigs\Services\ApiClient;
+use MxcDropshipInnocigs\Services\ArticleRegistry;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\ProductRepository;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
-use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Detail;
+use MxcDropshipInnocigs\Services\DropshippersCompanion;
 
 class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
@@ -33,6 +35,10 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     /** @var DropshippersCompanion */
     private $companion;
 
+    /** @var ArticleRegistry */
+    private $registry;
+
+    private $apiClient;
 
     /** \Doctrine\ORM\EntityRepository */
     private $setRepository;
@@ -40,9 +46,13 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     /** @var ProductRepository */
     protected $productRepository;
 
+    protected $articleRegistry;
+
     public function __construct(
         ArticleTool $articleTool,
+        ApiClient $apiClient,
         DropshippersCompanion $companion,
+        ArticleRegistry $articleRegistry,
         PriceMapper $priceMapper,
         OptionMapper $optionMapper
     ) {
@@ -50,6 +60,9 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->companion = $companion;
         $this->priceMapper = $priceMapper;
         $this->articleTool = $articleTool;
+        $this->apiClient = $apiClient;
+        $this->articleRegistry = $articleRegistry;
+
     }
 
     public function needsStructureUpdate(Product $product)
@@ -194,8 +207,27 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
         if (!$detail) return;
 
+        $stockInfo = $this->getStockInfo();
+
         $detail->setActive($variant->isValid());
-        $this->companion->configureDropship($variant);
+        $this->companion->configureDropship($variant, $stockInfo);
+
+        $data = [
+            'mxc_dsi_ic_productnumber'  => $variant->getIcNumber(),
+            'mxc_dsi_ic_productname'    => $variant->getName(),
+            'mxc_dsi_ic_purchaseprice'  => $variant->getPurchasePrice(),
+            'mxc_dsi_ic_retailprice'    => round($variant->getRecommendedRetailPrice(), 2),
+            'mxc_dsi_ic_instock'        => $stockInfo[$variant->getIcNumber()] ?? 0,
+            'mxc_dsi_ic_preferownstock' => false,
+            'mxc_dsi_ic_active'         => true,
+            'mxc_dsi_ic_status'         => ArticleRegistry::NO_ERROR,
+            'mxc_dsi_ic_registered'     => true,
+        ];
+        $this->articleRegistry->updateSettings($detail->getId(), $data);
+    }
+
+    protected function getStockInfo() {
+        return $this->stockInfo ?? $this->stockInfo = $this->apiClient->getAllStockInfo();
     }
 
     public function deleteArticle(Product $product)

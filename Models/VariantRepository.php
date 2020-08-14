@@ -3,6 +3,7 @@
 namespace MxcDropshipIntegrator\Models;
 
 use MxcCommons\Toolbox\Config\Config;
+use MxcCommons\Toolbox\Models\BaseEntityRepository;
 
 class VariantRepository extends BaseEntityRepository
 {

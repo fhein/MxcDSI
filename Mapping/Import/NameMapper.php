@@ -5,9 +5,9 @@ namespace MxcDropshipIntegrator\Mapping\Import;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Report\ArrayMap;
-use MxcDropshipIntegrator\Report\ArrayReport;
-use MxcDropshipIntegrator\Report\Mapper\SuccessiveReplacer;
+use MxcCommons\Toolbox\Report\ArrayMap;
+use MxcCommons\Toolbox\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\Mapper\SuccessiveReplacer;
 use MxcCommons\Defines\Constants;
 
 class NameMapper extends BaseImportMapper implements ProductMapperInterface

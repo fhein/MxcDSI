@@ -8,9 +8,10 @@ use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Customer\Group;
 use MxcCommons\Defines\Constants;
@@ -259,7 +260,7 @@ class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, C
         $sPrices = explode(Constants::DELIMITER_L2, $variant->getRetailPrices());
         foreach ($sPrices as $sPrice) {
             [$key, $price] = explode(Constants::DELIMITER_L1, $sPrice);
-            $retailPrices[$key] = floatVal(str_replace(',', '.', $price));
+            $retailPrices[$key] = StringTool::tofloat($price);
         }
         return $retailPrices;
     }

@@ -4,6 +4,7 @@ namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
@@ -110,7 +111,7 @@ class PriceMapper
             $price = $this->getPrice($detail, $customerGroupKey);
             if (!$price) continue;
 
-            $netRetailPrice = floatval(str_replace(',', '.', $retailPrice));
+            $netRetailPrice = StringTool::tofloat($retailPrice);
             $grossRetailPrice = $this->priceEngine->beautifyPrice($netRetailPrice * $vatFactor);
             $netRetailPrice = $grossRetailPrice / $vatFactor;
 

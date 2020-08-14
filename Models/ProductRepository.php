@@ -3,8 +3,8 @@
 namespace MxcDropshipIntegrator\Models;
 
 use MxcCommons\Toolbox\Config\Config;
+use MxcCommons\Toolbox\Models\BaseEntityRepository;
 use Shopware\Models\Article\Article;
-use MxcCommons\Config\Factory;
 
 class ProductRepository extends BaseEntityRepository
 {

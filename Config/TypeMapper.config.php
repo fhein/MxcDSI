@@ -64,6 +64,7 @@ return [
     ],
 
     'name_type_mapping' => [
+        '~Tom Klarks.*50 ml \+ 18~' => TypeMapper::TYPE_SHAKE_VAPE,
         '~TGO Pod Mod~'             => TypeMapper::TYPE_POD_SYSTEM,
         '~Ersatzteil-Set~'          => TypeMapper::TYPE_SPARE_PARTS,
         '~Kamin~'                   => TypeMapper::TYPE_SPARE_PARTS,

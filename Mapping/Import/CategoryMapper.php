@@ -6,11 +6,12 @@ use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Category;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 use MxcCommons\Toolbox\Shopware\CategoryTool;
 use MxcCommons\Defines\Constants;
 
@@ -191,7 +192,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
         $categories = [];
         // tank capacity
         $capacity = $product->getCapacity();
-        $capacity = floatval(str_replace(',', '.', $capacity));
+        $capacity = StringTool::tofloat($capacity);
         if ($capacity <= 2.0) {
             $categories[] = 'Tank bis 2 ml';
         } elseif ($capacity <= 3.0) {
@@ -237,7 +238,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
         // tank capacity
         $capacity = $product->getCapacity();
-        $capacity = floatval(str_replace(',', '.', $capacity));
+        $capacity = StringTool::tofloat($capacity);
         if ($capacity <= 2.0) {
             $categories[] = 'Tank bis 2 ml';
 
@@ -291,7 +292,7 @@ class CategoryMapper extends BaseImportMapper implements ProductMapperInterface,
 
         // tank capacity
         $capacity = $product->getCapacity();
-        $capacity = floatval(str_replace(',', '.', $capacity));
+        $capacity = StringTool::tofloat($capacity);
         if ($capacity <= 2.0) {
             $categories[] = 'Tank bis 2 ml';
 

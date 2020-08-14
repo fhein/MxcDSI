@@ -2,6 +2,7 @@
 
 namespace MxcDropshipIntegrator\Models;
 
+use MxcCommons\Toolbox\Models\BaseEntityRepository;
 
 class GroupRepository extends BaseEntityRepository
 {

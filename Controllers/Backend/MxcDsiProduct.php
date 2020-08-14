@@ -3,6 +3,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 
 use MxcCommons\Plugin\Controller\BackendApplicationController;
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcCommons\Plugin\Database\SchemaManager;
 use MxcCommons\Toolbox\Config\Config;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
@@ -15,10 +16,9 @@ use MxcDropshipInnocigs\Services\ArticleRegistry;
 use MxcDropshipIntegrator\Dropship\SupplierRegistry;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelProductImport;
-use MxcDropshipIntegrator\Exception\ApiException;
 use MxcDropshipIntegrator\Jobs\ApplyPriceRules;
 use MxcDropshipIntegrator\Jobs\PullCategorySeoInformation;
-use MxcDropshipIntegrator\Jobs\UpdateInnocigsPrices;
+use MxcDropshipInnocigs\Jobs\UpdatePrices;
 use MxcDropshipIntegrator\Mapping\Check\NameMappingConsistency;
 use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
 use MxcDropshipIntegrator\Mapping\Check\VariantMappingConsistency;
@@ -39,7 +39,7 @@ use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
@@ -100,7 +100,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updatePricesAction()
     {
         try {
-            UpdateInnocigsPrices::run();
+            UpdatePrices::run();
             ApplyPriceRules::run();
             $this->view->assign(['success' => true, 'message' => 'Prices were successfully updated.']);
         } catch (Throwable $e) {
@@ -653,7 +653,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $updateCronJob = new StockUpdateCronJob();
-            $updateCronJob->onUpdateStockCronJob(null);
+            $updateCronJob->onStockUpdate(null);
 
             $this->view->assign([ 'success' => true, 'message' => 'Successfully updated stock info from InnoCigs.' ]);
         } catch (Throwable $e) {
@@ -1354,9 +1354,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $attr = ArticleTool::getDetailAttributes($detail);
                 if (! empty($attr['dc_ic_ordernumber'])) {
                     $purchasePrice = $attr['dc_ic_purchasing_price'];
-                    $purchasePrice = floatval(str_replace(',', '.', $purchasePrice));
+                    $purchasePrice = StringTool::tofloat($purchasePrice);
                     $retailPrice = $attr['dc_ic_retail_price'];
-                    $retailPrice = floatval(str_replace(',', '.', $retailPrice));
+                    $retailPrice = StringTool::tofloat($retailPrice);
                     $settings = [
                         'mxc_dsi_ic_purchaseprice' => $purchasePrice,
                         'mxc_dsi_ic_retailprice' => $retailPrice,
@@ -1425,8 +1425,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             //$log = $services->get('logger');
             $config = $services->get('config');
 
-            $bf = $this->container->get(\MxcDropshipIntegrator\Test\Battlefield::class);
-
+            $contextService = $this->get('shopware_storefront.context_service');
+            $host = $contextService->createShopContext(1)->getShop()->getHost();
+            $this->view->assign([ 'success' => true, 'message' => $host]);
+            return;
 
 
 

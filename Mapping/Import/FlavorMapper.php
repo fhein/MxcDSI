@@ -8,7 +8,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 use MxcCommons\Config\Factory;
 use MxcCommons\Toolbox\Config\Config;
 

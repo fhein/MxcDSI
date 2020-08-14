@@ -5,7 +5,7 @@ namespace MxcDropshipIntegrator\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 
 class ProductSeoMapper extends BaseImportMapper implements ProductMapperInterface
 {

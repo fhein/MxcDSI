@@ -9,6 +9,7 @@ use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcCommons\Toolbox\Shopware\TaxTool;
@@ -34,7 +35,7 @@ class ImportPriceMapper implements ModelManagerAwareInterface, LoggerAwareInterf
 
             $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
 
-            $newUvp = floatval(str_replace(',', '.', $model->getRecommendedRetailPrice()));
+            $newUvp = StringTool::tofloat($model->getRecommendedRetailPrice());
             $newUvp /= $vatFactor;
 
             $currentUvp = $variant->getRecommendedRetailPrice();
@@ -49,7 +50,7 @@ class ImportPriceMapper implements ModelManagerAwareInterface, LoggerAwareInterf
                 ));
             }
 
-            $innocigsPurchasePrice = floatval(str_replace(',', '.', $model->getPurchasePrice()));
+            $innocigsPurchasePrice = StringTool::tofloat($model->getPurchasePrice());
             $currentPurchasePrice = $variant->getPurchasePrice();
 
             if (round($innocigsPurchasePrice, 2) !== round($currentPurchasePrice, 2)) {

@@ -9,6 +9,7 @@ use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
 use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
@@ -211,10 +212,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             $variant->setName($model->getName());
             $variant->setEan($model->getEan());
 
-            $purchasePrice = floatval(str_replace(',', '.', $model->getPurchasePrice()));
+            $purchasePrice = StringTool::tofloat($model->getPurchasePrice());
             $variant->setPurchasePrice($purchasePrice);
 
-            $uvp = floatval(str_replace(',', '.', $model->getRecommendedRetailPrice()));
+            $uvp = StringTool::tofloat($model->getRecommendedRetailPrice());
             $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
             $variant->setRecommendedRetailPrice($uvp / $vatFactor);
 
@@ -351,14 +352,14 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
                     if ($detail !== null) $detail->setEan($ean);
                     break;
                 case 'recommendedRetailPrice':
-                    $uvp = floatval(str_replace(',', '.', $model->getRecommendedRetailPrice()));
+                    $uvp = StringTool::tofloat($model->getRecommendedRetailPrice());
                     // @todo: Change price datatype in database to float
                     $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
                     $uvp = strval(round($uvp / $vatFactor, 2));
                     $variant->setRecommendedRetailPrice($uvp);
                     break;
                 case 'purchasePrice':
-                    $purchasePrice = str_replace(',', '.', $model->getPurchasePrice());
+                    $purchasePrice = StringTool::tofloat($model->getPurchasePrice());
                     $variant->setPurchasePrice($purchasePrice);
                     $detail = $variant->getDetail();
                     if ($detail !== null) $detail->setPurchasePrice(floatval($purchasePrice));

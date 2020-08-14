@@ -34,8 +34,8 @@ class ExcelExport
             $workSheet->setTitle($title);
             $exporter->export($workSheet);
         }
-        $spreadSheet->removeSheetByIndex(0);
         $writer = new Writer($spreadSheet);
         $writer->save($this->excelFile);
+        $spreadSheet->removeSheetByIndex(0);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace MxcDropshipIntegrator\Jobs;
 
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipIntegrator\Models\Variant;
@@ -42,8 +43,8 @@ class ApplyPriceRules
         foreach ($oldPrices as $key => $oldPrice)  {
             $newPrice = $newPrices[$key];
             if (round($oldPrice,2) != round($newPrice, 2)) {
-                $oldPrice = floatval(str_replace(',', '.', $oldPrice));
-                $newPrice = floatval(str_replace(',', '.', $newPrice));
+                $oldPrice = StringTool::tofloat($oldPrice);
+                $newPrice = StringTool::tofloat($newPrice);
                 $margin = ($newPrice - $purchasePrice) / $newPrice * 100;
                 $msg1 = sprintf('Price change: %s (%s)', $variant->getName(), $variant->getIcNumber());
                 $msg2 = sprintf( '   Group %s: Old price: %.2f. New price: %.2f. New margin %.2f%%.',

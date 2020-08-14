@@ -4,6 +4,9 @@ return [
         '510CloudPark' => [
             'BenchmarX' => 2,
         ],
+        'Bamberger Dampferlädla' => [
+            'Bassd Schoo' => 2,
+        ],
         'Twelve Monkeys' => [
             'Origins' => 2,
             'Cirlce of Life' => 2,
@@ -32,6 +35,7 @@ return [
         'Dr. Fog' => [
             'Shisha' => 2,
             'All Stars' => 2,
+            'Donuts' => 2,
         ],
         'Dr. Frost'      => [
             'Polar Ice Vapes' => 2,

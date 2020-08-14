@@ -9,6 +9,7 @@ use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Html\HtmlDocument;
@@ -245,7 +246,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
             $count = preg_match_all('~(\d+,\d|\d+) Watt~', $source, $matches, PREG_SET_ORDER);
             if ($count != false && $count > 0) {
                 $power = end($matches)[1];
-                $power = str_replace(',', '.', $power);
+                $power = StringTool::tofloat($power);
                 break;
             }
         }
@@ -265,7 +266,7 @@ class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterf
             $power = $matches[1];
             if (strpos($power, ',') !== false)
                 $this->log->debug('Decimal power: '. $power);
-            str_replace(',', '.', $power);
+            StringTool::tofloat($power);
         }
 
 

@@ -5,8 +5,9 @@ namespace MxcDropshipIntegrator\Mapping\Shopware;
 use MxcCommons\Interop\Container\ContainerInterface;
 use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
-use Shopware\Components\Api\Resource\Article as ArticleResource;
+use MxcDropshipIntegrator\Dropship\SupplierRegistry;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
+
 
 class DetailMapperFactory implements FactoryInterface
 {
@@ -21,11 +22,23 @@ class DetailMapperFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        /** @var SupplierRegistry $registry */
+        $registry = $container->get(SupplierRegistry::class);
+        $articleRegistry = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ArticleRegistry');
+        $companion = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'DropshippersCompanion');
+        $apiClient = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ApiClient');
+
         $priceMapper = $container->get(PriceMapper::class);
         $articleTool = $container->get(ArticleTool::class);
-        $companion = $container->get(DropshippersCompanion::class);
         $optionMapper = $container->get(OptionMapper::class);
 
-        return $this->augment($container, new DetailMapper($articleTool, $companion, $priceMapper, $optionMapper));
+        return $this->augment($container, new DetailMapper(
+            $articleTool,
+            $apiClient,
+            $companion,
+            $articleRegistry,
+            $priceMapper,
+            $optionMapper
+        ));
     }
 }

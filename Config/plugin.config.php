@@ -3,13 +3,6 @@
 namespace MxcDropshipIntegrator;
 
 use MxcCommons\Plugin\Service\AugmentedObjectFactory;
-use MxcDropshipInnocigs\Models\Model as InnocigsModel;
-use MxcDropshipInnocigs\Services\ApiClient as ApiClientInnocigs;
-use MxcDropshipInnocigs\Services\ApiClientSequential as ApiClientSequentialInnocigs;
-use MxcDropshipInnocigs\Services\ArticleRegistry as ArticleRegistryInnocigs;
-use MxcDropshipInnocigs\Services\Credentials as CredentialsInnoCigs;
-use MxcDropshipInnocigs\Services\DropshipOrder as DropshipOrderInnocigs;
-use MxcDropshipInnocigs\Services\ImportClient as ImportClientInnocigs;
 
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;
 use MxcCommons\Toolbox\Shopware\MailTool;
@@ -63,7 +56,7 @@ use MxcDropshipIntegrator\Models\Group;
 use MxcDropshipIntegrator\Models\Option;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 use MxcCommons\Toolbox\Html\HtmlDocument;
 use MxcCommons\Toolbox\Regex\RegexChecker;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
@@ -90,27 +83,9 @@ return [
             Option::class,
             Product::class,
             Variant::class,
-            InnocigsModel::class, // @todo: Move to MxcDropshipInnocigs
         ],
         'attributes' => [
-            // @todo: Move to MxcDropshipInnocigs
-            's_order_attributes'         => [
-                'mxc_dsi_innocigs' => ['type' => TypeMapping::TYPE_INTEGER],
-            ],
-            's_order_details_attributes' => [
-                'mxc_dsi_innocigs' => ['type' => TypeMapping::TYPE_INTEGER],
-            ],
             's_articles_attributes'      => [
-                'mxc_dsi_ic_registered'     => ['type' => TypeMapping::TYPE_BOOLEAN],
-                'mxc_dsi_ic_status'         => ['type' => TypeMapping::TYPE_INTEGER],
-                'mxc_dsi_ic_active'         => ['type' => TypeMapping::TYPE_BOOLEAN],
-                'mxc_dsi_ic_preferownstock' => ['type' => TypeMapping::TYPE_BOOLEAN],
-                'mxc_dsi_ic_productnumber'  => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_dsi_ic_productname'    => ['type' => TypeMapping::TYPE_STRING],
-                'mxc_dsi_ic_purchaseprice'  => ['type' => TypeMapping::TYPE_FLOAT],
-                'mxc_dsi_ic_retailprice'    => ['type' => TypeMapping::TYPE_FLOAT],
-                'mxc_dsi_ic_instock'        => ['type' => TypeMapping::TYPE_INTEGER],
-
                 'mxc_product_type' => ['type' => TypeMapping::TYPE_STRING],
                 'mxc_product_meta' => ['type' => TypeMapping::TYPE_INTEGER],
             ],
@@ -132,7 +107,6 @@ return [
             ImportPriceMapper::class         => AugmentedObjectFactory::class,
             DocumentRenderer::class          => AugmentedObjectFactory::class,
             MailTool::class              => AugmentedObjectFactory::class,
-            DropshipOrderInnocigs::class     => AugmentedObjectFactory::class,
             SupplierRegistry::class          => AugmentedObjectFactory::class,
 
             ArticleTool::class                 => AugmentedObjectFactory::class,
@@ -161,21 +135,15 @@ return [
 
         ],
         'magicals'  => [
-            ArticleRegistryInnocigs::class,
-            ApiClientInnocigs::class,
-            ApiClientSequentialInnocigs::class,
             ArrayReport::class,
             ShopwareCategoryMapper::class,
             ConfiguratorSetRepository::class,
-            CredentialsInnocigs::class,
             DetailMapper::class,
             DropshippersCompanion::class,
             ExcelExport::class,
             ExcelImport::class,
             ExportPrices::class,
-            FilterTest::class,
             ImageMapper::class,
-            ImportClientInnocigs::class,
             ImportMapper::class,
             ImportPrices::class,
             ManufacturerMapper::class,
@@ -196,7 +164,6 @@ return [
         DescriptionMapper::class        => 'DescriptionMapper.config.php',
         CommonNameMapper::class         => 'CommonNameMapper.config.php',
         FlavorMapper::class             => 'FlavorMapper.config.php',
-        ImportClient::class             => 'ImportClient.config.php',
         ManufacturerMapper::class       => 'ManufacturerMapper.config.php',
         NameMapper::class               => 'NameMapper.config.php',
         ProductMappings::class          => 'ProductMappings.config.phpx',
@@ -209,7 +176,6 @@ return [
         SpellChecker::class             => 'SpellChecker.config.php',
         PriceEngine::class              => 'PriceEngine.config.php',
         MetaDataExtractor::class        => 'MetaDataExtractor.config.php',
-        DropshipOrder::class            => 'DropshipOrder.config.php',
         SupplierRegistry::class         => 'SupplierRegistry.config.php',
     ],
     'excel'        => [
@@ -218,8 +184,8 @@ return [
         ],
         'export' => [
             'Prices'         => [
-//              'Neue Produkte' => ExportNewProducts::class,
-'Preise' => ExportPrices::class,
+                //'Neue Produkte' => ExportNewProducts::class,
+                'Preise' => ExportPrices::class,
             ],
             'Price Issues'   => [
                 'Preisprobleme' => ExportPriceIssues::class,

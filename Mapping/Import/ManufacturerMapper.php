@@ -6,7 +6,7 @@ use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
-use MxcDropshipIntegrator\Report\ArrayReport;
+use MxcCommons\Toolbox\Report\ArrayReport;
 
 class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInterface
 {
