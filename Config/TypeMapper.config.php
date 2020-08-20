@@ -60,7 +60,7 @@ return [
         TypeMapper::TYPE_DISPLAY            => 'DISPLAY',
         TypeMapper::TYPE_SPARE_PARTS        => 'SPARE_PARTS',
         TypeMapper::TYPE_POD_SYSTEM         => 'POD_SYSTEM',
-        TypeMapper::TYPE_NICSALT_LIQUID     => 'NICSALT_LIQUID'
+        TypeMapper::TYPE_NICSALT_LIQUID     => 'NICSALT_LIQUID',
     ],
 
     'name_type_mapping' => [
@@ -94,6 +94,7 @@ return [
         '~Pod - E-Zigarette~'       => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod E-Zigarette~'         => TypeMapper::TYPE_E_CIGARETTE,
         '~Preva Pod - E-Zigarette~' => TypeMapper::TYPE_E_CIGARETTE,
+        '~Valyrian Pod Head~'       => TypeMapper::TYPE_HEAD,
         '~PodStick - E-Zigarette~'  => TypeMapper::TYPE_E_CIGARETTE,
         '~Podin.*E-Zigarette~'      => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod HP Head~'             => TypeMapper::TYPE_HEAD,
@@ -144,6 +145,7 @@ return [
         '~Coil~'                    => TypeMapper::TYPE_COIL,
         '~Ladegerät~'               => TypeMapper::TYPE_CHARGER,
         '~DigiCharger~'             => TypeMapper::TYPE_CHARGER,
+        '~Atopack Magic~'           => TypeMapper::TYPE_POD_SYSTEM,
         '~[Ss]tecker~'              => TypeMapper::TYPE_CHARGER,
         '~Wireless-Charger~'        => TypeMapper::TYPE_CHARGER,
         '~[Kk]abel~'                => TypeMapper::TYPE_CABLE,
@@ -175,5 +177,6 @@ return [
         '~Batteriehülse~'           => TypeMapper::TYPE_BATTERY_SLEEVE,
         '~Batteriekappe~'           => TypeMapper::TYPE_BATTERY_CAP,
         '~Zeus X2.*Micromesh~'      => TypeMapper::TYPE_COIL,
+        '~Idian X - 510er Adapter~' => TypeMapper::TYPE_SPARE_PARTS,
     ],
 ];

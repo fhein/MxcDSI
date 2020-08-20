@@ -19,6 +19,11 @@ class ProductRepository extends BaseEntityRepository
             . 'JOIN p.variants v '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
 
+        'getDeletedProducts' =>
+            'SELECT p FROM MxcDropshipIntegrator\Models\Product p '
+            . 'LEFT JOIN p.variants v WITH v.deleted = false AND v.product = p.id '
+            . 'WHERE v.id IS NULL',
+
         'getProductsByIds' =>
             'SELECT p FROM MxcDropshipIntegrator\Models\Product p WHERE p.id in (:ids)',
 
@@ -26,6 +31,11 @@ class ProductRepository extends BaseEntityRepository
             'SELECT DISTINCT p FROM MxcDropshipIntegrator\Models\Product p INDEX BY p.icNumber '
             . 'JOIN p.variants v '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number',
+
+        'getArticlesWithReleaseDate' =>
+            'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
+            . 'JOIN a.details d '
+            . 'WHERE d.releaseDate IS NOT NULL',
 
         'getArticlesWithoutProduct' =>
             'SELECT DISTINCT a FROM Shopware\Models\Article\Article a '
@@ -37,7 +47,6 @@ class ProductRepository extends BaseEntityRepository
             'SELECT DISTINCT p FROM MxcDropshipIntegrator\Models\Product p '
             . 'JOIN p.variants v '
             . 'JOIN Shopware\Models\Article\Detail d WITH d.number = v.number '
-            //. 'JOIN Shopware\Models\Article\Article a WITH d.article = a.id AND a.id = :id'
             . 'WHERE d.article = :id',
 
         'getArticle' =>

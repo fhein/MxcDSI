@@ -13,7 +13,7 @@ use MxcCommons\Toolbox\Shopware\SupplierTool;
 use MxcDropshipInnocigs\Cronjobs\StockUpdateCronJob;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipInnocigs\Services\ArticleRegistry;
-use MxcDropshipIntegrator\Dropship\SupplierRegistry;
+use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelProductImport;
 use MxcDropshipIntegrator\Jobs\ApplyPriceRules;
@@ -48,13 +48,14 @@ use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Customer;
 use Shopware\Models\Order\Order;
+use MxcCommons\Plugin\Mail\MailManager;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
     protected $model = Product::class;
     protected $alias = 'product';
 
-    protected $emailTemplatesFile = __DIR__ . '/../../Config/MailTemplates.config.php';
+    protected $emailTemplatesFile = __DIR__ . '/../../Config/AllMailTemplates.config.php.bak';
 
     public function getWhitelistedCSRFActions()
     {
@@ -71,9 +72,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $services = MxcDropshipIntegrator::getServices();
-            /** @var SupplierRegistry $registry */
-            $registry = $services->get(SupplierRegistry::class);
-            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->import(true));
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
@@ -86,9 +87,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $services = MxcDropshipIntegrator::getServices();
-            /** @var SupplierRegistry $registry */
-            $registry = $services->get(SupplierRegistry::class);
-            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importSequential(true));
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
@@ -741,9 +742,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $xmlFile = $testDir . 'TESTErstimport.xml';
             $services = MxcDropshipIntegrator::getServices();
-            /** @var SupplierRegistry $registry */
-            $registry = $services->get(SupplierRegistry::class);
-            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFile($xmlFile, true));
 
@@ -765,9 +766,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $xmlFile = $testDir . 'TESTUpdateFeldwerte.xml';
 
             $services = MxcDropshipIntegrator::getServices();
-            /** @var SupplierRegistry $registry */
-            $registry = $services->get(SupplierRegistry::class);
-            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFile($xmlFile));
             $this->view->assign([ 'success' => true, 'message' => 'Values successfully updated.' ]);
@@ -782,9 +783,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateVarianten.xml';
             $services = MxcDropshipIntegrator::getServices();
-            /** @var SupplierRegistry $registry */
-            $registry = $services->get(SupplierRegistry::class);
-            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFile($xmlFile));
             $this->view->assign([ 'success' => true, 'message' => 'Variants successfully updated.' ]);
@@ -798,9 +799,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS></PRODUCTS></INNOCIGS_API_RESPONSE>';
             $services = MxcDropshipIntegrator::getServices();
-            /** @var SupplierRegistry $registry */
-            $registry = $services->get(SupplierRegistry::class);
-            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromXml($xml));
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
@@ -825,9 +826,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $xmlFile = $testDir . 'TESTHugeImport.xml';
             $services = MxcDropshipIntegrator::getServices();
-            /** @var SupplierRegistry $registry */
-            $registry = $services->get(SupplierRegistry::class);
-            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFileSequential($xmlFile, true));
 
@@ -858,9 +859,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $xmlFile = $testDir . 'TESTHugeImport.xml';
             $services = MxcDropshipIntegrator::getServices();
-            /** @var SupplierRegistry $registry */
-            $registry = $services->get(SupplierRegistry::class);
-            $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromFile($xmlFile, true));
 
@@ -1287,9 +1288,16 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function saveEmailTemplatesAction()
     {
         try {
-            $templates = EmailTemplates::getAll();
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var MailManager $mailManager */
+            $mailManager = $services->get(MailManager::class);
+            $templates = $mailManager->getMailTemplates(true);
             Config::toFile($this->emailTemplatesFile, $templates);
-            $this->view->assign([ 'success' => true, 'message' => 'Email templates successfully saved.']);
+            $file = basename($this->emailTemplatesFile);
+            $this->view->assign([
+                'success' => true,
+                'message' => 'Email templates successfully saved to.' . $file . '.'
+            ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1298,15 +1306,22 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function restoreEmailTemplatesAction()
     {
         try {
+            $fn = basename($this->emailTemplatesFile);
             if (! file_exists($this->emailTemplatesFile)) {
-                $this->view->assign([ 'success' => false, 'message' => 'File does not exist.']);
+                $this->view->assign([ 'success' => false, 'message' => 'File ' . $fn . ' does not exist.']);
                 return;
             }
 
+            $services = MxcDropshipIntegrator::getServices();
+            $mailManager = $services->get(MailManager::class);
+            /** @var MailManager $mailManager */
             $templates = include $this->emailTemplatesFile;
-            EmailTemplates::setAll($templates);
+            $mailManager->setMailTemplates($templates);
 
-            $this->view->assign([ 'success' => true, 'message' => 'Email templates successfully restored.']);
+            $this->view->assign([
+                'success' => true,
+                'message' => 'Email templates successfully restored from ' . $fn . '.'
+            ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1347,8 +1362,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $detailRepository = $this->getManager()->getRepository(Detail::class);
             $details = $detailRepository->findAll();
+
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var DropshipManager $registry */
+            $registry = $services->get(DropshipManager::class);
+            $registry = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ArticleRegistry');
             /** @var ArticleRegistry $registry */
-            $registry = MxcDropshipIntegrator::getServices()->get(ArticleRegistry::class);
             /** @var Detail $detail */
             foreach ($details as $detail) {
                 $attr = ArticleTool::getDetailAttributes($detail);
@@ -1422,21 +1441,21 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
 
             $services = MxcDropshipIntegrator::getServices();
+            $repo = $this->getManager()->getRepository(Model::class);
+
+            $result = $repo->getModelsWithDeletedVariant();
+
+            $x = 0;
+
+
             //$log = $services->get('logger');
-            $config = $services->get('config');
-
-            $contextService = $this->get('shopware_storefront.context_service');
-            $host = $contextService->createShopContext(1)->getShop()->getHost();
-            $this->view->assign([ 'success' => true, 'message' => $host]);
-            return;
 
 
-
-//            /** @var SupplierRegistry $supplierRegistry */
-//            $supplierRegistry = $services->get(SupplierRegistry::class);
+//            /** @var DropshipManager $dropshipManager */
+//            $dropshipManager = $services->get(DropshipManager::class);
 //            /** @var ApiClientInnocigs $client */
-//            $client = $supplierRegistry->getService(
-//                SupplierRegistry::SUPPLIER_INNOCIGS,
+//            $client = $dropshipManager->getService(
+//                DropshipManager::SUPPLIER_INNOCIGS,
 //                'ApiClient'
 //            );
 //
@@ -1668,12 +1687,29 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $product->fromArray($data);
         $this->getManager()->flush();
 
+        // @todo
+        // This is a dirty hack to promote a change of the release date to all details
+        //
+        $article = $product->getArticle();
+        if ($article !== null) {
+            $releaseDate = $product->getReleaseDate();
+            $details = $article->getDetails();
+            foreach ($details as $detail) {
+                $detail->setReleaseDate($releaseDate);
+            }
+        }
+        $this->getManager()->flush();
+        //
+        // End Hack
+
         /** @var Product $product */
         $this->updateProductStates($product, $changes);
+
 
         // The user may have changed the accepted state of variants to false in the detail view of an product.
         // So we need to check and remove invalid variants when the detail view gets saved.
         $services = MxcDropshipIntegrator::getServices();
+        /** @var ProductMapper $productMapper */
         $productMapper = $services->get(ProductMapper::class);
         if (! $fromListView) {
             $productMapper->updateArticleStructure($product);

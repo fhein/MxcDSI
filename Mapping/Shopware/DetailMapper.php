@@ -17,6 +17,7 @@ use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Detail;
 use MxcDropshipInnocigs\Services\DropshippersCompanion;
+use DateTime;
 
 class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 {
@@ -65,6 +66,13 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
 
     }
 
+    public function configureDropship(Variant $variant, int $stockInfo)
+    {
+        $detail = $variant->getDetail();
+        if (! $detail) return;
+
+    }
+
     public function needsStructureUpdate(Product $product)
     {
         return $this->optionMapper->needsUpdate($product);
@@ -98,6 +106,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             $flavor = implode(', ', array_map('trim', explode(',', $flavor)));
         }
 
+        $releaseDate = $product->getReleaseDate();
 
         $isMainDetail = true;
         /** @var Variant $variant */
@@ -111,6 +120,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
                 $article->setMainDetail($detail);
                 $isMainDetail = false;
             }
+            $detail->setReleaseDate($releaseDate);
             // set 'mxc_flavor' attribute if not empty (used in frontend product lists)
             if (! empty($flavor)) {
                 ArticleTool::setDetailAttribute($detail, 'mxc_flavor', $flavor);
@@ -129,16 +139,20 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     public function setDetail(Variant $variant, bool $needsOptionUpdate)
     {
         $detail = $variant->getDetail();
+        $isValid = $variant->isValid();
 
-        if ($detail && ! $variant->isValid()) {
-            $this->articleTool->deleteDetail($detail);
-            $variant->setDetail(null);
+        // delete invalid detail if exists
+        if (! $isValid) {
+            if ($detail) {
+                $this->articleTool->deleteDetail($detail);
+                $variant->setDetail(null);
+            }
             return null;
         }
 
+        // Update existing detail
         if ($detail) {
-            // Update existing detail
-            $this->setShopwareDetailProperties($variant);
+            $this->setDetailProperties($variant);
             if ($needsOptionUpdate) {
                 $configuratorOptions = $detail->getConfiguratorOptions();
                 $configuratorOptions->clear();
@@ -147,22 +161,18 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
             return $detail;
         }
 
-        if (! $variant->isValid()) {
-            return null;
-        }
-
         $product = $variant->getProduct();
         $article = $product->getArticle();
-
         if (!$article) return null;
 
+        // create new detail
         $detail = new Detail();
         $this->modelManager->persist($detail);
         // The next two settings have to be made upfront because the later code relies on these
         $variant->setDetail($detail);
         $detail->setArticle($article);
 
-        $this->setShopwareDetailProperties($variant);
+        $this->setDetailProperties($variant);
 
         // All valid details are marked active and lastStock
         $detail->setActive(true);
@@ -182,7 +192,7 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
      *
      * @param Variant $variant
      */
-    public function setShopwareDetailProperties(Variant $variant)
+    public function setDetailProperties(Variant $variant)
     {
         $detail = $variant->getDetail();
         if (!$detail) return;
@@ -201,33 +211,17 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
     public function setDetailActive(Variant $variant, bool $active)
     {
         $detail = $variant->getDetail();
+        $isValid = $variant->isValid();
 
-        $active = $active && $variant->isValid() && $detail !== null;
+        $active = $active && $isValid && $detail !== null;
         $variant->setActive($active);
+        if (! $detail) return;
 
-        if (!$detail) return;
+        $detail->setActive($isValid);
 
-        $stockInfo = $this->getStockInfo();
-
-        $detail->setActive($variant->isValid());
+        $stockInfo = @$this->getStockInfo()[$variant->getIcNumber()] ?? 0;
         $this->companion->configureDropship($variant, $stockInfo);
-
-        $data = [
-            'mxc_dsi_ic_productnumber'  => $variant->getIcNumber(),
-            'mxc_dsi_ic_productname'    => $variant->getName(),
-            'mxc_dsi_ic_purchaseprice'  => $variant->getPurchasePrice(),
-            'mxc_dsi_ic_retailprice'    => round($variant->getRecommendedRetailPrice(), 2),
-            'mxc_dsi_ic_instock'        => $stockInfo[$variant->getIcNumber()] ?? 0,
-            'mxc_dsi_ic_preferownstock' => false,
-            'mxc_dsi_ic_active'         => true,
-            'mxc_dsi_ic_status'         => ArticleRegistry::NO_ERROR,
-            'mxc_dsi_ic_registered'     => true,
-        ];
-        $this->articleRegistry->updateSettings($detail->getId(), $data);
-    }
-
-    protected function getStockInfo() {
-        return $this->stockInfo ?? $this->stockInfo = $this->apiClient->getAllStockInfo();
+        $this->articleRegistry->configureDropship($variant, $stockInfo);
     }
 
     public function deleteArticle(Product $product)
@@ -236,17 +230,22 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $article = $product->getArticle();
         if (! $article) return;
         ArticleTool::deleteArticle($article);
+        $product->setArticle(null);
+        $product->setActive(false);
+        $product->setLinked(false);
 
+        // we maintain one configurator set per article so we have to remove it (it is not used elsewhere)
         $configuratorSetName = 'mxc-set-' . $product->getIcNumber();
         if ($set = $this->getSetRepository()->findOneBy(['name' => $configuratorSetName]))
         {
             $this->modelManager->remove($set);
         }
 
-        $product->setArticle(null);
-        $product->setActive(false);
-        $product->setLinked(false);
         $this->modelManager->flush();
+    }
+
+    protected function getStockInfo() {
+        return $this->stockInfo ?? $this->stockInfo = $this->apiClient->getAllStockInfo();
     }
 
     protected function getProductRepository()

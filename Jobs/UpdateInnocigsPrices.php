@@ -2,7 +2,7 @@
 
 namespace MxcDropshipIntegrator\Jobs;
 
-use MxcDropshipIntegrator\Dropship\SupplierRegistry;
+use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Mapping\ImportPriceMapper;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
@@ -16,8 +16,8 @@ class UpdateInnocigsPrices
     {
         $services = MxcDropshipIntegrator::getServices();
 
-        $registry = MxcDropshipIntegrator::getServices()->get(SupplierRegistry::class);
-        $client = $registry->getService(SupplierRegistry::SUPPLIER_INNOCIGS, 'ImportClient');
+        $registry = MxcDropshipIntegrator::getServices()->get(DropshipManager::class);
+        $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
         $mapper = $services->get(ImportPriceMapper::class);
         $mapper->import($client->import(false));
     }

@@ -1,5 +1,4 @@
-<?php
-
+<?php /** @noinspection PhpPossiblePolymorphicInvocationInspection */
 /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipIntegrator\Mapping;
@@ -23,7 +22,6 @@ use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\ProductRepository;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\Models\VariantRepository;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcCommons\Defines\Constants;
@@ -158,7 +156,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         return new ArrayCollection($options);
     }
 
-    protected function addProduct(Model $model)
+    protected function createProduct(Model $model)
     {
         $product = new Product();
         $this->modelManager->persist($product);
@@ -175,64 +173,95 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         return $product;
     }
 
-    protected function mapProduct(Model $model)
+    protected function getProduct(Model $model)
     {
         $number = $model->getMaster();
-
-        // return cached product if available
         $product = @$this->products[$number];
-        if ($product) return $product;
 
-        if ($this->useCache) {
-            $product = $this->addProduct($model);
-        } else {
-            $product = $this->getProductRepository()->findOneBy(['icNumber' => $number]) ?? $this->addProduct($model);
+        if ($product === null) {
+            $product = $this->getProductRepository()->findOneBy(['icNumber' => $number]);
         }
 
-        $this->products[$number] = $product;
-
+        if ($product === null) {
+            $product = $this->createProduct($model);
+            $this->products[$number] = $product;
+        }
         return $product;
     }
 
-    protected function addNewVariants()
+    protected function initVariant(Variant $variant, Model $model, bool $active): void
+    {
+        // set properties which do not require mapping
+        $variant->setDeleted(false);
+
+        $variant->setIcNumber($model->getModel());
+        $variant->setName($model->getName());
+        $variant->setEan($model->getEan());
+
+        $purchasePrice = StringTool::tofloat($model->getPurchasePrice());
+        $variant->setPurchasePrice($purchasePrice);
+
+        $uvp = StringTool::tofloat($model->getRecommendedRetailPrice());
+
+        // we store net prices only
+        $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
+        $variant->setRecommendedRetailPrice($uvp / $vatFactor);
+
+        $variant->setImages($model->getImages());
+        $unit = $model->getUnit();
+        if (!empty($unit)) {
+            $variant->setUnit($unit);
+        }
+        $content = $model->getContent();
+        if (!empty($content)) {
+            $variant->setContent($content);
+        }
+
+        // @todo: Instead of just isSinglePack we could generalize that to configurable acceptance rules
+        $isSinglePack = $this->isSinglePack($model);
+        $active = $active && $isSinglePack;
+
+        $variant->setActive($active);
+        $variant->setAccepted($isSinglePack);
+        $variant->setRetailPrices('EK' . Constants::DELIMITER_L1 . $uvp);
+        $options = $this->mapOptions($model->getOptions());
+        $variant->setOptions($options);
+        $this->propertyMapper->mapModelToVariant($model, $variant);
+    }
+
+    protected function addVariants()
     {
         /** @noinspection PhpUndefinedMethodInspection */
         $additions = $this->getModelRepository()->getModelsWithoutVariant();
         /** @var  Model $model */
         foreach ($additions as $model) {
             $this->log->debug('Adding variant: ' . $model->getName());
-            $product = $this->mapProduct($model);
-            $this->updates[$product->getIcNumber()] = $product;
+            $product = $this->getProduct($model);
 
             $variant = new Variant();
             $this->modelManager->persist($variant);
             $product->addVariant($variant);
-            // set properties which do not require mapping
-            $variant->setIcNumber($model->getModel());
-            $variant->setName($model->getName());
-            $variant->setEan($model->getEan());
+            $this->initVariant($variant, $model, $product->isActive());
 
-            $purchasePrice = StringTool::tofloat($model->getPurchasePrice());
-            $variant->setPurchasePrice($purchasePrice);
+            $this->updates[$product->getIcNumber()] = $product;
+        }
+        $this->modelManager->flush();
+    }
 
-            $uvp = StringTool::tofloat($model->getRecommendedRetailPrice());
-            $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
-            $variant->setRecommendedRetailPrice($uvp / $vatFactor);
+    // Undelete variant if the according model was reintroduced
+    protected function revokeVariants()
+    {
+        /** @noinspection PhpUndefinedMethodInspection */
+        $revokables = $this->getModelRepository()->getModelsWithDeletedVariant();
 
-            $variant->setImages($model->getImages());
-            $unit = $model->getUnit();
-            if (! empty($unit)) $variant->setUnit($unit);
-            $content = $model->getContent();
-            if (! empty($content)) $variant->setContent($content);
+        foreach ($revokables as $revokable) {
+            $model = $revokable[0];
+            $variant = $revokable[1];
+            $this->log->debug('Revoking variant: ' . $model->getName());
+            $product = $variant->getProduct();
+            $this->initVariant($variant, $model, $product->isActive());
 
-            $active = $product->isActive() && $this->isSinglePack($model);
-
-            $variant->setActive($active);
-            $variant->setAccepted(true);
-            $variant->setRetailPrices('EK' . Constants::DELIMITER_L1 . $uvp);
-            $options = $this->mapOptions($model->getOptions());
-            $variant->setOptions($options);
-            $this->propertyMapper->mapModelToVariant($model, $variant);
+            $this->updates[$product->getIcNumber()] = $product;
         }
         $this->modelManager->flush();
     }
@@ -250,29 +279,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         return false;
     }
 
-
-    /**
-     * The Shopware details associated to obsolete variants must get removed before
-     * the variants get deleted.
-     */
-    protected function removeDetails()
-    {
-        /** @noinspection PhpUndefinedMethodInspection */
-        /** @noinspection PhpUndefinedMethodInspection */
-        $deletions = $this->getVariantRepository()->getVariantsWithoutModel();
-        if ( empty($deletions)) return;
-
-        $products = [];
-        /** @var  Variant $variant */
-        foreach ($deletions as $variant) {
-            $variant->setAccepted(false);
-            $product = $variant->getProduct();
-            $products[$product->getIcNumber()] = $product;
-        }
-
-        $this->productMapper->updateArticles($products);
-    }
-
     /**
      * Remove all variants together with the Options and Images
      * belonging to them. Remove the Product also, if it has no variant left.
@@ -282,37 +288,39 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $variantRepository = $this->getVariantRepository();
         /** @noinspection PhpUndefinedMethodInspection */
         $deletions = $variantRepository->getVariantsWithoutModel();
-        if (empty($deletions)) return;
-
         /** @var Variant $variant */
         foreach ($deletions as $variant) {
-            /** @var Product $product */
-            $product = $variant->getProduct();
-            $product->removeVariant($variant);
-
-            $variantRepository->removeOptions($variant);
-            $this->modelManager->remove($variant);
-            if ($product->getVariants()->count === 0) {
-                $this->modelManager->remove($product);
-            }
+            $variant->setDeleted(true);
         }
         $this->modelManager->flush();
     }
 
-    protected function deleteVariantsWithoutModel()
-    {
+    protected function removeProducts() {
         /** @noinspection PhpUndefinedMethodInspection */
+        $products = $this->getProductRepository()->getDeletedProducts();
+        $variantRepository = $this->getVariantRepository();
+        /** @var Product $product */
+        foreach ($products as $product) {
+            $article = $product->getArticle();
+            if ($article !== null) ArticleTool::deleteArticle($article);
+            $variants = $product->getVariants();
 
-        $this->removeDetails();
-        $this->removeVariants();
+            foreach ($variants as $variant) {
+                $product->removeVariant($variant);
+                $variantRepository->removeOptions($variant);
+                $this->modelManager->remove($variant);
+            }
+            $this->modelManager->remove($product);
+        }
+        $this->modelManager->flush();
     }
 
     protected function changeOptions(Variant $variant, string $oldValue, string $newValue)
     {
         $oldOptions = explode(Constants::DELIMITER_L2, $oldValue);
         $newOptions = explode(Constants::DELIMITER_L2, $newValue);
-        $rOptions = array_diff($oldOptions, $newOptions);
-        foreach ($rOptions as $option) {
+        $removedOptions = array_diff($oldOptions, $newOptions);
+        foreach ($removedOptions as $option) {
             if ($option === null) continue;
             $param = explode(Constants::DELIMITER_L1, $option);
             $o = $this->options[$param[0]][$param[1]];
@@ -353,16 +361,16 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
                     break;
                 case 'recommendedRetailPrice':
                     $uvp = StringTool::tofloat($model->getRecommendedRetailPrice());
-                    // @todo: Change price datatype in database to float
                     $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
-                    $uvp = strval(round($uvp / $vatFactor, 2));
+                    $uvp = round($uvp / $vatFactor, 2);
                     $variant->setRecommendedRetailPrice($uvp);
                     break;
                 case 'purchasePrice':
                     $purchasePrice = StringTool::tofloat($model->getPurchasePrice());
+                    $purchasePrice = round($purchasePrice, 2);
                     $variant->setPurchasePrice($purchasePrice);
                     $detail = $variant->getDetail();
-                    if ($detail !== null) $detail->setPurchasePrice(floatval($purchasePrice));
+                    if ($detail !== null) $detail->setPurchasePrice($purchasePrice);
                     break;
                 case 'images':
                     $variant->setImages($model->getImages());
@@ -381,7 +389,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         return $remap;
     }
 
-    protected function changeExistingVariants(array $changes)
+    protected function changeVariants(array $changes)
     {
         foreach ($changes as $icNumber => $change) {
             /** @var Variant $variant */
@@ -390,6 +398,7 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             } else {
                 $variant = $this->getVariantRepository()->findOneBy(['icNumber' => $icNumber]);
             }
+            $variant->setDeleted(false);
             $model = $change['model'];
             $fields = $change['fields'];
             $remap = $this->changeVariant($variant, $model, $fields);
@@ -403,7 +412,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
 
     protected function removeOrphanedItems()
     {
-        // this function will get obsolete once it is made sure that all removals work correctly
         $this->getVariantRepository()->removeOrphaned();
         $this->getProductRepository()->removeOrphaned();
         $this->getOptionRepository()->removeOrphaned();
@@ -418,12 +426,9 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             . 'set a.new = false, a.recommendedRetailPriceOld = a.recommendedRetailPrice, '
             . 'a.purchasePriceOld = a.purchasePrice')->execute();
         if ($this->useCache) {
-            /** @noinspection PhpUndefinedMethodInspection */
             $this->products = $this->getProductRepository()->getAllIndexed();
-            /** @noinspection PhpUndefinedMethodInspection */
             $this->groups = $this->getGroupRepository()->getAllIndexed();
             $this->options = $this->getOptionRepository()->getAllIndexed();
-            /** @noinspection PhpUndefinedMethodInspection */
             $this->variants = $this->getVariantRepository()->getAllIndexed();
         }
     }
@@ -433,13 +438,20 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $this->updates = [];
         $this->initCache();
 
-        $this->addNewVariants();
-        $this->changeExistingVariants($changes);
-        $this->deleteVariantsWithoutModel();
+        // revoke deleted variants if the according model was reintroduced
+        $this->revokeVariants();
+        // add new variants
+        $this->addVariants();
+        // apply changes to existing variants
+        $this->changeVariants($changes);
+        // mark variants without corresponding model as deleted
+        $this->removeVariants();
+        // delete products where all variants are marked deleted
+        $this->removeProducts();
+
         $this->propertyMapper->mapProperties($this->updates, true);
         $this->removeOrphanedItems();
 
-        /** @noinspection PhpUndefinedMethodInspection */
         $this->getProductRepository()->refreshProductStates();
 
         $this->productMapper->updateArticles($this->updates);

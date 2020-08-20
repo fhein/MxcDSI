@@ -159,6 +159,13 @@ class Variant extends ModelEntity
     private $accepted = true;
 
     /**
+     * @var boolean $deleted
+     *
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $deleted = false;
+
+    /**
      * @var boolean $new
      * @ORM\Column(type="boolean", nullable=false)
      */
@@ -647,5 +654,21 @@ class Variant extends ModelEntity
     public function setCapacity($capacity)
     {
         $this->capacity = $capacity;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDeleted()
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * @param bool $deleted
+     */
+    public function setDeleted($deleted)
+    {
+        $this->deleted = $deleted;
     }
 }

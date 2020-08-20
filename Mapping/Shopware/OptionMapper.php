@@ -112,8 +112,17 @@ class OptionMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         /** @var Variant $variant */
         foreach ($variants as $variant) {
             $valid = $variant->isValid();
-            if ($valid && ($variant->getDetail() === null)) return true;
-            if (! $valid && ($variant->getDetail() !== null)) return true;
+            $hasDetail = $variant->getDetail() !== null;
+
+            // Note: Even if the variant is marked deleted we consider it because we only delete details
+            // if the whole article gets deleted
+            if ($valid && ! $hasDetail) return true;
+            if (! $valid && $hasDetail) return true;
+            // @todo: We silently ignore that the options of an existing valid variant might have changed
+            // @todo: If that happens (which is unlikely) we ignore these changes (which is wrong)
+            //
+            //      if (isValid and any of the options of the variant changed)
+            //          return true;
         }
         return false;
     }

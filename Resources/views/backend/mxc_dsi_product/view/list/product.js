@@ -6,6 +6,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     region: 'center',
 
     configure: function() {
+        let me = this;
         return {
             detailWindow: 'Shopware.apps.MxcDsiProduct.view.detail.Window',
             columns: {
@@ -29,7 +30,11 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 headChangeable:             { header: 'Head Changeable'},
                 cellCapacity:               { header: 'Cell Capacity'},
                 power:                      { header: 'Power'},
-                releaseDate:                { header: 'Release'},
+                releaseDate:
+                  { header: 'Release',
+                    dataIndex: 'releaseDate',
+                    renderer: me.dateColumn, flex: 1
+                  },
                 accepted:                   { header: 'accept', width:45, flex: 0}
             },
             addButton: false,
@@ -950,6 +955,20 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 }
             }
         };
+    },
+
+    /**
+     * Formats the date column
+     *
+     * @param [string] - The order time value
+     * @return [string] - The passed value, formatted with Ext.util.Format.date()
+     */
+    dateColumn:function (value, metaData, record) {
+        if ( value === Ext.undefined ) {
+            return value;
+        }
+        if (value === null) return value;
+        return value.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year:'numeric'});
     },
 
     onSelectionChange: function(selModel, selection) {

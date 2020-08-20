@@ -9,6 +9,8 @@ use MxcCommons\Toolbox\Models\PrimaryKeyTrait;
 use MxcCommons\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
 use MxcCommons\Defines\Constants;
+use DateTime;
+use DateTimeInterface;
 
 /**
  * @ORM\Entity
@@ -36,8 +38,8 @@ class Product extends ModelEntity  {
     private $number;
 
     /**
-     * @var string $releaseDate
-     * @ORM\Column(name="release_date", type="string", length=12, nullable=true)
+     * @var DateTime $releaseDate
+     * @ORM\Column(name="release_date", type="datetime", nullable=true)
      */
     private $releaseDate;
 
@@ -939,7 +941,7 @@ class Product extends ModelEntity  {
     }
 
     /**
-     * @return string
+     * @return DateTime
      */
     public function getReleaseDate()
     {
@@ -951,6 +953,11 @@ class Product extends ModelEntity  {
      */
     public function setReleaseDate($releaseDate)
     {
-        $this->releaseDate = $releaseDate;
+        if ($releaseDate instanceof DateTimeInterface) {
+            $this->releaseDate = $releaseDate;
+        } elseif ($releaseDate !== null) {
+            // throws on error
+            $this->releaseDate = new DateTime($releaseDate);
+        }
     }
 }

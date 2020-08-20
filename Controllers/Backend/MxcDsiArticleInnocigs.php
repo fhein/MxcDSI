@@ -5,7 +5,7 @@ use MxcDropshipInnocigs\Models\ArticleAttributes;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Detail;
-use MxcDropshipIntegrator\Dropship\SupplierRegistry;
+use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Dropship\ArticleRegistryInterface;
 
 class Shopware_Controllers_Backend_MxcDsiArticleInnocigs extends Shopware_Controllers_Backend_ExtJs implements CSRFWhitelistAware

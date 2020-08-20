@@ -86,6 +86,7 @@ return array (
     14 => 'Spearmint',
     15 => 'Vanilleeis',
     16 => 'Zitronensorbet',
+    17 => 'marokkanische Minze',
   ),
   'Früchte' => 
   array (
@@ -283,8 +284,9 @@ return array (
     0 => 'Beere',
     1 => 'Holznote',
     2 => 'Lakritze',
-    3 => 'Süßigkeiten',
-    4 => 'Weintraube',
+    3 => 'Pfirisch',
+    4 => 'Süßigkeiten',
+    5 => 'Weintraube',
   ),
   'Süßigkeiten' => 
   array (

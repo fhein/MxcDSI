@@ -132,6 +132,7 @@ class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
     {
         $article = $product->getArticle();
         if (! $article) return;
+
         if (! $this->detailMapper->needsStructureUpdate($product)) return;
         $this->detailMapper->map($product);
     }

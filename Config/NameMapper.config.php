@@ -309,6 +309,7 @@ return [
             '~(Bamberger Dampferlädla) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
             '~(Dr. Fog - Shisha) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                     => '$1 - $3 $2 $4',
             '~(Mr. Blitz) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                            => '$1 - $3 $2 $4',
+            '~(Dog House) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                            => '$1 - $3 $2 $4',
             '~(Enfer) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                                => '$1 - $3 $2 $4',
             '~(Dr. Fog - Donuts) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                     => '$1 - $3 $2 $4',
             '~(Dr. Fog - All Stars) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
@@ -329,6 +330,7 @@ return [
             '~(Kaffeeklatsch) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                        => '$1 - $3 $2 $4',
             '~(510CloudPark) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                         => '$1 - $3 $2 $4',
             '~(510CloudPark - BenchmarX) (- Aroma)(.*)(- \d+(,\d+)? ml)~'             => '$1 - $3 $2 $4',
+            '~(hookahLove - hookahSqueeze) (- Aroma)(.*)(- \d+(,\d+)? ml)~'           => '$1 - $3 $2 $4',
             '~(Kirschlolli) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                          => '$1 - $3 $2 $4',
             '~(Oceans) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                               => '$1 - $3 $2 $4',
             '~(Pyromania) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                            => '$1 - $3 $2 $4',
@@ -558,6 +560,7 @@ return [
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
             '~(Aegis Squonk) (- \d+ Watt)~'                       => '$1 - Squonker Box $2',
+            '~(Essent) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(MIXX) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Deco) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Gen-S) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
@@ -878,6 +881,10 @@ return [
         'Joyetech'              => [
             '~(eRoll)~',
             '~(eGrip Mini)~',
+            '~(CuAIO D22)~',
+            '~(Batpack)~',
+            '~(Atopack Magic)~',
+
         ],
         'Nikola'                => [
             '~(Medea)~',
@@ -973,6 +980,9 @@ return [
             '~(Original Q( Pro)?)~',
             '~(Original Plus( DNA)?)~',
             '~(Lyra)~',
+            '~(Gemini Hybrid)~',
+            '~(Back to Basic)~',
+            '~(UBX)~',
         ],
         'OBS'                   => [
             '~(Crius 2 RTA)~',
@@ -990,7 +1000,7 @@ return [
             '~(nexMESH)~',
         ],
         'OXVA'                  => [
-            '~(Idian)~',
+            '~(Idian( X)?)~',
         ],
         'Smok'                  => [
             '~(NexM)~',
@@ -1129,7 +1139,7 @@ return [
             '~(Hypercar)~',
             '~(Ironfist)~',
             '~(Nunchaku(( RDA)|( 2))?)~',
-            '~(Valyrian( 2)?)~',
+            '~(Valyrian(( 2)|( Pod))?)~',
             '~(Blocks)~',
             '~(Whirl(( 20)|( 22))?)~',
             '~(Caliburn( Koko)?)~',

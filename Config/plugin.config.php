@@ -6,7 +6,7 @@ use MxcCommons\Plugin\Service\AugmentedObjectFactory;
 
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;
 use MxcCommons\Toolbox\Shopware\MailTool;
-use MxcDropshipIntegrator\Dropship\SupplierRegistry;
+use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelImport;
 use MxcDropshipIntegrator\Excel\ExcelImportFactory;
@@ -66,6 +66,7 @@ use MxcCommons\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRep
 use MxcCommons\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcCommons\Toolbox\Shopware\MediaTool;
 use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
+use Shopware\Models\Mail\Mail;
 
 return [
     'dropship' => [
@@ -106,8 +107,8 @@ return [
             VariantMappingConsistency::class => AugmentedObjectFactory::class,
             ImportPriceMapper::class         => AugmentedObjectFactory::class,
             DocumentRenderer::class          => AugmentedObjectFactory::class,
-            MailTool::class              => AugmentedObjectFactory::class,
-            SupplierRegistry::class          => AugmentedObjectFactory::class,
+            MailTool::class                  => AugmentedObjectFactory::class,
+            DropshipManager::class           => AugmentedObjectFactory::class,
 
             ArticleTool::class                 => AugmentedObjectFactory::class,
             ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
@@ -166,17 +167,17 @@ return [
         FlavorMapper::class             => 'FlavorMapper.config.php',
         ManufacturerMapper::class       => 'ManufacturerMapper.config.php',
         NameMapper::class               => 'NameMapper.config.php',
-        ProductMappings::class          => 'ProductMappings.config.phpx',
-        ProductNumberMapper::class      => 'ProductNumberMapper.config.php',
-        PropertyMapper::class           => 'PropertyMapper.config.php',
-        TypeMapper::class               => 'TypeMapper.config.php',
-        VariantNumberMapper::class      => 'VariantNumberMapper.config.php',
-        ProductSeoMapper::class         => 'ProductSeoMapper.config.php',
-        ShopwareCategoryMapper::class   => 'CategoryMapper.config.php',
-        SpellChecker::class             => 'SpellChecker.config.php',
-        PriceEngine::class              => 'PriceEngine.config.php',
-        MetaDataExtractor::class        => 'MetaDataExtractor.config.php',
-        SupplierRegistry::class         => 'SupplierRegistry.config.php',
+        ProductMappings::class        => 'ProductMappings.config.phpx',
+        ProductNumberMapper::class    => 'ProductNumberMapper.config.php',
+        PropertyMapper::class         => 'PropertyMapper.config.php',
+        TypeMapper::class             => 'TypeMapper.config.php',
+        VariantNumberMapper::class    => 'VariantNumberMapper.config.php',
+        ProductSeoMapper::class       => 'ProductSeoMapper.config.php',
+        ShopwareCategoryMapper::class => 'CategoryMapper.config.php',
+        SpellChecker::class           => 'SpellChecker.config.php',
+        PriceEngine::class            => 'PriceEngine.config.php',
+        MetaDataExtractor::class      => 'MetaDataExtractor.config.php',
+        DropshipManager::class        => 'DropshipManager.config.php',
     ],
     'excel'        => [
         'import' => [
@@ -194,5 +195,18 @@ return [
                 'Metadata' => ExportEcigMetaData::class,
             ],
         ],
+    ],
+    'mail_templates' => [
+//        [
+//            'name' => template name, required
+//            'from_mail' => mail address, default: shop mail address
+//            'from_name' => mail alias, default: shop name
+//            'subject'   => subject, default: template name
+//            'is_html' => true|false, default: false
+//            'type'    => mail type, default: Mail::MAILTYPE_USER,
+//            'context' => context array, default: null
+//            'content_text' => content_text, default: ''
+//            'content_html' => content_html, default ''
+//        ],
     ],
 ];
