@@ -4,13 +4,11 @@ namespace MxcDropshipIntegrator\Subscribers;
 
 use Enlight\Event\SubscriberInterface;
 use Enlight_Hook_HookArgs;
-use MxcDropshipInnocigs\Services\StockInfo;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
 class FrontendDetailSubscriber implements SubscriberInterface
 {
-    /** @var StockInfo */
     protected $dropshipManager;
 
     public function __construct()

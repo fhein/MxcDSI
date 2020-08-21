@@ -19,6 +19,8 @@ class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInt
     use ModelManagerAwareTrait;
     use DatabaseAwareTrait;
 
+    protected $automaticOrderProcessing = true;
+
     // constants for all available modules
     const SUPPLIER_INNOCIGS = 1;
     const SUPPLIER_DEMO = 2;
@@ -99,5 +101,9 @@ class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInt
             $stockData[] = $stockInfo;
         }
         return $stockData;
+    }
+
+    public function isAutomaticOrderProcessing() {
+        return $this->automaticOrderProcessing;
     }
 }

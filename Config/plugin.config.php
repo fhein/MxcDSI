@@ -86,6 +86,24 @@ return [
             Variant::class,
         ],
         'attributes' => [
+            's_order_attributes'         => [
+                'mxc_dsi_active'     => ['type' => TypeMapping::TYPE_BOOLEAN],
+                'mxc_dsi_cronstatus' => ['type' => TypeMapping::TYPE_INTEGER],
+                'mxc_dsi_status'     => ['type' => TypeMapping::TYPE_INTEGER],
+            ],
+            's_order_details_attributes' => [
+                'mxc_dsi_supplier'      => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_id'            => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_order_id'      => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_infos'         => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_instock'       => ['type' => TypeMapping::TYPE_INTEGER],
+                'mxc_dsi_purchaseprice' => ['type' => TypeMapping::TYPE_FLOAT],
+                'mxc_dsi_date'          => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_status'        => ['type' => TypeMapping::TYPE_INTEGER],
+                'mxc_dsi_message'       => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_carrier'       => ['type' => TypeMapping::TYPE_STRING],
+                'mxc_dsi_tracking_id'   => ['type' => TypeMapping::TYPE_STRING],
+            ],
             's_articles_attributes'      => [
                 'mxc_product_type' => ['type' => TypeMapping::TYPE_STRING],
                 'mxc_product_meta' => ['type' => TypeMapping::TYPE_INTEGER],
@@ -93,7 +111,7 @@ return [
         ],
     ],
 
-    'services'     => [
+    'services'       => [
         'factories' => [
             PriceEngine::class               => AugmentedObjectFactory::class,
             ExportPriceIssues::class         => AugmentedObjectFactory::class,
@@ -159,7 +177,7 @@ return [
             HtmlDocument::class,
         ],
     ],
-    'class_config' => [
+    'class_config'   => [
         AssociatedProductsMapper::class => 'AssociatedProductsMapper.config.php',
         CategoryMapper::class           => 'CategoryMapper.config.php',
         DescriptionMapper::class        => 'DescriptionMapper.config.php',
@@ -167,19 +185,19 @@ return [
         FlavorMapper::class             => 'FlavorMapper.config.php',
         ManufacturerMapper::class       => 'ManufacturerMapper.config.php',
         NameMapper::class               => 'NameMapper.config.php',
-        ProductMappings::class        => 'ProductMappings.config.phpx',
-        ProductNumberMapper::class    => 'ProductNumberMapper.config.php',
-        PropertyMapper::class         => 'PropertyMapper.config.php',
-        TypeMapper::class             => 'TypeMapper.config.php',
-        VariantNumberMapper::class    => 'VariantNumberMapper.config.php',
-        ProductSeoMapper::class       => 'ProductSeoMapper.config.php',
-        ShopwareCategoryMapper::class => 'CategoryMapper.config.php',
-        SpellChecker::class           => 'SpellChecker.config.php',
-        PriceEngine::class            => 'PriceEngine.config.php',
-        MetaDataExtractor::class      => 'MetaDataExtractor.config.php',
-        DropshipManager::class        => 'DropshipManager.config.php',
+        ProductMappings::class          => 'ProductMappings.config.phpx',
+        ProductNumberMapper::class      => 'ProductNumberMapper.config.php',
+        PropertyMapper::class           => 'PropertyMapper.config.php',
+        TypeMapper::class               => 'TypeMapper.config.php',
+        VariantNumberMapper::class      => 'VariantNumberMapper.config.php',
+        ProductSeoMapper::class         => 'ProductSeoMapper.config.php',
+        ShopwareCategoryMapper::class   => 'CategoryMapper.config.php',
+        SpellChecker::class             => 'SpellChecker.config.php',
+        PriceEngine::class              => 'PriceEngine.config.php',
+        MetaDataExtractor::class        => 'MetaDataExtractor.config.php',
+        DropshipManager::class          => 'DropshipManager.config.php',
     ],
-    'excel'        => [
+    'excel'          => [
         'import' => [
             'Preise' => ImportPrices::class,
         ],

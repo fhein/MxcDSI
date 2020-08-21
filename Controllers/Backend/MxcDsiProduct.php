@@ -7,7 +7,6 @@ use MxcCommons\Toolbox\Strings\StringTool;
 use MxcCommons\Plugin\Database\SchemaManager;
 use MxcCommons\Toolbox\Config\Config;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
-use MxcCommons\Toolbox\Shopware\EmailTemplates;
 use MxcCommons\Toolbox\Shopware\MailTool;
 use MxcCommons\Toolbox\Shopware\SupplierTool;
 use MxcDropshipInnocigs\Cronjobs\StockUpdateCronJob;
