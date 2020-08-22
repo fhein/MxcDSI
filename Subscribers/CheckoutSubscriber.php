@@ -7,6 +7,7 @@ use Enlight_Hook_HookArgs;
 use MxcCommons\Plugin\Service\Logger;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use Shopware_Components_Config;
 
 class CheckoutSubscriber implements SubscriberInterface
 {
@@ -28,6 +29,9 @@ class CheckoutSubscriber implements SubscriberInterface
     /** @var Logger object  */
     protected $log;
 
+    /** @var Shopware_Components_Config  */
+    protected $config;
+
     public function __construct()
     {
         $services = MxcDropshipIntegrator::getServices();
@@ -37,6 +41,7 @@ class CheckoutSubscriber implements SubscriberInterface
         $this->session = Shopware()->Session();
         $this->events = Shopware()->Events();
         $this->log = $services->get('logger');
+        $this->config = Shopware()->Config();
     }
 
     public static function getSubscribedEvents()
@@ -104,14 +109,15 @@ class CheckoutSubscriber implements SubscriberInterface
         $view = $args->getSubject()->View();
         $sBasket = $view->sBasket;
 
-        foreach ($sBasket['content'] as $idx => $item) {
-            $sArticle = $item['additional_details'];
+        foreach ($sBasket['content'] as $idx => &$item) {
+            $attributes = &$item['additional_details'];
             if (isset($item['instock'])) {
-                $stockInfo = $this->dropshipManager->getStockInfo($sArticle);
+                $stockInfo = $this->dropshipManager->getStockInfo($attributes);
+                $maxPurchase = $this->config->get('maxpurchase');
                 if (! empty($stockInfo)) {
                     $instock = strval(max(array_column($stockInfo, 'instock')));
-                    $sBasket['content'][$idx]['instock'] = $instock;
-                    $sBasket['content'][$idx]['maxpurchase'] = $instock;
+                    $item['instock'] = $attributes['instock'] = $instock;
+                    $item['maxpurchase'] = $attributes['maxpurchase'] = min($instock, $maxPurchase);
                 }
             }
         }

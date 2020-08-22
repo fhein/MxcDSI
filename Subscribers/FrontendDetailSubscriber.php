@@ -46,8 +46,10 @@ class FrontendDetailSubscriber implements SubscriberInterface
     protected function enableArticle(array &$sArticle, array $stockInfo)
     {
         if (! empty($stockInfo)) {
+            $instock = max(array_column($stockInfo, 'instock'));
             $sArticle['isAvailable'] = 1;
-            $sArticle['instock'] = max(array_column($stockInfo, 'instock'));
+            $sArticle['instock'] = $instock;
+            // @todo: Do we have to provide maxpurchase also here?
         }
     }
 

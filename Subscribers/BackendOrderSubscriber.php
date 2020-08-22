@@ -11,6 +11,7 @@ use Enlight_Event_EventArgs;
 use MxcCommons\Plugin\Service\Logger;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use Shopware_Components_Config;
 use Shopware\Models\Order\Order;
 use Enlight_Hook_HookArgs;
 use Shopware\Models\Order\Status;
@@ -32,8 +33,8 @@ class BackendOrderSubscriber implements SubscriberInterface
     /** @var Logger */
     private $log;
 
-    /** @var sAdmin */
-    private $admin;
+    /** @var Shopware_Components_Config  */
+    private $config;
 
     public function __construct()
     {
@@ -43,7 +44,7 @@ class BackendOrderSubscriber implements SubscriberInterface
         $this->dropshipManager = $services->get(DropshipManager::class);
         $this->db = Shopware()->Db();
         $this->log->debug('BackendOrderSubscriber loaded.');
-        $this->admin = Shopware()->Modules()->Admin();
+        $this->config = Shopware()->Config();
     }
 
     /**
@@ -53,7 +54,7 @@ class BackendOrderSubscriber implements SubscriberInterface
     {
         return [
             //            'Enlight_Controller_Action_PostDispatch_Backend_Order'          => 'onBackendOrderPostDispatch',
-            'Shopware_Modules_Order_SaveOrder_ProcessDetails'               => 'onSaveOrderProcessDetails',
+            //'Shopware_Modules_Order_SaveOrder_ProcessDetails'               => 'onSaveOrderProcessDetails',
             'Shopware_Controllers_Backend_Order::savePositionAction::after' => 'onSavePositionActionAfter',
             'Shopware_Controllers_Backend_Order::saveAction::after'         => 'onSaveActionAfter',
         ];
@@ -89,7 +90,7 @@ class BackendOrderSubscriber implements SubscriberInterface
         $active = $params['mxc_dsi_active'];
 
         if ($params['cleared'] === Status::PAYMENT_STATE_COMPLETELY_PAID) {
-            $active = $this->dropshipManager->isAutomaticOrderProcessing();
+            $active = $this->dropshipManager->isAuto();
         }
 
         $this->db->Query('
@@ -147,7 +148,6 @@ class BackendOrderSubscriber implements SubscriberInterface
      */
     public function onSaveOrderProcessDetails(Enlight_Event_EventArgs $args)
     {
-        return;
         $order = $args->getSubject();
         foreach ($args->details as $idx => $item) {
             $sArticle = $item['additional_details'];
@@ -157,6 +157,7 @@ class BackendOrderSubscriber implements SubscriberInterface
                 if (! empty($stockInfo)) {
                     $orderDetailsId = $item['orderDetailId'];
 
+                    // @todo: Necessary or available already?
                     $orderId = $this->getOrderIdByOrderDetailsId(
                         $orderDetailsId,
                         $item['ordernumber']
@@ -176,12 +177,13 @@ class BackendOrderSubscriber implements SubscriberInterface
                     $this->setOrderDetailSupplierAndStock($orderDetailsId, $supplierId, $maxStock);
 
                     // @todo: Pickware support
-                    if ($this->dropshipManager->isAutomaticOrderProcessing()) {
+                    if ($this->dropshipManager->isAuto()) {
                         $this->adjustArticleDetailStockAndSales($item['quantity'], $item['ordernumber']);
                     }
 
                     // @todo: this needs to be called once only, not throughout the loop
                     $this->setDropshipOrder($orderId);
+                    $admin = Shopware()->Modules()->Admin();
 
                     // @todo: The payment data is equal for all positions, so this has to move out of the loop
                     if (! empty($order->sUserData['additional']['payment']['id'])) {
@@ -189,14 +191,63 @@ class BackendOrderSubscriber implements SubscriberInterface
                     } else {
                         $paymentId = $order->sUserData['additional']['user']['paymentID'];
                     }
-                    $userData = $this->admin->sGetUserData();
-                    $paymentData = $this->admin->sGetPaymentMeanById($paymentId, $userData);
+                    $userData = $admin->sGetUserData();
+                    $paymentData = $admin->sGetPaymentMeanById($paymentId, $userData);
 
                     // @todo: This will send a mail for each order position which is bullshit
                     $this->sendMail($order, $paymentData);
                 }
             }
         }
+    }
+
+    private function setOrderDetailSupplierAndStock($id, $supplierId, $instock)
+    {
+        return Shopware()->Db()->Query('
+            UPDATE
+                s_order_details_attributes
+            SET
+                mxc_dsi_supplier = :supplierId,
+                mxc_dsi_instock = :instock
+            WHERE
+                detailID = :id
+        ', [
+            'id'         => $id,
+            'supplierId' => $supplierId,
+            'instock'    => $instock,
+        ]);
+    }
+
+    private function adjustArticleDetailStockAndSales(string $productNumber, int $quantity)
+    {
+        Shopware()->Db()->Query('
+            UPDATE 
+                s_articles_details
+            SET sales = sales - :quantity,
+                instock = instock + :quantity
+            WHERE 
+                ordernumber = :number
+            ', [
+                'quantity' => $quantity,
+                'number'   => $productNumber,
+            ]
+        );
+    }
+
+    private function setDropshipOrder($orderId)
+    {
+
+        return Shopware()->Db()->Query('
+          UPDATE
+            s_order_attributes
+          SET
+            dc_dropship_active = :active
+          WHERE
+            orderID = :id
+        ', [
+            'id'     => $orderId,
+            'active' => 1,
+        ]);
     }
 
 
@@ -374,54 +425,5 @@ class BackendOrderSubscriber implements SubscriberInterface
 //                $this->__logger('return: ' . $args->getReturn());
 //                break;
 //        }
-    }
-
-    private function setOrderDetailSupplierAndStock($id, $supplierId, $instock)
-    {
-        return Shopware()->Db()->Query('
-            UPDATE
-                s_order_details_attributes
-            SET
-                mxc_dsi_supplier = :supplierId,
-                mxc_dsi_instock = :instock
-            WHERE
-                detailID = :id
-        ', [
-            'id'         => $id,
-            'supplierId' => $supplierId,
-            'instock'    => $instock,
-        ]);
-    }
-
-    private function adjustArticleDetailStockAndSales(string $productNumber, int $quantity)
-    {
-        Shopware()->Db()->Query('
-            UPDATE 
-                s_articles_details
-            SET sales = sales - :quantity,
-                instock = instock + :quantity
-            WHERE 
-                ordernumber = :number
-            ', [
-                'quantity' => $quantity,
-                'number'   => $productNumber,
-            ]
-        );
-    }
-
-    private function setDropshipOrder($orderId)
-    {
-
-        return Shopware()->Db()->Query('
-          UPDATE
-            s_order_attributes
-          SET
-            dc_dropship_active = :active
-          WHERE
-            orderID = :id
-        ', [
-            'id'     => $orderId,
-            'active' => 1,
-        ]);
     }
 }

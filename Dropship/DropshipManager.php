@@ -19,11 +19,15 @@ class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInt
     use ModelManagerAwareTrait;
     use DatabaseAwareTrait;
 
-    protected $automaticOrderProcessing = true;
+    protected $auto = true;
+    protected $useOwnStock;
+    protected $preferOwnStock;
+    protected $ownStockPriority;
 
     // constants for all available modules
+    const SUPPLIER_SELF     = 0;
     const SUPPLIER_INNOCIGS = 1;
-    const SUPPLIER_DEMO = 2;
+    const SUPPLIER_DEMO     = 2;
 
     protected $modules = [];
 
@@ -69,6 +73,13 @@ class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInt
             // at this point we have a properly configured active dropship adapter module
             $this->modules[$supplierId] = $module;
         }
+
+        $config = Shopware()->Config();
+        $this->auto = $config->get('mxc_dsi_auto');
+        $this->useOwnStock = $config->get('mxc_dsi_useownstock');
+        $this->preferOwnStock = $config->get('mxc_dsi_preferownstock');
+        $this->ownStockPriority = $config->get('mxc_dsi_ownstockpriority');
+
     }
 
     public function getService(int $supplierId, string $service)
@@ -103,7 +114,12 @@ class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInt
         return $stockData;
     }
 
-    public function isAutomaticOrderProcessing() {
-        return $this->automaticOrderProcessing;
+    public function getSupplierAndStock(array $sArticle)
+    {
+
+    }
+
+    public function isAuto() {
+        return $this->auto;
     }
 }
