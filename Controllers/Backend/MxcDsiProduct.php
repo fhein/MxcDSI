@@ -1440,11 +1440,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
 
             $services = MxcDropshipIntegrator::getServices();
-            $repo = $this->getManager()->getRepository(Model::class);
 
-            $result = $repo->getModelsWithDeletedVariant();
 
-            $x = 0;
+        $test = Shopware()->Db()->fetchRow('
+            SELECT sa.*, c.countryiso as iso FROM s_order_shippingaddress sa 
+            LEFT JOIN s_core_countries c ON c.id = sa.countryID
+            WHERE sa.orderID = ?',
+            [80]
+        );
 
 
             //$log = $services->get('logger');
