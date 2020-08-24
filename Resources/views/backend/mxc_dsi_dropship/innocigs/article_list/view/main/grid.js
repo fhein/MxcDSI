@@ -15,8 +15,8 @@ Ext.define('Shopware.apps.MxcDsiDropship.innocigs.ArticleList.view.main.Grid', {
     },
 
     isDropshipProduct: function(value, metaData, record) {
-        return record.raw.mxc_dsi_ic_dropship;
-        // let color = record.raw.mxc_dsi_ic_dropship;
+        return record.raw.mxcbc_dsi_ic_dropship;
+        // let color = record.raw.mxcbc_dsi_ic_dropship;
         // let part1 = '<div style="width:16px;height:16px;';
         // let part2 = 'color:white;margin:0 auto;text-align:center;border-radius:3px;padding-top:0;></div>';
         //

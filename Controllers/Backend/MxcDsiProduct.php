@@ -1376,15 +1376,15 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                     $retailPrice = $attr['dc_ic_retail_price'];
                     $retailPrice = StringTool::tofloat($retailPrice);
                     $settings = [
-                        'mxc_dsi_ic_purchaseprice' => $purchasePrice,
-                        'mxc_dsi_ic_retailprice' => $retailPrice,
-                        'mxc_dsi_ic_productname' => $attr['dc_ic_articlename'],
-                        'mxc_dsi_ic_productnumber' => $attr['dc_ic_ordernumber'],
-                        'mxc_dsi_ic_instock' => $attr['dc_ic_instock'],
-                        'mxc_dsi_ic_active' => $attr['dc_ic_active'],
-                        'mxc_dsi_ic_preferownstock' => 0,
-                        'mxc_dsi_ic_registered' => true,
-                        'mxc_dsi_ic_status' => 0,
+                        'mxcbc_dsi_ic_purchaseprice' => $purchasePrice,
+                        'mxcbc_dsi_ic_retailprice' => $retailPrice,
+                        'mxcbc_dsi_ic_productname' => $attr['dc_ic_articlename'],
+                        'mxcbc_dsi_ic_productnumber' => $attr['dc_ic_ordernumber'],
+                        'mxcbc_dsi_ic_instock' => $attr['dc_ic_instock'],
+                        'mxcbc_dsi_ic_active' => $attr['dc_ic_active'],
+                        'mxcbc_dsi_ic_delivery' => DropshipManager::DELIVERY_DROPSHIP_ONLY,
+                        'mxcbc_dsi_ic_registered' => true,
+                        'mxcbc_dsi_ic_status' => 0,
                     ];
                     $registry->updateSettings($detail->getId(), $settings);
                 }

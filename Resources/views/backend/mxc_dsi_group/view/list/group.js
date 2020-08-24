@@ -1,5 +1,5 @@
-//{namespace name=backend/mxc_dsi_test/view/list/innocigs_group}
-//{block name="backend/mxc_dsi_test/view/mxc_dsi_test/view/list/window"}
+//{namespace name=backend/mxcbc_dsi_test/view/list/innocigs_group}
+//{block name="backend/mxcbc_dsi_test/view/mxcbc_dsi_test/view/list/window"}
 Ext.define('Shopware.apps.MxcDsiGroup.view.list.Group', {
     extend: 'Shopware.grid.Panel',
     alias:  'widget.mxc-dsi-group-listing-grid',

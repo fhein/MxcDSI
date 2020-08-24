@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipInnocigs\Cronjobs;
+namespace MxcDropshipIntegrator\Cronjobs;
 
 use Enlight\Event\SubscriberInterface;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
@@ -68,7 +68,7 @@ class OrderSendCronJob implements SubscriberInterface
         return $this->db->fetchAll('
             SELECT * FROM s_order o 
             LEFT JOIN s_order_attributes oa ON oa.orderID = o.id 
-            WHERE AND o.cleared = ? AND oa.mxc_dsi_active = 1 AND oa.mxc_dsi_status = 0
+            WHERE AND o.cleared = ? AND oa.mxcbc_dsi_active = 1 AND oa.mxcbc_dsi_status = 0
             ', [ Status::PAYMENT_STATE_COMPLETELY_PAID ]
         );
     }
@@ -85,7 +85,7 @@ class OrderSendCronJob implements SubscriberInterface
     private function getDropshipOrderIds()
     {
         return $this->db->fetchAll(
-            'SELECT orderID FROM s_order_attributes WHERE mxc_dsi_active = 1 AND mxc_dsi_status = 0',
+            'SELECT orderID FROM s_order_attributes WHERE mxcbc_dsi_active = 1 AND mxcbc_dsi_status = 0',
             [], PDO::FETCH_COLUMN
         );
     }

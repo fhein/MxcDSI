@@ -8,7 +8,7 @@ use Shopware\Components\Model\ModelEntity;
 /**
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_plugin_mxc_dsi_model")
+ * @ORM\Table(name="s_mxcbc_dsi_model")
  * @ORM\Entity(repositoryClass="ModelRepository")
  */
 class Model extends ModelEntity

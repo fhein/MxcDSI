@@ -10,7 +10,7 @@ use Shopware\Components\Model\ModelEntity;
 /**
  * @ORM\Entity(repositoryClass="CategoryRepository")
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_plugin_mxc_dsi_category")
+ * @ORM\Table(name="s_mxcbc_dsi_category")
  */
 class Category extends ModelEntity  {
 

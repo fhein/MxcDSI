@@ -3,21 +3,21 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
     <elements>
         <element required="true" type="boolean" scope="locale">
-            <name>mxc_dsi_useownstoc</name>
+            <name>mxcbc_dsi_useownstoc</name>
             <label lang="de">Lieferung aus eigenem Lager erlauben:</label>
             <label lang="en">Enable delivery from own stock</label>
             <description lang="de">Ist diese Option gesetzt, dann werden eigene Lagerbestände berücksichtigt und Lieferungen ohne Dropship ermöglicht.</description>
             <description lang="en">If this option is set delivery from own stock is possible.</description>
         </element>
         <element required="true" type="boolean" scope="locale">
-            <name>mxc_dsi_preferownstock</name>
+            <name>mxcbc_dsi_preferownstock</name>
             <label lang="de">Lieferung aus eigenem Lager bevorzugen:</label>
             <label lang="en">Prefer delivery from own stock</label>
             <description lang="de">Ist diese Option gesetzt, dann wird eine Lieferung aus dem eigenen Lager bevorzugt. Diese Option wird nur ausgewertet, wenn die Lieferung aus eigenem Lager erlaubt ist.</description>
             <description lang="en">If this option is set delivery from own stock is preferred. This option is only valid if delivery from own stock is enabled.</description>
         </element>
         <element required="true" type="number" scope="locale">
-            <name>mxc_dsi_ownstockpriority</name>
+            <name>mxcbc_dsi_ownstockpriority</name>
             <label lang="de">Priorität der Lieferung aus eigenem Lager:</label>
             <label lang="en">Priority of delivery from own stock: </label>
             <description lang="de">Wenn die Lieferung aus eigenem Lager erlaubt, aber nicht bevorzugt ist, dann entscheidet die Priorität des eigenen Lagers über dessen Verwendung. Höhere Zahlen sind höhere Priorität.</description>

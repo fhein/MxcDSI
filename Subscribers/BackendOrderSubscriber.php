@@ -69,16 +69,16 @@ class BackendOrderSubscriber implements SubscriberInterface
             UPDATE
                 s_order_details_attributes
             SET
-                mxc_dsi_supplier = :supplier,
-                mxc_dsi_instock = :instock,
-                mxc_dsi_purchaseprice = :purchasePrice
+                mxcbc_dsi_supplier = :supplier,
+                mxcbc_dsi_instock = :instock,
+                mxcbc_dsi_purchaseprice = :purchasePrice
             WHERE
                 id = :id
             ', [
                 'id'            => $params['id'],
-                'instock'       => $params['mxc_dsi_instock'],
-                'supplier'      => $params['mxc_dsi_supplier'],
-                'purchasePrice' => $params['mxc_dsi_purchaseprice'],
+                'instock'       => $params['mxcbc_dsi_instock'],
+                'supplier'      => $params['mxcbc_dsi_supplier'],
+                'purchasePrice' => $params['mxcbc_dsi_purchaseprice'],
             ]
         );
     }
@@ -87,7 +87,7 @@ class BackendOrderSubscriber implements SubscriberInterface
     {
         $this->log->debug('onSaveActionAfter');
         $params = $args->getSubject()->Request()->getParams();
-        $active = $params['mxc_dsi_active'];
+        $active = $params['mxcbc_dsi_active'];
 
         if ($params['cleared'] === Status::PAYMENT_STATE_COMPLETELY_PAID) {
             $active = $this->dropshipManager->isAuto();
@@ -97,14 +97,14 @@ class BackendOrderSubscriber implements SubscriberInterface
 			UPDATE
             	s_order_attributes
 			SET
-            	mxc_dsi_active = :active,
-				mxc_dsi_status = :status
+            	mxcbc_dsi_active = :active,
+				mxcbc_dsi_status = :status
 			WHERE
 				orderID = :id
 		', [
             'id'     => $params['id'],
             'active' => $active,
-            'status' => $params['mxc_dsi_status'],
+            'status' => $params['mxcbc_dsi_status'],
         ]);
     }
 
@@ -207,8 +207,8 @@ class BackendOrderSubscriber implements SubscriberInterface
             UPDATE
                 s_order_details_attributes
             SET
-                mxc_dsi_supplier = :supplierId,
-                mxc_dsi_instock = :instock
+                mxcbc_dsi_supplier = :supplierId,
+                mxcbc_dsi_instock = :instock
             WHERE
                 detailID = :id
         ', [

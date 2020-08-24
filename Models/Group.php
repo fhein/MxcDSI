@@ -13,7 +13,7 @@ use Shopware\Components\Model\ModelEntity;
 /**
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_plugin_mxc_dsi_group")
+ * @ORM\Table(name="s_mxcbc_dsi_group")
  * @ORM\Entity(repositoryClass="GroupRepository")
  */
 class Group extends ModelEntity

@@ -123,7 +123,7 @@ class ReleaseDateUpdateCronJob implements SubscriberInterface
         {
             $attr = ArticleTool::getDetailAttributes($detail);
             if ($detail->getInStock() > 0 ) return true;
-            if ($attr['mxc_dsi_ic_active'] && $attr['mxc_dsi_ic_instock'] > 0) return true;
+            if ($attr['mxcbc_dsi_ic_active'] && $attr['mxcbc_dsi_ic_instock'] > 0) return true;
         }
         return false;
     }

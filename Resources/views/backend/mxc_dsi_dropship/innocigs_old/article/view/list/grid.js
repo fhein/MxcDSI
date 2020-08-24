@@ -16,7 +16,7 @@ Ext.define('Shopware.apps.MxcDsiArticleList.view.main.Grid', {
     },
 
     isDropshipProduct: function(value, metaData, record) {
-        return record.raw.mxc_dsi_ic_dropship;
+        return record.raw.mxcbc_dsi_ic_dropship;
     }
 });
 //{/block}

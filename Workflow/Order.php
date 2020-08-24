@@ -99,7 +99,7 @@ class Order
     private function getPositionOrderType(Detail $detail)
     {
         $articleDetail = $detail->getArticleDetail();
-        // replace call with our custom attribute mxc_dsi_dropship_active
+        // replace call with our custom attribute mxcbc_dsi_dropship_active
         return $articleDetail->isDropShipProduct() ? self::ORDER_INNOCIGS : self::ORDER_VAPEE;
     }
 
@@ -117,7 +117,7 @@ class Order
             case self::ORDER_INNOCIGS:
                 // @todo: Hier muss der InnoCigs Bestand geprüft werden
                 // Zwei Modi: Entweder Live Abfrage oder den Wert in der Datenbank
-                // Order Attribute mxc_dsi_instock @todo
+                // Order Attribute mxcbc_dsi_instock @todo
 
                 if ($this->liveDropshipStockCheck) {
                     $innocigsStock = $this->apiClient->getStockInfo($articleDetail->getNumber());

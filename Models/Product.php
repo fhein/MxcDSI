@@ -15,7 +15,7 @@ use DateTimeInterface;
 /**
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_plugin_mxc_dsi_product")
+ * @ORM\Table(name="s_mxcbc_dsi_product")
  * @ORM\Entity(repositoryClass="ProductRepository")
  */
 class Product extends ModelEntity  {
@@ -45,7 +45,7 @@ class Product extends ModelEntity  {
 
     /**
      * @ORM\ManyToMany(targetEntity="Product")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_products_related",
+     * @ORM\JoinTable(name="s_mxcbc_dsi_x_products_related",
      *     joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="related_id", referencedColumnName="id")}
      *     )
@@ -54,7 +54,7 @@ class Product extends ModelEntity  {
 
     /**
      * @ORM\ManyToMany(targetEntity="Product")
-     * @ORM\JoinTable(name="s_plugin_mxc_dsi_x_products_similar",
+     * @ORM\JoinTable(name="s_mxcbc_dsi_x_products_similar",
      *     joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="similar_id", referencedColumnName="id")}
      *     )

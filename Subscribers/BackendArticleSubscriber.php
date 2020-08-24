@@ -107,8 +107,8 @@ class BackendArticleSubscriber implements SubscriberInterface
             // Check if dropship is configured
             foreach ($articleList as &$article) {
                 if ($article['Attribute_mxcDsiIcRegistered'] != null) {
-                    $article['mxc_dsi_ic_dropship'] = 1;
-                    //$article['mxc_dsi_ic_dropship'] = $this->getArticleListDecoration($article['Detail_id']);
+                    $article['mxcbc_dsi_ic_dropship'] = 1;
+                    //$article['mxcbc_dsi_ic_dropship'] = $this->getArticleListDecoration($article['Detail_id']);
                 }
             }
 
@@ -137,7 +137,7 @@ class BackendArticleSubscriber implements SubscriberInterface
             foreach ($articleList as &$article) {
 
                 if ($article['Attribute_mxcDsiIcRegistered'] === '1') {
-                    $article['mxc_dsi_ic_dropship'] = $this->getArticleListDecoration($article['Detail_id']);
+                    $article['mxcbc_dsi_ic_dropship'] = $this->getArticleListDecoration($article['Detail_id']);
                 }
             }
 
@@ -167,9 +167,9 @@ class BackendArticleSubscriber implements SubscriberInterface
         if ($settings === false) return null;
         $this->log->debug(var_export($settings, true));
 
-        if ($settings['mxc_dsi_ic_active'] === '0') {
+        if ($settings['mxcbc_dsi_ic_active'] === '0') {
             $color = 'red';
-        } elseif ($settings['mxc_dsi_ic_preferownstock'] === '1') {
+        } elseif ($settings['mxcbc_dsi_ic_delivery'] === '1') {
             $color = 'orange';
         } else {
             $color = 'limegreen';

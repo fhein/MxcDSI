@@ -7,52 +7,52 @@ Ext.define('Shopware.apps.Article.view.detail.MxcDropshipIntegrator', {
         let me = this,
             panelTab = me.callParent(arguments);
 
-        me.mxc_dsi_ic_active = Ext.create('Ext.form.field.Checkbox', {
-            name: 'attribute[mxc_dsi_ic_active]',
+        me.mxcbc_dsi_ic_active = Ext.create('Ext.form.field.Checkbox', {
+            name: 'attribute[mxcbc_dsi_ic_active]',
             fieldLabel: 'Aktivieren',
             inputValue: true,
             uncheckedValue: false,
             labelWidth: 155
         });
 
-        me.mxc_dsi_ic_preferownstock = Ext.create('Ext.form.field.Checkbox', {
-            name: 'attribute[mxc_dsi_ic_preferownstock]',
+        me.mxcbc_dsi_ic_preferownstock = Ext.create('Ext.form.field.Checkbox', {
+            name: 'attribute[mxcbc_dsi_ic_preferownstock]',
             fieldLabel: 'Eigenes Lager bevorzugen',
             inputValue: true,
             uncheckedValue: false,
             labelWidth: 155
         });
 
-        me.mxc_dsi_ic_productnumber = Ext.create('Ext.form.field.Text', {
-            name: 'attribute[mxc_dsi_ic_productnumber]',
+        me.mxcbc_dsi_ic_productnumber = Ext.create('Ext.form.field.Text', {
+            name: 'attribute[mxcbc_dsi_ic_productnumber]',
             fieldLabel: 'Artikelnummer',
             labelWidth: 155
         });
 
-        me.mxc_dsi_ic_productname = Ext.create('Ext.form.field.Text', {
-            name: 'attribute[mxc_dsi_ic_productname]',
+        me.mxcbc_dsi_ic_productname = Ext.create('Ext.form.field.Text', {
+            name: 'attribute[mxcbc_dsi_ic_productname]',
             readOnly: true,
             fieldLabel: 'Artikelbezeichnung',
             labelWidth: 155,
             width: 450
         });
 
-        me.mxc_dsi_ic_purchaseprice = Ext.create('Ext.form.field.Text', {
-            name: 'attribute[mxc_dsi_ic_purchaseprice]',
+        me.mxcbc_dsi_ic_purchaseprice = Ext.create('Ext.form.field.Text', {
+            name: 'attribute[mxcbc_dsi_ic_purchaseprice]',
             readOnly: true,
             fieldLabel: 'Einkaufspreis',
             labelWidth: 155
         });
 
-        me.mxc_dsi_ic_retailprice = Ext.create('Ext.form.field.Text', {
-            name: 'attribute[mxc_dsi_ic_retailprice]',
+        me.mxcbc_dsi_ic_retailprice = Ext.create('Ext.form.field.Text', {
+            name: 'attribute[mxcbc_dsi_ic_retailprice]',
             readOnly: true,
             fieldLabel: 'Unverbindliche Preisempfehlung',
             labelWidth: 155
         });
 
-        me.mxc_dsi_ic_instock = Ext.create('Ext.form.field.Text', {
-            name: 'attribute[mxc_dsi_ic_instock]',
+        me.mxcbc_dsi_ic_instock = Ext.create('Ext.form.field.Text', {
+            name: 'attribute[mxcbc_dsi_ic_instock]',
             decimalPrecision: 0,
             readOnly: true,
             fieldLabel: 'Bestand',
@@ -73,16 +73,16 @@ Ext.define('Shopware.apps.Article.view.detail.MxcDropshipIntegrator', {
                         return;
                     }
 
-                    let productNumber = me.mxc_dsi_ic_productnumber.getValue();
-                    let active = me.mxc_dsi_ic_active.getValue();
+                    let productNumber = me.mxcbc_dsi_ic_productnumber.getValue();
+                    let active = me.mxcbc_dsi_ic_active.getValue();
                     active = active ? 1 : 0;
-                    let preferOwnStock = me.mxc_dsi_ic_preferownstock.getValue();
+                    let preferOwnStock = me.mxcbc_dsi_ic_preferownstock.getValue();
                     preferOwnStock = preferOwnStock ? 1 : 0;
                     console.log(preferOwnStock);
 
                     if (productNumber === '') {
                         Shopware.Notification.createGrowlMessage('Fehler', 'Bitte geben Sie eine Artikelnummer an', 'MxcDropshipIntegrator');
-                        me.mxc_dsi_ic_ordernumber.focus();
+                        me.mxcbc_dsi_ic_ordernumber.focus();
                         return;
                     }
 
@@ -108,23 +108,23 @@ Ext.define('Shopware.apps.Article.view.detail.MxcDropshipIntegrator', {
 
                                 let overwritePurchaseprice = true;
                                 if (overwritePurchaseprice) {
-                                    document.getElementsByName('mainDetail[purchasePrice]')[0].value = response.data.mxc_dsi_ic_purchaseprice;
+                                    document.getElementsByName('mainDetail[purchasePrice]')[0].value = response.data.mxcbc_dsi_ic_purchaseprice;
                                 }
 
-                                let mxc_dsi_ic_purchaseprice = response.data.mxc_dsi_ic_purchaseprice;
-                                if (mxc_dsi_ic_purchaseprice == null) {
-                                    mxc_dsi_ic_purchaseprice = 'Kein Preis gefunden!';
+                                let mxcbc_dsi_ic_purchaseprice = response.data.mxcbc_dsi_ic_purchaseprice;
+                                if (mxcbc_dsi_ic_purchaseprice == null) {
+                                    mxcbc_dsi_ic_purchaseprice = 'Kein Preis gefunden!';
                                 }
 
-                                let mxc_dsi_ic_retailprice = response.data.mxc_dsi_ic_retailprice;
-                                if (mxc_dsi_ic_retailprice == null) {
-                                    mxc_dsi_ic_retailprice = 'Kein Preis gefunden!';
+                                let mxcbc_dsi_ic_retailprice = response.data.mxcbc_dsi_ic_retailprice;
+                                if (mxcbc_dsi_ic_retailprice == null) {
+                                    mxcbc_dsi_ic_retailprice = 'Kein Preis gefunden!';
                                 }
 
-                                me.mxc_dsi_ic_productname.setValue(response.data.mxc_dsi_ic_productname);
-                                me.mxc_dsi_ic_purchaseprice.setValue(mxc_dsi_ic_purchaseprice);
-                                me.mxc_dsi_ic_retailprice.setValue(mxc_dsi_ic_retailprice);
-                                me.mxc_dsi_ic_instock.setValue(response.data.mxc_dsi_ic_instock);
+                                me.mxcbc_dsi_ic_productname.setValue(response.data.mxcbc_dsi_ic_productname);
+                                me.mxcbc_dsi_ic_purchaseprice.setValue(mxcbc_dsi_ic_purchaseprice);
+                                me.mxcbc_dsi_ic_retailprice.setValue(mxcbc_dsi_ic_retailprice);
+                                me.mxcbc_dsi_ic_instock.setValue(response.data.mxcbc_dsi_ic_instock);
                                 Shopware.Notification.createGrowlMessage('Erfolg', 'Dropship erfolgreich registriert.', 'MxcDropshipIntegrator');
                             }
                         },
@@ -151,7 +151,7 @@ Ext.define('Shopware.apps.Article.view.detail.MxcDropshipIntegrator', {
                         return;
                     }
 
-                    let productNumber = me.mxc_dsi_ic_productnumber.getValue();
+                    let productNumber = me.mxcbc_dsi_ic_productnumber.getValue();
                     if (productNumber === '') {
                         return;
                     }
@@ -166,13 +166,13 @@ Ext.define('Shopware.apps.Article.view.detail.MxcDropshipIntegrator', {
                         },
                         success: function(responseData, request) {
                             let response = Ext.JSON.decode(responseData.responseText);
-                            me.mxc_dsi_ic_active.setValue(0);
-                            me.mxc_dsi_ic_preferownstock.setValue(0);
-                            me.mxc_dsi_ic_productnumber.setValue('');
-                            me.mxc_dsi_ic_productname.setValue('');
-                            me.mxc_dsi_ic_purchaseprice.setValue('');
-                            me.mxc_dsi_ic_retailprice.setValue('');
-                            me.mxc_dsi_ic_instock.setValue('');
+                            me.mxcbc_dsi_ic_active.setValue(0);
+                            me.mxcbc_dsi_ic_preferownstock.setValue(0);
+                            me.mxcbc_dsi_ic_productnumber.setValue('');
+                            me.mxcbc_dsi_ic_productname.setValue('');
+                            me.mxcbc_dsi_ic_purchaseprice.setValue('');
+                            me.mxcbc_dsi_ic_retailprice.setValue('');
+                            me.mxcbc_dsi_ic_instock.setValue('');
                             me.setLoading(false);
                             Shopware.Notification.createGrowlMessage('Erfolgreich', 'Dropship Konfiguration gelöscht.', 'MxcDropshipIntegrator');
                         },
@@ -189,13 +189,13 @@ Ext.define('Shopware.apps.Article.view.detail.MxcDropshipIntegrator', {
             layout: 'anchor',
             title: 'maxence Dropship Integrator / InnoCigs',
             items: [
-                me.mxc_dsi_ic_active,
-                me.mxc_dsi_ic_preferownstock,
-                me.mxc_dsi_ic_productnumber,
-                me.mxc_dsi_ic_productname,
-                me.mxc_dsi_ic_purchaseprice,
-                me.mxc_dsi_ic_retailprice,
-                me.mxc_dsi_ic_instock,
+                me.mxcbc_dsi_ic_active,
+                me.mxcbc_dsi_ic_preferownstock,
+                me.mxcbc_dsi_ic_productnumber,
+                me.mxcbc_dsi_ic_productname,
+                me.mxcbc_dsi_ic_purchaseprice,
+                me.mxcbc_dsi_ic_retailprice,
+                me.mxcbc_dsi_ic_instock,
                 me.saveButton,
                 me.removeButton
             ]
@@ -217,13 +217,13 @@ Ext.define('Shopware.apps.Article.view.detail.MxcDropshipIntegrator', {
             success: function(responseData, request) {
                 let response = Ext.JSON.decode(responseData.responseText);
                 if (response.success) {
-                    me.mxc_dsi_ic_active.setValue(response.data.mxc_dsi_ic_active);
-                    me.mxc_dsi_ic_preferownstock.setValue(response.data.mxc_dsi_ic_preferownstock);
-                    me.mxc_dsi_ic_productnumber.setValue(response.data.mxc_dsi_ic_productnumber);
-                    me.mxc_dsi_ic_productname.setValue(response.data.mxc_dsi_ic_productname);
-                    me.mxc_dsi_ic_purchaseprice.setValue(response.data.mxc_dsi_ic_purchaseprice);
-                    me.mxc_dsi_ic_retailprice.setValue(response.data.mxc_dsi_ic_retailprice);
-                    me.mxc_dsi_ic_instock.setValue(response.data.mxc_dsi_ic_instock);
+                    me.mxcbc_dsi_ic_active.setValue(response.data.mxcbc_dsi_ic_active);
+                    me.mxcbc_dsi_ic_preferownstock.setValue(response.data.mxcbc_dsi_ic_preferownstock);
+                    me.mxcbc_dsi_ic_productnumber.setValue(response.data.mxcbc_dsi_ic_productnumber);
+                    me.mxcbc_dsi_ic_productname.setValue(response.data.mxcbc_dsi_ic_productname);
+                    me.mxcbc_dsi_ic_purchaseprice.setValue(response.data.mxcbc_dsi_ic_purchaseprice);
+                    me.mxcbc_dsi_ic_retailprice.setValue(response.data.mxcbc_dsi_ic_retailprice);
+                    me.mxcbc_dsi_ic_instock.setValue(response.data.mxcbc_dsi_ic_instock);
                 }
             }
         });

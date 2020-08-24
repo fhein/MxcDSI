@@ -20,15 +20,19 @@ class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInt
     use DatabaseAwareTrait;
 
     protected $auto = true;
-    protected $useOwnStock;
-    protected $preferOwnStock;
-    protected $ownStockPriority;
+    protected $delivery;
 
     const NO_ERROR          = 0;
 
     const STATUS_NEW        = 0;
     const STATUS_OK         = 1;
     const STATUS_ERROR      = 2;
+
+    // delivery modes
+    const DELIVERY_OWNSTOCK_ONLY        = 0;
+    const DELIVERY_PREFER_OWNSTOCK      = 1;
+    const DELIVERY_PREFER_DROPSHIP      = 2;
+    const DELIVERY_DROPSHIP_ONLY        = 3;
 
     // constants for all available modules
     const SUPPLIER_SELF     = 0;
@@ -81,10 +85,8 @@ class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInt
         }
 
         $config = Shopware()->Config();
-        $this->auto = $config->get('mxc_dsi_auto');
-        $this->useOwnStock = $config->get('mxc_dsi_useownstock');
-        $this->preferOwnStock = $config->get('mxc_dsi_preferownstock');
-        $this->ownStockPriority = $config->get('mxc_dsi_ownstockpriority');
+        $this->auto = $config->get('mxcbc_dsi_auto');
+        $this->delivery = $config->get('mxcbc_dsi_delivery');
 
     }
 
@@ -126,7 +128,7 @@ class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInt
     public function processOrder(array $order)
     {
         $details = $order['details'];
-        $supplierIds = array_unique(array_column($details, 'mxc_dsi_suppliers'));
+        $supplierIds = array_unique(array_column($details, 'mxcbc_dsi_suppliers'));
         foreach ($supplierIds as $supplierId) {
             $processor = $this->getService($supplierId, 'OrderProcessor');
             $processor->processOrder($order);

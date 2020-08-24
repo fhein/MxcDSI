@@ -26,7 +26,7 @@ class VariantRepository extends BaseEntityRepository
     ];
 
     protected $sql = [
-        'removeOptions' => 'DELETE FROM s_plugin_mxc_dsi_x_variants_options WHERE variant_id = ?',
+        'removeOptions' => 'DELETE FROM s_mxcbc_dsi_x_variants_options WHERE variant_id = ?',
     ];
 
     protected $variantConfigFile = __DIR__ . '/../Config/VariantMappings.config.phpx';

@@ -9,9 +9,9 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Detail', {
         var customCallbackMxcDsi = function(newArticle, success) {
             Ext.callback(originalCallback, this, arguments);
 
-            var productNumber = me.getDetailForm().getForm().getFieldValues()['attribute[mxc_dsi_ic_productnumber]'];
-            var active = me.getDetailForm().getForm().getFieldValues()['attribute[mxc_dsi_ic_active]'];
-            var preferOwnStock = me.DetailForm().getForm().getFieldValues()['attribute[mxc_dsi_ic_preferownstock'];
+            var productNumber = me.getDetailForm().getForm().getFieldValues()['attribute[mxcbc_dsi_ic_productnumber]'];
+            var active = me.getDetailForm().getForm().getFieldValues()['attribute[mxcbc_dsi_ic_active]'];
+            var preferOwnStock = me.DetailForm().getForm().getFieldValues()['attribute[mxcbc_dsi_ic_preferownstock'];
             active = active ? 1 : 0;
             preferOwnStock = preferOwnStock ? 1 : 0;
 
@@ -29,7 +29,7 @@ Ext.define('Shopware.apps.MxcDsiArticle.controller.Detail', {
                     if (!response.success) {
                         Shopware.Notification.createGrowlMessage(response.info.title, response.info.message, 'MxcDropshipIntegrator');
                     } else {
-                        me.getDetailForm().getForm().findField('attribute[mxc_dsi_ic_instock]').setValue(response.data.mxc_dsi_ic_instock);
+                        me.getDetailForm().getForm().findField('attribute[mxcbc_dsi_ic_instock]').setValue(response.data.mxcbc_dsi_ic_instock);
                     }
                 },
                 failure: function(responseData, request) {
