@@ -2,13 +2,13 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcCommons\Toolbox\Report\ArrayReport;
 
-class ManufacturerMapper implements ProductMapperInterface, ClassConfigAwareInterface
+class ManufacturerMapper implements ProductMapperInterface, AugmentedObject
 {
     use ClassConfigAwareTrait;
 

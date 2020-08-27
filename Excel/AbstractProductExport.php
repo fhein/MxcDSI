@@ -2,13 +2,12 @@
 
 namespace MxcDropshipIntegrator\Excel;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
-abstract class AbstractProductExport extends AbstractSheetExport implements ModelManagerAwareInterface, LoggerAwareInterface
+abstract class AbstractProductExport extends AbstractSheetExport implements AugmentedObject
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

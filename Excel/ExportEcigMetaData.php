@@ -2,15 +2,14 @@
 
 namespace MxcDropshipIntegrator\Excel;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 
-class ExportEcigMetaData extends AbstractProductExport implements LoggerAwareInterface, ModelManagerAwareInterface
+class ExportEcigMetaData extends AbstractProductExport implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;

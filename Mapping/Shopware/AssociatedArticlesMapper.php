@@ -4,14 +4,13 @@ namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Models\Product;
 use Shopware\Models\Article\Article;
 
-class AssociatedArticlesMapper implements LoggerAwareInterface, ModelManagerAwareInterface
+class AssociatedArticlesMapper implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;

@@ -3,10 +3,9 @@
 namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipInnocigs\Services\ApiClient;
 use MxcDropshipInnocigs\Services\ArticleRegistry;
 use MxcDropshipIntegrator\Models\Product;
@@ -19,7 +18,7 @@ use Shopware\Models\Article\Detail;
 use MxcDropshipInnocigs\Services\DropshippersCompanion;
 use DateTime;
 
-class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
+class DetailMapper implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
@@ -121,9 +120,9 @@ class DetailMapper implements LoggerAwareInterface, ModelManagerAwareInterface
                 $isMainDetail = false;
             }
             $detail->setReleaseDate($releaseDate);
-            // set 'mxc_flavor' attribute if not empty (used in frontend product lists)
+            // set 'mxcbc_flavor' attribute if not empty (used in frontend product lists)
             if (! empty($flavor)) {
-                ArticleTool::setDetailAttribute($detail, 'mxc_flavor', $flavor);
+                ArticleTool::setDetailAttribute($detail, 'mxcbc_flavor', $flavor);
             }
         }
     }

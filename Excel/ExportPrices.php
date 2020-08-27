@@ -2,10 +2,9 @@
 
 namespace MxcDropshipIntegrator\Excel;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
@@ -18,7 +17,7 @@ use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
 use MxcCommons\Defines\Constants;
 
-class ExportPrices extends AbstractProductExport implements LoggerAwareInterface, ModelManagerAwareInterface
+class ExportPrices extends AbstractProductExport implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;

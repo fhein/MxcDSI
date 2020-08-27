@@ -2,17 +2,14 @@
 
 namespace MxcDropshipIntegrator\Listener;
 
-
-use MxcCommons\Plugin\PluginListenerInterface;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use Shopware\Components\Plugin\Context\UninstallContext;
 
-class MappingFilePersister implements LoggerAwareInterface, ModelManagerAwareInterface
+class MappingFilePersister implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;

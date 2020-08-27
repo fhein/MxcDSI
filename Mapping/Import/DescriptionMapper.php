@@ -2,13 +2,12 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 
-class
-DescriptionMapper extends BaseImportMapper implements ProductMapperInterface, LoggerAwareInterface
+class DescriptionMapper extends BaseImportMapper implements AugmentedObject
 {
     use LoggerAwareTrait;
 

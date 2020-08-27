@@ -32,7 +32,15 @@
                     <label lang="de">Import</label>
                     <controller>MxcDsiImport</controller>
                     <action>index</action>
-                    <class>sprite-document-import</class>
+                    <class>sprite-document-importFromApi</class>
+                </entry>
+                <entry>
+                    <name>MxcDsiDropshipLog</name>
+                    <label lang="en">Dropship Log</label>
+                    <label lang="de">Dropship Log</label>
+                    <controller>MxcDsiDropshipLog</controller>
+                    <action>index</action>
+                    <class>sprite-document-importFromApi</class>
                 </entry>
             </children>
         </entry>

@@ -2,8 +2,8 @@
 
 namespace MxcDropshipIntegrator;
 
-use MxcCommons\Plugin\Service\AugmentedObjectFactory;
-
+use MxcDropshipIntegrator\Dropship\DropshipLogger;
+use MxcDropshipIntegrator\Models\DropshipLogEntry;
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;
 use MxcCommons\Toolbox\Shopware\MailTool;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
@@ -66,7 +66,7 @@ use MxcCommons\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRep
 use MxcCommons\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcCommons\Toolbox\Shopware\MediaTool;
 use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
-use Shopware\Models\Mail\Mail;
+use MxcDropshipIntegrator\Workflow\WorkflowEngine;
 
 return [
     'dropship' => [
@@ -84,6 +84,7 @@ return [
             Option::class,
             Product::class,
             Variant::class,
+            DropshipLogEntry::class,
         ],
         'attributes' => [
             's_order_attributes'         => [
@@ -120,34 +121,8 @@ return [
 
     'services'       => [
         'factories' => [
-            PriceEngine::class               => AugmentedObjectFactory::class,
-            ExportPriceIssues::class         => AugmentedObjectFactory::class,
-            ProductMappings::class           => AugmentedObjectFactory::class,
-            ImportPiecesPerPackMapper::class => AugmentedObjectFactory::class,
-            ProductNumberMapper::class       => AugmentedObjectFactory::class,
-            TypeMapper::class                => AugmentedObjectFactory::class,
-            VariantNumberMapper::class       => AugmentedObjectFactory::class,
-            AssociatedProductsMapper::class  => AugmentedObjectFactory::class,
-            AssociatedArticlesMapper::class  => AugmentedObjectFactory::class,
-            VariantMappingConsistency::class => AugmentedObjectFactory::class,
-            ImportPriceMapper::class         => AugmentedObjectFactory::class,
-            DocumentRenderer::class          => AugmentedObjectFactory::class,
-            MailTool::class                  => AugmentedObjectFactory::class,
-            DropshipManager::class           => AugmentedObjectFactory::class,
-
-            ArticleTool::class                 => AugmentedObjectFactory::class,
-            ConfiguratorGroupRepository::class => AugmentedObjectFactory::class,
-            ConfiguratorSetRepository::class   => AugmentedObjectFactory::class,
-            DescriptionPullback::class         => AugmentedObjectFactory::class,
-            SpellChecker::class                => AugmentedObjectFactory::class,
-            FilterGroupRepository::class       => AugmentedObjectFactory::class,
-            MappingFilePersister::class        => AugmentedObjectFactory::class,
-            MediaTool::class                   => AugmentedObjectFactory::class,
-
-            CategoryTool::class => AugmentedObjectFactory::class,
 
             CommonNameMapper::class  => MappingConfigFactory::class,
-            ProductSeoMapper::class  => AugmentedObjectFactory::class,
             DosageMapper::class      => MappingConfigFactory::class,
             CapacityMapper::class    => MappingConfigFactory::class,
             FlavorMapper::class      => MappingConfigFactory::class,
@@ -155,12 +130,37 @@ return [
             CategoryMapper::class    => MappingConfigFactory::class,
             DescriptionMapper::class => MappingConfigFactory::class,
 
-            ExportNewProducts::class => AugmentedObjectFactory::class,
-
             ExcelProductImport::class => ExcelImportFactory::class,
 
         ],
         'magicals'  => [
+            ProductSeoMapper::class,
+            ExportNewProducts::class,
+            PriceEngine::class,
+            ExportPriceIssues::class,
+            ProductMappings::class,
+            ImportPiecesPerPackMapper::class,
+            ProductNumberMapper::class,
+            TypeMapper::class,
+            VariantNumberMapper::class,
+            AssociatedProductsMapper::class,
+            AssociatedArticlesMapper::class,
+            VariantMappingConsistency::class,
+            ImportPriceMapper::class,
+            DocumentRenderer::class,
+            MailTool::class,
+            DropshipManager::class,
+            DropshipLogger::class,
+            WorkflowEngine::class,
+            ArticleTool::class,
+            ConfiguratorGroupRepository::class,
+            ConfiguratorSetRepository::class,
+            DescriptionPullback::class,
+            SpellChecker::class,
+            FilterGroupRepository::class,
+            MappingFilePersister::class,
+            MediaTool::class,
+            CategoryTool::class,
             ArrayReport::class,
             ShopwareCategoryMapper::class,
             ConfiguratorSetRepository::class,
@@ -203,9 +203,10 @@ return [
         PriceEngine::class              => 'PriceEngine.config.php',
         MetaDataExtractor::class        => 'MetaDataExtractor.config.php',
         DropshipManager::class          => 'DropshipManager.config.php',
+        WorkflowEngine::class           => 'WorkflowEngine.config.php',
     ],
     'excel'          => [
-        'import' => [
+        'importFromApi' => [
             'Preise' => ImportPrices::class,
         ],
         'export' => [

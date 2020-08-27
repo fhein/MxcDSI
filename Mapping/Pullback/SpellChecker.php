@@ -2,14 +2,12 @@
 
 namespace MxcDropshipIntegrator\Mapping\Pullback;
 
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 
-class SpellChecker implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
+class SpellChecker implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;

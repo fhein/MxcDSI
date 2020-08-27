@@ -3,17 +3,15 @@
 
 namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipInnocigs\Services\ApiClient;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Plugin\Plugin;
 
-class DropshippersCompanion implements ModelManagerAwareInterface, LoggerAwareInterface
+class DropshippersCompanion implements AugmentedObject
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

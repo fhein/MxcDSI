@@ -2,17 +2,15 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcCommons\Toolbox\Report\ArrayReport;
-use MxcCommons\Config\Factory;
 use MxcCommons\Toolbox\Config\Config;
 
-class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
+class FlavorMapper implements ProductMapperInterface, AugmentedObject
 {
     use ModelManagerAwareTrait;
     use ClassConfigAwareTrait;
@@ -38,7 +36,7 @@ class FlavorMapper implements ProductMapperInterface, ModelManagerAwareInterface
         $flavor = @$this->mappings[$product->getIcNumber()]['flavor'];
         if (! $flavor) return;
 
-        list($flavor, $flavorCategory) = $this->remap($flavor);
+        [$flavor, $flavorCategory] = $this->remap($flavor);
 
         $product->setFlavor($flavor);
         $product->setFlavorCategory($flavorCategory);

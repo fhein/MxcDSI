@@ -48,6 +48,10 @@ use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Customer;
 use Shopware\Models\Order\Order;
 use MxcCommons\Plugin\Mail\MailManager;
+use MxcDropshipIntegrator\Dropship\DropshipLogger;
+use MxcDropshipInnocigs\Exception\ApiException;
+use MxcDropshipIntegrator\Dropship\ImportClientInterface;
+use MxcDropshipIntegrator\Dropship\ImportMapperInterface;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -71,26 +75,16 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
-            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
-            $mapper = $services->get(ImportMapper::class);
-            $mapper->import($client->import(true));
-            $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
-        } catch (Throwable $e) {
-            $this->handleException($e);
-        }
-    }
+            $params = $this->request->getParams();
+            $sequential = $params['sequential'] == 1;
 
-    public function importSequentialAction()
-    {
-        try {
-            $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
-            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $dropshipManager */
+            $dropshipManager = $services->get(DropshipManager::class);
+            /** @var ImportClientInterface $client */
+            $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var ImportMapperInterface $mapper */
             $mapper = $services->get(ImportMapper::class);
-            $mapper->import($client->importSequential(true));
+            $mapper->import($client->importFromApi(true, $sequential));
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -729,29 +723,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $testDir = __DIR__ . '/../../Test/';
-            $modelManager = $this->getManager();
-            $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model ir')->execute();
-            $articles = $modelManager->getRepository(Article::class)->findAll();
-            $articleResource = new ArticleResource();
-            $articleResource->setManager($modelManager);
-            /** @var Article $article */
-            foreach ($articles as $article) {
-                $articleResource->delete($article->getId());
-            }
-
             $xmlFile = $testDir . 'TESTErstimport.xml';
-            $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
-            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
-            $mapper = $services->get(ImportMapper::class);
-            $mapper->import($client->importFromFile($xmlFile, true));
-
-            $products = $this->getManager()->getRepository(Product::class)->findAll();
-            $services = MxcDropshipIntegrator::getServices();
-            $productMapper = $services->get(ProductMapper::class);
-            $productMapper->updateArticles($products, true);
-
+            $this->deleteShopwareArticles();
+            $this->testImportFromFile($xmlFile, true);
             $this->view->assign([ 'success' => true, 'message' => 'Erstimport successful.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -763,13 +737,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateFeldwerte.xml';
-
-            $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
-            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
-            $mapper = $services->get(ImportMapper::class);
-            $mapper->import($client->importFromFile($xmlFile));
+            $this->testImportFromFile($xmlFile, false);
             $this->view->assign([ 'success' => true, 'message' => 'Values successfully updated.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -781,12 +749,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $testDir = __DIR__ . '/../../Test/';
             $xmlFile = $testDir . 'TESTUpdateVarianten.xml';
-            $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
-            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
-            $mapper = $services->get(ImportMapper::class);
-            $mapper->import($client->importFromFile($xmlFile));
+            $this->testImportFromFile($xmlFile, false);
             $this->view->assign([ 'success' => true, 'message' => 'Variants successfully updated.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -798,11 +761,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS></PRODUCTS></INNOCIGS_API_RESPONSE>';
             $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
-            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var DropshipManager $dropshipManager */
+            $dropshipManager = $services->get(DropshipManager::class);
+            /** @var ImportClientInterface $client */
+            $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
-            $mapper->import($client->importFromXml($xml));
+            $mapper->import($client->importFromXml($xml, true, false));
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -813,24 +777,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $testDir = __DIR__ . '/../../Test/';
-            $modelManager = $this->getManager();
-            $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model ir')->execute();
-            $articles = $modelManager->getRepository(Article::class)->findAll();
-            $articleResource = new ArticleResource();
-            $articleResource->setManager($modelManager);
-            /** @var Article $article */
-            foreach ($articles as $article) {
-                $articleResource->delete($article->getId());
-            }
-
             $xmlFile = $testDir . 'TESTHugeImport.xml';
-            $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
-            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
-            $mapper = $services->get(ImportMapper::class);
-            $mapper->import($client->importFromFileSequential($xmlFile, true));
+            $this->deleteShopwareArticles();
+            $this->testImportFromFile($xmlFile, true);
 
+            $services = MxcDropshipIntegrator::getServices();
             $products = $this->getManager()->getRepository(Product::class)->findAll();
             $productMapper = $services->get(ProductMapper::class);
             $productMapper->updateArticles($products, true);
@@ -841,28 +792,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-
     public function testImport6Action()
     {
         try {
             $testDir = __DIR__ . '/../../Test/';
-            $modelManager = $this->getManager();
-            $modelManager->createQuery('DELETE MxcDropshipInnocigs\Models\Model ir')->execute();
-            $articles = $modelManager->getRepository(Article::class)->findAll();
-            $articleResource = new ArticleResource();
-            $articleResource->setManager($modelManager);
-            /** @var Article $article */
-            foreach ($articles as $article) {
-                $articleResource->delete($article->getId());
-            }
-
             $xmlFile = $testDir . 'TESTHugeImport.xml';
+            $this->deleteShopwareArticles();
+            $this->testImportFromFile($xmlFile, true);
             $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
-            $client = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
-            $mapper = $services->get(ImportMapper::class);
-            $mapper->import($client->importFromFile($xmlFile, true));
 
             $products = $this->getManager()->getRepository(Product::class)->findAll();
             $productMapper = $services->get(ProductMapper::class);
@@ -1440,15 +1377,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
 
             $services = MxcDropshipIntegrator::getServices();
-
-
-        $test = Shopware()->Db()->fetchRow('
-            SELECT sa.*, c.countryiso as iso FROM s_order_shippingaddress sa 
-            LEFT JOIN s_core_countries c ON c.id = sa.countryID
-            WHERE sa.orderID = ?',
-            [80]
-        );
-
+            $logger = $services->get(DropshipLogger::class);
+            $logger->log(DropshipLogger::INFO, 'InnoCigs', 'Hallo, Welt');
+            $logger->log(DropshipLogger::INFO, 'InnoCigs', 'Ich bin dann mal weg', '100299', 'AS10000A1', 5);
+            $logger->done();
 
             //$log = $services->get('logger');
 
@@ -1766,5 +1698,36 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         } catch (Throwable $e) {
             $this->handleException($e);
         }
+    }
+
+    protected function deleteShopwareArticles(): void
+    {
+        // delete all Shopware articles
+        $modelManager = $this->getManager();
+        $articles = $modelManager->getRepository(Article::class)->findAll();
+        $articleResource = new ArticleResource();
+        $articleResource->setManager($modelManager);
+        /** @var Article $article */
+        foreach ($articles as $article) {
+            $articleResource->delete($article->getId());
+        }
+    }
+
+    protected function testImportFromFile(string $xmlFile, bool $recreateSchema): void
+    {
+        $services = MxcDropshipIntegrator::getServices();
+        /** @var DropshipManager $dropshipManager */
+        $dropshipManager = $services->get(DropshipManager::class);
+        /** @var ImportClientInterface $client */
+        $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
+        $mapper = $services->get(ImportMapper::class);
+
+        // note: our models will be automatically deleted via param recreateSchema = true
+        $mapper->import($client->importFromFile($xmlFile, true, $recreateSchema));
+
+        $products = $this->getManager()->getRepository(Product::class)->findAll();
+        $services = MxcDropshipIntegrator::getServices();
+        $productMapper = $services->get(ProductMapper::class);
+        $productMapper->updateArticles($products, true);
     }
 }

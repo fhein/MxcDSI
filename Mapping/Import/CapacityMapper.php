@@ -3,12 +3,13 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
+use MxcDropshipIntegrator\Models\Variant;
 
-class CapacityMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
+class CapacityMapper extends BaseImportMapper implements ProductMapperInterface, AugmentedObject
 {
     use ModelManagerAwareTrait;
 

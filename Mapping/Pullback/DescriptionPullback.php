@@ -2,15 +2,14 @@
 
 namespace MxcDropshipIntegrator\Mapping\Pullback;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Models\Article\Article;
 
-class DescriptionPullback implements ModelManagerAwareInterface, LoggerAwareInterface
+class DescriptionPullback implements AugmentedObject
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

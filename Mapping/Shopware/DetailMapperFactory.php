@@ -3,7 +3,6 @@
 namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use MxcCommons\Interop\Container\ContainerInterface;
-use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
@@ -11,15 +10,6 @@ use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class DetailMapperFactory implements FactoryInterface
 {
-    use ObjectAugmentationTrait;
-    /**
-     * Create an object
-     *
-     * @param  ContainerInterface $container
-     * @param  string $requestedName
-     * @param  null|array $options
-     * @return object
-     */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         /** @var DropshipManager $registry */
@@ -32,13 +22,13 @@ class DetailMapperFactory implements FactoryInterface
         $articleTool = $container->get(ArticleTool::class);
         $optionMapper = $container->get(OptionMapper::class);
 
-        return $this->augment($container, new DetailMapper(
+        return new DetailMapper(
             $articleTool,
             $apiClient,
             $companion,
             $articleRegistry,
             $priceMapper,
             $optionMapper
-        ));
+        );
     }
 }

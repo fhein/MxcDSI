@@ -8,7 +8,7 @@ abstract class AbstractSheetImport
 
     abstract public function processImportData(array &$data);
 
-//    public function import(Worksheet $sheet)
+//    public function importFromApi(Worksheet $sheet)
 //    {
 //        $this->data = $this->entitiesToArray($sheet->toArray());
 //        if (! is_array($this->data) || empty($this->data)) return;

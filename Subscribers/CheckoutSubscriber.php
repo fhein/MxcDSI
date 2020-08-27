@@ -3,10 +3,14 @@
 namespace MxcDropshipIntegrator\Subscribers;
 
 use Enlight\Event\SubscriberInterface;
+use Enlight_Components_Db_Adapter_Pdo_Mysql;
+use Enlight_Components_Session_Namespace;
+use Enlight_Event_EventManager;
 use Enlight_Hook_HookArgs;
 use MxcCommons\Plugin\Service\Logger;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
+use sBasket;
 use Shopware_Components_Config;
 
 class CheckoutSubscriber implements SubscriberInterface
@@ -14,16 +18,16 @@ class CheckoutSubscriber implements SubscriberInterface
     /** @var DropshipManager */
     protected $dropshipManager;
 
-    /** @var \Enlight_Components_Db_Adapter_Pdo_Mysql */
+    /** @var Enlight_Components_Db_Adapter_Pdo_Mysql */
     protected $db;
 
-    /** @var \sBasket */
+    /** @var sBasket */
     protected $basket;
 
-    /** @var \Enlight_Components_Session_Namespace */
+    /** @var Enlight_Components_Session_Namespace */
     protected $session;
 
-    /** @var \Enlight_Event_EventManager */
+    /** @var Enlight_Event_EventManager */
     protected $events;
 
     /** @var Logger object  */

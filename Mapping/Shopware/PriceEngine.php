@@ -2,12 +2,10 @@
 
 namespace MxcDropshipIntegrator\Mapping\Shopware;
 
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
@@ -16,7 +14,7 @@ use MxcCommons\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Customer\Group;
 use MxcCommons\Defines\Constants;
 
-class PriceEngine implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
+class PriceEngine implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;

@@ -3,17 +3,14 @@
 namespace MxcDropshipIntegrator\Mapping\Import;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Models\Product;
 use MxcCommons\Toolbox\Report\ArrayReport;
 
-class AssociatedProductsMapper
-    implements ClassConfigAwareInterface, ModelManagerAwareInterface, LoggerAwareInterface
+class AssociatedProductsMapper implements AugmentedObject
 {
     use ClassConfigAwareTrait;
     use ModelManagerAwareTrait;

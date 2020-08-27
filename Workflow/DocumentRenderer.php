@@ -2,13 +2,13 @@
 
 namespace MxcDropshipIntegrator\Workflow;
 
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use Shopware\Models\Order\Order;
 use Shopware_Components_Document;
 use DateTime;
 
-class DocumentRenderer implements ModelManagerAwareInterface
+class DocumentRenderer implements AugmentedObject
 {
     use ModelManagerAwareTrait;
 

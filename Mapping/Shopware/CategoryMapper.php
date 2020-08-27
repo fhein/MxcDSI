@@ -4,12 +4,10 @@ namespace MxcDropshipIntegrator\Mapping\Shopware;
 
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Models\Category as CategoryConfiguration;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
@@ -18,8 +16,7 @@ use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
 use MxcCommons\Defines\Constants;
 
-
-class CategoryMapper implements ClassConfigAwareInterface, LoggerAwareInterface, ModelManagerAwareInterface
+class CategoryMapper implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ClassConfigAwareTrait;

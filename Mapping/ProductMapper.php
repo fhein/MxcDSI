@@ -2,10 +2,9 @@
 
 namespace MxcDropshipIntegrator\Mapping;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\CategoryMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
@@ -18,7 +17,7 @@ use MxcCommons\Toolbox\Shopware\SupplierTool;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Article\Article;
 
-class ProductMapper implements ModelManagerAwareInterface, LoggerAwareInterface
+class ProductMapper implements AugmentedObject
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

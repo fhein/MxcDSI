@@ -3,17 +3,16 @@
 
 namespace MxcDropshipIntegrator\Mapping\Check;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Mapping\Import\NameMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcCommons\Toolbox\Report\ArrayReport;
 
-class NameMappingConsistency implements LoggerAwareInterface, ModelManagerAwareInterface
+class NameMappingConsistency implements AugmentedObject
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

@@ -11,8 +11,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.control({
             'mxc-dsi-product-listing-grid': {
                 mxcSaveProduct:                      me.onSaveProduct,
-                mxcImportItems:                      me.onImportItems,
-                mxcImportItemsSequential:            me.onImportItemsSequential,
+                mxcImportProducts:                   me.onImportProducts,
 
                 // meta information
 
@@ -68,7 +67,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcCheckMissingModels:               me.onCheckMissingModels,
                 mxcCheckArticlesWithoutProducts:     me.onCheckArticlesWithoutProducts,
 
-                // Excel import/export
+                // Excel importFromApi/export
 
                 mxcExcelExportPrices:                me.onExcelExportPrices,
                 mxcExcelExportPriceIssues:           me.onExcelExportPriceIssues,
@@ -77,7 +76,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcCsvExportCustomers:               me.onCsvExportCustomers,
                 mxcArrayExportDocumentationTodos:    me.onArrayExportDocumentationTodos,
 
-                // InnoCigs import tests
+                // InnoCigs importFromApi tests
 
                 mxcTestImport1:                      me.onTestImport1,
                 mxcTestImport2:                      me.onTestImport2,
@@ -187,7 +186,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let me = this;
 
         if (file.type !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
-            me.showError('Please select a valid import file (.xlsx)');
+            me.showError('Please select a valid importFromApi file (.xlsx)');
             return;
         }
 
@@ -294,19 +293,12 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
-    onImportItems: function (grid) {
+    onImportProducts: function (grid, sequential) {
         let me = this;
         let url = '{url controller=MxcDsiProduct action=import}';
-        let params = {};
-        let growlTitle = 'Update';
-        let maskText = 'Updating products from InnoCigs ...';
-        me.doRequest(grid, url, params, growlTitle, maskText, true);
-    },
-
-    onImportItemsSequential: function (grid) {
-        let me = this;
-        let url = '{url controller=MxcDsiProduct action=importSequential}';
-        let params = {};
+        let params = {
+            sequential: sequential ? 1 : 0
+        };
         let growlTitle = 'Update';
         let maskText = 'Updating products from InnoCigs ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);

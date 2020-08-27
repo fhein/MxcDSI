@@ -2,10 +2,9 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Category;
 use MxcDropshipInnocigs\Models\Model;
@@ -15,7 +14,7 @@ use MxcCommons\Toolbox\Report\ArrayReport;
 use MxcCommons\Toolbox\Shopware\CategoryTool;
 use MxcCommons\Defines\Constants;
 
-class CategoryMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface, LoggerAwareInterface
+class CategoryMapper extends BaseImportMapper implements AugmentedObject
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

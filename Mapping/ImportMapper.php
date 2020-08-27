@@ -4,11 +4,11 @@
 namespace MxcDropshipIntegrator\Mapping;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
+use MxcDropshipIntegrator\Dropship\ImportMapperInterface;
 use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
 use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
@@ -26,8 +26,9 @@ use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcCommons\Defines\Constants;
 
-class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
+class ImportMapper implements ImportMapperInterface, AugmentedObject
 {
+    // augmentations
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;
 
@@ -104,30 +105,30 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         $this->productMapper = $productMapper;
     }
 
-    /**
-     * @param string $groupName
-     * @return Group
-     */
-    protected function addGroup(string $groupName): Group
+    public function import(array $changes)
     {
-        $group = new Group();
-        $this->modelManager->persist($group);
-        $group->setAccepted(true);
-        $group->setName($groupName);
-        return $group;
-    }
+        $this->updates = [];
+        $this->initCache();
 
-    protected function mapGroup(string $groupName)
-    {
-        $group = @$this->groups[$groupName];
-        if ($group) return $group;
-        if ($this->useCache) {
-            $group = $this->addGroup($groupName);
-        } else {
-            $group = $this->getGroupRepository()->findOneBy(['name' => $groupName]) ?? $this->addGroup($groupName);
-        }
-        $this->groups[$groupName] = $group;
-        return $group;
+        // revoke deleted variants if the according model was reintroduced
+        $this->revokeVariants();
+        // add new variants
+        $this->addVariants();
+        // apply changes to existing variants
+        $this->changeVariants($changes);
+        // mark variants without corresponding model as deleted
+        $this->removeVariants();
+        // delete products where all variants are marked deleted
+        $this->removeProducts();
+
+        $this->propertyMapper->mapProperties($this->updates, true);
+        $this->removeOrphanedItems();
+
+        $this->getProductRepository()->refreshProductStates();
+
+        $this->productMapper->updateArticles($this->updates);
+
+        return true;
     }
 
     public function mapOptions(?string $optionString): ArrayCollection
@@ -154,6 +155,32 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             $options[] = $option;
         }
         return new ArrayCollection($options);
+    }
+
+    /**
+     * @param string $groupName
+     * @return Group
+     */
+    protected function addGroup(string $groupName): Group
+    {
+        $group = new Group();
+        $this->modelManager->persist($group);
+        $group->setAccepted(true);
+        $group->setName($groupName);
+        return $group;
+    }
+
+    protected function mapGroup(string $groupName)
+    {
+        $group = @$this->groups[$groupName];
+        if ($group) return $group;
+        if ($this->useCache) {
+            $group = $this->addGroup($groupName);
+        } else {
+            $group = $this->getGroupRepository()->findOneBy(['name' => $groupName]) ?? $this->addGroup($groupName);
+        }
+        $this->groups[$groupName] = $group;
+        return $group;
     }
 
     protected function createProduct(Model $model)
@@ -247,11 +274,10 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
         }
         $this->modelManager->flush();
     }
-
     // Undelete variant if the according model was reintroduced
+
     protected function revokeVariants()
     {
-        /** @noinspection PhpUndefinedMethodInspection */
         $revokables = $this->getModelRepository()->getModelsWithDeletedVariant();
 
         foreach ($revokables as $revokable) {
@@ -431,32 +457,6 @@ class ImportMapper implements ModelManagerAwareInterface, LoggerAwareInterface
             $this->options = $this->getOptionRepository()->getAllIndexed();
             $this->variants = $this->getVariantRepository()->getAllIndexed();
         }
-    }
-
-    public function import(array $changes)
-    {
-        $this->updates = [];
-        $this->initCache();
-
-        // revoke deleted variants if the according model was reintroduced
-        $this->revokeVariants();
-        // add new variants
-        $this->addVariants();
-        // apply changes to existing variants
-        $this->changeVariants($changes);
-        // mark variants without corresponding model as deleted
-        $this->removeVariants();
-        // delete products where all variants are marked deleted
-        $this->removeProducts();
-
-        $this->propertyMapper->mapProperties($this->updates, true);
-        $this->removeOrphanedItems();
-
-        $this->getProductRepository()->refreshProductStates();
-
-        $this->productMapper->updateArticles($this->updates);
-
-        return true;
     }
 
     protected function getProductRepository()

@@ -17,7 +17,7 @@ class DropshipLogEntry extends ModelEntity  {
     use PrimaryKeyTrait;
     use TrackCreationAndUpdateTrait;
 
-    /** @ORM\Column(type="int", nullable=false) */
+    /** @ORM\Column(type="integer", nullable=false) */
     private $level;
 
     /** @ORM\Column(type="string", nullable=false) */
@@ -26,11 +26,14 @@ class DropshipLogEntry extends ModelEntity  {
     /** @ORM\Column(type="string", nullable=false) */
     private $message;
 
-    /** @ORM\Column(type="string", nullable=true) */
+    /** @ORM\Column(name="order_number", type="string", nullable=true) */
     private $orderNumber;
 
+    /** @ORM\Column(type="string", nullable=true) */
+    private $productNumber;
+
     /** @ORM\Column(type="integer", nullable=true) */
-    private $orderPosition;
+    private $quantity;
 
     public function getLevel() { return $this->level; }
     public function setLevel($level) { $this->level = $level; }
@@ -44,16 +47,19 @@ class DropshipLogEntry extends ModelEntity  {
     public function getOrderNumber() { return $this->orderNumber; }
     public function setOrderNumber($orderNumber) { $this->orderNumber = $orderNumber; }
 
-    public function getOrderPosition() { return $this->orderPosition; }
-    public function setOrderPosition($position) { $this->orderPosition = $position; }
+    public function getProductNmber() { return $this->productNumber; }
+    public function setProductNumber($productNumber) { $this->productNumber = $productNumber; }
 
-    public function set($level, $module, $message, $orderNumber = null, $position = null)
+    public function getQuantity() { return $this->quantity; }
+    public function setQuantity($quantity) { $this->quantity = $quantity; }
+
+    public function set($level, $module, $message, $orderNumber = null, $productNumber = null, $quantity = null)
     {
         $this->level = $level;
         $this->module = $module;
         $this->message = $message;
         $this->orderNumber = $orderNumber;
-        $this->orderPosition = $position;
+        $this->quantity = $quantity;
+        $this->productNumber = $productNumber;
     }
-
 }

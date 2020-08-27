@@ -3,6 +3,7 @@
 
 namespace MxcDropshipIntegrator\Listener;
 
+use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
 use Shopware\Models\Mail\Log;
 use Shopware\Models\Mail\Mail;

@@ -3,22 +3,11 @@
 namespace MxcDropshipIntegrator\Mapping\Import;
 
 use MxcCommons\Interop\Container\ContainerInterface;
-use MxcCommons\Plugin\Service\ObjectAugmentationTrait;
 use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 
 class PropertyMapperFactory implements FactoryInterface
 {
-    use ObjectAugmentationTrait;
-
-    /**
-     * Create an object
-     *
-     * @param ContainerInterface $container
-     * @param string $requestedName
-     * @param null|array $options
-     * @return object
-     */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         // mappers are applied in the order below, take care of mapper dependencies
@@ -59,13 +48,13 @@ class PropertyMapperFactory implements FactoryInterface
 
         $regularExpressions = $container->get(RegularExpressions::class);
 
-        return $this->augment($container, new PropertyMapper(
+        return new PropertyMapper(
             $mappings,
             $associatedProductsMapper,
             $regularExpressions,
             $productMappers,
             $variantMappers
-        ));
+        );
     }
 }
 

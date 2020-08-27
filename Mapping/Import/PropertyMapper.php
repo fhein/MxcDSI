@@ -2,19 +2,17 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use RuntimeException;
 
-class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface, ClassConfigAwareInterface
+class PropertyMapper implements AugmentedObject
 {
     use ModelManagerAwareTrait;
     use ClassConfigAwareTrait;
@@ -71,7 +69,7 @@ class PropertyMapper implements LoggerAwareInterface, ModelManagerAwareInterface
         $this->reset();
         $models = $this->getModels();
         if (! $models) {
-            $this->log->debug(__FUNCTION__ . ': no import models found.');
+            $this->log->debug(__FUNCTION__ . ': no importFromApi models found.');
             return;
         }
 

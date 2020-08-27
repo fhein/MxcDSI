@@ -2,14 +2,14 @@
 
 namespace MxcDropshipIntegrator\Excel;
 
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Models\Product;
 use MxcCommons\Toolbox\Shopware\DatabaseTool;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
 use RuntimeException;
 
-class ExcelImport implements ModelManagerAwareInterface
+class ExcelImport implements AugmentedObject
 {
     use ModelManagerAwareTrait;
 
@@ -45,7 +45,7 @@ class ExcelImport implements ModelManagerAwareInterface
     {
         $importer = $this->importers[$sheetName];
         if (! $importer) {
-            throw new RuntimeException('Unknown sheet import');
+            throw new RuntimeException('Unknown sheet importFromApi');
         }
 
         $importFile = $filepath ? $filepath : $this->excelFile;

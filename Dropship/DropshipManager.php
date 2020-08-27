@@ -3,17 +3,15 @@
 namespace MxcDropshipIntegrator\Dropship;
 
 use MxcCommons\Plugin\Plugin;
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
-use MxcCommons\Plugin\Service\DatabaseAwareInterface;
 use MxcCommons\Plugin\Service\DatabaseAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Exception\InvalidArgumentException;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
 
-class DropshipManager implements ClassConfigAwareInterface, ModelManagerAwareInterface, DatabaseAwareInterface
+class DropshipManager implements AugmentedObject
 {
     use ClassConfigAwareTrait;
     use ModelManagerAwareTrait;

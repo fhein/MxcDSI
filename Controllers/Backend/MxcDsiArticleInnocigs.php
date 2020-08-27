@@ -1,7 +1,6 @@
 <?php
 
 use MxcDropshipInnocigs\Services\ArticleRegistry;
-use MxcDropshipInnocigs\Models\ArticleAttributes;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Detail;

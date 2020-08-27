@@ -2,11 +2,11 @@
 
 namespace MxcDropshipIntegrator\Dropship;
 
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Models\DropshipLogEntry;
 
-class DropshipLogger implements ModelManagerAwareInterface
+class DropshipLogger implements AugmentedObject
 {
     use ModelManagerAwareTrait;
 
@@ -30,10 +30,16 @@ class DropshipLogger implements ModelManagerAwareInterface
         self::DEBUG => 'DEBUG',
     ];
 
-    public function log(int $level, string $module, string $message, string $orderNumber = null, int $position = null)
-    {
+    public function log(
+        int $level,
+        string $module,
+        string $message,
+        string $orderNumber = null,
+        string $productNumber = null,
+        int $quantity = null
+    ) {
         $entry = new DropshipLogEntry();
-        $entry->set($level, $module, $message, $orderNumber, $position);
+        $entry->set($level, $module, $message, $orderNumber, $productNumber, $quantity);
         $this->modelManager->persist($entry);
     }
 

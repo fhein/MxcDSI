@@ -65,7 +65,7 @@ trait BaseModelTrait
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
     public function getUpdated(): DateTime
     {

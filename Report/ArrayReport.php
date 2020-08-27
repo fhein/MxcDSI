@@ -3,7 +3,6 @@
 namespace MxcDropshipIntegrator\Report;
 
 use MxcCommons\Plugin\Utility\StringUtility;
-use MxcCommons\Config\Factory;
 use MxcCommons\Toolbox\Config\Config;
 
 class ArrayReport
@@ -45,7 +44,7 @@ class ArrayReport
         /** @noinspection PhpUnusedLocalVariableInspection */
         $diffFile = $dir . $fn . '.diff.php';
 
-        // @todo: There is a bug in here which can be seen running console import
+        // @todo: There is a bug in here which can be seen running console importFromApi
 //        if (file_exists($actFile)) {
 //            /** @noinspection PhpIncludeInspection */
 //            $old = include $actFile;

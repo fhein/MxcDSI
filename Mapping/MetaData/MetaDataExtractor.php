@@ -3,12 +3,10 @@
 
 namespace MxcDropshipIntegrator\Mapping\MetaData;
 
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
@@ -23,7 +21,7 @@ use MxcCommons\Defines\Constants;
  * Extraktion von Metadaten aus Produktbeschreibungen
  *
  */
-class MetaDataExtractor implements ModelManagerAwareInterface, LoggerAwareInterface, ClassConfigAwareInterface
+class MetaDataExtractor implements AugmentedObject
 {
     use LoggerAwareTrait;
     use ModelManagerAwareTrait;

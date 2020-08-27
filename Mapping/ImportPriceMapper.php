@@ -5,16 +5,15 @@
 
 namespace MxcDropshipIntegrator\Mapping;
 
-use MxcCommons\Plugin\Service\LoggerAwareInterface;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 
-class ImportPriceMapper implements ModelManagerAwareInterface, LoggerAwareInterface
+class ImportPriceMapper implements AugmentedObject
 {
     use ModelManagerAwareTrait;
     use LoggerAwareTrait;

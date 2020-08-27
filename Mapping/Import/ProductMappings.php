@@ -2,10 +2,10 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcCommons\Plugin\Service\ClassConfigAwareInterface;
 use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 
-class ProductMappings implements ClassConfigAwareInterface
+class ProductMappings implements AugmentedObject
 {
     use ClassConfigAwareTrait;
 

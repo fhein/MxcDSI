@@ -32,12 +32,13 @@ class ListProductServiceDecorator implements ListProductServiceInterface
     {
         $articles = $this->parent->getList($numbers, $context);
 
-        /** @var Article $article */
+        /** @var ListProduct $article */
         foreach ($articles as $article) {
 
             $details = ArticleTool::getArticleActiveDetailsArray($article->getId());
 
             $inStock = 0;
+            $releaseDate = null;
             foreach ($details as $detail) {
                 $inStock += empty($detail['dc_ic_active']) ? $detail['instock'] : $detail['dc_ic_instock'];
                 $releaseDate = $detail['releasedate'];
@@ -46,7 +47,6 @@ class ListProductServiceDecorator implements ListProductServiceInterface
                     $releaseDate = date('d.m.Y', $releaseDate);
                 }
             }
-            /** @noinspection PhpUnhandledExceptionInspection */
             $article->addAttribute('mxc_in_stock', new Attribute(['in_stock' => $inStock]));
             $article->addAttribute('mxc_releasedate', new Attribute(['releasedate' => $releaseDate]));
         }

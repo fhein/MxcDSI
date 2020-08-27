@@ -8,6 +8,7 @@ namespace MxcDropshipIntegrator\Subscribers;
 use Doctrine\ORM\EntityManager;
 use Enlight\Event\SubscriberInterface;
 use Enlight_Event_EventArgs;
+use Enlight_Exception;
 use MxcCommons\Plugin\Service\Logger;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
@@ -111,7 +112,7 @@ class BackendOrderSubscriber implements SubscriberInterface
     /**
      * @param $order
      * @param array $paymentData
-     * @throws \Enlight_Exception
+     * @throws Enlight_Exception
      */
     protected function sendMail($order, array $paymentData): void
     {

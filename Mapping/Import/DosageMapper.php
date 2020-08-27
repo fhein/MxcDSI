@@ -2,13 +2,13 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcCommons\Plugin\Service\ModelManagerAwareInterface;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
+use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcCommons\Toolbox\Report\ArrayReport;
 
-class DosageMapper extends BaseImportMapper implements ProductMapperInterface, ModelManagerAwareInterface
+class DosageMapper extends BaseImportMapper implements ProductMapperInterface, AugmentedObject
 {
     use ModelManagerAwareTrait;
 

@@ -81,8 +81,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcSetActiveSelected',
           'mxcSetLinkedSelected',
           'mxcSetAcceptedSelected',
-          'mxcImportItems',
-          'mxcImportItemsSequential',
+          'mxcImportProducts',
           'mxcUpdatePrices',
           'mxcUpdateVat',
           'mxcRefreshItems',
@@ -574,14 +573,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text: 'Import/Update',
                     iconCls: 'sprite-download-cloud',
                     handler: function() {
-                        me.fireEvent('mxcImportItems', me);
+                        me.fireEvent('mxcImportProducts', me, false);
                     }
                 },
                 {
                     text: 'Import/Update Sequential',
                     iconCls: 'sprite-download-cloud',
                     handler: function() {
-                        me.fireEvent('mxcImportItemsSequential', me);
+                        me.fireEvent('mxcImportProducts', me, true);
                     }
                 },
                 '-',
@@ -918,7 +917,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
     createImportMenuItem: function(menuText, eventName){ //, scope) {
         return {
             text: menuText, //'Excel Import',
-            iconCls: 'sprite-table-import',
+            iconCls: 'sprite-table-importFromApi',
             listeners: {
                 click: function (event) {
                     var filefield = Ext.ComponentQuery.query('#'+eventName+'Field');
