@@ -1,6 +1,6 @@
 <?php
 
-namespace MxcDropshipIntegrator\Listener;
+namespace MxcDropshipIntegrator\PluginListeners;
 
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;

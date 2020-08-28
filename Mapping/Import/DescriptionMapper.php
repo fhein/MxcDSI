@@ -127,15 +127,12 @@ class DescriptionMapper extends BaseImportMapper implements AugmentedObject
 
     public function map(Model $model, Product $product, bool $remap = true)
     {
-        $this->log->enter();
         $description = @$this->mappings[$product->getIcNumber()]['description'];
         if ($remap || ! $description) {
             $this->remap($product);
-            $this->log->leave();
             return;
         }
         $product->setDescription($description);
-        $this->log->leave();
     }
 
     public function remap(Product $product)

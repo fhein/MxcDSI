@@ -44,7 +44,6 @@ class OptionMapper implements AugmentedObject
      * @param array $variants
      */
     public function createShopwareGroupsAndOptions(array $variants) {
-        $this->log->enter();
         $groupOptions = [];
         foreach ($variants as $variant) {
             // if (! $variant->isValid()) continue;
@@ -102,7 +101,6 @@ class OptionMapper implements AugmentedObject
         foreach ($sortOptions as $groupName) {
             $this->groupRepository->sortOptions($groupName);
         }
-        $this->log->leave();
     }
 
     public function needsUpdate(Product $product)

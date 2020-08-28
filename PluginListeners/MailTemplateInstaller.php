@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MxcDropshipIntegrator\Listener;
+namespace MxcDropshipIntegrator\PluginListeners;
 
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;

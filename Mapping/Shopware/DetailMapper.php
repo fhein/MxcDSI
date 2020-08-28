@@ -48,6 +48,8 @@ class DetailMapper implements AugmentedObject
 
     protected $articleRegistry;
 
+    protected $stockInfo;
+
     public function __construct(
         ArticleTool $articleTool,
         ApiClient $apiClient,
@@ -244,7 +246,7 @@ class DetailMapper implements AugmentedObject
     }
 
     protected function getStockInfo() {
-        return $this->stockInfo ?? $this->stockInfo = $this->apiClient->getAllStockInfo();
+        return $this->stockInfo ?? $this->stockInfo = $this->apiClient->getStockInfo();
     }
 
     protected function getProductRepository()

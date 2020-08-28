@@ -4,6 +4,7 @@ namespace MxcDropshipIntegrator;
 
 use MxcDropshipIntegrator\Dropship\DropshipLogger;
 use MxcDropshipIntegrator\Models\DropshipLogEntry;
+use MxcDropshipIntegrator\Models\DropshipModule;
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;
 use MxcCommons\Toolbox\Shopware\MailTool;
 use MxcDropshipIntegrator\Dropship\DropshipManager;
@@ -16,7 +17,7 @@ use MxcDropshipIntegrator\Excel\ExportNewProducts;
 use MxcDropshipIntegrator\Excel\ExportPriceIssues;
 use MxcDropshipIntegrator\Excel\ExportPrices;
 use MxcDropshipIntegrator\Excel\ImportPrices;
-use MxcDropshipIntegrator\Listener\MappingFilePersister;
+use MxcDropshipIntegrator\PluginListeners\MappingFilePersister;
 use MxcDropshipIntegrator\Mapping\Check\NameMappingConsistency;
 use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
 use MxcDropshipIntegrator\Mapping\Check\VariantMappingConsistency;
@@ -46,7 +47,6 @@ use MxcDropshipIntegrator\Mapping\Pullback\SpellChecker;
 use MxcDropshipIntegrator\Mapping\Shopware\AssociatedArticlesMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\CategoryMapper as ShopwareCategoryMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
-use MxcDropshipIntegrator\Mapping\Shopware\DropshippersCompanion;
 use MxcDropshipIntegrator\Mapping\Shopware\ImageMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\OptionMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
@@ -69,12 +69,7 @@ use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
 use MxcDropshipIntegrator\Workflow\WorkflowEngine;
 
 return [
-    'dropship' => [
-        'suppliers' => [
-            'InnoCigs',
-        ],
-    ],
-    'plugin'   => [
+    'plugin_listeners'   => [
         MappingFilePersister::class,
     ],
     'doctrine' => [
@@ -85,6 +80,7 @@ return [
             Product::class,
             Variant::class,
             DropshipLogEntry::class,
+            DropshipModule::class,
         ],
         'attributes' => [
             's_order_attributes'         => [
@@ -158,14 +154,12 @@ return [
             DescriptionPullback::class,
             SpellChecker::class,
             FilterGroupRepository::class,
-            MappingFilePersister::class,
             MediaTool::class,
             CategoryTool::class,
             ArrayReport::class,
             ShopwareCategoryMapper::class,
             ConfiguratorSetRepository::class,
             DetailMapper::class,
-            DropshippersCompanion::class,
             ExcelExport::class,
             ExcelImport::class,
             ExportPrices::class,
