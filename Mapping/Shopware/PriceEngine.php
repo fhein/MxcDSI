@@ -8,7 +8,6 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Report\ArrayReport;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use Shopware\Models\Customer\Group;

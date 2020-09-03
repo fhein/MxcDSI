@@ -6,8 +6,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
-use MxcDropshipInnocigs\Services\ApiClient;
-use MxcDropshipInnocigs\Services\ArticleRegistry;
+use MxcDropshipInnocigs\Api\ApiClient;
+use MxcDropshipInnocigs\Article\ArticleRegistry;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\ProductRepository;
 use MxcDropshipIntegrator\Models\Variant;
@@ -15,8 +15,7 @@ use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Detail;
-use MxcDropshipInnocigs\Services\DropshippersCompanion;
-use DateTime;
+use MxcDropshipInnocigs\Companion\DropshippersCompanion;
 
 class DetailMapper implements AugmentedObject
 {

@@ -11,7 +11,6 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Option;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Conditional;
@@ -77,7 +76,6 @@ class ExportPrices extends AbstractProductExport implements AugmentedObject
         $products = $this->data;
         $data = [];
         $headers = null;
-        $count = 0;
         /** @var Product $product */
         foreach ($products as $product) {
             $info = $this->getColumns();
@@ -133,7 +131,6 @@ class ExportPrices extends AbstractProductExport implements AugmentedObject
 
                 $data[] = $info;
             }
-            // if ($count++ > 1) break;
         }
         // $this->priceEngine->report();
 

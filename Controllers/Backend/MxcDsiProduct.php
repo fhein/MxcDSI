@@ -9,15 +9,12 @@ use MxcCommons\Toolbox\Config\Config;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\Toolbox\Shopware\MailTool;
 use MxcCommons\Toolbox\Shopware\SupplierTool;
-use MxcDropshipInnocigs\Cronjobs\StockUpdateCronJob;
 use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Services\ArticleRegistry;
-use MxcDropshipIntegrator\Dropship\DropshipManager;
+use MxcDropshipInnocigs\Article\ArticleRegistry;
+use MxcDropship\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelProductImport;
-use MxcDropshipIntegrator\Jobs\ApplyPriceRules;
 use MxcDropshipIntegrator\Jobs\PullCategorySeoInformation;
-use MxcDropshipInnocigs\Jobs\UpdatePrices;
 use MxcDropshipIntegrator\Mapping\Check\NameMappingConsistency;
 use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
 use MxcDropshipIntegrator\Mapping\Check\VariantMappingConsistency;
@@ -48,10 +45,10 @@ use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Customer;
 use Shopware\Models\Order\Order;
 use MxcCommons\Plugin\Mail\MailManager;
-use MxcDropshipIntegrator\Dropship\DropshipLogger;
 use MxcDropshipInnocigs\Exception\ApiException;
 use MxcDropshipIntegrator\Dropship\ImportClientInterface;
 use MxcDropshipIntegrator\Dropship\ImportMapperInterface;
+use MxcDropship\MxcDropship;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -79,7 +76,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $sequential = $params['sequential'] == 1;
 
             /** @var DropshipManager $dropshipManager */
-            $dropshipManager = $services->get(DropshipManager::class);
+            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
             /** @var ImportClientInterface $client */
             $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             /** @var ImportMapperInterface $mapper */
@@ -94,8 +91,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updatePricesAction()
     {
         try {
-            UpdatePrices::run();
-            ApplyPriceRules::run();
+            /** @var DropshipManager $dropshipManager */
+            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
+            $dropshipManager->updatePrices();
             $this->view->assign(['success' => true, 'message' => 'Prices were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -431,6 +429,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             [$value, $products] = $this->setStatePropertyOnSelected();
             $services = MxcDropshipIntegrator::getServices();
+            /** @var ProductMapper $productMapper */
             $productMapper = $services->get(ProductMapper::class);
             switch ($value) {
                 case true:
@@ -646,8 +645,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updateStockInfoAction()
     {
         try {
-            $updateCronJob = new StockUpdateCronJob();
-            $updateCronJob->onStockUpdate(null);
+            /** @var DropshipManager $dropshipManager */
+            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
+            $dropshipManager->updateStock();
 
             $this->view->assign([ 'success' => true, 'message' => 'Successfully updated stock info from InnoCigs.' ]);
         } catch (Throwable $e) {
@@ -762,7 +762,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS></PRODUCTS></INNOCIGS_API_RESPONSE>';
             $services = MxcDropshipIntegrator::getServices();
             /** @var DropshipManager $dropshipManager */
-            $dropshipManager = $services->get(DropshipManager::class);
+            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
             /** @var ImportClientInterface $client */
             $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
             $mapper = $services->get(ImportMapper::class);
@@ -1301,7 +1301,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $services = MxcDropshipIntegrator::getServices();
             /** @var DropshipManager $registry */
-            $registry = $services->get(DropshipManager::class);
+            $registry = MxcDropship::getServices()->get(DropshipManager::class);
             $registry = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ArticleRegistry');
             /** @var ArticleRegistry $registry */
             /** @var Detail $detail */
@@ -1376,13 +1376,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
 
-            $services = MxcDropshipIntegrator::getServices();
-            $logger = $services->get(DropshipLogger::class);
-            $logger->log(DropshipLogger::INFO, 'InnoCigs', 'Hallo, Welt');
-            $logger->log(DropshipLogger::INFO, 'InnoCigs', 'Ich bin dann mal weg', '100299', 'AS10000A1', 5);
-            $logger->done();
+            $services = MxcDropship::getServices();
+            /** @var DropshipManager $dropshipManager */
+            $dropshipManager = $services->get(DropshipManager::class);
+            /** ResponseCollection $results */
+            $results = $dropshipManager->updateStock();
+            $log = $services->get('logger');
+            $log->debug(var_export($results->toArray(), true));
 
-            //$log = $services->get('logger');
 
 
 //            /** @var DropshipManager $dropshipManager */
@@ -1717,7 +1718,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         $services = MxcDropshipIntegrator::getServices();
         /** @var DropshipManager $dropshipManager */
-        $dropshipManager = $services->get(DropshipManager::class);
+        $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
         /** @var ImportClientInterface $client */
         $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
         $mapper = $services->get(ImportMapper::class);

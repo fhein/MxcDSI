@@ -7,7 +7,7 @@ use MxcDropshipIntegrator\MxcDropshipIntegrator;
 class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationController
 {
     protected $model = Model::class;
-    protected $alias = 'record';
+    protected $alias = 'mxcbc_dsi_model';
 
     protected function handleException(Throwable $e, bool $rethrow = false) {
         $log = MxcDropshipIntegrator::getServices()->get('logger');

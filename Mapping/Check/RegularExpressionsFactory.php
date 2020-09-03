@@ -3,9 +3,7 @@
 namespace MxcDropshipIntegrator\Mapping\Check;
 
 use MxcCommons\Interop\Container\ContainerInterface;
-use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
 use MxcDropshipIntegrator\Mapping\Import\NameMapper;
-use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
 use MxcDropshipIntegrator\Mapping\Import\TypeMapper;
 use MxcCommons\Toolbox\Regex\RegexChecker;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;

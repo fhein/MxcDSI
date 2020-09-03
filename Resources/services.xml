@@ -8,31 +8,6 @@
                 <tag name="shopware.event_subscriber"/>
             </service>
 
-            <service id="mxc_dropship_integrator.subscriber.backend_order"
-                     class="MxcDropshipIntegrator\Subscribers\BackendOrderSubscriber">
-                <tag name="shopware.event_subscriber"/>
-            </service>
-
-            <service id="mxc_dropship_integrator.subscriber.backend_article"
-                     class="MxcDropshipIntegrator\Subscribers\BackendArticleSubscriber">
-                <tag name="shopware.event_subscriber"/>
-            </service>
-
-            <service id="mxc_dropship_integrator.cronjob.order_send"
-                     class="MxcDropshipIntegrator\Cronjobs\OrderSendCronJob">
-                <tag name="shopware.event_subscriber"/>
-            </service>
-
-            <service id="mxc_dropship_integrator.subscriber.frontend_detail"
-                     class="MxcDropshipIntegrator\Subscribers\FrontendDetailSubscriber">
-                <tag name="shopware.event_subscriber"/>
-            </service>
-
-            <service id="mxc_dropship_integrator.subscriber.checkout"
-                     class="MxcDropshipIntegrator\Subscribers\CheckoutSubscriber">
-                <tag name="shopware.event_subscriber"/>
-            </service>
-
             <service id="mxc_dropship_integrator.cronjob.releasedate_update"
                      class="MxcDropshipIntegrator\Cronjobs\ReleaseDateUpdateCronJob">
                 <tag name="shopware.event_subscriber"/>

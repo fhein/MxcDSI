@@ -4,7 +4,6 @@ namespace MxcDropshipIntegrator\Mapping\Import;
 
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Report\ArrayMap;
 use MxcCommons\Toolbox\Report\ArrayReport;
 use MxcCommons\Toolbox\Report\Mapper\SuccessiveReplacer;

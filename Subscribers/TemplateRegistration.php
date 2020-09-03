@@ -5,8 +5,6 @@ namespace MxcDropshipIntegrator\Subscribers;
 use Enlight\Event\SubscriberInterface;
 use Enlight_Event_EventArgs;
 use Enlight_Template_Manager;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
-use Shopware\Models\Article\Detail;
 
 class TemplateRegistration implements SubscriberInterface
 {

@@ -1,4 +1,8 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php
+
+/** @noinspection PhpUnhandledExceptionInspection */
+/** @noinspection PhpUnusedAliasInspection */
+
 
 namespace MxcDropshipIntegrator\Mapping\Shopware;
 

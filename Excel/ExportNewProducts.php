@@ -30,7 +30,6 @@ class ExportNewProducts extends AbstractProductExport
     protected function formatSheet(): void
     {
         parent::formatSheet();
-        $highest = $this->sheet->getHighestRowAndColumn();
         $bColumn = $this->sheet->getColumnDimension('B');
         $bColumn->setAutoSize(false);
         $bColumn->setWidth(15);

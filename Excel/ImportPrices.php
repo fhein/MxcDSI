@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php
+
+/** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipIntegrator\Excel;
 
@@ -8,7 +10,6 @@ use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcCommons\Defines\Constants;
 
@@ -46,7 +47,6 @@ class ImportPrices extends AbstractProductImport implements AugmentedObject
         $this->models = $this->modelManager->getRepository(Model::class)->getAllIndexed();
         /** @var Variant $variant */
 
-        $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
         foreach ($data as $record) {
             $variant = $variants[$record['icNumber']] ?? null;
             if (!$variant) continue;

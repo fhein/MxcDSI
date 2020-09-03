@@ -10,13 +10,4 @@
         <disableOnError>true</disableOnError>
     </cronjob>
 
-    <cronjob>
-        <name>Bestellung versenden</name>
-        <action>Shopware_CronJob_MxcDropshipOrderSend</action>
-        <active>true</active>
-        <interval>300</interval>
-        <disableOnError>false</disableOnError>
-    </cronjob>
-
-
 </cronjobs>

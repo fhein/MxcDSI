@@ -2,12 +2,8 @@
 
 namespace MxcDropshipIntegrator;
 
-use MxcDropshipIntegrator\Dropship\DropshipLogger;
-use MxcDropshipIntegrator\Models\DropshipLogEntry;
-use MxcDropshipIntegrator\Models\DropshipModule;
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;
 use MxcCommons\Toolbox\Shopware\MailTool;
-use MxcDropshipIntegrator\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelImport;
 use MxcDropshipIntegrator\Excel\ExcelImportFactory;
@@ -79,8 +75,6 @@ return [
             Option::class,
             Product::class,
             Variant::class,
-            DropshipLogEntry::class,
-            DropshipModule::class,
         ],
         'attributes' => [
             's_order_attributes'         => [
@@ -145,8 +139,6 @@ return [
             ImportPriceMapper::class,
             DocumentRenderer::class,
             MailTool::class,
-            DropshipManager::class,
-            DropshipLogger::class,
             WorkflowEngine::class,
             ArticleTool::class,
             ConfiguratorGroupRepository::class,
@@ -177,27 +169,6 @@ return [
             RegularExpressions::class,
             HtmlDocument::class,
         ],
-    ],
-    'class_config'   => [
-        AssociatedProductsMapper::class => 'AssociatedProductsMapper.config.php',
-        CategoryMapper::class           => 'CategoryMapper.config.php',
-        DescriptionMapper::class        => 'DescriptionMapper.config.php',
-        CommonNameMapper::class         => 'CommonNameMapper.config.php',
-        FlavorMapper::class             => 'FlavorMapper.config.php',
-        ManufacturerMapper::class       => 'ManufacturerMapper.config.php',
-        NameMapper::class               => 'NameMapper.config.php',
-        ProductMappings::class          => 'ProductMappings.config.phpx',
-        ProductNumberMapper::class      => 'ProductNumberMapper.config.php',
-        PropertyMapper::class           => 'PropertyMapper.config.php',
-        TypeMapper::class               => 'TypeMapper.config.php',
-        VariantNumberMapper::class      => 'VariantNumberMapper.config.php',
-        ProductSeoMapper::class         => 'ProductSeoMapper.config.php',
-        ShopwareCategoryMapper::class   => 'CategoryMapper.config.php',
-        SpellChecker::class             => 'SpellChecker.config.php',
-        PriceEngine::class              => 'PriceEngine.config.php',
-        MetaDataExtractor::class        => 'MetaDataExtractor.config.php',
-        DropshipManager::class          => 'DropshipManager.config.php',
-        WorkflowEngine::class           => 'WorkflowEngine.config.php',
     ],
     'excel'          => [
         'importFromApi' => [

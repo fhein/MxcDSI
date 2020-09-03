@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpUnusedAliasInspection */
+
 namespace MxcDropshipIntegrator\Models;
 
 use Doctrine\Common\Collections\ArrayCollection;

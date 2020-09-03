@@ -9,7 +9,6 @@ use MxcDropshipInnocigs\Models\Model;
 use MxcDropshipIntegrator\Models\Option;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use MxcCommons\Defines\Constants;

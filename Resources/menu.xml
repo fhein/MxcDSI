@@ -4,45 +4,31 @@
 
     <entries>
         <entry>
-            <name>InnoCigs Dropship</name>
-            <label lang="en">Innocigs Dropship</label>
-            <label lang="de">Innocigs Dropship</label>
-            <class>sprite-truck-box</class>
-            <parent identifiedBy="controller">Article</parent>
-            <children>
-                <entry>
-                    <name>MxcDsiProduct</name>
-                    <label lang="en">Products</label>
-                    <label lang="de">Produkte</label>
-                    <controller>MxcDsiProduct</controller>
-                    <action>index</action>
-                    <class>sprite-documents</class>
-                </entry>
-                <entry>
-                    <name>MxcDsiGroup</name>
-                    <label lang="en">Groups</label>
-                    <label lang="de">Gruppen</label>
-                    <controller>MxcDsiGroup</controller>
-                    <action>index</action>
-                    <class>sprite-category-item</class>
-                </entry>
-                <entry>
-                    <name>MxcDsiImport</name>
-                    <label lang="en">Import</label>
-                    <label lang="de">Import</label>
-                    <controller>MxcDsiImport</controller>
-                    <action>index</action>
-                    <class>sprite-document-importFromApi</class>
-                </entry>
-                <entry>
-                    <name>MxcDsiDropshipLog</name>
-                    <label lang="en">Dropship Log</label>
-                    <label lang="de">Dropship Log</label>
-                    <controller>MxcDsiDropshipLog</controller>
-                    <action>index</action>
-                    <class>sprite-document-importFromApi</class>
-                </entry>
-            </children>
+            <name>MxcDsiProduct</name>
+            <label lang="en">Products</label>
+            <label lang="de">Produkte</label>
+            <controller>MxcDsiProduct</controller>
+            <action>index</action>
+            <class>sprite-documents</class>
+            <parent identifiedBy="label">maxence Dropship</parent>
+        </entry>
+        <entry>
+            <name>MxcDsiGroup</name>
+            <label lang="en">Groups</label>
+            <label lang="de">Gruppen</label>
+            <controller>MxcDsiGroup</controller>
+            <action>index</action>
+            <class>sprite-category-item</class>
+            <parent identifiedBy="label">maxence Dropship</parent>
+        </entry>
+        <entry>
+            <name>MxcDsiImport</name>
+            <label lang="en">Import</label>
+            <label lang="de">Import</label>
+            <controller>MxcDsiImport</controller>
+            <action>index</action>
+            <class>sprite-document-import</class>
+            <parent identifiedBy="label">maxence Dropship</parent>
         </entry>
     </entries>
 </menu>

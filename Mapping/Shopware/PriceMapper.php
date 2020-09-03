@@ -7,7 +7,6 @@ use Doctrine\ORM\ORMException;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcCommons\Toolbox\Shopware\UnitTool;
 use Shopware\Components\Model\ModelManager;

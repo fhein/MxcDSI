@@ -12,7 +12,6 @@ use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Throwable;
 use DateTime;
-use DateTimeInterface;
 
 class ReleaseDateUpdateCronJob implements SubscriberInterface
 {

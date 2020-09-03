@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php
+/** @noinspection PhpUnusedAliasInspection */
+/** @noinspection PhpUnhandledExceptionInspection */
 
 
 namespace MxcDropshipIntegrator\Models;

@@ -1,8 +1,8 @@
-<?php /** @noinspection PhpUnhandledExceptionInspection */
+<?php
 
+/** @noinspection PhpUnhandledExceptionInspection */
 
 namespace MxcDropshipIntegrator\Mapping\Shopware;
-
 
 use Doctrine\Common\Collections\ArrayCollection;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
@@ -10,7 +10,6 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Shopware\MediaTool;
 use Shopware\Models\Article\Article;
 use MxcCommons\Defines\Constants;

@@ -9,7 +9,6 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Product;
-use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Html\HtmlDocument;
 use MxcCommons\Defines\Constants;
 
@@ -254,6 +253,7 @@ class MetaDataExtractor implements AugmentedObject
 
     protected function extractStyle(array $topics)
     {
+        // @todo: This is a non working draft
         $source = $topics['tables'][1] ?? $topics['tables'][0];
         if ($source = null) return null;
 
@@ -266,7 +266,5 @@ class MetaDataExtractor implements AugmentedObject
                 $this->log->debug('Decimal power: '. $power);
             StringTool::tofloat($power);
         }
-
-
     }
 }
