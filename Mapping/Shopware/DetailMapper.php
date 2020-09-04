@@ -16,6 +16,7 @@ use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Detail;
 use MxcDropshipInnocigs\Companion\DropshippersCompanion;
+use Shopware\Components\Api\Resource\Article as ArticleResource;
 
 class DetailMapper implements AugmentedObject
 {
@@ -47,10 +48,13 @@ class DetailMapper implements AugmentedObject
 
     protected $articleRegistry;
 
+    protected $articleResource;
+
     protected $stockInfo;
 
     public function __construct(
         ArticleTool $articleTool,
+        ArticleResource $articleResource,
         ApiClient $apiClient,
         DropshippersCompanion $companion,
         ArticleRegistry $articleRegistry,
@@ -229,7 +233,9 @@ class DetailMapper implements AugmentedObject
         /** @var Article $article */
         $article = $product->getArticle();
         if (! $article) return;
-        ArticleTool::deleteArticle($article);
+        $this->articleResource->delete($article->getId());
+        // ArticleTool is much slower allthough it is just an SQL query
+        // ArticleTool::deleteArticle($article);
         $product->setArticle(null);
         $product->setActive(false);
         $product->setLinked(false);

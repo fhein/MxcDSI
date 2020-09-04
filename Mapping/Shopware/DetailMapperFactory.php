@@ -7,6 +7,7 @@ use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcDropship\Dropship\DropshipManager;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 use MxcDropship\MxcDropship;
+use Shopware\Components\Api\Resource\Article;
 
 
 class DetailMapperFactory implements FactoryInterface
@@ -22,9 +23,12 @@ class DetailMapperFactory implements FactoryInterface
         $priceMapper = $container->get(PriceMapper::class);
         $articleTool = $container->get(ArticleTool::class);
         $optionMapper = $container->get(OptionMapper::class);
+        $articleResource = new Article();
+        $articleResource->setManager($container->get('models'));
 
         return new DetailMapper(
             $articleTool,
+            $articleResource,
             $apiClient,
             $companion,
             $articleRegistry,

@@ -897,6 +897,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $pool = [];
                 foreach ($related as $relatedArticle) {
                     $product = $repo->getProduct($relatedArticle);
+                    if ($product === null) continue;
                     $pool[] = $product->getIcNumber();
                 }
                 if (! empty($pool)) {
@@ -907,6 +908,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $pool = [];
                 foreach ($similar as $similarArticle) {
                     $product = $repo->getProduct($similarArticle);
+                    if ($product === null) continue;
                     $pool[] = $product->getIcNumber();
                 }
                 if (! empty($pool)) {
@@ -1411,10 +1413,86 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function findDeletedProducts()
+    {
+        $services = MxcDropshipIntegrator::getServices();
+        $log = $services->get('logger');
+        $modelManager = $services->get('models');
+        /** @var ImportMapper $importMapper */
+        $importMapper = $services->get(ImportMapper::class);
+        $products = $modelManager->getRepository(Product::class)->findAll();
+        $models = $modelManager->getRepository(Model::class)->getAllIndexed();
+        $deletedProducts = [];
+        /** @var Product $product */
+        foreach ($products as $product) {
+
+            $variants = $product->getVariants();
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                if (isset($models[$variant->getIcNumber()])) {
+                    continue 2;
+                }
+            }
+            $deletedProducts[$product->getName()] = $product;
+        }
+        $log->debug('Deleted products');
+        $log->debug(var_export(array_keys($deletedProducts), true));
+        foreach ($deletedProducts as $product) {
+            $importMapper->removeProduct($product);
+        }
+        $log->debug('Deleted products removed.');
+        $modelManager->flush();
+    }
+
+    public function findDeletedArticles()
+    {
+        $services = MxcDropshipIntegrator::getServices();
+        $log = $services->get('logger');
+        $modelManager = $services->get('models');
+        $articles = $modelManager->getRepository(Article::class)->findAll();
+        $models = $modelManager->getRepository(Model::class)->getAllIndexed();
+        $deletedArticles = [];
+        /** @var Article $article */
+        foreach ($articles as $article) {
+            $details = $article->getDetails();
+            /** @var Detail $detail */
+            foreach ($details as $detail) {
+                if (isset($models[$detail->getNumber()])) {
+                    continue 2;
+                }
+            }
+            $name = $article->getName();
+            if (strpos($name, 'Black Note') === false && strpos($name, 'Surmount') === false) {
+                $deletedArticles[$article->getName()] = $article;
+            }
+        }
+        $log->debug('Deleted articles');
+        $log->debug(var_export(array_keys($deletedArticles), true));
+        $ar = new ArticleResource();
+        $ar->setManager($modelManager);
+        foreach ($deletedArticles as $article) {
+            $ar->delete($article->getId());
+        }
+        $log->debug("Deleted articles removed.");
+    }
+
+    public function findArticlesWithoutDetails()
+    {
+        $services = MxcDropshipIntegrator::getServices();
+        $db = $services->get('db');
+        $log = $services->get('logger');
+        $sql = 'SELECT * FROM s_articles a LEFT JOIN s_articles_details ad ON ad.articleID = a.id WHERE ad.id IS NULL';
+        $articles = $db->fetchAll($sql);
+        $log->debug('Articles without details:');
+        foreach ($articles as $article) {
+            $this->log->debug($article['name']);
+        }
+    }
+
     public function dev3Action()
     {
         try {
-            $this->adjustFlavor();
+            // $this->findDeletedArticles();
 
             $services = MxcDropship::getServices();
             /** @var DropshipManager $dropshipManager */

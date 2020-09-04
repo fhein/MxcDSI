@@ -25,6 +25,7 @@ use MxcDropshipIntegrator\Models\VariantRepository;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcCommons\Defines\Constants;
+use Shopware\Components\Api\Resource\Article as ArticleResource;
 
 class ImportMapper implements ImportMapperInterface, AugmentedObject
 {
@@ -324,19 +325,15 @@ class ImportMapper implements ImportMapperInterface, AugmentedObject
     protected function removeProducts() {
         /** @noinspection PhpUndefinedMethodInspection */
         $products = $this->getProductRepository()->getDeletedProducts();
-        $variantRepository = $this->getVariantRepository();
+        $ar = new ArticleResource();
+        $ar->setManager($this->modelManager);
         /** @var Product $product */
         foreach ($products as $product) {
             $article = $product->getArticle();
-            if ($article !== null) ArticleTool::deleteArticle($article);
-            $variants = $product->getVariants();
-
-            foreach ($variants as $variant) {
-                $product->removeVariant($variant);
-                $variantRepository->removeOptions($variant);
-                $this->modelManager->remove($variant);
+            if ($article !== null) {
+                $ar->delete($article->getId());
             }
-            $this->modelManager->remove($product);
+            $this->removeProduct($product);
         }
         $this->modelManager->flush();
     }
@@ -482,5 +479,16 @@ class ImportMapper implements ImportMapperInterface, AugmentedObject
     protected function getModelRepository()
     {
         return $this->modelRepository ?? $this->modelRepository = $this->modelManager->getRepository(Model::class);
+    }
+
+    public function removeProduct(Product $product)
+    {
+        $variants = $product->getVariants();
+        foreach ($variants as $variant) {
+            $product->removeVariant($variant);
+            $this->getVariantRepository()->removeOptions($variant);
+            $this->modelManager->remove($variant);
+        }
+        $this->modelManager->remove($product);
     }
 }
