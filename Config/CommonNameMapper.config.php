@@ -75,6 +75,9 @@ return [
             'VLADS VG'        => 2,
             'The Naughty One' => 2,
         ],
+        'Vaping Gorilla' => [
+            'Monkeys' => 2,
+        ],
         'I VG'           => [
             'Custards' => 2,
             'Deserts'  => 2,

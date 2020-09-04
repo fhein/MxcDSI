@@ -114,7 +114,7 @@ return [
         '~Akkuträger~'              => TypeMapper::TYPE_BOX_MOD_CELL,
         '~Akku~'                    => TypeMapper::TYPE_BOX_MOD,
         '~Squonker Box~'            => TypeMapper::TYPE_SQUONKER_BOX,
-        '~Squonker Flasche~'        => TypeMapper::TYPE_SQUONKER_BOTTLE,
+        '~Squonk(er)? Flasche~'     => TypeMapper::TYPE_SQUONKER_BOTTLE,
         '~Liquid Flasche~'          => TypeMapper::TYPE_SQUONKER_BOTTLE,
         '~Liquidflasche~'           => TypeMapper::TYPE_SQUONKER_BOTTLE,
         '~Leerflasche~'             => TypeMapper::TYPE_EMPTY_BOTTLE,
@@ -178,5 +178,7 @@ return [
         '~Batteriekappe~'           => TypeMapper::TYPE_BATTERY_CAP,
         '~Zeus X2.*Micromesh~'      => TypeMapper::TYPE_COIL,
         '~Idian X - 510er Adapter~' => TypeMapper::TYPE_SPARE_PARTS,
+        '~Wismec - RBA Set~'        => TypeMapper::TYPE_COIL,
+        '~OXVA.*Airflow Ring~'      => TypeMapper::TYPE_HEAD,
     ],
 ];

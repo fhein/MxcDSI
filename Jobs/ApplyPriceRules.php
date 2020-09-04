@@ -35,6 +35,7 @@ class ApplyPriceRules
             self::logPriceChanges($variant, $retailPrices, $correctedPrices);
         }
         $modelManager->flush();
+        self::$log->debug('Price rules successfulle applied.');
     }
 
     protected static function logPriceChanges(Variant $variant, array $oldPrices, array $newPrices)

@@ -84,6 +84,33 @@ return [
             . '</tr>'
             .'</tbody>'
             . '</table>',
+        'Detonation Drip' =>
+            '<p><strong>Aroma von ##supplier##</strong> zur Herstellung von E-Liquid. <strong>Geschmack: ##flavor##</strong>.</p>'
+            . '<p>Geben Sie das Aroma entsprechend der Dosierempfehlung '
+            . 'des Herstellers einer nikotinfreien oder nikotinhaltigen Basis zu und mischen Sie das Ergebnis gut durch. Das fertige '
+            . 'Liquid sollte nun vor der Verwendung noch einige Tage reifen, damit sich die Aromastoffe entfalten können. In der Regel werden 1 - 5 Tage Reifezeit empfohlen.</p>'
+            . '<p>Eine 50 ml Leerflasche ist bei den Aromen von Detonation Drip im Lieferumgfang enthalten.</p>'
+            . '<p><strong>Aromen sind hochkonzentriert und dürfen keinesfalls pur gedampft werden.</strong></p>'
+            . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
+            . '<tbody>'
+            . '<tr>'
+            . '<td>Produkt</td>'
+            . '<td>##content## ml Aroma zur Herstellung von E-Liquids </td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Geschmack </td>'
+            . '<td>##flavor##</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Dosierung</td>'
+            . '<td>##dosage## %</td>'
+            . '</tr>'
+            . '<tr>'
+            . '<td>Inhaltsstoffe</td>'
+            . '<td>Propylenglykol, Aromastoffe</td>'
+            . '</tr>'
+            .'</tbody>'
+            . '</table>',
         ],
 
     'descriptionShakeVapeDefault' =>

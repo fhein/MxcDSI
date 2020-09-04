@@ -44,7 +44,8 @@ return array (
     12 => 'Pfefferminzbonbon',
     13 => 'Toffee',
     14 => 'rote Fruchtgummis',
-    15 => 'süßes Kaugummi',
+    15 => 'Fruchtgummi',
+    16 => 'süßes Kaugummi',
   ),
   'Cerealien' => 
   array (
@@ -160,6 +161,7 @@ return array (
     34 => 'Zimtschnecke',
     35 => 'Zitronenkuchen',
     36 => 'Zitronentorte',
+    37 => 'Nussecke',
   ),
   'Getränke' => 
   array (
@@ -197,6 +199,7 @@ return array (
     31 => 'Zitronentee',
     32 => 'bittere Limonade',
     33 => 'karibischer Rum',
+    34 => 'Prosecco',
   ),
   'Gewürze' => 
   array (
@@ -261,6 +264,7 @@ return array (
     8 => 'Pistazie',
     9 => 'Walnuss',
     10 => 'geröstete Nüsse',
+    11 => 'Nuss-Mix'
   ),
   'Pflanzen' => 
   array (
@@ -279,16 +283,7 @@ return array (
     12 => 'Rhabarber',
     13 => 'Waldmeister',
   ),
-  'Sonstige' => 
-  array (
-    0 => 'Beere',
-    1 => 'Holznote',
-    2 => 'Lakritze',
-    3 => 'Pfirisch',
-    4 => 'Süßigkeiten',
-    5 => 'Weintraube',
-  ),
-  'Süßigkeiten' => 
+  'Süßigkeiten' =>
   array (
     0 => 'Ahornsirup',
     1 => 'Buttercreme',

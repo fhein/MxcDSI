@@ -1232,7 +1232,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $file = basename($this->emailTemplatesFile);
             $this->view->assign([
                 'success' => true,
-                'message' => 'Email templates successfully saved to.' . $file . '.'
+                'message' => 'Email templates successfully saved to.' . $file . '.',
             ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1256,7 +1256,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $this->view->assign([
                 'success' => true,
-                'message' => 'Email templates successfully restored from ' . $fn . '.'
+                'message' => 'Email templates successfully restored from ' . $fn . '.',
             ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1372,17 +1372,61 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+
+    // Delete all products which are accepted and not active
+    protected function cleanupProducts()
+    {
+        $services = MxcDropshipIntegrator::getServices();
+        $modelManager = $services->get('models');
+        $products = $modelManager->getRepository(Product::class)->findBy(['active' => 0, 'accepted' => 1]);
+        $variantRepository = $modelManager->getRepository(Variant::class);
+        foreach ($products as $product) {
+            $variants = $product->getVariants();
+            foreach ($variants as $variant) {
+                $product->removeVariant($variant);
+                $variantRepository->removeOptions($variant);
+                $modelManager->remove($variant);
+            }
+            $modelManager->remove($product);
+        }
+        $modelManager->flush();
+    }
+
+    // set flavor on all flavored products
+    // this is a workaround because the flavor does not get set at detail creation erronously
+    protected function adjustFlavor() {
+        $services = MxcDropshipIntegrator::getServices();
+        $modelManager = $services->get('models');
+        $products = $modelManager->getRepository(Product::class)->findAll();
+        /** @var Product $product */
+        foreach ($products as $product) {
+            if (empty($product->getFlavor())) continue;
+            $variants = $product->getVariants();
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                $detail = $variant->getDetail();
+                if ($detail === null) continue;
+                ArticleTool::setDetailAttribute($detail, 'mxcbc_flavor', $product->getFlavor());
+            }
+        }
+    }
+
     public function dev3Action()
     {
         try {
+            $this->adjustFlavor();
 
             $services = MxcDropship::getServices();
             /** @var DropshipManager $dropshipManager */
-            $dropshipManager = $services->get(DropshipManager::class);
-            /** ResponseCollection $results */
-            $results = $dropshipManager->updateStock();
-            $log = $services->get('logger');
-            $log->debug(var_export($results->toArray(), true));
+
+
+
+
+//            $dropshipManager = $services->get(DropshipManager::class);
+//            /** ResponseCollection $results */
+//            $results = $dropshipManager->updateStock();
+//            $log = $services->get('logger');
+//            $log->debug(var_export($results->toArray(), true));
 
 
 
