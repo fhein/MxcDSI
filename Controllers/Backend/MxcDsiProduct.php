@@ -1090,7 +1090,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 foreach ($variants as $variant) {
                     $correctedPrices = $priceEngine->getCorrectedRetailPrices($variant);
                     $priceEngine->setRetailPrices($variant, $correctedPrices);
-                    $priceMapper->setRetailPrices($variant);
+                    $priceMapper->setPrices($variant);
                 }
             }
             $this->getManager()->flush();
@@ -1493,7 +1493,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             // $this->findDeletedArticles();
+            /** @var \MxcDropship\Cronjobs\DeleteLogsCronJob $job */
 
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var Doctrine\DBAL\Connection $db */
+            $db = $services->get('dbal_connection');
+            $db = 1;
             $services = MxcDropship::getServices();
             /** @var DropshipManager $dropshipManager */
 

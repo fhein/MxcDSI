@@ -183,7 +183,7 @@ class DetailMapper implements AugmentedObject
         $detail->setLastStock(1);
 
         // set next two properties only on detail creation
-        $this->priceMapper->setRetailPrices($variant);
+        $this->priceMapper->setPrices($variant);
 
         // Note: shopware options were added non persistently to variants when configurator set was created
         $detail->setConfiguratorOptions(new ArrayCollection($variant->getShopwareOptions()));

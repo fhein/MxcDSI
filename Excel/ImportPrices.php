@@ -82,6 +82,6 @@ class ImportPrices extends AbstractProductImport implements AugmentedObject
         // $this->log->debug(var_export($prices, true));
         $prices = implode(Constants::DELIMITER_L2, $prices);
         $variant->setRetailPrices($prices);
-        $this->priceMapper->setRetailPrices($variant);
+        $this->priceMapper->setPrices($variant);
     }
 }

@@ -31,7 +31,7 @@ class ApplyPriceRules
             $retailPrices = $priceEngine->getRetailPrices($variant);
             $correctedPrices = $priceEngine->getCorrectedRetailPrices($variant);
             $priceEngine->setRetailPrices($variant, $correctedPrices);
-            $priceMapper->setRetailPrices($variant);
+            $priceMapper->setPrices($variant);
             self::logPriceChanges($variant, $retailPrices, $correctedPrices);
         }
         $modelManager->flush();

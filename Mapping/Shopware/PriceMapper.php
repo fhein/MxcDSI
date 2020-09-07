@@ -92,15 +92,17 @@ class PriceMapper
     }
 
     /**
-     * Set the retail price of Shopware detail associated to the given InnoCigs variant
+     * Set the retail and purchase prices of Shopware detail associated to the given InnoCigs variant
      *
      * @param Variant $variant
      */
-    public function setRetailPrices(Variant $variant)
+    public function setPrices(Variant $variant)
     {
         $detail = $variant->getDetail();
         if (!$detail) return;
         if (!$variant->getRetailPrices()) return;
+
+        $detail->setPurchasePrice($variant->getPurchasePrice());
 
         $vatFactor = 1 + $detail->getArticle()->getTax()->getTax() / 100;
 
