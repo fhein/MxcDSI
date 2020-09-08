@@ -1229,7 +1229,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $services = MxcDropshipIntegrator::getServices();
             /** @var MailManager $mailManager */
             $mailManager = $services->get(MailManager::class);
-            $templates = $mailManager->getMailTemplates(true);
+            $templates = $mailManager->getStatusMailTemplates(true);
             Config::toFile($this->emailTemplatesFile, $templates);
             $file = basename($this->emailTemplatesFile);
             $this->view->assign([

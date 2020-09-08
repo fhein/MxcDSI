@@ -3,28 +3,16 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
         <services>
-            <service id="mxc_dropship_integrator.subscriber.main_detail_selector"
+            <service id="mxcbc_dropship_integrator.subscriber.main_detail_selector"
                      class="MxcDropshipIntegrator\Subscribers\MainDetailSelector">
                 <tag name="shopware.event_subscriber"/>
             </service>
 
-            <service id="mxc_dropship_integrator.cronjob.releasedate_update"
-                     class="MxcDropshipIntegrator\Cronjobs\ReleaseDateUpdateCronJob">
-                <tag name="shopware.event_subscriber"/>
-            </service>
-
-            <service id="mxc_dropship_integrator.subscriber.templates"
+            <service id="mxcbc_dropship_integrator.subscriber.templates"
                      class="MxcDropshipIntegrator\Subscribers\TemplateRegistration">
                 <argument>%mxc_dropship_integrator.plugin_dir%</argument>
                 <argument type="service" id="template"/>
                 <tag name="shopware.event_subscriber"/>
-            </service>
-
-            <service id="mxc_dropship_integrator.list_product_service"
-                     class="MxcDropshipIntegrator\Shopware\Bundle\StoreFrontBundle\ListProductServiceDecorator"
-                     decorates="shopware_storefront.list_product_service"
-                     public="false">
-                <argument type="service" id="mxc_dropship_integrator.list_product_service.inner"/>
             </service>
     </services>
 </container>
