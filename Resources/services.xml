@@ -3,11 +3,6 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
         <services>
-            <service id="mxcbc_dropship_integrator.subscriber.main_detail_selector"
-                     class="MxcDropshipIntegrator\Subscribers\MainDetailSelector">
-                <tag name="shopware.event_subscriber"/>
-            </service>
-
             <service id="mxcbc_dropship_integrator.subscriber.templates"
                      class="MxcDropshipIntegrator\Subscribers\TemplateRegistration">
                 <argument>%mxc_dropship_integrator.plugin_dir%</argument>

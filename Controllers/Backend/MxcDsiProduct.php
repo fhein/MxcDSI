@@ -1493,15 +1493,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             // $this->findDeletedArticles();
-            /** @var \MxcDropship\Cronjobs\DeleteLogsCronJob $job */
-
-            $services = MxcDropshipIntegrator::getServices();
-            /** @var Doctrine\DBAL\Connection $db */
-            $db = $services->get('dbal_connection');
-            $db = 1;
-            $services = MxcDropship::getServices();
-            /** @var DropshipManager $dropshipManager */
-
+            /** @var \MxcDropshipInnocigs\Jobs\UpdatePrices $pricer */
+            $pricer = \MxcDropshipInnocigs\MxcDropshipInnocigs::getServices()->get(\MxcDropshipInnocigs\Jobs\UpdatePrices::class);
+            $pricer->updatePrices();
 
 
 
