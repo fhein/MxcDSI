@@ -2,7 +2,7 @@
 
 namespace MxcDropshipIntegrator\Mapping\Import;
 
-use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
 
 class VariantNumberMapper extends BaseImportMapper implements VariantMapperInterface

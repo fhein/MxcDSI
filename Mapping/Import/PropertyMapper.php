@@ -7,7 +7,7 @@ use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Mapping\Check\RegularExpressions;
-use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use RuntimeException;

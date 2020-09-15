@@ -12,7 +12,7 @@ class VariantRepository extends BaseEntityRepository
         'getDetail'                 => 'SELECT d FROM Shopware\Models\Article\Detail d WHERE d.number = :ordernumber',
         'removeOrphaned'            => 'SELECT v FROM MxcDropshipIntegrator\Models\Variant v WHERE v.product IS NULL',
         'getVariantsWithoutModel'   => 'SELECT v FROM MxcDropshipIntegrator\Models\Variant v '
-                                        . 'LEFT JOIN MxcDropshipInnocigs\Models\Model m WITH m.model = v.icNumber '
+                                        . 'LEFT JOIN MxcDropshipIntegrator\Models\Model m WITH m.model = v.icNumber '
                                         . 'WHERE m.id IS NULL',
 
         // DQL does not support parameters in SELECT

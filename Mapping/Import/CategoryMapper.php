@@ -7,7 +7,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Models\Category;
-use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Report\ArrayReport;

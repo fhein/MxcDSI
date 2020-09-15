@@ -8,14 +8,13 @@ use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
-use MxcDropshipIntegrator\Dropship\ImportMapperInterface;
 use MxcDropshipIntegrator\Mapping\Import\CategoryMapper;
 use MxcDropshipIntegrator\Mapping\Import\PropertyMapper;
 use MxcDropshipIntegrator\Mapping\Shopware\DetailMapper;
 use MxcDropshipIntegrator\Models\Group;
 use MxcDropshipIntegrator\Models\GroupRepository;
-use MxcDropshipInnocigs\Models\Model;
-use MxcDropshipInnocigs\Models\ModelRepository;
+use MxcDropshipIntegrator\Models\Model;
+use MxcDropshipIntegrator\Models\ModelRepository;
 use MxcDropshipIntegrator\Models\Option;
 use MxcDropshipIntegrator\Models\OptionRepository;
 use MxcDropshipIntegrator\Models\Product;
@@ -27,7 +26,7 @@ use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcCommons\Defines\Constants;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 
-class ImportMapper implements ImportMapperInterface, AugmentedObject
+class ImportMapper implements AugmentedObject
 {
     // augmentations
     use LoggerAwareTrait;

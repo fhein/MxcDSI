@@ -8,7 +8,7 @@ use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
-use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcCommons\Defines\Constants;

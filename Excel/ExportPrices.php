@@ -7,7 +7,7 @@ use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
-use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipIntegrator\Models\Option;
 use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;

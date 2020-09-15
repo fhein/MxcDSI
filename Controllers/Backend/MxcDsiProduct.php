@@ -9,7 +9,7 @@ use MxcCommons\Toolbox\Config\Config;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\Toolbox\Shopware\MailTool;
 use MxcCommons\Toolbox\Shopware\SupplierTool;
-use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipInnocigs\Article\ArticleRegistry;
 use MxcDropship\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Excel\ExcelExport;
@@ -46,8 +46,7 @@ use Shopware\Models\Customer\Customer;
 use Shopware\Models\Order\Order;
 use MxcCommons\Plugin\Mail\MailManager;
 use MxcDropshipInnocigs\Exception\ApiException;
-use MxcDropshipIntegrator\Dropship\ImportClientInterface;
-use MxcDropshipIntegrator\Dropship\ImportMapperInterface;
+use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropship\MxcDropship;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
@@ -75,11 +74,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $params = $this->request->getParams();
             $sequential = $params['sequential'] == 1;
 
-            /** @var DropshipManager $dropshipManager */
-            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-            /** @var ImportClientInterface $client */
-            $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
-            /** @var ImportMapperInterface $mapper */
+            /** @var ImportClient $client */
+            $client = $services->get(ImportClient::class);
+            /** @var ImportMapper $mapper */
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromApi(true, $sequential));
             $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
@@ -761,10 +758,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $xml = '<?xml version="1.0" encoding="utf-8"?><INNOCIGS_API_RESPONSE><PRODUCTS></PRODUCTS></INNOCIGS_API_RESPONSE>';
             $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $dropshipManager */
-            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-            /** @var ImportClientInterface $client */
-            $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
+            /** @var ImportClient $client */
+            $client = $services->get(ImportClient::class);
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromXml($xml, true, false));
             $this->view->assign([ 'success' => true, 'message' => 'Empty list successfully imported.' ]);
@@ -1321,7 +1316,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                         'mxcbc_dsi_ic_productnumber' => $attr['dc_ic_ordernumber'],
                         'mxcbc_dsi_ic_instock' => $attr['dc_ic_instock'],
                         'mxcbc_dsi_ic_active' => $attr['dc_ic_active'],
-                        'mxcbc_dsi_ic_delivery' => DropshipManager::DELIVERY_DROPSHIP_ONLY,
+                        'mxcbc_dsi_mode' => DropshipManager::MODE_DROPSHIP_ONLY,
                         'mxcbc_dsi_ic_registered' => true,
                         'mxcbc_dsi_ic_status' => 0,
                     ];
@@ -1489,13 +1484,44 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function findUnavailableMainDetails()
+    {
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+        $unavailableMainDetails = Shopware()->Db()->fetchAll('
+            SELECT * FROM s_articles_details d 
+            LEFT JOIN s_articles_attributes aa ON aa.articledetailsID = d.id
+            WHERE d.kind = 1 AND aa.mxcbc_dsi_ic_registered = 1 AND aa.mxcbc_dsi_ic_instock = 0; 
+        ');
+        foreach ($unavailableMainDetails as $detail) {
+            $variants = Shopware()->Db()->fetchall('
+            SELECT * FROM s_articles_details d 
+            LEFT JOIN s_articles_attributes aa ON aa.articledetailsID = d.id
+            WHERE d.kind = 2 AND d.articleID = ? 
+            ', [$detail['articleID']]
+            );
+            if (empty($variants)) continue;
+            $log->debug('Unavailable main detail: '. $detail['mxcbc_dsi_ic_productname']);
+        }
+    }
+
     public function dev3Action()
     {
         try {
+
+
             // $this->findDeletedArticles();
             /** @var \MxcDropshipInnocigs\Jobs\UpdatePrices $pricer */
-            $updateStock = \MxcDropshipInnocigs\MxcDropshipInnocigs::getServices()->get(\MxcDropshipInnocigs\Jobs\UpdateStock::class);
-            $updateStock->run();
+
+
+//            $configReader = Shopware()->Container()->get('shopware.plugin.cached_config_reader');
+//            $test = new \MxcVapee\Subscribers\FrontendDetailSubscriber('MxcVapee', $configReader);
+//            $test->setDb(Shopware()->Db());
+//            $test->setDSM(MxcDropship::getServices()->get(DropshipManager::class));
+//            $test->isMainDetailAvailableDropship(607);
+//            $test->getDetailDataDropship(607);
+
+
+
 
 //            $dropshipManager = $services->get(DropshipManager::class);
 //            /** ResponseCollection $results */
@@ -1836,10 +1862,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     protected function testImportFromFile(string $xmlFile, bool $recreateSchema): void
     {
         $services = MxcDropshipIntegrator::getServices();
-        /** @var DropshipManager $dropshipManager */
-        $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-        /** @var ImportClientInterface $client */
-        $client = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ImportClient');
+        /** @var ImportClient $client */
+        $client = $services->get(ImportClient::class);
         $mapper = $services->get(ImportMapper::class);
 
         // note: our models will be automatically deleted via param recreateSchema = true

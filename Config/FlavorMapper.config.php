@@ -26,6 +26,7 @@ return array (
     20 => 'schwarze Himbeere',
     21 => 'schwarze Johannisbeere',
     22 => 'süße Beeren',
+    23 => 'Beere',
   ),
   'Bonbons & Kaugummi' => 
   array (
@@ -225,6 +226,7 @@ return array (
     19 => 'Zucker',
     20 => 'brauner Zucker',
     21 => 'schwarzer Trüffel',
+    22 => 'Holznote'
   ),
   'Melonen' => 
   array (
@@ -283,16 +285,7 @@ return array (
     12 => 'Rhabarber',
     13 => 'Waldmeister',
   ),
-  'Sonstige' => 
-  array (
-    0 => 'Beere',
-    1 => 'Holznote',
-    2 => 'Pfirisch',
-    3 => 'Süßigkeiten',
-    4 => 'Weintraube',
-    5 => 'Wssermelone',
-  ),
-  'Süßigkeiten' => 
+  'Süßigkeiten' =>
   array (
     0 => 'Ahornsirup',
     1 => 'Buttercreme',
@@ -330,6 +323,7 @@ return array (
     33 => 'karamellisierte Früchte',
     34 => 'saures Weingummi',
     35 => 'weiße Schokolade',
+    36 => 'Süßigkeiten',
   ),
   'Tabak' => 
   array (
@@ -370,6 +364,7 @@ return array (
     3 => 'helle Traube',
     4 => 'rote Traube',
     5 => 'schwarze Traube',
+    6 => 'Weintraube',
   ),
   'Zitrusfrüchte' => 
   array (

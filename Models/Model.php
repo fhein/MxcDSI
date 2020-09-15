@@ -1,21 +1,24 @@
 <?php
 
-/** @noinspection PhpUnusedAliasInspection */
-
 namespace MxcDropshipIntegrator\Models;
 
 use Doctrine\ORM\Mapping as ORM;
+use MxcCommons\Toolbox\Models\PrivatePropertyAccessTrait;
+use MxcCommons\Toolbox\Models\PrimaryKeyTrait;
+use MxcCommons\Toolbox\Models\TrackCreationAndUpdateTrait;
 use Shopware\Components\Model\ModelEntity;
 
 /**
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
- * @ORM\Table(name="s_mxcbc_dsi_model")
+ * @ORM\Table(name="s_mxcbc_dsi_innocigs_model")
  * @ORM\Entity(repositoryClass="ModelRepository")
  */
 class Model extends ModelEntity
 {
-    use BaseModelTrait;
+    use PrimaryKeyTrait;
+    use TrackCreationAndUpdateTrait;
+    use PrivatePropertyAccessTrait;
 
     /**
      * @var string

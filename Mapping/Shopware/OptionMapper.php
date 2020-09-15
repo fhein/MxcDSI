@@ -76,8 +76,8 @@ class OptionMapper implements AugmentedObject
                 $optionName = array_keys($options)[0];
                 if ($optionName === '1er Packung') continue;
             }
-            //@todo: only variables can be passed by reference, param 1 is wrong
-            array_multisort(array_keys($options), SORT_NATURAL, $options);
+
+            ksort($options, SORT_NATURAL);
 
             // for an unknown reason it is necessary to recreate the group and option lookup table
             // allthough it is not invalid. Otherwise doctrine will duplicate group and option entities.

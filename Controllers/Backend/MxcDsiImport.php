@@ -1,7 +1,7 @@
 <?php
 
 use MxcCommons\Plugin\Controller\BackendApplicationController;
-use MxcDropshipInnocigs\Models\Model;
+use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
 class Shopware_Controllers_Backend_MxcDsiImport extends BackendApplicationController
