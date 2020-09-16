@@ -48,6 +48,7 @@ use MxcCommons\Plugin\Mail\MailManager;
 use MxcDropshipInnocigs\Exception\ApiException;
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropship\MxcDropship;
+use MxcDropship\Exception\DropshipException;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -644,9 +645,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             /** @var DropshipManager $dropshipManager */
             $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-            $dropshipManager->updateStock();
+            $result = $dropshipManager->updateStock()[0];
 
-            $this->view->assign([ 'success' => true, 'message' => 'Successfully updated stock info from InnoCigs.' ]);
+            $this->view->assign([
+                'success' => $result['code'] == DropshipManager::NO_ERROR,
+                'message' => $result['message']
+            ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1297,9 +1301,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $details = $detailRepository->findAll();
 
             $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $registry */
-            $registry = MxcDropship::getServices()->get(DropshipManager::class);
-            $registry = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ArticleRegistry');
+            /** @var DropshipManager $dropshipManager */
+            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
+            $supplierId = $dropshipManager->getSupplierIdByName('InnoCigs');
+            $dropshipManager = $dropshipManager->getService($supplierId, 'ArticleRegistry');
             /** @var ArticleRegistry $registry */
             /** @var Detail $detail */
             foreach ($details as $detail) {
@@ -1320,7 +1325,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                         'mxcbc_dsi_ic_registered' => true,
                         'mxcbc_dsi_ic_status' => 0,
                     ];
-                    $registry->updateSettings($detail->getId(), $settings);
+                    $dropshipManager->updateSettings($detail->getId(), $settings);
                 }
             }
 
@@ -1507,7 +1512,22 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-
+            $number = 'ES100L10-T4-3';
+            $sql = '
+                SELECT aor.option_id, o.group_id
+                FROM s_articles_details d
+                    LEFT JOIN s_article_configurator_option_relations aor ON d.id = aor.article_id
+                    LEFT JOIN s_article_configurator_options o ON aor.option_id = o.id
+                WHERE d.ordernumber = ?
+            ';
+            $r = Shopware()->Db()->fetchAll($sql, [$number]);
+            $result = [];
+            foreach ($r as $item) {
+                $result[$item['group_id']] = $item['option_id'];
+            }
+            $log = MxcDropshipIntegrator::getServices()->get('logger');
+            //$result = array_column($result, 'option_id');
+            $log->debug(var_export($result, true));
 
             // $this->findDeletedArticles();
             /** @var \MxcDropshipInnocigs\Jobs\UpdatePrices $pricer */

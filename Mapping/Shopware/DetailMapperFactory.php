@@ -7,6 +7,7 @@ use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcDropship\Dropship\DropshipManager;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 use MxcDropship\MxcDropship;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use Shopware\Components\Api\Resource\Article;
 
 
@@ -14,11 +15,13 @@ class DetailMapperFactory implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        /** @var DropshipManager $registry */
-        $registry = MxcDropship::getServices()->get(DropshipManager::class);
-        $articleRegistry = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ArticleRegistry');
-        $companion = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'DropshippersCompanion');
-        $apiClient = $registry->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ApiClient');
+        /** @var DropshipManager $dropshipManager */
+        $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
+        $supplierId = $dropshipManager->getSupplierIdByName('InnoCigs');
+
+        $articleRegistry = $dropshipManager->getService($supplierId, 'ArticleRegistry');
+        $companion = $dropshipManager->getService($supplierId, 'DropshippersCompanion');
+        $apiClient = $dropshipManager->getService($supplierId, 'ApiClient');
 
         $priceMapper = $container->get(PriceMapper::class);
         $articleTool = $container->get(ArticleTool::class);

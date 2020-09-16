@@ -2,7 +2,6 @@
 
 namespace MxcDropshipIntegrator;
 
-use MxcDropship\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipIntegrator\Workflow\DocumentRenderer;

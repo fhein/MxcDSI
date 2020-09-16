@@ -7,6 +7,7 @@ use MxcCommons\Plugin\Database\SchemaManager;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 use MxcDropship\Dropship\DropshipManager;
 use MxcDropship\MxcDropship;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
 
 class ImportClientFactory implements FactoryInterface
 {
@@ -14,8 +15,9 @@ class ImportClientFactory implements FactoryInterface
     {
         /** @var DropshipManager $dropshipManager */
         $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
+        $supplierId = $dropshipManager->getSupplierIdByName('InnoCigs');
 
-        $apiClient = $dropshipManager->getService(DropshipManager::SUPPLIER_INNOCIGS, 'ApiClient');
+        $apiClient = $dropshipManager->getService($supplierId, 'ApiClient');
         $schemaManager = $container->get(SchemaManager::class);
         return new ImportClient($schemaManager, $apiClient);
     }
