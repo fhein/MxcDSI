@@ -1509,28 +1509,40 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    protected function importDroshipStock()
+    {
+        $sql = '
+            UPDATE s_articles_details d
+            LEFT JOIN s_articles_attributes aa ON d.id = aa.articledetailsID
+            SET d.instock = aa.mxcbc_dsi_ic_instock
+        ';
+        Shopware()->Db()->executeUpdate($sql);
+    }
+
     public function dev3Action()
     {
         try {
-            $number = 'ES100L10-T4-3';
-            $sql = '
-                SELECT aor.option_id, o.group_id
-                FROM s_articles_details d
-                    LEFT JOIN s_article_configurator_option_relations aor ON d.id = aor.article_id
-                    LEFT JOIN s_article_configurator_options o ON aor.option_id = o.id
-                WHERE d.ordernumber = ?
-            ';
-            $r = Shopware()->Db()->fetchAll($sql, [$number]);
-            $result = [];
-            foreach ($r as $item) {
-                $result[$item['group_id']] = $item['option_id'];
-            }
-            $log = MxcDropshipIntegrator::getServices()->get('logger');
-            //$result = array_column($result, 'option_id');
-            $log->debug(var_export($result, true));
+            $this->importDroshipStock();
 
-            // $this->findDeletedArticles();
-            /** @var \MxcDropshipInnocigs\Jobs\UpdatePrices $pricer */
+//            $number = 'ES100L10-T4-3';
+//            $sql = '
+//                SELECT aor.option_id, o.group_id
+//                FROM s_articles_details d
+//                    LEFT JOIN s_article_configurator_option_relations aor ON d.id = aor.article_id
+//                    LEFT JOIN s_article_configurator_options o ON aor.option_id = o.id
+//                WHERE d.ordernumber = ?
+//            ';
+//            $r = Shopware()->Db()->fetchAll($sql, [$number]);
+//            $result = [];
+//            foreach ($r as $item) {
+//                $result[$item['group_id']] = $item['option_id'];
+//            }
+//            $log = MxcDropshipIntegrator::getServices()->get('logger');
+//            //$result = array_column($result, 'option_id');
+//            $log->debug(var_export($result, true));
+//
+//            // $this->findDeletedArticles();
+//            /** @var \MxcDropshipInnocigs\Jobs\UpdatePrices $pricer */
 
 
 //            $configReader = Shopware()->Container()->get('shopware.plugin.cached_config_reader');
