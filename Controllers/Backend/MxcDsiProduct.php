@@ -1303,8 +1303,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $services = MxcDropshipIntegrator::getServices();
             /** @var DropshipManager $dropshipManager */
             $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-            $supplierId = $dropshipManager->getSupplierIdByName('InnoCigs');
-            $dropshipManager = $dropshipManager->getService($supplierId, 'ArticleRegistry');
+            $supplier = 'InnoCigs';
+            $dropshipManager = $dropshipManager->getService($supplier, 'ArticleRegistry');
             /** @var ArticleRegistry $registry */
             /** @var Detail $detail */
             foreach ($details as $detail) {

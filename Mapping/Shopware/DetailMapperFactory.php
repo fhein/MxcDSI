@@ -17,11 +17,11 @@ class DetailMapperFactory implements FactoryInterface
     {
         /** @var DropshipManager $dropshipManager */
         $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-        $supplierId = $dropshipManager->getSupplierIdByName('InnoCigs');
+        $supplier = 'InnoCigs';
 
-        $articleRegistry = $dropshipManager->getService($supplierId, 'ArticleRegistry');
-        $companion = $dropshipManager->getService($supplierId, 'DropshippersCompanion');
-        $apiClient = $dropshipManager->getService($supplierId, 'ApiClient');
+        $articleRegistry = $dropshipManager->getService($supplier, 'ArticleRegistry');
+        $companion = $dropshipManager->getService($supplier, 'DropshippersCompanion');
+        $apiClient = $dropshipManager->getService($supplier, 'ApiClient');
 
         $priceMapper = $container->get(PriceMapper::class);
         $articleTool = $container->get(ArticleTool::class);

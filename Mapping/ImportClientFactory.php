@@ -15,9 +15,9 @@ class ImportClientFactory implements FactoryInterface
     {
         /** @var DropshipManager $dropshipManager */
         $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-        $supplierId = $dropshipManager->getSupplierIdByName('InnoCigs');
+        $supplier = 'InnoCigs';
 
-        $apiClient = $dropshipManager->getService($supplierId, 'ApiClient');
+        $apiClient = $dropshipManager->getService($supplier, 'ApiClient');
         $schemaManager = $container->get(SchemaManager::class);
         return new ImportClient($schemaManager, $apiClient);
     }
