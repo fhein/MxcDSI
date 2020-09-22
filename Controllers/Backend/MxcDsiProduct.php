@@ -49,6 +49,7 @@ use MxcDropshipInnocigs\Exception\ApiException;
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropship\MxcDropship;
 use MxcDropship\Exception\DropshipException;
+use MxcDropship\Jobs\SendOrders;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -1509,6 +1510,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    // copies all mxcbc_dsi_ic_instock to articles instock
     protected function importDroshipStock()
     {
         $sql = '
@@ -1522,7 +1524,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $this->importDroshipStock();
+
+            $sendOrders = MxcDropship::getServices()->get(SendOrders::class);
+            $sendOrders->run();
+
+//            $this->importDroshipStock();
 
 //            $number = 'ES100L10-T4-3';
 //            $sql = '
