@@ -1524,88 +1524,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-
+            /** @var \MxcDropshipInnocigs\Order\OrderProcessor $orderProcessor */
             $sendOrders = MxcDropship::getServices()->get(SendOrders::class);
             $sendOrders->run();
-
-//            $this->importDroshipStock();
-
-//            $number = 'ES100L10-T4-3';
-//            $sql = '
-//                SELECT aor.option_id, o.group_id
-//                FROM s_articles_details d
-//                    LEFT JOIN s_article_configurator_option_relations aor ON d.id = aor.article_id
-//                    LEFT JOIN s_article_configurator_options o ON aor.option_id = o.id
-//                WHERE d.ordernumber = ?
-//            ';
-//            $r = Shopware()->Db()->fetchAll($sql, [$number]);
-//            $result = [];
-//            foreach ($r as $item) {
-//                $result[$item['group_id']] = $item['option_id'];
-//            }
-//            $log = MxcDropshipIntegrator::getServices()->get('logger');
-//            //$result = array_column($result, 'option_id');
-//            $log->debug(var_export($result, true));
-//
-//            // $this->findDeletedArticles();
-//            /** @var \MxcDropshipInnocigs\Jobs\UpdatePrices $pricer */
-
-
-//            $configReader = Shopware()->Container()->get('shopware.plugin.cached_config_reader');
-//            $test = new \MxcVapee\Subscribers\FrontendDetailSubscriber('MxcVapee', $configReader);
-//            $test->setDb(Shopware()->Db());
-//            $test->setDSM(MxcDropship::getServices()->get(DropshipManager::class));
-//            $test->isMainDetailAvailableDropship(607);
-//            $test->getDetailDataDropship(607);
-
-
-
-
-//            $dropshipManager = $services->get(DropshipManager::class);
-//            /** ResponseCollection $results */
-//            $results = $dropshipManager->updateStock();
-//            $log = $services->get('logger');
-//            $log->debug(var_export($results->toArray(), true));
-
-
-
-//            /** @var DropshipManager $dropshipManager */
-//            $dropshipManager = $services->get(DropshipManager::class);
-//            /** @var ApiClientInnocigs $client */
-//            $client = $dropshipManager->getService(
-//                DropshipManager::SUPPLIER_INNOCIGS,
-//                'ApiClient'
-//            );
-//
-//            $time = DateTime::createFromFormat('d.m.Y', '31.07.2020');
-//
-//            $trackingInfo = $client->getTrackingData($time);
-//            $trackingInfo = $trackingInfo['TRACKING'];
-//            $log->debug('Tracking data: ' . var_export($trackingInfo, true));
-//
-//            if (isset($trackingInfo['DROPSHIP']['DROPSHIP_ID'])) {
-//                $dropShip = $trackingInfo['DROPSHIP'];
-//                $trackingInfo['DROPSHIP'] = null;
-//                $trackingInfo['DROPSHIP'][0] = $dropShip;
-//                $log->debug('Modified tracking info:');
-//                $log->debug(var_export($trackingInfo, true));
-//            }
-//
-//            foreach ($trackingInfo['DROPSHIP'] as $item) {
-//                $tracking = new TrackingInfo($item);
-//                $log->debug('Context:');
-//                $log->debug(var_export($tracking->getMailContext(), true));
-//            }
-//            /** @var DropshipOrder $dsOrder */
-//            $dsOrder = $services->get(DropshipOrder::class);
-//            $orders = $this->getManager()->getRepository(Order::class)->findAll();
-//            $order = $orders[0];
-//            if ($order !== 0) {
-//                $dsOrder->create($order);
-//                $request = $dsOrder->getXmlRequest(true);
-//                $result = $client->sendOrder($request);
-//            }
-
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
