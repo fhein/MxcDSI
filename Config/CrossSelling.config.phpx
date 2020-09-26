@@ -13976,6 +13976,64 @@ return array (
       4 => 'SC10000L10-B10',
       5 => 'SC10000L10-B50',
     ),
+    'KZ100TM' => 
+    array (
+      0 => 'SONYVTC5A',
+      1 => 'SAMSINR25R',
+    ),
+    'KZ100TMS' => 
+    array (
+      0 => 'SONYVTC5A',
+      1 => 'KZ100UL',
+      2 => 'KZ100LT',
+    ),
+    'KZ100UL' => 
+    array (
+      0 => 'CN100TH',
+      1 => 'CN100LP',
+      2 => 'GV100KA',
+      3 => 'GV100SG',
+      4 => 'GV100SF',
+      5 => 'GV100NF',
+    ),
+    'KZ100LT' => 
+    array (
+      0 => 'CN100TH',
+      1 => 'CN100LP',
+      2 => 'GV100KW',
+      3 => 'GV100SS',
+      4 => 'GV100SG',
+      5 => 'GV100SF',
+    ),
+    'VS100GO' => 
+    array (
+      0 => 'VS100GR',
+      1 => 'VS100GM',
+    ),
+    'Z100ES' => 
+    array (
+      0 => 'SONYVTC5A',
+      1 => 'IJOY21700',
+      2 => 'SC10000AV21',
+    ),
+    'AS100NP' => 
+    array (
+      0 => 'AS10000MININAUTHEADS',
+      1 => 'AS100N2M',
+      2 => 'AS100NPR',
+      3 => 'AS100NPP',
+    ),
+    'AS100NPR' => 
+    array (
+      0 => 'AS100NP',
+      1 => 'AS100NPP',
+    ),
+    'AS100NPP' => 
+    array (
+      0 => 'AS10000MININAUTHEADS',
+      1 => 'AS100N2M',
+      2 => 'AS100NP',
+    ),
   ),
   'similar' => 
   array (
@@ -39992,6 +40050,20 @@ return array (
       30 => 'DL100A10-CB',
       31 => 'DL100A10-AW',
       32 => '5E100A10-LP',
+    ),
+    'KZ100TMS' => 
+    array (
+      0 => 'GV100MZ',
+    ),
+    'VS100GO' => 
+    array (
+      0 => 'IK100T2',
+      1 => 'SK100GU',
+    ),
+    'AS100NP' => 
+    array (
+      0 => 'SK100NX',
+      1 => 'UW100VP',
     ),
   ),
 );

@@ -827,6 +827,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
     doRequest: function(grid, url, params, growlTitle, maskText, reloadGrid) {
         let me = this;
         let mask = new Ext.LoadMask(grid, { msg: maskText });
+        console.log(url);
         mask.show();
         Ext.Ajax.request({
             method: 'POST',
