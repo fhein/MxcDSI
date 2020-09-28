@@ -127,6 +127,7 @@ return [
             '~(iSub -)(PLEX)~'                             => '$1 $2',
             '~(eGrip) - (Mini)~'                           => '$1 $2', // does not work with rules below, reason unknown
             '~(Nord) -( 2 -)~'                             => '$1 $2', // does not work with rules below, reason unknown
+            '~(Nord) -( X -)~'                             => '$1 $2', // does not work with rules below, reason unknown
             '~- -(Verdampfer)~'                            => '- $1',
             '~(SC - .*) - by SC$~'                         => '$1',
             '~(.*)(3in1 Aroma.*)15( ml)~'                  => '$1$2 45$3',
@@ -144,6 +145,7 @@ return [
             '~(Care Edition) (E-Zigarette)~'               => '$1 - $2',
             '~InnoCigs (Caliburn)~'                        => 'Uwell - $1',
             '~(KA1) (- 0,6 Ohm) (Coil)~'                   => '$1 $3 $2',
+            '~(Ares 2 D22)(.*)(Limited Edition)~'          => '$1 $3 $2',
         ],
     ],
 
@@ -306,7 +308,10 @@ return [
             '~(Brunhilde) (RTA) (Edel)~'                                              => '$1 Top Coiler $2 $3',
             '~(Brunhilde) (RTA), (\d ml) (.*)~'                                       => '$1 Top Coiler $2 $4 - $3',
             '~(Bad Candy Liquids) (- .*)(- 20 ml)~'                                   => '$1 $2 - Aroma $3',
+            '~(Vapanion)(.*)(- Aroma)(.*)(- \d+(,\d+)? ml)~'                          => '$1 - $2 $3 $5', // non standard
+
             '~(Bamberger Dampferlädla - Bassd Schoo) (- Aroma)(.*)(- \d+(,\d+)? ml)~' => '$1 - $3 $2 $4',
+            '~(Frosty Affairs) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                       => '$1 - $3 $2 $4',
             '~(Bamberger Dampferlädla) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
             '~(Dr. Fog - Shisha) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                     => '$1 - $3 $2 $4',
             '~(Mr. Blitz) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                            => '$1 - $3 $2 $4',
@@ -544,6 +549,7 @@ return [
             '~(iStick Nowos) (- \d\.\d+ mAh)~'                    => '$1 - Akku $2',
             '~(Gen Nano) (- \d\.\d+ mAh)~'                        => '$1 - Akku $2',
             '~(CoolFire Z50) (- \d\.\d+ mAh)~'                    => '$1 - Akku $2',
+            '~(iStick S80) (- \d\.\d+ mAh)~'                      => '$1 - Akku $2',
             '~(iStick Rim) (- \d\.\d+ mAh)~'                      => '$1 - Akku $2',
             '~(Adept) (- \d\.\d+ mAh)~'                           => '$1 - Akku $2',
             '~(Typhon) (- \d+ Watt)~'                             => '$1 - Akku $2',
@@ -568,6 +574,7 @@ return [
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
             '~(Aegis Squonk) (- \d+ Watt)~'                       => '$1 - Squonker Box $2',
+            '~(Grus) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Gen X) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Essent) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(Argus GT) (- \d+ Watt)~'                           => '$1 - Akkuträger $2',
@@ -737,6 +744,7 @@ return [
         ],
         'Aspire'                => [
             // Aspire
+            '~(Minican)~',
             '~(Deco)~',
             '~(BP60)~',
             '~(Rover 2)~',
@@ -853,7 +861,7 @@ return [
             '~(Creed RTA)~',
             '~(Zeus(( X2)|( X RTA)|( Dual RTA)|( RTA))?)~',
             '~(Ammit Dual Coil RTA)~',
-            '~(Aegis(( Max)|( Pod)|( Boost Plus)|( Boost Luxury Edition)|( Boost)|( Legend)|( Mini)|( X)|( Solo)|( Squonk))?)~',
+            '~(Aegis(( Hero)|( Max)|( Pod)|( Boost Plus)|( Boost Luxury Edition)|( Boost)|( Legend)|( Mini)|( X)|( Solo)|( Squonk))?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
             '~(Creed RTA)~',
@@ -931,6 +939,8 @@ return [
             '~(Ello)~',
             '~(iJust Mini)~',
             '~(Coral 2)~',
+            '~(GZeno)~',
+            '~(iStick S80 mit GZeno)~',
         ],
         'SC'                    => [
             '~(iJust(( 21700)|( ECM)|( 3 Pro)|( 3)|( Mini)|( AIO))?)~',
@@ -958,10 +968,11 @@ return [
             '~(Prism ((S)|(T18/T22)|(T18 2)|(T18E)|(T18)|(T20(S)?)|(T22))?)~',
             '~(CoolFire Z50)~',
             '~(Proton( Mini)?)~',
+            '~(Glim)~',
             '~(EZ.Watt)~',
             '~(Zenith(( D22)|( Pro))?)~',
             '~(Scion 2 Plexus)~',
-            '~(Ares 2 D24)~',
+            '~(Ares 2(( D24)|( D22)))~',
             '~(Ares RTA)~',
             '~(Cool Fire Mini)~',
             '~(iSub (B)?)~',
@@ -1045,7 +1056,7 @@ return [
         'Smok'                  => [
             '~(NexM)~',
             '~(Alike)~',
-            '~(Nord( 2)?)~',
+            '~(Nord(( 2)|( X))?)~',
             '~(Mag(( P3)|( Pod))?)~',
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
@@ -1077,7 +1088,7 @@ return [
             '~(Fetch(( Mini)|( Pro)))~',
             '~(Pozz X)~',
             '~(Guardian)~',
-
+            '~(RPM 2)~',
         ],
         'ThunderHead Creations' => [
             '~(Tauren(( RDTA)|( RDA)|( RTA)|( Solo RDA)|( Pro)|( One RTA)|( X Pod)))~',
@@ -1183,7 +1194,7 @@ return [
             '~(Valyrian(( 2)|( Pod))?)~',
             '~(Blocks)~',
             '~(Whirl(( 2)|( 20)|( 22))?)~',
-            '~(Caliburn( Koko)?)~',
+            '~(Caliburn(( Koko)|( G))?)~',
             '~(Amulet)~',
             '~(Zumwalt Pod)~',
 
@@ -1219,10 +1230,12 @@ return [
             '~(Navi)~',
             '~(Argus GT)~',
             '~(PnP Pod)~',
+            '~(V Thru Pro)~',
         ],
         'Vaporesso'             => [
             '~(GTX(( Tank 22)|( One)|( 18)))~',
             '~(Cascade(( One Plus SE)|( One Plus)|( One)|( Baby SE))?)~',
+            '~(Barr)~',
             '~(Osmall)~',
             '~(Sky Solo( Plus)?)~',
             '~(GEN)~',
@@ -1300,7 +1313,8 @@ return [
             '~(Recurve RDA)~',
             '~(STNG MTL RDA)~',
             '~(COG MTL RTA)~',
-            '~(Profile(( Unity RTA)|( 1.5 RDA)))~',
+            '~(Profile(( Unity RTA)|( 1.5 RDA)|( RDTA)))~',
+            '~(nexM Pro)~',
         ],
         'XTAR'                  => [
             '~(Queen ANT MC6C)~',

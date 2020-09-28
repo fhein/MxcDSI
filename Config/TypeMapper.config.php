@@ -65,6 +65,7 @@ return [
 
     'name_type_mapping' => [
         '~Aromamizer Supreme V3.*Verdampfer~' => TypeMapper::TYPE_CLEAROMIZER_RDTA,
+        '~Ares 2 (D22|D24).* - Verdampfer~'   => TypeMapper::TYPE_CLEAROMIZER_RTA,
         '~Tom Klarks.*50 ml \+ 18~'           => TypeMapper::TYPE_SHAKE_VAPE,
         '~TGO Pod Mod~'                       => TypeMapper::TYPE_POD_SYSTEM,
         '~Ersatzteil-Set~'                    => TypeMapper::TYPE_SPARE_PARTS,
@@ -181,5 +182,6 @@ return [
         '~Idian X - 510er Adapter~'           => TypeMapper::TYPE_SPARE_PARTS,
         '~Wismec - RBA Set~'                  => TypeMapper::TYPE_COIL,
         '~OXVA.*Airflow Ring~'                => TypeMapper::TYPE_HEAD,
+        '~(RMC Silikonringe)~'                => TypeMapper::TYPE_SEAL,
     ],
 ];

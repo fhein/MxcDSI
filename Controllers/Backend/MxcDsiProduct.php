@@ -1524,9 +1524,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
+            $this->findDeletedArticles();
             /** @var \MxcDropshipInnocigs\Order\OrderProcessor $orderProcessor */
-            $sendOrders = MxcDropship::getServices()->get(SendOrders::class);
-            $sendOrders->run();
+//            $sendOrders = MxcDropship::getServices()->get(SendOrders::class);
+//            $sendOrders->run();
 
             $this->view->assign([ 'success' => true, 'message' => 'Development 3 slot is currently free.' ]);
         } catch (Throwable $e) {
