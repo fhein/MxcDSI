@@ -14542,6 +14542,26 @@ return array (
     array (
       0 => 'EFR100GZC',
     ),
+    'SK100DX' => 
+    array (
+      0 => 'SK100RPM',
+      1 => 'SK100RMH',
+      2 => 'SK100R2M',
+      3 => 'SK100DXP',
+      4 => 'SK100DX2',
+    ),
+    'SK100DXP' => 
+    array (
+      0 => 'SK100RPM',
+      1 => 'SK100RMC',
+      2 => 'SK100RPB',
+      3 => 'SK100RMH',
+    ),
+    'SK100DX2' => 
+    array (
+      0 => 'SK100R2M',
+      1 => 'SK100R2D',
+    ),
   ),
   'similar' => 
   array (
@@ -41336,6 +41356,11 @@ return array (
     'EFR100S8' => 
     array (
       0 => 'IK100T2',
+    ),
+    'SK100DX' => 
+    array (
+      0 => 'UW100CP',
+      1 => 'AS100BP',
     ),
   ),
 );

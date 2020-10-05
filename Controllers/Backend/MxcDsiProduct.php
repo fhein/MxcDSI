@@ -81,7 +81,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             /** @var ImportMapper $mapper */
             $mapper = $services->get(ImportMapper::class);
             $mapper->import($client->importFromApi(true, $sequential));
-            $this->view->assign(['success' => true, 'message' => 'Items were successfully updated.']);
+            $this->view->assign(['success' => true, 'message' => 'Products were successfully updated.']);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -90,10 +90,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updatePricesAction()
     {
         try {
+            $message = [
+                true => 'Prices were successfully updated',
+                false => 'Failed to update prices. See Dropship Log.'
+            ];
             /** @var DropshipManager $dropshipManager */
             $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-            $dropshipManager->updatePrices();
-            $this->view->assign(['success' => true, 'message' => 'Prices were successfully updated.']);
+            $result = $dropshipManager->updatePrices();
+            $this->view->assign(['success' => $result, 'message' => $message[$result]]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -644,14 +648,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function updateStockInfoAction()
     {
         try {
+            $message = [
+                true => 'Stock data was successfully updated.',
+                false => 'Failed to update stock data. See Dropship Log.',
+            ];
             /** @var DropshipManager $dropshipManager */
             $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-            $result = $dropshipManager->updateStock()[0];
-
-            $this->view->assign([
-                'success' => $result['code'] == DropshipManager::NO_ERROR,
-                'message' => $result['message']
-            ]);
+            $result = $dropshipManager->updateStock();
+            $this->view->assign(['success' => $result, 'message' => $message[$result]]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
