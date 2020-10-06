@@ -61,9 +61,11 @@ return [
         TypeMapper::TYPE_SPARE_PARTS        => 'SPARE_PARTS',
         TypeMapper::TYPE_POD_SYSTEM         => 'POD_SYSTEM',
         TypeMapper::TYPE_NICSALT_LIQUID     => 'NICSALT_LIQUID',
+        TypeMapper::TYPE_PHOTO_SAMPLE       => 'PHOTO_SAMPLE',
     ],
 
     'name_type_mapping' => [
+        '~Fotomuster~'                        => TypeMapper::TYPE_PHOTO_SAMPLE,
         '~Aromamizer Supreme V3.*Verdampfer~' => TypeMapper::TYPE_CLEAROMIZER_RDTA,
         '~Ares 2 (D22|D24).* - Verdampfer~'   => TypeMapper::TYPE_CLEAROMIZER_RTA,
         '~Tom Klarks.*50 ml \+ 18~'           => TypeMapper::TYPE_SHAKE_VAPE,

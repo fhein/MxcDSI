@@ -1325,7 +1325,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                         'mxcbc_dsi_ic_productname' => $attr['dc_ic_articlename'],
                         'mxcbc_dsi_ic_productnumber' => $attr['dc_ic_ordernumber'],
                         'mxcbc_dsi_ic_instock' => $attr['dc_ic_instock'],
-                        'mxcbc_dsi_ic_active' => $attr['dc_ic_active'],
                         'mxcbc_dsi_mode' => DropshipManager::MODE_DROPSHIP_ONLY,
                         'mxcbc_dsi_ic_registered' => true,
                         'mxcbc_dsi_ic_status' => 0,
@@ -1442,11 +1441,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
         $log->debug('Deleted products');
         $log->debug(var_export(array_keys($deletedProducts), true));
-        foreach ($deletedProducts as $product) {
-            $importMapper->removeProduct($product);
-        }
-        $log->debug('Deleted products removed.');
-        $modelManager->flush();
+//        foreach ($deletedProducts as $product) {
+//            $importMapper->removeProduct($product);
+//        }
+//        $log->debug('Deleted products removed.');
+//        $modelManager->flush();
     }
 
     public function findDeletedArticles()
@@ -1473,12 +1472,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
         $log->debug('Deleted articles');
         $log->debug(var_export(array_keys($deletedArticles), true));
-        $ar = new ArticleResource();
-        $ar->setManager($modelManager);
-        foreach ($deletedArticles as $article) {
-            $ar->delete($article->getId());
-        }
-        $log->debug("Deleted articles removed.");
+//        $ar = new ArticleResource();
+//        $ar->setManager($modelManager);
+//        foreach ($deletedArticles as $article) {
+//            $ar->delete($article->getId());
+//        }
+//        $log->debug("Deleted articles removed.");
     }
 
     public function findArticlesWithoutDetails()
@@ -1528,9 +1527,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
+            $this->findDeletedArticles();
+            $this->findDeletedProducts();
+
             /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
-            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
-            $trackingUpdate->run();
+//            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
+//            $trackingUpdate->run();
 
 
 //            /** @var \MxcDropshipInnocigs\Order\OrderProcessor $orderProcessor */
