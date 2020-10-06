@@ -7,6 +7,9 @@ return [
         'Bamberger Dampferlädla' => [
             'Bassd Schoo' => 2,
         ],
+        'KTS' => [
+            'Superfruit' => 2,
+        ],
         'Twelve Monkeys' => [
             'Origins' => 2,
             'Cirlce of Life' => 2,

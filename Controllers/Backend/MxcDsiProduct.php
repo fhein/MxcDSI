@@ -1440,12 +1440,15 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $deletedProducts[$product->getName()] = $product;
         }
         $log->debug('Deleted products');
-        $log->debug(var_export(array_keys($deletedProducts), true));
-//        foreach ($deletedProducts as $product) {
-//            $importMapper->removeProduct($product);
-//        }
-//        $log->debug('Deleted products removed.');
-//        $modelManager->flush();
+        $list = array_keys($deletedProducts);
+        sort($list);
+
+        $log->debug(var_export($list, true));
+        foreach ($deletedProducts as $product) {
+            $importMapper->removeProduct($product);
+        }
+        $log->debug('Deleted products removed.');
+        $modelManager->flush();
     }
 
     public function findDeletedArticles()
@@ -1471,13 +1474,15 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
         }
         $log->debug('Deleted articles');
-        $log->debug(var_export(array_keys($deletedArticles), true));
-//        $ar = new ArticleResource();
-//        $ar->setManager($modelManager);
-//        foreach ($deletedArticles as $article) {
-//            $ar->delete($article->getId());
-//        }
-//        $log->debug("Deleted articles removed.");
+        $list = array_keys($deletedArticles);
+        sort($list);
+        $log->debug(var_export($list, true));
+        $ar = new ArticleResource();
+        $ar->setManager($modelManager);
+        foreach ($deletedArticles as $article) {
+            $ar->delete($article->getId());
+        }
+        $log->debug("Deleted articles removed.");
     }
 
     public function findArticlesWithoutDetails()

@@ -27,6 +27,9 @@ return array (
     21 => 'schwarze Himbeere',
     22 => 'schwarze Johannisbeere',
     23 => 'süße Beeren',
+    24 => 'Gojibeere',
+    25 => 'Aroniabeere',
+    26 => 'Maulbeere',
   ),
   'Bonbons & Kaugummi' => 
   array (
@@ -284,6 +287,7 @@ return array (
     11 => 'Orchidee',
     12 => 'Rhabarber',
     13 => 'Waldmeister',
+    14 => 'Avocado',
   ),
   'Süßigkeiten' =>
   array (

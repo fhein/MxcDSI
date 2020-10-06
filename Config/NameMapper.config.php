@@ -3,6 +3,8 @@
 return [
     'name_prepare' => [
         'preg_replace' => [
+            '~(The Bros -)~'                        => 'The Bro\'s -',
+            '~(Superfruit -) (Mulberry)~'           => '$1 Aroma $2',
             '~\s+~'                                 => ' ',
             '~(- )+~'                               => '$1',
             '~ ,~'                                  => ',',
@@ -312,6 +314,10 @@ return [
 
             '~(Bamberger Dampferlädla - Bassd Schoo) (- Aroma)(.*)(- \d+(,\d+)? ml)~' => '$1 - $3 $2 $4',
             '~(Frosty Affairs) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                       => '$1 - $3 $2 $4',
+            '~(Azadian) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                              => '$1 - $3 $2 $4',
+            '~(The Bro\'s) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                           => '$1 - $3 $2 $4',
+            '~(KTS) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                                  => '$1 - $3 $2 $4',
+            '~(KTS - Superfruit) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                     => '$1 - $3 $2 $4',
             '~(Bamberger Dampferlädla) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
             '~(Dr. Fog - Shisha) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                     => '$1 - $3 $2 $4',
             '~(Mr. Blitz) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                            => '$1 - $3 $2 $4',
@@ -1060,6 +1066,7 @@ return [
             '~(Mag(( P3)|( Pod))?)~',
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
+            '~(Vape Pen V2)~',
             '~((Vape Pen Nord(( 19)|( 22))?)|(Nord(( AIO 19)|( AIO 22))?))~',
             '~(H-Priv 2)~',
             '~(Morph 219)~',
@@ -1170,6 +1177,7 @@ return [
             '~(Reuleaux Tinker( 2)?)~',
             '~(Sinuous(( V200)|( P80)|( V80)|( Ravage)|( SW)|( Solo))?)~',
             '~(Reux)~',
+            '~(Vape Pen V2)~',
 
         ],
         'Steam Crave'           => [
