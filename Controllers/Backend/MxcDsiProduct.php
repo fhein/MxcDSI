@@ -2,6 +2,7 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
+use MxcCommons\MxcCommons;
 use MxcCommons\Plugin\Controller\BackendApplicationController;
 use MxcCommons\Toolbox\Strings\StringTool;
 use MxcCommons\Plugin\Database\SchemaManager;
@@ -36,7 +37,7 @@ use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Report\ArrayReport;
-use MxcDropshipIntegrator\Workflow\DocumentRenderer;
+use MxcCommons\Toolbox\Shopware\DocumentRenderer;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
@@ -1195,13 +1196,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
         $services = MxcDropshipIntegrator::getServices();
         /** @var DocumentRenderer $docRenderer */
-        $docRenderer = $services->get(DocumentRenderer::class);
+        $docRenderer = MxcCommons::getServices()->get(DocumentRenderer::class);
         $log = $services->get('logger');
         /** @var Order $order */
-        $order = $this->getManager()->getRepository(Order::class)->find(2);
+        $order = $this->getManager()->getRepository(Order::class)->find(346);
         if ($order !== null) {
             $docRenderer->createDocument($order, 'invoice');
-            $log->debug('Document path: '  . $docRenderer->getDocumentPath($order, 'invoice'));
+            $path = $docRenderer->getDocumentPath($order, 'invoice');
+            $log->debug('Document path: '  . $path);
         }
     }
 
@@ -1532,8 +1534,22 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $this->findDeletedArticles();
-            $this->findDeletedProducts();
+            /** @var MailTool $mailTool */
+            /** @var Order $order */
+            /** @var DocumentRenderer $docRenderer */
+            $docRenderer = MxcCommons::getServices()->get(DocumentRenderer::class);
+            $order = $this->getManager()->getRepository(Order::class)->find(346);
+            if ($order !== null) {
+                $mailTool = \MxcCommons\MxcCommons::getServices()->get(MailTool::class);
+                $mail = $mailTool->renderStatusMail($order, 2);
+                $mailTool->attachOrderDocument($mail, $order, 'invoice');
+                $mailTool->sendStatusMail($mail);
+            }
+
+
+
+//            $this->findDeletedArticles();
+//            $this->findDeletedProducts();
 
             /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
 //            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);

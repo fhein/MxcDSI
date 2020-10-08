@@ -4,7 +4,6 @@ namespace MxcDropshipIntegrator;
 
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropshipIntegrator\Models\Model;
-use MxcDropshipIntegrator\Workflow\DocumentRenderer;
 use MxcCommons\Toolbox\Shopware\MailTool;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelImport;
@@ -109,7 +108,6 @@ return [
             AssociatedArticlesMapper::class,
             VariantMappingConsistency::class,
             ImportPriceMapper::class,
-            DocumentRenderer::class,
             MailTool::class,
             WorkflowEngine::class,
             ArticleTool::class,
