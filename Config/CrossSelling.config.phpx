@@ -28062,12 +28062,11 @@ return array (
       3 => 'DF100DR',
       4 => 'CU100IM',
       5 => 'CU100ZT',
-      6 => 'WFR100GV2',
-      7 => 'YH100DR',
-      8 => 'AL100CR',
-      9 => 'AK100AV2',
-      10 => 'WT100ST',
-      11 => 'YH100SE',
+      6 => 'YH100DR',
+      7 => 'AL100CR',
+      8 => 'AK100AV2',
+      9 => 'WT100ST',
+      10 => 'YH100SE',
     ),
     'HE100PS' => 
     array (
@@ -28090,7 +28089,6 @@ return array (
     'SN100BSC' => 
     array (
       0 => 'WFR100TB',
-      1 => 'WFR100GV2',
     ),
     'AG100CL' => 
     array (
@@ -31211,7 +31209,6 @@ return array (
     'AL100CR' => 
     array (
       0 => 'WFR100TB',
-      1 => 'WFR100GV2',
     ),
     'IK100T2C' => 
     array (
@@ -31919,7 +31916,6 @@ return array (
     'AK100AV2' => 
     array (
       0 => 'WFR100TB',
-      1 => 'WFR100GV2',
     ),
     'SI100SP' => 
     array (

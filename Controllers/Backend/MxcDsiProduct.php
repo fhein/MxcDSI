@@ -2,6 +2,7 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
+use MxcVapee\MxcVapee;
 use MxcCommons\MxcCommons;
 use MxcCommons\Plugin\Controller\BackendApplicationController;
 use MxcCommons\Toolbox\Strings\StringTool;
@@ -1534,17 +1535,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            /** @var MailTool $mailTool */
-            /** @var Order $order */
-            /** @var DocumentRenderer $docRenderer */
-            $docRenderer = MxcCommons::getServices()->get(DocumentRenderer::class);
-            $order = $this->getManager()->getRepository(Order::class)->find(346);
-            if ($order !== null) {
-                $mailTool = \MxcCommons\MxcCommons::getServices()->get(MailTool::class);
-                $mail = $mailTool->renderStatusMail($order, 2);
-                $mailTool->attachOrderDocument($mail, $order, 'invoice');
-                $mailTool->sendStatusMail($mail);
-            }
+            $sendOrders = MxcDropship::getServices()->get(SendOrders::class);
+            $sendOrders->run();
+
+//            $workflow = MxcVapee::getServices()->get(\MxcVapee\Workflow\WorkflowEngine::class);
+//            $workflow->run();
 
 
 

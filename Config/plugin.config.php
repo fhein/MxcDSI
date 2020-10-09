@@ -63,7 +63,6 @@ use MxcCommons\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRep
 use MxcCommons\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcCommons\Toolbox\Shopware\MediaTool;
 use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
-use MxcDropshipIntegrator\Workflow\WorkflowEngine;
 
 return [
     'plugin_listeners'   => [
@@ -109,7 +108,6 @@ return [
             VariantMappingConsistency::class,
             ImportPriceMapper::class,
             MailTool::class,
-            WorkflowEngine::class,
             ArticleTool::class,
             ConfiguratorGroupRepository::class,
             ConfiguratorSetRepository::class,
