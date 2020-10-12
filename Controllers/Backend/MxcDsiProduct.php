@@ -1546,7 +1546,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 //            $this->findDeletedArticles();
 //            $this->findDeletedProducts();
 
-            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
+//            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
 //            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
 //            $trackingUpdate->run();
 
