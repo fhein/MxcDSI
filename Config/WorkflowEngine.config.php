@@ -5,7 +5,7 @@ use Shopware\Models\Order\Status;
 return [
     'workflow' => [
         'order' => [
-            'order_status' => [
+            'DROPSHIP_STATUS' => [
                 Status::ORDER_STATE_CANCELLED => [],
                 Status::ORDER_STATE_OPEN => [],
                 Status::ORDER_STATE_IN_PROCESS => [],

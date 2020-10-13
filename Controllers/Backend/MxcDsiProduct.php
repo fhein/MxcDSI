@@ -3,6 +3,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 
 use MxcVapee\MxcVapee;
+use MxcVapee\Workflow\WorkflowEngine;
 use MxcCommons\MxcCommons;
 use MxcCommons\Plugin\Controller\BackendApplicationController;
 use MxcCommons\Toolbox\Strings\StringTool;
@@ -1193,21 +1194,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     }
 
-    public function test () {
-
-        $services = MxcDropshipIntegrator::getServices();
-        /** @var DocumentRenderer $docRenderer */
-        $docRenderer = MxcCommons::getServices()->get(DocumentRenderer::class);
-        $log = $services->get('logger');
-        /** @var Order $order */
-        $order = $this->getManager()->getRepository(Order::class)->find(346);
-        if ($order !== null) {
-            $docRenderer->createDocument($order, 'invoice');
-            $path = $docRenderer->getDocumentPath($order, 'invoice');
-            $log->debug('Document path: '  . $path);
-        }
-    }
-
     public function updateAssociatedLiquidsAction()
     {
         try {
@@ -1535,20 +1521,28 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $sendOrders = MxcDropship::getServices()->get(SendOrders::class);
-            $sendOrders->run();
+//            /** @var MailTool $mailer */
+//            $mailer = MxcCommons::getServices()->get(MailTool::class);
+//            $orderId = 381;
+//            $mail = $mailer->renderStatusMail($orderId, \Shopware\Models\Order\Status::ORDER_STATE_COMPLETED);
+//            $mailer->attachOrderDocument($mail, $orderId, DocumentRenderer::DOC_TYPE_INVOICE);
+//            $mailer->sendStatusMail($mail);
 
-//            $workflow = MxcVapee::getServices()->get(\MxcVapee\Workflow\WorkflowEngine::class);
-//            $workflow->run();
+//            $sendOrders = MxcDropship::getServices()->get(SendOrders::class);
+//            $sendOrders->run();
+            $test = 1;
+            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
+            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
+            $trackingUpdate->run();
+
+            $workflow = MxcVapee::getServices()->get(WorkflowEngine::class);
+            $workflow->run();
 
 
 
 //            $this->findDeletedArticles();
 //            $this->findDeletedProducts();
 
-//            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
-//            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
-//            $trackingUpdate->run();
 
 
 //            /** @var \MxcDropshipInnocigs\Order\OrderProcessor $orderProcessor */
@@ -1604,12 +1598,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function dev6Action() {
         try {
-            /** @var Order $order */
-            $order = $this->getManager()->getRepository(Order::class)->find(720);
-            /** @var MailTool $mail */
-            $mail = MxcDropshipIntegrator::getServices()->get(MailTool::class);
-            $mail = $mail->renderStatusMail($order, 1);
-            $mail->sendStatusMail($mail);
             $this->view->assign([ 'success' => true, 'message' => 'Development slot #6 is currently free.']);
         } catch (Throwable $e) {
             $this->handleException($e);
