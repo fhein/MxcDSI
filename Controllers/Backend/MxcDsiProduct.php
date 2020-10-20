@@ -1521,22 +1521,17 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-//            /** @var MailTool $mailer */
-//            $mailer = MxcCommons::getServices()->get(MailTool::class);
-//            $orderId = 381;
-//            $mail = $mailer->renderStatusMail($orderId, \Shopware\Models\Order\Status::ORDER_STATE_COMPLETED);
-//            $mailer->attachOrderDocument($mail, $orderId, DocumentRenderer::DOC_TYPE_INVOICE);
-//            $mailer->sendStatusMail($mail);
-
-//            $sendOrders = MxcDropship::getServices()->get(SendOrders::class);
-//            $sendOrders->run();
-            $test = 1;
-            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
-            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
-            $trackingUpdate->run();
-
-            $workflow = MxcVapee::getServices()->get(WorkflowEngine::class);
-            $workflow->run();
+            $orders = $this->getManager()->getRepository(Order::class)->findAll();
+            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
+            foreach ($orders as $order) {
+                $dropshipManager->initOrder($order->getId());
+            }
+//            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
+//            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
+//            $trackingUpdate->run();
+//
+//            $workflow = MxcVapee::getServices()->get(WorkflowEngine::class);
+//            $workflow->run();
 
 
 
