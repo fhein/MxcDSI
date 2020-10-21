@@ -1176,9 +1176,15 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $article = $product->getArticle();
                 if ($article === null) continue;
                 $description = $article->getDescriptionLong();
-                if (strpos($description, '<tbody>') === false) {
-                    $productsToDo[$type][$product->getIcNumber()] = $product->getName();
-                }
+                if (strpos($description, '<tbody>') !== false) continue;
+                $productsToDo[$type][$product->getIcNumber()] = $product->getName();
+            }
+            foreach ($products as $product) {
+                $article = $product->getArticle();
+                if ($article === null) continue;
+                $description = $article->getDescriptionLong();
+                if (! empty($description)) continue;
+                $productsTodo['_DESCRIPTION_EMPTY'][$product->getIcNumber()] = $product->getName();
             }
             foreach ($types as $type) {
                 if (isset($productsToDo[$type]))
@@ -1521,17 +1527,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $orders = $this->getManager()->getRepository(Order::class)->findAll();
-            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-            foreach ($orders as $order) {
-                $dropshipManager->initOrder($order->getId());
-            }
-//            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
-//            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
-//            $trackingUpdate->run();
-//
-//            $workflow = MxcVapee::getServices()->get(WorkflowEngine::class);
-//            $workflow->run();
+            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
+            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
+            $trackingUpdate->run();
+
+            $workflow = MxcVapee::getServices()->get(WorkflowEngine::class);
+            $workflow->run();
 
 
 
