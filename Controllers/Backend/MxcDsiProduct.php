@@ -11,6 +11,8 @@ use MxcCommons\Plugin\Database\SchemaManager;
 use MxcCommons\Toolbox\Config\Config;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcCommons\Toolbox\Shopware\MailTool;
+use MxcDropshipInnocigs\MxcDropshipInnocigs;
+use MxcDropshipInnocigs\PluginListeners\CompanionDataImport;
 use MxcCommons\Toolbox\Shopware\SupplierTool;
 use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipInnocigs\Article\ArticleRegistry;
@@ -1228,7 +1230,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $services = MxcDropshipIntegrator::getServices();
             /** @var MailManager $mailManager */
             $mailManager = $services->get(MailManager::class);
-            $templates = $mailManager->getStatusMailTemplates(true);
+            $templates = $mailManager->getMailTemplates(true);
             Config::toFile($this->emailTemplatesFile, $templates);
             $file = basename($this->emailTemplatesFile);
             $this->view->assign([
@@ -1297,37 +1299,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function importCompanionConfigurationAction()
     {
         try {
-            $detailRepository = $this->getManager()->getRepository(Detail::class);
-            $details = $detailRepository->findAll();
-
-            $services = MxcDropshipIntegrator::getServices();
-            /** @var DropshipManager $dropshipManager */
-            $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
-            $supplier = 'InnoCigs';
-            $dropshipManager = $dropshipManager->getService($supplier, 'ArticleRegistry');
-            /** @var ArticleRegistry $registry */
-            /** @var Detail $detail */
-            foreach ($details as $detail) {
-                $attr = ArticleTool::getDetailAttributes($detail);
-                if (! empty($attr['dc_ic_ordernumber'])) {
-                    $purchasePrice = $attr['dc_ic_purchasing_price'];
-                    $purchasePrice = StringTool::tofloat($purchasePrice);
-                    $retailPrice = $attr['dc_ic_retail_price'];
-                    $retailPrice = StringTool::tofloat($retailPrice);
-                    $settings = [
-                        'mxcbc_dsi_ic_purchaseprice' => $purchasePrice,
-                        'mxcbc_dsi_ic_retailprice' => $retailPrice,
-                        'mxcbc_dsi_ic_productname' => $attr['dc_ic_articlename'],
-                        'mxcbc_dsi_ic_productnumber' => $attr['dc_ic_ordernumber'],
-                        'mxcbc_dsi_ic_instock' => $attr['dc_ic_instock'],
-                        'mxcbc_dsi_mode' => DropshipManager::MODE_DROPSHIP_ONLY,
-                        'mxcbc_dsi_ic_registered' => true,
-                        'mxcbc_dsi_ic_status' => 0,
-                    ];
-                    $dropshipManager->updateSettings($detail->getId(), $settings);
-                }
-            }
-
+            $companionDataImport = MxcDropshipInnocigs::getServices()->get(CompanionDataImport::class);
+            $companionDataImport->importCompanionData();
             $this->view->assign([ 'success' => true, 'message' => 'Companion config sync completed.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);

@@ -14,7 +14,7 @@ class MailTemplateInstaller
         'sMXCDSIINVOICE',
         'sMXCDSIDELIVERYNOTE',
         'sMXCDSICANCELLATION',
-        'sMXCDSIREDIT',
+        'sMXCDSICREDIT',
     ];
 
     public function install(InstallContext $context)
