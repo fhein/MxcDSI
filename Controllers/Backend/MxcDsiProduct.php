@@ -2,8 +2,8 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
-use MxcVapee\MxcVapee;
-use MxcVapee\Workflow\WorkflowEngine;
+use MxcWorkflow\MxcWorkflow;
+use MxcWorkflow\Workflow\WorkflowEngine;
 use MxcCommons\MxcCommons;
 use MxcCommons\Plugin\Controller\BackendApplicationController;
 use MxcCommons\Toolbox\Strings\StringTool;
@@ -41,7 +41,6 @@ use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use MxcCommons\Toolbox\Report\ArrayReport;
-use MxcCommons\Toolbox\Shopware\DocumentRenderer;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 use Shopware\Components\CSRFWhitelistAware;
 use Shopware\Models\Article\Article;
@@ -49,7 +48,7 @@ use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Customer;
 use Shopware\Models\Order\Order;
-use MxcCommons\Plugin\Mail\MailManager;
+use MxcCommons\Plugin\Mail\MailTemplateManager;
 use MxcDropshipInnocigs\Exception\ApiException;
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropship\MxcDropship;
@@ -1228,8 +1227,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
             $services = MxcDropshipIntegrator::getServices();
-            /** @var MailManager $mailManager */
-            $mailManager = $services->get(MailManager::class);
+            /** @var MailTemplateManager $mailManager */
+            $mailManager = $services->get(MailTemplateManager::class);
             $templates = $mailManager->getMailTemplates(true);
             Config::toFile($this->emailTemplatesFile, $templates);
             $file = basename($this->emailTemplatesFile);
@@ -1252,8 +1251,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
 
             $services = MxcDropshipIntegrator::getServices();
-            $mailManager = $services->get(MailManager::class);
-            /** @var MailManager $mailManager */
+            $mailManager = $services->get(MailTemplateManager::class);
+            /** @var MailTemplateManager $mailManager */
             $templates = include $this->emailTemplatesFile;
             $mailManager->setMailTemplates($templates);
 
@@ -1504,7 +1503,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
             $trackingUpdate->run();
 
-            $workflow = MxcVapee::getServices()->get(WorkflowEngine::class);
+            $workflow = MxcWorkflow::getServices()->get(WorkflowEngine::class);
             $workflow->run();
 
 
