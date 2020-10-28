@@ -2,8 +2,10 @@
 
 namespace MxcDropshipIntegrator\Models;
 
+use Doctrine\ORM\Mapping\ClassMetadata;
 use MxcCommons\Toolbox\Config\Config;
 use MxcCommons\Toolbox\Models\BaseEntityRepository;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Models\Article\Article;
 
 class ProductRepository extends BaseEntityRepository
@@ -189,6 +191,12 @@ class ProductRepository extends BaseEntityRepository
         'headChangeable',
         'description',
     ];
+
+    public function __construct($em, ClassMetadata $class)
+    {
+        parent::__construct($em, $class);
+        $this->log = MxcDropshipIntegrator::getServices()->get('logger');
+    }
 
     public function refreshProductStates()
     {

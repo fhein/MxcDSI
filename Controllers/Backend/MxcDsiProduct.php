@@ -4,18 +4,15 @@
 
 use MxcWorkflow\MxcWorkflow;
 use MxcWorkflow\Workflow\WorkflowEngine;
-use MxcCommons\MxcCommons;
+use MxcDropshipInnocigs\Api\ApiClient;
+use MxcDropshipInnocigs\Article\ArticleRegistry;
 use MxcCommons\Plugin\Controller\BackendApplicationController;
-use MxcCommons\Toolbox\Strings\StringTool;
 use MxcCommons\Plugin\Database\SchemaManager;
 use MxcCommons\Toolbox\Config\Config;
 use MxcCommons\Toolbox\Shopware\ArticleTool;
-use MxcCommons\Toolbox\Shopware\MailTool;
 use MxcDropshipInnocigs\MxcDropshipInnocigs;
-use MxcDropshipInnocigs\PluginListeners\CompanionDataImport;
 use MxcCommons\Toolbox\Shopware\SupplierTool;
 use MxcDropshipIntegrator\Models\Model;
-use MxcDropshipInnocigs\Article\ArticleRegistry;
 use MxcDropship\Dropship\DropshipManager;
 use MxcDropshipIntegrator\Excel\ExcelExport;
 use MxcDropshipIntegrator\Excel\ExcelProductImport;
@@ -47,13 +44,10 @@ use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
 use Shopware\Models\Article\Supplier;
 use Shopware\Models\Customer\Customer;
-use Shopware\Models\Order\Order;
 use MxcCommons\Plugin\Mail\MailTemplateManager;
 use MxcDropshipInnocigs\Exception\ApiException;
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropship\MxcDropship;
-use MxcDropship\Exception\DropshipException;
-use MxcDropship\Jobs\SendOrders;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -96,7 +90,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         try {
             $message = [
                 true => 'Prices were successfully updated',
-                false => 'Failed to update prices. See Dropship Log.'
+                false => 'Failed to update prices. See Dropship Log.',
             ];
             /** @var DropshipManager $dropshipManager */
             $dropshipManager = MxcDropship::getServices()->get(DropshipManager::class);
@@ -130,6 +124,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $this->handleException($e);
         }
     }
+
 
     public function updateAssociatedProductsAction()
     {
@@ -1298,8 +1293,20 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function importCompanionConfigurationAction()
     {
         try {
-            $companionDataImport = MxcDropshipInnocigs::getServices()->get(CompanionDataImport::class);
-            $companionDataImport->importCompanionData();
+            $variants = $this->getManager()->getRepository(Variant::class)->findAll();
+            $services = MxcDropshipInnocigs::getServices();
+            $apiClient = $services->get(ApiClient::class);
+            /** @var ArticleRegistry $registry */
+            $registry = $services->get(ArticleRegistry::class);
+            $stockInfo = $apiClient->getStockInfo();
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                $detail = $variant->getDetail();
+                if ($detail === null) continue;
+                $instock = $stockInfo[$variant->getIcNumber()] ?? 0;
+                $detail->setInstock($instock);
+                $registry->configureDropship($variant, $instock);
+            }
             $this->view->assign([ 'success' => true, 'message' => 'Companion config sync completed.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1496,9 +1503,32 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         Shopware()->Db()->executeUpdate($sql);
     }
 
+    protected function setupFlavors()
+    {
+        $products = $this->getManager()->getRepository(Product::class)->findAll();
+        /** @var Product $product */
+        foreach ($products as $product)
+        {
+            $flavor = $product->getFlavor();
+            if (empty($flavor)) continue;
+            $variants = $product->getVariants();
+            /** @var Variant $variant */
+            foreach ($variants as $variant)
+            {
+                $detail = $variant->getDetail();
+                if ($detail === null) continue;
+                ArticleTool::setDetailAttribute($detail, 'mxcbc_flavor', $flavor);
+            }
+        }
+    }
+
     public function dev3Action()
     {
         try {
+            // $this->setupFlavors();
+            // $this->findDeletedProducts();
+            // $this->findDeletedArticles();
+
             /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
             $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
             $trackingUpdate->run();

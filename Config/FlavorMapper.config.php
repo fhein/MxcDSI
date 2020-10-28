@@ -166,6 +166,7 @@ return array (
     35 => 'Zimtschnecke',
     36 => 'Zitronenkuchen',
     37 => 'Zitronentorte',
+    38 => 'Lebkuchen',
   ),
   'Getränke' => 
   array (
@@ -204,6 +205,8 @@ return array (
     32 => 'Zitronentee',
     33 => 'bittere Limonade',
     34 => 'karibischer Rum',
+    35 => 'Glühwein',
+    36 => 'Punsch',
   ),
   'Gewürze' => 
   array (

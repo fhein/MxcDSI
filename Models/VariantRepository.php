@@ -2,8 +2,10 @@
 
 namespace MxcDropshipIntegrator\Models;
 
+use Doctrine\ORM\Mapping\ClassMetadata;
 use MxcCommons\Toolbox\Config\Config;
 use MxcCommons\Toolbox\Models\BaseEntityRepository;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 
 class VariantRepository extends BaseEntityRepository
 {
@@ -38,6 +40,12 @@ class VariantRepository extends BaseEntityRepository
         'retailPriceMaxVapor',
         'retailPriceOthers',
     ];
+
+    public function __construct($em, ClassMetadata $class)
+    {
+        parent::__construct($em, $class);
+        $this->log = MxcDropshipIntegrator::getServices()->get('logger');
+    }
 
     public function getDetail(Variant $variant)
     {

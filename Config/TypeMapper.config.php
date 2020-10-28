@@ -65,6 +65,7 @@ return [
     ],
 
     'name_type_mapping' => [
+        '~Manik Pod Mod~'                     => TypeMapper::TYPE_POD_SYSTEM,
         '~Fotomuster~'                        => TypeMapper::TYPE_PHOTO_SAMPLE,
         '~Aromamizer Supreme V3.*Verdampfer~' => TypeMapper::TYPE_CLEAROMIZER_RDTA,
         '~Ares 2 (D22|D24).* - Verdampfer~'   => TypeMapper::TYPE_CLEAROMIZER_RTA,
@@ -143,6 +144,7 @@ return [
         '~Doctor Coil Watte~'                 => TypeMapper::TYPE_WADDING,
         '~Doctor Coil Cotton~'                => TypeMapper::TYPE_WADDING,
         '~Feather Cotton Threads~'            => TypeMapper::TYPE_WADDING,
+        '~Cotton Threads~'                    => TypeMapper::TYPE_WADDING,
         '~Coilology.*pro Rolle~'              => TypeMapper::TYPE_WIRE,
         '~Glastank~'                          => TypeMapper::TYPE_TANK,
         '~Edelstahldraht~'                    => TypeMapper::TYPE_COIL,
@@ -177,6 +179,7 @@ return [
         '~Abdeckung~'                         => TypeMapper::TYPE_COVER,
         '~Vape Band~'                         => TypeMapper::TYPE_ACCESSORY,
         '~Magnet.*Adapter~'                   => TypeMapper::TYPE_MAGNET_ADAPTOR,
+        '~510er Adapter~'                     => TypeMapper::TYPE_SPARE_PARTS,
         '~[Mm]agnet~'                         => TypeMapper::TYPE_MAGNET,
         '~Batteriehülse~'                     => TypeMapper::TYPE_BATTERY_SLEEVE,
         '~Batteriekappe~'                     => TypeMapper::TYPE_BATTERY_CAP,
