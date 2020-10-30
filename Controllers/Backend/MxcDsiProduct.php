@@ -1522,9 +1522,17 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+
     public function dev3Action()
     {
         try {
+            /** @var ApiClient $client */
+//            $client = MxcDropshipInnocigs::getServices()->get(ApiClient::class);
+//            $log = MxcDropshipInnocigs::getServices()->get('logger');
+//            $data = $client->getTrackingData('2020-10-29');
+//            $log->debug(var_export($data,true));
+
+
             // $this->setupFlavors();
             // $this->findDeletedProducts();
             // $this->findDeletedArticles();
