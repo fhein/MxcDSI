@@ -1537,12 +1537,30 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             // $this->findDeletedProducts();
             // $this->findDeletedArticles();
 
-            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
-            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
-            $trackingUpdate->run();
+            $revenueCalculator = MxcDropship::getServices()->get(\MxcDropship\Dropship\RevenueCalculator::class);
+            $context = [
+                'mailTemplate'      => 'sMxcDsiDropshipStatus',
+                'mailSubject'       => 'Rechnung zu Bestellung {$orderNumber}',
+                'mailTitle'         => 'Bestellung erfolgreich abgeschlossen',
+                'mailBody'          => 'die Bestellung <strong>{$orderNumber}</strong> wurde erfolgreich abgeschlossen. '
+                    . 'Anhängend die Rechnung für die Buchhaltung.',
+                'message'           => 'Bestellung erfolgreich abgeschlossen',
+                'revenue'           => $revenueCalculator->calculate(501),
+            ];
 
-            $workflow = MxcWorkflow::getServices()->get(WorkflowEngine::class);
-            $workflow->run();
+
+            /** @var WorkflowEngine $engine */
+            $engine = MxcWorkflow::getServices()->get(WorkflowEngine::class);
+            $engine->sendNotificationMail(501, $context);
+
+
+
+            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
+//            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
+//            $trackingUpdate->run();
+//
+//            $workflow = MxcWorkflow::getServices()->get(WorkflowEngine::class);
+//            $workflow->run();
 
 
 
