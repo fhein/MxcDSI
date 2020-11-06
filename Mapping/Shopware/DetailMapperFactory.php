@@ -7,7 +7,6 @@ use MxcCommons\Toolbox\Shopware\ArticleTool;
 use MxcDropship\Dropship\DropshipManager;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 use MxcDropship\MxcDropship;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
 use Shopware\Components\Api\Resource\Article;
 
 
@@ -20,7 +19,6 @@ class DetailMapperFactory implements FactoryInterface
         $supplier = 'InnoCigs';
 
         $articleRegistry = $dropshipManager->getService($supplier, 'ArticleRegistry');
-        $companion = $dropshipManager->getService($supplier, 'DropshippersCompanion');
         $apiClient = $dropshipManager->getService($supplier, 'ApiClient');
 
         $priceMapper = $container->get(PriceMapper::class);
@@ -33,7 +31,6 @@ class DetailMapperFactory implements FactoryInterface
             $articleTool,
             $articleResource,
             $apiClient,
-            $companion,
             $articleRegistry,
             $priceMapper,
             $optionMapper

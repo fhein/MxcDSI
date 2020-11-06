@@ -62,7 +62,6 @@ use MxcCommons\Toolbox\Shopware\Configurator\GroupRepository as ConfiguratorGrou
 use MxcCommons\Toolbox\Shopware\Configurator\SetRepository as ConfiguratorSetRepository;
 use MxcCommons\Toolbox\Shopware\Filter\GroupRepository as FilterGroupRepository;
 use MxcCommons\Toolbox\Shopware\MediaTool;
-use Shopware\Bundle\AttributeBundle\Service\TypeMapping;
 
 return [
     'plugin_listeners'   => [
@@ -155,18 +154,5 @@ return [
                 'Metadata' => ExportEcigMetaData::class,
             ],
         ],
-    ],
-    'mail_templates' => [
-//        [
-//            'name' => template name, required
-//            'from_mail' => mail address, default: shop mail address
-//            'from_name' => mail alias, default: shop name
-//            'subject'   => subject, default: template name
-//            'is_html' => true|false, default: false
-//            'type'    => mail type, default: Mail::MAILTYPE_USER,
-//            'context' => context array, default: null
-//            'content_text' => content_text, default: ''
-//            'content_html' => content_html, default ''
-//        ],
     ],
 ];

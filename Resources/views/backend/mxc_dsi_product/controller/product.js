@@ -22,8 +22,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcUpdateArticleSeo:                 me.onUpdateArticleSeo,
                 mxcSetLastStock:                     me.onSetLastStock,
 
-                // dropshipper's companion deprecation
-                mxcImportCompanionSettings:         me.onImportCompanionSettings,
+                mxcEnableDropship:                  me.onEnableDropship,
 
                 // Remapping
 
@@ -102,12 +101,12 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         me.mainWindow = me.getView('list.Window').create({}).show();
     },
 
-    onImportCompanionSettings: function (grid) {
+    onEnableDropship: function (grid) {
         let me = this;
-        let url = '{url controller=MxcDsiProduct action=importCompanionConfiguration}';
+        let url = '{url controller=MxcDsiProduct action=enableDropship}';
         let params = {};
-        let growlTitle = 'Import companion settings';
-        let maskText = 'Importing companion settings ...';
+        let growlTitle = 'Enable dropship';
+        let maskText = 'Enabling dropship for all imported variants ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 

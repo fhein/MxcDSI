@@ -7,7 +7,6 @@ use MxcCommons\Plugin\Database\SchemaManager;
 use MxcCommons\ServiceManager\Factory\FactoryInterface;
 use MxcDropship\Dropship\DropshipManager;
 use MxcDropship\MxcDropship;
-use MxcDropshipInnocigs\MxcDropshipInnocigs;
 
 class ImportClientFactory implements FactoryInterface
 {

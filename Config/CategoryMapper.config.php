@@ -156,6 +156,12 @@ return array(
                 ),
             ),
         ),
+        39 => [
+            'types' => array(
+                0 => 'OTHER_EQUIPMENT',
+            ),
+            'path' => 'ZUBEHÖR > sonstiges Zubehör',
+        ],
         13 => array(
             'types' => array(
                 0 => 'CELL',
@@ -505,6 +511,12 @@ return array(
             'description' => 'Ersatz-Dichtungen für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Dichtung,Ersatzdichtung,Ersatz-Dichtung,E-Zigarette,günstig,kaufen',
             'h1' => 'ERSATZ-DICHTUNGEN FÜR VERDAMPFER',
+        ),
+        'ZUBEHÖR > sonstiges Zubehör' => array(
+            'title' => 'Sonstiges Zubehör E-Zigaretten günstig online kaufen!',
+            'description' => 'Sonstiges Zubehör für E-Zigaretten günstig kaufen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
+            'keywords' => 'Zubehör,sonstiges',
+            'h1' => 'SONSTIGES ZUBEHÖR',
         ),
         'ZUBEHÖR > Mundstücke & Schutz' => array(
             'title' => 'Mundstücke für E-Zigaretten günstig online kaufen!',

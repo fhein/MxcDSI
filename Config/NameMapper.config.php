@@ -48,6 +48,7 @@ return [
             // separator different from '-'
             '~(SX-RSA Esea) DIY~'                   => '$1',
             '~Bros Frost~'                          => 'Bro\'s Frost',
+            '~EXCEED~'                              => 'Exceed',
             '~–~'                                   => '-',
         ],
     ],
@@ -698,6 +699,7 @@ return [
             '~(VTC((6)|(5A)))~'                                   => '$1 - Akkuzelle',
             '~(INR18650-((25R)|(30Q)))~'                          => '$1 - Akkuzelle',
             '~\(Panasonic\) (NCR20700B)~'                         => '$1 - Akkuzelle',
+            '~(\d{5})er (Quad Akkubox)~'                          => '$2 - $1',
             '~(\d{5})er( Akku)?~'                                 => '$1 - Akkuzelle',
             '~Akkuzellebox~'                                      => 'Akkubox',
             '~(Easy 3) (Caps) (.*) \(~'                           => '$1 $3 - $2 (',
@@ -929,6 +931,8 @@ return [
             '~(Exceed Grip)~',
             '~(Exceed X)~',
             '~(Notch(C|c)ore)~',
+            '~(Teros)~',
+            '~(Riftcore(( Duo)|( Solo)))~',
         ],
         'Nikola'                => [
             '~(Medea)~',
@@ -953,6 +957,8 @@ return [
                 '~(Coral 2)~',
                 '~(GZeno)~',
                 '~(iStick S80 mit GZeno)~',
+                '~(Elven)~',
+                '~(iTap)~',
             ],
         'SC'                    => [
             '~(iJust(( 21700)|( ECM)|( 3 Pro)|( 3)|( Mini)|( AIO))?)~',
@@ -1017,7 +1023,7 @@ return [
             '~(Notchcore)~',
             '~(Presence)~',
             '~(ProCore (Air Plus)|(Air)|(Conquer)|(Remix)|(X))~',
-            '~(Riftcore Duo)~',
+            '~(Riftcore(( Duo)|( Solo)))~',
             '~(Teros( ONE)?)~',
             '~(Unimax 22)~',
             '~(Tralus)~',
@@ -1201,7 +1207,7 @@ return [
         'Uwell'                 => [
             '~(Evdilo)~',
             '~(Marsupod)~',
-            '~(Crown(( 3)|( 4)|( Pod)))~',
+            '~(Crown(( 3)|( 4)|( 5)|( Pod)))~',
             '~(Fancier RTA)~',
             '~(Hypercar)~',
             '~(Ironfist)~',
@@ -1212,6 +1218,7 @@ return [
             '~(Caliburn(( Koko( Prime)?)|( G))?)~',
             '~(Amulet)~',
             '~(Zumwalt Pod)~',
+            '~(Aeglos)~'
 
         ],
         'Vapanion'              => [
@@ -1247,6 +1254,7 @@ return [
             '~(Argus(( GT)|( Air)))~',
             '~(PnP Pod)~',
             '~(V Thru Pro)~',
+            '~(Argus( Pro)?)~',
         ],
         'Vaporesso'             => [
             '~(GTX(( Tank 22)|( One)|( 18)))~',

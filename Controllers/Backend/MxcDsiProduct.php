@@ -2,6 +2,7 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
+use MxcDropship\Jobs\UpdateTrackingData;
 use MxcWorkflow\MxcWorkflow;
 use MxcWorkflow\Workflow\WorkflowEngine;
 use MxcDropshipInnocigs\Api\ApiClient;
@@ -1153,6 +1154,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             $types = [
                 'E_CIGARETTE',
+                'POD_SYSTEM',
                 'BOX_MOD',
                 'BOX_MOD_CELL',
                 'SQUONKER_BOX',
@@ -1290,7 +1292,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
-    public function importCompanionConfigurationAction()
+    public function enableDropshipAction()
     {
         try {
             $variants = $this->getManager()->getRepository(Variant::class)->findAll();
@@ -1307,7 +1309,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $detail->setInstock($instock);
                 $registry->configureDropship($variant, $instock);
             }
-            $this->view->assign([ 'success' => true, 'message' => 'Companion config sync completed.' ]);
+            $this->view->assign([ 'success' => true, 'message' => 'Dropship for all variants enabled.' ]);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1522,10 +1524,21 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function findPodSystemsWithZugautomatik()
+    {
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+        $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'POD_SYSTEM']);
+        foreach ($products as $product) {
+            if (strpos($product->getDescription(), 'Zugautomatik') !== false) {
+                $log->debug('Zugautomatik: '. $product->getName());
+            }
+        }
+    }
 
     public function dev3Action()
     {
         try {
+            $this->findPodSystemsWithZugautomatik();
             /** @var ApiClient $client */
 //            $client = MxcDropshipInnocigs::getServices()->get(ApiClient::class);
 //            $log = MxcDropshipInnocigs::getServices()->get('logger');
@@ -1538,12 +1551,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             // $this->findDeletedArticles();
 
 
-            /** @var \MxcDropship\Jobs\UpdateTrackingData $trackingUpdate */
-            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
-            $trackingUpdate->run();
-
-            $workflow = MxcWorkflow::getServices()->get(WorkflowEngine::class);
-            $workflow->run();
+            /** @var UpdateTrackingData $trackingUpdate */
+//            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
+//            $trackingUpdate->run();
+//
+//            $workflow = MxcWorkflow::getServices()->get(WorkflowEngine::class);
+//            $workflow->run();
 
 
 

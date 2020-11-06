@@ -15,7 +15,6 @@ use MxcCommons\Toolbox\Shopware\ArticleTool;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Configurator\Set;
 use Shopware\Models\Article\Detail;
-use MxcDropshipInnocigs\Companion\DropshippersCompanion;
 use Shopware\Components\Api\Resource\Article as ArticleResource;
 
 class DetailMapper implements AugmentedObject
@@ -31,9 +30,6 @@ class DetailMapper implements AugmentedObject
 
     /** @var OptionMapper */
     protected $optionMapper;
-
-    /** @var DropshippersCompanion */
-    private $companion;
 
     /** @var ArticleRegistry */
     private $registry;
@@ -56,13 +52,11 @@ class DetailMapper implements AugmentedObject
         ArticleTool $articleTool,
         ArticleResource $articleResource,
         ApiClient $apiClient,
-        DropshippersCompanion $companion,
         ArticleRegistry $articleRegistry,
         PriceMapper $priceMapper,
         OptionMapper $optionMapper
     ) {
         $this->optionMapper = $optionMapper;
-        $this->companion = $companion;
         $this->priceMapper = $priceMapper;
         $this->articleTool = $articleTool;
         $this->apiClient = $apiClient;
@@ -225,7 +219,6 @@ class DetailMapper implements AugmentedObject
 
         $stockInfo = @$this->getStockInfo()[$variant->getIcNumber()] ?? 0;
         $detail->setInstock($stockInfo);
-        $this->companion->configureDropship($variant, $stockInfo);
         $this->articleRegistry->configureDropship($variant, $stockInfo);
     }
 

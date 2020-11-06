@@ -117,7 +117,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcDev6',
           'mxcDev7',
           'mxcDev8',
-          'mxcImportCompanionSettings'
+          'mxcEnableDropship'
         );
         me.callParent(arguments);
     },
@@ -717,9 +717,9 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
-                    text: 'Import companion settings',
+                    text: 'Enable dropship',
                     handler: function() {
-                        me.fireEvent('mxcImportCompanionSettings', me);
+                        me.fireEvent('mxcEnableDropship', me);
                     }
                 },
             ]

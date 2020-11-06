@@ -62,9 +62,12 @@ return [
         TypeMapper::TYPE_POD_SYSTEM         => 'POD_SYSTEM',
         TypeMapper::TYPE_NICSALT_LIQUID     => 'NICSALT_LIQUID',
         TypeMapper::TYPE_PHOTO_SAMPLE       => 'PHOTO_SAMPLE',
+        TypeMapper::TYPE_OTHER_EQUIPMENT    => 'OTHER_EQUIPMENT',
     ],
 
     'name_type_mapping' => [
+        '~Teros - E-Zigarette~'               => TypeMapper::TYPE_POD_SYSTEM,
+        '~Manik.*Cartridge~'                  => TypeMapper::TYPE_CARTRIDGE,
         '~Manik Pod Mod~'                     => TypeMapper::TYPE_POD_SYSTEM,
         '~Fotomuster~'                        => TypeMapper::TYPE_PHOTO_SAMPLE,
         '~Aromamizer Supreme V3.*Verdampfer~' => TypeMapper::TYPE_CLEAROMIZER_RDTA,
@@ -187,6 +190,8 @@ return [
         '~Idian X - 510er Adapter~'           => TypeMapper::TYPE_SPARE_PARTS,
         '~Wismec - RBA Set~'                  => TypeMapper::TYPE_COIL,
         '~OXVA.*Airflow Ring~'                => TypeMapper::TYPE_HEAD,
-        '~(RMC Silikonringe)~'                => TypeMapper::TYPE_SEAL,
+        '~RMC Silikonringe~'                  => TypeMapper::TYPE_SEAL,
+        '~Umhängeband~'                       => TypeMapper::TYPE_OTHER_EQUIPMENT,
+        '~Wickelmatte~'                       => TypeMapper::TYPE_OTHER_EQUIPMENT,
     ],
 ];
