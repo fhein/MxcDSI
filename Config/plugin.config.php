@@ -2,6 +2,8 @@
 
 namespace MxcDropshipIntegrator;
 
+use MxcDropshipIntegrator\Mapping\Import\BulkSupportMapper;
+use MxcDropshipIntegrator\Mapping\Import\IgnoredOptionRemover;
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropshipIntegrator\Models\Model;
 use MxcCommons\Toolbox\Shopware\MailTool;
@@ -93,6 +95,8 @@ return [
 
         ],
         'magicals'  => [
+            IgnoredOptionRemover::class,
+            BulkSupportMapper::class,
             ProductSeoMapper::class,
             ExportNewProducts::class,
             PriceEngine::class,

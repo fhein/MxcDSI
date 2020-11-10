@@ -2,7 +2,10 @@
 
 /** @noinspection PhpUnhandledExceptionInspection */
 
+use MxcDropshipIntegrator\Models\Option;
 use MxcDropship\Jobs\UpdateTrackingData;
+use MxcDropshipIntegrator\Mapping\Import\BulkSupportMapper;
+use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcWorkflow\MxcWorkflow;
 use MxcWorkflow\Workflow\WorkflowEngine;
 use MxcDropshipInnocigs\Api\ApiClient;
@@ -1535,17 +1538,153 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         }
     }
 
+    public function findMultipackLiquids()
+    {
+        $repository = $this->getManager()->getRepository(Product::class);
+        $products = $repository->getAllIndexed();
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+        $multiPacks = [];
+
+        /** @var Product $product */
+        foreach ($products as $product) {
+            $type = $product->getType();
+            if (! in_array($type, [
+                'LIQUID',
+                'NICSALT_LIQUID',
+                'AROMA',
+                'SHOT',
+            ])) continue;
+
+            $variants = $product->getVariants();
+            /** @var Variant $variant */
+            foreach ($variants as $variant) {
+                $options = $variant->getOptions();
+                /** @var Option $option */
+                foreach ($options as $option) {
+                    $group = $option->getIcGroup();
+                    if ($group->getName() !== 'Packungsgröße') continue;
+                    $optionName = $option->getName();
+                    if ($optionName != '1er Packung') {
+                        $size = [];
+                        preg_match('~(\d+)er Packung~', $optionName, $size);
+                        $size = intval($size[1]);
+                        if ($size > 20) continue;
+                        $multiPacks[$type][$product->getName()][] = $optionName;
+                    }
+                }
+            }
+        }
+        foreach ($multiPacks as $key => $value)
+        {
+            foreach ($value as $k => $v)
+            $multiPacks[$key][$k] = array_unique($v);
+            ksort($multiPacks[$key]);
+        }
+        $log->debug('Liquid Multipacks:');
+        $log->debug(var_export($multiPacks, true));
+    }
+
+    public function remapAccepted()
+    {
+        $services = MxcDropshipIntegrator::getServices();
+        $productMapper = $services->get(ProductMapper::class);
+        /** @var BulkSupportMapper $bulkSupportMapper */
+        $bulkSupportMapper = $services->get(BulkSupportMapper::class);
+        $repository = $this->getManager()->getRepository(Product::class);
+        $products = $repository->getAllIndexed();
+
+        $model = new Model();
+        foreach ($products as $product) {
+            $bulkSupportMapper->map($model, $product, true);
+        }
+        $this->getManager()->flush();
+
+//        $ids = [];
+//        foreach ($products as $product) {
+//            $ids[] = $product->getId();
+//        }
+//
+//        $products = $repository->getLinkedProductsFromProductIds($ids);
+//        $productMapper->updateArticles($products, false);
+//        $this->getManager()->flush();
+    }
+
+    public function resetSinglePacks()
+    {
+        $services = MxcDropshipIntegrator::getServices();
+        $bulkSupportMapper = $services->get(BulkSupportMapper::class);
+        $repository = $this->getManager()->getRepository(Product::class);
+        $products = $repository->getAllIndexed();
+
+        $model = new Model();
+        foreach ($products as $product) {
+            $bulkSupportMapper->map2($model, $product, true);
+        }
+        $this->getManager()->flush();
+
+    }
+
+    public function setLiguidBulkPrice()
+    {
+        $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'LIQUID']);
+
+        $supplier = 'SC -';
+        $optionName = '10er Packung';
+        $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
+        $price = 17.45 / $vatFactor;
+
+        /** @var PriceEngine $priceEngine */
+        $priceEngine = MxcDropshipIntegrator::getServices()->get(PriceEngine::class);
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+
+        /** @var Product $product */
+        foreach ($products as $product) {
+            if (strpos($product->getName(), $supplier) === false) continue;
+            $variants = $product->getVariants();
+            foreach ($variants as $variant) {
+                $options = $variant->getOptions();
+                foreach ($options as $option) {
+                    $groupName = $option->getIcGroup()->getName();
+                    if ($groupName != 'Packungsgröße') continue;
+                    if ($optionName != $option->getName()) continue;
+                    $priceEngine->setRetailPrice($variant, 'EK', $price);
+                }
+            }
+        }
+        $this->getManager()->flush();
+    }
+
     public function dev3Action()
     {
         try {
-            $this->findPodSystemsWithZugautomatik();
-            /** @var ApiClient $client */
-//            $client = MxcDropshipInnocigs::getServices()->get(ApiClient::class);
-//            $log = MxcDropshipInnocigs::getServices()->get('logger');
-//            $data = $client->getTrackingData('2020-10-29');
-//            $log->debug(var_export($data,true));
+            $this->setLiguidBulkPrice();
+            //            $this->resetSinglePacks();
+//            $this->remapAccepted();
+//            $this->findMultipackLiquids();
+//            $repository = $this->getManager()->getRepository(Variant::class);
+//            $variants = $repository->getAcceptedVariants();
+//            $accepted = true;
+//            /** @var Variant $variant */
+//            foreach ($variants as $variant) {
+//                if (! $variant->getAccepted()) {
+//                    $accepted = false;
+//                    break;
+//                }
+//            }
+//
+//            $count = count($variants);
+//
+//            if ($accepted === true)
+//            {
+//                $variants = $repository->getAllIndexed();
+//                $count2 = 0;
+//                foreach ($variants as $variant) {
+//                    if ($variant->getAccepted() === true) $count2++;
+//                }
+//            }
 
 
+            //$this->findPodSystemsWithZugautomatik();
             // $this->setupFlavors();
             // $this->findDeletedProducts();
             // $this->findDeletedArticles();
@@ -1719,6 +1858,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     protected function updateProductStates(Product $product, array $changes)
     {
         $services = MxcDropshipIntegrator::getServices();
+        /** @var ProductMapper $productMapper */
         $productMapper = $services->get(ProductMapper::class);
 
         $change = $changes['linked'] ?? null;

@@ -34,18 +34,23 @@ class CapacityMapper extends BaseImportMapper implements ProductMapperInterface,
         if (in_array($type, ['NICSALT_LIQUID', 'LIQUID', 'LIQUID_BOX', 'BASE'])) {
             $variants = $product->getVariants();
             foreach ($variants as $variant) {
-                $capacity = $variant->getContent();
-                $variant->setCapacity($capacity);
+                $content = $this->remapContent($product);
+                $variant->setContent($content);
+                $variant->setCapacity($content);
             }
         } else {
             $icNumber = $product->getIcNumber();
             $capacity = @$this->config[$icNumber]['capacity'];
             $capacity = $capacity ?? $this->remapCapacity($product);
+            $content = $this->remapContent($product);
 
             $variants = $product->getVariants();
             /** @var Variant $variant */
             foreach ($variants as $variant) {
                 $variant->setCapacity($capacity);
+                if ($content !== null) {
+                    $variant->setContent($content);
+                }
             }
         }
 

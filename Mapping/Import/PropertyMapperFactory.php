@@ -36,6 +36,10 @@ class PropertyMapperFactory implements FactoryInterface
             'category'      => $container->get(CategoryMapper::class),
             // requires name, sets commonName
             'seoInfo'       => $container->get(ProductSeoMapper::class),
+            // requires type
+            'bulkSupport'   => $container->get(BulkSupportMapper::class),
+            // run last
+            'ignoredOptions' => $container->get(IgnoredOptionRemover::class),
         ];
 
         $variantMappers = [

@@ -60,7 +60,6 @@ class ExportPriceIssues extends AbstractProductExport implements AugmentedObject
             $uvps = [];
             $margin = [];
             foreach ($variants as $variant) {
-                if (! $this->isSinglePack($variant)) continue;
                 $info['icNumber'] = $variant->getIcNumber();
                 $purchasePrice = floatVal($variant->getPurchasePrice());
                 $eks[] = $purchasePrice;
@@ -189,7 +188,6 @@ class ExportPriceIssues extends AbstractProductExport implements AugmentedObject
 
     protected function loadRawExportData(): ?array
     {
-        /** @noinspection PhpUndefinedMethodInspection */
         return $this->modelManager->getRepository(Product::class)->getAllIndexed();
     }
 

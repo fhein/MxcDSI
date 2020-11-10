@@ -73,66 +73,59 @@ class ExportPrices extends AbstractProductExport implements AugmentedObject
 
     protected function setSheetData()
     {
-        $products = $this->data;
+        $variants = $this->data;
         $data = [];
         $headers = null;
-        /** @var Product $product */
-        foreach ($products as $product) {
+        /** @var Variant $variant */
+        foreach ($variants as $variant) {
             $info = $this->getColumns();
+            $product = $variant->getProduct();
             $info['type'] = $product->getType();
             $info['supplier'] = $product->getSupplier();
             $info['brand'] = $product->getBrand();
             $info['name'] = $product->getName();
             $info['Product Number'] = $product->getIcNumber();
 
-            $variants = $product->getVariants();
-            /** @var Variant $variant */
-            foreach ($variants as $variant) {
 
-                $vatFactor = (1 + TaxTool::getCurrentVatPercentage() / 100);
-
-                if (! $this->isSinglePack($variant)) continue;
-                $info['icNumber'] = $variant->getIcNumber();
-                $price = floatVal($variant->getPurchasePrice());
-                $info['EK Netto'] = $price;
-                $info['EK Brutto'] = round($price * $vatFactor, 2);
-                $price = floatVal($variant->getRecommendedRetailPrice());
-                $info['UVP Brutto'] = round($price * $vatFactor, 2);
-                $price = floatVal($variant->getRecommendedRetailPriceOld());
-                $info['UVP Brutto alt'] = round($price * $vatFactor, 2);
-                $price = floatVal($variant->getPurchasePriceOld());
-                $info['EK Netto alt'] = round($price, 2);
-                $info['Dampfplanet'] = $variant->getRetailPriceDampfplanet();
-                $info['MaxVapor'] = $variant->getRetailPriceMaxVapor();
-                $info['andere'] = $variant->getRetailPriceOthers();
-                $options = $variant->getOptions();
-                $optionNames = [];
-                /** @var Option $option */
-                foreach ($options as $option) {
-                    $optionName = $option->getName();
-                    if ($optionName === '1er Packung') continue;
-                    $optionNames[] = $option->getIcGroup()->getName() . ': ' . $option->getName();
-                }
-                $optionText = implode(', ', $optionNames);
-                $info['options'] = $optionText;
-
-                $customerGroupKeys = $this->getCustomerGroupKeys();
-                $vapeePrices = $this->priceEngine->getRetailPrices($variant);
-                $correctedRetailPrices = $this->priceEngine->getCorrectedRetailPrices($variant);
-                foreach ($customerGroupKeys as $key) {
-                    $price = $vapeePrices[$key] ?? null;
-                    $correctedPrice = $correctedRetailPrices[$key] ?? null;
-                    if ($key !== 'EK') {
-                        $price = $price === $info['UVP Brutto'] ? null : $price;
-                    }
-                    $info['VK Brutto ' . $key] = round($this->priceEngine->beautifyPrice($price * $vatFactor), 2);
-                    $info['Corrected VK ' . $key] = round($this->priceEngine->beautifyPrice( $correctedPrice * $vatFactor), 2);
-                }
-
-                $data[] = $info;
+            $vatFactor = (1 + TaxTool::getCurrentVatPercentage() / 100);
+            $info['icNumber'] = $variant->getIcNumber();
+            $price = floatVal($variant->getPurchasePrice());
+            $info['EK Netto'] = $price;
+            $info['EK Brutto'] = round($price * $vatFactor, 2);
+            $price = floatVal($variant->getRecommendedRetailPrice());
+            $info['UVP Brutto'] = round($price * $vatFactor, 2);
+            $price = floatVal($variant->getRecommendedRetailPriceOld());
+            $info['UVP Brutto alt'] = round($price * $vatFactor, 2);
+            $price = floatVal($variant->getPurchasePriceOld());
+            $info['EK Netto alt'] = round($price, 2);
+            $info['Dampfplanet'] = $variant->getRetailPriceDampfplanet();
+            $info['MaxVapor'] = $variant->getRetailPriceMaxVapor();
+            $info['andere'] = $variant->getRetailPriceOthers();
+            $options = $variant->getOptions();
+            $optionNames = [];
+            /** @var Option $option */
+            foreach ($options as $option) {
+                $optionName = $option->getName();
+                if ($optionName === '1er Packung') continue;
+                $optionNames[] = $option->getIcGroup()->getName() . ': ' . $option->getName();
             }
+            $optionText = implode(', ', $optionNames);
+            $info['options'] = $optionText;
+
+            $customerGroupKeys = $this->getCustomerGroupKeys();
+            $vapeePrices = $this->priceEngine->getRetailPrices($variant);
+            $correctedRetailPrices = $this->priceEngine->getCorrectedRetailPrices($variant);
+            foreach ($customerGroupKeys as $key) {
+                $price = $vapeePrices[$key] ?? null;
+                $correctedPrice = $correctedRetailPrices[$key] ?? null;
+                if ($key !== 'EK') {
+                    $price = $price === $info['UVP Brutto'] ? null : $price;
+                }
+                $info['VK Brutto ' . $key] = round($this->priceEngine->beautifyPrice($price * $vatFactor), 2);
+                $info['Corrected VK ' . $key] = round($this->priceEngine->beautifyPrice( $correctedPrice * $vatFactor), 2);
+            }
+            $data[] = $info;
         }
-        // $this->priceEngine->report();
 
         $headers[] = array_keys($data[0]);
 
@@ -303,8 +296,8 @@ class ExportPrices extends AbstractProductExport implements AugmentedObject
 
     protected function loadRawExportData(): ?array
     {
-        /** @noinspection PhpUndefinedMethodInspection */
-        return $this->modelManager->getRepository(Product::class)->getAllIndexed();
+        $repository = $this->modelManager->getRepository(Variant::class);
+        return $repository->getAcceptedVariants();
     }
 
 }

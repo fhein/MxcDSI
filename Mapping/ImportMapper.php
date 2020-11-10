@@ -140,6 +140,7 @@ class ImportMapper implements AugmentedObject
             $param = explode(Constants::DELIMITER_L1, $option);
             $optionName = $this->propertyMapper->mapOptionName($param[1]);
             $groupName = $this->propertyMapper->mapGroupName($param[0]);
+
             $option = @$this->options[$groupName][$optionName];
             if ($option === null && ! $this->useCache) {
                 $option = $this->getOptionRepository()->getOption($groupName, $optionName);
@@ -229,10 +230,10 @@ class ImportMapper implements AugmentedObject
         $variant->setPurchasePrice($purchasePrice);
 
         $uvp = StringTool::tofloat($model->getRecommendedRetailPrice());
-
         // we store net prices only
         $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
-        $variant->setRecommendedRetailPrice($uvp / $vatFactor);
+        $uvp = $uvp / $vatFactor;
+        $variant->setRecommendedRetailPrice($uvp);
 
         $variant->setImages($model->getImages());
         $unit = $model->getUnit();
@@ -274,8 +275,8 @@ class ImportMapper implements AugmentedObject
         }
         $this->modelManager->flush();
     }
-    // Undelete variant if the according model was reintroduced
 
+    // Undelete variant if the according model was reintroduced
     protected function revokeVariants()
     {
         $revokables = $this->getModelRepository()->getModelsWithDeletedVariant();

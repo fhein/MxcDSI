@@ -65,8 +65,7 @@ class ImportPrices extends AbstractProductImport implements AugmentedObject
         $prices = [];
         $customerPrice = $record['VK Brutto EK'];
         // if no price is specified we take the UVP
-        if (! $customerPrice || $customerPrice === '') $customerPrice = $record['UVP Brutto'];
-
+        if (empty($customerPrice)) $customerPrice = $record['UVP Brutto'];
         $customerPrice = $customerPrice === '' ? null : $customerPrice;
 
         $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
@@ -79,7 +78,6 @@ class ImportPrices extends AbstractProductImport implements AugmentedObject
                 $prices[] = $customerGroup . Constants::DELIMITER_L1 . strval($netPrice);
             }
         }
-        // $this->log->debug(var_export($prices, true));
         $prices = implode(Constants::DELIMITER_L2, $prices);
         $variant->setRetailPrices($prices);
         $this->priceMapper->setPrices($variant);

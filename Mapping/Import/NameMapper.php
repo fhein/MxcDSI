@@ -332,5 +332,4 @@ class NameMapper extends BaseImportMapper implements ProductMapperInterface
         );
         return $replacementLog;
     }
-
 }

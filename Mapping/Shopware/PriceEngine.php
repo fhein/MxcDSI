@@ -240,14 +240,14 @@ class PriceEngine implements AugmentedObject
         return $this->customerGroups;
     }
 
-    public function setRetailPrices(Variant $variant, array $grossRetailPrices)
+    public function setRetailPrices(Variant $variant, array $netRetailPrices)
     {
         $prices = [];
-        foreach ($grossRetailPrices as $key => $price) {
+        foreach ($netRetailPrices as $key => $price) {
             $prices[] = $key . Constants::DELIMITER_L1 . $price;
         }
-        $grossRetailPrices = implode(Constants::DELIMITER_L2, $prices);
-        $variant->setRetailPrices($grossRetailPrices);
+        $netRetailPrices = implode(Constants::DELIMITER_L2, $prices);
+        $variant->setRetailPrices($netRetailPrices);
     }
 
     public function getRetailPrices(Variant $variant)
@@ -260,5 +260,20 @@ class PriceEngine implements AugmentedObject
             $retailPrices[$key] = StringTool::tofloat($price);
         }
         return $retailPrices;
+    }
+
+    public function setRetailPrice(Variant $variant, string $customerGroupKey, float $price)
+    {
+        $customerGroupKeys = $this->getCustomerGroupKeys();
+        if (! in_array($customerGroupKey, $customerGroupKeys)) return;
+        $retailPrices = $this->getRetailPrices($variant);
+        $retailPrices[$customerGroupKey] = $price;
+        $this->setRetailPrices($variant, $retailPrices);
+    }
+
+    public function getRetailPrice(Variant $variant, string $customerGroupKey)
+    {
+        $retailPrices = $this->getRetailPrices($variant);
+        return $retailPrices[$customerGroupKey];
     }
 }

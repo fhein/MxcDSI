@@ -16,7 +16,11 @@ class VariantRepository extends BaseEntityRepository
         'getVariantsWithoutModel'   => 'SELECT v FROM MxcDropshipIntegrator\Models\Variant v '
                                         . 'LEFT JOIN MxcDropshipIntegrator\Models\Model m WITH m.model = v.icNumber '
                                         . 'WHERE m.id IS NULL',
-
+        'getAcceptedVariants'       => 'SELECT p, v FROM MxcDropshipIntegrator\Models\Variant v '
+                                        . 'LEFT JOIN v.product p '
+                                        . 'LEFT JOIN v.options o '
+                                        . 'LEFT JOIN o.icGroup g '
+                                        . 'WHERE v.accepted = 1 AND p.accepted = 1 AND g.accepted = 1 and o.accepted = 1',
         // DQL does not support parameters in SELECT
         'getProperties'  =>
             'SELECT :properties FROM MxcDropshipIntegrator\Models\Variant p INDEX BY p.icNumber',

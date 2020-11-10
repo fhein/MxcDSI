@@ -66,6 +66,7 @@ return [
     ],
 
     'name_type_mapping' => [
+        '~Nautilus Prime - Base~'             => TypeMapper::TYPE_POD,
         '~Teros - E-Zigarette~'               => TypeMapper::TYPE_POD_SYSTEM,
         '~Manik.*Cartridge~'                  => TypeMapper::TYPE_CARTRIDGE,
         '~Manik Pod Mod~'                     => TypeMapper::TYPE_POD_SYSTEM,
