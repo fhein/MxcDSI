@@ -87,6 +87,7 @@ class VariantRepository extends BaseEntityRepository
                 continue;
             }
             $pieces =  $matches[1];
+            break;
         }
         return $pieces;
     }

@@ -6,6 +6,7 @@ use MxcDropshipIntegrator\Models\Option;
 use MxcDropship\Jobs\UpdateTrackingData;
 use MxcDropshipIntegrator\Mapping\Import\BulkSupportMapper;
 use MxcCommons\Toolbox\Shopware\TaxTool;
+use MxcDropshipIntegrator\Mapping\Shopware\BulkPriceMapper;
 use MxcWorkflow\MxcWorkflow;
 use MxcWorkflow\Workflow\WorkflowEngine;
 use MxcDropshipInnocigs\Api\ApiClient;
@@ -1550,9 +1551,11 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $type = $product->getType();
             if (! in_array($type, [
                 'LIQUID',
-                'NICSALT_LIQUID',
+                'SHAKE_VAPE',
                 'AROMA',
-                'SHOT',
+//                'NICSALT_LIQUID',
+//                'AROMA',
+//                'SHOT',
             ])) continue;
 
             $variants = $product->getVariants();
@@ -1569,7 +1572,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                         preg_match('~(\d+)er Packung~', $optionName, $size);
                         $size = intval($size[1]);
                         if ($size > 20) continue;
-                        $multiPacks[$type][$product->getName()][] = $optionName;
+                        $multiPacks[$type][$product->getBrand()][] = $optionName;
                     }
                 }
             }
@@ -1621,43 +1624,116 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $bulkSupportMapper->map2($model, $product, true);
         }
         $this->getManager()->flush();
-
     }
 
     public function setLiguidBulkPrice()
     {
-        $products = $this->getManager()->getRepository(Product::class)->findBy(['type' => 'LIQUID']);
+        $repository = $this->getManager()->getRepository(Product::class);
 
-        $supplier = 'SC -';
-        $optionName = '10er Packung';
         $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
-        $price = 17.45 / $vatFactor;
+        $bulkPrices = [
+            'LIQUID' => [
+                [
+                    'brand' => 'SC',
+                    'option'   => '10er Packung',
+                    'price'    => 17.5,
+                ],
+                [
+                    'brand' => 'InnoCigs',
+                    'option'   => '10er Packung',
+                    'price'    => 21.5,
+                ],
+                [
+                    'brand' => 'Erste Sahne',
+                    'option'   => '10er Packung',
+                    'price'    => 33.75,
+                ],
+                [
+                    'brand' => 'Erste Sahne',
+                    'option'   => '5er Packung',
+                    'price'    => 17.80,
+                ],
+                [
+                    'brand' => 'Vampire Vape',
+                    'option'   => '20er Packung',
+                    'price'    => 69.90,
+                ],
+            ],
+        ];
 
         /** @var PriceEngine $priceEngine */
-        $priceEngine = MxcDropshipIntegrator::getServices()->get(PriceEngine::class);
-        $log = MxcDropshipIntegrator::getServices()->get('logger');
+        $services = MxcDropshipIntegrator::getServices();
+        $priceEngine = $services->get(PriceEngine::class);
+        $log = $services->get('logger');
 
-        /** @var Product $product */
-        foreach ($products as $product) {
-            if (strpos($product->getName(), $supplier) === false) continue;
-            $variants = $product->getVariants();
-            foreach ($variants as $variant) {
-                $options = $variant->getOptions();
-                foreach ($options as $option) {
-                    $groupName = $option->getIcGroup()->getName();
-                    if ($groupName != 'Packungsgröße') continue;
-                    if ($optionName != $option->getName()) continue;
-                    $priceEngine->setRetailPrice($variant, 'EK', $price);
+        $ids = [];
+        foreach ($bulkPrices as $type => $data) {
+            foreach ($data as $item) {
+                $products = $repository->findBy(['type' => $type, 'brand' => $item['brand']]);
+                $price = $item['price'] / $vatFactor;
+                /** @var Product $product */
+                foreach ($products as $product) {
+                    $variants = $product->getVariants();
+                    foreach ($variants as $variant) {
+                        $options = $variant->getOptions();
+                        foreach ($options as $option) {
+                            $groupName = $option->getIcGroup()->getName();
+                            if ($groupName != 'Packungsgröße') {
+                                continue;
+                            }
+                            if ($item['option'] != $option->getName()) {
+                                continue;
+                            }
+                            $priceEngine->setRetailPrice($variant, 'EK', $price);
+                            $variant->setAccepted(true);
+                            $log->debug('Price set to ' . $item['price'] . ' for ' . $item['brand'] . ' - ' . $variant->getName());
+                            $ids[$product->getId()] = true;
+                        }
+                    }
                 }
+                $this->getManager()->flush();
             }
         }
+        $ids = array_keys($ids);
+
+        $productMapper = $services->get(ProductMapper::class);
+        $propertyMapper = $services->get(PropertyMapper::class);
+        /** @var PriceMapper $priceMapper */
+        $priceMapper = $services->get(PriceMapper::class);
+
+        $products = $repository->getProductsByIds($ids);
+        foreach ($products as $product) {
+            $log->debug('getProductsByIds: ' . $product->getName());
+        }
+
+        $propertyMapper->mapProperties($products, true);
+        $this->getManager()->flush();
+        $products = $repository->getLinkedProductsFromProductIds($ids);
+
+        foreach ($products as $product) {
+            $product->setActive(true);
+            $log->debug('Modified price for :' . $product->getName());
+        }
+        $productMapper->updateArticles($products, false);
+        $this->getManager()->flush();
+        foreach ($products as $product) {
+            $variants = $product->getVariants();
+            foreach ($variants as $variant) {
+                $priceMapper->setPrices($variant);
+            }
+        }
+
         $this->getManager()->flush();
     }
 
     public function dev3Action()
     {
         try {
-            $this->setLiguidBulkPrice();
+            /** @var BulkPriceMapper $bulkPriceMapper */
+            $bulkPriceMapper = MxcDropshipIntegrator::getServices()->get(BulkPriceMapper::class);
+            $bulkPriceMapper->mapBulkPrices();
+
+            //$this->setLiguidBulkPrice();
             //            $this->resetSinglePacks();
 //            $this->remapAccepted();
 //            $this->findMultipackLiquids();
@@ -1686,8 +1762,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             //$this->findPodSystemsWithZugautomatik();
             // $this->setupFlavors();
-            // $this->findDeletedProducts();
-            // $this->findDeletedArticles();
+//            $this->findDeletedProducts();
+//            $this->findDeletedArticles();
 
 
             /** @var UpdateTrackingData $trackingUpdate */

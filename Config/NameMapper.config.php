@@ -584,6 +584,7 @@ return [
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
             '~(Aegis Squonk) (- \d+ Watt)~'                       => '$1 - Squonker Box $2',
+            '~(Scar 18) (- \d+ Watt)~'                            => '$1 - Akkuträger $2',
             '~(Grus) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Gen X) (- \d+ Watt)~'                              => '$1 - Akkuträger $2',
             '~(Siegfried) (- \d+ Watt)~'                          => '$1 - Akkuträger $2',
@@ -1072,6 +1073,8 @@ return [
             '~(Idian( X)?)~',
         ],
         'Smok'                  => [
+            '~(Scar 18)~',
+            '~(RPM160)~',
             '~(NexM)~',
             '~(Alike)~',
             '~(Nord(( 2)|( X))?)~',
@@ -1096,6 +1099,7 @@ return [
             '~(X-Priv( Baby)?)~',
             '~(TFV12((-P)|( Baby Prince)|( Prince))?)~',
             '~(TFV8 ((Baby)|(X-Baby))?)~',
+            '~(TFV9)~',
             '~(Baby V2)~',
             '~(Species)~',
             '~(RPM Lite)~',
@@ -1228,6 +1232,7 @@ return [
 
         ],
         'Vapefly'               => [
+            '~(Manners)~',
             '~(Brunhilde MTL RTA)~',
             '~(Brunhilde Top Coiler RTA)~',
             '~(Kriemhild)~',
@@ -1283,6 +1288,7 @@ return [
             '~(XTRA)~',
             '~(Gen Nano)~',
             '~(XROS)~',
+            '~(Xiron Pod Mod)~',
         ],
         'Vapor Storm'           => [
             '~(Puma)~',

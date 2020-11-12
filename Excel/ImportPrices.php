@@ -7,6 +7,8 @@ namespace MxcDropshipIntegrator\Excel;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
 use MxcCommons\Toolbox\Strings\StringTool;
+use MxcDropshipIntegrator\Jobs\ApplyPriceRules;
+use MxcDropshipIntegrator\Mapping\Shopware\PriceEngine;
 use MxcDropshipIntegrator\Mapping\Shopware\PriceMapper;
 use MxcDropshipIntegrator\Models\Model;
 use MxcDropshipIntegrator\Models\Variant;
@@ -26,10 +28,15 @@ class ImportPrices extends AbstractProductImport implements AugmentedObject
     /** @var PriceMapper $priceMapper */
     protected $priceMapper;
 
+    /** @var PriceEngine */
+    protected $priceEngine;
+
     public function __construct(
-        PriceMapper $priceMapper
+        PriceMapper $priceMapper,
+        PriceEngine $priceEngine
     ) {
         $this->priceMapper = $priceMapper;
+        $this->priceEngine = $priceEngine;
     }
 
     public function processImportData(array &$data)
@@ -53,33 +60,31 @@ class ImportPrices extends AbstractProductImport implements AugmentedObject
             $variant->setRetailPriceDampfPlanet(StringTool::tofloat($record['Dampfplanet']));
             $variant->setRetailPriceMaxVapor(StringTool::tofloat($record['MaxVapor']));
             $variant->setRetailPriceOthers(StringTool::tofloat($record['andere']));
-
             $this->updateVariantPrice($variant, $record);
         }
-
         $this->modelManager->flush();
+        ApplyPriceRules::run();
     }
 
     protected function updateVariantPrice(Variant $variant, array $record)
     {
-        $prices = [];
         $customerPrice = $record['VK Brutto EK'];
         // if no price is specified we take the UVP
         if (empty($customerPrice)) $customerPrice = $record['UVP Brutto'];
         $customerPrice = $customerPrice === '' ? null : $customerPrice;
 
         $vatFactor = 1 + TaxTool::getCurrentVatPercentage() / 100;
+        $prices = [];
         foreach ($this->indexMap as $column => $customerGroup) {
             $price = $record[$column];
             $price = $price === '' ? null : $price;
             $price = $price ?? $customerPrice;
+            if (! $price) continue;
+
             $netPrice = StringTool::tofloat($price) / $vatFactor;
-            if ($price) {
-                $prices[] = $customerGroup . Constants::DELIMITER_L1 . strval($netPrice);
-            }
+            $prices[$customerGroup] = $netPrice;
         }
-        $prices = implode(Constants::DELIMITER_L2, $prices);
-        $variant->setRetailPrices($prices);
+        $this->priceEngine->setRetailPrices($variant, $prices);
         $this->priceMapper->setPrices($variant);
     }
 }
