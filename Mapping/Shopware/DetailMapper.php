@@ -219,7 +219,7 @@ class DetailMapper implements AugmentedObject
 
         $stockInfo = @$this->getStockInfo()[$variant->getIcNumber()] ?? 0;
         $detail->setInstock($stockInfo);
-        $this->articleRegistry->configureDropship($variant, $stockInfo);
+        $this->articleRegistry->configureDropship($variant,  $stockInfo);
     }
 
     public function deleteArticle(Product $product)

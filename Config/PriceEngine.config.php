@@ -10,6 +10,7 @@ return array(
             'discount' => 7.5
         ]
     ],
+    // price rules can get defined by type
     'rules' => array(
         '_default' => array(
             'price' => null,
@@ -146,6 +147,13 @@ return array(
             '_default' => array(
                 'margin_max_percent' => 40,
             ),
+            'Smoktech' => [
+                'SK100R2' => [
+                    '_default' => [
+                        'margin_min_percent' => 15,
+                    ]
+                ]
+            ]
         ),
         'EASY3_CAP' => array(
             '_default' => array(

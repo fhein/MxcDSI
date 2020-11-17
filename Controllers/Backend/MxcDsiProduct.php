@@ -1729,9 +1729,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
+            $this->adjustFlavor();
             /** @var BulkPriceMapper $bulkPriceMapper */
-            $bulkPriceMapper = MxcDropshipIntegrator::getServices()->get(BulkPriceMapper::class);
-            $bulkPriceMapper->mapBulkPrices();
+//            $bulkPriceMapper = MxcDropshipIntegrator::getServices()->get(BulkPriceMapper::class);
+//            $bulkPriceMapper->mapBulkPrices();
 
             //$this->setLiguidBulkPrice();
             //            $this->resetSinglePacks();
