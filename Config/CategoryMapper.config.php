@@ -619,19 +619,19 @@ return array(
             'title' => 'Gebrauchsfertige E-Liquids günstig online kaufen!',
             'description' => 'Gebrauchsfertige E-Liquids für E-Zigaretten günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
-            'h1' => 'E-LIQUIDS',
+            'h1' => 'GEBRAUCHSFERTIGE E-LIQUIDS',
         ),
         'E-LIQUIDS > Skake & Vape' => array(
             'title' => 'Shake & Vape E-Liquids günstig online kaufen!',
             'description' => 'Shake & Vape Liquids für E-Zigaretten günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
-            'h1' => 'E-LIQUIDS',
+            'h1' => 'SHAKE & VAPE E-LIQUIDS',
         ),
         'E-LIQUIDS > Aromen' => array(
             'title' => 'Aromen für E-Liquids günstig online kaufen!',
             'description' => 'Aromen für E-Liquids günstig kaufen ✓ Viele Geschmacksrichtungen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Liquid,E-Liquid,günstig,kaufen,E-Zigarette',
-            'h1' => 'E-LIQUIDS',
+            'h1' => 'AROMEN ZUR HERSTELLUNG VON E-LIQUIDS',
         ),
         'VERDAMPFER' => array(
             'title' => 'Verdampfer und Clearomizer für E-Zigaretten günstig online kaufen!',

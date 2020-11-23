@@ -34,8 +34,6 @@ return array (
   'Bonbons & Kaugummi' => 
   array (
     0 => 'Bonbon',
-    1 => 'Butterscotch Candy',
-    2 => 'Butterscotch Toffee',
     3 => 'Dragee',
     4 => 'Eisbonbon',
     5 => 'Fruchtbonbon',
@@ -293,15 +291,11 @@ return array (
     13 => 'Rhabarber',
     14 => 'Waldmeister',
   ),
-  'Sonstige' => 
-  array (
-    0 => 'Zironenkuchen',
-  ),
-  'Süßigkeiten' => 
+  'Süßigkeiten' =>
   array (
     0 => 'Ahornsirup',
     1 => 'Buttercreme',
-    2 => 'Butterscotch',
+    2 => 'Butterscotch Candy',
     3 => 'Candy',
     4 => 'Erdbeerlolli',
     5 => 'Erdbeerschnüre',
@@ -339,7 +333,7 @@ return array (
   ),
   'Tabak' => 
   array (
-    0 => 'Burley Tabak',
+    0 => 'Burley-Tabak',
     1 => 'Doppelapfel',
     2 => 'Pfeifentabak',
     3 => 'Rohtabakblätter',
@@ -368,6 +362,7 @@ return array (
     15 => 'grüner Tee',
     16 => 'grüner Zitronentee',
     17 => 'schwarzer Tee',
+    18 => 'Orientalischer Minztee',
   ),
   'Trauben' => 
   array (
@@ -411,5 +406,6 @@ return array (
     14 => 'exotische Früchte',
     15 => 'karibische Früchte',
     16 => 'tropische Früchte',
+    17 => 'Dattel',
   ),
 );

@@ -64,13 +64,6 @@ class DetailMapper implements AugmentedObject
 
     }
 
-    public function configureDropship(Variant $variant, int $stockInfo)
-    {
-        $detail = $variant->getDetail();
-        if (! $detail) return;
-
-    }
-
     public function needsStructureUpdate(Product $product)
     {
         return $this->optionMapper->needsUpdate($product);
@@ -119,10 +112,6 @@ class DetailMapper implements AugmentedObject
                 $isMainDetail = false;
             }
             $detail->setReleaseDate($releaseDate);
-            // set 'mxcbc_flavor' attribute if not empty (used in frontend product lists)
-            if (! empty($flavor)) {
-                ArticleTool::setDetailAttribute($detail, 'mxcbc_flavor', $flavor);
-            }
         }
     }
 

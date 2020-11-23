@@ -974,7 +974,7 @@ return array(
         'metaTitle' => 'Starke E-Zigaretten für zwei wechselbare Akkuzellen',
         'metaDescription' => 'Sehen Sie sich unser gut sortiertes Angebot an E-Zigaretten an ✓ für zwei wechselbare Akkuzellen ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de! ',
         'metaKeywords' => null,
-        'header' => 'E_ZIGARETTEN FÜR ZWEI WECHSELBARE AKKUZELLEN',
+        'header' => 'E-ZIGARETTEN FÜR ZWEI WECHSELBARE AKKUZELLEN',
         'description' => '<p>Diese Seite zeigt leistungsstarke E-Zigaretten, die mit zwei Akkuzellen betrieben werden, die nicht fest eingebaut sind, sondern ausgewechselt werden können. Wenn Sie mehrere Akkuzellen und ein externes Ladegerät haben, können Sie die leeren Akkuzellen einfach gegen volle austauschen. Das Laden der E-Zigarette kann so entfallen.</p>',
     ),
     'E-ZIGARETTEN > E-Zigaretten > über 120 Watt' => array(

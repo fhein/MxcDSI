@@ -65,6 +65,7 @@ class CategoryMapper implements AugmentedObject
                 if ($parent === null) break;
                 $idx = $idx === '' ? $name : $idx . ' > ' . $name;
                 $this->setCategoryProperties($idx, $parent);
+                $parent->setActive(true);
                 $parent->setChanged();
             }
             if ($parent !== null) {

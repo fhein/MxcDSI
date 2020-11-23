@@ -176,8 +176,8 @@ class CategoryMapper extends BaseImportMapper implements AugmentedObject
             $categories[] = 'bis 75 Watt';
         } elseif ($power <= 100) {
             $categories[] = 'bis 100 Watt';
-        } elseif ($power <= 180) {
-            $categories[] = 'bis 180 Watt';
+//        } elseif ($power <= 180) {
+//            $categories[] = 'bis 180 Watt';
         } elseif ($power <= 200) {
             $categories[] = 'bis 200 Watt';
         } else {

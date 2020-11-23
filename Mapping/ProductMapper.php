@@ -2,6 +2,7 @@
 
 namespace MxcDropshipIntegrator\Mapping;
 
+use MxcCommons\Plugin\Service\ClassConfigAwareTrait;
 use MxcCommons\Plugin\Service\LoggerAwareTrait;
 use MxcCommons\Plugin\Service\ModelManagerAwareTrait;
 use MxcCommons\ServiceManager\AugmentedObject;
@@ -20,6 +21,7 @@ use Shopware\Models\Article\Article;
 class ProductMapper implements AugmentedObject
 {
     use ModelManagerAwareTrait;
+    use ClassConfigAwareTrait;
     use LoggerAwareTrait;
 
     /** @var DetailMapper */
@@ -83,12 +85,8 @@ class ProductMapper implements AugmentedObject
         $this->configureArticle($product, true);
         $this->activateArticle($product);
         $this->modelManager->flush(); //temporary
-        // if this works, seo url has to be applied after flush because
-        // article attributes do not exist before
-        $seoUrl = $product->getSeoUrl();
-        if (! empty($seoUrl)) {
-            ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
-        }
+        // article attributes do not exist before flush
+        $this->setArticleAttributes($product, $article);
         return true;
     }
 
@@ -117,13 +115,8 @@ class ProductMapper implements AugmentedObject
         $this->configureArticle($product, $forceUpdate);
         $this->activateArticle($product);
         $this->modelManager->flush(); // temporary
-
-        // if this works, seo url has to be applied after flush because
-        // article attributes do not exist before
-        $seoUrl = $product->getSeoUrl();
-        if (! empty($seoUrl)) {
-            ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
-        }
+        // article attributes do not exist before flush
+        $this->setArticleAttributes($product, $article);
         return true;
     }
 
@@ -271,11 +264,6 @@ class ProductMapper implements AugmentedObject
         // findet oder erzeugt ein Tax Object mit dem aktuellen Mehrwertsteuersatz
         $article->setTax(TaxTool::getTax());
 
-        $seoUrl = $product->getSeoUrl();
-        if (! empty($seoUrl)) {
-            ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
-        }
-
         $supplierName = $product->getSupplier();
         if ($supplierName === 'InnoCigs') $supplierName = $product->getBrand();
         $supplier = SupplierTool::getSupplier($supplierName);
@@ -289,5 +277,27 @@ class ProductMapper implements AugmentedObject
         SupplierTool::setSupplierMetaInfo($supplier, $metaTitle, $metaDescription, $supplierName);
 
         $this->categoryMapper->map($product);
+    }
+
+    protected function setArticleAttributes(Product $product, Article $article)
+    {
+        $seoUrl = $product->getSeoUrl();
+        if (! empty($seoUrl)) {
+            ArticleTool::setArticleAttribute($article, 'attr4', $seoUrl);
+        }
+        $flavor = $product->getFlavor();
+        if (! empty($flavor))
+        {
+            // displayed in article list
+            ArticleTool::setArticleAttribute($article, 'mxcbc_flavor', $flavor);
+
+            // convert flavor list to format used by Ajax Power Filter
+            $flavorFilter = array_map('trim', explode(',', $flavor));
+            $flavorFilter = '|' . implode('|', $flavorFilter) . '|';
+            ArticleTool::setArticleAttribute($article, 'mxcbc_flavor_filter', $flavorFilter);
+        }
+        $type = $product->getType();
+        $filterType = $this->classConfig['filter_product_type'][$type] ?? 'unbekannt';
+        ArticleTool::setArticleAttribute($article, 'mxcbc_product_type', $filterType);
     }
 }

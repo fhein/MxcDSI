@@ -605,6 +605,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $services = MxcDropshipIntegrator::getServices();
             $propertyMapper = $services->get(PropertyMapper::class);
             $categoryMapper = $services->get(CategoryMapper::class);
+            /** @var ProductMapper $productMapper */
             $productMapper = $services->get(ProductMapper::class);
             $repository = $this->getModelManager()->getRepository(Product::class);
 
@@ -1378,6 +1379,23 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $modelManager->flush();
     }
 
+    public function setArticleType()
+    {
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+        $config = include __DIR__ . '/../../Config/ProductMapper.config.php';
+        $log->debug('Config: ' . var_export($config, true));
+
+        $products = $this->getManager()->getRepository(Product::class)->findAll();
+        foreach ($products as $product) {
+            $article = $product->getArticle();
+            if ($article === null) continue;
+            $type = $product->getType();
+            $filterType = $config['filter_product_type'][$type] ?? 'unbekannt';
+            $log->debug('Mapping: ' . $type . ' => ' . $filterType);
+            ArticleTool::setArticleAttribute($article, 'mxcbc_product_type', $filterType);
+        }
+    }
+
     // set flavor on all flavored products
     // this is a workaround because the flavor does not get set at detail creation erronously
     protected function adjustFlavor() {
@@ -1386,15 +1404,73 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $products = $modelManager->getRepository(Product::class)->findAll();
         /** @var Product $product */
         foreach ($products as $product) {
-            if (empty($product->getFlavor())) continue;
-            $variants = $product->getVariants();
-            /** @var Variant $variant */
-            foreach ($variants as $variant) {
-                $detail = $variant->getDetail();
-                if ($detail === null) continue;
-                ArticleTool::setDetailAttribute($detail, 'mxcbc_flavor', $product->getFlavor());
+            $article = $product->getArticle();
+            if ($article === null) continue;
+            $flavor = $product->getFlavor();
+            if (empty($flavor)) continue;
+            $flavorFilter = array_map('trim', explode(',', $flavor));
+            $flavorFilter = '|' . implode('|', $flavorFilter) . '|';
+            ArticleTool::setArticleAttribute($article, 'mxcbc_flavor', $flavor);
+            ArticleTool::setArticleAttribute($article, 'mxcbc_flavor_filter', $flavorFilter);
+        }
+    }
+
+    protected function adjustOwnStockFlavors()
+    {
+        $db = Shopware()->Db();
+        $sql = 'SELECT id, mxcbc_flavor FROM s_articles_attributes WHERE mxcbc_flavor IS NOT NULL AND mxcbc_flavor != \'\' AND mxcbc_flavor_filter IS NULL';
+        $details = $db->query($sql);
+        foreach ($details as $detail) {
+            $flavorFilter = array_map('trim', explode(',', $detail['mxcbc_flavor']));
+            $flavorFilter = '|' . implode('|', $flavorFilter) . '|';
+            ArticleTool::setDetailAttribute($detail['id'], 'mxcbc_flavor_filter', $flavorFilter);
+        }
+    }
+
+    protected function setSurmountFlavours()
+    {
+        $flavors = [
+            'Surmount - Alter Tobi' => 'Tabak',
+            'Surmount - Marokkan' => 'Orient-Tabak',
+            'Surmount - Sherlock' => 'Tabak',
+            'Surmount - Vanilla' => 'Vanille',
+            'Surmount - Tuscany' => 'Zigarillo',
+        ];
+        $repository = $this->getManager()->getRepository(Article::class);
+        foreach ($flavors as $name => $flavor) {
+            /** @var Article $article */
+            $article = $repository->findOneBy(['name' => $name]);
+            if ($article === null) continue;
+            ArticleTool::setArticleAttribute($article, 'mxcbc_flavor', $flavor);
+            ArticleTool::setArticleAttribute($article, 'mxcbc_flavor_filter', '|' . $flavor . '|');
+        }
+    }
+
+    public function setBlackNotePurchasePrice()
+    {
+        $names = [
+            'Black Note - Solo - Liquid - 10 ml',
+            'Black Note - Prelude - Liquid - 10 ml',
+            'Black Note - Sonata - Liquid - 10 ml',
+            'Black Note - Forte - Liquid - 10 ml',
+            'Black Note - Legato - Liquid - 10 ml',
+            'Black Note - Quartet - Liquid - 10 ml',
+        ];
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+
+        $repository = $this->getManager()->getRepository(Article::class);
+        foreach ($names as $name) {
+            /** @var Article $article */
+            $article = $repository->findOneBy(['name' => $name]);
+            if ($article === null) continue;
+            $log->debug("Modifying price for $name");
+            $details = $article->getDetails();
+            /** @var Detail $detail */
+            foreach ($details as $detail) {
+                $detail->setPurchasePrice(4.35);
             }
         }
+        $this->getManager()->flush();
     }
 
     public function findDeletedProducts()
@@ -1729,7 +1805,10 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $this->adjustFlavor();
+//            $this->setArticleType();
+
+//            $this->adjustFlavor();
+//            $this->adjustOwnStockFlavors();
             /** @var BulkPriceMapper $bulkPriceMapper */
 //            $bulkPriceMapper = MxcDropshipIntegrator::getServices()->get(BulkPriceMapper::class);
 //            $bulkPriceMapper->mapBulkPrices();
@@ -1763,8 +1842,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             //$this->findPodSystemsWithZugautomatik();
             // $this->setupFlavors();
-//            $this->findDeletedProducts();
-//            $this->findDeletedArticles();
+            $this->findDeletedProducts();
+            $this->findDeletedArticles();
 
 
             /** @var UpdateTrackingData $trackingUpdate */
