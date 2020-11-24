@@ -185,13 +185,6 @@ class PriceMapper
             $product->setTax($currentVatPercentage);
         }
         $this->modelManager->flush();
-
-        // Pull back shopware prices to products
-        /** @var Article $article */
-        foreach ($articles as $article) {
-            $details = $article->getDetails();
-
-        }
     }
 
     protected function getCustomerGroupRepository()

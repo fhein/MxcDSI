@@ -63,9 +63,11 @@ return [
         TypeMapper::TYPE_NICSALT_LIQUID     => 'NICSALT_LIQUID',
         TypeMapper::TYPE_PHOTO_SAMPLE       => 'PHOTO_SAMPLE',
         TypeMapper::TYPE_OTHER_EQUIPMENT    => 'OTHER_EQUIPMENT',
+        TypeMapper::TYPE_BOOK               => 'BOOK',
     ],
 
     'name_type_mapping' => [
+        '~Fakten und Mythen~'                 => TypeMapper::TYPE_BOOK,
         '~Nautilus Prime - Base~'             => TypeMapper::TYPE_POD,
         '~Teros - E-Zigarette~'               => TypeMapper::TYPE_POD_SYSTEM,
         '~Xiron Pod Mod - E-Zigarette~'       => TypeMapper::TYPE_POD_SYSTEM,

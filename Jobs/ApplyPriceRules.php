@@ -28,6 +28,8 @@ class ApplyPriceRules
         $variants = $modelManager->getRepository(Variant::class)->findAll();
         /** @var Variant $variant */
         foreach ($variants as $variant) {
+            // Keine Preiskorrektur für das Buch 'Die E-Zigarette - Fakten und Mythen'
+            if ($variant->getIcNumber() === 'B100EZ-10') continue;
             $retailPrices = $priceEngine->getRetailPrices($variant);
             $correctedPrices = $priceEngine->getCorrectedRetailPrices($variant);
             $priceEngine->setRetailPrices($variant, $correctedPrices);

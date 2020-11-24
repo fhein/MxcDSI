@@ -258,6 +258,7 @@ return [
         'preg_replace' => [
             '~(PnP) (0,6 Ohm) (Coil)~'                       => '$1 $3 - $2',
             '~(SKRR) (S)~'                                   => '$1-$2',
+            '~Buch - Die E-Zigarette~'                       => 'Die E-Zigarette - Fakten und Mythen - Prof. Dr. Bernd Mayer',
             '~(Wolf) Tank (Mini)~'                           => '$1 $2',
             '~(Aegis Squonk)er~'                             => '$1',
             '~(1,5 Ohm) (Cartridge)~'                        => '$2, $1',

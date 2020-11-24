@@ -60,5 +60,6 @@ return [
         'NICSALT_LIQUID'     => 'Liquids',
         'PHOTO_SAMPLE'       => 'Photobox',
         'OTHER_EQUIPMENT'    => 'Zubehör',
+        'BOOK'               => 'Bücher',
     ],
 ];

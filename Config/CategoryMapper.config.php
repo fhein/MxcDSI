@@ -330,6 +330,12 @@ return array(
             ),
             'path' => 'VERDAMPFER > für Selbstwickler > ADA',
         ),
+        40 => [
+            'types' => [
+                'BOOK'
+            ],
+            'path' => 'ZUBEHÖR > Bücher',
+        ]
     ),
     'category_seo_items' => array(
         'E-ZIGARETTEN' => array(
@@ -421,6 +427,12 @@ return array(
             'description' => 'Zubehör für E-Zigaretten günstig kaufen ✓ Große Auswahl ✓ Faire Preise ✓ Rascher Versand ► Besuchen Sie vapee.de!',
             'keywords' => 'Verdampfer, Verdampferkopf,Coil,E-Zigarette,günstig,kaufen',
             'h1' => 'ZUBEHÖR FÜR DIE E-ZIGARETTE',
+        ),
+        'ZUBEHÖR > Bücher' => array(
+            'title' => 'Bücher zur E-Zigarette',
+            'description' => 'Schluss mit der Unsicherheit ✓ Fachbücher zur E-Zigarette ► Informieren Sie sich auf vapee.de!',
+            'keywords' => 'E-Zigarette, Buch, Fachbuch',
+            'h1' => 'FACHBÜCHER ZUR E-ZIGARETTE',
         ),
         'ZUBEHÖR > Aufbewahrung' => array(
             'title' => 'Vitrinen für E-Zigaretten günstig online kaufen!',

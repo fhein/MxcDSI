@@ -67,6 +67,7 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
     const TYPE_NICSALT_LIQUID       = 56;
     const TYPE_PHOTO_SAMPLE         = 57;
     const TYPE_OTHER_EQUIPMENT      = 58;
+    const TYPE_BOOK                 = 59;
 
     protected $types;
 
