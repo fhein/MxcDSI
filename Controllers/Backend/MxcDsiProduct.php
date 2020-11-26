@@ -1802,9 +1802,35 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $this->getManager()->flush();
     }
 
+    protected function getSupplierProductCount()
+    {
+        $productCount = [];
+        $suppliers = $this->getManager()->getRepository(Supplier::class)->findAll();
+        /** @var Supplier $supplier */
+        foreach($suppliers as $supplier) {
+            $productCount[$supplier->getName()] = 0;
+        }
+
+        $articles = $this->getManager()->getRepository(Article::class)->findAll();
+        /** @var Article $article */
+        foreach ($articles as $article) {
+            $productCount[$article->getSupplier()->getName()]++;
+        }
+        return $productCount;
+    }
+
     public function dev3Action()
     {
         try {
+            $suppliers = $this->getSupplierProductCount();
+            $empty = [];
+            foreach ($suppliers as $name => $count) {
+                if ($count > 0) continue;
+                $empty[] = $name;
+            }
+            $log = MxcDropshipIntegrator::getServices()->get('logger');
+            $log->debug(var_export($suppliers, true));
+            $log->debug(implode(', ', $empty));
 //            $this->setArticleType();
 
 //            $this->adjustFlavor();
@@ -1842,8 +1868,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             //$this->findPodSystemsWithZugautomatik();
             // $this->setupFlavors();
-            $this->findDeletedProducts();
-            $this->findDeletedArticles();
+//            $this->findDeletedProducts();
+//            $this->findDeletedArticles();
 
 
             /** @var UpdateTrackingData $trackingUpdate */
