@@ -1284,7 +1284,7 @@ return [
             '~(Tarot Baby)~',
             '~(Veco)~',
             '~(Zero)~',
-            '~(Target(( Mini 2)|( PM80)|( PM30))?)~',
+            '~(Target(( Mini 2)|( PM80 SE)|( PM80)|( PM30))?)~',
             '~(VM Solo 22)~',
             '~(VM Stick 18)~',
             '~(VM \d\d)~',
