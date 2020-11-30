@@ -69,6 +69,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             'excelExportEcigMetaData',
             'csvExportCustomers',
             'arrayExportDocumentationTodos',
+            'zipExportSupplierLogos',
         ];
     }
 
@@ -331,14 +332,18 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $filepath = $excel->getExcelFile();
             $batchfile = file_get_contents($filepath);
             $size = filesize($filepath);
-            $this->exportFile('vapee.export.xlsx', $size, $batchfile);
-
+            $this->exportFile(
+                'vapee.export.xlsx',
+                $size,
+                $batchfile,
+                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            );
         } catch (Throwable $e) {
             $this->handleException($e);
         }
     }
 
-    protected function exportFile(string $filename, int $size, $content) {
+    protected function exportFile(string $filename, int $size, $content, $contentType) {
         $this->get('plugins')->Controller()->ViewRenderer()->setNoRender();
         $this->Front()->Plugins()->Json()->setRenderer(false);
 
@@ -346,7 +351,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $response->setHeader('Cache-Control', 'must-revalidate');
         $response->setHeader('Content-Description', 'File Transfer');
         $response->setHeader('Content-disposition', 'attachment; filename=' . $filename);
-        $response->setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        $response->setHeader('Content-type', $contentType);
         $response->setHeader('Content-Transfer-Encoding', 'binary');
         $response->setHeader('Content-Length', $size);
         $response->setHeader('Pragma', 'public');
@@ -1146,11 +1151,26 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 $lines[] = implode(';', [$salutation, $firstname, $lastname, $email]);
             }
             $lines = implode("\n", $lines);
-            $this->exportFile('vapee.customers.csv', strlen($lines), $lines);
+            $this->exportFile(
+                'vapee.customers.csv',
+                strlen($lines),
+                $lines,
+                'application/octet-stream'
+            );
 
         } catch (Throwable $e) {
             $this->handleException($e);
         }
+    }
+
+    public function zipExportSupplierLogosAction()
+    {
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+        $filePath = $this->zipSupplierLogos();
+        $batchfile = file_get_contents($filePath);
+        $size = filesize($filePath);
+        $log->debug('Zip export: ' . $size);
+        $this->exportFile('vapeeSupplierLogos.zip', $size, $batchfile, 'application/zip');
     }
 
     public function arrayExportDocumentationTodosAction()
@@ -1195,7 +1215,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             }
             ksort($productsToDo);
             $file = var_export($productsToDo, true);
-            $this->exportFile('vapee.documentation.todos.txt', strlen($file), $file);
+            $this->exportFile(
+                'vapee.documentation.todos.txt',
+                strlen($file),
+                $file,
+                'application/octet-stream'
+            );
 
         } catch (Throwable $e) {
             $this->handleException($e);
@@ -1819,19 +1844,48 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return $productCount;
     }
 
+    protected function zipSupplierLogos()
+    {
+        $suppliers = $this->getManager()->getRepository(Supplier::class)->findAll();
+        $media = MxcDropshipIntegrator::getServices()->get('shopware_media.media_service');
+        $docPath = Shopware()->DocPath();
+        $zip = new ZipArchive();
+        $zipPath = __DIR__ . '/../../Config/vapee_supplier_logos.zip';
+        $zip->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE);
+
+        /** @var Supplier $supplier */
+        foreach ($suppliers as $supplier) {
+            $img = $supplier->getImage();
+            if (empty($img)) continue;
+
+            $url = $media->getUrl($img);
+            $path = explode('media', $url);
+            $path = $docPath . 'media' . $path[1];
+            $zip->addFile($path, basename($path));
+        }
+        $zip->close();
+        return $zipPath;
+    }
+
     public function dev3Action()
     {
         try {
-            $suppliers = $this->getSupplierProductCount();
-            $empty = [];
-            foreach ($suppliers as $name => $count) {
-                if ($count > 0) continue;
-                $empty[] = $name;
-            }
-            $log = MxcDropshipIntegrator::getServices()->get('logger');
-            $log->debug(var_export($suppliers, true));
-            $log->debug(implode(', ', $empty));
-//            $this->setArticleType();
+
+            $this->zipExportSupplierLogos();
+            return;
+
+//            $suppliers = $this->getSupplierProductCount();
+//            $empty = [];
+//            foreach ($suppliers as $name => $count) {
+//                if ($count > 0) continue;
+//                $empty[] = $name;
+//            }
+//            $log = MxcDropshipIntegrator::getServices()->get('logger');
+//            $log->debug(var_export($suppliers, true));
+//            $log->debug(implode(', ', $empty));
+
+
+            //            $this->setArticleType();
 
 //            $this->adjustFlavor();
 //            $this->adjustOwnStockFlavors();

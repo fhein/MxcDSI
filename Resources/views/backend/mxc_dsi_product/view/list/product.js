@@ -97,6 +97,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
           'mxcExcelExportPrices',
           'mxcExcelExportPriceIssues',
           'mxcExcelExportEcigMetaData',
+          'mxcZipExportSupplierLogos',
           'mxcExcelImportPrices',
 
           'mxcCsvExportCustomers',
@@ -405,6 +406,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     iconCls: 'sprite-table-export',
                     handler: function () {
                         window.open('/backend/MxcDsiProduct/arrayExportDocumentationTodos');
+                    }
+                },
+                '-',
+                {
+                    text: 'Export Supplier Logos',
+                    iconCls: 'sprite-table-export',
+                    handler: function () {
+                        window.open('/backend/MxcDsiProduct/zipExportSupplierLogos');
                     }
                 },
                 '-',

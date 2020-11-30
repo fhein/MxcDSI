@@ -70,6 +70,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
 
                 mxcExcelExportPrices:                me.onExcelExportPrices,
                 mxcExcelExportPriceIssues:           me.onExcelExportPriceIssues,
+                mxcZipExportSupplierLogos:           me.onZipExportSupplierLogos,
                 mxcExcelExportEcigMetaData:          me.onExcelExportEcigMetaData,
                 mxcExcelImportPrices:                me.onExcelImportPrices,
                 mxcCsvExportCustomers:               me.onCsvExportCustomers,
@@ -134,6 +135,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
         let params = {};
         let growlTitle = 'Prices: Excel export';
         let maskText = 'Exporting prices to Excel ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
+    },
+
+    onZipExportSupplierLogos: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=zipExportSupplierLogos}';
+        let params = {};
+        let growlTitle = 'Supplier Logos: Zip export';
+        let maskText = 'Exporting supplier logos to Zip ...';
         me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
