@@ -166,6 +166,7 @@ return array (
     37 => 'Zimtschnecke',
     38 => 'Zitronenkuchen',
     39 => 'Zitronentorte',
+    40 => 'Zimtgebäck',
   ),
   'Getränke' => 
   array (
@@ -341,6 +342,9 @@ return array (
     5 => 'Tabak',
     6 => 'Virginia Tabak',
     7 => 'Zigarrentabak',
+    8 => 'American Blend',
+    9 => 'dunkler Tabak',
+    10 => 'süßer Tabak',
   ),
   'Tee & Kaffee' => 
   array (

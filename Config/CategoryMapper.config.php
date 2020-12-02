@@ -16,7 +16,7 @@ return array(
                 1 => 'E_PIPE',
             ),
             'append' => ['e-cigarette'],
-            'path' => 'E-ZIGARETTEN > E-Zigaretten',
+            'path' => 'E-ZIGARETTEN > Klassische E-Zigaretten',
         ),
         1 => array(
             'types' => array(

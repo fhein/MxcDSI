@@ -1852,17 +1852,20 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $zip = new ZipArchive();
         $zipPath = __DIR__ . '/../../Config/vapee_supplier_logos.zip';
         $zip->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE);
+        $logoDir = [];
 
         /** @var Supplier $supplier */
         foreach ($suppliers as $supplier) {
             $img = $supplier->getImage();
             if (empty($img)) continue;
-
             $url = $media->getUrl($img);
             $path = explode('media', $url);
             $path = $docPath . 'media' . $path[1];
+            $baseName = basename($path);
             $zip->addFile($path, basename($path));
+            $logoDir[$supplier->getName()] = $baseName;
         }
+        $zip->addFromString('directory.php', var_export($logoDir, true));
         $zip->close();
         return $zipPath;
     }
@@ -1871,8 +1874,6 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     {
         try {
 
-            $this->zipExportSupplierLogos();
-            return;
 
 //            $suppliers = $this->getSupplierProductCount();
 //            $empty = [];
@@ -1922,8 +1923,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
             //$this->findPodSystemsWithZugautomatik();
             // $this->setupFlavors();
-//            $this->findDeletedProducts();
-//            $this->findDeletedArticles();
+            $this->findDeletedProducts();
+            $this->findDeletedArticles();
 
 
             /** @var UpdateTrackingData $trackingUpdate */
