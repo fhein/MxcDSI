@@ -102,6 +102,7 @@ return [
         '~Verdampfer~'                        => TypeMapper::TYPE_CLEAROMIZER,
         '~Cartridge~'                         => TypeMapper::TYPE_CARTRIDGE,
         '~Nikotinsalz-Liquid~'                => TypeMapper::TYPE_NICSALT_LIQUID,
+        '~Drag X - E-Zigarette~'              => TypeMapper::TYPE_POD_SYSTEM,
         '~QPod - E-Zigarette~'                => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod - E-Zigarette~'                 => TypeMapper::TYPE_E_CIGARETTE,
         '~Pod E-Zigarette~'                   => TypeMapper::TYPE_E_CIGARETTE,

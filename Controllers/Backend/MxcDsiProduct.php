@@ -73,6 +73,18 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         ];
     }
 
+    public function removeObsoleteProductsAction()
+    {
+        try {
+            $this->removeDeletedProducts();
+            $count = $this->removeDeletedArticles();
+            $message = $count > 0 ? 'Successfully removed ' . $count . ' outdated products' : 'No outdated products found.';
+            $this->view->assign([ 'success' => true, 'message' => $message ]);
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
+    }
+
     public function importAction()
     {
         try {
@@ -1498,7 +1510,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $this->getManager()->flush();
     }
 
-    public function findDeletedProducts()
+    public function removeDeletedProducts()
     {
         $services = MxcDropshipIntegrator::getServices();
         $log = $services->get('logger');
@@ -1532,7 +1544,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $modelManager->flush();
     }
 
-    public function findDeletedArticles()
+    public function removeDeletedArticles()
     {
         $services = MxcDropshipIntegrator::getServices();
         $log = $services->get('logger');
@@ -1564,6 +1576,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $ar->delete($article->getId());
         }
         $log->debug("Deleted articles removed.");
+        return count($deletedArticles);
     }
 
     public function findArticlesWithoutDetails()
@@ -1870,9 +1883,29 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         return $zipPath;
     }
 
+    protected function countSimilarProducts()
+    {
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+        $products = $this->getManager()->getRepository(Product::class)->findAll();
+        /** @var Article $article */
+        $similarProducts = [];
+        foreach ($products as $product) {
+            $article = $product->getArticle();
+            if ($article === null) continue;
+            $similar = $article->getSimilar();
+            $similarProducts[$product->getType()][$product->getName()] = $similar->count();
+        }
+        foreach ($similarProducts as $key => &$products)
+        {
+            ksort($products);
+        }
+        $log->debug('Similar product count: ' . var_export($similarProducts, true));
+    }
+
     public function dev3Action()
     {
         try {
+            $this->countSimilarProducts();
 
 
 //            $suppliers = $this->getSupplierProductCount();
@@ -1921,25 +1954,12 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 //            }
 
 
-            //$this->findPodSystemsWithZugautomatik();
-            // $this->setupFlavors();
-            $this->findDeletedProducts();
-            $this->findDeletedArticles();
-
-
             /** @var UpdateTrackingData $trackingUpdate */
 //            $trackingUpdate = MxcDropship::getServices()->get(\MxcDropship\Jobs\UpdateTrackingData::class);
 //            $trackingUpdate->run();
 //
 //            $workflow = MxcWorkflow::getServices()->get(WorkflowEngine::class);
 //            $workflow->run();
-
-
-
-//            $this->findDeletedArticles();
-//            $this->findDeletedProducts();
-
-
 
 //            /** @var \MxcDropshipInnocigs\Order\OrderProcessor $orderProcessor */
 //            $sendOrders = MxcDropship::getServices()->get(SendOrders::class);

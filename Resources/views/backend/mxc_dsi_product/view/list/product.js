@@ -47,6 +47,7 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
         let me = this;
         me.addEvents(
           'mxcUpdateSchema',
+          'mxcRemoveObsoleteProducts',
 
           'mxcUpdateCategorySeo',
           'mxcSaveCategorySeo',
@@ -729,6 +730,14 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                     text: 'Enable dropship',
                     handler: function() {
                         me.fireEvent('mxcEnableDropship', me);
+                    }
+                },
+                '-',
+                {
+                    text: 'Remove obsolete products',
+                    iconCls: 'sprite-minus-circle',
+                    handler: function() {
+                        me.fireEvent('mxcRemoveObsoleteProducts', me);
                     }
                 },
             ]

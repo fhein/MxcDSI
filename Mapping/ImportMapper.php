@@ -116,10 +116,17 @@ class ImportMapper implements AugmentedObject
         $this->addVariants();
         // apply changes to existing variants
         $this->changeVariants($changes);
-        // mark variants without corresponding model as deleted
-        $this->removeVariants();
-        // delete products where all variants are marked deleted
-        $this->removeProducts();
+
+        // Disabled because
+        // removing variants and products (together with associated articles)
+        // produce an Doctrine error: Can not remove detached entity bla
+        // Use backend 'Remove obsolete products' instead
+        //
+
+//        // mark variants without corresponding model as deleted
+//        $this->removeVariants();
+//        // delete products where all variants are marked deleted
+//        $this->removeProducts();
 
         $this->propertyMapper->mapProperties($this->updates, true);
         $this->removeOrphanedItems();

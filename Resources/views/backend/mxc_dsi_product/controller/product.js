@@ -13,6 +13,8 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
                 mxcSaveProduct:                      me.onSaveProduct,
                 mxcImportProducts:                   me.onImportProducts,
 
+                mxcRemoveObsoleteProducts:           me.onRemoveObsoleteProducts,
+
                 // meta information
 
                 mxcUpdateSupplierSeo:                me.onUpdateSupplierSeo,
@@ -100,6 +102,15 @@ Ext.define('Shopware.apps.MxcDsiProduct.controller.Product', {
             }
         });
         me.mainWindow = me.getView('list.Window').create({}).show();
+    },
+
+    onRemoveObsoleteProducts: function (grid) {
+        let me = this;
+        let url = '{url controller=MxcDsiProduct action=removeObsoleteProducts}';
+        let params = {};
+        let growlTitle = 'Remove obsolete products';
+        let maskText = 'Removing obsolete products ...';
+        me.doRequest(grid, url, params, growlTitle, maskText, true);
     },
 
     onEnableDropship: function (grid) {
