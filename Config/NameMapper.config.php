@@ -153,6 +153,9 @@ return [
             '~(Pro - 2 Pod)~'                              => '$1s',
             '~(P) (Series)~'                               => '$1-$2',
             '~(E-Zigarette) LE$~'                          => '$1 - Limited Edition',
+            '~(Aegis Boost) - LE Bonus (E-Zigarette)~'     => '$1 - Limited Bonus Edition - $2',
+            '~(B) (Series Head) - (\d,\d Ohm oder) -~'     => '$1-$2 - $3',
+            '~(SMOK -) (V9 - 0,15)~'                       => '$1 TF$2',
         ],
     ],
 
@@ -317,8 +320,8 @@ return [
             '~(Brunhilde) (RTA), (\d ml) (.*)~'              => '$1 Top Coiler $2 $4 - $3',
             '~(Bad Candy Liquids) (- .*)(- 20 ml)~'          => '$1 $2 - Aroma $3',
             '~(Vapanion)(.*)(- Aroma)(.*)(- \d+(,\d+)? ml)~' => '$1 - $2 $3 $5', // non standard
-
             '~(Bamberger Dampferlädla - Bassd Schoo) (- Aroma)(.*)(- \d+(,\d+)? ml)~'  => '$1 - $3 $2 $4',
+            '~(Frühstücksclub) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                        => '$1 - $3 $2 $4',
             '~(Frosty Affairs) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                        => '$1 - $3 $2 $4',
             '~(SteamersClub) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                          => '$1 - $3 $2 $4',
             '~(#Schmeckt) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                             => '$1 - $3 $2 $4',
