@@ -207,6 +207,7 @@ return array (
     34 => 'Zitronentee',
     35 => 'bittere Limonade',
     36 => 'karibischer Rum',
+    37 => 'Likör',
   ),
   'Gewürze' => 
   array (
@@ -390,6 +391,7 @@ return array (
     7 => 'Zitrone',
     8 => 'Zitronengras',
     9 => 'Zitrusfrüchte',
+    10 => 'Orangenblüte',
   ),
   'exotische Früchte' => 
   array (

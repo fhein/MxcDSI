@@ -5,6 +5,7 @@ namespace MxcDropshipIntegrator;
 use MxcDropshipIntegrator\Mapping\Import\BulkSupportMapper;
 use MxcDropshipIntegrator\Mapping\Import\IgnoredOptionRemover;
 use MxcDropshipIntegrator\Mapping\ImportClient;
+use MxcDropshipIntegrator\Mapping\ImportClientFactory;
 use MxcDropshipIntegrator\Mapping\Shopware\BulkPriceMapper;
 use MxcDropshipIntegrator\Models\Model;
 use MxcCommons\Toolbox\Shopware\MailTool;
@@ -83,7 +84,6 @@ return [
 
     'services'       => [
         'factories' => [
-
             CommonNameMapper::class  => MappingConfigFactory::class,
             DosageMapper::class      => MappingConfigFactory::class,
             CapacityMapper::class    => MappingConfigFactory::class,
