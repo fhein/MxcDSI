@@ -395,10 +395,17 @@ Ext.define('Shopware.apps.MxcDsiProduct.view.list.Product', {
                 },
                 '-',
                 {
-                    text: 'CSV Export Customers',
+                    text: 'CSV Export Registered Customers',
                     iconCls: 'sprite-table-export',
                     handler: function () {
                         window.open('/backend/MxcDsiProduct/csvExportCustomers');
+                    }
+                },
+                {
+                    text: 'CSV Export Paying Customers',
+                    iconCls: 'sprite-table-export',
+                    handler: function () {
+                        window.open('/backend/MxcDsiProduct/csvExportPayingCustomers');
                     }
                 },
                 '-',

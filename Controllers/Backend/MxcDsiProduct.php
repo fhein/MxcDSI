@@ -53,6 +53,7 @@ use MxcCommons\Plugin\Mail\MailTemplateManager;
 use MxcDropshipInnocigs\Exception\ApiException;
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropship\MxcDropship;
+use Shopware\Models\Order\Order;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -68,6 +69,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             'excelExportPriceIssues',
             'excelExportEcigMetaData',
             'csvExportCustomers',
+            'csvExportPayingCustomers',
             'arrayExportDocumentationTodos',
             'zipExportSupplierLogos',
         ];
@@ -1136,40 +1138,60 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         } catch (Throwable $e) {
             $this->handleException($e);
         }
+    }
 
+    protected function exportCustomers($customers)
+    {
+        $salutationMap = [
+            'mr' => 'Herr',
+            'ms' => 'Frau',
+        ];
+
+        /** @var Customer $customer */
+        $lines[] = implode(';', [ 'Salutation','First Name','Last Name','eMail' ]);
+
+        foreach ($customers as $customer) {
+            $firstname = $customer->getFirstname();
+            $firstname = iconv('UTF-8', 'WINDOWS-1252', $firstname);
+            $lastname = $customer->getLastname();
+            $lastname = iconv('UTF-8', 'WINDOWS-1252', $lastname);
+            $salutation = $salutationMap[$customer->getSalutation()];
+            $email = $customer->getEmail();
+            $lines[] = implode(';', [$salutation, $firstname, $lastname, $email]);
+        }
+        $lines = implode("\n", $lines);
+        $this->exportFile(
+            'vapee.customers.csv',
+            strlen($lines),
+            $lines,
+            'application/octet-stream'
+        );
+    }
+
+    public function csvExportPayingCustomersAction()
+    {
+        try {
+            $db = Shopware()->Db();
+            $manager = $this->getManager();
+            $log = MxcDropshipInnocigs::getServices()->get('logger');
+
+            $dql = 'SELECT DISTINCT c FROM Shopware\Models\Customer\Customer c 
+                   LEFT JOIN Shopware\Models\Order\Order o WITH o.customer = c.id
+                   WHERE o.paymentStatus = 12';
+
+            $query = $this->getManager()->createQuery($dql);
+            $this->exportCustomers($query->getResult());
+        } catch (Throwable $e) {
+            $this->handleException($e);
+        }
     }
 
     public function csvExportCustomersAction()
     {
         try {
-            $salutationMap = [
-                'mr' => 'Herr',
-                'ms' => 'Frau',
-            ];
-
-            $services = MxcDropshipIntegrator::getServices();
             $manager = $this->getManager();
             $customers = $manager->getRepository(Customer::class)->findAll();
-            /** @var Customer $customer */
-            $lines[] = implode(';', [ 'Salutation','First Name','Last Name','eMail' ]);
-
-            foreach ($customers as $customer) {
-                $firstname = $customer->getFirstname();
-                $firstname = iconv('UTF-8', 'WINDOWS-1252', $firstname);
-                $lastname = $customer->getLastname();
-                $lastname = iconv('UTF-8', 'WINDOWS-1252', $lastname);
-                $salutation = $salutationMap[$customer->getSalutation()];
-                $email = $customer->getEmail();
-                $lines[] = implode(';', [$salutation, $firstname, $lastname, $email]);
-            }
-            $lines = implode("\n", $lines);
-            $this->exportFile(
-                'vapee.customers.csv',
-                strlen($lines),
-                $lines,
-                'application/octet-stream'
-            );
-
+            $this->exportCustomers($customers);
         } catch (Throwable $e) {
             $this->handleException($e);
         }
@@ -1902,10 +1924,25 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
         $log->debug('Similar product count: ' . var_export($similarProducts, true));
     }
 
+    protected function createFlavorMappingFile()
+    {
+        $flavors = include __DIR__ . '/../../Config/FlavorMapper.config.php';
+        $log = MxcDropshipIntegrator::getServices()->get('logger');
+
+        $map = [];
+        foreach ($flavors as $name => $categories) {
+            foreach ($categories as $flavor) {
+                $map[$flavor] = [$name];
+            }
+        }
+        $log->debug(var_export($map, true));
+    }
+
     public function dev3Action()
     {
         try {
-            $this->countSimilarProducts();
+            $this->createFlavorMappingFile();
+            //$this->countSimilarProducts();
 
 
 //            $suppliers = $this->getSupplierProductCount();

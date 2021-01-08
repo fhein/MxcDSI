@@ -30,6 +30,7 @@ return array (
     24 => 'schwarze Himbeere',
     25 => 'schwarze Johannisbeere',
     26 => 'süße Beeren',
+    27 => 'dunkle Beeren',
   ),
   'Bonbons & Kaugummi' => 
   array (
@@ -208,6 +209,9 @@ return array (
     35 => 'Zitronentee',
     36 => 'bittere Limonade',
     37 => 'karibischer Rum',
+    38 => 'Glühwein mit Schuss',
+    39 => 'Eierpunsch',
+
   ),
   'Gewürze' => 
   array (
@@ -337,6 +341,7 @@ return array (
     34 => 'karamellisierte Früchte',
     35 => 'saures Weingummi',
     36 => 'weiße Schokolade',
+    37 => 'Zuckerguss',
   ),
   'Tabak' => 
   array (
@@ -373,6 +378,9 @@ return array (
     16 => 'grüner Tee',
     17 => 'grüner Zitronentee',
     18 => 'schwarzer Tee',
+    19 => 'Milchkaffee',
+    20 => 'Yuzu-Tee',
+    21 => 'Minztee',
   ),
   'Trauben' => 
   array (
@@ -418,5 +426,6 @@ return array (
     15 => 'exotische Früchte',
     16 => 'karibische Früchte',
     17 => 'tropische Früchte',
+    18 => 'Kaktus',
   ),
 );

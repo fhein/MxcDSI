@@ -67,11 +67,16 @@ return [
     ],
 
     'name_type_mapping' => [
+        '~Multi - Airflow Control Ring~'      => TypeMapper::TYPE_SPARE_PARTS,
+        '~JesterX.*Wicklung.*Watte~'          => TypeMapper::TYPE_COIL,
+        '~Ladestation~'                       => TypeMapper::TYPE_CHARGER,
         '~Fakten und Mythen~'                 => TypeMapper::TYPE_BOOK,
         '~Nautilus Prime - Base~'             => TypeMapper::TYPE_POD,
         '~Teros - E-Zigarette~'               => TypeMapper::TYPE_POD_SYSTEM,
         '~Xiron Pod Mod - E-Zigarette~'       => TypeMapper::TYPE_POD_SYSTEM,
         '~Manik.*Cartridge~'                  => TypeMapper::TYPE_CARTRIDGE,
+        '~Thelema Pod Mod~'                   => TypeMapper::TYPE_POD_SYSTEM,
+        '~JesterX Pod Mod~'                   => TypeMapper::TYPE_POD_SYSTEM,
         '~Manik Pod Mod~'                     => TypeMapper::TYPE_POD_SYSTEM,
         '~Fotomuster~'                        => TypeMapper::TYPE_PHOTO_SAMPLE,
         '~Aromamizer Supreme V3.*Verdampfer~' => TypeMapper::TYPE_CLEAROMIZER_RDTA,
