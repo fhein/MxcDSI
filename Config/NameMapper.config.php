@@ -160,6 +160,7 @@ return [
             '~(Lunar) - Akkuträger - 45 Watt (Lemon.*)~'   => '$1 $2',
             '~(NRG) (-S) (Verdampfer)~'                    => '$1$2 - $3',
             '~(Argus) - (X) - (E-Zigarette)~'              => '$1 $2 - $3',
+            '~(Vaporesso) - (Gen) -(S)~'                   => '$1 - $2 $3',
         ],
     ],
 
