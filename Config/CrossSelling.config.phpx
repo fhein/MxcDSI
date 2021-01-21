@@ -10063,12 +10063,14 @@ return array (
     'AS100APM' => 
     array (
       0 => 'AS100APP',
-      1 => 'AS100ST',
+      1 => 'AS100NT',
+      2 => 'AS100ST',
     ),
     'AS100APH' => 
     array (
       0 => 'AS100APP',
-      1 => 'AS100ST',
+      1 => 'AS100NT',
+      2 => 'AS100ST',
     ),
     'JK100A10-KM' => 
     array (
@@ -17067,7 +17069,9 @@ return array (
     ),
     'AS100NT' => 
     array (
-      0 => 'AS100PD',
+      0 => 'AS100APM',
+      1 => 'AS100APH',
+      2 => 'AS100PD',
     ),
     'VX100MR' => 
     array (
@@ -30797,11 +30801,12 @@ return array (
     ),
     'AS10000NAUTMINISET' => 
     array (
-      0 => 'AS100NXC',
+      0 => 'AS100NT',
     ),
     'AS10000K2CL' => 
     array (
-      0 => 'FM100MXC',
+      0 => 'AS100NT',
+      1 => 'FM100MXC',
     ),
     'IC100ED' => 
     array (
@@ -30874,7 +30879,8 @@ return array (
     'AS100N2S' => 
     array (
       0 => 'AS100TGC',
-      1 => 'FM100MXC',
+      1 => 'AS100NT',
+      2 => 'FM100MXC',
     ),
     'AS100TGC' => 
     array (
@@ -33645,8 +33651,9 @@ return array (
       3 => 'IK100KAM',
       4 => 'GV100MZM',
       5 => 'AS100MX',
-      6 => 'SK100SMM',
-      7 => 'SK100RM8',
+      6 => 'EFR100S8A',
+      7 => 'SK100SMM',
+      8 => 'SK100RM8',
     ),
     'UW100MD' => 
     array (
@@ -50183,11 +50190,13 @@ return array (
     ),
     'SC10000PDM' => 
     array (
-      0 => 'FM100MXC',
+      0 => 'AS100NT',
+      1 => 'FM100MXC',
     ),
     'AS100GT' => 
     array (
-      0 => 'FM100MXC',
+      0 => 'AS100NT',
+      1 => 'FM100MXC',
     ),
     'VS100NRS' => 
     array (
@@ -50200,7 +50209,14 @@ return array (
     ),
     'AS100NT' => 
     array (
-      0 => 'FM100MXC',
+      0 => 'AS10000NAUTMINISET',
+      1 => 'AS10000K2CL',
+      2 => 'SC10000PDM',
+      3 => 'AS100N2S',
+      4 => 'AS100GT',
+      5 => 'EFR100GZ',
+      6 => 'GV100ZN',
+      7 => 'FM100MXC',
     ),
     'UW100V2P' => 
     array (
@@ -50219,6 +50235,14 @@ return array (
     array (
       0 => 'AS100ZEM',
       1 => 'EFR100S8A',
+    ),
+    'EFR100GZ' => 
+    array (
+      0 => 'AS100NT',
+    ),
+    'GV100ZN' => 
+    array (
+      0 => 'AS100NT',
     ),
   ),
 );
