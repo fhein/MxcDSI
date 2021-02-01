@@ -68,6 +68,7 @@ return [
 
     'name_type_mapping' => [
         '~Multi - Airflow Control Ring~'      => TypeMapper::TYPE_SPARE_PARTS,
+        '~DIY Wicklungen~'                    => TypeMapper::TYPE_COIL,
         '~JesterX.*Wicklung.*Watte~'          => TypeMapper::TYPE_COIL,
         '~Ladestation~'                       => TypeMapper::TYPE_CHARGER,
         '~Fakten und Mythen~'                 => TypeMapper::TYPE_BOOK,
