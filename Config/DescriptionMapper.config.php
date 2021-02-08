@@ -350,6 +350,36 @@ return [
         . '<p><strong>Kostenhinweis: </strong> Mit der SC Easy 3 dampfen Sie sehr bequem. Sehr viel kostengünstiger kommen Sie aber weg, wenn Sie statt der Easy 3 ein wiederbefüllbares '
         . 'Pod-System verwenden und sich das Innocigs Liquid dazu in der 10 ml Flasche kaufen. Lesen Sie dazu bitte auch unsere '
         . '<strong><a title="Kosten der E-Zigarette" href="https://www.vapee.de/e-zigarette-ratgeber-kosten-im-vergleich/">Hinweise zu den Kosten von E-Zigaretten</a></strong></p>',
+    'descriptionEasy4' =>
+        '<p><strong>Gebrauchsfertiges, mit dem bekannten InnoCigs Liquid gefülltes Pod von ##supplier## exklusiv für die ##supplier## Easy 4 E-Zigarette. Geschmack: ##flavor##.</strong></p>'
+        . '<p>Schieben Sie das Pod einfach in die Easy 4 und dampfen Sie los! Das Pod kann nicht nachbefüllt werden. Wenn es leer ist, werfen Sie es weg und setzen ein neues ein. Die Packung enthält zwei Pods.</p>'
+        . '<table border="5" frame="hsides" rules="rows" cellspacing="0" cellpadding="2">'
+        . '<tbody>'
+        . '<tr>'
+        . '<td>Produkt</td>'
+        . '<td>Pod für die ##supplier## Easy 4, 2 * 1,75 ml </td>'
+        . '</tr>'
+        . '<tr>'
+        . '<td>Geschmack </td>'
+        . '<td>##flavor##</td>'
+        . '</tr>'
+        . '<tr>'
+        . '<td>Widerstand</td>'
+        . '<td>1,1 Ohm</td>'
+        . '</tr>'
+        . '<tr>'
+        . '<td>Inhaltsstoffe<sup>1</sup></td>'
+        . '<td>PG (55%), VG (35%), Wasser (10%), Aromastoffe, Nikotin nach Wahl</td>'
+        . '</tr>'
+        .'</tbody>'
+        . '</table>'
+        . '<p><sup>1</sup> PG: Propylenglykol, VG: pflanzliches Glycerin</p>'
+        . '<p><strong>Lieferumfang</strong>'
+        . '<ul><li>2x SC Easy 4 Pod 1,1 Ohm</li><li>1x Gebrauchsinformation</li></ul>'
+        .'</p>'
+        . '<p><strong>Kostenhinweis: </strong> Mit der SC Easy 4 dampfen Sie sehr bequem. Sehr viel kostengünstiger kommen Sie aber weg, wenn Sie statt der Easy 4 ein wiederbefüllbares '
+        . 'Pod-System verwenden und sich das Innocigs Liquid dazu in der 10 ml Flasche kaufen. Lesen Sie dazu bitte auch unsere '
+        . '<strong><a title="Kosten der E-Zigarette" href="https://www.vapee.de/e-zigarette-ratgeber-kosten-im-vergleich/">Hinweise zu den Kosten von E-Zigaretten</a></strong></p>',
 
 
 ];

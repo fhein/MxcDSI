@@ -170,6 +170,10 @@ class DescriptionMapper extends BaseImportMapper implements AugmentedObject
                 $description = $this->classConfig['descriptionEasy3'];
                 $description = str_replace(['##flavor##', '##supplier##'], [$flavor, $supplier], $description);
                 break;
+            case 'EASY4_CAP':
+                $description = $this->classConfig['descriptionEasy4'];
+                $description = str_replace(['##flavor##', '##supplier##'], [$flavor, $supplier], $description);
+                break;
             default:
                 $description = $this->mappings[$product->getIcNumber()]['description'] ?? $product->getIcDescription();
         }

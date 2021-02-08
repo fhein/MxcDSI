@@ -39,6 +39,7 @@ return array(
                 0 => 'LIQUID',
                 1 => 'LIQUID_BOX',
                 2 => 'EASY3_CAP',
+                3 => 'EASY4_CAP',
             ),
             'path' => 'E-LIQUIDS > Fertig-Liquids',
             'append' => ['flavor'],

@@ -78,6 +78,14 @@ return [
         ],
         [
             'types' => [
+                'EASY4_CAP'
+            ],
+            'title' => [
+                '~(SC) - (Easy 4) - (.*) - (Caps)~' => '$1 - $3 - $4 für die $1 $2'
+            ]
+        ],
+        [
+            'types' => [
                 'TOOL',
             ],
             'title' => [
@@ -139,6 +147,7 @@ return [
         'SQUONKER_BOX'       => 'e-zigaretten/squonker/',
         'EMPTY_BOTTLE'       => 'e-zigaretten/liquidflasche/',
         'EASY3_CAP'          => 'e-liquids/gebrauchsfertig/',
+        'EASY4_CAP'          => 'e-liquids/gebrauchsfertig/',
         'DECK'               => 'e-zigaretten/decks/',
         'HEATING_PLATE'      => 'e-zigaretten/heizplatten/',
         'TOOL_HEATING_PLATE' => 'e-zigaretten/heizplatten/',

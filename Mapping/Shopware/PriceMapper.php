@@ -133,7 +133,7 @@ class PriceMapper
     {
 
         $type = $product->getType();
-        if (in_array($type, ['NICSALT_LIQUID', 'LIQUID', 'LIQUID_BOX', 'AROMA', 'SHAKE_VAPE', 'BASE', 'EASY3_CAP'])) {
+        if (in_array($type, ['NICSALT_LIQUID', 'LIQUID', 'LIQUID_BOX', 'AROMA', 'SHAKE_VAPE', 'BASE', 'EASY3_CAP', 'EASY4_CAP'])) {
             $reference = $type === 'BASE' ? 1000 : 100;
         } elseif (in_array($type, ['EMPTY_BOTTLE', 'SQUONKER_BOTTLE'])) {
             $reference = null;

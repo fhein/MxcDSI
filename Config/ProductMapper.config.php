@@ -45,6 +45,7 @@ return [
         'SQUONKER_BOX'       => 'Akkuträger',
         'EMPTY_BOTTLE'       => 'Leerflaschen',
         'EASY3_CAP'          => 'Liquids',
+        'EASY4_CAP'          => 'Liquids',
         'DECK'               => 'Zubehör',
         'HEATING_PLATE'      => 'Zubehör',
         'TOOL_HEATING_PLATE' => 'Zubehör',

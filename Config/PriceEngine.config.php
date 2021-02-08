@@ -159,6 +159,10 @@ return array(
             '_default' => array(
             ),
         ),
+        'EASY4_CAP' => array(
+            '_default' => array(
+            ),
+        ),
         'POD' => array(
             '_default' => array(
                 'margin_max_percent' => 45,

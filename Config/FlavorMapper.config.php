@@ -301,13 +301,16 @@ return array (
   ),
   'Sonstige' => 
   array (
-    0 => 'Clementine',
+    0 => 'Butterscotch',
     1 => 'Clementine',
-    2 => 'Energydrink',
-    3 => 'Erdbeer',
-    4 => 'Ernussbutter',
-    5 => 'Virginia-Tabak',
-    6 => 'Virginia-Tabak',
+    2 => 'Clementine',
+    3 => 'Energydrink',
+    4 => 'Erdbeer',
+    5 => 'Ernussbutter',
+    6 => 'Lychee',
+    7 => 'Virginia-Tabak',
+    8 => 'Virginia-Tabak',
+    9 => 'Vsanille',
   ),
   'Süßigkeiten' => 
   array (
