@@ -6,6 +6,8 @@ return [
         ],
         'Bamberger Dampferlädla' => [
             'Bassd Schoo' => 2,
+            'Lädlas Chabeso' => 2,
+            'Götter' => 2,
         ],
         'KTS' => [
             'Superfruit' => 2,
@@ -16,6 +18,9 @@ return [
         ],
         'Vaporist'       => [
             'Midnight Munchies' => 2,
+        ],
+        'Flavorist' => [
+            'Tabak Royal' => 2,
         ],
         'Twisted'        => [
             'Cryostasis'                           => 2,

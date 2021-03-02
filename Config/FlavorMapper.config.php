@@ -91,6 +91,7 @@ return array (
     15 => 'Vanilleeis',
     16 => 'Zitronensorbet',
     17 => 'marokkanische Minze',
+    18 => 'Spaghetti-Eis',
   ),
   'Früchte' => 
   array (
@@ -170,6 +171,9 @@ return array (
     40 => 'Zimtschnecke',
     41 => 'Zitronenkuchen',
     42 => 'Zitronentorte',
+    43 => 'Butter-Biskuit',
+    44 => 'Cantuccini',
+    45 => 'Krapfen',
   ),
   'Getränke' => 
   array (
@@ -301,16 +305,10 @@ return array (
   ),
   'Sonstige' => 
   array (
-    0 => 'Butterscotch',
-    1 => 'Clementine',
-    2 => 'Clementine',
-    3 => 'Energydrink',
-    4 => 'Erdbeer',
-    5 => 'Ernussbutter',
-    6 => 'Lychee',
-    7 => 'Virginia-Tabak',
-    8 => 'Virginia-Tabak',
-    9 => 'Vsanille',
+    0 => 'Energydrink',
+    1 => 'Erdbeer',
+    2 => 'Virginia-Tabak',
+    3 => 'Virginia-Tabak',
   ),
   'Süßigkeiten' => 
   array (
@@ -368,6 +366,7 @@ return array (
     8 => 'Zigarrentabak',
     9 => 'dunkler Tabak',
     10 => 'süßer Tabak',
+    11 => 'Kentucky Tabak',
   ),
   'Tee & Kaffee' => 
   array (
@@ -408,15 +407,17 @@ return array (
   array (
     0 => 'Bergamotte',
     1 => 'Blutorange',
-    2 => 'Grapefruit',
-    3 => 'Limette',
-    4 => 'Limone',
-    5 => 'Mandarine',
-    6 => 'Orange',
-    7 => 'Orangenblüte',
-    8 => 'Zitrone',
-    9 => 'Zitronengras',
-    10 => 'Zitrusfrüchte',
+    2 => 'Clementine',
+    3 => 'Clementine',
+    4 => 'Grapefruit',
+    5 => 'Limette',
+    6 => 'Limone',
+    7 => 'Mandarine',
+    8 => 'Orange',
+    9 => 'Orangenblüte',
+    10 => 'Zitrone',
+    11 => 'Zitronengras',
+    12 => 'Zitrusfrüchte',
   ),
   'exotische Früchte' => 
   array (
