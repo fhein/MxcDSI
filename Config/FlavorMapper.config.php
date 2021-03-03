@@ -58,6 +58,7 @@ return array (
     3 => 'Müsli',
     4 => 'Müsliriegel',
     5 => 'Rice Crispies',
+    6 => 'Hafer',
   ),
   'Cremiges' => 
   array (
@@ -174,6 +175,7 @@ return array (
     43 => 'Butter-Biskuit',
     44 => 'Cantuccini',
     45 => 'Krapfen',
+    46 => 'Butterstreusel',
   ),
   'Getränke' => 
   array (

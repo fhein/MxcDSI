@@ -489,6 +489,7 @@ return [
             '~Clearomizer Ständer~'                                                    => 'Verdampferständer',
             '~(Aspire) (INR) (\d{5})er - (\d\.\d{3} mAh)~'                             => '$1 - Akkuzelle - $3, $4',
             '~(iJoy) (21700) Akku - (.*)~'                                             => '$1 - Akkuzelle - $2, $3',
+            '~(Samsung) (40T) (21700) (.*)~'                                           => '$1 - Akkuzelle - $2 $3 - $4',
             '~EVO~'                                                                    => 'Evo',
             '~SINUOUS~'                                                                => 'Sinuous',
             '~POD~'                                                                    => 'Pod',
@@ -497,6 +498,7 @@ return [
             '~ Core ~'                                                                 => ' ',
             '~Basis~'                                                                  => 'Base',
             '~(Twelve Monkeys.*Circle of Life) (.*)~'                                  => '$1 - $2',
+            '~(Tango Yango) Mango-Sahne~'                                              => '$1',
             '~(Chinese Green) Grüner Tee-Lychee~'                                      => '$1',
             '~(Fresh Yellow) Zitrone~'                                                 => '$1',
             '~(Hakuna Matata) Traube~'                                                 => '$1',
@@ -1446,6 +1448,7 @@ return [
             '~(COG MTL RTA)~',
             '~(Profile(( M RTA)|( Unity RTA)|( 1.5 RDA)|( RDTA)))~',
             '~(nexM Pro)~',
+            '~(SMRT)~',
         ],
         'XTAR'                  => [
             '~(Queen ANT MC6C)~',
