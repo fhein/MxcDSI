@@ -19,7 +19,7 @@ class BulkPriceMapper implements AugmentedObject
                     'EK' => 1.95,
                 ],
                 '10er Packung' => [
-                    'EK' => 17.5,
+                    'EK' => 17.95,
                 ],
             ],
             'InnoCigs' => [
@@ -27,7 +27,7 @@ class BulkPriceMapper implements AugmentedObject
                     'EK' => 2.45,
                 ],
                 '10er Packung'  => [
-                    'EK' => 21.5,
+                    'EK' => 22.9,
                 ],
             ],
             'Erste Sahne' =>
@@ -36,21 +36,32 @@ class BulkPriceMapper implements AugmentedObject
                     'EK' => 3.75,
                 ],
                 '5er Packung'  => [
-                    'EK' => 17.8,
+                    'EK' => 18.25,
                 ],
                 '10er Packung' => [
-                    'EK' => 33.75,
+                    'EK' => 34.60,
                 ],
             ],
             'Vampire Vape' => [
                 '1er Packung' => [
-                    'EK' => 3.7
+                    'EK' => 3.8
                 ],
                 '20er Packung' => [
                     'EK' => 69.9,
                 ],
             ],
         ],
+        'NICSALT_LIQUID' => [
+            'Pod Salt Fusion' =>
+                [
+                    '1er Packung' => [
+                        'EK' => 5.40,
+                    ],
+                    '5er Packung' => [
+                        'EK' => 24.30,
+                    ],
+                ],
+        ]
     ];
 
     /** @var PriceEngine */
@@ -78,9 +89,9 @@ class BulkPriceMapper implements AugmentedObject
                 foreach ($products as $product) {
                     $this->mapPrices($product, $prices);
                 }
-                $this->modelManager->flush();
             }
         }
+        $this->modelManager->flush();
     }
 
     public function mapPrices(Product $product, array $priceList)
@@ -96,11 +107,12 @@ class BulkPriceMapper implements AugmentedObject
                     if ($optionName != $option->getName()) continue;
                     foreach ($prices as $customerGroup => $price) {
                         $this->priceEngine->setRetailPrice($variant, $customerGroup, $price / $this->vatFactor);
+                        $variant->setAccepted(true);
                     }
                 }
                 $this->priceMapper->setPrices($variant);
+                $this->priceMapper::setReferencePriceVariant($variant, 100);
             }
         }
     }
-
 }

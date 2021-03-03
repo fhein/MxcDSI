@@ -1772,27 +1772,27 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
                 [
                     'brand' => 'SC',
                     'option'   => '10er Packung',
-                    'price'    => 17.5,
+                    'price'    => 17.95,
                 ],
                 [
                     'brand' => 'InnoCigs',
                     'option'   => '10er Packung',
-                    'price'    => 21.5,
+                    'price'    => 22.9,
                 ],
                 [
                     'brand' => 'Erste Sahne',
                     'option'   => '10er Packung',
-                    'price'    => 33.75,
+                    'price'    => 34.60,
                 ],
                 [
                     'brand' => 'Erste Sahne',
                     'option'   => '5er Packung',
-                    'price'    => 17.80,
+                    'price'    => 18.25,
                 ],
                 [
                     'brand' => 'Vampire Vape',
                     'option'   => '20er Packung',
-                    'price'    => 69.90,
+                    'price'    => 62.50,
                 ],
             ],
         ];
@@ -1941,7 +1941,14 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
-            $this->createFlavorMappingFile();
+            /** @var \MxcCommons\Toolbox\Shopware\OrderTool $orderTool */
+            // $orderTool = \MxcCommons\MxcCommons::getServices()->get(\MxcCommons\Toolbox\Shopware\OrderTool::class);
+            // $orderTool->setOrderStatusDoctrine(34,\Shopware\Models\Order\Status::ORDER_STATE_COMPLETELY_DELIVERED);
+
+
+
+
+            // $this->createFlavorMappingFile();
             //$this->countSimilarProducts();
 
 
@@ -1961,10 +1968,9 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 //            $this->adjustFlavor();
 //            $this->adjustOwnStockFlavors();
             /** @var BulkPriceMapper $bulkPriceMapper */
-//            $bulkPriceMapper = MxcDropshipIntegrator::getServices()->get(BulkPriceMapper::class);
-//            $bulkPriceMapper->mapBulkPrices();
+            $bulkPriceMapper = MxcDropshipIntegrator::getServices()->get(BulkPriceMapper::class);
+            $bulkPriceMapper->mapBulkPrices();
 
-            //$this->setLiguidBulkPrice();
             //            $this->resetSinglePacks();
 //            $this->remapAccepted();
 //            $this->findMultipackLiquids();

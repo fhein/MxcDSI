@@ -9,6 +9,7 @@ use MxcDropshipIntegrator\Models\Product;
 use MxcDropshipIntegrator\Models\Variant;
 use MxcCommons\Toolbox\Shopware\TaxTool;
 use MxcCommons\Toolbox\Shopware\UnitTool;
+use MxcDropshipIntegrator\MxcDropshipIntegrator;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Article\Detail;
@@ -142,19 +143,23 @@ class PriceMapper
         $variants = $product->getVariants();
         /** @var Variant $variant */
         foreach ($variants as $variant) {
-            $detail = $variant->getDetail();
-            if ($detail === null) continue;
+            self::setReferencePriceVariant($variant, $reference);
+        }
+    }
 
-            $content = $variant->getContent() * $variant->getPiecesPerOrder();
-            if ($content === 0) continue;
+    public static function setReferencePriceVariant(Variant $variant, ?int $reference)
+    {
+        $detail = $variant->getDetail();
+        if ($detail === null) return;
 
-            // set reference volume and unit
-            $detail->setPurchaseUnit($content);
-            $detail->setUnit(UnitTool::getUnit('ml'));
-            if ($reference !== null) {
-                $detail->setReferenceUnit($reference);
-            }
+        $content = $variant->getContent() * $variant->getPiecesPerOrder();
+        if ($content === 0) return;
 
+        // set reference volume and unit
+        $detail->setPurchaseUnit($content);
+        $detail->setUnit(UnitTool::getUnit('ml'));
+        if ($reference !== null) {
+            $detail->setReferenceUnit($reference);
         }
     }
 
