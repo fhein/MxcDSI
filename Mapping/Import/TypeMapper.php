@@ -93,11 +93,17 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
         }
         // check if e-cigarette is a pod-system
         // @todo: Quickhack for Argus GT with pod style clearomizer
-        if ($type === 'E_CIGARETTE' && strpos($name, 'Argus GT') === false) {
-            $description = $product->getIcDescription();
-            if (strpos($description, 'Pod') !== false
-                || strpos($description, 'Cartridge') !== false) {
-                $type = 'POD_SYSTEM';
+        // @todo: Quickhack für Drag 3 & Drag X Plus with pod style clearomizer
+        if ($type === 'E_CIGARETTE') {
+            if (strpos($name, 'Argus GT') === false
+                && strpos($name, 'Drag 3') === false
+                && strpos($name, 'Drag X Plus') === false
+            ) {
+                $description = $product->getIcDescription();
+                if (strpos($description, 'Pod') !== false
+                    || strpos($description, 'Cartridge') !== false) {
+                    $type = 'POD_SYSTEM';
+                }
             }
         }
 

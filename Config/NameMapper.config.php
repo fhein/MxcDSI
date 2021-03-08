@@ -163,6 +163,8 @@ return [
             '~(Argus) - (X) - (E-Zigarette)~'              => '$1 $2 - $3',
             '~(Vaporesso) - (Gen) -(S)~'                   => '$1 - $2 $3',
             '~(.*Easy 4.*) - 9 mg/ml~'                     => '$1',
+            '~(Verdampfer) (Anniversary Edition)~'         => '$1 - $2',
+            '~(Metal Edition) (Verdampfer)~'               => '$2 - $1',
         ],
     ],
 
@@ -333,6 +335,7 @@ return [
             '~(Bamberger Dampferlädla - Götter) (- Aroma)(.*)(- \d+(,\d+)? ml)~'  => '$1 - $3 $2 $4',
             '~(Bamberger Dampferlädla - Lädlas Chabeso) (- Aroma)(.*)(- \d+(,\d+)? ml)~'  => '$1 - $3 $2 $4',
             '~(Classic Sauce by Classic Dampf) (- Aroma)(.*)(- \d+(,\d+)? ml)~'        => '$1 - $3 $2 $4',
+            '~(Shadow Burner) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                          => '$1 - $3 $2 $4',
             '~(VapingGamerz) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                          => '$1 - $3 $2 $4',
             '~(YO-YO) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                                 => '$1 - $3 $2 $4',
             '~(Dreamlike) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                             => '$1 - $3 $2 $4',
@@ -819,6 +822,7 @@ return [
         ],
         'Aspire'                => [
             // Aspire
+            '~(Favostix)~',
             '~(Finixx)~',
             '~(Onixx)~',
             '~(SteelTech)~',
@@ -925,9 +929,10 @@ return [
         'FreeMax'               => [
             '~(Twister mit Fireluke 2)~',
             '~(Fireluke 22?)~',
+            '~(Fireluke 3)~',
             '~(Fireluke Mesh)~',
-            '~(Maxus 50W)~',
-            '~(M Pro)~',
+            '~(Maxus(( 50W)|( 100W)|( 200W)))~',
+            '~(M Pro( 2)?)~',
             '~(Gemm)~',
         ],
         'GeekVape'              => [
@@ -1003,6 +1008,10 @@ return [
             '~(Notch(C|c)ore)~',
             '~(Teros)~',
             '~(Riftcore(( Duo)|( Solo)))~',
+        ],
+        'Kangerm' => [
+            '~(M2)~',
+            '~(Innovator)~',
         ],
         'Nikola'                => [
             '~(Medea)~',
@@ -1368,6 +1377,7 @@ return [
             '~(Gen(( X)|( S))?)~',
             '~(Aurora Play)~',
             '~(Luxe(( S)|( Nano)|( 2))?)~',
+            '~(LUXE PM40)~',
             '~(NRG)~',
             '~(Orca Solo( Plus)?)~',
             '~(Polar)~',
@@ -1449,6 +1459,7 @@ return [
             '~(Profile(( M RTA)|( Unity RTA)|( 1.5 RDA)|( RDTA)))~',
             '~(nexM Pro)~',
             '~(SMRT)~',
+            '~(The Troll X RTA)~',
         ],
         'XTAR'                  => [
             '~(Queen ANT MC6C)~',

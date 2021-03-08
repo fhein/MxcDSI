@@ -126,6 +126,7 @@ return array (
     27 => 'saure Früchte',
     28 => 'süße Früchte',
     29 => 'süße Kirsche',
+    30 => 'Rote Früchte',
   ),
   'Gebäck' => 
   array (
@@ -286,6 +287,7 @@ return array (
     10 => 'Pistazie',
     11 => 'Walnuss',
     12 => 'geröstete Nüsse',
+    13 => 'Marone',
   ),
   'Pflanzen' => 
   array (
@@ -394,6 +396,7 @@ return array (
     19 => 'grüner Tee',
     20 => 'grüner Zitronentee',
     21 => 'schwarzer Tee',
+    22 => 'Latte Macchiato',
   ),
   'Trauben' => 
   array (

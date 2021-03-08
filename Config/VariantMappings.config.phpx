@@ -92041,4 +92041,3492 @@ return array (
     'retailPriceMaxVapor' => NULL,
     'retailPriceOthers' => NULL,
   ),
+  'TS100L10-AT-0-M' => 
+  array (
+    'icNumber' => 'TS100L10-AT-0-M',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'TS100L10-HS-0-M' => 
+  array (
+    'icNumber' => 'TS100L10-HS-0-M',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'TS100L10-PB-0-M' => 
+  array (
+    'icNumber' => 'TS100L10-PB-0-M',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'TS100L10-ZK-0-M' => 
+  array (
+    'icNumber' => 'TS100L10-ZK-0-M',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VR10010-BS-0-M' => 
+  array (
+    'icNumber' => 'VR10010-BS-0-M',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-MM-A-H' => 
+  array (
+    'icNumber' => 'FV100A10-MM-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-TR-A-H' => 
+  array (
+    'icNumber' => 'FV100A10-TR-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-HR-A-H' => 
+  array (
+    'icNumber' => 'FV100A10-HR-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-IB-A-H' => 
+  array (
+    'icNumber' => 'FV100A10-IB-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100B8H-16' => 
+  array (
+    'icNumber' => 'AS100B8H-16',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100B8H-16-H' => 
+  array (
+    'icNumber' => 'AS100B8H-16-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NI-16' => 
+  array (
+    'icNumber' => 'AS100NI-16',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NI-17' => 
+  array (
+    'icNumber' => 'AS100NI-17',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VY100MN-12' => 
+  array (
+    'icNumber' => 'VY100MN-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VY100MN-13' => 
+  array (
+    'icNumber' => 'VY100MN-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VY100MN-14' => 
+  array (
+    'icNumber' => 'VY100MN-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VY100MN-15' => 
+  array (
+    'icNumber' => 'VY100MN-15',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'KG100M2-10' => 
+  array (
+    'icNumber' => 'KG100M2-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'KG100IV-10' => 
+  array (
+    'icNumber' => 'KG100IV-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'KG100M2H-10' => 
+  array (
+    'icNumber' => 'KG100M2H-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'KG100IVH-10' => 
+  array (
+    'icNumber' => 'KG100IVH-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'KG100IVR-10' => 
+  array (
+    'icNumber' => 'KG100IVR-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FV-10' => 
+  array (
+    'icNumber' => 'AS100FV-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FV-11' => 
+  array (
+    'icNumber' => 'AS100FV-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FV-12' => 
+  array (
+    'icNumber' => 'AS100FV-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FV-13' => 
+  array (
+    'icNumber' => 'AS100FV-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FV-14' => 
+  array (
+    'icNumber' => 'AS100FV-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FV-15' => 
+  array (
+    'icNumber' => 'AS100FV-15',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FV-16' => 
+  array (
+    'icNumber' => 'AS100FV-16',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FVP-10' => 
+  array (
+    'icNumber' => 'AS100FVP-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FVP-10-H' => 
+  array (
+    'icNumber' => 'AS100FVP-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FVP-11' => 
+  array (
+    'icNumber' => 'AS100FVP-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100FVP-11-H' => 
+  array (
+    'icNumber' => 'AS100FVP-11-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NX-10' => 
+  array (
+    'icNumber' => 'AS100NX-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NX-11' => 
+  array (
+    'icNumber' => 'AS100NX-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NX-12' => 
+  array (
+    'icNumber' => 'AS100NX-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NX-13' => 
+  array (
+    'icNumber' => 'AS100NX-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NX-14' => 
+  array (
+    'icNumber' => 'AS100NX-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NX-15' => 
+  array (
+    'icNumber' => 'AS100NX-15',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NXP-16' => 
+  array (
+    'icNumber' => 'AS100NXP-16',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NXP-17' => 
+  array (
+    'icNumber' => 'AS100NXP-17',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-DB-A-H' => 
+  array (
+    'icNumber' => 'FV100A10-DB-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-MG-A-H' => 
+  array (
+    'icNumber' => 'FV100A10-MG-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100WC-10' => 
+  array (
+    'icNumber' => 'GV100WC-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100WC-11' => 
+  array (
+    'icNumber' => 'GV100WC-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100WC-12' => 
+  array (
+    'icNumber' => 'GV100WC-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100WC-13' => 
+  array (
+    'icNumber' => 'GV100WC-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100WCP-14' => 
+  array (
+    'icNumber' => 'GV100WCP-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100WCP-14-H' => 
+  array (
+    'icNumber' => 'GV100WCP-14-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100WCP-15' => 
+  array (
+    'icNumber' => 'GV100WCP-15',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100WCP-15-H' => 
+  array (
+    'icNumber' => 'GV100WCP-15-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100GGS-10' => 
+  array (
+    'icNumber' => 'GV100GGS-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GV100GGS-10-H' => 
+  array (
+    'icNumber' => 'GV100GGS-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100NXA-10' => 
+  array (
+    'icNumber' => 'AS100NXA-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VS100PM-10' => 
+  array (
+    'icNumber' => 'VS100PM-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VS100PM-11' => 
+  array (
+    'icNumber' => 'VS100PM-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VS100PM-12' => 
+  array (
+    'icNumber' => 'VS100PM-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VS100PMC-15' => 
+  array (
+    'icNumber' => 'VS100PMC-15',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VS100PMC-15-H' => 
+  array (
+    'icNumber' => 'VS100PMC-15-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3-10' => 
+  array (
+    'icNumber' => 'PV100D3-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3-11' => 
+  array (
+    'icNumber' => 'PV100D3-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3-12' => 
+  array (
+    'icNumber' => 'PV100D3-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3-13' => 
+  array (
+    'icNumber' => 'PV100D3-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3-14' => 
+  array (
+    'icNumber' => 'PV100D3-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3M-15' => 
+  array (
+    'icNumber' => 'PV100D3M-15',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3M-16' => 
+  array (
+    'icNumber' => 'PV100D3M-16',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3M-17' => 
+  array (
+    'icNumber' => 'PV100D3M-17',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3M-18' => 
+  array (
+    'icNumber' => 'PV100D3M-18',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100D3M-19' => 
+  array (
+    'icNumber' => 'PV100D3M-19',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TD1-10' => 
+  array (
+    'icNumber' => 'PV100TD1-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TD1-10-H' => 
+  array (
+    'icNumber' => 'PV100TD1-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TD2-10' => 
+  array (
+    'icNumber' => 'PV100TD2-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TD2-10-H' => 
+  array (
+    'icNumber' => 'PV100TD2-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XP-10' => 
+  array (
+    'icNumber' => 'PV100XP-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XP-11' => 
+  array (
+    'icNumber' => 'PV100XP-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XP-12' => 
+  array (
+    'icNumber' => 'PV100XP-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XP-13' => 
+  array (
+    'icNumber' => 'PV100XP-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XP-14' => 
+  array (
+    'icNumber' => 'PV100XP-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XPM-10' => 
+  array (
+    'icNumber' => 'PV100XPM-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XPM-11' => 
+  array (
+    'icNumber' => 'PV100XPM-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XPM-12' => 
+  array (
+    'icNumber' => 'PV100XPM-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XPM-13' => 
+  array (
+    'icNumber' => 'PV100XPM-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100XPM-14' => 
+  array (
+    'icNumber' => 'PV100XPM-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPH-10' => 
+  array (
+    'icNumber' => 'PV100TPH-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPH-11' => 
+  array (
+    'icNumber' => 'PV100TPH-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPH-12' => 
+  array (
+    'icNumber' => 'PV100TPH-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPP-10' => 
+  array (
+    'icNumber' => 'PV100TPP-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPP-10-H' => 
+  array (
+    'icNumber' => 'PV100TPP-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPP-11' => 
+  array (
+    'icNumber' => 'PV100TPP-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPP-11-H' => 
+  array (
+    'icNumber' => 'PV100TPP-11-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPP-12' => 
+  array (
+    'icNumber' => 'PV100TPP-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PV100TPP-12-H' => 
+  array (
+    'icNumber' => 'PV100TPP-12-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-0' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-0',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-0-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-0-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-3' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-3',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-3-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-3-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-6' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-6',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-6-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-6-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-9' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-9',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-9-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-9-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-18' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-18',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CS-18-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CS-18-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-0' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-0',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-0-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-0-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-3' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-3',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-3-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-3-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-6' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-6',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-6-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-6-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-9' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-9',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-9-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-9-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-18' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-18',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-CG-18-H' => 
+  array (
+    'icNumber' => 'IC10000L10-CG-18-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-0' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-0',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-0-H' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-0-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-3' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-3',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-3-H' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-3-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-6' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-6',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-6-H' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-6-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-9' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-9',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-9-H' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-9-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-18' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-18',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-FW-18-H' => 
+  array (
+    'icNumber' => 'IC10000L10-FW-18-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-0' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-0',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-0-H' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-0-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-3' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-3',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-3-H' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-3-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-6' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-6',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-6-H' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-6-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-9' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-9',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-9-H' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-9-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-18' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-18',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-HM-18-H' => 
+  array (
+    'icNumber' => 'IC10000L10-HM-18-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-0' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-0',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-0-H' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-0-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-3' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-3',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-3-H' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-3-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-6' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-6',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-6-H' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-6-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-9' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-9',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-9-H' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-9-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-18' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-18',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'IC10000L10-TY-18-H' => 
+  array (
+    'icNumber' => 'IC10000L10-TY-18-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VT100A10-NB-A-H' => 
+  array (
+    'icNumber' => 'VT100A10-NB-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VT100A10-AD-A-H' => 
+  array (
+    'icNumber' => 'VT100A10-AD-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VT100A10-WN-A-H' => 
+  array (
+    'icNumber' => 'VT100A10-WN-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AM100A10-ES-A-H' => 
+  array (
+    'icNumber' => 'AM100A10-ES-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AM100A10-SK-A-H' => 
+  array (
+    'icNumber' => 'AM100A10-SK-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AM100A10-TS-A-H' => 
+  array (
+    'icNumber' => 'AM100A10-TS-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AM100A10-ZS-A-H' => 
+  array (
+    'icNumber' => 'AM100A10-ZS-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AM100A10-ZK-A-H' => 
+  array (
+    'icNumber' => 'AM100A10-ZK-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SP-10' => 
+  array (
+    'icNumber' => 'WT100SP-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SP-10-H' => 
+  array (
+    'icNumber' => 'WT100SP-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SP-11' => 
+  array (
+    'icNumber' => 'WT100SP-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SP-11-H' => 
+  array (
+    'icNumber' => 'WT100SP-11-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SP-12' => 
+  array (
+    'icNumber' => 'WT100SP-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SP-12-H' => 
+  array (
+    'icNumber' => 'WT100SP-12-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SP-13' => 
+  array (
+    'icNumber' => 'WT100SP-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SP-13-H' => 
+  array (
+    'icNumber' => 'WT100SP-13-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SPP-14' => 
+  array (
+    'icNumber' => 'WT100SPP-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SPP-14-H' => 
+  array (
+    'icNumber' => 'WT100SPP-14-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SPC-16' => 
+  array (
+    'icNumber' => 'WT100SPC-16',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SPC-16-H' => 
+  array (
+    'icNumber' => 'WT100SPC-16-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SPT-17' => 
+  array (
+    'icNumber' => 'WT100SPT-17',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SPT-17-H' => 
+  array (
+    'icNumber' => 'WT100SPT-17-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SPE-18' => 
+  array (
+    'icNumber' => 'WT100SPE-18',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100SPE-18-H' => 
+  array (
+    'icNumber' => 'WT100SPE-18-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-CZ-A' => 
+  array (
+    'icNumber' => 'BD100A10-CZ-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-CO-A' => 
+  array (
+    'icNumber' => 'BD100A10-CO-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-CG-A' => 
+  array (
+    'icNumber' => 'BD100A10-CG-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SW100A10-ZT-A' => 
+  array (
+    'icNumber' => 'SW100A10-ZT-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-GB-A' => 
+  array (
+    'icNumber' => 'BD100A10-GB-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-GF-A' => 
+  array (
+    'icNumber' => 'BD100A10-GF-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-GH-A' => 
+  array (
+    'icNumber' => 'BD100A10-GH-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-GL-A' => 
+  array (
+    'icNumber' => 'BD100A10-GL-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SW100A10-EB-A' => 
+  array (
+    'icNumber' => 'SW100A10-EB-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-GO-A' => 
+  array (
+    'icNumber' => 'BD100A10-GO-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'BD100A10-GT-A' => 
+  array (
+    'icNumber' => 'BD100A10-GT-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SW100A10-DK-A' => 
+  array (
+    'icNumber' => 'SW100A10-DK-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SW100A10-BB-A' => 
+  array (
+    'icNumber' => 'SW100A10-BB-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GS100A10-MK-A' => 
+  array (
+    'icNumber' => 'GS100A10-MK-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GS100A10-BI-A' => 
+  array (
+    'icNumber' => 'GS100A10-BI-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GS100A10-GE-A' => 
+  array (
+    'icNumber' => 'GS100A10-GE-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GS100A10-JV-A' => 
+  array (
+    'icNumber' => 'GS100A10-JV-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GS100A10-HW-A' => 
+  array (
+    'icNumber' => 'GS100A10-HW-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GS100A10-ZS-A' => 
+  array (
+    'icNumber' => 'GS100A10-ZS-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GS100A10-SE-A' => 
+  array (
+    'icNumber' => 'GS100A10-SE-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PE100A10-TP-A' => 
+  array (
+    'icNumber' => 'PE100A10-TP-A',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-PY-A' => 
+  array (
+    'icNumber' => 'CL100A10-PY-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-WB-A' => 
+  array (
+    'icNumber' => 'CL100A10-WB-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-IC-A' => 
+  array (
+    'icNumber' => 'CL100A10-IC-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-IT-A' => 
+  array (
+    'icNumber' => 'CL100A10-IT-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-GR-A' => 
+  array (
+    'icNumber' => 'CL100A10-GR-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-EY-A' => 
+  array (
+    'icNumber' => 'CL100A10-EY-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-BC-A' => 
+  array (
+    'icNumber' => 'CL100A10-BC-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-AT-A' => 
+  array (
+    'icNumber' => 'CL100A10-AT-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'CL100A10-FA-A' => 
+  array (
+    'icNumber' => 'CL100A10-FA-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-BM-A' => 
+  array (
+    'icNumber' => 'SY100A10-BM-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-EK-A' => 
+  array (
+    'icNumber' => 'SY100A10-EK-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-HJ-A' => 
+  array (
+    'icNumber' => 'SY100A10-HJ-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-MM-A' => 
+  array (
+    'icNumber' => 'SY100A10-MM-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-NM-A' => 
+  array (
+    'icNumber' => 'SY100A10-NM-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-PE-A' => 
+  array (
+    'icNumber' => 'SY100A10-PE-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-RF-A' => 
+  array (
+    'icNumber' => 'SY100A10-RF-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-SO-A' => 
+  array (
+    'icNumber' => 'SY100A10-SO-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SY100A10-WB-A' => 
+  array (
+    'icNumber' => 'SY100A10-WB-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B72-1' => 
+  array (
+    'icNumber' => 'FM100-B72-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B85-1' => 
+  array (
+    'icNumber' => 'FM100-B85-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B74-1' => 
+  array (
+    'icNumber' => 'FM100-B74-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B89-1' => 
+  array (
+    'icNumber' => 'FM100-B89-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SAMS40T-10' => 
+  array (
+    'icNumber' => 'SAMS40T-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SAMS40T-10-H' => 
+  array (
+    'icNumber' => 'SAMS40T-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B84-1' => 
+  array (
+    'icNumber' => 'FM100-B84-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'RL100PFM-10' => 
+  array (
+    'icNumber' => 'RL100PFM-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GZ100A10-CC-A' => 
+  array (
+    'icNumber' => 'GZ100A10-CC-A',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'GZ100A10-CC-A-H' => 
+  array (
+    'icNumber' => 'GZ100A10-CC-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100GA-10' => 
+  array (
+    'icNumber' => 'AS100GA-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100GA-11' => 
+  array (
+    'icNumber' => 'AS100GA-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100GMA-10' => 
+  array (
+    'icNumber' => 'AS100GMA-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AS100GMA-11' => 
+  array (
+    'icNumber' => 'AS100GMA-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B82-1' => 
+  array (
+    'icNumber' => 'FM100-B82-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B87-1' => 
+  array (
+    'icNumber' => 'FM100-B87-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B83-1' => 
+  array (
+    'icNumber' => 'FM100-B83-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B86-1' => 
+  array (
+    'icNumber' => 'FM100-B86-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B97-1' => 
+  array (
+    'icNumber' => 'FM100-B97-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B76-1' => 
+  array (
+    'icNumber' => 'FM100-B76-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B77-1' => 
+  array (
+    'icNumber' => 'FM100-B77-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B92-1' => 
+  array (
+    'icNumber' => 'FM100-B92-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B93-1' => 
+  array (
+    'icNumber' => 'FM100-B93-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B90-1' => 
+  array (
+    'icNumber' => 'FM100-B90-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B80-1' => 
+  array (
+    'icNumber' => 'FM100-B80-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B88-1' => 
+  array (
+    'icNumber' => 'FM100-B88-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B91-1' => 
+  array (
+    'icNumber' => 'FM100-B91-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B81-1' => 
+  array (
+    'icNumber' => 'FM100-B81-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B99-1' => 
+  array (
+    'icNumber' => 'FM100-B99-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100-B98-1' => 
+  array (
+    'icNumber' => 'FM100-B98-1',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-DA-A' => 
+  array (
+    'icNumber' => 'FV100A10-DA-A',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-DA-A-H' => 
+  array (
+    'icNumber' => 'FV100A10-DA-A-H',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-GO-A' => 
+  array (
+    'icNumber' => 'FV100A10-GO-A',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FV100A10-GO-A-H' => 
+  array (
+    'icNumber' => 'FV100A10-GO-A-H',
+    'capacity' => '',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-BI-A' => 
+  array (
+    'icNumber' => 'DR100A10-BI-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-EI-A' => 
+  array (
+    'icNumber' => 'DR100A10-EI-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-LC-A' => 
+  array (
+    'icNumber' => 'DR100A10-LC-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-ML-A' => 
+  array (
+    'icNumber' => 'DR100A10-ML-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-RI-A' => 
+  array (
+    'icNumber' => 'DR100A10-RI-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-SI-A' => 
+  array (
+    'icNumber' => 'DR100A10-SI-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-BW-A' => 
+  array (
+    'icNumber' => 'DR100A10-BW-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-BF-A' => 
+  array (
+    'icNumber' => 'DR100A10-BF-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-EM-A' => 
+  array (
+    'icNumber' => 'DR100A10-EM-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-SM-A' => 
+  array (
+    'icNumber' => 'DR100A10-SM-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-VM-A' => 
+  array (
+    'icNumber' => 'DR100A10-VM-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-WD-A' => 
+  array (
+    'icNumber' => 'DR100A10-WD-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-LF-A' => 
+  array (
+    'icNumber' => 'DR100A10-LF-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-PL-A' => 
+  array (
+    'icNumber' => 'DR100A10-PL-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-PO-A' => 
+  array (
+    'icNumber' => 'DR100A10-PO-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-PA-A' => 
+  array (
+    'icNumber' => 'DR100A10-PA-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-PC-A' => 
+  array (
+    'icNumber' => 'DR100A10-PC-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'YO100A10-CR-A' => 
+  array (
+    'icNumber' => 'YO100A10-CR-A',
+    'capacity' => '60',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'DR100A10-PS-A' => 
+  array (
+    'icNumber' => 'DR100A10-PS-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-MM-20' => 
+  array (
+    'icNumber' => 'PT100NS10-MM-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-MM-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-MM-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-KI-20' => 
+  array (
+    'icNumber' => 'PT100NS10-KI-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-KI-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-KI-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-LC-20' => 
+  array (
+    'icNumber' => 'PT100NS10-LC-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-LC-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-LC-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-BJ-20' => 
+  array (
+    'icNumber' => 'PT100NS10-BJ-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-BJ-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-BJ-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'HK100A10-ZA-A' => 
+  array (
+    'icNumber' => 'HK100A10-ZA-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-BU-20' => 
+  array (
+    'icNumber' => 'PT100NS10-BU-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-BU-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-BU-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-AM-20' => 
+  array (
+    'icNumber' => 'PT100NS10-AM-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-AM-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-AM-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-CL-20' => 
+  array (
+    'icNumber' => 'PT100NS10-CL-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-CL-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-CL-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-PB-20' => 
+  array (
+    'icNumber' => 'PT100NS10-PB-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-PB-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-PB-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-SU-20' => 
+  array (
+    'icNumber' => 'PT100NS10-SU-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-SU-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-SU-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-PH-20' => 
+  array (
+    'icNumber' => 'PT100NS10-PH-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-PH-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-PH-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-BP-20' => 
+  array (
+    'icNumber' => 'PT100NS10-BP-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'PT100NS10-BP-20-H' => 
+  array (
+    'icNumber' => 'PT100NS10-BP-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'VA100A10-MJ-A' => 
+  array (
+    'icNumber' => 'VA100A10-MJ-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100M1-10' => 
+  array (
+    'icNumber' => 'FM100M1-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100M1-11' => 
+  array (
+    'icNumber' => 'FM100M1-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100M1-12' => 
+  array (
+    'icNumber' => 'FM100M1-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100M1-13' => 
+  array (
+    'icNumber' => 'FM100M1-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100FL3-14' => 
+  array (
+    'icNumber' => 'FM100FL3-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100FL3-15' => 
+  array (
+    'icNumber' => 'FM100FL3-15',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100FL3-16' => 
+  array (
+    'icNumber' => 'FM100FL3-16',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100FL3-17' => 
+  array (
+    'icNumber' => 'FM100FL3-17',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH1-10' => 
+  array (
+    'icNumber' => 'FM100XH1-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH1-10-H' => 
+  array (
+    'icNumber' => 'FM100XH1-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH2-10' => 
+  array (
+    'icNumber' => 'FM100XH2-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH2-10-H' => 
+  array (
+    'icNumber' => 'FM100XH2-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH2-11' => 
+  array (
+    'icNumber' => 'FM100XH2-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH2-11-H' => 
+  array (
+    'icNumber' => 'FM100XH2-11-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH3-10' => 
+  array (
+    'icNumber' => 'FM100XH3-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH3-10-H' => 
+  array (
+    'icNumber' => 'FM100XH3-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH4-10' => 
+  array (
+    'icNumber' => 'FM100XH4-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100XH4-10-H' => 
+  array (
+    'icNumber' => 'FM100XH4-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100MCS-20' => 
+  array (
+    'icNumber' => 'WT100MCS-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100MCS-20-H' => 
+  array (
+    'icNumber' => 'WT100MCS-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100RBC-21' => 
+  array (
+    'icNumber' => 'WT100RBC-21',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100RBC-21-H' => 
+  array (
+    'icNumber' => 'WT100RBC-21-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100RBS-22' => 
+  array (
+    'icNumber' => 'WT100RBS-22',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100RBS-22-H' => 
+  array (
+    'icNumber' => 'WT100RBS-22-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-AL-A' => 
+  array (
+    'icNumber' => 'SU100A10-AL-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-AL-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-AL-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BH-A' => 
+  array (
+    'icNumber' => 'SU100A10-BH-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BH-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-BH-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BM-A' => 
+  array (
+    'icNumber' => 'SU100A10-BM-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BM-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-BM-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BC-A' => 
+  array (
+    'icNumber' => 'SU100A10-BC-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BC-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-BC-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BS-A' => 
+  array (
+    'icNumber' => 'SU100A10-BS-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BS-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-BS-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BR-A' => 
+  array (
+    'icNumber' => 'SU100A10-BR-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BR-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-BR-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BT-A' => 
+  array (
+    'icNumber' => 'SU100A10-BT-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-BT-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-BT-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-CU-A' => 
+  array (
+    'icNumber' => 'SU100A10-CU-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-CU-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-CU-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-CM-A' => 
+  array (
+    'icNumber' => 'SU100A10-CM-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-CM-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-CM-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-CL-A' => 
+  array (
+    'icNumber' => 'SU100A10-CL-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-CL-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-CL-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-DC-A' => 
+  array (
+    'icNumber' => 'SU100A10-DC-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-DC-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-DC-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-EM-A' => 
+  array (
+    'icNumber' => 'SU100A10-EM-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-EM-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-EM-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-FG-A' => 
+  array (
+    'icNumber' => 'SU100A10-FG-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-FG-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-FG-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-GT-A' => 
+  array (
+    'icNumber' => 'SU100A10-GT-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-GT-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-GT-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-GV-A' => 
+  array (
+    'icNumber' => 'SU100A10-GV-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-GV-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-GV-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-HV-A' => 
+  array (
+    'icNumber' => 'SU100A10-HV-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-HV-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-HV-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-HB-A' => 
+  array (
+    'icNumber' => 'SU100A10-HB-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-HB-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-HB-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-HJ-A' => 
+  array (
+    'icNumber' => 'SU100A10-HJ-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-HJ-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-HJ-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-HW-A' => 
+  array (
+    'icNumber' => 'SU100A10-HW-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-HW-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-HW-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-LM-A' => 
+  array (
+    'icNumber' => 'SU100A10-LM-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-LM-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-LM-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-IV-A' => 
+  array (
+    'icNumber' => 'SU100A10-IV-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-IV-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-IV-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-TP-A' => 
+  array (
+    'icNumber' => 'SU100A10-TP-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-TP-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-TP-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-IT-A' => 
+  array (
+    'icNumber' => 'SU100A10-IT-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-IT-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-IT-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-KK-A' => 
+  array (
+    'icNumber' => 'SU100A10-KK-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-KK-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-KK-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-K1-A' => 
+  array (
+    'icNumber' => 'SU100A10-K1-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-K1-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-K1-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-K2-A' => 
+  array (
+    'icNumber' => 'SU100A10-K2-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-K2-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-K2-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-LK-A' => 
+  array (
+    'icNumber' => 'SU100A10-LK-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-LK-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-LK-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-MS-A' => 
+  array (
+    'icNumber' => 'SU100A10-MS-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-MS-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-MS-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-MM-A' => 
+  array (
+    'icNumber' => 'SU100A10-MM-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-MM-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-MM-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-NM-A' => 
+  array (
+    'icNumber' => 'SU100A10-NM-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-NM-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-NM-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RL-A' => 
+  array (
+    'icNumber' => 'SU100A10-RL-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RL-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-RL-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-PC-A' => 
+  array (
+    'icNumber' => 'SU100A10-PC-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-PC-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-PC-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-PB-A' => 
+  array (
+    'icNumber' => 'SU100A10-PB-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-PB-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-PB-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RP-A' => 
+  array (
+    'icNumber' => 'SU100A10-RP-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RP-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-RP-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RI-A' => 
+  array (
+    'icNumber' => 'SU100A10-RI-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RI-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-RI-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RF-A' => 
+  array (
+    'icNumber' => 'SU100A10-RF-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RF-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-RF-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RK-A' => 
+  array (
+    'icNumber' => 'SU100A10-RK-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-RK-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-RK-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-SH-A' => 
+  array (
+    'icNumber' => 'SU100A10-SH-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-SH-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-SH-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-SC-A' => 
+  array (
+    'icNumber' => 'SU100A10-SC-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-SC-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-SC-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-TE-A' => 
+  array (
+    'icNumber' => 'SU100A10-TE-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-TE-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-TE-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-TM-A' => 
+  array (
+    'icNumber' => 'SU100A10-TM-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-TM-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-TM-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-WT-A' => 
+  array (
+    'icNumber' => 'SU100A10-WT-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-WT-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-WT-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-WC-A' => 
+  array (
+    'icNumber' => 'SU100A10-WC-A',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'SU100A10-WC-A-H' => 
+  array (
+    'icNumber' => 'SU100A10-WC-A-H',
+    'capacity' => '10',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100M2-10' => 
+  array (
+    'icNumber' => 'FM100M2-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100M2-11' => 
+  array (
+    'icNumber' => 'FM100M2-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100M2-12' => 
+  array (
+    'icNumber' => 'FM100M2-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100M2-13' => 
+  array (
+    'icNumber' => 'FM100M2-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MP2-10' => 
+  array (
+    'icNumber' => 'FM100MP2-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MP2-11' => 
+  array (
+    'icNumber' => 'FM100MP2-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MP2-12' => 
+  array (
+    'icNumber' => 'FM100MP2-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MP2-13' => 
+  array (
+    'icNumber' => 'FM100MP2-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MH1-10' => 
+  array (
+    'icNumber' => 'FM100MH1-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MH1-10-H' => 
+  array (
+    'icNumber' => 'FM100MH1-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MH2-11' => 
+  array (
+    'icNumber' => 'FM100MH2-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MH2-11-H' => 
+  array (
+    'icNumber' => 'FM100MH2-11-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MH3-12' => 
+  array (
+    'icNumber' => 'FM100MH3-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MH3-12-H' => 
+  array (
+    'icNumber' => 'FM100MH3-12-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MH4-13' => 
+  array (
+    'icNumber' => 'FM100MH4-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'FM100MH4-13-H' => 
+  array (
+    'icNumber' => 'FM100MH4-13-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AH100A10-AD-A' => 
+  array (
+    'icNumber' => 'AH100A10-AD-A',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'AH100A10-AD-A-H' => 
+  array (
+    'icNumber' => 'AH100A10-AD-A-H',
+    'capacity' => '120',
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-10' => 
+  array (
+    'icNumber' => 'WT100TT-10',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-10-H' => 
+  array (
+    'icNumber' => 'WT100TT-10-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-11' => 
+  array (
+    'icNumber' => 'WT100TT-11',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-11-H' => 
+  array (
+    'icNumber' => 'WT100TT-11-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-12' => 
+  array (
+    'icNumber' => 'WT100TT-12',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-12-H' => 
+  array (
+    'icNumber' => 'WT100TT-12-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-13' => 
+  array (
+    'icNumber' => 'WT100TT-13',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-13-H' => 
+  array (
+    'icNumber' => 'WT100TT-13-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-14' => 
+  array (
+    'icNumber' => 'WT100TT-14',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-14-H' => 
+  array (
+    'icNumber' => 'WT100TT-14-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-15' => 
+  array (
+    'icNumber' => 'WT100TT-15',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TT-15-H' => 
+  array (
+    'icNumber' => 'WT100TT-15-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-16' => 
+  array (
+    'icNumber' => 'WT100TTM-16',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-16-H' => 
+  array (
+    'icNumber' => 'WT100TTM-16-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-17' => 
+  array (
+    'icNumber' => 'WT100TTM-17',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-17-H' => 
+  array (
+    'icNumber' => 'WT100TTM-17-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-18' => 
+  array (
+    'icNumber' => 'WT100TTM-18',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-18-H' => 
+  array (
+    'icNumber' => 'WT100TTM-18-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-19' => 
+  array (
+    'icNumber' => 'WT100TTM-19',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-19-H' => 
+  array (
+    'icNumber' => 'WT100TTM-19-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-20' => 
+  array (
+    'icNumber' => 'WT100TTM-20',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTM-20-H' => 
+  array (
+    'icNumber' => 'WT100TTM-20-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTG-21' => 
+  array (
+    'icNumber' => 'WT100TTG-21',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTG-21-H' => 
+  array (
+    'icNumber' => 'WT100TTG-21-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTG-22' => 
+  array (
+    'icNumber' => 'WT100TTG-22',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
+  'WT100TTG-22-H' => 
+  array (
+    'icNumber' => 'WT100TTG-22-H',
+    'capacity' => NULL,
+    'retailPriceDampfplanet' => NULL,
+    'retailPriceMaxVapor' => NULL,
+    'retailPriceOthers' => NULL,
+  ),
 );
