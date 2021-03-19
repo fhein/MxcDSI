@@ -17,6 +17,10 @@ return [
         'Elli´s Aromen' => [
             'brand' => 'Elli\'s Aromen',
             'supplier' => 'Elli\'s Aromen',
+        ],
+        'Die4Brüder Bubble' => [
+            'brand' => 'Die 4 Brüder',
+            'supplier' => 'Die 4 Brüder',
         ]
     ],
 ];

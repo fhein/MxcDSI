@@ -220,6 +220,7 @@ return array (
     37 => 'Zitronentee',
     38 => 'bittere Limonade',
     39 => 'karibischer Rum',
+    40 => 'Blaubeertee',
   ),
   'Gewürze' => 
   array (
