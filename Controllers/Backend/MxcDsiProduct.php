@@ -54,6 +54,7 @@ use MxcDropshipInnocigs\Exception\ApiException;
 use MxcDropshipIntegrator\Mapping\ImportClient;
 use MxcDropship\MxcDropship;
 use Shopware\Models\Order\Order;
+use Shopware\Models\Order\Status;
 
 class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationController implements CSRFWhitelistAware
 {
@@ -1941,6 +1942,27 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
     public function dev3Action()
     {
         try {
+            $orderId = 1129;
+            $services = MxcDropshipIntegrator::getServices();
+            /** @var \MxcCommons\Toolbox\Shopware\OrderTool $orderTool */
+            $orderTool = $services->get(\MxcCommons\Toolbox\Shopware\OrderTool::class);
+            $order = $orderTool->getOrder($orderId);
+            $log = $services->get('logger');
+            $calculator = $services->get('bestit_klarna_order_management.components.calculator.calculator');
+            $capture = $services->get('bestit_klarna_order_management.components.facade.capture');
+            $cents = $calculator->toCents($order['invoice_amount']);
+            $response = $capture->create($order['transactionID'], $cents);
+            if ($response->isError()) {
+                $error = $response->getError();
+                $log->err('Klarna Error: ' . $error->errorCode . ': ' . $error->errorMessages);
+                foreach ($error->errorMessages as $msg) {
+                    $log->err('MSG: ' . $msg);
+                }
+                /** @var WorkflowEngine $engine */
+                $orderTool->setPaymentStatus($order['id'], Status::PAYMENT_STATE_REVIEW_NECESSARY);
+            }
+
+
             /** @var \MxcCommons\Toolbox\Shopware\OrderTool $orderTool */
             // $orderTool = \MxcCommons\MxcCommons::getServices()->get(\MxcCommons\Toolbox\Shopware\OrderTool::class);
             // $orderTool->setOrderStatusDoctrine(34,\Shopware\Models\Order\Status::ORDER_STATE_COMPLETELY_DELIVERED);
@@ -1968,8 +1990,8 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 //            $this->adjustFlavor();
 //            $this->adjustOwnStockFlavors();
             /** @var BulkPriceMapper $bulkPriceMapper */
-            $bulkPriceMapper = MxcDropshipIntegrator::getServices()->get(BulkPriceMapper::class);
-            $bulkPriceMapper->mapBulkPrices();
+//--->            $bulkPriceMapper = MxcDropshipIntegrator::getServices()->get(BulkPriceMapper::class);
+//--->            $bulkPriceMapper->mapBulkPrices();
 
             //            $this->resetSinglePacks();
 //            $this->remapAccepted();
