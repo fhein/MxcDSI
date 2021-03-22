@@ -165,6 +165,7 @@ return [
             '~(.*Easy 4.*) - 9 mg/ml~'                     => '$1',
             '~(Verdampfer) (Anniversary Edition)~'         => '$1 - $2',
             '~(Metal Edition) (Verdampfer)~'               => '$2 - $1',
+            '~(Argus) - (GT)~'                             => '$1 $2',
         ],
     ],
 
