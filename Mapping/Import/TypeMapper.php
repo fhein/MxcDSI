@@ -98,6 +98,8 @@ class TypeMapper extends BaseImportMapper implements ProductMapperInterface
             if (strpos($name, 'Argus GT') === false
                 && strpos($name, 'Drag 3') === false
                 && strpos($name, 'Drag X Plus') === false
+                && strpos($name, 'iStick Power 2C') === false
+                && strpos($name, 'Grus') === false
             ) {
                 $description = $product->getIcDescription();
                 if (strpos($description, 'Pod') !== false
