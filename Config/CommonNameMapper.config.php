@@ -4,10 +4,16 @@ return [
         '510CloudPark' => [
             'BenchmarX' => 2,
         ],
+        'Arcanum' => [
+            'Respawn' => 2,
+        ],
         'Bamberger Dampferlädla' => [
             'Bassd Schoo' => 2,
             'Lädlas Chabeso' => 2,
             'Götter' => 2,
+        ],
+        'Ezigaro Pro' => [
+            'Quick Eazy' => 2,
         ],
         'KTS' => [
             'Superfruit' => 2,
@@ -21,6 +27,12 @@ return [
         ],
         'Flavorist' => [
             'Tabak Royal' => 2,
+        ],
+        'Omerta Liquids' => [
+            'Bisha' => 2,
+            'Carat' => 2,
+            'La Famiglia' => 2,
+            'The Dons' => 2,
         ],
         'Twisted'        => [
             'Cryostasis'                           => 2,

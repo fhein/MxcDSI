@@ -93,6 +93,7 @@ return array (
     16 => 'Zitronensorbet',
     17 => 'marokkanische Minze',
     18 => 'Spaghetti-Eis',
+    19 => 'blauer Slushy',
   ),
   'Früchte' => 
   array (
@@ -221,6 +222,7 @@ return array (
     38 => 'bittere Limonade',
     39 => 'karibischer Rum',
     40 => 'Blaubeertee',
+    41 => 'Bourbon',
   ),
   'Gewürze' => 
   array (
@@ -247,6 +249,8 @@ return array (
     20 => 'Zucker',
     21 => 'brauner Zucker',
     22 => 'schwarzer Trüffel',
+    23 => 'Eichenholz',
+    24 => 'orientalische Gewürze',
   ),
   'Melonen' => 
   array (
@@ -272,6 +276,7 @@ return array (
     8 => 'Sojamilch',
     9 => 'griechischer Joghurt',
     10 => 'süße Schlagsahne',
+    11 => 'Milchreis',
   ),
   'Nüsse' => 
   array (
@@ -357,6 +362,7 @@ return array (
     37 => 'karamellisierte Früchte',
     38 => 'saures Weingummi',
     39 => 'weiße Schokolade',
+    40 => 'dunkle Schokolade',
   ),
   'Tabak' => 
   array (
