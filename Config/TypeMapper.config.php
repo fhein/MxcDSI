@@ -214,5 +214,6 @@ return [
         '~RMC Silikonringe~'                   => TypeMapper::TYPE_SEAL,
         '~Umhängeband~'                        => TypeMapper::TYPE_OTHER_EQUIPMENT,
         '~Wickelmatte~'                        => TypeMapper::TYPE_OTHER_EQUIPMENT,
+        '~Siegfried - RTA DIY~'                => TypeMapper::TYPE_SPARE_PARTS,
     ],
 ];

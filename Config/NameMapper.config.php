@@ -166,7 +166,8 @@ return [
             '~(Verdampfer) (Anniversary Edition)~'         => '$1 - $2',
             '~(Metal Edition) (Verdampfer)~'               => '$2 - $1',
             '~(Argus) - (GT)~'                             => '$1 $2',
-            '~Headhot -~'                                 => 'Headshot -',
+            '~Headhot -~'                                  => 'Headshot -',
+            '~(Stick) - (G15)~'                            => '$1 $2 -',
         ],
     ],
 
@@ -1227,6 +1228,7 @@ return [
             '~(QBox)~',
             '~(R-Kiss)~',
             '~(R40)~',
+            '~(Stick G15)~',
             '~(Stick( V9( Max)?)?)~',
             '~(T-Priv)~',
             '~(X-Priv( Baby)?)~',
@@ -1247,7 +1249,6 @@ return [
             '~(Guardian)~',
             '~(RPM 2)~',
             '~(ARCFOX)~',
-            '~(Stick G15)~',
         ],
         'Smok'                  => [
             '~(#4)~',
