@@ -69,6 +69,9 @@ return [
         'Juice Bomb'     => [
             'Double Up' => 2,
         ],
+        'Taste of Gods' => [
+            'Gods of Olymp' => 2,
+        ],
         'The Fog Clown'  => [
             'Energy Series' => 2,
             'Ice Cream'     => 2,

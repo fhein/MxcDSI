@@ -132,6 +132,7 @@ return [
             '~(eGrip) - (Mini)~'                           => '$1 $2', // does not work with rules below, reason unknown
             '~(Nord) -( 2 -)~'                             => '$1 $2', // does not work with rules below, reason unknown
             '~(Nord) -( X -)~'                             => '$1 $2', // does not work with rules below, reason unknown
+            '~(Nord) -( 4 -)~'                             => '$1 $2', // does not work with rules below, reason unknown
             '~- -(Verdampfer)~'                            => '- $1',
             '~(SC - .*) - by SC$~'                         => '$1',
             '~(.*)(3in1 Aroma.*)15( ml)~'                  => '$1$2 45$3',
@@ -168,6 +169,7 @@ return [
             '~(Argus) - (GT)~'                             => '$1 $2',
             '~Headhot -~'                                  => 'Headshot -',
             '~(Stick) - (G15)~'                            => '$1 $2 -',
+            '~(Cartridge) mit,~'                           => '$1,',
         ],
     ],
 
@@ -339,6 +341,8 @@ return [
             '~(Vapanion)(.*)(- Aroma)(.*)(- \d+(,\d+)? ml)~'                             => '$1 - $2 $3 $5',
             // non standard
             '~(Ezigaro Pro - Quick Eazy) (Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 - $2 $4',
+            // non standard
+            '~(Gods of Olymp) - (.*) (- \d+(,\d+)? ml)~'                                 => '$1 - $2 - Aroma $3',
 
             '~(Bamberger Dampferlädla - Bassd Schoo) (- Aroma)(.*)(- \d+(,\d+)? ml)~'    => '$1 - $3 $2 $4',
             '~(Bamberger Dampferlädla - Götter) (- Aroma)(.*)(- \d+(,\d+)? ml)~'         => '$1 - $3 $2 $4',
@@ -623,6 +627,8 @@ return [
             '~(Head) - (ARC)~'                                    => '$2 $1 -',
             '~(Hookah) (Set)~'                                    => '$1 ($2)',
             '~(Zelos) - 5~'                                       => '$1 - Akku $2',
+            '~(Zelos 3) (- \d\.\d+ mAh)~'                         => '$1 - Akku $2',
+            '~(Zeep Mini) (- \d+ mAh)~'                           => '$1 - Akku $2',
             '~(NX40) (- \d\.\d+ mAh)~'                            => '$1 - Akku $2',
             '~(Meteor 510) (- \d\.\d+ mAh)~'                      => '$1 - Akku $2',
             '~(iStick Nowos) (- \d\.\d+ mAh)~'                    => '$1 - Akku $2',
@@ -876,9 +882,9 @@ return [
             '~(Tigon( AIO)?)~',
             '~((Triton)(( 2)|( Mini))?)~',
             '~((Breeze)(( 2)|( NXT))?)~',
-            '~((Zelos)( 2.0)?)~',
+            '~((Zelos)(( 2.0)|( 3))?)~',
             '~(Revvo(( Mini)|( Boost))?)~',
-            '~(Nautilus(( 2S?)|( XS)|( X)|( Mini)|( Prime X)|( Prime)|( AIO)|( GT( Mini)?))?)~',
+            '~(Nautilus(( 3)|( 2S?)|( XS)|( X)|( Mini)|( Prime X)|( Prime)|( AIO)|( GT( Mini)?))?)~',
             '~(Cleito((( Shot)|( 120)?( Pro)?))?)~',
             '~(SkyStar)~',
             '~(Feedlink)~',
@@ -1073,6 +1079,7 @@ return [
             '~(iTap)~',
             '~(iStick P100)~',
             '~(iStick T80 mit GTL Pod)~',
+            '~(iSolo(( Air)|( R)))~',
         ],
         'SC'                    => [
             '~(iJust(( 21700)|( ECM)|( 3 Pro)|( 3)|( Mini)|( AIO))?)~',
@@ -1210,7 +1217,7 @@ return [
             '~(RPM160)~',
             '~(NexM)~',
             '~(Alike)~',
-            '~(Nord(( 2)|( X))?)~',
+            '~(Nord(( 2)|( X)|( 4))?)~',
             '~(Mag(( P3)|( Pod))?)~',
             '~(G-Priv ((2)|(Baby)))~',
             '~(Globe)~',
@@ -1347,6 +1354,9 @@ return [
             '~(Glaz RDSA)~',
             '~(Mico)~',
             '~(Glaz RTA)~',
+        ],
+        'UD' => [
+            '~(Zeep Mini)~',
         ],
         'Uwell'                 => [
             '~(Tripod PCC)~',

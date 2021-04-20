@@ -9084,6 +9084,7 @@ return array (
       3 => 'SK100R2',
       4 => 'SK100S5',
       5 => 'SK100HS',
+      6 => 'SK100N4',
     ),
     'SK100NRC' => 
     array (
@@ -10702,6 +10703,7 @@ return array (
       4 => 'SK100R2',
       5 => 'SK100S5',
       6 => 'SK100HS',
+      7 => 'SK100N4',
     ),
     'SK100RMQ' => 
     array (
@@ -11179,6 +11181,7 @@ return array (
       1 => 'SK100RP8',
       2 => 'SK100FP',
       3 => 'SK100S5',
+      4 => 'SK100N4',
     ),
     'SK100RMH' => 
     array (
@@ -11188,6 +11191,7 @@ return array (
       3 => 'SK100R2',
       4 => 'SK100S5',
       5 => 'SK100HS',
+      6 => 'SK100N4',
     ),
     'RG100A10-LM' => 
     array (
@@ -16549,6 +16553,7 @@ return array (
     'UW100CR5C' => 
     array (
       0 => 'SK100M2M',
+      1 => 'UW100CR5',
     ),
     'SK100S18' => 
     array (
@@ -19215,10 +19220,13 @@ return array (
     'SK100DCM' => 
     array (
       0 => 'SK100HS',
+      1 => 'SK100N4',
     ),
     'SC100GTL' => 
     array (
       0 => 'EFR100IP',
+      1 => 'EFR100IR',
+      2 => 'EFR100SA',
     ),
     'AS100BP1' => 
     array (
@@ -19227,10 +19235,13 @@ return array (
     'EFR100GTH' => 
     array (
       0 => 'EFR100IP',
+      1 => 'EFR100IR',
+      2 => 'EFR100SA',
     ),
     'EFR100GTP' => 
     array (
       0 => 'EFR100IPM',
+      1 => 'EFR100IR',
     ),
     'VS100GTRM' => 
     array (
@@ -20657,6 +20668,267 @@ return array (
     'SK100G16' => 
     array (
       0 => 'SK100G16D',
+    ),
+    'UW100CR5H' => 
+    array (
+      0 => 'UW100CR5',
+    ),
+    'UW100CR5G' => 
+    array (
+      0 => 'UW100CR5',
+    ),
+    'UW100CR5M' => 
+    array (
+      0 => 'UW100CR5',
+    ),
+    'UW100CR5R' => 
+    array (
+      0 => 'UW100CR5',
+    ),
+    'SK100N42' => 
+    array (
+      0 => 'SK100N4',
+    ),
+    'SK100N4R' => 
+    array (
+      0 => 'SK100N4',
+    ),
+    'EFR100GMH' => 
+    array (
+      0 => 'EFR100SA',
+    ),
+    'EFR100GMP' => 
+    array (
+      0 => 'EFR100SA',
+    ),
+    'EFR100GPB' => 
+    array (
+      0 => 'EFR100IR',
+    ),
+    'EFR100TLP' => 
+    array (
+      0 => 'EFR100IR',
+    ),
+    'DS100A10-AL' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'VF100L10-S',
+      2 => 'SC100NS10-ST',
+      3 => 'VF100L10-ST',
+    ),
+    'DS100A10-CA' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'VF100L10-S',
+      2 => 'SC100NS10-ST',
+      3 => 'VF100L10-ST',
+    ),
+    'DS100A10-PF' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'VF100L10-S',
+      2 => 'SC100NS10-ST',
+      3 => 'VF100L10-ST',
+    ),
+    'DS100A10-FD' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'VF100L10-S',
+      2 => 'SC100NS10-ST',
+      3 => 'VF100L10-ST',
+    ),
+    'DS100A10-MC' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'VF100L10-S',
+      2 => 'SC100NS10-ST',
+      3 => 'VF100L10-ST',
+    ),
+    'DS100A10-RA' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'VF100L10-S',
+      2 => 'SC100NS10-ST',
+      3 => 'VF100L10-ST',
+    ),
+    'DS100A10-R6' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'VF100L10-S',
+      2 => 'SC100NS10-ST',
+      3 => 'VF100L10-ST',
+    ),
+    'DS100A10-VB' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'VF100L10-S',
+      2 => 'SC100NS10-ST',
+      3 => 'VF100L10-ST',
+    ),
+    'HO100A10-SS' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'HO100A10-CO' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'TG100A10-ZS' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'TG100A10-PN' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'TG100A10-HS' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'NF100A10-N1' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'NF100A10-N2' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'NF100A10-N3' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'NF100A10-N4' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'NF100A10-N5' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'NF100A10-N6' => 
+    array (
+      0 => 'SC10000L10-S',
+      1 => 'SC10000L10-B',
+      2 => 'SC10000L10-B10',
+      3 => 'SC10000L10-B50',
+      4 => 'VF100L10-S',
+      5 => 'SC100NS10-ST',
+      6 => 'VF100L10-ST',
+    ),
+    'SK100N4' => 
+    array (
+      0 => 'SK100RPM',
+      1 => 'SK100RMC',
+      2 => 'SK100RPB',
+      3 => 'SK100RMH',
+      4 => 'SK100DCM',
+      5 => 'SK100N42',
+      6 => 'SK100N4R',
+    ),
+    'UW100CR5' => 
+    array (
+      0 => 'UW100CR5C',
+      1 => 'UW100CR5H',
+      2 => 'UW100CR5G',
+      3 => 'UW100CR5M',
+      4 => 'UW100CR5R',
+    ),
+    'EFR100IR' => 
+    array (
+      0 => 'SC100GTL',
+      1 => 'EFR100GTH',
+      2 => 'EFR100GTP',
+      3 => 'EFR100GPB',
+      4 => 'EFR100TLP',
+    ),
+    'EFR100SA' => 
+    array (
+      0 => 'SC100GTL',
+      1 => 'EFR100GTH',
+      2 => 'EFR100GMH',
+      3 => 'EFR100GMP',
+    ),
+    'THC100TMR' => 
+    array (
+      0 => 'CN100TH',
+      1 => 'CN100LP',
+      2 => 'GV100KW',
+      3 => 'GV100KA',
+      4 => 'THC100TMC',
+      5 => 'THC100NCA',
+      6 => 'THC100NCF',
+    ),
+    'THC100TMC' => 
+    array (
+      0 => 'THC100TMR',
+    ),
+    'THC100NCA' => 
+    array (
+      0 => 'THC100TMR',
+    ),
+    'THC100NCF' => 
+    array (
+      0 => 'THC100TMR',
     ),
   ),
   'similar' => 
@@ -22644,6 +22916,7 @@ return array (
       24 => 'HS100A10-BU',
       25 => 'NP100A10-PR',
       26 => 'EP100A10-PI',
+      27 => 'HO100A10-CO',
     ),
     'VV100A10-BI' => 
     array (
@@ -22713,6 +22986,7 @@ return array (
       37 => 'BC100A10-CW',
       38 => 'FB100A10-MM',
       39 => 'MZ100A10-MC',
+      40 => 'HO100A10-CO',
     ),
     'VV100A10-BR' => 
     array (
@@ -23058,6 +23332,7 @@ return array (
       131 => 'NP100A10-PK',
       132 => 'NP100A10-RD',
       133 => 'MZ100A10-ED',
+      134 => 'NF100A10-N6',
     ),
     'VV100A10-DK' => 
     array (
@@ -23390,6 +23665,8 @@ return array (
       161 => 'NP100A10-RD',
       162 => 'MZ100A10-ED',
       163 => 'MZ100A10-MC',
+      164 => 'NF100A10-N5',
+      165 => 'NF100A10-N6',
     ),
     'VV100A10-JT' => 
     array (
@@ -23534,6 +23811,7 @@ return array (
       131 => 'NP100A10-PK',
       132 => 'NP100A10-RD',
       133 => 'MZ100A10-ED',
+      134 => 'NF100A10-N6',
     ),
     'VV100A10-NY' => 
     array (
@@ -23941,6 +24219,9 @@ return array (
       44 => 'NP100A10-GR',
       45 => 'NP100A10-PK',
       46 => 'EP100A10-PI',
+      47 => 'TG100A10-ZS',
+      48 => 'NF100A10-N3',
+      49 => 'NF100A10-N4',
     ),
     'VV100A10-LM' => 
     array (
@@ -24153,6 +24434,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'SC100A10-RY' => 
     array (
@@ -24189,6 +24471,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'SC100A10-AP' => 
     array (
@@ -24258,6 +24541,7 @@ return array (
       34 => 'BC100A10-CO',
       35 => 'OM100A10-BV',
       36 => 'EP100A10-CN',
+      37 => 'NF100A10-N2',
     ),
     'SC100A10-WM' => 
     array (
@@ -24305,6 +24589,7 @@ return array (
       20 => 'BC100A10-CW',
       21 => 'FB100A10-MM',
       22 => 'EP100A10-PI',
+      23 => 'HO100A10-CO',
     ),
     'SC100A10-PF' => 
     array (
@@ -24368,6 +24653,7 @@ return array (
       26 => 'DL100A10-RI',
       27 => 'HS100A10-CO',
       28 => 'EP100A10-PI',
+      29 => 'TG100A10-ZS',
     ),
     'SC100A10-VB' => 
     array (
@@ -24404,6 +24690,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'SC100A10-EB' => 
     array (
@@ -24453,6 +24740,10 @@ return array (
       43 => 'NP100A10-GR',
       44 => 'NP100A10-PK',
       45 => 'EP100A10-PI',
+      46 => 'TG100A10-ZS',
+      47 => 'NF100A10-N3',
+      48 => 'NF100A10-N4',
+      49 => 'NF100A10-N6',
     ),
     'SC100A10-MA' => 
     array (
@@ -24467,6 +24758,7 @@ return array (
       8 => 'BC100A10-MC',
       9 => 'FB100A10-MH',
       10 => 'MZ100A10-ED',
+      11 => 'NF100A10-N4',
     ),
     'SC100A10-EF' => 
     array (
@@ -24511,6 +24803,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'SC100A10-KI' => 
     array (
@@ -24541,6 +24834,7 @@ return array (
       24 => 'GZ100A10-CP',
       25 => 'BD100A10-GF',
       26 => 'MZ100A10-MC',
+      27 => 'NF100A10-N4',
     ),
     'SC100A10-BA' => 
     array (
@@ -24559,6 +24853,7 @@ return array (
       12 => 'SU100A10-BH',
       13 => 'SU100A10-BM',
       14 => 'BC100A10-BA',
+      15 => 'NF100A10-N6',
     ),
     'SC100A10-BL' => 
     array (
@@ -24750,6 +25045,7 @@ return array (
       1 => 'VV100A10-PK',
       2 => 'VV100L10-PN',
       3 => 'VV100A10-PN',
+      4 => 'DS100A10-VB',
     ),
     'VV100L10-PRB' => 
     array (
@@ -24860,6 +25156,8 @@ return array (
       6 => 'SQ100L10-SN',
       7 => 'AM100A10-ZK',
       8 => 'YT100L10-LM',
+      9 => 'DS100A10-CA',
+      10 => 'DS100A10-MC',
     ),
     'HL100L10-EM' => 
     array (
@@ -25161,6 +25459,7 @@ return array (
       3 => 'MN100L10-PS',
       4 => 'MN100L10-MF',
       5 => 'DR100L10-PI',
+      6 => 'DS100A10-CA',
     ),
     '12M100L10-OZ' => 
     array (
@@ -25176,6 +25475,7 @@ return array (
       5 => 'YR100L10-CR',
       6 => 'YR100L10-PC',
       7 => 'YR100L10-SB',
+      8 => 'DS100A10-PF',
     ),
     '12M100L10-MR' => 
     array (
@@ -25337,10 +25637,14 @@ return array (
       2 => 'TK100L10-KL',
       3 => 'TK100L10-WH',
       4 => 'TK100L10-SH',
+      5 => 'DS100A10-AL',
+      6 => 'DS100A10-FD',
+      7 => 'DS100A10-R6',
     ),
     'ES100L10-SV' => 
     array (
       0 => '12M100L10-PP',
+      1 => 'DS100A10-RA',
     ),
     'ES100L10-RP' => 
     array (
@@ -25362,6 +25666,9 @@ return array (
       2 => 'TK100L10-KL',
       3 => 'TK100L10-WH',
       4 => 'TK100L10-SH',
+      5 => 'DS100A10-AL',
+      6 => 'DS100A10-FD',
+      7 => 'DS100A10-R6',
     ),
     'ES100L10-ET' => 
     array (
@@ -25492,6 +25799,8 @@ return array (
       7 => 'YT100L10-SB',
       8 => 'SQ100L10-GO',
       9 => 'YR100L10-SB',
+      10 => 'DS100A10-CA',
+      11 => 'DS100A10-PF',
     ),
     '12M100L10-PP' => 
     array (
@@ -25500,6 +25809,9 @@ return array (
       2 => 'ES100L10-PT',
       3 => 'TK100L10-WH',
       4 => 'TK100L10-SH',
+      5 => 'DS100A10-AL',
+      6 => 'DS100A10-FD',
+      7 => 'DS100A10-R6',
     ),
     'TW100L10-RM' => 
     array (
@@ -26622,6 +26934,7 @@ return array (
       18 => 'BC100A10-CW',
       19 => 'FB100A10-MM',
       20 => 'EP100A10-PI',
+      21 => 'HO100A10-CO',
     ),
     'SB100A10-VF' => 
     array (
@@ -27544,6 +27857,9 @@ return array (
       38 => 'OM100A10-TB',
       39 => 'OM100A10-DV',
       40 => 'OM100A10-BP',
+      41 => 'TG100A10-PN',
+      42 => 'NF100A10-N1',
+      43 => 'NF100A10-N2',
     ),
     'SB100A10-KZ' => 
     array (
@@ -29730,6 +30046,7 @@ return array (
       35 => 'VC100L10-CI',
       36 => 'YR100L10-CR',
       37 => 'YR100L10-PC',
+      38 => 'DS100A10-CA',
     ),
     'DR100L10-OM' => 
     array (
@@ -31375,6 +31692,9 @@ return array (
       136 => 'NP100A10-RD',
       137 => 'EP100A10-PI',
       138 => 'MZ100A10-ED',
+      139 => 'TG100A10-ZS',
+      140 => 'NF100A10-N3',
+      141 => 'NF100A10-N4',
     ),
     'AR100A10-WM' => 
     array (
@@ -31515,6 +31835,7 @@ return array (
       134 => 'NP100A10-GR',
       135 => 'NP100A10-RD',
       136 => 'MZ100A10-ED',
+      137 => 'NF100A10-N6',
     ),
     'AR100A10-ZT' => 
     array (
@@ -31660,6 +31981,9 @@ return array (
       139 => 'NP100A10-PK',
       140 => 'NP100A10-RD',
       141 => 'MZ100A10-ED',
+      142 => 'TG100A10-ZS',
+      143 => 'TG100A10-HS',
+      144 => 'NF100A10-N6',
     ),
     'AR100A10-AP' => 
     array (
@@ -31809,6 +32133,7 @@ return array (
       143 => 'NP100A10-GD',
       144 => 'NP100A10-PK',
       145 => 'MZ100A10-ED',
+      146 => 'NF100A10-N6',
     ),
     'DR100L10-WN' => 
     array (
@@ -31963,6 +32288,8 @@ return array (
       45 => 'BC100A10-LE',
       46 => 'BV100A10-BA',
       47 => 'HS100A10-BL',
+      48 => 'TG100A10-ZS',
+      49 => 'NF100A10-N3',
     ),
     'MA100A10-KB' => 
     array (
@@ -32006,6 +32333,8 @@ return array (
       37 => 'SU100A10-BM',
       38 => 'BC100A10-BA',
       39 => 'MZ100A10-MC',
+      40 => 'NF100A10-N4',
+      41 => 'NF100A10-N6',
     ),
     'MA100A10-WN' => 
     array (
@@ -32059,6 +32388,7 @@ return array (
       20 => 'SU100A10-TE',
       21 => 'BC100A10-TR',
       22 => 'OM100A10-DV',
+      23 => 'NF100A10-N1',
     ),
     'FV100A10-IB' => 
     array (
@@ -32105,6 +32435,8 @@ return array (
       35 => 'YR100L10-CR',
       36 => 'YR100L10-PC',
       37 => 'YR100L10-SB',
+      38 => 'DS100A10-CA',
+      39 => 'DS100A10-MC',
     ),
     'RO100A10-LB' => 
     array (
@@ -33601,6 +33933,7 @@ return array (
       26 => 'DL100A10-RI',
       27 => 'HS100A10-CO',
       28 => 'EP100A10-PI',
+      29 => 'TG100A10-ZS',
     ),
     '5E100A10-BM' => 
     array (
@@ -33738,6 +34071,7 @@ return array (
       131 => 'NP100A10-PK',
       132 => 'NP100A10-RD',
       133 => 'MZ100A10-ED',
+      134 => 'NF100A10-N6',
     ),
     '5E100A10-DM' => 
     array (
@@ -35677,6 +36011,7 @@ return array (
       143 => 'NP100A10-GD',
       144 => 'NP100A10-PK',
       145 => 'MZ100A10-ED',
+      146 => 'NF100A10-N6',
     ),
     'SM100G3D' => 
     array (
@@ -36621,6 +36956,7 @@ return array (
       136 => 'NP100A10-PK',
       137 => 'NP100A10-RD',
       138 => 'MZ100A10-ED',
+      139 => 'NF100A10-N6',
     ),
     'GG100A10-ME' => 
     array (
@@ -36667,6 +37003,7 @@ return array (
       30 => 'BC100A10-LE',
       31 => 'FB100A10-CO',
       32 => 'NP100A10-OR',
+      33 => 'TG100A10-HS',
     ),
     'GG100A10-PL' => 
     array (
@@ -37093,6 +37430,8 @@ return array (
       25 => 'DL100A10-PI',
       26 => 'FB100A10-MH',
       27 => 'HS100A10-FE',
+      28 => 'TG100A10-HS',
+      29 => 'NF100A10-N3',
     ),
     'DK100A10-KE' => 
     array (
@@ -37146,6 +37485,9 @@ return array (
       47 => 'NP100A10-GR',
       48 => 'NP100A10-PK',
       49 => 'EP100A10-PI',
+      50 => 'NF100A10-N3',
+      51 => 'NF100A10-N4',
+      52 => 'NF100A10-N6',
     ),
     'DK100A10-KM' => 
     array (
@@ -37213,6 +37555,8 @@ return array (
       61 => 'FB100A10-MM',
       62 => 'HS100A10-AR',
       63 => 'HS100A10-CA',
+      64 => 'NF100A10-N4',
+      65 => 'NF100A10-N5',
     ),
     'DK100A10-HN' => 
     array (
@@ -37345,6 +37689,9 @@ return array (
       44 => 'NP100A10-GR',
       45 => 'NP100A10-PK',
       46 => 'EP100A10-PI',
+      47 => 'TG100A10-ZS',
+      48 => 'NF100A10-N3',
+      49 => 'NF100A10-N4',
     ),
     'DD100A10-JC' => 
     array (
@@ -37373,6 +37720,7 @@ return array (
       22 => 'BC100A10-MC',
       23 => 'FB100A10-MH',
       24 => 'MZ100A10-ED',
+      25 => 'NF100A10-N4',
     ),
     'DD100A10-MT' => 
     array (
@@ -37562,6 +37910,7 @@ return array (
       141 => 'HS100A10-MA',
       142 => 'NP100A10-PK',
       143 => 'NP100A10-RD',
+      144 => 'NF100A10-N6',
     ),
     'YJ100A10-IC' => 
     array (
@@ -37801,6 +38150,7 @@ return array (
       131 => 'NP100A10-PK',
       132 => 'NP100A10-RD',
       133 => 'MZ100A10-ED',
+      134 => 'NF100A10-N6',
     ),
     'YJ100A10-IG' => 
     array (
@@ -39189,6 +39539,8 @@ return array (
       25 => 'DL100A10-PI',
       26 => 'FB100A10-MH',
       27 => 'HS100A10-FE',
+      28 => 'TG100A10-HS',
+      29 => 'NF100A10-N3',
     ),
     'UB100A10-SY' => 
     array (
@@ -39375,6 +39727,7 @@ return array (
       26 => 'AC100A10-CR',
       27 => 'HS100A10-BU',
       28 => 'MZ100A10-MC',
+      29 => 'NF100A10-N4',
     ),
     'DV100A10-PO' => 
     array (
@@ -39479,6 +39832,7 @@ return array (
       3 => 'SK100RM',
       4 => 'GV100AZ',
       5 => 'FM100MX',
+      6 => 'EFR100IR',
     ),
     'AS100NGM' => 
     array (
@@ -39715,6 +40069,8 @@ return array (
       8 => 'AZ100A10-GP',
       9 => 'FC100A10-FH',
       10 => 'BC100A10-JG',
+      11 => 'TG100A10-HS',
+      12 => 'NF100A10-N3',
     ),
     'BV100A10-IR' => 
     array (
@@ -39779,6 +40135,7 @@ return array (
       28 => 'GZ100A10-CP',
       29 => 'BD100A10-GF',
       30 => 'MZ100A10-MC',
+      31 => 'NF100A10-N4',
     ),
     'BC100A10-AA' => 
     array (
@@ -39813,6 +40170,7 @@ return array (
       28 => 'HS100A10-RE',
       29 => 'NP100A10-GR',
       30 => 'NP100A10-RD',
+      31 => 'TG100A10-ZS',
     ),
     'BC100A10-BB' => 
     array (
@@ -40133,6 +40491,7 @@ return array (
       91 => 'DL100A10-OR',
       92 => 'DL100A10-PI',
       93 => 'GG100A10-PI',
+      94 => 'NF100A10-N2',
     ),
     'VP100CBS' => 
     array (
@@ -40423,6 +40782,7 @@ return array (
       11 => 'VX100GS',
       12 => 'AS100ST',
       13 => 'VS100PM',
+      14 => 'SK100N4',
     ),
     'RG100A10-LM' => 
     array (
@@ -40480,6 +40840,7 @@ return array (
       26 => 'FB100A10-CO',
       27 => 'HS100A10-BL',
       28 => 'NP100A10-OR',
+      29 => 'TG100A10-HS',
     ),
     'RG100A10-MD' => 
     array (
@@ -40500,6 +40861,7 @@ return array (
       14 => 'BC100A10-LS',
       15 => 'HS100A10-BL',
       16 => 'NP100A10-OR',
+      17 => 'TG100A10-HS',
     ),
     'KL100A10-CL' => 
     array (
@@ -40639,6 +41001,7 @@ return array (
       133 => 'NP100A10-PK',
       134 => 'NP100A10-RD',
       135 => 'MZ100A10-ED',
+      136 => 'NF100A10-N6',
     ),
     'VK100SMB' => 
     array (
@@ -40871,6 +41234,9 @@ return array (
       8 => 'VS100PM',
       9 => 'AS100TN',
       10 => 'LV100UL',
+      11 => 'SK100N4',
+      12 => 'EFR100IR',
+      13 => 'EFR100SA',
     ),
     'AS100CF' => 
     array (
@@ -40919,6 +41285,7 @@ return array (
       16 => 'BC100A10-CO',
       17 => 'OM100A10-BV',
       18 => 'OM100A10-BP',
+      19 => 'NF100A10-N2',
     ),
     'KK100A10-CP' => 
     array (
@@ -41212,6 +41579,7 @@ return array (
       32 => 'SU100A10-GT',
       33 => 'BC100A10-VV',
       34 => 'BC100A10-BA',
+      35 => 'NF100A10-N2',
     ),
     'AV100A10-DJ' => 
     array (
@@ -41309,6 +41677,7 @@ return array (
       36 => 'HS100A10-AR',
       37 => 'NP100A10-PK',
       38 => 'EP100A10-PI',
+      39 => 'HO100A10-CO',
     ),
     'AV100A10-BF' => 
     array (
@@ -41399,6 +41768,8 @@ return array (
       17 => 'BC100A10-VV',
       18 => 'NP100A10-OR',
       19 => 'EP100A10-CN',
+      20 => 'TG100A10-PN',
+      21 => 'NF100A10-N2',
     ),
     'AV100A10-NX' => 
     array (
@@ -41704,6 +42075,7 @@ return array (
       5 => 'MN100L10-LB',
       6 => 'YT100L10-OM',
       7 => 'DR100L10-MF',
+      8 => 'DS100A10-CA',
     ),
     '12M100L10-CQ' => 
     array (
@@ -41721,6 +42093,7 @@ return array (
       11 => 'YT100L10-SB',
       12 => 'YT100L10-LM',
       13 => 'YR100L10-SB',
+      14 => 'DS100A10-MC',
     ),
     'RG100A10-EB' => 
     array (
@@ -41783,6 +42156,10 @@ return array (
       56 => 'NP100A10-GR',
       57 => 'NP100A10-PK',
       58 => 'EP100A10-PI',
+      59 => 'TG100A10-ZS',
+      60 => 'NF100A10-N3',
+      61 => 'NF100A10-N4',
+      62 => 'NF100A10-N6',
     ),
     'RG100A10-MG' => 
     array (
@@ -42052,6 +42429,7 @@ return array (
       15 => 'BC100A10-LO',
       16 => 'FB100A10-CO',
       17 => 'NP100A10-OR',
+      18 => 'TG100A10-HS',
     ),
     'UB100A10-VC' => 
     array (
@@ -42351,6 +42729,7 @@ return array (
       45 => 'HS100A10-CO',
       46 => 'EP100A10-PI',
       47 => 'EP100A10-XB',
+      48 => 'TG100A10-ZS',
     ),
     'YJ100A10-BZ' => 
     array (
@@ -42411,6 +42790,8 @@ return array (
       20 => 'SU100A10-NM',
       21 => 'BC100A10-VV',
       22 => 'EP100A10-CN',
+      23 => 'TG100A10-PN',
+      24 => 'NF100A10-N2',
     ),
     'YJ100A10-SC' => 
     array (
@@ -42463,6 +42844,10 @@ return array (
       46 => 'NP100A10-GR',
       47 => 'NP100A10-PK',
       48 => 'EP100A10-PI',
+      49 => 'TG100A10-ZS',
+      50 => 'NF100A10-N3',
+      51 => 'NF100A10-N4',
+      52 => 'NF100A10-N6',
     ),
     'YJ100A10-LC' => 
     array (
@@ -42511,6 +42896,8 @@ return array (
       42 => 'BC100A10-LE',
       43 => 'BV100A10-BA',
       44 => 'HS100A10-BL',
+      45 => 'TG100A10-ZS',
+      46 => 'TG100A10-HS',
     ),
     'YJ100A10-AP' => 
     array (
@@ -42551,6 +42938,7 @@ return array (
       34 => 'BC100A10-CO',
       35 => 'OM100A10-BV',
       36 => 'EP100A10-CN',
+      37 => 'NF100A10-N2',
     ),
     'YJ100A10-WF' => 
     array (
@@ -42611,6 +42999,7 @@ return array (
       30 => 'DL100A10-RI',
       31 => 'HS100A10-CO',
       32 => 'EP100A10-PI',
+      33 => 'TG100A10-ZS',
     ),
     'GV100EX' => 
     array (
@@ -42764,6 +43153,7 @@ return array (
       132 => 'NP100A10-PK',
       133 => 'NP100A10-RD',
       134 => 'MZ100A10-ED',
+      135 => 'NF100A10-N6',
     ),
     'BD100A10-LD' => 
     array (
@@ -42837,6 +43227,7 @@ return array (
       16 => 'SY100A10-NM',
       17 => 'SU100A10-MM',
       18 => 'AC100A10-MP',
+      19 => 'TG100A10-HS',
     ),
     'FG100A10-MB' => 
     array (
@@ -42907,6 +43298,7 @@ return array (
       34 => 'SY100A10-HJ',
       35 => 'SU100A10-HJ',
       36 => 'MZ100A10-MC',
+      37 => 'NF100A10-N4',
     ),
     'AH100A10-IN' => 
     array (
@@ -42959,6 +43351,7 @@ return array (
       22 => 'BC100A10-MT',
       23 => 'BC100A10-CW',
       24 => 'FB100A10-MM',
+      25 => 'HO100A10-CO',
     ),
     'GL100A10-BB' => 
     array (
@@ -42982,6 +43375,7 @@ return array (
       17 => 'BC100A10-BA',
       18 => 'OM100A10-TB',
       19 => 'EP100A10-CN',
+      20 => 'NF100A10-N6',
     ),
     'KL100A10-CE' => 
     array (
@@ -43293,6 +43687,7 @@ return array (
       96 => 'GG100A10-PI',
       97 => 'FB100A10-MM',
       98 => 'MZ100A10-MC',
+      99 => 'NF100A10-N5',
     ),
     'WF100A10-BR' => 
     array (
@@ -44469,6 +44864,7 @@ return array (
       51 => 'HS100A10-CA',
       52 => 'EP100A10-XB',
       53 => 'MZ100A10-MC',
+      54 => 'NF100A10-N5',
     ),
     'FG100A10-KT' => 
     array (
@@ -44597,6 +44993,7 @@ return array (
       53 => 'NP100A10-PK',
       54 => 'NP100A10-PR',
       55 => 'MZ100A10-MC',
+      56 => 'NF100A10-N5',
     ),
     'FG100A10-WM' => 
     array (
@@ -44655,6 +45052,7 @@ return array (
       52 => 'HS100A10-CA',
       53 => 'NP100A10-PK',
       54 => 'MZ100A10-MC',
+      55 => 'NF100A10-N5',
     ),
     'FG100A10-BF' => 
     array (
@@ -44693,6 +45091,8 @@ return array (
       6 => 'UB100A10-SR',
       7 => 'BD100A10-GF',
       8 => 'NP100A10-OR',
+      9 => 'TG100A10-HS',
+      10 => 'NF100A10-N3',
     ),
     'TK100A10-JM' => 
     array (
@@ -44931,6 +45331,7 @@ return array (
       2 => '12M100L10-CS',
       3 => 'YT100L10-OM',
       4 => 'DR100L10-MF',
+      5 => 'DS100A10-CA',
     ),
     'MN100L10-FL' => 
     array (
@@ -45078,6 +45479,7 @@ return array (
       129 => 'NP100A10-PK',
       130 => 'NP100A10-RD',
       131 => 'MZ100A10-ED',
+      132 => 'NF100A10-N6',
     ),
     'AR100A10-GA' => 
     array (
@@ -45219,6 +45621,7 @@ return array (
       135 => 'NP100A10-PK',
       136 => 'NP100A10-RD',
       137 => 'MZ100A10-ED',
+      138 => 'NF100A10-N6',
     ),
     'MY100A10-BW' => 
     array (
@@ -46354,6 +46757,8 @@ return array (
       25 => 'SU100A10-SH',
       26 => 'BC100A10-JG',
       27 => 'BC100A10-LE',
+      28 => 'TG100A10-HS',
+      29 => 'NF100A10-N3',
     ),
     'MZ100A10-CM' => 
     array (
@@ -46415,6 +46820,8 @@ return array (
       55 => 'OM100A10-TH',
       56 => 'OM100A10-DV',
       57 => 'MZ100A10-MC',
+      58 => 'NF100A10-N1',
+      59 => 'NF100A10-N4',
     ),
     'MY100L10-BD' => 
     array (
@@ -46631,6 +47038,7 @@ return array (
       23 => 'FB100A10-MM',
       24 => 'HS100A10-CA',
       25 => 'EP100A10-PI',
+      26 => 'HO100A10-CO',
     ),
     'KF100A10-OT' => 
     array (
@@ -46772,6 +47180,8 @@ return array (
       135 => 'NP100A10-PK',
       136 => 'NP100A10-RD',
       137 => 'MZ100A10-ED',
+      138 => 'TG100A10-HS',
+      139 => 'NF100A10-N6',
     ),
     'KF100A10-CB' => 
     array (
@@ -46930,6 +47340,8 @@ return array (
       152 => 'NP100A10-RD',
       153 => 'MZ100A10-ED',
       154 => 'MZ100A10-MC',
+      155 => 'NF100A10-N4',
+      156 => 'NF100A10-N6',
     ),
     'KF100A10-RG' => 
     array (
@@ -47078,6 +47490,8 @@ return array (
       142 => 'NP100A10-RD',
       143 => 'EP100A10-PI',
       144 => 'MZ100A10-ED',
+      145 => 'TG100A10-ZS',
+      146 => 'NF100A10-N6',
     ),
     'KF100A10-SW' => 
     array (
@@ -47220,6 +47634,9 @@ return array (
       136 => 'NP100A10-RD',
       137 => 'EP100A10-PI',
       138 => 'MZ100A10-ED',
+      139 => 'TG100A10-ZS',
+      140 => 'NF100A10-N3',
+      141 => 'NF100A10-N4',
     ),
     'BD100A10-EB' => 
     array (
@@ -47269,6 +47686,10 @@ return array (
       43 => 'NP100A10-GR',
       44 => 'NP100A10-PK',
       45 => 'EP100A10-PI',
+      46 => 'TG100A10-ZS',
+      47 => 'NF100A10-N3',
+      48 => 'NF100A10-N4',
+      49 => 'NF100A10-N6',
     ),
     'BD100A10-KR' => 
     array (
@@ -47299,6 +47720,7 @@ return array (
       24 => 'GZ100A10-CP',
       25 => 'BD100A10-GF',
       26 => 'MZ100A10-MC',
+      27 => 'NF100A10-N4',
     ),
     'BD100A10-MA' => 
     array (
@@ -47313,6 +47735,7 @@ return array (
       8 => 'BC100A10-MC',
       9 => 'FB100A10-MH',
       10 => 'MZ100A10-ED',
+      11 => 'NF100A10-N4',
     ),
     'BD100A10-ZT' => 
     array (
@@ -47358,6 +47781,8 @@ return array (
       39 => 'BC100A10-LE',
       40 => 'BV100A10-BA',
       41 => 'HS100A10-BL',
+      42 => 'TG100A10-ZS',
+      43 => 'TG100A10-HS',
     ),
     '12M100L10-PR' => 
     array (
@@ -47401,6 +47826,7 @@ return array (
       8 => 'BC100A10-RD',
       9 => 'OM100A10-DL',
       10 => 'AC100A10-BR',
+      11 => 'TG100A10-PN',
     ),
     'FG100A10-GR' => 
     array (
@@ -47427,6 +47853,7 @@ return array (
       20 => 'BC100A10-RD',
       21 => 'OM100A10-DL',
       22 => 'AC100A10-BR',
+      23 => 'TG100A10-PN',
     ),
     'FG100A10-KK' => 
     array (
@@ -47471,6 +47898,7 @@ return array (
       15 => 'BC100A10-VV',
       16 => 'OM100A10-DL',
       17 => 'AC100A10-BR',
+      18 => 'NF100A10-N2',
     ),
     'AS100OEC' => 
     array (
@@ -47736,6 +48164,7 @@ return array (
       99 => 'DL100A10-RI',
       100 => 'DL100A10-PI',
       101 => 'GG100A10-PI',
+      102 => 'NF100A10-N2',
     ),
     'BC100A10-PP' => 
     array (
@@ -48010,6 +48439,7 @@ return array (
       23 => 'BC100A10-CW',
       24 => 'FB100A10-MM',
       25 => 'EP100A10-PI',
+      26 => 'HO100A10-CO',
     ),
     'LV100BB' => 
     array (
@@ -48300,6 +48730,7 @@ return array (
       34 => 'SY100A10-HJ',
       35 => 'SU100A10-HJ',
       36 => 'MZ100A10-MC',
+      37 => 'NF100A10-N4',
     ),
     'DP100A10-VC' => 
     array (
@@ -48343,6 +48774,7 @@ return array (
       37 => 'BC100A10-CO',
       38 => 'OM100A10-BV',
       39 => 'OM100A10-CC',
+      40 => 'NF100A10-N2',
     ),
     'DP100A10-TP' => 
     array (
@@ -48517,6 +48949,9 @@ return array (
       136 => 'NP100A10-RD',
       137 => 'EP100A10-PI',
       138 => 'MZ100A10-ED',
+      139 => 'TG100A10-ZS',
+      140 => 'NF100A10-N3',
+      141 => 'NF100A10-N4',
     ),
     'DP100A10-SM' => 
     array (
@@ -48567,6 +49002,9 @@ return array (
       44 => 'NP100A10-GR',
       45 => 'NP100A10-PK',
       46 => 'EP100A10-PI',
+      47 => 'TG100A10-ZS',
+      48 => 'NF100A10-N3',
+      49 => 'NF100A10-N4',
     ),
     'DP100A10-BS' => 
     array (
@@ -48599,6 +49037,8 @@ return array (
       5 => 'BC100A10-TT',
       6 => 'AZ100A10-GP',
       7 => 'BC100A10-JG',
+      8 => 'TG100A10-HS',
+      9 => 'NF100A10-N3',
     ),
     'DP100A10-FF' => 
     array (
@@ -48736,6 +49176,7 @@ return array (
       131 => 'NP100A10-PK',
       132 => 'NP100A10-RD',
       133 => 'MZ100A10-ED',
+      134 => 'NF100A10-N6',
     ),
     'DP100A10-FC' => 
     array (
@@ -48869,6 +49310,8 @@ return array (
       46 => 'BC100A10-LE',
       47 => 'BV100A10-BA',
       48 => 'HS100A10-BL',
+      49 => 'TG100A10-ZS',
+      50 => 'TG100A10-HS',
     ),
     'DP100A10-DC' => 
     array (
@@ -49185,6 +49628,7 @@ return array (
       141 => 'HS100A10-MA',
       142 => 'NP100A10-PK',
       143 => 'NP100A10-RD',
+      144 => 'NF100A10-N6',
     ),
     'BR100A10-GR' => 
     array (
@@ -49325,6 +49769,8 @@ return array (
       134 => 'NP100A10-PK',
       135 => 'NP100A10-RD',
       136 => 'MZ100A10-ED',
+      137 => 'NF100A10-N5',
+      138 => 'NF100A10-N6',
     ),
     'BR100A10-WA' => 
     array (
@@ -49468,6 +49914,7 @@ return array (
       137 => 'NP100A10-GR',
       138 => 'NP100A10-RD',
       139 => 'MZ100A10-ED',
+      140 => 'NF100A10-N6',
     ),
     'BR100A10-ST' => 
     array (
@@ -49614,6 +50061,9 @@ return array (
       140 => 'EP100A10-PI',
       141 => 'MZ100A10-ED',
       142 => 'YR100L10-SB',
+      143 => 'TG100A10-ZS',
+      144 => 'NF100A10-N3',
+      145 => 'NF100A10-N4',
     ),
     'BR100A10-GA' => 
     array (
@@ -49754,6 +50204,7 @@ return array (
       134 => 'NP100A10-PK',
       135 => 'NP100A10-RD',
       136 => 'MZ100A10-ED',
+      137 => 'NF100A10-N6',
     ),
     'BR100A10-PI' => 
     array (
@@ -49943,6 +50394,7 @@ return array (
       30 => 'SU100A10-HB',
       31 => 'SU100A10-RL',
       32 => 'MZ100A10-MC',
+      33 => 'NF100A10-N4',
     ),
     'BO100A10-LL' => 
     array (
@@ -50026,6 +50478,7 @@ return array (
       36 => 'HS100A10-AR',
       37 => 'HS100A10-CA',
       38 => 'MZ100A10-MC',
+      39 => 'NF100A10-N5',
     ),
     'HD100A10-MT' => 
     array (
@@ -50092,6 +50545,7 @@ return array (
       60 => 'NP100A10-GR',
       61 => 'MZ100A10-ED',
       62 => 'MZ100A10-MC',
+      63 => 'NF100A10-N5',
     ),
     'HD100A10-MM' => 
     array (
@@ -50140,6 +50594,7 @@ return array (
       42 => 'HS100A10-AR',
       43 => 'HS100A10-CA',
       44 => 'MZ100A10-MC',
+      45 => 'NF100A10-N5',
     ),
     'KL100A10-CT' => 
     array (
@@ -50181,6 +50636,7 @@ return array (
       35 => 'OM100A10-TH',
       36 => 'OM100A10-DL',
       37 => 'OM100A10-DV',
+      38 => 'NF100A10-N1',
     ),
     'KL100A10-CO' => 
     array (
@@ -50242,6 +50698,8 @@ return array (
       55 => 'OM100A10-TH',
       56 => 'OM100A10-DV',
       57 => 'MZ100A10-MC',
+      58 => 'NF100A10-N1',
+      59 => 'NF100A10-N4',
     ),
     'KL100A10-CP' => 
     array (
@@ -50276,6 +50734,7 @@ return array (
       28 => 'GZ100A10-CP',
       29 => 'BD100A10-GF',
       30 => 'MZ100A10-MC',
+      31 => 'NF100A10-N4',
     ),
     'KL100A10-CN' => 
     array (
@@ -50357,6 +50816,7 @@ return array (
       26 => 'DL100A10-RI',
       27 => 'HS100A10-CO',
       28 => 'EP100A10-PI',
+      29 => 'TG100A10-ZS',
     ),
     'EF100A10-KI' => 
     array (
@@ -50387,6 +50847,7 @@ return array (
       24 => 'GZ100A10-CP',
       25 => 'BD100A10-GF',
       26 => 'MZ100A10-MC',
+      27 => 'NF100A10-N4',
     ),
     'EF100A10-PF' => 
     array (
@@ -50454,6 +50915,7 @@ return array (
       34 => 'BC100A10-CO',
       35 => 'OM100A10-BV',
       36 => 'EP100A10-CN',
+      37 => 'NF100A10-N2',
     ),
     'EF100A10-ZI' => 
     array (
@@ -50499,6 +50961,8 @@ return array (
       39 => 'BC100A10-LE',
       40 => 'BV100A10-BA',
       41 => 'HS100A10-BL',
+      42 => 'TG100A10-ZS',
+      43 => 'TG100A10-HS',
     ),
     'PG100A10-BS' => 
     array (
@@ -50566,6 +51030,8 @@ return array (
       39 => 'BC100A10-LE',
       40 => 'BV100A10-BA',
       41 => 'HS100A10-BL',
+      42 => 'TG100A10-ZS',
+      43 => 'TG100A10-HS',
     ),
     'PG100A10-FO' => 
     array (
@@ -50587,6 +51053,7 @@ return array (
       15 => 'BC100A10-LO',
       16 => 'FB100A10-CO',
       17 => 'NP100A10-OR',
+      18 => 'TG100A10-HS',
     ),
     'PG100A10-GD' => 
     array (
@@ -50780,6 +51247,7 @@ return array (
       38 => 'DL100A10-MT',
       39 => 'FB100A10-MM',
       40 => 'MZ100A10-MC',
+      41 => 'NF100A10-N5',
     ),
     'PG100A10-MN' => 
     array (
@@ -50869,6 +51337,9 @@ return array (
       74 => 'HS100A10-BL',
       75 => 'HS100A10-CA',
       76 => 'MZ100A10-MC',
+      77 => 'TG100A10-ZS',
+      78 => 'TG100A10-HS',
+      79 => 'NF100A10-N5',
     ),
     'PG100A10-WE' => 
     array (
@@ -50902,6 +51373,7 @@ return array (
       27 => 'DL100A10-MT',
       28 => 'FB100A10-MM',
       29 => 'MZ100A10-MC',
+      30 => 'NF100A10-N5',
     ),
     'PG100A10-HE' => 
     array (
@@ -50952,6 +51424,7 @@ return array (
       44 => 'BC100A10-CO',
       45 => 'OM100A10-BV',
       46 => 'HS100A10-RE',
+      47 => 'NF100A10-N2',
     ),
     'PG100A10-MK' => 
     array (
@@ -51556,6 +52029,7 @@ return array (
       134 => 'NP100A10-PK',
       135 => 'NP100A10-RD',
       136 => 'MZ100A10-ED',
+      137 => 'NF100A10-N6',
     ),
     '5E100A10-LP' => 
     array (
@@ -51720,6 +52194,8 @@ return array (
       45 => 'BC100A10-LE',
       46 => 'BV100A10-BA',
       47 => 'HS100A10-BL',
+      48 => 'TG100A10-ZS',
+      49 => 'TG100A10-HS',
     ),
     'KZ100TMS' => 
     array (
@@ -51780,6 +52256,7 @@ return array (
       15 => 'SY100A10-HJ',
       16 => 'SU100A10-HJ',
       17 => 'NP100A10-OR',
+      18 => 'TG100A10-HS',
     ),
     'VP100A10-RK' => 
     array (
@@ -51848,6 +52325,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'VP100A10-FM' => 
     array (
@@ -52004,6 +52482,7 @@ return array (
       142 => 'NP100A10-RD',
       143 => 'EP100A10-XB',
       144 => 'MZ100A10-ED',
+      145 => 'NF100A10-N6',
     ),
     'FR100A10-MC' => 
     array (
@@ -52143,6 +52622,7 @@ return array (
       133 => 'NP100A10-GR',
       134 => 'NP100A10-RD',
       135 => 'MZ100A10-ED',
+      136 => 'NF100A10-N6',
     ),
     'FR100A10-GF' => 
     array (
@@ -52292,6 +52772,7 @@ return array (
       143 => 'NP100A10-GD',
       144 => 'NP100A10-PK',
       145 => 'MZ100A10-ED',
+      146 => 'NF100A10-N6',
     ),
     'FR100A10-SB' => 
     array (
@@ -52434,6 +52915,9 @@ return array (
       136 => 'NP100A10-RD',
       137 => 'EP100A10-PI',
       138 => 'MZ100A10-ED',
+      139 => 'TG100A10-ZS',
+      140 => 'NF100A10-N3',
+      141 => 'NF100A10-N4',
     ),
     'FR100A10-RF' => 
     array (
@@ -52582,6 +53066,8 @@ return array (
       142 => 'NP100A10-RD',
       143 => 'EP100A10-PI',
       144 => 'MZ100A10-ED',
+      145 => 'TG100A10-ZS',
+      146 => 'NF100A10-N6',
     ),
     'FR100A10-IV' => 
     array (
@@ -52740,6 +53226,8 @@ return array (
       152 => 'NP100A10-RD',
       153 => 'MZ100A10-ED',
       154 => 'MZ100A10-MC',
+      155 => 'NF100A10-N4',
+      156 => 'NF100A10-N6',
     ),
     'GV100ALZ' => 
     array (
@@ -52750,6 +53238,7 @@ return array (
       4 => 'SK100RG',
       5 => 'FM100M1',
       6 => 'AS100VDS',
+      7 => 'UW100CR5',
     ),
     'EFR100S8' => 
     array (
@@ -52774,6 +53263,7 @@ return array (
       8 => 'VX100GS',
       9 => 'AS100TN',
       10 => 'JFR100BQ',
+      11 => 'SK100N4',
     ),
     'AS100MC' => 
     array (
@@ -52838,6 +53328,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'KT100A10-BL' => 
     array (
@@ -52966,6 +53457,7 @@ return array (
       39 => 'HS100A10-AR',
       40 => 'HS100A10-CA',
       41 => 'MZ100A10-MC',
+      42 => 'NF100A10-N5',
     ),
     'KT100A10-SL' => 
     array (
@@ -52999,6 +53491,7 @@ return array (
       27 => 'BC100A10-CO',
       28 => 'BC100A10-BA',
       29 => 'OM100A10-BV',
+      30 => 'NF100A10-N2',
     ),
     'KT100A10-GN' => 
     array (
@@ -53117,6 +53610,7 @@ return array (
       18 => 'SY100A10-PE',
       19 => 'SU100A10-TP',
       20 => 'AC100A10-MP',
+      21 => 'TG100A10-HS',
     ),
     'KT100A10-PF' => 
     array (
@@ -53341,6 +53835,10 @@ return array (
       54 => 'NP100A10-GR',
       55 => 'NP100A10-PK',
       56 => 'EP100A10-PI',
+      57 => 'TG100A10-ZS',
+      58 => 'NF100A10-N3',
+      59 => 'NF100A10-N4',
+      60 => 'NF100A10-N6',
     ),
     'DL100A10-AP' => 
     array (
@@ -53420,6 +53918,9 @@ return array (
       44 => 'NP100A10-GR',
       45 => 'NP100A10-PK',
       46 => 'EP100A10-PI',
+      47 => 'TG100A10-ZS',
+      48 => 'NF100A10-N3',
+      49 => 'NF100A10-N4',
     ),
     'DL100A10-AI' => 
     array (
@@ -53590,6 +54091,7 @@ return array (
       10 => 'PE100A10-GS',
       11 => 'BD100A10-CG',
       12 => 'BC100A10-GL',
+      13 => 'NF100A10-N5',
     ),
     'AZ100A10-GP' => 
     array (
@@ -53621,6 +54123,8 @@ return array (
       25 => 'DL100A10-PI',
       26 => 'FB100A10-MH',
       27 => 'HS100A10-FE',
+      28 => 'TG100A10-HS',
+      29 => 'NF100A10-N3',
     ),
     'DL100A10-GI' => 
     array (
@@ -53816,6 +54320,8 @@ return array (
       46 => 'BC100A10-LE',
       47 => 'BV100A10-BA',
       48 => 'HS100A10-BL',
+      49 => 'TG100A10-ZS',
+      50 => 'TG100A10-HS',
     ),
     'DL100A10-SB' => 
     array (
@@ -53865,6 +54371,10 @@ return array (
       43 => 'NP100A10-GR',
       44 => 'NP100A10-PK',
       45 => 'EP100A10-PI',
+      46 => 'TG100A10-ZS',
+      47 => 'NF100A10-N3',
+      48 => 'NF100A10-N4',
+      49 => 'NF100A10-N6',
     ),
     'DL100A10-SI' => 
     array (
@@ -54007,6 +54517,9 @@ return array (
       136 => 'NP100A10-RD',
       137 => 'EP100A10-PI',
       138 => 'MZ100A10-ED',
+      139 => 'TG100A10-ZS',
+      140 => 'NF100A10-N3',
+      141 => 'NF100A10-N4',
     ),
     'DL100A10-VN' => 
     array (
@@ -54047,6 +54560,7 @@ return array (
       34 => 'BC100A10-CO',
       35 => 'OM100A10-BV',
       36 => 'EP100A10-CN',
+      37 => 'NF100A10-N2',
     ),
     'DL100A10-VI' => 
     array (
@@ -54387,6 +54901,7 @@ return array (
       142 => 'NP100A10-RD',
       143 => 'EP100A10-XB',
       144 => 'MZ100A10-ED',
+      145 => 'NF100A10-N6',
     ),
     'DL100A10-TB' => 
     array (
@@ -54423,6 +54938,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'DL100A10-TI' => 
     array (
@@ -54657,6 +55173,8 @@ return array (
       51 => 'OM100A10-DV',
       52 => 'FB100A10-MM',
       53 => 'EP100A10-PI',
+      54 => 'HO100A10-CO',
+      55 => 'NF100A10-N1',
     ),
     'BS100A10-HN' => 
     array (
@@ -54699,6 +55217,8 @@ return array (
       36 => 'OM100A10-TH',
       37 => 'OM100A10-DV',
       38 => 'AC100A10-MP',
+      39 => 'TG100A10-HS',
+      40 => 'NF100A10-N1',
     ),
     'BS100A10-AP' => 
     array (
@@ -54791,6 +55311,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'FS100A10-CL' => 
     array (
@@ -54878,6 +55399,7 @@ return array (
       46 => 'NP100A10-GR',
       47 => 'EP100A10-PI',
       48 => 'MZ100A10-ED',
+      49 => 'HO100A10-CO',
     ),
     'FS100A10-FW' => 
     array (
@@ -55017,6 +55539,7 @@ return array (
       133 => 'NP100A10-GR',
       134 => 'NP100A10-RD',
       135 => 'MZ100A10-ED',
+      136 => 'NF100A10-N6',
     ),
     'CB100A10-TF' => 
     array (
@@ -55053,6 +55576,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'CB100A10-AB' => 
     array (
@@ -55154,6 +55678,9 @@ return array (
       66 => 'BV100A10-BA',
       67 => 'HS100A10-BL',
       68 => 'MZ100A10-MC',
+      69 => 'TG100A10-ZS',
+      70 => 'TG100A10-HS',
+      71 => 'NF100A10-N4',
     ),
     'DL100A10-WP' => 
     array (
@@ -55348,6 +55875,7 @@ return array (
       133 => 'NP100A10-GR',
       134 => 'NP100A10-RD',
       135 => 'MZ100A10-ED',
+      136 => 'NF100A10-N6',
     ),
     'DL100A10-WA' => 
     array (
@@ -55516,6 +56044,7 @@ return array (
       141 => 'HS100A10-MA',
       142 => 'NP100A10-PK',
       143 => 'NP100A10-RD',
+      144 => 'NF100A10-N6',
     ),
     'DL100A10-MA' => 
     array (
@@ -55696,6 +56225,7 @@ return array (
       14 => 'SU100A10-RL',
       15 => 'OM100A10-TB',
       16 => 'EP100A10-CN',
+      17 => 'TG100A10-PN',
     ),
     'AS100BY' => 
     array (
@@ -55786,6 +56316,7 @@ return array (
       7 => 'SK100NXM',
       8 => 'SK100SG',
       9 => 'SK100G25',
+      10 => 'EFR100SA',
     ),
     'JFR100T' => 
     array (
@@ -55895,6 +56426,7 @@ return array (
       79 => 'DL100A10-PI',
       80 => 'GG100A10-PI',
       81 => 'FB100A10-WP',
+      82 => 'HK100NS10-AW',
     ),
     'HK100A10-BZ' => 
     array (
@@ -56003,6 +56535,7 @@ return array (
       102 => 'DL100A10-PI',
       103 => 'GG100A10-PI',
       104 => 'HS100A10-BL',
+      105 => 'HK100NS10-BZ',
     ),
     'HK100A10-BB' => 
     array (
@@ -56142,6 +56675,7 @@ return array (
       133 => 'NP100A10-PK',
       134 => 'NP100A10-RD',
       135 => 'MZ100A10-ED',
+      136 => 'NF100A10-N6',
     ),
     'MX100A10-SA' => 
     array (
@@ -56217,6 +56751,10 @@ return array (
       57 => 'NP100A10-GR',
       58 => 'NP100A10-PK',
       59 => 'EP100A10-PI',
+      60 => 'TG100A10-ZS',
+      61 => 'NF100A10-N3',
+      62 => 'NF100A10-N4',
+      63 => 'NF100A10-N6',
     ),
     'YO100A10-RA' => 
     array (
@@ -56257,6 +56795,7 @@ return array (
       34 => 'DL100A10-RI',
       35 => 'HS100A10-CO',
       36 => 'EP100A10-PI',
+      37 => 'TG100A10-ZS',
     ),
     'YO100A10-PE' => 
     array (
@@ -56336,6 +56875,7 @@ return array (
       34 => 'SY100A10-HJ',
       35 => 'SU100A10-HJ',
       36 => 'MZ100A10-MC',
+      37 => 'NF100A10-N4',
     ),
     'YO100A10-BA' => 
     array (
@@ -56368,6 +56908,7 @@ return array (
       26 => 'SU100A10-BM',
       27 => 'SU100A10-HJ',
       28 => 'BC100A10-BA',
+      29 => 'NF100A10-N6',
     ),
     'SQ100L10-SN' => 
     array (
@@ -56377,6 +56918,8 @@ return array (
       3 => '12M100L10-CQ',
       4 => 'SQ100L10-AI',
       5 => 'YT100L10-LM',
+      6 => 'DS100A10-CA',
+      7 => 'DS100A10-MC',
     ),
     'KL100A10-KB' => 
     array (
@@ -56420,6 +56963,8 @@ return array (
       37 => 'SU100A10-BM',
       38 => 'BC100A10-BA',
       39 => 'MZ100A10-MC',
+      40 => 'NF100A10-N4',
+      41 => 'NF100A10-N6',
     ),
     'KL100A10-KR' => 
     array (
@@ -56454,6 +56999,7 @@ return array (
       28 => 'VA100A10-MJ',
       29 => 'BD100A10-GF',
       30 => 'MZ100A10-MC',
+      31 => 'NF100A10-N4',
     ),
     'KL100A10-MT' => 
     array (
@@ -56480,6 +57026,7 @@ return array (
       20 => 'BC100A10-CW',
       21 => 'FB100A10-MM',
       22 => 'EP100A10-PI',
+      23 => 'HO100A10-CO',
     ),
     'KL100A10-BV' => 
     array (
@@ -56588,6 +57135,7 @@ return array (
       98 => 'GG100A10-PI',
       99 => 'FB100A10-MH',
       100 => 'HS100A10-CO',
+      101 => 'HK100NS10-HP',
     ),
     'VS100XR' => 
     array (
@@ -56672,6 +57220,7 @@ return array (
       5 => 'SK100S5',
       6 => 'VX100GS',
       7 => 'JFR100BQ',
+      8 => 'EFR100SA',
     ),
     'LV100GH' => 
     array (
@@ -56732,6 +57281,7 @@ return array (
       3 => 'GV100AOB',
       4 => 'VX100GS',
       5 => 'AS100ST',
+      6 => 'EFR100SA',
     ),
     'WT100MP' => 
     array (
@@ -56767,6 +57317,7 @@ return array (
       6 => 'VY100JX',
       7 => 'WT100SP',
       8 => 'VS100WPM',
+      9 => 'SK100N4',
     ),
     'VS100XI' => 
     array (
@@ -57062,6 +57613,7 @@ return array (
       15 => 'GZ100A10-DF',
       16 => 'BC100A10-SK',
       17 => 'HS100A10-RE',
+      18 => 'TG100A10-ZS',
     ),
     'KU100A10-OR' => 
     array (
@@ -57130,6 +57682,8 @@ return array (
       48 => 'BC100A10-LE',
       49 => 'BV100A10-BA',
       50 => 'HS100A10-BL',
+      51 => 'TG100A10-ZS',
+      52 => 'TG100A10-HS',
     ),
     'KU100A10-AP' => 
     array (
@@ -57266,6 +57820,7 @@ return array (
       10 => 'SK100RG',
       11 => 'FM100M1',
       12 => 'SK100AF',
+      13 => 'UW100CR5',
     ),
     'SK100T9' => 
     array (
@@ -57334,6 +57889,7 @@ return array (
       6 => 'PV100DXV',
       7 => 'VX100GY',
       8 => 'LV100UQ',
+      9 => 'SK100N4',
     ),
     'SK100M2' => 
     array (
@@ -57350,6 +57906,7 @@ return array (
       10 => 'SK100RG',
       11 => 'AS100VDS',
       12 => 'SK100AF',
+      13 => 'UW100CR5',
     ),
     'SK100M2M' => 
     array (
@@ -57598,6 +58155,7 @@ return array (
       17 => 'DB100A10-MT',
       18 => 'BC100A10-GL',
       19 => 'HS100A10-AR',
+      20 => 'NF100A10-N5',
     ),
     'RC100A10-MI' => 
     array (
@@ -58031,6 +58589,7 @@ return array (
       19 => 'BC100A10-LO',
       20 => 'FB100A10-CO',
       21 => 'NP100A10-OR',
+      22 => 'TG100A10-HS',
     ),
     'MB100A10-S' => 
     array (
@@ -58088,6 +58647,7 @@ return array (
       51 => 'HS100A10-CA',
       52 => 'EP100A10-XB',
       53 => 'MZ100A10-MC',
+      54 => 'NF100A10-N5',
     ),
     'MB100A10-H' => 
     array (
@@ -58120,6 +58680,7 @@ return array (
       26 => 'DL100A10-RI',
       27 => 'HS100A10-CO',
       28 => 'EP100A10-PI',
+      29 => 'TG100A10-ZS',
     ),
     'FV100A10-DB' => 
     array (
@@ -58161,6 +58722,7 @@ return array (
       35 => 'FB100A10-MM',
       36 => 'HS100A10-AR',
       37 => 'MZ100A10-MC',
+      38 => 'NF100A10-N5',
     ),
     'FV100A10-MG' => 
     array (
@@ -58508,6 +59070,7 @@ return array (
       20 => 'SU100A10-GT',
       21 => 'BC100A10-VV',
       22 => 'OM100A10-DP',
+      23 => 'NF100A10-N2',
     ),
     'PN100A10-DR' => 
     array (
@@ -58608,6 +59171,10 @@ return array (
       46 => 'NP100A10-GR',
       47 => 'NP100A10-PK',
       48 => 'EP100A10-PI',
+      49 => 'TG100A10-ZS',
+      50 => 'NF100A10-N3',
+      51 => 'NF100A10-N4',
+      52 => 'NF100A10-N6',
     ),
     'KL100A10-KT' => 
     array (
@@ -58980,6 +59547,7 @@ return array (
       9 => 'FM100M1',
       10 => 'AS100VDS',
       11 => 'SK100AF',
+      12 => 'UW100CR5',
     ),
     'SK100SM' => 
     array (
@@ -59022,6 +59590,7 @@ return array (
       1 => 'AS100Z2',
       2 => 'AS100NGS',
       3 => 'SK100VP2',
+      4 => 'EFR100IR',
     ),
     'PV100DA' => 
     array (
@@ -59071,6 +59640,7 @@ return array (
       4 => 'GV100MA',
       5 => 'VS100XI',
       6 => 'VX100GS',
+      7 => 'EFR100IR',
     ),
     'LV100PS' => 
     array (
@@ -59346,6 +59916,8 @@ return array (
       46 => 'BC100A10-LE',
       47 => 'BV100A10-BA',
       48 => 'HS100A10-BL',
+      49 => 'TG100A10-ZS',
+      50 => 'TG100A10-HS',
     ),
     'KL100A10-AK' => 
     array (
@@ -59401,6 +59973,7 @@ return array (
       49 => 'NP100A10-GR',
       50 => 'NP100A10-RD',
       51 => 'MZ100A10-MC',
+      52 => 'NF100A10-N4',
     ),
     'KL100A10-AKI' => 
     array (
@@ -59537,6 +60110,8 @@ return array (
       31 => 'BC100A10-CO',
       32 => 'OM100A10-BV',
       33 => 'OM100A10-TB',
+      34 => 'TG100A10-PN',
+      35 => 'NF100A10-N2',
     ),
     'AM100A10-ES' => 
     array (
@@ -59690,6 +60265,7 @@ return array (
       32 => 'SU100A10-PB',
       33 => 'BC100A10-ES',
       34 => 'MZ100A10-MC',
+      35 => 'NF100A10-N4',
     ),
     'GZ100A10-TW' => 
     array (
@@ -59798,6 +60374,7 @@ return array (
       102 => 'HS100A10-RE',
       103 => 'NP100A10-PK',
       104 => 'NP100A10-PR',
+      105 => 'NF100A10-N2',
     ),
     'YT100L10-OM' => 
     array (
@@ -59861,6 +60438,7 @@ return array (
       36 => 'VC100L10-CI',
       37 => 'YR100L10-CR',
       38 => 'YR100L10-PC',
+      39 => 'DS100A10-CA',
     ),
     'YT100L10-CR' => 
     array (
@@ -60086,6 +60664,8 @@ return array (
       4 => 'SQ100L10-SN',
       5 => 'DR100L10-PS',
       6 => 'DR100L10-BS',
+      7 => 'DS100A10-CA',
+      8 => 'DS100A10-MC',
     ),
     'SC100E4P-DD' => 
     array (
@@ -60243,6 +60823,10 @@ return array (
       43 => 'NP100A10-GR',
       44 => 'NP100A10-PK',
       45 => 'EP100A10-PI',
+      46 => 'TG100A10-ZS',
+      47 => 'NF100A10-N3',
+      48 => 'NF100A10-N4',
+      49 => 'NF100A10-N6',
     ),
     'EF100A10-HM' => 
     array (
@@ -60330,6 +60914,7 @@ return array (
       40 => 'OM100A10-DV',
       41 => 'DL100A10-OR',
       42 => 'DL100A10-RI',
+      43 => 'NF100A10-N1',
     ),
     'CS100A10-VR' => 
     array (
@@ -60353,6 +60938,7 @@ return array (
       17 => 'BC100A10-VW',
       18 => 'BC100A10-CO',
       19 => 'OM100A10-BV',
+      20 => 'NF100A10-N2',
     ),
     'CS100A10-WL' => 
     array (
@@ -60421,6 +61007,7 @@ return array (
       31 => 'OM100A10-TB',
       32 => 'OM100A10-TH',
       33 => 'OM100A10-DV',
+      34 => 'NF100A10-N1',
     ),
     'CS100A10-HY' => 
     array (
@@ -60764,6 +61351,7 @@ return array (
       136 => 'NP100A10-PR',
       137 => 'NP100A10-RD',
       138 => 'MZ100A10-ED',
+      139 => 'NF100A10-N6',
     ),
     'PE100A10-OM' => 
     array (
@@ -61010,6 +61598,8 @@ return array (
       36 => 'BC100A10-VV',
       37 => 'OM100A10-BV',
       38 => 'OM100A10-DV',
+      39 => 'NF100A10-N1',
+      40 => 'NF100A10-N2',
     ),
     'GZ100A10-CC' => 
     array (
@@ -61163,6 +61753,7 @@ return array (
       36 => 'DL100A10-RI',
       37 => 'HS100A10-CO',
       38 => 'EP100A10-PI',
+      39 => 'TG100A10-ZS',
     ),
     'VA100A10-MJ' => 
     array (
@@ -61349,6 +61940,7 @@ return array (
       138 => 'NP100A10-PK',
       139 => 'NP100A10-RD',
       140 => 'MZ100A10-ED',
+      141 => 'NF100A10-N6',
     ),
     'GS100A10-GE' => 
     array (
@@ -61493,6 +62085,7 @@ return array (
       138 => 'NP100A10-PK',
       139 => 'NP100A10-RD',
       140 => 'MZ100A10-ED',
+      141 => 'NF100A10-N6',
     ),
     'GS100A10-JV' => 
     array (
@@ -61553,6 +62146,7 @@ return array (
       54 => 'NP100A10-GR',
       55 => 'NP100A10-RD',
       56 => 'EP100A10-CN',
+      57 => 'NF100A10-N2',
     ),
     'GS100A10-HW' => 
     array (
@@ -61710,6 +62304,9 @@ return array (
       139 => 'NP100A10-PK',
       140 => 'NP100A10-RD',
       141 => 'MZ100A10-ED',
+      142 => 'TG100A10-ZS',
+      143 => 'TG100A10-HS',
+      144 => 'NF100A10-N6',
     ),
     'PE100A10-TP' => 
     array (
@@ -61850,6 +62447,7 @@ return array (
       134 => 'NP100A10-PK',
       135 => 'NP100A10-RD',
       136 => 'MZ100A10-ED',
+      137 => 'NF100A10-N6',
     ),
     'FV100A10-GO' => 
     array (
@@ -61892,6 +62490,9 @@ return array (
       36 => 'OM100A10-TB',
       37 => 'OM100A10-DV',
       38 => 'EP100A10-CN',
+      39 => 'TG100A10-PN',
+      40 => 'NF100A10-N1',
+      41 => 'NF100A10-N2',
     ),
     'DR100A10-EM' => 
     array (
@@ -61954,6 +62555,10 @@ return array (
       56 => 'NP100A10-GR',
       57 => 'NP100A10-PK',
       58 => 'EP100A10-PI',
+      59 => 'TG100A10-ZS',
+      60 => 'NF100A10-N3',
+      61 => 'NF100A10-N4',
+      62 => 'NF100A10-N6',
     ),
     'DR100A10-SM' => 
     array (
@@ -62022,6 +62627,7 @@ return array (
       43 => 'BC100A10-CO',
       44 => 'OM100A10-BV',
       45 => 'EP100A10-CN',
+      46 => 'NF100A10-N2',
     ),
     'DR100A10-WD' => 
     array (
@@ -62181,6 +62787,9 @@ return array (
       139 => 'NP100A10-PK',
       140 => 'NP100A10-RD',
       141 => 'MZ100A10-ED',
+      142 => 'TG100A10-ZS',
+      143 => 'TG100A10-HS',
+      144 => 'NF100A10-N6',
     ),
     'DR100A10-PO' => 
     array (
@@ -62322,6 +62931,8 @@ return array (
       135 => 'NP100A10-PK',
       136 => 'NP100A10-RD',
       137 => 'MZ100A10-ED',
+      138 => 'TG100A10-HS',
+      139 => 'NF100A10-N6',
     ),
     'DR100A10-PA' => 
     array (
@@ -62459,6 +63070,7 @@ return array (
       131 => 'NP100A10-PK',
       132 => 'NP100A10-RD',
       133 => 'MZ100A10-ED',
+      134 => 'NF100A10-N6',
     ),
     'DR100A10-PC' => 
     array (
@@ -62598,6 +63210,7 @@ return array (
       133 => 'NP100A10-PK',
       134 => 'NP100A10-RD',
       135 => 'MZ100A10-ED',
+      136 => 'NF100A10-N6',
     ),
     'DR100A10-PS' => 
     array (
@@ -62739,6 +63352,9 @@ return array (
       135 => 'NP100A10-RD',
       136 => 'EP100A10-PI',
       137 => 'MZ100A10-ED',
+      138 => 'TG100A10-ZS',
+      139 => 'NF100A10-N3',
+      140 => 'NF100A10-N4',
     ),
     'BD100A10-GL' => 
     array (
@@ -62812,6 +63428,8 @@ return array (
       32 => 'BC100A10-VV',
       33 => 'OM100A10-BV',
       34 => 'OM100A10-DV',
+      35 => 'NF100A10-N1',
+      36 => 'NF100A10-N2',
     ),
     'BD100A10-GT' => 
     array (
@@ -63019,6 +63637,7 @@ return array (
       136 => 'NP100A10-PK',
       137 => 'NP100A10-RD',
       138 => 'MZ100A10-ED',
+      139 => 'NF100A10-N6',
     ),
     'CL100A10-GR' => 
     array (
@@ -63051,6 +63670,7 @@ return array (
       26 => 'DL100A10-RI',
       27 => 'HS100A10-CO',
       28 => 'EP100A10-PI',
+      29 => 'TG100A10-ZS',
     ),
     'CL100A10-EY' => 
     array (
@@ -63104,6 +63724,7 @@ return array (
       34 => 'BC100A10-CO',
       35 => 'OM100A10-BV',
       36 => 'EP100A10-CN',
+      37 => 'NF100A10-N2',
     ),
     'CL100A10-AT' => 
     array (
@@ -63141,6 +63762,7 @@ return array (
       31 => 'OM100A10-TB',
       32 => 'OM100A10-TH',
       33 => 'OM100A10-DV',
+      34 => 'NF100A10-N1',
     ),
     'CL100A10-FA' => 
     array (
@@ -63385,6 +64007,7 @@ return array (
       139 => 'NP100A10-PK',
       140 => 'NP100A10-RD',
       141 => 'MZ100A10-ED',
+      142 => 'NF100A10-N6',
     ),
     'DR100A10-LC' => 
     array (
@@ -63716,6 +64339,8 @@ return array (
       142 => 'NP100A10-RD',
       143 => 'EP100A10-PI',
       144 => 'MZ100A10-ED',
+      145 => 'TG100A10-ZS',
+      146 => 'NF100A10-N6',
     ),
     'DR100A10-SI' => 
     array (
@@ -63859,6 +64484,9 @@ return array (
       137 => 'NP100A10-RD',
       138 => 'EP100A10-PI',
       139 => 'MZ100A10-ED',
+      140 => 'TG100A10-ZS',
+      141 => 'NF100A10-N3',
+      142 => 'NF100A10-N4',
     ),
     'DR100A10-BW' => 
     array (
@@ -63899,6 +64527,8 @@ return array (
       34 => 'BC100A10-VV',
       35 => 'OM100A10-BV',
       36 => 'OM100A10-DV',
+      37 => 'NF100A10-N1',
+      38 => 'NF100A10-N2',
     ),
     'DR100A10-BF' => 
     array (
@@ -63944,6 +64574,8 @@ return array (
       39 => 'OM100A10-DP',
       40 => 'BV100A10-BA',
       41 => 'HS100A10-BL',
+      42 => 'TG100A10-ZS',
+      43 => 'TG100A10-HS',
     ),
     'BD100A10-CZ' => 
     array (
@@ -64013,6 +64645,8 @@ return array (
       26 => 'FB100A10-MH',
       27 => 'NP100A10-OR',
       28 => 'MZ100A10-ED',
+      29 => 'TG100A10-HS',
+      30 => 'NF100A10-N4',
     ),
     'BD100A10-CG' => 
     array (
@@ -64034,6 +64668,7 @@ return array (
       15 => 'SU100A10-SC',
       16 => 'BC100A10-GL',
       17 => 'FB100A10-CO',
+      18 => 'NF100A10-N5',
     ),
     'SW100A10-ZT' => 
     array (
@@ -64087,6 +64722,8 @@ return array (
       47 => 'BV100A10-BA',
       48 => 'HS100A10-BL',
       49 => 'EP100A10-XB',
+      50 => 'TG100A10-ZS',
+      51 => 'TG100A10-HS',
     ),
     'BD100A10-GB' => 
     array (
@@ -64211,6 +64848,10 @@ return array (
       51 => 'NP100A10-PK',
       52 => 'EP100A10-PI',
       53 => 'EP100A10-XB',
+      54 => 'TG100A10-ZS',
+      55 => 'NF100A10-N3',
+      56 => 'NF100A10-N4',
+      57 => 'NF100A10-N6',
     ),
     'SW100A10-DK' => 
     array (
@@ -64367,6 +65008,8 @@ return array (
       108 => 'HS100A10-RE',
       109 => 'NP100A10-GR',
       110 => 'NP100A10-PK',
+      111 => 'TG100A10-ZS',
+      112 => 'NF100A10-N6',
     ),
     'SY100A10-HJ' => 
     array (
@@ -64407,6 +65050,7 @@ return array (
       34 => 'DL100A10-RI',
       35 => 'HS100A10-CO',
       36 => 'EP100A10-PI',
+      37 => 'TG100A10-ZS',
     ),
     'SY100A10-MM' => 
     array (
@@ -64600,6 +65244,7 @@ return array (
       134 => 'NP100A10-PK',
       135 => 'NP100A10-RD',
       136 => 'MZ100A10-ED',
+      137 => 'NF100A10-N6',
     ),
     'SY100A10-SO' => 
     array (
@@ -64631,6 +65276,7 @@ return array (
       25 => 'HS100A10-CO',
       26 => 'HS100A10-FE',
       27 => 'NP100A10-OR',
+      28 => 'TG100A10-HS',
     ),
     'SY100A10-WB' => 
     array (
@@ -65127,6 +65773,7 @@ return array (
       36 => 'HS100A10-AR',
       37 => 'HS100A10-CA',
       38 => 'MZ100A10-MC',
+      39 => 'NF100A10-N5',
     ),
     'SU100A10-AL' => 
     array (
@@ -65272,6 +65919,9 @@ return array (
       139 => 'NP100A10-PK',
       140 => 'NP100A10-RD',
       141 => 'MZ100A10-ED',
+      142 => 'TG100A10-ZS',
+      143 => 'TG100A10-HS',
+      144 => 'NF100A10-N6',
     ),
     'SU100A10-BH' => 
     array (
@@ -65357,6 +66007,9 @@ return array (
       58 => 'NP100A10-GR',
       59 => 'NP100A10-PK',
       60 => 'EP100A10-PI',
+      61 => 'TG100A10-ZS',
+      62 => 'NF100A10-N3',
+      63 => 'NF100A10-N4',
     ),
     'SU100A10-BC' => 
     array (
@@ -65433,6 +66086,8 @@ return array (
       39 => 'OM100A10-DP',
       40 => 'BV100A10-BA',
       41 => 'HS100A10-BL',
+      42 => 'TG100A10-ZS',
+      43 => 'TG100A10-HS',
     ),
     'SU100A10-BR' => 
     array (
@@ -65558,6 +66213,7 @@ return array (
       30 => 'HS100A10-MA',
       31 => 'NP100A10-GD',
       32 => 'NP100A10-GR',
+      33 => 'NF100A10-N4',
     ),
     'SU100A10-CU' => 
     array (
@@ -65674,6 +66330,7 @@ return array (
       110 => 'GG100A10-PI',
       111 => 'HS100A10-RE',
       112 => 'EP100A10-PI',
+      113 => 'TG100A10-ZS',
     ),
     'SU100A10-CM' => 
     array (
@@ -65815,6 +66472,9 @@ return array (
       135 => 'NP100A10-RD',
       136 => 'EP100A10-PI',
       137 => 'MZ100A10-ED',
+      138 => 'TG100A10-ZS',
+      139 => 'NF100A10-N3',
+      140 => 'NF100A10-N4',
     ),
     'SU100A10-CL' => 
     array (
@@ -65964,6 +66624,8 @@ return array (
       55 => 'HS100A10-CA',
       56 => 'EP100A10-PI',
       57 => 'MZ100A10-MC',
+      58 => 'HO100A10-CO',
+      59 => 'NF100A10-N5',
     ),
     'SU100A10-FG' => 
     array (
@@ -66102,6 +66764,7 @@ return array (
       132 => 'NP100A10-PK',
       133 => 'NP100A10-RD',
       134 => 'MZ100A10-ED',
+      135 => 'NF100A10-N6',
     ),
     'SU100A10-GT' => 
     array (
@@ -66151,6 +66814,8 @@ return array (
       43 => 'OM100A10-BV',
       44 => 'OM100A10-TB',
       45 => 'OM100A10-DV',
+      46 => 'NF100A10-N1',
+      47 => 'NF100A10-N2',
     ),
     'SU100A10-GV' => 
     array (
@@ -66176,6 +66841,7 @@ return array (
       19 => 'BC100A10-VW',
       20 => 'BC100A10-CO',
       21 => 'OM100A10-BV',
+      22 => 'NF100A10-N2',
     ),
     'SU100A10-HV' => 
     array (
@@ -66223,6 +66889,7 @@ return array (
       30 => 'DL100A10-RI',
       31 => 'HS100A10-CO',
       32 => 'EP100A10-PI',
+      33 => 'TG100A10-ZS',
     ),
     'SU100A10-HJ' => 
     array (
@@ -66263,6 +66930,7 @@ return array (
       34 => 'DL100A10-RI',
       35 => 'HS100A10-CO',
       36 => 'EP100A10-PI',
+      37 => 'TG100A10-ZS',
     ),
     'SU100A10-HW' => 
     array (
@@ -66297,6 +66965,7 @@ return array (
       28 => 'DL100A10-RI',
       29 => 'HS100A10-CO',
       30 => 'EP100A10-PI',
+      31 => 'TG100A10-ZS',
     ),
     'SU100A10-LM' => 
     array (
@@ -66434,6 +67103,7 @@ return array (
       131 => 'NP100A10-PK',
       132 => 'NP100A10-RD',
       133 => 'MZ100A10-ED',
+      134 => 'NF100A10-N6',
     ),
     'SU100A10-IV' => 
     array (
@@ -66534,6 +67204,7 @@ return array (
       94 => 'DL100A10-PI',
       95 => 'GG100A10-PI',
       96 => 'HS100A10-RE',
+      97 => 'NF100A10-N2',
     ),
     'SU100A10-TP' => 
     array (
@@ -66603,6 +67274,7 @@ return array (
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
       33 => 'EP100A10-CN',
+      34 => 'NF100A10-N1',
     ),
     'SU100A10-KK' => 
     array (
@@ -66704,6 +67376,7 @@ return array (
       82 => 'DL100A10-RI',
       83 => 'DL100A10-PI',
       84 => 'GG100A10-PI',
+      85 => 'NF100A10-N2',
     ),
     'SU100A10-K2' => 
     array (
@@ -66792,6 +67465,7 @@ return array (
       82 => 'DL100A10-RI',
       83 => 'DL100A10-PI',
       84 => 'GG100A10-PI',
+      85 => 'NF100A10-N2',
     ),
     'SU100A10-LK' => 
     array (
@@ -66856,6 +67530,9 @@ return array (
       58 => 'FB100A10-MM',
       59 => 'HS100A10-BL',
       60 => 'EP100A10-PI',
+      61 => 'HO100A10-CO',
+      62 => 'TG100A10-ZS',
+      63 => 'TG100A10-HS',
     ),
     'SU100A10-MS' => 
     array (
@@ -66890,6 +67567,8 @@ return array (
       17 => 'BC100A10-VV',
       18 => 'OM100A10-TB',
       19 => 'EP100A10-CN',
+      20 => 'TG100A10-PN',
+      21 => 'NF100A10-N2',
     ),
     'SU100A10-NM' => 
     array (
@@ -66910,6 +67589,8 @@ return array (
       14 => 'SU100A10-GV',
       15 => 'SU100A10-WC',
       16 => 'BC100A10-VV',
+      17 => 'TG100A10-PN',
+      18 => 'NF100A10-N2',
     ),
     'SU100A10-RL' => 
     array (
@@ -66958,6 +67639,7 @@ return array (
       42 => 'HS100A10-AR',
       43 => 'HS100A10-CA',
       44 => 'MZ100A10-MC',
+      45 => 'NF100A10-N5',
     ),
     'SU100A10-PC' => 
     array (
@@ -67023,6 +67705,7 @@ return array (
       24 => 'HS100A10-BU',
       25 => 'NP100A10-PR',
       26 => 'EP100A10-PI',
+      27 => 'HO100A10-CO',
     ),
     'SU100A10-RI' => 
     array (
@@ -67053,6 +67736,7 @@ return array (
       24 => 'HS100A10-BU',
       25 => 'NP100A10-PR',
       26 => 'EP100A10-PI',
+      27 => 'HO100A10-CO',
     ),
     'SU100A10-RF' => 
     array (
@@ -67076,6 +67760,7 @@ return array (
       17 => 'BC100A10-CW',
       18 => 'FB100A10-MM',
       19 => 'EP100A10-PI',
+      20 => 'HO100A10-CO',
     ),
     'SU100A10-RK' => 
     array (
@@ -67099,6 +67784,7 @@ return array (
       17 => 'BC100A10-CW',
       18 => 'FB100A10-MM',
       19 => 'EP100A10-PI',
+      20 => 'HO100A10-CO',
     ),
     'SU100A10-SH' => 
     array (
@@ -67163,6 +67849,9 @@ return array (
       58 => 'FB100A10-MM',
       59 => 'HS100A10-BL',
       60 => 'EP100A10-PI',
+      61 => 'HO100A10-CO',
+      62 => 'TG100A10-ZS',
+      63 => 'TG100A10-HS',
     ),
     'SU100A10-SC' => 
     array (
@@ -67207,6 +67896,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'SU100A10-TM' => 
     array (
@@ -67373,6 +68063,7 @@ return array (
       137 => 'NP100A10-PR',
       138 => 'NP100A10-RD',
       139 => 'MZ100A10-ED',
+      140 => 'NF100A10-N6',
     ),
     'SU100A10-WC' => 
     array (
@@ -67416,6 +68107,7 @@ return array (
       1 => 'PV100VC',
       2 => 'UW100YN',
       3 => 'SK100SG',
+      4 => 'EFR100SA',
     ),
     'VP100A10-TA' => 
     array (
@@ -67568,6 +68260,7 @@ return array (
       142 => 'NP100A10-PK',
       143 => 'NP100A10-RD',
       144 => 'MZ100A10-ED',
+      145 => 'NF100A10-N6',
     ),
     'DB100A10-BT' => 
     array (
@@ -67648,6 +68341,7 @@ return array (
       38 => 'HS100A10-AR',
       39 => 'HS100A10-CA',
       40 => 'MZ100A10-MC',
+      41 => 'NF100A10-N5',
     ),
     'EV100A10-MA' => 
     array (
@@ -67714,6 +68408,7 @@ return array (
       60 => 'NP100A10-GR',
       61 => 'MZ100A10-ED',
       62 => 'MZ100A10-MC',
+      63 => 'NF100A10-N5',
     ),
     'TK100L10-WH' => 
     array (
@@ -67738,6 +68433,7 @@ return array (
       1 => 'DR100L10-OM',
       2 => 'SL100L10-EP',
       3 => 'YT100L10-OM',
+      4 => 'DS100A10-PF',
     ),
     'VS100FTR' => 
     array (
@@ -67765,6 +68461,7 @@ return array (
       3 => 'FM100M1',
       4 => 'PV100XP',
       5 => 'EFR100IPM',
+      6 => 'UW100CR5',
     ),
     'SK100HS' => 
     array (
@@ -67872,6 +68569,7 @@ return array (
       18 => 'BC100A10-CW',
       19 => 'FB100A10-MM',
       20 => 'EP100A10-PI',
+      21 => 'HO100A10-CO',
     ),
     'BC100A10-MI' => 
     array (
@@ -68038,6 +68736,8 @@ return array (
       160 => 'NP100A10-RD',
       161 => 'MZ100A10-ED',
       162 => 'MZ100A10-MC',
+      163 => 'NF100A10-N5',
+      164 => 'NF100A10-N6',
     ),
     'BC100A10-MP' => 
     array (
@@ -68083,6 +68783,7 @@ return array (
       39 => 'HS100A10-BL',
       40 => 'HS100A10-CA',
       41 => 'MZ100A10-MC',
+      42 => 'NF100A10-N5',
     ),
     'BC100A10-NY' => 
     array (
@@ -68249,6 +68950,7 @@ return array (
       34 => 'DL100A10-RI',
       35 => 'HS100A10-CO',
       36 => 'EP100A10-PI',
+      37 => 'TG100A10-ZS',
     ),
     'BC100A10-RY' => 
     array (
@@ -68281,6 +68983,7 @@ return array (
       26 => 'DL100A10-RI',
       27 => 'HS100A10-CO',
       28 => 'EP100A10-PI',
+      29 => 'TG100A10-ZS',
     ),
     'BC100A10-RB' => 
     array (
@@ -68320,6 +69023,7 @@ return array (
       4 => 'KU100A10-KI',
       5 => 'GZ100A10-DF',
       6 => 'HS100A10-RE',
+      7 => 'TG100A10-ZS',
     ),
     'BC100A10-SC' => 
     array (
@@ -68374,6 +69078,10 @@ return array (
       43 => 'NP100A10-GR',
       44 => 'NP100A10-PK',
       45 => 'EP100A10-PI',
+      46 => 'TG100A10-ZS',
+      47 => 'NF100A10-N3',
+      48 => 'NF100A10-N4',
+      49 => 'NF100A10-N6',
     ),
     'BC100A10-TB' => 
     array (
@@ -68428,6 +69136,7 @@ return array (
       30 => 'OM100A10-TB',
       31 => 'OM100A10-TH',
       32 => 'OM100A10-DV',
+      33 => 'NF100A10-N1',
     ),
     'BC100A10-VV' => 
     array (
@@ -68468,6 +69177,7 @@ return array (
       34 => 'BC100A10-CO',
       35 => 'OM100A10-BV',
       36 => 'EP100A10-CN',
+      37 => 'NF100A10-N2',
     ),
     'BC100A10-VW' => 
     array (
@@ -68491,6 +69201,7 @@ return array (
       17 => 'BC100A10-VV',
       18 => 'BC100A10-CO',
       19 => 'OM100A10-BV',
+      20 => 'NF100A10-N2',
     ),
     'BC100A10-WW' => 
     array (
@@ -68700,6 +69411,7 @@ return array (
       131 => 'NP100A10-PK',
       132 => 'NP100A10-RD',
       133 => 'MZ100A10-ED',
+      134 => 'NF100A10-N6',
     ),
     'BC100A10-CH' => 
     array (
@@ -68753,6 +69465,7 @@ return array (
       17 => 'BC100A10-VV',
       18 => 'BC100A10-VW',
       19 => 'OM100A10-BV',
+      20 => 'NF100A10-N2',
     ),
     'BC100A10-CW' => 
     array (
@@ -68911,6 +69624,8 @@ return array (
       152 => 'NP100A10-RD',
       153 => 'EP100A10-PI',
       154 => 'MZ100A10-ED',
+      155 => 'HO100A10-CO',
+      156 => 'NF100A10-N6',
     ),
     'BC100A10-ES' => 
     array (
@@ -68995,6 +69710,7 @@ return array (
       38 => 'HS100A10-AR',
       39 => 'HS100A10-CA',
       40 => 'MZ100A10-MC',
+      41 => 'NF100A10-N5',
     ),
     'BC100A10-GL' => 
     array (
@@ -69103,6 +69819,8 @@ return array (
       5 => 'BC100A10-TT',
       6 => 'DP100A10-GT',
       7 => 'AZ100A10-GP',
+      8 => 'TG100A10-HS',
+      9 => 'NF100A10-N3',
     ),
     'BC100A10-JJ' => 
     array (
@@ -69251,6 +69969,8 @@ return array (
       39 => 'SU100A10-SH',
       40 => 'BV100A10-BA',
       41 => 'HS100A10-BL',
+      42 => 'TG100A10-ZS',
+      43 => 'TG100A10-HS',
     ),
     'BC100A10-LO' => 
     array (
@@ -69471,6 +70191,7 @@ return array (
       8 => 'SU100A10-BT',
       9 => 'FB100A10-MH',
       10 => 'MZ100A10-ED',
+      11 => 'NF100A10-N4',
     ),
     'BC100A10-MD' => 
     array (
@@ -69610,6 +70331,7 @@ return array (
       12 => 'KL100A10-KB',
       13 => 'SU100A10-BH',
       14 => 'SU100A10-BM',
+      15 => 'NF100A10-N6',
     ),
     'BC100A10-BY' => 
     array (
@@ -69661,6 +70383,8 @@ return array (
       40 => 'BC100A10-VW',
       41 => 'BC100A10-CO',
       42 => 'OM100A10-DV',
+      43 => 'NF100A10-N1',
+      44 => 'NF100A10-N2',
     ),
     'OM100A10-CC' => 
     array (
@@ -69692,6 +70416,7 @@ return array (
       25 => 'BC100A10-TR',
       26 => 'OM100A10-DV',
       27 => 'OM100A10-BP',
+      28 => 'NF100A10-N1',
     ),
     'OM100A10-CF' => 
     array (
@@ -69733,6 +70458,7 @@ return array (
       35 => 'DL100A10-PE',
       36 => 'DL100A10-PI',
       37 => 'FB100A10-MH',
+      38 => 'NF100A10-N1',
     ),
     'OM100A10-CW' => 
     array (
@@ -69756,6 +70482,7 @@ return array (
       17 => 'SU100A10-TE',
       18 => 'BC100A10-TR',
       19 => 'OM100A10-DV',
+      20 => 'NF100A10-N1',
     ),
     'OM100A10-TB' => 
     array (
@@ -69786,6 +70513,8 @@ return array (
       24 => 'BC100A10-TR',
       25 => 'OM100A10-DV',
       26 => 'EP100A10-CN',
+      27 => 'TG100A10-PN',
+      28 => 'NF100A10-N1',
     ),
     'OM100A10-TC' => 
     array (
@@ -69849,6 +70578,7 @@ return array (
       17 => 'SU100A10-TE',
       18 => 'BC100A10-TR',
       19 => 'OM100A10-DV',
+      20 => 'NF100A10-N1',
     ),
     'OM100A10-DG' => 
     array (
@@ -69881,6 +70611,7 @@ return array (
       0 => 'PN100A10-PH',
       1 => 'DR100A10-BF',
       2 => 'SU100A10-BS',
+      3 => 'NF100A10-N2',
     ),
     'OM100A10-DV' => 
     array (
@@ -69918,6 +70649,7 @@ return array (
       31 => 'OM100A10-CW',
       32 => 'OM100A10-TB',
       33 => 'OM100A10-TH',
+      34 => 'NF100A10-N1',
     ),
     'OM100A10-BP' => 
     array (
@@ -70091,6 +70823,7 @@ return array (
       26 => 'DL100A10-RI',
       27 => 'HS100A10-CO',
       28 => 'EP100A10-PI',
+      29 => 'TG100A10-ZS',
     ),
     'DL100A10-RI' => 
     array (
@@ -70239,6 +70972,8 @@ return array (
       142 => 'NP100A10-RD',
       143 => 'EP100A10-PI',
       144 => 'MZ100A10-ED',
+      145 => 'TG100A10-ZS',
+      146 => 'NF100A10-N6',
     ),
     'DL100A10-PE' => 
     array (
@@ -70421,6 +71156,7 @@ return array (
       149 => 'NP100A10-PK',
       150 => 'NP100A10-RD',
       151 => 'MZ100A10-ED',
+      152 => 'NF100A10-N6',
     ),
     'DL100A10-MT' => 
     array (
@@ -70463,6 +71199,7 @@ return array (
       36 => 'HS100A10-AR',
       37 => 'HS100A10-CA',
       38 => 'MZ100A10-MC',
+      39 => 'NF100A10-N5',
     ),
     'BV100A10-BA' => 
     array (
@@ -70640,6 +71377,7 @@ return array (
       132 => 'NP100A10-PK',
       133 => 'NP100A10-RD',
       134 => 'MZ100A10-ED',
+      135 => 'NF100A10-N6',
     ),
     'FB100A10-CO' => 
     array (
@@ -70666,6 +71404,7 @@ return array (
       20 => 'BC100A10-JJ',
       21 => 'BC100A10-LO',
       22 => 'NP100A10-OR',
+      23 => 'TG100A10-HS',
     ),
     'FB100A10-WP' => 
     array (
@@ -70754,6 +71493,8 @@ return array (
       55 => 'HS100A10-CA',
       56 => 'EP100A10-PI',
       57 => 'MZ100A10-MC',
+      58 => 'HO100A10-CO',
+      59 => 'NF100A10-N5',
     ),
     'FB100A10-MH' => 
     array (
@@ -70790,6 +71531,7 @@ return array (
       30 => 'DL100A10-PI',
       31 => 'HS100A10-FE',
       32 => 'MZ100A10-ED',
+      33 => 'NF100A10-N4',
     ),
     'HS100A10-AR' => 
     array (
@@ -71182,6 +71924,9 @@ return array (
       46 => 'NP100A10-GR',
       47 => 'NP100A10-PK',
       48 => 'EP100A10-PI',
+      49 => 'NF100A10-N3',
+      50 => 'NF100A10-N4',
+      51 => 'NF100A10-N6',
     ),
     'NP100A10-GD' => 
     array (
@@ -71680,6 +72425,8 @@ return array (
       66 => 'DL100A10-RI',
       67 => 'FB100A10-MM',
       68 => 'HS100A10-RE',
+      69 => 'HO100A10-CO',
+      70 => 'TG100A10-ZS',
     ),
     'EP100A10-XB' => 
     array (
@@ -71719,6 +72466,8 @@ return array (
       16 => 'SU100A10-MM',
       17 => 'BC100A10-VV',
       18 => 'OM100A10-TB',
+      19 => 'TG100A10-PN',
+      20 => 'NF100A10-N2',
     ),
     'EP100A10-CM' => 
     array (
@@ -71927,6 +72676,8 @@ return array (
       61 => 'FB100A10-MM',
       62 => 'HS100A10-AR',
       63 => 'HS100A10-CA',
+      64 => 'NF100A10-N4',
+      65 => 'NF100A10-N5',
     ),
     'VY100K2P' => 
     array (
@@ -71935,11 +72686,13 @@ return array (
     'OV100VC' => 
     array (
       0 => 'VS100WP',
+      1 => 'EFR100IR',
     ),
     'SK100IX' => 
     array (
       0 => 'VS100WP',
       1 => 'VS100WPM',
+      2 => 'SK100N4',
     ),
     'AS100NX' => 
     array (
@@ -71949,6 +72702,7 @@ return array (
     'FM100M2' => 
     array (
       0 => 'AS100VDS',
+      1 => 'UW100CR5',
     ),
     'AS100VDS' => 
     array (
@@ -71962,6 +72716,7 @@ return array (
       7 => 'FM100M2',
       8 => 'SK100AF',
       9 => 'AS100GU',
+      10 => 'UW100CR5',
     ),
     'SK100AF' => 
     array (
@@ -71973,6 +72728,7 @@ return array (
       5 => 'SK100RG',
       6 => 'AS100VDS',
       7 => 'SK100AFA',
+      8 => 'UW100CR5',
     ),
     'UW100YN' => 
     array (
@@ -72018,6 +72774,7 @@ return array (
       4 => 'UW100AG',
       5 => 'AS100NX',
       6 => 'VS100WP',
+      7 => 'EFR100SA',
     ),
     'GV100BL' => 
     array (
@@ -72210,6 +72967,587 @@ return array (
       4 => 'GV100ZN',
       5 => 'AS100NT',
       6 => 'SK100G25',
+    ),
+    'AS100NI' => 
+    array (
+      0 => 'EFR100IR',
+    ),
+    'GV100TX' => 
+    array (
+      0 => 'THC100TMR',
+    ),
+    'VS100FR' => 
+    array (
+      0 => 'THC100TMR',
+    ),
+    'DF100DRV' => 
+    array (
+      0 => 'THC100TMR',
+    ),
+    'DS100A10-AL' => 
+    array (
+      0 => 'ES100L10-TK',
+      1 => 'ES100L10-PT',
+      2 => '12M100L10-PP',
+      3 => 'DS100A10-FD',
+      4 => 'DS100A10-R6',
+    ),
+    'DS100A10-CA' => 
+    array (
+      0 => 'TS100L10-ZK',
+      1 => '12M100L10-MB',
+      2 => '12M100L10-OS',
+      3 => 'DR100L10-SB',
+      4 => 'DR100L10-LI',
+      5 => '12M100L10-CS',
+      6 => 'MN100L10-MF',
+      7 => 'SQ100L10-SN',
+      8 => 'YT100L10-SB',
+      9 => 'YT100L10-LM',
+    ),
+    'DS100A10-PF' => 
+    array (
+      0 => '12M100L10-BG',
+      1 => '12M100L10-OS',
+      2 => 'SQ100L10-GO',
+    ),
+    'DS100A10-FD' => 
+    array (
+      0 => 'ES100L10-TK',
+      1 => 'ES100L10-PT',
+      2 => '12M100L10-PP',
+      3 => 'DS100A10-AL',
+      4 => 'DS100A10-R6',
+    ),
+    'DS100A10-MC' => 
+    array (
+      0 => 'TS100L10-ZK',
+      1 => 'DR100L10-LI',
+      2 => '12M100L10-CQ',
+      3 => 'SQ100L10-SN',
+      4 => 'YT100L10-LM',
+    ),
+    'DS100A10-RA' => 
+    array (
+      0 => 'ES100L10-SV',
+    ),
+    'DS100A10-R6' => 
+    array (
+      0 => 'ES100L10-TK',
+      1 => 'ES100L10-PT',
+      2 => '12M100L10-PP',
+      3 => 'DS100A10-AL',
+      4 => 'DS100A10-FD',
+    ),
+    'DS100A10-VB' => 
+    array (
+      0 => 'VV100L10-PO',
+    ),
+    'HO100A10-CO' => 
+    array (
+      0 => 'VV100A10-BM',
+      1 => 'VV100A10-BK',
+      2 => 'SC100A10-ME',
+      3 => 'SB100A10-KT',
+      4 => 'AV100A10-IM',
+      5 => 'AH100A10-OU',
+      6 => 'EN100A10-EN',
+      7 => 'HO100A10-CS',
+      8 => 'BS100A10-FR',
+      9 => 'FS100A10-MB',
+      10 => 'KL100A10-MT',
+      11 => 'SU100A10-EM',
+      12 => 'SU100A10-LK',
+      13 => 'SU100A10-RP',
+      14 => 'SU100A10-RI',
+      15 => 'SU100A10-RF',
+      16 => 'SU100A10-RK',
+      17 => 'SU100A10-SH',
+      18 => 'BC100A10-MT',
+      19 => 'BC100A10-CW',
+      20 => 'FB100A10-MM',
+      21 => 'EP100A10-PI',
+    ),
+    'TG100A10-ZS' => 
+    array (
+      0 => 'VV100A10-SM',
+      1 => 'SC100A10-HB',
+      2 => 'SC100A10-EB',
+      3 => 'AR100A10-EB',
+      4 => 'AR100A10-ZT',
+      5 => 'MA100A10-GT',
+      6 => '5E100A10-DR',
+      7 => 'DD100A10-ED',
+      8 => 'BC100A10-AA',
+      9 => 'RG100A10-EB',
+      10 => 'YJ100A10-BR',
+      11 => 'YJ100A10-SC',
+      12 => 'YJ100A10-LC',
+      13 => 'YJ100A10-RB',
+      14 => 'KF100A10-RG',
+      15 => 'KF100A10-SW',
+      16 => 'BD100A10-EB',
+      17 => 'BD100A10-ZT',
+      18 => 'DP100A10-SI',
+      19 => 'DP100A10-SM',
+      20 => 'DP100A10-FL',
+      21 => 'BR100A10-ST',
+      22 => 'EF100A10-HI',
+      23 => 'EF100A10-ZI',
+      24 => 'PG100A10-BW',
+      25 => 'PG100A10-YS',
+      26 => '5E100A10-PL',
+      27 => 'FR100A10-SB',
+      28 => 'FR100A10-RF',
+      29 => 'AZ100A10-EK',
+      30 => 'AZ100A10-EM',
+      31 => 'AZ100A10-IT',
+      32 => 'DL100A10-SB',
+      33 => 'DL100A10-SI',
+      34 => 'CB100A10-FH',
+      35 => 'YO100A10-ST',
+      36 => 'YO100A10-RA',
+      37 => 'KU100A10-KI',
+      38 => 'KU100A10-ZI',
+      39 => 'MB100A10-H',
+      40 => 'BS100A10-EB',
+      41 => 'RM100LA10-EZ',
+      42 => 'EF100A10-EB',
+      43 => 'YO100A10-CR',
+      44 => 'GS100A10-ZS',
+      45 => 'DR100A10-EM',
+      46 => 'DR100A10-PL',
+      47 => 'DR100A10-PS',
+      48 => 'CL100A10-GR',
+      49 => 'DR100A10-RI',
+      50 => 'DR100A10-SI',
+      51 => 'DR100A10-BF',
+      52 => 'SW100A10-ZT',
+      53 => 'SW100A10-EB',
+      54 => 'SY100A10-EK',
+      55 => 'SY100A10-HJ',
+      56 => 'SU100A10-AL',
+      57 => 'SU100A10-BM',
+      58 => 'SU100A10-BS',
+      59 => 'SU100A10-CU',
+      60 => 'SU100A10-CM',
+      61 => 'SU100A10-HB',
+      62 => 'SU100A10-HJ',
+      63 => 'SU100A10-HW',
+      64 => 'SU100A10-LK',
+      65 => 'SU100A10-SH',
+      66 => 'BC100A10-RD',
+      67 => 'BC100A10-RY',
+      68 => 'BC100A10-SK',
+      69 => 'BC100A10-SS',
+      70 => 'BC100A10-LE',
+      71 => 'DL100A10-OR',
+      72 => 'DL100A10-RI',
+      73 => 'EP100A10-PI',
+    ),
+    'TG100A10-PN' => 
+    array (
+      0 => 'FV100A10-TR',
+      1 => 'AV100A10-FT',
+      2 => 'YJ100A10-TC',
+      3 => 'FG100A10-DN',
+      4 => 'FG100A10-GR',
+      5 => 'BD100A10-LE',
+      6 => 'VT100A10-AD',
+      7 => 'FV100A10-GO',
+      8 => 'SU100A10-MM',
+      9 => 'SU100A10-NM',
+      10 => 'OM100A10-TB',
+      11 => 'EP100A10-CN',
+    ),
+    'TG100A10-HS' => 
+    array (
+      0 => 'AR100A10-ZT',
+      1 => 'GG100A10-NH',
+      2 => 'DK100A10-PG',
+      3 => 'UB100A10-SG',
+      4 => 'BV100A10-AR',
+      5 => 'RG100A10-OR',
+      6 => 'RG100A10-MD',
+      7 => 'CK100A10-OR',
+      8 => 'YJ100A10-LC',
+      9 => 'FG100A10-MH',
+      10 => 'FG100A10-DT',
+      11 => 'MZ100A10-FP',
+      12 => 'KF100A10-OT',
+      13 => 'BD100A10-ZT',
+      14 => 'DP100A10-GT',
+      15 => 'DP100A10-FL',
+      16 => 'EF100A10-ZI',
+      17 => 'PG100A10-BW',
+      18 => 'PG100A10-FO',
+      19 => 'PG100A10-YS',
+      20 => '5E100A10-PL',
+      21 => 'VP100A10-MJ',
+      22 => 'KT100A10-HG',
+      23 => 'AZ100A10-GP',
+      24 => 'AZ100A10-IT',
+      25 => 'BS100A10-HN',
+      26 => 'CB100A10-FH',
+      27 => 'KU100A10-ZI',
+      28 => 'MB100A10-U',
+      29 => 'RM100LA10-EZ',
+      30 => 'GS100A10-ZS',
+      31 => 'DR100A10-PL',
+      32 => 'DR100A10-PO',
+      33 => 'DR100A10-BF',
+      34 => 'BD100A10-CO',
+      35 => 'SW100A10-ZT',
+      36 => 'SY100A10-SO',
+      37 => 'SU100A10-AL',
+      38 => 'SU100A10-BS',
+      39 => 'SU100A10-LK',
+      40 => 'SU100A10-SH',
+      41 => 'BC100A10-JG',
+      42 => 'BC100A10-LE',
+      43 => 'FB100A10-CO',
+    ),
+    'NF100A10-N1' => 
+    array (
+      0 => 'SC100A10-ST',
+      1 => 'SC100A10-RY',
+      2 => 'SC100A10-VB',
+      3 => 'SC100A10-AF',
+      4 => 'FV100A10-TR',
+      5 => 'FV100A10-HR',
+      6 => 'MZ100A10-CM',
+      7 => 'KL100A10-CT',
+      8 => 'KL100A10-CO',
+      9 => 'VP100A10-TT',
+      10 => 'BS100A10-N1',
+      11 => 'DL100A10-TB',
+      12 => 'BS100A10-FR',
+      13 => 'BS100A10-HN',
+      14 => 'BS100A10-CL',
+      15 => 'CB100A10-TF',
+      16 => 'CS100A10-HT',
+      17 => 'CS100A10-BT',
+      18 => 'CS100A10-PR',
+      19 => 'FV100A10-GO',
+      20 => 'BD100A10-GO',
+      21 => 'CL100A10-AT',
+      22 => 'DR100A10-BW',
+      23 => 'SU100A10-GT',
+      24 => 'SU100A10-IT',
+      25 => 'SU100A10-TE',
+      26 => 'BC100A10-TR',
+      27 => 'OM100A10-BV',
+      28 => 'OM100A10-CC',
+      29 => 'OM100A10-CF',
+      30 => 'OM100A10-CW',
+      31 => 'OM100A10-TB',
+      32 => 'OM100A10-TH',
+      33 => 'OM100A10-DV',
+    ),
+    'NF100A10-N2' => 
+    array (
+      0 => 'SC100A10-VA',
+      1 => 'FV100A10-TR',
+      2 => 'BC100A10-RR',
+      3 => 'CK100A10-PC',
+      4 => 'AV100A10-CM',
+      5 => 'AV100A10-FT',
+      6 => 'YJ100A10-TC',
+      7 => 'YJ100A10-AP',
+      8 => 'FG100A10-TD',
+      9 => 'BC100A10-BE',
+      10 => 'DP100A10-VC',
+      11 => 'EF100A10-VA',
+      12 => 'PG100A10-HE',
+      13 => 'KT100A10-SL',
+      14 => 'DL100A10-VN',
+      15 => 'PN100A10-PH',
+      16 => 'VT100A10-AD',
+      17 => 'GZ100A10-TW',
+      18 => 'CS100A10-VR',
+      19 => 'CS100A10-PR',
+      20 => 'GS100A10-JV',
+      21 => 'FV100A10-GO',
+      22 => 'DR100A10-VM',
+      23 => 'BD100A10-GO',
+      24 => 'CL100A10-BC',
+      25 => 'DR100A10-BW',
+      26 => 'SU100A10-GT',
+      27 => 'SU100A10-GV',
+      28 => 'SU100A10-IV',
+      29 => 'SU100A10-K1',
+      30 => 'SU100A10-K2',
+      31 => 'SU100A10-MM',
+      32 => 'SU100A10-NM',
+      33 => 'BC100A10-VV',
+      34 => 'BC100A10-VW',
+      35 => 'BC100A10-CO',
+      36 => 'OM100A10-BV',
+      37 => 'OM100A10-DP',
+      38 => 'EP100A10-CN',
+    ),
+    'NF100A10-N3' => 
+    array (
+      0 => 'VV100A10-SM',
+      1 => 'SC100A10-EB',
+      2 => 'AR100A10-EB',
+      3 => 'MA100A10-GT',
+      4 => 'DK100A10-PG',
+      5 => 'DK100A10-KE',
+      6 => 'DD100A10-ED',
+      7 => 'UB100A10-SG',
+      8 => 'BV100A10-AR',
+      9 => 'RG100A10-EB',
+      10 => 'YJ100A10-SC',
+      11 => 'FG100A10-DT',
+      12 => 'MZ100A10-FP',
+      13 => 'KF100A10-SW',
+      14 => 'BD100A10-EB',
+      15 => 'DP100A10-SI',
+      16 => 'DP100A10-SM',
+      17 => 'DP100A10-GT',
+      18 => 'BR100A10-ST',
+      19 => 'FR100A10-SB',
+      20 => 'AZ100A10-EK',
+      21 => 'AZ100A10-EM',
+      22 => 'AZ100A10-GP',
+      23 => 'DL100A10-SB',
+      24 => 'DL100A10-SI',
+      25 => 'YO100A10-ST',
+      26 => 'BS100A10-EB',
+      27 => 'EF100A10-EB',
+      28 => 'DR100A10-EM',
+      29 => 'DR100A10-PS',
+      30 => 'DR100A10-SI',
+      31 => 'SW100A10-EB',
+      32 => 'SU100A10-BM',
+      33 => 'SU100A10-CM',
+      34 => 'BC100A10-SS',
+      35 => 'BC100A10-JG',
+      36 => 'HS100A10-RE',
+    ),
+    'NF100A10-N4' => 
+    array (
+      0 => 'VV100A10-SM',
+      1 => 'SC100A10-EB',
+      2 => 'SC100A10-MA',
+      3 => 'SC100A10-KI',
+      4 => 'AR100A10-EB',
+      5 => 'MA100A10-KB',
+      6 => 'DK100A10-KE',
+      7 => 'DK100A10-KM',
+      8 => 'DD100A10-ED',
+      9 => 'DD100A10-JC',
+      10 => '5E100A10-CJ',
+      11 => 'BV100A10-PW',
+      12 => 'RG100A10-EB',
+      13 => 'YJ100A10-SC',
+      14 => 'AH100A10-AL',
+      15 => 'MZ100A10-CM',
+      16 => 'KF100A10-CB',
+      17 => 'KF100A10-SW',
+      18 => 'BD100A10-EB',
+      19 => 'BD100A10-KR',
+      20 => 'BD100A10-MA',
+      21 => 'DP100A10-YS',
+      22 => 'DP100A10-SI',
+      23 => 'DP100A10-SM',
+      24 => 'BR100A10-ST',
+      25 => 'BO100A10-KK',
+      26 => 'KL100A10-CO',
+      27 => 'KL100A10-CP',
+      28 => 'EF100A10-KI',
+      29 => 'FR100A10-SB',
+      30 => 'FR100A10-IV',
+      31 => 'AZ100A10-EK',
+      32 => 'AZ100A10-EM',
+      33 => 'DL100A10-SB',
+      34 => 'DL100A10-SI',
+      35 => 'CB100A10-FH',
+      36 => 'YO100A10-ST',
+      37 => 'YO100A10-CH',
+      38 => 'KL100A10-KB',
+      39 => 'KL100A10-KR',
+      40 => 'BS100A10-EB',
+      41 => 'KL100A10-AK',
+      42 => 'EF100A10-EB',
+      43 => 'GZ100A10-CP',
+      44 => 'DR100A10-EM',
+      45 => 'DR100A10-PS',
+      46 => 'DR100A10-SI',
+      47 => 'BD100A10-CO',
+      48 => 'SW100A10-EB',
+      49 => 'SU100A10-BM',
+      50 => 'SU100A10-BT',
+      51 => 'SU100A10-CM',
+      52 => 'BC100A10-SS',
+      53 => 'BC100A10-MC',
+      54 => 'FB100A10-MH',
+      55 => 'HS100A10-RE',
+      56 => 'MZ100A10-MC',
+    ),
+    'NF100A10-N5' => 
+    array (
+      0 => 'VV100A10-IM',
+      1 => 'DK100A10-KM',
+      2 => 'EV100A10-GM',
+      3 => 'FG100A10-BM',
+      4 => 'FG100A10-LM',
+      5 => 'FG100A10-WM',
+      6 => 'BR100A10-GR',
+      7 => 'HD100A10-NM',
+      8 => 'HD100A10-MT',
+      9 => 'HD100A10-MM',
+      10 => 'PG100A10-KG',
+      11 => 'PG100A10-YS',
+      12 => 'PG100A10-WE',
+      13 => 'KT100A10-WT',
+      14 => 'DL100A10-GP',
+      15 => 'RC100A10-MG',
+      16 => 'MB100A10-S',
+      17 => 'FV100A10-DB',
+      18 => 'BD100A10-CG',
+      19 => 'AH100A10-AD',
+      20 => 'SU100A10-EM',
+      21 => 'SU100A10-RL',
+      22 => 'EV100A10-LM',
+      23 => 'EV100A10-MA',
+      24 => 'BC100A10-MI',
+      25 => 'BC100A10-MP',
+      26 => 'BC100A10-FB',
+      27 => 'DL100A10-MT',
+      28 => 'FB100A10-MM',
+      29 => 'MZ100A10-MC',
+    ),
+    'NF100A10-N6' => 
+    array (
+      0 => 'VV100A10-DW',
+      1 => 'VV100A10-IM',
+      2 => 'VV100A10-KO',
+      3 => 'SC100A10-EB',
+      4 => 'SC100A10-BA',
+      5 => 'AR100A10-WM',
+      6 => 'AR100A10-ZT',
+      7 => 'AR100A10-AP',
+      8 => 'MA100A10-KB',
+      9 => '5E100A10-BM',
+      10 => 'CK100A10-AR',
+      11 => 'GG100A10-MI',
+      12 => 'DK100A10-KE',
+      13 => 'YJ100A10-IM',
+      14 => 'YJ100A10-IB',
+      15 => 'KL100A10-CL',
+      16 => 'RG100A10-EB',
+      17 => 'YJ100A10-SC',
+      18 => 'BD100A10-KI',
+      19 => 'GL100A10-BB',
+      20 => 'AR100A10-LY',
+      21 => 'AR100A10-GA',
+      22 => 'KF100A10-OT',
+      23 => 'KF100A10-CB',
+      24 => 'KF100A10-RG',
+      25 => 'BD100A10-EB',
+      26 => 'DP100A10-FF',
+      27 => 'BR100A10-MA',
+      28 => 'BR100A10-GR',
+      29 => 'BR100A10-WA',
+      30 => 'BR100A10-GA',
+      31 => 'BD100A10-TI',
+      32 => 'FR100A10-BR',
+      33 => 'FR100A10-MC',
+      34 => 'FR100A10-GF',
+      35 => 'FR100A10-RF',
+      36 => 'FR100A10-IV',
+      37 => 'AZ100A10-EK',
+      38 => 'DL100A10-SB',
+      39 => 'DL100A10-BI',
+      40 => 'FS100A10-FW',
+      41 => 'DL100A10-WI',
+      42 => 'DL100A10-MI',
+      43 => 'HK100A10-BB',
+      44 => 'YO100A10-ST',
+      45 => 'YO100A10-BA',
+      46 => 'KL100A10-KB',
+      47 => 'BS100A10-EB',
+      48 => 'EF100A10-EB',
+      49 => 'PE100A10-LS',
+      50 => 'GS100A10-BI',
+      51 => 'GS100A10-GE',
+      52 => 'GS100A10-ZS',
+      53 => 'PE100A10-TP',
+      54 => 'DR100A10-EM',
+      55 => 'DR100A10-PL',
+      56 => 'DR100A10-PO',
+      57 => 'DR100A10-PA',
+      58 => 'DR100A10-PC',
+      59 => 'CL100A10-IT',
+      60 => 'DR100A10-EI',
+      61 => 'DR100A10-RI',
+      62 => 'SW100A10-EB',
+      63 => 'SY100A10-EK',
+      64 => 'SY100A10-RF',
+      65 => 'SU100A10-AL',
+      66 => 'SU100A10-FG',
+      67 => 'SU100A10-LM',
+      68 => 'SU100A10-WT',
+      69 => '5E100A10-AN',
+      70 => 'BC100A10-MI',
+      71 => 'BC100A10-SS',
+      72 => 'BC100A10-BS',
+      73 => 'BC100A10-CW',
+      74 => 'BC100A10-BA',
+      75 => 'DL100A10-RI',
+      76 => 'DL100A10-PI',
+      77 => 'GG100A10-PI',
+      78 => 'HS100A10-RE',
+    ),
+    'SK100N4' => 
+    array (
+      0 => 'GV100AO',
+      1 => 'SK100N2',
+      2 => 'SK100DX',
+      3 => 'PV100AP',
+      4 => 'EFR100P1',
+      5 => 'SK100IX',
+      6 => 'EFR100IR',
+      7 => 'EFR100SA',
+    ),
+    'UW100CR5' => 
+    array (
+      0 => 'GV100ALZ',
+      1 => 'SK100S18',
+      2 => 'SK100M2',
+      3 => 'SK100RG',
+      4 => 'FM100M2',
+      5 => 'EFR100IP',
+      6 => 'AS100VDS',
+      7 => 'SK100AF',
+    ),
+    'EFR100IR' => 
+    array (
+      0 => 'AS100NGS',
+      1 => 'SK100N2',
+      2 => 'FM100MX',
+      3 => 'AS100ST',
+      4 => 'AS100NI',
+      5 => 'OV100VC',
+      6 => 'SK100N4',
+    ),
+    'EFR100SA' => 
+    array (
+      0 => 'SK100N2',
+      1 => 'OV100IX',
+      2 => 'GV100AH',
+      3 => 'SK100VX',
+      4 => 'AS100FV',
+      5 => 'JFR100BQ',
+      6 => 'SK100N4',
+    ),
+    'THC100TMR' => 
+    array (
+      0 => 'GV100TX',
+      1 => 'VS100FR',
+      2 => 'DF100DRV',
     ),
   ),
 );

@@ -152,6 +152,8 @@ return [
         '~Easy 3.*E-Zigarette~'                => TypeMapper::TYPE_POD_SYSTEM,
         '~Easy 4.*E-Zigarette~'                => TypeMapper::TYPE_POD_SYSTEM,
         '~Fused Clapton Head~'                 => TypeMapper::TYPE_COIL,
+        '~ThunderHead.*Coil~'                  => TypeMapper::TYPE_COIL,
+        '~ThunderHead.*Keramik~'               => TypeMapper::TYPE_SPARE_PARTS,
         '~Head~'                               => TypeMapper::TYPE_HEAD,
         '~Hellcoil~'                           => TypeMapper::TYPE_HEAD,
         '~[Tt]asche~'                          => TypeMapper::TYPE_BAG,
@@ -215,5 +217,8 @@ return [
         '~Umhängeband~'                        => TypeMapper::TYPE_OTHER_EQUIPMENT,
         '~Wickelmatte~'                        => TypeMapper::TYPE_OTHER_EQUIPMENT,
         '~Siegfried - RTA DIY~'                => TypeMapper::TYPE_SPARE_PARTS,
+        '~Zeep Mini - Filter~'                 => TypeMapper::TYPE_OTHER_EQUIPMENT,
+        '~Zeep Mini - Top Cap~'                => TypeMapper::TYPE_OTHER_EQUIPMENT,
+        '~Obelisk.*Fast Charger~'              => TypeMapper::TYPE_CHARGER,
     ],
 ];
