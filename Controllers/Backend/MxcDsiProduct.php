@@ -2079,6 +2079,17 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
 
     public function dev6Action() {
         try {
+            $services = MxcDropshipInnocigs::getServices();
+            $log = $services->get('logger');
+            /** @var ApiClient $apiClient */
+            $apiClient = $services->get(ApiClient::class);
+            $ss = $apiClient->getShippingStatus();
+            $shippingStatus = [];
+            foreach ($ss as $status) {
+                $shippingStatus[$status] = true;
+            }
+            $log->debug(var_export($shippingStatus, true));
+
             $this->view->assign([ 'success' => true, 'message' => 'Development slot #6 is currently free.']);
         } catch (Throwable $e) {
             $this->handleException($e);
