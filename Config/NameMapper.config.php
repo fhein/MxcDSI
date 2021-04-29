@@ -170,6 +170,7 @@ return [
             '~Headhot -~'                                  => 'Headshot -',
             '~(Stick) - (G15)~'                            => '$1 $2 -',
             '~(Cartridge) mit,~'                           => '$1,',
+            '~VStick pro~'                                 => 'VStick Pro',
         ],
     ],
 
@@ -343,16 +344,24 @@ return [
             '~(Ezigaro Pro - Quick Eazy) (Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 - $2 $4',
             // non standard
             '~(Gods of Olymp) - (.*) (- \d+(,\d+)? ml)~'                                 => '$1 - $2 - Aroma $3',
+            // non standard
+            '~(Strapped Sodas) - (.*) (Aroma) (- \d+(,\d+)? ml)~'                           => '$1 - $2 - $3 $4',
+            // non standard
+            '~(Vapeozon - Läuft!) (Aroma)(.*)(- \d+(,\d+)? ml)~'                       => '$1 - $3 - $2 $4',
 
             '~(Bamberger Dampferlädla - Bassd Schoo) (- Aroma)(.*)(- \d+(,\d+)? ml)~'    => '$1 - $3 $2 $4',
             '~(Bamberger Dampferlädla - Götter) (- Aroma)(.*)(- \d+(,\d+)? ml)~'         => '$1 - $3 $2 $4',
             '~(Bamberger Dampferlädla - Lädlas Chabeso) (- Aroma)(.*)(- \d+(,\d+)? ml)~' => '$1 - $3 $2 $4',
             '~(Classic Sauce by Classic Dampf) (- Aroma)(.*)(- \d+(,\d+)? ml)~'          => '$1 - $3 $2 $4',
+            '~(Classic Dampf) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                           => '$1 - $3 $2 $4',
+            '~(Dampforia) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                               => '$1 - $3 $2 $4',
+            '~(Noon) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                                    => '$1 - $3 $2 $4',
             '~(Shadow Burner) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                           => '$1 - $3 $2 $4',
             '~(Omerta Liquids - Bisha) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
             '~(Omerta Liquids - La Famiglia) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Omerta Liquids - Carat) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
             '~(Omerta Liquids - The Dons) (- Aroma)(.*)(- \d+(,\d+)? ml)~'               => '$1 - $3 $2 $4',
+            '~(Omerta Liquids - Gusto) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
             '~(Fiasco Brew) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                             => '$1 - $3 $2 $4',
             '~(Bad Candy) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                               => '$1 - $3 $2 $4',
             '~(Arcanum - Respawn) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                       => '$1 - $3 $2 $4',
@@ -427,6 +436,8 @@ return [
             '~(Ultrabio) (Singular) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                     => '$1 - $2 - $4 $3 $5',
             '~(Cream Team) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                              => '$1 - $3 $2 $4',
             '~(Joker Flavour) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                           => '$1 - $3 $2 $4',
+            '~(Erste Sahne - Football Serie) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
+            '~(Erste Sahne - Gin Serie) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                 => '$1 - $3 $2 $4',
             '~(The Custard Shoppe) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                      => '$1 - $3 $2 $4',
             '~(hilda.) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                                  => '$1 - $3 $2 $4',
             '~(Elli\'s Aromen) (- Aroma)(.*)(- \d+ ml)~'                                 => '$1 - $3 $2 $4',
@@ -899,6 +910,7 @@ return [
             '~(9th)~',
             '~(Vrod 200)~',
             '~(Guroo)~',
+            '~(PENEX)~'
         ],
         'asMODus'               => [
             '~((Minikin V3S mit Viento)|(Minikin(( V2 Kodama)|( V2)|( V3S)|( V3)|( Reborn))?))~',
@@ -1047,6 +1059,7 @@ return [
             '~(Teros)~',
             '~(Riftcore(( Duo)|( Solo)))~',
             '~(ObliQ)~',
+            '~(EVIO C)~',
         ],
         'Kangerm'               => [
             '~(M2)~',
@@ -1161,6 +1174,9 @@ return [
             '~(Q14)~',
             '~(Q16(( C)|( Pro)))~',
             '~(QPod)~',
+        ],
+        'Quawins' => [
+            '~(VStick pro)~',
         ],
         'Lost Vape'             => [
             '~(Grus)~',
@@ -1415,6 +1431,7 @@ return [
             '~(PnP Pod)~',
             '~(V Thru Pro)~',
             '~(Argus( Pro)?)~',
+            '~(VMATE)~',
         ],
         'Vaporesso'             => [
             '~(Forz)~',

@@ -219,6 +219,9 @@ return [
         '~Siegfried - RTA DIY~'                => TypeMapper::TYPE_SPARE_PARTS,
         '~Zeep Mini - Filter~'                 => TypeMapper::TYPE_OTHER_EQUIPMENT,
         '~Zeep Mini - Top Cap~'                => TypeMapper::TYPE_OTHER_EQUIPMENT,
+        '~VStick Pro Filter~'                  => TypeMapper::TYPE_OTHER_EQUIPMENT,
         '~Obelisk.*Fast Charger~'              => TypeMapper::TYPE_CHARGER,
+        '~Charging Case~'                      => TypeMapper::TYPE_CHARGER,
+        '~Acrylglastank~'                      => TypeMapper::TYPE_TANK,
     ],
 ];

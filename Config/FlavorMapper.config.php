@@ -31,6 +31,9 @@ return array (
     25 => 'schwarze Himbeere',
     26 => 'schwarze Johannisbeere',
     27 => 'süße Beeren',
+    28 => 'Schlehenbeeren',
+    29 => 'Wacholderbeeren',
+
   ),
   'Bonbons & Kaugummi' => 
   array (
@@ -71,6 +74,7 @@ return array (
     6 => 'Pudding',
     7 => 'Vanillepudding',
     8 => 'Wackelpudding',
+    9 => 'Irish Cream',
   ),
   'Frisches & Eiscreme' => 
   array (
@@ -128,6 +132,7 @@ return array (
     28 => 'saure Früchte',
     29 => 'süße Früchte',
     30 => 'süße Kirsche',
+    31 => 'weißer Pfirsich',
   ),
   'Gebäck' => 
   array (
@@ -223,6 +228,7 @@ return array (
     39 => 'Zitronentee',
     40 => 'bittere Limonade',
     41 => 'karibischer Rum',
+    42 => 'Sekt',
   ),
   'Gewürze' => 
   array (
@@ -251,6 +257,7 @@ return array (
     22 => 'brauner Zucker',
     23 => 'orientalische Gewürze',
     24 => 'schwarzer Trüffel',
+    25 => 'Süße',
   ),
   'Melonen' => 
   array (
@@ -312,6 +319,7 @@ return array (
     12 => 'Orchidee',
     13 => 'Rhabarber',
     14 => 'Waldmeister',
+    15 => 'Blumen',
   ),
   'Süßigkeiten' =>
   array (
@@ -356,6 +364,8 @@ return array (
     38 => 'karamellisierte Früchte',
     39 => 'saures Weingummi',
     40 => 'weiße Schokolade',
+    41 => 'Süße',
+    42 => 'schwarzer Honig',
   ),
   'Tabak' => 
   array (
@@ -423,6 +433,8 @@ return array (
     10 => 'Zitrone',
     11 => 'Zitronengras',
     12 => 'Zitrusfrüchte',
+    13 => 'Pampelmuse',
+    14 => 'Pomelo',
   ),
   'exotische Früchte' => 
   array (

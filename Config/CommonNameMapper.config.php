@@ -12,6 +12,10 @@ return [
             'Lädlas Chabeso' => 2,
             'Götter' => 2,
         ],
+        'Erste Sahne' => [
+            'Football Serie' => 2,
+            'Gin Serie' => 2,
+        ],
         'Ezigaro Pro' => [
             'Quick Eazy' => 2,
         ],
@@ -33,6 +37,7 @@ return [
             'Carat' => 2,
             'La Famiglia' => 2,
             'The Dons' => 2,
+            'Gusto' => 2,
         ],
         'Twisted'        => [
             'Cryostasis'                           => 2,
@@ -92,11 +97,8 @@ return [
             'Poison III'       => 2,
 
         ],
-        'Vampire Vape'   => [
-            'Koncept XIX'     => 2,
-            'Shortz'          => 2,
-            'VLADS VG'        => 2,
-            'The Naughty One' => 2,
+        'Vapeozon' => [
+            'Läuft!' => 2,
         ],
         'Vaping Gorilla' => [
             'Monkeys' => 2,
