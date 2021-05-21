@@ -171,6 +171,7 @@ return [
             '~(Stick) - (G15)~'                            => '$1 $2 -',
             '~(Cartridge) mit,~'                           => '$1,',
             '~VStick pro~'                                 => 'VStick Pro',
+            '~(GeekVape -) N S (Head)~'                    => '$1 NS $2',
         ],
     ],
 
@@ -345,9 +346,9 @@ return [
             // non standard
             '~(Gods of Olymp) - (.*) (- \d+(,\d+)? ml)~'                                 => '$1 - $2 - Aroma $3',
             // non standard
-            '~(Strapped Sodas) - (.*) (Aroma) (- \d+(,\d+)? ml)~'                           => '$1 - $2 - $3 $4',
+            '~(Strapped Sodas) - (.*) (Aroma) (- \d+(,\d+)? ml)~'                        => '$1 - $2 - $3 $4',
             // non standard
-            '~(Vapeozon - Läuft!) (Aroma)(.*)(- \d+(,\d+)? ml)~'                       => '$1 - $3 - $2 $4',
+            '~(Vapeozon - Läuft!) (Aroma)(.*)(- \d+(,\d+)? ml)~'                         => '$1 - $3 - $2 $4',
 
             '~(Bamberger Dampferlädla - Bassd Schoo) (- Aroma)(.*)(- \d+(,\d+)? ml)~'    => '$1 - $3 $2 $4',
             '~(Bamberger Dampferlädla - Götter) (- Aroma)(.*)(- \d+(,\d+)? ml)~'         => '$1 - $3 $2 $4',
@@ -356,7 +357,14 @@ return [
             '~(Classic Dampf) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                           => '$1 - $3 $2 $4',
             '~(Dampforia) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                               => '$1 - $3 $2 $4',
             '~(Noon) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                                    => '$1 - $3 $2 $4',
+            '~(Fana Vape - M2Like) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                      => '$1 - $3 $2 $4',
             '~(Shadow Burner) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                           => '$1 - $3 $2 $4',
+            '~(Philgood´s Liquidhimmel) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                 => '$1 - $3 $2 $4',
+            '~(Happy Club Mix) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                          => '$1 - $3 $2 $4',
+            '~(Flavour Manufaktur) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                      => '$1 - $3 $2 $4',
+            '~(mammoth) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                                 => '$1 - $3 $2 $4',
+            '~(The Vaping Flavour) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                      => '$1 - $3 $2 $4',
+            '~(Day n Night) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                             => '$1 - $3 $2 $4',
             '~(Omerta Liquids - Bisha) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
             '~(Omerta Liquids - La Famiglia) (- Aroma)(.*)(- \d+(,\d+)? ml)~'            => '$1 - $3 $2 $4',
             '~(Omerta Liquids - Carat) (- Aroma)(.*)(- \d+(,\d+)? ml)~'                  => '$1 - $3 $2 $4',
@@ -515,6 +523,7 @@ return [
             '~(Liquid)$~'                                                                => '$1 - 10 ml',
             '~(Illusions - Beyond Series.*50 ml)~'                                       => '$1, 0 mg/ml',
             '~(\d+(\.\d+)? ml, 0 mg/ml)$~'                                               => '- Shake & Vape - $1',
+            '~(Insane.*) (- 100 ml)~'                                                    => '$1 - Shake & Vape $2',
             '~(Chicken Shop.*) (- 0 mg/ml)~'                                             => '$1 - Shake & Vape $2',
             '~(Skull Plus.*) - 0 mg/ml~'                                                 => '$1 - Shake & Vape - 100 ml, 0 mg/ml',
             '~(Koncept XIX.*) - (50 ml)~'                                                => '$1 - Shake & Vape - 50 ml, 0 mg/ml',
@@ -638,7 +647,9 @@ return [
             '~(Head) - (ARC)~'                                    => '$2 $1 -',
             '~(Hookah) (Set)~'                                    => '$1 ($2)',
             '~(Zelos) - 5~'                                       => '$1 - Akku $2',
+            '~(Z50) (- \d\.\d+ mAh)~'                             => '$1 - Akku $2',
             '~(Zelos 3) (- \d\.\d+ mAh)~'                         => '$1 - Akku $2',
+            '~(Galaxies) (- \d+ mAh)~'                            => '$1 - Akku $2',
             '~(Zeep Mini) (- \d+ mAh)~'                           => '$1 - Akku $2',
             '~(NX40) (- \d\.\d+ mAh)~'                            => '$1 - Akku $2',
             '~(Meteor 510) (- \d\.\d+ mAh)~'                      => '$1 - Akku $2',
@@ -671,6 +682,7 @@ return [
             '~(RX GEN3)~'                                         => 'RX Gen3',
             '~(Lux) 200~'                                         => '$1',
             '~(Aegis Squonk) (- \d+ Watt)~'                       => '$1 - Squonker Box $2',
+            '~(MDura Pro) (- \d+ Watt)~'                          => '$1 - Akkuträger $2',
             '~(RHEA) (- \d+ Watt)~'                               => '$1 - Akkuträger $2',
             '~(Alieno) (- \d+ Watt)~'                             => '$1 - Akkuträger $2',
             '~(Swag PX80) (- \d+ Watt)~'                          => '$1 - Akkuträger $2',
@@ -997,7 +1009,7 @@ return [
             '~(Creed RTA)~',
             '~(Zeus(( X2)|( X RTA)|( Dual RTA)|( RTA))?)~',
             '~(Ammit Dual Coil RTA)~',
-            '~(Aegis(( Hero)|( Max)|( Pod)|( Boost Plus)|( Boost Pro)|( Boost Luxury Edition)|( Boost)|( Legend)|( Mini)|( X)|( Solo)|( Squonk))?)~',
+            '~(Aegis(( Hero)|( Max)|( Pod)|( Boost Plus)|( Boost Pro)|( Boost Luxury Edition)|( Boost)|( Legend( 2)?)|( Mini)|( X)|( Solo)|( Squonk))?)~',
             '~(Aero Mesh)~',
             '~(Cerberus)~',
             '~(Creed RTA)~',
@@ -1008,6 +1020,7 @@ return [
             '~(Frenzy)~',
             '~(Mero( AIO)?)~',
             '~(Z Nano)~',
+            '~(Z50)~',
             '~(Obelisk)~',
         ],
         'Gorilla Killa'         => [
@@ -1080,13 +1093,14 @@ return [
         ],
         'Eleaf'                 => [
             '~(iStick Power 2C mit GTL Pod)~',
+            '~(iStick Pico 2)~',
             '~(iStick Pico Baby)~',
             '~(Pico Compaq)~',
             '~(Tance Max)~',
             '~(Ello)~',
             '~(iJust Mini)~',
             '~(Coral 2)~',
-            '~(GZeno)~',
+            '~(GZeno( S)?)~',
             '~(iStick S80 mit GZeno)~',
             '~(Elven)~',
             '~(iTap)~',
@@ -1216,10 +1230,12 @@ return [
         'OXVA'                  => [
             '~(Idian( X)?)~',
             '~(Arbiter RTA)~',
+            '~(Arbiter Solo RTA)~',
             '~(Unipro RBA)~',
             '~(Velocity)~',
         ],
         'Smok'                  => [
+            '~(Acro)~',
             '~(Gram(( 25)|( 16))?)~',
             '~(#4)~',
             '~(Thallo S)~',
@@ -1400,6 +1416,8 @@ return [
 
         ],
         'Vapefly'               => [
+            '~(Galaxies 30W)~',
+            '~(Galaxies Air)~',
             '~(Manners)~',
             '~(Brunhilde MTL RTA)~',
             '~(Brunhilde Top Coiler RTA)~',
@@ -1425,7 +1443,7 @@ return [
             '~(Find(( Pod)|( S Trio))?)~',
             '~((Zip)|((Alpha Zip)( (Mini))?))~',
             '~(Uforce T2)~',
-            '~(Vinci(( X)|( Air))?)~',
+            '~(Vinci(( 2)|( X 2)|( X)|( Air))?)~',
             '~(Navi)~',
             '~(Argus(( X)|( GT)|( Air)))~',
             '~(PnP Pod)~',
@@ -1479,6 +1497,7 @@ return [
         ],
         'VapX'                  => [
             '~(Geyser( S)?)~',
+            '~(ART)~',
 
         ],
         'Vsticking'             => [

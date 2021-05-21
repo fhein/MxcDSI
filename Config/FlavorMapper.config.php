@@ -183,6 +183,8 @@ return array (
     44 => 'Zimtschnecke',
     45 => 'Zitronenkuchen',
     46 => 'Zitronentorte',
+    47 => 'Kirschtasche',
+    48 => 'Marzipanschnecke',
   ),
   'Getränke' => 
   array (
@@ -258,6 +260,7 @@ return array (
     23 => 'orientalische Gewürze',
     24 => 'schwarzer Trüffel',
     25 => 'Süße',
+    26 => 'Pfeffer',
   ),
   'Melonen' => 
   array (
@@ -457,5 +460,6 @@ return array (
     16 => 'exotische Früchte',
     17 => 'karibische Früchte',
     18 => 'tropische Früchte',
+    19 => 'Olive',
   ),
 );

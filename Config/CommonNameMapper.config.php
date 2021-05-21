@@ -39,6 +39,9 @@ return [
             'The Dons' => 2,
             'Gusto' => 2,
         ],
+        'Fana Vape' => [
+            'M2Like' => 2,
+        ],
         'Twisted'        => [
             'Cryostasis'                           => 2,
             'Highway Vapor'                        => 2,

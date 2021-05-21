@@ -223,5 +223,8 @@ return [
         '~Obelisk.*Fast Charger~'              => TypeMapper::TYPE_CHARGER,
         '~Charging Case~'                      => TypeMapper::TYPE_CHARGER,
         '~Acrylglastank~'                      => TypeMapper::TYPE_TANK,
+        '~RPM Meshed-Cotton Set~'              => TypeMapper::TYPE_COIL,
+        '~RPM Mesh-Cotton Set~'                => TypeMapper::TYPE_COIL,
+        '~JesterX - Stahldrähte~'              => TypeMapper::TYPE_SPARE_PARTS,
     ],
 ];

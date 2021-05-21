@@ -2086,7 +2086,7 @@ class Shopware_Controllers_Backend_MxcDsiProduct extends BackendApplicationContr
             $ss = $apiClient->getShippingStatus();
             $shippingStatus = [];
             foreach ($ss as $status) {
-                $shippingStatus[$status] = true;
+                $shippingStatus[$status]++;
             }
             $log->debug(var_export($shippingStatus, true));
 
